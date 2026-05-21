@@ -1,0 +1,11 @@
+# @package _global_
+
+model_set_name: dataset
+
+model_names:
+  - openclip_vit_l_14_quickgelu_metaclip_400m
+  - openclip_vit_l_14_quickgelu_metaclip_fullcc
+  - timm_vit_large_patch14_clip_224_dfn2b
+  - timm_vit_large_patch14_clip_quickgelu_224_openai
+  - openclip_vit_l_14_laion400m_e31
+

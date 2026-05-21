@@ -1,0 +1,91 @@
+# Hydra config for fit_encoding_hydra.py
+#
+# Usage:
+#   # Run all subjects and models
+#   python fit_encoding_hydra.py
+#
+#   # Run single subject, single batch (for SLURM parallelization)
+#   python fit_encoding_hydra.py parallel.subject=sub-01 parallel.model_batch=0
+#
+#   # Use random_kfold with 5 folds for alpha stability analysis
+#   python fit_encoding_hydra.py fitting.eval_method=random_kfold fitting.n_folds=5
+#
+#   # Use group_kfold (leave-one-dataset-out)
+#   python fit_encoding_hydra.py fitting.eval_method=group_kfold
+
+defaults:
+  - _self_
+  - paths: share
+
+# Parallel execution settings
+parallel:
+  subject: null  # If set, only process this subject
+  model_batch: null  # If set, only process this batch of models
+  models_per_batch: 5  # 5 models per batch × 4 batches = 20 models
+  model_filter: null  # Optional glob filter for model names
+
+# Subjects to process (when parallel.subject is null)
+subjects:
+  - sub-01
+  - sub-03
+  - sub-05
+  - sub-06
+  - sub-07
+
+# Benchmark data settings
+benchmark:
+  voxel_set: visual  # Always fit on visual (full CVE mask)
+  cve_threshold: 0.2
+  input_source: finalinterp
+  image_set: shared  # shared | unique (unique = per-subject images, independent of selection)
+
+# Preprocessing settings
+preprocessing:
+  response_zscore: true   # z-score betas per voxel across images
+  srp: false              # sparse random projection on features
+  srp_eps: 0.1            # JL epsilon for target dimensionality (only if srp=true)
+
+# Evaluation settings
+evaluation:
+  rois:                   # compute veRSA for these ROIs (subset of visual)
+    - visual
+    - hlvis
+
+# Model fitting settings
+fitting:
+  eval_method: random_kfold  # random_kfold | group_kfold | odd_even
+  n_folds: 5                 # number of random splits (for random_kfold)
+  alpha_aggregation: median  # how to aggregate fold alphas: median | mean
+  store_fold_alphas: true    # save full (n_folds, n_voxels) array
+  seed: 42
+  scale_features: true       # z-score features before ridge regression
+
+# Ridge regression alpha grid
+ridge:
+  alpha_min: 0.1
+  alpha_max: 1.0e+6
+  n_alphas: 20
+
+# Feature extraction
+extraction:
+  batch_size: 64
+  device: cuda
+
+# Output settings
+output:
+  make_plots: true
+  fig_dpi: 120
+  save_oof_predictions: false
+  skip_existing: true
+
+# Resume from existing run (path to output directory)
+resume_from: null
+
+hydra:
+  run:
+    dir: ${paths.output_root}/runs/${now:%Y%m%d_%H%M%S}
+  sweep:
+    dir: ${paths.output_root}/multirun/${now:%Y%m%d_%H%M%S}
+    subdir: ${hydra.job.num}
+  job:
+    chdir: false

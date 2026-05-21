@@ -1,0 +1,3 @@
+[submodule "06_manuscript"]
+	path = 06_manuscript
+	url = https://github.com/andropar/cstims_paper.git

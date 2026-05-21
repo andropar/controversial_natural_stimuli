@@ -1,0 +1,35 @@
+[project]
+name = "cstims-share"
+version = "0.1.0"
+description = "Copy-only share package for the controversial-stimuli project"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "pandas",
+  "scipy",
+  "scikit-learn",
+  "matplotlib",
+  "pillow",
+]
+
+[project.optional-dependencies]
+full = [
+  "h5py",
+  "hydra-core",
+  "joblib",
+  "nibabel",
+  "omegaconf",
+  "psutil",
+  "pyarrow",
+  "PyYAML",
+  "scikit-image",
+  "timm",
+  "torch",
+  "torchvision",
+  "tqdm",
+  "transformers",
+  "cornet @ git+https://github.com/dicarlolab/CORnet",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

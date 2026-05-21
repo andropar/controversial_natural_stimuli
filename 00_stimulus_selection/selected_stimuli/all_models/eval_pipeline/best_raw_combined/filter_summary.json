@@ -1,0 +1,59 @@
+{
+  "total_evaluated": 10,
+  "total_passed": 10,
+  "total_failed": 0,
+  "pass_rate": 1.0,
+  "rejection_breakdown": {},
+  "rank_distribution": {
+    "1": 10,
+    "2": 0,
+    "3": 0,
+    "4+": 0
+  },
+  "phase_breakdown": {
+    "refinement": 10
+  },
+  "resolution_stats": {
+    "passed": {
+      "count": 10,
+      "mean": 1475.7,
+      "median": 1352.5,
+      "min": 1000,
+      "max": 3024
+    },
+    "failed": {
+      "count": 0,
+      "mean": null,
+      "median": null,
+      "min": null,
+      "max": null
+    }
+  },
+  "classifier_stats": {
+    "passed": {
+      "count": 10,
+      "mean": 0.9870325249272177,
+      "median": 0.9994428864136511,
+      "min": 0.9045978079559072,
+      "max": 0.9999946557237246
+    },
+    "failed": {
+      "count": 0,
+      "mean": null,
+      "median": null,
+      "min": null,
+      "max": null
+    }
+  },
+  "score_stats": {
+    "passed": {
+      "mean": 4.687589621543884,
+      "std": 0.9478999807459011
+    },
+    "failed": {
+      "mean": null,
+      "std": null
+    }
+  },
+  "score_penalty_stats": null
+}

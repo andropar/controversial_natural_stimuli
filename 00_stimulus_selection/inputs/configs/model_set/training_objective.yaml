@@ -1,0 +1,11 @@
+# @package _global_
+
+model_set_name: training_objective
+
+model_names:
+  - vissl_resnet50_supervised
+  - vissl_resnet50_barlowtwins
+  - vissl_resnet50_mocov2
+  - vicreg_resnet50
+  - robustness_imagenet_l2_eps3
+

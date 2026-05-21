@@ -1,0 +1,12 @@
+# @package _global_
+
+method_name: fitted
+
+tracks:
+  - name: fitted
+    type: encoding
+    encoding_name: sub-01_hlvis
+
+track_aggregation:
+  norm_method: none
+  agg_method: identity

@@ -1,0 +1,79 @@
+defaults:
+  - _self_
+  - paths: raven
+  - model_set: small
+  - method: raw
+
+# Selection parameters
+target_size: 100
+init_size: 3
+n_mc_samples: 100
+batch_size: 10000
+
+# Track configuration (overridden per-method)
+tracks: []
+track_aggregation:
+  norm_method: none
+  agg_method: null  # null = auto-select based on context (weighted_mean if raw_weight set, else mean)
+  beta: 5.0
+  # Power parameter for power_mean aggregation: p=1 is arithmetic mean, p=-1 is harmonic mean
+  # Negative values bias toward lower-scoring tracks (conservative)
+  power: 1.0
+  # Optional: total weight on the raw (identity) track when combining raw + encodings.
+  # If set, the remaining mass (1 - raw_weight) is split uniformly over all encoding tracks.
+  raw_weight: null
+  # Optional explicit per-track weights for weighted_mean aggregation.
+  weights: null
+
+# Algorithm parameters
+metric: cosine
+corr_type: correlation
+aggregation_within: mean
+aggregation_across: min
+use_analytical: true
+noise_ceiling_target: 0.46
+
+# Encoding model ROI subset (only used when tracks include encoding types)
+# Set to "hlvis" to use only high-level visual cortex voxels, or null for all voxels
+encoding_roi_subset: hlvis
+
+# Noise parameters
+noise_in_feature_space: false
+feature_noise_n_samples: 20
+feature_noise_max_iter: 20
+feature_noise_tolerance: 0.01
+
+# Device and memory
+device: cuda
+max_ram_gb: 1
+max_images: null
+prefetch_features: true
+
+# Image quality filter (applied during selection)
+image_filter:
+  enabled: true
+  min_resolution: 1000  # Min pixels on at least one side
+  natural_prob_threshold: 0.85  # P(natural) from classifier
+  download_timeout: 10.0  # Seconds
+  max_attempts_per_iteration: 100  # Max candidates to try before fallback
+  parallel_batch_size: 1  # Validate this many candidates in parallel
+  classifier_path: ${paths.classifier_path}
+
+# Refinement phase (local search after greedy selection)
+refinement:
+  max_passes: 10  # 0 = disabled, >0 = max number of full passes through all positions
+  min_replacements: 0  # Stop if replacements in a pass <= this value (0 = until no changes)
+
+# Resume from a previous run (path to output directory)
+resume_from: null
+
+seed: 42
+
+hydra:
+  run:
+    dir: ${paths.output_base}/${model_set_name}/method-${method_name}/metric-${metric}_corr-${corr_type}_aggwithin-${aggregation_within}_aggacross-${aggregation_across}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: ${paths.output_base}/multirun/${model_set_name}/method-${method_name}/metric-${metric}_corr-${corr_type}_aggwithin-${aggregation_within}_aggacross-${aggregation_across}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}
+  job:
+    chdir: false

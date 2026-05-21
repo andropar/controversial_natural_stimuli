@@ -1,0 +1,26 @@
+# @package _global_
+
+model_set_name: all_models
+
+model_names:
+  - vissl_resnet50_supervised
+  - vissl_resnet50_barlowtwins
+  - vissl_resnet50_mocov2
+  - vicreg_resnet50
+  - slip_vit_l_slip
+  - slip_vit_l_simclr
+  - timm_vit_large_patch14_clip_224_laion2b
+  - dinov2_vitl14
+  - openclip_vit_so400m_14_siglip_webli
+  - torchvision_vgg16_imagenet1k_v1
+  - torchvision_resnet50_imagenet1k_v1
+  - torchvision_convnext_base_imagenet1k_v1
+  - torchvision_vit_l_16_imagenet1k_v1
+  - openclip_vit_l_14_quickgelu_metaclip_400m
+  - openclip_vit_l_14_quickgelu_metaclip_fullcc
+  - timm_vit_large_patch14_clip_224_dfn2b
+  - timm_vit_large_patch14_clip_quickgelu_224_openai
+  - openclip_vit_l_14_laion400m_e31
+  - cornet_s
+  - robustness_imagenet_l2_eps3
+

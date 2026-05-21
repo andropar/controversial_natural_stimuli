@@ -1,0 +1,6 @@
+- paths=iris
+- benchmark.image_set=unique
+- fitting.eval_method=random_kfold
+- fitting.n_folds=5
+- parallel.subject=sub-03
+- resume_from=/home/jroth/rsa_based_selection/outputs/deepvision_encoding_models/runs/20260317_170621

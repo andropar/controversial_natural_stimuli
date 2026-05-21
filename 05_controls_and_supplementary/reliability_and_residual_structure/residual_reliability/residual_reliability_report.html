@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diagnostic Images, Ensemble Gaps, and Residual Brain Structure</title>
+  <style>
+    :root {
+      --ink: #18212f;
+      --muted: #5b6575;
+      --line: #d8dee8;
+      --paper: #f7f9fc;
+      --white: #ffffff;
+      --blue: #2f75b5;
+      --red: #c94f4f;
+      --green: #2d8a68;
+      --amber: #bd7b21;
+      --violet: #6e5aa8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    header {
+      background: #111827;
+      color: white;
+      padding: 44px 24px 36px;
+    }
+    main { max-width: 1160px; margin: 0 auto; padding: 28px 20px 56px; }
+    h1 { margin: 0 0 12px; font-size: clamp(30px, 5vw, 54px); line-height: 1.02; letter-spacing: 0; }
+    h2 { margin: 0 0 14px; font-size: 24px; letter-spacing: 0; }
+    h3 { margin: 0 0 10px; font-size: 18px; letter-spacing: 0; }
+    p { margin: 0 0 14px; }
+    .subhead { max-width: 900px; color: #d8dee8; font-size: 19px; }
+    section {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin: 18px 0;
+      padding: 22px;
+    }
+    .grid { display: grid; gap: 16px; }
+    .two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    @media (max-width: 820px) { .two, .three { grid-template-columns: 1fr; } }
+    .callout {
+      border-left: 5px solid var(--red);
+      background: #fff7f7;
+      padding: 14px 16px;
+      border-radius: 6px;
+    }
+    .good { border-left-color: var(--green); background: #f2fbf7; }
+    .note { border-left-color: var(--amber); background: #fff9ef; }
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      background: #fbfcff;
+    }
+    .metric .num { font-size: 34px; font-weight: 750; line-height: 1.05; }
+    .metric .label { color: var(--muted); font-size: 14px; }
+    .pill {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: white;
+      background: var(--blue);
+      margin-right: 6px;
+    }
+    .pill.red { background: var(--red); }
+    .pill.green { background: var(--green); }
+    .pill.amber { background: var(--amber); }
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(120px, 1fr));
+      gap: 10px;
+      align-items: stretch;
+    }
+    .step {
+      min-height: 112px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      background: #fbfcff;
+      position: relative;
+    }
+    .step strong { display: block; margin-bottom: 6px; }
+    .arrow {
+      display: none;
+    }
+    @media (min-width: 950px) {
+      .step:not(:last-child)::after {
+        content: ">";
+        position: absolute;
+        right: -9px;
+        top: 42px;
+        color: #758096;
+        font-weight: 800;
+      }
+    }
+    @media (max-width: 949px) { .flow { grid-template-columns: 1fr; } }
+    .barrow { margin: 12px 0 16px; }
+    .barlabel { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; color: var(--muted); }
+    .track {
+      height: 18px;
+      background: #eef2f7;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+    .fill { height: 100%; border-radius: 999px; }
+    .fill.blue { background: var(--blue); }
+    .fill.red { background: var(--red); }
+    .fill.green { background: var(--green); }
+    .fill.amber { background: var(--amber); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+    .figure {
+      margin: 12px 0 6px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      padding: 10px;
+    }
+    .figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    th, td { border-bottom: 1px solid var(--line); padding: 9px 8px; text-align: right; }
+    th:first-child, td:first-child { text-align: left; }
+    th { color: var(--muted); font-weight: 700; background: #f3f6fa; }
+    .small { color: var(--muted); font-size: 13px; }
+    code { background: #eef2f7; padding: 1px 5px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Diagnostic images expose a model-brain convergence gap</h1>
+    <p class="subhead">A plain-English report for the residual reliability and model-ensemble analysis in <code>10_residual_reliability</code>.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>One-Sentence Takeaway</h2>
+      <div class="callout">
+        Standard natural-image benchmarks can make modern vision models look close to human visual cortex; on diagnostic natural images, the ensemble gap to the reliable brain ceiling grows and a larger fraction of reliable residual structure remains outside the current model family.
+      </div>
+    </section>
+
+    <section>
+      <h2>The Problem Setup</h2>
+      <div class="flow">
+        <div class="step"><strong>1. Start with natural images</strong>Baseline images are ordinary unselected natural photographs.</div>
+        <div class="step"><strong>2. Select diagnostic images</strong>Images are selected because current models disagree in RSA space, not because of brain data.</div>
+        <div class="step"><strong>3. Measure brain responses</strong>7T fMRI gives reliable high-level visual cortex RDMs.</div>
+        <div class="step"><strong>4. Compare models to brain</strong>Single models and model ensembles predict the brain RDM.</div>
+        <div class="step"><strong>5. Ask what remains</strong>After removing model structure, do humans still share residual representational structure?</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>What Changed in the Analysis</h2>
+      <div class="grid two">
+        <div>
+          <h3>Old prototype</h3>
+          <p>Mixed model-brain correlations, raw split-half reliability, and residual reliability on one axis. This made the figure hard to interpret because model correlations should be compared to <code>sqrt(noise ceiling reliability)</code>, not the raw reliability.</p>
+        </div>
+        <div>
+          <h3>Corrected version</h3>
+          <p>Separates two questions: how close does the best 20-model ensemble get to the correlation ceiling, and is the model residual shared across subjects using leave-one-subject-out residual RSA?</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>The Two Headline Tests</h2>
+      <div class="grid two">
+        <div class="metric">
+          <span class="pill">Test 1</span>
+          <h3>Best possible model ensemble</h3>
+          <p>Fit a ridge-weighted ensemble of model RDMs to the brain RDM with cross-validation. Compare it to the correct model-correlation ceiling: <code>sqrt(split-half reliability)</code>.</p>
+        </div>
+        <div class="metric">
+          <span class="pill green">Test 2</span>
+          <h3>Shared residual brain structure</h3>
+          <p>Residualize each subject's brain RDM against the model-RDM space. Then correlate that residual with the leave-one-subject-out mean residual from the other participants.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Key Corrected Result: Mixed RSA, All-Model Diagnostic Set</h2>
+      <div class="grid three">
+        <div class="metric">
+          <div class="num">0.64</div>
+          <div class="label">model-correlation ceiling, sqrt(NC)</div>
+        </div>
+        <div class="metric">
+          <div class="num">0.42</div>
+          <div class="label">cross-validated 20-model ensemble</div>
+        </div>
+        <div class="metric">
+          <div class="num">0.28</div>
+          <div class="label">LOSO residual RSA after model removal</div>
+        </div>
+      </div>
+
+      <div class="barrow">
+        <div class="barlabel"><span>Best single model</span><strong>0.41</strong></div>
+        <div class="track"><div class="fill amber" style="width:64%"></div></div>
+      </div>
+      <div class="barrow">
+        <div class="barlabel"><span>Best 20-model ensemble</span><strong>0.42</strong></div>
+        <div class="track"><div class="fill blue" style="width:66%"></div></div>
+      </div>
+      <div class="barrow">
+        <div class="barlabel"><span>Model-correlation ceiling</span><strong>0.64</strong></div>
+        <div class="track"><div class="fill green" style="width:100%"></div></div>
+      </div>
+
+      <div class="callout good">
+        The ensemble improves only slightly over the best single model and still leaves a gap of about <strong>0.22 Spearman r</strong> to the correlation ceiling. The residual itself is still shared across participants: <strong>r = 0.28</strong> against the leave-one-subject-out residual mean.
+      </div>
+      <div class="callout note">
+        Critical caveat: the absolute LOSO residual is not larger than baseline. The stronger diagnostic result is fractional and within-subject: the all-model set leaves <strong>0.73</strong> of split-half reliability in the residual, versus <strong>0.44</strong> on baseline; it also leaves <strong>0.57</strong> of LOSO brain structure, versus <strong>0.46</strong> on baseline.
+      </div>
+    </section>
+
+    <section>
+      <h2>Nature-Critical Contrast</h2>
+      <p class="small">Mixed RSA, all-model diagnostic set minus baseline. Means are paired across the five subjects; Vicco baseline is averaged over 10 N=100 bootstraps before pairing.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>baseline</th>
+            <th>diagnostic</th>
+            <th>difference</th>
+            <th>95% CI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Cross-validated ensemble gap</td><td>0.089</td><td>0.217</td><td>+0.128</td><td>[0.030, 0.226]</td></tr>
+          <tr><td>Full-fit ensemble gap</td><td>0.056</td><td>0.156</td><td>+0.099</td><td>[0.024, 0.175]</td></tr>
+          <tr><td>Within-subject residual fraction</td><td>0.435</td><td>0.727</td><td>+0.292</td><td>[0.128, 0.456]</td></tr>
+          <tr><td>LOSO residual fraction</td><td>0.458</td><td>0.571</td><td>+0.113</td><td>[0.055, 0.171]</td></tr>
+          <tr><td>Absolute LOSO residual</td><td>0.281</td><td>0.275</td><td>-0.005</td><td>[-0.033, 0.022]</td></tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        Fair interpretation: diagnostic images do not uniquely create more absolute shared residual structure. They reveal that models explain a smaller fraction of the reliable brain signal, and this remains true even for an over-generous full-fit ensemble.
+      </div>
+    </section>
+
+    <section>
+      <h2>Computed Summary</h2>
+      <p class="small">Means across subjects. Vicco baseline values below are averaged over 10 bootstrap samples of 100 images. The corrected run is complete for both fixed and mixed RSA across all diagnostic sets.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>RSA / stimulus set</th>
+            <th>best single</th>
+            <th>ensemble</th>
+            <th>sqrt(NC)</th>
+            <th>ensemble gap</th>
+            <th>LOSO brain</th>
+            <th>LOSO residual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>mixed / baseline</td><td>0.586</td><td>0.605</td><td>0.695</td><td>0.089</td><td>0.608</td><td>0.281</td></tr>
+          <tr><td>mixed / all-model diagnostic</td><td>0.405</td><td>0.418</td><td>0.635</td><td>0.217</td><td>0.481</td><td>0.275</td></tr>
+          <tr><td>mixed / SOTA diagnostic</td><td>0.524</td><td>0.539</td><td>0.734</td><td>0.195</td><td>0.649</td><td>0.384</td></tr>
+          <tr><td>mixed / architecture diagnostic</td><td>0.499</td><td>0.507</td><td>0.625</td><td>0.119</td><td>0.551</td><td>0.255</td></tr>
+          <tr><td>mixed / dataset diagnostic</td><td>0.420</td><td>0.424</td><td>0.601</td><td>0.177</td><td>0.485</td><td>0.294</td></tr>
+          <tr><td>mixed / training-objective diagnostic</td><td>0.553</td><td>0.552</td><td>0.724</td><td>0.172</td><td>0.628</td><td>0.332</td></tr>
+          <tr><td>fixed / baseline</td><td>0.296</td><td>0.335</td><td>0.695</td><td>0.360</td><td>0.608</td><td>0.534</td></tr>
+          <tr><td>fixed / all-model diagnostic</td><td>0.156</td><td>0.190</td><td>0.635</td><td>0.444</td><td>0.481</td><td>0.450</td></tr>
+          <tr><td>fixed / SOTA diagnostic</td><td>0.365</td><td>0.322</td><td>0.734</td><td>0.412</td><td>0.649</td><td>0.544</td></tr>
+          <tr><td>fixed / architecture diagnostic</td><td>0.299</td><td>0.297</td><td>0.625</td><td>0.328</td><td>0.551</td><td>0.459</td></tr>
+          <tr><td>fixed / dataset diagnostic</td><td>0.201</td><td>0.165</td><td>0.601</td><td>0.437</td><td>0.485</td><td>0.446</td></tr>
+          <tr><td>fixed / training-objective diagnostic</td><td>0.227</td><td>0.229</td><td>0.724</td><td>0.495</td><td>0.628</td><td>0.566</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Corrected Figure</h2>
+      <p>The top row shows the ensemble gap to the correct model-correlation ceiling. The bottom row shows how much subject-to-subject brain structure remains after residualizing each subject against the full model-RDM space.</p>
+      <div class="figure">
+        <img src="figures/residual_reliability.png" alt="Residual reliability figure with ensemble gaps and LOSO residual RSA">
+      </div>
+    </section>
+
+    <section>
+      <h2>Decomposition Figure</h2>
+      <p>This figure separates absolute gaps from residual fractions. The black tick in panel A is the full-fit ensemble upper bound, which is intentionally generous because it is not cross-validated.</p>
+      <div class="figure">
+        <img src="figures/residual_decomposition.png" alt="Residual decomposition figure showing ensemble gaps and residual fractions">
+      </div>
+    </section>
+
+    <section>
+      <h2>Cross-Set Ensemble Transfer</h2>
+      <p>To test whether the diagnostic failure is just a bad choice of ensemble weights, I fit the model-RDM ensemble on one stimulus regime and evaluated it on the other.</p>
+      <div class="grid three">
+        <div class="metric">
+          <div class="num">0.616</div>
+          <div class="label">baseline within-set CV</div>
+        </div>
+        <div class="metric">
+          <div class="num">0.419</div>
+          <div class="label">baseline-trained weights on diagnostic images</div>
+        </div>
+        <div class="metric">
+          <div class="num">0.635</div>
+          <div class="label">diagnostic model-correlation ceiling</div>
+        </div>
+      </div>
+      <p>The baseline-trained ensemble transfers to the diagnostic set about as well as a within-diagnostic CV ensemble (<strong>0.419</strong> vs <strong>0.418</strong>), but both remain far below the diagnostic ceiling. So the gap is not rescued by importing the model mixture learned on baseline images.</p>
+      <div class="figure">
+        <img src="figures/ensemble_transfer_mixed.png" alt="Cross-set ensemble transfer figure">
+      </div>
+    </section>
+
+    <section>
+      <h2>How to Interpret This</h2>
+      <div class="grid two">
+        <div>
+          <h3>What the result supports</h3>
+          <p>The all-model diagnostic set does not merely make one favorite model look bad. Even an optimized linear mixture of current models remains below the reliable brain signal; even a full-fit ensemble leaves a larger gap than baseline; and a larger fraction of both within-subject and cross-subject reliable structure remains in the residual.</p>
+          <p>This directly supports the stronger paper claim: current models have not saturated the reliable representational geometry of human visual cortex.</p>
+        </div>
+        <div>
+          <h3>What it does not yet prove</h3>
+          <p>The absolute LOSO residual is basically the same for baseline and all-model diagnostic images, so do not claim that diagnostic images produce more shared residual in raw correlation units. The residual analysis is also correlational RSA: it shows structure outside the current model-RDM space, not yet what visual dimensions define that structure. The Vicco baseline is based on 10 bootstraps here; final paper numbers should use more baseline resamples.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Context in the Paper</h2>
+      <p><span class="pill red">Paper-level claim</span> Benchmark saturation is not the same thing as brain-model convergence.</p>
+      <p>The existing paper already shows that model-brain alignment drops on diagnostic natural images. This new analysis explains why that drop matters: the gap is not closed by choosing a better model from the zoo, by mixing the zoo together, by giving the ensemble an in-sample upper bound, or by transferring baseline-learned ensemble weights. The remaining residual contains reliable within-subject signal and non-trivial shared cross-subject structure.</p>
+      <p>That turns the story from "controversial stimuli reveal model differences" into "apparent convergence depends on the images used to test it."</p>
+    </section>
+
+    <section>
+      <h2>Reproducibility Notes</h2>
+      <p>Updated compute script: <code>analysis/01_compute_residual_rsa.py</code></p>
+      <p>Useful robust commands:</p>
+      <p><code>python analysis/01_compute_residual_rsa.py --rsa-type fixed --output data/parts/fixed.csv</code></p>
+      <p><code>python analysis/01_compute_residual_rsa.py --rsa-type mixed --groups all_models --output data/parts/mixed_all_models.csv</code></p>
+      <p><code>PYTHONNOUSERSITE=1 python analysis/02_decompose_residual_signal.py</code></p>
+      <p><code>PYTHONNOUSERSITE=1 python analysis/03_cross_set_ensemble_transfer.py --rsa-type mixed</code></p>
+      <p><code>PYTHONNOUSERSITE=1 python figures/plot_residual_reliability.py</code></p>
+      <p class="small"><code>PYTHONNOUSERSITE=1</code> avoids a local user-site NumPy 2 / conda Matplotlib ABI mismatch on this machine.</p>
+    </section>
+  </main>
+</body>
+</html>

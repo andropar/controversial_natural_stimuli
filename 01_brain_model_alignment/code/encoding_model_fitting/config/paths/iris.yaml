@@ -1,0 +1,7 @@
+# @package _global_
+
+paths:
+  model_list_csv: /home/jroth/rsa_based_selection/data/resources/model_list.csv
+  cache_root: /home/jroth/rsa_based_selection/data/cache
+  deepvision_root: /SSD/jroth/deepvision_fmri
+  output_root: /home/jroth/rsa_based_selection/outputs/deepvision_encoding_models

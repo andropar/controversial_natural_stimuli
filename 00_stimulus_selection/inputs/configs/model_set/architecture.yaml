@@ -1,0 +1,11 @@
+# @package _global_
+
+model_set_name: architecture
+
+model_names:
+  - torchvision_vgg16_imagenet1k_v1
+  - torchvision_resnet50_imagenet1k_v1
+  - torchvision_convnext_base_imagenet1k_v1
+  - torchvision_vit_l_16_imagenet1k_v1
+  - cornet_s
+

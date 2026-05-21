@@ -1,0 +1,73 @@
+target_size: 100
+init_size: 3
+n_mc_samples: 100
+batch_size: 2500
+tracks:
+- name: sub-01
+  type: encoding
+  encoding_name: sub-01
+- name: sub-03
+  type: encoding
+  encoding_name: sub-03
+- name: sub-05
+  type: encoding
+  encoding_name: sub-05
+- name: sub-06
+  type: encoding
+  encoding_name: sub-06
+- name: sub-07
+  type: encoding
+  encoding_name: sub-07
+- name: raw
+  type: identity
+track_aggregation:
+  norm_method: zscore
+  agg_method: identity
+  beta: 5.0
+  raw_weight: 0.5
+  weights: null
+metric: cosine
+corr_type: correlation
+aggregation_within: mean
+aggregation_across: min
+use_analytical: true
+noise_ceiling_target: 0.46
+encoding_roi_subset: hlvis
+noise_in_feature_space: false
+feature_noise_n_samples: 20
+feature_noise_max_iter: 20
+feature_noise_tolerance: 0.01
+device: cuda
+max_ram_gb: 300
+max_images: null
+prefetch_features: true
+image_filter:
+  enabled: true
+  min_resolution: 1000
+  natural_prob_threshold: 0.85
+  download_timeout: 10.0
+  max_attempts_per_iteration: 100
+  parallel_batch_size: 1
+  classifier_path: ${paths.classifier_path}
+refinement:
+  max_passes: 10
+  min_replacements: 0
+resume_from: null
+seed: 42
+paths:
+  subset_root: /ptmp/rothj/cstims_laion_natural_subset
+  preprocessed_dirs:
+    raw: /ptmp/rothj/cstims_laion_natural_subset_memmaps
+    fitted: /ptmp/rothj/cstims_laion_natural_subset_memmaps_encoded/sub-01/encoded
+  model_list_csv: /u/rothj/cstims/data/resources/model_list.csv
+  output_base: /u/rothj/cstims/outputs/select_controversial_stimuli
+  encoding_root: /u/rothj/cstims/experiments/encoding_fitting/results/encoding_20251222_141301
+  classifier_path: /u/rothj/laion_natural/experiments/laion/deepvision_dataset/data/laion_natural_img_clf.pkl
+model_set_name: training_objective
+model_names:
+- vissl_resnet50_supervised
+- vissl_resnet50_barlowtwins
+- vissl_resnet50_mocov2
+- vicreg_resnet50
+- robustness_imagenet_l2_eps3
+method_name: raw_plus_all_encodings

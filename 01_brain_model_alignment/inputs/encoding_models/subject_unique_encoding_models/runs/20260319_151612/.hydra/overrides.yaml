@@ -1,0 +1,5 @@
+- paths=iris
+- parallel.subject=sub-06
+- benchmark.image_set=unique
+- fitting.eval_method=random_kfold
+- fitting.n_folds=5

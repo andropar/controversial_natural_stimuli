@@ -1,0 +1,49 @@
+parallel:
+  subject: null
+  model_batch: null
+  models_per_batch: 5
+  model_filter: null
+subjects:
+- sub-01
+- sub-03
+- sub-05
+- sub-06
+- sub-07
+benchmark:
+  voxel_set: visual
+  cve_threshold: 0.2
+  input_source: finalinterp
+  image_set: unique
+preprocessing:
+  response_zscore: true
+  srp: false
+  srp_eps: 0.1
+evaluation:
+  rois:
+  - visual
+  - hlvis
+fitting:
+  eval_method: random_kfold
+  n_folds: 5
+  alpha_aggregation: median
+  store_fold_alphas: true
+  seed: 42
+  scale_features: true
+ridge:
+  alpha_min: 0.1
+  alpha_max: 1000000.0
+  n_alphas: 20
+extraction:
+  batch_size: 64
+  device: cuda
+output:
+  make_plots: true
+  fig_dpi: 120
+  save_oof_predictions: false
+  skip_existing: true
+resume_from: null
+paths:
+  model_list_csv: /home/jroth/rsa_based_selection/data/resources/model_list.csv
+  cache_root: /home/jroth/rsa_based_selection/data/cache
+  deepvision_root: /SSD/jroth/deepvision_fmri
+  output_root: /home/jroth/rsa_based_selection/outputs/deepvision_encoding_models

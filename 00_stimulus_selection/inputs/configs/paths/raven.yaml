@@ -1,0 +1,11 @@
+# @package _global_
+
+paths:
+  subset_root: /ptmp/rothj/cstims_laion_natural_subset
+  preprocessed_dirs:
+    raw: /ptmp/rothj/cstims_laion_natural_subset_memmaps
+    fitted: /ptmp/rothj/cstims_laion_natural_subset_memmaps_encoded/sub-01/encoded
+  model_list_csv: /u/rothj/cstims/data/resources/model_list.csv
+  output_base: /u/rothj/cstims/outputs/select_controversial_stimuli
+  encoding_root: /u/rothj/cstims/experiments/encoding_fitting/results/encoding_20251222_141301
+  classifier_path: /u/rothj/laion_natural/experiments/laion/deepvision_dataset/data/laion_natural_img_clf.pkl

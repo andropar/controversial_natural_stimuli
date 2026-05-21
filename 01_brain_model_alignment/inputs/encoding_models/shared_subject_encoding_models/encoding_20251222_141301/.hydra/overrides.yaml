@@ -1,0 +1,8 @@
+- parallel.subject=sub-07
+- parallel.model_batch=3
+- parallel.models_per_batch=5
+- fitting.eval_method=random_kfold
+- fitting.n_folds=5
+- fitting.scale_features=false
+- preprocessing.response_zscore=false
+- preprocessing.srp=false

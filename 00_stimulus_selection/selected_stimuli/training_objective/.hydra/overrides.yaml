@@ -1,0 +1,14 @@
+- paths=raven
+- corr_type=correlation
+- use_analytical=true
+- model_set=training_objective
+- method=raw_plus_all_encodings
+- metric=cosine
+- aggregation_within=mean
+- aggregation_across=min
+- max_ram_gb=300
+- target_size=100
+- batch_size=2500
+- refinement.max_passes=10
+- refinement.min_replacements=0
+- image_filter.enabled=true

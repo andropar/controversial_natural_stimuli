@@ -1,0 +1,18 @@
+# Pair-Level Brain Placement
+
+`01_quantify_brain_placement.py` quantifies the high-disagreement pair figure.
+For each All-Models image pair, it z-scores model pair distances within model,
+places each subject's brain distance on the resulting model-distance axis, and
+exports pair-level percentiles and z-positions.
+
+<!-- BEGIN AUTO-FIGURE-PROVENANCE -->
+## Contents Snapshot
+
+- Folder: `05_controls_and_supplementary/stimulus_and_pair_diagnostics/pair_level_brain_placement`
+- Figures in this folder tree: 0
+- Data/table-like files in this folder tree: 3
+- Python scripts in this folder tree: 1
+- Main child folders: `code/`, `data/`, `figures/`
+
+Use the tables below as a trace from rendered files back to the nearby code, staged data, score tables, or reports that produced them.
+<!-- END AUTO-FIGURE-PROVENANCE -->

@@ -1,0 +1,11 @@
+# @package _global_
+
+method_name: raw
+
+tracks:
+  - name: raw
+    type: identity
+
+track_aggregation:
+  norm_method: none
+  agg_method: identity

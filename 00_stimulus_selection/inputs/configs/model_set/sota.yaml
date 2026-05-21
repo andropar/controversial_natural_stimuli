@@ -1,0 +1,12 @@
+# @package _global_
+
+model_set_name: sota
+
+model_names:
+  - slip_vit_l_slip
+  - slip_vit_l_simclr
+  - timm_vit_large_patch14_clip_224_laion2b
+  - dinov2_vitl14
+  - openclip_vit_so400m_14_siglip_webli
+  - torchvision_convnext_base_imagenet1k_v1
+

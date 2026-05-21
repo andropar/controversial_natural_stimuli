@@ -1,0 +1,36 @@
+# @package _global_
+
+method_name: raw_plus_all_encodings_powermean
+
+# Raw track + all encoding tracks with power mean aggregation
+# Uses generalized mean with negative p to bias toward lower-scoring tracks,
+# preventing trade-offs where raw improves at the expense of encodings.
+#
+# Note: encoding_name must match the subject used in fit_encoding_hydra.py output directories
+# (e.g., "sub-01" matches "sub-01_{model}.layer{layer}/encoding_model.npz")
+# The ROI subset is controlled by encoding_roi_subset in config.yaml (default: hlvis)
+tracks:
+  - name: sub-01
+    type: encoding
+    encoding_name: sub-01
+  - name: sub-03
+    type: encoding
+    encoding_name: sub-03
+  - name: sub-05
+    type: encoding
+    encoding_name: sub-05
+  - name: sub-06
+    type: encoding
+    encoding_name: sub-06
+  - name: sub-07
+    type: encoding
+    encoding_name: sub-07
+  - name: raw
+    type: identity
+
+track_aggregation:
+  norm_method: zscore
+  agg_method: power_mean
+  power: -1.0  # Harmonic mean: biases toward lower-scoring tracks
+  raw_weight: 0.5  # lambda: raw gets 0.5, encodings share remaining 0.5
+

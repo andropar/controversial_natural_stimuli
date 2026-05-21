@@ -1,0 +1,11 @@
+# @package _global_
+
+model_set_name: small
+
+model_names:
+  - vissl_resnet50_supervised
+  - vissl_resnet50_barlowtwins
+  - vissl_resnet50_mocov2
+
+# Can add model-specific params
+target_size: 50  # smaller for testing

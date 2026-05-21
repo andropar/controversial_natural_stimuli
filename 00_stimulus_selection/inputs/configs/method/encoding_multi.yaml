@@ -1,0 +1,15 @@
+# @package _global_
+
+method_name: encoding_multi
+
+# Raw + group-encoding tracks
+tracks:
+  - name: raw
+    type: identity
+  - name: encoded_group
+    type: group_encoding
+    encoding_names: ["sub-01_hlvis", "sub-05_hlvis", "sub-07_hlvis"]
+
+track_aggregation:
+  norm_method: zscore
+  agg_method: mean

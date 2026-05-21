@@ -1,0 +1,47 @@
+# Python and local runtime state
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.env
+.env.*
+.DS_Store
+
+# Local/scratch outputs
+temp/
+**/logs/
+*.log
+
+# External mounts and heavyweight caches
+external_data/*
+!external_data/README.md
+**/cache_or_heavy/
+**/feature_cache/
+**/features.npz
+**/encoding_model.npz
+*.npy
+
+# Raw or derived brain response arrays that are not result tables
+01_brain_model_alignment/inputs/brain_data_cache/
+05_controls_and_supplementary/full_data_rerun/data/brain_data_cache/
+05_controls_and_supplementary/full_data_rerun/data/deepvision_unique_cache/
+**/voxel_sets/
+**/image_sets/
+**/voxel_betas*
+**/voxel_metadata.*
+**/*betas*.csv
+**/*betas*.npz
+**/*betas*.npy
+
+# Keep selected-stimulus metadata/results, but not redistributed image payloads
+00_stimulus_selection/**/images/*.jpg
+00_stimulus_selection/**/images/*.jpeg
+00_stimulus_selection/**/images/*.png
+00_stimulus_selection/**/images/*.webp
+00_stimulus_selection/**/images/selected_images_fullres.pdf
+00_stimulus_selection/selected_stimuli/**/validated_images/*.jpg
+00_stimulus_selection/selected_stimuli/**/validated_images/*.jpeg
+00_stimulus_selection/selected_stimuli/**/validated_images/*.png
+00_stimulus_selection/selected_stimuli/**/validated_images/*.webp
+05_controls_and_supplementary/stimulus_and_pair_diagnostics/stimulus_characterization/figures/*.pdf
+05_controls_and_supplementary/stimulus_and_pair_diagnostics/stimulus_characterization/figures/png/*.png
