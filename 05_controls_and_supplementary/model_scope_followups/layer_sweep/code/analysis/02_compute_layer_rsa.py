@@ -40,7 +40,7 @@ from utils import (
 from layers_config import MODEL_LAYERS, STIMULUS_SETS
 
 CACHE_ROOT = LAYER_SWEEP_ROOT / "cache_or_heavy" / "features"
-DATA_DIR = LAYER_SWEEP_ROOT / "data"
+DATA_DIR = LAYER_SWEEP_ROOT / "results"
 OUT_CSV = DATA_DIR / "fixed_rsa_layer_sweep.csv"
 
 

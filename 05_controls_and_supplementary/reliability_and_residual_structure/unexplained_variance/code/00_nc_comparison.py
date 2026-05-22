@@ -26,8 +26,8 @@ sys.path.insert(0, str(_PAPER.parents[1]))
 sys.path.insert(0, str(_PAPER / "figures"))
 import config
 
-STATS_DIR = _PAPER / "03_statistics" / "data"
-DATA_DIR = Path(__file__).resolve().parent / "data"
+STATS_DIR = _PAPER / "03_statistics" / "results"
+DATA_DIR = Path(__file__).resolve().parent / "results"
 FIG_DIR = Path(__file__).resolve().parent / "figures"
 
 try:

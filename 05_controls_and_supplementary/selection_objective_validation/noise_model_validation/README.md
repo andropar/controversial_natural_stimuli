@@ -8,7 +8,7 @@ in-silico stimulus-selection analysis:
    and recompute RDMs.
 
 The original completed run was moved from `scripts/claude/validate_noise_approximation`.
-The CSV files in `data/` are the frozen results used for the supplement figure.
+The CSV files in `results/` are the frozen results used for the supplement figure.
 
 Run:
 
@@ -25,7 +25,7 @@ This writes `noise_model_validation.pdf` and `.png` in `figures/`.
 - Figures in this folder tree: 2
 - Data/table-like files in this folder tree: 8
 - Python scripts in this folder tree: 2
-- Main child folders: `code/`, `data/`, `figures/`
+- Main child folders: `code/`, `results/`, `figures/`
 - Direct files: `REPORT.md`
 
 Use the tables below as a trace from rendered files back to the nearby code, staged data, score tables, or reports that produced them.

@@ -95,7 +95,7 @@ but consider that the difference between methods is minimal.
 - Figures in this folder tree: 1
 - Data/table-like files in this folder tree: 2
 - Python scripts in this folder tree: 3
-- Main child folders: `data/`, `figures/`
+- Main child folders: `results/`, `figures/`
 - Direct files: `compare_auc.py`, `full_analysis.py`
 
 Use the tables below as a trace from rendered files back to the nearby code, staged data, score tables, or reports that produced them.

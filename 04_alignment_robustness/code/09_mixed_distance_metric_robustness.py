@@ -189,7 +189,7 @@ def main() -> None:
     parser.add_argument("--max-models", type=int, default=None)
     args = parser.parse_args()
 
-    data_dir = _PAPER / "03_statistics" / "data"
+    data_dir = _PAPER / "03_statistics" / "results"
     data_dir.mkdir(parents=True, exist_ok=True)
     rows = []
 

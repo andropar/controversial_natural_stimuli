@@ -41,7 +41,7 @@ from style_improved import apply_style, FONT, DPI, W_DOUBLE  # noqa: E402
 apply_style()
 
 HERE = Path(__file__).resolve().parent
-DATA = HERE.parent / "data" / "degradation_results.csv"
+DATA = HERE.parent / "results" / "degradation_results.csv"
 OUT_PDF = HERE / "degradation_curves.pdf"
 OUT_PNG = HERE / "degradation_curves.png"
 

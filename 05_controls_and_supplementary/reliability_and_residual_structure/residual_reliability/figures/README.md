@@ -23,7 +23,7 @@ Use the tables below as a trace from rendered files back to the nearby code, sta
 
 Each row is one figure concept; `formats` lists the concrete files present in this folder.
 
-| Figure | Formats | What it shows | Source / derivation | Data or inputs | Script | Paper use |
+| Figure | Formats | What it shows | Source / derivation | Resources or results | Script | Paper use |
 |---|---:|---|---|---|---|---|
 | `residual_decomposition` | pdf | residual or unexplained brain-structure diagnostic | copied from `/data/home_roth/_stachelschwein/rsa_based_selection/experiments/cstim_paper/archive/10_residual_reliability/figures/residual_decomposition.pdf`; historical share path `data/tier1_analysis_derivatives/cstim_paper/10_residual_reliability/figures/residual_decomposition.pdf` | `residual_rsa.csv`; `residual_decomposition_summary.csv`; `residual_decomposition_contrasts.csv`; `OUT_DATA`; `05_controls_and_supplementary/reliability_and_residual_structure/residual_reliability/data/ensemble_transfer.csv`; `05_controls_and_supplementary/reliability_and_residual_structure/residual_reliability/data/parts/fixed.csv`; plus 3 more | `05_controls_and_supplementary/reliability_and_residual_structure/residual_reliability/code/analysis/02_decompose_residual_signal.py` | no |
 <!-- END AUTO-FIGURE-PROVENANCE -->

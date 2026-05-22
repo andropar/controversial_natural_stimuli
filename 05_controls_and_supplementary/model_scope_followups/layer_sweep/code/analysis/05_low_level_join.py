@@ -19,10 +19,10 @@ import pandas as pd
 
 from config import PAPER_ROOT
 
-DATA_DIR = LAYER_SWEEP_ROOT / "data"
+DATA_DIR = LAYER_SWEEP_ROOT / "results"
 RESCUE_CSV = DATA_DIR / "layer_rescue_summary.csv"
 LOWLEVEL_CSV = (
-    PAPER_ROOT / "06_ood" / "data" / "low_level_robustness_per_image_distances.csv"
+    PAPER_ROOT / "06_ood" / "results" / "low_level_robustness_per_image_distances.csv"
 )
 OUT_CSV = DATA_DIR / "rescue_vs_low_level.csv"
 

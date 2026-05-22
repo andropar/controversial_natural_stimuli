@@ -19,7 +19,7 @@ import config  # noqa: E402
 from style_improved import OKABE_ITO, apply_style, shade  # noqa: E402
 
 
-DATA = _PAPER / "05_heldout_unique_baseline" / "data"
+DATA = _PAPER / "05_heldout_unique_baseline" / "results"
 FIGURES = _PAPER / "05_heldout_unique_baseline" / "figures"
 FIGURES.mkdir(parents=True, exist_ok=True)
 

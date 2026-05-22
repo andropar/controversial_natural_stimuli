@@ -26,7 +26,7 @@ from style_improved import (  # noqa: E402
     add_panel_label,
 )
 
-DATA = STAGE / "data" / "baseline_matching_diagnostics.csv"
+DATA = STAGE / "results" / "baseline_matching_diagnostics.csv"
 FIG = STAGE / "figures" / "supplementary"
 PNG_DIR = FIG / "png"
 

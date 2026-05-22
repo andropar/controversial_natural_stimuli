@@ -64,7 +64,7 @@ SHARED_CACHE_CANDIDATES = [
 ]
 CSTIM_CACHE = config.FEATURE_CACHE_DIR / "cstim" / f"{MODEL}.npz"
 
-OUT = PAPER / "14_stimulus_characterization" / "data"
+OUT = PAPER / "14_stimulus_characterization" / "results"
 FIG = PAPER / "14_stimulus_characterization" / "figures"
 OUT.mkdir(parents=True, exist_ok=True)
 FIG.mkdir(parents=True, exist_ok=True)
@@ -107,7 +107,7 @@ INSET_CANDIDATES = [
     (0.10, 0.12), (0.25, 0.12), (0.40, 0.12), (0.60, 0.12), (0.75, 0.12), (0.90, 0.12),
     (0.08, 0.30), (0.08, 0.50), (0.08, 0.70), (0.92, 0.30), (0.92, 0.50), (0.92, 0.70),
 ]
-SELECTION_EVAL_IMAGE_ROOT = PROJECT / "experiments" / "cstim_paper" / "00_selection_evaluation" / "data"
+SELECTION_EVAL_IMAGE_ROOT = PROJECT / "experiments" / "cstim_paper" / "00_selection_evaluation" / "results"
 WEBAPP_STIMULUS_ROOT = PROJECT / "writing" / "cstims_webapp" / "assets" / "stimuli"
 
 
@@ -314,7 +314,15 @@ def image_path(row: pd.Series) -> Path:
     if row["pool"] == "controversial":
         return cstim_image_dir(str(row["source_set"])) / row["image"]
     if row["pool"] == "shared train":
-        return PROJECT / "data" / "cache" / "image_sets" / "deepvision_shared" / row["image"]
+        return (
+            config.SHARE_ROOT
+            / "01_brain_model_alignment"
+            / "cache_or_heavy"
+            / "brain_data"
+            / "image_sets"
+            / "deepvision_shared"
+            / row["image"]
+        )
     raise ValueError(f"No local image path configured for pool={row['pool']!r}")
 
 

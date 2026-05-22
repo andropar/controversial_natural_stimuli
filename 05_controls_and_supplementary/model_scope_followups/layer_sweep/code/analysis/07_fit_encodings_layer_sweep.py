@@ -27,7 +27,7 @@ Idempotent: skips models with all layers already fit.
 """
 
 import _paths  # noqa: F401
-from _paths import LAYER_SWEEP_ROOT
+from _paths import LAYER_SWEEP_ROOT, SHARE_ROOT
 import argparse
 import gc
 import glob
@@ -44,7 +44,7 @@ from joblib import Parallel, delayed
 from scipy.stats import rankdata
 from tqdm import tqdm
 
-from config import CSTIM_HDF5_ROOT, MODEL_DISPLAY_NAMES, PAPER_ROOT, PROJECT_ROOT, get_brain_input_dir
+from config import CSTIM_HDF5_ROOT, MODEL_DISPLAY_NAMES, PAPER_ROOT, get_brain_input_dir
 from utils import bootstrap_sample_indices, compute_rdm_correlation, parse_subject_arg
 from batch_tuning import (
     parse_batch_candidates,
@@ -74,14 +74,14 @@ CACHE_DIR = LAYER_SWEEP_ROOT / "cache_or_heavy"
 DV_FEAT_CACHE = CACHE_DIR / "dv_features"
 ENC_CACHE = CACHE_DIR / "encodings"
 LOCK_DIR = CACHE_DIR / "locks"
-DV_BENCHMARK_CACHE = PAPER_ROOT.parents[1] / "data" / "cache"
-DATA_DIR = LAYER_SWEEP_ROOT / "data"
+DEEPVISION_CACHE = SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "brain_data"
+DV_BENCHMARK_CACHE = DEEPVISION_CACHE
+DATA_DIR = LAYER_SWEEP_ROOT / "results"
 STREAM_WRSA_CSV = DATA_DIR / "wrsa_dense_layer_sweep.csv"
 STREAM_SHARED_CSV = DATA_DIR / "wrsa_dense_shared_layer_sweep.csv"
 STREAM_PART_DIR = DATA_DIR / "stream_parts"
 STREAM_WRSA_PART_DIR = STREAM_PART_DIR / "wrsa_dense_layer_sweep"
 STREAM_SHARED_PART_DIR = STREAM_PART_DIR / "wrsa_dense_shared_layer_sweep"
-DEEPVISION_CACHE = PROJECT_ROOT / "data" / "cache"
 LABSHARE_CSTIM_HDF5_ROOT = Path(
     "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files"
 )
@@ -475,8 +475,17 @@ def _load_cstim_images(group: str):
 
     img_files = sorted(list(img_dir.glob("*.jpg")) + list(img_dir.glob("*.png")))
     if not img_files and folder_group != "vicco":
-        img_dir = PAPER_ROOT / "00_selection_evaluation" / "data" / folder_group / "images"
-        img_files = sorted(list(img_dir.glob("*.jpg")) + list(img_dir.glob("*.png")))
+        fallback_dirs = (
+            SHARE_ROOT / "00_stimulus_selection" / "decision_checks" / "selection_evaluation"
+            / "results" / folder_group / "images",
+            PAPER_ROOT / "00_selection_evaluation" / "data" / folder_group / "images",
+            PAPER_ROOT / "00_selection_evaluation" / "results" / folder_group / "images",
+        )
+        for fallback_dir in fallback_dirs:
+            img_files = sorted(list(fallback_dir.glob("*.jpg")) + list(fallback_dir.glob("*.png")))
+            if img_files:
+                img_dir = fallback_dir
+                break
     if not img_files and folder_group == "vicco":
         img_dir = LABSHARE_CSTIM_HDF5_ROOT / "shared_vicco"
         img_files = sorted(list(img_dir.glob("*.jpg")) + list(img_dir.glob("*.png")))

@@ -30,7 +30,7 @@ from scipy.special import logsumexp
 
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 SECTION = Path(__file__).resolve().parents[1]
-DATA_DIR = SECTION / "data"
+DATA_DIR = SECTION / "results"
 
 MODEL_NAMES = [
     "vissl_resnet50_supervised",
@@ -53,7 +53,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--feature-cache",
         type=Path,
-        default=PROJECT_ROOT / "data" / "cache" / "natural_pool_subset_10k",
+        default=Path(__file__).resolve().parents[5] / "shared" / "cache_or_heavy" / "natural_pool_subset_10k",
         help="Directory with cached per-model .npz feature files.",
     )
     parser.add_argument("--metric", choices=["cosine", "correlation"], default="cosine")

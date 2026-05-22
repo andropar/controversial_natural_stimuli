@@ -23,7 +23,7 @@ import pandas as pd
 
 from config import PAPER_ROOT, MODEL_DISPLAY_NAMES
 
-DATA_DIR = LAYER_SWEEP_ROOT / "data"
+DATA_DIR = LAYER_SWEEP_ROOT / "results"
 FRSA_IN = DATA_DIR / "fixed_rsa_layer_sweep.csv"
 MRSA_IN = DATA_DIR / "wrsa_layer_sweep.csv"
 

@@ -36,8 +36,8 @@ apply_style()
 SUBJECTS = config.SUBJECTS
 STAGE_DIR = Path(__file__).resolve().parents[3]
 SHARE_ROOT = STAGE_DIR.parent
-RSA_DATA_DIR = STAGE_DIR / "rsa_scores"
-STATS_DATA_DIR = SHARE_ROOT / "03_alignment_inference" / "data"
+RSA_DATA_DIR = STAGE_DIR / "results" / "rsa_scores"
+STATS_DATA_DIR = SHARE_ROOT / "03_alignment_inference" / "results"
 FIGURES_DIR = STAGE_DIR / "figures" / "rsa_scores" / "supplementary"
 PNG_DIR = FIGURES_DIR / "png"
 FIGURES_DIR.mkdir(parents=True, exist_ok=True)

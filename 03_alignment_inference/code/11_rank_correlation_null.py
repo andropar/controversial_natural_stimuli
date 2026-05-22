@@ -30,8 +30,8 @@ from scipy.stats import spearmanr
 
 STAGE = Path(__file__).resolve().parents[1]
 SHARE_ROOT = STAGE.parent
-RSA = SHARE_ROOT / "01_brain_model_alignment" / "rsa_scores"
-OUT_DATA = STAGE / "data"
+RSA = SHARE_ROOT / "01_brain_model_alignment" / "results" / "rsa_scores"
+OUT_DATA = STAGE / "results"
 OUT_FIG = STAGE / "figures" / "supplementary"
 OUT_PNG = OUT_FIG / "png"
 OUT_DATA.mkdir(parents=True, exist_ok=True)

@@ -49,7 +49,7 @@ ALL_MODELS = config.MODEL_SETS["all_models"]
 N_VICCO_SUBSAMPLES = 10
 VICCO_SEED = 0
 
-OUT_CSV = Path(__file__).resolve().parent / "data" / "degradation_results.csv"
+OUT_CSV = Path(__file__).resolve().parent / "results" / "degradation_results.csv"
 
 
 # ------------------------------------------------------------------

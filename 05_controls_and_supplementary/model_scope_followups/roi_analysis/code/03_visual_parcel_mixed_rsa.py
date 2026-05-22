@@ -39,7 +39,7 @@ import config  # noqa: E402
 from utils import bootstrap_sample_indices, get_encoding_folder, load_model_layer_mapping  # noqa: E402
 
 
-OUT = PAPER / "13_roi_analysis" / "data"
+OUT = PAPER / "13_roi_analysis" / "results"
 OUT.mkdir(parents=True, exist_ok=True)
 
 ATLAS_ROOT = config.DEEPVISION_ROOT / "derivatives/functional/1sTR_1pt5mm/atlas"

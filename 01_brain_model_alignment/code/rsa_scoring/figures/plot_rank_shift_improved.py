@@ -50,7 +50,7 @@ FIGURES_DIR = STAGE_DIR / "figures" / "rsa_scores"
 PNG_DIR = FIGURES_DIR / "png"
 SUPPLEMENTARY_DIR = FIGURES_DIR / "supplementary"
 SUPPLEMENTARY_PNG_DIR = SUPPLEMENTARY_DIR / "png"
-RANK_CORR_PATH = SHARE_ROOT / "03_alignment_inference" / "data" / "rank_correlations.csv"
+RANK_CORR_PATH = SHARE_ROOT / "03_alignment_inference" / "results" / "rank_correlations.csv"
 
 COLOR_MRSA = OKABE_ITO["blue"]      # #0072B2
 COLOR_FRSA = OKABE_ITO["sky_blue"]  # #56B4E9

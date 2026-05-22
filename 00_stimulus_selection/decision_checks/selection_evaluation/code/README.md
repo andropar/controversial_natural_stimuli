@@ -14,5 +14,5 @@ Source provenance:
 
 These scripts were added to the share package after an audit found that the
 initial copy step included `00_selection_evaluation` derivatives
-(`data/`, `figures/`, `*.md`, `*.html`) but omitted the producer scripts from
+(`results/`, `figures/`, `*.md`, `*.html`) but omitted the producer scripts from
 the active code copy list.

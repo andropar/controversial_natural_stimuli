@@ -9,12 +9,12 @@ import pandas as pd
 
 
 PAPER = Path(__file__).resolve().parents[1]
-OUT = PAPER / "13_roi_analysis" / "data"
+OUT = PAPER / "13_roi_analysis" / "results"
 OUT.mkdir(parents=True, exist_ok=True)
 
 
 def main() -> None:
-    primary = pd.read_csv(PAPER / "03_statistics" / "data" / "primary_endpoint_summary.csv")
+    primary = pd.read_csv(PAPER / "03_statistics" / "results" / "primary_endpoint_summary.csv")
     rows = []
     for _, r in primary.iterrows():
         rows.append(

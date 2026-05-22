@@ -20,7 +20,7 @@ from sklearn.linear_model import LinearRegression
 
 
 PAPER = Path(__file__).resolve().parents[1]
-DATA = PAPER / "06_ood" / "data"
+DATA = PAPER / "06_ood" / "results"
 OUT = DATA / "ood_residualization_results.csv"
 
 

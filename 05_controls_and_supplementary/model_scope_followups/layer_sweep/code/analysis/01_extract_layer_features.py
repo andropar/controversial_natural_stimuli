@@ -19,7 +19,7 @@ or get_custom_model, exactly as used in 02_rsa_scores/01_compute_crsa.py.
 """
 
 import _paths  # noqa: F401  -- sets up sys.path
-from _paths import LAYER_SWEEP_ROOT
+from _paths import LAYER_SWEEP_ROOT, SHARE_ROOT
 import argparse
 import time
 from pathlib import Path
@@ -59,9 +59,18 @@ def load_images(group: str):
     img_files = sorted(list(img_dir.glob("*.jpg")) + list(img_dir.glob("*.png")))
     if not img_files and folder_group != "vicco":
         # Server fallback: the old /SSD image root is not always mounted, but
-        # cstim paper selection outputs keep the same 100-image sets locally.
-        img_dir = PAPER_ROOT / "00_selection_evaluation" / "data" / folder_group / "images"
-        img_files = sorted(list(img_dir.glob("*.jpg")) + list(img_dir.glob("*.png")))
+        # the share copy and the private cstim tree keep the same image sets.
+        fallback_dirs = (
+            SHARE_ROOT / "00_stimulus_selection" / "decision_checks" / "selection_evaluation"
+            / "results" / folder_group / "images",
+            PAPER_ROOT / "00_selection_evaluation" / "data" / folder_group / "images",
+            PAPER_ROOT / "00_selection_evaluation" / "results" / folder_group / "images",
+        )
+        for fallback_dir in fallback_dirs:
+            img_files = sorted(list(fallback_dir.glob("*.jpg")) + list(fallback_dir.glob("*.png")))
+            if img_files:
+                img_dir = fallback_dir
+                break
     if not img_files and folder_group == "vicco":
         img_dir = LABSHARE_CSTIM_HDF5_ROOT / "shared_vicco"
         img_files = sorted(list(img_dir.glob("*.jpg")) + list(img_dir.glob("*.png")))

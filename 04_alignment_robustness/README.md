@@ -6,7 +6,7 @@ analyses are downstream of the main RSA score tables but are conceptually
 different from the primary inference tests, so they live outside
 `03_alignment_inference/`.
 
-The scripts in `code/` generate the robustness tables in `data/` and the
+The scripts in `code/` generate the robustness tables in `results/` and the
 retained robustness figures in `figures/`.
 
 ## How To Read This Stage
@@ -23,7 +23,7 @@ and model-RDM spread diagnostics.
 - Figures in this folder tree: 8
 - Data/table-like files in this folder tree: 6
 - Python scripts in this folder tree: 9
-- Main child folders: `code/`, `data/`, `figures/`
+- Main child folders: `code/`, `results/`, `figures/`
 
 Use the tables below as a trace from rendered files back to the nearby code, staged data, score tables, or reports that produced them.
 

@@ -23,17 +23,23 @@ import config  # noqa: E402
 
 
 SUBJECTS = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]
-UNIQUE_CACHE = RERUN_ROOT / "data" / "deepvision_unique_cache"
-CSTIM_CACHE = RERUN_ROOT / "data" / "brain_data_cache"
-OUT_ROOT = RERUN_ROOT / "data" / "encoding_models" / "paper_layer"
-FEATURE_ROOT = (
+UNIQUE_CACHE = RERUN_ROOT / "results" / "deepvision_unique_cache"
+CSTIM_CACHE = RERUN_ROOT / "results" / "brain_data_cache"
+OUT_ROOT = RERUN_ROOT / "results" / "encoding_models" / "paper_layer"
+FEATURE_ROOTS = [
+    SHARE_ROOT
+    / "01_brain_model_alignment"
+    / "results"
+    / "encoding_models"
+    / "subject_unique_encoding_models"
+    / "runs",
     SHARE_ROOT
     / "01_brain_model_alignment"
     / "inputs"
     / "encoding_models"
     / "subject_unique_encoding_models"
-    / "runs"
-)
+    / "runs",
+]
 ALPHAS = np.logspace(np.log10(0.1), np.log10(1e7), 20)
 
 
@@ -48,7 +54,10 @@ def model_layer_map() -> dict[str, str]:
 
 def feature_path(subject: str, model: str, layer: str) -> Path:
     safe = layer_safe(layer)
-    candidates = sorted(FEATURE_ROOT.glob(f"*/{subject}_{model}.layer{safe}/features.npz"))
+    candidates = []
+    for root in FEATURE_ROOTS:
+        candidates.extend(root.glob(f"*/{subject}_{model}.layer{safe}/features.npz"))
+    candidates = sorted(candidates)
     if not candidates:
         raise FileNotFoundError(f"No features for {subject}/{model}/layer{safe}")
     return candidates[-1]

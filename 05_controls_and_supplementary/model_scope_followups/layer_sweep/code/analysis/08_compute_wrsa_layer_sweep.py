@@ -34,7 +34,7 @@ from layers_config import MODEL_LAYERS, STIMULUS_SETS, get_layer_set
 
 CACHE_FEAT = LAYER_SWEEP_ROOT / "cache_or_heavy" / "features"
 CACHE_ENC = LAYER_SWEEP_ROOT / "cache_or_heavy" / "encodings"
-DATA_DIR = LAYER_SWEEP_ROOT / "data"
+DATA_DIR = LAYER_SWEEP_ROOT / "results"
 OUT_CSV = DATA_DIR / "wrsa_layer_sweep.csv"
 ENCODING_PROTOCOL = "hydra_random_kfold_v1"
 

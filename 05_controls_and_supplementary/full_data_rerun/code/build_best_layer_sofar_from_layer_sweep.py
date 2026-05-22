@@ -25,8 +25,8 @@ LAYER_SWEEP = (
     / "model_scope_followups"
     / "layer_sweep"
 )
-PART_ROOT = LAYER_SWEEP / "data" / "stream_parts"
-DEFAULT_OUT = RERUN_ROOT / "data" / "best_shared_layer_sofar_from_layer_sweep.csv"
+PART_ROOT = LAYER_SWEEP / "results" / "stream_parts"
+DEFAULT_OUT = RERUN_ROOT / "results" / "best_shared_layer_sofar_from_layer_sweep.csv"
 
 
 def read_parts(part_dir: Path) -> pd.DataFrame:

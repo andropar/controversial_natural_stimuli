@@ -35,7 +35,7 @@ sys.path.insert(0, str(_PAPER / "figures"))
 import config
 
 IMAGE_DIR = _PAPER / "00_selection_evaluation/data/all_models/images"
-DATA_DIR = Path(__file__).resolve().parent / "data"
+DATA_DIR = Path(__file__).resolve().parent / "results"
 FIG_DIR = Path(__file__).resolve().parent / "figures"
 SUBJECTS = ["sub-01", "sub-03", "sub-05"]
 

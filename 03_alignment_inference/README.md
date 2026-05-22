@@ -8,7 +8,7 @@ score production itself, while this folder stores the statistical summaries
 that interpret those scores.
 
 The code in `code/` consumes the RSA outputs from `01_brain_model_alignment/`
-and writes compact result tables to `data/`; the currently retained rendered
+and writes compact result tables to `results/`; the currently retained rendered
 inference figures are in `figures/`.
 
 ## How To Read This Stage
@@ -26,7 +26,7 @@ uncertainty, model family, rank-null analyses, and selected subsets.
 - Figures in this folder tree: 4
 - Data/table-like files in this folder tree: 18
 - Python scripts in this folder tree: 9
-- Main child folders: `code/`, `data/`, `figures/`
+- Main child folders: `code/`, `results/`, `figures/`
 
 Use the tables below as a trace from rendered files back to the nearby code, staged data, score tables, or reports that produced them.
 

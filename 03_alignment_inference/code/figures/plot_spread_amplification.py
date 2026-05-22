@@ -32,7 +32,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib
 
-DATA_DIR = Path(__file__).resolve().parents[2] / "data"
+DATA_DIR = Path(__file__).resolve().parents[2] / "results"
 FIGURES_DIR = Path(__file__).resolve().parents[2] / "figures" / "supplementary"
 PNG_DIR = FIGURES_DIR / "png"
 

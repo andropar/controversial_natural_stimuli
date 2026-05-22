@@ -933,7 +933,7 @@ def _ensure_encoding_params(
     if not model_list_csv.exists():
         # Fall back to local path
         project_root = Path(__file__).resolve().parents[4]
-        model_list_csv = project_root / "data" / "resources" / "model_list.csv"
+        model_list_csv = project_root / "resources" / "model_list.csv"
 
     for enc_name in missing:
         enc_root = (encoding_root_map or {}).get(enc_name, default_root)

@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parents[1]
-OUT = PAPER / "13_roi_analysis" / "data"
+OUT = PAPER / "13_roi_analysis" / "results"
 OUT.mkdir(parents=True, exist_ok=True)
 
 

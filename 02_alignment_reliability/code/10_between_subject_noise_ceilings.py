@@ -33,7 +33,7 @@ import config
 
 SUBJECTS = config.SUBJECTS
 BRAIN_DATA_DIR = config.BRAIN_DATA_DIR
-DATA_OUT = Path(__file__).resolve().parent / "data" / "between_subject_noise_ceilings.csv"
+DATA_OUT = Path(__file__).resolve().parent / "results" / "between_subject_noise_ceilings.csv"
 
 N_MATCH = 100    # match controversial stimulus count
 N_BOOT = 200     # bootstrap iterations for vicco subsampling

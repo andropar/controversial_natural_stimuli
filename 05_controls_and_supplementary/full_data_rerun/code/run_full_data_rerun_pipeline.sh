@@ -26,6 +26,39 @@ run_logged() {
   echo "[$(timestamp)] DONE ${name} log=${log}" | tee -a "${LOG_DIR}/pipeline_status.log"
 }
 
+run_if_missing() {
+  local name="$1"
+  local output="$2"
+  shift 2
+  if [[ -s "${output}" ]]; then
+    echo "[$(timestamp)] SKIP ${name} output_exists=${output}" | tee -a "${LOG_DIR}/pipeline_status.log"
+    return
+  fi
+  run_logged "${name}" "$@"
+}
+
+have_cstim_cache() {
+  local subject
+  for subject in "${SUBJECTS[@]}"; do
+    [[ -s "${RERUN}/results/brain_data_cache/${subject}/cstim_betas_averaged.npz" ]] || return 1
+    [[ -s "${RERUN}/results/brain_data_cache/${subject}/voxel_metadata.npz" ]] || return 1
+    [[ -s "${RERUN}/results/brain_data_cache/${subject}/cstim_stimulus_info.csv" ]] || return 1
+  done
+  return 0
+}
+
+have_all_paper_layer_encodings() {
+  local count
+  count=$(find "${RERUN}/results/encoding_models/paper_layer" -type f -name encoding_model.npz 2>/dev/null | wc -l)
+  [[ "${count}" -ge 100 ]]
+}
+
+have_noise_ceilings() {
+  [[ -s "${RERUN}/results/rdm_noise_ceilings_by_roi.csv" ]] || return 1
+  [[ -s "${RERUN}/results/between_subject_noise_ceilings_by_roi.csv" ]] || return 1
+  return 0
+}
+
 wait_for_existing_unique_cache_job() {
   local subject="$1"
   while pgrep -f "prepare_deepvision_unique_cache_from_laion.py --subject ${subject}" >/dev/null; do
@@ -42,25 +75,49 @@ run_logged build_best_layer_sofar \
 run_logged check_best_layer_sofar_feature_availability \
   "${PY}" "${RERUN}/code/check_best_layer_sofar_feature_availability.py"
 
-run_logged prepare_cstim_brain_cache \
-  "${PY}" "${RERUN}/code/prepare_cstim_brain_cache_from_laion.py"
+if have_cstim_cache; then
+  echo "[$(timestamp)] SKIP prepare_cstim_brain_cache all_subject_outputs_exist" | tee -a "${LOG_DIR}/pipeline_status.log"
+else
+  run_logged prepare_cstim_brain_cache \
+    "${PY}" "${RERUN}/code/prepare_cstim_brain_cache_from_laion.py"
+fi
 
-run_logged compute_paper_layer_crsa_by_roi \
+run_if_missing compute_paper_layer_crsa_by_roi \
+  "${RERUN}/results/paper_layer_crsa_by_roi_summary.csv" \
   "${PY}" "${RERUN}/code/compute_paper_layer_crsa_by_roi.py" --n-vicco-boot 1000
 
 for subject in "${SUBJECTS[@]}"; do
   wait_for_existing_unique_cache_job "${subject}"
-  run_logged "prepare_deepvision_unique_${subject}" \
-    "${PY}" "${RERUN}/code/prepare_deepvision_unique_cache_from_laion.py" --subject "${subject}"
+  if [[ -s "${RERUN}/results/deepvision_unique_cache/${subject}/unique_betas_averaged.npz" ]]; then
+    echo "[$(timestamp)] SKIP prepare_deepvision_unique_${subject} output_exists" | tee -a "${LOG_DIR}/pipeline_status.log"
+  else
+    run_logged "prepare_deepvision_unique_${subject}" \
+      "${PY}" "${RERUN}/code/prepare_deepvision_unique_cache_from_laion.py" --subject "${subject}"
+  fi
 done
 
-run_logged fit_paper_layer_encodings_full_data \
-  "${PY}" "${RERUN}/code/fit_paper_layer_encodings_full_data.py" --subject all --models all
+if have_all_paper_layer_encodings; then
+  echo "[$(timestamp)] SKIP fit_paper_layer_encodings_full_data all_100_outputs_exist" | tee -a "${LOG_DIR}/pipeline_status.log"
+else
+  run_logged fit_paper_layer_encodings_full_data \
+    "${PY}" "${RERUN}/code/fit_paper_layer_encodings_full_data.py" --subject all --models all
+fi
 
-run_logged compute_paper_layer_mrsa_by_roi \
+run_if_missing compute_paper_layer_mrsa_by_roi \
+  "${RERUN}/results/paper_layer_mrsa_by_roi_summary.csv" \
   "${PY}" "${RERUN}/code/compute_paper_layer_mrsa_by_roi.py" --n-vicco-boot 1000
 
-run_logged plot_full_data_rerun \
-  "${PY}" "${RERUN}/code/plot_full_data_rerun.py"
+if have_noise_ceilings; then
+  echo "[$(timestamp)] SKIP compute_noise_ceilings_by_roi outputs_exist" | tee -a "${LOG_DIR}/pipeline_status.log"
+else
+  run_logged compute_noise_ceilings_by_roi \
+    "${PY}" "${RERUN}/code/compute_noise_ceilings_by_roi.py" --n-vicco-boot 1000 --n-between-vicco-boot 200
+fi
+
+run_logged plot_brain_alignment_improved_with_shared \
+  "${PY}" "${RERUN}/code/plot_brain_alignment_improved_with_shared.py" --roi all
+
+run_logged plot_roi_spread_alignment_drop_summary \
+  "${PY}" "${RERUN}/code/plot_roi_spread_alignment_drop_summary.py"
 
 echo "[$(timestamp)] PIPELINE DONE" | tee -a "${LOG_DIR}/pipeline_status.log"

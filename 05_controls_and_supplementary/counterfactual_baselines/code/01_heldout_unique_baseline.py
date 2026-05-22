@@ -33,11 +33,11 @@ import config  # noqa: E402
 from utils import compute_rdm_correlation, compute_rsa_score, get_encoding_folder, load_encoding_model  # noqa: E402
 
 
-OUT_DIR = _PAPER / "05_heldout_unique_baseline" / "data"
+OUT_DIR = _PAPER / "05_heldout_unique_baseline" / "results"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 MODEL_SETS = ["all_models", "sota", "training_objective", "architecture", "dataset"]
 UNIQUE_LOW_LEVEL_PATH = OUT_DIR / "unique_image_low_level_stats.csv"
-CSTIM_LOW_LEVEL_PATH = _PAPER / "08_image_statistics" / "data" / "image_stats.csv"
+CSTIM_LOW_LEVEL_PATH = _PAPER / "08_image_statistics" / "results" / "image_stats.csv"
 LOW_LEVEL_COLS = [
     "lum_mean",
     "lum_rms",
@@ -58,7 +58,7 @@ LOW_LEVEL_COLS = [
 def _unique_voxel_dir(subject: str) -> Path:
     return (
         config.PROJECT_ROOT
-        / "data"
+        / "results"
         / "cache"
         / "voxel_sets"
         / f"deepvision_unique_{subject}_visual_cve0p20"
@@ -150,7 +150,7 @@ def rsa_score(brain_patterns: np.ndarray, pred_patterns: np.ndarray) -> float:
 
 
 def nc_value(subject: str, group: str, stimulus_type: str) -> float:
-    path = _PAPER / "03_statistics" / "data" / "rdm_noise_ceilings.csv"
+    path = _PAPER / "03_statistics" / "results" / "rdm_noise_ceilings.csv"
     if not path.exists() or stimulus_type == "heldout_unique":
         return np.nan
     nc = pd.read_csv(path)

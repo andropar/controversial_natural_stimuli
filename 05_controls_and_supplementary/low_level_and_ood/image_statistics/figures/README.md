@@ -23,7 +23,7 @@ Use the tables below as a trace from rendered files back to the nearby code, sta
 
 Each row is one figure concept; `formats` lists the concrete files present in this folder.
 
-| Figure | Formats | What it shows | Source / derivation | Data or inputs | Script | Paper use |
+| Figure | Formats | What it shows | Source / derivation | Resources or results | Script | Paper use |
 |---|---:|---|---|---|---|---|
 | `stat_distributions_improved` | pdf | low-level image-statistic distributions for selected and reference images | copied from `/data/home_roth/_stachelschwein/rsa_based_selection/experiments/cstim_paper/08_image_statistics/figures/stat_distributions_improved.pdf`; historical share path `data/tier1_analysis_derivatives/cstim_paper/08_image_statistics/figures/stat_distributions_improved.pdf` | `05_controls_and_supplementary/low_level_and_ood/image_statistics/data/image_stats.csv`; `image_stats.csv`; `05_controls_and_supplementary/low_level_and_ood/image_statistics/data/low_level_rdm_brain_alignment.csv` | `05_controls_and_supplementary/low_level_and_ood/image_statistics/code/figures/plot_stat_distributions.py`; `05_controls_and_supplementary/low_level_and_ood/image_statistics/code/figures/plot_stat_distributions_improved.py` | yes |
 <!-- END AUTO-FIGURE-PROVENANCE -->

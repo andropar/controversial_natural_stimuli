@@ -25,7 +25,7 @@ sys.path.insert(0, str(HELPERS))
 import config  # noqa: E402
 
 
-DATA_DIR = RERUN_ROOT / "data"
+DATA_DIR = RERUN_ROOT / "results"
 FIG_DIR = RERUN_ROOT / "figures"
 ROI_ORDER = [
     "EVC",

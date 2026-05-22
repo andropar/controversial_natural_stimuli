@@ -13,7 +13,7 @@ or, with --part-dir:
 """
 
 import _paths  # noqa: F401
-from _paths import LAYER_SWEEP_ROOT
+from _paths import LAYER_SWEEP_ROOT, SHARE_ROOT
 import argparse
 import importlib.util
 import os
@@ -27,7 +27,7 @@ from scipy.stats import rankdata
 from tqdm import tqdm
 from joblib import Parallel, delayed
 
-from config import MODEL_DISPLAY_NAMES, PAPER_ROOT, PROJECT_ROOT, SUBJECTS
+from config import MODEL_DISPLAY_NAMES, PAPER_ROOT, SUBJECTS
 from utils import (
     bootstrap_sample_indices,
     compute_rdm_correlation,
@@ -65,9 +65,9 @@ load_encoding = _WRSA.load_encoding
 
 CACHE_ROOT = LAYER_SWEEP_ROOT / "cache_or_heavy"
 FEATURE_CACHE = CACHE_ROOT / "features"
-DATA_DIR = LAYER_SWEEP_ROOT / "data"
+DATA_DIR = LAYER_SWEEP_ROOT / "results"
 PART_DIR = DATA_DIR / "wrsa_dense_shared_parts"
-DEEPVISION_CACHE = PROJECT_ROOT / "data" / "cache"
+DEEPVISION_CACHE = SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "brain_data"
 DEEPVISION_FMRI_ROOT = Path("/data/labshare/_stachelschwein/SSD/jroth/deepvision_fmri")
 STIMULUS_TYPE = "deepvision_shared"
 

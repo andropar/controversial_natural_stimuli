@@ -44,8 +44,8 @@ apply_style()
 GROUPS = ["vicco", "all_models", "sota", "training_objective", "architecture", "dataset"]
 STAGE_DIR = Path(__file__).resolve().parents[3]
 SHARE_ROOT = STAGE_DIR.parent
-RSA_DATA_DIR = STAGE_DIR / "rsa_scores"
-STATS_DATA_DIR = SHARE_ROOT / "02_alignment_reliability" / "data"
+RSA_DATA_DIR = STAGE_DIR / "results" / "rsa_scores"
+STATS_DATA_DIR = SHARE_ROOT / "02_alignment_reliability" / "results"
 FIGURES_DIR = STAGE_DIR / "figures" / "rsa_scores"
 PNG_DIR = FIGURES_DIR / "png"
 SUPPLEMENTARY_DIR = FIGURES_DIR / "supplementary"

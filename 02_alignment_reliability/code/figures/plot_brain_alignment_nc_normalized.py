@@ -36,7 +36,7 @@ from matplotlib.lines import Line2D
 MODEL_SETS = config.MODEL_SETS
 MODEL_DISPLAY_NAMES = config.MODEL_DISPLAY_NAMES
 SUBJECTS = config.SUBJECTS
-DATA_DIR = Path(__file__).resolve().parents[2] / "data"
+DATA_DIR = Path(__file__).resolve().parents[2] / "results"
 FIGURES_DIR = Path(__file__).resolve().parents[2] / "figures"
 PNG_DIR = FIGURES_DIR / "png"
 

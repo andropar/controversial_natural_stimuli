@@ -13,7 +13,7 @@ import numpy as np
 HERE = Path(__file__).resolve().parent
 SECTION = HERE.parent
 PAPER = SECTION.parent
-DATA = SECTION / "data"
+DATA = SECTION / "results"
 
 sys.path.insert(0, str(PAPER / "figures"))
 from style_improved import (  # noqa: E402

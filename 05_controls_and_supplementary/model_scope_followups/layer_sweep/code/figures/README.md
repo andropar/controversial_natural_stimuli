@@ -15,7 +15,7 @@ Use the tables below as a trace from rendered files back to the nearby code, sta
 
 These scripts are kept here because they generate or document figure outputs elsewhere in the staged package.
 
-| Script | Derived figure outputs | Data or inputs referenced by script |
+| Script | Derived figure outputs | Resources or results referenced by script |
 |---|---|---|
 | `05_controls_and_supplementary/model_scope_followups/layer_sweep/code/figures/_paths.py` | No rendered figure output was linked by filename or literal-reference scan. | `SHARE_ROOT` |
 | `05_controls_and_supplementary/model_scope_followups/layer_sweep/code/figures/plot_brain_alignment_best_layer.py` | `05_controls_and_supplementary/model_scope_followups/layer_sweep/figures/brain_alignment_best_layer`; `05_controls_and_supplementary/model_scope_followups/layer_sweep/figures/brain_alignment_best_layer_full`; `05_controls_and_supplementary/model_scope_followups/layer_sweep/figures/png/brain_alignment_best_layer`; `05_controls_and_supplementary/model_scope_followups/layer_sweep/figures/png/brain_alignment_best_layer_full`; `06_manuscript/figures/archive/brain_alignment` | `best_layer_crsa_scores.csv`; `best_layer_wrsa_scores.csv`; `rdm_noise_ceilings.csv`; `crsa_scores.csv`; `wrsa_transfer_scores.csv`; `PAPER_ROOT`; `STATS_DATA_DIR`; `RSA_DATA_DIR`; plus 2 more |

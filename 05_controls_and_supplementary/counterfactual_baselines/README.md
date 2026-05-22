@@ -40,7 +40,7 @@ unsupported match.
 - Figures in this folder tree: 4
 - Data/table-like files in this folder tree: 9
 - Python scripts in this folder tree: 4
-- Main child folders: `code/`, `data/`, `figures/`
+- Main child folders: `code/`, `results/`, `figures/`
 
 Use the tables below as a trace from rendered files back to the nearby code, staged data, score tables, or reports that produced them.
 

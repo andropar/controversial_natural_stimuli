@@ -38,7 +38,7 @@ import matplotlib.patches as mpatches
 
 import config
 
-DATA_DIR = _PAPER / "data"
+DATA_DIR = _PAPER / "results"
 PER     = DATA_DIR / "baseline_subsampling.csv"
 SUMMARY = DATA_DIR / "baseline_subsampling_summary.csv"
 FIGS    = Path(__file__).resolve().parents[2] / "figures" / "supplementary"

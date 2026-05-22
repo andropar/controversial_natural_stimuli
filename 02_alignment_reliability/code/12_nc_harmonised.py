@@ -24,7 +24,7 @@ STAGE = Path(__file__).resolve().parents[1]
 SHARE_ROOT = STAGE.parent
 sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
 sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
-DATA = STAGE / "data"
+DATA = STAGE / "results"
 OUT = STAGE / "figures" / "supplementary"
 PNG_OUT = OUT / "png"
 OUT.mkdir(parents=True, exist_ok=True)

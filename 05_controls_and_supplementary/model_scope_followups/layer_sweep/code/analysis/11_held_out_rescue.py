@@ -35,7 +35,7 @@ from layers_config import MODEL_LAYERS, MAIN_LAYER
 
 CACHE_FEAT = LAYER_SWEEP_ROOT / "cache_or_heavy" / "features"
 CACHE_ENC = LAYER_SWEEP_ROOT / "cache_or_heavy" / "encodings"
-DATA_DIR = LAYER_SWEEP_ROOT / "data"
+DATA_DIR = LAYER_SWEEP_ROOT / "results"
 CSTIM_SETS = ["all_models", "architecture", "dataset", "sota", "training_objective"]
 ENCODING_PROTOCOL = "hydra_random_kfold_v1"
 

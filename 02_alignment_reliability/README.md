@@ -6,7 +6,7 @@ whether a controversial-stimulus alignment change is explained by lower
 measurement reliability, or whether the effect remains after noise-ceiling
 normalization and attenuation-style checks.
 
-The code in `code/` produces the staged summary tables in `data/` and the
+The code in `code/` produces the staged summary tables in `results/` and the
 rendered reliability figures in `figures/`.
 
 ## How To Read This Stage
@@ -24,7 +24,7 @@ could explain the alignment effects.
 - Figures in this folder tree: 6
 - Data/table-like files in this folder tree: 5
 - Python scripts in this folder tree: 6
-- Main child folders: `code/`, `data/`, `figures/`
+- Main child folders: `code/`, `results/`, `figures/`
 
 Use the tables below as a trace from rendered files back to the nearby code, staged data, score tables, or reports that produced them.
 

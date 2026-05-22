@@ -45,7 +45,7 @@ comparison is exact.
 
 ## Main Data
 
-Primary dense outputs in `data/`:
+Primary dense outputs in `results/`:
 
 - `wrsa_dense_layer_sweep.csv`: dense cstim/Vicco mRSA scores.
 - `wrsa_dense_shared_layer_sweep.csv`: dense DeepVision shared mRSA scores.
@@ -63,7 +63,7 @@ Derived summaries:
 - `mrsa_layer_depth_curve_summary.csv`
 
 Legacy configured/fRSA outputs from the older analysis are still present in
-`data/`, but they are not the active dense mRSA follow-up.
+`results/`, but they are not the active dense mRSA follow-up.
 
 ## Main Figures
 

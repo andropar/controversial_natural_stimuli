@@ -36,7 +36,7 @@ from style_improved import (
 apply_style()
 
 HERE = Path(__file__).resolve().parent
-CSV = HERE.parent / "data" / "image_stats.csv"
+CSV = HERE.parent / "results" / "image_stats.csv"
 OUT_BASE = HERE / "stat_distributions_improved"
 
 STAT_ORDER = [

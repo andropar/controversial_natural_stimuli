@@ -8,7 +8,7 @@ in-silico stimulus-selection analysis:
    and recompute RDMs.
 
 The original completed run was moved from `scripts/claude/validate_noise_approximation`.
-The CSV files in `data/` are the frozen results used for the supplement figure.
+The CSV files in `results/` are the frozen results used for the supplement figure.
 
 Run:
 

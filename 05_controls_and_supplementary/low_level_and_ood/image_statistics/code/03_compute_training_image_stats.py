@@ -34,7 +34,7 @@ compute_stats = _mod.compute_stats
 DEEPVISION_ROOT = Path("/SSD/jroth/deepvision_fmri")
 STIMULI_HDF5 = DEEPVISION_ROOT / "stimuli_participant_p01.hdf5"
 METADATA_CSV = DEEPVISION_ROOT / "metadata_p01.csv"
-OUT_CSV = _HERE / "data" / "image_stats.csv"
+OUT_CSV = _HERE / "results" / "image_stats.csv"
 SET_NAME = "deepvision_train"
 
 

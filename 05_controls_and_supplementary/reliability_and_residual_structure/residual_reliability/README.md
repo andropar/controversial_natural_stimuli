@@ -121,7 +121,7 @@ python analysis/01_compute_residual_rsa.py --rsa-type mixed --groups all_models
 - Figures in this folder tree: 4
 - Data/table-like files in this folder tree: 5
 - Python scripts in this folder tree: 4
-- Main child folders: `code/`, `data/`, `figures/`
+- Main child folders: `code/`, `results/`, `figures/`
 - Direct files: `residual_reliability_report.html`
 
 Use the tables below as a trace from rendered files back to the nearby code, staged data, score tables, or reports that produced them.

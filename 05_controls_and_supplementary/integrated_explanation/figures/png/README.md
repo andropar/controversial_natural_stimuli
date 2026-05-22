@@ -24,7 +24,7 @@ Use the tables below as a trace from rendered files back to the nearby code, sta
 
 Each row is one figure concept; `formats` lists the concrete files present in this folder.
 
-| Figure | Formats | What it shows | Source / derivation | Data or inputs | Script | Paper use |
+| Figure | Formats | What it shows | Source / derivation | Resources or results | Script | Paper use |
 |---|---:|---|---|---|---|---|
 | `explanation_summary` | png | integrated explanation summary combining matched controls, reliability, and variance partitioning | copied from `/data/home_roth/_stachelschwein/rsa_based_selection/experiments/cstim_paper/18_explain_alignment_effect/figures/explanation_summary.png`; historical share path `data/tier1_analysis_derivatives/cstim_paper/18_explain_alignment_effect/figures/explanation_summary.png` | `matched_counterfactual_ladder_summary.csv`; `reliability_control_summary.csv`; `pair_variance_partition_summary.csv`; `residual_readout_contrasts.csv`; `05_controls_and_supplementary/integrated_explanation/data/matched_counterfactual_decision_table.csv`; `05_controls_and_supplementary/integrated_explanation/data/matched_counterfactual_ladder_by_cell.csv`; plus 4 more | `05_controls_and_supplementary/integrated_explanation/code/analysis/04_make_explanation_summary_figure.py` | no |
 <!-- END AUTO-FIGURE-PROVENANCE -->

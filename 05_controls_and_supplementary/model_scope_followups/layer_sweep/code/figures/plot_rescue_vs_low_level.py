@@ -16,7 +16,7 @@ from style import apply_style, FONT
 
 apply_style()
 
-DATA_DIR = LAYER_SWEEP_ROOT / "data"
+DATA_DIR = LAYER_SWEEP_ROOT / "results"
 FIG_DIR = LAYER_SWEEP_ROOT / "figures"
 
 

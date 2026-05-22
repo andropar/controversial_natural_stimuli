@@ -152,7 +152,7 @@ def load_noise_ceilings() -> pd.DataFrame:
 
 
 def load_between_subject_nc() -> pd.DataFrame:
-    path = _PAPER / "03_statistics" / "data" / "between_subject_noise_ceilings.csv"
+    path = _PAPER / "03_statistics" / "results" / "between_subject_noise_ceilings.csv"
     return pd.read_csv(path)
 
 

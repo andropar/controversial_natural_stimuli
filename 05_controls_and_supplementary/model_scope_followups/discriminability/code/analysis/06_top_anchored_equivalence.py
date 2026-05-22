@@ -17,8 +17,8 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-RSA_ROOT = ROOT.parent / "02_rsa_scores" / "data"
-OUT = ROOT / "data" / "top_anchored_equivalence.csv"
+RSA_ROOT = ROOT.parent / "02_rsa_scores" / "results"
+OUT = ROOT / "results" / "top_anchored_equivalence.csv"
 
 SUBJECTS = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]
 N_BOOT = 10_000

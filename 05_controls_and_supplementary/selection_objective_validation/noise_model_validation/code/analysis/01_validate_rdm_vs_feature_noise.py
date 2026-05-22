@@ -46,7 +46,7 @@ from cstims.selection.utility import compute_analytical_utility
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 SECTION_DIR = SCRIPT_DIR.parent
-DATA_DIR = SECTION_DIR / "data"
+DATA_DIR = SECTION_DIR / "results"
 FIGURES_DIR = SECTION_DIR / "figures"
 
 MODEL_NAMES = [
@@ -80,7 +80,7 @@ def load_features(n_calib: int, n_selected: int, n_candidates: int, seed: int):
     """Load features and split into calibration, selected, candidate sets."""
     subset_root = Path("/SSD/datasets/cstims_laion_natural_subset")
     memmap_dir = Path("/SSD/datasets/cstims_laion_natural_subset_memmaps")
-    model_csv = PROJECT_ROOT / "data" / "resources" / "model_list.csv"
+    model_csv = Path(__file__).resolve().parents[5] / "00_stimulus_selection" / "resources" / "model_list.csv"
 
     total_needed = n_calib + n_selected + n_candidates
     print(f"Loading {total_needed} images for {len(MODEL_NAMES)} models...")

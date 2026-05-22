@@ -29,7 +29,7 @@ sys.path.insert(0, str(PAPER))
 
 from config import MODEL_SETS, RSA_DATA_DIR, SUBJECTS  # noqa
 
-DATA_DIR = Path(__file__).resolve().parents[1] / "data"
+DATA_DIR = Path(__file__).resolve().parents[1] / "results"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 CSTIM_SETS = ["all_models", "architecture", "dataset", "sota", "training_objective"]

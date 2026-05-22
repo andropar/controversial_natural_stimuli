@@ -15,7 +15,7 @@ Use the tables below as a trace from rendered files back to the nearby code, sta
 
 These scripts are kept here because they generate or document figure outputs elsewhere in the staged package.
 
-| Script | Derived figure outputs | Data or inputs referenced by script |
+| Script | Derived figure outputs | Resources or results referenced by script |
 |---|---|---|
 | `05_controls_and_supplementary/low_level_and_ood/image_statistics/code/figures/plot_low_level_brain_alignment.py` | `06_manuscript/figures/archive/brain_alignment` | `low_level_rdm_brain_alignment.csv` |
 | `05_controls_and_supplementary/low_level_and_ood/image_statistics/code/figures/plot_stat_distributions.py` | `05_controls_and_supplementary/low_level_and_ood/image_statistics/figures/png/stat_distributions_improved`; `05_controls_and_supplementary/low_level_and_ood/image_statistics/figures/stat_distributions_improved`; `06_manuscript/figures/04_dissociation/stat_distributions_improved`; `06_manuscript/figures/archive/stat_distributions` | `image_stats.csv` |

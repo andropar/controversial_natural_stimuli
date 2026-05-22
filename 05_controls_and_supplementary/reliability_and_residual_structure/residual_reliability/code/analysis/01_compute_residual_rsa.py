@@ -391,7 +391,7 @@ def main():
         if args.groups else set(GROUPS_CONTROVERSIAL + ["vicco"])
     )
     out_path = Path(args.output) if args.output else (
-        _PAPER / "10_residual_reliability" / "data" / "residual_rsa.csv"
+        _PAPER / "10_residual_reliability" / "results" / "residual_rsa.csv"
     )
     out_path.parent.mkdir(parents=True, exist_ok=True)
     if out_path.exists():

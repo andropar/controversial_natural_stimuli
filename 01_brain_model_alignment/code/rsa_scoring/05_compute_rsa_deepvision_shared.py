@@ -40,7 +40,7 @@ from tqdm import tqdm
 
 from config import (
     MODEL_SETS, MODEL_DISPLAY_NAMES, RSA_DATA_DIR,
-    SHARED_ENCODING_ROOT, PROJECT_ROOT,
+    SHARED_ENCODING_ROOT, PROJECT_ROOT, VOXEL_CACHE_DIR,
 )
 from utils import (
     compute_rdm_correlation, bootstrap_sample_indices,
@@ -50,8 +50,7 @@ from utils import (
 
 
 DV_SHARED_CACHE = (
-    PROJECT_ROOT / "data" / "cache" / "voxel_sets"
-    / "deepvision_shared_visual_cve0p20" / "finalinterp"
+    VOXEL_CACHE_DIR / "deepvision_shared_visual_cve0p20" / "finalinterp"
 )
 N_BOOTSTRAPS = int(os.environ.get("DV_SHARED_N_BOOTSTRAPS", "1000"))
 BOOTSTRAP_N = 100

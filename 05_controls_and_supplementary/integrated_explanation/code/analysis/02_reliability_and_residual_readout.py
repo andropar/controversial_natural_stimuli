@@ -10,11 +10,11 @@ import pandas as pd
 
 
 PAPER = Path(__file__).resolve().parents[2]
-DATA = PAPER / "18_explain_alignment_effect" / "data"
+DATA = PAPER / "18_explain_alignment_effect" / "results"
 FIGURES = PAPER / "18_explain_alignment_effect" / "figures"
-PRIMARY = PAPER / "03_statistics" / "data" / "primary_endpoint_summary.csv"
-RESIDUAL_SUMMARY = PAPER / "10_residual_reliability" / "data" / "residual_decomposition_summary.csv"
-RESIDUAL_CONTRASTS = PAPER / "10_residual_reliability" / "data" / "residual_decomposition_contrasts.csv"
+PRIMARY = PAPER / "03_statistics" / "results" / "primary_endpoint_summary.csv"
+RESIDUAL_SUMMARY = PAPER / "10_residual_reliability" / "results" / "residual_decomposition_summary.csv"
+RESIDUAL_CONTRASTS = PAPER / "10_residual_reliability" / "results" / "residual_decomposition_contrasts.csv"
 
 DATA.mkdir(parents=True, exist_ok=True)
 FIGURES.mkdir(parents=True, exist_ok=True)

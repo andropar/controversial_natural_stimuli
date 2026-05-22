@@ -53,7 +53,7 @@ CSTIM_HDF5_ROOT = Path(
 MODEL_LIST_CSV = Path(
     os.environ.get(
         "CSTIMS_MODEL_LIST_CSV",
-        SHARE_ROOT / "00_stimulus_selection" / "inputs" / "resources" / "model_list.csv",
+        SHARE_ROOT / "00_stimulus_selection" / "resources" / "model_list.csv",
     )
 )
 
@@ -63,16 +63,29 @@ MODEL_LIST_CSV = Path(
 
 # Shared encoding models (trained on DeepVision ~515 shared images)
 SHARED_ENCODING_ROOT = (
-    PROJECT_ROOT / "experiments" / "encoding_fitting" / "results" / "encoding_20251222_141301"
+    SHARE_ROOT
+    / "01_brain_model_alignment"
+    / "results"
+    / "encoding_models"
+    / "shared_subject_encoding_models"
+    / "encoding_20251222_141301"
 )
 
 # Unique encoding models (trained on per-subject unique images)
+UNIQUE_ENCODING_ROOT = (
+    SHARE_ROOT
+    / "01_brain_model_alignment"
+    / "results"
+    / "encoding_models"
+    / "subject_unique_encoding_models"
+    / "runs"
+)
 UNIQUE_ENCODING_DIRS = {
-    "sub-01": PROJECT_ROOT / "outputs" / "deepvision_encoding_models" / "runs" / "20260317_170621",
-    "sub-03": PROJECT_ROOT / "outputs" / "deepvision_encoding_models" / "runs" / "20260319_152751",
-    "sub-05": PROJECT_ROOT / "outputs" / "deepvision_encoding_models" / "runs" / "20260317_170621",
-    "sub-06": PROJECT_ROOT / "outputs" / "deepvision_encoding_models" / "runs" / "20260319_152752",
-    "sub-07": PROJECT_ROOT / "outputs" / "deepvision_encoding_models" / "runs" / "20260317_170621",
+    "sub-01": UNIQUE_ENCODING_ROOT / "20260317_170621",
+    "sub-03": UNIQUE_ENCODING_ROOT / "20260319_152751",
+    "sub-05": UNIQUE_ENCODING_ROOT / "20260317_170621",
+    "sub-06": UNIQUE_ENCODING_ROOT / "20260319_152752",
+    "sub-07": UNIQUE_ENCODING_ROOT / "20260317_170621",
 }
 
 # Encoding mode is always "unique" (per-subject encoding models).
@@ -90,15 +103,14 @@ def get_encoding_root(subject: str = None) -> Path:
 # Selection Payload + Eval Pipeline
 # =============================================================================
 
-# Original selection output (frozen — never rerun)
-SELECTION_OUTPUT_ROOT = PROJECT_ROOT / "outputs" / "final_cstims_v2_full"
-SELECTION_PAYLOAD = (
-    SELECTION_OUTPUT_ROOT / "all_models" / "method-raw_plus_all_encodings"
-    / "20251222_175721" / "selected_stimuli_data.pkl"
-)
+# Original selection output (frozen - never rerun)
+SELECTION_OUTPUT_ROOT = SHARE_ROOT / "00_stimulus_selection" / "results" / "selected_stimuli"
+SELECTION_PAYLOAD = SELECTION_OUTPUT_ROOT / "all_models" / "selected_stimuli_data.pkl"
 
-# Eval pipeline results (copied into paper directory)
-EVAL_DATA_DIR = PAPER_ROOT / "00_selection_evaluation" / "data"
+# Eval pipeline results
+EVAL_DATA_DIR = (
+    SHARE_ROOT / "00_stimulus_selection" / "decision_checks" / "selection_evaluation" / "results"
+)
 
 
 def get_eval_pipeline_dir(model_set: str) -> Path:
@@ -106,17 +118,23 @@ def get_eval_pipeline_dir(model_set: str) -> Path:
     return EVAL_DATA_DIR / model_set
 
 # =============================================================================
-# Data Directories
+# Result Directories
 # =============================================================================
 
-# Per-section data directories
-BRAIN_DATA_DIR = PAPER_ROOT / "01_brain_data" / "data"
-RSA_DATA_DIR = PAPER_ROOT / "02_rsa_scores" / "data"
-STATS_DATA_DIR = PAPER_ROOT / "03_statistics" / "data"
-SIM_DATA_DIR = PAPER_ROOT / "04_simulation" / "data"
-UMC_DATA_DIR = PAPER_ROOT / "05_unique_contribution" / "data"
-OOD_DATA_DIR = PAPER_ROOT / "06_ood" / "data"
-CONSENSUS_DATA_DIR = PAPER_ROOT / "07_consensus" / "data"
+# Per-section result directories. Names ending in DATA_DIR are retained for
+# compatibility with older scripts, but they point at the public `results/`
+# layout.
+BRAIN_DATA_DIR = SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "brain_data_cache" / "data"
+RSA_DATA_DIR = SHARE_ROOT / "01_brain_model_alignment" / "results" / "rsa_scores"
+RELIABILITY_DATA_DIR = SHARE_ROOT / "02_alignment_reliability" / "results"
+STATS_DATA_DIR = SHARE_ROOT / "03_alignment_inference" / "results"
+ROBUSTNESS_DATA_DIR = SHARE_ROOT / "04_alignment_robustness" / "results"
+SIM_DATA_DIR = SHARE_ROOT / "05_controls_and_supplementary" / "simulation_validation" / "results"
+UMC_DATA_DIR = SHARE_ROOT / "05_controls_and_supplementary" / "counterfactual_baselines" / "results"
+OOD_DATA_DIR = (
+    SHARE_ROOT / "05_controls_and_supplementary" / "low_level_and_ood" / "ood_controls" / "results"
+)
+CONSENSUS_DATA_DIR = SHARE_ROOT / "05_controls_and_supplementary" / "integrated_explanation" / "results"
 
 # Feature cache (shared across sections)
 FEATURE_CACHE_DIR = PAPER_ROOT / "cache" / "feature_cache"
@@ -124,8 +142,8 @@ CSTIM_FEATURE_CACHE = FEATURE_CACHE_DIR / "cstim"
 DV_FEATURE_CACHE = FEATURE_CACHE_DIR / "deepvision"
 VICCO_FEATURE_CACHE = FEATURE_CACHE_DIR / "vicco"
 
-# Voxel cache (existing, at project root)
-VOXEL_CACHE_DIR = PROJECT_ROOT / "data" / "cache" / "voxel_sets"
+# Voxel cache (heavy local cache, not part of the public results payload)
+VOXEL_CACHE_DIR = SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "brain_data" / "voxel_sets"
 
 
 def get_brain_input_dir(subject: str) -> Path:

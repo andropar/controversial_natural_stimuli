@@ -53,7 +53,7 @@ COLOR_BASELINE = "#2980B9"
 COLOR_CSTIM = "#D64541"
 
 STAGE = Path(__file__).resolve().parents[2]
-DATA_CSV = STAGE / "data" / "residual_rsa.csv"
+DATA_CSV = STAGE / "results" / "residual_rsa.csv"
 OUT_DIR = STAGE / "figures" / "supplementary"
 PNG_DIR = OUT_DIR / "png"
 

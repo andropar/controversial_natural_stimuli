@@ -16,7 +16,7 @@ sys.path.insert(0, str(_PAPER / "figures"))
 
 from style_improved import apply_style, FONT, DPI, W_SINGLE, OKABE_ITO, add_panel_label  # noqa: E402
 
-DATA = _PAPER / "06_ood" / "data" / "ood_residualization_results.csv"
+DATA = _PAPER / "06_ood" / "results" / "ood_residualization_results.csv"
 FIG = _PAPER / "06_ood" / "figures"
 
 LABELS = {

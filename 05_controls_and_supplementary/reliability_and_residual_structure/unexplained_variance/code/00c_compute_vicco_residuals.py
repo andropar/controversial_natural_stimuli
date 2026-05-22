@@ -31,7 +31,7 @@ from utils import compute_rdm_correlation, load_encoding_model, predict_voxel_re
 from cstims.feature_extraction.universal_extractor import UniversalFeatureExtractor
 
 SUBJECTS = config.SUBJECTS  # all 5
-DATA_DIR = Path(__file__).resolve().parent / "data"
+DATA_DIR = Path(__file__).resolve().parent / "results"
 VICCO_IMG_DIR = config.CSTIM_HDF5_ROOT / "shared_vicco"
 N_VICCO = 292
 

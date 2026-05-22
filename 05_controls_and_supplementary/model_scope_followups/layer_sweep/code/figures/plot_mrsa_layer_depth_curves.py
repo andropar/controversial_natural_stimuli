@@ -15,7 +15,7 @@ from layers_config import MAIN_LAYER, get_layer_set
 
 apply_style()
 
-DATA_DIR = LAYER_SWEEP_ROOT / "data"
+DATA_DIR = LAYER_SWEEP_ROOT / "results"
 FIG_DIR = LAYER_SWEEP_ROOT / "figures"
 PNG_DIR = FIG_DIR / "png"
 

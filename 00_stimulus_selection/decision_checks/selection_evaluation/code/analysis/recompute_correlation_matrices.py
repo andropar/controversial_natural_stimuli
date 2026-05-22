@@ -162,7 +162,7 @@ def main():
         print(f"\n{'='*60}")
         print(f"Model set: {ms}")
         print(f"{'='*60}")
-        output_dir = PAPER_ROOT / "00_selection_evaluation" / "data" / f"{ms}_unique"
+        output_dir = PAPER_ROOT / "00_selection_evaluation" / "results" / f"{ms}_unique"
         output_dir.mkdir(parents=True, exist_ok=True)
         process_model_set(ms, device, output_dir)
 

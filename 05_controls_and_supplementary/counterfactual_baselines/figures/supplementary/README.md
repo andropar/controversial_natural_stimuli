@@ -23,7 +23,7 @@ Use the tables below as a trace from rendered files back to the nearby code, sta
 
 Each row is one figure concept; `formats` lists the concrete files present in this folder.
 
-| Figure | Formats | What it shows | Source / derivation | Data or inputs | Script | Paper use |
+| Figure | Formats | What it shows | Source / derivation | Resources or results | Script | Paper use |
 |---|---:|---|---|---|---|---|
 | `heldout_matching_diagnostics` | pdf | figure derived from heldout matching diagnostics | copied from `/data/home_roth/_stachelschwein/rsa_based_selection/experiments/cstim_paper/05_heldout_unique_baseline/figures/heldout_matching_diagnostics.pdf`; historical share path `data/tier1_analysis_derivatives/cstim_paper/05_heldout_unique_baseline/figures/heldout_matching_diagnostics.pdf` | `baseline_matching_diagnostics.csv`; `SHARE_ROOT`; `PNG_DIR`; `05_controls_and_supplementary/counterfactual_baselines/data/baseline_matching_diagnostics.csv`; `05_controls_and_supplementary/counterfactual_baselines/data/heldout_unique_aggregate_summary.csv`; `05_controls_and_supplementary/counterfactual_baselines/data/heldout_unique_baseline_results.csv`; plus 3 more | `05_controls_and_supplementary/counterfactual_baselines/code/03_plot_matching_diagnostics.py` | no |
 <!-- END AUTO-FIGURE-PROVENANCE -->

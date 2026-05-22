@@ -205,7 +205,7 @@ def create_high_spread_pairs():
     from matplotlib.colors import TwoSlopeNorm
 
     data_dir = config.PROJECT_ROOT / "experiments" / "archive" / "cstim_image_analysis" / "model_pair_disagreement"
-    spread_df = pd.read_csv(data_dir / "data" / "all_models" / "per_pair_spread.csv")
+    spread_df = pd.read_csv(data_dir / "results" / "all_models" / "per_pair_spread.csv")
     spread_df = spread_df.sort_values("spread", ascending=False)
 
     model_names, z_dists = _load_model_zscores()
@@ -402,7 +402,7 @@ def create_brain_consistency_plot(sd_threshold=1.0):
     apply_style()
 
     data_dir = config.PROJECT_ROOT / "experiments" / "archive" / "cstim_image_analysis" / "model_pair_disagreement"
-    spread_df = pd.read_csv(data_dir / "data" / "all_models" / "per_pair_spread.csv")
+    spread_df = pd.read_csv(data_dir / "results" / "all_models" / "per_pair_spread.csv")
     spread_df = spread_df.sort_values("spread", ascending=False)
 
     brain_z_by_subject = _load_brain_zscores()
@@ -466,7 +466,7 @@ def create_high_spread_pairs_consistent(sd_threshold=1.0, min_abs_mean_z=0.75):
     from matplotlib.colors import TwoSlopeNorm
 
     data_dir = config.PROJECT_ROOT / "experiments" / "archive" / "cstim_image_analysis" / "model_pair_disagreement"
-    spread_df = pd.read_csv(data_dir / "data" / "all_models" / "per_pair_spread.csv")
+    spread_df = pd.read_csv(data_dir / "results" / "all_models" / "per_pair_spread.csv")
     spread_df = spread_df.sort_values("spread", ascending=False)
 
     model_names, z_dists = _load_model_zscores()

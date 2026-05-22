@@ -17,7 +17,7 @@ import pandas as pd
 from config import PAPER_ROOT
 from layers_config import MAIN_LAYER
 
-DATA_DIR = LAYER_SWEEP_ROOT / "data"
+DATA_DIR = LAYER_SWEEP_ROOT / "results"
 CSTIM_SETS = ["all_models", "architecture", "dataset", "sota", "training_objective"]
 
 

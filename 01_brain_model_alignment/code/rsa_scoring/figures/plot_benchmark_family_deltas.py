@@ -27,7 +27,7 @@ from style_improved import (  # noqa: E402
     add_panel_label,
 )
 
-DATA = _PAPER / "03_statistics" / "data" / "posthoc_model_family_summary.csv"
+DATA = _PAPER / "03_statistics" / "results" / "posthoc_model_family_summary.csv"
 FIG = _PAPER / "02_rsa_scores" / "figures"
 
 FAMILY_ORDER = ["supervised_classification", "image_text", "self_supervised"]

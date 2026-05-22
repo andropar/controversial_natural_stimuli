@@ -9,15 +9,16 @@ selection is doing what it is supposed to do before any brain-alignment analysis
 uses the images.
 
 - `code/`: selection entrypoint plus copied selection/evaluation dependencies.
-- `inputs/`: Hydra configs, model-set definitions, and selection resources.
-- `selected_stimuli/`: final frozen selected sets.
+- `resources/`: Hydra configs, model-set definitions, and selection resources.
+- `results/selected_stimuli/`: final frozen selected sets.
 - `decision_checks/`: selection evaluation, diagnostics, and known-bad or
   superseded checks.
-- `manifests/selection_runs.csv`: readable provenance for each selected set.
+- `resources/manifests/selection_runs.csv`: readable provenance for each
+  selected set.
 
 ## Selected Stimuli
 
-Each folder under `selected_stimuli/` contains:
+Each folder under `results/selected_stimuli/` contains:
 
 - `selected_stimuli_data.pkl`: main downstream payload with selected global
   image indices, image records, resolved config, model names, raw/encoding
@@ -25,7 +26,8 @@ Each folder under `selected_stimuli/` contains:
 - `checkpoint.pkl`: optimizer resume/provenance checkpoint.
 - `select_controversial_stimuli.log`: text log for the frozen run.
 
-See `selected_stimuli/README.md` for the detailed pickle field description.
+See `results/selected_stimuli/README.md` for the detailed pickle field
+description.
 
 ## Decision Checks
 
@@ -39,10 +41,10 @@ See `decision_checks/README.md` for the file-by-file description.
 
 ## How To Read This Stage
 
-Start with `selected_stimuli/` if you need the actual frozen image sets. Use
-`manifests/selection_runs.csv` to identify which run produced a set, then inspect
-`inputs/` for the selection configuration and `decision_checks/` for the
-evidence that the chosen set has the intended disagreement structure.
+Start with `results/selected_stimuli/` if you need the actual frozen image sets. Use
+`resources/manifests/selection_runs.csv` to identify which run produced a set,
+then inspect `resources/` for the selection configuration and `decision_checks/`
+for the evidence that the chosen set has the intended disagreement structure.
 
 ## Selection Method
 
@@ -55,7 +57,7 @@ The core steps are:
 1. Build each model's RDM from pairwise image distances, usually cosine
    distance.
 2. Calibrate expected brain-measurement noise to the configured noise ceiling
-   (`noise_ceiling_target: 0.46` in `inputs/configs/config.yaml`).
+   (`noise_ceiling_target: 0.46` in `resources/configs/config.yaml`).
 3. Estimate the expected RSA correlation matrix under that noise.
 4. Score each model by how well it agrees with itself relative to the other
    models.
@@ -80,7 +82,7 @@ Relevant implementation files:
   model-discrimination helpers.
 
 The main selection entrypoint copied into this stage is
-`code/select_controversial_stimuli.py`. Configs live in `inputs/configs/`,
+`code/select_controversial_stimuli.py`. Configs live in `resources/configs/`,
 including model sets such as `sota`, `all_models`, `architecture`,
 `training_objective`, `dataset`, and `small`.
 
@@ -91,7 +93,7 @@ including model sets such as `sota`, `all_models`, `architecture`,
 - Figures in this folder tree: 115
 - Data/table-like files in this folder tree: 281
 - Python scripts in this folder tree: 51
-- Main child folders: `code/`, `inputs/`, `selected_stimuli/`, `decision_checks/`
+- Main child folders: `code/`, `resources/`, `results/selected_stimuli/`, `decision_checks/`
 
 Use the tables below as a trace from rendered files back to the nearby code, staged data, score tables, or reports that produced them.
 

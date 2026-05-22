@@ -27,7 +27,7 @@ Use the tables below as a trace from rendered files back to the nearby code, sta
 
 Each row is one figure concept; `formats` lists the concrete files present in this folder.
 
-| Figure | Formats | What it shows | Source / derivation | Data or inputs | Script | Paper use |
+| Figure | Formats | What it shows | Source / derivation | Resources or results | Script | Paper use |
 |---|---:|---|---|---|---|---|
 | `nc_harmonised` | png | harmonized noise-ceiling and attenuation readout | copied from `/data/home_roth/_stachelschwein/rsa_based_selection/experiments/cstim_paper/03_statistics/figures/nc_harmonised.png`; historical share path `data/tier1_analysis_derivatives/cstim_paper/03_statistics/figures/nc_harmonised.png` | `02_alignment_reliability/data/*noise*.csv`; `rdm_noise_ceilings.csv`; `between_subject_noise_ceilings.csv`; `SHARE_ROOT`; `02_alignment_reliability/data/between_subject_noise_ceilings.csv`; `02_alignment_reliability/data/nc_normalized_scores.csv`; plus 3 more | `02_alignment_reliability/code/12_nc_harmonised.py` | no |
 | `rdm_noise_ceilings` | png | RDM split-half or subject noise-ceiling estimates | copied from `/data/home_roth/_stachelschwein/rsa_based_selection/experiments/cstim_paper/03_statistics/figures/rdm_noise_ceilings.png`; historical share path `data/tier1_analysis_derivatives/cstim_paper/03_statistics/figures/rdm_noise_ceilings.png` | `02_alignment_reliability/data/*noise*.csv`; `rdm_noise_ceilings.csv`; `SHARE_ROOT`; `DATA_DIR`; `FIGURES_DIR`; `PNG_DIR`; plus 5 more | `02_alignment_reliability/code/figures/plot_rdm_noise_ceilings.py` | no |

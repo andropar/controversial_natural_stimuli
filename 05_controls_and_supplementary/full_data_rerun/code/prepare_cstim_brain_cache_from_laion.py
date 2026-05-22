@@ -4,10 +4,10 @@
 The output contract intentionally matches the cache consumed by the existing
 RSA scripts:
 
-    data/brain_data_cache/{subject}/cstim_betas_averaged.npz
-    data/brain_data_cache/{subject}/cstim_betas_by_rep.npz
-    data/brain_data_cache/{subject}/cstim_stimulus_info.csv
-    data/brain_data_cache/{subject}/voxel_metadata.npz
+    results/brain_data_cache/{subject}/cstim_betas_averaged.npz
+    results/brain_data_cache/{subject}/cstim_betas_by_rep.npz
+    results/brain_data_cache/{subject}/cstim_stimulus_info.csv
+    results/brain_data_cache/{subject}/voxel_metadata.npz
 
 Inputs are expected under the GLMsingle-tedana BIDS derivative layout used by
 the public LAION-fMRI release.
@@ -36,7 +36,7 @@ CSTIM_SESSIONS = ["ses-32", "ses-33", "ses-34"]
 CVE_THRESHOLD = 0.2
 
 DEFAULT_LAION_ROOT = Path("/data/home_roth/datasets/LAION-fMRI")
-DEFAULT_OUT_ROOT = RERUN_ROOT / "data" / "brain_data_cache"
+DEFAULT_OUT_ROOT = RERUN_ROOT / "results" / "brain_data_cache"
 
 LAION_ROIS = {
     "EVC": ["laionEVC"],

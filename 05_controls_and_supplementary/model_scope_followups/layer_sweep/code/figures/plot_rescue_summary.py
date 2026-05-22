@@ -16,7 +16,7 @@ from layers_config import MODEL_LAYERS
 
 apply_style()
 
-DATA_DIR = LAYER_SWEEP_ROOT / "data"
+DATA_DIR = LAYER_SWEEP_ROOT / "results"
 FIG_DIR = LAYER_SWEEP_ROOT / "figures"
 CSTIM_SETS = ["all_models", "architecture", "dataset", "sota", "training_objective"]
 MODEL_ORDER = list(MODEL_LAYERS.keys())

@@ -36,7 +36,7 @@ from style_improved import (  # noqa: E402
 
 
 HERE = Path(__file__).resolve().parent
-DATA = HERE / "data"
+DATA = HERE / "results"
 FIGURES = HERE / "figures"
 FIGURES.mkdir(parents=True, exist_ok=True)
 

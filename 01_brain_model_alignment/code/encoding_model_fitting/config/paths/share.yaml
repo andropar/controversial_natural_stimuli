@@ -4,7 +4,7 @@
 # environment variables when rerunning from external fMRI/stimulus data.
 
 paths:
-  model_list_csv: ${oc.env:CSTIMS_MODEL_LIST_CSV,${hydra:runtime.cwd}/00_stimulus_selection/inputs/resources/model_list.csv}
+  model_list_csv: ${oc.env:CSTIMS_MODEL_LIST_CSV,${hydra:runtime.cwd}/00_stimulus_selection/resources/model_list.csv}
   cache_root: ${oc.env:CSTIMS_DEEPVISION_CACHE_ROOT,${hydra:runtime.cwd}/01_brain_model_alignment/cache_or_heavy/brain_data}
   deepvision_root: ${oc.env:CSTIMS_DEEPVISION_FMRI_ROOT,${hydra:runtime.cwd}/external_data/deepvision_fmri}
-  output_root: ${oc.env:CSTIMS_ENCODING_OUTPUT_ROOT,${hydra:runtime.cwd}/01_brain_model_alignment/inputs/encoding_models/refit_runs}
+  output_root: ${oc.env:CSTIMS_ENCODING_OUTPUT_ROOT,${hydra:runtime.cwd}/01_brain_model_alignment/results/encoding_models/refit_runs}

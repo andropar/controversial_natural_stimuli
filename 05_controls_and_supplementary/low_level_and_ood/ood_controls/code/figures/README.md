@@ -15,7 +15,7 @@ Use the tables below as a trace from rendered files back to the nearby code, sta
 
 These scripts are kept here because they generate or document figure outputs elsewhere in the staged package.
 
-| Script | Derived figure outputs | Data or inputs referenced by script |
+| Script | Derived figure outputs | Resources or results referenced by script |
 |---|---|---|
 | `05_controls_and_supplementary/low_level_and_ood/ood_controls/code/figures/plot_baseline_subsampling.py` | No rendered figure output was linked by filename or literal-reference scan. | `baseline_subsampling.csv`; `baseline_subsampling_summary.csv`; `SHARE_ROOT`; `DATA_DIR`; `PNG_DIR` |
 | `05_controls_and_supplementary/low_level_and_ood/ood_controls/code/figures/plot_disagreement_vs_ood.py` | `05_controls_and_supplementary/low_level_and_ood/ood_controls/figures/supplementary/disagreement_vs_ood_pairs`; `05_controls_and_supplementary/low_level_and_ood/ood_controls/figures/supplementary/png/disagreement_vs_ood_pairs` | `disagreement_vs_ood_pairs.csv`; `disagreement_vs_ood_images.csv`; `disagreement_vs_ood_summary.csv`; `SHARE_ROOT`; `OOD_DIR`; `SUPP_PNG_DIR` |

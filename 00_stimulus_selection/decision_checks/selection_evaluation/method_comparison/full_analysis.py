@@ -23,7 +23,7 @@ POWERMEAN_ROOT = Path("/home/jroth/rsa_based_selection/outputs/final_cstims_powe
 MODEL_SETS = ["all_models", "sota", "dataset", "training_objective", "architecture"]
 SCRIPT_DIR = Path(__file__).parent
 OUTPUT_DIR = SCRIPT_DIR / "figures"
-DATA_DIR = SCRIPT_DIR / "data"
+DATA_DIR = SCRIPT_DIR / "results"
 
 # Plotting style
 plt.style.use("seaborn-v0_8-whitegrid")

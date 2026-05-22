@@ -34,7 +34,7 @@ from style_improved import apply_style, FONT, DPI, W_SINGLE
 
 apply_style()
 
-DATA_DIR = Path(__file__).resolve().parents[2] / "data"
+DATA_DIR = Path(__file__).resolve().parents[2] / "results"
 FIGURES_DIR = Path(__file__).resolve().parents[2] / "figures" / "supplementary"
 PNG_DIR = FIGURES_DIR / "png"
 

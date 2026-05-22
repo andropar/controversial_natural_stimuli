@@ -31,7 +31,7 @@ import matplotlib.pyplot as plt
 
 import config
 
-OOD_DIR = _PAPER / "data"
+OOD_DIR = _PAPER / "results"
 PAIRS   = OOD_DIR / "disagreement_vs_ood_pairs.csv"
 IMGS    = OOD_DIR / "disagreement_vs_ood_images.csv"
 SUMMARY = OOD_DIR / "disagreement_vs_ood_summary.csv"

@@ -21,8 +21,8 @@ import matplotlib.pyplot as plt
 
 STAGE = Path(__file__).resolve().parents[1]
 LOW_LEVEL_AND_OOD = STAGE.parent
-IMG_STATS = LOW_LEVEL_AND_OOD / "image_statistics" / "data" / "image_stats.csv"
-OUT_DATA = STAGE / "data"
+IMG_STATS = LOW_LEVEL_AND_OOD / "image_statistics" / "results" / "image_stats.csv"
+OUT_DATA = STAGE / "results"
 OUT_FIG = STAGE / "figures" / "supplementary"
 OUT_PNG = OUT_FIG / "png"
 

@@ -15,7 +15,7 @@ Use the tables below as a trace from rendered files back to the nearby code, sta
 
 These scripts are kept here because they generate or document figure outputs elsewhere in the staged package.
 
-| Script | Derived figure outputs | Data or inputs referenced by script |
+| Script | Derived figure outputs | Resources or results referenced by script |
 |---|---|---|
 | `05_controls_and_supplementary/reliability_and_residual_structure/graceful_degradation/code/figures/plot_degradation.py` | No rendered figure output was linked by filename or literal-reference scan. | `degradation_results.csv` |
 <!-- END AUTO-FIGURE-PROVENANCE -->

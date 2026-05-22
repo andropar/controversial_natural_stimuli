@@ -45,7 +45,7 @@ from config import MODEL_SETS, get_brain_input_dir  # noqa
 from utils import load_encoding_model, predict_voxel_responses  # noqa
 from layers_config import MAIN_LAYER  # noqa
 
-DATA_DIR = Path(__file__).resolve().parents[1] / "data"
+DATA_DIR = Path(__file__).resolve().parents[1] / "results"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 CACHE_FEAT = LAYER_SWEEP / "cache" / "features"

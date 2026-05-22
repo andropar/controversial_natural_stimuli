@@ -18,7 +18,7 @@ from layers_config import get_layer_set
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 LOG_ROOT = LAYER_SWEEP_ROOT / "logs"
-DATA_DIR = LAYER_SWEEP_ROOT / "data"
+DATA_DIR = LAYER_SWEEP_ROOT / "results"
 
 
 def parse_csv(value: str):

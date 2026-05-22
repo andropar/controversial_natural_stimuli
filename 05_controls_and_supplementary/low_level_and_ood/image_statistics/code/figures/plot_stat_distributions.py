@@ -25,7 +25,7 @@ from style import apply_style, FONT  # noqa: E402
 apply_style()
 
 HERE = Path(__file__).resolve().parent
-CSV = HERE.parent / "data" / "image_stats.csv"
+CSV = HERE.parent / "results" / "image_stats.csv"
 OUT_PDF = HERE / "stat_distributions.pdf"
 OUT_PNG = HERE / "stat_distributions.png"
 

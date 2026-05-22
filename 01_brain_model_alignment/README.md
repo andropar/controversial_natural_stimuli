@@ -11,17 +11,20 @@ score tables consumed by later reliability and inference stages.
 - `code/brain_data_preparation/`: brain-data cache/preparation scripts.
 - `code/encoding_model_fitting/`: encoding-model fitting scripts.
 - `code/rsa_scoring/`: fixed RSA, mixed RSA, transfer, and benchmark scripts.
-- `inputs/`: analysis-ready brain caches and fitted encoding models.
-- `rsa_scores/`: core alignment score tables.
+- `resources/`: fixed lightweight resources for this stage.
+- `results/encoding_models/`: fitted encoding-model metadata and summary
+  outputs, excluding the heavyweight model payloads.
+- `results/rsa_scores/`: core alignment score tables.
 - `figures/`: alignment figures.
 - `cache_or_heavy/`: optional heavy rerun inputs.
 
 ## How To Read This Stage
 
-Use `rsa_scores/` for the canonical alignment tables. Use `code/rsa_scoring/`
-to see how those tables were computed, and `inputs/encoding_models/` when you
-need the fitted subject/model inputs behind the scoring. The `figures/` folder
-is a rendered view of those same score outputs, not a separate analysis source.
+Use `results/rsa_scores/` for the canonical alignment tables. Use `code/rsa_scoring/`
+to see how those tables were computed, and `results/encoding_models/` when you
+need the fitted subject/model metadata behind the scoring. The `figures/`
+folder is a rendered view of those same score outputs, not a separate analysis
+source.
 
 ## Encoding Models
 
@@ -43,7 +46,7 @@ stimulus selection and as inputs to downstream RSA scoring.
 - Figures in this folder tree: 26
 - Data/table-like files in this folder tree: 835
 - Python scripts in this folder tree: 31
-- Main child folders: `code/`, `figures/`, `inputs/`, `cache_or_heavy/`
+- Main child folders: `code/`, `figures/`, `resources/`, `results/`, `cache_or_heavy/`
 
 Use the tables below as a trace from rendered files back to the nearby code, staged data, score tables, or reports that produced them.
 

@@ -27,7 +27,7 @@ from style_improved import (  # noqa: E402
     add_panel_label,
 )
 
-DATA = _PAPER / "03_statistics" / "data" / "primary_endpoint_summary.csv"
+DATA = _PAPER / "03_statistics" / "results" / "primary_endpoint_summary.csv"
 FIG = _PAPER / "03_statistics" / "figures"
 
 METHODS = [

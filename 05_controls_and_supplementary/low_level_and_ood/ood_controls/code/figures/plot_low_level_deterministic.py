@@ -34,9 +34,9 @@ from style_improved import apply_style, FONT, DPI, W_DOUBLE
 
 apply_style()
 
-OOD = _PAPER / "data"
-RSA_DATA_DIR = _SHARE_ROOT / "01_brain_model_alignment" / "rsa_scores"
-STATS_DATA_DIR = _SHARE_ROOT / "02_alignment_reliability" / "data"
+OOD = _PAPER / "results"
+RSA_DATA_DIR = _SHARE_ROOT / "01_brain_model_alignment" / "results" / "rsa_scores"
+STATS_DATA_DIR = _SHARE_ROOT / "02_alignment_reliability" / "results"
 DET = OOD / "wrsa_low_level_subsets.csv"
 COMP = OOD / "wrsa_low_level_subsets_comparison.csv"
 FIGS = Path(__file__).resolve().parents[2] / "figures"

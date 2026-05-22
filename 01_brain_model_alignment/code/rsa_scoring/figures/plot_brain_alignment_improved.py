@@ -107,7 +107,7 @@ def load_nc():
 
 
 def load_bs_nc():
-    p = _PAPER / "03_statistics" / "data" / "between_subject_noise_ceilings.csv"
+    p = _PAPER / "03_statistics" / "results" / "between_subject_noise_ceilings.csv"
     return pd.read_csv(p)
 
 

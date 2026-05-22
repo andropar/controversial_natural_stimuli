@@ -19,7 +19,7 @@ from style_improved import DPI, FONT, OKABE_ITO, W_DOUBLE, add_panel_label, appl
 
 
 HERE = Path(__file__).resolve().parent
-DATA = HERE / "data"
+DATA = HERE / "results"
 FIGURES = HERE / "figures"
 FIGURES.mkdir(parents=True, exist_ok=True)
 

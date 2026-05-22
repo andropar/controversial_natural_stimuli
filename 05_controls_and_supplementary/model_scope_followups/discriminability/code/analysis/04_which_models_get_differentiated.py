@@ -33,7 +33,7 @@ PAPER = PROJECT / "experiments" / "cstim_paper"
 sys.path.insert(0, str(PAPER))
 from config import MODEL_SETS  # noqa
 
-DATA_DIR = Path(__file__).resolve().parents[1] / "data"
+DATA_DIR = Path(__file__).resolve().parents[1] / "results"
 
 
 # Architecture families: same backbone architecture, varying training.

@@ -12,7 +12,7 @@ models, and compute RSA alignment scores.
 - `encoding_model_fitting/`: fits the ridge encoding models used for
   brain-predicted feature tracks and mixed/weighted RSA.
 - `rsa_scoring/`: computes the cstim brain-alignment score tables in
-  `../rsa_scores/`.
+  `../results/rsa_scores/`.
 
 For the common question "where are the cstim brain-alignment scores computed?",
 start in `rsa_scoring/README.md`.

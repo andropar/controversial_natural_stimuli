@@ -31,7 +31,7 @@ STIMULUS_SETS = [
     "vicco",
 ]
 
-OUT_CSV = Path(__file__).resolve().parent / "data" / "image_stats.csv"
+OUT_CSV = Path(__file__).resolve().parent / "results" / "image_stats.csv"
 
 
 def load_image_paths(group: str) -> list[Path]:

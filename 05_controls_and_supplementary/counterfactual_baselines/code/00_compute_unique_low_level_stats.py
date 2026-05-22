@@ -27,7 +27,7 @@ sys.path.insert(0, str(_PAPER.parents[1]))
 import config  # noqa: E402
 
 
-OUT = _PAPER / "05_heldout_unique_baseline" / "data" / "unique_image_low_level_stats.csv"
+OUT = _PAPER / "05_heldout_unique_baseline" / "results" / "unique_image_low_level_stats.csv"
 
 
 def _load_compute_stats():
@@ -41,15 +41,19 @@ def _load_compute_stats():
 
 
 def subject_metadata(subject: str) -> pd.DataFrame:
-    path = config.PROJECT_ROOT / "data" / "cache" / "image_sets" / f"deepvision_unique_{subject}.csv"
+    image_root = (
+        config.SHARE_ROOT
+        / "01_brain_model_alignment"
+        / "cache_or_heavy"
+        / "brain_data"
+        / "image_sets"
+    )
+    path = image_root / f"deepvision_unique_{subject}.csv"
     df = pd.read_csv(path)
     df["image_idx"] = range(len(df))
     df["subject"] = subject
     df["image_path"] = (
-        config.PROJECT_ROOT
-        / "data"
-        / "cache"
-        / "image_sets"
+        image_root
         / f"deepvision_unique_{subject}"
     ).as_posix() + "/" + df["image_name"]
     return df

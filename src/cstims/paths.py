@@ -24,13 +24,11 @@ def resources_dir() -> Path:
 
     root = find_share_root()
     for candidate in (
-        root / "00_stimulus_selection/inputs/resources",
-        root / "data/resources",
-        root / "src/data/resources",
+        root / "00_stimulus_selection/resources",
     ):
         if candidate.exists():
             return candidate
-    return root / "00_stimulus_selection/inputs/resources"
+    return root / "00_stimulus_selection/resources"
 
 
 def model_list_csv() -> Path:

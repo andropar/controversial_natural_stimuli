@@ -15,7 +15,7 @@ Use the tables below as a trace from rendered files back to the nearby code, sta
 
 These scripts are kept here because they generate or document figure outputs elsewhere in the staged package.
 
-| Script | Derived figure outputs | Data or inputs referenced by script |
+| Script | Derived figure outputs | Resources or results referenced by script |
 |---|---|---|
 | `01_brain_model_alignment/code/rsa_scoring/figures/plot_benchmark_family_deltas.py` | No rendered figure output was linked by filename or literal-reference scan. | `posthoc_model_family_summary.csv` |
 | `01_brain_model_alignment/code/rsa_scoring/figures/plot_benchmark_median_deltas.py` | No rendered figure output was linked by filename or literal-reference scan. | `rsa_large_benchmark_scores.csv`; `rdm_noise_ceilings.csv`; `FIGURES_DIR`; `RSA_DATA_DIR`; `STATS_DATA_DIR` |

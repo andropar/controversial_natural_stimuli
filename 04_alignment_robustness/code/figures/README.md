@@ -15,7 +15,7 @@ Use the tables below as a trace from rendered files back to the nearby code, sta
 
 These scripts are kept here because they generate or document figure outputs elsewhere in the staged package.
 
-| Script | Derived figure outputs | Data or inputs referenced by script |
+| Script | Derived figure outputs | Resources or results referenced by script |
 |---|---|---|
 | `04_alignment_robustness/code/figures/plot_distance_metric_claim_robustness.py` | `04_alignment_robustness/figures/distance_metric_claim_robustness`; `04_alignment_robustness/figures/png/distance_metric_claim_robustness` | `distance_metric_robustness.csv`; `mixed_distance_metric_robustness.csv`; `distance_metric_claim_robustness.csv`; `distance_metric_claim_robustness_summary.csv`; `FIGURES_DIR`; `STATS_DATA_DIR` |
 | `04_alignment_robustness/code/figures/plot_distance_metric_robustness.py` | `04_alignment_robustness/figures/distance_metric_robustness_improved`; `04_alignment_robustness/figures/mixed_distance_metric_robustness`; `04_alignment_robustness/figures/png/distance_metric_robustness_improved`; `04_alignment_robustness/figures/png/mixed_distance_metric_robustness`; `06_manuscript/figures/archive/distance_metric_robustness_improved`; `06_manuscript/figures/archive/mixed_distance_metric_robustness`; `06_manuscript/figures/methods_robustness/distance_metric_robustness_improved`; `06_manuscript/figures/methods_robustness/mixed_distance_metric_robustness` | `distance_metric_robustness.csv`; `DATA_DIR`; `STATS_DATA_DIR`; `FIGURES_DIR` |

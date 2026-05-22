@@ -10,7 +10,7 @@ import pandas as pd
 
 
 PAPER = Path(__file__).resolve().parents[2]
-DATA = PAPER / "18_explain_alignment_effect" / "data"
+DATA = PAPER / "18_explain_alignment_effect" / "results"
 FIGURES = PAPER / "18_explain_alignment_effect" / "figures"
 FIGURES.mkdir(parents=True, exist_ok=True)
 

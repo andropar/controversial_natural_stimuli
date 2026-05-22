@@ -83,7 +83,7 @@ def run_comparison(
         cache_path = Path(
             os.environ.get(
                 "CSTIMS_ENCODING_OUTPUT_ROOT",
-                PROJECT_ROOT / "01_brain_model_alignment/inputs/encoding_models",
+                PROJECT_ROOT / "01_brain_model_alignment/results/encoding_models",
             )
         )
         feature_files = list(cache_path.glob("**/vissl_resnet50_supervised*/features.npz"))

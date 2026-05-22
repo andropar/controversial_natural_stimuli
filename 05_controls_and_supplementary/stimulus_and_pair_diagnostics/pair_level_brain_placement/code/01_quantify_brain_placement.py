@@ -22,7 +22,7 @@ from style_improved import OKABE_ITO, apply_style  # noqa: E402
 from utils import compute_rdm_correlation  # noqa: E402
 
 
-OUT = _PAPER / "15_pair_level_brain_placement" / "data"
+OUT = _PAPER / "15_pair_level_brain_placement" / "results"
 FIG = _PAPER / "15_pair_level_brain_placement" / "figures"
 OUT.mkdir(parents=True, exist_ok=True)
 FIG.mkdir(parents=True, exist_ok=True)

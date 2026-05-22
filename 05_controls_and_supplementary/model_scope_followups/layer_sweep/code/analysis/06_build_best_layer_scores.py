@@ -21,7 +21,7 @@ import pandas as pd
 
 from config import PAPER_ROOT, MODEL_DISPLAY_NAMES
 
-DATA_DIR = LAYER_SWEEP_ROOT / "data"
+DATA_DIR = LAYER_SWEEP_ROOT / "results"
 IN_CSV = DATA_DIR / "fixed_rsa_layer_sweep.csv"
 OUT_CSV = DATA_DIR / "best_layer_crsa_scores.csv"
 

@@ -42,8 +42,8 @@ from utils import (  # noqa: E402
 
 
 HERE = Path(__file__).resolve().parent
-STATS_CSV = HERE / "data" / "image_stats.csv"
-OUT_CSV = HERE / "data" / "low_level_rdm_brain_alignment.csv"
+STATS_CSV = HERE / "results" / "image_stats.csv"
+OUT_CSV = HERE / "results" / "low_level_rdm_brain_alignment.csv"
 
 STIM_SETS = ["all_models", "architecture", "dataset", "sota", "training_objective", "vicco"]
 PIXEL_SIZE = 64  # downsample edge for pixel RDM

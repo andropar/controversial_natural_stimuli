@@ -39,8 +39,8 @@ from style_improved import apply_style, DPI, FONT, W_DOUBLE
 
 apply_style()
 
-DATA_CSV = _PAPER / "10_residual_reliability" / "data" / "residual_rsa.csv"
-OUT_DATA = _PAPER / "10_residual_reliability" / "data"
+DATA_CSV = _PAPER / "10_residual_reliability" / "results" / "residual_rsa.csv"
+OUT_DATA = _PAPER / "10_residual_reliability" / "results"
 OUT_FIG = _PAPER / "10_residual_reliability" / "figures"
 
 GROUPS = ["vicco", "all_models", "sota", "architecture", "dataset", "training_objective"]

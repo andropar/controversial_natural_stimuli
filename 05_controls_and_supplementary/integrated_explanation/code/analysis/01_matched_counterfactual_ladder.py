@@ -23,9 +23,9 @@ import pandas as pd
 
 
 PAPER = Path(__file__).resolve().parents[2]
-DATA = PAPER / "18_explain_alignment_effect" / "data"
+DATA = PAPER / "18_explain_alignment_effect" / "results"
 FIGURES = PAPER / "18_explain_alignment_effect" / "figures"
-SOURCE = PAPER / "03_statistics" / "data" / "primary_endpoint_summary.csv"
+SOURCE = PAPER / "03_statistics" / "results" / "primary_endpoint_summary.csv"
 
 DATA.mkdir(parents=True, exist_ok=True)
 FIGURES.mkdir(parents=True, exist_ok=True)

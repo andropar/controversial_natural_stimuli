@@ -28,7 +28,7 @@ from style_improved import apply_style, FONT, DPI  # noqa
 
 apply_style()
 
-DATA_DIR = Path(__file__).resolve().parents[1] / "data"
+DATA_DIR = Path(__file__).resolve().parents[1] / "results"
 FIG_DIR = Path(__file__).resolve().parent
 
 # Okabe-Ito

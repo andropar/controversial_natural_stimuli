@@ -23,7 +23,7 @@ Use the tables below as a trace from rendered files back to the nearby code, sta
 
 Each row is one figure concept; `formats` lists the concrete files present in this folder.
 
-| Figure | Formats | What it shows | Source / derivation | Data or inputs | Script | Paper use |
+| Figure | Formats | What it shows | Source / derivation | Resources or results | Script | Paper use |
 |---|---:|---|---|---|---|---|
 | `objective_mc_validation` | png | Monte Carlo validation of the analytical selection objective | copied from `/data/home_roth/_stachelschwein/rsa_based_selection/experiments/cstim_paper/17_objective_mc_validation/figures/objective_mc_validation.png`; historical share path `data/tier1_analysis_derivatives/cstim_paper/17_objective_mc_validation/figures/objective_mc_validation.png` | `candidate_utilities_nc0.46_mean_min.csv`; `summary_by_noise_ceiling.csv`; `summary_by_aggregation.csv`; `05_controls_and_supplementary/selection_objective_validation/objective_mc_validation/data/candidate_utilities_nc0.46_mean_min.csv`; `05_controls_and_supplementary/selection_objective_validation/objective_mc_validation/data/metadata.json`; `05_controls_and_supplementary/selection_objective_validation/objective_mc_validation/data/summary_by_aggregation.csv`; plus 1 more | `05_controls_and_supplementary/selection_objective_validation/objective_mc_validation/code/figures/plot_objective_mc_validation.py` | no |
 <!-- END AUTO-FIGURE-PROVENANCE -->

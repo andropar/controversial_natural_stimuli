@@ -15,7 +15,7 @@ Use the tables below as a trace from rendered files back to the nearby code, sta
 
 These scripts are kept here because they generate or document figure outputs elsewhere in the staged package.
 
-| Script | Derived figure outputs | Data or inputs referenced by script |
+| Script | Derived figure outputs | Resources or results referenced by script |
 |---|---|---|
 | `00_stimulus_selection/decision_checks/selection_evaluation/code/figures/plot_correlation_matrices_improved.py` | `06_manuscript/figures/01_insilico/correlation_matrices_summary_raw_improved` | `correlation_matrices.csv`; `correlation_matrices_with_random_noised_pool.csv`; `correlation_matrices_with_random_noised.csv`; `margin_curve.csv`; `margin_curve_pool.csv` |
 | `00_stimulus_selection/decision_checks/selection_evaluation/code/figures/plot_insilico_evaluation.py` | `00_stimulus_selection/decision_checks/selection_evaluation/figures/insilico_curve/insilico_evaluation_unique_improved`; `00_stimulus_selection/decision_checks/selection_evaluation/figures/insilico_curve/png/insilico_evaluation_unique_improved`; `06_manuscript/figures/01_insilico/insilico_evaluation_unique_improved`; `06_manuscript/figures/archive/insilico_evaluation_unique` | `discriminability.csv`; `statistics.csv`; `FIGURES_DIR` |

@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 _PAPER = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(_PAPER / "figures"))
 
-DATA_DIR = Path(__file__).resolve().parents[1] / "data"
+DATA_DIR = Path(__file__).resolve().parents[1] / "results"
 FIG_DIR = Path(__file__).resolve().parent
 
 try:

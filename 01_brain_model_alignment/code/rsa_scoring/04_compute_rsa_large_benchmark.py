@@ -51,7 +51,12 @@ from cstims.feature_extraction.universal_extractor import UniversalFeatureExtrac
 ALL_GROUPS = ["architecture", "dataset", "sota", "training_objective", "all_models", "vicco"]
 
 # model_list_large.csv location: rsa_based_selection/data/resources/model_list_large.csv
-MODEL_LIST_LARGE = Path(__file__).resolve().parents[3] / "data" / "resources" / "model_list_large.csv"
+MODEL_LIST_LARGE = (
+    Path(__file__).resolve().parents[3]
+    / "00_stimulus_selection"
+    / "resources"
+    / "model_list_large.csv"
+)
 
 
 def _sanitize_layer(layer: str) -> str:

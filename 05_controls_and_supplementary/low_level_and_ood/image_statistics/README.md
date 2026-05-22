@@ -59,7 +59,7 @@ track the model-RSA drop seen in `02_rsa_scores`; the drop is model-specific.
 - Figures in this folder tree: 2
 - Data/table-like files in this folder tree: 2
 - Python scripts in this folder tree: 6
-- Main child folders: `code/`, `data/`, `figures/`
+- Main child folders: `code/`, `results/`, `figures/`
 
 Use the tables below as a trace from rendered files back to the nearby code, staged data, score tables, or reports that produced them.
 

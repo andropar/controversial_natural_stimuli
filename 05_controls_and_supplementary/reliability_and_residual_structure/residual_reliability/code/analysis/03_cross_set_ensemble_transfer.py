@@ -56,7 +56,7 @@ rr = importlib.util.module_from_spec(spec)
 assert spec.loader is not None
 spec.loader.exec_module(rr)
 
-OUT_DATA = _PAPER / "10_residual_reliability" / "data"
+OUT_DATA = _PAPER / "10_residual_reliability" / "results"
 OUT_FIG = _PAPER / "10_residual_reliability" / "figures"
 
 ALPHAS = np.logspace(-2, 6, 30)

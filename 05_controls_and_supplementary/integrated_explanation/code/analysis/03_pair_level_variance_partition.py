@@ -29,10 +29,10 @@ import config  # noqa: E402
 from utils import compute_rdm_correlation, rdm_to_vector, load_cached_features, stimulus_cv_splits  # noqa: E402
 
 
-DATA = PAPER / "18_explain_alignment_effect" / "data"
+DATA = PAPER / "18_explain_alignment_effect" / "results"
 FIGURES = PAPER / "18_explain_alignment_effect" / "figures"
-IMAGE_STATS = PAPER / "08_image_statistics" / "data" / "image_stats.csv"
-OOD = PAPER / "06_ood" / "data" / "pca_loglik.csv"
+IMAGE_STATS = PAPER / "08_image_statistics" / "results" / "image_stats.csv"
+OOD = PAPER / "06_ood" / "results" / "pca_loglik.csv"
 
 DATA.mkdir(parents=True, exist_ok=True)
 FIGURES.mkdir(parents=True, exist_ok=True)

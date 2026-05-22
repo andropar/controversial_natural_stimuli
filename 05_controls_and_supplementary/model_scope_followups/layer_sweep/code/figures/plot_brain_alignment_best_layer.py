@@ -30,7 +30,7 @@ from style import apply_style, FONT, DPI
 
 apply_style()
 
-DATA_DIR = LAYER_SWEEP_ROOT / "data"
+DATA_DIR = LAYER_SWEEP_ROOT / "results"
 FIG_DIR = LAYER_SWEEP_ROOT / "figures"
 BEST_CSV = DATA_DIR / "best_layer_crsa_scores.csv"
 BEST_WRSA_CSV = DATA_DIR / "best_layer_wrsa_scores.csv"

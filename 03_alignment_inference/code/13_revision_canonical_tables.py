@@ -45,7 +45,7 @@ MODEL_SETS = ["all_models", "sota", "training_objective", "architecture", "datas
 METHOD_LABEL = {"wrsa_transfer": "mixed_RSA", "crsa": "fixed_RSA"}
 SCORE_COL = {"wrsa_transfer": "wrsa_transfer", "crsa": "crsa"}
 SELECTION_MODELS = set(config.MODEL_SETS["all_models"])
-MODEL_LIST_LARGE = PROJECT / "data" / "resources" / "model_list_large.csv"
+MODEL_LIST_LARGE = config.SHARE_ROOT / "00_stimulus_selection" / "resources" / "model_list_large.csv"
 
 
 def sem(x: Iterable[float]) -> float:
@@ -158,7 +158,7 @@ def build_primary_endpoint_summary() -> pd.DataFrame:
 
     # If the held-out unique pipeline has produced results, append its subject
     # level endpoint summary without making this script depend on that pipeline.
-    heldout_path = _PAPER / "05_heldout_unique_baseline" / "data" / "heldout_unique_endpoint_summary.csv"
+    heldout_path = _PAPER / "05_heldout_unique_baseline" / "results" / "heldout_unique_endpoint_summary.csv"
     if heldout_path.exists():
         heldout = pd.read_csv(heldout_path)
         complete_subjects = heldout["subject"].nunique() >= len(SUBJECTS)
@@ -554,10 +554,10 @@ def build_leave_one_subject_out(primary: pd.DataFrame) -> pd.DataFrame:
 
 def build_existing_output_summaries() -> None:
     layer_files = [
-        _PAPER / "11_layer_sweep" / "data" / "layer_drop_summary_subject_avg.csv",
-        _PAPER / "11_layer_sweep" / "data" / "mrsa_layer_drop_summary_subject_avg.csv",
-        _PAPER / "11_layer_sweep" / "data" / "held_out_rescue.csv",
-        _PAPER / "11_layer_sweep" / "data" / "spread_summary.csv",
+        _PAPER / "11_layer_sweep" / "results" / "layer_drop_summary_subject_avg.csv",
+        _PAPER / "11_layer_sweep" / "results" / "mrsa_layer_drop_summary_subject_avg.csv",
+        _PAPER / "11_layer_sweep" / "results" / "held_out_rescue.csv",
+        _PAPER / "11_layer_sweep" / "results" / "spread_summary.csv",
     ]
     layer_rows = []
     for path in layer_files:
@@ -573,9 +573,9 @@ def build_existing_output_summaries() -> None:
     pd.DataFrame(layer_rows).to_csv(DATA / "layer_sweep_paper_summary.csv", index=False)
 
     discrim_files = [
-        _PAPER / "12_discriminability" / "data" / "pair_separation_summary.csv",
-        _PAPER / "12_discriminability" / "data" / "sample_efficiency_summary.csv",
-        _PAPER / "12_discriminability" / "data" / "top_anchored_equivalence.csv",
+        _PAPER / "12_discriminability" / "results" / "pair_separation_summary.csv",
+        _PAPER / "12_discriminability" / "results" / "sample_efficiency_summary.csv",
+        _PAPER / "12_discriminability" / "results" / "top_anchored_equivalence.csv",
     ]
     discrim_rows = []
     for path in discrim_files:

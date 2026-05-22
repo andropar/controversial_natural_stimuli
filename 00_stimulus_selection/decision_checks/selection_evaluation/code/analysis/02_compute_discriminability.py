@@ -632,7 +632,7 @@ def main():
     # On Raven, use --env raven instead.
     if Path("/SSD").exists():
         _IRIS_OVERRIDES = {
-            "model_list_csv": str(PROJECT_ROOT / "data" / "resources" / "model_list.csv"),
+            "model_list_csv": str(PROJECT_ROOT / "resources" / "model_list.csv"),
             "subset_root": "/SSD/datasets/cstims_laion_natural_subset",
             "encoding_root": str(PROJECT_ROOT / "experiments" / "encoding_fitting" / "results" / "encoding_20251222_141301"),
         }

@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 from scipy.stats import spearmanr
 
 STAGE = Path(__file__).resolve().parents[1]
-DATA = STAGE / "data" / "ood_vs_alignment.csv"
+DATA = STAGE / "results" / "ood_vs_alignment.csv"
 OUT = STAGE / "figures" / "supplementary"
 PNG_OUT = OUT / "png"
 OUT.mkdir(parents=True, exist_ok=True)
@@ -109,7 +109,7 @@ def main():
             rows.append({"group": g, "ood_space": col, "n": len(sub),
                          "rho": rho, "p": p})
     summary = pd.DataFrame(rows)
-    summary.to_csv(STAGE / "data" / "ood_per_model_rho.csv", index=False)
+    summary.to_csv(STAGE / "results" / "ood_per_model_rho.csv", index=False)
     print(summary.to_string(index=False))
 
 

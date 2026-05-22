@@ -15,7 +15,7 @@ Use the tables below as a trace from rendered files back to the nearby code, sta
 
 These scripts are kept here because they generate or document figure outputs elsewhere in the staged package.
 
-| Script | Derived figure outputs | Data or inputs referenced by script |
+| Script | Derived figure outputs | Resources or results referenced by script |
 |---|---|---|
 | `05_controls_and_supplementary/stimulus_and_pair_diagnostics/stimulus_characterization/code/figures/create_model_set_grids.py` | No rendered figure output was linked by filename or literal-reference scan. | `SHARE_ROOT`; `CSTIM_DIR`; `CSTIM_HDF5_ROOT`; `FIG_DIR` |
 | `05_controls_and_supplementary/stimulus_and_pair_diagnostics/stimulus_characterization/code/figures/create_stimulus_grids.py` | No rendered figure output was linked by filename or literal-reference scan. | `cstim_betas_averaged.npz`; `voxel_metadata.npz`; `cstim_stimulus_info.csv`; `per_pair_spread.csv`; `SHARE_ROOT`; `CSTIM_DIR`; `CSTIM_HDF5_ROOT`; `FIG_DIR`; plus 1 more |

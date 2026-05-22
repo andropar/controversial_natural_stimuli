@@ -26,7 +26,7 @@ from config import MODEL_DISPLAY_NAMES, PAPER_ROOT
 from layers_config import MAIN_LAYER, STIMULUS_SETS, get_layer_set
 
 
-DATA_DIR = LAYER_SWEEP_ROOT / "data"
+DATA_DIR = LAYER_SWEEP_ROOT / "results"
 CSTIM_SETS = [s for s in STIMULUS_SETS if s != "vicco"]
 SHARED_SET = "deepvision_shared"
 

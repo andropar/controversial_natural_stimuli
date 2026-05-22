@@ -77,7 +77,7 @@ def main():
     df = collect_all_results()
 
     # Save raw data
-    output_dir = Path(__file__).parent / "data"
+    output_dir = Path(__file__).parent / "results"
     output_dir.mkdir(exist_ok=True)
     df.to_csv(output_dir / "all_auc_results.csv", index=False)
     print(f"\nSaved raw results to {output_dir / 'all_auc_results.csv'}")

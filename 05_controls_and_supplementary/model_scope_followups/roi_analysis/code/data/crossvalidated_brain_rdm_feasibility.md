@@ -1,3 +1,0 @@
-# Crossvalidated Brain-RDM Feasibility
-
-The CSTIMS cache includes averaged betas and per-stimulus repetition arrays (`cstim_betas_by_rep.npz`). It does not include run/session labels for each individual repetition in the paper-facing cache. Odd/even split-half RDMs are already used for noise ceilings, but a crossnobis or run-wise crossvalidated RDM requires independent run/session partitions and, ideally, run-wise noise covariance estimates. Because those labels are not available here, the crossvalidated brain-RDM robustness analysis is not run from this cache. Re-exporting repetition-level run/session metadata would make it feasible without collecting new data.

@@ -3,7 +3,7 @@
 This folder contains the code path used to produce the frozen selected
 controversial-stimulus inputs used by the downstream paper analyses. The paper
 results do not come from an arbitrary rerun of this code; they use the copied
-frozen runs in `../selected_stimuli/`.
+frozen runs in `../results/selected_stimuli/`.
 
 ## Frozen Selection Run Used Downstream
 
@@ -12,11 +12,11 @@ in `../manifests/selection_runs.csv`:
 
 | model set | frozen target | original run |
 |---|---|---|
-| `all_models` | `../selected_stimuli/all_models/selected_stimuli_data.pkl` | `outputs/final_cstims_v2_full/all_models/method-raw_plus_all_encodings/20251222_175721` |
-| `sota` | `../selected_stimuli/sota/selected_stimuli_data.pkl` | `outputs/final_cstims_v2_full/sota/method-raw_plus_all_encodings/20251222_175721` |
-| `training_objective` | `../selected_stimuli/training_objective/selected_stimuli_data.pkl` | `outputs/final_cstims_v2_full/training_objective/method-raw_plus_all_encodings/20251222_175721` |
-| `architecture` | `../selected_stimuli/architecture/selected_stimuli_data.pkl` | `outputs/final_cstims_v2_full/architecture/method-raw_plus_all_encodings/20251222_175721` |
-| `dataset` | `../selected_stimuli/dataset/selected_stimuli_data.pkl` | `outputs/final_cstims_v2_full/dataset/method-raw_plus_all_encodings/20251222_175721` |
+| `all_models` | `../results/selected_stimuli/all_models/selected_stimuli_data.pkl` | `outputs/final_cstims_v2_full/all_models/method-raw_plus_all_encodings/20251222_175721` |
+| `sota` | `../results/selected_stimuli/sota/selected_stimuli_data.pkl` | `outputs/final_cstims_v2_full/sota/method-raw_plus_all_encodings/20251222_175721` |
+| `training_objective` | `../results/selected_stimuli/training_objective/selected_stimuli_data.pkl` | `outputs/final_cstims_v2_full/training_objective/method-raw_plus_all_encodings/20251222_175721` |
+| `architecture` | `../results/selected_stimuli/architecture/selected_stimuli_data.pkl` | `outputs/final_cstims_v2_full/architecture/method-raw_plus_all_encodings/20251222_175721` |
+| `dataset` | `../results/selected_stimuli/dataset/selected_stimuli_data.pkl` | `outputs/final_cstims_v2_full/dataset/method-raw_plus_all_encodings/20251222_175721` |
 
 All five frozen runs used `target_size=100`, `seed=42`, `metric=cosine`,
 `corr_type=correlation`, `use_analytical=true`, `aggregation_within=mean`,
@@ -80,11 +80,11 @@ were accepted only after passing the image-quality/natural-image filter.
 
 The actual frozen outputs to use are:
 
-- `../selected_stimuli/<model_set>/selected_stimuli_data.pkl`: selected image
+- `../results/selected_stimuli/<model_set>/selected_stimuli_data.pkl`: selected image
   records and stimulus payload used downstream.
-- `../selected_stimuli/<model_set>/checkpoint.pkl`: final selection checkpoint.
-- `../selected_stimuli/<model_set>/.hydra/config.yaml`: exact frozen config.
-- `../selected_stimuli/<model_set>/eval_pipeline/`: post-hoc sanity checks and
+- `../results/selected_stimuli/<model_set>/checkpoint.pkl`: final selection checkpoint.
+- `../results/selected_stimuli/<model_set>/.hydra/config.yaml`: exact frozen config.
+- `../results/selected_stimuli/<model_set>/eval_pipeline/`: post-hoc sanity checks and
   diagnostics for the selected set.
 
 The `eval_pipeline/best_raw_combined/` subfolders are diagnostic exports from

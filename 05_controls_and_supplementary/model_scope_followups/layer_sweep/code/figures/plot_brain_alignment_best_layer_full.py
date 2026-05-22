@@ -30,7 +30,7 @@ from style import apply_style, FONT, DPI
 
 apply_style()
 
-DATA_DIR = LAYER_SWEEP_ROOT / "data"
+DATA_DIR = LAYER_SWEEP_ROOT / "results"
 FIG_DIR = LAYER_SWEEP_ROOT / "figures"
 
 COLOR_CSTIM = "#D64541"

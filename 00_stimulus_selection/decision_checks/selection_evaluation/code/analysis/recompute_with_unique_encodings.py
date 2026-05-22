@@ -36,10 +36,10 @@ from cstims.feature_extraction.universal_extractor import UniversalFeatureExtrac
 # ── Paths ────────────────────────────────────────────────────────────────────
 SELECTION_ROOT = PROJECT_ROOT / "outputs" / "final_cstims_v2_full"
 TIMESTAMP = "20251222_175721"
-LAION_SAMPLE_DIR = PROJECT_ROOT / "data" / "LAION_natural_sample"
+LAION_SAMPLE_DIR = PROJECT_ROOT / "results" / "LAION_natural_sample"
 LAION_FEATURES_DIR = LAION_SAMPLE_DIR / "features"
 LAION_IMAGES_DIR = LAION_SAMPLE_DIR / "images"
-OUTPUT_ROOT = PAPER_ROOT / "00_selection_evaluation" / "data"
+OUTPUT_ROOT = PAPER_ROOT / "00_selection_evaluation" / "results"
 
 ALL_MODEL_SETS = ["all_models", "architecture", "dataset", "sota", "training_objective"]
 ENCODING_NAMES = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]

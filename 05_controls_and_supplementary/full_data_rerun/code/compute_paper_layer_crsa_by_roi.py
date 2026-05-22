@@ -7,7 +7,7 @@ This uses cached paper-layer features from:
 
 and full-preprocessed cstim betas from:
 
-    05_controls_and_supplementary/full_data_rerun/data/brain_data_cache
+    05_controls_and_supplementary/full_data_rerun/results/brain_data_cache
 
 No encoding model weights are used here, so this remains valid even though the
 full-data voxel grid differs from the original paper cache.
@@ -34,7 +34,7 @@ import config  # noqa: E402
 
 
 SUBJECTS = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]
-DEFAULT_BRAIN_CACHE = RERUN_ROOT / "data" / "brain_data_cache"
+DEFAULT_BRAIN_CACHE = RERUN_ROOT / "results" / "brain_data_cache"
 DEFAULT_FEATURE_CACHE = (
     SHARE_ROOT
     / "shared"
@@ -43,8 +43,8 @@ DEFAULT_FEATURE_CACHE = (
     / "feature_cache"
     / "cstim"
 )
-DEFAULT_OUT = RERUN_ROOT / "data" / "paper_layer_crsa_by_roi.csv"
-DEFAULT_SUMMARY_OUT = RERUN_ROOT / "data" / "paper_layer_crsa_by_roi_summary.csv"
+DEFAULT_OUT = RERUN_ROOT / "results" / "paper_layer_crsa_by_roi.csv"
+DEFAULT_SUMMARY_OUT = RERUN_ROOT / "results" / "paper_layer_crsa_by_roi_summary.csv"
 
 
 def bootstrap_sample_indices(n_total: int, n_sample: int, n_bootstrap: int, seed: int = 0):

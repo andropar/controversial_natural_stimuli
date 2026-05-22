@@ -15,7 +15,7 @@ Use the tables below as a trace from rendered files back to the nearby code, sta
 
 These scripts are kept here because they generate or document figure outputs elsewhere in the staged package.
 
-| Script | Derived figure outputs | Data or inputs referenced by script |
+| Script | Derived figure outputs | Resources or results referenced by script |
 |---|---|---|
 | `05_controls_and_supplementary/model_scope_followups/discriminability/code/figures/plot_pair_separation.py` | No rendered figure output was linked by filename or literal-reference scan. | `pair_separation_mrsa.csv`; `pair_separation_frsa.csv`; `DATA_DIR`; `FIG_DIR` |
 | `05_controls_and_supplementary/model_scope_followups/discriminability/code/figures/plot_pair_structure.py` | `05_controls_and_supplementary/model_scope_followups/discriminability/figures/pair_structure`; `05_controls_and_supplementary/model_scope_followups/discriminability/figures/png/pair_structure` | `which_models_pair_outcomes.csv`; `which_models_per_model_profile.csv`; `which_models_family_conversion.csv`; `DATA_DIR`; `FIG_DIR` |

@@ -24,7 +24,7 @@ import pandas as pd
 from config import PAPER_ROOT
 from layers_config import MODEL_LAYERS, layer_depth_rank, layer_depth_frac
 
-DATA_DIR = LAYER_SWEEP_ROOT / "data"
+DATA_DIR = LAYER_SWEEP_ROOT / "results"
 IN_CSV = DATA_DIR / "fixed_rsa_layer_sweep.csv"
 OUT_CSV = DATA_DIR / "layer_drop_summary.csv"
 OUT_AVG_CSV = DATA_DIR / "layer_drop_summary_subject_avg.csv"

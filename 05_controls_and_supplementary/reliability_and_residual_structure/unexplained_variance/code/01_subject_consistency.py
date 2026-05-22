@@ -41,7 +41,7 @@ SUBJECTS = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]
 RDM_DIR = Path("/home/jroth/rsa_based_selection/experiments/archive/simulationdiffs_to_braindiffs/data")
 MANIFEST_PATH = _PAPER / "00_selection_evaluation/data/all_models/images/image_manifest.csv"
 
-DATA_DIR = Path(__file__).resolve().parent / "data"
+DATA_DIR = Path(__file__).resolve().parent / "results"
 FIG_DIR = Path(__file__).resolve().parent / "figures"
 N_IMAGES = 100
 

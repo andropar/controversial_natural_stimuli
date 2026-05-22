@@ -28,8 +28,12 @@ Read the numbered folders as a pipeline:
 Within a numbered folder, the usual convention is:
 
 - `code/`: scripts that generate that stage's outputs.
-- `data/`, `rsa_scores/`, `selected_stimuli/`, or `inputs/`: staged inputs and
-  tabular outputs used by later stages.
+- `resources/`: fixed ingredients for a stage, such as configs, manifests, and
+  model rosters.
+- `results/`: outputs produced by the stage, including intermediate tables and
+  reusable artifacts consumed later. Domain-specific outputs live under this
+  folder, for example `results/rsa_scores/` and
+  `results/selected_stimuli/`.
 - `figures/`: rendered analysis figures, with `png/` folders holding raster
   copies where present.
 - Local `README.md` files: plain-language notes for what that folder contains
@@ -61,10 +65,11 @@ selection runs and their configs copied into `00_stimulus_selection/`.
 
 ## Folder Map
 
-1. `00_stimulus_selection/` - selected stimuli, selection code, configs,
-   resources, and selection decision checks.
-2. `01_brain_model_alignment/` - brain-data preparation, encoding models, RSA
-   analyses, and alignment score tables.
+1. `00_stimulus_selection/` - selection code, fixed resources, selected-stimulus
+   metadata in `results/selected_stimuli/`, and selection decision checks.
+2. `01_brain_model_alignment/` - brain-data preparation, encoding model
+   metadata in `results/encoding_models/`, RSA analyses, and alignment score
+   tables in `results/rsa_scores/`.
 3. `02_alignment_reliability/` - reliability and noise-ceiling analyses.
 4. `03_alignment_inference/` - primary alignment inference, permutation tests,
    bootstrap summaries, and canonical tables.

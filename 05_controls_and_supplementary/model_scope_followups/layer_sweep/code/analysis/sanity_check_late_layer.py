@@ -21,7 +21,7 @@ from utils import compute_rdm_correlation, compute_rsa_score
 from layers_config import MODEL_LAYERS, MAIN_LAYER, LATE_LAYER
 
 CACHE_NEW = LAYER_SWEEP_ROOT / "cache_or_heavy" / "features"
-EXISTING_CSV = PAPER_ROOT / "02_rsa_scores" / "data"
+EXISTING_CSV = PAPER_ROOT / "02_rsa_scores" / "results"
 # Existing crsa_scores.csv was computed on CPU; we extract on GPU. The drift
 # is up to ~5e-4 RSA points for transformer architectures (DINOv2). For
 # convolutional models the agreement is ~1e-5. A 1e-3 floor is more than

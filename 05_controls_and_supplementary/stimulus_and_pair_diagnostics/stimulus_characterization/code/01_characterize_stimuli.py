@@ -12,9 +12,9 @@ from sklearn.preprocessing import StandardScaler
 
 
 PAPER = Path(__file__).resolve().parents[1]
-OUT = PAPER / "14_stimulus_characterization" / "data"
+OUT = PAPER / "14_stimulus_characterization" / "results"
 OUT.mkdir(parents=True, exist_ok=True)
-STATS = PAPER / "08_image_statistics" / "data" / "image_stats.csv"
+STATS = PAPER / "08_image_statistics" / "results" / "image_stats.csv"
 FEATURE_COLS = [
     "lum_mean", "lum_rms", "colorfulness", "lab_chroma_mean", "hue_entropy",
     "sf_slope", "sf_high_low_ratio", "edge_mag_mean", "orient_anisotropy",
