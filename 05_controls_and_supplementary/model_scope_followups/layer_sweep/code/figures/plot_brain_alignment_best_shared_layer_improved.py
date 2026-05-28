@@ -75,6 +75,17 @@ SHORT_NAMES = {
     "timm_vit_large_patch14_clip_quickgelu_224_openai": "CLIP-OAI",
     "openclip_vit_l_14_laion400m_e31": "CLIP-L400",
 }
+NC_BAND_ALPHA = 0.032
+NC_LINE_ALPHA = 0.36
+PAIR_LINE_ALPHA = 0.18
+PAIR_LINE_WIDTH = 0.28
+DELTA_SUMMARY_OFFSET = 0.54
+RANGE_SUMMARY_OFFSET = 1.12
+SUMMARY_END_PAD = 0.36
+SPREAD_RANGE_GAP = 0.26
+SPREAD_CAP_WIDTH = 0.11
+BOOTSTRAP_N = 5000
+BOOTSTRAP_SEED = 20260528
 
 
 def sem(vals: np.ndarray) -> float:
@@ -83,6 +94,20 @@ def sem(vals: np.ndarray) -> float:
     if len(vals) <= 1:
         return 0.0
     return float(vals.std(ddof=1) / np.sqrt(len(vals)))
+
+
+def bootstrap_ci(vals: np.ndarray) -> tuple[float, float, float]:
+    vals = np.asarray(vals, dtype=float)
+    vals = vals[np.isfinite(vals)]
+    if len(vals) == 0:
+        return np.nan, np.nan, np.nan
+    mean = float(vals.mean())
+    if len(vals) == 1:
+        return mean, mean, mean
+    rng = np.random.default_rng(BOOTSTRAP_SEED)
+    samples = rng.choice(vals, size=(BOOTSTRAP_N, len(vals)), replace=True).mean(axis=1)
+    lo, hi = np.percentile(samples, [2.5, 97.5])
+    return mean, float(lo), float(hi)
 
 
 def draw_box(
@@ -228,6 +253,60 @@ def model_order(mrsa_panel: pd.DataFrame) -> list[str]:
     )
 
 
+def panel_model_mean_values(panel: pd.DataFrame, condition: str) -> np.ndarray:
+    values = panel.groupby("model")[condition].mean().to_numpy(dtype=float)
+    return values[np.isfinite(values)]
+
+
+def panel_subject_delta_values(panel: pd.DataFrame) -> np.ndarray:
+    deltas = panel.assign(delta=panel["vicco"] - panel["cstim"])
+    values = deltas.groupby("subject")["delta"].mean().to_numpy(dtype=float)
+    return values[np.isfinite(values)]
+
+
+def draw_delta_summary(ax, panel: pd.DataFrame, xpos: float) -> None:
+    vals = panel_subject_delta_values(panel)
+    mean, lo, hi = bootstrap_ci(vals)
+    if not np.isfinite(mean):
+        return
+    ax.vlines(xpos, lo, hi, colors="0.12", linewidth=0.9, zorder=7)
+    ax.hlines([lo, hi], xpos - 0.07, xpos + 0.07, colors="0.12", linewidth=0.75, zorder=7)
+    ax.scatter(xpos, mean, s=14, color="0.12", zorder=8)
+    ax.hlines(0, xpos - 0.10, xpos + 0.10, colors="0.65", linewidth=0.55, zorder=6)
+
+
+def draw_spread_ranges(ax, panel: pd.DataFrame, x_center: float) -> float:
+    """Draw min-max ranges of model-level boxplot means."""
+    specs = [
+        ("cstim", COLOR_CSTIM, x_center - SPREAD_RANGE_GAP / 2),
+        ("vicco", COLOR_BASELINE, x_center + SPREAD_RANGE_GAP / 2),
+    ]
+    for condition, color, xpos in specs:
+        vals = panel_model_mean_values(panel, condition)
+        if len(vals) == 0:
+            continue
+        lo = float(vals.min())
+        hi = float(vals.max())
+        mid = float(np.median(vals))
+        ax.vlines(
+            xpos,
+            lo,
+            hi,
+            colors=color,
+            linewidth=1.0,
+            zorder=4,
+        )
+        ax.hlines(
+            [lo, mid, hi],
+            xpos - SPREAD_CAP_WIDTH / 2,
+            xpos + SPREAD_CAP_WIDTH / 2,
+            colors=color,
+            linewidth=[0.75, 1.0, 0.75],
+            zorder=6,
+        )
+    return x_center
+
+
 def add_mrsa_noise_ceiling(ax, nc: pd.DataFrame, model_set: str) -> None:
     ctrl = (
         nc[nc["group"].eq(model_set) & nc["stimulus_type"].eq("controversial")]
@@ -261,8 +340,22 @@ def _add_band(ax, vals, color: str, linestyle: str) -> None:
         return
     mean = float(vals.mean())
     err = sem(vals)
-    ax.axhspan(mean - err, mean + err, color=color, alpha=0.10, zorder=0, linewidth=0)
-    ax.axhline(mean, color=color, linewidth=0.9, alpha=0.7, linestyle=linestyle, zorder=0)
+    ax.axhspan(
+        mean - err,
+        mean + err,
+        color=color,
+        alpha=NC_BAND_ALPHA,
+        zorder=0,
+        linewidth=0,
+    )
+    ax.axhline(
+        mean,
+        color=color,
+        linewidth=0.85,
+        alpha=NC_LINE_ALPHA,
+        linestyle=linestyle,
+        zorder=0,
+    )
 
 
 def add_noise_ceiling(ax, nc: pd.DataFrame, bs_nc: pd.DataFrame, model_set: str, method: str) -> None:
@@ -292,6 +385,10 @@ def plot_panel(
     subjects = sorted(panel["subject"].unique())
     x = np.arange(len(order))
     offset = 0.20
+    delta_x = len(order) + DELTA_SUMMARY_OFFSET
+    range_center = len(order) + RANGE_SUMMARY_OFFSET
+    draw_delta_summary(ax, panel, delta_x)
+    draw_spread_ranges(ax, panel, range_center)
     for i, model in enumerate(order):
         block = panel[panel["model"].eq(model)]
         cstim = block.set_index("subject")["cstim"].to_dict()
@@ -321,8 +418,8 @@ def plot_panel(
                     [x[i] - offset, x[i] + offset],
                     [c_val, b_val],
                     color="#888888",
-                    linewidth=0.4,
-                    alpha=0.4,
+                    linewidth=PAIR_LINE_WIDTH,
+                    alpha=PAIR_LINE_ALPHA,
                     zorder=2,
                 )
             if c_val is not None:
@@ -350,28 +447,35 @@ def plot_panel(
                     alpha=0.9,
                 )
 
-    ax.set_xticks(x)
-    ax.set_xlim(-0.65, len(order) - 0.35)
+    ax.set_xlim(-0.65, range_center + SPREAD_RANGE_GAP / 2 + SUMMARY_END_PAD)
     if show_xticks:
+        xticks = [*x, delta_x, range_center]
+        labels = [SHORT_NAMES.get(m, MODEL_DISPLAY.get(m, m)) for m in order] + [
+            r"$\Delta$",
+            "range",
+        ]
+        ax.set_xticks(xticks)
         ax.set_xticklabels(
-            [SHORT_NAMES.get(m, MODEL_DISPLAY.get(m, m)) for m in order],
+            labels,
             rotation=45,
             ha="right",
         )
     else:
+        ax.set_xticks(x)
         ax.set_xticklabels([])
         ax.tick_params(axis="x", length=0)
 
     if panel_label is not None:
         ax.text(
             0.015,
-            0.98,
+            1.125,
             panel_label,
             transform=ax.transAxes,
             fontsize=FONT["panel_label"],
             fontweight="bold",
             ha="left",
             va="top",
+            clip_on=False,
             zorder=10,
         )
 
@@ -397,8 +501,6 @@ def plot_panel(
                 markersize=4,
                 label="Baseline",
             ),
-            Line2D([0], [0], color=COLOR_CSTIM, linewidth=0.9, linestyle="-", label="NC (cstim)"),
-            Line2D([0], [0], color=COLOR_BASELINE, linewidth=0.9, linestyle="--", label="NC (base)"),
         ]
         ax.legend(
             handles=handles,
@@ -407,30 +509,42 @@ def plot_panel(
             framealpha=0.92,
             edgecolor="none",
             fontsize=FONT["small"],
-            ncol=2,
+            ncol=1,
             columnspacing=0.8,
             handletextpad=0.4,
             handlelength=1.4,
         )
 
 
-def row_noise_upper_values(nc: pd.DataFrame, method: str) -> list[float]:
-    if method != "mRSA":
-        return []
-
+def row_noise_upper_values(nc: pd.DataFrame, bs_nc: pd.DataFrame, method: str) -> list[float]:
     values = []
-    base = nc[nc["group"].eq("vicco")].groupby("subject")["noise_ceiling_spearman"].mean()
-    for model_set in PANEL_ORDER:
-        ctrl = (
-            nc[nc["group"].eq(model_set) & nc["stimulus_type"].eq("controversial")]
-            .groupby("subject")["noise_ceiling_spearman"]
-            .mean()
-        )
-        for vals in [ctrl, base]:
-            vals = np.sqrt(vals.clip(lower=0).to_numpy(dtype=float))
-            vals = vals[np.isfinite(vals)]
-            if len(vals):
-                values.append(float(vals.mean()) + sem(vals))
+    if method == "mRSA":
+        base = nc[nc["group"].eq("vicco")].groupby("subject")["noise_ceiling_spearman"].mean()
+        for model_set in PANEL_ORDER:
+            ctrl = (
+                nc[nc["group"].eq(model_set) & nc["stimulus_type"].eq("controversial")]
+                .groupby("subject")["noise_ceiling_spearman"]
+                .mean()
+            )
+            for vals in [ctrl, base]:
+                vals = np.sqrt(vals.clip(lower=0).to_numpy(dtype=float))
+                vals = vals[np.isfinite(vals)]
+                if len(vals):
+                    values.append(float(vals.mean()) + sem(vals))
+    else:
+        base = bs_nc[bs_nc["group"].eq("vicco")]
+        for model_set in PANEL_ORDER:
+            ctrl = bs_nc[
+                bs_nc["group"].eq(model_set)
+                & bs_nc["stimulus_type"].eq("controversial")
+            ]
+            for vals in [
+                ctrl["nc_mid"].to_numpy(dtype=float),
+                base["nc_mid"].to_numpy(dtype=float),
+            ]:
+                vals = vals[np.isfinite(vals)]
+                if len(vals):
+                    values.append(float(vals.mean()) + sem(vals))
     return values
 
 
@@ -440,13 +554,12 @@ def row_y_limits(df: pd.DataFrame, nc: pd.DataFrame, bs_nc: pd.DataFrame, method
         panel = panel_data(df, model_set, method)
         if not panel.empty:
             vals.extend(panel[["cstim", "vicco"]].to_numpy(dtype=float).ravel())
-    if method == "mRSA":
-        vals.extend(row_noise_upper_values(nc, method))
+    vals.extend(row_noise_upper_values(nc, bs_nc, method))
     vals = np.asarray(vals, dtype=float)
     vals = vals[np.isfinite(vals)]
     if len(vals) == 0:
         return (-0.03, 1.0)
-    headroom = 1.025 if method == "mRSA" else 1.12
+    headroom = 1.025 if method == "mRSA" else 1.035
     return (-0.04, float(vals.max()) * headroom)
 
 
@@ -457,7 +570,10 @@ def main() -> None:
     df = load_scores()
     nc = load_noise_ceilings()
     bs_nc = load_between_subject_noise_ceilings()
-    ratios = [max(len(MODEL_SETS[model_set]), 4) for model_set in PANEL_ORDER]
+    ratios = [
+        len(MODEL_SETS[model_set]) + (2.8 if model_set == "all_models" else 1.9)
+        for model_set in PANEL_ORDER
+    ]
     ylims = {method: row_y_limits(df, nc, bs_nc, method) for method in METHOD_ORDER}
 
     fig = plt.figure(figsize=(W_DOUBLE, 10.1))
@@ -502,7 +618,7 @@ def main() -> None:
                 ax.spines["left"].set_visible(False)
                 ax.tick_params(axis="y", left=False, labelleft=False)
             if row == 0:
-                ax.set_title(TITLE[model_set], y=1.03, fontsize=FONT["small"], fontweight="bold")
+                ax.set_title(TITLE[model_set], y=0.995, fontsize=FONT["small"], fontweight="bold")
 
     out_pdf = FIGURES_DIR / "brain_alignment_best_shared_layer_improved.pdf"
     out_png = PNG_DIR / "brain_alignment_best_shared_layer_improved.png"
