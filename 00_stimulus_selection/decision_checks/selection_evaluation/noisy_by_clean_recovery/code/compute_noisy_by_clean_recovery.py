@@ -23,6 +23,7 @@ from typing import Any
 import numpy as np
 import pandas as pd
 import torch
+import yaml
 from tqdm import tqdm
 
 if not hasattr(np, "trapz") and hasattr(np, "trapezoid"):
@@ -54,6 +55,7 @@ DEFAULT_RESULTS = SCRIPT.parents[1] / "results"
 DEFAULT_RANDOM_FEATURE_DIR = ROOT / "shared" / "cache_or_heavy" / "natural_pool_subset_10k"
 SELECTION_ROOT = ROOT / "00_stimulus_selection" / "results" / "selected_stimuli"
 ORIENTATION = "noisy_by_clean"
+ENV_CONFIG_ROOT = ROOT / "00_stimulus_selection" / "resources" / "configs" / "paths"
 
 
 def load_disc_module():
@@ -247,6 +249,42 @@ def available_random_models(random_feature_dir: Path, model_names: list[str]) ->
     return [model for model in model_names if (random_feature_dir / f"{model}.npz").exists()]
 
 
+def load_repo_env_paths(env: str) -> dict[str, Any]:
+    config_path = ENV_CONFIG_ROOT / f"{env}.yaml"
+    if not config_path.exists():
+        raise FileNotFoundError(f"Environment config not found: {config_path}")
+
+    with config_path.open() as f:
+        config = yaml.safe_load(f) or {}
+
+    paths = dict(config.get("paths", {}))
+
+    # Keep repo-internal metadata tied to the checked-out repository. The Raven
+    # YAML still carries the old /u/rothj/cstims clone path in some fields.
+    local_model_csv = ROOT / "00_stimulus_selection" / "resources" / "model_list.csv"
+    if local_model_csv.exists():
+        paths["model_list_csv"] = str(local_model_csv)
+    paths["output_base"] = str(SELECTION_ROOT)
+
+    return paths
+
+
+def apply_env_paths(payload: dict, env: str | None) -> dict:
+    if not env:
+        return payload
+
+    env_paths = load_repo_env_paths(env)
+    payload = dict(payload)
+    config = dict(payload.get("config", {}))
+    old_paths = dict(config.get("paths", {}))
+    eval_utils._warn_path_divergence(old_paths, env_paths, env)
+    merged_paths = {**old_paths, **env_paths}
+    config["paths"] = merged_paths
+    payload["config"] = config
+    print(f"Using paths from env={env}: {ENV_CONFIG_ROOT / f'{env}.yaml'}")
+    return payload
+
+
 def _filter_model_dict(data: Any, keep_models: list[str]) -> Any:
     if not isinstance(data, dict):
         return data
@@ -316,23 +354,31 @@ def run_model_set(
     encoding_root_map: dict[str, Path] | None,
 ) -> None:
     result_dir = args.selection_root / model_set
-    payload = eval_utils.load_selection_payload(result_dir)
+    payload = apply_env_paths(eval_utils.load_selection_payload(result_dir), args.env)
     original_models = list(payload["model_names"])
-    available_models = available_random_models(args.random_feature_dir, original_models)
-    missing = sorted(set(original_models) - set(available_models))
-    if missing and args.strict_random_models:
-        raise FileNotFoundError(
-            f"{model_set}: random feature cache is missing {len(missing)} models: {missing}"
-        )
-    if missing:
-        print(
-            f"[{model_set}] WARNING: dropping {len(missing)} models missing from "
-            f"{args.random_feature_dir}: {missing}"
-        )
-    if len(available_models) < 2:
-        raise RuntimeError(f"{model_set}: need at least 2 models after random-cache filtering")
 
-    payload = filter_payload_to_models(payload, available_models)
+    if args.random_feature_dir is None:
+        available_models = original_models
+        missing: list[str] = []
+        random_feature_source = f"candidate_pool:env-{args.env}" if args.env else "candidate_pool:payload_paths"
+    else:
+        available_models = available_random_models(args.random_feature_dir, original_models)
+        missing = sorted(set(original_models) - set(available_models))
+        if missing and args.strict_random_models:
+            raise FileNotFoundError(
+                f"{model_set}: random feature cache is missing {len(missing)} models: {missing}"
+            )
+        if missing:
+            print(
+                f"[{model_set}] WARNING: dropping {len(missing)} models missing from "
+                f"{args.random_feature_dir}: {missing}"
+            )
+        if len(available_models) < 2:
+            raise RuntimeError(f"{model_set}: need at least 2 models after random-cache filtering")
+
+        payload = filter_payload_to_models(payload, available_models)
+        random_feature_source = f"local_random_pool:{args.random_feature_dir}"
+
     config_payload = payload.get("config", {})
     metric = args.metric or config_payload.get("metric", "cosine")
     corr_type = args.corr_type or config_payload.get("corr_type", "spearman")
@@ -354,6 +400,7 @@ def run_model_set(
                 "included" if model in available_models else "missing_random_pool_feature"
                 for model in original_models
             ],
+            "random_feature_source": random_feature_source,
         }
     ).to_csv(out_dir / "model_roster.csv", index=False)
 
@@ -387,7 +434,7 @@ def run_model_set(
 
         discrim_df["model_set"] = model_set
         discrim_df["recovery_orientation"] = ORIENTATION
-        discrim_df["random_feature_source"] = str(args.random_feature_dir)
+        discrim_df["random_feature_source"] = random_feature_source
         discrim_df["n_models"] = len(available_models)
         all_discrim_rows.append(discrim_df)
 
@@ -396,7 +443,7 @@ def run_model_set(
                 "track": track_name,
                 "model_set": model_set,
                 "recovery_orientation": ORIENTATION,
-                "random_feature_source": str(args.random_feature_dir),
+                "random_feature_source": random_feature_source,
                 "n_models": len(available_models),
                 **{
                     key: value
@@ -435,8 +482,31 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--tracks", default="raw," + ",".join(ENCODING_TRACKS))
     parser.add_argument("--selection-root", type=Path, default=SELECTION_ROOT)
     parser.add_argument("--output-root", type=Path, default=DEFAULT_RESULTS)
-    parser.add_argument("--random-feature-dir", type=Path, default=DEFAULT_RANDOM_FEATURE_DIR)
-    parser.add_argument("--strict-random-models", action="store_true")
+    parser.add_argument(
+        "--env",
+        choices=eval_utils.VALID_ENVS,
+        default=None,
+        help=(
+            "Override payload paths with the repo env config under "
+            "00_stimulus_selection/resources/configs/paths/{env}.yaml. "
+            "Use --env raven for the full Raven candidate-pool rerun."
+        ),
+    )
+    parser.add_argument(
+        "--random-feature-dir",
+        type=Path,
+        default=None,
+        help=(
+            "Optional debug-only local .npz random-feature cache. Omit this for the "
+            "proper candidate-pool baseline loaded from the payload/env paths. "
+            f"Local smoke-test cache, if present: {DEFAULT_RANDOM_FEATURE_DIR}"
+        ),
+    )
+    parser.add_argument(
+        "--strict-random-models",
+        action="store_true",
+        help="Fail if --random-feature-dir is provided and is missing any selected model.",
+    )
     parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--n-random-subsets", type=int, default=50)
@@ -460,13 +530,14 @@ def main() -> None:
     args.tracks = [item.strip() for item in args.tracks.split(",") if item.strip()]
     args.selection_root = args.selection_root.resolve()
     args.output_root = args.output_root.resolve()
-    args.random_feature_dir = args.random_feature_dir.resolve()
+    if args.random_feature_dir is not None:
+        args.random_feature_dir = args.random_feature_dir.resolve()
 
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
     disc.N_BOOTSTRAP_DEFAULT = int(args.n_bootstrap)
 
-    if not args.random_feature_dir.exists():
+    if args.random_feature_dir is not None and not args.random_feature_dir.exists():
         raise FileNotFoundError(f"Random feature directory not found: {args.random_feature_dir}")
 
     device = torch.device(args.device)
@@ -476,7 +547,11 @@ def main() -> None:
         torch.set_float32_matmul_precision("high")
 
     install_orientation_patch()
-    install_random_pool_loader(args.random_feature_dir)
+    if args.random_feature_dir is None:
+        print("Using candidate-pool random baseline from payload/env paths")
+    else:
+        install_random_pool_loader(args.random_feature_dir)
+        print(f"Using debug local random-feature cache: {args.random_feature_dir}")
 
     encoding_root_map = None
     if args.unique_encodings:

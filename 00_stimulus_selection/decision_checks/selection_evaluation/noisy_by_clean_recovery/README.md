@@ -17,19 +17,35 @@ Outputs are written locally under:
 - `results/<model_set>_noisy_by_clean_boot/`
 - `figures/noisy_by_clean_recovery.{pdf,png}`
 
-The local workspace does not contain the old cluster memmap paths from the
-selection payloads, so the compute wrapper can load random-baseline features from
-`shared/cache_or_heavy/natural_pool_subset_10k`.
+For the proper Raven rerun, use the original candidate pool via the Raven path
+config. Do not pass `--random-feature-dir`:
 
-Run completed in this workspace with:
-
-```text
-n_random_subsets = 10
-n_noise_samples = 50
-n_bootstrap = 100
+```bash
+export CSTIMS_SHARE_ROOT="$PWD"
+bash 00_stimulus_selection/decision_checks/selection_evaluation/noisy_by_clean_recovery/code/run_noisy_by_clean_recovery.sh \
+  --env raven \
+  --n-random-subsets 50 \
+  --n-noise-samples 100 \
+  --n-bootstrap 1000
 ```
 
-The verified local natural-pool cache is incomplete for two dataset models and
-one legacy all-models-only model. The compute output therefore writes
-`model_roster.csv` in each model-set result directory; in this run `all_models`
-uses 18 cached models and `dataset` uses 3 cached models.
+That uses:
+
+- selection payloads from `00_stimulus_selection/results/selected_stimuli/`
+- random-baseline features from the candidate pool in
+  `00_stimulus_selection/resources/configs/paths/raven.yaml`
+- unique per-subject encoding roots from `shared/code/paper_helpers/config.py`
+
+The wrapper keeps `--random-feature-dir` only for local smoke tests with cached
+`.npz` features:
+
+```bash
+bash 00_stimulus_selection/decision_checks/selection_evaluation/noisy_by_clean_recovery/code/run_noisy_by_clean_recovery.sh \
+  --random-feature-dir shared/cache_or_heavy/natural_pool_subset_10k \
+  --n-random-subsets 10 \
+  --n-noise-samples 50 \
+  --n-bootstrap 100
+```
+
+Existing small-cache outputs in this directory are not the full candidate-pool
+rerun; the Raven command above overwrites them.
