@@ -17,17 +17,27 @@ Outputs are written locally under:
 - `results/<model_set>_noisy_by_clean_boot/`
 - `figures/noisy_by_clean_recovery.{pdf,png}`
 
-For the proper Raven rerun, use the original candidate pool via the Raven path
-config. Do not pass `--random-feature-dir`:
+For the proper Raven rerun, submit the model-set jobs through the same SLURM
+wrapper pattern as the original evaluation. Do not pass `--random-feature-dir`:
 
 ```bash
-export CSTIMS_SHARE_ROOT="$PWD"
-bash 00_stimulus_selection/decision_checks/selection_evaluation/noisy_by_clean_recovery/code/run_noisy_by_clean_recovery.sh \
-  --env raven \
-  --n-random-subsets 50 \
-  --n-noise-samples 100 \
-  --n-bootstrap 1000
+bash 00_stimulus_selection/decision_checks/selection_evaluation/noisy_by_clean_recovery/code/run_noisy_by_clean_recovery_slurm.sh
 ```
+
+By default this uses `/u/rothj/laion_natural/scripts/start_as_slurm_job.py`.
+If Raven has a different wrapper path, set `CSTIMS_SLURM_WRAPPER` first.
+
+The submitter uses the original unique-evaluation parameters:
+
+- `env = raven`
+- `which_selection = final`
+- `n_random_subsets = 50`
+- `n_noise_samples = 100`
+- `n_bootstrap = 500`
+- `seed = 42`
+- metric/correlation from the payload config, with the original fallbacks
+  `cosine`/`spearman`
+- unique per-subject encodings
 
 That uses:
 
@@ -35,6 +45,12 @@ That uses:
 - random-baseline features from the candidate pool in
   `00_stimulus_selection/resources/configs/paths/raven.yaml`
 - unique per-subject encoding roots from `shared/code/paper_helpers/config.py`
+
+After all five jobs finish, generate the plot:
+
+```bash
+python 00_stimulus_selection/decision_checks/selection_evaluation/noisy_by_clean_recovery/code/plot_noisy_by_clean_recovery.py
+```
 
 The wrapper keeps `--random-feature-dir` only for local smoke tests with cached
 `.npz` features:
