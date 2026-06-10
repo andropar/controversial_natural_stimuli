@@ -56,6 +56,7 @@ DEFAULT_RANDOM_FEATURE_DIR = ROOT / "shared" / "cache_or_heavy" / "natural_pool_
 SELECTION_ROOT = ROOT / "00_stimulus_selection" / "results" / "selected_stimuli"
 ORIENTATION = "noisy_by_clean"
 ENV_CONFIG_ROOT = ROOT / "00_stimulus_selection" / "resources" / "configs" / "paths"
+PAIRWISE_METRIC_CALLS: list[dict[str, np.ndarray]] = []
 
 
 def load_disc_module():
@@ -106,19 +107,44 @@ def _multiclass_error_dict(model_score: torch.Tensor) -> dict:
     }
 
 
-def _bootstrap_error_probs_from_scores(
+def _score_metrics_from_scores(
     scores: torch.Tensor,
     n_bootstrap: int,
     generator: torch.Generator,
-) -> np.ndarray:
+) -> dict[str, Any]:
     scores_cpu = scores.cpu()
     n_draws, n_models, _ = scores_cpu.shape
     detected = torch.argmax(scores_cpu, dim=2)
     true_idx = torch.arange(n_models).unsqueeze(0)
     correct = (detected == true_idx).float()
+
+    diag_scores = scores_cpu.diagonal(dim1=1, dim2=2)
+    pairwise_margin = diag_scores.unsqueeze(2) - scores_cpu
+    off_diag_mask = ~torch.eye(n_models, dtype=torch.bool)
+    pairwise_margin = pairwise_margin[:, off_diag_mask]
+    pairwise_dominance = (
+        (pairwise_margin > 0).float()
+        + 0.5 * torch.isclose(pairwise_margin, torch.zeros_like(pairwise_margin)).float()
+    )
+
+    point_error = float(1.0 - correct.mean().item())
+    point_dominance = float(pairwise_dominance.mean().item())
+    point_margin = float(pairwise_margin.mean().item())
+
     idx = torch.randint(0, n_draws, (n_bootstrap, n_draws), generator=generator)
     boot_acc = correct[idx].mean(dim=(1, 2))
-    return (1.0 - boot_acc).numpy()
+    boot_dominance = pairwise_dominance[idx].mean(dim=(1, 2))
+    boot_margin = pairwise_margin[idx].mean(dim=(1, 2))
+
+    return {
+        "error_prob": point_error,
+        "pairwise_dominance": point_dominance,
+        "pairwise_error_prob": 1.0 - point_dominance,
+        "mean_margin": point_margin,
+        "error_prob_boot": (1.0 - boot_acc).numpy(),
+        "pairwise_dominance_boot": boot_dominance.numpy(),
+        "mean_margin_boot": boot_margin.numpy(),
+    }
 
 
 def compute_discriminability_by_noise_level_noisy_by_clean(
@@ -148,6 +174,11 @@ def compute_discriminability_by_noise_level_noisy_by_clean(
 
     n_levels = len(noise_level_multipliers)
     bootstrap_error_probs = np.empty((n_levels, n_bootstrap), dtype=np.float64)
+    pairwise_dominance = np.empty(n_levels, dtype=np.float64)
+    pairwise_error_prob = np.empty(n_levels, dtype=np.float64)
+    mean_margin = np.empty(n_levels, dtype=np.float64)
+    pairwise_dominance_boot = np.empty((n_levels, n_bootstrap), dtype=np.float64)
+    mean_margin_boot = np.empty((n_levels, n_bootstrap), dtype=np.float64)
     discriminability_by_noise_level: list[dict] = []
 
     clean_norm = _normalize_for_correlation(rdms.unsqueeze(0), corr_type)
@@ -165,15 +196,36 @@ def compute_discriminability_by_noise_level_noisy_by_clean(
         )
         noised_norm = _normalize_for_correlation(noised_rdms, corr_type)
         scores = _correlate_normalized(noised_norm, clean_norm)
+        metrics = _score_metrics_from_scores(scores, n_bootstrap, boot_gen)
 
-        discriminability_by_noise_level.append(_multiclass_error_dict(scores))
-        bootstrap_error_probs[level_idx] = _bootstrap_error_probs_from_scores(
-            scores, n_bootstrap, boot_gen
+        discriminability_by_noise_level.append(
+            {
+                "non_parametric_multiclass_error_prob": metrics["error_prob"],
+                "non_parametric_pairwise_error_prob": metrics["pairwise_error_prob"],
+                "pairwise_dominance": metrics["pairwise_dominance"],
+                "mean_margin": metrics["mean_margin"],
+            }
         )
+        bootstrap_error_probs[level_idx] = metrics["error_prob_boot"]
+        pairwise_dominance[level_idx] = metrics["pairwise_dominance"]
+        pairwise_error_prob[level_idx] = metrics["pairwise_error_prob"]
+        mean_margin[level_idx] = metrics["mean_margin"]
+        pairwise_dominance_boot[level_idx] = metrics["pairwise_dominance_boot"]
+        mean_margin_boot[level_idx] = metrics["mean_margin_boot"]
 
-        del noised_rdms, noised_norm, scores
+        del noised_rdms, noised_norm, scores, metrics
 
     del clean_norm
+    PAIRWISE_METRIC_CALLS.append(
+        {
+            "noise_mult": np.asarray(noise_level_multipliers, dtype=float),
+            "pairwise_dominance": pairwise_dominance,
+            "pairwise_error_prob": pairwise_error_prob,
+            "mean_margin": mean_margin,
+            "pairwise_dominance_boot": pairwise_dominance_boot,
+            "mean_margin_boot": mean_margin_boot,
+        }
+    )
     return discriminability_by_noise_level, bootstrap_error_probs
 
 
@@ -347,6 +399,210 @@ def append_corr_rows(
                 )
 
 
+def _ci(values: np.ndarray) -> tuple[float, float]:
+    return float(np.quantile(values, 0.025)), float(np.quantile(values, 0.975))
+
+
+def _bootstrap_auc(
+    values_boot: np.ndarray,
+    noise_mult: np.ndarray,
+) -> np.ndarray:
+    sort_idx = np.argsort(noise_mult.astype(float))
+    x_sorted = noise_mult[sort_idx]
+    return np.asarray(
+        [
+            disc.compute_auc(x_sorted, values_boot[sort_idx, boot_idx])
+            for boot_idx in range(values_boot.shape[1])
+        ],
+        dtype=np.float64,
+    )
+
+
+def append_pairwise_rows(
+    rows: list[dict],
+    auc_rows: list[dict],
+    calls: list[dict[str, np.ndarray]],
+    *,
+    model_set: str,
+    track: dict,
+    metric: str,
+    corr_type: str,
+    target_nc: float,
+    random_feature_source: str,
+    n_models: int,
+) -> None:
+    if not calls:
+        return
+
+    selected = calls[0]
+    random_calls = calls[1:]
+    noise_mult = selected["noise_mult"]
+    track_name = track["name"]
+    track_type = track.get("type", "identity")
+
+    selected_dom_auc = disc.compute_auc(noise_mult, selected["pairwise_dominance"])
+    selected_margin_auc = disc.compute_auc(noise_mult, selected["mean_margin"])
+    selected_dom_auc_boot = _bootstrap_auc(
+        selected["pairwise_dominance_boot"], noise_mult
+    )
+    selected_margin_auc_boot = _bootstrap_auc(selected["mean_margin_boot"], noise_mult)
+
+    if random_calls:
+        random_dom = np.stack([call["pairwise_dominance"] for call in random_calls])
+        random_margin = np.stack([call["mean_margin"] for call in random_calls])
+        random_dom_boot = np.stack(
+            [call["pairwise_dominance_boot"] for call in random_calls]
+        )
+        random_margin_boot = np.stack(
+            [call["mean_margin_boot"] for call in random_calls]
+        )
+        random_dom_mean = random_dom.mean(axis=0)
+        random_margin_mean = random_margin.mean(axis=0)
+        random_dom_subset_std = random_dom.std(axis=0, ddof=1)
+        random_margin_subset_std = random_margin.std(axis=0, ddof=1)
+        random_dom_mc_std = random_dom_boot.mean(axis=0).std(axis=1, ddof=1)
+        random_margin_mc_std = random_margin_boot.mean(axis=0).std(axis=1, ddof=1)
+        random_dom_auc_per_subset = np.asarray(
+            [disc.compute_auc(noise_mult, curve) for curve in random_dom],
+            dtype=np.float64,
+        )
+        random_margin_auc_per_subset = np.asarray(
+            [disc.compute_auc(noise_mult, curve) for curve in random_margin],
+            dtype=np.float64,
+        )
+        random_dom_auc_boot = _bootstrap_auc(random_dom_boot.mean(axis=0), noise_mult)
+        random_margin_auc_boot = _bootstrap_auc(
+            random_margin_boot.mean(axis=0), noise_mult
+        )
+    else:
+        random_dom_mean = np.full_like(noise_mult, np.nan, dtype=np.float64)
+        random_margin_mean = np.full_like(noise_mult, np.nan, dtype=np.float64)
+        random_dom_subset_std = np.full_like(noise_mult, np.nan, dtype=np.float64)
+        random_margin_subset_std = np.full_like(noise_mult, np.nan, dtype=np.float64)
+        random_dom_mc_std = np.full_like(noise_mult, np.nan, dtype=np.float64)
+        random_margin_mc_std = np.full_like(noise_mult, np.nan, dtype=np.float64)
+        random_dom_auc_per_subset = np.asarray([np.nan], dtype=np.float64)
+        random_margin_auc_per_subset = np.asarray([np.nan], dtype=np.float64)
+        random_dom_auc_boot = np.asarray([np.nan], dtype=np.float64)
+        random_margin_auc_boot = np.asarray([np.nan], dtype=np.float64)
+
+    for level_idx, multiplier in enumerate(noise_mult):
+        noise_ceiling = disc.multiplier_to_noise_ceiling(float(multiplier), target_nc)
+        dom_lo, dom_hi = _ci(selected["pairwise_dominance_boot"][level_idx])
+        margin_lo, margin_hi = _ci(selected["mean_margin_boot"][level_idx])
+
+        rows.append(
+            {
+                "track": track_name,
+                "track_type": track_type,
+                "metric": metric,
+                "corr_type": corr_type,
+                "noise_mult": multiplier,
+                "noise_ceiling": noise_ceiling,
+                "subset_type": "selected",
+                "pairwise_dominance": selected["pairwise_dominance"][level_idx],
+                "pairwise_dominance_subset_std": np.nan,
+                "pairwise_dominance_mc_std": selected["pairwise_dominance_boot"][
+                    level_idx
+                ].std(ddof=1),
+                "pairwise_dominance_mc_ci_lo": dom_lo,
+                "pairwise_dominance_mc_ci_hi": dom_hi,
+                "pairwise_error_prob": 1.0
+                - selected["pairwise_dominance"][level_idx],
+                "mean_margin": selected["mean_margin"][level_idx],
+                "mean_margin_subset_std": np.nan,
+                "mean_margin_mc_std": selected["mean_margin_boot"][level_idx].std(
+                    ddof=1
+                ),
+                "mean_margin_mc_ci_lo": margin_lo,
+                "mean_margin_mc_ci_hi": margin_hi,
+                "model_set": model_set,
+                "recovery_orientation": ORIENTATION,
+                "random_feature_source": random_feature_source,
+                "n_models": n_models,
+            }
+        )
+
+        rows.append(
+            {
+                "track": track_name,
+                "track_type": track_type,
+                "metric": metric,
+                "corr_type": corr_type,
+                "noise_mult": multiplier,
+                "noise_ceiling": noise_ceiling,
+                "subset_type": "random",
+                "pairwise_dominance": random_dom_mean[level_idx],
+                "pairwise_dominance_subset_std": random_dom_subset_std[level_idx],
+                "pairwise_dominance_mc_std": random_dom_mc_std[level_idx],
+                "pairwise_dominance_mc_ci_lo": np.nan,
+                "pairwise_dominance_mc_ci_hi": np.nan,
+                "pairwise_error_prob": 1.0 - random_dom_mean[level_idx],
+                "mean_margin": random_margin_mean[level_idx],
+                "mean_margin_subset_std": random_margin_subset_std[level_idx],
+                "mean_margin_mc_std": random_margin_mc_std[level_idx],
+                "mean_margin_mc_ci_lo": np.nan,
+                "mean_margin_mc_ci_hi": np.nan,
+                "model_set": model_set,
+                "recovery_orientation": ORIENTATION,
+                "random_feature_source": random_feature_source,
+                "n_models": n_models,
+            }
+        )
+
+    dom_lo, dom_hi = _ci(selected_dom_auc_boot)
+    margin_lo, margin_hi = _ci(selected_margin_auc_boot)
+    auc_rows.append(
+        {
+            "track": track_name,
+            "model_set": model_set,
+            "recovery_orientation": ORIENTATION,
+            "random_feature_source": random_feature_source,
+            "n_models": n_models,
+            "selected_pairwise_dominance_auc": selected_dom_auc,
+            "selected_pairwise_dominance_auc_mc_std": selected_dom_auc_boot.std(
+                ddof=1
+            ),
+            "selected_pairwise_dominance_auc_mc_ci_lo": dom_lo,
+            "selected_pairwise_dominance_auc_mc_ci_hi": dom_hi,
+            "random_pairwise_dominance_auc_mean": random_dom_auc_per_subset.mean(),
+            "random_pairwise_dominance_auc_subset_std": random_dom_auc_per_subset.std(
+                ddof=1
+            ),
+            "random_pairwise_dominance_auc_mc_std": random_dom_auc_boot.std(ddof=1),
+            "selected_mean_margin_auc": selected_margin_auc,
+            "selected_mean_margin_auc_mc_std": selected_margin_auc_boot.std(ddof=1),
+            "selected_mean_margin_auc_mc_ci_lo": margin_lo,
+            "selected_mean_margin_auc_mc_ci_hi": margin_hi,
+            "random_mean_margin_auc_mean": random_margin_auc_per_subset.mean(),
+            "random_mean_margin_auc_subset_std": random_margin_auc_per_subset.std(
+                ddof=1
+            ),
+            "random_mean_margin_auc_mc_std": random_margin_auc_boot.std(ddof=1),
+            "pairwise_dominance_auc_z_score": (
+                (selected_dom_auc - random_dom_auc_per_subset.mean())
+                / random_dom_auc_per_subset.std(ddof=1)
+                if random_dom_auc_per_subset.std(ddof=1) > 0
+                else float("nan")
+            ),
+            "mean_margin_auc_z_score": (
+                (selected_margin_auc - random_margin_auc_per_subset.mean())
+                / random_margin_auc_per_subset.std(ddof=1)
+                if random_margin_auc_per_subset.std(ddof=1) > 0
+                else float("nan")
+            ),
+            "pairwise_dominance_p_value_empirical": (
+                (int(np.sum(random_dom_auc_per_subset >= selected_dom_auc)) + 1)
+                / (len(random_dom_auc_per_subset) + 1)
+            ),
+            "mean_margin_p_value_empirical": (
+                (int(np.sum(random_margin_auc_per_subset >= selected_margin_auc)) + 1)
+                / (len(random_margin_auc_per_subset) + 1)
+            ),
+        }
+    )
+
+
 def run_model_set(
     model_set: str,
     args: argparse.Namespace,
@@ -382,6 +638,7 @@ def run_model_set(
     config_payload = payload.get("config", {})
     metric = args.metric or config_payload.get("metric", "cosine")
     corr_type = args.corr_type or config_payload.get("corr_type", "spearman")
+    target_nc = config_payload.get("noise_ceiling_target", 0.46)
     tracks = [
         track
         for track in eval_utils.get_all_tracks_for_evaluation(payload)
@@ -408,10 +665,13 @@ def run_model_set(
     all_auc_rows = []
     all_noise_rows = []
     all_corr_rows = []
+    all_pairwise_rows = []
+    all_pairwise_auc_rows = []
 
     for track_idx, track in enumerate(tracks):
         track_name = track["name"]
         print(f"\n[{model_set}] track {track_idx + 1}/{len(tracks)}: {track_name}")
+        PAIRWISE_METRIC_CALLS.clear()
         try:
             discrim_df, correlation_info, noise_info, auc_info = (
                 disc.compute_discriminability_for_track(
@@ -431,6 +691,20 @@ def run_model_set(
         except Exception:
             print(f"[{model_set}/{track_name}] ERROR")
             raise
+
+        append_pairwise_rows(
+            all_pairwise_rows,
+            all_pairwise_auc_rows,
+            list(PAIRWISE_METRIC_CALLS),
+            model_set=model_set,
+            track=track,
+            metric=metric,
+            corr_type=corr_type,
+            target_nc=target_nc,
+            random_feature_source=random_feature_source,
+            n_models=len(available_models),
+        )
+        PAIRWISE_METRIC_CALLS.clear()
 
         discrim_df["model_set"] = model_set
         discrim_df["recovery_orientation"] = ORIENTATION
@@ -473,6 +747,8 @@ def run_model_set(
     pd.DataFrame(all_auc_rows).to_csv(out_dir / "auc_significance.csv", index=False)
     pd.DataFrame(all_noise_rows).to_csv(out_dir / "noise_calibration.csv", index=False)
     pd.DataFrame(all_corr_rows).to_csv(out_dir / "correlation_matrices.csv", index=False)
+    pd.DataFrame(all_pairwise_rows).to_csv(out_dir / "pairwise_margin.csv", index=False)
+    pd.DataFrame(all_pairwise_auc_rows).to_csv(out_dir / "pairwise_auc.csv", index=False)
     print(f"[{model_set}] saved {out_dir}")
 
 

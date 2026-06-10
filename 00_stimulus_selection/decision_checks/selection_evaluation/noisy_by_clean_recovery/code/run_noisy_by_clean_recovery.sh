@@ -11,6 +11,7 @@ if [[ -z "${PYTHON:-}" ]]; then
 fi
 SCRIPT="${ROOT}/00_stimulus_selection/decision_checks/selection_evaluation/noisy_by_clean_recovery/code/compute_noisy_by_clean_recovery.py"
 PLOT="${ROOT}/00_stimulus_selection/decision_checks/selection_evaluation/noisy_by_clean_recovery/code/plot_noisy_by_clean_recovery.py"
+PAIRWISE_PLOT="${ROOT}/00_stimulus_selection/decision_checks/selection_evaluation/noisy_by_clean_recovery/code/plot_pairwise_margin.py"
 
 if [[ -n "${CONDA_PREFIX:-}" && -d "${CONDA_PREFIX}/lib" ]]; then
   export LD_LIBRARY_PATH="${CONDA_PREFIX}/lib:${LD_LIBRARY_PATH:-}"
@@ -20,3 +21,4 @@ fi
 
 "${PYTHON}" "${SCRIPT}" "$@"
 "${PYTHON}" "${PLOT}"
+"${PYTHON}" "${PAIRWISE_PLOT}"

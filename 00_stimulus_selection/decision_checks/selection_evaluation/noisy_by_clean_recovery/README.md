@@ -16,6 +16,7 @@ Outputs are written locally under:
 
 - `results/<model_set>_noisy_by_clean_boot/`
 - `figures/noisy_by_clean_recovery.{pdf,png}`
+- `figures/pairwise_dominance_margin_{raw,encoding}.{pdf,png}`
 
 For the proper Raven rerun, submit the model-set jobs through the same SLURM
 wrapper pattern as the original evaluation. Do not pass `--random-feature-dir`:
@@ -50,7 +51,14 @@ After all five jobs finish, generate the plot:
 
 ```bash
 python 00_stimulus_selection/decision_checks/selection_evaluation/noisy_by_clean_recovery/code/plot_noisy_by_clean_recovery.py
+python 00_stimulus_selection/decision_checks/selection_evaluation/noisy_by_clean_recovery/code/plot_pairwise_margin.py
 ```
+
+The pairwise diagnostic writes two additional files in each model-set result
+directory:
+
+- `pairwise_margin.csv`: curves for pairwise dominance and mean correlation margin
+- `pairwise_auc.csv`: AUC summaries for those curves
 
 The wrapper keeps `--random-feature-dir` only for local smoke tests with cached
 `.npz` features:

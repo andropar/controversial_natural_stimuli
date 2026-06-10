@@ -14,6 +14,7 @@ set -euo pipefail
 ROOT=${ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../../../../.." && pwd)}
 SCRIPT="${ROOT}/00_stimulus_selection/decision_checks/selection_evaluation/noisy_by_clean_recovery/code/compute_noisy_by_clean_recovery.py"
 PLOT="${ROOT}/00_stimulus_selection/decision_checks/selection_evaluation/noisy_by_clean_recovery/code/plot_noisy_by_clean_recovery.py"
+PAIRWISE_PLOT="${ROOT}/00_stimulus_selection/decision_checks/selection_evaluation/noisy_by_clean_recovery/code/plot_pairwise_margin.py"
 START_SLURM="${CSTIMS_SLURM_WRAPPER:-/u/rothj/laion_natural/scripts/start_as_slurm_job.py}"
 PYTHON=${PYTHON:-python}
 
@@ -158,4 +159,5 @@ echo "Monitor with: squeue -u \$USER"
 echo ""
 echo "After all jobs finish, generate the figure with:"
 print_command "${PYTHON}" "${PLOT}"
+print_command "${PYTHON}" "${PAIRWISE_PLOT}"
 echo "========================================"
