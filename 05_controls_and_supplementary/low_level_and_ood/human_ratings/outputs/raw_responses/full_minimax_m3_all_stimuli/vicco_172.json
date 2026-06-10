@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_172",
+    "stim_key": "vicco_172",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 172,
+    "file_index": 171,
+    "image_name": "shared_4rep_vicco_172.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_172.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"text_document\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"signage_restaurant\",\n  \"short_caption\": \"A-frame sandwich board advertising Da Franco MBV Pizza with hours and phone number on grass.\",\n  \"main_objects\": [\"sandwich board sign\", \"grass\"],\n  \"possible_interpretations\": [\"advertisement for a pizza restaurant\", \"takeaway food sign\", \"pavement restaurant sign\", \"business information board\"],\n  \"uncertainty_notes\": \"Text is clearly readable; sign type and content are unambiguous.\",\n  \"quality_flags\": []\n}\n```",
+      "response": {
+        "id": "gen-1780319589-7XZ8hkiBdA5oWndNeyXH",
+        "object": "chat.completion",
+        "created": 1780319589,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"text_document\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"signage_restaurant\",\n  \"short_caption\": \"A-frame sandwich board advertising Da Franco MBV Pizza with hours and phone number on grass.\",\n  \"main_objects\": [\"sandwich board sign\", \"grass\"],\n  \"possible_interpretations\": [\"advertisement for a pizza restaurant\", \"takeaway food sign\", \"pavement restaurant sign\", \"business information board\"],\n  \"uncertainty_notes\": \"Text is clearly readable; sign type and content are unambiguous.\",\n  \"quality_flags\": []\n}\n```",
+              "refusal": null,
+              "reasoning": "The image shows an A-frame sandwich board sign on grass. The sign advertises \"Da Franco MBV Pizza\" with hours \"Montag - Sonntag 11.00 - 22.00 Uhr\" and mentions \"Täglich auch zum Mitnehmen\" (daily also for takeout) with a phone number \"Tel. 0641 / 97 28 45 17\". The sign is placed on a grassy area.\n\nLet me annotate this carefully:\n\n- Recognizability: Very clear - a pizza restaurant sign (5)\n- Ambiguity: Low - clearly a sign for a pizza place (1)\n- Natural photo typicality: It's a natural photo, somewhat typical (4)\n- Visual clutter: Low - just the sign and grass (2)\n- Object centricity: The sign is the central object (4)\n- Scene centricity: Not really a scene, more object-focused (2)\n- Caption confidence: High (5)\n\nObjects: sandwich board sign, grass\nContains text: yes\nOutdoor scene: yes (grass visible)\nNo person, face, animal, vehicle, food visible directly\nNo artificial/rendered content (it's a real photo of a real sign)\nNo occlusion/truncation\nNo unusual viewpoint\nSingle main object\n\nDominant content: text_document or object? It's a sign with text, so could be \"object\" or \"text_document\". The sign is a physical object with text. I'll go with \"object\" since it's a sandwich board sign photographed in context.\n\nActually, considering the main content is the text on the sign, \"text_document\" might be more appropriate, but the sign itself is the physical object. I'll go with \"object\".\n\nImage style: natural_photo\nSemantic domain: signage/restaurant advertisement\n\nShort caption: A-frame sign advertising Da Franco MBV Pizza restaurant with opening hours and phone number on grass.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows an A-frame sandwich board sign on grass. The sign advertises \"Da Franco MBV Pizza\" with hours \"Montag - Sonntag 11.00 - 22.00 Uhr\" and mentions \"Täglich auch zum Mitnehmen\" (daily also for takeout) with a phone number \"Tel. 0641 / 97 28 45 17\". The sign is placed on a grassy area.\n\nLet me annotate this carefully:\n\n- Recognizability: Very clear - a pizza restaurant sign (5)\n- Ambiguity: Low - clearly a sign for a pizza place (1)\n- Natural photo typicality: It's a natural photo, somewhat typical (4)\n- Visual clutter: Low - just the sign and grass (2)\n- Object centricity: The sign is the central object (4)\n- Scene centricity: Not really a scene, more object-focused (2)\n- Caption confidence: High (5)\n\nObjects: sandwich board sign, grass\nContains text: yes\nOutdoor scene: yes (grass visible)\nNo person, face, animal, vehicle, food visible directly\nNo artificial/rendered content (it's a real photo of a real sign)\nNo occlusion/truncation\nNo unusual viewpoint\nSingle main object\n\nDominant content: text_document or object? It's a sign with text, so could be \"object\" or \"text_document\". The sign is a physical object with text. I'll go with \"object\" since it's a sandwich board sign photographed in context.\n\nActually, considering the main content is the text on the sign, \"text_document\" might be more appropriate, but the sign itself is the physical object. I'll go with \"object\".\n\nImage style: natural_photo\nSemantic domain: signage/restaurant advertisement\n\nShort caption: A-frame sign advertising Da Franco MBV Pizza restaurant with opening hours and phone number on grass.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 716,
+          "total_tokens": 2238,
+          "cost": 0.00116556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00116556,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008592
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 422,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_18",
+    "stim_key": "training_objective_18",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 18,
+    "file_index": 18,
+    "image_name": "image_0018.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0018.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 3, \"ambiguity\": 2, \"natural_photo_typicality\": 2, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 4, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": true, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"mixed\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"equestrian\", \"short_caption\": \"Equestrian rider in formal attire sitting on a brown horse in an indoor arena\", \"main_objects\": [\"rider\", \"horse\", \"equestrian helmet\", \"arena railings\", \"advertising banners\"], \"possible_interpretations\": [\"equestrian show competition\", \"horseback riding training\", \"hunter or dressage class\"], \"uncertainty_notes\": \"Image is heavily washed out with very low contrast and faded appearance, making fine details hard to discern. Partial text on banners is legible but cropped.\", \"quality_flags\": [\"low_contrast\", \"faded\", \"overexposed\", \"hazy\"]}",
+      "response": {
+        "id": "gen-1780319226-BXslYiJRPPNxn6hoqcAA",
+        "object": "chat.completion",
+        "created": 1780319226,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 3, \"ambiguity\": 2, \"natural_photo_typicality\": 2, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 4, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": true, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"mixed\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"equestrian\", \"short_caption\": \"Equestrian rider in formal attire sitting on a brown horse in an indoor arena\", \"main_objects\": [\"rider\", \"horse\", \"equestrian helmet\", \"arena railings\", \"advertising banners\"], \"possible_interpretations\": [\"equestrian show competition\", \"horseback riding training\", \"hunter or dressage class\"], \"uncertainty_notes\": \"Image is heavily washed out with very low contrast and faded appearance, making fine details hard to discern. Partial text on banners is legible but cropped.\", \"quality_flags\": [\"low_contrast\", \"faded\", \"overexposed\", \"hazy\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see a person riding a horse, wearing equestrian attire (helmet, dark jacket, light pants/boots). The image appears to be very washed out or faded - it has a very low contrast, overexposed, or hazy appearance. There's some text visible in the background that appears to be advertising banners, and metal railings suggesting an indoor or covered arena.\n\nLet me annotate based on the schema:\n\n- recognizability: Despite the washed-out quality, the main content (person on horse) is recognizable. I'd say 3-4.\n- ambiguity: Low ambiguity - it's clearly a person riding a horse in an equestrian setting. 1-2.\n- natural_photo_typicality: The washed-out/faded appearance is atypical for a natural photo. 2.\n- visual_clutter: There's the rider, horse, background railings, banners with text. Moderate clutter. 3.\n- object_centricity: The rider and horse dominate the image. 4.\n- scene_centricity: It's somewhat scene-based (equestrian arena). 3.\n- caption_confidence: Pretty confident about what's shown despite the quality issues. 4.\n\n- contains_person: true\n- contains_face: true (face is visible)\n- contains_animal: true (horse)\n- contains_text: true (banners in background)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (appears to be an indoor arena)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (person and horse)\n\ndominant_content_type: \"person_face\" or \"mixed\" - it's a person on an animal. I'd say \"person_face\" since the person is the main subject, but actually \"mixed\" might be more appropriate given the horse is also prominent.\n\nimage_style: \"natural_photo\" despite the washed-out look\nsemantic_domain: \"equestrian\" or \"sports\"\n\nshort_caption: \"Person in equestrian attire riding a horse in an arena\"\nmain_objects: [\"rider\", \"horse\", \"arena railings\", \"advertising banners\"]\npossible_interpretations: [\"equestrian competition\", \"horseback riding lesson\", \"equestrian show\"]\nuncertainty_notes: \"Image is heavily washed out/faded with low contrast\"\nquality_flags: [\"low_contrast\", \"faded\", \"overexposed\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see a person riding a horse, wearing equestrian attire (helmet, dark jacket, light pants/boots). The image appears to be very washed out or faded - it has a very low contrast, overexposed, or hazy appearance. There's some text visible in the background that appears to be advertising banners, and metal railings suggesting an indoor or covered arena.\n\nLet me annotate based on the schema:\n\n- recognizability: Despite the washed-out quality, the main content (person on horse) is recognizable. I'd say 3-4.\n- ambiguity: Low ambiguity - it's clearly a person riding a horse in an equestrian setting. 1-2.\n- natural_photo_typicality: The washed-out/faded appearance is atypical for a natural photo. 2.\n- visual_clutter: There's the rider, horse, background railings, banners with text. Moderate clutter. 3.\n- object_centricity: The rider and horse dominate the image. 4.\n- scene_centricity: It's somewhat scene-based (equestrian arena). 3.\n- caption_confidence: Pretty confident about what's shown despite the quality issues. 4.\n\n- contains_person: true\n- contains_face: true (face is visible)\n- contains_animal: true (horse)\n- contains_text: true (banners in background)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (appears to be an indoor arena)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (person and horse)\n\ndominant_content_type: \"person_face\" or \"mixed\" - it's a person on an animal. I'd say \"person_face\" since the person is the main subject, but actually \"mixed\" might be more appropriate given the horse is also prominent.\n\nimage_style: \"natural_photo\" despite the washed-out look\nsemantic_domain: \"equestrian\" or \"sports\"\n\nshort_caption: \"Person in equestrian attire riding a horse in an arena\"\nmain_objects: [\"rider\", \"horse\", \"arena railings\", \"advertising banners\"]\npossible_interpretations: [\"equestrian competition\", \"horseback riding lesson\", \"equestrian show\"]\nuncertainty_notes: \"Image is heavily washed out/faded with low contrast\"\nquality_flags: [\"low_contrast\", \"faded\", \"overexposed\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1467,
+          "completion_tokens": 867,
+          "total_tokens": 2334,
+          "cost": 0.00113178,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1453,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00113178,
+            "upstream_inference_prompt_cost": 9.138e-05,
+            "upstream_inference_completions_cost": 0.0010404
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 585,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

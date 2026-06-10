@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_237",
+    "stim_key": "vicco_237",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 237,
+    "file_index": 236,
+    "image_name": "shared_4rep_vicco_237.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_237.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: Missing required fields: ['contains_unusual_viewpoint']"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"farm_animal_care\",\n  \"short_caption\": \"A person grooming a horned goat with a wooden bristle brush on a farm\",\n  \"main_objects\": [\"goat\", \"brush\", \"hand\", \"floral jacket\"],\n  \"possible_interpretations\": [\"person grooming a goat\", \"child caring for a farm animal\", \"someone brushing livestock\"],\n  \"uncertainty_notes\": \"Animal's face and most of body are out of frame; only horn, neck, and back visible\",\n  \"quality_flags\": [\"subject_truncation\", \"closeup_framing\"]\n}",
+      "response": {
+        "id": "gen-1780319690-Y7bG6S2jp3DYDIzhWZ1B",
+        "object": "chat.completion",
+        "created": 1780319690,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"farm_animal_care\",\n  \"short_caption\": \"A person grooming a horned goat with a wooden bristle brush on a farm\",\n  \"main_objects\": [\"goat\", \"brush\", \"hand\", \"floral jacket\"],\n  \"possible_interpretations\": [\"person grooming a goat\", \"child caring for a farm animal\", \"someone brushing livestock\"],\n  \"uncertainty_notes\": \"Animal's face and most of body are out of frame; only horn, neck, and back visible\",\n  \"quality_flags\": [\"subject_truncation\", \"closeup_framing\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- A close-up of a person (child's hand visible) brushing/grooming a goat or similar horned animal\n- The animal is black with brown/tan markings and has large curved horns\n- There's a wooden-handled brush with natural bristles\n- The person is wearing a floral patterned jacket/sleeve (dark blue with pink, white, and yellow flowers)\n- Background shows what appears to be a wooden structure/fence\n- This appears to be an outdoor or farm setting\n\nLet me annotate this:\n\n- recognizability: 4 - clearly recognizable as grooming an animal\n- ambiguity: 2 - pretty clear what's happening\n- natural_photo_typicality: 4 - looks like a natural photo\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 3 - the action of brushing is central\n- scene_centricity: 2 - it's more about the action than a scene\n- caption_confidence: 4 - can describe it well\n\n- estimated_salient_object_count: 3 (hand, brush, animal)\n- estimated_distinct_object_categories: 3 (person part, brush, animal)\n\n- contains_person: true (partial - hand and arm)\n- contains_face: false\n- contains_animal: true (goat)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true (farm setting)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (animal's face is cut off, person's body cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"animal\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"farm_animal_care\"\n\n- short_caption: \"Person brushing a black and brown goat with a wooden brush at a farm\"\n- main_objects: [\"goat\", \"brush\", \"hand\", \"floral jacket\"]\n- possible_interpretations: [\"person grooming a goat\", \"child caring for farm animal\", \"someone brushing livestock\"]\n- uncertainty_notes: \"Animal is partially out of frame, only horn and back visible\"\n- quality_flags: [\"partial_occlusion\", \"subject_truncation\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- A close-up of a person (child's hand visible) brushing/grooming a goat or similar horned animal\n- The animal is black with brown/tan markings and has large curved horns\n- There's a wooden-handled brush with natural bristles\n- The person is wearing a floral patterned jacket/sleeve (dark blue with pink, white, and yellow flowers)\n- Background shows what appears to be a wooden structure/fence\n- This appears to be an outdoor or farm setting\n\nLet me annotate this:\n\n- recognizability: 4 - clearly recognizable as grooming an animal\n- ambiguity: 2 - pretty clear what's happening\n- natural_photo_typicality: 4 - looks like a natural photo\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 3 - the action of brushing is central\n- scene_centricity: 2 - it's more about the action than a scene\n- caption_confidence: 4 - can describe it well\n\n- estimated_salient_object_count: 3 (hand, brush, animal)\n- estimated_distinct_object_categories: 3 (person part, brush, animal)\n\n- contains_person: true (partial - hand and arm)\n- contains_face: false\n- contains_animal: true (goat)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true (farm setting)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (animal's face is cut off, person's body cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"animal\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"farm_animal_care\"\n\n- short_caption: \"Person brushing a black and brown goat with a wooden brush at a farm\"\n- main_objects: [\"goat\", \"brush\", \"hand\", \"floral jacket\"]\n- possible_interpretations: [\"person grooming a goat\", \"child caring for farm animal\", \"someone brushing livestock\"]\n- uncertainty_notes: \"Animal is partially out of frame, only horn and back visible\"\n- quality_flags: [\"partial_occlusion\", \"subject_truncation\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 845,
+          "total_tokens": 2383,
+          "cost": 0.00132516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00132516,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.001014
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 540,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

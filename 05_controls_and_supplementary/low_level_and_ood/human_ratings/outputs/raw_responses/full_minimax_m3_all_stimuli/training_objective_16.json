@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_16",
+    "stim_key": "training_objective_16",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 16,
+    "file_index": 16,
+    "image_name": "image_0016.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0016.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 5, \"scene_centricity\": 1, \"caption_confidence\": 5, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"home and garden\", \"short_caption\": \"Hands holding a small potted snake plant in a mountain-patterned ceramic planter\", \"main_objects\": [\"ceramic planter with mountain design\", \"snake plant (Sansevieria)\", \"hands\", \"knit sweater\"], \"possible_interpretations\": [\"A person displaying a small houseplant in a decorative ceramic pot\", \"A handcrafted mountain-themed planter holding a young snake plant\", \"A lifestyle photo of indoor gardening decor\"], \"uncertainty_notes\": \"The person holding the pot is cropped, so only hands are visible. Plant species identification as Sansevieria/snake plant is moderately confident based on leaf shape and variegation.\", \"quality_flags\": [\"person_truncated\"]}",
+      "response": {
+        "id": "gen-1780319221-3TkZdtao0xwgXCFHxQ0B",
+        "object": "chat.completion",
+        "created": 1780319221,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 5, \"scene_centricity\": 1, \"caption_confidence\": 5, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"home and garden\", \"short_caption\": \"Hands holding a small potted snake plant in a mountain-patterned ceramic planter\", \"main_objects\": [\"ceramic planter with mountain design\", \"snake plant (Sansevieria)\", \"hands\", \"knit sweater\"], \"possible_interpretations\": [\"A person displaying a small houseplant in a decorative ceramic pot\", \"A handcrafted mountain-themed planter holding a young snake plant\", \"A lifestyle photo of indoor gardening decor\"], \"uncertainty_notes\": \"The person holding the pot is cropped, so only hands are visible. Plant species identification as Sansevieria/snake plant is moderately confident based on leaf shape and variegation.\", \"quality_flags\": [\"person_truncated\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- A ceramic planter/pot with a mountain landscape design (white top with gray/light blue mountains, black bottom)\n- Inside the pot, there's a small plant - appears to be a snake plant (Sansevieria) with its characteristic upright variegated green leaves\n- The pot is being held by two hands (visible at the bottom of the frame)\n- The background is a gray knitted/textured fabric, likely a sweater\n- There's some moss/deco material visible in the pot\n\nLet me assess the dimensions:\n\n1. Recognizability: Very clear - it's a potted plant being held. 5\n2. Ambiguity: Low ambiguity, clear subject. 1\n3. Natural_photo_typicality: Looks like a typical product/lifestyle photo. 4\n4. Visual_clutter: Moderate - the pot has a design, the plant, hands, sweater background. 3\n5. Object_centricity: The planter with plant is the clear central object. 5\n6. Scene_centricity: Not really a scene, more of an object. 1\n7. Caption_confidence: High - easy to describe. 5\n\nSalient objects: planter/pot, plant (snake plant), hands, sweater\nDistinct categories: 3-4 (planter, plant, hand/clothing)\n\nFlags:\n- contains_person: true (hands visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: likely true (indoor setting)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the person holding is cut off, sweater fills background)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (one main: pot with plant)\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: home/garden/decor\n\nShort caption: \"Hands holding a small potted snake plant in a mountain-patterned ceramic planter\"\n\nMain objects: ceramic planter, snake plant, hands, knit sweater\n\nPossible interpretations: \"A small houseplant in a decorative ceramic pot\", \"A person displaying a handcrafted planter with a snake plant\"\n\nUncertainty notes: The person holding is mostly cropped out, only hands visible. The plant species identification (snake plant/Sansevieria) is reasonably confident.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- A ceramic planter/pot with a mountain landscape design (white top with gray/light blue mountains, black bottom)\n- Inside the pot, there's a small plant - appears to be a snake plant (Sansevieria) with its characteristic upright variegated green leaves\n- The pot is being held by two hands (visible at the bottom of the frame)\n- The background is a gray knitted/textured fabric, likely a sweater\n- There's some moss/deco material visible in the pot\n\nLet me assess the dimensions:\n\n1. Recognizability: Very clear - it's a potted plant being held. 5\n2. Ambiguity: Low ambiguity, clear subject. 1\n3. Natural_photo_typicality: Looks like a typical product/lifestyle photo. 4\n4. Visual_clutter: Moderate - the pot has a design, the plant, hands, sweater background. 3\n5. Object_centricity: The planter with plant is the clear central object. 5\n6. Scene_centricity: Not really a scene, more of an object. 1\n7. Caption_confidence: High - easy to describe. 5\n\nSalient objects: planter/pot, plant (snake plant), hands, sweater\nDistinct categories: 3-4 (planter, plant, hand/clothing)\n\nFlags:\n- contains_person: true (hands visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: likely true (indoor setting)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the person holding is cut off, sweater fills background)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (one main: pot with plant)\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: home/garden/decor\n\nShort caption: \"Hands holding a small potted snake plant in a mountain-patterned ceramic planter\"\n\nMain objects: ceramic planter, snake plant, hands, knit sweater\n\nPossible interpretations: \"A small houseplant in a decorative ceramic pot\", \"A person displaying a handcrafted planter with a snake plant\"\n\nUncertainty notes: The person holding is mostly cropped out, only hands visible. The plant species identification (snake plant/Sansevieria) is reasonably confident.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 881,
+          "total_tokens": 2403,
+          "cost": 0.00136356,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00136356,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010572
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 583,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

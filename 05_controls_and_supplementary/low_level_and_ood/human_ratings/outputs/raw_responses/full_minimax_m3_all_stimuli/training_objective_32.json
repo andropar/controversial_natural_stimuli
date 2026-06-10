@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_32",
+    "stim_key": "training_objective_32",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 32,
+    "file_index": 32,
+    "image_name": "image_0032.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0032.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"political_event\",\n  \"short_caption\": \"Syrian flags, soldiers on a rooftop, and a large portrait banner at an outdoor political rally with a crowd.\",\n  \"main_objects\": [\"syrian_flags\", \"soldiers\", \"portrait_banner\", \"building\", \"crowd\", \"sky\"],\n  \"possible_interpretations\": [\"Syrian government political rally\", \"military commemoration event\", \"public pro-government demonstration\", \"military parade staging area\", \"national holiday gathering\"],\n  \"uncertainty_notes\": \"Identity of the person in the poster is not certain; exact event/occasion is unclear; number of crowd members not precisely countable.\",\n  \"quality_flags\": [\"foreground_crowd_occludes_lower_scene\", \"low_angle_viewpoint\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319316-iSg841EV0201zy3wP83s",
+        "object": "chat.completion",
+        "created": 1780319316,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"political_event\",\n  \"short_caption\": \"Syrian flags, soldiers on a rooftop, and a large portrait banner at an outdoor political rally with a crowd.\",\n  \"main_objects\": [\"syrian_flags\", \"soldiers\", \"portrait_banner\", \"building\", \"crowd\", \"sky\"],\n  \"possible_interpretations\": [\"Syrian government political rally\", \"military commemoration event\", \"public pro-government demonstration\", \"military parade staging area\", \"national holiday gathering\"],\n  \"uncertainty_notes\": \"Identity of the person in the poster is not certain; exact event/occasion is unclear; number of crowd members not precisely countable.\",\n  \"quality_flags\": [\"foreground_crowd_occludes_lower_scene\", \"low_angle_viewpoint\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- Two soldiers/military personnel standing on the roof of a building\n- Multiple Syrian flags (red, white, black with green stars) hanging in the upper portion\n- A large Syrian flag draped on the building facade\n- Portraits/posters of what appears to be a military figure (likely Bashar al-Assad or a military commander) wearing sunglasses\n- A crowd of people in the foreground (silhouettes/back of heads)\n- Clear blue sky background\n- The building appears to be under construction or damaged (rebar visible)\n- This looks like a political/military rally or gathering in Syria\n\nLet me annotate according to the schema:\n\n- Recognizability: High - clearly a political/military gathering with Syrian flags\n- Ambiguity: Low - pretty clear what's happening\n- Natural photo typicality: High - looks like a real photo\n- Visual clutter: Medium-high - many elements (flags, people, portraits, soldiers, building)\n- Object centricity: Low - it's more of a scene\n- Scene centricity: High - shows a place/event\n- Caption confidence: High\n\nSalient objects: soldiers, flags, portraits, building, crowd\nObject categories: soldiers, flags, posters, building, people (crowd)\n\nContains person: yes (crowd, soldiers, person in poster)\nContains face: yes (poster face, possibly soldier faces)\nContains animal: no\nContains text: no (no readable text, though posters have images)\nContains vehicle: no\nContains food: no\nIndoor: no\nOutdoor: yes\nArtificial/rendered: no\nOcclusion/truncation: yes (crowd is partially visible from behind)\nUnusual viewpoint: slightly (looking up at roof)\nMultiple main objects: yes (soldiers, flags, crowd, posters)\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: political_event / military_gathering\n\nShort caption: Syrian flags, soldiers on rooftop, and a large portrait banner at an outdoor political rally with a crowd.\n\nMain objects: Syrian flags, soldiers, portrait banner, building, crowd\n\nPossible interpretations: Syrian government rally, military event, public political gathering\n\nUncertainty: exact identity of person in poster, specific event",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- Two soldiers/military personnel standing on the roof of a building\n- Multiple Syrian flags (red, white, black with green stars) hanging in the upper portion\n- A large Syrian flag draped on the building facade\n- Portraits/posters of what appears to be a military figure (likely Bashar al-Assad or a military commander) wearing sunglasses\n- A crowd of people in the foreground (silhouettes/back of heads)\n- Clear blue sky background\n- The building appears to be under construction or damaged (rebar visible)\n- This looks like a political/military rally or gathering in Syria\n\nLet me annotate according to the schema:\n\n- Recognizability: High - clearly a political/military gathering with Syrian flags\n- Ambiguity: Low - pretty clear what's happening\n- Natural photo typicality: High - looks like a real photo\n- Visual clutter: Medium-high - many elements (flags, people, portraits, soldiers, building)\n- Object centricity: Low - it's more of a scene\n- Scene centricity: High - shows a place/event\n- Caption confidence: High\n\nSalient objects: soldiers, flags, portraits, building, crowd\nObject categories: soldiers, flags, posters, building, people (crowd)\n\nContains person: yes (crowd, soldiers, person in poster)\nContains face: yes (poster face, possibly soldier faces)\nContains animal: no\nContains text: no (no readable text, though posters have images)\nContains vehicle: no\nContains food: no\nIndoor: no\nOutdoor: yes\nArtificial/rendered: no\nOcclusion/truncation: yes (crowd is partially visible from behind)\nUnusual viewpoint: slightly (looking up at roof)\nMultiple main objects: yes (soldiers, flags, crowd, posters)\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: political_event / military_gathering\n\nShort caption: Syrian flags, soldiers on rooftop, and a large portrait banner at an outdoor political rally with a crowd.\n\nMain objects: Syrian flags, soldiers, portrait banner, building, crowd\n\nPossible interpretations: Syrian government rally, military event, public political gathering\n\nUncertainty: exact identity of person in poster, specific event",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 850,
+          "total_tokens": 2264,
+          "cost": 0.0011082,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1400,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0011082,
+            "upstream_inference_prompt_cost": 8.82e-05,
+            "upstream_inference_completions_cost": 0.00102
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 570,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

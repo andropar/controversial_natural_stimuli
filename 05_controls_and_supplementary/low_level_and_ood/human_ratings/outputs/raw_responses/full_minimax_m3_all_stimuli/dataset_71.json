@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_71",
+    "stim_key": "dataset_71",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 71,
+    "file_index": 71,
+    "image_name": "image_0071.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0071.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"still life decor\",\n  \"short_caption\": \"Styled tabletop arrangement of white flowers, greenery, lit taper candles, and small fruits on a white tablecloth.\",\n  \"main_objects\": [\"floral arrangement\", \"taper candles\", \"candleholders\", \"small green fruits\", \"tablecloth\"],\n  \"possible_interpretations\": [\"wedding reception centerpiece\", \"editorial still life photograph\", \"home decor table setting\", \"romantic dinner table\"],\n  \"uncertainty_notes\": \"The round objects may be decorative gourds or fruit; image is clearly styled and could be from a wedding or editorial shoot.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319041-lvp3X2ZXACHXAi8xn2Vv",
+        "object": "chat.completion",
+        "created": 1780319041,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"still life decor\",\n  \"short_caption\": \"Styled tabletop arrangement of white flowers, greenery, lit taper candles, and small fruits on a white tablecloth.\",\n  \"main_objects\": [\"floral arrangement\", \"taper candles\", \"candleholders\", \"small green fruits\", \"tablecloth\"],\n  \"possible_interpretations\": [\"wedding reception centerpiece\", \"editorial still life photograph\", \"home decor table setting\", \"romantic dinner table\"],\n  \"uncertainty_notes\": \"The round objects may be decorative gourds or fruit; image is clearly styled and could be from a wedding or editorial shoot.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a still life arrangement on a table. There's a floral centerpiece with white and pale pink flowers, greenery, branches with small berries, and several lit candles (taper candles in brass holders and what appears to be a small votive/bowl candle). There are also some round fruits/objects that look like green apples or similar. The background is a plain, light-colored wall, giving it a minimalist, editorial feel.\n\nLet me rate the various dimensions:\n\n- recognizability: The image is quite recognizable as a styled floral/candle arrangement. 4-5.\n- ambiguity: Low ambiguity - it's clearly a styled still life. 1-2.\n- natural_photo_typicality: This looks like a natural photograph, but it's very stylized/editorial. 4.\n- visual_clutter: Low to moderate - the arrangement is detailed but against a plain background. 2.\n- object_centricity: The arrangement is the central object, but it's more of a scene/tableau. 3.\n- scene_centricity: It's more of a still life composition than a place/scene. 2-3.\n- caption_confidence: High confidence for a concise caption. 4-5.\n\nCategories:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: There appear to be some fruits (green apples/persimmons). Could be decorative or food. Let me say false since they seem decorative.\n- contains_indoor_scene: true (appears to be indoors against a wall)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (it's one arrangement)\n\nSalient objects: floral arrangement, candles (3-4), fruits (2-3), brass candleholders\nDistinct categories: flowers, candles, fruits, candleholders, table = about 4-5\n\nDominant content type: object (still life arrangement)\nImage style: natural_photo (though stylized, appears to be a photograph)\nSemantic domain: still life / home decor\n\nLet me finalize my ratings.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a still life arrangement on a table. There's a floral centerpiece with white and pale pink flowers, greenery, branches with small berries, and several lit candles (taper candles in brass holders and what appears to be a small votive/bowl candle). There are also some round fruits/objects that look like green apples or similar. The background is a plain, light-colored wall, giving it a minimalist, editorial feel.\n\nLet me rate the various dimensions:\n\n- recognizability: The image is quite recognizable as a styled floral/candle arrangement. 4-5.\n- ambiguity: Low ambiguity - it's clearly a styled still life. 1-2.\n- natural_photo_typicality: This looks like a natural photograph, but it's very stylized/editorial. 4.\n- visual_clutter: Low to moderate - the arrangement is detailed but against a plain background. 2.\n- object_centricity: The arrangement is the central object, but it's more of a scene/tableau. 3.\n- scene_centricity: It's more of a still life composition than a place/scene. 2-3.\n- caption_confidence: High confidence for a concise caption. 4-5.\n\nCategories:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: There appear to be some fruits (green apples/persimmons). Could be decorative or food. Let me say false since they seem decorative.\n- contains_indoor_scene: true (appears to be indoors against a wall)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (it's one arrangement)\n\nSalient objects: floral arrangement, candles (3-4), fruits (2-3), brass candleholders\nDistinct categories: flowers, candles, fruits, candleholders, table = about 4-5\n\nDominant content type: object (still life arrangement)\nImage style: natural_photo (though stylized, appears to be a photograph)\nSemantic domain: still life / home decor\n\nLet me finalize my ratings.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 836,
+          "total_tokens": 2358,
+          "cost": 0.00130956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00130956,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010032
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 541,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

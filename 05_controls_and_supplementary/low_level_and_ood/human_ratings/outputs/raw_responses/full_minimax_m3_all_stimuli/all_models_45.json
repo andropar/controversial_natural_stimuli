@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_45",
+    "stim_key": "all_models_45",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 45,
+    "file_index": 45,
+    "image_name": "image_0045.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0045.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"fashion_clothing\",\n  \"short_caption\": \"Person wearing a white tiered lace dress photographed from behind against a textured wall.\",\n  \"main_objects\": [\"white lace dress\", \"person\"],\n  \"possible_interpretations\": [\"fashion product photo\", \"e-commerce listing\", \"editorial fashion shoot\"],\n  \"uncertainty_notes\": \"Head is cropped out; only torso and skirt fully visible. Setting is minimal and studio-like.\",\n  \"quality_flags\": [\"head_truncated\", \"back_view_only\"]\n}",
+      "response": {
+        "id": "gen-1780318784-ON8o51vZTihV6aqkT5hD",
+        "object": "chat.completion",
+        "created": 1780318784,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"fashion_clothing\",\n  \"short_caption\": \"Person wearing a white tiered lace dress photographed from behind against a textured wall.\",\n  \"main_objects\": [\"white lace dress\", \"person\"],\n  \"possible_interpretations\": [\"fashion product photo\", \"e-commerce listing\", \"editorial fashion shoot\"],\n  \"uncertainty_notes\": \"Head is cropped out; only torso and skirt fully visible. Setting is minimal and studio-like.\",\n  \"quality_flags\": [\"head_truncated\", \"back_view_only\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a person wearing a white lace dress with tiered skirt details. The person is photographed from behind, showing the back of the dress. The dress has long sleeves with lace/eyelet cutout details and a long tiered skirt with similar lace details. The background is a textured white/cream wall. The person appears to be wearing white shoes.\n\nLet me analyze this image for the schema:\n\n- Recognizability: The dress is clearly recognizable as a white lace dress. 4\n- Ambiguity: Low ambiguity - it's clearly a dress. 1\n- Natural photo typicality: Looks like a fashion/product photo, staged. 3\n- Visual clutter: Minimal clutter, mostly the dress against a plain wall. 2\n- Object centrality: The dress is the central focus. 4\n- Scene centrality: Not really a scene, more product-focused. 2\n- Caption confidence: High confidence in describing it. 5\n\nSalient objects: 1 (the dress)\nDistinct object categories: 1 (dress/clothing)\nContains person: yes (partially visible from behind)\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: yes (indoor setting)\nContains outdoor scene: no\nContains artificial or rendered: no\nContains occlusion/truncation: yes (head is cut off)\nContains unusual viewpoint: somewhat (back view, but common for fashion)\nContains multiple main objects: no\n\nDominant content type: object (the dress)\nImage style: natural_photo (though it's a product/fashion photo)\nSemantic domain: fashion/clothing\n\nShort caption: \"Woman wearing a white tiered lace dress photographed from behind\"\nMain objects: white lace dress, person\nPossible interpretations: fashion product photo, editorial fashion shoot, e-commerce listing",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a person wearing a white lace dress with tiered skirt details. The person is photographed from behind, showing the back of the dress. The dress has long sleeves with lace/eyelet cutout details and a long tiered skirt with similar lace details. The background is a textured white/cream wall. The person appears to be wearing white shoes.\n\nLet me analyze this image for the schema:\n\n- Recognizability: The dress is clearly recognizable as a white lace dress. 4\n- Ambiguity: Low ambiguity - it's clearly a dress. 1\n- Natural photo typicality: Looks like a fashion/product photo, staged. 3\n- Visual clutter: Minimal clutter, mostly the dress against a plain wall. 2\n- Object centrality: The dress is the central focus. 4\n- Scene centrality: Not really a scene, more product-focused. 2\n- Caption confidence: High confidence in describing it. 5\n\nSalient objects: 1 (the dress)\nDistinct object categories: 1 (dress/clothing)\nContains person: yes (partially visible from behind)\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: yes (indoor setting)\nContains outdoor scene: no\nContains artificial or rendered: no\nContains occlusion/truncation: yes (head is cut off)\nContains unusual viewpoint: somewhat (back view, but common for fashion)\nContains multiple main objects: no\n\nDominant content type: object (the dress)\nImage style: natural_photo (though it's a product/fashion photo)\nSemantic domain: fashion/clothing\n\nShort caption: \"Woman wearing a white tiered lace dress photographed from behind\"\nMain objects: white lace dress, person\nPossible interpretations: fashion product photo, editorial fashion shoot, e-commerce listing",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 714,
+          "total_tokens": 2236,
+          "cost": 0.00128604,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00128604,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008568
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 452,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

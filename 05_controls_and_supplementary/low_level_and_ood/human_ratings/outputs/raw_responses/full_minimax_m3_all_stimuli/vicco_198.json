@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_198",
+    "stim_key": "vicco_198",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 198,
+    "file_index": 197,
+    "image_name": "shared_4rep_vicco_198.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_198.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_street\",\n  \"short_caption\": \"Sideways urban street scene with a building, parked car, bare tree, and a discarded washing machine on the sidewalk.\",\n  \"main_objects\": [\"building\", \"car\", \"tree\", \"washing machine\", \"metal fence\", \"street\"],\n  \"possible_interpretations\": [\"urban street scene\", \"abandoned appliance on curb\", \"rotated city block photo\", \"winter day in a city\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees clockwise. A white appliance near the curb could be a washing machine or similar household item, possibly discarded.\",\n  \"quality_flags\": [\"rotated_orientation\"]\n}",
+      "response": {
+        "id": "gen-1780319617-26bElYC431d1mOYHubMK",
+        "object": "chat.completion",
+        "created": 1780319617,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_street\",\n  \"short_caption\": \"Sideways urban street scene with a building, parked car, bare tree, and a discarded washing machine on the sidewalk.\",\n  \"main_objects\": [\"building\", \"car\", \"tree\", \"washing machine\", \"metal fence\", \"street\"],\n  \"possible_interpretations\": [\"urban street scene\", \"abandoned appliance on curb\", \"rotated city block photo\", \"winter day in a city\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees clockwise. A white appliance near the curb could be a washing machine or similar household item, possibly discarded.\",\n  \"quality_flags\": [\"rotated_orientation\"]\n}",
+              "refusal": null,
+              "reasoning": "The image appears to be rotated 90 degrees (sideways). Let me analyze it carefully.\n\nThe image shows an outdoor urban scene with:\n- A building (appears to be a multi-story building with windows and architectural details)\n- A car parked on the street\n- A bare tree\n- What appears to be a washing machine or similar appliance placed on the sidewalk/curb area\n- A metal fence/railing\n- A street with road markings (white lines)\n- Clear blue sky\n\nThe image is rotated sideways. The main elements include a building, a parked car, a tree, a discarded appliance (possibly a washing machine), and a street.\n\nLet me annotate:\n\n- recognizability: 3 (the rotation makes it harder to recognize, but the content is identifiable)\n- ambiguity: 3 (multiple possible interpretations due to rotation and what looks like a discarded appliance)\n- natural_photo_typicality: 4 (looks like a typical street photo, though rotated)\n- visual_clutter: 3 (moderate clutter with building, car, tree, appliance, fence)\n- object_centricity: 2 (no single dominant object)\n- scene_centricity: 4 (it's mainly a street/scene)\n- caption_confidence: 3 (rotation makes captioning less confident)\n\n- estimated_salient_object_count: 4 (building, car, tree, appliance)\n- estimated_distinct_object_categories: 4 (building, vehicle, tree, appliance)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: true\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the rotation causes parts to be cut off)\n- contains_unusual_viewpoint: true (rotated 90 degrees)\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"urban_street\"\n\n- short_caption: \"A sideways view of an urban street with a building, parked car, tree, and a discarded washing machine on the sidewalk.\"\n- main_objects: [\"building\", \"car\", \"tree\", \"washing machine\", \"fence\", \"street\"]\n- possible_interpretations: [\"urban street scene\", \"abandoned appliance on curb\", \"rotated photo of city block\", \"winter day in the city\"]\n- uncertainty_notes: \"Image is rotated 90 degrees clockwise, making orientation ambiguous. A white appliance (possibly washing machine) sits near the curb, suggesting it may be discarded.\"\n- quality_flags: [\"rotated_orientation\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image appears to be rotated 90 degrees (sideways). Let me analyze it carefully.\n\nThe image shows an outdoor urban scene with:\n- A building (appears to be a multi-story building with windows and architectural details)\n- A car parked on the street\n- A bare tree\n- What appears to be a washing machine or similar appliance placed on the sidewalk/curb area\n- A metal fence/railing\n- A street with road markings (white lines)\n- Clear blue sky\n\nThe image is rotated sideways. The main elements include a building, a parked car, a tree, a discarded appliance (possibly a washing machine), and a street.\n\nLet me annotate:\n\n- recognizability: 3 (the rotation makes it harder to recognize, but the content is identifiable)\n- ambiguity: 3 (multiple possible interpretations due to rotation and what looks like a discarded appliance)\n- natural_photo_typicality: 4 (looks like a typical street photo, though rotated)\n- visual_clutter: 3 (moderate clutter with building, car, tree, appliance, fence)\n- object_centricity: 2 (no single dominant object)\n- scene_centricity: 4 (it's mainly a street/scene)\n- caption_confidence: 3 (rotation makes captioning less confident)\n\n- estimated_salient_object_count: 4 (building, car, tree, appliance)\n- estimated_distinct_object_categories: 4 (building, vehicle, tree, appliance)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: true\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the rotation causes parts to be cut off)\n- contains_unusual_viewpoint: true (rotated 90 degrees)\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"urban_street\"\n\n- short_caption: \"A sideways view of an urban street with a building, parked car, tree, and a discarded washing machine on the sidewalk.\"\n- main_objects: [\"building\", \"car\", \"tree\", \"washing machine\", \"fence\", \"street\"]\n- possible_interpretations: [\"urban street scene\", \"abandoned appliance on curb\", \"rotated photo of city block\", \"winter day in the city\"]\n- uncertainty_notes: \"Image is rotated 90 degrees clockwise, making orientation ambiguous. A white appliance (possibly washing machine) sits near the curb, suggesting it may be discarded.\"\n- quality_flags: [\"rotated_orientation\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 939,
+          "total_tokens": 2461,
+          "cost": 0.00143316,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00143316,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011268
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 643,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

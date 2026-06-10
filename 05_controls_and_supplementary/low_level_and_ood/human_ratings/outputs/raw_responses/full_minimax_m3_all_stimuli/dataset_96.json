@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_96",
+    "stim_key": "dataset_96",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 96,
+    "file_index": 96,
+    "image_name": "image_0096.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0096.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"furniture\",\n  \"short_caption\": \"Wooden corner china cabinet with glass doors displaying ceramic teacups, saucers, and a pitcher.\",\n  \"main_objects\": [\"wooden display cabinet\", \"ceramic teacups\", \"saucers\", \"porcelain pitcher\", \"decorative plates\"],\n  \"possible_interpretations\": [\"corner curio cabinet with dishware\", \"wooden display hutch with porcelain\", \"china cabinet against a gray wall\"],\n  \"uncertainty_notes\": \"Image is clear and well-lit; all items inside cabinet are easily identifiable.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319065-9hDgnDoiuVIAjXLsrAwu",
+        "object": "chat.completion",
+        "created": 1780319065,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"furniture\",\n  \"short_caption\": \"Wooden corner china cabinet with glass doors displaying ceramic teacups, saucers, and a pitcher.\",\n  \"main_objects\": [\"wooden display cabinet\", \"ceramic teacups\", \"saucers\", \"porcelain pitcher\", \"decorative plates\"],\n  \"possible_interpretations\": [\"corner curio cabinet with dishware\", \"wooden display hutch with porcelain\", \"china cabinet against a gray wall\"],\n  \"uncertainty_notes\": \"Image is clear and well-lit; all items inside cabinet are easily identifiable.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a wooden corner display cabinet (china cabinet) with glass doors on top, containing various ceramic items like teacups, saucers, a pitcher/jug, and plates. Below are wooden cabinet doors. The cabinet is placed in a corner against a light gray wall.\n\nLet me annotate this:\n\n- recognizability: 5 - very clearly a display cabinet\n- ambiguity: 1 - very unambiguous\n- natural_photo_typicality: 4 - looks like a typical product/real photo\n- visual_clutter: 2 - mostly the cabinet with some items inside\n- object_centricity: 5 - cabinet dominates\n- scene_centricity: 1 - not a scene, it's an object\n- caption_confidence: 5\n\nestimated_salient_object_count: 1 (the cabinet)\nestimated_distinct_object_categories: 3 (cabinet, cups, pitcher)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: object\nimage_style: natural_photo\nsemantic_domain: furniture\n\nshort_caption: \"Wooden corner china cabinet displaying ceramic teacups, saucers, and a pitcher behind glass doors.\"\n\nmain_objects: [\"wooden display cabinet\", \"ceramic teacups\", \"saucers\", \"pitcher\", \"plates\"]\n\npossible_interpretations: [\"corner china cabinet with dishware\", \"display hutch with porcelain\", \"wooden corner curio cabinet\"]\n\nuncertainty_notes: \"Image is clean and well-lit; items inside cabinet clearly visible.\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a wooden corner display cabinet (china cabinet) with glass doors on top, containing various ceramic items like teacups, saucers, a pitcher/jug, and plates. Below are wooden cabinet doors. The cabinet is placed in a corner against a light gray wall.\n\nLet me annotate this:\n\n- recognizability: 5 - very clearly a display cabinet\n- ambiguity: 1 - very unambiguous\n- natural_photo_typicality: 4 - looks like a typical product/real photo\n- visual_clutter: 2 - mostly the cabinet with some items inside\n- object_centricity: 5 - cabinet dominates\n- scene_centricity: 1 - not a scene, it's an object\n- caption_confidence: 5\n\nestimated_salient_object_count: 1 (the cabinet)\nestimated_distinct_object_categories: 3 (cabinet, cups, pitcher)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: object\nimage_style: natural_photo\nsemantic_domain: furniture\n\nshort_caption: \"Wooden corner china cabinet displaying ceramic teacups, saucers, and a pitcher behind glass doors.\"\n\nmain_objects: [\"wooden display cabinet\", \"ceramic teacups\", \"saucers\", \"pitcher\", \"plates\"]\n\npossible_interpretations: [\"corner china cabinet with dishware\", \"display hutch with porcelain\", \"wooden corner curio cabinet\"]\n\nuncertainty_notes: \"Image is clean and well-lit; items inside cabinet clearly visible.\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 747,
+          "total_tokens": 2269,
+          "cost": 0.00120276,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00120276,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008964
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 437,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

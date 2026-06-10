@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_161",
+    "stim_key": "vicco_161",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 161,
+    "file_index": 160,
+    "image_name": "shared_4rep_vicco_161.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_161.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 5,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 18,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"kitchen\",\n  \"short_caption\": \"Overhead view of a kitchen drawer filled with assorted utensils, cutlery, and scissors on a cloth lining.\",\n  \"main_objects\": [\"knives\", \"forks\", \"spoons\", \"scissors\", \"ladle\", \"whisk\", \"peeler\", \"cloth\"],\n  \"possible_interpretations\": [\"kitchen cutlery drawer\", \"junk drawer\", \"utensil storage drawer\", \"kitchen drawer inventory\"],\n  \"uncertainty_notes\": \"Exact count of individual utensils is difficult due to overlapping and occlusion; some items are partially hidden beneath others.\",\n  \"quality_flags\": [\"high_clutter\", \"occlusion\", \"partial_truncation_at_edges\"]\n}",
+      "response": {
+        "id": "gen-1780319574-LewEpOYVeQZTpbfLYMHK",
+        "object": "chat.completion",
+        "created": 1780319574,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 5,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 18,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"kitchen\",\n  \"short_caption\": \"Overhead view of a kitchen drawer filled with assorted utensils, cutlery, and scissors on a cloth lining.\",\n  \"main_objects\": [\"knives\", \"forks\", \"spoons\", \"scissors\", \"ladle\", \"whisk\", \"peeler\", \"cloth\"],\n  \"possible_interpretations\": [\"kitchen cutlery drawer\", \"junk drawer\", \"utensil storage drawer\", \"kitchen drawer inventory\"],\n  \"uncertainty_notes\": \"Exact count of individual utensils is difficult due to overlapping and occlusion; some items are partially hidden beneath others.\",\n  \"quality_flags\": [\"high_clutter\", \"occlusion\", \"partial_truncation_at_edges\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see a kitchen drawer filled with various utensils - knives, forks, spoons, scissors, a ladle, whisks, and other cooking tools. The drawer has a cloth/towel lining. The image appears to be taken from above looking down into the drawer.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - Very clearly recognizable as a kitchen drawer with utensils\n- ambiguity: 1 - Very clear what this is\n- natural_photo_typicality: 4 - Looks like a typical photo, though slightly angled\n- visual_clutter: 5 - Many overlapping utensils\n- object_centricity: 2 - Multiple objects, no single dominant one\n- scene_centricity: 3 - It's more of an object collection in a setting\n- caption_confidence: 5 - Easy to caption\n\nCounts:\n- estimated_salient_object_count: Many utensils, maybe 15-20\n- estimated_distinct_object_categories: knives, forks, spoons, scissors, ladle, whisk, etc. - about 6-7\n\nContains:\n- person: no\n- face: no\n- animal: no\n- text: no\n- vehicle: no\n- food: no\n- indoor_scene: yes (kitchen drawer)\n- outdoor_scene: no\n- artificial_or_rendered: no\n- occlusion_or_truncation: yes (utensils overlap and some are cut off by drawer edge)\n- unusual_viewpoint: no, it's a top-down view which is common\n- multiple_main_objects: yes\n\nDominant content: object (collection of objects)\nImage style: natural_photo\nSemantic domain: kitchen/utensils\n\nCaption: \"Overhead view of a kitchen drawer containing assorted utensils, knives, and scissors on a cloth lining.\"\n\nMain objects: knives, forks, spoons, scissors, ladle, whisk, drawer, cloth\n\nPossible interpretations: kitchen utensil drawer, junk drawer, cutlery drawer\n\nQuality flags: cluttered composition, partial occlusion",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see a kitchen drawer filled with various utensils - knives, forks, spoons, scissors, a ladle, whisks, and other cooking tools. The drawer has a cloth/towel lining. The image appears to be taken from above looking down into the drawer.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - Very clearly recognizable as a kitchen drawer with utensils\n- ambiguity: 1 - Very clear what this is\n- natural_photo_typicality: 4 - Looks like a typical photo, though slightly angled\n- visual_clutter: 5 - Many overlapping utensils\n- object_centricity: 2 - Multiple objects, no single dominant one\n- scene_centricity: 3 - It's more of an object collection in a setting\n- caption_confidence: 5 - Easy to caption\n\nCounts:\n- estimated_salient_object_count: Many utensils, maybe 15-20\n- estimated_distinct_object_categories: knives, forks, spoons, scissors, ladle, whisk, etc. - about 6-7\n\nContains:\n- person: no\n- face: no\n- animal: no\n- text: no\n- vehicle: no\n- food: no\n- indoor_scene: yes (kitchen drawer)\n- outdoor_scene: no\n- artificial_or_rendered: no\n- occlusion_or_truncation: yes (utensils overlap and some are cut off by drawer edge)\n- unusual_viewpoint: no, it's a top-down view which is common\n- multiple_main_objects: yes\n\nDominant content: object (collection of objects)\nImage style: natural_photo\nSemantic domain: kitchen/utensils\n\nCaption: \"Overhead view of a kitchen drawer containing assorted utensils, knives, and scissors on a cloth lining.\"\n\nMain objects: knives, forks, spoons, scissors, ladle, whisk, drawer, cloth\n\nPossible interpretations: kitchen utensil drawer, junk drawer, cutlery drawer\n\nQuality flags: cluttered composition, partial occlusion",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 798,
+          "total_tokens": 2320,
+          "cost": 0.00126396,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126396,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009576
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 459,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

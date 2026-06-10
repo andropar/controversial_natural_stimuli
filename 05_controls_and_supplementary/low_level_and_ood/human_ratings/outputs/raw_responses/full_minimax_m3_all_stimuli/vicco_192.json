@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_192",
+    "stim_key": "vicco_192",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 192,
+    "file_index": 191,
+    "image_name": "shared_4rep_vicco_192.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_192.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 4, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 5, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": true, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"religious shrine\", \"short_caption\": \"White and blue Virgin Mary statue in a rocky grotto surrounded by flowers, candles, and devotional offerings.\", \"main_objects\": [\"statue\", \"rosary\", \"flowers\", \"candles\", \"figurines\"], \"possible_interpretations\": [\"Marian shrine\", \"Catholic pilgrimage grotto\", \"religious devotional site\", \"wayside shrine\", \"outdoor chapel altar\"], \"uncertainty_notes\": \"Top of statue's head is cropped; exact location or specific Marian devotion cannot be identified.\", \"quality_flags\": [\"top of main statue truncated\"]}",
+      "response": {
+        "id": "gen-1780319610-IuNOacC20voLXEw5cVVT",
+        "object": "chat.completion",
+        "created": 1780319610,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 4, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 5, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": true, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"religious shrine\", \"short_caption\": \"White and blue Virgin Mary statue in a rocky grotto surrounded by flowers, candles, and devotional offerings.\", \"main_objects\": [\"statue\", \"rosary\", \"flowers\", \"candles\", \"figurines\"], \"possible_interpretations\": [\"Marian shrine\", \"Catholic pilgrimage grotto\", \"religious devotional site\", \"wayside shrine\", \"outdoor chapel altar\"], \"uncertainty_notes\": \"Top of statue's head is cropped; exact location or specific Marian devotion cannot be identified.\", \"quality_flags\": [\"top of main statue truncated\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a religious statue, likely of the Virgin Mary, set in a rocky grotto or alcove. The statue is wearing white robes with a blue sash and is holding a rosary. Around the base of the statue are various offerings including flowers (pink, white, red), candles, small statues/figurines, and other devotional items. The background is a rough stone/rock wall forming a grotto.\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - Very clearly recognizable as a Marian grotto/shrine\n- ambiguity: 1 - Very clear interpretation\n- natural_photo_typicality: 4 - Looks like a natural photo, though it's a religious shrine\n- visual_clutter: 4 - Many offerings and items around the base\n- object_centricity: 3 - The statue is central but the scene as a whole is prominent\n- scene_centricity: 4 - It's a shrine scene\n- caption_confidence: 5 - Very confident in a caption\n\nEstimated salient object count: ~1 main statue + many offerings\nEstimated distinct object categories: statue, flowers, candles, figurines, rocks (5)\n\ncontains_person: false (it's a statue)\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false (outdoor grotto)\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: true (the statue is artificial)\ncontains_occlusion_or_truncation: true (the top of the statue is cut off)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: object (the statue) - but could also be scene\nimage_style: natural_photo\nsemantic_domain: religious\n\nshort_caption: White and blue statue of Virgin Mary in a rocky grotto surrounded by flowers and offerings.\n\nmain_objects: statue, flowers, candles, rosary, figurines\npossible_interpretations: Marian shrine, religious grotto, Catholic pilgrimage site\nuncertainty_notes: None significant\nquality_flags: statue head partially cut off",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a religious statue, likely of the Virgin Mary, set in a rocky grotto or alcove. The statue is wearing white robes with a blue sash and is holding a rosary. Around the base of the statue are various offerings including flowers (pink, white, red), candles, small statues/figurines, and other devotional items. The background is a rough stone/rock wall forming a grotto.\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - Very clearly recognizable as a Marian grotto/shrine\n- ambiguity: 1 - Very clear interpretation\n- natural_photo_typicality: 4 - Looks like a natural photo, though it's a religious shrine\n- visual_clutter: 4 - Many offerings and items around the base\n- object_centricity: 3 - The statue is central but the scene as a whole is prominent\n- scene_centricity: 4 - It's a shrine scene\n- caption_confidence: 5 - Very confident in a caption\n\nEstimated salient object count: ~1 main statue + many offerings\nEstimated distinct object categories: statue, flowers, candles, figurines, rocks (5)\n\ncontains_person: false (it's a statue)\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false (outdoor grotto)\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: true (the statue is artificial)\ncontains_occlusion_or_truncation: true (the top of the statue is cut off)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: object (the statue) - but could also be scene\nimage_style: natural_photo\nsemantic_domain: religious\n\nshort_caption: White and blue statue of Virgin Mary in a rocky grotto surrounded by flowers and offerings.\n\nmain_objects: statue, flowers, candles, rosary, figurines\npossible_interpretations: Marian shrine, religious grotto, Catholic pilgrimage site\nuncertainty_notes: None significant\nquality_flags: statue head partially cut off",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 775,
+          "total_tokens": 2297,
+          "cost": 0.00123636,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00123636,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.00093
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 521,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

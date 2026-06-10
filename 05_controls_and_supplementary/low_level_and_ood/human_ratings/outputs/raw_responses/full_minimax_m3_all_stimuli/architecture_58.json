@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_58",
+    "stim_key": "architecture_58",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 58,
+    "file_index": 58,
+    "image_name": "image_0058.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0058.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature\",\n  \"short_caption\": \"Three tall palm trees with green fronds against a clear blue sky.\",\n  \"main_objects\": [\"palm trees\", \"sky\", \"bushes\"],\n  \"possible_interpretations\": [\"tropical outdoor scene\", \"palm trees in a park\", \"beach or coastal setting\"],\n  \"uncertainty_notes\": \"None significant; image is straightforward.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318907-uqJRS2URwNdBcJhLtMHc",
+        "object": "chat.completion",
+        "created": 1780318907,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature\",\n  \"short_caption\": \"Three tall palm trees with green fronds against a clear blue sky.\",\n  \"main_objects\": [\"palm trees\", \"sky\", \"bushes\"],\n  \"possible_interpretations\": [\"tropical outdoor scene\", \"palm trees in a park\", \"beach or coastal setting\"],\n  \"uncertainty_notes\": \"None significant; image is straightforward.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows three palm trees against a clear blue sky with some green vegetation at the bottom. Let me analyze each attribute carefully.\n\n- recognizability: Very clear - palm trees against blue sky. 5\n- ambiguity: Very low ambiguity - clearly palm trees. 1\n- natural_photo_typicality: Looks like a typical natural photograph. 5\n- visual_clutter: Not much clutter - just trees, sky, and some bushes. 2\n- object_centricity: The palm trees dominate but there are three of them. 3\n- scene_centricity: This is more of a scene/outdoor view. 4\n- caption_confidence: Easy to caption. 5\n\n- estimated_salient_object_count: 3 palm trees\n- estimated_distinct_object_categories: 1 (palm trees) or 2 (palms + bushes/sky)\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: trees are not really occluded, bottom has some greenery\n- contains_unusual_viewpoint: somewhat low angle but not unusual\n- contains_multiple_main_objects: true (3 palm trees)\n\ndominant_content_type: \"scene\" or \"object\" - could be either, but it's mainly an outdoor scene with palm trees\nimage_style: \"natural_photo\"\nsemantic_domain: \"nature\" or \"outdoor\"\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows three palm trees against a clear blue sky with some green vegetation at the bottom. Let me analyze each attribute carefully.\n\n- recognizability: Very clear - palm trees against blue sky. 5\n- ambiguity: Very low ambiguity - clearly palm trees. 1\n- natural_photo_typicality: Looks like a typical natural photograph. 5\n- visual_clutter: Not much clutter - just trees, sky, and some bushes. 2\n- object_centricity: The palm trees dominate but there are three of them. 3\n- scene_centricity: This is more of a scene/outdoor view. 4\n- caption_confidence: Easy to caption. 5\n\n- estimated_salient_object_count: 3 palm trees\n- estimated_distinct_object_categories: 1 (palm trees) or 2 (palms + bushes/sky)\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: trees are not really occluded, bottom has some greenery\n- contains_unusual_viewpoint: somewhat low angle but not unusual\n- contains_multiple_main_objects: true (3 palm trees)\n\ndominant_content_type: \"scene\" or \"object\" - could be either, but it's mainly an outdoor scene with palm trees\nimage_style: \"natural_photo\"\nsemantic_domain: \"nature\" or \"outdoor\"\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 666,
+          "total_tokens": 2188,
+          "cost": 0.00110556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00110556,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0007992
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 366,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

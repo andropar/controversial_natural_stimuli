@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_98",
+    "stim_key": "architecture_98",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 98,
+    "file_index": 98,
+    "image_name": "image_0098.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0098.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"furniture\",\n  \"short_caption\": \"Pink three-seater sofa photographed against a plain background\",\n  \"main_objects\": [\"sofa\", \"cushions\"],\n  \"possible_interpretations\": [\"pink upholstered sofa\", \"couch in studio product shot\", \"modern living room furniture\"],\n  \"uncertainty_notes\": \"Image is a studio-style product photo with even lighting and neutral background; sofa edges appear cropped on both sides.\",\n  \"quality_flags\": [\"cropped_edges\", \"plain_background\", \"studio_lighting\"]\n}",
+      "response": {
+        "id": "gen-1780318955-K0RHTdSPgc4jgEYSTtua",
+        "object": "chat.completion",
+        "created": 1780318955,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"furniture\",\n  \"short_caption\": \"Pink three-seater sofa photographed against a plain background\",\n  \"main_objects\": [\"sofa\", \"cushions\"],\n  \"possible_interpretations\": [\"pink upholstered sofa\", \"couch in studio product shot\", \"modern living room furniture\"],\n  \"uncertainty_notes\": \"Image is a studio-style product photo with even lighting and neutral background; sofa edges appear cropped on both sides.\",\n  \"quality_flags\": [\"cropped_edges\", \"plain_background\", \"studio_lighting\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a pink sofa/couch in what appears to be a studio product photograph. The sofa has three seat cushions and three back cushions, photographed against a plain light/white background. This is a typical furniture product shot.\n\nLet me annotate this carefully:\n\n- Recognizability: Very clearly a sofa/couch - 5\n- Ambiguity: Low ambiguity, clearly a piece of furniture - 1\n- Natural_photo_typicality: It's a product photo, not a typical natural photo - looks somewhat staged/edited but could be a natural photo of a sofa in a studio - maybe 3\n- Visual_clutter: Very clean, minimal clutter - 1\n- Object_centricity: The sofa is the clear central object - 5\n- Scene_centricity: Not really a scene, it's an object-focused shot - 1\n- Caption_confidence: Very confident - 5\n\n- Estimated salient object count: 1 (the sofa)\n- Estimated distinct object categories: 1 (sofa/furniture)\n\n- Contains person: false\n- Contains face: false\n- Contains animal: false\n- Contains text: false\n- Contains vehicle: false\n- Contains food: false\n- Contains indoor scene: false (it's an object against a plain background, not really a scene)\n- Contains outdoor scene: false\n- Contains artificial or rendered content: possibly, it could be a product render\n- Contains occlusion or truncation: true (the sides are cropped/truncated)\n- Contains unusual viewpoint: false (frontal view)\n- Contains multiple main objects: false\n\n- Dominant content type: object\n- Image style: This could be a natural photo (product shot) or possibly edited/rendered. It looks like a typical furniture product photo - I'll say \"natural_photo\" but it could be \"edited_photo\". Let me go with \"natural_photo\" as it appears to be a photographed product.\n- Semantic domain: furniture\n\n- Short caption: \"Pink three-seater sofa photographed against a plain background\"\n- Main objects: [\"sofa\", \"couch\"]\n- Possible interpretations: just one clear interpretation\n- Uncertainty notes: \"Image appears to be a product photograph with even lighting\"\n- Quality flags: [\"cropped_edges\", \"plain_background\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a pink sofa/couch in what appears to be a studio product photograph. The sofa has three seat cushions and three back cushions, photographed against a plain light/white background. This is a typical furniture product shot.\n\nLet me annotate this carefully:\n\n- Recognizability: Very clearly a sofa/couch - 5\n- Ambiguity: Low ambiguity, clearly a piece of furniture - 1\n- Natural_photo_typicality: It's a product photo, not a typical natural photo - looks somewhat staged/edited but could be a natural photo of a sofa in a studio - maybe 3\n- Visual_clutter: Very clean, minimal clutter - 1\n- Object_centricity: The sofa is the clear central object - 5\n- Scene_centricity: Not really a scene, it's an object-focused shot - 1\n- Caption_confidence: Very confident - 5\n\n- Estimated salient object count: 1 (the sofa)\n- Estimated distinct object categories: 1 (sofa/furniture)\n\n- Contains person: false\n- Contains face: false\n- Contains animal: false\n- Contains text: false\n- Contains vehicle: false\n- Contains food: false\n- Contains indoor scene: false (it's an object against a plain background, not really a scene)\n- Contains outdoor scene: false\n- Contains artificial or rendered content: possibly, it could be a product render\n- Contains occlusion or truncation: true (the sides are cropped/truncated)\n- Contains unusual viewpoint: false (frontal view)\n- Contains multiple main objects: false\n\n- Dominant content type: object\n- Image style: This could be a natural photo (product shot) or possibly edited/rendered. It looks like a typical furniture product photo - I'll say \"natural_photo\" but it could be \"edited_photo\". Let me go with \"natural_photo\" as it appears to be a photographed product.\n- Semantic domain: furniture\n\n- Short caption: \"Pink three-seater sofa photographed against a plain background\"\n- Main objects: [\"sofa\", \"couch\"]\n- Possible interpretations: just one clear interpretation\n- Uncertainty notes: \"Image appears to be a product photograph with even lighting\"\n- Quality flags: [\"cropped_edges\", \"plain_background\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 806,
+          "total_tokens": 2328,
+          "cost": 0.00139644,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139644,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009672
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 540,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

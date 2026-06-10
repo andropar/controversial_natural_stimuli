@@ -11,10 +11,18 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
 
-PAPER = Path(__file__).resolve().parents[1]
-OUT = PAPER / "14_stimulus_characterization" / "results"
+STAGE = Path(__file__).resolve().parents[1]
+SHARE_ROOT = STAGE.parents[2]
+OUT = STAGE / "results"
 OUT.mkdir(parents=True, exist_ok=True)
-STATS = PAPER / "08_image_statistics" / "results" / "image_stats.csv"
+STATS = (
+    SHARE_ROOT
+    / "05_controls_and_supplementary"
+    / "low_level_and_ood"
+    / "image_statistics"
+    / "results"
+    / "image_stats.csv"
+)
 FEATURE_COLS = [
     "lum_mean", "lum_rms", "colorfulness", "lab_chroma_mean", "hue_entropy",
     "sf_slope", "sf_high_low_ratio", "edge_mag_mean", "orient_anisotropy",

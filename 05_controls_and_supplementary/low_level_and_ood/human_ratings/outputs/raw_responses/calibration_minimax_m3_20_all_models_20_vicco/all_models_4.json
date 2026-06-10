@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_4",
+    "stim_key": "all_models_4",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 4,
+    "file_index": 4,
+    "image_name": "image_0004.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0004.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"mountain landscape\",\n  \"short_caption\": \"A hiker points toward snow-capped mountain peaks in a vast mountain landscape\",\n  \"main_objects\": [\"mountain peaks\", \"person\", \"forested slopes\", \"sky\"],\n  \"possible_interpretations\": [\"A trekker admiring and pointing at a mountain range\", \"A scenic viewpoint along a high-altitude trail\", \"A person gesturing toward a distant summit on a hike\"],\n  \"uncertainty_notes\": \"The person's face is not clearly visible; specific mountain location is not identifiable beyond being a high alpine scene.\",\n  \"quality_flags\": [\"person_truncated_at_edge\"]\n}",
+      "response": {
+        "id": "gen-1780317842-5z5bKX3R6Q9bvxM1x7yW",
+        "object": "chat.completion",
+        "created": 1780317842,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"mountain landscape\",\n  \"short_caption\": \"A hiker points toward snow-capped mountain peaks in a vast mountain landscape\",\n  \"main_objects\": [\"mountain peaks\", \"person\", \"forested slopes\", \"sky\"],\n  \"possible_interpretations\": [\"A trekker admiring and pointing at a mountain range\", \"A scenic viewpoint along a high-altitude trail\", \"A person gesturing toward a distant summit on a hike\"],\n  \"uncertainty_notes\": \"The person's face is not clearly visible; specific mountain location is not identifiable beyond being a high alpine scene.\",\n  \"quality_flags\": [\"person_truncated_at_edge\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a mountainous landscape with snow-capped peaks in the background. In the lower left, there's a person pointing toward the mountains. The scene is clearly an outdoor mountain vista, likely from a high vantage point during a trek.\n\nLet me analyze each attribute:\n\n- recognizability: 5 - Very clear mountain scene with a person\n- ambiguity: 1 - Very clear interpretation\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 3 - Multiple mountain ridges, vegetation, but fairly organized\n- object_centricity: 2 - The mountains are the main subject, not a single object\n- scene_centricity: 5 - Clearly a place/scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 2 (person and the main mountain peak)\n- estimated_distinct_object_categories: 3 (person, mountain, vegetation)\n\n- contains_person: true\n- contains_face: false (the person's face is not clearly visible, they appear to be facing away)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the person is partially cut off at the bottom)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"mountain landscape\" or \"outdoor nature\"\n\n- short_caption: \"A hiker points toward snow-capped mountain peaks in a vast Himalayan landscape\"\n- main_objects: [\"mountain\", \"person\", \"vegetation\"]\n- possible_interpretations: [\"A trekker viewing a mountain range\", \"A hiker pointing out a peak on a trail\", \"A scenic mountain vista with a person\"]\n- uncertainty_notes: \"The person's face is not clearly visible, so face content is uncertain. Specific location is unclear.\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a mountainous landscape with snow-capped peaks in the background. In the lower left, there's a person pointing toward the mountains. The scene is clearly an outdoor mountain vista, likely from a high vantage point during a trek.\n\nLet me analyze each attribute:\n\n- recognizability: 5 - Very clear mountain scene with a person\n- ambiguity: 1 - Very clear interpretation\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 3 - Multiple mountain ridges, vegetation, but fairly organized\n- object_centricity: 2 - The mountains are the main subject, not a single object\n- scene_centricity: 5 - Clearly a place/scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 2 (person and the main mountain peak)\n- estimated_distinct_object_categories: 3 (person, mountain, vegetation)\n\n- contains_person: true\n- contains_face: false (the person's face is not clearly visible, they appear to be facing away)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the person is partially cut off at the bottom)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"mountain landscape\" or \"outdoor nature\"\n\n- short_caption: \"A hiker points toward snow-capped mountain peaks in a vast Himalayan landscape\"\n- main_objects: [\"mountain\", \"person\", \"vegetation\"]\n- possible_interpretations: [\"A trekker viewing a mountain range\", \"A hiker pointing out a peak on a trail\", \"A scenic mountain vista with a person\"]\n- uncertainty_notes: \"The person's face is not clearly visible, so face content is uncertain. Specific location is unclear.\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1467,
+          "completion_tokens": 799,
+          "total_tokens": 2266,
+          "cost": 0.00137154,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00137154,
+            "upstream_inference_prompt_cost": 0.00041274,
+            "upstream_inference_completions_cost": 0.0009588
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 501,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

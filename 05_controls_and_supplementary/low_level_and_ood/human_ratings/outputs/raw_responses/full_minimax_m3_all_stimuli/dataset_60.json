@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_60",
+    "stim_key": "dataset_60",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 60,
+    "file_index": 60,
+    "image_name": "image_0060.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0060.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"window decorations\",\n  \"short_caption\": \"White multi-pane window decorated with bear and snowflake silhouette decals\",\n  \"main_objects\": [\"bear decals\", \"snowflake decals\", \"person silhouette decal\", \"window frame\", \"fern plant\"],\n  \"possible_interpretations\": [\"Winter/holiday window decoration\", \"Children's room window decor\", \"Cabin or cottage window art\", \"Polar/arctic themed decoration\"],\n  \"uncertainty_notes\": \"The viewpoint (inside vs outside) and exact nature of the figure in the bottom-left pane (sitting/reading person) are somewhat ambiguous but clearly interpretable.\",\n  \"quality_flags\": [\"weathered window frame\", \"artificial decals on glass\", \"foggy/dirty glass\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319032-hzvaSdwayM49pmO9NZ8E",
+        "object": "chat.completion",
+        "created": 1780319032,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"window decorations\",\n  \"short_caption\": \"White multi-pane window decorated with bear and snowflake silhouette decals\",\n  \"main_objects\": [\"bear decals\", \"snowflake decals\", \"person silhouette decal\", \"window frame\", \"fern plant\"],\n  \"possible_interpretations\": [\"Winter/holiday window decoration\", \"Children's room window decor\", \"Cabin or cottage window art\", \"Polar/arctic themed decoration\"],\n  \"uncertainty_notes\": \"The viewpoint (inside vs outside) and exact nature of the figure in the bottom-left pane (sitting/reading person) are somewhat ambiguous but clearly interpretable.\",\n  \"quality_flags\": [\"weathered window frame\", \"artificial decals on glass\", \"foggy/dirty glass\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see a multi-pane window with white decorative decals/stickers on the glass. The decals depict:\n- Top left pane: A bear silhouette walking\n- Top right pane: A bear silhouette\n- Middle area: Snowflake decorations\n- Bottom left pane: A person/figure (appears to be a person reading or sitting) and a bear\n- Bottom right pane: Two bears\n\nBehind the window, there appears to be a fern or plant visible through the glass. The window frame is white/light colored and looks weathered/distressed.\n\nThe decals are clearly artificial - they are window clings or stickers. The image style is a photograph of decorated windows.\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clear what's depicted (window with bear/snowflake decals)\n- ambiguity: 1 - Very clear interpretation\n- natural_photo_typicality: 3 - It's a natural photo but of an artificial arrangement\n- visual_clutter: 2 - Relatively simple, organized composition\n- object_centricity: 3 - The decals are objects but the window is the setting\n- scene_centricity: 3 - It's a scene (window view) with decorative elements\n- caption_confidence: 5 - Easy to caption\n\nCounts:\n- estimated_salient_object_count: ~6 (bears, figure, snowflakes)\n- estimated_distinct_object_categories: 3 (bears, human figure, snowflakes) or 4 (including window)\n\nFlags:\n- contains_person: true (the figure in bottom left)\n- contains_face: false (it's a silhouette)\n- contains_animal: true (bears)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (looking at window from outside or inside?)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (the decals are artificial)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\nDominant content type: object (the decals are the main subjects) or mixed\nImage style: natural_photo (it's a photo of a window)\nSemantic domain: window decorations or holiday decor\n\nLet me reconsider the scene. The image is looking at a window from outside (or inside), and the decorations are on the glass. The plant/fern is visible behind through the glass.\n\nShort caption: \"White window decorated with bear silhouettes and snowflake decals\"\n\nMain objects: [\"bear decals\", \"snowflake decals\", \"window\", \"human silhouette decal\", \"plant\"]\n\nPossible interpretations: [\"Holiday/winter window decorations\", \"Children's room window decor\", \"Cabin/cottage window decoration\"]\n\nQuality flags: [\"weathered window frame\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see a multi-pane window with white decorative decals/stickers on the glass. The decals depict:\n- Top left pane: A bear silhouette walking\n- Top right pane: A bear silhouette\n- Middle area: Snowflake decorations\n- Bottom left pane: A person/figure (appears to be a person reading or sitting) and a bear\n- Bottom right pane: Two bears\n\nBehind the window, there appears to be a fern or plant visible through the glass. The window frame is white/light colored and looks weathered/distressed.\n\nThe decals are clearly artificial - they are window clings or stickers. The image style is a photograph of decorated windows.\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clear what's depicted (window with bear/snowflake decals)\n- ambiguity: 1 - Very clear interpretation\n- natural_photo_typicality: 3 - It's a natural photo but of an artificial arrangement\n- visual_clutter: 2 - Relatively simple, organized composition\n- object_centricity: 3 - The decals are objects but the window is the setting\n- scene_centricity: 3 - It's a scene (window view) with decorative elements\n- caption_confidence: 5 - Easy to caption\n\nCounts:\n- estimated_salient_object_count: ~6 (bears, figure, snowflakes)\n- estimated_distinct_object_categories: 3 (bears, human figure, snowflakes) or 4 (including window)\n\nFlags:\n- contains_person: true (the figure in bottom left)\n- contains_face: false (it's a silhouette)\n- contains_animal: true (bears)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (looking at window from outside or inside?)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (the decals are artificial)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\nDominant content type: object (the decals are the main subjects) or mixed\nImage style: natural_photo (it's a photo of a window)\nSemantic domain: window decorations or holiday decor\n\nLet me reconsider the scene. The image is looking at a window from outside (or inside), and the decorations are on the glass. The plant/fern is visible behind through the glass.\n\nShort caption: \"White window decorated with bear silhouettes and snowflake decals\"\n\nMain objects: [\"bear decals\", \"snowflake decals\", \"window\", \"human silhouette decal\", \"plant\"]\n\nPossible interpretations: [\"Holiday/winter window decorations\", \"Children's room window decor\", \"Cabin/cottage window decoration\"]\n\nQuality flags: [\"weathered window frame\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 989,
+          "total_tokens": 2511,
+          "cost": 0.00161604,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00161604,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0011868
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 678,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

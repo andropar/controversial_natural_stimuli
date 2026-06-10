@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_268",
+    "stim_key": "vicco_268",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 268,
+    "file_index": 267,
+    "image_name": "shared_4rep_vicco_268.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_268.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"beach_resort\",\n  \"short_caption\": \"Beach resort at sunset with pool, thatched palapas, and sun rays over the ocean.\",\n  \"main_objects\": [\"swimming pool\", \"thatched palapa umbrellas\", \"beach loungers\", \"ocean\", \"water slide\"],\n  \"possible_interpretations\": [\"Beachfront resort at sunset\", \"Tropical vacation pool area\", \"Coastal hotel terrace view\"],\n  \"uncertainty_notes\": \"Time of day could be sunrise or sunset; small distant figures are too small to confirm clearly as people.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319698-hE49jhdpu7nAfLDroOSL",
+        "object": "chat.completion",
+        "created": 1780319698,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"beach_resort\",\n  \"short_caption\": \"Beach resort at sunset with pool, thatched palapas, and sun rays over the ocean.\",\n  \"main_objects\": [\"swimming pool\", \"thatched palapa umbrellas\", \"beach loungers\", \"ocean\", \"water slide\"],\n  \"possible_interpretations\": [\"Beachfront resort at sunset\", \"Tropical vacation pool area\", \"Coastal hotel terrace view\"],\n  \"uncertainty_notes\": \"Time of day could be sunrise or sunset; small distant figures are too small to confirm clearly as people.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a beach resort scene at what appears to be sunset or sunrise. Key elements:\n- A swimming pool in the foreground (left side)\n- Several thatched-roof palapas/umbrellas (at least 4-5 visible)\n- Beach loungers/chairs\n- The ocean/sea in the background\n- A dramatic sky with sun rays breaking through clouds\n- A water slide structure on the right side\n- Some people visible in the distance near the beach\n- Beach/sand area in the middle ground\n- Resort infrastructure\n\nLet me rate each dimension:\n\n- recognizability: 5 - very clear what's in the image\n- ambiguity: 1 - very clear interpretation as a beach resort\n- natural_photo_typicality: 4 - looks like a natural photograph, though it has a somewhat composed quality\n- visual_clutter: 3 - multiple elements but organized\n- object_centricity: 2 - it's a scene, not a single object\n- scene_centricity: 5 - clearly a place/scene\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 5-6 (palapas, pool, ocean, sky, water slide, people)\n- estimated_distinct_object_categories: 5 (palapas/umbrellas, pool, loungers, ocean, water slide, sky)\n\n- contains_person: true (small figures in background)\n- contains_face: false (too small to see faces)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (palapa in foreground is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: \"scene\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"beach_resort\"\n\nshort_caption: \"Beach resort with swimming pool, thatched palapas, and sun rays over the ocean at sunset.\"\n\nmain_objects: [\"swimming pool\", \"thatched umbrellas\", \"beach loungers\", \"ocean\", \"water slide\"]\n\npossible_interpretations: [\"Beach resort at sunset\", \"Coastal vacation spot\", \"Tropical resort pool area\"]\n\nuncertainty_notes: \"Time of day could be sunrise or sunset; small figures are too distant to confirm as people.\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a beach resort scene at what appears to be sunset or sunrise. Key elements:\n- A swimming pool in the foreground (left side)\n- Several thatched-roof palapas/umbrellas (at least 4-5 visible)\n- Beach loungers/chairs\n- The ocean/sea in the background\n- A dramatic sky with sun rays breaking through clouds\n- A water slide structure on the right side\n- Some people visible in the distance near the beach\n- Beach/sand area in the middle ground\n- Resort infrastructure\n\nLet me rate each dimension:\n\n- recognizability: 5 - very clear what's in the image\n- ambiguity: 1 - very clear interpretation as a beach resort\n- natural_photo_typicality: 4 - looks like a natural photograph, though it has a somewhat composed quality\n- visual_clutter: 3 - multiple elements but organized\n- object_centricity: 2 - it's a scene, not a single object\n- scene_centricity: 5 - clearly a place/scene\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 5-6 (palapas, pool, ocean, sky, water slide, people)\n- estimated_distinct_object_categories: 5 (palapas/umbrellas, pool, loungers, ocean, water slide, sky)\n\n- contains_person: true (small figures in background)\n- contains_face: false (too small to see faces)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (palapa in foreground is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: \"scene\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"beach_resort\"\n\nshort_caption: \"Beach resort with swimming pool, thatched palapas, and sun rays over the ocean at sunset.\"\n\nmain_objects: [\"swimming pool\", \"thatched umbrellas\", \"beach loungers\", \"ocean\", \"water slide\"]\n\npossible_interpretations: [\"Beach resort at sunset\", \"Coastal vacation spot\", \"Tropical resort pool area\"]\n\nuncertainty_notes: \"Time of day could be sunrise or sunset; small figures are too distant to confirm as people.\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 893,
+          "total_tokens": 2415,
+          "cost": 0.00137796,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00137796,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010716
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 578,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

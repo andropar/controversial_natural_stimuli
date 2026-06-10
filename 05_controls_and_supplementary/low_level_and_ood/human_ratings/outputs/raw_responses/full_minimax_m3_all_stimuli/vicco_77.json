@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_77",
+    "stim_key": "vicco_77",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 77,
+    "file_index": 76,
+    "image_name": "shared_4rep_vicco_077.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_077.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor_street_sunset\",\n  \"short_caption\": \"Empty road at twilight with a pink and purple sky, trees, streetlight, and a distant industrial chimney.\",\n  \"main_objects\": [\"road\", \"trees\", \"streetlight\", \"chimney\", \"person with light\"],\n  \"possible_interpretations\": [\"urban road at dusk\", \"suburban street near industrial area at sunset\", \"evening commute scene\"],\n  \"uncertainty_notes\": \"Distant figure could be cyclist or pedestrian; chimney is partially silhouetted; small distant vehicle headlights visible.\",\n  \"quality_flags\": [\"low_light\", \"slight_underexposure_foreground\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319478-weQZsQrqFtQ0l4helskC",
+        "object": "chat.completion",
+        "created": 1780319478,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor_street_sunset\",\n  \"short_caption\": \"Empty road at twilight with a pink and purple sky, trees, streetlight, and a distant industrial chimney.\",\n  \"main_objects\": [\"road\", \"trees\", \"streetlight\", \"chimney\", \"person with light\"],\n  \"possible_interpretations\": [\"urban road at dusk\", \"suburban street near industrial area at sunset\", \"evening commute scene\"],\n  \"uncertainty_notes\": \"Distant figure could be cyclist or pedestrian; chimney is partially silhouetted; small distant vehicle headlights visible.\",\n  \"quality_flags\": [\"low_light\", \"slight_underexposure_foreground\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a road/street scene at sunset or twilight. There's a purple/pink sky, a road with lane markings, trees on the left, a streetlight, what appears to be a tall industrial chimney/smokestack on the right, some buildings partially visible, and possibly a person or cyclist in the distance.\n\nLet me annotate based on the schema:\n\n- Recognizability: High, clearly a road scene at sunset\n- Ambiguity: Low, it's clearly a road/sunset scene\n- Natural photo typicality: High, looks like a natural photograph\n- Visual clutter: Moderate - road, trees, sky, chimney, streetlight\n- Object centricity: Low - it's a scene\n- Scene centricity: High\n- Caption confidence: High\n\nThere seems to be a person/cyclist on the road. Let me check more carefully - yes, there appears to be someone walking/cycling with a light visible.\n\nThe tall structure on the right looks like an industrial chimney or smokestack.\n\nLet me provide the annotations.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a road/street scene at sunset or twilight. There's a purple/pink sky, a road with lane markings, trees on the left, a streetlight, what appears to be a tall industrial chimney/smokestack on the right, some buildings partially visible, and possibly a person or cyclist in the distance.\n\nLet me annotate based on the schema:\n\n- Recognizability: High, clearly a road scene at sunset\n- Ambiguity: Low, it's clearly a road/sunset scene\n- Natural photo typicality: High, looks like a natural photograph\n- Visual clutter: Moderate - road, trees, sky, chimney, streetlight\n- Object centricity: Low - it's a scene\n- Scene centricity: High\n- Caption confidence: High\n\nThere seems to be a person/cyclist on the road. Let me check more carefully - yes, there appears to be someone walking/cycling with a light visible.\n\nThe tall structure on the right looks like an industrial chimney or smokestack.\n\nLet me provide the annotations.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 588,
+          "total_tokens": 2110,
+          "cost": 0.00101196,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00101196,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0007056
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 254,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

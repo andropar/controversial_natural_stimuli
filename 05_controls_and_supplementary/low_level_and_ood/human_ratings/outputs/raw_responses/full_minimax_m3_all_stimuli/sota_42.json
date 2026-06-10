@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_42",
+    "stim_key": "sota_42",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 42,
+    "file_index": 42,
+    "image_name": "image_0042.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0042.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion accessories\",\n\n  \"short_caption\": \"Brown checkered handbag with shoulder strap on a mannequin wearing a gray dress\",\n  \"main_objects\": [\"handbag\", \"mannequin\", \"gray dress\"],\n  \"possible_interpretations\": [\"Louis Vuitton Damier Ebene handbag product photo\", \"designer checkered shoulder bag\", \"brown leather purse on mannequin\"],\n  \"uncertainty_notes\": \"Brand identity inferred from pattern but not confirmed; mannequin has no head/hands fully visible\",\n  \"quality_flags\": [\"product_photo\", \"white_background\", \"mannequin_display\", \"studio_lighting\"]\n}",
+      "response": {
+        "id": "gen-1780319126-BpsBOgsVQKoKvdSyUhh9",
+        "object": "chat.completion",
+        "created": 1780319126,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion accessories\",\n\n  \"short_caption\": \"Brown checkered handbag with shoulder strap on a mannequin wearing a gray dress\",\n  \"main_objects\": [\"handbag\", \"mannequin\", \"gray dress\"],\n  \"possible_interpretations\": [\"Louis Vuitton Damier Ebene handbag product photo\", \"designer checkered shoulder bag\", \"brown leather purse on mannequin\"],\n  \"uncertainty_notes\": \"Brand identity inferred from pattern but not confirmed; mannequin has no head/hands fully visible\",\n  \"quality_flags\": [\"product_photo\", \"white_background\", \"mannequin_display\", \"studio_lighting\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a mannequin wearing a gray dress and holding/displaying a brown and dark brown checkered pattern handbag. The bag appears to be a Louis Vuitton Damier Ebene pattern bag (specifically looks like the MM Delightful or similar style). It's a product photo on a white background.\n\nLet me annotate this:\n\n- recognizability: 5 - very clearly a handbag\n- ambiguity: 1 - clearly a handbag product shot\n- natural_photo_typicality: 2 - it's a product photo, not a typical natural photo\n- visual_clutter: 1 - clean white background, minimal clutter\n- object_centricity: 5 - the bag is the clear central object\n- scene_centricity: 1 - not a scene, focused on object\n- caption_confidence: 5 - very clear what this is\n\n- estimated_salient_object_count: 1 (the handbag)\n- estimated_distinct_object_categories: 2 (mannequin, handbag)\n\n- contains_person: false (mannequin, not a person)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (mannequin, product photo)\n- contains_occlusion_or_truncation: true (mannequin is truncated)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"edited_photo\" (product photography)\n- semantic_domain: \"fashion accessories\"\n\nshort_caption: \"Checkered brown handbag displayed on a mannequin in gray dress\"\nmain_objects: [\"handbag\", \"mannequin\", \"dress\"]\npossible_interpretations: [\"Louis Vuitton Damier Ebene handbag product photo\", \"Designer checkered shoulder bag\", \"Brown checkered leather purse\"]\nuncertainty_notes: \"Brand may not be certain, pattern style suggests luxury designer\"\nquality_flags: [\"product_photo\", \"white_background\", \"mannequin_display\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a mannequin wearing a gray dress and holding/displaying a brown and dark brown checkered pattern handbag. The bag appears to be a Louis Vuitton Damier Ebene pattern bag (specifically looks like the MM Delightful or similar style). It's a product photo on a white background.\n\nLet me annotate this:\n\n- recognizability: 5 - very clearly a handbag\n- ambiguity: 1 - clearly a handbag product shot\n- natural_photo_typicality: 2 - it's a product photo, not a typical natural photo\n- visual_clutter: 1 - clean white background, minimal clutter\n- object_centricity: 5 - the bag is the clear central object\n- scene_centricity: 1 - not a scene, focused on object\n- caption_confidence: 5 - very clear what this is\n\n- estimated_salient_object_count: 1 (the handbag)\n- estimated_distinct_object_categories: 2 (mannequin, handbag)\n\n- contains_person: false (mannequin, not a person)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (mannequin, product photo)\n- contains_occlusion_or_truncation: true (mannequin is truncated)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"edited_photo\" (product photography)\n- semantic_domain: \"fashion accessories\"\n\nshort_caption: \"Checkered brown handbag displayed on a mannequin in gray dress\"\nmain_objects: [\"handbag\", \"mannequin\", \"dress\"]\npossible_interpretations: [\"Louis Vuitton Damier Ebene handbag product photo\", \"Designer checkered shoulder bag\", \"Brown checkered leather purse\"]\nuncertainty_notes: \"Brand may not be certain, pattern style suggests luxury designer\"\nquality_flags: [\"product_photo\", \"white_background\", \"mannequin_display\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 994,
+          "completion_tokens": 809,
+          "total_tokens": 1803,
+          "cost": 0.00111876,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00111876,
+            "upstream_inference_prompt_cost": 0.00014796,
+            "upstream_inference_completions_cost": 0.0009708
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 489,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

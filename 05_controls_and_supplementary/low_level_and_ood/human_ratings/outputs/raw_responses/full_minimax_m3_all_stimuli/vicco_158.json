@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_158",
+    "stim_key": "vicco_158",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 158,
+    "file_index": 157,
+    "image_name": "shared_4rep_vicco_158.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_158.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor_tools_household\",\n  \"short_caption\": \"A pile of chopped firewood with an axe, glass bottles, and a paint bucket on top\",\n  \"main_objects\": [\"firewood logs\", \"axe\", \"glass bottles\", \"paint bucket\", \"wood debris\"],\n  \"possible_interpretations\": [\"firewood storage area with discarded items\", \"outdoor cleanup debris pile\", \"backyard woodpile with tools and recyclables\"],\n  \"uncertainty_notes\": \"Bottle brand labels are partially visible but not clearly legible; the bucket's purpose (paint vs. other) is uncertain\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319572-Ff0PAggHONj2oNoSt6wA",
+        "object": "chat.completion",
+        "created": 1780319572,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor_tools_household\",\n  \"short_caption\": \"A pile of chopped firewood with an axe, glass bottles, and a paint bucket on top\",\n  \"main_objects\": [\"firewood logs\", \"axe\", \"glass bottles\", \"paint bucket\", \"wood debris\"],\n  \"possible_interpretations\": [\"firewood storage area with discarded items\", \"outdoor cleanup debris pile\", \"backyard woodpile with tools and recyclables\"],\n  \"uncertainty_notes\": \"Bottle brand labels are partially visible but not clearly legible; the bucket's purpose (paint vs. other) is uncertain\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a pile of chopped wooden logs/wood pieces stacked together. On top of or among the logs, there are:\n- A green and white paint bucket/container (appears to be a paint can or similar container with some labeling)\n- Two glass bottles (appears to be liquor/spirits bottles - one looks like a vodka bottle with blue label, another with a dark/blue label)\n- An axe or hatchet with a wooden handle and metal head\n- Wood chips/bark debris on the right side\n- A large log in the foreground\n\nThis appears to be an outdoor scene, likely showing firewood storage with some items placed on it.\n\nLet me rate the dimensions:\n\n- recognizability: 4 - The content is fairly clear, I can identify logs, bottles, a bucket, and an axe\n- ambiguity: 2 - The scene is fairly clear in what it shows\n- natural_photo_typicality: 4 - Looks like a typical photograph\n- visual_clutter: 4 - Many competing elements (logs, bottles, bucket, axe, debris)\n- object_centricity: 2 - No single clear central object\n- scene_centricity: 4 - It's more of a scene/arrangement\n- caption_confidence: 4 - Can be captioned fairly well\n\nCounts:\n- estimated_salient_object_count: 4-5 (axe, bottles, bucket, log pile)\n- estimated_distinct_object_categories: 4 (axe, bottles, bucket, logs)\n\nBooleans:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (labels on bottles and bucket)\n- contains_vehicle: false\n- contains_food: false (though bottles could be interpreted as containing food/drink, the main subject is the bottles themselves)\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: \"scene\" or \"mixed\" - I'll say \"scene\" since it's about the wood pile arrangement\nimage_style: \"natural_photo\"\nsemantic_domain: \"outdoor\" or \"tools\" or \"household\"\n\nshort_caption: \"A pile of chopped firewood with an axe, glass bottles, and a paint bucket on top\"\n\nmain_objects: [\"logs\", \"firewood\", \"axe\", \"glass bottles\", \"paint bucket\"]\n\npossible_interpretations: [\"firewood storage area\", \"discarded items on woodpile\", \"outdoor cleanup debris\"]\n\nuncertainty_notes: \"Bottle labels are partially visible but brand text is unclear\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a pile of chopped wooden logs/wood pieces stacked together. On top of or among the logs, there are:\n- A green and white paint bucket/container (appears to be a paint can or similar container with some labeling)\n- Two glass bottles (appears to be liquor/spirits bottles - one looks like a vodka bottle with blue label, another with a dark/blue label)\n- An axe or hatchet with a wooden handle and metal head\n- Wood chips/bark debris on the right side\n- A large log in the foreground\n\nThis appears to be an outdoor scene, likely showing firewood storage with some items placed on it.\n\nLet me rate the dimensions:\n\n- recognizability: 4 - The content is fairly clear, I can identify logs, bottles, a bucket, and an axe\n- ambiguity: 2 - The scene is fairly clear in what it shows\n- natural_photo_typicality: 4 - Looks like a typical photograph\n- visual_clutter: 4 - Many competing elements (logs, bottles, bucket, axe, debris)\n- object_centricity: 2 - No single clear central object\n- scene_centricity: 4 - It's more of a scene/arrangement\n- caption_confidence: 4 - Can be captioned fairly well\n\nCounts:\n- estimated_salient_object_count: 4-5 (axe, bottles, bucket, log pile)\n- estimated_distinct_object_categories: 4 (axe, bottles, bucket, logs)\n\nBooleans:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (labels on bottles and bucket)\n- contains_vehicle: false\n- contains_food: false (though bottles could be interpreted as containing food/drink, the main subject is the bottles themselves)\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: \"scene\" or \"mixed\" - I'll say \"scene\" since it's about the wood pile arrangement\nimage_style: \"natural_photo\"\nsemantic_domain: \"outdoor\" or \"tools\" or \"household\"\n\nshort_caption: \"A pile of chopped firewood with an axe, glass bottles, and a paint bucket on top\"\n\nmain_objects: [\"logs\", \"firewood\", \"axe\", \"glass bottles\", \"paint bucket\"]\n\npossible_interpretations: [\"firewood storage area\", \"discarded items on woodpile\", \"outdoor cleanup debris\"]\n\nuncertainty_notes: \"Bottle labels are partially visible but brand text is unclear\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 942,
+          "total_tokens": 2464,
+          "cost": 0.00143676,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00143676,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011304
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 636,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

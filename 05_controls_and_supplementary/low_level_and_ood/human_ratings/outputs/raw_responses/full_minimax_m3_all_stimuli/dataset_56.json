@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_56",
+    "stim_key": "dataset_56",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 56,
+    "file_index": 56,
+    "image_name": "image_0056.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0056.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban street scene\",\n  \"short_caption\": \"Weathered concrete wall with painted bird mural next to trash bags and blue door\",\n  \"main_objects\": [\"concrete wall\", \"bird artwork\", \"brick wall\", \"blue door\", \"trash bags\", \"glass bottle\"],\n  \"possible_interpretations\": [\"urban alley with street art\", \"abandoned lot with bird stencil mural\", \"neglected side street with litter and graffiti\", \"residential back area with decorative wall painting\"],\n  \"uncertainty_notes\": \"Bird-shaped marks could be real birds, stencils, or faded paint; purpose of the concrete structure is unclear\",\n  \"quality_flags\": [\"urban_gritty\", \"moderate_resolution\", \"natural_lighting\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319025-hhGAKfoChTXgUduwqx7G",
+        "object": "chat.completion",
+        "created": 1780319025,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban street scene\",\n  \"short_caption\": \"Weathered concrete wall with painted bird mural next to trash bags and blue door\",\n  \"main_objects\": [\"concrete wall\", \"bird artwork\", \"brick wall\", \"blue door\", \"trash bags\", \"glass bottle\"],\n  \"possible_interpretations\": [\"urban alley with street art\", \"abandoned lot with bird stencil mural\", \"neglected side street with litter and graffiti\", \"residential back area with decorative wall painting\"],\n  \"uncertainty_notes\": \"Bird-shaped marks could be real birds, stencils, or faded paint; purpose of the concrete structure is unclear\",\n  \"quality_flags\": [\"urban_gritty\", \"moderate_resolution\", \"natural_lighting\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- A weathered concrete/stone wall structure (looks like a small building or enclosure)\n- The wall has many painted shapes resembling birds flying - this looks like a piece of street art or stencil art\n- There's a brick wall on the left side\n- On the right side, there's a blue surface (possibly a door or wall)\n- At the bottom, there are black trash bags with bottles\n- The ground appears to be concrete/pavement\n- Some small green plants/vegetation at the bottom left\n- There appears to be a bottle (looks like it could be a beer bottle) on top of the structure\n\nLet me rate this:\n- recognizability: 4 - the content is fairly clear (wall with bird artwork and trash bags)\n- ambiguity: 2 - pretty clear what's shown\n- natural_photo_typicality: 3 - looks like a real photo but is of an urban/gritty scene\n- visual_clutter: 3 - multiple elements but not overwhelming\n- object_centricity: 2 - no single dominant object, it's more of a scene\n- scene_centricity: 4 - this is primarily a scene/location\n- caption_confidence: 4 - can describe it well\n\nEstimated salient objects: wall structure, brick wall, blue door, trash bags, bottle\nDistinct categories: 4-5 (wall, brick, trash bags, bottle, ground)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false (the birds are painted, not real)\ncontains_text: false (some faint marks but no clear text)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: urban street scene\n\nShort caption: \"Concrete wall with painted bird artwork next to black trash bags and a blue door\"\n\nMain objects: concrete wall, bird artwork/stencil, brick wall, blue door/wall, trash bags, bottle\n\nPossible interpretations:\n- Street art scene in an urban environment\n- Abandoned or neglected area with bird mural\n- Side alley with graffiti and litter\n- Urban decay with artistic element\n\nUncertainty notes: The bird figures could be interpreted as flying birds, stencils, or graffiti\nQuality flags: maybe \"low_light\" or \"urban\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- A weathered concrete/stone wall structure (looks like a small building or enclosure)\n- The wall has many painted shapes resembling birds flying - this looks like a piece of street art or stencil art\n- There's a brick wall on the left side\n- On the right side, there's a blue surface (possibly a door or wall)\n- At the bottom, there are black trash bags with bottles\n- The ground appears to be concrete/pavement\n- Some small green plants/vegetation at the bottom left\n- There appears to be a bottle (looks like it could be a beer bottle) on top of the structure\n\nLet me rate this:\n- recognizability: 4 - the content is fairly clear (wall with bird artwork and trash bags)\n- ambiguity: 2 - pretty clear what's shown\n- natural_photo_typicality: 3 - looks like a real photo but is of an urban/gritty scene\n- visual_clutter: 3 - multiple elements but not overwhelming\n- object_centricity: 2 - no single dominant object, it's more of a scene\n- scene_centricity: 4 - this is primarily a scene/location\n- caption_confidence: 4 - can describe it well\n\nEstimated salient objects: wall structure, brick wall, blue door, trash bags, bottle\nDistinct categories: 4-5 (wall, brick, trash bags, bottle, ground)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false (the birds are painted, not real)\ncontains_text: false (some faint marks but no clear text)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: urban street scene\n\nShort caption: \"Concrete wall with painted bird artwork next to black trash bags and a blue door\"\n\nMain objects: concrete wall, bird artwork/stencil, brick wall, blue door/wall, trash bags, bottle\n\nPossible interpretations:\n- Street art scene in an urban environment\n- Abandoned or neglected area with bird mural\n- Side alley with graffiti and litter\n- Urban decay with artistic element\n\nUncertainty notes: The bird figures could be interpreted as flying birds, stencils, or graffiti\nQuality flags: maybe \"low_light\" or \"urban\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 920,
+          "total_tokens": 2442,
+          "cost": 0.00141036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00141036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.001104
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 613,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

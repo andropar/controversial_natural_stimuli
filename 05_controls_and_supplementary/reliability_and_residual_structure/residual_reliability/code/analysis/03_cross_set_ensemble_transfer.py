@@ -21,7 +21,7 @@ fitting or scoring. That makes this a test of whether model-combination weights
 generalize across stimulus regimes, not a test of absolute distance calibration.
 
 Outputs:
-    data/ensemble_transfer.csv
+    results/ensemble_transfer.csv
     figures/ensemble_transfer.{pdf,png}
 """
 
@@ -38,10 +38,10 @@ from scipy import stats
 from sklearn.linear_model import RidgeCV
 
 _HERE = Path(__file__).resolve()
-_PAPER = _HERE.parents[2]
-sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_PAPER.parents[1]))
-sys.path.insert(0, str(_PAPER / "figures"))
+STAGE = _HERE.parents[2]
+SHARE_ROOT = STAGE.parents[2]
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
 
 import matplotlib.pyplot as plt
 
@@ -56,8 +56,8 @@ rr = importlib.util.module_from_spec(spec)
 assert spec.loader is not None
 spec.loader.exec_module(rr)
 
-OUT_DATA = _PAPER / "10_residual_reliability" / "results"
-OUT_FIG = _PAPER / "10_residual_reliability" / "figures"
+OUT_DATA = STAGE / "results"
+OUT_FIG = STAGE / "figures"
 
 ALPHAS = np.logspace(-2, 6, 30)
 GROUPS = ["vicco", "all_models"]
@@ -138,15 +138,32 @@ def fit_transfer(train: dict, test: dict) -> dict:
     }
 
 
-def within_cv(cell: dict) -> float:
-    pred = rr._ridge_oof_ranked(
+def within_cv(
+    cell: dict,
+    cv_repeats: int = rr.N_CV_REPEATS,
+    cv_seed: int = rr.CV_RANDOM_STATE,
+) -> dict:
+    pred, counts = rr._ridge_oof_ranked(
         cell["brain"], cell["model_vecs"], n_stim=cell["n_stimuli"],
         alphas=ALPHAS, n_folds=rr.N_CV_FOLDS,
+        n_repeats=cv_repeats, random_state=cv_seed, return_counts=True,
     )
-    return _spearman(stats.rankdata(cell["brain"]), pred)
+    n_total = int(len(cell["brain"]))
+    n_pred = int((counts > 0).sum())
+    return {
+        "r": _spearman(stats.rankdata(cell["brain"]), pred),
+        "n_pairs_total": n_total,
+        "n_pairs_oof_predicted": n_pred,
+        "oof_pair_coverage": n_pred / n_total if n_total else np.nan,
+    }
 
 
-def compute_rows(subjects: list[str], rsa_types: list[str]) -> pd.DataFrame:
+def compute_rows(
+    subjects: list[str],
+    rsa_types: list[str],
+    cv_repeats: int = rr.N_CV_REPEATS,
+    cv_seed: int = rr.CV_RANDOM_STATE,
+) -> pd.DataFrame:
     all_rows = []
     print(f"Loading subject data: {subjects}", flush=True)
     subject_data = {subject: rr._load_subject_reps(subject) for subject in subjects}
@@ -159,7 +176,10 @@ def compute_rows(subjects: list[str], rsa_types: list[str]) -> pd.DataFrame:
                 group: _vectorize_group(subject, subject_data[subject], group, rsa_type)
                 for group in GROUPS
             }
-            within = {group: within_cv(cells[group]) for group in GROUPS}
+            within = {
+                group: within_cv(cells[group], cv_repeats=cv_repeats, cv_seed=cv_seed)
+                for group in GROUPS
+            }
 
             for train_group in GROUPS:
                 for test_group in GROUPS:
@@ -171,9 +191,19 @@ def compute_rows(subjects: list[str], rsa_types: list[str]) -> pd.DataFrame:
                         "test_group": test_group,
                         "train_label": GROUP_LABELS[train_group],
                         "test_label": GROUP_LABELS[test_group],
+                        "transfer_kind": (
+                            "within_set_in_sample"
+                            if train_group == test_group
+                            else "cross_set_transfer"
+                        ),
                         "n_train_stimuli": cells[train_group]["n_stimuli"],
                         "n_test_stimuli": cells[test_group]["n_stimuli"],
-                        "r_within_cv_test": within[test_group],
+                        "r_within_cv_test": within[test_group]["r"],
+                        "within_cv_n_pairs_total_test": within[test_group]["n_pairs_total"],
+                        "within_cv_n_pairs_oof_predicted_test": within[test_group]["n_pairs_oof_predicted"],
+                        "within_cv_oof_pair_coverage_test": within[test_group]["oof_pair_coverage"],
+                        "cv_repeats_image_blocked": int(cv_repeats),
+                        "cv_random_state": int(cv_seed),
                         "correlation_ceiling_test": cells[test_group]["correlation_ceiling"],
                         **res,
                     }
@@ -287,6 +317,8 @@ def main() -> None:
     parser.add_argument("--subject", default="all")
     parser.add_argument("--rsa-type", choices=["mixed", "fixed", "all"], default="mixed")
     parser.add_argument("--output", default=None)
+    parser.add_argument("--cv-repeats", type=int, default=rr.N_CV_REPEATS)
+    parser.add_argument("--cv-seed", type=int, default=rr.CV_RANDOM_STATE)
     args = parser.parse_args()
 
     subjects = config.SUBJECTS if args.subject == "all" else rr.parse_subject_arg(args.subject)
@@ -295,7 +327,12 @@ def main() -> None:
     OUT_DATA.mkdir(parents=True, exist_ok=True)
     OUT_FIG.mkdir(parents=True, exist_ok=True)
 
-    df = compute_rows(subjects, rsa_types)
+    df = compute_rows(
+        subjects,
+        rsa_types,
+        cv_repeats=args.cv_repeats,
+        cv_seed=args.cv_seed,
+    )
     out_csv = Path(args.output) if args.output else OUT_DATA / "ensemble_transfer.csv"
     df.to_csv(out_csv, index=False)
     print(f"\nSaved {out_csv}")

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_3",
+    "stim_key": "all_models_3",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 3,
+    "file_index": 3,
+    "image_name": "image_0003.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0003.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"clothing_product\",\n  \"short_caption\": \"Pink paisley baby romper with snap buttons laid flat on white wooden planks beside a pink flower bouquet\",\n  \"main_objects\": [\"baby romper\", \"flower bouquet\", \"wooden plank surface\"],\n  \"possible_interpretations\": [\"baby clothing product photo\", \"children's apparel flat lay with floral styling\", \"romper for sale listing\"],\n  \"uncertainty_notes\": \"Small brand label on romper neckline is not fully legible; cannot identify brand\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780317817-J26cvqHLsHZXrVhYh5aI",
+        "object": "chat.completion",
+        "created": 1780317817,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"clothing_product\",\n  \"short_caption\": \"Pink paisley baby romper with snap buttons laid flat on white wooden planks beside a pink flower bouquet\",\n  \"main_objects\": [\"baby romper\", \"flower bouquet\", \"wooden plank surface\"],\n  \"possible_interpretations\": [\"baby clothing product photo\", \"children's apparel flat lay with floral styling\", \"romper for sale listing\"],\n  \"uncertainty_notes\": \"Small brand label on romper neckline is not fully legible; cannot identify brand\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a baby onesie/romper with a pink and green paisley pattern, laid flat on a white wooden plank surface. Next to it on the right side is a small bouquet of pink and red flowers (roses and other small flowers with green foliage).\n\nLet me go through each annotation:\n\n- recognizability: Very clear what this is - a baby romper/onesie. 5\n- ambiguity: Low ambiguity, clearly a baby garment. 1\n- natural_photo_typicality: Looks like a product photo, slightly staged. 3\n- visual_clutter: Has pattern on the romper, flowers as accent. Moderate. 2-3\n- object_centricity: The romper is the central object. 4\n- scene_centricity: Not really a scene, more of a product shot. 1\n- caption_confidence: High confidence. 5\n\n- estimated_salient_object_count: 2 (romper and flower bouquet)\n- estimated_distinct_object_categories: 2\n\n- contains_person: false (no person, just a garment)\n- contains_face: false\n- contains_animal: false\n- contains_text: false (there's a small label but no readable text visible)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (background is wooden planks, could be indoor surface)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (romper is clearly main, flowers are accent)\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\" (looks like a product photograph, possibly slightly edited)\n- semantic_domain: \"clothing\" or \"product\"\n\n- short_caption: \"Pink paisley baby romper with snap buttons laid on white wood with pink flowers\"\n- main_objects: [\"baby romper\", \"flower bouquet\", \"wooden surface\"]\n- possible_interpretations: [\"baby clothing product photo\", \"romper with floral arrangement\", \"children's apparel flat lay\"]\n- uncertainty_notes: \"Small brand label on romper is not fully legible\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a baby onesie/romper with a pink and green paisley pattern, laid flat on a white wooden plank surface. Next to it on the right side is a small bouquet of pink and red flowers (roses and other small flowers with green foliage).\n\nLet me go through each annotation:\n\n- recognizability: Very clear what this is - a baby romper/onesie. 5\n- ambiguity: Low ambiguity, clearly a baby garment. 1\n- natural_photo_typicality: Looks like a product photo, slightly staged. 3\n- visual_clutter: Has pattern on the romper, flowers as accent. Moderate. 2-3\n- object_centricity: The romper is the central object. 4\n- scene_centricity: Not really a scene, more of a product shot. 1\n- caption_confidence: High confidence. 5\n\n- estimated_salient_object_count: 2 (romper and flower bouquet)\n- estimated_distinct_object_categories: 2\n\n- contains_person: false (no person, just a garment)\n- contains_face: false\n- contains_animal: false\n- contains_text: false (there's a small label but no readable text visible)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (background is wooden planks, could be indoor surface)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (romper is clearly main, flowers are accent)\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\" (looks like a product photograph, possibly slightly edited)\n- semantic_domain: \"clothing\" or \"product\"\n\n- short_caption: \"Pink paisley baby romper with snap buttons laid on white wood with pink flowers\"\n- main_objects: [\"baby romper\", \"flower bouquet\", \"wooden surface\"]\n- possible_interpretations: [\"baby clothing product photo\", \"romper with floral arrangement\", \"children's apparel flat lay\"]\n- uncertainty_notes: \"Small brand label on romper is not fully legible\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 812,
+          "total_tokens": 2334,
+          "cost": 0.00140364,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00140364,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009744
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 523,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

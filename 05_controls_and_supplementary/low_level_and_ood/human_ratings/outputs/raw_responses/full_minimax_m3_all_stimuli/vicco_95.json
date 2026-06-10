@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_95",
+    "stim_key": "vicco_95",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 95,
+    "file_index": 94,
+    "image_name": "shared_4rep_vicco_095.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_095.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife_zoo\",\n  \"short_caption\": \"Meerkats gathered around a cave-like shelter in a zoo enclosure\",\n  \"main_objects\": [\"meerkat\", \"cave shelter\", \"fallen log\", \"dirt ground\", \"grass patches\"],\n  \"possible_interpretations\": [\"meerkats at a zoo\", \"meerkats in a naturalistic enclosure\", \"a meerkat family group near their den\", \"meerkats exploring their habitat\"],\n  \"uncertainty_notes\": \"The cave-like structure appears to be an artificial zoo feature designed to mimic a natural den; distinction between wild and captive setting requires contextual cues.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319498-LEzzC49SQVv8BvyKGTyo",
+        "object": "chat.completion",
+        "created": 1780319498,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife_zoo\",\n  \"short_caption\": \"Meerkats gathered around a cave-like shelter in a zoo enclosure\",\n  \"main_objects\": [\"meerkat\", \"cave shelter\", \"fallen log\", \"dirt ground\", \"grass patches\"],\n  \"possible_interpretations\": [\"meerkats at a zoo\", \"meerkats in a naturalistic enclosure\", \"a meerkat family group near their den\", \"meerkats exploring their habitat\"],\n  \"uncertainty_notes\": \"The cave-like structure appears to be an artificial zoo feature designed to mimic a natural den; distinction between wild and captive setting requires contextual cues.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nI can see what appears to be a meerkat enclosure in a zoo. There are meerkats - some near/inside a cave-like structure made to look like a tree trunk, and others on the ground. The setting includes dirt, some grass patches, a fallen log/branch, and rocks. The cave structure has a reddish interior.\n\nLet me count: I can see about 4 meerkats - two sitting at the entrance of the cave, one on the ground to the left of the cave, and one in the foreground walking.\n\nThis looks like a natural photograph of a zoo enclosure.\n\nRatings:\n- recognizability: 5 - clearly meerkats in a zoo enclosure\n- ambiguity: 1 - very clear what's shown\n- natural_photo_typicality: 4 - looks like a typical photo, though it's a zoo setting\n- visual_clutter: 3 - moderate, several elements but organized\n- object_centricity: 3 - the meerkats are the focus but multiple\n- scene_centricity: 4 - it's showing a scene/environment with the animals\n- caption_confidence: 5 - easy to caption\n\nBooleans:\n- contains_person: false\n- contains_face: false (animal faces, not human)\n- contains_animal: true (meerkats)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (though the cave structure is artificial, it's part of a real zoo)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (multiple meerkats)\n\ndominant_content_type: animal\nimage_style: natural_photo\nsemantic_domain: wildlife/zoo\n\nshort_caption: \"Meerkats near a cave-like shelter in a zoo enclosure\"\nmain_objects: [\"meerkat\", \"cave shelter\", \"log\", \"dirt ground\", \"grass\"]\n\nPossible interpretations: meerkats at zoo, meerkats in their habitat, meerkat family group\n\nQuality flags: none significant",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nI can see what appears to be a meerkat enclosure in a zoo. There are meerkats - some near/inside a cave-like structure made to look like a tree trunk, and others on the ground. The setting includes dirt, some grass patches, a fallen log/branch, and rocks. The cave structure has a reddish interior.\n\nLet me count: I can see about 4 meerkats - two sitting at the entrance of the cave, one on the ground to the left of the cave, and one in the foreground walking.\n\nThis looks like a natural photograph of a zoo enclosure.\n\nRatings:\n- recognizability: 5 - clearly meerkats in a zoo enclosure\n- ambiguity: 1 - very clear what's shown\n- natural_photo_typicality: 4 - looks like a typical photo, though it's a zoo setting\n- visual_clutter: 3 - moderate, several elements but organized\n- object_centricity: 3 - the meerkats are the focus but multiple\n- scene_centricity: 4 - it's showing a scene/environment with the animals\n- caption_confidence: 5 - easy to caption\n\nBooleans:\n- contains_person: false\n- contains_face: false (animal faces, not human)\n- contains_animal: true (meerkats)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (though the cave structure is artificial, it's part of a real zoo)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (multiple meerkats)\n\ndominant_content_type: animal\nimage_style: natural_photo\nsemantic_domain: wildlife/zoo\n\nshort_caption: \"Meerkats near a cave-like shelter in a zoo enclosure\"\nmain_objects: [\"meerkat\", \"cave shelter\", \"log\", \"dirt ground\", \"grass\"]\n\nPossible interpretations: meerkats at zoo, meerkats in their habitat, meerkat family group\n\nQuality flags: none significant",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 826,
+          "total_tokens": 2348,
+          "cost": 0.00129756,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129756,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009912
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 496,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

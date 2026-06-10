@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_4",
+    "stim_key": "vicco_4",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 4,
+    "file_index": 3,
+    "image_name": "shared_4rep_vicco_004.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_004.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 15,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"dining_hospitality\",\n  \"short_caption\": \"Stainless steel utility cart piled with dirty plates, wine glasses, and coffee cups after a meal.\",\n  \"main_objects\": [\"metal service cart\", \"wine glasses\", \"dinner plates\", \"coffee cups\", \"utensils\"],\n  \"possible_interpretations\": [\"restaurant bus cart after service\", \"hotel room service cart\", \"private event cleanup\", \"catering trolley\"],\n  \"uncertainty_notes\": \"Exact setting (restaurant, hotel, or private) is not fully clear from background alone.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318191-D7jznhGR0gLZVU1lrCmr",
+        "object": "chat.completion",
+        "created": 1780318191,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 15,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"dining_hospitality\",\n  \"short_caption\": \"Stainless steel utility cart piled with dirty plates, wine glasses, and coffee cups after a meal.\",\n  \"main_objects\": [\"metal service cart\", \"wine glasses\", \"dinner plates\", \"coffee cups\", \"utensils\"],\n  \"possible_interpretations\": [\"restaurant bus cart after service\", \"hotel room service cart\", \"private event cleanup\", \"catering trolley\"],\n  \"uncertainty_notes\": \"Exact setting (restaurant, hotel, or private) is not fully clear from background alone.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a metal/stainless steel utility cart or trolley loaded with dirty dishes, glasses, and coffee cups. I can see:\n- A metal serving cart/trolley\n- Multiple wine glasses and champagne flutes (several stacked or clustered)\n- Plates with food residue (one with what appears to be sauce/stain, another with reddish sauce)\n- Coffee cups (white) with what looks like coffee or espresso\n- A coffee cup with dark liquid\n- A red/orange wall in the background\n- An elevator door or metallic wall in the background\n- Dark floor\n- The setting appears to be indoors, possibly a restaurant or hotel\n\nLet me rate this:\n\n- recognizability: 5 - Very clear what's shown (a cart of dirty dishes after a meal)\n- ambiguity: 1 - Very clear interpretation\n- natural_photo_typicality: 4 - Looks like a natural photo\n- visual_clutter: 4 - Many items crowded on the cart\n- object_centricity: 3 - The cart with dishes is central, but it's a collection\n- scene_centricity: 3 - More about the object collection than a scene\n- caption_confidence: 5 - Easy to caption\n\nEstimated salient object count: many - maybe 15-20 glasses/cups\nDistinct object categories: glasses, plates, cups, cart - 4-5\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false (a cart is a vehicle? probably not in this sense)\ncontains_food: false (food residue, but not actual food)\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false (slightly elevated angle but not unusual)\ncontains_multiple_main_objects: true\n\ndominant_content_type: mixed or object - I'll go with \"object\" since it's a cart full of objects\nimage_style: natural_photo\nsemantic_domain: \"restaurant\" or \"hospitality\" or \"dining\"\n\nshort_caption: \"Metal utility cart loaded with dirty plates, wine glasses, and coffee cups after a meal.\"\n\nmain_objects: [\"metal cart\", \"wine glasses\", \"plates\", \"coffee cups\", \"dishes\"]\n\npossible_interpretations: [\"post-meal cleanup cart\", \"restaurant bus cart\", \"hotel room service cart\", \"event catering cleanup\"]\n\nuncertainty_notes: \"Unclear if this is from a restaurant, hotel, or private setting.\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a metal/stainless steel utility cart or trolley loaded with dirty dishes, glasses, and coffee cups. I can see:\n- A metal serving cart/trolley\n- Multiple wine glasses and champagne flutes (several stacked or clustered)\n- Plates with food residue (one with what appears to be sauce/stain, another with reddish sauce)\n- Coffee cups (white) with what looks like coffee or espresso\n- A coffee cup with dark liquid\n- A red/orange wall in the background\n- An elevator door or metallic wall in the background\n- Dark floor\n- The setting appears to be indoors, possibly a restaurant or hotel\n\nLet me rate this:\n\n- recognizability: 5 - Very clear what's shown (a cart of dirty dishes after a meal)\n- ambiguity: 1 - Very clear interpretation\n- natural_photo_typicality: 4 - Looks like a natural photo\n- visual_clutter: 4 - Many items crowded on the cart\n- object_centricity: 3 - The cart with dishes is central, but it's a collection\n- scene_centricity: 3 - More about the object collection than a scene\n- caption_confidence: 5 - Easy to caption\n\nEstimated salient object count: many - maybe 15-20 glasses/cups\nDistinct object categories: glasses, plates, cups, cart - 4-5\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false (a cart is a vehicle? probably not in this sense)\ncontains_food: false (food residue, but not actual food)\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false (slightly elevated angle but not unusual)\ncontains_multiple_main_objects: true\n\ndominant_content_type: mixed or object - I'll go with \"object\" since it's a cart full of objects\nimage_style: natural_photo\nsemantic_domain: \"restaurant\" or \"hospitality\" or \"dining\"\n\nshort_caption: \"Metal utility cart loaded with dirty plates, wine glasses, and coffee cups after a meal.\"\n\nmain_objects: [\"metal cart\", \"wine glasses\", \"plates\", \"coffee cups\", \"dishes\"]\n\npossible_interpretations: [\"post-meal cleanup cart\", \"restaurant bus cart\", \"hotel room service cart\", \"event catering cleanup\"]\n\nuncertainty_notes: \"Unclear if this is from a restaurant, hotel, or private setting.\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 897,
+          "total_tokens": 2419,
+          "cost": 0.00138276,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00138276,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010764
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 614,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

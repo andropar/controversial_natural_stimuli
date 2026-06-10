@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_3",
+    "stim_key": "architecture_3",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 3,
+    "file_index": 3,
+    "image_name": "image_0003.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0003.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"residential_aerial\",\n  \"short_caption\": \"Aerial view of a house with a swimming pool surrounded by trees and lawn.\",\n  \"main_objects\": [\"house\", \"swimming pool\", \"trees\", \"lawn\", \"outbuilding\", \"car\", \"road\"],\n  \"possible_interpretations\": [\n    \"aerial view of a suburban residential property\",\n    \"drone shot of a private estate with pool\",\n    \"real estate listing photo from above\"\n  ],\n  \"uncertainty_notes\": \"Top-down aerial perspective limits fine detail; pool water and some shadows are stylized by lighting.\",\n  \"quality_flags\": [\"aerial_viewpoint\", \"good_lighting\", \"sharp_focus\"]\n}",
+      "response": {
+        "id": "gen-1780318848-XWbxCGuj3LRM0zOEl1mL",
+        "object": "chat.completion",
+        "created": 1780318848,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"residential_aerial\",\n  \"short_caption\": \"Aerial view of a house with a swimming pool surrounded by trees and lawn.\",\n  \"main_objects\": [\"house\", \"swimming pool\", \"trees\", \"lawn\", \"outbuilding\", \"car\", \"road\"],\n  \"possible_interpretations\": [\n    \"aerial view of a suburban residential property\",\n    \"drone shot of a private estate with pool\",\n    \"real estate listing photo from above\"\n  ],\n  \"uncertainty_notes\": \"Top-down aerial perspective limits fine detail; pool water and some shadows are stylized by lighting.\",\n  \"quality_flags\": [\"aerial_viewpoint\", \"good_lighting\", \"sharp_focus\"]\n}",
+              "refusal": null,
+              "reasoning": "The image is an aerial/drone view of a property with a house, swimming pool, and surrounding trees and grass. Let me analyze it carefully.\n\n- It's an aerial drone shot of a residential property\n- Main features: a house with a grey roof, a blue swimming pool, a smaller outbuilding/shed, surrounding trees, a lawn, a road with a car, and what appears to be a barn in the upper left\n- The view is from directly above (bird's eye view)\n- Natural lighting, appears to be a typical real estate or drone photograph\n\nLet me rate each:\n- recognizability: 4 - clearly a residential property aerial view\n- ambiguity: 2 - fairly clear what's shown\n- natural_photo_typicality: 4 - looks like a typical drone photograph, though drone shots are a specific type\n- visual_clutter: 3 - has multiple elements but organized\n- object_centricity: 2 - no single dominant object, it's more of a scene\n- scene_centricity: 5 - this is clearly a scene/place\n- caption_confidence: 5 - easy to caption\n\nContent flags:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: true (car on road)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (aerial/bird's eye)\n- contains_multiple_main_objects: true (house, pool, trees)\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: residential_property / aerial\n\nSalient objects: house, swimming pool, trees, lawn, car, outbuilding, barn\nEstimated count: 5-7 distinct objects\nCategories: 4-5 (buildings, pool, trees, road/vehicle, lawn)",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image is an aerial/drone view of a property with a house, swimming pool, and surrounding trees and grass. Let me analyze it carefully.\n\n- It's an aerial drone shot of a residential property\n- Main features: a house with a grey roof, a blue swimming pool, a smaller outbuilding/shed, surrounding trees, a lawn, a road with a car, and what appears to be a barn in the upper left\n- The view is from directly above (bird's eye view)\n- Natural lighting, appears to be a typical real estate or drone photograph\n\nLet me rate each:\n- recognizability: 4 - clearly a residential property aerial view\n- ambiguity: 2 - fairly clear what's shown\n- natural_photo_typicality: 4 - looks like a typical drone photograph, though drone shots are a specific type\n- visual_clutter: 3 - has multiple elements but organized\n- object_centricity: 2 - no single dominant object, it's more of a scene\n- scene_centricity: 5 - this is clearly a scene/place\n- caption_confidence: 5 - easy to caption\n\nContent flags:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: true (car on road)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (aerial/bird's eye)\n- contains_multiple_main_objects: true (house, pool, trees)\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: residential_property / aerial\n\nSalient objects: house, swimming pool, trees, lawn, car, outbuilding, barn\nEstimated count: 5-7 distinct objects\nCategories: 4-5 (buildings, pool, trees, road/vehicle, lawn)",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 798,
+          "total_tokens": 2320,
+          "cost": 0.00138684,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00138684,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009576
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 451,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

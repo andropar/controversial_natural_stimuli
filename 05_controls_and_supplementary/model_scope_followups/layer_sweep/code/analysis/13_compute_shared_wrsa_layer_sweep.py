@@ -7,9 +7,9 @@ images, but evaluation is on held-out DeepVision shared images with measured
 brain responses.
 
 Outputs by default:
-    11_layer_sweep/data/wrsa_dense_shared_layer_sweep.csv
+    results/wrsa_dense_shared_layer_sweep.csv
 or, with --part-dir:
-    11_layer_sweep/data/wrsa_dense_shared_parts/{model}.csv
+    results/wrsa_dense_shared_parts/{model}.csv
 """
 
 import _paths  # noqa: F401

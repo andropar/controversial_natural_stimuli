@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_173",
+    "stim_key": "vicco_173",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 173,
+    "file_index": 172,
+    "image_name": "shared_4rep_vicco_173.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_173.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_cityscape\",\n  \"short_caption\": \"Rainbow arching over European rooftops at sunset with pink-tinged clouds\",\n  \"main_objects\": [\"rainbow\", \"buildings\", \"trees\", \"cloudy sky\", \"rooftops\"],\n  \"possible_interpretations\": [\"rainbow over a European city at sunset\", \"storm clearing after rain over urban rooftops\", \"late-day rainbow viewed from a window or balcony\"],\n  \"uncertainty_notes\": \"Exact city or location not identifiable; architecture suggests Central or Northern Europe\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319592-wXPYFZ1WzxYG6sCDx0Xu",
+        "object": "chat.completion",
+        "created": 1780319592,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_cityscape\",\n  \"short_caption\": \"Rainbow arching over European rooftops at sunset with pink-tinged clouds\",\n  \"main_objects\": [\"rainbow\", \"buildings\", \"trees\", \"cloudy sky\", \"rooftops\"],\n  \"possible_interpretations\": [\"rainbow over a European city at sunset\", \"storm clearing after rain over urban rooftops\", \"late-day rainbow viewed from a window or balcony\"],\n  \"uncertainty_notes\": \"Exact city or location not identifiable; architecture suggests Central or Northern Europe\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a cityscape/urban scene with:\n- A rainbow arcing across a cloudy sky during what appears to be sunset (pinkish/orange hues in the clouds)\n- European-style buildings in the foreground, including what looks like a historic building with a dark roof and ornate facade\n- Trees in the lower left\n- A larger building on the right with multiple windows\n- Pink/orange cloud lighting suggesting golden hour or sunset\n- The sky takes up roughly the top 2/3 of the image\n\nLet me annotate according to the schema:\n\n- recognizability: 4 - clearly recognizable as an urban scene with a rainbow\n- ambiguity: 2 - pretty clear what's shown, though one could interpret the location\n- natural_photo_typicality: 5 - looks like a natural photograph\n- visual_clutter: 3 - moderate complexity with buildings, trees, sky\n- object_centricity: 2 - no single dominant object\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 4 - can describe confidently\n\n- estimated_salient_object_count: 5 (buildings, trees, rainbow, sky, clouds)\n- estimated_distinct_object_categories: 4 (buildings, trees, rainbow, sky)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (normal elevated viewpoint)\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"urban\" or \"cityscape\" or \"outdoor\"\n\n- short_caption: \"Rainbow arching over European rooftops at sunset with pink clouds\"\n- main_objects: [\"rainbow\", \"buildings\", \"trees\", \"sky\", \"clouds\"]\n- possible_interpretations: [\"rainbow over city at sunset\", \"storm clearing after rain in urban area\", \"sunset rainbow over rooftops\"]\n- uncertainty_notes: \"Exact location unclear, likely European based on architecture\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a cityscape/urban scene with:\n- A rainbow arcing across a cloudy sky during what appears to be sunset (pinkish/orange hues in the clouds)\n- European-style buildings in the foreground, including what looks like a historic building with a dark roof and ornate facade\n- Trees in the lower left\n- A larger building on the right with multiple windows\n- Pink/orange cloud lighting suggesting golden hour or sunset\n- The sky takes up roughly the top 2/3 of the image\n\nLet me annotate according to the schema:\n\n- recognizability: 4 - clearly recognizable as an urban scene with a rainbow\n- ambiguity: 2 - pretty clear what's shown, though one could interpret the location\n- natural_photo_typicality: 5 - looks like a natural photograph\n- visual_clutter: 3 - moderate complexity with buildings, trees, sky\n- object_centricity: 2 - no single dominant object\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 4 - can describe confidently\n\n- estimated_salient_object_count: 5 (buildings, trees, rainbow, sky, clouds)\n- estimated_distinct_object_categories: 4 (buildings, trees, rainbow, sky)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (normal elevated viewpoint)\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"urban\" or \"cityscape\" or \"outdoor\"\n\n- short_caption: \"Rainbow arching over European rooftops at sunset with pink clouds\"\n- main_objects: [\"rainbow\", \"buildings\", \"trees\", \"sky\", \"clouds\"]\n- possible_interpretations: [\"rainbow over city at sunset\", \"storm clearing after rain in urban area\", \"sunset rainbow over rooftops\"]\n- uncertainty_notes: \"Exact location unclear, likely European based on architecture\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 844,
+          "total_tokens": 2366,
+          "cost": 0.00131916,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131916,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010128
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 550,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

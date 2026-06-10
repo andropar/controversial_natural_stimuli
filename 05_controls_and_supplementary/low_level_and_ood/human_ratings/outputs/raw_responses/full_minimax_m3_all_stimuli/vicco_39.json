@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_39",
+    "stim_key": "vicco_39",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 39,
+    "file_index": 38,
+    "image_name": "shared_4rep_vicco_039.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_039.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 12,\n  \"estimated_distinct_object_categories\": 7,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"kitchen_interior\",\n\n  \"short_caption\": \"A cozy green kitchen with coffee machine, wooden countertop, window with plant, and a bulletin board\",\n  \"main_objects\": [\"green cabinets\", \"coffee machine\", \"wooden countertop\", \"window\", \"potted plant\", \"bulletin board\", \"dish towels\", \"string lights\"],\n  \"possible_interpretations\": [\"home kitchen interior\", \"eclectic cottage kitchen\", \"personalized apartment kitchen\"],\n  \"uncertainty_notes\": \"Small text on signs and notes is mostly unreadable; full layout of cabinets partially cut off on right\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319431-QLWdufeUhSIahE3YmSCr",
+        "object": "chat.completion",
+        "created": 1780319431,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 12,\n  \"estimated_distinct_object_categories\": 7,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"kitchen_interior\",\n\n  \"short_caption\": \"A cozy green kitchen with coffee machine, wooden countertop, window with plant, and a bulletin board\",\n  \"main_objects\": [\"green cabinets\", \"coffee machine\", \"wooden countertop\", \"window\", \"potted plant\", \"bulletin board\", \"dish towels\", \"string lights\"],\n  \"possible_interpretations\": [\"home kitchen interior\", \"eclectic cottage kitchen\", \"personalized apartment kitchen\"],\n  \"uncertainty_notes\": \"Small text on signs and notes is mostly unreadable; full layout of cabinets partially cut off on right\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully and provide structured annotations.\n\nThe image shows a kitchen interior with:\n- Green cabinets (tall pantry/wardrobe style and lower cabinets with drawers)\n- A coffee machine on the left with a mug\n- String lights with red bulbs\n- A bulletin board with papers/notes\n- Wooden countertop\n- A window with a view of trees/garden outside\n- A potted plant on the windowsill\n- Various kitchen items (jars, utensils, knife block)\n- Dish towels hanging\n- A small \"Kaffee Frucht\" wooden crate\n- Tile floor\n- A refrigerator on the right edge\n\nThis is clearly a natural photograph of a kitchen scene. It's indoor, scene-centric rather than object-centric. There are many objects but the scene as a whole is the main subject.\n\nLet me rate:\n- recognizability: 5 - very clearly a kitchen\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 5 - looks like a typical real photo\n- visual_clutter: 4 - many items, somewhat cluttered/cozy\n- object_centricity: 2 - scene dominates\n- scene_centricity: 5 - clearly a place/scene\n- caption_confidence: 5 - easy to caption\n\nEstimated salient object count: many - maybe 10+\nEstimated distinct object categories: ~6-7 (cabinets, coffee machine, window, plant, towels, utensils, etc.)\n\nNo people, faces, animals, text (some text on signs but minor), vehicles, food visible\nIndoor: yes\nOutdoor view through window: yes (but image is indoor)\nArtificial/rendered: no\nOcclusion/truncation: some items partially cut off\nMultiple main objects: yes, many\nUnusual viewpoint: no, standard eye-level kitchen view\n\nMain objects: green cabinets, coffee machine, window, potted plant, wooden countertop, dish towels, bulletin board\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: kitchen/interior\n\nPossible interpretations: just one really - it's a kitchen\n\nUncertainty notes: small amount of text on signs and notes, difficult to read fully",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully and provide structured annotations.\n\nThe image shows a kitchen interior with:\n- Green cabinets (tall pantry/wardrobe style and lower cabinets with drawers)\n- A coffee machine on the left with a mug\n- String lights with red bulbs\n- A bulletin board with papers/notes\n- Wooden countertop\n- A window with a view of trees/garden outside\n- A potted plant on the windowsill\n- Various kitchen items (jars, utensils, knife block)\n- Dish towels hanging\n- A small \"Kaffee Frucht\" wooden crate\n- Tile floor\n- A refrigerator on the right edge\n\nThis is clearly a natural photograph of a kitchen scene. It's indoor, scene-centric rather than object-centric. There are many objects but the scene as a whole is the main subject.\n\nLet me rate:\n- recognizability: 5 - very clearly a kitchen\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 5 - looks like a typical real photo\n- visual_clutter: 4 - many items, somewhat cluttered/cozy\n- object_centricity: 2 - scene dominates\n- scene_centricity: 5 - clearly a place/scene\n- caption_confidence: 5 - easy to caption\n\nEstimated salient object count: many - maybe 10+\nEstimated distinct object categories: ~6-7 (cabinets, coffee machine, window, plant, towels, utensils, etc.)\n\nNo people, faces, animals, text (some text on signs but minor), vehicles, food visible\nIndoor: yes\nOutdoor view through window: yes (but image is indoor)\nArtificial/rendered: no\nOcclusion/truncation: some items partially cut off\nMultiple main objects: yes, many\nUnusual viewpoint: no, standard eye-level kitchen view\n\nMain objects: green cabinets, coffee machine, window, potted plant, wooden countertop, dish towels, bulletin board\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: kitchen/interior\n\nPossible interpretations: just one really - it's a kitchen\n\nUncertainty notes: small amount of text on signs and notes, difficult to read fully",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 810,
+          "total_tokens": 2332,
+          "cost": 0.00127836,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00127836,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000972
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 516,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

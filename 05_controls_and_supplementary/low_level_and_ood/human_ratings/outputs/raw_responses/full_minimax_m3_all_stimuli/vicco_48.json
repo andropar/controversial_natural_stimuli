@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_48",
+    "stim_key": "vicco_48",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 48,
+    "file_index": 47,
+    "image_name": "shared_4rep_vicco_048.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_048.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 5,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 60,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food/bakery\",\n  \"short_caption\": \"Bakery display case filled with colorful macarons, cake slices, and pastries arranged on shelves.\",\n  \"main_objects\": [\"macarons\", \"cake slices\", \"pastry slices\", \"display case\"],\n  \"possible_interpretations\": [\"bakery pastry display\", \"dessert shop window\", \"patisserie showcase\", \"café cake selection\"],\n  \"uncertainty_notes\": \"Small text signs above macarons are partially visible and mirrored, making flavor labels unreadable.\",\n  \"quality_flags\": [\"some_glare_on_glass\", \"slight_reflection\"]\n}",
+      "response": {
+        "id": "gen-1780319446-qUJMGryd0pXrdCjTKuJe",
+        "object": "chat.completion",
+        "created": 1780319446,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 5,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 60,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food/bakery\",\n  \"short_caption\": \"Bakery display case filled with colorful macarons, cake slices, and pastries arranged on shelves.\",\n  \"main_objects\": [\"macarons\", \"cake slices\", \"pastry slices\", \"display case\"],\n  \"possible_interpretations\": [\"bakery pastry display\", \"dessert shop window\", \"patisserie showcase\", \"café cake selection\"],\n  \"uncertainty_notes\": \"Small text signs above macarons are partially visible and mirrored, making flavor labels unreadable.\",\n  \"quality_flags\": [\"some_glare_on_glass\", \"slight_reflection\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a bakery or pastry shop display case filled with various cakes, pastries, and macarons. There are multiple rows and shelves visible, all containing different types of desserts. Let me analyze this carefully for the schema.\n\n- Recognizability: Very clear - it's a pastry display case (5)\n- Ambiguity: Low - clearly a bakery display (1-2)\n- Natural_photo_typicality: Looks like a typical natural photograph (4-5)\n- Visual_clutter: High - many items competing for attention (4-5)\n- Object_centricity: There are many objects, no single central one (2-3)\n- Scene_centricity: More of a product display scene (3-4)\n- Caption_confidence: High - can describe easily (5)\n\nEstimated salient objects: many - dozens of macarons, cake slices\nDistinct object categories: macarons, cake slices, pastry slices - maybe 3-4\n\nContains food: yes\nContains text: yes (signs visible at top, though mirrored/partial)\nNo person, face, animal, vehicle\nIndoor scene: yes\nMultiple main objects: yes\nUnusual viewpoint: slightly - through glass display\n\nDominant content: food\nImage style: natural_photo\nSemantic domain: food/bakery\n\nShort caption: Display case filled with colorful macarons and various cake slices in a bakery.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a bakery or pastry shop display case filled with various cakes, pastries, and macarons. There are multiple rows and shelves visible, all containing different types of desserts. Let me analyze this carefully for the schema.\n\n- Recognizability: Very clear - it's a pastry display case (5)\n- Ambiguity: Low - clearly a bakery display (1-2)\n- Natural_photo_typicality: Looks like a typical natural photograph (4-5)\n- Visual_clutter: High - many items competing for attention (4-5)\n- Object_centricity: There are many objects, no single central one (2-3)\n- Scene_centricity: More of a product display scene (3-4)\n- Caption_confidence: High - can describe easily (5)\n\nEstimated salient objects: many - dozens of macarons, cake slices\nDistinct object categories: macarons, cake slices, pastry slices - maybe 3-4\n\nContains food: yes\nContains text: yes (signs visible at top, though mirrored/partial)\nNo person, face, animal, vehicle\nIndoor scene: yes\nMultiple main objects: yes\nUnusual viewpoint: slightly - through glass display\n\nDominant content: food\nImage style: natural_photo\nSemantic domain: food/bakery\n\nShort caption: Display case filled with colorful macarons and various cake slices in a bakery.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 648,
+          "total_tokens": 2170,
+          "cost": 0.00108396,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00108396,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0007776
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 322,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

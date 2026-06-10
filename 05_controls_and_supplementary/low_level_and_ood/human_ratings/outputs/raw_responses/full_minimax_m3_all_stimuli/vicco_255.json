@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_255",
+    "stim_key": "vicco_255",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 255,
+    "file_index": 254,
+    "image_name": "shared_4rep_vicco_255.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_255.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife_nature\",\n  \"short_caption\": \"White pelicans standing on logs in a green algae-covered pond with autumn foliage\",\n  \"main_objects\": [\"pelicans\", \"logs\", \"pond water\", \"trees\", \"rocks\"],\n  \"possible_interpretations\": [\"pelicans in a zoo enclosure\", \"pelicans in a natural wetland\", \"pelicans at a wildlife park\"],\n  \"uncertainty_notes\": \"Setting appears possibly enclosed/captive based on wooden structure in background; exact species may include Dalmatian or great white pelicans.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319679-m4x2OuemSuz6KexIf5Pj",
+        "object": "chat.completion",
+        "created": 1780319679,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife_nature\",\n  \"short_caption\": \"White pelicans standing on logs in a green algae-covered pond with autumn foliage\",\n  \"main_objects\": [\"pelicans\", \"logs\", \"pond water\", \"trees\", \"rocks\"],\n  \"possible_interpretations\": [\"pelicans in a zoo enclosure\", \"pelicans in a natural wetland\", \"pelicans at a wildlife park\"],\n  \"uncertainty_notes\": \"Setting appears possibly enclosed/captive based on wooden structure in background; exact species may include Dalmatian or great white pelicans.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a pond with greenish (algae-covered) water, with several white pelicans standing on logs and rocks in and around the water. In the background, there are trees and bushes with autumn colors (red, orange, yellow, green foliage), and what appears to be a wooden fence or structure on the right side.\n\nKey observations:\n- Multiple pelicans (I count about 6-7) - clearly the main subjects\n- Green algae-covered pond water\n- Logs and rocks protruding from water\n- Autumn foliage in background (trees, bushes)\n- Wooden structure/fence on the right\n- This looks like a zoo or wildlife park enclosure\n\nLet me rate each dimension:\n\n- recognizability: 4 - clearly recognizable as pelicans on a pond\n- ambiguity: 1 - very clear what's happening\n- natural_photo_typicality: 3 - looks like a natural photo but seems to be a zoo/wildlife park setting\n- visual_clutter: 3 - multiple elements but reasonably organized\n- object_centricity: 3 - pelicans are prominent but there are many\n- scene_centricity: 3 - it's a mix of scene and objects\n- caption_confidence: 4 - easy to caption\n\nCounts:\n- salient objects: ~6-7 pelicans\n- distinct categories: 2-3 (pelicans, logs/rocks, trees/foliage)\n\nContains:\n- person: false\n- face: false\n- animal: true (pelicans)\n- text: false\n- vehicle: false\n- food: false\n- indoor: false\n- outdoor: true\n- artificial: false (the wooden structure could be, but overall it's outdoor)\n- occlusion: partial - some pelicans are behind logs\n- unusual viewpoint: false\n- multiple main objects: true\n\nDominant content: animal or mixed (animals + scene)\nImage style: natural_photo\nSemantic domain: wildlife/nature\n\nCaption: \"White pelicans standing on logs in a green algae-covered pond surrounded by autumn foliage\"\n\nPossible interpretations: pelicans in zoo enclosure, pelicans in natural wetland, pelicans at wildlife park\n\nQuality flags: possibly captive/enclosure setting",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a pond with greenish (algae-covered) water, with several white pelicans standing on logs and rocks in and around the water. In the background, there are trees and bushes with autumn colors (red, orange, yellow, green foliage), and what appears to be a wooden fence or structure on the right side.\n\nKey observations:\n- Multiple pelicans (I count about 6-7) - clearly the main subjects\n- Green algae-covered pond water\n- Logs and rocks protruding from water\n- Autumn foliage in background (trees, bushes)\n- Wooden structure/fence on the right\n- This looks like a zoo or wildlife park enclosure\n\nLet me rate each dimension:\n\n- recognizability: 4 - clearly recognizable as pelicans on a pond\n- ambiguity: 1 - very clear what's happening\n- natural_photo_typicality: 3 - looks like a natural photo but seems to be a zoo/wildlife park setting\n- visual_clutter: 3 - multiple elements but reasonably organized\n- object_centricity: 3 - pelicans are prominent but there are many\n- scene_centricity: 3 - it's a mix of scene and objects\n- caption_confidence: 4 - easy to caption\n\nCounts:\n- salient objects: ~6-7 pelicans\n- distinct categories: 2-3 (pelicans, logs/rocks, trees/foliage)\n\nContains:\n- person: false\n- face: false\n- animal: true (pelicans)\n- text: false\n- vehicle: false\n- food: false\n- indoor: false\n- outdoor: true\n- artificial: false (the wooden structure could be, but overall it's outdoor)\n- occlusion: partial - some pelicans are behind logs\n- unusual viewpoint: false\n- multiple main objects: true\n\nDominant content: animal or mixed (animals + scene)\nImage style: natural_photo\nSemantic domain: wildlife/nature\n\nCaption: \"White pelicans standing on logs in a green algae-covered pond surrounded by autumn foliage\"\n\nPossible interpretations: pelicans in zoo enclosure, pelicans in natural wetland, pelicans at wildlife park\n\nQuality flags: possibly captive/enclosure setting",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 807,
+          "total_tokens": 2329,
+          "cost": 0.00127476,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00127476,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009684
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 520,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

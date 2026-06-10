@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_10",
+    "stim_key": "vicco_10",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 10,
+    "file_index": 9,
+    "image_name": "shared_4rep_vicco_010.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_010.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 7,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food/breakfast\",\n\n  \"short_caption\": \"Breakfast table with muesli, fruit, croissant, juice, and coffee beside a person in a patterned sweater.\",\n  \"main_objects\": [\"plate\", \"muesli bowl\", \"watermelon slice\", \"cantaloupe\", \"croissant\", \"coffee cup\", \"green juice glass\", \"red gerbera flowers\", \"patterned sweater\"],\n  \"possible_interpretations\": [\n    \"Restaurant or cafe breakfast scene\",\n    \"Healthy brunch spread\",\n    \"Hotel breakfast\"\n  ],\n  \"uncertainty_notes\": \"Person is heavily cropped so no face or identity cues; exact venue type and beverage contents are not fully certain.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319395-KnGsRYYOFeg3eEXs8wkM",
+        "object": "chat.completion",
+        "created": 1780319395,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 7,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food/breakfast\",\n\n  \"short_caption\": \"Breakfast table with muesli, fruit, croissant, juice, and coffee beside a person in a patterned sweater.\",\n  \"main_objects\": [\"plate\", \"muesli bowl\", \"watermelon slice\", \"cantaloupe\", \"croissant\", \"coffee cup\", \"green juice glass\", \"red gerbera flowers\", \"patterned sweater\"],\n  \"possible_interpretations\": [\n    \"Restaurant or cafe breakfast scene\",\n    \"Healthy brunch spread\",\n    \"Hotel breakfast\"\n  ],\n  \"uncertainty_notes\": \"Person is heavily cropped so no face or identity cues; exact venue type and beverage contents are not fully certain.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a breakfast/brunch scene on a table with:\n- A person wearing a colorful patterned sweater/jacket (visible from chest down, with traditional/ethnic pattern)\n- Various dishes: coffee cups, a glass of what appears to be green juice or smoothie, a croissant\n- A plate with muesli/granola, watermelon slice, cantaloupe, and what looks like physalis (cape gooseberry)\n- A small vase with red gerbera daisies\n- A used/empty bowl\n- Multiple plates and dishes\n- Spoons and utensils\n- The setting appears to be a restaurant or café\n\nLet me rate according to the schema:\n\n- recognizability: 5 - very clearly a breakfast scene\n- ambiguity: 1 - very clear what's happening (breakfast/brunch)\n- natural_photo_typicality: 4 - looks like a typical photo, slightly styled\n- visual_clutter: 4 - many items on the table\n- object_centricity: 2 - no single dominant object, more of a scene\n- scene_centricity: 4 - it's primarily a table scene/setting\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: ~6-8 (plates, cups, flowers, food items)\n- estimated_distinct_object_categories: ~6 (cups, plates, food, flowers, person clothing, glass)\n\n- contains_person: true (partially visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false (maybe some small text on a cup?)\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: \"mixed\" or \"food\" - leaning food since it's primarily a meal\nimage_style: \"natural_photo\"\nsemantic_domain: \"food/breakfast\"\n\nshort_caption: \"Breakfast table with muesli, fruit, croissant, and coffee at a restaurant\"\n\nmain_objects: [\"plate\", \"coffee cup\", \"muesli\", \"watermelon\", \"croissant\", \"flowers\", \"glass of juice\", \"person in patterned sweater\"]\n\npossible_interpretations: \n- \"Restaurant breakfast scene\"\n- \"Cafe brunch\"\n- \"Healthy breakfast spread\"\n\nuncertainty_notes: \"Person's face not visible, exact location/type of establishment unclear\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a breakfast/brunch scene on a table with:\n- A person wearing a colorful patterned sweater/jacket (visible from chest down, with traditional/ethnic pattern)\n- Various dishes: coffee cups, a glass of what appears to be green juice or smoothie, a croissant\n- A plate with muesli/granola, watermelon slice, cantaloupe, and what looks like physalis (cape gooseberry)\n- A small vase with red gerbera daisies\n- A used/empty bowl\n- Multiple plates and dishes\n- Spoons and utensils\n- The setting appears to be a restaurant or café\n\nLet me rate according to the schema:\n\n- recognizability: 5 - very clearly a breakfast scene\n- ambiguity: 1 - very clear what's happening (breakfast/brunch)\n- natural_photo_typicality: 4 - looks like a typical photo, slightly styled\n- visual_clutter: 4 - many items on the table\n- object_centricity: 2 - no single dominant object, more of a scene\n- scene_centricity: 4 - it's primarily a table scene/setting\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: ~6-8 (plates, cups, flowers, food items)\n- estimated_distinct_object_categories: ~6 (cups, plates, food, flowers, person clothing, glass)\n\n- contains_person: true (partially visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false (maybe some small text on a cup?)\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: \"mixed\" or \"food\" - leaning food since it's primarily a meal\nimage_style: \"natural_photo\"\nsemantic_domain: \"food/breakfast\"\n\nshort_caption: \"Breakfast table with muesli, fruit, croissant, and coffee at a restaurant\"\n\nmain_objects: [\"plate\", \"coffee cup\", \"muesli\", \"watermelon\", \"croissant\", \"flowers\", \"glass of juice\", \"person in patterned sweater\"]\n\npossible_interpretations: \n- \"Restaurant breakfast scene\"\n- \"Cafe brunch\"\n- \"Healthy breakfast spread\"\n\nuncertainty_notes: \"Person's face not visible, exact location/type of establishment unclear\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 933,
+          "total_tokens": 2455,
+          "cost": 0.00142596,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00142596,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011196
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 599,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

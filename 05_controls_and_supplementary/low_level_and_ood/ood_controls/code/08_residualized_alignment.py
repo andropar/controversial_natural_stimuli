@@ -7,7 +7,7 @@ controversial-minus-baseline alignment delta is still negative after projecting
 out measured PPCA feature/prediction OOD deltas and model-set fixed effects.
 
 Output:
-  experiments/cstim_paper/06_ood/data/ood_residualization_results.csv
+  05_controls_and_supplementary/low_level_and_ood/ood_controls/results/ood_residualization_results.csv
 """
 
 from __future__ import annotations
@@ -19,8 +19,8 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 
 
-PAPER = Path(__file__).resolve().parents[1]
-DATA = PAPER / "06_ood" / "results"
+STAGE = Path(__file__).resolve().parents[1]
+DATA = STAGE / "results"
 OUT = DATA / "ood_residualization_results.csv"
 
 

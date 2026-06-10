@@ -7,7 +7,7 @@ stimuli (0.38) than on vicco baseline (0.15), establishing that the unexplained
 variance is reliable brain structure, not noise.
 
 Outputs:
-    data/nc_comparison.csv
+    results/nc_comparison.csv
     figures/nc_comparison.pdf/png
 
 Usage:
@@ -20,15 +20,15 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-_PAPER = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_PAPER.parents[1]))
-sys.path.insert(0, str(_PAPER / "figures"))
+STAGE = Path(__file__).resolve().parents[1]
+SHARE_ROOT = STAGE.parents[2]
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
 import config
 
-STATS_DIR = _PAPER / "03_statistics" / "results"
-DATA_DIR = Path(__file__).resolve().parent / "results"
-FIG_DIR = Path(__file__).resolve().parent / "figures"
+STATS_DIR = SHARE_ROOT / "02_alignment_reliability" / "results"
+DATA_DIR = STAGE / "results"
+FIG_DIR = STAGE / "figures"
 
 try:
     from style_improved import apply_style, DPI, W_SINGLE, W_DOUBLE
@@ -86,8 +86,9 @@ def main():
     )
     merged["gap_cstim"] = 1 - merged["nc_normalized_mean_cstim"]
     merged["gap_vicco"] = 1 - merged["nc_normalized_mean_vicco"]
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
     merged.to_csv(DATA_DIR / "nc_comparison.csv", index=False)
-    print(f"\nSaved: data/nc_comparison.csv")
+    print(f"\nSaved: results/nc_comparison.csv")
 
     # Figure: NC-normalized scores for both stimulus types, all models
     fig, axes = plt.subplots(1, 2, figsize=(W_DOUBLE, 4.5), sharey=False)
@@ -114,6 +115,7 @@ def main():
         ax.legend(fontsize=7)
 
     fig.tight_layout()
+    FIG_DIR.mkdir(parents=True, exist_ok=True)
     fig.savefig(FIG_DIR / "nc_comparison.pdf", bbox_inches="tight")
     fig.savefig(FIG_DIR / "nc_comparison.png", dpi=DPI, bbox_inches="tight")
     plt.close(fig)

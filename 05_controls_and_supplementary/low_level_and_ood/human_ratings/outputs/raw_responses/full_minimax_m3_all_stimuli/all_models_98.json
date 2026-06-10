@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_98",
+    "stim_key": "all_models_98",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 98,
+    "file_index": 98,
+    "image_name": "image_0098.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0098.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 1,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"illustration_or_render\",\n  \"semantic_domain\": \"digital_art\",\n  \"short_caption\": \"Digital artwork of a classical face composed of 3D rendered voxel blocks\",\n  \"main_objects\": [\"face\", \"3D blocks\", \"voxels\"],\n  \"possible_interpretations\": [\n    \"A classical sculpture face dissolving into geometric 3D blocks\",\n    \"Digital art merging classical portrait with voxel rendering\",\n    \"A face emerging from or breaking apart into cubic structures\"\n  ],\n  \"uncertainty_notes\": \"The face appears to be a classical sculpture (possibly Michelangelo's David), but resolution and angle make identification approximate\",\n  \"quality_flags\": [\"highly_artistic_composition\", \"non_photographic\", \"selective_focus_blur\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318843-DiY7Jh1wbHF3FlqSDeE9",
+        "object": "chat.completion",
+        "created": 1780318843,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 1,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"illustration_or_render\",\n  \"semantic_domain\": \"digital_art\",\n  \"short_caption\": \"Digital artwork of a classical face composed of 3D rendered voxel blocks\",\n  \"main_objects\": [\"face\", \"3D blocks\", \"voxels\"],\n  \"possible_interpretations\": [\n    \"A classical sculpture face dissolving into geometric 3D blocks\",\n    \"Digital art merging classical portrait with voxel rendering\",\n    \"A face emerging from or breaking apart into cubic structures\"\n  ],\n  \"uncertainty_notes\": \"The face appears to be a classical sculpture (possibly Michelangelo's David), but resolution and angle make identification approximate\",\n  \"quality_flags\": [\"highly_artistic_composition\", \"non_photographic\", \"selective_focus_blur\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "The image shows a creative artistic composition where a face (appears to be a classical sculpture or painting of a face) is made up of or overlaid on what looks like 3D rendered blocks/voxels/cubes. It's a digital art piece that combines a classical face image with a 3D geometric block structure. The face appears to be in the upper portion, while the lower portion shows the block/voxel structure in a grid pattern.\n\nLet me analyze this carefully:\n- It's clearly an edited/composite image\n- Contains a face (classical art style)\n- Has 3D rendered blocks/voxels\n- The artistic style is digital art/illustration\n- The image has an unusual viewpoint/perspective\n\nLet me rate according to the schema:\n\n- recognizability: The main content (face made of blocks) is recognizable but unusual - 4\n- ambiguity: Has one main interpretation but could be seen differently - 2\n- natural_photo_typicality: Not a natural photo at all - 1\n- visual_clutter: Many small blocks/elements - 4\n- object_centricity: The face is the central object - 4\n- scene_centricity: Not really a scene - 1\n- caption_confidence: Pretty confident about what's shown - 4\n\n- estimated_salient_object_count: 1 (the face)\n- estimated_distinct_object_categories: 2 (face, blocks/voxels)\n\n- contains_person: yes (face visible)\n- contains_face: yes\n- contains_animal: no\n- contains_text: no\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: no\n- contains_outdoor_scene: no\n- contains_artificial_or_rendered_content: yes\n- contains_occlusion_or_truncation: yes (face is partially shown)\n- contains_unusual_viewpoint: yes (the perspective/angle)\n- contains_multiple_main_objects: no\n\n- dominant_content_type: closeup_detail or person_face - I'll go with \"person_face\" since the face is the dominant element\n- image_style: edited_photo or illustration_or_render - \"illustration_or_render\" since it has heavy 3D rendering elements\n- semantic_domain: \"digital_art\" or \"art\"\n\nShort caption: \"Digital art composition of a classical face rendered in 3D blocks\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a creative artistic composition where a face (appears to be a classical sculpture or painting of a face) is made up of or overlaid on what looks like 3D rendered blocks/voxels/cubes. It's a digital art piece that combines a classical face image with a 3D geometric block structure. The face appears to be in the upper portion, while the lower portion shows the block/voxel structure in a grid pattern.\n\nLet me analyze this carefully:\n- It's clearly an edited/composite image\n- Contains a face (classical art style)\n- Has 3D rendered blocks/voxels\n- The artistic style is digital art/illustration\n- The image has an unusual viewpoint/perspective\n\nLet me rate according to the schema:\n\n- recognizability: The main content (face made of blocks) is recognizable but unusual - 4\n- ambiguity: Has one main interpretation but could be seen differently - 2\n- natural_photo_typicality: Not a natural photo at all - 1\n- visual_clutter: Many small blocks/elements - 4\n- object_centricity: The face is the central object - 4\n- scene_centricity: Not really a scene - 1\n- caption_confidence: Pretty confident about what's shown - 4\n\n- estimated_salient_object_count: 1 (the face)\n- estimated_distinct_object_categories: 2 (face, blocks/voxels)\n\n- contains_person: yes (face visible)\n- contains_face: yes\n- contains_animal: no\n- contains_text: no\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: no\n- contains_outdoor_scene: no\n- contains_artificial_or_rendered_content: yes\n- contains_occlusion_or_truncation: yes (face is partially shown)\n- contains_unusual_viewpoint: yes (the perspective/angle)\n- contains_multiple_main_objects: no\n\n- dominant_content_type: closeup_detail or person_face - I'll go with \"person_face\" since the face is the dominant element\n- image_style: edited_photo or illustration_or_render - \"illustration_or_render\" since it has heavy 3D rendering elements\n- semantic_domain: \"digital_art\" or \"art\"\n\nShort caption: \"Digital art composition of a classical face rendered in 3D blocks\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 869,
+          "total_tokens": 2391,
+          "cost": 0.00134916,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00134916,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010428
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 536,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

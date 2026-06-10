@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_43",
+    "stim_key": "dataset_43",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 43,
+    "file_index": 43,
+    "image_name": "image_0043.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0043.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 3, \"caption_confidence\": 5, \"estimated_salient_object_count\": 8, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"home_decor\", \"short_caption\": \"White square frames mounted on a wall, each containing artificial plants and flowers in a diamond arrangement\", \"main_objects\": [\"white square frames\", \"artificial succulents\", \"artificial flowers\", \"wall\"], \"possible_interpretations\": [\"wall-mounted artificial plant decoration\", \"home decor arrangement\", \"faux plant wall art\"], \"uncertainty_notes\": \"Plants appear artificial but cannot be definitively distinguished from real in a still image; count of frames is 8 arranged in a cross/diamond pattern\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319013-keyzaRbMzKMCAoxyoLlM",
+        "object": "chat.completion",
+        "created": 1780319013,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 3, \"caption_confidence\": 5, \"estimated_salient_object_count\": 8, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"home_decor\", \"short_caption\": \"White square frames mounted on a wall, each containing artificial plants and flowers in a diamond arrangement\", \"main_objects\": [\"white square frames\", \"artificial succulents\", \"artificial flowers\", \"wall\"], \"possible_interpretations\": [\"wall-mounted artificial plant decoration\", \"home decor arrangement\", \"faux plant wall art\"], \"uncertainty_notes\": \"Plants appear artificial but cannot be definitively distinguished from real in a still image; count of frames is 8 arranged in a cross/diamond pattern\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "The image shows a wall decoration consisting of multiple white square frames arranged in a diamond/cross pattern, each containing artificial plants and flowers of various types and colors. There appear to be 8 frames total arranged in a decorative pattern. The frames contain different succulents, flowers (purple, pink, green, lavender, orange roses), creating a wall-mounted artificial plant display.\n\nLet me analyze this carefully:\n\n- Recognizability: Very clear what it is - wall-mounted artificial plant/flower frames. 5\n- Ambiguity: Pretty clear purpose, could be interpreted as wall art or decoration. 1-2\n- Natural_photo_typicality: Looks like a typical product/lifestyle photo. 4\n- Visual_clutter: Multiple frames and many plants, somewhat busy but organized. 3\n- Object_centricity: Multiple objects, not one central. 2\n- Scene_centricity: It's a wall display, more of an object arrangement. 3\n- Caption_confidence: High - easy to describe. 5\n\nEstimated salient objects: 8 frames\nDistinct categories: frames, artificial plants/flowers\n\nContains: no person, no face, no animal, no text, no vehicle, no food, no indoor/outdoor specifically (it's a wall display), no artificial/rendered content per se (though the plants are artificial), no occlusion, no unusual viewpoint, multiple main objects (8 frames)\n\nDominant content: object (decorative arrangement)\nImage style: natural_photo\nSemantic domain: home_decor\n\nShort caption: \"White square wall-mounted frames displaying artificial plants and flowers in diamond pattern\"\n\nMain objects: wall frames, artificial plants, succulents, flowers\n\nPossible interpretations: wall art decoration, artificial plant display, home decor arrangement\n\nUncertainty: the plants are clearly artificial but indistinguishable from real in a quick glance",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a wall decoration consisting of multiple white square frames arranged in a diamond/cross pattern, each containing artificial plants and flowers of various types and colors. There appear to be 8 frames total arranged in a decorative pattern. The frames contain different succulents, flowers (purple, pink, green, lavender, orange roses), creating a wall-mounted artificial plant display.\n\nLet me analyze this carefully:\n\n- Recognizability: Very clear what it is - wall-mounted artificial plant/flower frames. 5\n- Ambiguity: Pretty clear purpose, could be interpreted as wall art or decoration. 1-2\n- Natural_photo_typicality: Looks like a typical product/lifestyle photo. 4\n- Visual_clutter: Multiple frames and many plants, somewhat busy but organized. 3\n- Object_centricity: Multiple objects, not one central. 2\n- Scene_centricity: It's a wall display, more of an object arrangement. 3\n- Caption_confidence: High - easy to describe. 5\n\nEstimated salient objects: 8 frames\nDistinct categories: frames, artificial plants/flowers\n\nContains: no person, no face, no animal, no text, no vehicle, no food, no indoor/outdoor specifically (it's a wall display), no artificial/rendered content per se (though the plants are artificial), no occlusion, no unusual viewpoint, multiple main objects (8 frames)\n\nDominant content: object (decorative arrangement)\nImage style: natural_photo\nSemantic domain: home_decor\n\nShort caption: \"White square wall-mounted frames displaying artificial plants and flowers in diamond pattern\"\n\nMain objects: wall frames, artificial plants, succulents, flowers\n\nPossible interpretations: wall art decoration, artificial plant display, home decor arrangement\n\nUncertainty: the plants are clearly artificial but indistinguishable from real in a quick glance",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 697,
+          "total_tokens": 2219,
+          "cost": 0.00126564,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126564,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008364
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 468,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_107",
+    "stim_key": "vicco_107",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 107,
+    "file_index": 106,
+    "image_name": "shared_4rep_vicco_107.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_107.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"zoo_animal_enclosure\",\n  \"short_caption\": \"Two workers standing at the edge of a zoo enclosure pool near a brick animal den.\",\n  \"main_objects\": [\"workers\", \"water pool\", \"brick wall\", \"information sign\", \"bicycles\", \"trees\"],\n  \"possible_interpretations\": [\n    \"Zookeepers performing maintenance at an animal enclosure\",\n    \"Staff preparing for an animal feeding session based on the posted schedule\",\n    \"Workers cleaning or inspecting a zoo water feature\",\n    \"People wading at the edge of a park pond\"\n  ],\n  \"uncertainty_notes\": \"Exact activity of the people is unclear; animal enclosure context is inferred from the rocky den-like opening, water feature, and schedule sign. Faces are not visible.\",\n  \"quality_flags\": [\"overcast_lighting\", \"subjects_at_distance\", \"slight_visual_busyness\"]\n}",
+      "response": {
+        "id": "gen-1780319512-0P4zTSlJDxI4Wa9HWdC3",
+        "object": "chat.completion",
+        "created": 1780319512,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"zoo_animal_enclosure\",\n  \"short_caption\": \"Two workers standing at the edge of a zoo enclosure pool near a brick animal den.\",\n  \"main_objects\": [\"workers\", \"water pool\", \"brick wall\", \"information sign\", \"bicycles\", \"trees\"],\n  \"possible_interpretations\": [\n    \"Zookeepers performing maintenance at an animal enclosure\",\n    \"Staff preparing for an animal feeding session based on the posted schedule\",\n    \"Workers cleaning or inspecting a zoo water feature\",\n    \"People wading at the edge of a park pond\"\n  ],\n  \"uncertainty_notes\": \"Exact activity of the people is unclear; animal enclosure context is inferred from the rocky den-like opening, water feature, and schedule sign. Faces are not visible.\",\n  \"quality_flags\": [\"overcast_lighting\", \"subjects_at_distance\", \"slight_visual_busyness\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an outdoor scene at what appears to be a zoo or animal enclosure. I can see:\n- Two people standing near the edge of water - they appear to be zookeepers or staff, one wearing a tan/beige jacket and hat, the other in dark clothing\n- A water body (pool/enclosure) in the foreground\n- A brick wall/structure on the left with a small opening (possibly an animal den)\n- Trees and vegetation in the background\n- A sign with what appears to be feeding times (10:30, 13:30) - text mentions \"North Passage\" or similar\n- Bicycles visible behind a fence in the background\n- The setting appears to be a zoo enclosure, possibly for a bear or large animal given the rocky terrain and water\n\nThe people seem to be workers (zookeepers) at the edge of the water, possibly cleaning or doing maintenance work.\n\nLet me assess the ratings:\n\n- recognizability: 4 - fairly clear what's happening, though specific details are ambiguous\n- ambiguity: 3 - could be interpreted as zoo maintenance, fishing, etc.\n- natural_photo_typicality: 4 - looks like a typical natural photograph\n- visual_clutter: 3 - moderate amount of detail\n- object_centricity: 2 - no single dominant object, more of a scene\n- scene_centricity: 4 - this is primarily a scene/place\n- caption_confidence: 3 - could be described but specific context is unclear\n\n- estimated_salient_object_count: 4-5 (2 people, building, water, sign, bicycles)\n- estimated_distinct_object_categories: 4-5 (people, building, water, vegetation, bicycles, sign)\n\n- contains_person: true\n- contains_face: false (faces not clearly visible, turned away)\n- contains_animal: false (no animals visible, though it might be an animal enclosure)\n- contains_text: true (sign with times)\n- contains_vehicle: true (bicycles)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: zoo/animal enclosure\n\nshort_caption: Two zookeepers working at the edge of a zoo enclosure with a water pool\nmain_objects: zookeepers, water pool, brick wall, sign, bicycles, trees\npossible_interpretations: \n- Zoo keepers cleaning animal enclosure\n- Workers performing maintenance at water feature\n- Staff preparing for animal feeding time\n- People fishing in a pond\nuncertainty_notes: Specific context (zoo type, activity) is inferred but not confirmed\nquality_flags: somewhat_overcast_lighting, distance_subjects",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an outdoor scene at what appears to be a zoo or animal enclosure. I can see:\n- Two people standing near the edge of water - they appear to be zookeepers or staff, one wearing a tan/beige jacket and hat, the other in dark clothing\n- A water body (pool/enclosure) in the foreground\n- A brick wall/structure on the left with a small opening (possibly an animal den)\n- Trees and vegetation in the background\n- A sign with what appears to be feeding times (10:30, 13:30) - text mentions \"North Passage\" or similar\n- Bicycles visible behind a fence in the background\n- The setting appears to be a zoo enclosure, possibly for a bear or large animal given the rocky terrain and water\n\nThe people seem to be workers (zookeepers) at the edge of the water, possibly cleaning or doing maintenance work.\n\nLet me assess the ratings:\n\n- recognizability: 4 - fairly clear what's happening, though specific details are ambiguous\n- ambiguity: 3 - could be interpreted as zoo maintenance, fishing, etc.\n- natural_photo_typicality: 4 - looks like a typical natural photograph\n- visual_clutter: 3 - moderate amount of detail\n- object_centricity: 2 - no single dominant object, more of a scene\n- scene_centricity: 4 - this is primarily a scene/place\n- caption_confidence: 3 - could be described but specific context is unclear\n\n- estimated_salient_object_count: 4-5 (2 people, building, water, sign, bicycles)\n- estimated_distinct_object_categories: 4-5 (people, building, water, vegetation, bicycles, sign)\n\n- contains_person: true\n- contains_face: false (faces not clearly visible, turned away)\n- contains_animal: false (no animals visible, though it might be an animal enclosure)\n- contains_text: true (sign with times)\n- contains_vehicle: true (bicycles)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: zoo/animal enclosure\n\nshort_caption: Two zookeepers working at the edge of a zoo enclosure with a water pool\nmain_objects: zookeepers, water pool, brick wall, sign, bicycles, trees\npossible_interpretations: \n- Zoo keepers cleaning animal enclosure\n- Workers performing maintenance at water feature\n- Staff preparing for animal feeding time\n- People fishing in a pond\nuncertainty_notes: Specific context (zoo type, activity) is inferred but not confirmed\nquality_flags: somewhat_overcast_lighting, distance_subjects",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 1036,
+          "total_tokens": 2558,
+          "cost": 0.00154956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00154956,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0012432
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 696,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_203",
+    "stim_key": "vicco_203",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 203,
+    "file_index": 202,
+    "image_name": "shared_4rep_vicco_203.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_203.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor camping forest\",\n  \"short_caption\": \"Green tarp shelter strung between tall pine trees in a dim forest with camping gear below\",\n  \"main_objects\": [\"tarp\", \"pine trees\", \"umbrella\", \"camping gear\", \"mossy ground\"],\n  \"possible_interpretations\": [\"camping setup\", \"bushcraft shelter\", \"hunting blind\", \"field bivouac\", \"temporary outdoor cover\"],\n  \"uncertainty_notes\": \"Difficult to identify specific items beneath the tarp; exact purpose and presence of people are unclear\",\n  \"quality_flags\": [\"dim low light\", \"partially occluded foreground objects\", \"overcast lighting\"]\n}",
+      "response": {
+        "id": "gen-1780319624-JOQIvp3eyj9v5el0t7K1",
+        "object": "chat.completion",
+        "created": 1780319624,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor camping forest\",\n  \"short_caption\": \"Green tarp shelter strung between tall pine trees in a dim forest with camping gear below\",\n  \"main_objects\": [\"tarp\", \"pine trees\", \"umbrella\", \"camping gear\", \"mossy ground\"],\n  \"possible_interpretations\": [\"camping setup\", \"bushcraft shelter\", \"hunting blind\", \"field bivouac\", \"temporary outdoor cover\"],\n  \"uncertainty_notes\": \"Difficult to identify specific items beneath the tarp; exact purpose and presence of people are unclear\",\n  \"quality_flags\": [\"dim low light\", \"partially occluded foreground objects\", \"overcast lighting\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a tarp shelter set up in a pine forest. There are tall pine trees, a green/grey tarp strung between trees creating a makeshift shelter or tent. On the ground beneath the tarp, there appears to be some camping equipment and what might be an umbrella. The forest floor has green undergrowth, moss, and some fallen branches. The lighting is dim, suggesting overcast or evening conditions.\n\nLet me annotate this carefully:\n\n- recognizability: The content is clear - a tarp shelter in a forest. 4\n- ambiguity: Limited interpretations - it's clearly a camping setup. 1\n- natural_photo_typicality: Looks like a typical natural photograph. 5\n- visual_clutter: There's the tarp, trees, undergrowth, some camping gear - moderate clutter. 3\n- object_centricity: The tarp shelter is the central object but it's spread across the scene. 3\n- scene_centricity: This is more of a scene/place than an object-focused image. 4\n- caption_confidence: High confidence in a caption describing a tarp shelter in a forest. 4\n\n- estimated_salient_object_count: 1 (the tarp/shelter setup)\n- estimated_distinct_object_categories: 3 (tarp, trees, camping gear/umbrella)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (one main object - the shelter)\n\n- dominant_content_type: \"mixed\" - it's both an object (tarp) and a scene (forest)\n- image_style: \"natural_photo\"\n- semantic_domain: \"outdoor/camping\"\n\n- short_caption: \"A green tarp shelter strung between pine trees in a forest with camping gear underneath\"\n- main_objects: [\"tarp\", \"pine trees\", \"camping gear\", \"umbrella\"]\n- possible_interpretations: [\"camping setup\", \"hunting blind\", \"bushcraft shelter\", \"temporary field camp\"]\n- uncertainty_notes: \"Difficult to determine exact purpose of the shelter or whether anyone is present underneath\"\n- quality_flags: [\"dim lighting\", \"partially occluded objects under tarp\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a tarp shelter set up in a pine forest. There are tall pine trees, a green/grey tarp strung between trees creating a makeshift shelter or tent. On the ground beneath the tarp, there appears to be some camping equipment and what might be an umbrella. The forest floor has green undergrowth, moss, and some fallen branches. The lighting is dim, suggesting overcast or evening conditions.\n\nLet me annotate this carefully:\n\n- recognizability: The content is clear - a tarp shelter in a forest. 4\n- ambiguity: Limited interpretations - it's clearly a camping setup. 1\n- natural_photo_typicality: Looks like a typical natural photograph. 5\n- visual_clutter: There's the tarp, trees, undergrowth, some camping gear - moderate clutter. 3\n- object_centricity: The tarp shelter is the central object but it's spread across the scene. 3\n- scene_centricity: This is more of a scene/place than an object-focused image. 4\n- caption_confidence: High confidence in a caption describing a tarp shelter in a forest. 4\n\n- estimated_salient_object_count: 1 (the tarp/shelter setup)\n- estimated_distinct_object_categories: 3 (tarp, trees, camping gear/umbrella)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (one main object - the shelter)\n\n- dominant_content_type: \"mixed\" - it's both an object (tarp) and a scene (forest)\n- image_style: \"natural_photo\"\n- semantic_domain: \"outdoor/camping\"\n\n- short_caption: \"A green tarp shelter strung between pine trees in a forest with camping gear underneath\"\n- main_objects: [\"tarp\", \"pine trees\", \"camping gear\", \"umbrella\"]\n- possible_interpretations: [\"camping setup\", \"hunting blind\", \"bushcraft shelter\", \"temporary field camp\"]\n- uncertainty_notes: \"Difficult to determine exact purpose of the shelter or whether anyone is present underneath\"\n- quality_flags: [\"dim lighting\", \"partially occluded objects under tarp\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 899,
+          "total_tokens": 2421,
+          "cost": 0.00138516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00138516,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010788
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 574,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

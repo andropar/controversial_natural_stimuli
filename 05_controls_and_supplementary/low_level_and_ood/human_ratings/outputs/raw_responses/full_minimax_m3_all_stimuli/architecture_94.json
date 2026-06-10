@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_94",
+    "stim_key": "architecture_94",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 94,
+    "file_index": 94,
+    "image_name": "image_0094.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0094.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior\",\n  \"short_caption\": \"Empty room with brown carpet, white plantation shutters, and partial floral furniture in sunlight.\",\n  \"main_objects\": [\"carpet\", \"plantation shutters\", \"baseboards\", \"floral chair (partial)\"],\n  \"possible_interpretations\": [\"interior of a residential home\", \"empty unfurnished room\", \"living or sitting room with carpet\"],\n  \"uncertainty_notes\": \"Only a small portion of a floral-patterned object is visible on the left edge, making its identity uncertain; the room's function is unclear due to minimal furnishings.\",\n  \"quality_flags\": [\"partial object on left edge\", \"high contrast from direct sunlight\", \"uncluttered composition\"]\n}",
+      "response": {
+        "id": "gen-1780318952-IOMEh5Q3oqlloAsaxfAO",
+        "object": "chat.completion",
+        "created": 1780318952,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior\",\n  \"short_caption\": \"Empty room with brown carpet, white plantation shutters, and partial floral furniture in sunlight.\",\n  \"main_objects\": [\"carpet\", \"plantation shutters\", \"baseboards\", \"floral chair (partial)\"],\n  \"possible_interpretations\": [\"interior of a residential home\", \"empty unfurnished room\", \"living or sitting room with carpet\"],\n  \"uncertainty_notes\": \"Only a small portion of a floral-patterned object is visible on the left edge, making its identity uncertain; the room's function is unclear due to minimal furnishings.\",\n  \"quality_flags\": [\"partial object on left edge\", \"high contrast from direct sunlight\", \"uncluttered composition\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows an interior room scene, primarily featuring a brown/reddish carpeted floor with sunlight streaming in through white plantation-style window shutters. There's a small portion of what appears to be a floral-patterned chair or piece of furniture visible on the left edge. The walls are a peachy/cream color with white baseboards.\n\nLet me annotate this according to the schema:\n\n- recognizability: It's clearly a room with carpet and shutters, very recognizable = 5\n- ambiguity: Not much ambiguity, it's clearly an interior = 2\n- natural_photo_typicality: Looks like a typical interior photo = 4\n- visual_clutter: Quite empty/minimal = 1\n- object_centricity: No clear central object = 1\n- scene_centricity: Yes, this is mainly a place/scene = 5\n- caption_confidence: Easy to caption = 5\n\n- estimated_salient_object_count: 2 (carpet area, window shutters)\n- estimated_distinct_object_categories: 2-3 (window/shutters, carpet, partial furniture)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false (window shows some light but not outdoor scene)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (furniture cut off on left)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"interior\"\n\n- short_caption: \"Empty room with brown carpet, white plantation shutters, and partial floral furniture\"\n- main_objects: [\"carpet\", \"plantation shutters\", \"baseboards\", \"floral chair (partial)\"]\n- possible_interpretations: [\"interior of a home\", \"empty room\", \"living space with carpet\"]\n- uncertainty_notes: \"Only partial view of furniture on left edge; limited context about the room's function\"\n- quality_flags: [\"partial object visible\", \"bright sunlight causing high contrast\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows an interior room scene, primarily featuring a brown/reddish carpeted floor with sunlight streaming in through white plantation-style window shutters. There's a small portion of what appears to be a floral-patterned chair or piece of furniture visible on the left edge. The walls are a peachy/cream color with white baseboards.\n\nLet me annotate this according to the schema:\n\n- recognizability: It's clearly a room with carpet and shutters, very recognizable = 5\n- ambiguity: Not much ambiguity, it's clearly an interior = 2\n- natural_photo_typicality: Looks like a typical interior photo = 4\n- visual_clutter: Quite empty/minimal = 1\n- object_centricity: No clear central object = 1\n- scene_centricity: Yes, this is mainly a place/scene = 5\n- caption_confidence: Easy to caption = 5\n\n- estimated_salient_object_count: 2 (carpet area, window shutters)\n- estimated_distinct_object_categories: 2-3 (window/shutters, carpet, partial furniture)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false (window shows some light but not outdoor scene)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (furniture cut off on left)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"interior\"\n\n- short_caption: \"Empty room with brown carpet, white plantation shutters, and partial floral furniture\"\n- main_objects: [\"carpet\", \"plantation shutters\", \"baseboards\", \"floral chair (partial)\"]\n- possible_interpretations: [\"interior of a home\", \"empty room\", \"living space with carpet\"]\n- uncertainty_notes: \"Only partial view of furniture on left edge; limited context about the room's function\"\n- quality_flags: [\"partial object visible\", \"bright sunlight causing high contrast\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 842,
+          "total_tokens": 2256,
+          "cost": 0.00128436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00128436,
+            "upstream_inference_prompt_cost": 0.00027396,
+            "upstream_inference_completions_cost": 0.0010104
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 523,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

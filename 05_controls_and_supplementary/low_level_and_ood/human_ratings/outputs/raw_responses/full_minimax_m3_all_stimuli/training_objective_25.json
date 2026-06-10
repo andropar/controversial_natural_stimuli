@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_25",
+    "stim_key": "training_objective_25",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 25,
+    "file_index": 25,
+    "image_name": "image_0025.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0025.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"agriculture/farming\",\n\n  \"short_caption\": \"Group of men examining an ear of corn in a tall cornfield.\",\n  \"main_objects\": [\"men\", \"corn plants\", \"ear of corn\", \"hats\"],\n  \"possible_interpretations\": [\n    \"Farmers or agronomists inspecting a corn crop in the field\",\n    \"Group discussing harvest or crop quality\",\n    \"Agricultural extension workers visiting a maize farm\"\n  ],\n  \"uncertainty_notes\": \"Faces are partially obscured by hats and beards; any text on the green hat is not legible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319235-N3TltKLZsTr2gTg9n50N",
+        "object": "chat.completion",
+        "created": 1780319235,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"agriculture/farming\",\n\n  \"short_caption\": \"Group of men examining an ear of corn in a tall cornfield.\",\n  \"main_objects\": [\"men\", \"corn plants\", \"ear of corn\", \"hats\"],\n  \"possible_interpretations\": [\n    \"Farmers or agronomists inspecting a corn crop in the field\",\n    \"Group discussing harvest or crop quality\",\n    \"Agricultural extension workers visiting a maize farm\"\n  ],\n  \"uncertainty_notes\": \"Faces are partially obscured by hats and beards; any text on the green hat is not legible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a group of people (appears to be 3-4 men) standing in a corn field. They are wearing traditional clothing and hats (one has a green hat that might have some text/logo on it). One person appears to be holding an ear of corn with the husk peeled back, showing yellow corn kernels. The scene is outdoors in tall corn plants.\n\nLet me rate each dimension:\n\n- recognizability: The content is clear - people in a cornfield examining corn. 5\n- ambiguity: Low ambiguity - clear scene. 1\n- natural_photo_typicality: Looks like a typical natural photograph. 5\n- visual_clutter: There's a lot of corn plants/foliage, but it's not overly cluttered. 3\n- object_centricity: There's a group of people, not really a single central object. 2\n- scene_centricity: This is more of a scene - a cornfield with people. 4\n- caption_confidence: High confidence in caption. 5\n\nEstimated counts:\n- salient objects: ~4 people + corn plants\n- distinct categories: people, corn plants, corn ear = 3\n\nContent flags:\n- contains_person: true\n- contains_face: faces are visible but partially obscured by hats/beards\n- contains_animal: false\n- contains_text: possible on the green hat but unclear\n- contains_vehicle: false\n- contains_food: corn is technically food but not prepared food\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: some occlusion by foliage\n- contains_unusual_viewpoint: no\n- contains_multiple_main_objects: yes, multiple people\n\nDominant content: scene (or mixed with people)\nImage style: natural_photo\nSemantic domain: agriculture/farming\n\nCaption: Group of men examining an ear of corn in a tall cornfield.\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a group of people (appears to be 3-4 men) standing in a corn field. They are wearing traditional clothing and hats (one has a green hat that might have some text/logo on it). One person appears to be holding an ear of corn with the husk peeled back, showing yellow corn kernels. The scene is outdoors in tall corn plants.\n\nLet me rate each dimension:\n\n- recognizability: The content is clear - people in a cornfield examining corn. 5\n- ambiguity: Low ambiguity - clear scene. 1\n- natural_photo_typicality: Looks like a typical natural photograph. 5\n- visual_clutter: There's a lot of corn plants/foliage, but it's not overly cluttered. 3\n- object_centricity: There's a group of people, not really a single central object. 2\n- scene_centricity: This is more of a scene - a cornfield with people. 4\n- caption_confidence: High confidence in caption. 5\n\nEstimated counts:\n- salient objects: ~4 people + corn plants\n- distinct categories: people, corn plants, corn ear = 3\n\nContent flags:\n- contains_person: true\n- contains_face: faces are visible but partially obscured by hats/beards\n- contains_animal: false\n- contains_text: possible on the green hat but unclear\n- contains_vehicle: false\n- contains_food: corn is technically food but not prepared food\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: some occlusion by foliage\n- contains_unusual_viewpoint: no\n- contains_multiple_main_objects: yes, multiple people\n\nDominant content: scene (or mixed with people)\nImage style: natural_photo\nSemantic domain: agriculture/farming\n\nCaption: Group of men examining an ear of corn in a tall cornfield.\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 774,
+          "total_tokens": 2088,
+          "cost": 0.00117276,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00117276,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.0009288
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 470,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

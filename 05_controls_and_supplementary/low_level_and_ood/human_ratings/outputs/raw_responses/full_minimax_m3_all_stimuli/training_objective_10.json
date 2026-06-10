@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_10",
+    "stim_key": "training_objective_10",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 10,
+    "file_index": 10,
+    "image_name": "image_0010.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0010.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 3, \"visual_clutter\": 2, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 4, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 4, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"edited_photo\", \"semantic_domain\": \"fashion\", \"short_caption\": \"Model wearing a navy blue floral-patterned midi skirt indoors beside a plant and ladder.\", \"main_objects\": [\"navy blue floral midi skirt\", \"cream knit top\", \"fiddle leaf fig plant\", \"woven basket\", \"wooden ladder\"], \"possible_interpretations\": [\"fashion product photo\", \"clothing catalog image\", \"e-commerce listing photo\", \"styled outfit shot\"], \"uncertainty_notes\": \"Person's head is cropped out; the image is a styled product photograph rather than a candid scene.\", \"quality_flags\": [\"head_cropped\", \"product_photography\", \"staged_composition\"]}",
+      "response": {
+        "id": "gen-1780319213-zGG0fSP3yBbeGTxqrbfG",
+        "object": "chat.completion",
+        "created": 1780319213,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 3, \"visual_clutter\": 2, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 4, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 4, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"edited_photo\", \"semantic_domain\": \"fashion\", \"short_caption\": \"Model wearing a navy blue floral-patterned midi skirt indoors beside a plant and ladder.\", \"main_objects\": [\"navy blue floral midi skirt\", \"cream knit top\", \"fiddle leaf fig plant\", \"woven basket\", \"wooden ladder\"], \"possible_interpretations\": [\"fashion product photo\", \"clothing catalog image\", \"e-commerce listing photo\", \"styled outfit shot\"], \"uncertainty_notes\": \"Person's head is cropped out; the image is a styled product photograph rather than a candid scene.\", \"quality_flags\": [\"head_cropped\", \"product_photography\", \"staged_composition\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a person wearing a navy blue midi skirt with silver/grey floral patterns. The person is wearing a cream/white long-sleeve top. We can see the person's torso from chest down to mid-calf. There's a plant (looks like a fiddle leaf fig) in a woven basket on the left, and a wooden ladder on the right against a light-colored wall.\n\nLet me rate each dimension:\n\n- recognizability: 4 - clearly a skirt being modeled, easy to recognize\n- ambiguity: 2 - pretty clear it's a clothing product shot\n- natural_photo_typicality: 3 - it looks like a product/e-commerce photo, not a typical natural photo\n- visual_clutter: 2 - fairly clean composition\n- object_centricity: 4 - the skirt is clearly the main subject\n- scene_centricity: 2 - not really a scene\n- caption_confidence: 4 - easy to describe\n\nestimated_salient_object_count: 4 (skirt, person, plant, ladder)\nestimated_distinct_object_categories: 4\n\ncontains_person: true\ncontains_face: false (face is cut off)\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (person's head is cut off)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: \"object\" (the skirt is the main subject)\nimage_style: \"edited_photo\" (looks like a product photo, possibly with some editing)\nsemantic_domain: \"fashion\" or \"clothing\"\n\nshort_caption: \"Woman modeling a navy blue floral-patterned midi skirt indoors with plant and ladder.\"\nmain_objects: [\"navy blue floral skirt\", \"cream top\", \"fiddle leaf fig plant\", \"wooden ladder\", \"woven basket\"]\n\npossible_interpretations: [\"fashion product photo\", \"clothing catalog image\", \"e-commerce listing\"]\n\nuncertainty_notes: \"Image is clearly a product/fashion photo; person's head is cropped out.\"\nquality_flags: [\"head_cropped\", \"product_photography\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a person wearing a navy blue midi skirt with silver/grey floral patterns. The person is wearing a cream/white long-sleeve top. We can see the person's torso from chest down to mid-calf. There's a plant (looks like a fiddle leaf fig) in a woven basket on the left, and a wooden ladder on the right against a light-colored wall.\n\nLet me rate each dimension:\n\n- recognizability: 4 - clearly a skirt being modeled, easy to recognize\n- ambiguity: 2 - pretty clear it's a clothing product shot\n- natural_photo_typicality: 3 - it looks like a product/e-commerce photo, not a typical natural photo\n- visual_clutter: 2 - fairly clean composition\n- object_centricity: 4 - the skirt is clearly the main subject\n- scene_centricity: 2 - not really a scene\n- caption_confidence: 4 - easy to describe\n\nestimated_salient_object_count: 4 (skirt, person, plant, ladder)\nestimated_distinct_object_categories: 4\n\ncontains_person: true\ncontains_face: false (face is cut off)\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (person's head is cut off)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: \"object\" (the skirt is the main subject)\nimage_style: \"edited_photo\" (looks like a product photo, possibly with some editing)\nsemantic_domain: \"fashion\" or \"clothing\"\n\nshort_caption: \"Woman modeling a navy blue floral-patterned midi skirt indoors with plant and ladder.\"\nmain_objects: [\"navy blue floral skirt\", \"cream top\", \"fiddle leaf fig plant\", \"wooden ladder\", \"woven basket\"]\n\npossible_interpretations: [\"fashion product photo\", \"clothing catalog image\", \"e-commerce listing\"]\n\nuncertainty_notes: \"Image is clearly a product/fashion photo; person's head is cropped out.\"\nquality_flags: [\"head_cropped\", \"product_photography\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 820,
+          "total_tokens": 2342,
+          "cost": 0.00129036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000984
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 529,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

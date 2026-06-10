@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_2",
+    "stim_key": "architecture_2",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 2,
+    "file_index": 2,
+    "image_name": "image_0002.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0002.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"interior_design\",\n  \"short_caption\": \"Modern living room with black and white sectional sofa and speakers\",\n  \"main_objects\": [\"sectional sofa\", \"wall speakers\", \"wall art\", \"shag rug\", \"curtains\", \"floor lamp\"],\n  \"possible_interpretations\": [\"modern living room interior\", \"contemporary home decor showcase\", \"furniture showroom\"],\n  \"uncertainty_notes\": \"Depositphotos watermark visible across the image, indicating stock photo origin\",\n  \"quality_flags\": [\"watermark\", \"stock_photo\"]\n}",
+      "response": {
+        "id": "gen-1780318848-OtcjLtM0DmUJ34XwVvHK",
+        "object": "chat.completion",
+        "created": 1780318848,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"interior_design\",\n  \"short_caption\": \"Modern living room with black and white sectional sofa and speakers\",\n  \"main_objects\": [\"sectional sofa\", \"wall speakers\", \"wall art\", \"shag rug\", \"curtains\", \"floor lamp\"],\n  \"possible_interpretations\": [\"modern living room interior\", \"contemporary home decor showcase\", \"furniture showroom\"],\n  \"uncertainty_notes\": \"Depositphotos watermark visible across the image, indicating stock photo origin\",\n  \"quality_flags\": [\"watermark\", \"stock_photo\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a modern living room with a large black and white sectional sofa as the main subject. There are speakers on the walls, a piece of artwork on the wall, a fluffy gray rug, curtains by a window, and a floor lamp. The image appears to be a stock photo with a visible \"depositphotos\" watermark, suggesting it's an edited/stock photograph.\n\nLet me analyze each attribute:\n\n- recognizability: Very clear, modern living room - 5\n- ambiguity: Quite clear what it is, a modern living room with sofa - 2\n- natural_photo_typicality: Has watermark, looks like a stock photo/render - 3\n- visual_clutter: Moderate, several elements but organized - 3\n- object_centricity: Sofa dominates but it's also a scene - 3\n- scene_centricity: Yes, clearly an indoor scene - 4\n- caption_confidence: High - 5\n\n- estimated_salient_object_count: 5-6 (sofa, speakers, artwork, rug, lamp, curtains)\n- estimated_distinct_object_categories: 5-6\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (watermark is visible but it's not text content per se - actually there is a watermark text \"depositphotos\")\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (looks like a photo)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (sofa is the main object)\n\nWait, there is a watermark text \"depositphotos\" visible. So contains_text should be true.\n\n- dominant_content_type: \"scene\" (it's a living room scene with furniture)\n- image_style: \"edited_photo\" (stock photo with watermark)\n- semantic_domain: \"interior_design\" or \"home_furniture\"\n\nshort_caption: \"Modern living room with black and white sectional sofa\"\nmain_objects: [\"sectional sofa\", \"speakers\", \"wall art\", \"rug\", \"curtains\", \"floor lamp\"]\npossible_interpretations: [\"modern living room interior\", \"contemporary home decor\", \"furniture showroom\"]\nuncertainty_notes: \"Image has depositphotos watermark indicating stock photo origin\"\nquality_flags: [\"watermark\", \"stock_photo\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a modern living room with a large black and white sectional sofa as the main subject. There are speakers on the walls, a piece of artwork on the wall, a fluffy gray rug, curtains by a window, and a floor lamp. The image appears to be a stock photo with a visible \"depositphotos\" watermark, suggesting it's an edited/stock photograph.\n\nLet me analyze each attribute:\n\n- recognizability: Very clear, modern living room - 5\n- ambiguity: Quite clear what it is, a modern living room with sofa - 2\n- natural_photo_typicality: Has watermark, looks like a stock photo/render - 3\n- visual_clutter: Moderate, several elements but organized - 3\n- object_centricity: Sofa dominates but it's also a scene - 3\n- scene_centricity: Yes, clearly an indoor scene - 4\n- caption_confidence: High - 5\n\n- estimated_salient_object_count: 5-6 (sofa, speakers, artwork, rug, lamp, curtains)\n- estimated_distinct_object_categories: 5-6\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (watermark is visible but it's not text content per se - actually there is a watermark text \"depositphotos\")\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (looks like a photo)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (sofa is the main object)\n\nWait, there is a watermark text \"depositphotos\" visible. So contains_text should be true.\n\n- dominant_content_type: \"scene\" (it's a living room scene with furniture)\n- image_style: \"edited_photo\" (stock photo with watermark)\n- semantic_domain: \"interior_design\" or \"home_furniture\"\n\nshort_caption: \"Modern living room with black and white sectional sofa\"\nmain_objects: [\"sectional sofa\", \"speakers\", \"wall art\", \"rug\", \"curtains\", \"floor lamp\"]\npossible_interpretations: [\"modern living room interior\", \"contemporary home decor\", \"furniture showroom\"]\nuncertainty_notes: \"Image has depositphotos watermark indicating stock photo origin\"\nquality_flags: [\"watermark\", \"stock_photo\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 866,
+          "total_tokens": 2388,
+          "cost": 0.00134556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00134556,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010392
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 564,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

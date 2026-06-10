@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_66",
+    "stim_key": "sota_66",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 66,
+    "file_index": 66,
+    "image_name": "image_0066.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0066.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion/apparel\",\n  \"short_caption\": \"Young man wearing a dark checkered hooded puffer jacket against a plain background.\",\n  \"main_objects\": [\"puffer jacket\", \"young man\"],\n  \"possible_interpretations\": [\n    \"E-commerce product photo of a hooded puffer jacket\",\n    \"Fashion editorial featuring a model in outerwear\",\n    \"Catalog image of a menswear jacket\"\n  ],\n  \"uncertainty_notes\": \"Studio lighting and plain backdrop suggest commercial product photography; exact brand or product line not identifiable.\",\n  \"quality_flags\": [\"cropped_face\", \"studio_background\", \"commercial_photography\"]\n}",
+      "response": {
+        "id": "gen-1780319164-FJHOFgtDBPqHVnPKpVH6",
+        "object": "chat.completion",
+        "created": 1780319164,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion/apparel\",\n  \"short_caption\": \"Young man wearing a dark checkered hooded puffer jacket against a plain background.\",\n  \"main_objects\": [\"puffer jacket\", \"young man\"],\n  \"possible_interpretations\": [\n    \"E-commerce product photo of a hooded puffer jacket\",\n    \"Fashion editorial featuring a model in outerwear\",\n    \"Catalog image of a menswear jacket\"\n  ],\n  \"uncertainty_notes\": \"Studio lighting and plain backdrop suggest commercial product photography; exact brand or product line not identifiable.\",\n  \"quality_flags\": [\"cropped_face\", \"studio_background\", \"commercial_photography\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a young man with curly brown hair wearing a dark checkered/plaid hooded puffer jacket. It appears to be a product/fashion photograph with a plain white/light background. The jacket has visible drawstrings and toggles at the collar area. This looks like a studio product photo, likely for an e-commerce site.\n\nLet me analyze each dimension:\n\n- recognizability: Very clear, 5\n- ambiguity: Not much ambiguity, 1-2\n- natural_photo_typicality: It's a studio photo, not a typical natural photo, maybe 2\n- visual_clutter: Low clutter, 2\n- object_centricity: The jacket is a central object, but it's also a person... 4\n- scene_centricity: Not really a scene, 1\n- caption_confidence: High confidence, 5\n\nThe image contains a person, face is partially visible. No animals, text, vehicles, food. It's not really indoor/outdoor - studio setting. There's no artificial/rendered content per se, just studio photography. No occlusion really. No unusual viewpoint.\n\nThe dominant content is the jacket (object) or could be considered person_face. The jacket seems to be the focus, so I'd say \"object\" since this is a product photo.\n\nimage_style: edited_photo (product photography, possibly color-corrected)\nsemantic_domain: fashion/apparel\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a young man with curly brown hair wearing a dark checkered/plaid hooded puffer jacket. It appears to be a product/fashion photograph with a plain white/light background. The jacket has visible drawstrings and toggles at the collar area. This looks like a studio product photo, likely for an e-commerce site.\n\nLet me analyze each dimension:\n\n- recognizability: Very clear, 5\n- ambiguity: Not much ambiguity, 1-2\n- natural_photo_typicality: It's a studio photo, not a typical natural photo, maybe 2\n- visual_clutter: Low clutter, 2\n- object_centricity: The jacket is a central object, but it's also a person... 4\n- scene_centricity: Not really a scene, 1\n- caption_confidence: High confidence, 5\n\nThe image contains a person, face is partially visible. No animals, text, vehicles, food. It's not really indoor/outdoor - studio setting. There's no artificial/rendered content per se, just studio photography. No occlusion really. No unusual viewpoint.\n\nThe dominant content is the jacket (object) or could be considered person_face. The jacket seems to be the focus, so I'd say \"object\" since this is a product photo.\n\nimage_style: edited_photo (product photography, possibly color-corrected)\nsemantic_domain: fashion/apparel\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 654,
+          "total_tokens": 2176,
+          "cost": 0.00109116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00109116,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0007848
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 329,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

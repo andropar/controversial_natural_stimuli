@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_11",
+    "stim_key": "dataset_11",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 11,
+    "file_index": 11,
+    "image_name": "image_0011.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0011.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"holiday decor\",\n  \"short_caption\": \"Painted Christmas tree design on rustic wooden pallet planks\",\n  \"main_objects\": [\"wooden planks\", \"painted Christmas tree\", \"red ornaments\"],\n  \"possible_interpretations\": [\"rustic Christmas wall art\", \"handcrafted holiday decor\", \"painted pallet tree design\"],\n  \"uncertainty_notes\": \"The wooden art is cropped at the top and bottom, so its full size and shape are unclear.\",\n  \"quality_flags\": [\"truncated_subject\"]\n}",
+      "response": {
+        "id": "gen-1780318976-8yMo7jQBolhJeErJABa1",
+        "object": "chat.completion",
+        "created": 1780318976,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"holiday decor\",\n  \"short_caption\": \"Painted Christmas tree design on rustic wooden pallet planks\",\n  \"main_objects\": [\"wooden planks\", \"painted Christmas tree\", \"red ornaments\"],\n  \"possible_interpretations\": [\"rustic Christmas wall art\", \"handcrafted holiday decor\", \"painted pallet tree design\"],\n  \"uncertainty_notes\": \"The wooden art is cropped at the top and bottom, so its full size and shape are unclear.\",\n  \"quality_flags\": [\"truncated_subject\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a painted Christmas tree design on wooden planks. The wooden planks appear to be arranged vertically, creating a rustic, pallet-style wall art. The tree is painted green with white snow/snow-like details, and there are red ornaments/baubles painted on it. The background is a gray fabric or surface.\n\nThis is a handcrafted/painted piece of decor - a wooden pallet wall art featuring a Christmas tree design.\n\nLet me rate each attribute:\n\n- recognizability: 4 - The main content (painted Christmas tree on wood) is quite clear\n- ambiguity: 1 - Very clear what this is, minimal interpretation options\n- natural_photo_typicality: 2 - This is a photo of a craft/art object, not a typical natural scene\n- visual_clutter: 2 - Relatively simple composition with few elements\n- object_centricity: 4 - The painted tree art is the clear central focus\n- scene_centricity: 1 - Not a scene, it's a close-up of an object\n- caption_confidence: 5 - Very confident in a concise caption\n\n- estimated_salient_object_count: 1 (the wooden pallet art)\n- estimated_distinct_object_categories: 2 (wooden planks, painted tree design)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (this is an object, not a scene)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (handcrafted art)\n- contains_occlusion_or_truncation: true (the art is cut off at top and bottom)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\" (it's a photo of a real object, though the object is crafted)\n- semantic_domain: \"holiday decor\"\n\n- short_caption: \"Painted Christmas tree design on rustic wooden pallet planks\"\n- main_objects: [\"wooden planks\", \"painted Christmas tree\", \"red ornaments\"]\n- possible_interpretations: [\"rustic Christmas wall art\", \"handcrafted holiday decor\", \"painted pallet tree\"]\n- uncertainty_notes: \"The full extent of the wooden art is not visible\"\n- quality_flags: [\"truncated_subject\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a painted Christmas tree design on wooden planks. The wooden planks appear to be arranged vertically, creating a rustic, pallet-style wall art. The tree is painted green with white snow/snow-like details, and there are red ornaments/baubles painted on it. The background is a gray fabric or surface.\n\nThis is a handcrafted/painted piece of decor - a wooden pallet wall art featuring a Christmas tree design.\n\nLet me rate each attribute:\n\n- recognizability: 4 - The main content (painted Christmas tree on wood) is quite clear\n- ambiguity: 1 - Very clear what this is, minimal interpretation options\n- natural_photo_typicality: 2 - This is a photo of a craft/art object, not a typical natural scene\n- visual_clutter: 2 - Relatively simple composition with few elements\n- object_centricity: 4 - The painted tree art is the clear central focus\n- scene_centricity: 1 - Not a scene, it's a close-up of an object\n- caption_confidence: 5 - Very confident in a concise caption\n\n- estimated_salient_object_count: 1 (the wooden pallet art)\n- estimated_distinct_object_categories: 2 (wooden planks, painted tree design)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (this is an object, not a scene)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (handcrafted art)\n- contains_occlusion_or_truncation: true (the art is cut off at top and bottom)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\" (it's a photo of a real object, though the object is crafted)\n- semantic_domain: \"holiday decor\"\n\n- short_caption: \"Painted Christmas tree design on rustic wooden pallet planks\"\n- main_objects: [\"wooden planks\", \"painted Christmas tree\", \"red ornaments\"]\n- possible_interpretations: [\"rustic Christmas wall art\", \"handcrafted holiday decor\", \"painted pallet tree\"]\n- uncertainty_notes: \"The full extent of the wooden art is not visible\"\n- quality_flags: [\"truncated_subject\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 848,
+          "total_tokens": 2370,
+          "cost": 0.00144684,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00144684,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010176
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 572,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

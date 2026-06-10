@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_69",
+    "stim_key": "training_objective_69",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 69,
+    "file_index": 69,
+    "image_name": "image_0069.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0069.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature/beach\",\n  \"short_caption\": \"Brown kelp washed up on a sandy beach with waves\",\n  \"main_objects\": [\"kelp\", \"seaweed\", \"beach\", \"waves\"],\n  \"possible_interpretations\": [\"kelp on beach\", \"seaweed in surf\", \"marine algae on shore\"],\n  \"uncertainty_notes\": \"Specific kelp species is hard to determine from the image\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319344-iDsaxWvN63FERnIpE1zQ",
+        "object": "chat.completion",
+        "created": 1780319344,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature/beach\",\n  \"short_caption\": \"Brown kelp washed up on a sandy beach with waves\",\n  \"main_objects\": [\"kelp\", \"seaweed\", \"beach\", \"waves\"],\n  \"possible_interpretations\": [\"kelp on beach\", \"seaweed in surf\", \"marine algae on shore\"],\n  \"uncertainty_notes\": \"Specific kelp species is hard to determine from the image\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be kelp/seaweed (brown/golden colored) washed up on a beach, with ocean waves visible in the background. The kelp is the main subject, and it's on wet sand at the shoreline with water around it.\n\nLet me go through each annotation:\n\n- recognizability: The main content (kelp on beach) is clearly recognizable. 5\n- ambiguity: There's one clear interpretation - kelp on a beach. 1\n- natural_photo_typicality: This looks like a natural photograph. 5\n- visual_clutter: The image is relatively simple with kelp and water/sand. 2\n- object_centricity: The kelp is the central subject. 4\n- scene_centricity: There's also a strong scene element (beach/ocean). 3\n- caption_confidence: I'm confident in describing this. 5\n\n- estimated_salient_object_count: 1 (the kelp cluster)\n- estimated_distinct_object_categories: 2 (kelp, water/sand)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false (kelp is a plant/algae, not an animal)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the kelp)\n- image_style: \"natural_photo\"\n- semantic_domain: \"nature/beach\"\n\n- short_caption: \"Brown kelp washed up on a sandy beach with waves\"\n\n- main_objects: [\"kelp\", \"seaweed\", \"beach\", \"waves\"]\n\n- possible_interpretations: [\"kelp on beach\", \"seaweed in surf\", \"marine algae on shore\"]\n\n- uncertainty_notes: \"The kelp type (bull kelp, bladder kelp, etc.) is hard to determine precisely\"\n\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be kelp/seaweed (brown/golden colored) washed up on a beach, with ocean waves visible in the background. The kelp is the main subject, and it's on wet sand at the shoreline with water around it.\n\nLet me go through each annotation:\n\n- recognizability: The main content (kelp on beach) is clearly recognizable. 5\n- ambiguity: There's one clear interpretation - kelp on a beach. 1\n- natural_photo_typicality: This looks like a natural photograph. 5\n- visual_clutter: The image is relatively simple with kelp and water/sand. 2\n- object_centricity: The kelp is the central subject. 4\n- scene_centricity: There's also a strong scene element (beach/ocean). 3\n- caption_confidence: I'm confident in describing this. 5\n\n- estimated_salient_object_count: 1 (the kelp cluster)\n- estimated_distinct_object_categories: 2 (kelp, water/sand)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false (kelp is a plant/algae, not an animal)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the kelp)\n- image_style: \"natural_photo\"\n- semantic_domain: \"nature/beach\"\n\n- short_caption: \"Brown kelp washed up on a sandy beach with waves\"\n\n- main_objects: [\"kelp\", \"seaweed\", \"beach\", \"waves\"]\n\n- possible_interpretations: [\"kelp on beach\", \"seaweed in surf\", \"marine algae on shore\"]\n\n- uncertainty_notes: \"The kelp type (bull kelp, bladder kelp, etc.) is hard to determine precisely\"\n\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 779,
+          "total_tokens": 2301,
+          "cost": 0.00124116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00124116,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009348
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 471,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_85",
+    "stim_key": "sota_85",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 85,
+    "file_index": 85,
+    "image_name": "image_0085.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0085.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sport_racing_flag\",\n  \"short_caption\": \"Black and white checkered racing flag waving against a blue sky with clouds.\",\n  \"main_objects\": [\"checkered flag\", \"sky\", \"clouds\", \"partial hand or pole\"],\n  \"possible_interpretations\": [\"racing finish line flag\", \"motorsport victory flag\", \"start/finish signal flag\", \"photography subject against sky\"],\n  \"uncertainty_notes\": \"Bottom right corner shows a small unclear shape that could be a hand holding the flag or a pole; not clearly identifiable.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319187-G39S9h2tzt3sO1o7U2jY",
+        "object": "chat.completion",
+        "created": 1780319187,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sport_racing_flag\",\n  \"short_caption\": \"Black and white checkered racing flag waving against a blue sky with clouds.\",\n  \"main_objects\": [\"checkered flag\", \"sky\", \"clouds\", \"partial hand or pole\"],\n  \"possible_interpretations\": [\"racing finish line flag\", \"motorsport victory flag\", \"start/finish signal flag\", \"photography subject against sky\"],\n  \"uncertainty_notes\": \"Bottom right corner shows a small unclear shape that could be a hand holding the flag or a pole; not clearly identifiable.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a checkered flag (black and white squares) waving against a blue sky with some clouds. It appears to be a racing/finish flag being held up, with a partial view of what might be a person's hand or arm at the bottom right corner.\n\nLet me annotate this:\n\n- Recognizability: High - clearly a checkered flag\n- Ambiguity: Low - it's clearly a checkered racing flag\n- Natural photo typicality: High - looks like a natural photo\n- Visual clutter: Low - simple composition\n- Object centricity: High - the flag dominates\n- Scene centricity: Medium - sky is the backdrop but the flag is the focus\n- Caption confidence: High\n\nSalient objects: 1 (the flag)\nDistinct categories: 1 (flag)\nContains person: possibly - small part of what might be an arm/hand\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor: no\nContains outdoor: yes\nContains artificial: no\nContains occlusion: no\nContains unusual viewpoint: no\nMultiple main objects: no\n\nMain content: object (the flag)\nStyle: natural_photo\nDomain: flag/racing/sport",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a checkered flag (black and white squares) waving against a blue sky with some clouds. It appears to be a racing/finish flag being held up, with a partial view of what might be a person's hand or arm at the bottom right corner.\n\nLet me annotate this:\n\n- Recognizability: High - clearly a checkered flag\n- Ambiguity: Low - it's clearly a checkered racing flag\n- Natural photo typicality: High - looks like a natural photo\n- Visual clutter: Low - simple composition\n- Object centricity: High - the flag dominates\n- Scene centricity: Medium - sky is the backdrop but the flag is the focus\n- Caption confidence: High\n\nSalient objects: 1 (the flag)\nDistinct categories: 1 (flag)\nContains person: possibly - small part of what might be an arm/hand\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor: no\nContains outdoor: yes\nContains artificial: no\nContains occlusion: no\nContains unusual viewpoint: no\nMultiple main objects: no\n\nMain content: object (the flag)\nStyle: natural_photo\nDomain: flag/racing/sport",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 838,
+          "completion_tokens": 606,
+          "total_tokens": 1444,
+          "cost": 0.00082836,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00082836,
+            "upstream_inference_prompt_cost": 0.00010116,
+            "upstream_inference_completions_cost": 0.0007272
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 292,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_24",
+    "stim_key": "sota_24",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 24,
+    "file_index": 24,
+    "image_name": "image_0024.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0024.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: short_caption must be <= 20 words"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home decor\",\n  \"short_caption\": \"A large dark gray fuzzy bean bag chair on a wooden floor indoors.\",\n  \"main_objects\": [\"bean bag chair\", \"Buddha statue\", \"abstract painting\"],\n  \"possible_interpretations\": [\"bean bag chair\", \"floor cushion\", \"oversized pet bed\"],\n  \"uncertainty_notes\": \"Background objects (painting, Buddha statue) are partially visible; main object is unambiguously a fluffy bean bag chair.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319139-gsE76xILys8diONqoDg1",
+        "object": "chat.completion",
+        "created": 1780319139,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home decor\",\n  \"short_caption\": \"A large dark gray fuzzy bean bag chair on a wooden floor indoors.\",\n  \"main_objects\": [\"bean bag chair\", \"Buddha statue\", \"abstract painting\"],\n  \"possible_interpretations\": [\"bean bag chair\", \"floor cushion\", \"oversized pet bed\"],\n  \"uncertainty_notes\": \"Background objects (painting, Buddha statue) are partially visible; main object is unambiguously a fluffy bean bag chair.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The user wants me to annotate this image. Let me analyze it carefully.\n\nThe image shows a large, fluffy, dark gray/black bean bag chair or floor cushion with a furry texture. In the background, I can see:\n- A colorful abstract painting/artwork on the left wall\n- A Buddha statue on the right side\n- A plain white/light wall\n- A wooden floor\n\nThe main subject is clearly the fuzzy bean bag chair. It's an indoor scene.\n\nLet me rate each dimension:\n\n- recognizability: 5 - very clearly a bean bag chair/floor cushion\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a typical photo, though indoor home setting\n- visual_clutter: 2 - main subject dominates, few competing elements\n- object_centricity: 5 - the bean bag clearly dominates\n- scene_centricity: 2 - the scene is secondary to the object\n- caption_confidence: 5 - easy to caption\n\nObjects:\n- Fuzzy bean bag chair (main)\n- Buddha statue (background)\n- Abstract painting (background)\n\nSalient objects: 1 main (the chair)\nDistinct categories: 3 (chair, statue, painting)\n\nContains person: no\nContains face: no (the Buddha is small and a statue)\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial or rendered content: no\nContains occlusion or truncation: no\nContains unusual viewpoint: no\nContains multiple main objects: no\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: furniture/home decor\n\nShort caption: A large dark gray fuzzy bean bag chair on a wooden floor.\n\nPossible interpretations: bean bag chair, floor cushion, pet bed (less likely given size)\n\nUncertainty: Buddha statue is partially visible, might be unclear\n\nLet me format as JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The user wants me to annotate this image. Let me analyze it carefully.\n\nThe image shows a large, fluffy, dark gray/black bean bag chair or floor cushion with a furry texture. In the background, I can see:\n- A colorful abstract painting/artwork on the left wall\n- A Buddha statue on the right side\n- A plain white/light wall\n- A wooden floor\n\nThe main subject is clearly the fuzzy bean bag chair. It's an indoor scene.\n\nLet me rate each dimension:\n\n- recognizability: 5 - very clearly a bean bag chair/floor cushion\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a typical photo, though indoor home setting\n- visual_clutter: 2 - main subject dominates, few competing elements\n- object_centricity: 5 - the bean bag clearly dominates\n- scene_centricity: 2 - the scene is secondary to the object\n- caption_confidence: 5 - easy to caption\n\nObjects:\n- Fuzzy bean bag chair (main)\n- Buddha statue (background)\n- Abstract painting (background)\n\nSalient objects: 1 main (the chair)\nDistinct categories: 3 (chair, statue, painting)\n\nContains person: no\nContains face: no (the Buddha is small and a statue)\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial or rendered content: no\nContains occlusion or truncation: no\nContains unusual viewpoint: no\nContains multiple main objects: no\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: furniture/home decor\n\nShort caption: A large dark gray fuzzy bean bag chair on a wooden floor.\n\nPossible interpretations: bean bag chair, floor cushion, pet bed (less likely given size)\n\nUncertainty: Buddha statue is partially visible, might be unclear\n\nLet me format as JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 737,
+          "total_tokens": 2275,
+          "cost": 0.00119556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00119556,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.0008844
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 477,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

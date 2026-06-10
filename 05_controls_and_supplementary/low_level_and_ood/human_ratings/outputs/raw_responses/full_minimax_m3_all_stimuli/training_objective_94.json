@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_94",
+    "stim_key": "training_objective_94",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 94,
+    "file_index": 94,
+    "image_name": "image_0094.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0094.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: Missing required fields: ['contains_unusual_viewpoint']"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"lifestyle portrait\",\n  \"short_caption\": \"Blonde woman smiling joyfully while swinging in a snowy neighborhood\",\n  \"main_objects\": [\"woman\", \"swing\", \"houses\", \"trees\"],\n  \"possible_interpretations\": [\"woman playing on a swing in winter\", \"lifestyle portrait\", \"casual outdoor photo\"],\n  \"uncertainty_notes\": \"Background is slightly out of focus; image has a warm color grade that may indicate light editing\",\n  \"quality_flags\": [\"warm_color_grade\", \"background_blur\"]\n}",
+      "response": {
+        "id": "gen-1780319408-vLKDJpcj3VnQAiCIe3mH",
+        "object": "chat.completion",
+        "created": 1780319408,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"lifestyle portrait\",\n  \"short_caption\": \"Blonde woman smiling joyfully while swinging in a snowy neighborhood\",\n  \"main_objects\": [\"woman\", \"swing\", \"houses\", \"trees\"],\n  \"possible_interpretations\": [\"woman playing on a swing in winter\", \"lifestyle portrait\", \"casual outdoor photo\"],\n  \"uncertainty_notes\": \"Background is slightly out of focus; image has a warm color grade that may indicate light editing\",\n  \"quality_flags\": [\"warm_color_grade\", \"background_blur\"]\n}",
+              "refusal": null,
+              "reasoning": "The user wants me to annotate the image according to the schema. Let me analyze the image carefully.\n\nThe image shows a woman with blonde hair, wearing a gray sweatshirt and gray sweatpants, sitting on a swing in a snowy outdoor setting. She has a big smile on her face. The swing chains are visible. In the background, there are snow-covered houses, bare trees, and snow on the ground. The image has a warm, slightly edited tone.\n\nLet me rate the items:\n\n- recognizability: 5 - Very clearly a person on a swing\n- ambiguity: 1 - One clear interpretation\n- natural_photo_typicality: 4 - Looks like a natural photo, slightly warm tone but appears real\n- visual_clutter: 3 - Some background elements but not overly cluttered\n- object_centricity: 3 - Person is central but scene context is important\n- scene_centricity: 3 - Significant scene context with snow and houses\n- caption_confidence: 5 - Easy to caption\n\nCounts:\n- salient_object_count: 2 (person, swing)\n- distinct_object_categories: 3 (person, swing, houses/trees)\n\nBoolean flags:\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false (maybe a car in background but not clear)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (might be slightly edited)\n- contains_occlusion_or_truncation: true (body is partially cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\nDominant content: person_face (her face is prominent)\nImage style: natural_photo\nSemantic domain: lifestyle/portrait\n\nShort caption: \"Blonde woman smiling joyfully on a swing in a snowy neighborhood\"\n\nMain objects: woman, swing, houses, trees\n\nPossible interpretations: woman playing on swing in winter, portrait photo, lifestyle photography\n\nUncertainty notes: Background slightly blurred, could be slight color grading\n\nQuality flags: warm color tone",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The user wants me to annotate the image according to the schema. Let me analyze the image carefully.\n\nThe image shows a woman with blonde hair, wearing a gray sweatshirt and gray sweatpants, sitting on a swing in a snowy outdoor setting. She has a big smile on her face. The swing chains are visible. In the background, there are snow-covered houses, bare trees, and snow on the ground. The image has a warm, slightly edited tone.\n\nLet me rate the items:\n\n- recognizability: 5 - Very clearly a person on a swing\n- ambiguity: 1 - One clear interpretation\n- natural_photo_typicality: 4 - Looks like a natural photo, slightly warm tone but appears real\n- visual_clutter: 3 - Some background elements but not overly cluttered\n- object_centricity: 3 - Person is central but scene context is important\n- scene_centricity: 3 - Significant scene context with snow and houses\n- caption_confidence: 5 - Easy to caption\n\nCounts:\n- salient_object_count: 2 (person, swing)\n- distinct_object_categories: 3 (person, swing, houses/trees)\n\nBoolean flags:\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false (maybe a car in background but not clear)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (might be slightly edited)\n- contains_occlusion_or_truncation: true (body is partially cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\nDominant content: person_face (her face is prominent)\nImage style: natural_photo\nSemantic domain: lifestyle/portrait\n\nShort caption: \"Blonde woman smiling joyfully on a swing in a snowy neighborhood\"\n\nMain objects: woman, swing, houses, trees\n\nPossible interpretations: woman playing on swing in winter, portrait photo, lifestyle photography\n\nUncertainty notes: Background slightly blurred, could be slight color grading\n\nQuality flags: warm color tone",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 792,
+          "total_tokens": 2330,
+          "cost": 0.00126156,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126156,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.0009504
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 523,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

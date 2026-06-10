@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_13",
+    "stim_key": "vicco_13",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 13,
+    "file_index": 12,
+    "image_name": "shared_4rep_vicco_013.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_013.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food\",\n  \"short_caption\": \"Person eating red curry soup with rice and side dishes on a restaurant tray.\",\n  \"main_objects\": [\"soup bowl\", \"rice bowl\", \"side containers\", \"drink bottle\", \"red tray\", \"person's hands\"],\n  \"possible_interpretations\": [\"Thai tom yum soup meal\", \"spicy curry noodle meal\", \"Asian restaurant lunch\"],\n  \"uncertainty_notes\": \"Specific dish type uncertain; face not visible so person identity unknown.\",\n  \"quality_flags\": [\"person_cropped\", \"casual_snapshot\"]\n}",
+      "response": {
+        "id": "gen-1780319395-SwI5UkMBaPyqHYoaa0sO",
+        "object": "chat.completion",
+        "created": 1780319395,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food\",\n  \"short_caption\": \"Person eating red curry soup with rice and side dishes on a restaurant tray.\",\n  \"main_objects\": [\"soup bowl\", \"rice bowl\", \"side containers\", \"drink bottle\", \"red tray\", \"person's hands\"],\n  \"possible_interpretations\": [\"Thai tom yum soup meal\", \"spicy curry noodle meal\", \"Asian restaurant lunch\"],\n  \"uncertainty_notes\": \"Specific dish type uncertain; face not visible so person identity unknown.\",\n  \"quality_flags\": [\"person_cropped\", \"casual_snapshot\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully:\n\n- I can see a person (only hands and torso visible) eating from a bowl of what appears to be a red/orange soup, likely Thai tom yum or similar curry/soup\n- There's a red tray with multiple items\n- A bowl of white rice\n- Small plastic containers with what appears to be cucumbers/pickles\n- Another bowl of similar soup in the foreground\n- A napkin\n- A drink bottle on the right\n- Wooden table surface\n- Indoor restaurant setting\n\nThe image is clearly a food/mealtime scene, taken from a first-person or over-the-shoulder perspective.\n\nLet me rate each dimension:\n- recognizability: 5 - very clear what this is\n- ambiguity: 1 - clear interpretation (person eating soup at restaurant)\n- natural_photo_typicality: 4 - looks like a casual phone photo of a meal\n- visual_clutter: 3 - multiple items but not overwhelming\n- object_centricity: 2 - the food is prominent but it's more of a scene\n- scene_centricity: 4 - this is a meal scene\n- caption_confidence: 5 - easy to caption\n\nCounts:\n- salient objects: ~5 (soup bowl, rice bowl, side containers, drink, second soup bowl)\n- distinct categories: ~4-5 (soup, rice, sides, drink, tray)\n\nBooleans:\n- contains_person: true (hands visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false (I don't see text)\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person is cropped)\n- contains_unusual_viewpoint: false (typical POV)\n- contains_multiple_main_objects: true (two soup bowls)\n\nDominant content: mixed (food + person activity)\nImage style: natural_photo\nSemantic domain: food/restaurant\n\nShort caption: \"Person eating a bowl of red curry soup with rice and side dishes at a restaurant.\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully:\n\n- I can see a person (only hands and torso visible) eating from a bowl of what appears to be a red/orange soup, likely Thai tom yum or similar curry/soup\n- There's a red tray with multiple items\n- A bowl of white rice\n- Small plastic containers with what appears to be cucumbers/pickles\n- Another bowl of similar soup in the foreground\n- A napkin\n- A drink bottle on the right\n- Wooden table surface\n- Indoor restaurant setting\n\nThe image is clearly a food/mealtime scene, taken from a first-person or over-the-shoulder perspective.\n\nLet me rate each dimension:\n- recognizability: 5 - very clear what this is\n- ambiguity: 1 - clear interpretation (person eating soup at restaurant)\n- natural_photo_typicality: 4 - looks like a casual phone photo of a meal\n- visual_clutter: 3 - multiple items but not overwhelming\n- object_centricity: 2 - the food is prominent but it's more of a scene\n- scene_centricity: 4 - this is a meal scene\n- caption_confidence: 5 - easy to caption\n\nCounts:\n- salient objects: ~5 (soup bowl, rice bowl, side containers, drink, second soup bowl)\n- distinct categories: ~4-5 (soup, rice, sides, drink, tray)\n\nBooleans:\n- contains_person: true (hands visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false (I don't see text)\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person is cropped)\n- contains_unusual_viewpoint: false (typical POV)\n- contains_multiple_main_objects: true (two soup bowls)\n\nDominant content: mixed (food + person activity)\nImage style: natural_photo\nSemantic domain: food/restaurant\n\nShort caption: \"Person eating a bowl of red curry soup with rice and side dishes at a restaurant.\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 800,
+          "total_tokens": 2322,
+          "cost": 0.00126636,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126636,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.00096
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 495,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

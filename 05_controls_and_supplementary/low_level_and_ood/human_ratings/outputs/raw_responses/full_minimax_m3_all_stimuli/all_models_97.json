@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_97",
+    "stim_key": "all_models_97",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 97,
+    "file_index": 97,
+    "image_name": "image_0097.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0097.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"music_shop\",\n  \"short_caption\": \"A double bass stands outside a violin shop with open sign and competition poster in window.\",\n  \"main_objects\": [\"double bass\", \"shop sign\", \"open sign\", \"window poster\"],\n  \"possible_interpretations\": [\n    \"Display outside a string instrument shop\",\n    \"Double bass being shown for sale\",\n    \"Promotional display for a music competition\"\n  ],\n  \"uncertainty_notes\": \"The top of the double bass and shop name are cut off, and reflections in the window may obscure details.\",\n  \"quality_flags\": [\"partial_object_occlusion\", \"reflections_in_glass\"]\n}",
+      "response": {
+        "id": "gen-1780318842-VPERF1zUiW4c2GgbVCoo",
+        "object": "chat.completion",
+        "created": 1780318842,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"music_shop\",\n  \"short_caption\": \"A double bass stands outside a violin shop with open sign and competition poster in window.\",\n  \"main_objects\": [\"double bass\", \"shop sign\", \"open sign\", \"window poster\"],\n  \"possible_interpretations\": [\n    \"Display outside a string instrument shop\",\n    \"Double bass being shown for sale\",\n    \"Promotional display for a music competition\"\n  ],\n  \"uncertainty_notes\": \"The top of the double bass and shop name are cut off, and reflections in the window may obscure details.\",\n  \"quality_flags\": [\"partial_object_occlusion\", \"reflections_in_glass\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see a large stringed instrument (looks like a double bass or upright bass) positioned in front of what appears to be a music shop window. There's a sign for \"Animato Violins - The String Instrument Specialist\" and an \"OPEN\" sign. The window has posters for \"Harmonie Music Centre\" and an \"International Violin Competition\" poster. The setting appears to be outside a music shop.\n\nLet me provide the annotations based on what I can see.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see a large stringed instrument (looks like a double bass or upright bass) positioned in front of what appears to be a music shop window. There's a sign for \"Animato Violins - The String Instrument Specialist\" and an \"OPEN\" sign. The window has posters for \"Harmonie Music Centre\" and an \"International Violin Competition\" poster. The setting appears to be outside a music shop.\n\nLet me provide the annotations based on what I can see.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 464,
+          "total_tokens": 1878,
+          "cost": 0.00083076,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00083076,
+            "upstream_inference_prompt_cost": 0.00027396,
+            "upstream_inference_completions_cost": 0.0005568
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 121,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

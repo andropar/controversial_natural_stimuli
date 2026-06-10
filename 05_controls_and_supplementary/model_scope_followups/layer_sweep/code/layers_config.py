@@ -10,7 +10,7 @@ names). Aggregation per layer:
     - "mean_patch":  3D (B, T, D) -> mean over tokens (no-CLS models, e.g. SigLIP)
 
 The ``MAIN_LAYER`` mapping records the layer used in the existing
-02_rsa_scores main pipeline (read from data/resources/model_list.csv) — that
+RSA scoring main pipeline (read from 00_stimulus_selection/resources/model_list.csv) — that
 layer must be present in MODEL_LAYERS for the sanity check.
 """
 
@@ -233,8 +233,8 @@ MODEL_SOURCE = {
     "openclip_vit_so400m_14_siglip_webli": "deepjuice",
 }
 
-# The "main paper" layer per model: matches data/resources/model_list.csv
-# and 02_rsa_scores. The sanity check verifies that fRSA at this layer
+# The "main paper" layer per model: matches 00_stimulus_selection/resources/model_list.csv
+# and the RSA scoring results. The sanity check verifies that fRSA at this layer
 # reproduces the existing crsa_scores.csv values within CPU/GPU drift.
 MAIN_LAYER = {
     "torchvision_resnet50_imagenet1k_v1":               "flatten",

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_36",
+    "stim_key": "dataset_36",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 36,
+    "file_index": 36,
+    "image_name": "image_0036.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0036.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home_furnishing\",\n  \"short_caption\": \"Gray grommet-top curtain panel hanging on a rod with a chair partially visible.\",\n  \"main_objects\": [\"curtain\", \"curtain rod\", \"chair\"],\n  \"possible_interpretations\": [\"gray curtain panel product photo\", \"bedroom window with curtain\", \"interior decor product listing\"],\n  \"uncertainty_notes\": \"Image appears to be a product/catalog photo; chair in corner is only partially visible.\",\n  \"quality_flags\": [\"product_photo\", \"truncated_object\"]\n}",
+      "response": {
+        "id": "gen-1780319001-ynilk9z0p58inTOSXKs3",
+        "object": "chat.completion",
+        "created": 1780319001,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home_furnishing\",\n  \"short_caption\": \"Gray grommet-top curtain panel hanging on a rod with a chair partially visible.\",\n  \"main_objects\": [\"curtain\", \"curtain rod\", \"chair\"],\n  \"possible_interpretations\": [\"gray curtain panel product photo\", \"bedroom window with curtain\", \"interior decor product listing\"],\n  \"uncertainty_notes\": \"Image appears to be a product/catalog photo; chair in corner is only partially visible.\",\n  \"quality_flags\": [\"product_photo\", \"truncated_object\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a gray curtain with grommets hanging on a curtain rod, with what appears to be a small portion of a chair or other furniture visible in the bottom right corner. This looks like a product photo for home furnishings.\n\nLet me analyze each attribute:\n\n- recognizability: The main content (a gray curtain) is very clearly recognizable. 5\n- ambiguity: Very little ambiguity - it's clearly a curtain. 1\n- natural_photo_typicality: This looks like a product photography shot, somewhat staged. 3\n- visual_clutter: Mostly just the curtain with minimal other content. 1\n- object_centricity: The curtain is the central object. 5\n- scene_centricity: It's an object-focused image, not a scene. 1\n- caption_confidence: Very confident in captioning. 5\n\nLet me fill in the rest based on what's visible.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a gray curtain with grommets hanging on a curtain rod, with what appears to be a small portion of a chair or other furniture visible in the bottom right corner. This looks like a product photo for home furnishings.\n\nLet me analyze each attribute:\n\n- recognizability: The main content (a gray curtain) is very clearly recognizable. 5\n- ambiguity: Very little ambiguity - it's clearly a curtain. 1\n- natural_photo_typicality: This looks like a product photography shot, somewhat staged. 3\n- visual_clutter: Mostly just the curtain with minimal other content. 1\n- object_centricity: The curtain is the central object. 5\n- scene_centricity: It's an object-focused image, not a scene. 1\n- caption_confidence: Very confident in captioning. 5\n\nLet me fill in the rest based on what's visible.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 530,
+          "total_tokens": 2052,
+          "cost": 0.00106524,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00106524,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.000636
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 210,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

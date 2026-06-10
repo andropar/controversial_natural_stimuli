@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_12",
+    "stim_key": "training_objective_12",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 12,
+    "file_index": 12,
+    "image_name": "image_0012.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0012.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor sports\",\n  \"short_caption\": \"Rock climber scaling a steep cliff beside a cascading waterfall.\",\n  \"main_objects\": [\"climber\", \"rock face\", \"waterfall\", \"climbing gear\", \"pool\"],\n  \"possible_interpretations\": [\"rock climbing on a waterfall cliff\", \"free solo climbing route\", \"action adventure sports photography\", \"traditional climbing with ropes\", \"alpine or gorge climbing scene\"],\n  \"uncertainty_notes\": \"Difficult to determine if climber is roped in or free soloing; photo angle is dramatic but may be rotated or taken from a high vantage point.\",\n  \"quality_flags\": [\"dramatic_angle\", \"high_contrast_lighting\", \"wide_angle_perspective\"]\n}",
+      "response": {
+        "id": "gen-1780319316-QhJwoSq5SaW3nTH5FO9Y",
+        "object": "chat.completion",
+        "created": 1780319316,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor sports\",\n  \"short_caption\": \"Rock climber scaling a steep cliff beside a cascading waterfall.\",\n  \"main_objects\": [\"climber\", \"rock face\", \"waterfall\", \"climbing gear\", \"pool\"],\n  \"possible_interpretations\": [\"rock climbing on a waterfall cliff\", \"free solo climbing route\", \"action adventure sports photography\", \"traditional climbing with ropes\", \"alpine or gorge climbing scene\"],\n  \"uncertainty_notes\": \"Difficult to determine if climber is roped in or free soloing; photo angle is dramatic but may be rotated or taken from a high vantage point.\",\n  \"quality_flags\": [\"dramatic_angle\", \"high_contrast_lighting\", \"wide_angle_perspective\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. The image shows a rock climber on a steep cliff face, with a waterfall visible in the background. The image appears to be rotated 90 degrees - the climber is hanging horizontally in the frame but the gravity/orientation suggests the photo was taken sideways. Actually, looking more carefully, the climber is clinging to a near-vertical rock face, and there's a waterfall plunging down a cliff to what appears to be a pool or ocean below.\n\nThe image is clearly a natural photograph showing:\n- A person rock climbing (wearing a dark blue/navy shirt, shorts)\n- Steep rocky cliff face\n- A large waterfall cascading down\n- Water/pool at the bottom\n- Some greenery/vegetation on the rocks\n- Climbing gear (looks like a rope or piece of equipment on the rock)\n\nThe photo seems to be taken from a dramatic angle, possibly with a wide-angle lens, giving an unusual perspective looking down at the climber and the waterfall.\n\nLet me rate this:\n- recognizability: 5 - very clearly a rock climber\n- ambiguity: 1 - very clear what's happening\n- natural_photo_typicality: 5 - looks like a typical action/nature photograph\n- visual_clutter: 3 - has the climber, rocks, waterfall, water below - moderately busy\n- object_centricity: 3 - the climber is prominent but the scene (waterfall, cliff) is also very prominent\n- scene_centricity: 4 - it's very much about the dramatic location\n- caption_confidence: 5 - easy to caption\n\nCounts:\n- salient objects: climber (1) - maybe the waterfall as a second\n- distinct categories: person, rock, water, waterfall\n\nBoolean flags:\n- contains_person: true\n- contains_face: true (I can see the climber's face)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (full body visible)\n- contains_unusual_viewpoint: true (extreme angle)\n- contains_multiple_main_objects: false (one main subject - the climber)\n\nDominant content type: person (climber is the focal point)\nImage style: natural_photo\nSemantic domain: outdoor sports/adventure\n\nShort caption: \"Rock climber scaling a steep cliff face beside a waterfall\"\n\nMain objects: climber, rock face, waterfall, climbing gear\nPossible interpretations: rock climbing scene, adventure sport photography, free solo climbing (though I don't see clear safety equipment, so maybe not solo)\n\nWait, I need to look again - the image orientation. The climber appears to be on the left side, oriented vertically with feet up. The waterfall flows to the right. It seems the photo is in correct orientation but the cliff is nearly vertical with the climber hanging on. Actually, the climber's body is oriented along the vertical axis of the image, and the waterfall also flows vertically. This looks like a normal orientation photo.\n\nActually, looking once more - the climber is on the left side clinging to a rock, with their head pointing down (toward the bottom of the image) and feet up. That would be unusual. But wait, the waterfall also flows from top to bottom in the image. So the orientation seems consistent - the climber is hanging from an overhang or vertical cliff, with their head down... no, that doesn't make sense for climbing.\n\nLet me look again. The climber appears to be in a typical climbing pose, leaning back from the rock face (overhanging climb), with feet below and head above. The waterfall is to the right cascading down. The water at the bottom right appears to be a pool where the waterfall lands.\n\nActually I think the climber is shown from above, looking down. The photographer took the shot from above the climber, and we can see the climber's face and torso, with the waterfall and pool below. The \"unusual viewpoint\" makes sense.\n\nHmm, but actually the typical interpretation: the climber is doing a difficult move on a vertical/overhanging rock face, and there's a waterfall nearby. The perspective is dramatic.\n\nLet me finalize my annotations.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. The image shows a rock climber on a steep cliff face, with a waterfall visible in the background. The image appears to be rotated 90 degrees - the climber is hanging horizontally in the frame but the gravity/orientation suggests the photo was taken sideways. Actually, looking more carefully, the climber is clinging to a near-vertical rock face, and there's a waterfall plunging down a cliff to what appears to be a pool or ocean below.\n\nThe image is clearly a natural photograph showing:\n- A person rock climbing (wearing a dark blue/navy shirt, shorts)\n- Steep rocky cliff face\n- A large waterfall cascading down\n- Water/pool at the bottom\n- Some greenery/vegetation on the rocks\n- Climbing gear (looks like a rope or piece of equipment on the rock)\n\nThe photo seems to be taken from a dramatic angle, possibly with a wide-angle lens, giving an unusual perspective looking down at the climber and the waterfall.\n\nLet me rate this:\n- recognizability: 5 - very clearly a rock climber\n- ambiguity: 1 - very clear what's happening\n- natural_photo_typicality: 5 - looks like a typical action/nature photograph\n- visual_clutter: 3 - has the climber, rocks, waterfall, water below - moderately busy\n- object_centricity: 3 - the climber is prominent but the scene (waterfall, cliff) is also very prominent\n- scene_centricity: 4 - it's very much about the dramatic location\n- caption_confidence: 5 - easy to caption\n\nCounts:\n- salient objects: climber (1) - maybe the waterfall as a second\n- distinct categories: person, rock, water, waterfall\n\nBoolean flags:\n- contains_person: true\n- contains_face: true (I can see the climber's face)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (full body visible)\n- contains_unusual_viewpoint: true (extreme angle)\n- contains_multiple_main_objects: false (one main subject - the climber)\n\nDominant content type: person (climber is the focal point)\nImage style: natural_photo\nSemantic domain: outdoor sports/adventure\n\nShort caption: \"Rock climber scaling a steep cliff face beside a waterfall\"\n\nMain objects: climber, rock face, waterfall, climbing gear\nPossible interpretations: rock climbing scene, adventure sport photography, free solo climbing (though I don't see clear safety equipment, so maybe not solo)\n\nWait, I need to look again - the image orientation. The climber appears to be on the left side, oriented vertically with feet up. The waterfall flows to the right. It seems the photo is in correct orientation but the cliff is nearly vertical with the climber hanging on. Actually, the climber's body is oriented along the vertical axis of the image, and the waterfall also flows vertically. This looks like a normal orientation photo.\n\nActually, looking once more - the climber is on the left side clinging to a rock, with their head pointing down (toward the bottom of the image) and feet up. That would be unusual. But wait, the waterfall also flows from top to bottom in the image. So the orientation seems consistent - the climber is hanging from an overhang or vertical cliff, with their head down... no, that doesn't make sense for climbing.\n\nLet me look again. The climber appears to be in a typical climbing pose, leaning back from the rock face (overhanging climb), with feet below and head above. The waterfall is to the right cascading down. The water at the bottom right appears to be a pool where the waterfall lands.\n\nActually I think the climber is shown from above, looking down. The photographer took the shot from above the climber, and we can see the climber's face and torso, with the waterfall and pool below. The \"unusual viewpoint\" makes sense.\n\nHmm, but actually the typical interpretation: the climber is doing a difficult move on a vertical/overhanging rock face, and there's a waterfall nearby. The perspective is dramatic.\n\nLet me finalize my annotations.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 1267,
+          "total_tokens": 2789,
+          "cost": 0.00161508,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1508,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00161508,
+            "upstream_inference_prompt_cost": 9.468e-05,
+            "upstream_inference_completions_cost": 0.0015204
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 1061,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

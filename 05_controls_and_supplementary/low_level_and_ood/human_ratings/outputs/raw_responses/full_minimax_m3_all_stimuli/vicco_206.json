@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_206",
+    "stim_key": "vicco_206",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 206,
+    "file_index": 205,
+    "image_name": "shared_4rep_vicco_206.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_206.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"abandoned_building\",\n  \"short_caption\": \"A dilapidated wooden cabin with collapsed shingle roof surrounded by overgrown vegetation under a cloudy sky.\",\n  \"main_objects\": [\"wooden cabin\", \"shingle roof\", \"wooden beams\", \"overgrown vegetation\", \"conifer tree\"],\n  \"possible_interpretations\": [\"abandoned rural cabin\", \"collapsed mountain shelter\", \"old alpine hut in ruins\", \"derelict wooden barn\"],\n  \"uncertainty_notes\": \"The exact original purpose of the structure is unclear, but it is clearly a man-made wooden building in advanced decay in a rural setting.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319627-dn4jsfJFOAD04TkOhgOY",
+        "object": "chat.completion",
+        "created": 1780319627,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"abandoned_building\",\n  \"short_caption\": \"A dilapidated wooden cabin with collapsed shingle roof surrounded by overgrown vegetation under a cloudy sky.\",\n  \"main_objects\": [\"wooden cabin\", \"shingle roof\", \"wooden beams\", \"overgrown vegetation\", \"conifer tree\"],\n  \"possible_interpretations\": [\"abandoned rural cabin\", \"collapsed mountain shelter\", \"old alpine hut in ruins\", \"derelict wooden barn\"],\n  \"uncertainty_notes\": \"The exact original purpose of the structure is unclear, but it is clearly a man-made wooden building in advanced decay in a rural setting.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an old, dilapidated wooden structure - appears to be a collapsed or ruined wooden cabin/shelter. The roof is made of wooden shingles that are in disarray, and the walls are partially collapsed showing the wooden frame structure. The building is surrounded by overgrown vegetation - bushes, grass, and a pine tree branch visible in the upper left. The sky is overcast/cloudy, and there appears to be mountains or hills in the background to the right.\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - Very clear what this is (a ruined wooden building)\n- ambiguity: 1 - Very clear interpretation\n- natural_photo_typicality: 4 - Looks like a typical natural photograph\n- visual_clutter: 3 - There are many details (vegetation, wooden beams, shingles) but not overwhelming\n- object_centricity: 3 - The building is the main subject but vegetation also prominent\n- scene_centricity: 4 - This is more of a scene showing a place\n- caption_confidence: 5 - High confidence in caption\n\nCounts:\n- estimated_salient_object_count: 1 (the building)\n- estimated_distinct_object_categories: 2-3 (building, vegetation, sky)\n\nContains:\n- person: false\n- face: false\n- animal: false\n- text: false\n- vehicle: false\n- food: false\n- indoor: false\n- outdoor: true\n- artificial: false (it's a photo of a real scene, though the building is man-made)\n- occlusion: true (vegetation occludes parts)\n- unusual_viewpoint: false\n- multiple_main_objects: false\n\ndominant_content_type: \"scene\" or \"object\" - I think \"object\" since the building is the main focus, but it could be \"scene\" since it's in a natural setting. Let me go with \"object\" since the building dominates.\n\nActually, looking again, the building is clearly the central focus. I'll say \"object\".\n\nimage_style: \"natural_photo\"\nsemantic_domain: \"rural_ruin\" or \"abandoned_building\"\n\nshort_caption: \"A dilapidated wooden cabin with collapsed roof surrounded by overgrown vegetation under a cloudy sky.\"\n\nmain_objects: [\"wooden cabin\", \"shingles\", \"vegetation\", \"tree\"]\n\npossible_interpretations: [\"abandoned rural cabin\", \"collapsed wooden shelter\", \"old mountain hut in ruins\"]\n\nuncertainty_notes: \"The exact location and purpose of the building is unclear, but it appears to be an old wooden structure in a rural/mountain setting.\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an old, dilapidated wooden structure - appears to be a collapsed or ruined wooden cabin/shelter. The roof is made of wooden shingles that are in disarray, and the walls are partially collapsed showing the wooden frame structure. The building is surrounded by overgrown vegetation - bushes, grass, and a pine tree branch visible in the upper left. The sky is overcast/cloudy, and there appears to be mountains or hills in the background to the right.\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - Very clear what this is (a ruined wooden building)\n- ambiguity: 1 - Very clear interpretation\n- natural_photo_typicality: 4 - Looks like a typical natural photograph\n- visual_clutter: 3 - There are many details (vegetation, wooden beams, shingles) but not overwhelming\n- object_centricity: 3 - The building is the main subject but vegetation also prominent\n- scene_centricity: 4 - This is more of a scene showing a place\n- caption_confidence: 5 - High confidence in caption\n\nCounts:\n- estimated_salient_object_count: 1 (the building)\n- estimated_distinct_object_categories: 2-3 (building, vegetation, sky)\n\nContains:\n- person: false\n- face: false\n- animal: false\n- text: false\n- vehicle: false\n- food: false\n- indoor: false\n- outdoor: true\n- artificial: false (it's a photo of a real scene, though the building is man-made)\n- occlusion: true (vegetation occludes parts)\n- unusual_viewpoint: false\n- multiple_main_objects: false\n\ndominant_content_type: \"scene\" or \"object\" - I think \"object\" since the building is the main focus, but it could be \"scene\" since it's in a natural setting. Let me go with \"object\" since the building dominates.\n\nActually, looking again, the building is clearly the central focus. I'll say \"object\".\n\nimage_style: \"natural_photo\"\nsemantic_domain: \"rural_ruin\" or \"abandoned_building\"\n\nshort_caption: \"A dilapidated wooden cabin with collapsed roof surrounded by overgrown vegetation under a cloudy sky.\"\n\nmain_objects: [\"wooden cabin\", \"shingles\", \"vegetation\", \"tree\"]\n\npossible_interpretations: [\"abandoned rural cabin\", \"collapsed wooden shelter\", \"old mountain hut in ruins\"]\n\nuncertainty_notes: \"The exact location and purpose of the building is unclear, but it appears to be an old wooden structure in a rural/mountain setting.\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 916,
+          "total_tokens": 2438,
+          "cost": 0.00140556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00140556,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010992
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 622,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

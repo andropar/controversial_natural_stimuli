@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_108",
+    "stim_key": "vicco_108",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 108,
+    "file_index": 107,
+    "image_name": "shared_4rep_vicco_108.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_108.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior lighting\",\n\n  \"short_caption\": \"A vintage-style wall sconce lamp with a glass chimney mounted on a dark wooden plank wall.\",\n  \"main_objects\": [\"wall sconce\", \"glass lamp chimney\", \"wooden wall\"],\n  \"possible_interpretations\": [\"vintage electric wall sconce\", \"gas-style decorative lamp\", \"rustic cabin wall light\"],\n  \"uncertainty_notes\": \"Cannot determine if it is purely electric or gas-style fixture; exact setting unclear though likely indoor.\",\n  \"quality_flags\": [\"low_light\", \"high_contrast\", \"dark_background\"]\n}",
+      "response": {
+        "id": "gen-1780319514-paXIzxMIeWeLJqDlsXLC",
+        "object": "chat.completion",
+        "created": 1780319514,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior lighting\",\n\n  \"short_caption\": \"A vintage-style wall sconce lamp with a glass chimney mounted on a dark wooden plank wall.\",\n  \"main_objects\": [\"wall sconce\", \"glass lamp chimney\", \"wooden wall\"],\n  \"possible_interpretations\": [\"vintage electric wall sconce\", \"gas-style decorative lamp\", \"rustic cabin wall light\"],\n  \"uncertainty_notes\": \"Cannot determine if it is purely electric or gas-style fixture; exact setting unclear though likely indoor.\",\n  \"quality_flags\": [\"low_light\", \"high_contrast\", \"dark_background\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a wall-mounted sconce light fixture with a glass chimney/lamp shade covering what appears to be a lit bulb, mounted on a dark wooden plank wall. The lighting is warm and the scene is relatively dark, giving it a moody atmosphere.\n\nLet me analyze each attribute:\n\n- recognizability: The object is clearly a wall sconce/lamp - very recognizable. 5\n- ambiguity: Pretty clear what it is, low ambiguity. 1\n- natural_photo_typicality: Looks like a natural photograph. 4\n- visual_clutter: Minimal clutter, just the lamp and wooden wall. 2\n- object_centricity: The lamp is the clear central subject. 5\n- scene_centricity: It's more about the object than the scene, but the wooden wall provides context. 2\n- caption_confidence: High confidence in describing it. 5\n\n- estimated_salient_object_count: 1 (the lamp)\n- estimated_distinct_object_categories: 2 (lamp, wall)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (appears to be indoor against a wooden wall)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (slight angle but not unusual)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"interior\" or \"lighting\"\n\n- short_caption: \"A wall-mounted vintage sconce lamp with a glass chimney on a dark wooden wall.\"\n- main_objects: [\"wall sconce\", \"glass lamp chimney\", \"wooden wall\"]\n- possible_interpretations: [\"vintage wall sconce lamp\", \"gas lamp converted to electric\", \"decorative wall light fixture\"]\n- uncertainty_notes: \"Hard to tell if it's a gas-style lamp or purely electric decorative fixture\"\n- quality_flags: [\"low light\", \"moody lighting\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a wall-mounted sconce light fixture with a glass chimney/lamp shade covering what appears to be a lit bulb, mounted on a dark wooden plank wall. The lighting is warm and the scene is relatively dark, giving it a moody atmosphere.\n\nLet me analyze each attribute:\n\n- recognizability: The object is clearly a wall sconce/lamp - very recognizable. 5\n- ambiguity: Pretty clear what it is, low ambiguity. 1\n- natural_photo_typicality: Looks like a natural photograph. 4\n- visual_clutter: Minimal clutter, just the lamp and wooden wall. 2\n- object_centricity: The lamp is the clear central subject. 5\n- scene_centricity: It's more about the object than the scene, but the wooden wall provides context. 2\n- caption_confidence: High confidence in describing it. 5\n\n- estimated_salient_object_count: 1 (the lamp)\n- estimated_distinct_object_categories: 2 (lamp, wall)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (appears to be indoor against a wooden wall)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (slight angle but not unusual)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"interior\" or \"lighting\"\n\n- short_caption: \"A wall-mounted vintage sconce lamp with a glass chimney on a dark wooden wall.\"\n- main_objects: [\"wall sconce\", \"glass lamp chimney\", \"wooden wall\"]\n- possible_interpretations: [\"vintage wall sconce lamp\", \"gas lamp converted to electric\", \"decorative wall light fixture\"]\n- uncertainty_notes: \"Hard to tell if it's a gas-style lamp or purely electric decorative fixture\"\n- quality_flags: [\"low light\", \"moody lighting\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 815,
+          "total_tokens": 2337,
+          "cost": 0.00128436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00128436,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000978
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 496,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_65",
+    "stim_key": "all_models_65",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 65,
+    "file_index": 65,
+    "image_name": "image_0065.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0065.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"furniture/home decor\",\n\n  \"short_caption\": \"Accent chair with vintage world map print fabric on dark wooden legs in a living room\",\n  \"main_objects\": [\"accent chair\", \"potted plant\", \"bookshelf\", \"rug\", \"window\"],\n  \"possible_interpretations\": [\"accent chair with map upholstery\", \"vintage-style living room chair\", \"product photograph of upholstered chair\", \"home decor interior scene\"],\n  \"uncertainty_notes\": \"Image appears to be a staged product or lifestyle photograph rather than a candid natural photo\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318802-MpLAYST9nkzUFLJiRKa0",
+        "object": "chat.completion",
+        "created": 1780318802,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"furniture/home decor\",\n\n  \"short_caption\": \"Accent chair with vintage world map print fabric on dark wooden legs in a living room\",\n  \"main_objects\": [\"accent chair\", \"potted plant\", \"bookshelf\", \"rug\", \"window\"],\n  \"possible_interpretations\": [\"accent chair with map upholstery\", \"vintage-style living room chair\", \"product photograph of upholstered chair\", \"home decor interior scene\"],\n  \"uncertainty_notes\": \"Image appears to be a staged product or lifestyle photograph rather than a candid natural photo\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an armless accent chair with a fabric upholstery featuring a vintage world map print. The chair is in beige/cream color with dark wooden legs. It's positioned on a textured beige/tan shag rug. In the background, there's a window with natural light coming in, showing greenery outside, a potted plant on the left, and what appears to be a wooden cabinet/bookshelf on the right with books.\n\nLet me go through the schema:\n\n- recognizability: 5 - very clear, easy to identify as a chair\n- ambiguity: 1 - very clear interpretation as a chair\n- natural_photo_typicality: 3 - looks like a product/lifestyle photo, somewhat staged\n- visual_clutter: 2 - fairly simple composition, chair is dominant\n- object_centricity: 5 - chair is clearly the main subject\n- scene_centricity: 3 - has room context but chair dominates\n- caption_confidence: 5 - easy to caption\n\nCounts:\n- salient objects: 1 (the chair), or 3 if counting plant and bookshelf\n- distinct categories: 2-3 (chair, plant, furniture)\n\nFlags:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (text on the map and book spines)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false (window shows outside but it's an indoor setting primarily)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\nDominant content: object (chair)\nImage style: natural_photo (looks like a product photo but is a photograph)\nSemantic domain: furniture/home decor\n\nCaption: \"Accent chair with vintage world map print fabric on wooden legs in a living room setting\"\n\nMain objects: chair, plant, bookshelf, rug\n\nPossible interpretations: accent chair, vintage-style accent chair, map-print accent chair, living room furniture\n\nUncertainty notes: The image appears to be a staged product/lifestyle photograph",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an armless accent chair with a fabric upholstery featuring a vintage world map print. The chair is in beige/cream color with dark wooden legs. It's positioned on a textured beige/tan shag rug. In the background, there's a window with natural light coming in, showing greenery outside, a potted plant on the left, and what appears to be a wooden cabinet/bookshelf on the right with books.\n\nLet me go through the schema:\n\n- recognizability: 5 - very clear, easy to identify as a chair\n- ambiguity: 1 - very clear interpretation as a chair\n- natural_photo_typicality: 3 - looks like a product/lifestyle photo, somewhat staged\n- visual_clutter: 2 - fairly simple composition, chair is dominant\n- object_centricity: 5 - chair is clearly the main subject\n- scene_centricity: 3 - has room context but chair dominates\n- caption_confidence: 5 - easy to caption\n\nCounts:\n- salient objects: 1 (the chair), or 3 if counting plant and bookshelf\n- distinct categories: 2-3 (chair, plant, furniture)\n\nFlags:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (text on the map and book spines)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false (window shows outside but it's an indoor setting primarily)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\nDominant content: object (chair)\nImage style: natural_photo (looks like a product photo but is a photograph)\nSemantic domain: furniture/home decor\n\nCaption: \"Accent chair with vintage world map print fabric on wooden legs in a living room setting\"\n\nMain objects: chair, plant, bookshelf, rug\n\nPossible interpretations: accent chair, vintage-style accent chair, map-print accent chair, living room furniture\n\nUncertainty notes: The image appears to be a staged product/lifestyle photograph",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 811,
+          "total_tokens": 2333,
+          "cost": 0.00140244,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00140244,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009732
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 533,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

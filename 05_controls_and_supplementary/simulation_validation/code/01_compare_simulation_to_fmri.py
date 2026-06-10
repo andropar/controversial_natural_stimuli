@@ -13,13 +13,13 @@ Pairwise difference correlation (Option B):
   - Correlate across model pairs; aggregate with subject-averaged permutation test
 
 Inputs:
-  Simulation: experiments/cstim_paper/00_selection_evaluation/data/{model_set}/
+  Simulation: 00_stimulus_selection/decision_checks/selection_evaluation/results/{model_set}/
               correlation_matrices.csv
-  fMRI: experiments/cstim_paper/02_rsa_scores/data/{sub}/wrsa_transfer_scores.csv
+  fMRI: 01_brain_model_alignment/results/rsa_scores/{sub}/wrsa_transfer_scores.csv
 
 Outputs:
-  experiments/cstim_paper/04_simulation/data/option_b_pairwise.csv
-  experiments/cstim_paper/04_simulation/data/prediction_summary.csv
+  05_controls_and_supplementary/simulation_validation/results/option_b_pairwise.csv
+  05_controls_and_supplementary/simulation_validation/results/prediction_summary.csv
 
 Usage:
   python 01_compare_simulation_to_fmri.py
@@ -67,9 +67,8 @@ def load_sim_correlation_matrix(model_set: str) -> pd.DataFrame:
 
 
 def load_fmri_scores(subject: str) -> pd.DataFrame:
-    # Must read from RSA_DATA_DIR (02_rsa_scores/data/{sub}/), not from
-    # get_subject_data_dir (which returns 01_brain_data/data/{sub}/ and only
-    # contains raw betas/stim info, not RSA scores).
+    # Must read from RSA_DATA_DIR, not from the brain-data cache, which only
+    # contains raw betas/stim info and not RSA scores.
     path = config.RSA_DATA_DIR / subject / "wrsa_transfer_scores.csv"
     if not path.exists():
         return pd.DataFrame()

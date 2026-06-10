@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_71",
+    "stim_key": "sota_71",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 71,
+    "file_index": 71,
+    "image_name": "image_0071.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0071.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 3, \"scene_centricity\": 1, \"caption_confidence\": 5, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 4, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"fashion/menswear\", \"short_caption\": \"Man in pinstripe suit adjusting a burgundy knit tie outdoors\", \"main_objects\": [\"pinstripe double-breasted suit jacket\", \"striped dress shirt\", \"burgundy knit tie\", \"wristwatch\", \"person (torso)\"], \"possible_interpretations\": [\"man adjusting his tie before a formal event\", \"menswear fashion photography\", \"tailored suit detail showcase\", \"businessman preparing for a meeting\"], \"uncertainty_notes\": \"face and head are truncated above the chin, so individual identity and expression are unavailable\", \"quality_flags\": [\"face_truncated\"]}",
+      "response": {
+        "id": "gen-1780319169-7naghgfNNX3ArpLvxgYx",
+        "object": "chat.completion",
+        "created": 1780319169,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 3, \"scene_centricity\": 1, \"caption_confidence\": 5, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 4, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"fashion/menswear\", \"short_caption\": \"Man in pinstripe suit adjusting a burgundy knit tie outdoors\", \"main_objects\": [\"pinstripe double-breasted suit jacket\", \"striped dress shirt\", \"burgundy knit tie\", \"wristwatch\", \"person (torso)\"], \"possible_interpretations\": [\"man adjusting his tie before a formal event\", \"menswear fashion photography\", \"tailored suit detail showcase\", \"businessman preparing for a meeting\"], \"uncertainty_notes\": \"face and head are truncated above the chin, so individual identity and expression are unavailable\", \"quality_flags\": [\"face_truncated\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a man (only his torso is visible, from chin to waist) wearing a dark pinstripe double-breasted suit jacket, a light blue and white striped dress shirt, and a textured burgundy/maroon knit tie with a small pattern. He's adjusting his tie with both hands. He has a gold and silver two-tone watch on his left wrist. The background appears to be blurred greenery/foliage, suggesting an outdoor setting.\n\nLet me annotate according to the schema:\n\n- Recognizability: Clear - 5 (very clear what's happening)\n- Ambiguity: Low - 1 (very clear interpretation: man in suit adjusting tie)\n- Natural photo typicality: 4 (looks like a real photo, slightly posed)\n- Visual clutter: 2 (relatively clean, focused on subject)\n- Object centricity: 3-4 (the suit/tie is central but it's also about the person)\n- Scene centricity: 1 (not about a place)\n- Caption confidence: 5 (easy to caption)\n\nSalient objects: suit jacket, tie, shirt, watch, person - maybe 4-5\nDistinct categories: clothing, accessories, person - 3-4\n\nContains person: yes (torso visible, no face)\nContains face: no (face is cut off above chin)\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes (greenery in background)\nContains artificial/rendered: no\nContains occlusion/truncation: yes (face is cut off)\nContains unusual viewpoint: no\nContains multiple main objects: somewhat - the tie is the focal point but there are several items\n\nDominant content type: person (but face not visible, so could be \"object\" focusing on clothing) - I'll say \"person\" or \"object\" - actually since the face isn't visible, it's more about the clothing/person torso. Let me go with \"object\" since the person is incomplete.\n\nWait, the face is cut off, so it could be a closeup of clothing. The dominant content is the tie/suit. I'll say \"object\" or maybe \"closeup_detail\". Actually the main subject is the person wearing the suit - I'll go with \"person\" but no face visible.\n\nImage style: natural_photo\nSemantic domain: fashion/clothing/men's wear\n\nShort caption: \"Man in pinstripe suit adjusting a burgundy knit tie\"\n\nMain objects: pinstripe suit jacket, striped dress shirt, burgundy knit tie, wristwatch, person\n\nPossible interpretations: \"man adjusting his tie\", \"fashion photography of men's suit and tie\", \"man preparing for formal event\"\n\nUncertainty notes: face is truncated, making it impossible to identify individual\n\nQuality flags: face truncated/cut off",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a man (only his torso is visible, from chin to waist) wearing a dark pinstripe double-breasted suit jacket, a light blue and white striped dress shirt, and a textured burgundy/maroon knit tie with a small pattern. He's adjusting his tie with both hands. He has a gold and silver two-tone watch on his left wrist. The background appears to be blurred greenery/foliage, suggesting an outdoor setting.\n\nLet me annotate according to the schema:\n\n- Recognizability: Clear - 5 (very clear what's happening)\n- Ambiguity: Low - 1 (very clear interpretation: man in suit adjusting tie)\n- Natural photo typicality: 4 (looks like a real photo, slightly posed)\n- Visual clutter: 2 (relatively clean, focused on subject)\n- Object centricity: 3-4 (the suit/tie is central but it's also about the person)\n- Scene centricity: 1 (not about a place)\n- Caption confidence: 5 (easy to caption)\n\nSalient objects: suit jacket, tie, shirt, watch, person - maybe 4-5\nDistinct categories: clothing, accessories, person - 3-4\n\nContains person: yes (torso visible, no face)\nContains face: no (face is cut off above chin)\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes (greenery in background)\nContains artificial/rendered: no\nContains occlusion/truncation: yes (face is cut off)\nContains unusual viewpoint: no\nContains multiple main objects: somewhat - the tie is the focal point but there are several items\n\nDominant content type: person (but face not visible, so could be \"object\" focusing on clothing) - I'll say \"person\" or \"object\" - actually since the face isn't visible, it's more about the clothing/person torso. Let me go with \"object\" since the person is incomplete.\n\nWait, the face is cut off, so it could be a closeup of clothing. The dominant content is the tie/suit. I'll say \"object\" or maybe \"closeup_detail\". Actually the main subject is the person wearing the suit - I'll go with \"person\" but no face visible.\n\nImage style: natural_photo\nSemantic domain: fashion/clothing/men's wear\n\nShort caption: \"Man in pinstripe suit adjusting a burgundy knit tie\"\n\nMain objects: pinstripe suit jacket, striped dress shirt, burgundy knit tie, wristwatch, person\n\nPossible interpretations: \"man adjusting his tie\", \"fashion photography of men's suit and tie\", \"man preparing for formal event\"\n\nUncertainty notes: face is truncated, making it impossible to identify individual\n\nQuality flags: face truncated/cut off",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 920,
+          "total_tokens": 2442,
+          "cost": 0.00141036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00141036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.001104
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 667,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

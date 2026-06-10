@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_77",
+    "stim_key": "all_models_77",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 77,
+    "file_index": 77,
+    "image_name": "image_0077.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0077.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports_apparel\",\n  \"short_caption\": \"Person wearing a blue and black Germany national team goalkeeper jersey with number 1\",\n  \"main_objects\": [\"soccer jersey\", \"Adidas logo\", \"FIFA badge\", \"DFB crest\"],\n  \"possible_interpretations\": [\"Germany national football team goalkeeper kit\", \"Adidas soccer jersey product photo\", \"FIFA championship goalkeeper jersey\"],\n  \"uncertainty_notes\": \"Face and most of the body are cropped out, so only the torso and jersey are visible. The background is ambiguous between studio and outdoor concrete setting.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318820-DZ7cbboWclIFyW1p8v5W",
+        "object": "chat.completion",
+        "created": 1780318820,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports_apparel\",\n  \"short_caption\": \"Person wearing a blue and black Germany national team goalkeeper jersey with number 1\",\n  \"main_objects\": [\"soccer jersey\", \"Adidas logo\", \"FIFA badge\", \"DFB crest\"],\n  \"possible_interpretations\": [\"Germany national football team goalkeeper kit\", \"Adidas soccer jersey product photo\", \"FIFA championship goalkeeper jersey\"],\n  \"uncertainty_notes\": \"Face and most of the body are cropped out, so only the torso and jersey are visible. The background is ambiguous between studio and outdoor concrete setting.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a person wearing a Germany national football team goalkeeper jersey. The jersey is blue and black striped, long-sleeved, with the Adidas logo, FIFA badge, and German football association crest (DFB) with stars. The number \"1\" is visible on the front. The person's face is not shown (only torso/neck visible). The background is a concrete/gray wall.\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - clearly recognizable as a soccer/football jersey\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a typical product/lifestyle photo\n- visual_clutter: 2 - relatively clean with the jersey as the focus\n- object_centricity: 4 - the jersey dominates the image\n- scene_centricity: 1 - not a scene\n- caption_confidence: 5 - very confident\n\n- contains_person: true (body/torso visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (Adidas, FIFA, numbers, letters)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (looks like outdoor/studio with concrete wall)\n- contains_outdoor_scene: false (could be either, looks more like studio/architectural)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (face is cut off, body is truncated)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: object (the jersey)\n- image_style: natural_photo (or could be edited_photo since it looks like a product shot, but appears natural)\n- semantic_domain: sports_apparel\n\nshort_caption: \"Person wearing a blue and black Germany national team goalkeeper jersey with number 1\"\nmain_objects: [\"soccer jersey\", \"Adidas logo\", \"FIFA badge\", \"DFB crest\"]\npossible_interpretations: [\"Germany national football team goalkeeper kit\", \"Adidas soccer jersey product photo\", \"FIFA championship jersey\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a person wearing a Germany national football team goalkeeper jersey. The jersey is blue and black striped, long-sleeved, with the Adidas logo, FIFA badge, and German football association crest (DFB) with stars. The number \"1\" is visible on the front. The person's face is not shown (only torso/neck visible). The background is a concrete/gray wall.\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - clearly recognizable as a soccer/football jersey\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a typical product/lifestyle photo\n- visual_clutter: 2 - relatively clean with the jersey as the focus\n- object_centricity: 4 - the jersey dominates the image\n- scene_centricity: 1 - not a scene\n- caption_confidence: 5 - very confident\n\n- contains_person: true (body/torso visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (Adidas, FIFA, numbers, letters)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (looks like outdoor/studio with concrete wall)\n- contains_outdoor_scene: false (could be either, looks more like studio/architectural)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (face is cut off, body is truncated)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: object (the jersey)\n- image_style: natural_photo (or could be edited_photo since it looks like a product shot, but appears natural)\n- semantic_domain: sports_apparel\n\nshort_caption: \"Person wearing a blue and black Germany national team goalkeeper jersey with number 1\"\nmain_objects: [\"soccer jersey\", \"Adidas logo\", \"FIFA badge\", \"DFB crest\"]\npossible_interpretations: [\"Germany national football team goalkeeper kit\", \"Adidas soccer jersey product photo\", \"FIFA championship jersey\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1267,
+          "completion_tokens": 801,
+          "total_tokens": 2068,
+          "cost": 0.00131394,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131394,
+            "upstream_inference_prompt_cost": 0.00035274,
+            "upstream_inference_completions_cost": 0.0009612
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 491,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

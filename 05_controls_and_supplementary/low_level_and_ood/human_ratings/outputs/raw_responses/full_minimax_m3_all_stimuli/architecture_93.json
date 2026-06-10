@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_93",
+    "stim_key": "architecture_93",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 93,
+    "file_index": 93,
+    "image_name": "image_0093.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0093.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture\",\n  \"short_caption\": \"Tall wooden door with arched window set in a stone archway, showing green trees beyond\",\n  \"main_objects\": [\"wooden door\", \"arched window\", \"stone archway\", \"ornate door handle\"],\n  \"possible_interpretations\": [\"wooden door in stone archway\", \"castle or church entrance\", \"historic building doorway\", \"entrance to a garden or estate\", \"view from inside looking out through a door\"],\n  \"uncertainty_notes\": \"The image has a slightly idealized, possibly rendered quality, but this is not definitively determinable. The viewer's perspective appears to be inside a stone structure looking at the door and through the window to the outdoors.\",\n  \"quality_flags\": [\"possible_rendered_or_staged_content\", \"symmetrical_composition\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318950-U19M36bqJTY2Pgfiim89",
+        "object": "chat.completion",
+        "created": 1780318950,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture\",\n  \"short_caption\": \"Tall wooden door with arched window set in a stone archway, showing green trees beyond\",\n  \"main_objects\": [\"wooden door\", \"arched window\", \"stone archway\", \"ornate door handle\"],\n  \"possible_interpretations\": [\"wooden door in stone archway\", \"castle or church entrance\", \"historic building doorway\", \"entrance to a garden or estate\", \"view from inside looking out through a door\"],\n  \"uncertainty_notes\": \"The image has a slightly idealized, possibly rendered quality, but this is not definitively determinable. The viewer's perspective appears to be inside a stone structure looking at the door and through the window to the outdoors.\",\n  \"quality_flags\": [\"possible_rendered_or_staged_content\", \"symmetrical_composition\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "The image shows a tall wooden door with a large arched window, set within a stone archway. Through the window, you can see green trees and a landscape. The door has a decorative wooden panel design at the bottom and an ornate metal handle. The door is the clear central object, framed by stone walls/columns.\n\nLet me analyze this carefully:\n\n- Recognizability: Very clear - it's a wooden door in a stone archway. 5\n- Ambiguity: Low - one clear interpretation. 1\n- Natural_photo_typicality: This could be a natural photo but it has a somewhat rendered/idealized look. The image quality is good and it looks like it could be either a real photo or a high-quality render. I'll say 3-4.\n- Visual_clutter: Low - the door is the main focus. 2\n- Object_centricity: High - the door dominates. 5\n- Scene_centricity: Moderate - it's both an object and shows a scene through the window. 3\n- Caption_confidence: High. 5\n\nEstimated salient object count: 1 (the door)\nDistinct object categories: 3 (door, window, trees/landscape)\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor scene: It's an interior view looking out, so could be either. The viewer's perspective is inside looking at a door and through it to outside. I'll say false for indoor - the main subject is the door/window, and it could be from either side.\nContains outdoor scene: yes, visible through the window\nContains artificial or rendered content: Possibly - the image has a slightly rendered quality but I shouldn't be too speculative. I'll mark false.\nContains occlusion or truncation: No\nContains unusual viewpoint: No\nContains multiple main objects: No - the door is clearly the main object\n\nDominant content type: object\nImage style: natural_photo (or possibly edited/rendered - but it looks like a natural photo)\nSemantic domain: architecture or doorway\n\nShort caption: \"Tall wooden door with arched window set in a stone archway, showing trees beyond\"\nMain objects: wooden door, arched window, stone archway, metal door handle\nPossible interpretations: \n- Wooden door in stone archway\n- Castle or church entrance\n- Historic building doorway\n- Doorway to garden/landscape\n\nUncertainty notes: The image may be a render rather than a photograph, but it's not clearly so.\nQuality flags: possible rendered content",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a tall wooden door with a large arched window, set within a stone archway. Through the window, you can see green trees and a landscape. The door has a decorative wooden panel design at the bottom and an ornate metal handle. The door is the clear central object, framed by stone walls/columns.\n\nLet me analyze this carefully:\n\n- Recognizability: Very clear - it's a wooden door in a stone archway. 5\n- Ambiguity: Low - one clear interpretation. 1\n- Natural_photo_typicality: This could be a natural photo but it has a somewhat rendered/idealized look. The image quality is good and it looks like it could be either a real photo or a high-quality render. I'll say 3-4.\n- Visual_clutter: Low - the door is the main focus. 2\n- Object_centricity: High - the door dominates. 5\n- Scene_centricity: Moderate - it's both an object and shows a scene through the window. 3\n- Caption_confidence: High. 5\n\nEstimated salient object count: 1 (the door)\nDistinct object categories: 3 (door, window, trees/landscape)\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor scene: It's an interior view looking out, so could be either. The viewer's perspective is inside looking at a door and through it to outside. I'll say false for indoor - the main subject is the door/window, and it could be from either side.\nContains outdoor scene: yes, visible through the window\nContains artificial or rendered content: Possibly - the image has a slightly rendered quality but I shouldn't be too speculative. I'll mark false.\nContains occlusion or truncation: No\nContains unusual viewpoint: No\nContains multiple main objects: No - the door is clearly the main object\n\nDominant content type: object\nImage style: natural_photo (or possibly edited/rendered - but it looks like a natural photo)\nSemantic domain: architecture or doorway\n\nShort caption: \"Tall wooden door with arched window set in a stone archway, showing trees beyond\"\nMain objects: wooden door, arched window, stone archway, metal door handle\nPossible interpretations: \n- Wooden door in stone archway\n- Castle or church entrance\n- Historic building doorway\n- Doorway to garden/landscape\n\nUncertainty notes: The image may be a render rather than a photograph, but it's not clearly so.\nQuality flags: possible rendered content",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 935,
+          "total_tokens": 2249,
+          "cost": 0.00136596,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00136596,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.001122
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 624,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

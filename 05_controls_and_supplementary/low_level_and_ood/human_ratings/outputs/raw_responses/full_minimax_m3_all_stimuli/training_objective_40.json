@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_40",
+    "stim_key": "training_objective_40",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 40,
+    "file_index": 40,
+    "image_name": "image_0040.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0040.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"entertainment\",\n  \"short_caption\": \"Woman in navy velvet gown on red carpet at Golden Globe Awards\",\n  \"main_objects\": [\"woman\", \"evening gown\", \"clutch purse\", \"red carpet\", \"hedge backdrop\"],\n  \"possible_interpretations\": [\n    \"Celebrity posing on Golden Globe Awards red carpet\",\n    \"Actress arriving at awards show press line\"\n  ],\n  \"uncertainty_notes\": \"Identity of the person is not determined; the dress is patterned velvet in dark blue/navy.\",\n  \"quality_flags\": []\n}\n```",
+      "response": {
+        "id": "gen-1780319316-sCeGneuAAjoay3LVeGY4",
+        "object": "chat.completion",
+        "created": 1780319316,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"entertainment\",\n  \"short_caption\": \"Woman in navy velvet gown on red carpet at Golden Globe Awards\",\n  \"main_objects\": [\"woman\", \"evening gown\", \"clutch purse\", \"red carpet\", \"hedge backdrop\"],\n  \"possible_interpretations\": [\n    \"Celebrity posing on Golden Globe Awards red carpet\",\n    \"Actress arriving at awards show press line\"\n  ],\n  \"uncertainty_notes\": \"Identity of the person is not determined; the dress is patterned velvet in dark blue/navy.\",\n  \"quality_flags\": []\n}\n```",
+              "refusal": null,
+              "reasoning": "The image shows a woman in a long dark blue/navy patterned velvet dress standing on a red carpet. Behind her is a \"GOLDEN GLOBE AWARDS\" backdrop with green hedges. She's holding a small clutch purse. This appears to be a red carpet event photo, likely from the Golden Globe Awards ceremony.\n\nLet me analyze the schema requirements:\n\n- recognizability: Very clear, a typical viewer would easily recognize this as a red carpet event with a person. 5\n- ambiguity: Quite low ambiguity - clearly a red carpet event. 1\n- natural_photo_typicality: Looks like a typical event/red carpet photograph. 4\n- visual_clutter: Moderate - red carpet, hedge background, backdrop text, but main subject is clear. 2\n- object_centricity: The woman is the central focus. 5\n- scene_centricity: It's more of a portrait than a scene. 2\n- caption_confidence: High confidence in a caption. 5\n\n- estimated_salient_object_count: 1 (the woman) or 2 (woman + dress as salient)\n- estimated_distinct_object_categories: 3-4 (person, dress, clutch, backdrop)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: true (Golden Globe Awards)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: false (it's at an event, semi-outdoor with hedges - could be outdoor, but it's a red carpet setup which could be indoor or outdoor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (she's fully visible)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: person_face (or person)\n- image_style: natural_photo\n- semantic_domain: entertainment/celebrity\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a woman in a long dark blue/navy patterned velvet dress standing on a red carpet. Behind her is a \"GOLDEN GLOBE AWARDS\" backdrop with green hedges. She's holding a small clutch purse. This appears to be a red carpet event photo, likely from the Golden Globe Awards ceremony.\n\nLet me analyze the schema requirements:\n\n- recognizability: Very clear, a typical viewer would easily recognize this as a red carpet event with a person. 5\n- ambiguity: Quite low ambiguity - clearly a red carpet event. 1\n- natural_photo_typicality: Looks like a typical event/red carpet photograph. 4\n- visual_clutter: Moderate - red carpet, hedge background, backdrop text, but main subject is clear. 2\n- object_centricity: The woman is the central focus. 5\n- scene_centricity: It's more of a portrait than a scene. 2\n- caption_confidence: High confidence in a caption. 5\n\n- estimated_salient_object_count: 1 (the woman) or 2 (woman + dress as salient)\n- estimated_distinct_object_categories: 3-4 (person, dress, clutch, backdrop)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: true (Golden Globe Awards)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: false (it's at an event, semi-outdoor with hedges - could be outdoor, but it's a red carpet setup which could be indoor or outdoor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (she's fully visible)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: person_face (or person)\n- image_style: natural_photo\n- semantic_domain: entertainment/celebrity\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 756,
+          "total_tokens": 2170,
+          "cost": 0.0009954,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1400,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0009954,
+            "upstream_inference_prompt_cost": 8.82e-05,
+            "upstream_inference_completions_cost": 0.0009072
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 441,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

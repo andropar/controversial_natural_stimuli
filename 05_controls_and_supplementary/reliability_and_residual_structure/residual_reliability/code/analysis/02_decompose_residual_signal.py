@@ -2,7 +2,7 @@
 """
 Decompose the residual-reliability result into interpretable pieces.
 
-This script starts from data/residual_rsa.csv and asks four related questions:
+This script starts from results/residual_rsa.csv and asks four related questions:
 
 1. How close is the cross-validated model ensemble to the correlation ceiling?
 2. How much within-subject split-half reliability remains after residualization?
@@ -14,8 +14,8 @@ diagnostic set leaves a larger *fraction* of the available shared signal
 unexplained. The paired contrasts make that distinction explicit.
 
 Outputs:
-    data/residual_decomposition_summary.csv
-    data/residual_decomposition_contrasts.csv
+    results/residual_decomposition_summary.csv
+    results/residual_decomposition_contrasts.csv
     figures/residual_decomposition.{pdf,png}
 """
 
@@ -28,10 +28,10 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
-_PAPER = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_PAPER.parents[1]))
-sys.path.insert(0, str(_PAPER / "figures"))
+STAGE = Path(__file__).resolve().parents[2]
+SHARE_ROOT = STAGE.parents[2]
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
 
 import matplotlib.pyplot as plt
 
@@ -39,9 +39,9 @@ from style_improved import apply_style, DPI, FONT, W_DOUBLE
 
 apply_style()
 
-DATA_CSV = _PAPER / "10_residual_reliability" / "results" / "residual_rsa.csv"
-OUT_DATA = _PAPER / "10_residual_reliability" / "results"
-OUT_FIG = _PAPER / "10_residual_reliability" / "figures"
+DATA_CSV = STAGE / "results" / "residual_rsa.csv"
+OUT_DATA = STAGE / "results"
+OUT_FIG = STAGE / "figures"
 
 GROUPS = ["vicco", "all_models", "sota", "architecture", "dataset", "training_objective"]
 GROUP_LABELS = {
@@ -72,6 +72,15 @@ METRIC_LABELS = {
     "correlation_ceiling": "Correlation ceiling",
 }
 
+RATIO_METRICS = {
+    "ensemble_fraction_ceiling",
+    "fullfit_fraction_ceiling",
+    "within_residual_fraction",
+    "within_model_removed_fraction",
+    "loso_residual_fraction",
+    "loso_model_removed_fraction",
+}
+
 
 def _sem(x: pd.Series) -> float:
     x = x.dropna()
@@ -87,12 +96,48 @@ def _ci95(x: pd.Series) -> tuple[float, float]:
     return float(mean - half), float(mean + half)
 
 
+def _sign_test_pvalue(diffs: pd.Series) -> float:
+    diffs = diffs.dropna()
+    diffs = diffs[diffs != 0]
+    if len(diffs) == 0:
+        return np.nan
+    n_pos = int((diffs > 0).sum())
+    return float(stats.binomtest(n_pos, n=len(diffs), p=0.5).pvalue)
+
+
+def _wilcoxon_pvalue(diffs: pd.Series) -> float:
+    diffs = diffs.dropna()
+    diffs = diffs[diffs != 0]
+    if len(diffs) < 2:
+        return np.nan
+    try:
+        return float(stats.wilcoxon(diffs, zero_method="wilcox", method="auto").pvalue)
+    except ValueError:
+        return np.nan
+
+
 def load_subject_level() -> pd.DataFrame:
     """Average baseline bootstraps within subject and add derived metrics."""
     df = pd.read_csv(DATA_CSV)
+    sample_counts = (
+        df.groupby(["rsa_type", "stimulus_group", "stimulus_type", "subject"], as_index=False)
+        ["bootstrap_idx"]
+        .nunique()
+        .rename(columns={"bootstrap_idx": "n_subsamples_averaged"})
+    )
     subj = (
         df.groupby(["rsa_type", "stimulus_group", "stimulus_type", "subject"], as_index=False)
         .mean(numeric_only=True)
+    )
+    subj = subj.merge(
+        sample_counts,
+        on=["rsa_type", "stimulus_group", "stimulus_type", "subject"],
+        how="left",
+    )
+    subj["baseline_sampling"] = np.where(
+        subj["stimulus_group"] == "vicco",
+        "n_matched_without_replacement",
+        "none",
     )
 
     subj["ensemble_fraction_ceiling"] = (
@@ -155,7 +200,9 @@ def make_summary(subj: pd.DataFrame) -> pd.DataFrame:
         row = {
             "rsa_type": rsa_type,
             "stimulus_group": group,
+            "inference_unit": "subject",
             "n_subjects": g["subject"].nunique(),
+            "mean_n_subsamples_averaged": float(g["n_subsamples_averaged"].mean()),
         }
         for metric in metrics:
             lo, hi = _ci95(g[metric])
@@ -163,6 +210,9 @@ def make_summary(subj: pd.DataFrame) -> pd.DataFrame:
             row[f"{metric}_sem"] = _sem(g[metric])
             row[f"{metric}_ci95_lo"] = lo
             row[f"{metric}_ci95_hi"] = hi
+            if metric in RATIO_METRICS:
+                row[f"{metric}_n_below_0"] = int((g[metric] < 0).sum())
+                row[f"{metric}_n_above_1"] = int((g[metric] > 1).sum())
         rows.append(row)
     return pd.DataFrame(rows).sort_values(["rsa_type", "stimulus_group"])
 
@@ -193,6 +243,7 @@ def make_contrasts(subj: pd.DataFrame) -> pd.DataFrame:
                     "stimulus_group": group,
                     "metric": metric,
                     "metric_label": METRIC_LABELS[metric],
+                    "inference_unit": "subject",
                     "n_subjects": len(diffs),
                     "baseline_mean": float(base.loc[diffs.index, metric].mean()),
                     "diagnostic_mean": float(cur.loc[diffs.index, metric].mean()),
@@ -202,8 +253,11 @@ def make_contrasts(subj: pd.DataFrame) -> pd.DataFrame:
                     "ci95_hi": ci_hi,
                     "t": float(t_res.statistic),
                     "p_ttest": float(t_res.pvalue),
+                    "p_wilcoxon": _wilcoxon_pvalue(diffs),
+                    "p_sign_two_sided": _sign_test_pvalue(diffs),
                     "n_positive": int((diffs > 0).sum()),
                     "n_negative": int((diffs < 0).sum()),
+                    "ratio_metric_unbounded": bool(metric in RATIO_METRICS),
                 })
     return pd.DataFrame(rows).sort_values(["rsa_type", "stimulus_group", "metric"])
 
@@ -312,7 +366,7 @@ def make_figure(subj: pd.DataFrame) -> plt.Figure:
     )
 
     fig.suptitle(
-        "Diagnostic stimuli increase the fraction of reliable brain structure left outside the model ensemble",
+        "Subject-level residual diagnostics after model-ensemble removal",
         fontsize=FONT["title"] + 1,
     )
     return fig
@@ -352,7 +406,8 @@ def main() -> None:
         ]))
     ][[
         "metric_label", "baseline_mean", "diagnostic_mean",
-        "mean_diff_diagnostic_minus_baseline", "ci95_lo", "ci95_hi", "p_ttest",
+        "mean_diff_diagnostic_minus_baseline", "ci95_lo", "ci95_hi",
+        "p_ttest", "p_wilcoxon", "p_sign_two_sided",
     ]]
     print("\nMixed all-model diagnostic vs baseline:")
     print(key.to_string(index=False, float_format=lambda x: f"{x:.3f}"))

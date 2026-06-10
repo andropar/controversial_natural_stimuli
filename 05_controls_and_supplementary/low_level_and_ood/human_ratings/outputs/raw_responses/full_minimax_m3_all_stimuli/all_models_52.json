@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_52",
+    "stim_key": "all_models_52",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 52,
+    "file_index": 52,
+    "image_name": "image_0052.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0052.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 4, \"estimated_salient_object_count\": 6, \"estimated_distinct_object_categories\": 5, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"politics\", \"short_caption\": \"A formal meeting room with a large Argentine flag and suited individuals at a conference table.\", \"main_objects\": [\"Argentine flag\", \"conference table\", \"water bottles\", \"microphone\", \"suit\", \"curtained window\"], \"possible_interpretations\": [\"Argentine government press conference\", \"diplomatic meeting\", \"official government briefing\", \"political interview setup\", \"state ceremony preparation\"], \"uncertainty_notes\": \"Only partial bodies of people are visible; identities and exact event context cannot be determined.\", \"quality_flags\": [\"partial occlusion of persons\", \"truncated composition\"]}",
+      "response": {
+        "id": "gen-1780318791-PldxH6Rpx79FGOE5yrt9",
+        "object": "chat.completion",
+        "created": 1780318791,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 4, \"estimated_salient_object_count\": 6, \"estimated_distinct_object_categories\": 5, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"politics\", \"short_caption\": \"A formal meeting room with a large Argentine flag and suited individuals at a conference table.\", \"main_objects\": [\"Argentine flag\", \"conference table\", \"water bottles\", \"microphone\", \"suit\", \"curtained window\"], \"possible_interpretations\": [\"Argentine government press conference\", \"diplomatic meeting\", \"official government briefing\", \"political interview setup\", \"state ceremony preparation\"], \"uncertainty_notes\": \"Only partial bodies of people are visible; identities and exact event context cannot be determined.\", \"quality_flags\": [\"partial occlusion of persons\", \"truncated composition\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an indoor scene, likely a meeting room or formal office. The main elements I can see:\n- An Argentine flag (light blue and white stripes with the Sun of May emblem) is prominently displayed, hanging vertically\n- A person in a dark suit (only arm and partial body visible) is holding a water bottle\n- Another person partially visible on the left (hand and arm)\n- A conference/meeting table\n- Water bottles on the table\n- A window with curtains in the background\n- A microphone on the table\n- What appears to be a cell phone on the table\n\nThe scene appears to be a press conference or formal meeting setting, likely involving Argentine officials or diplomats given the prominent Argentine flag.\n\nLet me rate the dimensions:\n- Recognizability: 4-5, the content is fairly clear - a meeting/conference with an Argentine flag\n- Ambiguity: 2, it's fairly clear it's a formal meeting with Argentine flag\n- Natural photo typicality: 4, looks like a natural photograph\n- Visual clutter: 3, several objects but not overly cluttered\n- Object centricity: 3, the flag is prominent but it's also a scene\n- Scene centricity: 4, it's clearly a scene/setting\n- Caption confidence: 4, can describe it fairly well\n\nEstimated salient objects: 5-6 (flag, person, water bottles, microphone, phone, table)\nDistinct categories: 4-5 (flag, person, bottle, microphone, phone, table)\n\nContains person: yes\nContains face: no (faces not visible)\nContains animal: no\nContains text: possibly (emblem on flag but not clear text)\nContains vehicle: no\nContains food: no\nContains indoor scene: yes\nContains outdoor scene: no (window shows outside but scene is indoor)\nContains artificial or rendered content: no\nContains occlusion: yes (person partially out of frame)\nContains unusual viewpoint: no\nContains multiple main objects: yes\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: politics/government/diplomacy\n\nCaption: A formal meeting room featuring an Argentine flag, with suited individuals seated at a conference table with water bottles and a microphone.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an indoor scene, likely a meeting room or formal office. The main elements I can see:\n- An Argentine flag (light blue and white stripes with the Sun of May emblem) is prominently displayed, hanging vertically\n- A person in a dark suit (only arm and partial body visible) is holding a water bottle\n- Another person partially visible on the left (hand and arm)\n- A conference/meeting table\n- Water bottles on the table\n- A window with curtains in the background\n- A microphone on the table\n- What appears to be a cell phone on the table\n\nThe scene appears to be a press conference or formal meeting setting, likely involving Argentine officials or diplomats given the prominent Argentine flag.\n\nLet me rate the dimensions:\n- Recognizability: 4-5, the content is fairly clear - a meeting/conference with an Argentine flag\n- Ambiguity: 2, it's fairly clear it's a formal meeting with Argentine flag\n- Natural photo typicality: 4, looks like a natural photograph\n- Visual clutter: 3, several objects but not overly cluttered\n- Object centricity: 3, the flag is prominent but it's also a scene\n- Scene centricity: 4, it's clearly a scene/setting\n- Caption confidence: 4, can describe it fairly well\n\nEstimated salient objects: 5-6 (flag, person, water bottles, microphone, phone, table)\nDistinct categories: 4-5 (flag, person, bottle, microphone, phone, table)\n\nContains person: yes\nContains face: no (faces not visible)\nContains animal: no\nContains text: possibly (emblem on flag but not clear text)\nContains vehicle: no\nContains food: no\nContains indoor scene: yes\nContains outdoor scene: no (window shows outside but scene is indoor)\nContains artificial or rendered content: no\nContains occlusion: yes (person partially out of frame)\nContains unusual viewpoint: no\nContains multiple main objects: yes\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: politics/government/diplomacy\n\nCaption: A formal meeting room featuring an Argentine flag, with suited individuals seated at a conference table with water bottles and a microphone.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1267,
+          "completion_tokens": 794,
+          "total_tokens": 2061,
+          "cost": 0.00130554,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00130554,
+            "upstream_inference_prompt_cost": 0.00035274,
+            "upstream_inference_completions_cost": 0.0009528
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 558,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

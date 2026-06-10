@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_91",
+    "stim_key": "dataset_91",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 91,
+    "file_index": 91,
+    "image_name": "image_0091.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0091.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"landscape_nature\",\n  \"short_caption\": \"A large cascading waterfall with a rainbow, flanked by green cliffs under a partly cloudy blue sky.\",\n  \"main_objects\": [\"waterfall\", \"rainbow\", \"cliffs\", \"river\", \"grass\"],\n  \"possible_interpretations\": [\"large tiered waterfall landscape\", \"cascading river gorge\", \"waterfall with mist rainbow\", \"Icelandic-style waterfall scene\"],\n  \"uncertainty_notes\": \"Exact location is not certain; the stepped tiered formation resembles Gullfoss in Iceland but could be another similar waterfall. Tiny human figures on the left edge are barely visible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319062-PzNqqedb0MvDVzz21VZh",
+        "object": "chat.completion",
+        "created": 1780319062,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"landscape_nature\",\n  \"short_caption\": \"A large cascading waterfall with a rainbow, flanked by green cliffs under a partly cloudy blue sky.\",\n  \"main_objects\": [\"waterfall\", \"rainbow\", \"cliffs\", \"river\", \"grass\"],\n  \"possible_interpretations\": [\"large tiered waterfall landscape\", \"cascading river gorge\", \"waterfall with mist rainbow\", \"Icelandic-style waterfall scene\"],\n  \"uncertainty_notes\": \"Exact location is not certain; the stepped tiered formation resembles Gullfoss in Iceland but could be another similar waterfall. Tiny human figures on the left edge are barely visible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a large waterfall, which appears to be a wide, powerful cascade with multiple tiers. There's a rainbow visible on the left side of the image. The waterfall is flanked by green cliffs and grassy areas. The sky is blue with some clouds. There appear to be some tiny figures (people) visible on the left side near the waterfall edge, giving scale to the scene. This looks like it could be Gullfoss in Iceland, given the characteristic stepped waterfall formation and landscape.\n\nLet me go through the schema:\n\n- recognizability: 5 - Very clearly a waterfall scene\n- ambiguity: 1 - Very clear what this is\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 2 - Relatively clean composition, the waterfall dominates\n- object_centricity: 2 - Not a single object, it's a scene\n- scene_centricity: 5 - Definitely a place/scene\n- caption_confidence: 5 - Very confident about the caption\n\n- estimated_salient_object_count: 1 (the waterfall as the main feature, or maybe 2 with the rainbow)\n- estimated_distinct_object_categories: 2-3 (waterfall, cliff, rainbow, sky)\n\n- contains_person: true (tiny figures visible on the left)\n- contains_face: false (too small to see)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (typical landscape view)\n- contains_multiple_main_objects: false (waterfall is dominant)\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: landscape or nature\n\n- short_caption: A large cascading waterfall with a rainbow, surrounded by green cliffs under a blue sky.\n- main_objects: waterfall, rainbow, cliffs, river\n- possible_interpretations: large waterfall scene, cascading river over cliffs, waterfall with rainbow, possibly Gullfoss Iceland\n- uncertainty_notes: exact location uncertain, could be various large waterfalls\n- quality_flags: small figures barely visible",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a large waterfall, which appears to be a wide, powerful cascade with multiple tiers. There's a rainbow visible on the left side of the image. The waterfall is flanked by green cliffs and grassy areas. The sky is blue with some clouds. There appear to be some tiny figures (people) visible on the left side near the waterfall edge, giving scale to the scene. This looks like it could be Gullfoss in Iceland, given the characteristic stepped waterfall formation and landscape.\n\nLet me go through the schema:\n\n- recognizability: 5 - Very clearly a waterfall scene\n- ambiguity: 1 - Very clear what this is\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 2 - Relatively clean composition, the waterfall dominates\n- object_centricity: 2 - Not a single object, it's a scene\n- scene_centricity: 5 - Definitely a place/scene\n- caption_confidence: 5 - Very confident about the caption\n\n- estimated_salient_object_count: 1 (the waterfall as the main feature, or maybe 2 with the rainbow)\n- estimated_distinct_object_categories: 2-3 (waterfall, cliff, rainbow, sky)\n\n- contains_person: true (tiny figures visible on the left)\n- contains_face: false (too small to see)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (typical landscape view)\n- contains_multiple_main_objects: false (waterfall is dominant)\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: landscape or nature\n\n- short_caption: A large cascading waterfall with a rainbow, surrounded by green cliffs under a blue sky.\n- main_objects: waterfall, rainbow, cliffs, river\n- possible_interpretations: large waterfall scene, cascading river over cliffs, waterfall with rainbow, possibly Gullfoss Iceland\n- uncertainty_notes: exact location uncertain, could be various large waterfalls\n- quality_flags: small figures barely visible",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1363,
+          "completion_tokens": 852,
+          "total_tokens": 2215,
+          "cost": 0.00128106,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00128106,
+            "upstream_inference_prompt_cost": 0.00025866,
+            "upstream_inference_completions_cost": 0.0010224
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 564,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

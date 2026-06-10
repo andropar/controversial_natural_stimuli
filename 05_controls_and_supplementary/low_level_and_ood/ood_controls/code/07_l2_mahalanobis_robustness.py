@@ -7,11 +7,11 @@ claim that cstim mean Mahalanobis distance exceeds the baseline should hold
 under both schemes if the conclusion is real and not a normalisation artefact.
 
 Reads:
-  experiments/cstim_paper/08_image_statistics/data/image_stats.csv
+  05_controls_and_supplementary/low_level_and_ood/image_statistics/results/image_stats.csv
 
 Writes:
-  experiments/cstim_paper/06_ood/data/low_level_mahalanobis_l2norm.csv
-  experiments/cstim_paper/06_ood/figures/mahalanobis_l2_robustness.{pdf,png}
+  05_controls_and_supplementary/low_level_and_ood/ood_controls/results/low_level_mahalanobis_l2norm.csv
+  05_controls_and_supplementary/low_level_and_ood/ood_controls/figures/supplementary/mahalanobis_l2_robustness.{pdf,png}
 """
 
 from pathlib import Path

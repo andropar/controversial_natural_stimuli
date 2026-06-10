@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_73",
+    "stim_key": "dataset_73",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 73,
+    "file_index": 73,
+    "image_name": "image_0073.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0073.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"vehicle\",\n\n  \"short_caption\": \"Vintage black and maroon classic car parked on road beside hedges with a white house behind.\",\n  \"main_objects\": [\"vintage car\", \"house\", \"hedges\", \"license plate\"],\n  \"possible_interpretations\": [\"vintage car parked outside a residence\", \"classic car at a show or gathering\", \"automotive photograph of pre-war saloon\"],\n  \"uncertainty_notes\": \"Exact make and model of the car cannot be determined with certainty from the image alone.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319043-fyKOvwzGujlFc6n0Ac5R",
+        "object": "chat.completion",
+        "created": 1780319043,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"vehicle\",\n\n  \"short_caption\": \"Vintage black and maroon classic car parked on road beside hedges with a white house behind.\",\n  \"main_objects\": [\"vintage car\", \"house\", \"hedges\", \"license plate\"],\n  \"possible_interpretations\": [\"vintage car parked outside a residence\", \"classic car at a show or gathering\", \"automotive photograph of pre-war saloon\"],\n  \"uncertainty_notes\": \"Exact make and model of the car cannot be determined with certainty from the image alone.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a vintage car - it appears to be a classic British luxury car, likely a Riley or similar make from the 1930s era, painted in a two-tone black and dark red/maroon color scheme. It has the classic pre-war design with large round headlights, a prominent chrome grille, and wire-spoke wheels. The license plate reads \"LV 9363\". \n\nThe car is parked on what appears to be a paved road or driveway. In the background, there's a white house with a dark roof, surrounded by lush green hedges and trees. The setting looks like a residential area, possibly in the UK given the license plate format.\n\nLet me annotate this systematically:\n\n- Recognizability: The car is clearly recognizable as a vintage/classic car. 5\n- Ambiguity: The interpretation is fairly clear - it's a vintage car. 1\n- Natural photo typicality: Looks like a typical natural photograph. 5\n- Visual clutter: There are several elements (car, house, hedges, trees, road) but it's not overly cluttered. 3\n- Object centricity: The car clearly dominates the image. 5\n- Scene centricity: While there's a scene in the background, the focus is on the object. 2\n- Caption confidence: High confidence in describing this. 5\n\nSalient object count: 1 main car\nDistinct object categories: 2-3 (car, building, vegetation)\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: true (license plate)\nContains vehicle: true\nContains food: false\nContains indoor scene: false\nContains outdoor scene: true\nContains artificial/rendered: false\nContains occlusion: false\nContains unusual viewpoint: false\nContains multiple main objects: false\n\nDominant content type: object\nImage style: natural_photo\nSemantic domain: vehicle/automotive\n\nShort caption: Vintage black and red classic car parked on road beside hedges and white house.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a vintage car - it appears to be a classic British luxury car, likely a Riley or similar make from the 1930s era, painted in a two-tone black and dark red/maroon color scheme. It has the classic pre-war design with large round headlights, a prominent chrome grille, and wire-spoke wheels. The license plate reads \"LV 9363\". \n\nThe car is parked on what appears to be a paved road or driveway. In the background, there's a white house with a dark roof, surrounded by lush green hedges and trees. The setting looks like a residential area, possibly in the UK given the license plate format.\n\nLet me annotate this systematically:\n\n- Recognizability: The car is clearly recognizable as a vintage/classic car. 5\n- Ambiguity: The interpretation is fairly clear - it's a vintage car. 1\n- Natural photo typicality: Looks like a typical natural photograph. 5\n- Visual clutter: There are several elements (car, house, hedges, trees, road) but it's not overly cluttered. 3\n- Object centricity: The car clearly dominates the image. 5\n- Scene centricity: While there's a scene in the background, the focus is on the object. 2\n- Caption confidence: High confidence in describing this. 5\n\nSalient object count: 1 main car\nDistinct object categories: 2-3 (car, building, vegetation)\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: true (license plate)\nContains vehicle: true\nContains food: false\nContains indoor scene: false\nContains outdoor scene: true\nContains artificial/rendered: false\nContains occlusion: false\nContains unusual viewpoint: false\nContains multiple main objects: false\n\nDominant content type: object\nImage style: natural_photo\nSemantic domain: vehicle/automotive\n\nShort caption: Vintage black and red classic car parked on road beside hedges and white house.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 756,
+          "total_tokens": 2278,
+          "cost": 0.00121356,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00121356,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009072
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 490,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

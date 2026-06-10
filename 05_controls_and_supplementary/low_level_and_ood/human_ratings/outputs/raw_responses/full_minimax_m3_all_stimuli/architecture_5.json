@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_5",
+    "stim_key": "architecture_5",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 5,
+    "file_index": 5,
+    "image_name": "image_0005.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0005.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\":5,\"ambiguity\":1,\"natural_photo_typicality\":5,\"visual_clutter\":2,\"object_centricity\":2,\"scene_centricity\":5,\"caption_confidence\":5,\"estimated_salient_object_count\":4,\"estimated_distinct_object_categories\":4,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":false,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":true,\"contains_outdoor_scene\":false,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":false,\"contains_unusual_viewpoint\":false,\"contains_multiple_main_objects\":false,\"dominant_content_type\":\"scene\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"bathroom/interior\",\"short_caption\":\"Tiled corner shower stall with built-in bench, showerhead, and wall niche holding toiletries.\",\"main_objects\":[\"showerhead\",\"shower bench\",\"tiled walls\",\"toiletry bottles\",\"loofah\"],\"possible_interpretations\":[\"walk-in shower stall\",\"corner shower\",\"tiled bathroom shower\"],\"uncertainty_notes\":\"Bottle labels are not legible; exact toiletetry products cannot be identified.\",\"quality_flags\":[]}",
+      "response": {
+        "id": "gen-1780318849-3PaUm5PfAMwRTgnpoZWo",
+        "object": "chat.completion",
+        "created": 1780318849,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\":5,\"ambiguity\":1,\"natural_photo_typicality\":5,\"visual_clutter\":2,\"object_centricity\":2,\"scene_centricity\":5,\"caption_confidence\":5,\"estimated_salient_object_count\":4,\"estimated_distinct_object_categories\":4,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":false,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":true,\"contains_outdoor_scene\":false,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":false,\"contains_unusual_viewpoint\":false,\"contains_multiple_main_objects\":false,\"dominant_content_type\":\"scene\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"bathroom/interior\",\"short_caption\":\"Tiled corner shower stall with built-in bench, showerhead, and wall niche holding toiletries.\",\"main_objects\":[\"showerhead\",\"shower bench\",\"tiled walls\",\"toiletry bottles\",\"loofah\"],\"possible_interpretations\":[\"walk-in shower stall\",\"corner shower\",\"tiled bathroom shower\"],\"uncertainty_notes\":\"Bottle labels are not legible; exact toiletetry products cannot be identified.\",\"quality_flags\":[]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a shower stall/bathroom shower area with:\n- Beige/tan tiled walls\n- A corner shower with small floor tiles\n- Shower fixtures (showerhead, handles, a vertical bar)\n- A small corner seat/bench\n- A hanging caddy/organizer with what appears to be bottles (shampoo, body wash)\n- A loofah/sponge (green and white)\n- Built-in niches in the wall\n- A drain on the floor\n- Door frame visible on the left\n\nThis is clearly a natural photograph of an indoor bathroom shower scene.\n\nLet me rate:\n- recognizability: 5 - very clear what this is\n- ambiguity: 1 - only one interpretation (shower stall)\n- natural_photo_typicality: 5 - looks like a typical photograph\n- visual_clutter: 2 - relatively simple, organized shower\n- object_centricity: 2 - no single dominant object, it's a scene\n- scene_centricity: 5 - definitely a scene/location\n- caption_confidence: 5 - easy to caption\n\nestimated_salient_object_count: Maybe 3-4 (shower fixtures, bench, caddy with bottles)\nestimated_distinct_object_categories: 3-4 (shower fixtures, bench, toiletry bottles, loofah)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: maybe (labels on bottles but not clearly readable)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: bathroom/interior\n\nshort_caption: \"Tiled corner shower stall with built-in bench and wall niches\"\nmain_objects: [\"showerhead\", \"shower bench\", \"tiled walls\", \"toiletry bottles\", \"loofah\"]\npossible_interpretations: [\"shower stall\", \"walk-in shower\", \"corner shower\"]\nuncertainty_notes: \"Bottle labels not clearly readable\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a shower stall/bathroom shower area with:\n- Beige/tan tiled walls\n- A corner shower with small floor tiles\n- Shower fixtures (showerhead, handles, a vertical bar)\n- A small corner seat/bench\n- A hanging caddy/organizer with what appears to be bottles (shampoo, body wash)\n- A loofah/sponge (green and white)\n- Built-in niches in the wall\n- A drain on the floor\n- Door frame visible on the left\n\nThis is clearly a natural photograph of an indoor bathroom shower scene.\n\nLet me rate:\n- recognizability: 5 - very clear what this is\n- ambiguity: 1 - only one interpretation (shower stall)\n- natural_photo_typicality: 5 - looks like a typical photograph\n- visual_clutter: 2 - relatively simple, organized shower\n- object_centricity: 2 - no single dominant object, it's a scene\n- scene_centricity: 5 - definitely a scene/location\n- caption_confidence: 5 - easy to caption\n\nestimated_salient_object_count: Maybe 3-4 (shower fixtures, bench, caddy with bottles)\nestimated_distinct_object_categories: 3-4 (shower fixtures, bench, toiletry bottles, loofah)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: maybe (labels on bottles but not clearly readable)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: bathroom/interior\n\nshort_caption: \"Tiled corner shower stall with built-in bench and wall niches\"\nmain_objects: [\"showerhead\", \"shower bench\", \"tiled walls\", \"toiletry bottles\", \"loofah\"]\npossible_interpretations: [\"shower stall\", \"walk-in shower\", \"corner shower\"]\nuncertainty_notes: \"Bottle labels not clearly readable\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1027,
+          "completion_tokens": 739,
+          "total_tokens": 1766,
+          "cost": 0.00104466,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00104466,
+            "upstream_inference_prompt_cost": 0.00015786,
+            "upstream_inference_completions_cost": 0.0008868
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 514,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

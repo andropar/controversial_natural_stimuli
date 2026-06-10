@@ -4,26 +4,25 @@ Improved brain alignment figure.
 
 Fixes vs. original:
 - Okabe-Ito palette (vermillion / blue) — colour-blind safe.
-- Noise-ceiling bands rendered as neutral grey, so the controversial/baseline
-  hue is reserved for data and doesn't fight the eye.
-- Spread ratio promoted from corner annotation to a bold subtitle below
-  each panel title; this is the headline number of the figure.
+- Noise-ceiling bands use the same controversial/baseline colour encoding as
+  the score distributions.
+- Per-panel spread-ratio text removed; spread is shown in a companion summary.
 - Panel labels (a..e) for the five model sets.
 - Mixed and Fixed RSA share the same colour, distinguished by marker
   fill (mixed = filled, fixed = open) and line style — so a single legend
   works.
-- Fixed RSA row: y-limit chosen per row so the noise-ceiling band is visible
-  without wasting empty space.
+- Mixed and fixed RSA rows share the same y-limit and both show noise ceiling
+  bands in-panel.
 """
 from __future__ import annotations
 
 import sys
 from pathlib import Path
 
-_PAPER = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_PAPER.parents[1]))
-sys.path.insert(0, str(_PAPER / "figures"))
+STAGE = Path(__file__).resolve().parents[3]
+SHARE_ROOT = STAGE.parent
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
 
 import numpy as np
 import pandas as pd
@@ -45,7 +44,9 @@ MODEL_DISPLAY = config.MODEL_DISPLAY_NAMES
 SUBJECTS = config.SUBJECTS
 STATS_DATA_DIR = config.STATS_DATA_DIR
 RSA_DATA_DIR = config.RSA_DATA_DIR
-FIGURES_DIR = Path(__file__).resolve().parent
+FIGURES_DIR = STAGE / "figures" / "rsa_scores"
+PNG_DIR = FIGURES_DIR / "png"
+SPREAD_STATS_PATH = STATS_DATA_DIR / "spread_statistics.csv"
 
 SHORT_NAMES = {
     "torchvision_vgg16_imagenet1k_v1": "VGG-16",
@@ -71,7 +72,7 @@ SHORT_NAMES = {
 }
 
 TITLE = {
-    "training_objective": "Training Objective",
+    "training_objective": "Train. Objective",
     "sota":               "State of the Art",
     "architecture":       "Architecture",
     "dataset":            "Dataset",
@@ -103,12 +104,25 @@ def load_scores():
 
 
 def load_nc():
-    return pd.read_csv(STATS_DATA_DIR / "rdm_noise_ceilings.csv")
+    paths = [
+        STATS_DATA_DIR / "rdm_noise_ceilings.csv",
+        SHARE_ROOT / "02_alignment_reliability" / "results" / "rdm_noise_ceilings.csv",
+    ]
+    for p in paths:
+        if p.exists():
+            return pd.read_csv(p)
+    raise FileNotFoundError(f"Could not find rdm_noise_ceilings.csv in {paths}")
 
 
 def load_bs_nc():
-    p = _PAPER / "03_statistics" / "results" / "between_subject_noise_ceilings.csv"
-    return pd.read_csv(p)
+    paths = [
+        STATS_DATA_DIR / "between_subject_noise_ceilings.csv",
+        SHARE_ROOT / "02_alignment_reliability" / "results" / "between_subject_noise_ceilings.csv",
+    ]
+    for p in paths:
+        if p.exists():
+            return pd.read_csv(p)
+    raise FileNotFoundError(f"Could not find between_subject_noise_ceilings.csv in {paths}")
 
 
 def load_perm():
@@ -201,44 +215,39 @@ def plot_method_panel(ax, df, nc_df, bs_nc_df, perm_df, model_set, method,
         m = np.nanmean(vals); s = np.nanstd(vals, ddof=1) / np.sqrt(max(len(vals), 1))
         return m - s, m + s, m
 
-    nc_drawn = []
     nc_ctrl_mean = float(np.nanmean(nc_ctrl_v)) if len(nc_ctrl_v) else np.nan
     nc_base_mean = float(np.nanmean(nc_base_v)) if len(nc_base_v) else np.nan
-    is_mrsa_panel = (method == "mRSA")
 
-    if is_mrsa_panel:
-        # mRSA: data and NC overlap, draw bands inside panel.
-        if not np.isnan(nc_ctrl_mean):
-            lo, hi, m = _band(nc_ctrl_v)
-            ax.axhspan(lo, hi, color=COLOR_CSTIM, alpha=0.10, zorder=0, linewidth=0)
-            ax.axhline(m, color=COLOR_CSTIM, linewidth=0.9, alpha=0.7, zorder=0,
-                       linestyle="-")
-        if not np.isnan(nc_base_mean):
-            lo, hi, m = _band(nc_base_v)
-            ax.axhspan(lo, hi, color=COLOR_BASELINE, alpha=0.10, zorder=0, linewidth=0)
-            ax.axhline(m, color=COLOR_BASELINE, linewidth=0.9, alpha=0.7, zorder=0,
-                       linestyle="--")
-    else:
-        # fRSA: NC sits well above the data range. Indicate it with upward
-        # arrows + numeric annotations at the top of the panel rather than
-        # crushing the data by extending the y-axis to include NC.
-        nc_drawn = [("base", nc_base_mean, COLOR_BASELINE),
-                    ("cstim", nc_ctrl_mean, COLOR_CSTIM)]
+    # Noise ceiling: draw both rows in-panel with the same colour/line encoding.
+    if not np.isnan(nc_ctrl_mean):
+        lo, hi, m = _band(nc_ctrl_v)
+        ax.axhspan(lo, hi, color=COLOR_CSTIM, alpha=0.10, zorder=0, linewidth=0)
+        ax.axhline(m, color=COLOR_CSTIM, linewidth=0.9, alpha=0.7, zorder=0,
+                   linestyle="-")
+    if not np.isnan(nc_base_mean):
+        lo, hi, m = _band(nc_base_v)
+        ax.axhspan(lo, hi, color=COLOR_BASELINE, alpha=0.10, zorder=0, linewidth=0)
+        ax.axhline(m, color=COLOR_BASELINE, linewidth=0.9, alpha=0.7, zorder=0,
+                   linestyle="--")
 
     # ---- Per-model boxes + per-subject dots ----
     n = len(order)
     x = np.arange(n)
     offset = 0.20
+    cstim_panel_values = []
+    base_panel_values = []
     for i, m in enumerate(order):
         c = data[m][method].get("controversial", {})
         b = data[m][method].get("vicco", {})
         if c:
             v = np.array(list(c.values()))
+            cstim_panel_values.extend(v)
             sem = v.std(ddof=1) / np.sqrt(len(v)) if len(v) > 1 else 0
             draw_box(ax, x[i] - offset, v.mean(), sem,
                      width=0.30, filled=is_mrsa, color=COLOR_CSTIM)
         if b:
             v = np.array(list(b.values()))
+            base_panel_values.extend(v)
             sem = v.std(ddof=1) / np.sqrt(len(v)) if len(v) > 1 else 0
             draw_box(ax, x[i] + offset, v.mean(), sem,
                      width=0.30, filled=is_mrsa, color=COLOR_BASELINE)
@@ -262,8 +271,25 @@ def plot_method_panel(ax, df, nc_df, bs_nc_df, perm_df, model_set, method,
                            linewidths=0.5, marker=mk, zorder=6,
                            alpha=0.9)
 
+    def draw_score_interval(vals, xpos, color):
+        vals = np.asarray(vals, dtype=float)
+        vals = vals[np.isfinite(vals)]
+        if len(vals) == 0:
+            return
+        lo, mid, hi = np.percentile(vals, [2.5, 50.0, 97.5])
+        cap = 0.055
+        ax.vlines(xpos, lo, hi, color=color, linewidth=0.8, alpha=0.95, zorder=7)
+        ax.hlines([lo, hi], xpos - cap, xpos + cap, color=color,
+                  linewidth=0.8, alpha=0.95, zorder=7)
+        ax.hlines(mid, xpos - cap * 1.25, xpos + cap * 1.25, color=color,
+                  linewidth=1.1, alpha=0.95, zorder=8)
+
+    draw_score_interval(cstim_panel_values, n - 0.02, COLOR_CSTIM)
+    draw_score_interval(base_panel_values, n + 0.16, COLOR_BASELINE)
+
     # ---- Axis cosmetics ----
     ax.set_xticks(x)
+    ax.set_xlim(-0.65, n + 0.32)
     if show_xticks:
         ax.set_xticklabels([SHORT_NAMES.get(m, MODEL_DISPLAY.get(m, m))
                             for m in order],
@@ -272,52 +298,15 @@ def plot_method_panel(ax, df, nc_df, bs_nc_df, perm_df, model_set, method,
         ax.set_xticklabels([])
         ax.tick_params(axis="x", length=0)
 
-    # ---- Spread-ratio: prominent annotation in the panel header strip ----
-    spread = lookup_spread(perm_df, model_set, method)
-    if spread is not None:
-        col = "#9A4500" if spread >= 1.0 else "#666666"
-        # Largest-amplification panel: prepend a star and bump font slightly
-        # without adding extra horizontal text (panels can be narrow).
-        if is_largest_amp and method == "mRSA":
-            label = f"★ spread ratio: {spread:.2f}×"
-            font_size = FONT["annotation"] + 1
-        else:
-            label = f"spread ratio: {spread:.2f}×"
-            font_size = FONT["annotation"]
-        ax.text(0.5, 1.005, label,
-                transform=ax.transAxes, fontsize=font_size,
-                fontweight="bold", color=col, ha="center", va="bottom",
-                zorder=10)
-
-    # ---- Inline NC indicator (fRSA only) ----
-    # The fRSA noise ceiling sits well above the data range. Rather than
-    # crushing the data into the bottom 30% of the panel by extending y-axis,
-    # we show NC values as a compact inset box at the top-right of each
-    # panel: "NC base / cstim". This keeps the comparison local to each
-    # model set instead of shipping it off-panel.
-    if nc_drawn:
-        # nc_drawn is a list of ("base"/"cstim", value, color)
-        nc_map = {kind: (val, col) for kind, val, col in nc_drawn}
-        nc_b_val, _ = nc_map.get("base", (np.nan, COLOR_BASELINE))
-        nc_c_val, _ = nc_map.get("cstim", (np.nan, COLOR_CSTIM))
-        # Two-line, color-coded NC values inside an inset box.
-        from matplotlib.patches import FancyBboxPatch  # local import keeps top tidy
-        # Bounding box drawn in axes-fraction via a transform-aware patch.
-        ax.text(0.985, 0.965,
-                "NC (off-panel)",
-                transform=ax.transAxes, ha="right", va="top",
-                fontsize=FONT["small"] - 1, color="#555", fontweight="bold")
-        ax.text(0.985, 0.875,
-                f"base  {nc_b_val:.2f}",
-                transform=ax.transAxes, ha="right", va="top",
-                fontsize=FONT["small"] - 1, color=COLOR_BASELINE)
-        ax.text(0.985, 0.795,
-                f"cstim {nc_c_val:.2f}",
-                transform=ax.transAxes, ha="right", va="top",
-                fontsize=FONT["small"] - 1, color=COLOR_CSTIM)
-
     if panel_label is not None:
-        add_panel_label(ax, panel_label, x=-0.04, y=1.05)
+        ax.text(
+            0.015, 0.98, panel_label,
+            transform=ax.transAxes,
+            fontsize=FONT["panel_label"],
+            fontweight="bold",
+            ha="left", va="top",
+            zorder=10,
+        )
 
     if show_legend:
         handles = [
@@ -337,6 +326,92 @@ def plot_method_panel(ax, df, nc_df, bs_nc_df, perm_df, model_set, method,
                   ncol=2, columnspacing=0.8, handletextpad=0.4, handlelength=1.4)
 
 
+def plot_median_spread_summary():
+    """Two-panel companion: absolute median model-score spread."""
+    if not SPREAD_STATS_PATH.exists():
+        print(f"[WARN] Missing {SPREAD_STATS_PATH}; skipping median-spread summary")
+        return
+
+    spread_df = pd.read_csv(SPREAD_STATS_PATH)
+    method_specs = [
+        ("crsa", "fRSA"),
+        ("wrsa_transfer", "mRSA"),
+    ]
+    labels = {
+        "all_models": "All",
+        "sota": "SOTA",
+        "training_objective": "Train.\nObj.",
+        "architecture": "Arch.",
+        "dataset": "Dataset",
+    }
+
+    fig, axes = plt.subplots(1, 2, figsize=(W_DOUBLE, 4.4), sharey=True)
+    x = np.arange(len(PANEL_ORDER), dtype=float)
+    width = 0.34
+    err_kw = dict(ecolor="0.30", elinewidth=0.8, capsize=2)
+
+    for ax, (method, title) in zip(axes, method_specs):
+        baseline_means, baseline_sems = [], []
+        cstim_means, cstim_sems = [], []
+        for model_set in PANEL_ORDER:
+            rows = spread_df[
+                (spread_df["method"] == method)
+                & (spread_df["model_set"] == model_set)
+            ]
+            base_vals = rows["vicco_median_pairwise_diff_mean"].astype(float)
+            cstim_vals = rows["cstim_median_pairwise_diff"].astype(float)
+            baseline_means.append(base_vals.mean())
+            baseline_sems.append(base_vals.sem())
+            cstim_means.append(cstim_vals.mean())
+            cstim_sems.append(cstim_vals.sem())
+
+        ax.bar(
+            x - width / 2,
+            baseline_means,
+            width,
+            yerr=baseline_sems,
+            color=COLOR_BASELINE,
+            alpha=0.82,
+            edgecolor="white",
+            linewidth=0.5,
+            label="Baseline",
+            error_kw=err_kw,
+            zorder=3,
+        )
+        ax.bar(
+            x + width / 2,
+            cstim_means,
+            width,
+            yerr=cstim_sems,
+            color=COLOR_CSTIM,
+            alpha=0.82,
+            edgecolor="white",
+            linewidth=0.5,
+            label="Controversial",
+            error_kw=err_kw,
+            zorder=3,
+        )
+        ax.set_xticks(x)
+        ax.set_xticklabels([labels[ms] for ms in PANEL_ORDER])
+        ax.set_title(title)
+        ax.grid(axis="y", alpha=0.35, zorder=0)
+        ax.set_axisbelow(True)
+
+    axes[0].set_ylabel("Median pairwise score difference")
+    axes[0].legend(loc="upper left", frameon=True, framealpha=0.92,
+                   edgecolor="none", fontsize=FONT["small"])
+
+    out_pdf = FIGURES_DIR / "median_spread_by_model_set.pdf"
+    out_png = PNG_DIR / "median_spread_by_model_set.png"
+    FIGURES_DIR.mkdir(parents=True, exist_ok=True)
+    PNG_DIR.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_pdf)
+    fig.savefig(out_png, dpi=DPI)
+    print(f"Saved {out_pdf}")
+    print(f"Saved {out_png}")
+    plt.close(fig)
+
+
 def main():
     df = load_scores()
     nc_df = load_nc()
@@ -349,70 +424,51 @@ def main():
         n_models = len([m for m in MODEL_SETS[ms]])
         ratios.append(max(n_models, 4))
 
-    fig = plt.figure(figsize=(W_DOUBLE, 9.0))
+    fig = plt.figure(figsize=(W_DOUBLE, 10.6))
     gs = fig.add_gridspec(
         2, len(PANEL_ORDER),
         width_ratios=ratios,
-        wspace=0.06, hspace=0.18,
-        left=0.05, right=0.99, top=0.94, bottom=0.16,
+        wspace=0.06, hspace=0.14,
+        left=0.05, right=0.99, top=0.94, bottom=0.14,
     )
 
-    # Compute y-limits anchored on the DATA (not on NC).
-    # For mRSA, model scores get reasonably close to NC, so NC fits in panel.
-    # For fRSA, scores are much lower than NC; rather than crush the data into
-    # the bottom 30% of the panel, we trim to data range and indicate the NC
-    # off-panel via an upward arrow + numerical annotation per panel.
-    def row_ylim(method):
-        data_max = df[df["method"] == method]["score"].max()
-        if method == "mRSA":
-            # Include NC so the band remains visible (data and NC overlap).
-            nc_max = float(np.sqrt(nc_df["noise_ceiling_spearman"].clip(0).max()))
-            upper = max(data_max, nc_max) * 1.10
-        else:
-            # Anchor purely on data; NC will be shown as a numeric annotation.
-            upper = data_max * 1.10
-        return 0, upper
-
-    ylims = {"mRSA": row_ylim("mRSA"), "fRSA": row_ylim("fRSA")}
-
-    # Identify the largest-amplification panel (by mRSA spread ratio) so its
-    # title can flag the takeaway directly.
-    mrsa_ratios = {}
-    for ms in PANEL_ORDER:
-        r = lookup_spread(perm_df, ms, "mRSA")
-        if r is not None:
-            mrsa_ratios[ms] = r
-    largest_ms = max(mrsa_ratios, key=mrsa_ratios.get) if mrsa_ratios else None
+    # Shared y-limits across rows; include both mRSA and fRSA noise ceilings.
+    data_max = float(df["score"].max())
+    mrsa_nc_max = float(np.sqrt(nc_df["noise_ceiling_spearman"].clip(0).max()))
+    frsa_nc_max = float(bs_nc_df["nc_mid"].max())
+    shared_ylim = (0, max(data_max, mrsa_nc_max, frsa_nc_max) * 1.10)
 
     panel_letters = list("abcde")
     for r, method in enumerate(["mRSA", "fRSA"]):
         for c, ms in enumerate(PANEL_ORDER):
             ax = fig.add_subplot(gs[r, c])
-            ax.set_ylim(*ylims[method])
+            ax.set_ylim(*shared_ylim)
             plot_method_panel(
                 ax, df, nc_df, bs_nc_df, perm_df, ms, method,
                 show_xticks=(r == 1),
                 panel_label=panel_letters[c] if r == 0 else None,
                 show_legend=(r == 0 and c == 0),
-                is_largest_amp=(ms == largest_ms),
             )
             if c == 0:
                 ax.set_ylabel(("Mixed RSA " if method == "mRSA"
                                else "Fixed RSA ") + r"($r_s$)")
             else:
                 ax.set_ylabel("")
-                ax.tick_params(axis="y", labelleft=False)
+                ax.spines["left"].set_visible(False)
+                ax.tick_params(axis="y", left=False, labelleft=False)
             if r == 0:
-                # Push title up to leave a header strip for the spread ratio
-                ax.set_title(TITLE[ms], y=1.08)
+                ax.set_title(TITLE[ms], y=1.03)
 
     out_pdf = FIGURES_DIR / "brain_alignment_improved.pdf"
-    out_png = FIGURES_DIR / "brain_alignment_improved.png"
+    out_png = PNG_DIR / "brain_alignment_improved.png"
+    FIGURES_DIR.mkdir(parents=True, exist_ok=True)
+    PNG_DIR.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_pdf)
     fig.savefig(out_png, dpi=DPI)
     print(f"Saved {out_pdf}")
     print(f"Saved {out_png}")
     plt.close(fig)
+    plot_median_spread_summary()
 
 
 if __name__ == "__main__":

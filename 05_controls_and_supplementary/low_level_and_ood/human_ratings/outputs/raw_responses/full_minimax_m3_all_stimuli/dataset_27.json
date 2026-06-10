@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_27",
+    "stim_key": "dataset_27",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 27,
+    "file_index": 27,
+    "image_name": "image_0027.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0027.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"furniture\",\n  \"short_caption\": \"Glass-topped table with cream Greek key pattern decorative supports\",\n  \"main_objects\": [\"table\", \"glass top\", \"geometric supports\"],\n  \"possible_interpretations\": [\"decorative coffee table\", \"display table with Greek key motif\", \"furniture piece with meander pattern\"],\n  \"uncertainty_notes\": \"Exact function of the table (coffee table, display, etc.) is unclear; framing cuts off top edge slightly\",\n  \"quality_flags\": [\"product_photo\", \"bright_lighting\", \"minimalist_background\", \"slight_top_truncation\"]\n}",
+      "response": {
+        "id": "gen-1780318990-WksXG0NscChH33p7IL1s",
+        "object": "chat.completion",
+        "created": 1780318990,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"furniture\",\n  \"short_caption\": \"Glass-topped table with cream Greek key pattern decorative supports\",\n  \"main_objects\": [\"table\", \"glass top\", \"geometric supports\"],\n  \"possible_interpretations\": [\"decorative coffee table\", \"display table with Greek key motif\", \"furniture piece with meander pattern\"],\n  \"uncertainty_notes\": \"Exact function of the table (coffee table, display, etc.) is unclear; framing cuts off top edge slightly\",\n  \"quality_flags\": [\"product_photo\", \"bright_lighting\", \"minimalist_background\", \"slight_top_truncation\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I see what appears to be a glass-topped table with cream/beige colored geometric Greek key (meander) pattern supports or legs. The design is symmetric and decorative. It's viewed from a slightly elevated angle, looking down at the glass top with the decorative supports visible beneath/around it.\n\nLet me annotate according to the schema:\n\n- Recognizability: The image clearly shows a table with decorative Greek key pattern supports. I'd say 4 - clearly recognizable.\n- Ambiguity: Low ambiguity - it's clearly a piece of furniture. Maybe 1-2.\n- Natural_photo_typicality: This looks like a product photo, not a typical natural photo. Maybe 2-3.\n- Visual_clutter: Quite clean and minimal, low clutter. 1-2.\n- Object_centricity: The table is the clear central object. 5.\n- Scene_centricity: This is an object shot, not really a scene. 1-2.\n- Caption_confidence: Pretty confident about what it is. 4.\n\nSalient object count: 1 (the table)\nDistinct categories: 1 (table/furniture)\n\nNo people, faces, animals, text, vehicles, food.\nIndoor scene - appears to be a studio/product shot, so yes indoor.\nOutdoor scene - no.\nArtificial or rendered content - no, it's a real photo of a real object.\nOcclusion/truncation - the table appears somewhat truncated/cut off at top.\nUnusual viewpoint - slightly elevated angle, not really unusual.\nMultiple main objects - no, just one table.\n\nDominant content type: object\nImage style: natural_photo (though it's a product photo)\nSemantic domain: furniture\n\nShort caption: \"Glass-topped table with cream Greek key pattern supports\"\n\nMain objects: [\"table\", \"glass top\", \"decorative supports\"]\n\nPossible interpretations: [\"decorative table\", \"coffee table with Greek key design\", \"display table\", \"furniture piece\"]\n\nQuality flags: [\"product photo\", \"slight overexposure\", \"minimal background\"]\n\nLet me finalize the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I see what appears to be a glass-topped table with cream/beige colored geometric Greek key (meander) pattern supports or legs. The design is symmetric and decorative. It's viewed from a slightly elevated angle, looking down at the glass top with the decorative supports visible beneath/around it.\n\nLet me annotate according to the schema:\n\n- Recognizability: The image clearly shows a table with decorative Greek key pattern supports. I'd say 4 - clearly recognizable.\n- Ambiguity: Low ambiguity - it's clearly a piece of furniture. Maybe 1-2.\n- Natural_photo_typicality: This looks like a product photo, not a typical natural photo. Maybe 2-3.\n- Visual_clutter: Quite clean and minimal, low clutter. 1-2.\n- Object_centricity: The table is the clear central object. 5.\n- Scene_centricity: This is an object shot, not really a scene. 1-2.\n- Caption_confidence: Pretty confident about what it is. 4.\n\nSalient object count: 1 (the table)\nDistinct categories: 1 (table/furniture)\n\nNo people, faces, animals, text, vehicles, food.\nIndoor scene - appears to be a studio/product shot, so yes indoor.\nOutdoor scene - no.\nArtificial or rendered content - no, it's a real photo of a real object.\nOcclusion/truncation - the table appears somewhat truncated/cut off at top.\nUnusual viewpoint - slightly elevated angle, not really unusual.\nMultiple main objects - no, just one table.\n\nDominant content type: object\nImage style: natural_photo (though it's a product photo)\nSemantic domain: furniture\n\nShort caption: \"Glass-topped table with cream Greek key pattern supports\"\n\nMain objects: [\"table\", \"glass top\", \"decorative supports\"]\n\nPossible interpretations: [\"decorative table\", \"coffee table with Greek key design\", \"display table\", \"furniture piece\"]\n\nQuality flags: [\"product photo\", \"slight overexposure\", \"minimal background\"]\n\nLet me finalize the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1363,
+          "completion_tokens": 786,
+          "total_tokens": 2149,
+          "cost": 0.00132474,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00132474,
+            "upstream_inference_prompt_cost": 0.00038154,
+            "upstream_inference_completions_cost": 0.0009432
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 498,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

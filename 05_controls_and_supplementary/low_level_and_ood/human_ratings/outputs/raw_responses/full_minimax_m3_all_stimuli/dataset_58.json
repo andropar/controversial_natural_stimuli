@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_58",
+    "stim_key": "dataset_58",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 58,
+    "file_index": 58,
+    "image_name": "image_0058.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0058.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"beach\",\n  \"short_caption\": \"Row of trash bins lined up across a sandy beach with mountains and buildings in the background.\",\n  \"main_objects\": [\"trash bins\", \"sand\", \"mountains\", \"buildings\", \"sky\"],\n  \"possible_interpretations\": [\"A beach with trash collection bins\", \"A coastal scene with recycling bins\", \"An empty beach with waste management setup\"],\n  \"uncertainty_notes\": \"Slight film grain and warm color cast suggest film photography, but image is clearly a natural photo.\",\n  \"quality_flags\": [\"film_grain\", \"warm_color_cast\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319027-GSHbKGY6JDKEB3nDorFw",
+        "object": "chat.completion",
+        "created": 1780319027,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"beach\",\n  \"short_caption\": \"Row of trash bins lined up across a sandy beach with mountains and buildings in the background.\",\n  \"main_objects\": [\"trash bins\", \"sand\", \"mountains\", \"buildings\", \"sky\"],\n  \"possible_interpretations\": [\"A beach with trash collection bins\", \"A coastal scene with recycling bins\", \"An empty beach with waste management setup\"],\n  \"uncertainty_notes\": \"Slight film grain and warm color cast suggest film photography, but image is clearly a natural photo.\",\n  \"quality_flags\": [\"film_grain\", \"warm_color_cast\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a beach scene with a row of trash/recycling bins lined up on the sand. The bins recede into the distance, creating a line that leads the eye. In the background, there are mountains, some buildings/hotels, and a clear blue sky with some clouds. The sand is light-colored, and there are tire tracks visible in it.\n\nLet me annotate according to the schema:\n\n- recognizability: High - clearly recognizable as a beach with trash bins\n- ambiguity: Low - the content is quite clear\n- natural_photo_typicality: This looks like a film photograph, possibly with some grain/aged quality, but otherwise typical of a natural photo\n- visual_clutter: Moderate - the main elements are clear but there are several bins and background elements\n- object_centricity: The bins are prominent, especially the large one in the foreground\n- scene_centricity: This is definitely a scene (beach)\n- caption_confidence: High\n\nThe image has a film photography quality - slightly grainy, warm tones. It looks like it could be from a film camera.\n\nMain objects: trash bins, sand, mountains, buildings\nDominant content: scene (beach) with object focus (trash bins)\nNo people visible, no faces, no animals, no text, no vehicles, no food\nOutdoor scene, natural photo\nNo occlusion or unusual viewpoint really\nMultiple main objects - the bins and the beach scene\n\nLet me count the bins - I can see about 6-7 trash bins in the line.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a beach scene with a row of trash/recycling bins lined up on the sand. The bins recede into the distance, creating a line that leads the eye. In the background, there are mountains, some buildings/hotels, and a clear blue sky with some clouds. The sand is light-colored, and there are tire tracks visible in it.\n\nLet me annotate according to the schema:\n\n- recognizability: High - clearly recognizable as a beach with trash bins\n- ambiguity: Low - the content is quite clear\n- natural_photo_typicality: This looks like a film photograph, possibly with some grain/aged quality, but otherwise typical of a natural photo\n- visual_clutter: Moderate - the main elements are clear but there are several bins and background elements\n- object_centricity: The bins are prominent, especially the large one in the foreground\n- scene_centricity: This is definitely a scene (beach)\n- caption_confidence: High\n\nThe image has a film photography quality - slightly grainy, warm tones. It looks like it could be from a film camera.\n\nMain objects: trash bins, sand, mountains, buildings\nDominant content: scene (beach) with object focus (trash bins)\nNo people visible, no faces, no animals, no text, no vehicles, no food\nOutdoor scene, natural photo\nNo occlusion or unusual viewpoint really\nMultiple main objects - the bins and the beach scene\n\nLet me count the bins - I can see about 6-7 trash bins in the line.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 684,
+          "total_tokens": 2206,
+          "cost": 0.00112716,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00112716,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008208
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 380,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_28",
+    "stim_key": "sota_28",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 28,
+    "file_index": 28,
+    "image_name": "image_0028.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0028.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: Missing required fields: ['contains_unusual_viewpoint']"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"library_study\",\n  \"short_caption\": \"Young woman writing in a notebook at a library table with bookshelves behind her.\",\n  \"main_objects\": [\"woman\", \"notebook\", \"pen\", \"bookshelf\", \"books\"],\n  \"possible_interpretations\": [\"woman studying in library\", \"student taking notes\", \"person writing at library desk\"],\n  \"uncertainty_notes\": \"Visible 123RF watermarks indicate stock photo; woman's face is partially turned and partly in shadow.\",\n  \"quality_flags\": [\"watermark\", \"stock_photo\"]\n}",
+      "response": {
+        "id": "gen-1780319140-SZnoiR7zvGfV8TAjgpGE",
+        "object": "chat.completion",
+        "created": 1780319140,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"library_study\",\n  \"short_caption\": \"Young woman writing in a notebook at a library table with bookshelves behind her.\",\n  \"main_objects\": [\"woman\", \"notebook\", \"pen\", \"bookshelf\", \"books\"],\n  \"possible_interpretations\": [\"woman studying in library\", \"student taking notes\", \"person writing at library desk\"],\n  \"uncertainty_notes\": \"Visible 123RF watermarks indicate stock photo; woman's face is partially turned and partly in shadow.\",\n  \"quality_flags\": [\"watermark\", \"stock_photo\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a young woman with long brown hair, wearing a white tank top, sitting at a wooden table and writing in a notebook with a pen. She is in what appears to be a library, with multiple shelves of books visible in the background. The image has a watermark \"123RF\" visible across it, indicating it's a stock photo.\n\nLet me annotate according to the schema:\n\n- recognizability: High, clearly recognizable scene - 5\n- ambiguity: Low, one clear interpretation - 1\n- natural_photo_typicality: Very typical stock photo - 5\n- visual_clutter: Moderate, many books in background but clear subject - 3\n- object_centricity: Person is the central subject - 4\n- scene_centricity: Also shows a clear scene (library) - 4\n- caption_confidence: High - 5\n\n- estimated_salient_object_count: Main subject is the woman, plus books/notebook/pen - 3\n- estimated_distinct_object_categories: person, books, notebook, pen, table - 5\n\n- contains_person: true\n- contains_face: true (her face is visible)\n- contains_animal: false\n- contains_text: true (watermarks, possibly book titles though blurry)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (library)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (woman is clearly main)\n\n- dominant_content_type: person_face (the woman is central, though more of a person than face closeup) - actually \"person_face\" might be too close. Let me go with \"person_face\" since person is the main subject. Or \"mixed\" since there's scene + person. I'll go with \"person_face\" as the person dominates.\n\n- image_style: natural_photo (with watermarks but it's a photo) - \"natural_photo\"\n- semantic_domain: library/study/education\n\n- short_caption: \"Young woman writing in a notebook at a library table with bookshelves behind her.\"\n\n- main_objects: woman, notebook, pen, bookshelf, books\n- possible_interpretations: [\"woman studying in library\", \"student taking notes\", \"person reading/writing in a library\"]\n- uncertainty_notes: \"Stock photo with visible 123RF watermarks; face is not fully frontal but clearly visible\"\n- quality_flags: [\"watermark\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a young woman with long brown hair, wearing a white tank top, sitting at a wooden table and writing in a notebook with a pen. She is in what appears to be a library, with multiple shelves of books visible in the background. The image has a watermark \"123RF\" visible across it, indicating it's a stock photo.\n\nLet me annotate according to the schema:\n\n- recognizability: High, clearly recognizable scene - 5\n- ambiguity: Low, one clear interpretation - 1\n- natural_photo_typicality: Very typical stock photo - 5\n- visual_clutter: Moderate, many books in background but clear subject - 3\n- object_centricity: Person is the central subject - 4\n- scene_centricity: Also shows a clear scene (library) - 4\n- caption_confidence: High - 5\n\n- estimated_salient_object_count: Main subject is the woman, plus books/notebook/pen - 3\n- estimated_distinct_object_categories: person, books, notebook, pen, table - 5\n\n- contains_person: true\n- contains_face: true (her face is visible)\n- contains_animal: false\n- contains_text: true (watermarks, possibly book titles though blurry)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (library)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (woman is clearly main)\n\n- dominant_content_type: person_face (the woman is central, though more of a person than face closeup) - actually \"person_face\" might be too close. Let me go with \"person_face\" since person is the main subject. Or \"mixed\" since there's scene + person. I'll go with \"person_face\" as the person dominates.\n\n- image_style: natural_photo (with watermarks but it's a photo) - \"natural_photo\"\n- semantic_domain: library/study/education\n\n- short_caption: \"Young woman writing in a notebook at a library table with bookshelves behind her.\"\n\n- main_objects: woman, notebook, pen, bookshelf, books\n- possible_interpretations: [\"woman studying in library\", \"student taking notes\", \"person reading/writing in a library\"]\n- uncertainty_notes: \"Stock photo with visible 123RF watermarks; face is not fully frontal but clearly visible\"\n- quality_flags: [\"watermark\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 889,
+          "total_tokens": 2427,
+          "cost": 0.00137796,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00137796,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.0010668
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 601,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

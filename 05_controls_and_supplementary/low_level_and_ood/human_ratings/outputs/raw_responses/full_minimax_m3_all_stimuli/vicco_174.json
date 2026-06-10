@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_174",
+    "stim_key": "vicco_174",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 174,
+    "file_index": 173,
+    "image_name": "shared_4rep_vicco_174.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_174.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 5, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 5, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": true, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"coastal_town\", \"short_caption\": \"White Mediterranean coastal town perched on a cliff above a sandy beach under an overcast sky.\", \"main_objects\": [\"beach\", \"cliff\", \"white buildings\", \"hotel\", \"ocean\", \"truck\"], \"possible_interpretations\": [\"coastal town viewed from the beach\", \"Mediterranean seaside town\", \"Albufeira-style cliffside settlement\"], \"uncertainty_notes\": \"Small distant figures are too small to confirm details; specific town identity uncertain.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319592-CDWFhjEtvDE8dKzNL9Af",
+        "object": "chat.completion",
+        "created": 1780319592,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 5, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 5, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": true, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"coastal_town\", \"short_caption\": \"White Mediterranean coastal town perched on a cliff above a sandy beach under an overcast sky.\", \"main_objects\": [\"beach\", \"cliff\", \"white buildings\", \"hotel\", \"ocean\", \"truck\"], \"possible_interpretations\": [\"coastal town viewed from the beach\", \"Mediterranean seaside town\", \"Albufeira-style cliffside settlement\"], \"uncertainty_notes\": \"Small distant figures are too small to confirm details; specific town identity uncertain.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a coastal scene with:\n- A sandy beach in the foreground with gentle waves\n- A cliff/rocky outcrop in the middle ground\n- White buildings (looks like a Mediterranean/Spanish town, possibly Albufeira in Portugal given the style) built on top of and around the cliff\n- A large hotel building on the left side\n- Overcast/cloudy gray sky\n- A few small figures of people on the beach\n- A truck/vehicle near the right side\n- Some vegetation on the cliff\n\nThis is clearly an outdoor scene - a coastal town viewed from the beach.\n\nLet me rate:\n- recognizability: 5 - very recognizable as a coastal town scene\n- ambiguity: 1 - very clear what this is\n- natural_photo_typicality: 5 - looks like a typical photograph\n- visual_clutter: 3 - there are many buildings but the scene is organized\n- object_centricity: 2 - not really centered on one object\n- scene_centricity: 5 - this is definitely a scene\n- caption_confidence: 5 - easy to caption\n\nContent:\n- contains_person: true (small figures on beach)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: true (truck visible)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (cliff, buildings, beach, ocean)\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: coastal_town\n\nshort_caption: White Mediterranean coastal town built on a cliff above a sandy beach under overcast sky.\nmain_objects: [\"beach\", \"cliff\", \"white buildings\", \"hotel\", \"ocean\", \"truck\"]\npossible_interpretations: [\"coastal town view from beach\", \"Mediterranean seaside town\", \"Albufeira Portugal view\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a coastal scene with:\n- A sandy beach in the foreground with gentle waves\n- A cliff/rocky outcrop in the middle ground\n- White buildings (looks like a Mediterranean/Spanish town, possibly Albufeira in Portugal given the style) built on top of and around the cliff\n- A large hotel building on the left side\n- Overcast/cloudy gray sky\n- A few small figures of people on the beach\n- A truck/vehicle near the right side\n- Some vegetation on the cliff\n\nThis is clearly an outdoor scene - a coastal town viewed from the beach.\n\nLet me rate:\n- recognizability: 5 - very recognizable as a coastal town scene\n- ambiguity: 1 - very clear what this is\n- natural_photo_typicality: 5 - looks like a typical photograph\n- visual_clutter: 3 - there are many buildings but the scene is organized\n- object_centricity: 2 - not really centered on one object\n- scene_centricity: 5 - this is definitely a scene\n- caption_confidence: 5 - easy to caption\n\nContent:\n- contains_person: true (small figures on beach)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: true (truck visible)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (cliff, buildings, beach, ocean)\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: coastal_town\n\nshort_caption: White Mediterranean coastal town built on a cliff above a sandy beach under overcast sky.\nmain_objects: [\"beach\", \"cliff\", \"white buildings\", \"hotel\", \"ocean\", \"truck\"]\npossible_interpretations: [\"coastal town view from beach\", \"Mediterranean seaside town\", \"Albufeira Portugal view\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 767,
+          "total_tokens": 2289,
+          "cost": 0.00122676,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00122676,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009204
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 489,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_264",
+    "stim_key": "vicco_264",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 264,
+    "file_index": 263,
+    "image_name": "shared_4rep_vicco_264.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_264.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"rural landscape\",\n  \"short_caption\": \"Hillside village view with rusted metal rooftops, terraced green hills, and a distant hilltop structure under cloudy sky\",\n  \"main_objects\": [\"rusted metal rooftop\", \"yellow building\", \"street lamp\", \"hilltop structure\", \"terraced fields\", \"power lines\"],\n  \"possible_interpretations\": [\n    \"Rural village in a tropical region\",\n    \"Southeast Asian hillside settlement with terraced farmland\",\n    \"View from a rooftop overlooking forested hills\",\n    \"Village with small temple on a distant hill\"\n  ],\n  \"uncertainty_notes\": \"Exact location uncertain; the distant hilltop structure could be a temple, monument, or tower. Tropical vegetation suggests Southeast Asia or similar region.\",\n  \"quality_flags\": [\"foreground power lines cross frame\", \"partly overcast lighting\", \"casual smartphone composition\"]\n}",
+      "response": {
+        "id": "gen-1780319690-UBzmgPDWCThnxtbPNqTT",
+        "object": "chat.completion",
+        "created": 1780319690,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"rural landscape\",\n  \"short_caption\": \"Hillside village view with rusted metal rooftops, terraced green hills, and a distant hilltop structure under cloudy sky\",\n  \"main_objects\": [\"rusted metal rooftop\", \"yellow building\", \"street lamp\", \"hilltop structure\", \"terraced fields\", \"power lines\"],\n  \"possible_interpretations\": [\n    \"Rural village in a tropical region\",\n    \"Southeast Asian hillside settlement with terraced farmland\",\n    \"View from a rooftop overlooking forested hills\",\n    \"Village with small temple on a distant hill\"\n  ],\n  \"uncertainty_notes\": \"Exact location uncertain; the distant hilltop structure could be a temple, monument, or tower. Tropical vegetation suggests Southeast Asia or similar region.\",\n  \"quality_flags\": [\"foreground power lines cross frame\", \"partly overcast lighting\", \"casual smartphone composition\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- A landscape view from an elevated position\n- In the foreground: a building with a rusted corrugated metal roof (with yellow and silver/blue patches), a yellow building wall\n- Wires/cables running across the image\n- Middle ground: rolling green hills with vegetation, terraced fields visible on one hillside\n- A small structure/tower on a distant hilltop (possibly a temple or monument)\n- A street lamp/light pole\n- Background: cloudy sky with patches of blue\n- Right side: trees and vegetation, possibly banana/palm trees\n- Appears to be a tropical rural village scene, possibly in Southeast Asia (Indonesia/Bali given the temple-like structure)\n\nLet me rate each attribute:\n\n- recognizability: 4 - Clear what it is, a rural landscape with buildings\n- ambiguity: 2 - Pretty clear it's a hillside village scene\n- natural_photo_typicality: 4 - Looks like a typical phone photo\n- visual_clutter: 3 - Several elements: roof, wires, hills, sky, vegetation\n- object_centricity: 2 - No single dominant object, it's more of a scene\n- scene_centricity: 4 - Primarily a landscape/scene\n- caption_confidence: 4 - Can describe it well\n\nEstimated salient object count: maybe 3-4 (rooftop building, distant temple/tower, lamp post, hills)\nDistinct object categories: 3-4 (buildings, vegetation/hills, sky, wires)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: false (don't see any text)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (wires cross the scene, building edge cut off)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: rural landscape / village scene\n\nshort_caption: \"View from a hillside village showing rusted metal rooftops overlooking green terraced hills and cloudy sky\"\n\nmain_objects: [\"building rooftop\", \"terraced hills\", \"street lamp\", \"temple/monument on hill\", \"power lines\"]\n\npossible_interpretations: \n- \"Rooftop view of rural village\"\n- \"Southeast Asian hillside settlement\"\n- \"Terraced farming landscape\"\n\nuncertainty_notes: \"Exact location unclear but tropical hill setting with what appears to be a small temple on the distant hilltop\"\nquality_flags: [\"wires cross frame\", \"partly cloudy lighting\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- A landscape view from an elevated position\n- In the foreground: a building with a rusted corrugated metal roof (with yellow and silver/blue patches), a yellow building wall\n- Wires/cables running across the image\n- Middle ground: rolling green hills with vegetation, terraced fields visible on one hillside\n- A small structure/tower on a distant hilltop (possibly a temple or monument)\n- A street lamp/light pole\n- Background: cloudy sky with patches of blue\n- Right side: trees and vegetation, possibly banana/palm trees\n- Appears to be a tropical rural village scene, possibly in Southeast Asia (Indonesia/Bali given the temple-like structure)\n\nLet me rate each attribute:\n\n- recognizability: 4 - Clear what it is, a rural landscape with buildings\n- ambiguity: 2 - Pretty clear it's a hillside village scene\n- natural_photo_typicality: 4 - Looks like a typical phone photo\n- visual_clutter: 3 - Several elements: roof, wires, hills, sky, vegetation\n- object_centricity: 2 - No single dominant object, it's more of a scene\n- scene_centricity: 4 - Primarily a landscape/scene\n- caption_confidence: 4 - Can describe it well\n\nEstimated salient object count: maybe 3-4 (rooftop building, distant temple/tower, lamp post, hills)\nDistinct object categories: 3-4 (buildings, vegetation/hills, sky, wires)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: false (don't see any text)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (wires cross the scene, building edge cut off)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: rural landscape / village scene\n\nshort_caption: \"View from a hillside village showing rusted metal rooftops overlooking green terraced hills and cloudy sky\"\n\nmain_objects: [\"building rooftop\", \"terraced hills\", \"street lamp\", \"temple/monument on hill\", \"power lines\"]\n\npossible_interpretations: \n- \"Rooftop view of rural village\"\n- \"Southeast Asian hillside settlement\"\n- \"Terraced farming landscape\"\n\nuncertainty_notes: \"Exact location unclear but tropical hill setting with what appears to be a small temple on the distant hilltop\"\nquality_flags: [\"wires cross frame\", \"partly cloudy lighting\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 986,
+          "total_tokens": 2508,
+          "cost": 0.00148956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00148956,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011832
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 651,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

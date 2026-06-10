@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_1",
+    "stim_key": "training_objective_1",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 1,
+    "file_index": 1,
+    "image_name": "image_0001.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0001.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: Missing required fields: ['contains_unusual_viewpoint']"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"people/vehicles\",\n  \"short_caption\": \"Two men examining a car listing on a smartphone beside a white SUV.\",\n  \"main_objects\": [\"men\", \"smartphone\", \"white SUV\", \"gravel ground\"],\n  \"possible_interpretations\": [\n    \"Friends browsing a car for sale online\",\n    \"Buyers reviewing a vehicle listing at a dealership\",\n    \"Two men discussing a car purchase\"\n  ],\n  \"uncertainty_notes\": \"Tops of both heads are cut off; phone screen content only partially legible. Specific relationship between men unclear.\",\n  \"quality_flags\": [\"partial_top_crop\"]\n}",
+      "response": {
+        "id": "gen-1780319232-5YDMSaAJKqhZEkCCRwN7",
+        "object": "chat.completion",
+        "created": 1780319232,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"people/vehicles\",\n  \"short_caption\": \"Two men examining a car listing on a smartphone beside a white SUV.\",\n  \"main_objects\": [\"men\", \"smartphone\", \"white SUV\", \"gravel ground\"],\n  \"possible_interpretations\": [\n    \"Friends browsing a car for sale online\",\n    \"Buyers reviewing a vehicle listing at a dealership\",\n    \"Two men discussing a car purchase\"\n  ],\n  \"uncertainty_notes\": \"Tops of both heads are cut off; phone screen content only partially legible. Specific relationship between men unclear.\",\n  \"quality_flags\": [\"partial_top_crop\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully and provide structured annotations.\n\nThe image shows two men sitting outside, with one holding a smartphone showing what appears to be a car-related app or listing. There's a white SUV/truck in the background. The scene appears to be outdoors, possibly at a car dealership or looking at a vehicle.\n\nLet me assess each dimension:\n\n- recognizability: 4 - Clear what's happening, two men looking at a phone with a car in background\n- ambiguity: 2 - Pretty clear scene of men viewing a car/listing on phone\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 2 - Relatively uncluttered, focused on the men and phone\n- object_centricity: 3 - Multiple elements but the phone/cars are focal\n- scene_centricity: 3 - It's a scene but with specific objects\n- caption_confidence: 4 - Can describe confidently\n\n- contains_person: true\n- contains_face: true (partial faces)\n- contains_animal: false\n- contains_text: true (on phone screen)\n- contains_vehicle: true\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (faces are partially cut off at top)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: \"mixed\" (people and vehicle)\nimage_style: \"natural_photo\"\nsemantic_domain: \"people/cars\"\n\nshort_caption: \"Two men examining a car listing on a smartphone next to a white SUV.\"\n\nmain_objects: [\"men\", \"smartphone\", \"white SUV\", \"gravel\"]\n\npossible_interpretations: \n- \"Friends looking at a car to buy\"\n- \"People browsing car listings at a dealership\"\n- \"Two men discussing a vehicle\"\n\nuncertainty_notes: \"Top of both men's heads cut off, hard to see full faces. Phone screen content partially visible.\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully and provide structured annotations.\n\nThe image shows two men sitting outside, with one holding a smartphone showing what appears to be a car-related app or listing. There's a white SUV/truck in the background. The scene appears to be outdoors, possibly at a car dealership or looking at a vehicle.\n\nLet me assess each dimension:\n\n- recognizability: 4 - Clear what's happening, two men looking at a phone with a car in background\n- ambiguity: 2 - Pretty clear scene of men viewing a car/listing on phone\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 2 - Relatively uncluttered, focused on the men and phone\n- object_centricity: 3 - Multiple elements but the phone/cars are focal\n- scene_centricity: 3 - It's a scene but with specific objects\n- caption_confidence: 4 - Can describe confidently\n\n- contains_person: true\n- contains_face: true (partial faces)\n- contains_animal: false\n- contains_text: true (on phone screen)\n- contains_vehicle: true\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (faces are partially cut off at top)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: \"mixed\" (people and vehicle)\nimage_style: \"natural_photo\"\nsemantic_domain: \"people/cars\"\n\nshort_caption: \"Two men examining a car listing on a smartphone next to a white SUV.\"\n\nmain_objects: [\"men\", \"smartphone\", \"white SUV\", \"gravel\"]\n\npossible_interpretations: \n- \"Friends looking at a car to buy\"\n- \"People browsing car listings at a dealership\"\n- \"Two men discussing a vehicle\"\n\nuncertainty_notes: \"Top of both men's heads cut off, hard to see full faces. Phone screen content partially visible.\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1283,
+          "completion_tokens": 790,
+          "total_tokens": 2073,
+          "cost": 0.00118266,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00118266,
+            "upstream_inference_prompt_cost": 0.00023466,
+            "upstream_inference_completions_cost": 0.000948
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 489,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

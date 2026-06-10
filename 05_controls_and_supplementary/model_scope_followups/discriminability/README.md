@@ -94,7 +94,7 @@ figures/
   sample_efficiency.{pdf,png}                 # 2x2: mRSA/fRSA × {separated, rank-stab}
   pair_structure.{pdf,png}                    # 4-panel: per-model, family, effect, losses
 
-data/
+results/
   pair_separation_{mrsa,frsa}.csv             # per-pair test results
   pair_separation_summary.csv                 # set-level conversion summary
   pair_separation_singlesubset_*.csv          # sanity-check version

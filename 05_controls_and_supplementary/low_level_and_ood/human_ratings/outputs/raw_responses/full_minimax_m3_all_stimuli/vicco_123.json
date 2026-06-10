@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_123",
+    "stim_key": "vicco_123",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 123,
+    "file_index": 122,
+    "image_name": "shared_4rep_vicco_123.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_123.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 3, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"person_face\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"outdoor recreation\", \"short_caption\": \"Smiling hiker crouching beside a snow patch in a rocky alpine landscape.\", \"main_objects\": [\"person\", \"backpack\", \"cap\", \"snow patch\", \"rocks\", \"trail running shoes\"], \"possible_interpretations\": [\"Hiker posing with snow patch on mountain trail\", \"Trail runner taking a break near summer snow\", \"Person enjoying alpine scenery in rocky terrain\"], \"uncertainty_notes\": \"Image is rotated 90 degrees counterclockwise, which may affect typical framing assumptions; shoe brand logo partially visible.\", \"quality_flags\": [\"rotated_orientation\"]}",
+      "response": {
+        "id": "gen-1780319530-Zg5PJqYPcdLG6quJp4ew",
+        "object": "chat.completion",
+        "created": 1780319530,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 3, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"person_face\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"outdoor recreation\", \"short_caption\": \"Smiling hiker crouching beside a snow patch in a rocky alpine landscape.\", \"main_objects\": [\"person\", \"backpack\", \"cap\", \"snow patch\", \"rocks\", \"trail running shoes\"], \"possible_interpretations\": [\"Hiker posing with snow patch on mountain trail\", \"Trail runner taking a break near summer snow\", \"Person enjoying alpine scenery in rocky terrain\"], \"uncertainty_notes\": \"Image is rotated 90 degrees counterclockwise, which may affect typical framing assumptions; shoe brand logo partially visible.\", \"quality_flags\": [\"rotated_orientation\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a person crouching/leaning next to a patch of snow surrounded by rocks. The person is wearing a blue jacket, dark shorts, a light blue cap, and green/yellow trail running shoes (appears to be Hoka brand). The image appears to be rotated 90 degrees (sideways). The person is smiling at the camera.\n\nKey observations:\n- A person (smiling, wearing athletic/hiking gear)\n- Snow patch in a rocky environment\n- Rocks/boulders surrounding the area\n- The image is rotated/oriented unusually (sideways)\n- Outdoor mountain/alpine setting\n\nLet me rate each attribute:\n\n- recognizability: 4 - Clear what's happening, person and snow/rocks are easily recognizable\n- ambiguity: 2 - Pretty clear interpretation\n- natural_photo_typicality: 4 - Looks like a natural photo, though rotated\n- visual_clutter: 3 - Multiple elements (person, snow, rocks) but not overly cluttered\n- object_centricity: 3 - Person is a main subject but the snow patch is also prominent\n- scene_centricity: 3 - The rocky mountain scene is important context\n- caption_confidence: 4 - Easy to describe\n\n- estimated_salient_object_count: 3 (person, snow patch, rocks)\n- estimated_distinct_object_categories: 3 (person, snow, rocks)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false (maybe a small logo on the shoe)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (rotated 90 degrees)\n- contains_multiple_main_objects: false (person is dominant)\n\n- dominant_content_type: \"person_face\" - the person/face is the main subject\n- image_style: \"natural_photo\"\n- semantic_domain: \"outdoor recreation\"\n\nShort caption: \"Smiling hiker crouching beside a snow patch in a rocky alpine landscape.\"\n\nMain objects: [\"person\", \"snow patch\", \"rocks\", \"backpack\", \"cap\", \"hiking shoes\"]\n\nPossible interpretations: \n- \"Hiker enjoying a snow patch on a mountain trail\"\n- \"Person posing with snow in summer alpine environment\"\n- \"Trail runner taking a break near snow\"\n\nUncertainty notes: Image is rotated 90 degrees; could affect interpretation\nQuality flags: [\"rotated_orientation\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a person crouching/leaning next to a patch of snow surrounded by rocks. The person is wearing a blue jacket, dark shorts, a light blue cap, and green/yellow trail running shoes (appears to be Hoka brand). The image appears to be rotated 90 degrees (sideways). The person is smiling at the camera.\n\nKey observations:\n- A person (smiling, wearing athletic/hiking gear)\n- Snow patch in a rocky environment\n- Rocks/boulders surrounding the area\n- The image is rotated/oriented unusually (sideways)\n- Outdoor mountain/alpine setting\n\nLet me rate each attribute:\n\n- recognizability: 4 - Clear what's happening, person and snow/rocks are easily recognizable\n- ambiguity: 2 - Pretty clear interpretation\n- natural_photo_typicality: 4 - Looks like a natural photo, though rotated\n- visual_clutter: 3 - Multiple elements (person, snow, rocks) but not overly cluttered\n- object_centricity: 3 - Person is a main subject but the snow patch is also prominent\n- scene_centricity: 3 - The rocky mountain scene is important context\n- caption_confidence: 4 - Easy to describe\n\n- estimated_salient_object_count: 3 (person, snow patch, rocks)\n- estimated_distinct_object_categories: 3 (person, snow, rocks)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false (maybe a small logo on the shoe)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (rotated 90 degrees)\n- contains_multiple_main_objects: false (person is dominant)\n\n- dominant_content_type: \"person_face\" - the person/face is the main subject\n- image_style: \"natural_photo\"\n- semantic_domain: \"outdoor recreation\"\n\nShort caption: \"Smiling hiker crouching beside a snow patch in a rocky alpine landscape.\"\n\nMain objects: [\"person\", \"snow patch\", \"rocks\", \"backpack\", \"cap\", \"hiking shoes\"]\n\nPossible interpretations: \n- \"Hiker enjoying a snow patch on a mountain trail\"\n- \"Person posing with snow in summer alpine environment\"\n- \"Trail runner taking a break near snow\"\n\nUncertainty notes: Image is rotated 90 degrees; could affect interpretation\nQuality flags: [\"rotated_orientation\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 881,
+          "total_tokens": 2403,
+          "cost": 0.00136356,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00136356,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010572
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 615,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

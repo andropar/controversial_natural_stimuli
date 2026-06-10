@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_45",
+    "stim_key": "training_objective_45",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 45,
+    "file_index": 45,
+    "image_name": "image_0045.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0045.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 5, \"scene_centricity\": 1, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 2, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": true, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"animal\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"pet\", \"short_caption\": \"Close-up of a white dog wearing a black 'earthdog' trucker cap indoors.\", \"main_objects\": [\"dog\", \"trucker cap\"], \"possible_interpretations\": [\"A pet dog wearing an earthdog-branded cap\", \"A close-up portrait of a light-colored retriever with a hat\", \"An indoor pet photo with branded apparel\"], \"uncertainty_notes\": \"Exact breed is unclear; appears to be a Golden Retriever or similar light-colored dog. Background is dim and partially out of focus.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319317-FsFgc6TSeQJXLpBp25ec",
+        "object": "chat.completion",
+        "created": 1780319317,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 5, \"scene_centricity\": 1, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 2, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": true, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"animal\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"pet\", \"short_caption\": \"Close-up of a white dog wearing a black 'earthdog' trucker cap indoors.\", \"main_objects\": [\"dog\", \"trucker cap\"], \"possible_interpretations\": [\"A pet dog wearing an earthdog-branded cap\", \"A close-up portrait of a light-colored retriever with a hat\", \"An indoor pet photo with branded apparel\"], \"uncertainty_notes\": \"Exact breed is unclear; appears to be a Golden Retriever or similar light-colored dog. Background is dim and partially out of focus.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "The image shows a close-up of a white dog (appears to be a Golden Retriever or similar light-colored breed) wearing a black trucker-style cap with a yellow/gold patch that says \"earthdog\". The dog is the main subject, taking up most of the frame. The background shows what appears to be a filing cabinet or drawer unit, suggesting an indoor setting.\n\nLet me analyze each field:\n\n- recognizability: Very clearly a dog wearing a hat - 5\n- ambiguity: Very unambiguous - 1\n- natural_photo_typicality: Looks like a typical photo someone would take with a phone/camera - 4\n- visual_clutter: Mostly the dog with simple background - 2\n- object_centricity: The dog is the dominant central object - 5\n- scene_centricity: Not a scene, focused on the animal - 1\n- caption_confidence: Very high - 5\n\n- estimated_salient_object_count: 1 (the dog, with hat as part of it)\n- estimated_distinct_object_categories: 2 (dog, hat)\n\n- contains_person: false\n- contains_face: false (animal face)\n- contains_animal: true\n- contains_text: true (earthdog text on patch)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (background shows indoor setting with filing cabinet)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (extreme close-up of dog's face is somewhat unusual)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"animal\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"pet\"\n\n- short_caption: \"Close-up of a white dog wearing a black 'earthdog' trucker cap indoors.\"\n- main_objects: [\"dog\", \"baseball cap\"]\n- possible_interpretations: [\"A pet dog wearing a branded cap\", \"A close-up portrait of a Golden Retriever with hat\", \"A dog dressed in earthdog-themed apparel\"]\n- uncertainty_notes: \"Breed identification is approximate; the dog's face dominates the frame.\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a close-up of a white dog (appears to be a Golden Retriever or similar light-colored breed) wearing a black trucker-style cap with a yellow/gold patch that says \"earthdog\". The dog is the main subject, taking up most of the frame. The background shows what appears to be a filing cabinet or drawer unit, suggesting an indoor setting.\n\nLet me analyze each field:\n\n- recognizability: Very clearly a dog wearing a hat - 5\n- ambiguity: Very unambiguous - 1\n- natural_photo_typicality: Looks like a typical photo someone would take with a phone/camera - 4\n- visual_clutter: Mostly the dog with simple background - 2\n- object_centricity: The dog is the dominant central object - 5\n- scene_centricity: Not a scene, focused on the animal - 1\n- caption_confidence: Very high - 5\n\n- estimated_salient_object_count: 1 (the dog, with hat as part of it)\n- estimated_distinct_object_categories: 2 (dog, hat)\n\n- contains_person: false\n- contains_face: false (animal face)\n- contains_animal: true\n- contains_text: true (earthdog text on patch)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (background shows indoor setting with filing cabinet)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (extreme close-up of dog's face is somewhat unusual)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"animal\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"pet\"\n\n- short_caption: \"Close-up of a white dog wearing a black 'earthdog' trucker cap indoors.\"\n- main_objects: [\"dog\", \"baseball cap\"]\n- possible_interpretations: [\"A pet dog wearing a branded cap\", \"A close-up portrait of a Golden Retriever with hat\", \"A dog dressed in earthdog-themed apparel\"]\n- uncertainty_notes: \"Breed identification is approximate; the dog's face dominates the frame.\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 792,
+          "total_tokens": 2314,
+          "cost": 0.00104508,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1508,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00104508,
+            "upstream_inference_prompt_cost": 9.468e-05,
+            "upstream_inference_completions_cost": 0.0009504
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 509,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

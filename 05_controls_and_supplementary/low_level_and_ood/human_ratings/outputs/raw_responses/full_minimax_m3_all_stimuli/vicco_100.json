@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_100",
+    "stim_key": "vicco_100",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 100,
+    "file_index": 99,
+    "image_name": "shared_4rep_vicco_100.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_100.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\":4,\"ambiguity\":1,\"natural_photo_typicality\":4,\"visual_clutter\":5,\"object_centricity\":1,\"scene_centricity\":5,\"caption_confidence\":5,\"estimated_salient_object_count\":null,\"estimated_distinct_object_categories\":6,\"contains_person\":true,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":true,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":true,\"contains_outdoor_scene\":false,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":true,\"contains_multiple_main_objects\":true,\"dominant_content_type\":\"scene\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"indoor commercial space\",\"short_caption\":\"Multi-level shopping mall interior with shoppers, food court tables, escalators, and holiday light decorations.\",\"main_objects\":[\"people\",\"escalator\",\"tables\",\"chairs\",\"storefronts\",\"light decorations\"],\"possible_interpretations\":[\"shopping mall interior\",\"department store atrium\",\"mall food court during holiday season\"],\"uncertainty_notes\":\"Image is very busy with many small elements; faces are too distant to discern; specific stores are not clearly identifiable.\",\"quality_flags\":[\"cluttered\",\"elevated_viewpoint\",\"faces_too_small\"]}",
+      "response": {
+        "id": "gen-1780319505-V6T4eezZjIxnjzsx1rph",
+        "object": "chat.completion",
+        "created": 1780319505,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\":4,\"ambiguity\":1,\"natural_photo_typicality\":4,\"visual_clutter\":5,\"object_centricity\":1,\"scene_centricity\":5,\"caption_confidence\":5,\"estimated_salient_object_count\":null,\"estimated_distinct_object_categories\":6,\"contains_person\":true,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":true,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":true,\"contains_outdoor_scene\":false,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":true,\"contains_multiple_main_objects\":true,\"dominant_content_type\":\"scene\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"indoor commercial space\",\"short_caption\":\"Multi-level shopping mall interior with shoppers, food court tables, escalators, and holiday light decorations.\",\"main_objects\":[\"people\",\"escalator\",\"tables\",\"chairs\",\"storefronts\",\"light decorations\"],\"possible_interpretations\":[\"shopping mall interior\",\"department store atrium\",\"mall food court during holiday season\"],\"uncertainty_notes\":\"Image is very busy with many small elements; faces are too distant to discern; specific stores are not clearly identifiable.\",\"quality_flags\":[\"cluttered\",\"elevated_viewpoint\",\"faces_too_small\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a multi-level shopping mall interior. I can see:\n- Multiple floors of a shopping center\n- Escalators on the right side with people on them\n- Many people walking around and sitting at tables (looks like a food court area in the lower level)\n- Decorative light installations (star-shaped ornaments, circular/ring lights) suggesting holiday/Christmas decorations\n- Store fronts visible on the middle level with some signage\n- A food court with many tables and chairs on the lower level\n- Modern architectural elements with geometric/angular structures in the foreground\n- Glass railings and modern design elements\n- Various people in different positions\n\nLet me rate based on the schema:\n\n- recognizability: 4 - Clearly recognizable as a shopping mall interior\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 4 - Looks like a typical phone photo of a mall\n- visual_clutter: 5 - Very busy with many people, structures, decorations\n- object_centricity: 1 - No single dominant object\n- scene_centricity: 5 - This is clearly a place/scene\n- caption_confidence: 5 - Very confident in describing it\n\nCounts:\n- estimated_salient_object_count: Many - hard to count, maybe null or a high number\n- estimated_distinct_object_categories: ~5-6 (people, tables, chairs, escalator, decorations, stores)\n\nBoolean flags:\n- contains_person: true\n- contains_face: false (too small/distant to make out clearly)\n- contains_animal: false\n- contains_text: true (I can see some signage)\n- contains_vehicle: false\n- contains_food: possibly (food court but food not clearly visible)\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (people partially visible, some cut off)\n- contains_unusual_viewpoint: true (elevated viewpoint looking down)\n- contains_multiple_main_objects: true (multiple competing elements)\n\ndominant_content_type: \"scene\" - it's a scene/mall interior\nimage_style: \"natural_photo\" - looks like a regular photo\nsemantic_domain: \"indoor commercial space\" or \"shopping mall\"\n\nshort_caption: \"Multi-level shopping mall interior with shoppers, food court, escalators, and holiday decorations.\"\nmain_objects: [\"people\", \"escalator\", \"tables\", \"chairs\", \"decorations\", \"storefronts\"]\n\npossible_interpretations: [\"shopping mall interior\", \"department store atrium\", \"mall food court\"]\n\nuncertainty_notes: \"Image is busy with many small elements; faces are too small to identify\"\nquality_flags: [\"cluttered\", \"elevated_viewpoint\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a multi-level shopping mall interior. I can see:\n- Multiple floors of a shopping center\n- Escalators on the right side with people on them\n- Many people walking around and sitting at tables (looks like a food court area in the lower level)\n- Decorative light installations (star-shaped ornaments, circular/ring lights) suggesting holiday/Christmas decorations\n- Store fronts visible on the middle level with some signage\n- A food court with many tables and chairs on the lower level\n- Modern architectural elements with geometric/angular structures in the foreground\n- Glass railings and modern design elements\n- Various people in different positions\n\nLet me rate based on the schema:\n\n- recognizability: 4 - Clearly recognizable as a shopping mall interior\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 4 - Looks like a typical phone photo of a mall\n- visual_clutter: 5 - Very busy with many people, structures, decorations\n- object_centricity: 1 - No single dominant object\n- scene_centricity: 5 - This is clearly a place/scene\n- caption_confidence: 5 - Very confident in describing it\n\nCounts:\n- estimated_salient_object_count: Many - hard to count, maybe null or a high number\n- estimated_distinct_object_categories: ~5-6 (people, tables, chairs, escalator, decorations, stores)\n\nBoolean flags:\n- contains_person: true\n- contains_face: false (too small/distant to make out clearly)\n- contains_animal: false\n- contains_text: true (I can see some signage)\n- contains_vehicle: false\n- contains_food: possibly (food court but food not clearly visible)\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (people partially visible, some cut off)\n- contains_unusual_viewpoint: true (elevated viewpoint looking down)\n- contains_multiple_main_objects: true (multiple competing elements)\n\ndominant_content_type: \"scene\" - it's a scene/mall interior\nimage_style: \"natural_photo\" - looks like a regular photo\nsemantic_domain: \"indoor commercial space\" or \"shopping mall\"\n\nshort_caption: \"Multi-level shopping mall interior with shoppers, food court, escalators, and holiday decorations.\"\nmain_objects: [\"people\", \"escalator\", \"tables\", \"chairs\", \"decorations\", \"storefronts\"]\n\npossible_interpretations: [\"shopping mall interior\", \"department store atrium\", \"mall food court\"]\n\nuncertainty_notes: \"Image is busy with many small elements; faces are too small to identify\"\nquality_flags: [\"cluttered\", \"elevated_viewpoint\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 870,
+          "total_tokens": 2392,
+          "cost": 0.00135036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00135036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.001044
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 686,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

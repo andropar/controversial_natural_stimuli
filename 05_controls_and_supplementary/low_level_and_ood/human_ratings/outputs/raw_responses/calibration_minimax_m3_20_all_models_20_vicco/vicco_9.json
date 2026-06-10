@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_9",
+    "stim_key": "vicco_9",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 9,
+    "file_index": 8,
+    "image_name": "shared_4rep_vicco_009.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_009.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 2,\n  \"ambiguity\": 5,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"texture_pattern\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"street chalk drawing\",\n  \"short_caption\": \"Colorful abstract chalk scribbles and smudges on a dark asphalt surface.\",\n  \"main_objects\": [\"chalk drawing\", \"asphalt pavement\"],\n  \"possible_interpretations\": [\"abstract chalk artwork\", \"children's sidewalk drawing\", \"weathered graffiti\", \"playful scribbles\", \"partially erased chalk art\"],\n  \"uncertainty_notes\": \"The drawing is highly abstract; specific figures or objects within it are difficult to identify with confidence.\",\n  \"quality_flags\": [\"abstract_content\", \"low_object_specificity\"]\n}",
+      "response": {
+        "id": "gen-1780318199-lrbwi1vowk0kQdaZUytG",
+        "object": "chat.completion",
+        "created": 1780318199,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 2,\n  \"ambiguity\": 5,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"texture_pattern\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"street chalk drawing\",\n  \"short_caption\": \"Colorful abstract chalk scribbles and smudges on a dark asphalt surface.\",\n  \"main_objects\": [\"chalk drawing\", \"asphalt pavement\"],\n  \"possible_interpretations\": [\"abstract chalk artwork\", \"children's sidewalk drawing\", \"weathered graffiti\", \"playful scribbles\", \"partially erased chalk art\"],\n  \"uncertainty_notes\": \"The drawing is highly abstract; specific figures or objects within it are difficult to identify with confidence.\",\n  \"quality_flags\": [\"abstract_content\", \"low_object_specificity\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a chalk drawing on a dark pavement or asphalt surface. The drawing appears to be abstract/scribbled in nature with various colors - pink, purple, blue, yellow, green, white. There seem to be some recognizable shapes like what could be a ladder, some figures or abstract elements, but it's largely an abstract chalk drawing.\n\nLet me think about each attribute:\n\n- recognizability: The content is abstract chalk scribbles, hard to recognize specific objects. Maybe 2.\n- ambiguity: Very high, many possible interpretations. 5.\n- natural_photo_typicality: It's a photo of a real scene, but with drawn content. The setting is natural/outdoor. 3.\n- visual_clutter: Lots of competing scribbles and elements. 4.\n- object_centricity: No clear central object. 1-2.\n- scene_centricity: It's more of a surface/ground than a scene. 2.\n- caption_confidence: Hard to give a confident caption. 2.\n\n- salient_object_count: hard to tell, maybe 1 (the drawing as a whole) or many small ones\n- distinct_object_categories: 1 (chalk drawing)\n\n- contains_person: no\n- contains_face: no\n- contains_animal: no\n- contains_text: no\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: no\n- contains_outdoor_scene: yes (pavement outdoors)\n- contains_artificial_or_rendered_content: yes (chalk drawing on pavement)\n- contains_occlusion_or_truncation: no\n- contains_unusual_viewpoint: somewhat (looking down at pavement)\n- contains_multiple_main_objects: no, it's one composition\n\ndominant_content_type: texture_pattern or mixed - I'd say \"texture_pattern\" since the chalk drawing is the main content but it's abstract\nimage_style: natural_photo\nsemantic_domain: street art / chalk drawing\n\nshort_caption: Colorful chalk drawing scribbled on dark pavement.\n\nmain_objects: chalk drawing, pavement\npossible_interpretations: abstract chalk art, children's sidewalk drawing, weathered chalk drawing, street art, random scribbles",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a chalk drawing on a dark pavement or asphalt surface. The drawing appears to be abstract/scribbled in nature with various colors - pink, purple, blue, yellow, green, white. There seem to be some recognizable shapes like what could be a ladder, some figures or abstract elements, but it's largely an abstract chalk drawing.\n\nLet me think about each attribute:\n\n- recognizability: The content is abstract chalk scribbles, hard to recognize specific objects. Maybe 2.\n- ambiguity: Very high, many possible interpretations. 5.\n- natural_photo_typicality: It's a photo of a real scene, but with drawn content. The setting is natural/outdoor. 3.\n- visual_clutter: Lots of competing scribbles and elements. 4.\n- object_centricity: No clear central object. 1-2.\n- scene_centricity: It's more of a surface/ground than a scene. 2.\n- caption_confidence: Hard to give a confident caption. 2.\n\n- salient_object_count: hard to tell, maybe 1 (the drawing as a whole) or many small ones\n- distinct_object_categories: 1 (chalk drawing)\n\n- contains_person: no\n- contains_face: no\n- contains_animal: no\n- contains_text: no\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: no\n- contains_outdoor_scene: yes (pavement outdoors)\n- contains_artificial_or_rendered_content: yes (chalk drawing on pavement)\n- contains_occlusion_or_truncation: no\n- contains_unusual_viewpoint: somewhat (looking down at pavement)\n- contains_multiple_main_objects: no, it's one composition\n\ndominant_content_type: texture_pattern or mixed - I'd say \"texture_pattern\" since the chalk drawing is the main content but it's abstract\nimage_style: natural_photo\nsemantic_domain: street art / chalk drawing\n\nshort_caption: Colorful chalk drawing scribbled on dark pavement.\n\nmain_objects: chalk drawing, pavement\npossible_interpretations: abstract chalk art, children's sidewalk drawing, weathered chalk drawing, street art, random scribbles",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 804,
+          "total_tokens": 2326,
+          "cost": 0.00139404,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139404,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009648
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 515,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

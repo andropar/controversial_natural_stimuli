@@ -8,7 +8,7 @@ This is the copied selection-evaluation output for the five final stimulus
 sets. It includes per-set summaries and figures that check whether the selected
 images separate the model groups better than random or baseline image samples.
 
-Important files under `selection_evaluation/data/<set>/`:
+Important files under `selection_evaluation/results/<set>/`:
 
 - `summary_report.md`: short human-readable summary for one selected set.
 - `summary.csv`: run-level scalar metadata.
@@ -25,7 +25,7 @@ Important files under `selection_evaluation/data/<set>/`:
 - `ablations.csv`: selection/refinement ablation diagnostics.
 
 Cross-set decision-check tables live directly under
-`selection_evaluation/data/`:
+`selection_evaluation/results/`:
 
 - `selection_objective_summary.csv`: objective readouts by model set, track,
   subset type, and noise condition.
@@ -49,8 +49,8 @@ selection against the power-mean variant and final selections against
 Important files:
 
 - `README.md`: summary of the comparison and recommendation.
-- `data/all_auc_results.csv`: AUC table used by the comparison.
-- `data/image_overlap.csv`: selected-image overlap table.
+- `results/all_auc_results.csv`: AUC table used by the comparison.
+- `results/image_overlap.csv`: selected-image overlap table.
 - `figures/track_composition_leaderboard_improved.pdf`: leaderboard figure
   copied into the manuscript as `selection_method_comparison_improved.pdf`.
 - `figures/plot_track_composition_leaderboard_improved.py`: plotting script for

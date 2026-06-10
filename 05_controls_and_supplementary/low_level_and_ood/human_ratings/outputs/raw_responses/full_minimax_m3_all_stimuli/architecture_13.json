@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_13",
+    "stim_key": "architecture_13",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 13,
+    "file_index": 13,
+    "image_name": "image_0013.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0013.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"interior\",\n  \"short_caption\": \"Hallway entryway with wooden floor, patterned rugs, potted plants, and a front door\",\n  \"main_objects\": [\"patterned rugs\", \"front door\", \"potted plants\", \"shoes\", \"hanging coat\", \"wooden furniture\"],\n  \"possible_interpretations\": [\"residential entryway\", \"apartment hallway\", \"real estate listing photo\", \"home foyer\"],\n  \"uncertainty_notes\": \"Watermark suggests real estate listing; image is slightly soft in focus\",\n  \"quality_flags\": [\"watermark_present\", \"slight_softness\"]\n}",
+      "response": {
+        "id": "gen-1780318859-uW5bAAJZysGihE4tS48O",
+        "object": "chat.completion",
+        "created": 1780318859,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"interior\",\n  \"short_caption\": \"Hallway entryway with wooden floor, patterned rugs, potted plants, and a front door\",\n  \"main_objects\": [\"patterned rugs\", \"front door\", \"potted plants\", \"shoes\", \"hanging coat\", \"wooden furniture\"],\n  \"possible_interpretations\": [\"residential entryway\", \"apartment hallway\", \"real estate listing photo\", \"home foyer\"],\n  \"uncertainty_notes\": \"Watermark suggests real estate listing; image is slightly soft in focus\",\n  \"quality_flags\": [\"watermark_present\", \"slight_softness\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows an interior hallway/entryway of a home or apartment. I can see:\n\n- A wooden floor\n- Two rugs with geometric patterns (black, white, and beige/brown)\n- A front door at the end of the hallway\n- A coat/jacket hanging on the wall\n- A pair of shoes on the floor\n- Potted plants on both sides\n- White/cream colored walls\n- A watermark \"CAChImobiliare\" suggesting this is a real estate listing photo\n- A wooden piece of furniture (possibly a chest or cabinet) in the lower left\n\nLet me annotate based on the schema:\n\n- recognizability: 4 - clearly recognizable as a hallway/entryway\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a typical real estate photo\n- visual_clutter: 2 - relatively clean, few items\n- object_centricity: 2 - no single dominant object\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 5-6 (rugs, door, plants, shoes, coat, furniture)\n- estimated_distinct_object_categories: 5\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (watermark)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"scene\"\n- image_style: \"edited_photo\" (has watermark, likely edited for real estate)\n- semantic_domain: \"interior\"\n\nshort_caption: \"Hallway entryway with wooden floor, patterned rugs, potted plants, and a front door\"\n\nmain_objects: [\"rugs\", \"front door\", \"potted plants\", \"shoes\", \"coat\", \"wooden floor\"]\n\npossible_interpretations: [\"home entryway\", \"apartment hallway\", \"real estate listing photo\"]\n\nuncertainty_notes: \"Watermark suggests real estate listing; image quality is moderate\"\n\nquality_flags: [\"watermark_present\", \"slight_motion_blur\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows an interior hallway/entryway of a home or apartment. I can see:\n\n- A wooden floor\n- Two rugs with geometric patterns (black, white, and beige/brown)\n- A front door at the end of the hallway\n- A coat/jacket hanging on the wall\n- A pair of shoes on the floor\n- Potted plants on both sides\n- White/cream colored walls\n- A watermark \"CAChImobiliare\" suggesting this is a real estate listing photo\n- A wooden piece of furniture (possibly a chest or cabinet) in the lower left\n\nLet me annotate based on the schema:\n\n- recognizability: 4 - clearly recognizable as a hallway/entryway\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a typical real estate photo\n- visual_clutter: 2 - relatively clean, few items\n- object_centricity: 2 - no single dominant object\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 5-6 (rugs, door, plants, shoes, coat, furniture)\n- estimated_distinct_object_categories: 5\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (watermark)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"scene\"\n- image_style: \"edited_photo\" (has watermark, likely edited for real estate)\n- semantic_domain: \"interior\"\n\nshort_caption: \"Hallway entryway with wooden floor, patterned rugs, potted plants, and a front door\"\n\nmain_objects: [\"rugs\", \"front door\", \"potted plants\", \"shoes\", \"coat\", \"wooden floor\"]\n\npossible_interpretations: [\"home entryway\", \"apartment hallway\", \"real estate listing photo\"]\n\nuncertainty_notes: \"Watermark suggests real estate listing; image quality is moderate\"\n\nquality_flags: [\"watermark_present\", \"slight_motion_blur\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 871,
+          "total_tokens": 2393,
+          "cost": 0.00147444,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00147444,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010452
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 539,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

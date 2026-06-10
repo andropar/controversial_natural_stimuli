@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_0",
+    "stim_key": "training_objective_0",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 0,
+    "file_index": 0,
+    "image_name": "image_0000.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0000.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 3, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_multiple_main_objects\": true, \"contains_unusual_viewpoint\": false, \"dominant_content_type\": \"mixed\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"sports/basketball\", \"short_caption\": \"Miami Heat player diving for a loose ball against Boston Celtics defender Kevin Garnett\", \"main_objects\": [\"basketball players\", \"basketball\", \"basketball court\", \"crowd\"], \"possible_interpretations\": [\"NBA basketball game action shot\", \"Heat vs Celtics game\", \"player diving for loose ball\", \"professional basketball game\", \"regular season NBA matchup\"], \"uncertainty_notes\": \"Player identities inferred from jerseys; Heat player not fully visible to confirm number\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319203-oiUUiDJagjX6Xhv1RmmT",
+        "object": "chat.completion",
+        "created": 1780319203,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 3, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_multiple_main_objects\": true, \"contains_unusual_viewpoint\": false, \"dominant_content_type\": \"mixed\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"sports/basketball\", \"short_caption\": \"Miami Heat player diving for a loose ball against Boston Celtics defender Kevin Garnett\", \"main_objects\": [\"basketball players\", \"basketball\", \"basketball court\", \"crowd\"], \"possible_interpretations\": [\"NBA basketball game action shot\", \"Heat vs Celtics game\", \"player diving for loose ball\", \"professional basketball game\", \"regular season NBA matchup\"], \"uncertainty_notes\": \"Player identities inferred from jerseys; Heat player not fully visible to confirm number\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a basketball game scene. There's a player in a white Miami Heat jersey diving/lunging for a basketball, and a player in a green Boston Celtics jersey with \"GARNETT\" and \"5\" on it defending. There's a crowd in the background and a basketball court visible.\n\nKey observations:\n- This is clearly a professional basketball game (NBA)\n- Main subjects: Dwyane Wade (Miami Heat, white jersey) diving for the ball, and Kevin Garnett (Boston Celtics, green jersey, #5)\n- The scene is an indoor arena\n- There's visible text on signage (\"Where amazing h...\")\n- The crowd is visible in the background\n\nLet me rate according to the schema:\n- recognizability: 5 - very clearly recognizable as a basketball game\n- ambiguity: 1 - very clear what's happening\n- natural_photo_typicality: 5 - looks like a typical sports photograph\n- visual_clutter: 3 - crowd in background adds some clutter but main subjects are clear\n- object_centricity: 3 - the players are the focus but it's also about the action\n- scene_centricity: 4 - this is clearly a scene (basketball game)\n- caption_confidence: 5 - very confident in a caption\n\n- contains_person: true\n- contains_face: true (faces visible)\n- contains_animal: false\n- contains_text: true (GARNETT, 5, HEAT, Where amazing h...)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the other Celtics player on the left is partially cut off)\n- contains_multiple_main_objects: true (two main players)\n- contains_unusual_viewpoint: false\n\ndominant_content_type: \"person_face\" or \"mixed\" - it has people prominently but is also a scene. I'll say \"mixed\" since it captures both players and the game action.\nimage_style: \"natural_photo\"\nsemantic_domain: \"sports\" or \"basketball\"\n\nshort_caption: \"Miami Heat player diving for a loose ball against Boston Celtics' Kevin Garnett\"\n\nmain_objects: [\"basketball\", \"basketball players\", \"basketball court\", \"crowd\"]\n\npossible_interpretations: [\"basketball game action shot\", \"NBA game between Heat and Celtics\", \"player diving for loose ball\"]\n\nuncertainty_notes: \"Player identities inferred from jerseys (Garnett #5 Celtics, Heat #3 likely Wade)\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a basketball game scene. There's a player in a white Miami Heat jersey diving/lunging for a basketball, and a player in a green Boston Celtics jersey with \"GARNETT\" and \"5\" on it defending. There's a crowd in the background and a basketball court visible.\n\nKey observations:\n- This is clearly a professional basketball game (NBA)\n- Main subjects: Dwyane Wade (Miami Heat, white jersey) diving for the ball, and Kevin Garnett (Boston Celtics, green jersey, #5)\n- The scene is an indoor arena\n- There's visible text on signage (\"Where amazing h...\")\n- The crowd is visible in the background\n\nLet me rate according to the schema:\n- recognizability: 5 - very clearly recognizable as a basketball game\n- ambiguity: 1 - very clear what's happening\n- natural_photo_typicality: 5 - looks like a typical sports photograph\n- visual_clutter: 3 - crowd in background adds some clutter but main subjects are clear\n- object_centricity: 3 - the players are the focus but it's also about the action\n- scene_centricity: 4 - this is clearly a scene (basketball game)\n- caption_confidence: 5 - very confident in a caption\n\n- contains_person: true\n- contains_face: true (faces visible)\n- contains_animal: false\n- contains_text: true (GARNETT, 5, HEAT, Where amazing h...)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the other Celtics player on the left is partially cut off)\n- contains_multiple_main_objects: true (two main players)\n- contains_unusual_viewpoint: false\n\ndominant_content_type: \"person_face\" or \"mixed\" - it has people prominently but is also a scene. I'll say \"mixed\" since it captures both players and the game action.\nimage_style: \"natural_photo\"\nsemantic_domain: \"sports\" or \"basketball\"\n\nshort_caption: \"Miami Heat player diving for a loose ball against Boston Celtics' Kevin Garnett\"\n\nmain_objects: [\"basketball\", \"basketball players\", \"basketball court\", \"crowd\"]\n\npossible_interpretations: [\"basketball game action shot\", \"NBA game between Heat and Celtics\", \"player diving for loose ball\"]\n\nuncertainty_notes: \"Player identities inferred from jerseys (Garnett #5 Celtics, Heat #3 likely Wade)\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 867,
+          "total_tokens": 2389,
+          "cost": 0.00146964,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00146964,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010404
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 610,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

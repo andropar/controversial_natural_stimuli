@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_29",
+    "stim_key": "dataset_29",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 29,
+    "file_index": 29,
+    "image_name": "image_0029.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0029.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"interior/bedroom\",\n  \"short_caption\": \"A four-poster bed in a bedroom with two arched windows and floral valances\",\n  \"main_objects\": [\"four-poster bed\", \"arched windows\", \"floral valances\", \"wooden wardrobe\", \"small stool\"],\n  \"possible_interpretations\": [\"bedroom interior\", \"traditional guest room\", \"master bedroom with vaulted ceiling\"],\n  \"uncertainty_notes\": \"Image appears HDR-processed with enhanced colors and detail; wardrobe is partially truncated on the right edge\",\n  \"quality_flags\": [\"hdr_processing\", \"edge_truncation\", \"high_color_saturation\"]\n}",
+      "response": {
+        "id": "gen-1780318991-OKNUn2BnSJ2m7INta2I0",
+        "object": "chat.completion",
+        "created": 1780318991,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"interior/bedroom\",\n  \"short_caption\": \"A four-poster bed in a bedroom with two arched windows and floral valances\",\n  \"main_objects\": [\"four-poster bed\", \"arched windows\", \"floral valances\", \"wooden wardrobe\", \"small stool\"],\n  \"possible_interpretations\": [\"bedroom interior\", \"traditional guest room\", \"master bedroom with vaulted ceiling\"],\n  \"uncertainty_notes\": \"Image appears HDR-processed with enhanced colors and detail; wardrobe is partially truncated on the right edge\",\n  \"quality_flags\": [\"hdr_processing\", \"edge_truncation\", \"high_color_saturation\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a bedroom with a four-poster bed, two arched windows with valances, and what appears to be a wardrobe or armoire on the right side. The image has an HDR or enhanced look to it.\n\nKey observations:\n- Four-poster bed (wooden, tall posts) with pink/rose colored bedding and pillows\n- Two arched windows with floral valances\n- Light/neutral walls and vaulted ceiling\n- A small wooden stool at the foot of the bed\n- A piece of furniture (likely a wardrobe/armoire) on the right\n- Carpeted floor\n- The image appears to have HDR processing (enhanced saturation, high dynamic range look)\n\nLet me fill in the schema:\n\n- recognizability: 5 - Very clearly a bedroom\n- ambiguity: 1 - Unambiguous bedroom scene\n- natural_photo_typicality: 3 - It's a photo but has HDR enhancement, looks slightly artificial\n- visual_clutter: 2 - Relatively clean, not many competing elements\n- object_centricity: 2 - The bed is prominent but it's more of a scene\n- scene_centricity: 5 - Clearly a place/room scene\n- caption_confidence: 5 - Very confident in caption\n\n- estimated_salient_object_count: 3 (bed, windows, wardrobe)\n- estimated_distinct_object_categories: 3-4 (bed, window, wardrobe, stool)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false (windows show trees but indoor)\n- contains_artificial_or_rendered_content: false (though HDR processed)\n- contains_occlusion_or_truncation: true (wardrobe cut off on right)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"scene\"\n- image_style: \"edited_photo\" (HDR processing)\n- semantic_domain: \"interior/bedroom\"\n\n- short_caption: \"A four-poster bed in a bedroom with two arched windows and floral valances\"\n- main_objects: [\"four-poster bed\", \"arched windows\", \"valances\", \"wardrobe\", \"stool\"]\n- possible_interpretations: [\"bedroom interior\", \"guest room\", \"traditional bedroom\"]\n- uncertainty_notes: \"HDR processing makes colors look enhanced\"\n- quality_flags: [\"hdr_processing\", \"slight_color_enhancement\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a bedroom with a four-poster bed, two arched windows with valances, and what appears to be a wardrobe or armoire on the right side. The image has an HDR or enhanced look to it.\n\nKey observations:\n- Four-poster bed (wooden, tall posts) with pink/rose colored bedding and pillows\n- Two arched windows with floral valances\n- Light/neutral walls and vaulted ceiling\n- A small wooden stool at the foot of the bed\n- A piece of furniture (likely a wardrobe/armoire) on the right\n- Carpeted floor\n- The image appears to have HDR processing (enhanced saturation, high dynamic range look)\n\nLet me fill in the schema:\n\n- recognizability: 5 - Very clearly a bedroom\n- ambiguity: 1 - Unambiguous bedroom scene\n- natural_photo_typicality: 3 - It's a photo but has HDR enhancement, looks slightly artificial\n- visual_clutter: 2 - Relatively clean, not many competing elements\n- object_centricity: 2 - The bed is prominent but it's more of a scene\n- scene_centricity: 5 - Clearly a place/room scene\n- caption_confidence: 5 - Very confident in caption\n\n- estimated_salient_object_count: 3 (bed, windows, wardrobe)\n- estimated_distinct_object_categories: 3-4 (bed, window, wardrobe, stool)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false (windows show trees but indoor)\n- contains_artificial_or_rendered_content: false (though HDR processed)\n- contains_occlusion_or_truncation: true (wardrobe cut off on right)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"scene\"\n- image_style: \"edited_photo\" (HDR processing)\n- semantic_domain: \"interior/bedroom\"\n\n- short_caption: \"A four-poster bed in a bedroom with two arched windows and floral valances\"\n- main_objects: [\"four-poster bed\", \"arched windows\", \"valances\", \"wardrobe\", \"stool\"]\n- possible_interpretations: [\"bedroom interior\", \"guest room\", \"traditional bedroom\"]\n- uncertainty_notes: \"HDR processing makes colors look enhanced\"\n- quality_flags: [\"hdr_processing\", \"slight_color_enhancement\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 905,
+          "total_tokens": 2427,
+          "cost": 0.00139236,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139236,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.001086
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 582,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_36",
+    "stim_key": "architecture_36",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 36,
+    "file_index": 36,
+    "image_name": "image_0036.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0036.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 8,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_kitchen\",\n  \"short_caption\": \"Modern red kitchen interior with dining area, bar stools, coffee station, and a circular red rug\",\n  \"main_objects\": [\"red cabinets\", \"kitchen counter\", \"coffee makers\", \"bar stools\", \"dining table\", \"plates\", \"circular rug\", \"glass shelves\"],\n  \"possible_interpretations\": [\"modern residential kitchen\", \"open-plan kitchen and dining area\", \"kitchen showroom or model home\"],\n  \"uncertainty_notes\": \"Slight color cast and mild softness; no people or food present; empty plates and decorative rug suggest staged photo.\",\n  \"quality_flags\": [\"mild_color_cast\", \"slight_softness\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318883-1sdJnhd9hturNc7Znzn5",
+        "object": "chat.completion",
+        "created": 1780318883,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 8,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_kitchen\",\n  \"short_caption\": \"Modern red kitchen interior with dining area, bar stools, coffee station, and a circular red rug\",\n  \"main_objects\": [\"red cabinets\", \"kitchen counter\", \"coffee makers\", \"bar stools\", \"dining table\", \"plates\", \"circular rug\", \"glass shelves\"],\n  \"possible_interpretations\": [\"modern residential kitchen\", \"open-plan kitchen and dining area\", \"kitchen showroom or model home\"],\n  \"uncertainty_notes\": \"Slight color cast and mild softness; no people or food present; empty plates and decorative rug suggest staged photo.\",\n  \"quality_flags\": [\"mild_color_cast\", \"slight_softness\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a modern kitchen with red cabinets, a circular red rug, a dining table with plates, bar stools, coffee makers, shelves with glasses, and a skylight ceiling. The image appears to be a natural photograph of an interior scene.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - clearly a kitchen interior\n- ambiguity: 1 - very clear what it shows\n- natural_photo_typicality: 4 - looks like a typical interior photo\n- visual_clutter: 3 - moderate, several items but organized\n- object_centricity: 2 - it's more of a scene\n- scene_centricity: 5 - clearly an interior scene\n- caption_confidence: 5 - easy to caption\n\nContent flags:\n- No people visible\n- No animals\n- Some small text/logos on appliances maybe, hard to tell\n- No vehicles\n- No food (plates but empty)\n- Indoor scene: yes\n- Outdoor: no\n- Artificial/rendered: no, natural photo\n- Occlusion: no\n- Unusual viewpoint: no\n- Multiple main objects: somewhat\n\nMain objects: kitchen counter, red cabinets, bar stools, coffee maker, dining table, plates, circular rug, shelves with glasses, skylight\n\nDomain: interior/kitchen\n\nCaption: \"Modern red kitchen with dining area, bar stools, coffee station, and a circular red rug\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a modern kitchen with red cabinets, a circular red rug, a dining table with plates, bar stools, coffee makers, shelves with glasses, and a skylight ceiling. The image appears to be a natural photograph of an interior scene.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - clearly a kitchen interior\n- ambiguity: 1 - very clear what it shows\n- natural_photo_typicality: 4 - looks like a typical interior photo\n- visual_clutter: 3 - moderate, several items but organized\n- object_centricity: 2 - it's more of a scene\n- scene_centricity: 5 - clearly an interior scene\n- caption_confidence: 5 - easy to caption\n\nContent flags:\n- No people visible\n- No animals\n- Some small text/logos on appliances maybe, hard to tell\n- No vehicles\n- No food (plates but empty)\n- Indoor scene: yes\n- Outdoor: no\n- Artificial/rendered: no, natural photo\n- Occlusion: no\n- Unusual viewpoint: no\n- Multiple main objects: somewhat\n\nMain objects: kitchen counter, red cabinets, bar stools, coffee maker, dining table, plates, circular rug, shelves with glasses, skylight\n\nDomain: interior/kitchen\n\nCaption: \"Modern red kitchen with dining area, bar stools, coffee station, and a circular red rug\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 678,
+          "total_tokens": 2200,
+          "cost": 0.00111996,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00111996,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008136
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 331,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

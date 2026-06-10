@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_51",
+    "stim_key": "all_models_51",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 51,
+    "file_index": 51,
+    "image_name": "image_0051.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0051.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nautical\",\n  \"short_caption\": \"Wooden ship's wheel with brass center mounted on a white boat deck\",\n  \"main_objects\": [\"ship's wheel\", \"throttle lever\", \"boat deck\"],\n  \"possible_interpretations\": [\"ship's helm on a yacht\", \"vintage wooden steering wheel on a boat\"],\n  \"uncertainty_notes\": \"Visible 123RF watermarks indicate this is a stock photo, which may affect naturalness perception.\",\n  \"quality_flags\": [\"stock_watermark\"]\n}",
+      "response": {
+        "id": "gen-1780318790-0cnp4bsPCh2c6qtoqZy4",
+        "object": "chat.completion",
+        "created": 1780318790,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nautical\",\n  \"short_caption\": \"Wooden ship's wheel with brass center mounted on a white boat deck\",\n  \"main_objects\": [\"ship's wheel\", \"throttle lever\", \"boat deck\"],\n  \"possible_interpretations\": [\"ship's helm on a yacht\", \"vintage wooden steering wheel on a boat\"],\n  \"uncertainty_notes\": \"Visible 123RF watermarks indicate this is a stock photo, which may affect naturalness perception.\",\n  \"quality_flags\": [\"stock_watermark\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a wooden ship's wheel (helm) with a brass/bronze center hub, mounted on the white deck/structure of a boat. There's also what appears to be a throttle or gear shift lever (engine control) to the right of the wheel. The image has visible watermarks (\"123RF\") indicating it's a stock photo.\n\nLet me annotate based on the schema:\n\n- Recognizability: Very clear - 5\n- Ambiguity: Low - 1 (clearly a ship's wheel)\n- Natural photo typicality: 4 (looks natural but has stock photo watermarks)\n- Visual clutter: 2 (clean composition, just wheel and control)\n- Object centricity: 5 (ship's wheel dominates)\n- Scene centricity: 2 (it's on a boat but the wheel is the focus)\n- Caption confidence: 5 (easy to caption)\n\n- Salient objects: 2 (wheel, throttle)\n- Distinct categories: 2 (wheel, control lever)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (watermarks)\n- contains_vehicle: true (boat/yacht)\n- contains_food: false\n- contains_indoor: false (outdoor on boat)\n- contains_outdoor: true\n- contains_artificial_or_rendered: false\n- contains_occlusion: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (wheel is clearly main)\n\n- dominant_content_type: object\n- image_style: natural_photo\n- semantic_domain: nautical/transportation\n\nCaption: \"Wooden ship's wheel with brass center on a white boat deck\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a wooden ship's wheel (helm) with a brass/bronze center hub, mounted on the white deck/structure of a boat. There's also what appears to be a throttle or gear shift lever (engine control) to the right of the wheel. The image has visible watermarks (\"123RF\") indicating it's a stock photo.\n\nLet me annotate based on the schema:\n\n- Recognizability: Very clear - 5\n- Ambiguity: Low - 1 (clearly a ship's wheel)\n- Natural photo typicality: 4 (looks natural but has stock photo watermarks)\n- Visual clutter: 2 (clean composition, just wheel and control)\n- Object centricity: 5 (ship's wheel dominates)\n- Scene centricity: 2 (it's on a boat but the wheel is the focus)\n- Caption confidence: 5 (easy to caption)\n\n- Salient objects: 2 (wheel, throttle)\n- Distinct categories: 2 (wheel, control lever)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (watermarks)\n- contains_vehicle: true (boat/yacht)\n- contains_food: false\n- contains_indoor: false (outdoor on boat)\n- contains_outdoor: true\n- contains_artificial_or_rendered: false\n- contains_occlusion: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (wheel is clearly main)\n\n- dominant_content_type: object\n- image_style: natural_photo\n- semantic_domain: nautical/transportation\n\nCaption: \"Wooden ship's wheel with brass center on a white boat deck\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 690,
+          "total_tokens": 2212,
+          "cost": 0.00113436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00113436,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000828
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 380,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

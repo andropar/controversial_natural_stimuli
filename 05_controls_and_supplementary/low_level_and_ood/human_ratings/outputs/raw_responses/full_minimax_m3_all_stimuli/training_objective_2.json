@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_2",
+    "stim_key": "training_objective_2",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 2,
+    "file_index": 2,
+    "image_name": "image_0002.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0002.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"family portrait / travel\",\n\n  \"short_caption\": \"Family of four posing together at a mountain viewpoint with cloudy peaks behind them.\",\n  \"main_objects\": [\"adult man\", \"adult woman\", \"young girl\", \"young girl\", \"mountains\", \"sky\"],\n  \"possible_interpretations\": [\"family vacation photo\", \"group portrait at scenic overlook\", \"tourist snapshot at mountain viewpoint\"],\n  \"uncertainty_notes\": \"Reflective sunglasses partially obscure eye contact for all four subjects; no text or signage visible to identify the specific location.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319205-hx2upj9RLKkMrgWhLRGl",
+        "object": "chat.completion",
+        "created": 1780319205,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"family portrait / travel\",\n\n  \"short_caption\": \"Family of four posing together at a mountain viewpoint with cloudy peaks behind them.\",\n  \"main_objects\": [\"adult man\", \"adult woman\", \"young girl\", \"young girl\", \"mountains\", \"sky\"],\n  \"possible_interpretations\": [\"family vacation photo\", \"group portrait at scenic overlook\", \"tourist snapshot at mountain viewpoint\"],\n  \"uncertainty_notes\": \"Reflective sunglasses partially obscure eye contact for all four subjects; no text or signage visible to identify the specific location.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a family of four posing for a photo at what appears to be a mountain viewpoint. There's a bald man wearing reflective orange/red sunglasses and a black jacket, a woman with brown hair wearing dark sunglasses and a blue jacket with a pink hoodie underneath, a young girl with blonde/brown hair wearing reflective sunglasses and a striped fleece jacket (pink, white, blue stripes), and a young girl with blonde hair wearing reflective sunglasses.\n\nIn the background, there are mountains, clouds, and what appears to be a railing or barrier, suggesting they're at a mountain viewpoint/observation deck.\n\nLet me annotate this according to the schema:\n\n- recognizability: 5 - Very clear, a family photo\n- ambiguity: 1 - Very clear what this is\n- natural_photo_typicality: 5 - Looks like a typical family vacation photo\n- visual_clutter: 2 - Relatively clean composition with the family as main focus\n- object_centricity: 3 - The people are the focus but it's also about the scene\n- scene_centricity: 3 - The mountain scene is also prominent\n- caption_confidence: 5 - Very confident about caption\n\nMain objects: 4 people, mountains, sky\nSalient object count: 4 people\nDistinct object categories: people, mountains, sky/clouds\n\nContains person: true\nContains face: true (faces are visible)\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor scene: false\nContains outdoor scene: true\nContains artificial or rendered content: false\nContains occlusion or truncation: false\nContains unusual viewpoint: false\nContains multiple main objects: true (4 people)\n\nDominant content type: person_face (it's a group portrait)\nImage style: natural_photo\nSemantic domain: family/portrait\n\nShort caption: \"Family of four posing for a photo at a mountain viewpoint with clouds and peaks in background.\"\n\nPossible interpretations: Family vacation photo, group portrait, tourism photo\nUncertainty notes: The glasses on the children make it hard to see eye contact\nQuality flags: none significant",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a family of four posing for a photo at what appears to be a mountain viewpoint. There's a bald man wearing reflective orange/red sunglasses and a black jacket, a woman with brown hair wearing dark sunglasses and a blue jacket with a pink hoodie underneath, a young girl with blonde/brown hair wearing reflective sunglasses and a striped fleece jacket (pink, white, blue stripes), and a young girl with blonde hair wearing reflective sunglasses.\n\nIn the background, there are mountains, clouds, and what appears to be a railing or barrier, suggesting they're at a mountain viewpoint/observation deck.\n\nLet me annotate this according to the schema:\n\n- recognizability: 5 - Very clear, a family photo\n- ambiguity: 1 - Very clear what this is\n- natural_photo_typicality: 5 - Looks like a typical family vacation photo\n- visual_clutter: 2 - Relatively clean composition with the family as main focus\n- object_centricity: 3 - The people are the focus but it's also about the scene\n- scene_centricity: 3 - The mountain scene is also prominent\n- caption_confidence: 5 - Very confident about caption\n\nMain objects: 4 people, mountains, sky\nSalient object count: 4 people\nDistinct object categories: people, mountains, sky/clouds\n\nContains person: true\nContains face: true (faces are visible)\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor scene: false\nContains outdoor scene: true\nContains artificial or rendered content: false\nContains occlusion or truncation: false\nContains unusual viewpoint: false\nContains multiple main objects: true (4 people)\n\nDominant content type: person_face (it's a group portrait)\nImage style: natural_photo\nSemantic domain: family/portrait\n\nShort caption: \"Family of four posing for a photo at a mountain viewpoint with clouds and peaks in background.\"\n\nPossible interpretations: Family vacation photo, group portrait, tourism photo\nUncertainty notes: The glasses on the children make it hard to see eye contact\nQuality flags: none significant",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1267,
+          "completion_tokens": 788,
+          "total_tokens": 2055,
+          "cost": 0.00117546,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00117546,
+            "upstream_inference_prompt_cost": 0.00022986,
+            "upstream_inference_completions_cost": 0.0009456
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 550,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

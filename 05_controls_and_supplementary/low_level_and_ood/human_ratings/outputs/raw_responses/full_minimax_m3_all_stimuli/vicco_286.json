@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_286",
+    "stim_key": "vicco_286",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 286,
+    "file_index": 285,
+    "image_name": "shared_4rep_vicco_286.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_286.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"music/party equipment\",\n  \"short_caption\": \"A person in a tie-dye shirt operating DJ equipment with headphones and microphone.\",\n  \"main_objects\": [\"DJ controller\", \"mixer\", \"headphones\", \"microphone\", \"person\"],\n  \"possible_interpretations\": [\"DJ performing at a party\", \"Person practicing DJing at home\", \"Music equipment being set up for an event\", \"Close-up of DJ gear in use\"],\n  \"uncertainty_notes\": \"The image is cropped and taken from an unusual angle, making it hard to see full context. Faces are not visible.\",\n  \"quality_flags\": [\"cropped\", \"unusual_angle\", \"blurry_cables\", \"partial_person_visible\"]\n}",
+      "response": {
+        "id": "gen-1780319721-RYRPQFKawP7ydAkKc2Dc",
+        "object": "chat.completion",
+        "created": 1780319721,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"music/party equipment\",\n  \"short_caption\": \"A person in a tie-dye shirt operating DJ equipment with headphones and microphone.\",\n  \"main_objects\": [\"DJ controller\", \"mixer\", \"headphones\", \"microphone\", \"person\"],\n  \"possible_interpretations\": [\"DJ performing at a party\", \"Person practicing DJing at home\", \"Music equipment being set up for an event\", \"Close-up of DJ gear in use\"],\n  \"uncertainty_notes\": \"The image is cropped and taken from an unusual angle, making it hard to see full context. Faces are not visible.\",\n  \"quality_flags\": [\"cropped\", \"unusual_angle\", \"blurry_cables\", \"partial_person_visible\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- A person wearing a tie-dye shirt (orange, yellow, red) with their hand on DJ equipment\n- DJ equipment including what appears to be a CDJ (CD player) and a mixer\n- Blue Beats headphones (with the \"b\" logo visible)\n- A microphone\n- Another person partially visible in the background wearing pink/light clothing with a tattoo on their arm\n- The setting appears to be indoors, possibly a party or event\n- Wood floor/table surface\n\nKey elements:\n- DJ controller/turntable\n- Headphones\n- Microphone\n- Person operating equipment\n- Multiple cables\n\nFor ratings:\n- Recognizability: High - clearly shows DJ equipment in use (4)\n- Ambiguity: Low - clear scene of DJing (2)\n- Natural photo typicality: Looks like a candid photo, somewhat typical (4)\n- Visual clutter: Many objects - mixer, CDJ, headphones, mic, cables (4)\n- Object centricity: The DJ equipment is the main focus (3-4)\n- Scene centricity: It's more of an object/activity scene (3)\n- Caption confidence: High (4)\n\nCounts:\n- Salient objects: ~3-4 (DJ controller, headphones, microphone, person)\n- Distinct categories: ~4 (DJ equipment, audio equipment, person, cable)\n\nContains: person, but I don't see a clear face, no animal, no text really (just brand logos), no vehicle, no food, indoor scene, no artificial/rendered content, some occlusion (hand on equipment).\n\nDominant content type: object (DJ equipment)\nImage style: natural photo\nSemantic domain: music/equipment/party\n\nLet me write the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- A person wearing a tie-dye shirt (orange, yellow, red) with their hand on DJ equipment\n- DJ equipment including what appears to be a CDJ (CD player) and a mixer\n- Blue Beats headphones (with the \"b\" logo visible)\n- A microphone\n- Another person partially visible in the background wearing pink/light clothing with a tattoo on their arm\n- The setting appears to be indoors, possibly a party or event\n- Wood floor/table surface\n\nKey elements:\n- DJ controller/turntable\n- Headphones\n- Microphone\n- Person operating equipment\n- Multiple cables\n\nFor ratings:\n- Recognizability: High - clearly shows DJ equipment in use (4)\n- Ambiguity: Low - clear scene of DJing (2)\n- Natural photo typicality: Looks like a candid photo, somewhat typical (4)\n- Visual clutter: Many objects - mixer, CDJ, headphones, mic, cables (4)\n- Object centricity: The DJ equipment is the main focus (3-4)\n- Scene centricity: It's more of an object/activity scene (3)\n- Caption confidence: High (4)\n\nCounts:\n- Salient objects: ~3-4 (DJ controller, headphones, microphone, person)\n- Distinct categories: ~4 (DJ equipment, audio equipment, person, cable)\n\nContains: person, but I don't see a clear face, no animal, no text really (just brand logos), no vehicle, no food, indoor scene, no artificial/rendered content, some occlusion (hand on equipment).\n\nDominant content type: object (DJ equipment)\nImage style: natural photo\nSemantic domain: music/equipment/party\n\nLet me write the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 740,
+          "total_tokens": 2262,
+          "cost": 0.00119436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00119436,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000888
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 406,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

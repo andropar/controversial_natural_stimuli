@@ -18,10 +18,10 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-_PAPER = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_PAPER.parents[1]))
-sys.path.insert(0, str(_PAPER / "figures"))
+STAGE = Path(__file__).resolve().parents[3]
+SHARE_ROOT = STAGE.parent
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
 
 import numpy as np
 import pandas as pd
@@ -43,7 +43,7 @@ MODEL_DISPLAY = config.MODEL_DISPLAY_NAMES
 SUBJECTS = config.SUBJECTS
 STATS_DATA_DIR = config.STATS_DATA_DIR
 RSA_DATA_DIR = config.RSA_DATA_DIR
-FIGURES_DIR = Path(__file__).resolve().parent
+FIGURES_DIR = STAGE / "figures" / "rsa_scores"
 
 COLOR_SHARED = OKABE_ITO["bluish_green"]   # #009E73 — distinct from blue + vermillion
 
@@ -129,7 +129,7 @@ def load_nc():
 
 
 def load_bs_nc():
-    p = _PAPER / "03_statistics" / "results" / "between_subject_noise_ceilings.csv"
+    p = SHARE_ROOT / "02_alignment_reliability" / "results" / "between_subject_noise_ceilings.csv"
     return pd.read_csv(p)
 
 
@@ -406,6 +406,7 @@ def main():
 
     out_pdf = FIGURES_DIR / "brain_alignment_improved_with_shared.pdf"
     out_png = FIGURES_DIR / "brain_alignment_improved_with_shared.png"
+    FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_pdf)
     fig.savefig(out_png, dpi=DPI)
     print(f"Saved {out_pdf}")

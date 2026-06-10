@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_60",
+    "stim_key": "vicco_60",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 60,
+    "file_index": 59,
+    "image_name": "shared_4rep_vicco_060.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_060.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"animal\",\n\n  \"short_caption\": \"Closeup of a horse's spotted white and brown legs walking on a wooden plank over dirt.\",\n  \"main_objects\": [\"horse legs\", \"hooves\", \"wooden plank\", \"dirt ground\", \"rock\"],\n  \"possible_interpretations\": [\n    \"horse stepping on wooden plank in enclosure\",\n    \"zoo or farm animal walking on board\",\n    \"animal crossing a narrow wooden walkway\"\n  ],\n  \"uncertainty_notes\": \"Animal's body is not visible; identity inferred from leg pattern and hoof shape, likely horse or similar equid.\",\n  \"quality_flags\": [\"truncated_subject\", \"unusual_low_angle\"]\n}",
+      "response": {
+        "id": "gen-1780319457-e3nBe3xQmdL0IQnG4FVv",
+        "object": "chat.completion",
+        "created": 1780319457,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"animal\",\n\n  \"short_caption\": \"Closeup of a horse's spotted white and brown legs walking on a wooden plank over dirt.\",\n  \"main_objects\": [\"horse legs\", \"hooves\", \"wooden plank\", \"dirt ground\", \"rock\"],\n  \"possible_interpretations\": [\n    \"horse stepping on wooden plank in enclosure\",\n    \"zoo or farm animal walking on board\",\n    \"animal crossing a narrow wooden walkway\"\n  ],\n  \"uncertainty_notes\": \"Animal's body is not visible; identity inferred from leg pattern and hoof shape, likely horse or similar equid.\",\n  \"quality_flags\": [\"truncated_subject\", \"unusual_low_angle\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see:\n- The lower legs/hooves of what appears to be a horse or similar animal (white with brown spots)\n- The animal is standing on or walking over a wooden plank/board\n- The ground is dirt/soil with some debris\n- There's a large rock in the background\n- A dried leaf is visible on the left side\n- This appears to be in some kind of enclosure (zoo or farm)\n\nThe main subject is the animal's legs and hooves, which are truncated (we only see legs, not the full body). This is a closeup detail view.\n\nLet me rate each dimension:\n- recognizability: 4 - clearly animal legs/hooves on a plank\n- ambiguity: 2 - pretty clear what it is\n- natural_photo_typicality: 4 - looks like a natural photo\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 3 - the legs are the focus but truncated\n- scene_centricity: 3 - shows a setting with ground/plank\n- caption_confidence: 4 - can describe it well\n\nContent flags:\n- contains_animal: true (horse legs)\n- contains_person: false\n- contains_face: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (truncated - only legs visible)\n- contains_unusual_viewpoint: true (low angle, closeup)\n- contains_multiple_main_objects: false\n\nDominant content: closeup_detail\nImage style: natural_photo\nSemantic domain: animal\n\nShort caption: \"Closeup of a horse's spotted legs and hooves walking on a wooden plank over dirt ground.\"\n\nMain objects: horse legs, hooves, wooden plank, dirt ground, rock\n\nPossible interpretations: \"horse walking on plank\", \"zoo enclosure with animal\", \"farm animal stepping on wood\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see:\n- The lower legs/hooves of what appears to be a horse or similar animal (white with brown spots)\n- The animal is standing on or walking over a wooden plank/board\n- The ground is dirt/soil with some debris\n- There's a large rock in the background\n- A dried leaf is visible on the left side\n- This appears to be in some kind of enclosure (zoo or farm)\n\nThe main subject is the animal's legs and hooves, which are truncated (we only see legs, not the full body). This is a closeup detail view.\n\nLet me rate each dimension:\n- recognizability: 4 - clearly animal legs/hooves on a plank\n- ambiguity: 2 - pretty clear what it is\n- natural_photo_typicality: 4 - looks like a natural photo\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 3 - the legs are the focus but truncated\n- scene_centricity: 3 - shows a setting with ground/plank\n- caption_confidence: 4 - can describe it well\n\nContent flags:\n- contains_animal: true (horse legs)\n- contains_person: false\n- contains_face: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (truncated - only legs visible)\n- contains_unusual_viewpoint: true (low angle, closeup)\n- contains_multiple_main_objects: false\n\nDominant content: closeup_detail\nImage style: natural_photo\nSemantic domain: animal\n\nShort caption: \"Closeup of a horse's spotted legs and hooves walking on a wooden plank over dirt ground.\"\n\nMain objects: horse legs, hooves, wooden plank, dirt ground, rock\n\nPossible interpretations: \"horse walking on plank\", \"zoo enclosure with animal\", \"farm animal stepping on wood\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 807,
+          "total_tokens": 2329,
+          "cost": 0.00139764,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139764,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009684
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 474,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

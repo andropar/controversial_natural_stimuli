@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_42",
+    "stim_key": "dataset_42",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 42,
+    "file_index": 42,
+    "image_name": "image_0042.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0042.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"transportation\",\n  \"short_caption\": \"Orange and black BNSF locomotive number 981 on railroad tracks.\",\n  \"main_objects\": [\"locomotive\", \"railroad tracks\", \"grass\", \"trees\"],\n  \"possible_interpretations\": [\"BNSF diesel locomotive\", \"heritage-painted train\", \"railroad engine on tracks\"],\n  \"uncertainty_notes\": \"No significant uncertainty; the subject is unambiguous.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319013-ODobL3GQ8CxACkyHra3n",
+        "object": "chat.completion",
+        "created": 1780319013,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"transportation\",\n  \"short_caption\": \"Orange and black BNSF locomotive number 981 on railroad tracks.\",\n  \"main_objects\": [\"locomotive\", \"railroad tracks\", \"grass\", \"trees\"],\n  \"possible_interpretations\": [\"BNSF diesel locomotive\", \"heritage-painted train\", \"railroad engine on tracks\"],\n  \"uncertainty_notes\": \"No significant uncertainty; the subject is unambiguous.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a BNSF (Burlington Northern Santa Fe) locomotive, number 981, in the classic orange and black \"Heritage\" paint scheme. It's an outdoor shot with grass in the foreground, trees in the background, and an overcast/white sky. The train is on railroad tracks. This is clearly a diesel-electric locomotive.\n\nLet me annotate based on the schema:\n\n- Recognizability: 5 - Very clearly a BNSF locomotive\n- Ambiguity: 1 - Very clear what it is\n- Natural photo typicality: 4 - Looks like a typical natural photograph\n- Visual clutter: 2 - Not much clutter, mostly the train and some background\n- Object-centricity: 5 - The locomotive dominates\n- Scene-centricity: 2 - It's mostly about the object\n- Caption confidence: 5 - Easy to caption\n\n- Salient object count: 1 (the locomotive)\n- Distinct object categories: 2 (locomotive, trees/grass)\n\n- Contains person: false\n- Contains face: false\n- Contains animal: false\n- Contains text: true (BNSF, 981, and some logo text)\n- Contains vehicle: true (locomotive/train)\n- Contains food: false\n- Contains indoor scene: false\n- Contains outdoor scene: true\n- Contains artificial/rendered: false\n- Contains occlusion/truncation: false\n- Contains unusual viewpoint: false (standard 3/4 view)\n- Contains multiple main objects: false\n\nDominant content: object (locomotive)\nImage style: natural_photo\nSemantic domain: transportation/railroad\n\nCaption: \"Orange and black BNSF locomotive number 981 on railroad tracks outdoors\"\n\nMain objects: [\"locomotive\", \"railroad tracks\", \"trees\", \"grass\"]\n\nPossible interpretations: [\"BNSF locomotive\", \"diesel locomotive\", \"heritage paint scheme train\"]\n\nUncertainty notes: None significant\nQuality flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a BNSF (Burlington Northern Santa Fe) locomotive, number 981, in the classic orange and black \"Heritage\" paint scheme. It's an outdoor shot with grass in the foreground, trees in the background, and an overcast/white sky. The train is on railroad tracks. This is clearly a diesel-electric locomotive.\n\nLet me annotate based on the schema:\n\n- Recognizability: 5 - Very clearly a BNSF locomotive\n- Ambiguity: 1 - Very clear what it is\n- Natural photo typicality: 4 - Looks like a typical natural photograph\n- Visual clutter: 2 - Not much clutter, mostly the train and some background\n- Object-centricity: 5 - The locomotive dominates\n- Scene-centricity: 2 - It's mostly about the object\n- Caption confidence: 5 - Easy to caption\n\n- Salient object count: 1 (the locomotive)\n- Distinct object categories: 2 (locomotive, trees/grass)\n\n- Contains person: false\n- Contains face: false\n- Contains animal: false\n- Contains text: true (BNSF, 981, and some logo text)\n- Contains vehicle: true (locomotive/train)\n- Contains food: false\n- Contains indoor scene: false\n- Contains outdoor scene: true\n- Contains artificial/rendered: false\n- Contains occlusion/truncation: false\n- Contains unusual viewpoint: false (standard 3/4 view)\n- Contains multiple main objects: false\n\nDominant content: object (locomotive)\nImage style: natural_photo\nSemantic domain: transportation/railroad\n\nCaption: \"Orange and black BNSF locomotive number 981 on railroad tracks outdoors\"\n\nMain objects: [\"locomotive\", \"railroad tracks\", \"trees\", \"grass\"]\n\nPossible interpretations: [\"BNSF locomotive\", \"diesel locomotive\", \"heritage paint scheme train\"]\n\nUncertainty notes: None significant\nQuality flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 722,
+          "total_tokens": 2244,
+          "cost": 0.00129564,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129564,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008664
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 451,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

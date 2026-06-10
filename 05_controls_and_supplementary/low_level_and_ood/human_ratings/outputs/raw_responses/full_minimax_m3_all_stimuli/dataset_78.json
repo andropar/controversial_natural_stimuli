@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_78",
+    "stim_key": "dataset_78",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 78,
+    "file_index": 78,
+    "image_name": "image_0078.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0078.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"furniture\",\n  \"short_caption\": \"Close-up of an antique wooden cabinet with empty shelves and scalloped trim\",\n  \"main_objects\": [\"wooden cabinet\", \"shelves\", \"decorative trim\"],\n  \"possible_interpretations\": [\"antique wooden cabinet\", \"bookcase section\", \"display hutch\", \"shelving unit\", \"vintage furniture detail\"],\n  \"uncertainty_notes\": \"Image is cropped showing only a portion of the furniture; full object type is uncertain but appears to be a shelving/cabinet piece.\",\n  \"quality_flags\": [\"cropped_view\", \"partial_object\", \"studio_black_background\"]\n}",
+      "response": {
+        "id": "gen-1780319046-kGRd5UUV8h1iIMJSz2NI",
+        "object": "chat.completion",
+        "created": 1780319046,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"furniture\",\n  \"short_caption\": \"Close-up of an antique wooden cabinet with empty shelves and scalloped trim\",\n  \"main_objects\": [\"wooden cabinet\", \"shelves\", \"decorative trim\"],\n  \"possible_interpretations\": [\"antique wooden cabinet\", \"bookcase section\", \"display hutch\", \"shelving unit\", \"vintage furniture detail\"],\n  \"uncertainty_notes\": \"Image is cropped showing only a portion of the furniture; full object type is uncertain but appears to be a shelving/cabinet piece.\",\n  \"quality_flags\": [\"cropped_view\", \"partial_object\", \"studio_black_background\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a close-up of what appears to be an antique wooden furniture piece - likely a cabinet, hutch, or bookcase section. I can see the wooden frame with visible wear, scratches, and aged patina. There are two shelves visible with decorative scalloped/shaped edges on the top. The wood has a dark brown color with lighter wear marks. The background behind the shelves is completely black, suggesting either an empty interior cavity or a studio photography setup.\n\nLet me annotate this according to the schema:\n\n- recognizability: 4 - It's clearly a piece of wooden furniture, though it's a partial view\n- ambiguity: 2 - It's clearly furniture, not much ambiguity\n- natural_photo_typicality: 3 - It looks like a natural photo but the black background suggests studio photography\n- visual_clutter: 1 - Very clean, minimal content\n- object_centricity: 4 - The wooden furniture piece is the clear central subject\n- scene_centricity: 1 - Not really a scene\n- caption_confidence: 4 - Easy to caption\n\nThe image shows only part of a larger piece of furniture - we can see the top edge, side, and shelves, but it's cropped/partial view.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a close-up of what appears to be an antique wooden furniture piece - likely a cabinet, hutch, or bookcase section. I can see the wooden frame with visible wear, scratches, and aged patina. There are two shelves visible with decorative scalloped/shaped edges on the top. The wood has a dark brown color with lighter wear marks. The background behind the shelves is completely black, suggesting either an empty interior cavity or a studio photography setup.\n\nLet me annotate this according to the schema:\n\n- recognizability: 4 - It's clearly a piece of wooden furniture, though it's a partial view\n- ambiguity: 2 - It's clearly furniture, not much ambiguity\n- natural_photo_typicality: 3 - It looks like a natural photo but the black background suggests studio photography\n- visual_clutter: 1 - Very clean, minimal content\n- object_centricity: 4 - The wooden furniture piece is the clear central subject\n- scene_centricity: 1 - Not really a scene\n- caption_confidence: 4 - Easy to caption\n\nThe image shows only part of a larger piece of furniture - we can see the top edge, side, and shelves, but it's cropped/partial view.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 621,
+          "total_tokens": 2035,
+          "cost": 0.00101916,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00101916,
+            "upstream_inference_prompt_cost": 0.00027396,
+            "upstream_inference_completions_cost": 0.0007452
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 301,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

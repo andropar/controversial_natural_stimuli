@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_258",
+    "stim_key": "vicco_258",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 258,
+    "file_index": 257,
+    "image_name": "shared_4rep_vicco_258.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_258.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 5,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"texture_pattern\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"street art / urban surface\",\n\n  \"short_caption\": \"Close-up of a graffiti-covered wall with torn posters, paint splatters, and faded text fragments.\",\n  \"main_objects\": [\"graffiti\", \"torn posters\", \"paint splatters\", \"text fragments\", \"concrete wall\"],\n  \"possible_interpretations\": [\"urban street art surface\", \"weathered advertising wall\", \"abstract layered texture\", \"abandoned poster site\", \"spray-painted concrete wall\"],\n  \"uncertainty_notes\": \"Heavy layering makes it difficult to determine how many distinct posters or artworks are present; some text is partially legible but not fully readable.\",\n  \"quality_flags\": [\"high_visual_clutter\", \"partial_text_legibility\", \"no_clear_focal_point\"]\n}",
+      "response": {
+        "id": "gen-1780319686-5xAQand4OWp8S4uiUWL1",
+        "object": "chat.completion",
+        "created": 1780319686,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 5,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"texture_pattern\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"street art / urban surface\",\n\n  \"short_caption\": \"Close-up of a graffiti-covered wall with torn posters, paint splatters, and faded text fragments.\",\n  \"main_objects\": [\"graffiti\", \"torn posters\", \"paint splatters\", \"text fragments\", \"concrete wall\"],\n  \"possible_interpretations\": [\"urban street art surface\", \"weathered advertising wall\", \"abstract layered texture\", \"abandoned poster site\", \"spray-painted concrete wall\"],\n  \"uncertainty_notes\": \"Heavy layering makes it difficult to determine how many distinct posters or artworks are present; some text is partially legible but not fully readable.\",\n  \"quality_flags\": [\"high_visual_clutter\", \"partial_text_legibility\", \"no_clear_focal_point\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a heavily layered graffiti/street art surface with torn posters, spray paint, and what appears to be painted and printed text elements. There are visible words like \"YOUNG\" and \"STAR\" and \"VIDEO\" partially visible. The image is very cluttered with overlapping layers of paint splatters, torn paper, and various colors including yellow, pink, purple, black, and white. It looks like a close-up of a wall covered in urban street art and poster residue.\n\nLet me analyze:\n- Recognizability: It's clearly a graffiti/street art wall, fairly recognizable - 4\n- Ambiguity: Could be interpreted as abstract art, street art, or just a dirty wall - 2-3\n- Natural photo typicality: It looks like a real photograph of a real wall - 4\n- Visual clutter: Very cluttered with many overlapping elements - 5\n- Object centricity: No single central object - 1\n- Scene centricity: It's more of a surface/texture than a scene - 2\n- Caption confidence: I can describe it confidently - 4\n\nMain objects: graffiti, torn posters, paint splatters, text fragments\nContains text: Yes\nNo people, faces, animals, vehicles, food\nIndoor/outdoor: outdoor scene (wall)\nArtificial content: yes (graffiti, posters)\nOcclusion/truncation: yes, layers obscure each other\nUnusual viewpoint: no, fairly straightforward\nMultiple main objects: no, it's more of a surface",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a heavily layered graffiti/street art surface with torn posters, spray paint, and what appears to be painted and printed text elements. There are visible words like \"YOUNG\" and \"STAR\" and \"VIDEO\" partially visible. The image is very cluttered with overlapping layers of paint splatters, torn paper, and various colors including yellow, pink, purple, black, and white. It looks like a close-up of a wall covered in urban street art and poster residue.\n\nLet me analyze:\n- Recognizability: It's clearly a graffiti/street art wall, fairly recognizable - 4\n- Ambiguity: Could be interpreted as abstract art, street art, or just a dirty wall - 2-3\n- Natural photo typicality: It looks like a real photograph of a real wall - 4\n- Visual clutter: Very cluttered with many overlapping elements - 5\n- Object centricity: No single central object - 1\n- Scene centricity: It's more of a surface/texture than a scene - 2\n- Caption confidence: I can describe it confidently - 4\n\nMain objects: graffiti, torn posters, paint splatters, text fragments\nContains text: Yes\nNo people, faces, animals, vehicles, food\nIndoor/outdoor: outdoor scene (wall)\nArtificial content: yes (graffiti, posters)\nOcclusion/truncation: yes, layers obscure each other\nUnusual viewpoint: no, fairly straightforward\nMultiple main objects: no, it's more of a surface",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 697,
+          "total_tokens": 2219,
+          "cost": 0.00114276,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00114276,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008364
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 349,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

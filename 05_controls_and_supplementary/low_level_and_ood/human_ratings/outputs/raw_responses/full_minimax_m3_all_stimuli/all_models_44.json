@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_44",
+    "stim_key": "all_models_44",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 44,
+    "file_index": 44,
+    "image_name": "image_0044.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0044.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: dominant_content_type has invalid value: 'person'"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"construction/architecture\",\n  \"short_caption\": \"Two construction workers in yellow hard hats reviewing architectural blueprints.\",\n  \"main_objects\": [\"hard hats\", \"safety vests\", \"blueprints\", \"workers\"],\n  \"possible_interpretations\": [\"construction workers reviewing plans\", \"architects examining designs\", \"engineers checking technical drawings\", \"foremen discussing project schematics\"],\n  \"uncertainty_notes\": \"Faces and full bodies are not visible due to overhead viewpoint and cropping; exact setting (indoor vs outdoor construction site) cannot be determined from visible background.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318813-16YYRhheP1rCIWsU6MFN",
+        "object": "chat.completion",
+        "created": 1780318813,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"construction/architecture\",\n  \"short_caption\": \"Two construction workers in yellow hard hats reviewing architectural blueprints.\",\n  \"main_objects\": [\"hard hats\", \"safety vests\", \"blueprints\", \"workers\"],\n  \"possible_interpretations\": [\"construction workers reviewing plans\", \"architects examining designs\", \"engineers checking technical drawings\", \"foremen discussing project schematics\"],\n  \"uncertainty_notes\": \"Faces and full bodies are not visible due to overhead viewpoint and cropping; exact setting (indoor vs outdoor construction site) cannot be determined from visible background.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows two people wearing yellow hard hats (construction helmets) and high-visibility yellow/green safety vests, viewed from above/behind. They appear to be looking at architectural/engineering blueprints or construction plans spread out before them. The blueprints contain technical drawings, floor plans, and text (I can see what appears to be Russian text \"OOO ПРОЕКТИРОВАНИЕ\" meaning \"Design LLC\").\n\nLet me annotate this:\n\n- Recognizability: 5 - very clearly recognizable scene of construction workers reviewing plans\n- Ambiguity: 1 - very clear single interpretation\n- Natural_photo_typicality: 4 - looks like a natural photo, possibly staged\n- Visual_clutter: 3 - blueprints have some detail but the main subjects are clear\n- Object_centricity: 3 - the helmets are prominent but it's really a scene\n- Scene_centricity: 4 - it's primarily a scene of workers reviewing plans\n- Caption_confidence: 5 - easy to caption\n\nSalient objects: 2 helmets, 2 workers, blueprints\nDistinct categories: helmets, people, blueprints/paper\n\nContains person: yes\nContains face: no (back of heads visible)\nContains animal: no\nContains text: yes (on blueprints)\nContains vehicle: no\nContains food: no\nContains indoor_scene: possibly, but likely outdoor or construction site - hard to tell\nContains outdoor_scene: possibly - construction site context\nContains artificial_or_rendered_content: no\nContains occlusion_or_truncation: yes (people's faces cut off)\nContains unusual_viewpoint: yes (overhead view)\nContains_multiple_main_objects: yes (two workers)\n\nDominant content type: mixed (people and objects/documents)\nImage style: natural_photo\nSemantic domain: construction/architecture\n\nShort caption: \"Two construction workers in yellow hard hats reviewing architectural blueprints.\"\n\nMain objects: hard hats, safety vests, blueprints, workers\nPossible interpretations: construction workers reviewing plans, architects examining designs, engineers checking schematics\nUncertainty notes: can't see faces or full bodies, context of setting is unclear\n\nLet me set contains_indoor_scene to true since they're likely at a construction site which could be either, but the close-up view doesn't show setting clearly. I'll set it to null/false for safety. Actually, the bottom of the image seems to show some ground/surface, so it could be outdoor. Let me say neither since we can't be sure.\n\nActually, looking again, there's some concrete/stone surface visible at the bottom which suggests outdoor construction site. But it's ambiguous. I'll leave both as false since we're not sure.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows two people wearing yellow hard hats (construction helmets) and high-visibility yellow/green safety vests, viewed from above/behind. They appear to be looking at architectural/engineering blueprints or construction plans spread out before them. The blueprints contain technical drawings, floor plans, and text (I can see what appears to be Russian text \"OOO ПРОЕКТИРОВАНИЕ\" meaning \"Design LLC\").\n\nLet me annotate this:\n\n- Recognizability: 5 - very clearly recognizable scene of construction workers reviewing plans\n- Ambiguity: 1 - very clear single interpretation\n- Natural_photo_typicality: 4 - looks like a natural photo, possibly staged\n- Visual_clutter: 3 - blueprints have some detail but the main subjects are clear\n- Object_centricity: 3 - the helmets are prominent but it's really a scene\n- Scene_centricity: 4 - it's primarily a scene of workers reviewing plans\n- Caption_confidence: 5 - easy to caption\n\nSalient objects: 2 helmets, 2 workers, blueprints\nDistinct categories: helmets, people, blueprints/paper\n\nContains person: yes\nContains face: no (back of heads visible)\nContains animal: no\nContains text: yes (on blueprints)\nContains vehicle: no\nContains food: no\nContains indoor_scene: possibly, but likely outdoor or construction site - hard to tell\nContains outdoor_scene: possibly - construction site context\nContains artificial_or_rendered_content: no\nContains occlusion_or_truncation: yes (people's faces cut off)\nContains unusual_viewpoint: yes (overhead view)\nContains_multiple_main_objects: yes (two workers)\n\nDominant content type: mixed (people and objects/documents)\nImage style: natural_photo\nSemantic domain: construction/architecture\n\nShort caption: \"Two construction workers in yellow hard hats reviewing architectural blueprints.\"\n\nMain objects: hard hats, safety vests, blueprints, workers\nPossible interpretations: construction workers reviewing plans, architects examining designs, engineers checking schematics\nUncertainty notes: can't see faces or full bodies, context of setting is unclear\n\nLet me set contains_indoor_scene to true since they're likely at a construction site which could be either, but the close-up view doesn't show setting clearly. I'll set it to null/false for safety. Actually, the bottom of the image seems to show some ground/surface, so it could be outdoor. Let me say neither since we can't be sure.\n\nActually, looking again, there's some concrete/stone surface visible at the bottom which suggests outdoor construction site. But it's ambiguous. I'll leave both as false since we're not sure.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1483,
+          "completion_tokens": 896,
+          "total_tokens": 2379,
+          "cost": 0.00149274,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00149274,
+            "upstream_inference_prompt_cost": 0.00041754,
+            "upstream_inference_completions_cost": 0.0010752
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 694,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

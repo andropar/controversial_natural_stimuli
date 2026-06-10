@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_33",
+    "stim_key": "vicco_33",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 33,
+    "file_index": 32,
+    "image_name": "shared_4rep_vicco_033.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_033.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban street\",\n  \"short_caption\": \"Green Converse high-top sneakers resting on a graffiti-covered concrete block in an urban setting.\",\n  \"main_objects\": [\"green converse sneakers\", \"graffiti-covered concrete block\", \"parked cars\", \"bicycles\", \"storefront buildings\"],\n  \"possible_interpretations\": [\"urban street photography\", \"abandoned shoes on a city block\", \"fashion product in context\", \"street art and skate culture scene\"],\n  \"uncertainty_notes\": \"Background is slightly soft due to shallow depth of field but main subject is sharp; some background text and signage are not fully legible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319420-YJSd6wSzGbfhSEHkuzf8",
+        "object": "chat.completion",
+        "created": 1780319420,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban street\",\n  \"short_caption\": \"Green Converse high-top sneakers resting on a graffiti-covered concrete block in an urban setting.\",\n  \"main_objects\": [\"green converse sneakers\", \"graffiti-covered concrete block\", \"parked cars\", \"bicycles\", \"storefront buildings\"],\n  \"possible_interpretations\": [\"urban street photography\", \"abandoned shoes on a city block\", \"fashion product in context\", \"street art and skate culture scene\"],\n  \"uncertainty_notes\": \"Background is slightly soft due to shallow depth of field but main subject is sharp; some background text and signage are not fully legible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a pair of green Converse high-top sneakers placed on a graffiti-covered concrete block or surface in an urban street setting. In the background, there's a city street with parked cars, bicycles, buildings with storefronts, and some autumn leaves on the ground.\n\nLet me go through the schema:\n\n- recognizability: The main subject (shoes) is very clear and recognizable. 5\n- ambiguity: The image is quite clear with a clear main subject. Low ambiguity. 1\n- natural_photo_typicality: This looks like a typical natural photograph. 5\n- visual_clutter: There's a fair amount of detail - graffiti, background buildings, cars, bicycles, but the subject is clear. 3\n- object_centricity: The shoes are the clear central focus. 5\n- scene_centricity: It's more object-focused but the urban scene is prominent. 2\n- caption_confidence: I can describe this confidently. 5\n\n- estimated_salient_object_count: 2 shoes (as a pair), maybe 3-4 if we count other items\n- estimated_distinct_object_categories: shoes, cars, buildings, bicycles, stickers, bottles\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (signs, stickers, graffiti)\n- contains_vehicle: true (cars, bicycles)\n- contains_food: false (maybe bottles but not food)\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (slightly low angle but not unusual)\n- contains_multiple_main_objects: false (the two shoes form one main object group)\n\n- dominant_content_type: object\n- image_style: natural_photo\n- semantic_domain: urban street / fashion\n\n- short_caption: Green Converse sneakers sitting on a graffiti-covered urban block\n- main_objects: green converse sneakers, graffiti-covered block, parked cars, bicycles\n- possible_interpretations: urban street scene with shoes, abandoned shoes, street photography\n- uncertainty_notes: some background details are slightly blurred but main subject is clear",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a pair of green Converse high-top sneakers placed on a graffiti-covered concrete block or surface in an urban street setting. In the background, there's a city street with parked cars, bicycles, buildings with storefronts, and some autumn leaves on the ground.\n\nLet me go through the schema:\n\n- recognizability: The main subject (shoes) is very clear and recognizable. 5\n- ambiguity: The image is quite clear with a clear main subject. Low ambiguity. 1\n- natural_photo_typicality: This looks like a typical natural photograph. 5\n- visual_clutter: There's a fair amount of detail - graffiti, background buildings, cars, bicycles, but the subject is clear. 3\n- object_centricity: The shoes are the clear central focus. 5\n- scene_centricity: It's more object-focused but the urban scene is prominent. 2\n- caption_confidence: I can describe this confidently. 5\n\n- estimated_salient_object_count: 2 shoes (as a pair), maybe 3-4 if we count other items\n- estimated_distinct_object_categories: shoes, cars, buildings, bicycles, stickers, bottles\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (signs, stickers, graffiti)\n- contains_vehicle: true (cars, bicycles)\n- contains_food: false (maybe bottles but not food)\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (slightly low angle but not unusual)\n- contains_multiple_main_objects: false (the two shoes form one main object group)\n\n- dominant_content_type: object\n- image_style: natural_photo\n- semantic_domain: urban street / fashion\n\n- short_caption: Green Converse sneakers sitting on a graffiti-covered urban block\n- main_objects: green converse sneakers, graffiti-covered block, parked cars, bicycles\n- possible_interpretations: urban street scene with shoes, abandoned shoes, street photography\n- uncertainty_notes: some background details are slightly blurred but main subject is clear",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 838,
+          "total_tokens": 2360,
+          "cost": 0.00131196,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131196,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010056
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 548,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

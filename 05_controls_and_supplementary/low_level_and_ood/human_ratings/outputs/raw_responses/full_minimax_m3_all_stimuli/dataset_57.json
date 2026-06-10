@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_57",
+    "stim_key": "dataset_57",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 57,
+    "file_index": 57,
+    "image_name": "image_0057.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0057.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 5, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"library/indoor\", \"short_caption\": \"Interior of a library with white and black bookshelves filled with books and a decorative bunting garland.\", \"main_objects\": [\"bookshelves\", \"books\", \"ceiling lights\", \"bunting flags\", \"carpet\"], \"possible_interpretations\": [\"library interior with bookshelves and books\", \"public or school library reading area\"], \"uncertainty_notes\": \"Image may be a stock photograph; no significant perceptual uncertainty.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319026-lNC5ywK5cFlUPsvUKWz8",
+        "object": "chat.completion",
+        "created": 1780319026,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 5, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"library/indoor\", \"short_caption\": \"Interior of a library with white and black bookshelves filled with books and a decorative bunting garland.\", \"main_objects\": [\"bookshelves\", \"books\", \"ceiling lights\", \"bunting flags\", \"carpet\"], \"possible_interpretations\": [\"library interior with bookshelves and books\", \"public or school library reading area\"], \"uncertainty_notes\": \"Image may be a stock photograph; no significant perceptual uncertainty.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "The image shows an interior of a library with bookshelves, books, ceiling lights, and a decorative bunting/flag garland hanging from the ceiling. The dominant content is the library scene with multiple bookshelves.\n\nLet me analyze this systematically:\n\n- Recognizability: Very clearly a library - 5\n- Ambiguity: Pretty unambiguous as a library - 1\n- Natural photo typicality: Looks like a real photo, though possibly a stock photo - 4\n- Visual clutter: Multiple bookshelves with many books, but organized - 3\n- Object centricity: It's more of a scene than centered on one object - 2\n- Scene centricity: Clearly a scene/place - 5\n- Caption confidence: High confidence in describing it - 5\n\nObject counts:\n- Several bookshelves, many books, ceiling fixtures, bunting flags\n- Salient objects: maybe 4-5 main bookshelves\n- Distinct categories: bookshelves, books, ceiling lights, bunting, carpet\n\nContains:\n- No person/face/animal\n- Contains text (on book spines, sign on shelf)\n- No vehicle, no food\n- Indoor scene - yes\n- Outdoor - no\n- Artificial/rendered - no\n- Occlusion/truncation - no\n- Unusual viewpoint - no\n- Multiple main objects - yes (multiple bookshelves)\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: library/indoor\n\nShort caption: \"Interior of a library with white bookshelves filled with books and decorative bunting hanging from the ceiling.\"\n\nMain objects: bookshelves, books, ceiling lights, bunting flags, carpet\n\nPossible interpretations: all point to library so just one main interpretation\nUncertainty: none significant\nQuality flags: none",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows an interior of a library with bookshelves, books, ceiling lights, and a decorative bunting/flag garland hanging from the ceiling. The dominant content is the library scene with multiple bookshelves.\n\nLet me analyze this systematically:\n\n- Recognizability: Very clearly a library - 5\n- Ambiguity: Pretty unambiguous as a library - 1\n- Natural photo typicality: Looks like a real photo, though possibly a stock photo - 4\n- Visual clutter: Multiple bookshelves with many books, but organized - 3\n- Object centricity: It's more of a scene than centered on one object - 2\n- Scene centricity: Clearly a scene/place - 5\n- Caption confidence: High confidence in describing it - 5\n\nObject counts:\n- Several bookshelves, many books, ceiling fixtures, bunting flags\n- Salient objects: maybe 4-5 main bookshelves\n- Distinct categories: bookshelves, books, ceiling lights, bunting, carpet\n\nContains:\n- No person/face/animal\n- Contains text (on book spines, sign on shelf)\n- No vehicle, no food\n- Indoor scene - yes\n- Outdoor - no\n- Artificial/rendered - no\n- Occlusion/truncation - no\n- Unusual viewpoint - no\n- Multiple main objects - yes (multiple bookshelves)\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: library/indoor\n\nShort caption: \"Interior of a library with white bookshelves filled with books and decorative bunting hanging from the ceiling.\"\n\nMain objects: bookshelves, books, ceiling lights, bunting flags, carpet\n\nPossible interpretations: all point to library so just one main interpretation\nUncertainty: none significant\nQuality flags: none",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 675,
+          "total_tokens": 2197,
+          "cost": 0.00123924,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00123924,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.00081
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 426,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

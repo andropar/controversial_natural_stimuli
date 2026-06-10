@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_41",
+    "stim_key": "architecture_41",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 41,
+    "file_index": 41,
+    "image_name": "image_0041.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0041.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"illustration_or_render\",\n  \"semantic_domain\": \"bedroom_furniture\",\n  \"short_caption\": \"A quilted mattress pad on a metal-framed bed with a green nightstand and lamp.\",\n  \"main_objects\": [\"mattress\", \"headboard\", \"nightstand\", \"lamp base\"],\n  \"possible_interpretations\": [\"bedroom with new mattress topper\", \"3D rendered bedroom scene\", \"furniture showroom display\"],\n  \"uncertainty_notes\": \"Image appears to be a 3D render (likely from a video game) rather than a real photograph, based on texture uniformity and lighting.\",\n  \"quality_flags\": [\"likely_computer_generated\"]\n}",
+      "response": {
+        "id": "gen-1780318890-qgkOYswE8g9Hjz5kOF61",
+        "object": "chat.completion",
+        "created": 1780318890,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"illustration_or_render\",\n  \"semantic_domain\": \"bedroom_furniture\",\n  \"short_caption\": \"A quilted mattress pad on a metal-framed bed with a green nightstand and lamp.\",\n  \"main_objects\": [\"mattress\", \"headboard\", \"nightstand\", \"lamp base\"],\n  \"possible_interpretations\": [\"bedroom with new mattress topper\", \"3D rendered bedroom scene\", \"furniture showroom display\"],\n  \"uncertainty_notes\": \"Image appears to be a 3D render (likely from a video game) rather than a real photograph, based on texture uniformity and lighting.\",\n  \"quality_flags\": [\"likely_computer_generated\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a bed with a quilted mattress pad or topper with a swirl pattern. There's a metal headboard, a small green nightstand with what appears to be a lamp base on it, and the setting looks like a bedroom. The image appears to be a 3D render or computer-generated image rather than a real photograph - the textures and lighting look somewhat artificial, possibly from a video game like The Sims.\n\nLet me annotate this carefully:\n\n- recognizability: 4 - clearly recognizable as a bed/mattress\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 2 - looks like a 3D render, not a natural photo\n- visual_clutter: 2 - relatively few objects, mostly dominated by the mattress\n- object_centricity: 3 - the mattress is dominant but it's a large object\n- scene_centricity: 4 - it's more of a scene (bedroom) with the bed as main element\n- caption_confidence: 4\n\nSalient objects: bed/mattress, nightstand, lamp base\nDistinct categories: 3 (bedding, furniture, lamp)\n\nContains: no person, no face, no animal, no text, no vehicle, no food, indoor scene, no outdoor, contains artificial/rendered content (likely), no occlusion, no unusual viewpoint, no multiple main objects\n\nDominant content: object (the mattress/bed)\nImage style: illustration_or_render (looks like a 3D render)\nSemantic domain: bedroom/furniture\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a bed with a quilted mattress pad or topper with a swirl pattern. There's a metal headboard, a small green nightstand with what appears to be a lamp base on it, and the setting looks like a bedroom. The image appears to be a 3D render or computer-generated image rather than a real photograph - the textures and lighting look somewhat artificial, possibly from a video game like The Sims.\n\nLet me annotate this carefully:\n\n- recognizability: 4 - clearly recognizable as a bed/mattress\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 2 - looks like a 3D render, not a natural photo\n- visual_clutter: 2 - relatively few objects, mostly dominated by the mattress\n- object_centricity: 3 - the mattress is dominant but it's a large object\n- scene_centricity: 4 - it's more of a scene (bedroom) with the bed as main element\n- caption_confidence: 4\n\nSalient objects: bed/mattress, nightstand, lamp base\nDistinct categories: 3 (bedding, furniture, lamp)\n\nContains: no person, no face, no animal, no text, no vehicle, no food, indoor scene, no outdoor, contains artificial/rendered content (likely), no occlusion, no unusual viewpoint, no multiple main objects\n\nDominant content: object (the mattress/bed)\nImage style: illustration_or_render (looks like a 3D render)\nSemantic domain: bedroom/furniture\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 682,
+          "total_tokens": 2204,
+          "cost": 0.00124764,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00124764,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008184
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 352,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

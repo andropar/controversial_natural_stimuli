@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_288",
+    "stim_key": "vicco_288",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 288,
+    "file_index": 287,
+    "image_name": "shared_4rep_vicco_288.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_288.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"portrait\",\n  \"short_caption\": \"Smiling elderly woman holding a bouquet of flowers in front of a wooden china cabinet.\",\n  \"main_objects\": [\"elderly woman\", \"flower bouquet\", \"wooden china cabinet\", \"navy jacket\", \"floral blouse\"],\n  \"possible_interpretations\": [\"portrait of woman with flowers\", \"birthday or anniversary celebration\", \"casual indoor family photo\"],\n  \"uncertainty_notes\": \"Occasion or context is not fully clear, but the core scene is unambiguous.\",\n  \"quality_flags\": []\n}\n```",
+      "response": {
+        "id": "gen-1780319722-TIr1WkkEQSk8yD5Cieep",
+        "object": "chat.completion",
+        "created": 1780319722,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"portrait\",\n  \"short_caption\": \"Smiling elderly woman holding a bouquet of flowers in front of a wooden china cabinet.\",\n  \"main_objects\": [\"elderly woman\", \"flower bouquet\", \"wooden china cabinet\", \"navy jacket\", \"floral blouse\"],\n  \"possible_interpretations\": [\"portrait of woman with flowers\", \"birthday or anniversary celebration\", \"casual indoor family photo\"],\n  \"uncertainty_notes\": \"Occasion or context is not fully clear, but the core scene is unambiguous.\",\n  \"quality_flags\": []\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an elderly woman with white curly hair, smiling, holding a bouquet of flowers. She's wearing a dark blue/navy jacket over a floral patterned blouse. Behind her is a wooden china cabinet/hutch with glass doors displaying some items inside. The setting appears to be indoors, likely a dining room or living room.\n\nMain content:\n- Elderly woman (smiling, clear face)\n- Bouquet of flowers (pink roses, various greenery, some pink/red flowers)\n- Wooden china cabinet in background\n- Indoor setting\n\nLet me rate each dimension:\n\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - one clear interpretation (woman holding flowers)\n- natural_photo_typicality: 5 - looks like a typical natural photograph\n- visual_clutter: 3 - moderate clutter with flowers, cabinet, items in cabinet\n- object_centricity: 3 - the woman is central but the flowers also compete\n- scene_centricity: 3 - it's a scene with a person, the cabinet provides context\n- caption_confidence: 5 - easy to caption\n\nObjects: woman, flowers, china cabinet, chair (red), maybe glassware inside cabinet\n\ncontains_person: true\ncontains_face: true\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false (the flowers partially occlude her jacket but she's still clearly visible)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true (woman and flowers are both main)\n\ndominant_content_type: \"person_face\" - though flowers are prominent, the woman and her face are central\nimage_style: \"natural_photo\"\nsemantic_domain: \"portrait\" or \"indoor\"\n\nshort_caption: \"Smiling elderly woman holding a bouquet of flowers in front of a wooden cabinet\"\n\nmain_objects: [\"elderly woman\", \"flower bouquet\", \"wooden china cabinet\", \"floral blouse\", \"navy jacket\"]\n\npossible_interpretations: [\"portrait of woman with flowers\", \"birthday or anniversary celebration\", \"casual indoor portrait\"]\n\nuncertainty_notes: \"Occasion/context not entirely clear but the scene is unambiguous\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an elderly woman with white curly hair, smiling, holding a bouquet of flowers. She's wearing a dark blue/navy jacket over a floral patterned blouse. Behind her is a wooden china cabinet/hutch with glass doors displaying some items inside. The setting appears to be indoors, likely a dining room or living room.\n\nMain content:\n- Elderly woman (smiling, clear face)\n- Bouquet of flowers (pink roses, various greenery, some pink/red flowers)\n- Wooden china cabinet in background\n- Indoor setting\n\nLet me rate each dimension:\n\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - one clear interpretation (woman holding flowers)\n- natural_photo_typicality: 5 - looks like a typical natural photograph\n- visual_clutter: 3 - moderate clutter with flowers, cabinet, items in cabinet\n- object_centricity: 3 - the woman is central but the flowers also compete\n- scene_centricity: 3 - it's a scene with a person, the cabinet provides context\n- caption_confidence: 5 - easy to caption\n\nObjects: woman, flowers, china cabinet, chair (red), maybe glassware inside cabinet\n\ncontains_person: true\ncontains_face: true\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false (the flowers partially occlude her jacket but she's still clearly visible)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true (woman and flowers are both main)\n\ndominant_content_type: \"person_face\" - though flowers are prominent, the woman and her face are central\nimage_style: \"natural_photo\"\nsemantic_domain: \"portrait\" or \"indoor\"\n\nshort_caption: \"Smiling elderly woman holding a bouquet of flowers in front of a wooden cabinet\"\n\nmain_objects: [\"elderly woman\", \"flower bouquet\", \"wooden china cabinet\", \"floral blouse\", \"navy jacket\"]\n\npossible_interpretations: [\"portrait of woman with flowers\", \"birthday or anniversary celebration\", \"casual indoor portrait\"]\n\nuncertainty_notes: \"Occasion/context not entirely clear but the scene is unambiguous\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 844,
+          "total_tokens": 2366,
+          "cost": 0.00131916,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131916,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010128
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 585,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

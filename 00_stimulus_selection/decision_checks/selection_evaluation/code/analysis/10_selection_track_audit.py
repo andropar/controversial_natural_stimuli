@@ -15,9 +15,10 @@ import numpy as np
 import pandas as pd
 
 
-ROOT = Path(__file__).resolve().parents[4]
-SRC = ROOT / "scripts" / "cursor" / "outputs" / "final_aggregate_plot" / "leaderboard_summary.csv"
-OUT = ROOT / "experiments" / "cstim_paper" / "00_selection_evaluation" / "results"
+STAGE = Path(__file__).resolve().parents[2]
+SHARE_ROOT = STAGE.parents[2]
+SRC = SHARE_ROOT / "scripts" / "cursor" / "outputs" / "final_aggregate_plot" / "leaderboard_summary.csv"
+OUT = STAGE / "results"
 OUT.mkdir(parents=True, exist_ok=True)
 
 

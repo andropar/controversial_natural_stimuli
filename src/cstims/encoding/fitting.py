@@ -242,7 +242,7 @@ def fit_voxelwise_ridgecv_fast(
         scoring="pearson_r",
         alpha_per_target=True,
         fit_intercept=True,
-        gcv_mode="svd",
+        gcv_mode=None,
     )
     ridge.fit(X_train_proc, Y_train_f64)
 

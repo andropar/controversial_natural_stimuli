@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_97",
+    "stim_key": "training_objective_97",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 97,
+    "file_index": 97,
+    "image_name": "image_0097.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0097.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"law enforcement\",\n  \"short_caption\": \"Two police officers in high-visibility jackets behind police cordon tape\",\n  \"main_objects\": [\"police officer\", \"high-visibility jacket\", \"custodian helmet\", \"police tape\", \"hedge\"],\n  \"possible_interpretations\": [\"crime scene cordon\", \"police incident response\", \"press barrier at public event\", \"secured area\", \"news photograph of police activity\"],\n  \"uncertainty_notes\": \"Image is heavily blurred; officer details and background are indistinct. Exact context of the police presence is not visible.\",\n  \"quality_flags\": [\"heavy defocus blur\", \"shallow depth of field\"]\n}",
+      "response": {
+        "id": "gen-1780319384-683vFID3oChsX9wGD65g",
+        "object": "chat.completion",
+        "created": 1780319384,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"law enforcement\",\n  \"short_caption\": \"Two police officers in high-visibility jackets behind police cordon tape\",\n  \"main_objects\": [\"police officer\", \"high-visibility jacket\", \"custodian helmet\", \"police tape\", \"hedge\"],\n  \"possible_interpretations\": [\"crime scene cordon\", \"police incident response\", \"press barrier at public event\", \"secured area\", \"news photograph of police activity\"],\n  \"uncertainty_notes\": \"Image is heavily blurred; officer details and background are indistinct. Exact context of the police presence is not visible.\",\n  \"quality_flags\": [\"heavy defocus blur\", \"shallow depth of field\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- Two police officers wearing high-visibility yellow/green jackets and traditional British-style custodian helmets (police helmets)\n- The officers are out of focus/blurred\n- Police tape in the foreground reading \"POLICE LINE DO NOT CROSS\" (also blurred slightly)\n- Green foliage/hedge in the background, also blurred\n- The focus seems to be on the police tape rather than the officers\n\nThis is a typical scene of a police cordon or crime scene.\n\nLet me rate:\n- recognizability: 4 - The main content (police scene) is recognizable despite the blur\n- ambiguity: 2 - Fairly clear what's happening (police scene/cordon)\n- natural_photo_typicality: 4 - Looks like a typical news/photo image, though with heavy bokeh\n- visual_clutter: 2 - Not many competing elements, just officers, tape, and foliage\n- object_centricity: 3 - The tape and officers are central but scene-like\n- scene_centricity: 3 - Could be a scene, but has clear objects\n- caption_confidence: 4 - Can confidently caption\n\n- estimated_salient_object_count: 3 (two officers, police tape)\n- estimated_distinct_object_categories: 3 (officers, tape, foliage/background)\n\n- contains_person: true\n- contains_face: true (though blurred)\n- contains_animal: false\n- contains_text: true (POLICE LINE DO NOT CROSS)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (two officers, tape)\n\n- dominant_content_type: \"mixed\" or \"scene\" - the police tape and officers suggest scene\n- image_style: \"natural_photo\"\n- semantic_domain: \"public safety\" or \"law enforcement\"\n\nShort caption: \"Two police officers behind police cordon tape with green hedge background\"\n\nPossible interpretations:\n- Crime scene\n- Police incident\n- Public safety cordon\n- News coverage of incident",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- Two police officers wearing high-visibility yellow/green jackets and traditional British-style custodian helmets (police helmets)\n- The officers are out of focus/blurred\n- Police tape in the foreground reading \"POLICE LINE DO NOT CROSS\" (also blurred slightly)\n- Green foliage/hedge in the background, also blurred\n- The focus seems to be on the police tape rather than the officers\n\nThis is a typical scene of a police cordon or crime scene.\n\nLet me rate:\n- recognizability: 4 - The main content (police scene) is recognizable despite the blur\n- ambiguity: 2 - Fairly clear what's happening (police scene/cordon)\n- natural_photo_typicality: 4 - Looks like a typical news/photo image, though with heavy bokeh\n- visual_clutter: 2 - Not many competing elements, just officers, tape, and foliage\n- object_centricity: 3 - The tape and officers are central but scene-like\n- scene_centricity: 3 - Could be a scene, but has clear objects\n- caption_confidence: 4 - Can confidently caption\n\n- estimated_salient_object_count: 3 (two officers, police tape)\n- estimated_distinct_object_categories: 3 (officers, tape, foliage/background)\n\n- contains_person: true\n- contains_face: true (though blurred)\n- contains_animal: false\n- contains_text: true (POLICE LINE DO NOT CROSS)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (two officers, tape)\n\n- dominant_content_type: \"mixed\" or \"scene\" - the police tape and officers suggest scene\n- image_style: \"natural_photo\"\n- semantic_domain: \"public safety\" or \"law enforcement\"\n\nShort caption: \"Two police officers behind police cordon tape with green hedge background\"\n\nPossible interpretations:\n- Crime scene\n- Police incident\n- Public safety cordon\n- News coverage of incident",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 830,
+          "total_tokens": 2352,
+          "cost": 0.00130236,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00130236,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000996
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 534,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

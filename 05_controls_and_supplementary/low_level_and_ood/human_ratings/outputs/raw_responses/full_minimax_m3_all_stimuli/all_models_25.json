@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_25",
+    "stim_key": "all_models_25",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 25,
+    "file_index": 25,
+    "image_name": "image_0025.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0025.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 6,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_home_decor\",\n\n  \"short_caption\": \"Living room with beige sofa, coffee table, and a framed pixelated sea turtle artwork on the wall\",\n  \"main_objects\": [\"sofa\", \"throw pillows\", \"coffee table\", \"glass vase with branches\", \"framed artwork\", \"candles\", \"books\"],\n  \"possible_interpretations\": [\"interior design mockup\", \"living room scene\", \"home decor product photo\"],\n  \"uncertainty_notes\": \"Text on books not clearly legible; image may be a staged product mockup for the artwork\",\n  \"quality_flags\": [\"staged_interior\", \"possible_product_mockup\"]\n}",
+      "response": {
+        "id": "gen-1780318762-zTWPXmhBpK4sDwbMiVYr",
+        "object": "chat.completion",
+        "created": 1780318762,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 6,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_home_decor\",\n\n  \"short_caption\": \"Living room with beige sofa, coffee table, and a framed pixelated sea turtle artwork on the wall\",\n  \"main_objects\": [\"sofa\", \"throw pillows\", \"coffee table\", \"glass vase with branches\", \"framed artwork\", \"candles\", \"books\"],\n  \"possible_interpretations\": [\"interior design mockup\", \"living room scene\", \"home decor product photo\"],\n  \"uncertainty_notes\": \"Text on books not clearly legible; image may be a staged product mockup for the artwork\",\n  \"quality_flags\": [\"staged_interior\", \"possible_product_mockup\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a living room interior scene with:\n- A beige/cream colored sofa with several pillows (brown, beige, cream colors)\n- A small wooden coffee table in front with books and white candles\n- A clear glass vase with pink cherry blossom branches\n- A framed pixelated/cross-stitch style artwork on the wall depicting a sea turtle swimming underwater near a tropical island with a tree\n- Beige/neutral colored walls with a slight texture\n\nLet me annotate this according to the schema:\n\n- Recognizability: High - clearly a living room interior with a prominent artwork\n- Ambiguity: Low - the content is quite clear\n- Natural_photo_typicality: This is an interior design photo/mockup, so it's a typical interior photo but may be staged. I'd say 4.\n- Visual_clutter: Moderate - several elements but organized. Maybe 3.\n- Object_centricity: The artwork is central, but it's also a scene. Maybe 2-3.\n- Scene_centricity: Yes, this is primarily a living room scene. 4.\n- Caption_confidence: High - I can describe this clearly. 5.\n\nSalient objects: turtle artwork, sofa, pillows, coffee table, vase with branches, candles, books\nDistinct categories: maybe 6-7\n\nContains person: no\nContains face: no\nContains animal: yes (turtle in artwork)\nContains text: possibly some text on the books but not clearly visible\nContains vehicle: no\nContains food: no\nContains indoor scene: yes\nContains outdoor scene: the artwork shows an outdoor scene but the main image is indoor\nContains artificial/rendered content: The artwork is pixelated/cross-stitch style, so yes\nContains occlusion: not really\nContains unusual viewpoint: no\nContains multiple main objects: yes, the artwork and the sofa both serve as focal points\n\nDominant content: scene (interior)\nImage style: natural_photo (though it's a staged interior mockup)\nSemantic domain: interior/home decor\n\nLet me finalize my annotations.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a living room interior scene with:\n- A beige/cream colored sofa with several pillows (brown, beige, cream colors)\n- A small wooden coffee table in front with books and white candles\n- A clear glass vase with pink cherry blossom branches\n- A framed pixelated/cross-stitch style artwork on the wall depicting a sea turtle swimming underwater near a tropical island with a tree\n- Beige/neutral colored walls with a slight texture\n\nLet me annotate this according to the schema:\n\n- Recognizability: High - clearly a living room interior with a prominent artwork\n- Ambiguity: Low - the content is quite clear\n- Natural_photo_typicality: This is an interior design photo/mockup, so it's a typical interior photo but may be staged. I'd say 4.\n- Visual_clutter: Moderate - several elements but organized. Maybe 3.\n- Object_centricity: The artwork is central, but it's also a scene. Maybe 2-3.\n- Scene_centricity: Yes, this is primarily a living room scene. 4.\n- Caption_confidence: High - I can describe this clearly. 5.\n\nSalient objects: turtle artwork, sofa, pillows, coffee table, vase with branches, candles, books\nDistinct categories: maybe 6-7\n\nContains person: no\nContains face: no\nContains animal: yes (turtle in artwork)\nContains text: possibly some text on the books but not clearly visible\nContains vehicle: no\nContains food: no\nContains indoor scene: yes\nContains outdoor scene: the artwork shows an outdoor scene but the main image is indoor\nContains artificial/rendered content: The artwork is pixelated/cross-stitch style, so yes\nContains occlusion: not really\nContains unusual viewpoint: no\nContains multiple main objects: yes, the artwork and the sofa both serve as focal points\n\nDominant content: scene (interior)\nImage style: natural_photo (though it's a staged interior mockup)\nSemantic domain: interior/home decor\n\nLet me finalize my annotations.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 796,
+          "total_tokens": 2318,
+          "cost": 0.00138444,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00138444,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009552
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 508,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

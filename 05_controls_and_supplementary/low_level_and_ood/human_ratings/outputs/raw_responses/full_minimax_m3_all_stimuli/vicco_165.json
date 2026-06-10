@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_165",
+    "stim_key": "vicco_165",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 165,
+    "file_index": 164,
+    "image_name": "shared_4rep_vicco_165.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_165.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"communication\",\n  \"short_caption\": \"Cracked iPhone on wooden table displaying Russian Sberbank text message about credit limit increase\",\n  \"main_objects\": [\"smartphone\", \"text message\", \"wooden table\"],\n  \"possible_interpretations\": [\n    \"a phone showing a Russian banking SMS notification\",\n    \"a cracked iPhone resting on a wooden surface\",\n    \"a casual photo of a phone displaying a financial text\"\n  ],\n  \"uncertainty_notes\": \"Small curved object in bottom-left corner is ambiguous, possibly a hair tie, ring, or rubber band; minor reflections and shadows on cracked glass affect clarity of text edges\",\n  \"quality_flags\": [\"cracked_screen\", \"glare_on_screen\", \"minor_blur_on_text\"]\n}",
+      "response": {
+        "id": "gen-1780319578-IMT0ovCIDTvycHGJWR5z",
+        "object": "chat.completion",
+        "created": 1780319578,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"communication\",\n  \"short_caption\": \"Cracked iPhone on wooden table displaying Russian Sberbank text message about credit limit increase\",\n  \"main_objects\": [\"smartphone\", \"text message\", \"wooden table\"],\n  \"possible_interpretations\": [\n    \"a phone showing a Russian banking SMS notification\",\n    \"a cracked iPhone resting on a wooden surface\",\n    \"a casual photo of a phone displaying a financial text\"\n  ],\n  \"uncertainty_notes\": \"Small curved object in bottom-left corner is ambiguous, possibly a hair tie, ring, or rubber band; minor reflections and shadows on cracked glass affect clarity of text edges\",\n  \"quality_flags\": [\"cracked_screen\", \"glare_on_screen\", \"minor_blur_on_text\"]\n}",
+              "refusal": null,
+              "reasoning": "The user wants me to annotate an image of a smartphone (iPhone) displaying a text message in Russian. The phone is lying on a wooden surface. The text message appears to be from Sberbank about a credit limit increase. Let me analyze the image carefully.\n\nKey observations:\n- A smartphone (iPhone) with a cracked screen, lying on a wooden table\n- The screen shows a text message conversation in Russian\n- The message is from Sberbank (Сбербанк) about a credit limit increase\n- The phone has a Russian keyboard layout\n- Time shown is 13:20\n- There's a small object in the bottom left (looks like a ring or hair tie)\n\nLet me fill out the schema:\n\n- recognizability: 5 - very clear what's in the image\n- ambiguity: 1 - very unambiguous, it's a phone with a text message\n- natural_photo_typicality: 4 - looks like a typical phone photo, though slightly casual\n- visual_clutter: 2 - mostly just the phone, simple wooden background\n- object_centricity: 5 - phone is clearly the central object\n- scene_centricity: 1 - not really a scene, focused on object\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 1 (the phone) - though there's a small ring/band visible\n- estimated_distinct_object_categories: 2 (phone, ring/band)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (wooden table suggests indoor)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the phone)\n- image_style: \"natural_photo\"\n- semantic_domain: \"technology\" or \"communication\"\n\n- short_caption: \"iPhone displaying Russian text message about Sberbank credit limit on wooden table\"\n- main_objects: [\"smartphone\", \"text message\", \"wooden table\"]\n- possible_interpretations: [\"a phone showing a banking text message\", \"a cracked iPhone on a table\", \"a Russian text message screenshot of a phone\"]\n- uncertainty_notes: \"Small object in bottom-left corner is unclear (possibly a hair tie or ring)\"\n- quality_flags: [\"cracked_screen\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The user wants me to annotate an image of a smartphone (iPhone) displaying a text message in Russian. The phone is lying on a wooden surface. The text message appears to be from Sberbank about a credit limit increase. Let me analyze the image carefully.\n\nKey observations:\n- A smartphone (iPhone) with a cracked screen, lying on a wooden table\n- The screen shows a text message conversation in Russian\n- The message is from Sberbank (Сбербанк) about a credit limit increase\n- The phone has a Russian keyboard layout\n- Time shown is 13:20\n- There's a small object in the bottom left (looks like a ring or hair tie)\n\nLet me fill out the schema:\n\n- recognizability: 5 - very clear what's in the image\n- ambiguity: 1 - very unambiguous, it's a phone with a text message\n- natural_photo_typicality: 4 - looks like a typical phone photo, though slightly casual\n- visual_clutter: 2 - mostly just the phone, simple wooden background\n- object_centricity: 5 - phone is clearly the central object\n- scene_centricity: 1 - not really a scene, focused on object\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 1 (the phone) - though there's a small ring/band visible\n- estimated_distinct_object_categories: 2 (phone, ring/band)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (wooden table suggests indoor)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the phone)\n- image_style: \"natural_photo\"\n- semantic_domain: \"technology\" or \"communication\"\n\n- short_caption: \"iPhone displaying Russian text message about Sberbank credit limit on wooden table\"\n- main_objects: [\"smartphone\", \"text message\", \"wooden table\"]\n- possible_interpretations: [\"a phone showing a banking text message\", \"a cracked iPhone on a table\", \"a Russian text message screenshot of a phone\"]\n- uncertainty_notes: \"Small object in bottom-left corner is unclear (possibly a hair tie or ring)\"\n- quality_flags: [\"cracked_screen\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 925,
+          "total_tokens": 2447,
+          "cost": 0.00141636,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00141636,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.00111
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 596,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

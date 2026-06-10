@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_185",
+    "stim_key": "vicco_185",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 185,
+    "file_index": 184,
+    "image_name": "shared_4rep_vicco_185.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_185.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"train_station\",\n  \"short_caption\": \"Upside-down view of a train station platform at sunset with overhead catenary lines\",\n  \"main_objects\": [\"platform canopy\", \"catenary poles\", \"power lines\", \"distant buildings\", \"cloudy sky\"],\n  \"possible_interpretations\": [\n    \"Upside-down photo of a train station at dusk\",\n    \"View through a window of a train station taken in reverse orientation\",\n    \"Train platform with overhead wires and sunset sky\",\n    \"Industrial rooftop scene with metal structures\"\n  ],\n  \"uncertainty_notes\": \"Image is rotated 180 degrees, making orientation-dependent recognition difficult; platform may be reflected or genuinely inverted; scale of structures hard to judge.\",\n  \"quality_flags\": [\"upside_down_orientation\", \"low_contrast\", \"dusk_lighting\"]\n}",
+      "response": {
+        "id": "gen-1780319604-5wpIzGnHMlYDcvYl9WMZ",
+        "object": "chat.completion",
+        "created": 1780319604,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"train_station\",\n  \"short_caption\": \"Upside-down view of a train station platform at sunset with overhead catenary lines\",\n  \"main_objects\": [\"platform canopy\", \"catenary poles\", \"power lines\", \"distant buildings\", \"cloudy sky\"],\n  \"possible_interpretations\": [\n    \"Upside-down photo of a train station at dusk\",\n    \"View through a window of a train station taken in reverse orientation\",\n    \"Train platform with overhead wires and sunset sky\",\n    \"Industrial rooftop scene with metal structures\"\n  ],\n  \"uncertainty_notes\": \"Image is rotated 180 degrees, making orientation-dependent recognition difficult; platform may be reflected or genuinely inverted; scale of structures hard to judge.\",\n  \"quality_flags\": [\"upside_down_orientation\", \"low_contrast\", \"dusk_lighting\"]\n}",
+              "refusal": null,
+              "reasoning": "The image appears to be upside down. It shows what looks like a train station platform with overhead structures, electrical lines/poles, and a sunset sky. The image is rotated 180 degrees, making it look unusual. Let me analyze it carefully.\n\nLooking at the image (mentally rotating it), I can see:\n- A train station platform\n- Overhead canopies/roof structures\n- Electrical poles/catenary supports\n- Power lines\n- A sunset/dusk sky with clouds\n- Some buildings in the background\n\nThe image is taken from an unusual viewpoint (upside down) and shows a train station scene.\n\nLet me rate accordingly:\n- recognizability: 3 - It's upside down which makes it harder to immediately recognize, but the content is recognizable\n- ambiguity: 3 - Could be interpreted as a train station or just an abstract scene due to orientation\n- natural_photo_typicality: 3 - It looks like a photo but the orientation is unusual\n- visual_clutter: 3 - Multiple elements (poles, lines, structures)\n- object_centricity: 2 - No single clear central object, more of a scene\n- scene_centricity: 5 - It's clearly a scene (train station)\n- caption_confidence: 3 - Can caption but orientation makes it tricky\n\n- contains_person: false (or possibly, hard to tell with upside down)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: maybe (trains implied by station)\n- contains_food: false\n- contains_indoor_scene: false (outdoor)\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (upside down)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: train_station / transportation\n\n- short_caption: \"Upside down view of a train station platform at sunset with overhead power lines\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image appears to be upside down. It shows what looks like a train station platform with overhead structures, electrical lines/poles, and a sunset sky. The image is rotated 180 degrees, making it look unusual. Let me analyze it carefully.\n\nLooking at the image (mentally rotating it), I can see:\n- A train station platform\n- Overhead canopies/roof structures\n- Electrical poles/catenary supports\n- Power lines\n- A sunset/dusk sky with clouds\n- Some buildings in the background\n\nThe image is taken from an unusual viewpoint (upside down) and shows a train station scene.\n\nLet me rate accordingly:\n- recognizability: 3 - It's upside down which makes it harder to immediately recognize, but the content is recognizable\n- ambiguity: 3 - Could be interpreted as a train station or just an abstract scene due to orientation\n- natural_photo_typicality: 3 - It looks like a photo but the orientation is unusual\n- visual_clutter: 3 - Multiple elements (poles, lines, structures)\n- object_centricity: 2 - No single clear central object, more of a scene\n- scene_centricity: 5 - It's clearly a scene (train station)\n- caption_confidence: 3 - Can caption but orientation makes it tricky\n\n- contains_person: false (or possibly, hard to tell with upside down)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: maybe (trains implied by station)\n- contains_food: false\n- contains_indoor_scene: false (outdoor)\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (upside down)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: train_station / transportation\n\n- short_caption: \"Upside down view of a train station platform at sunset with overhead power lines\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 834,
+          "total_tokens": 2356,
+          "cost": 0.00130716,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00130716,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010008
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 494,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_17",
+    "stim_key": "vicco_17",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 17,
+    "file_index": 16,
+    "image_name": "shared_4rep_vicco_017.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_017.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"street art\",\n\n  \"short_caption\": \"Colorful painted bird mural on a wooden fence with Spanish text\",\n  \"main_objects\": [\"bird\", \"branch\", \"wooden fence\"],\n  \"possible_interpretations\": [\"painted bird mural\", \"street art on fence\", \"decorative parrot painting\", \"wooden fence with bird artwork\"],\n  \"uncertainty_notes\": \"Bird is a painted illustration, not a real animal; bird body is truncated at the right edge\",\n  \"quality_flags\": [\"occluded_subject\", \"painted_content\"]\n}",
+      "response": {
+        "id": "gen-1780319406-oVRW99674NOXTQLv2qm9",
+        "object": "chat.completion",
+        "created": 1780319406,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"street art\",\n\n  \"short_caption\": \"Colorful painted bird mural on a wooden fence with Spanish text\",\n  \"main_objects\": [\"bird\", \"branch\", \"wooden fence\"],\n  \"possible_interpretations\": [\"painted bird mural\", \"street art on fence\", \"decorative parrot painting\", \"wooden fence with bird artwork\"],\n  \"uncertainty_notes\": \"Bird is a painted illustration, not a real animal; bird body is truncated at the right edge\",\n  \"quality_flags\": [\"occluded_subject\", \"painted_content\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a painted mural on a wooden fence. The mural depicts a colorful, stylized bird (looks like a parrot or toucan) perched on a green branch. The bird has vibrant colors - red, green, yellow, blue. There's also text written in white on the fence in Spanish: \"UN PAJARITO ME DIJO AL OÍDO PÍO, PÍO, PÍO TENGO MUCHO FRÍO\" which translates to \"A little bird told me in my ear peep, peep, peep I'm very cold.\"\n\nThe fence is made of vertical wooden planks. There's some tree/foliage visible at the top. The bottom shows some white painted steps or blocks.\n\nLet me assess each dimension:\n\n- recognizability: 4 - clearly a mural of a bird on a fence\n- ambiguity: 2 - pretty clear what's depicted\n- natural_photo_typicality: 2 - it's a photo of a mural, not a typical natural photo\n- visual_clutter: 3 - has the bird, branch, text, fence texture, steps\n- object_centricity: 4 - the bird is the main subject\n- scene_centricity: 3 - it's a scene (fence mural)\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 2 (bird, branch)\n- estimated_distinct_object_categories: 2 (bird, tree branch)\n\n- contains_person: false\n- contains_face: false (the bird has an eye but it's stylized)\n- contains_animal: true (bird in mural)\n- contains_text: true (Spanish text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: true (it's a mural/painted)\n- contains_occlusion_or_truncation: true (bird is cut off on the right)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the bird is central)\n- image_style: \"natural_photo\" (it's a photo of a mural, so technically a natural photo of artificial content)\n- semantic_domain: \"street art\" or \"mural\"\n\nshort_caption: \"Colorful mural of a stylized bird on a wooden fence with Spanish text\"\nmain_objects: [\"bird\", \"branch\", \"fence\"]\npossible_interpretations: [\"mural of a bird\", \"street art\", \"decorated fence\"]\n\nLet me reconsider image_style - it's a natural photo of a mural, so \"natural_photo\" seems right since the photo itself is natural even though the content is painted.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a painted mural on a wooden fence. The mural depicts a colorful, stylized bird (looks like a parrot or toucan) perched on a green branch. The bird has vibrant colors - red, green, yellow, blue. There's also text written in white on the fence in Spanish: \"UN PAJARITO ME DIJO AL OÍDO PÍO, PÍO, PÍO TENGO MUCHO FRÍO\" which translates to \"A little bird told me in my ear peep, peep, peep I'm very cold.\"\n\nThe fence is made of vertical wooden planks. There's some tree/foliage visible at the top. The bottom shows some white painted steps or blocks.\n\nLet me assess each dimension:\n\n- recognizability: 4 - clearly a mural of a bird on a fence\n- ambiguity: 2 - pretty clear what's depicted\n- natural_photo_typicality: 2 - it's a photo of a mural, not a typical natural photo\n- visual_clutter: 3 - has the bird, branch, text, fence texture, steps\n- object_centricity: 4 - the bird is the main subject\n- scene_centricity: 3 - it's a scene (fence mural)\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 2 (bird, branch)\n- estimated_distinct_object_categories: 2 (bird, tree branch)\n\n- contains_person: false\n- contains_face: false (the bird has an eye but it's stylized)\n- contains_animal: true (bird in mural)\n- contains_text: true (Spanish text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: true (it's a mural/painted)\n- contains_occlusion_or_truncation: true (bird is cut off on the right)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the bird is central)\n- image_style: \"natural_photo\" (it's a photo of a mural, so technically a natural photo of artificial content)\n- semantic_domain: \"street art\" or \"mural\"\n\nshort_caption: \"Colorful mural of a stylized bird on a wooden fence with Spanish text\"\nmain_objects: [\"bird\", \"branch\", \"fence\"]\npossible_interpretations: [\"mural of a bird\", \"street art\", \"decorated fence\"]\n\nLet me reconsider image_style - it's a natural photo of a mural, so \"natural_photo\" seems right since the photo itself is natural even though the content is painted.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 915,
+          "total_tokens": 2437,
+          "cost": 0.00140436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00140436,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.001098
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 593,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

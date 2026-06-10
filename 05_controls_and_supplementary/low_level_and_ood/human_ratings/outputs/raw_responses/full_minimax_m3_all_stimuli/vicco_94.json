@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_94",
+    "stim_key": "vicco_94",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 94,
+    "file_index": 93,
+    "image_name": "shared_4rep_vicco_094.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_094.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"farm/animals\",\n\n  \"short_caption\": \"Three brown chickens foraging near a feed bag and cardboard box on a farm\",\n  \"main_objects\": [\"chickens\", \"feed bag\", \"cardboard box\", \"tractor tire\", \"wire mesh\"],\n  \"possible_interpretations\": [\"chickens near feed in a farm shed\", \"free-range hens foraging\", \"poultry in a barnyard setting\"],\n  \"uncertainty_notes\": \"Setting is ambiguous between indoor barn and covered outdoor area; only tractor tire visible, not the full vehicle.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319496-hLzki6ubzDpeHTLNBFq7",
+        "object": "chat.completion",
+        "created": 1780319496,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"farm/animals\",\n\n  \"short_caption\": \"Three brown chickens foraging near a feed bag and cardboard box on a farm\",\n  \"main_objects\": [\"chickens\", \"feed bag\", \"cardboard box\", \"tractor tire\", \"wire mesh\"],\n  \"possible_interpretations\": [\"chickens near feed in a farm shed\", \"free-range hens foraging\", \"poultry in a barnyard setting\"],\n  \"uncertainty_notes\": \"Setting is ambiguous between indoor barn and covered outdoor area; only tractor tire visible, not the full vehicle.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nI can see:\n- Three chickens (brown/buff colored hens) in what appears to be a farm or rural setting\n- The ground is dirt/gravel\n- There's a large bag (orange and white) that looks like animal feed - I can see \"Agritel\" text on a box\n- There's a cardboard box on the left\n- A muddy tractor tire is visible in the background right\n- There appears to be some wire mesh/fence\n- The setting looks like a farm yard, partially covered area (outdoor/indoor transitional)\n\nLet me assess each criterion:\n\n- recognizability: The chickens are clearly recognizable. 5\n- ambiguity: Quite low ambiguity - it's clearly chickens in a farm setting. 1-2\n- natural_photo_typicality: This looks like a natural photograph, candid farm scene. 5\n- visual_clutter: There's some clutter with the bag, box, tire, etc. but the chickens are the focus. 3\n- object_centricity: The chickens are the central subjects. 4\n- scene_centricity: It's a scene but with clear animal subjects. 3\n- caption_confidence: Pretty confident. 4\n\nObject counts:\n- 3 chickens (main)\n- Plus bag, box, tire in background\n- Salient objects: 3 chickens\n- Distinct categories: chickens, feed bag, box, tire, wire mesh = about 5\n\nContains:\n- person: no\n- face: no\n- animal: yes (chickens)\n- text: yes (Agritel, other text on packaging)\n- vehicle: the tire suggests a vehicle but no full vehicle visible... I'll say no\n- food: no (animal feed bag, not human food)\n- indoor scene: partially, looks like a barn/shed area\n- outdoor scene: yes, the ground is outdoor dirt\n- artificial content: no\n- occlusion: chickens are partially behind/around the bag\n- unusual viewpoint: no\n- multiple main objects: yes (3 chickens)\n\nDominant content: animal (chickens are the main subject)\nImage style: natural_photo\nSemantic domain: farm/animals\n\nShort caption: \"Three brown chickens foraging near a feed bag on a farm\"\n\nPossible interpretations: chickens near feed, chickens in farm yard, free-range chickens\n\nQuality flags: none major, image is reasonably clear",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nI can see:\n- Three chickens (brown/buff colored hens) in what appears to be a farm or rural setting\n- The ground is dirt/gravel\n- There's a large bag (orange and white) that looks like animal feed - I can see \"Agritel\" text on a box\n- There's a cardboard box on the left\n- A muddy tractor tire is visible in the background right\n- There appears to be some wire mesh/fence\n- The setting looks like a farm yard, partially covered area (outdoor/indoor transitional)\n\nLet me assess each criterion:\n\n- recognizability: The chickens are clearly recognizable. 5\n- ambiguity: Quite low ambiguity - it's clearly chickens in a farm setting. 1-2\n- natural_photo_typicality: This looks like a natural photograph, candid farm scene. 5\n- visual_clutter: There's some clutter with the bag, box, tire, etc. but the chickens are the focus. 3\n- object_centricity: The chickens are the central subjects. 4\n- scene_centricity: It's a scene but with clear animal subjects. 3\n- caption_confidence: Pretty confident. 4\n\nObject counts:\n- 3 chickens (main)\n- Plus bag, box, tire in background\n- Salient objects: 3 chickens\n- Distinct categories: chickens, feed bag, box, tire, wire mesh = about 5\n\nContains:\n- person: no\n- face: no\n- animal: yes (chickens)\n- text: yes (Agritel, other text on packaging)\n- vehicle: the tire suggests a vehicle but no full vehicle visible... I'll say no\n- food: no (animal feed bag, not human food)\n- indoor scene: partially, looks like a barn/shed area\n- outdoor scene: yes, the ground is outdoor dirt\n- artificial content: no\n- occlusion: chickens are partially behind/around the bag\n- unusual viewpoint: no\n- multiple main objects: yes (3 chickens)\n\nDominant content: animal (chickens are the main subject)\nImage style: natural_photo\nSemantic domain: farm/animals\n\nShort caption: \"Three brown chickens foraging near a feed bag on a farm\"\n\nPossible interpretations: chickens near feed, chickens in farm yard, free-range chickens\n\nQuality flags: none major, image is reasonably clear",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 848,
+          "total_tokens": 2370,
+          "cost": 0.00132396,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00132396,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010176
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 544,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

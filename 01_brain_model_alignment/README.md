@@ -11,7 +11,6 @@ score tables consumed by later reliability and inference stages.
 - `code/brain_data_preparation/`: brain-data cache/preparation scripts.
 - `code/encoding_model_fitting/`: encoding-model fitting scripts.
 - `code/rsa_scoring/`: fixed RSA, mixed RSA, transfer, and benchmark scripts.
-- `resources/`: fixed lightweight resources for this stage.
 - `results/encoding_models/`: fitted encoding-model metadata and summary
   outputs, excluding the heavyweight model payloads.
 - `results/rsa_scores/`: core alignment score tables.
@@ -46,7 +45,7 @@ stimulus selection and as inputs to downstream RSA scoring.
 - Figures in this folder tree: 26
 - Data/table-like files in this folder tree: 835
 - Python scripts in this folder tree: 31
-- Main child folders: `code/`, `figures/`, `resources/`, `results/`, `cache_or_heavy/`
+- Main child folders: `code/`, `figures/`, `results/`, `cache_or_heavy/`
 
 Use the tables below as a trace from rendered files back to the nearby code, staged data, score tables, or reports that produced them.
 

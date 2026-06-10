@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_87",
+    "stim_key": "architecture_87",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 87,
+    "file_index": 87,
+    "image_name": "image_0087.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0087.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home interior\",\n  \"short_caption\": \"Brown wall with painted C+J heart beside doorway, adjacent room shows Pokemon poster and window\",\n  \"main_objects\": [\"painted heart with initials\", \"doorway\", \"Pokemon poster\", \"window blinds\", \"partially visible hand\"],\n  \"possible_interpretations\": [\n    \"couple's home interior with personalized wall art\",\n    \"child's bedroom viewed from hallway\",\n    \"in-progress home painting project\",\n    \"casual snapshot of domestic space\"\n  ],\n  \"uncertainty_notes\": \"Image appears rotated; hand in upper right corner is partially cut off and may be a selfie or accidental capture\",\n  \"quality_flags\": [\"rotated_orientation\", \"partial_occlusion\", \"hand_in_frame\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318946-avvRYtF14XgXM0hBjzfn",
+        "object": "chat.completion",
+        "created": 1780318946,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home interior\",\n  \"short_caption\": \"Brown wall with painted C+J heart beside doorway, adjacent room shows Pokemon poster and window\",\n  \"main_objects\": [\"painted heart with initials\", \"doorway\", \"Pokemon poster\", \"window blinds\", \"partially visible hand\"],\n  \"possible_interpretations\": [\n    \"couple's home interior with personalized wall art\",\n    \"child's bedroom viewed from hallway\",\n    \"in-progress home painting project\",\n    \"casual snapshot of domestic space\"\n  ],\n  \"uncertainty_notes\": \"Image appears rotated; hand in upper right corner is partially cut off and may be a selfie or accidental capture\",\n  \"quality_flags\": [\"rotated_orientation\", \"partial_occlusion\", \"hand_in_frame\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an interior scene with:\n- A brown/tan wall on the right side with a heart-shaped painting/decoration containing the initials \"C+J\" (or \"C\" and \"J\" with a cross/plus between them, suggesting \"C+J\" couple initials)\n- A doorway/door frame in the center-left with white trim\n- Through the doorway, another room is visible with:\n  - A Pokémon poster (appears to be \"The First Movie\" with Pikachu visible)\n  - Window blinds\n  - What appears to be a chair\n- A hand is partially visible in the upper right corner\n- The wall has some unpainted/primer areas near the door frame\n- There are quality issues - the image appears to be rotated or has an unusual orientation\n\nLet me annotate this:\n\n- Recognizability: The main content (interior with C+J heart art and Pokémon poster) is fairly recognizable. I'd say 4.\n- Ambiguity: There are a few possible interpretations - a couple's bedroom, a home interior, etc. Moderate ambiguity. 2-3.\n- Natural photo typicality: Looks like a natural photo of a home interior, though the rotation is unusual. 4.\n- Visual clutter: Multiple objects but not overly cluttered. 2-3.\n- Object centricity: There's a central heart decoration and a poster, but it's more scene-like. 2.\n- Scene centricity: This is primarily a scene/interior view. 4.\n- Caption confidence: Reasonably confident in describing it. 3-4.\n\nSalient objects: heart with C+J text, Pokémon poster, door frame, window blinds, hand\nObject categories: wall art/decoration, poster, door, window, person (hand)\n\nContains: \n- person: yes (hand visible)\n- face: no\n- animal: yes (Pikachu on poster, but this is in a poster not real)\n- text: yes (C+J, Pokémon text)\n- vehicle: no\n- food: no\n- indoor scene: yes\n- outdoor scene: no\n- artificial content: the hand might be partially cut off\n- unusual viewpoint: yes, the rotation makes it unusual\n\nWait - \"contains_animal\" - I should only mark this if there's a real animal, not just an image of one on a poster. I'll mark false.\n\nImage style: natural_photo\nSemantic domain: home interior\n\nShort caption: \"Interior wall with painted C+J heart beside doorway showing Pokémon poster in adjacent room\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an interior scene with:\n- A brown/tan wall on the right side with a heart-shaped painting/decoration containing the initials \"C+J\" (or \"C\" and \"J\" with a cross/plus between them, suggesting \"C+J\" couple initials)\n- A doorway/door frame in the center-left with white trim\n- Through the doorway, another room is visible with:\n  - A Pokémon poster (appears to be \"The First Movie\" with Pikachu visible)\n  - Window blinds\n  - What appears to be a chair\n- A hand is partially visible in the upper right corner\n- The wall has some unpainted/primer areas near the door frame\n- There are quality issues - the image appears to be rotated or has an unusual orientation\n\nLet me annotate this:\n\n- Recognizability: The main content (interior with C+J heart art and Pokémon poster) is fairly recognizable. I'd say 4.\n- Ambiguity: There are a few possible interpretations - a couple's bedroom, a home interior, etc. Moderate ambiguity. 2-3.\n- Natural photo typicality: Looks like a natural photo of a home interior, though the rotation is unusual. 4.\n- Visual clutter: Multiple objects but not overly cluttered. 2-3.\n- Object centricity: There's a central heart decoration and a poster, but it's more scene-like. 2.\n- Scene centricity: This is primarily a scene/interior view. 4.\n- Caption confidence: Reasonably confident in describing it. 3-4.\n\nSalient objects: heart with C+J text, Pokémon poster, door frame, window blinds, hand\nObject categories: wall art/decoration, poster, door, window, person (hand)\n\nContains: \n- person: yes (hand visible)\n- face: no\n- animal: yes (Pikachu on poster, but this is in a poster not real)\n- text: yes (C+J, Pokémon text)\n- vehicle: no\n- food: no\n- indoor scene: yes\n- outdoor scene: no\n- artificial content: the hand might be partially cut off\n- unusual viewpoint: yes, the rotation makes it unusual\n\nWait - \"contains_animal\" - I should only mark this if there's a real animal, not just an image of one on a poster. I'll mark false.\n\nImage style: natural_photo\nSemantic domain: home interior\n\nShort caption: \"Interior wall with painted C+J heart beside doorway showing Pokémon poster in adjacent room\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1467,
+          "completion_tokens": 914,
+          "total_tokens": 2381,
+          "cost": 0.00138666,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00138666,
+            "upstream_inference_prompt_cost": 0.00028986,
+            "upstream_inference_completions_cost": 0.0010968
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 581,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

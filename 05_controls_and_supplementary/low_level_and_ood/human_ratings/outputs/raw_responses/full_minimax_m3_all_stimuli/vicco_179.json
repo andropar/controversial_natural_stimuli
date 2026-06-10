@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_179",
+    "stim_key": "vicco_179",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 179,
+    "file_index": 178,
+    "image_name": "shared_4rep_vicco_179.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_179.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_poster\",\n  \"short_caption\": \"Sideways photo of a Mega Mahl event poster on a graffiti-covered wall\",\n  \"main_objects\": [\"event poster\", \"graffiti\", \"wall\", \"secondary posters\"],\n  \"possible_interpretations\": [\"event poster for Mega Mahl Magdeburg\", \"urban street art display\", \"outdoor advertisement board\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; poster text partially legible; exact event details beyond date and location unclear.\",\n  \"quality_flags\": [\"rotated_orientation\", \"low_light\", \"partial_text_legibility\"]\n}",
+      "response": {
+        "id": "gen-1780319596-KUgayLPvSxroFJp6IPWw",
+        "object": "chat.completion",
+        "created": 1780319596,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_poster\",\n  \"short_caption\": \"Sideways photo of a Mega Mahl event poster on a graffiti-covered wall\",\n  \"main_objects\": [\"event poster\", \"graffiti\", \"wall\", \"secondary posters\"],\n  \"possible_interpretations\": [\"event poster for Mega Mahl Magdeburg\", \"urban street art display\", \"outdoor advertisement board\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; poster text partially legible; exact event details beyond date and location unclear.\",\n  \"quality_flags\": [\"rotated_orientation\", \"low_light\", \"partial_text_legibility\"]\n}",
+              "refusal": null,
+              "reasoning": "The image appears to be rotated 90 degrees (sideways). It shows a poster for \"MEGA MAHL\" dated 16. AUGUST 2025 in Magdeburg (Elbauenpark), mounted on what appears to be a wall with graffiti. The poster has multiple people illustrated on it. There's also what looks like other posters and graffiti around it.\n\nLet me analyze the image:\n- Main content: A poster/advertisement for an event called \"MEGA MAHL\" with date 16. August 2025 in Magdeburg\n- Contains text: Yes\n- Contains people (drawn/illustrated): Yes\n- Style: Looks like a photo of a poster on a wall with graffiti\n- Scene type: Outdoor scene (wall with graffiti)\n- Has artificial/rendered content: The poster itself is designed/rendered\n\nLet me provide the annotations.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image appears to be rotated 90 degrees (sideways). It shows a poster for \"MEGA MAHL\" dated 16. AUGUST 2025 in Magdeburg (Elbauenpark), mounted on what appears to be a wall with graffiti. The poster has multiple people illustrated on it. There's also what looks like other posters and graffiti around it.\n\nLet me analyze the image:\n- Main content: A poster/advertisement for an event called \"MEGA MAHL\" with date 16. August 2025 in Magdeburg\n- Contains text: Yes\n- Contains people (drawn/illustrated): Yes\n- Style: Looks like a photo of a poster on a wall with graffiti\n- Scene type: Outdoor scene (wall with graffiti)\n- Has artificial/rendered content: The poster itself is designed/rendered\n\nLet me provide the annotations.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 533,
+          "total_tokens": 2055,
+          "cost": 0.00094596,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00094596,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0006396
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 190,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_79",
+    "stim_key": "architecture_79",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 79,
+    "file_index": 79,
+    "image_name": "image_0079.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0079.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 5,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 12,\n  \"estimated_distinct_object_categories\": 8,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"historical domestic interior\",\n  \"short_caption\": \"Cluttered historical domestic interior with hanging laundry, bathtub, stove, and sink.\",\n  \"main_objects\": [\"bathtub\", \"stove\", \"sink\", \"textiles\", \"wooden stools\", \"framed photographs\", \"camera\", \"soap dispenser\"],\n  \"possible_interpretations\": [\"museum recreation of historical dwelling\", \"period room exhibit\", \"working-class home interior from early 20th century\", \"preserved historical living quarters\", \"stage set of vintage home\"],\n  \"uncertainty_notes\": \"Image appears to be a museum period room; exact time period and location are uncertain. The modern camera suggests it is a contemporary photograph of a curated space.\",\n  \"quality_flags\": [\"contains watermark\", \"high clutter\", \"low light in corners\"]\n}",
+      "response": {
+        "id": "gen-1780318930-3IsYJr9lEqwU3l9xVt1R",
+        "object": "chat.completion",
+        "created": 1780318930,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 5,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 12,\n  \"estimated_distinct_object_categories\": 8,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"historical domestic interior\",\n  \"short_caption\": \"Cluttered historical domestic interior with hanging laundry, bathtub, stove, and sink.\",\n  \"main_objects\": [\"bathtub\", \"stove\", \"sink\", \"textiles\", \"wooden stools\", \"framed photographs\", \"camera\", \"soap dispenser\"],\n  \"possible_interpretations\": [\"museum recreation of historical dwelling\", \"period room exhibit\", \"working-class home interior from early 20th century\", \"preserved historical living quarters\", \"stage set of vintage home\"],\n  \"uncertainty_notes\": \"Image appears to be a museum period room; exact time period and location are uncertain. The modern camera suggests it is a contemporary photograph of a curated space.\",\n  \"quality_flags\": [\"contains watermark\", \"high clutter\", \"low light in corners\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a small, cluttered room that appears to be a museum recreation of a historical dwelling or living space. I can see:\n- A bathtub in the center-right\n- Hanging textiles/cloths on a clothesline (floral pattern, striped orange cloth, white garment)\n- A metal stove/heater on the left\n- A sink with soap dispenser on the right\n- Wooden stools in the center\n- Framed photographs/prints on a small table to the left\n- Green painted lower walls with white upper walls\n- Patterned tile/checkered floor\n- A camera hanging on the wall (modern element)\n- Various small items scattered around\n\nThis looks like a historical/period recreation, possibly a museum exhibit showing a working-class dwelling (perhaps WWII era or early 20th century European).\n\nLet me rate the dimensions:\n- recognizability: 4 - the scene is clearly a domestic/period room, recognizable\n- ambiguity: 2 - fairly clear what it is (a historical domestic scene)\n- natural_photo_typicality: 3 - it's a photo of a real scene but appears to be a museum/curated space\n- visual_clutter: 5 - very cluttered with many objects\n- object_centricity: 2 - no single central object, it's a scene\n- scene_centricity: 5 - it's clearly a place/scene\n- caption_confidence: 4 - can confidently describe it\n\nCounts:\n- estimated_salient_object_count: many - maybe 10-15\n- estimated_distinct_object_categories: maybe 7-8 (textiles, stove, bathtub, sink, stools, photos, camera, etc.)\n\nContains:\n- person: no\n- face: no\n- animal: no\n- text: possibly on items, but no prominent text\n- vehicle: no\n- food: no\n- indoor scene: yes\n- outdoor scene: no\n- artificial_or_rendered: no\n- occlusion_or_truncation: no\n- unusual_viewpoint: no\n- multiple_main_objects: yes\n\nDominant content: scene\nImage style: natural_photo (though it has Alamy watermark)\nSemantic domain: historical/domestic\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a small, cluttered room that appears to be a museum recreation of a historical dwelling or living space. I can see:\n- A bathtub in the center-right\n- Hanging textiles/cloths on a clothesline (floral pattern, striped orange cloth, white garment)\n- A metal stove/heater on the left\n- A sink with soap dispenser on the right\n- Wooden stools in the center\n- Framed photographs/prints on a small table to the left\n- Green painted lower walls with white upper walls\n- Patterned tile/checkered floor\n- A camera hanging on the wall (modern element)\n- Various small items scattered around\n\nThis looks like a historical/period recreation, possibly a museum exhibit showing a working-class dwelling (perhaps WWII era or early 20th century European).\n\nLet me rate the dimensions:\n- recognizability: 4 - the scene is clearly a domestic/period room, recognizable\n- ambiguity: 2 - fairly clear what it is (a historical domestic scene)\n- natural_photo_typicality: 3 - it's a photo of a real scene but appears to be a museum/curated space\n- visual_clutter: 5 - very cluttered with many objects\n- object_centricity: 2 - no single central object, it's a scene\n- scene_centricity: 5 - it's clearly a place/scene\n- caption_confidence: 4 - can confidently describe it\n\nCounts:\n- estimated_salient_object_count: many - maybe 10-15\n- estimated_distinct_object_categories: maybe 7-8 (textiles, stove, bathtub, sink, stools, photos, camera, etc.)\n\nContains:\n- person: no\n- face: no\n- animal: no\n- text: possibly on items, but no prominent text\n- vehicle: no\n- food: no\n- indoor scene: yes\n- outdoor scene: no\n- artificial_or_rendered: no\n- occlusion_or_truncation: no\n- unusual_viewpoint: no\n- multiple_main_objects: yes\n\nDominant content: scene\nImage style: natural_photo (though it has Alamy watermark)\nSemantic domain: historical/domestic\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 859,
+          "total_tokens": 2381,
+          "cost": 0.00133716,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00133716,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010308
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 507,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

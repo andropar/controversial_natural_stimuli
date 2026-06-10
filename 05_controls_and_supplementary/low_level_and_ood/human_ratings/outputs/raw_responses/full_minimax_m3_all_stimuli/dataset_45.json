@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_45",
+    "stim_key": "dataset_45",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 45,
+    "file_index": 45,
+    "image_name": "image_0045.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0045.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"maritime/transportation\",\n  \"short_caption\": \"A large multi-masted sailing cruise ship on calm water at sunset\",\n  \"main_objects\": [\"sailing ship\", \"masts\", \"sails\", \"water\"],\n  \"possible_interpretations\": [\"Windjammer cruise ship at sunset\", \"Multi-masted tall ship at sea\", \"Sailing cruise vessel in golden hour light\"],\n  \"uncertainty_notes\": \"Backlit silhouette makes fine details hard to discern; specific ship identity and any passengers not visible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319015-egyYij2avZDt3vH2fscp",
+        "object": "chat.completion",
+        "created": 1780319015,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"maritime/transportation\",\n  \"short_caption\": \"A large multi-masted sailing cruise ship on calm water at sunset\",\n  \"main_objects\": [\"sailing ship\", \"masts\", \"sails\", \"water\"],\n  \"possible_interpretations\": [\"Windjammer cruise ship at sunset\", \"Multi-masted tall ship at sea\", \"Sailing cruise vessel in golden hour light\"],\n  \"uncertainty_notes\": \"Backlit silhouette makes fine details hard to discern; specific ship identity and any passengers not visible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a large sailing ship/yacht with multiple tall masts and sails, photographed on water during what appears to be sunset or golden hour. The sky is clear with a warm tone, and the ship is silhouetted against the bright sky. The ship has many sails extended across multiple masts.\n\nKey observations:\n- Large multi-masted sailing vessel (looks like a cruise ship with sails, possibly a windjammer-style cruise ship)\n- Sunset/golden hour lighting\n- Water in the foreground\n- Clear sky\n- The ship is the dominant subject\n- No visible people or faces clearly\n- No text visible\n- No vehicles other than the ship\n- Outdoor scene\n\nLet me rate the attributes:\n\n- recognizability: 5 - Very clearly a sailing ship, easily recognized\n- ambiguity: 1 - Very clear what it is, one main interpretation\n- natural_photo_typicality: 4 - Looks like a typical natural photograph, though with nice lighting\n- visual_clutter: 2 - The ship is complex but the background is clean\n- object_centricity: 5 - The ship clearly dominates the image\n- scene_centricity: 3 - It's a scene but the ship is the clear focus\n- caption_confidence: 5 - Easy to caption accurately\n\n- estimated_salient_object_count: 1 (the ship)\n- estimated_distinct_object_categories: 2 (ship, water/sky)\n\n- contains_person: false (too far to see)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: true (ship is a vehicle)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: object (the ship dominates)\n- image_style: natural_photo\n- semantic_domain: maritime/transportation\n\n- short_caption: \"A large multi-masted sailing cruise ship on calm water at sunset\"\n\n- main_objects: [\"sailing ship\", \"masts\", \"sails\", \"water\"]\n\n- possible_interpretations: [\"Large sailing cruise ship at sea\", \"Windjammer cruise ship at sunset\", \"Multi-masted tall ship\"]\n\n- uncertainty_notes: \"Hard to see fine details due to backlighting; may be a Club Med or similar windjammer cruise ship\"\n\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a large sailing ship/yacht with multiple tall masts and sails, photographed on water during what appears to be sunset or golden hour. The sky is clear with a warm tone, and the ship is silhouetted against the bright sky. The ship has many sails extended across multiple masts.\n\nKey observations:\n- Large multi-masted sailing vessel (looks like a cruise ship with sails, possibly a windjammer-style cruise ship)\n- Sunset/golden hour lighting\n- Water in the foreground\n- Clear sky\n- The ship is the dominant subject\n- No visible people or faces clearly\n- No text visible\n- No vehicles other than the ship\n- Outdoor scene\n\nLet me rate the attributes:\n\n- recognizability: 5 - Very clearly a sailing ship, easily recognized\n- ambiguity: 1 - Very clear what it is, one main interpretation\n- natural_photo_typicality: 4 - Looks like a typical natural photograph, though with nice lighting\n- visual_clutter: 2 - The ship is complex but the background is clean\n- object_centricity: 5 - The ship clearly dominates the image\n- scene_centricity: 3 - It's a scene but the ship is the clear focus\n- caption_confidence: 5 - Easy to caption accurately\n\n- estimated_salient_object_count: 1 (the ship)\n- estimated_distinct_object_categories: 2 (ship, water/sky)\n\n- contains_person: false (too far to see)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: true (ship is a vehicle)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: object (the ship dominates)\n- image_style: natural_photo\n- semantic_domain: maritime/transportation\n\n- short_caption: \"A large multi-masted sailing cruise ship on calm water at sunset\"\n\n- main_objects: [\"sailing ship\", \"masts\", \"sails\", \"water\"]\n\n- possible_interpretations: [\"Large sailing cruise ship at sea\", \"Windjammer cruise ship at sunset\", \"Multi-masted tall ship\"]\n\n- uncertainty_notes: \"Hard to see fine details due to backlighting; may be a Club Med or similar windjammer cruise ship\"\n\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 883,
+          "total_tokens": 2197,
+          "cost": 0.00142644,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00142644,
+            "upstream_inference_prompt_cost": 0.00036684,
+            "upstream_inference_completions_cost": 0.0010596
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 603,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

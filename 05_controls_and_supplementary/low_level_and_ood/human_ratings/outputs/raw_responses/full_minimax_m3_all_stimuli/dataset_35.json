@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_35",
+    "stim_key": "dataset_35",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 35,
+    "file_index": 35,
+    "image_name": "image_0035.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0035.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home_decor\",\n\n  \"short_caption\": \"Wooden wall-mounted rack with beadboard paneling and two black star-shaped hooks\",\n  \"main_objects\": [\"wooden rack\", \"star hooks\", \"beadboard panel\"],\n  \"possible_interpretations\": [\"coat rack\", \"key hook rack\", \"decorative wall hanging\", \"hat rack\"],\n  \"uncertainty_notes\": \"Image is tightly cropped; full extent and context of the rack are not visible.\",\n  \"quality_flags\": [\"tightly_cropped\"]\n}",
+      "response": {
+        "id": "gen-1780319000-F7GV4ClbAoBE4dG8sPpi",
+        "object": "chat.completion",
+        "created": 1780319000,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home_decor\",\n\n  \"short_caption\": \"Wooden wall-mounted rack with beadboard paneling and two black star-shaped hooks\",\n  \"main_objects\": [\"wooden rack\", \"star hooks\", \"beadboard panel\"],\n  \"possible_interpretations\": [\"coat rack\", \"key hook rack\", \"decorative wall hanging\", \"hat rack\"],\n  \"uncertainty_notes\": \"Image is tightly cropped; full extent and context of the rack are not visible.\",\n  \"quality_flags\": [\"tightly_cropped\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see a wooden board/plaque with beadboard paneling in the upper section, and two black star-shaped hooks mounted on the lower rail. The background is a plain off-white/cream wall.\n\nLet me annotate according to the schema:\n\n- recognizability: 4 - The main content (wooden coat rack with star hooks) is clearly recognizable\n- ambiguity: 2 - Pretty clear what it is, a wall-mounted wooden rack with star hooks\n- natural_photo_typicality: 4 - Looks like a typical photograph\n- visual_clutter: 1 - Very simple, minimal elements\n- object_centricity: 4 - The wooden rack with hooks is the clear central object\n- scene_centricity: 1 - Not really a scene, more of a closeup of an object\n- caption_confidence: 4 - Easy to caption\n\n- estimated_salient_object_count: 3 (the rack, two star hooks could be counted as 2 or together)\n- estimated_distinct_object_categories: 2 (wooden rack, metal hooks)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (indoor wall)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (or true, since there are 2 hooks)\n\ndominant_content_type: \"object\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"home_decor\"\n\nshort_caption: \"Wooden wall-mounted rack with beadboard paneling and two black star-shaped hooks\"\n\nmain_objects: [\"wooden rack\", \"star hooks\", \"beadboard panel\"]\n\npossible_interpretations: [\"coat rack\", \"key hook rack\", \"decorative wall hanging\", \"hat rack\"]\n\nuncertainty_notes: \"Image is tightly cropped; full extent of the rack is not visible.\"\nquality_flags: [\"tightly_cropped\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see a wooden board/plaque with beadboard paneling in the upper section, and two black star-shaped hooks mounted on the lower rail. The background is a plain off-white/cream wall.\n\nLet me annotate according to the schema:\n\n- recognizability: 4 - The main content (wooden coat rack with star hooks) is clearly recognizable\n- ambiguity: 2 - Pretty clear what it is, a wall-mounted wooden rack with star hooks\n- natural_photo_typicality: 4 - Looks like a typical photograph\n- visual_clutter: 1 - Very simple, minimal elements\n- object_centricity: 4 - The wooden rack with hooks is the clear central object\n- scene_centricity: 1 - Not really a scene, more of a closeup of an object\n- caption_confidence: 4 - Easy to caption\n\n- estimated_salient_object_count: 3 (the rack, two star hooks could be counted as 2 or together)\n- estimated_distinct_object_categories: 2 (wooden rack, metal hooks)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (indoor wall)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (or true, since there are 2 hooks)\n\ndominant_content_type: \"object\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"home_decor\"\n\nshort_caption: \"Wooden wall-mounted rack with beadboard paneling and two black star-shaped hooks\"\n\nmain_objects: [\"wooden rack\", \"star hooks\", \"beadboard panel\"]\n\npossible_interpretations: [\"coat rack\", \"key hook rack\", \"decorative wall hanging\", \"hat rack\"]\n\nuncertainty_notes: \"Image is tightly cropped; full extent of the rack is not visible.\"\nquality_flags: [\"tightly_cropped\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 791,
+          "total_tokens": 2313,
+          "cost": 0.00125556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00125556,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009492
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 486,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

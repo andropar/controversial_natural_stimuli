@@ -11,8 +11,8 @@ rendered reliability figures in `figures/`.
 
 ## How To Read This Stage
 
-Start with `data/nc_normalized_summary.csv` and
-`data/noise_ceiling_variant_summary.csv` for the compact answers. The scripts in
+Start with `results/nc_normalized_summary.csv` and
+`results/noise_ceiling_variant_summary.csv` for the compact answers. The scripts in
 `code/` compute subject-level and between-subject noise ceilings, normalize RSA
 scores against those ceilings, and summarize whether reliability differences
 could explain the alignment effects.

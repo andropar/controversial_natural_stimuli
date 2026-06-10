@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_82",
+    "stim_key": "sota_82",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 82,
+    "file_index": 82,
+    "image_name": "image_0082.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0082.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"clothing\",\n\n  \"short_caption\": \"Striped button-up shirt with cat illustrations hanging on branch against wooden wall\",\n  \"main_objects\": [\"striped shirt\", \"cat illustrations\", \"wooden wall\", \"rope hanger\", \"branch\", \"plants\"],\n  \"possible_interpretations\": [\"product photo of novelty shirt\", \"fashion editorial shot\", \"lifestyle photograph\"],\n  \"uncertainty_notes\": \"Drawn cats on the shirt are illustrations, not real animals. The setting is staged but the medium appears photographic.\",\n  \"quality_flags\": [\"staged_composition\"]\n}",
+      "response": {
+        "id": "gen-1780319182-8tlqWWmCqxVLc6Tz6zP5",
+        "object": "chat.completion",
+        "created": 1780319182,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"clothing\",\n\n  \"short_caption\": \"Striped button-up shirt with cat illustrations hanging on branch against wooden wall\",\n  \"main_objects\": [\"striped shirt\", \"cat illustrations\", \"wooden wall\", \"rope hanger\", \"branch\", \"plants\"],\n  \"possible_interpretations\": [\"product photo of novelty shirt\", \"fashion editorial shot\", \"lifestyle photograph\"],\n  \"uncertainty_notes\": \"Drawn cats on the shirt are illustrations, not real animals. The setting is staged but the medium appears photographic.\",\n  \"quality_flags\": [\"staged_composition\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a light blue/white striped button-up shirt hanging on a branch via a rope hanger. The shirt has three cat illustrations on it - one with a top hat and tie, one with a pointed hat, and one wearing a red beret and sweater. The background is a dark wooden plank wall. There's also some greenery/flowers in the bottom left corner.\n\nLet me provide the annotations:\n\n- recognizability: 5 - very clearly a shirt with cat designs\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 3 - looks like a styled product photo, somewhat natural but clearly staged\n- visual_clutter: 2 - fairly simple composition, shirt dominates\n- object_centricity: 5 - shirt is the clear central object\n- scene_centricity: 2 - there's a background scene but object is dominant\n- caption_confidence: 5 - easy to caption\n\nEstimated salient object count: 1 (the shirt)\nEstimated distinct object categories: 2 (shirt, flowers/plants)\n\ncontains_person: false\ncontains_face: false (cat illustrations have faces but they're not human faces)\ncontains_animal: false (cat illustrations, but they're decorative)\ncontains_text: false (there's a small label visible)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false (could be indoor or outdoor, wooden wall suggests staged)\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: \"object\"\nimage_style: \"natural_photo\" (though it's a styled product shot, it still looks like a photograph)\nsemantic_domain: \"clothing\" or \"fashion\"\n\nshort_caption: \"Striped button-up shirt with cat illustrations hanging on branch against wooden wall\"\nmain_objects: [\"shirt\", \"cat illustrations\", \"wooden wall\", \"plants\"]\n\nLet me reconsider natural_photo_typicality - this is a product photo with styling, so it looks like a typical natural photo but is clearly staged. I'll say 3.\n\nActually, for contains_text, I see what appears to be a small label/tag on the shirt collar area. It's not really readable text though. I'll mark it as false since it's just a label.\n\nFor semantic_domain, I'll use \"clothing\" or \"apparel\".",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a light blue/white striped button-up shirt hanging on a branch via a rope hanger. The shirt has three cat illustrations on it - one with a top hat and tie, one with a pointed hat, and one wearing a red beret and sweater. The background is a dark wooden plank wall. There's also some greenery/flowers in the bottom left corner.\n\nLet me provide the annotations:\n\n- recognizability: 5 - very clearly a shirt with cat designs\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 3 - looks like a styled product photo, somewhat natural but clearly staged\n- visual_clutter: 2 - fairly simple composition, shirt dominates\n- object_centricity: 5 - shirt is the clear central object\n- scene_centricity: 2 - there's a background scene but object is dominant\n- caption_confidence: 5 - easy to caption\n\nEstimated salient object count: 1 (the shirt)\nEstimated distinct object categories: 2 (shirt, flowers/plants)\n\ncontains_person: false\ncontains_face: false (cat illustrations have faces but they're not human faces)\ncontains_animal: false (cat illustrations, but they're decorative)\ncontains_text: false (there's a small label visible)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false (could be indoor or outdoor, wooden wall suggests staged)\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: \"object\"\nimage_style: \"natural_photo\" (though it's a styled product shot, it still looks like a photograph)\nsemantic_domain: \"clothing\" or \"fashion\"\n\nshort_caption: \"Striped button-up shirt with cat illustrations hanging on branch against wooden wall\"\nmain_objects: [\"shirt\", \"cat illustrations\", \"wooden wall\", \"plants\"]\n\nLet me reconsider natural_photo_typicality - this is a product photo with styling, so it looks like a typical natural photo but is clearly staged. I'll say 3.\n\nActually, for contains_text, I see what appears to be a small label/tag on the shirt collar area. It's not really readable text though. I'll mark it as false since it's just a label.\n\nFor semantic_domain, I'll use \"clothing\" or \"apparel\".",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 865,
+          "total_tokens": 2387,
+          "cost": 0.00134436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00134436,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.001038
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 596,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

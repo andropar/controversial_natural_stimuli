@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_63",
+    "stim_key": "all_models_63",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 63,
+    "file_index": 63,
+    "image_name": "image_0063.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0063.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"product_food\",\n  \"short_caption\": \"Black Chic de Sno pouch of small herbal cubes on a wooden surface\",\n  \"main_objects\": [\"black resealable pouch\", \"compressed herbal cubes\"],\n  \"possible_interpretations\": [\"herbal supplement cubes\", \"pet treats\", \"compressed dried herbs\", \"catnip cubes\", \"flavored sugar cubes\"],\n  \"uncertainty_notes\": \"Exact product category is uncertain; cubes contain visible plant material and could be treats, supplements, or culinary ingredients.\",\n  \"quality_flags\": []\n}\n```",
+      "response": {
+        "id": "gen-1780318799-b8LNdOMwPvamISug6Ngb",
+        "object": "chat.completion",
+        "created": 1780318799,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"product_food\",\n  \"short_caption\": \"Black Chic de Sno pouch of small herbal cubes on a wooden surface\",\n  \"main_objects\": [\"black resealable pouch\", \"compressed herbal cubes\"],\n  \"possible_interpretations\": [\"herbal supplement cubes\", \"pet treats\", \"compressed dried herbs\", \"catnip cubes\", \"flavored sugar cubes\"],\n  \"uncertainty_notes\": \"Exact product category is uncertain; cubes contain visible plant material and could be treats, supplements, or culinary ingredients.\",\n  \"quality_flags\": []\n}\n```",
+              "refusal": null,
+              "reasoning": "The image shows a black resealable bag of some kind of product with the text \"Chic de Sno\" or similar on a circular label. Next to the bag are small cylindrical/rectangular pieces that appear to be some kind of food or supplement - they look like compressed herbal pellets or perhaps some kind of cubes/blocks. The background is a light wooden surface with visible grain.\n\nLet me analyze:\n- The pieces look like they could be dried herbs pressed into cubes, or perhaps some kind of pet food treats, or maybe sugar cubes with herbs mixed in\n- The packaging is black with a white circular label\n- It's on a wooden background\n- This looks like a styled product photo\n\nThe pieces appear to be small rectangular blocks that are greenish-brown with visible plant material - could be compressed catnip, herbal cubes, or some kind of natural product.\n\nLet me rate based on the schema:\n- recognizability: 4 - quite clear it's some kind of packaged product with small pieces\n- ambiguity: 2 - clear it's a product, though exact nature is somewhat ambiguous\n- natural_photo_typicality: 4 - looks like a styled product photograph\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 4 - the bag and pieces are the focus\n- scene_centricity: 2 - it's more of a product shot\n- caption_confidence: 3 - can describe it but exact identification is uncertain\n\nSalient objects: the bag, the cubes/pellets - 2 main items\nDistinct categories: packaging, food-like items - 2\n\ncontains_text: yes (Chic de Sno text)\ncontains_food: probably yes (looks like food/treats)\ncontains_artificial_or_rendered_content: no\nThe cubes look like they could be cat treats or herbal cubes.\n\nMain objects: black packaging bag, herbal cubes/pellets\nShort caption: \"Black package of Chic de Sno herbal cubes on a wooden surface\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a black resealable bag of some kind of product with the text \"Chic de Sno\" or similar on a circular label. Next to the bag are small cylindrical/rectangular pieces that appear to be some kind of food or supplement - they look like compressed herbal pellets or perhaps some kind of cubes/blocks. The background is a light wooden surface with visible grain.\n\nLet me analyze:\n- The pieces look like they could be dried herbs pressed into cubes, or perhaps some kind of pet food treats, or maybe sugar cubes with herbs mixed in\n- The packaging is black with a white circular label\n- It's on a wooden background\n- This looks like a styled product photo\n\nThe pieces appear to be small rectangular blocks that are greenish-brown with visible plant material - could be compressed catnip, herbal cubes, or some kind of natural product.\n\nLet me rate based on the schema:\n- recognizability: 4 - quite clear it's some kind of packaged product with small pieces\n- ambiguity: 2 - clear it's a product, though exact nature is somewhat ambiguous\n- natural_photo_typicality: 4 - looks like a styled product photograph\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 4 - the bag and pieces are the focus\n- scene_centricity: 2 - it's more of a product shot\n- caption_confidence: 3 - can describe it but exact identification is uncertain\n\nSalient objects: the bag, the cubes/pellets - 2 main items\nDistinct categories: packaging, food-like items - 2\n\ncontains_text: yes (Chic de Sno text)\ncontains_food: probably yes (looks like food/treats)\ncontains_artificial_or_rendered_content: no\nThe cubes look like they could be cat treats or herbal cubes.\n\nMain objects: black packaging bag, herbal cubes/pellets\nShort caption: \"Black package of Chic de Sno herbal cubes on a wooden surface\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 750,
+          "total_tokens": 2064,
+          "cost": 0.00114396,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00114396,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.0009
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 472,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

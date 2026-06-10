@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_22",
+    "stim_key": "all_models_22",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 22,
+    "file_index": 22,
+    "image_name": "image_0022.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0022.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: short_caption must be <= 20 words"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 5,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"event_decoration\",\n  \"short_caption\": \"Large decorative wall of white and pink roses in an indoor hallway\",\n  \"main_objects\": [\"flower wall\", \"roses\", \"green leaves\", \"wooden paneled walls\"],\n  \"possible_interpretations\": [\"wedding decoration\", \"event photography backdrop\", \"floral installation\", \"ceremony backdrop\"],\n  \"uncertainty_notes\": \"Flowers may be real or artificial; exact count and arrangement type not determinable.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318763-rbeFx7eClAixCbdOhUNA",
+        "object": "chat.completion",
+        "created": 1780318763,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 5,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"event_decoration\",\n  \"short_caption\": \"Large decorative wall of white and pink roses in an indoor hallway\",\n  \"main_objects\": [\"flower wall\", \"roses\", \"green leaves\", \"wooden paneled walls\"],\n  \"possible_interpretations\": [\"wedding decoration\", \"event photography backdrop\", \"floral installation\", \"ceremony backdrop\"],\n  \"uncertainty_notes\": \"Flowers may be real or artificial; exact count and arrangement type not determinable.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a large floral wall or backdrop made up of many roses in white and pink colors, with green leaves interspersed. It appears to be a wedding or event decoration, set up in what looks like a hallway or corridor with wooden paneled walls and tile flooring.\n\nLet me analyze each attribute:\n\n- recognizability: 5 - Very clearly a flower wall/backdrop\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 3 - It's a photo of a real scene, but the subject itself is artificial/decorative\n- visual_clutter: 5 - Many flowers, busy pattern\n- object_centricity: 2 - No single object, it's a wall\n- scene_centricity: 4 - It's more of a scene/setup\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1 (the flower wall as a whole)\n- estimated_distinct_object_categories: 2 (roses, leaves/structure)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (decorative setup, though the flowers might be real)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the flower wall as a unified object/decoration)\n- image_style: \"natural_photo\"\n- semantic_domain: \"events/decorations\" or \"floral\"\n\nshort_caption: \"Large decorative wall of white and pink roses in an indoor hallway\"\nmain_objects: [\"flower wall\", \"roses\", \"leaves\"]\npossible_interpretations: [\"wedding decoration\", \"event backdrop\", \"photography backdrop\", \"floral arrangement\"]\n\nuncertainty_notes: \"Flowers may be real or artificial; cannot definitively determine\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a large floral wall or backdrop made up of many roses in white and pink colors, with green leaves interspersed. It appears to be a wedding or event decoration, set up in what looks like a hallway or corridor with wooden paneled walls and tile flooring.\n\nLet me analyze each attribute:\n\n- recognizability: 5 - Very clearly a flower wall/backdrop\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 3 - It's a photo of a real scene, but the subject itself is artificial/decorative\n- visual_clutter: 5 - Many flowers, busy pattern\n- object_centricity: 2 - No single object, it's a wall\n- scene_centricity: 4 - It's more of a scene/setup\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1 (the flower wall as a whole)\n- estimated_distinct_object_categories: 2 (roses, leaves/structure)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (decorative setup, though the flowers might be real)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the flower wall as a unified object/decoration)\n- image_style: \"natural_photo\"\n- semantic_domain: \"events/decorations\" or \"floral\"\n\nshort_caption: \"Large decorative wall of white and pink roses in an indoor hallway\"\nmain_objects: [\"flower wall\", \"roses\", \"leaves\"]\npossible_interpretations: [\"wedding decoration\", \"event backdrop\", \"photography backdrop\", \"floral arrangement\"]\n\nuncertainty_notes: \"Flowers may be real or artificial; cannot definitively determine\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 767,
+          "total_tokens": 2305,
+          "cost": 0.00135444,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00135444,
+            "upstream_inference_prompt_cost": 0.00043404,
+            "upstream_inference_completions_cost": 0.0009204
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 475,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

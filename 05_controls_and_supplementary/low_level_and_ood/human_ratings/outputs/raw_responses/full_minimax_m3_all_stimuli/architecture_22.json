@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_22",
+    "stim_key": "architecture_22",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 22,
+    "file_index": 22,
+    "image_name": "image_0022.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0022.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 3, \"visual_clutter\": 2, \"object_centricity\": 5, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 1, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"furniture\", \"short_caption\": \"Two round wooden nesting tables with white tops in an indoor setting.\", \"main_objects\": [\"nesting table\", \"wooden table\", \"round side table\"], \"possible_interpretations\": [\"nesting side tables\", \"coffee and end table set\", \"staged furniture product photo\"], \"uncertainty_notes\": \"Image appears to be a product/catalog photograph with even studio lighting and neutral background.\", \"quality_flags\": [\"product_photo_styling\"]}",
+      "response": {
+        "id": "gen-1780318872-VDRSAZa9MbEoPksMOoSk",
+        "object": "chat.completion",
+        "created": 1780318872,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 3, \"visual_clutter\": 2, \"object_centricity\": 5, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 1, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"furniture\", \"short_caption\": \"Two round wooden nesting tables with white tops in an indoor setting.\", \"main_objects\": [\"nesting table\", \"wooden table\", \"round side table\"], \"possible_interpretations\": [\"nesting side tables\", \"coffee and end table set\", \"staged furniture product photo\"], \"uncertainty_notes\": \"Image appears to be a product/catalog photograph with even studio lighting and neutral background.\", \"quality_flags\": [\"product_photo_styling\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows two nesting tables - a larger one and a smaller one placed partially underneath/beside it. They appear to be round-topped side tables with wooden legs and white/light colored tops. The background shows sheer curtains and what appears to be a light-colored floor, suggesting an indoor setting.\n\nLet me go through the schema:\n\n- recognizability: 5 - very clearly recognizable as nesting tables\n- ambiguity: 1 - very clear what the objects are\n- natural_photo_typicality: 3 - looks like a product photo, somewhat staged\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 5 - tables dominate the image\n- scene_centricity: 2 - focused on objects, but shows some context\n- caption_confidence: 5 - very confident in a caption\n\n- estimated_salient_object_count: 2 (the two tables)\n- estimated_distinct_object_categories: 1 (tables)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the smaller table is partially behind/under the larger one)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (two tables)\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\" (looks like a product photograph)\n- semantic_domain: \"furniture\"\n\nshort_caption: \"Two round wooden nesting tables with white tops in an indoor setting.\"\n\nmain_objects: [\"nesting table\", \"wooden table\", \"round table\"]\n\npossible_interpretations: [\"nesting side tables\", \"coffee and end table set\", \"occasional tables\"]\n\nuncertainty_notes: \"Image appears to be a product/catalog photograph with staged lighting.\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows two nesting tables - a larger one and a smaller one placed partially underneath/beside it. They appear to be round-topped side tables with wooden legs and white/light colored tops. The background shows sheer curtains and what appears to be a light-colored floor, suggesting an indoor setting.\n\nLet me go through the schema:\n\n- recognizability: 5 - very clearly recognizable as nesting tables\n- ambiguity: 1 - very clear what the objects are\n- natural_photo_typicality: 3 - looks like a product photo, somewhat staged\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 5 - tables dominate the image\n- scene_centricity: 2 - focused on objects, but shows some context\n- caption_confidence: 5 - very confident in a caption\n\n- estimated_salient_object_count: 2 (the two tables)\n- estimated_distinct_object_categories: 1 (tables)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the smaller table is partially behind/under the larger one)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (two tables)\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\" (looks like a product photograph)\n- semantic_domain: \"furniture\"\n\nshort_caption: \"Two round wooden nesting tables with white tops in an indoor setting.\"\n\nmain_objects: [\"nesting table\", \"wooden table\", \"round table\"]\n\npossible_interpretations: [\"nesting side tables\", \"coffee and end table set\", \"occasional tables\"]\n\nuncertainty_notes: \"Image appears to be a product/catalog photograph with staged lighting.\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1179,
+          "completion_tokens": 734,
+          "total_tokens": 1913,
+          "cost": 0.00108426,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00108426,
+            "upstream_inference_prompt_cost": 0.00020346,
+            "upstream_inference_completions_cost": 0.0008808
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 492,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

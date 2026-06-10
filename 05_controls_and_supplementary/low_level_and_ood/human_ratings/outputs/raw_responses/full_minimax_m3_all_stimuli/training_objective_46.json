@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_46",
+    "stim_key": "training_objective_46",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 46,
+    "file_index": 46,
+    "image_name": "image_0046.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0046.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"decorative planter\",\n  \"short_caption\": \"Coffin-shaped planter with skeleton figurine and succulents in soil\",\n  \"main_objects\": [\"coffin planter\", \"skull figurine\", \"skeleton hands\", \"succulent plants\", \"soil\"],\n  \"possible_interpretations\": [\"Halloween decoration\", \"gothic novelty planter\", \"Halloween-themed craft\", \"succulent planter\"],\n  \"uncertainty_notes\": \"Image is a staged studio-style photograph of a decorative item\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319317-na4LOg9kB8lWt2wJudsp",
+        "object": "chat.completion",
+        "created": 1780319317,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"decorative planter\",\n  \"short_caption\": \"Coffin-shaped planter with skeleton figurine and succulents in soil\",\n  \"main_objects\": [\"coffin planter\", \"skull figurine\", \"skeleton hands\", \"succulent plants\", \"soil\"],\n  \"possible_interpretations\": [\"Halloween decoration\", \"gothic novelty planter\", \"Halloween-themed craft\", \"succulent planter\"],\n  \"uncertainty_notes\": \"Image is a staged studio-style photograph of a decorative item\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a coffin-shaped planter with soil, small succulent plants, and a skeleton figurine with skull and ribcage/hands. It's a decorative Halloween-style or gothic-themed planter.\n\nLet me annotate according to the schema:\n\n- recognizability: 4 - clearly a coffin-shaped planter with skeleton and succulents\n- ambiguity: 2 - pretty clear what it is\n- natural_photo_typicality: 3 - it's a real photo but staged/artificial scene\n- visual_clutter: 3 - multiple elements but not too cluttered\n- object_centricity: 4 - the coffin planter with skeleton is the clear focus\n- scene_centricity: 2 - it's more object-focused\n- caption_confidence: 4 - easy to caption\n\n- estimated_salient_object_count: 4 (coffin, skull, skeleton body, plants)\n- estimated_distinct_object_categories: 3 (planter, skeleton figurine, succulents)\n\n- contains_person: false\n- contains_face: false (skull is not a face)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: false (it's a studio shot of a planter)\n- contains_artificial_or_rendered_content: true (skeleton is artificial)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (overhead view of a coffin)\n- contains_multiple_main_objects: false (one main scene)\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"decorative planter\"\n\n- short_caption: \"Coffin-shaped planter with skeleton figurine and succulents\"\n- main_objects: [\"coffin planter\", \"skull figurine\", \"skeleton hands\", \"succulent plants\", \"soil\"]\n- possible_interpretations: [\"Halloween decoration\", \"gothic planter\", \"novelty planter\", \"Halloween craft\"]\n- uncertainty_notes: \"Image is well-lit, studio-style photo\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a coffin-shaped planter with soil, small succulent plants, and a skeleton figurine with skull and ribcage/hands. It's a decorative Halloween-style or gothic-themed planter.\n\nLet me annotate according to the schema:\n\n- recognizability: 4 - clearly a coffin-shaped planter with skeleton and succulents\n- ambiguity: 2 - pretty clear what it is\n- natural_photo_typicality: 3 - it's a real photo but staged/artificial scene\n- visual_clutter: 3 - multiple elements but not too cluttered\n- object_centricity: 4 - the coffin planter with skeleton is the clear focus\n- scene_centricity: 2 - it's more object-focused\n- caption_confidence: 4 - easy to caption\n\n- estimated_salient_object_count: 4 (coffin, skull, skeleton body, plants)\n- estimated_distinct_object_categories: 3 (planter, skeleton figurine, succulents)\n\n- contains_person: false\n- contains_face: false (skull is not a face)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: false (it's a studio shot of a planter)\n- contains_artificial_or_rendered_content: true (skeleton is artificial)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (overhead view of a coffin)\n- contains_multiple_main_objects: false (one main scene)\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"decorative planter\"\n\n- short_caption: \"Coffin-shaped planter with skeleton figurine and succulents\"\n- main_objects: [\"coffin planter\", \"skull figurine\", \"skeleton hands\", \"succulent plants\", \"soil\"]\n- possible_interpretations: [\"Halloween decoration\", \"gothic planter\", \"novelty planter\", \"Halloween craft\"]\n- uncertainty_notes: \"Image is well-lit, studio-style photo\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1467,
+          "completion_tokens": 779,
+          "total_tokens": 2246,
+          "cost": 0.00122466,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00122466,
+            "upstream_inference_prompt_cost": 0.00028986,
+            "upstream_inference_completions_cost": 0.0009348
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 477,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

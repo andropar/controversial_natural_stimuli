@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_0",
+    "stim_key": "sota_0",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 0,
+    "file_index": 0,
+    "image_name": "image_0000.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0000.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"equestrian product\",\n  \"short_caption\": \"Woman with braided hair holding a green diamond-quilted equestrian saddle pad with FARUSIA branding.\",\n  \"main_objects\": [\"green quilted saddle pad\", \"woman\", \"FARUSIA label\"],\n  \"possible_interpretations\": [\n    \"E-commerce product photo of an equestrian saddle pad\",\n    \"Studio catalog image showcasing equestrian equipment\",\n    \"Model presenting branded riding gear\",\n    \"Retail advertisement for horse riding accessories\"\n  ],\n  \"uncertainty_notes\": \"Top of the model's head is cropped out; full facial features not visible. Exact context (studio vs. catalog) inferred from clean white background.\",\n  \"quality_flags\": [\"head_cropped\", \"studio_background\", \"product_lighting\"]\n}",
+      "response": {
+        "id": "gen-1780319073-ReoEV2iDr8MUicYeHqRN",
+        "object": "chat.completion",
+        "created": 1780319073,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"equestrian product\",\n  \"short_caption\": \"Woman with braided hair holding a green diamond-quilted equestrian saddle pad with FARUSIA branding.\",\n  \"main_objects\": [\"green quilted saddle pad\", \"woman\", \"FARUSIA label\"],\n  \"possible_interpretations\": [\n    \"E-commerce product photo of an equestrian saddle pad\",\n    \"Studio catalog image showcasing equestrian equipment\",\n    \"Model presenting branded riding gear\",\n    \"Retail advertisement for horse riding accessories\"\n  ],\n  \"uncertainty_notes\": \"Top of the model's head is cropped out; full facial features not visible. Exact context (studio vs. catalog) inferred from clean white background.\",\n  \"quality_flags\": [\"head_cropped\", \"studio_background\", \"product_lighting\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a young woman with blonde braided hair holding up a green quilted saddle pad (equestrian product). The saddle pad is dark green with a diamond quilted pattern and has a \"FARUSIA\" brand label with a diamond logo. The woman is wearing a dark gray/charcoal zip-up top. The background is plain white/light gray, suggesting a studio product photo setting.\n\nLet me annotate according to the schema:\n\n- Recognizability: Very clear - 5\n- Ambiguity: Low - the main content is clear, though it could be interpreted as product display or model showing product - 2\n- Natural photo typicality: It's a studio product photo, somewhat typical but has clear studio lighting - 3\n- Visual clutter: Relatively low, focused on the saddle pad - 2\n- Object centricity: Yes, the saddle pad dominates - 4\n- Scene centricity: No, it's an object-focused image - 1\n- Caption confidence: High - 5\n\n- Estimated salient objects: 2 (person and saddle pad)\n- Estimated distinct categories: 2 (person, saddle pad)\n\n- contains_person: yes\n- contains_face: yes (partial face visible)\n- contains_animal: no\n- contains_text: yes (FARUSIA brand text)\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: yes (studio)\n- contains_outdoor_scene: no\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: yes (face is cut off at top)\n- contains_unusual_viewpoint: no\n- contains_multiple_main_objects: no (saddle pad is main)\n\n- dominant_content_type: object\n- image_style: edited_photo (studio product photography)\n- semantic_domain: equestrian/products\n\nShort caption: \"Woman holding a green quilted equestrian saddle pad with FARUSIA branding.\"\n\nMain objects: saddle pad, woman\n\nPossible interpretations: \n- Product photography for equestrian saddle pad\n- Model showcasing equestrian equipment\n- E-commerce product listing\n\nUncertainty: The top of the head is cut off, so we don't see the full face.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a young woman with blonde braided hair holding up a green quilted saddle pad (equestrian product). The saddle pad is dark green with a diamond quilted pattern and has a \"FARUSIA\" brand label with a diamond logo. The woman is wearing a dark gray/charcoal zip-up top. The background is plain white/light gray, suggesting a studio product photo setting.\n\nLet me annotate according to the schema:\n\n- Recognizability: Very clear - 5\n- Ambiguity: Low - the main content is clear, though it could be interpreted as product display or model showing product - 2\n- Natural photo typicality: It's a studio product photo, somewhat typical but has clear studio lighting - 3\n- Visual clutter: Relatively low, focused on the saddle pad - 2\n- Object centricity: Yes, the saddle pad dominates - 4\n- Scene centricity: No, it's an object-focused image - 1\n- Caption confidence: High - 5\n\n- Estimated salient objects: 2 (person and saddle pad)\n- Estimated distinct categories: 2 (person, saddle pad)\n\n- contains_person: yes\n- contains_face: yes (partial face visible)\n- contains_animal: no\n- contains_text: yes (FARUSIA brand text)\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: yes (studio)\n- contains_outdoor_scene: no\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: yes (face is cut off at top)\n- contains_unusual_viewpoint: no\n- contains_multiple_main_objects: no (saddle pad is main)\n\n- dominant_content_type: object\n- image_style: edited_photo (studio product photography)\n- semantic_domain: equestrian/products\n\nShort caption: \"Woman holding a green quilted equestrian saddle pad with FARUSIA branding.\"\n\nMain objects: saddle pad, woman\n\nPossible interpretations: \n- Product photography for equestrian saddle pad\n- Model showcasing equestrian equipment\n- E-commerce product listing\n\nUncertainty: The top of the head is cut off, so we don't see the full face.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 848,
+          "total_tokens": 2262,
+          "cost": 0.00141444,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00141444,
+            "upstream_inference_prompt_cost": 0.00039684,
+            "upstream_inference_completions_cost": 0.0010176
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 521,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

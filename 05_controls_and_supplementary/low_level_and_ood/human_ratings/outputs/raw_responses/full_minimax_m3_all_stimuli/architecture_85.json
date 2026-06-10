@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_85",
+    "stim_key": "architecture_85",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 85,
+    "file_index": 85,
+    "image_name": "image_0085.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0085.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home interior\",\n\n  \"short_caption\": \"A wooden two-tier side table with white vases and a phone against a paneled wall.\",\n  \"main_objects\": [\"wooden side table\", \"white ceramic vases\", \"smartphone\", \"earphones\"],\n  \"possible_interpretations\": [\"product photography of furniture\", \"minimalist home interior scene\", \"styled lifestyle photograph\", \"interior design showcase\"],\n  \"uncertainty_notes\": \"Possible slight cropping at right edge of table; otherwise content is unambiguous.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318945-LGuzn4QLjR1IFfdSmjYn",
+        "object": "chat.completion",
+        "created": 1780318945,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home interior\",\n\n  \"short_caption\": \"A wooden two-tier side table with white vases and a phone against a paneled wall.\",\n  \"main_objects\": [\"wooden side table\", \"white ceramic vases\", \"smartphone\", \"earphones\"],\n  \"possible_interpretations\": [\"product photography of furniture\", \"minimalist home interior scene\", \"styled lifestyle photograph\", \"interior design showcase\"],\n  \"uncertainty_notes\": \"Possible slight cropping at right edge of table; otherwise content is unambiguous.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a wooden side table or stool with two tiers. On the top tier, there are two white ceramic vases of different sizes. On the lower tier, there's a smartphone with earphones/headphones plugged in, with the cord dangling down. The table is positioned against a white paneled wall on a dark wooden plank floor. The setting appears to be an indoor scene with a minimalist aesthetic.\n\nLet me rate each attribute:\n\n- recognizability: 5 - Very clear, typical interior scene\n- ambiguity: 1 - Very clear what's shown\n- natural_photo_typicality: 4 - Looks like a natural/staged photograph, possibly product photography\n- visual_clutter: 2 - Minimal objects, clean composition\n- object_centricity: 4 - The table is the central focus\n- scene_centricity: 3 - Both object-focused and shows the room context\n- caption_confidence: 5 - Easy to describe\n\nObject counts:\n- Salient objects: table, 2 vases, phone, earphones = ~5 items\n- Distinct categories: table, vase, phone, earphones, wall, floor = ~6\n\nBooleans:\n- person: false\n- face: false\n- animal: false\n- text: false\n- vehicle: false\n- food: false\n- indoor_scene: true\n- outdoor_scene: false\n- artificial_or_rendered: false (looks like a photo)\n- occlusion_or_truncation: false (though the table edge is cut off)\n- unusual_viewpoint: false\n- multiple_main_objects: false (table is dominant)\n\nStyle: natural_photo\nSemantic domain: home interior / furniture\nDominant content: object (the table is the main subject)",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a wooden side table or stool with two tiers. On the top tier, there are two white ceramic vases of different sizes. On the lower tier, there's a smartphone with earphones/headphones plugged in, with the cord dangling down. The table is positioned against a white paneled wall on a dark wooden plank floor. The setting appears to be an indoor scene with a minimalist aesthetic.\n\nLet me rate each attribute:\n\n- recognizability: 5 - Very clear, typical interior scene\n- ambiguity: 1 - Very clear what's shown\n- natural_photo_typicality: 4 - Looks like a natural/staged photograph, possibly product photography\n- visual_clutter: 2 - Minimal objects, clean composition\n- object_centricity: 4 - The table is the central focus\n- scene_centricity: 3 - Both object-focused and shows the room context\n- caption_confidence: 5 - Easy to describe\n\nObject counts:\n- Salient objects: table, 2 vases, phone, earphones = ~5 items\n- Distinct categories: table, vase, phone, earphones, wall, floor = ~6\n\nBooleans:\n- person: false\n- face: false\n- animal: false\n- text: false\n- vehicle: false\n- food: false\n- indoor_scene: true\n- outdoor_scene: false\n- artificial_or_rendered: false (looks like a photo)\n- occlusion_or_truncation: false (though the table edge is cut off)\n- unusual_viewpoint: false\n- multiple_main_objects: false (table is dominant)\n\nStyle: natural_photo\nSemantic domain: home interior / furniture\nDominant content: object (the table is the main subject)",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 704,
+          "total_tokens": 2226,
+          "cost": 0.00115116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00115116,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008448
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 402,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

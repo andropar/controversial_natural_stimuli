@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_66",
+    "stim_key": "vicco_66",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 66,
+    "file_index": 65,
+    "image_name": "shared_4rep_vicco_066.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_066.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"zoo/wildlife\",\n\n  \"short_caption\": \"Zebra and antelopes grazing together in a mixed-species zoo enclosure with fallen logs and autumn trees\",\n  \"main_objects\": [\"zebra\", \"antelopes\", \"fallen logs\", \"trees\", \"grass\", \"tall reeds\", \"wooden post\"],\n  \"possible_interpretations\": [\"zoo enclosure\", \"safari park exhibit\", \"wildlife park\"],\n  \"uncertainty_notes\": \"Small dark spot in upper right may be a bird but is too distant to identify; exact antelope species unclear\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319465-BdITuQGH0zfpzlxo7UiU",
+        "object": "chat.completion",
+        "created": 1780319465,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"zoo/wildlife\",\n\n  \"short_caption\": \"Zebra and antelopes grazing together in a mixed-species zoo enclosure with fallen logs and autumn trees\",\n  \"main_objects\": [\"zebra\", \"antelopes\", \"fallen logs\", \"trees\", \"grass\", \"tall reeds\", \"wooden post\"],\n  \"possible_interpretations\": [\"zoo enclosure\", \"safari park exhibit\", \"wildlife park\"],\n  \"uncertainty_notes\": \"Small dark spot in upper right may be a bird but is too distant to identify; exact antelope species unclear\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an outdoor scene that appears to be a zoo enclosure or wildlife park. I can see:\n- A zebra in the center-bottom of the image (clearly visible, facing away)\n- Several antelopes/gazelles scattered on the grass (grazing)\n- A large grassy field/lawn\n- Fallen logs and tree stumps arranged in the middle area\n- Trees in the background with autumn colors\n- Tall grasses/reeds behind the logs\n- A bare tree in the center\n- What appears to be a bird in the upper right (small dark spot)\n- A sandy area in the bottom right corner\n- A wooden post in the bottom left\n\nThis looks like a mixed-species enclosure, likely at a zoo (possibly a safari park given the mixed species like zebra and antelopes together).\n\nLet me rate the dimensions:\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - very clear interpretation (zoo enclosure with mixed species)\n- natural_photo_typicality: 4 - looks like a natural photo, though it's a zoo setting\n- visual_clutter: 3 - moderate amount of elements\n- object_centricity: 2 - the zebra is prominent but it's more of a scene\n- scene_centricity: 5 - definitely a scene/park setting\n- caption_confidence: 5 - easy to caption\n\nSalient objects: 1 zebra, about 4-5 antelopes, logs, trees\nObject categories: zebra, antelope, log, tree, grass\n\nContains animal: yes\nContains person: no\nContains face: no (animals have faces but not human)\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial or rendered: no\nContains occlusion/truncation: no\nContains unusual viewpoint: no\nContains multiple main objects: yes (multiple animals)\n\nDominant content: scene or animal - I'd say scene since the animals are part of a larger scene\nImage style: natural_photo\nSemantic domain: zoo/wildlife/savanna\n\nShort caption: \"Zebra and antelopes grazing in a mixed-species zoo enclosure with fallen logs and trees\"\n\nMain objects: zebra, antelopes, logs, trees, grass\nPossible interpretations: zoo enclosure, safari park, wildlife reserve\nUncertainty notes: The bird in the sky is hard to identify\nQuality flags: none particularly",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an outdoor scene that appears to be a zoo enclosure or wildlife park. I can see:\n- A zebra in the center-bottom of the image (clearly visible, facing away)\n- Several antelopes/gazelles scattered on the grass (grazing)\n- A large grassy field/lawn\n- Fallen logs and tree stumps arranged in the middle area\n- Trees in the background with autumn colors\n- Tall grasses/reeds behind the logs\n- A bare tree in the center\n- What appears to be a bird in the upper right (small dark spot)\n- A sandy area in the bottom right corner\n- A wooden post in the bottom left\n\nThis looks like a mixed-species enclosure, likely at a zoo (possibly a safari park given the mixed species like zebra and antelopes together).\n\nLet me rate the dimensions:\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - very clear interpretation (zoo enclosure with mixed species)\n- natural_photo_typicality: 4 - looks like a natural photo, though it's a zoo setting\n- visual_clutter: 3 - moderate amount of elements\n- object_centricity: 2 - the zebra is prominent but it's more of a scene\n- scene_centricity: 5 - definitely a scene/park setting\n- caption_confidence: 5 - easy to caption\n\nSalient objects: 1 zebra, about 4-5 antelopes, logs, trees\nObject categories: zebra, antelope, log, tree, grass\n\nContains animal: yes\nContains person: no\nContains face: no (animals have faces but not human)\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial or rendered: no\nContains occlusion/truncation: no\nContains unusual viewpoint: no\nContains multiple main objects: yes (multiple animals)\n\nDominant content: scene or animal - I'd say scene since the animals are part of a larger scene\nImage style: natural_photo\nSemantic domain: zoo/wildlife/savanna\n\nShort caption: \"Zebra and antelopes grazing in a mixed-species zoo enclosure with fallen logs and trees\"\n\nMain objects: zebra, antelopes, logs, trees, grass\nPossible interpretations: zoo enclosure, safari park, wildlife reserve\nUncertainty notes: The bird in the sky is hard to identify\nQuality flags: none particularly",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 867,
+          "total_tokens": 2389,
+          "cost": 0.00134676,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00134676,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010404
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 582,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

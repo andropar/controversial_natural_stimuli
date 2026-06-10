@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_62",
+    "stim_key": "all_models_62",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 62,
+    "file_index": 62,
+    "image_name": "image_0062.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0062.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"hunting/sporting goods\",\n\n  \"short_caption\": \"Person in camouflage holding a large wild turkey inside a sporting goods store.\",\n  \"main_objects\": [\"person\", \"wild turkey\", \"camouflage jacket\", \"archery target\", \"clipboards\"],\n  \"possible_interpretations\": [\n    \"Hunter showing off a turkey harvest at a sporting goods store\",\n    \"Customer posing with a taxidermy or display turkey in a hunting shop\",\n    \"Store employee displaying hunting-related merchandise\"\n  ],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees (sideways orientation). The turkey may be a real harvested bird, taxidermy, or display prop; not fully clear from image alone.\",\n  \"quality_flags\": [\"image_rotated_90_degrees\"]\n}",
+      "response": {
+        "id": "gen-1780318799-tLjyUtob3jES4aRlaykU",
+        "object": "chat.completion",
+        "created": 1780318799,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"hunting/sporting goods\",\n\n  \"short_caption\": \"Person in camouflage holding a large wild turkey inside a sporting goods store.\",\n  \"main_objects\": [\"person\", \"wild turkey\", \"camouflage jacket\", \"archery target\", \"clipboards\"],\n  \"possible_interpretations\": [\n    \"Hunter showing off a turkey harvest at a sporting goods store\",\n    \"Customer posing with a taxidermy or display turkey in a hunting shop\",\n    \"Store employee displaying hunting-related merchandise\"\n  ],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees (sideways orientation). The turkey may be a real harvested bird, taxidermy, or display prop; not fully clear from image alone.\",\n  \"quality_flags\": [\"image_rotated_90_degrees\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. The image is rotated 90 degrees (sideways). It shows a person in a camouflage jacket holding a large wild turkey in what appears to be a sporting goods or hunting store. There's a target (archery target with red, blue, yellow rings) visible in the background, along with clipboards/papers, and various store items.\n\nLet me annotate based on the schema:\n\n- recognizability: 4 - the content is fairly clear (person with turkey in store)\n- ambiguity: 2 - fairly clear what's happening\n- natural_photo_typicality: 4 - looks like a typical photo, just sideways\n- visual_clutter: 4 - lots of competing items in the background\n- object_centricity: 3 - the turkey is prominent but it's more of a scene with person\n- scene_centricity: 4 - it's clearly a scene (store interior)\n- caption_confidence: 4 - can confidently describe\n\nImage is rotated 90 degrees - this is a quality flag.\n\ncontains_person: true\ncontains_face: true\ncontains_animal: true (turkey)\ncontains_text: true (clipboards with text)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: true (rotated 90 degrees)\ncontains_multiple_main_objects: true (person and turkey)\n\ndominant_content_type: \"mixed\" - person and animal together\nimage_style: \"natural_photo\"\nsemantic_domain: \"hunting/sporting goods\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. The image is rotated 90 degrees (sideways). It shows a person in a camouflage jacket holding a large wild turkey in what appears to be a sporting goods or hunting store. There's a target (archery target with red, blue, yellow rings) visible in the background, along with clipboards/papers, and various store items.\n\nLet me annotate based on the schema:\n\n- recognizability: 4 - the content is fairly clear (person with turkey in store)\n- ambiguity: 2 - fairly clear what's happening\n- natural_photo_typicality: 4 - looks like a typical photo, just sideways\n- visual_clutter: 4 - lots of competing items in the background\n- object_centricity: 3 - the turkey is prominent but it's more of a scene with person\n- scene_centricity: 4 - it's clearly a scene (store interior)\n- caption_confidence: 4 - can confidently describe\n\nImage is rotated 90 degrees - this is a quality flag.\n\ncontains_person: true\ncontains_face: true\ncontains_animal: true (turkey)\ncontains_text: true (clipboards with text)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: true (rotated 90 degrees)\ncontains_multiple_main_objects: true (person and turkey)\n\ndominant_content_type: \"mixed\" - person and animal together\nimage_style: \"natural_photo\"\nsemantic_domain: \"hunting/sporting goods\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 736,
+          "total_tokens": 2258,
+          "cost": 0.00131244,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131244,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008832
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 387,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

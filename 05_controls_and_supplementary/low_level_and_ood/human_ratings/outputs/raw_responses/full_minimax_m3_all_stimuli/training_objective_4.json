@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_4",
+    "stim_key": "training_objective_4",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 4,
+    "file_index": 4,
+    "image_name": "image_0004.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0004.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: Missing required fields: ['contains_unusual_viewpoint']"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 3, \"visual_clutter\": 2, \"object_centricity\": 2, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 4, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"person_face\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"talk_show\", \"short_caption\": \"Two older women seated on a red polka-dot talk show set with a coffee mug and papers\", \"main_objects\": [\"older woman in green textured top\", \"older woman with scarf and gold bracelets\", \"red coffee mug\", \"papers\", \"red polka-dot backdrop\"], \"possible_interpretations\": [\"television talk show interview\", \"news panel discussion\", \"reality TV segment\", \"celebrity interview\", \"podcast video recording\"], \"uncertainty_notes\": \"Specific identities and exact program context are unclear; setting strongly suggests a televised talk show or interview.\", \"quality_flags\": [\"frame_truncation\", \"television_broadcast_quality\"]}",
+      "response": {
+        "id": "gen-1780319234-UEh8cARbgyRZ9NgEGMpF",
+        "object": "chat.completion",
+        "created": 1780319234,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 3, \"visual_clutter\": 2, \"object_centricity\": 2, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 4, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"person_face\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"talk_show\", \"short_caption\": \"Two older women seated on a red polka-dot talk show set with a coffee mug and papers\", \"main_objects\": [\"older woman in green textured top\", \"older woman with scarf and gold bracelets\", \"red coffee mug\", \"papers\", \"red polka-dot backdrop\"], \"possible_interpretations\": [\"television talk show interview\", \"news panel discussion\", \"reality TV segment\", \"celebrity interview\", \"podcast video recording\"], \"uncertainty_notes\": \"Specific identities and exact program context are unclear; setting strongly suggests a televised talk show or interview.\", \"quality_flags\": [\"frame_truncation\", \"television_broadcast_quality\"]}",
+              "refusal": null,
+              "reasoning": "The image shows two older women sitting at what appears to be a talk show set, with a red background featuring white polka dots. There's a red coffee mug visible and what looks like papers/scripts. This looks like a TV interview or talk show setting.\n\nLet me analyze the image:\n- Two women, both with gray/silver hair\n- One wearing a green/olive textured top with necklaces\n- The other wearing a darker top with a patterned scarf, gold bracelets, and a ring\n- Red background with white polka dots\n- A red coffee mug\n- Some papers/documents visible at the bottom\n- Looks like a talk show or interview setting\n\nLet me rate this:\n- recognizability: 4 - clearly recognizable as a talk show/TV interview scene\n- ambiguity: 2 - fairly clear what's happening\n- natural_photo_typicality: 3 - it's a TV/screenshot, not a natural photo\n- visual_clutter: 2 - relatively clean composition\n- object_centricity: 2 - the people dominate, not a single object\n- scene_centricity: 3 - it's a scene/set\n- caption_confidence: 4\n\nEstimated salient objects: 2 people, mug, papers = 4\nDistinct categories: people, mug, papers, background = 3-4\n\nContains person: true\nContains face: true\nContains animal: false\nContains text: false (no readable text)\nContains vehicle: false\nContains food: false (mug is not food)\nContains indoor_scene: true (TV studio)\nContains outdoor_scene: false\nContains artificial_or_rendered_content: false (it's a photo of a real set)\nContains occlusion_or_truncation: true (both people are cut off by frame)\nContains unusual_viewpoint: false\nContains multiple_main_objects: true (two people)\n\nDominant content type: person_face (or \"mixed\" since there are two people and a set)\nImage style: natural_photo (it's a photograph, possibly a TV screenshot but still photographic)\nSemantic domain: talk_show/celebrity interview\n\nShort caption: \"Two older women on a talk show set with a polka-dotted red background\"\nMain objects: women, coffee mug, papers, polka-dot background\n\nPossible interpretations: talk show interview, news segment, reality TV, podcast recording\n\nUncertainty notes: exact identity/context unclear, but setting appears to be a televised talk show\nQuality flags: frame truncation, TV broadcast quality",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows two older women sitting at what appears to be a talk show set, with a red background featuring white polka dots. There's a red coffee mug visible and what looks like papers/scripts. This looks like a TV interview or talk show setting.\n\nLet me analyze the image:\n- Two women, both with gray/silver hair\n- One wearing a green/olive textured top with necklaces\n- The other wearing a darker top with a patterned scarf, gold bracelets, and a ring\n- Red background with white polka dots\n- A red coffee mug\n- Some papers/documents visible at the bottom\n- Looks like a talk show or interview setting\n\nLet me rate this:\n- recognizability: 4 - clearly recognizable as a talk show/TV interview scene\n- ambiguity: 2 - fairly clear what's happening\n- natural_photo_typicality: 3 - it's a TV/screenshot, not a natural photo\n- visual_clutter: 2 - relatively clean composition\n- object_centricity: 2 - the people dominate, not a single object\n- scene_centricity: 3 - it's a scene/set\n- caption_confidence: 4\n\nEstimated salient objects: 2 people, mug, papers = 4\nDistinct categories: people, mug, papers, background = 3-4\n\nContains person: true\nContains face: true\nContains animal: false\nContains text: false (no readable text)\nContains vehicle: false\nContains food: false (mug is not food)\nContains indoor_scene: true (TV studio)\nContains outdoor_scene: false\nContains artificial_or_rendered_content: false (it's a photo of a real set)\nContains occlusion_or_truncation: true (both people are cut off by frame)\nContains unusual_viewpoint: false\nContains multiple_main_objects: true (two people)\n\nDominant content type: person_face (or \"mixed\" since there are two people and a set)\nImage style: natural_photo (it's a photograph, possibly a TV screenshot but still photographic)\nSemantic domain: talk_show/celebrity interview\n\nShort caption: \"Two older women on a talk show set with a polka-dotted red background\"\nMain objects: women, coffee mug, papers, polka-dot background\n\nPossible interpretations: talk show interview, news segment, reality TV, podcast recording\n\nUncertainty notes: exact identity/context unclear, but setting appears to be a televised talk show\nQuality flags: frame truncation, TV broadcast quality",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 858,
+          "total_tokens": 2396,
+          "cost": 0.00134076,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00134076,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.0010296
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 589,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

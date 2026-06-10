@@ -25,19 +25,26 @@ from sklearn.linear_model import Ridge
 from sklearn.preprocessing import StandardScaler
 from tqdm import tqdm
 
-_PAPER = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_PAPER.parents[1]))
+STAGE = Path(__file__).resolve().parents[1]
+SHARE_ROOT = STAGE.parents[1]
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
 
 import config  # noqa: E402
 from utils import compute_rdm_correlation, compute_rsa_score, get_encoding_folder, load_encoding_model  # noqa: E402
 
 
-OUT_DIR = _PAPER / "05_heldout_unique_baseline" / "results"
+OUT_DIR = STAGE / "results"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 MODEL_SETS = ["all_models", "sota", "training_objective", "architecture", "dataset"]
 UNIQUE_LOW_LEVEL_PATH = OUT_DIR / "unique_image_low_level_stats.csv"
-CSTIM_LOW_LEVEL_PATH = _PAPER / "08_image_statistics" / "results" / "image_stats.csv"
+CSTIM_LOW_LEVEL_PATH = (
+    SHARE_ROOT
+    / "05_controls_and_supplementary"
+    / "low_level_and_ood"
+    / "image_statistics"
+    / "results"
+    / "image_stats.csv"
+)
 LOW_LEVEL_COLS = [
     "lum_mean",
     "lum_rms",
@@ -150,7 +157,7 @@ def rsa_score(brain_patterns: np.ndarray, pred_patterns: np.ndarray) -> float:
 
 
 def nc_value(subject: str, group: str, stimulus_type: str) -> float:
-    path = _PAPER / "03_statistics" / "results" / "rdm_noise_ceilings.csv"
+    path = SHARE_ROOT / "02_alignment_reliability" / "results" / "rdm_noise_ceilings.csv"
     if not path.exists() or stimulus_type == "heldout_unique":
         return np.nan
     nc = pd.read_csv(path)

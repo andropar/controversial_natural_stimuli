@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_44",
+    "stim_key": "sota_44",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 44,
+    "file_index": 44,
+    "image_name": "image_0044.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0044.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"body/feet\",\n  \"short_caption\": \"Powdered bare feet viewed from below against a purple gradient background\",\n  \"main_objects\": [\"feet\", \"talcum powder\", \"white surface\"],\n  \"possible_interpretations\": [\n    \"Feet with foot powder resting on a bed\",\n    \"Foot care product advertisement\",\n    \"Artistic photograph of feet\",\n    \"Feet on a table or shelf\"\n  ],\n  \"uncertainty_notes\": \"Context of the white surface and setting is unclear; could be a bed, table, or studio setup\",\n  \"quality_flags\": [\"unusual_viewpoint\", \"truncated_body_parts\"]\n}",
+      "response": {
+        "id": "gen-1780319135-DEU7XqSgU6SrPiQOZaNq",
+        "object": "chat.completion",
+        "created": 1780319135,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"body/feet\",\n  \"short_caption\": \"Powdered bare feet viewed from below against a purple gradient background\",\n  \"main_objects\": [\"feet\", \"talcum powder\", \"white surface\"],\n  \"possible_interpretations\": [\n    \"Feet with foot powder resting on a bed\",\n    \"Foot care product advertisement\",\n    \"Artistic photograph of feet\",\n    \"Feet on a table or shelf\"\n  ],\n  \"uncertainty_notes\": \"Context of the white surface and setting is unclear; could be a bed, table, or studio setup\",\n  \"quality_flags\": [\"unusual_viewpoint\", \"truncated_body_parts\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a pair of bare feet/heels standing on what appears to be a white surface (possibly a bed or platform), with a purple/blue gradient background. The feet have white powder on them (looks like talcum powder or foot powder). The viewpoint is from below/underneath, looking up at the feet. The toes are visible at the top, peeking over the edge of the surface.\n\nLet me annotate this:\n\n- Recognizability: Clear what it is (feet with powder), so 4-5\n- Ambiguity: The main subject is clear, but the context is unusual. Maybe 2\n- Natural photo typicality: It looks like a natural photo, though somewhat staged. 3-4\n- Visual clutter: Not much clutter, fairly clean. 2\n- Object centricity: The feet are the central object. 4\n- Scene centricity: Not really a scene, more an object. 2\n- Caption confidence: Pretty confident about what's shown. 4\n\n- Salient objects: 2 feet\n- Distinct categories: 1 (feet)\n- Contains person: Yes (body parts)\n- Contains face: No\n- Contains animal: No\n- Contains text: No\n- Contains vehicle: No\n- Contains food: No\n- Contains indoor scene: Unclear, but the white surface could be a bed\n- Contains outdoor scene: No\n- Contains artificial or rendered content: No\n- Contains occlusion or truncation: Yes, the legs are cut off\n- Contains unusual viewpoint: Yes, looking up from below\n- Contains multiple main objects: The two feet could be considered as one set\n\n- Dominant content type: object (or closeup_detail)\n- Image style: natural_photo\n- Semantic domain: body/feet\n\n- Short caption: Powdered bare feet viewed from below against a purple background\n- Main objects: feet, powder\n- Possible interpretations: feet on a bed, feet on a table, foot care product photo, artistic photo\n- Uncertainty notes: hard to tell exact context\n- Quality flags: unusual_viewpoint",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a pair of bare feet/heels standing on what appears to be a white surface (possibly a bed or platform), with a purple/blue gradient background. The feet have white powder on them (looks like talcum powder or foot powder). The viewpoint is from below/underneath, looking up at the feet. The toes are visible at the top, peeking over the edge of the surface.\n\nLet me annotate this:\n\n- Recognizability: Clear what it is (feet with powder), so 4-5\n- Ambiguity: The main subject is clear, but the context is unusual. Maybe 2\n- Natural photo typicality: It looks like a natural photo, though somewhat staged. 3-4\n- Visual clutter: Not much clutter, fairly clean. 2\n- Object centricity: The feet are the central object. 4\n- Scene centricity: Not really a scene, more an object. 2\n- Caption confidence: Pretty confident about what's shown. 4\n\n- Salient objects: 2 feet\n- Distinct categories: 1 (feet)\n- Contains person: Yes (body parts)\n- Contains face: No\n- Contains animal: No\n- Contains text: No\n- Contains vehicle: No\n- Contains food: No\n- Contains indoor scene: Unclear, but the white surface could be a bed\n- Contains outdoor scene: No\n- Contains artificial or rendered content: No\n- Contains occlusion or truncation: Yes, the legs are cut off\n- Contains unusual viewpoint: Yes, looking up from below\n- Contains multiple main objects: The two feet could be considered as one set\n\n- Dominant content type: object (or closeup_detail)\n- Image style: natural_photo\n- Semantic domain: body/feet\n\n- Short caption: Powdered bare feet viewed from below against a purple background\n- Main objects: feet, powder\n- Possible interpretations: feet on a bed, feet on a table, foot care product photo, artistic photo\n- Uncertainty notes: hard to tell exact context\n- Quality flags: unusual_viewpoint",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1363,
+          "completion_tokens": 797,
+          "total_tokens": 2160,
+          "cost": 0.00121506,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00121506,
+            "upstream_inference_prompt_cost": 0.00025866,
+            "upstream_inference_completions_cost": 0.0009564
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 476,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

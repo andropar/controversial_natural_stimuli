@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_157",
+    "stim_key": "vicco_157",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 157,
+    "file_index": 156,
+    "image_name": "shared_4rep_vicco_157.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_157.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"religion_culture\",\n  \"short_caption\": \"Tibetan Buddhist prayer flags with script and animal illustrations hanging outdoors.\",\n  \"main_objects\": [\"prayer flag (white)\", \"prayer flag (orange)\", \"tree\", \"printed illustrations\"],\n  \"possible_interpretations\": [\"Tibetan prayer flags at a Buddhist site\", \"Himalayan cultural/religious display\", \"Decorative textile with religious iconography\"],\n  \"uncertainty_notes\": \"Script is Tibetan and not fully readable; exact animal illustrations are stylized and may represent zodiac or sacred symbols.\",\n  \"quality_flags\": [\"partially_occluded_subjects\", \"slight_motion_in_breeze\"]\n}",
+      "response": {
+        "id": "gen-1780319572-XRWGg6O9YqNMpoAs8y0c",
+        "object": "chat.completion",
+        "created": 1780319572,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"religion_culture\",\n  \"short_caption\": \"Tibetan Buddhist prayer flags with script and animal illustrations hanging outdoors.\",\n  \"main_objects\": [\"prayer flag (white)\", \"prayer flag (orange)\", \"tree\", \"printed illustrations\"],\n  \"possible_interpretations\": [\"Tibetan prayer flags at a Buddhist site\", \"Himalayan cultural/religious display\", \"Decorative textile with religious iconography\"],\n  \"uncertainty_notes\": \"Script is Tibetan and not fully readable; exact animal illustrations are stylized and may represent zodiac or sacred symbols.\",\n  \"quality_flags\": [\"partially_occluded_subjects\", \"slight_motion_in_breeze\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows Tibetan Buddhist prayer flags hanging on a line, with a white flag containing Tibetan script and various animal illustrations (appears to include a deer, possibly a pig, and other animals) and a deity figure in the center. There's also an orange/red flag visible. The background shows trees with autumn-colored leaves and sky.\n\nLet me annotate according to the schema:\n\n- Recognizability: The prayer flags are clearly recognizable. 4-5.\n- Ambiguity: The image clearly shows prayer flags, not very ambiguous. 1-2.\n- Natural photo typicality: Looks like a typical natural photograph. 4-5.\n- Visual clutter: There are multiple elements but it's not overly cluttered. 2-3.\n- Object centricity: The prayer flags are the main subject. 4.\n- Scene centricity: There's also a scene element with trees. 3.\n- Caption confidence: High confidence. 4.\n\nContains person: No\nContains face: No (animal faces possibly, but no human faces)\nContains animal: Yes, there are animal illustrations on the flag (deer, pig, etc.)\nContains text: Yes, Tibetan script\nContains vehicle: No\nContains food: No\nContains indoor scene: No\nContains outdoor scene: Yes\nContains artificial or rendered content: The flag illustrations are printed/artificial but the photo itself is natural\nContains occlusion or truncation: Yes, the flags are partially visible/cut off\nContains unusual viewpoint: The angle is somewhat low looking up, but not extremely unusual\nContains multiple main objects: There are two flags but they are similar\n\nDominant content type: object (the prayer flags)\nImage style: natural_photo\nSemantic domain: religion/culture\n\nLet me finalize:",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows Tibetan Buddhist prayer flags hanging on a line, with a white flag containing Tibetan script and various animal illustrations (appears to include a deer, possibly a pig, and other animals) and a deity figure in the center. There's also an orange/red flag visible. The background shows trees with autumn-colored leaves and sky.\n\nLet me annotate according to the schema:\n\n- Recognizability: The prayer flags are clearly recognizable. 4-5.\n- Ambiguity: The image clearly shows prayer flags, not very ambiguous. 1-2.\n- Natural photo typicality: Looks like a typical natural photograph. 4-5.\n- Visual clutter: There are multiple elements but it's not overly cluttered. 2-3.\n- Object centricity: The prayer flags are the main subject. 4.\n- Scene centricity: There's also a scene element with trees. 3.\n- Caption confidence: High confidence. 4.\n\nContains person: No\nContains face: No (animal faces possibly, but no human faces)\nContains animal: Yes, there are animal illustrations on the flag (deer, pig, etc.)\nContains text: Yes, Tibetan script\nContains vehicle: No\nContains food: No\nContains indoor scene: No\nContains outdoor scene: Yes\nContains artificial or rendered content: The flag illustrations are printed/artificial but the photo itself is natural\nContains occlusion or truncation: Yes, the flags are partially visible/cut off\nContains unusual viewpoint: The angle is somewhat low looking up, but not extremely unusual\nContains multiple main objects: There are two flags but they are similar\n\nDominant content type: object (the prayer flags)\nImage style: natural_photo\nSemantic domain: religion/culture\n\nLet me finalize:",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 727,
+          "total_tokens": 2249,
+          "cost": 0.00117876,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00117876,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008724
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 443,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

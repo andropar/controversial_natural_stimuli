@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_62",
+    "stim_key": "sota_62",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 62,
+    "file_index": 62,
+    "image_name": "image_0062.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0062.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 3, \"visual_clutter\": 2, \"object_centricity\": 3, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"mixed\", \"image_style\": \"edited_photo\", \"semantic_domain\": \"lifestyle_home_goods\", \"short_caption\": \"Smiling couple posing under a red and green crocheted granny-square Christmas afghan on a bed\", \"main_objects\": [\"woman\", \"man\", \"crocheted afghan blanket\", \"bed\"], \"possible_interpretations\": [\"lifestyle or catalog photo for a crochet blanket pattern\", \"couple relaxing under a holiday afghan\", \"holiday-themed editorial portrait\"], \"uncertainty_notes\": \"Image appears to be a staged commercial/editorial photo, likely for promoting a crochet pattern or holiday product\", \"quality_flags\": [\"staged_commercial_photo\", \"professional_lighting\"]}",
+      "response": {
+        "id": "gen-1780319159-medg2X2HsaizWATIm7Zs",
+        "object": "chat.completion",
+        "created": 1780319159,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 3, \"visual_clutter\": 2, \"object_centricity\": 3, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"mixed\", \"image_style\": \"edited_photo\", \"semantic_domain\": \"lifestyle_home_goods\", \"short_caption\": \"Smiling couple posing under a red and green crocheted granny-square Christmas afghan on a bed\", \"main_objects\": [\"woman\", \"man\", \"crocheted afghan blanket\", \"bed\"], \"possible_interpretations\": [\"lifestyle or catalog photo for a crochet blanket pattern\", \"couple relaxing under a holiday afghan\", \"holiday-themed editorial portrait\"], \"uncertainty_notes\": \"Image appears to be a staged commercial/editorial photo, likely for promoting a crochet pattern or holiday product\", \"quality_flags\": [\"staged_commercial_photo\", \"professional_lighting\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a couple (man and woman) sitting close together on what appears to be a bed, covered with a large crocheted/knitted afghan blanket. The blanket has a distinctive granny square pattern in red, green, and white/cream colors - classic Christmas colors. The couple is smiling at the camera. This looks like a staged commercial/editorial photo, possibly for a craft magazine or pattern book, given the prominent display of the blanket.\n\nLet me go through the schema:\n\n- recognizability: 5 - very clear what we're seeing\n- ambiguity: 1 - quite clear interpretation (couple with Christmas blanket)\n- natural_photo_typicality: 3 - looks like a posed commercial photo, somewhat natural but clearly staged\n- visual_clutter: 2 - relatively clean, main elements are the couple and the blanket\n- object_centricity: 3 - the blanket is prominent but the people are also focal\n- scene_centricity: 2 - it's more about the people and object than a place\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 3 (couple + blanket)\n- estimated_distinct_object_categories: 3 (person, person, blanket/bedding)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it appears to be a real photo, though staged)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"mixed\" - people and object (blanket) are both prominent\n- image_style: \"edited_photo\" - looks like a commercial/editorial photo with good lighting\n- semantic_domain: \"lifestyle\" or \"home_goods\"\n\n- short_caption: \"Smiling couple posing under a red and green crocheted Christmas blanket on a bed\"\n- main_objects: [\"couple\", \"crocheted blanket\", \"bed\"]\n- possible_interpretations: [\"couple advertising a crocheted blanket pattern\", \"holiday lifestyle photo\", \"couple relaxing under Christmas blanket\"]\n- uncertainty_notes: \"Image appears to be a commercial/lifestyle photo, possibly for a craft pattern book\"\n- quality_flags: [\"staged_commercial_photo\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a couple (man and woman) sitting close together on what appears to be a bed, covered with a large crocheted/knitted afghan blanket. The blanket has a distinctive granny square pattern in red, green, and white/cream colors - classic Christmas colors. The couple is smiling at the camera. This looks like a staged commercial/editorial photo, possibly for a craft magazine or pattern book, given the prominent display of the blanket.\n\nLet me go through the schema:\n\n- recognizability: 5 - very clear what we're seeing\n- ambiguity: 1 - quite clear interpretation (couple with Christmas blanket)\n- natural_photo_typicality: 3 - looks like a posed commercial photo, somewhat natural but clearly staged\n- visual_clutter: 2 - relatively clean, main elements are the couple and the blanket\n- object_centricity: 3 - the blanket is prominent but the people are also focal\n- scene_centricity: 2 - it's more about the people and object than a place\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 3 (couple + blanket)\n- estimated_distinct_object_categories: 3 (person, person, blanket/bedding)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it appears to be a real photo, though staged)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"mixed\" - people and object (blanket) are both prominent\n- image_style: \"edited_photo\" - looks like a commercial/editorial photo with good lighting\n- semantic_domain: \"lifestyle\" or \"home_goods\"\n\n- short_caption: \"Smiling couple posing under a red and green crocheted Christmas blanket on a bed\"\n- main_objects: [\"couple\", \"crocheted blanket\", \"bed\"]\n- possible_interpretations: [\"couple advertising a crocheted blanket pattern\", \"holiday lifestyle photo\", \"couple relaxing under Christmas blanket\"]\n- uncertainty_notes: \"Image appears to be a commercial/lifestyle photo, possibly for a craft pattern book\"\n- quality_flags: [\"staged_commercial_photo\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 868,
+          "total_tokens": 2390,
+          "cost": 0.00147084,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00147084,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010416
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 594,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

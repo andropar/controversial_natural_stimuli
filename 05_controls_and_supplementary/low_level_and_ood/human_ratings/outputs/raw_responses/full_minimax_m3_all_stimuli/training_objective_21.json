@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_21",
+    "stim_key": "training_objective_21",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 21,
+    "file_index": 21,
+    "image_name": "image_0021.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0021.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "OpenRouterAPIError: OpenRouter request failed with HTTP 520: {\"error\":{\"message\":\"Provider returned error\",\"code\":520,\"metadata\":{\"raw\":\"error code: 520\",\"provider_name\":\"Minimax\",\"is_byok\":false}},\"user_id\":\"user_30doEloC0mnteHONeVzxbMu9Wrj\"}"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wedding\",\n  \"short_caption\": \"A bride and groom in traditional South Asian wedding attire pose on a grassy hill beneath a dramatic cloudy sky\",\n  \"main_objects\": [\"bride\", \"groom\", \"bouquet\", \"veil\"],\n  \"possible_interpretations\": [\"wedding portrait\", \"engagement photo\", \"fashion editorial\", \"couple's photoshoot\"],\n  \"uncertainty_notes\": \"Faces are small and viewed at distance; specific ethnicity/cultural context of attire is inferred but not certain\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319318-K2e4ygiOOEJCY2n5Vm5N",
+        "object": "chat.completion",
+        "created": 1780319318,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wedding\",\n  \"short_caption\": \"A bride and groom in traditional South Asian wedding attire pose on a grassy hill beneath a dramatic cloudy sky\",\n  \"main_objects\": [\"bride\", \"groom\", \"bouquet\", \"veil\"],\n  \"possible_interpretations\": [\"wedding portrait\", \"engagement photo\", \"fashion editorial\", \"couple's photoshoot\"],\n  \"uncertainty_notes\": \"Faces are small and viewed at distance; specific ethnicity/cultural context of attire is inferred but not certain\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a couple standing on a grassy hill against a dramatic cloudy sky. The man appears to be wearing a dark suit and the woman is wearing a red traditional South Asian outfit (possibly a lehenga or sari) with a red veil. They appear to be in a wedding or engagement pose, facing each other.\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - Very clear what's happening\n- ambiguity: 1 - Very clear interpretation\n- natural_photo_typicality: 4 - Looks like a typical photograph\n- visual_clutter: 2 - Relatively simple composition\n- object_centricity: 3 - Couple is centered but scene is also prominent\n- scene_centricity: 3 - The sky and landscape are prominent\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 2 (the two people)\n- estimated_distinct_object_categories: 2 (bride, groom)\n\n- contains_person: true\n- contains_face: true (I can see their faces)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (two people)\n\n- dominant_content_type: \"person_face\" or \"mixed\" - it's people in a scene\n- image_style: \"natural_photo\"\n- semantic_domain: \"wedding\" or \"portrait\"\n\n- short_caption: \"A bride and groom in traditional South Asian wedding attire pose on a grassy hill under a dramatic cloudy sky\"\n- main_objects: [\"bride\", \"groom\", \"bouquet\"]\n- possible_interpretations: [\"wedding photo\", \"engagement photo\", \"fashion photo\"]\n- uncertainty_notes: \"Faces are small and somewhat distant\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a couple standing on a grassy hill against a dramatic cloudy sky. The man appears to be wearing a dark suit and the woman is wearing a red traditional South Asian outfit (possibly a lehenga or sari) with a red veil. They appear to be in a wedding or engagement pose, facing each other.\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - Very clear what's happening\n- ambiguity: 1 - Very clear interpretation\n- natural_photo_typicality: 4 - Looks like a typical photograph\n- visual_clutter: 2 - Relatively simple composition\n- object_centricity: 3 - Couple is centered but scene is also prominent\n- scene_centricity: 3 - The sky and landscape are prominent\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 2 (the two people)\n- estimated_distinct_object_categories: 2 (bride, groom)\n\n- contains_person: true\n- contains_face: true (I can see their faces)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (two people)\n\n- dominant_content_type: \"person_face\" or \"mixed\" - it's people in a scene\n- image_style: \"natural_photo\"\n- semantic_domain: \"wedding\" or \"portrait\"\n\n- short_caption: \"A bride and groom in traditional South Asian wedding attire pose on a grassy hill under a dramatic cloudy sky\"\n- main_objects: [\"bride\", \"groom\", \"bouquet\"]\n- possible_interpretations: [\"wedding photo\", \"engagement photo\", \"fashion photo\"]\n- uncertainty_notes: \"Faces are small and somewhat distant\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 779,
+          "total_tokens": 2317,
+          "cost": 0.00124596,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00124596,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.0009348
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 472,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

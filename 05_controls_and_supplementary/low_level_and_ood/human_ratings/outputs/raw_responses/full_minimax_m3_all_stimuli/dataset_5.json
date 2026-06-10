@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_5",
+    "stim_key": "dataset_5",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 5,
+    "file_index": 5,
+    "image_name": "image_0005.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0005.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"domestic/indoor\",\n  \"short_caption\": \"A gray tabby cat stands beside a large Amazon cardboard box on a tiled floor.\",\n  \"main_objects\": [\"cardboard box\", \"cat\", \"patterned chair\", \"lamp\", \"wooden cabinet\"],\n  \"possible_interpretations\": [\"cat about to enter the box\", \"curious cat inspecting a delivery\", \"new Amazon package in living room\", \"cat considering playing in the box\"],\n  \"uncertainty_notes\": \"The top of the box is cropped by the frame; room layout is partially visible but background details are limited.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318966-yelFyOhNYKhg4ZxjwIGZ",
+        "object": "chat.completion",
+        "created": 1780318966,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"domestic/indoor\",\n  \"short_caption\": \"A gray tabby cat stands beside a large Amazon cardboard box on a tiled floor.\",\n  \"main_objects\": [\"cardboard box\", \"cat\", \"patterned chair\", \"lamp\", \"wooden cabinet\"],\n  \"possible_interpretations\": [\"cat about to enter the box\", \"curious cat inspecting a delivery\", \"new Amazon package in living room\", \"cat considering playing in the box\"],\n  \"uncertainty_notes\": \"The top of the box is cropped by the frame; room layout is partially visible but background details are limited.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- A large cardboard box with an Amazon logo on it, with a square hole cut out of the top section\n- The box appears to be in a home setting (tile floor visible)\n- A gray/tabby cat standing next to the box on the right side\n- A patterned chair (swirl pattern) in the background\n- What appears to be a wooden cabinet or furniture on the left\n- A lamp in the upper right corner\n- Some markings on the box indicating \"Bathroom\" and \"Kitchen\" (upside down at the top)\n\nThis is a natural photograph of a domestic scene with a cat and an Amazon box.\n\nLet me rate the attributes:\n\n- recognizability: 5 - very clearly recognizable\n- ambiguity: 1 - single clear interpretation\n- natural_photo_typicality: 5 - looks like a typical natural photo\n- visual_clutter: 3 - moderate, several elements but not overwhelming\n- object_centricity: 4 - the box is the dominant object\n- scene_centricity: 3 - it's an indoor scene with objects\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 3-4 (box, cat, chair)\n- estimated_distinct_object_categories: 3 (box, cat, furniture)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: true (cat)\n- contains_text: true (Amazon logo, box markings)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (box is cut off at top but naturally)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (box and cat)\n\ndominant_content_type: \"mixed\" (object + animal)\nimage_style: \"natural_photo\"\nsemantic_domain: \"domestic/indoor\"\n\nshort_caption: \"A gray cat stands next to a large Amazon cardboard box indoors.\"\nmain_objects: [\"cardboard box\", \"cat\", \"chair\", \"lamp\"]\npossible_interpretations: [\"cat about to play in box\", \"cat inspecting new delivery\", \"amazon package delivery scene\"]\nuncertainty_notes: \"Box top is cropped, but this appears intentional framing\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- A large cardboard box with an Amazon logo on it, with a square hole cut out of the top section\n- The box appears to be in a home setting (tile floor visible)\n- A gray/tabby cat standing next to the box on the right side\n- A patterned chair (swirl pattern) in the background\n- What appears to be a wooden cabinet or furniture on the left\n- A lamp in the upper right corner\n- Some markings on the box indicating \"Bathroom\" and \"Kitchen\" (upside down at the top)\n\nThis is a natural photograph of a domestic scene with a cat and an Amazon box.\n\nLet me rate the attributes:\n\n- recognizability: 5 - very clearly recognizable\n- ambiguity: 1 - single clear interpretation\n- natural_photo_typicality: 5 - looks like a typical natural photo\n- visual_clutter: 3 - moderate, several elements but not overwhelming\n- object_centricity: 4 - the box is the dominant object\n- scene_centricity: 3 - it's an indoor scene with objects\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 3-4 (box, cat, chair)\n- estimated_distinct_object_categories: 3 (box, cat, furniture)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: true (cat)\n- contains_text: true (Amazon logo, box markings)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (box is cut off at top but naturally)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (box and cat)\n\ndominant_content_type: \"mixed\" (object + animal)\nimage_style: \"natural_photo\"\nsemantic_domain: \"domestic/indoor\"\n\nshort_caption: \"A gray cat stands next to a large Amazon cardboard box indoors.\"\nmain_objects: [\"cardboard box\", \"cat\", \"chair\", \"lamp\"]\npossible_interpretations: [\"cat about to play in box\", \"cat inspecting new delivery\", \"amazon package delivery scene\"]\nuncertainty_notes: \"Box top is cropped, but this appears intentional framing\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 868,
+          "total_tokens": 2282,
+          "cost": 0.00131556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131556,
+            "upstream_inference_prompt_cost": 0.00027396,
+            "upstream_inference_completions_cost": 0.0010416
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 550,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

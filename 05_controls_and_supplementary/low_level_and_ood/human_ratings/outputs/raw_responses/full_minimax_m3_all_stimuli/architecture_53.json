@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_53",
+    "stim_key": "architecture_53",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 53,
+    "file_index": 53,
+    "image_name": "image_0053.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0053.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_multiple_main_objects\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"art gallery interior\",\n  \"short_caption\": \"Art gallery interior featuring a large yellow abstract painting on a white wall with a street-facing window.\",\n  \"main_objects\": [\"abstract painting\", \"window\", \"concrete column\", \"white wall\", \"concrete floor\", \"vehicle reflection\"],\n  \"possible_interpretations\": [\"art gallery\", \"artist studio\", \"contemporary art exhibition space\", \"pop-up art venue\"],\n  \"uncertainty_notes\": \"Text in window appears reversed, likely a reflection rather than actual signage. Exact nature of the painting's imagery is ambiguous.\",\n  \"quality_flags\": [\"reversed_mirrored_text\"]\n}",
+      "response": {
+        "id": "gen-1780318901-RcGpQQXLE2EX1BNierrA",
+        "object": "chat.completion",
+        "created": 1780318901,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_multiple_main_objects\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"art gallery interior\",\n  \"short_caption\": \"Art gallery interior featuring a large yellow abstract painting on a white wall with a street-facing window.\",\n  \"main_objects\": [\"abstract painting\", \"window\", \"concrete column\", \"white wall\", \"concrete floor\", \"vehicle reflection\"],\n  \"possible_interpretations\": [\"art gallery\", \"artist studio\", \"contemporary art exhibition space\", \"pop-up art venue\"],\n  \"uncertainty_notes\": \"Text in window appears reversed, likely a reflection rather than actual signage. Exact nature of the painting's imagery is ambiguous.\",\n  \"quality_flags\": [\"reversed_mirrored_text\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I see an interior of what appears to be an art gallery or studio space. There's a large yellow abstract painting on the right wall, a window on the left showing a reflection of a vehicle (appears to be a van/SUV) and a tree, a concrete column, white walls, and a gray concrete floor. There's some text visible in the window that appears mirrored/reversed.\n\nLet me annotate this according to the schema:\n\n- recognizability: It's clearly an art gallery/studio interior, so 4-5\n- ambiguity: There could be multiple interpretations - art gallery, studio, showroom, etc. So moderate ambiguity, maybe 3\n- natural_photo_typicality: This looks like a typical photograph, maybe slightly stylized but appears natural, 4\n- visual_clutter: Relatively clean space with a few key elements, 2\n- object_centricity: The painting is the main focus, 4\n- scene_centricity: It's more of a scene with the painting as focal point, 3-4\n- caption_confidence: I can describe it confidently, 4\n\n- estimated_salient_object_count: 3 (painting, window, column/space)\n- estimated_distinct_object_categories: 4-5 (painting, window, vehicle, column, floor, walls)\n\n- contains_person: false\n- contains_face: false (there might be abstract figures in the painting)\n- contains_animal: false\n- contains_text: true (reversed text in window)\n- contains_vehicle: true (visible through/reflected in window)\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: partially (visible through window)\n- contains_artificial_or_rendered_content: true (the painting is artificial/art)\n- contains_occlusion_or_truncation: false\n- contains_multiple_main_objects: false (painting is dominant)\n- contains_unusual_viewpoint: false\n\ndominant_content_type: scene (it's a gallery scene with a painting)\nimage_style: natural_photo\nsemantic_domain: art gallery / interior\n\nShort caption: \"Art gallery interior with large yellow abstract painting on white wall, window showing street view.\"\n\nMain objects: [\"painting\", \"window\", \"concrete column\", \"wall\", \"floor\"]\nPossible interpretations: [\"art gallery\", \"artist studio\", \"exhibition space\", \"art dealership\"]\nUncertainty notes: \"Text in window is reversed/mirrored, suggesting reflection rather than text on the surface\"\nQuality flags: [\"reversed text\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I see an interior of what appears to be an art gallery or studio space. There's a large yellow abstract painting on the right wall, a window on the left showing a reflection of a vehicle (appears to be a van/SUV) and a tree, a concrete column, white walls, and a gray concrete floor. There's some text visible in the window that appears mirrored/reversed.\n\nLet me annotate this according to the schema:\n\n- recognizability: It's clearly an art gallery/studio interior, so 4-5\n- ambiguity: There could be multiple interpretations - art gallery, studio, showroom, etc. So moderate ambiguity, maybe 3\n- natural_photo_typicality: This looks like a typical photograph, maybe slightly stylized but appears natural, 4\n- visual_clutter: Relatively clean space with a few key elements, 2\n- object_centricity: The painting is the main focus, 4\n- scene_centricity: It's more of a scene with the painting as focal point, 3-4\n- caption_confidence: I can describe it confidently, 4\n\n- estimated_salient_object_count: 3 (painting, window, column/space)\n- estimated_distinct_object_categories: 4-5 (painting, window, vehicle, column, floor, walls)\n\n- contains_person: false\n- contains_face: false (there might be abstract figures in the painting)\n- contains_animal: false\n- contains_text: true (reversed text in window)\n- contains_vehicle: true (visible through/reflected in window)\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: partially (visible through window)\n- contains_artificial_or_rendered_content: true (the painting is artificial/art)\n- contains_occlusion_or_truncation: false\n- contains_multiple_main_objects: false (painting is dominant)\n- contains_unusual_viewpoint: false\n\ndominant_content_type: scene (it's a gallery scene with a painting)\nimage_style: natural_photo\nsemantic_domain: art gallery / interior\n\nShort caption: \"Art gallery interior with large yellow abstract painting on white wall, window showing street view.\"\n\nMain objects: [\"painting\", \"window\", \"concrete column\", \"wall\", \"floor\"]\nPossible interpretations: [\"art gallery\", \"artist studio\", \"exhibition space\", \"art dealership\"]\nUncertainty notes: \"Text in window is reversed/mirrored, suggesting reflection rather than text on the surface\"\nQuality flags: [\"reversed text\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 897,
+          "total_tokens": 2211,
+          "cost": 0.00132036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00132036,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.0010764
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 605,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

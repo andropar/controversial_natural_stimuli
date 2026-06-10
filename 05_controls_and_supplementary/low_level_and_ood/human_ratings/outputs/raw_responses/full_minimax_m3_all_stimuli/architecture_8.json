@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_8",
+    "stim_key": "architecture_8",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 8,
+    "file_index": 8,
+    "image_name": "image_0008.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0008.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"living_room_furniture\",\n  \"short_caption\": \"Living room with dark brown leather sofas, coffee table, lamp, and bookshelf by a curtained window.\",\n  \"main_objects\": [\"leather sofas\", \"coffee table\", \"table lamp\", \"bookshelf\", \"curtains\", \"framed artwork\", \"area rug\"],\n  \"possible_interpretations\": [\"furniture catalog or product photo\", \"living room interior design photo\", \"retail advertisement for sofa set\"],\n  \"uncertainty_notes\": \"The small inset image in the top-right corner suggests this is a composite product/marketing image rather than a single natural photograph.\",\n  \"quality_flags\": [\"inset_composite\", \"staged_product_photo\"]\n}",
+      "response": {
+        "id": "gen-1780318854-PvPzSWEDGqx8mxPcvgUQ",
+        "object": "chat.completion",
+        "created": 1780318854,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"living_room_furniture\",\n  \"short_caption\": \"Living room with dark brown leather sofas, coffee table, lamp, and bookshelf by a curtained window.\",\n  \"main_objects\": [\"leather sofas\", \"coffee table\", \"table lamp\", \"bookshelf\", \"curtains\", \"framed artwork\", \"area rug\"],\n  \"possible_interpretations\": [\"furniture catalog or product photo\", \"living room interior design photo\", \"retail advertisement for sofa set\"],\n  \"uncertainty_notes\": \"The small inset image in the top-right corner suggests this is a composite product/marketing image rather than a single natural photograph.\",\n  \"quality_flags\": [\"inset_composite\", \"staged_product_photo\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a living room scene with:\n- Two dark brown leather sofas/recliners (a loveseat on the left and a larger sofa on the right)\n- A dark wood coffee table in the foreground with magazines and a decorative bowl\n- A small side table between the sofas with a lamp and picture frame\n- A dark wood bookshelf in the background with books and decorative items\n- A window with sheer curtains\n- Framed artwork on the wall\n- A small inset image in the top right corner showing what appears to be the same room from a different angle or a similar product shot\n- An area rug on the floor\n- Light-colored walls\n\nThis appears to be a furniture product/catalog photo, likely for a sofa set. The inset image is typical of product photography showing different views.\n\nLet me rate according to the schema:\n\n- recognizability: 5 - Very clearly a living room with sofas\n- ambiguity: 1 - Very clear what's shown\n- natural_photo_typicality: 3 - It's a photo but appears to be a staged product photo, not a candid natural photo\n- visual_clutter: 3 - Multiple furniture items but organized\n- object_centricity: 3 - The sofas are prominent but it's a scene\n- scene_centricity: 5 - Primarily a room/scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 5 (two sofas, coffee table, lamp, bookshelf)\n- estimated_distinct_object_categories: 6-7 (sofas, table, lamp, bookshelf, curtains, artwork, rug)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (no readable text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it's a photo, but staged)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: scene\n- image_style: edited_photo (it's clearly a product/catalog photo with the inset view)\n- semantic_domain: \"living_room\" or \"furniture\" or \"interior\"\n\nshort_caption: \"Living room with two dark brown leather sofas, coffee table, and bookshelf\"\nmain_objects: [\"leather sofas\", \"coffee table\", \"lamp\", \"bookshelf\", \"curtains\", \"framed artwork\"]\npossible_interpretations: [\"furniture catalog photo\", \"living room interior\", \"product advertisement\"]\nuncertainty_notes: \"Inset image in corner suggests product/catalog photography rather than natural scene\"\nquality_flags: [\"inset_composite\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a living room scene with:\n- Two dark brown leather sofas/recliners (a loveseat on the left and a larger sofa on the right)\n- A dark wood coffee table in the foreground with magazines and a decorative bowl\n- A small side table between the sofas with a lamp and picture frame\n- A dark wood bookshelf in the background with books and decorative items\n- A window with sheer curtains\n- Framed artwork on the wall\n- A small inset image in the top right corner showing what appears to be the same room from a different angle or a similar product shot\n- An area rug on the floor\n- Light-colored walls\n\nThis appears to be a furniture product/catalog photo, likely for a sofa set. The inset image is typical of product photography showing different views.\n\nLet me rate according to the schema:\n\n- recognizability: 5 - Very clearly a living room with sofas\n- ambiguity: 1 - Very clear what's shown\n- natural_photo_typicality: 3 - It's a photo but appears to be a staged product photo, not a candid natural photo\n- visual_clutter: 3 - Multiple furniture items but organized\n- object_centricity: 3 - The sofas are prominent but it's a scene\n- scene_centricity: 5 - Primarily a room/scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 5 (two sofas, coffee table, lamp, bookshelf)\n- estimated_distinct_object_categories: 6-7 (sofas, table, lamp, bookshelf, curtains, artwork, rug)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (no readable text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it's a photo, but staged)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: scene\n- image_style: edited_photo (it's clearly a product/catalog photo with the inset view)\n- semantic_domain: \"living_room\" or \"furniture\" or \"interior\"\n\nshort_caption: \"Living room with two dark brown leather sofas, coffee table, and bookshelf\"\nmain_objects: [\"leather sofas\", \"coffee table\", \"lamp\", \"bookshelf\", \"curtains\", \"framed artwork\"]\npossible_interpretations: [\"furniture catalog photo\", \"living room interior\", \"product advertisement\"]\nuncertainty_notes: \"Inset image in corner suggests product/catalog photography rather than natural scene\"\nquality_flags: [\"inset_composite\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 973,
+          "total_tokens": 2287,
+          "cost": 0.00141156,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00141156,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.0011676
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 659,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

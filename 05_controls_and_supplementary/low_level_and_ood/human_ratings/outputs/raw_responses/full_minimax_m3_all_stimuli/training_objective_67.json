@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_67",
+    "stim_key": "training_objective_67",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 67,
+    "file_index": 67,
+    "image_name": "image_0067.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0067.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 14,\n  \"estimated_distinct_object_categories\": 1,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"agricultural landscape\",\n\n  \"short_caption\": \"Round hay bales scattered across a harvested golden field under a deep blue sky.\",\n  \"main_objects\": [\"hay bales\", \"harvested field\", \"sky\"],\n  \"possible_interpretations\": [\"agricultural field with hay bales\", \"rural farmland after harvest\", \"summer hay-making landscape\"],\n  \"uncertainty_notes\": \"Colors appear quite saturated, which may indicate some post-processing or color enhancement, but the scene itself is clearly a natural agricultural landscape.\",\n  \"quality_flags\": [\"highly saturated colors\"]\n}",
+      "response": {
+        "id": "gen-1780319342-VOCIKnm2K6a2uxmcwLAx",
+        "object": "chat.completion",
+        "created": 1780319342,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 14,\n  \"estimated_distinct_object_categories\": 1,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"agricultural landscape\",\n\n  \"short_caption\": \"Round hay bales scattered across a harvested golden field under a deep blue sky.\",\n  \"main_objects\": [\"hay bales\", \"harvested field\", \"sky\"],\n  \"possible_interpretations\": [\"agricultural field with hay bales\", \"rural farmland after harvest\", \"summer hay-making landscape\"],\n  \"uncertainty_notes\": \"Colors appear quite saturated, which may indicate some post-processing or color enhancement, but the scene itself is clearly a natural agricultural landscape.\",\n  \"quality_flags\": [\"highly saturated colors\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see a landscape photograph showing a harvested agricultural field with multiple round hay bales scattered across a gently rolling terrain. The field has visible furrow lines from harvesting, and the sky above is a deep, rich blue. The image appears to be taken from a low angle, giving a wide view of the field and the many hay bales.\n\nLet me rate each attribute:\n\n- recognizability: 5 - very clear, easily recognizable as hay bales in a field\n- ambiguity: 1 - very unambiguous, clearly a field with hay bales\n- natural_photo_typicality: 4 - looks like a natural photograph, though the colors seem slightly enhanced/saturated\n- visual_clutter: 2 - relatively uncluttered with the repetitive pattern of bales\n- object_centricity: 2 - no single dominant object, the scene is the focus\n- scene_centricity: 5 - clearly a landscape/scene\n- caption_confidence: 5 - very confident in a caption\n\nCounts:\n- salient object count: I can see roughly 12-15 hay bales\n- distinct categories: 1 (hay bales), plus the field/landscape\n\nContent:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (looks like a natural photo, perhaps slightly enhanced)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (slightly low angle but not unusual)\n- contains_multiple_main_objects: true (many hay bales)\n\nDominant content: scene\nImage style: natural_photo (possibly slightly edited but looks natural)\nSemantic domain: agriculture/landscape\n\nShort caption: \"Round hay bales scattered across a harvested golden field under a deep blue sky\"\n\nMain objects: hay bales, harvested field, sky\n\nPossible interpretations: \n- Agricultural landscape with hay bales\n- Rural farmland in summer/harvest season\n- Post-harvest wheat or hay field\n\nUncertainty notes: The colors appear quite saturated which may suggest some editing\n\nQuality flags: possibly color enhanced/saturated",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see a landscape photograph showing a harvested agricultural field with multiple round hay bales scattered across a gently rolling terrain. The field has visible furrow lines from harvesting, and the sky above is a deep, rich blue. The image appears to be taken from a low angle, giving a wide view of the field and the many hay bales.\n\nLet me rate each attribute:\n\n- recognizability: 5 - very clear, easily recognizable as hay bales in a field\n- ambiguity: 1 - very unambiguous, clearly a field with hay bales\n- natural_photo_typicality: 4 - looks like a natural photograph, though the colors seem slightly enhanced/saturated\n- visual_clutter: 2 - relatively uncluttered with the repetitive pattern of bales\n- object_centricity: 2 - no single dominant object, the scene is the focus\n- scene_centricity: 5 - clearly a landscape/scene\n- caption_confidence: 5 - very confident in a caption\n\nCounts:\n- salient object count: I can see roughly 12-15 hay bales\n- distinct categories: 1 (hay bales), plus the field/landscape\n\nContent:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (looks like a natural photo, perhaps slightly enhanced)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (slightly low angle but not unusual)\n- contains_multiple_main_objects: true (many hay bales)\n\nDominant content: scene\nImage style: natural_photo (possibly slightly edited but looks natural)\nSemantic domain: agriculture/landscape\n\nShort caption: \"Round hay bales scattered across a harvested golden field under a deep blue sky\"\n\nMain objects: hay bales, harvested field, sky\n\nPossible interpretations: \n- Agricultural landscape with hay bales\n- Rural farmland in summer/harvest season\n- Post-harvest wheat or hay field\n\nUncertainty notes: The colors appear quite saturated which may suggest some editing\n\nQuality flags: possibly color enhanced/saturated",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 835,
+          "total_tokens": 2149,
+          "cost": 0.00124596,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00124596,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.001002
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 562,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

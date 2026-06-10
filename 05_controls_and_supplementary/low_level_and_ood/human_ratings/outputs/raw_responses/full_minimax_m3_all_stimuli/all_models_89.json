@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_89",
+    "stim_key": "all_models_89",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 89,
+    "file_index": 89,
+    "image_name": "image_0089.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0089.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports\",\n  \"short_caption\": \"Hockey goaltender tangled in goal net with Gatorade bottle on top\",\n  \"main_objects\": [\"hockey goaltender\", \"goal net\", \"Gatorade bottle\", \"ice skates\", \"goalie pads\"],\n  \"possible_interpretations\": [\"Goalie fell into the net after a save\", \"Goalie celebrating a victory\", \"Goalie injured during play\"],\n  \"uncertainty_notes\": \"Goalie's face is not visible; cannot determine identity, expression, or exact situation\",\n  \"quality_flags\": []\n}\n```",
+      "response": {
+        "id": "gen-1780318831-wlWpNLOfbu36RO32ALIi",
+        "object": "chat.completion",
+        "created": 1780318831,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports\",\n  \"short_caption\": \"Hockey goaltender tangled in goal net with Gatorade bottle on top\",\n  \"main_objects\": [\"hockey goaltender\", \"goal net\", \"Gatorade bottle\", \"ice skates\", \"goalie pads\"],\n  \"possible_interpretations\": [\"Goalie fell into the net after a save\", \"Goalie celebrating a victory\", \"Goalie injured during play\"],\n  \"uncertainty_notes\": \"Goalie's face is not visible; cannot determine identity, expression, or exact situation\",\n  \"quality_flags\": []\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a hockey goaltender who appears to have fallen into or near the goal net. I can see:\n\n- A hockey goaltender wearing CCM equipment (visible on the pads)\n- The goal frame with red posts and white netting\n- A green Gatorade water bottle balanced on top of the net\n- Ice surface\n- Boards with NHL.com/Live Game signage\n- The goalie's skates are visible\n- The goalie appears to be tangled in the net\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clearly a hockey goaltender in the net\n- ambiguity: 1 - Very clear what's happening\n- natural_photo_typicality: 4 - Looks like a typical sports photograph\n- visual_clutter: 3 - Several elements but not overly busy\n- object_centricity: 3 - The goalie and net are the main subjects\n- scene_centricity: 3 - It's a sports scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 3 (goalie, net, water bottle)\n- estimated_distinct_object_categories: 3\n\n- contains_person: true\n- contains_face: false (face not visible)\n- contains_animal: false\n- contains_text: true (NHL.com, Live Game, CCM, Gatorade)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (indoor arena but it's a scene)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (goalie partially obscured by net)\n- contains_multiple_main_objects: true (goalie and net)\n- contains_unusual_viewpoint: false (relatively typical angle)\n\nActually, hockey arenas are indoor scenes. Let me set contains_indoor_scene to true.\n\ndominant_content_type: \"person\" - the goalie is the main subject, but it's also a scene. Maybe \"mixed\"\n\nimage_style: \"natural_photo\"\nsemantic_domain: \"sports\"\n\nshort_caption: \"Hockey goaltender tangled in goal net with Gatorade bottle on top\"\nmain_objects: [\"hockey goalie\", \"goal net\", \"Gatorade bottle\", \"ice skates\", \"hockey pads\"]\npossible_interpretations: [\"Goalie making a save and falling into net\", \"Goalie celebrating after winning\", \"Goalie injured in the net\"]\nuncertainty_notes: \"Goalie's face is not visible due to being in the net\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a hockey goaltender who appears to have fallen into or near the goal net. I can see:\n\n- A hockey goaltender wearing CCM equipment (visible on the pads)\n- The goal frame with red posts and white netting\n- A green Gatorade water bottle balanced on top of the net\n- Ice surface\n- Boards with NHL.com/Live Game signage\n- The goalie's skates are visible\n- The goalie appears to be tangled in the net\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clearly a hockey goaltender in the net\n- ambiguity: 1 - Very clear what's happening\n- natural_photo_typicality: 4 - Looks like a typical sports photograph\n- visual_clutter: 3 - Several elements but not overly busy\n- object_centricity: 3 - The goalie and net are the main subjects\n- scene_centricity: 3 - It's a sports scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 3 (goalie, net, water bottle)\n- estimated_distinct_object_categories: 3\n\n- contains_person: true\n- contains_face: false (face not visible)\n- contains_animal: false\n- contains_text: true (NHL.com, Live Game, CCM, Gatorade)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (indoor arena but it's a scene)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (goalie partially obscured by net)\n- contains_multiple_main_objects: true (goalie and net)\n- contains_unusual_viewpoint: false (relatively typical angle)\n\nActually, hockey arenas are indoor scenes. Let me set contains_indoor_scene to true.\n\ndominant_content_type: \"person\" - the goalie is the main subject, but it's also a scene. Maybe \"mixed\"\n\nimage_style: \"natural_photo\"\nsemantic_domain: \"sports\"\n\nshort_caption: \"Hockey goaltender tangled in goal net with Gatorade bottle on top\"\nmain_objects: [\"hockey goalie\", \"goal net\", \"Gatorade bottle\", \"ice skates\", \"hockey pads\"]\npossible_interpretations: [\"Goalie making a save and falling into net\", \"Goalie celebrating after winning\", \"Goalie injured in the net\"]\nuncertainty_notes: \"Goalie's face is not visible due to being in the net\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 904,
+          "total_tokens": 2426,
+          "cost": 0.00139116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139116,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010848
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 576,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

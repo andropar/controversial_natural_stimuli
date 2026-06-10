@@ -15,16 +15,9 @@ effect.
 ## Contents Snapshot
 
 - Folder: `05_controls_and_supplementary/stimulus_and_pair_diagnostics`
-- Figures in this folder tree: 5
+- Figures in this folder tree: 0
 - Data/table-like files in this folder tree: 10
 - Python scripts in this folder tree: 5
 
-Use the tables below as a trace from rendered files back to the nearby code, staged data, score tables, or reports that produced them.
-
-## Figure Index
-
-| Figure directory | Figures | README |
-|---|---:|---|
-| `05_controls_and_supplementary/stimulus_and_pair_diagnostics/stimulus_characterization/figures` | 4 | `05_controls_and_supplementary/stimulus_and_pair_diagnostics/stimulus_characterization/figures/README.md` |
-| `05_controls_and_supplementary/stimulus_and_pair_diagnostics/stimulus_characterization/figures/png` | 1 | `05_controls_and_supplementary/stimulus_and_pair_diagnostics/stimulus_characterization/figures/png/README.md` |
+Rendered stimulus-image figures are intentionally not part of the public share.
 <!-- END AUTO-FIGURE-PROVENANCE -->

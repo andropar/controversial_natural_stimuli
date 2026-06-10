@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_188",
+    "stim_key": "vicco_188",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 188,
+    "file_index": 187,
+    "image_name": "shared_4rep_vicco_188.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_188.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"street/town\",\n  \"short_caption\": \"Narrow European street with shops, colorful butterfly umbrellas, and parked van\",\n  \"main_objects\": [\"buildings\", \"van\", \"umbrellas\", \"storefronts\", \"street\", \"signs\", \"people\"],\n  \"possible_interpretations\": [\"outdoor cafe street\", \"shopping street in a town\", \"village market alley\", \"pedestrian shopping district\", \"tourist town center\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees, making orientation and some details ambiguous; small figures may be people but are hard to confirm\",\n  \"quality_flags\": [\"rotated_90_degrees\", \"moderate_resolution\", \"distant_subjects\"]\n}",
+      "response": {
+        "id": "gen-1780319606-uhnBcix3FJFaXajRobIG",
+        "object": "chat.completion",
+        "created": 1780319606,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"street/town\",\n  \"short_caption\": \"Narrow European street with shops, colorful butterfly umbrellas, and parked van\",\n  \"main_objects\": [\"buildings\", \"van\", \"umbrellas\", \"storefronts\", \"street\", \"signs\", \"people\"],\n  \"possible_interpretations\": [\"outdoor cafe street\", \"shopping street in a town\", \"village market alley\", \"pedestrian shopping district\", \"tourist town center\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees, making orientation and some details ambiguous; small figures may be people but are hard to confirm\",\n  \"quality_flags\": [\"rotated_90_degrees\", \"moderate_resolution\", \"distant_subjects\"]\n}",
+              "refusal": null,
+              "reasoning": "The image appears to be rotated 90 degrees. It shows an outdoor street scene in what looks like a European town, with buildings on both sides of a narrow street, shops, umbrellas/parasols, and possibly a van. The image is rotated sideways.\n\nLet me analyze the scene:\n- Narrow street with buildings on both sides\n- Shops/storefronts visible\n- Outdoor seating with umbrellas (some appear to have butterfly designs)\n- A blue van parked on the street\n- Cobblestone or paved street\n- The image is rotated 90 degrees\n- Appears to be a small European town/village\n\nLet me provide ratings:\n- recognizability: 3 (the rotation makes it harder, but the content is recognizable as a street scene)\n- ambiguity: 2 (clearly a street scene with shops)\n- natural_photo_typicality: 4 (looks like a typical photo, though rotated)\n- visual_clutter: 4 (many elements - buildings, signs, umbrellas, van, people)\n- object_centricity: 1 (no single dominant object)\n- scene_centricity: 5 (definitely a scene/place)\n- caption_confidence: 3 (rotation makes captioning harder)\n\nObject counts:\n- salient_object_count: many (buildings, van, umbrellas, signs)\n- distinct_object_categories: maybe 6-8 (buildings, van, umbrellas, signs, street, people, posts)\n\nContains:\n- person: possibly some small figures\n- face: not clearly\n- animal: no\n- text: yes (signs visible)\n- vehicle: yes (van)\n- food: no (though restaurant/cafe items)\n- indoor_scene: no\n- outdoor_scene: yes\n- artificial_or_rendered: no\n- occlusion_or_truncation: yes (image rotated, edges cut off)\n- unusual_viewpoint: yes (rotated 90 degrees)\n- multiple_main_objects: yes\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: street/town\n\nShort caption: \"Narrow European street with shops, colorful umbrellas, and parked van\"\n\nMain objects: buildings, van, umbrellas, storefronts, street\n\nPossible interpretations: outdoor cafe street, shopping street, town market street\n\nUncertainty: image is rotated 90 degrees, making orientation unclear",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image appears to be rotated 90 degrees. It shows an outdoor street scene in what looks like a European town, with buildings on both sides of a narrow street, shops, umbrellas/parasols, and possibly a van. The image is rotated sideways.\n\nLet me analyze the scene:\n- Narrow street with buildings on both sides\n- Shops/storefronts visible\n- Outdoor seating with umbrellas (some appear to have butterfly designs)\n- A blue van parked on the street\n- Cobblestone or paved street\n- The image is rotated 90 degrees\n- Appears to be a small European town/village\n\nLet me provide ratings:\n- recognizability: 3 (the rotation makes it harder, but the content is recognizable as a street scene)\n- ambiguity: 2 (clearly a street scene with shops)\n- natural_photo_typicality: 4 (looks like a typical photo, though rotated)\n- visual_clutter: 4 (many elements - buildings, signs, umbrellas, van, people)\n- object_centricity: 1 (no single dominant object)\n- scene_centricity: 5 (definitely a scene/place)\n- caption_confidence: 3 (rotation makes captioning harder)\n\nObject counts:\n- salient_object_count: many (buildings, van, umbrellas, signs)\n- distinct_object_categories: maybe 6-8 (buildings, van, umbrellas, signs, street, people, posts)\n\nContains:\n- person: possibly some small figures\n- face: not clearly\n- animal: no\n- text: yes (signs visible)\n- vehicle: yes (van)\n- food: no (though restaurant/cafe items)\n- indoor_scene: no\n- outdoor_scene: yes\n- artificial_or_rendered: no\n- occlusion_or_truncation: yes (image rotated, edges cut off)\n- unusual_viewpoint: yes (rotated 90 degrees)\n- multiple_main_objects: yes\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: street/town\n\nShort caption: \"Narrow European street with shops, colorful umbrellas, and parked van\"\n\nMain objects: buildings, van, umbrellas, storefronts, street\n\nPossible interpretations: outdoor cafe street, shopping street, town market street\n\nUncertainty: image is rotated 90 degrees, making orientation unclear",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 873,
+          "total_tokens": 2395,
+          "cost": 0.00135396,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00135396,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010476
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 534,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_19",
+    "stim_key": "training_objective_19",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 19,
+    "file_index": 19,
+    "image_name": "image_0019.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0019.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"portrait_memorial\",\n  \"short_caption\": \"Hand holding a framed portrait of a smiling man in a suit, warm bokeh background\",\n  \"main_objects\": [\"framed photograph\", \"hand\", \"portrait of man\"],\n  \"possible_interpretations\": [\n    \"A person displaying a memorial or tribute portrait\",\n    \"Someone showing a photo of a loved one\",\n    \"A commemorative or celebratory moment\",\n    \"A posed photograph emphasizing the portrait subject\"\n  ],\n  \"uncertainty_notes\": \"The subject of the portrait is recognizable only as a smiling man in formal attire; identity and broader context (event, relationship) are unclear.\",\n  \"quality_flags\": [\"shallow_depth_of_field\", \"bokeh_background\", \"framed_subject_at_angle\", \"portrait_inside_photograph\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319229-riXcFpT9Qz6xtbZhuLIV",
+        "object": "chat.completion",
+        "created": 1780319229,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"portrait_memorial\",\n  \"short_caption\": \"Hand holding a framed portrait of a smiling man in a suit, warm bokeh background\",\n  \"main_objects\": [\"framed photograph\", \"hand\", \"portrait of man\"],\n  \"possible_interpretations\": [\n    \"A person displaying a memorial or tribute portrait\",\n    \"Someone showing a photo of a loved one\",\n    \"A commemorative or celebratory moment\",\n    \"A posed photograph emphasizing the portrait subject\"\n  ],\n  \"uncertainty_notes\": \"The subject of the portrait is recognizable only as a smiling man in formal attire; identity and broader context (event, relationship) are unclear.\",\n  \"quality_flags\": [\"shallow_depth_of_field\", \"bokeh_background\", \"framed_subject_at_angle\", \"portrait_inside_photograph\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a hand holding a framed photograph of a smiling man wearing a suit and tie. The man in the photograph appears to be smiling broadly. The frame is held at an angle. In the background, there are out-of-focus string lights and what appears to be an indoor setting with warm lighting. There's also what looks like a bowl or dish in the lower left.\n\nThe main content is the framed portrait being held up. The background is bokeh/blurred with warm lights.\n\nLet me assess each dimension:\n\n- recognizability: The image is fairly clear - a hand holding a framed portrait. 4\n- ambiguity: The interpretation is fairly clear - it's a framed photograph being displayed. Some ambiguity about context but the main content is clear. 2\n- natural_photo_typicality: Looks like a natural photograph with shallow depth of field. 4\n- visual_clutter: The background has blurred lights but the main subject is clear. Moderate clutter. 2\n- object_centricity: The framed portrait is the clear central object. 4\n- scene_centricity: It's more object-focused than scene-focused. 2\n- caption_confidence: Can describe it confidently. 4\n\nSalient objects: 1 main object (the framed photo)\nDistinct categories: 2 (framed photo, hand)\n\ncontains_person: Yes, in the photograph\ncontains_face: Yes, in the photograph\ncontains_animal: No\ncontains_text: No\ncontains_vehicle: No\ncontains_food: Maybe a bowl but unclear\ncontains_indoor_scene: Yes\ncontains_outdoor_scene: No\ncontains_artificial_or_rendered_content: No\ncontains_occlusion_or_truncation: The frame is at an edge, slightly cut off\ncontains_unusual_viewpoint: Slightly unusual angle\ncontains_multiple_main_objects: No\n\ndominant_content: object\nimage_style: natural_photo\nsemantic_domain: portrait/memorial\n\nshort_caption: \"Hand holding a framed portrait of a smiling man in a suit\"\n\nmain_objects: [\"framed photograph\", \"hand\", \"portrait of man\"]\n\npossible_interpretations: \n- A person holding a memorial portrait\n- A person displaying a photo of a loved one\n- A person showing a portrait to someone\n- A holiday/festive moment with a photo\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a hand holding a framed photograph of a smiling man wearing a suit and tie. The man in the photograph appears to be smiling broadly. The frame is held at an angle. In the background, there are out-of-focus string lights and what appears to be an indoor setting with warm lighting. There's also what looks like a bowl or dish in the lower left.\n\nThe main content is the framed portrait being held up. The background is bokeh/blurred with warm lights.\n\nLet me assess each dimension:\n\n- recognizability: The image is fairly clear - a hand holding a framed portrait. 4\n- ambiguity: The interpretation is fairly clear - it's a framed photograph being displayed. Some ambiguity about context but the main content is clear. 2\n- natural_photo_typicality: Looks like a natural photograph with shallow depth of field. 4\n- visual_clutter: The background has blurred lights but the main subject is clear. Moderate clutter. 2\n- object_centricity: The framed portrait is the clear central object. 4\n- scene_centricity: It's more object-focused than scene-focused. 2\n- caption_confidence: Can describe it confidently. 4\n\nSalient objects: 1 main object (the framed photo)\nDistinct categories: 2 (framed photo, hand)\n\ncontains_person: Yes, in the photograph\ncontains_face: Yes, in the photograph\ncontains_animal: No\ncontains_text: No\ncontains_vehicle: No\ncontains_food: Maybe a bowl but unclear\ncontains_indoor_scene: Yes\ncontains_outdoor_scene: No\ncontains_artificial_or_rendered_content: No\ncontains_occlusion_or_truncation: The frame is at an edge, slightly cut off\ncontains_unusual_viewpoint: Slightly unusual angle\ncontains_multiple_main_objects: No\n\ndominant_content: object\nimage_style: natural_photo\nsemantic_domain: portrait/memorial\n\nshort_caption: \"Hand holding a framed portrait of a smiling man in a suit\"\n\nmain_objects: [\"framed photograph\", \"hand\", \"portrait of man\"]\n\npossible_interpretations: \n- A person holding a memorial portrait\n- A person displaying a photo of a loved one\n- A person showing a portrait to someone\n- A holiday/festive moment with a photo\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 892,
+          "total_tokens": 2206,
+          "cost": 0.00131436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131436,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.0010704
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 567,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

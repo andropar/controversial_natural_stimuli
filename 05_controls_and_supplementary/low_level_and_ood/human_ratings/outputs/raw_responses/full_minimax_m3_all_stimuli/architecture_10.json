@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_10",
+    "stim_key": "architecture_10",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 10,
+    "file_index": 10,
+    "image_name": "image_0010.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0010.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_decor\",\n  \"short_caption\": \"Colorful striped curtains frame white French doors flanked by wall sconces in an interior.\",\n  \"main_objects\": [\"curtains\", \"french doors\", \"wall sconces\", \"curtain rod\"],\n  \"possible_interpretations\": [\"product photo of curtains\", \"interior design showcase\", \"staged room display\", \"home decor catalog image\"],\n  \"uncertainty_notes\": \"Likely a product or catalog photograph; the view through the doors appears slightly stylized or enhanced.\",\n  \"quality_flags\": [\"product_photo\", \"possibly_staged\", \"bright_exterior_backlight\"]\n}",
+      "response": {
+        "id": "gen-1780318856-TCH017MAJz6gEN76hZJS",
+        "object": "chat.completion",
+        "created": 1780318856,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_decor\",\n  \"short_caption\": \"Colorful striped curtains frame white French doors flanked by wall sconces in an interior.\",\n  \"main_objects\": [\"curtains\", \"french doors\", \"wall sconces\", \"curtain rod\"],\n  \"possible_interpretations\": [\"product photo of curtains\", \"interior design showcase\", \"staged room display\", \"home decor catalog image\"],\n  \"uncertainty_notes\": \"Likely a product or catalog photograph; the view through the doors appears slightly stylized or enhanced.\",\n  \"quality_flags\": [\"product_photo\", \"possibly_staged\", \"bright_exterior_backlight\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an interior scene with:\n- Colorful striped curtains (red, blue, yellow, green, orange) framing a set of white French doors\n- Two wall sconces on either side with candle-style lights\n- Beige/tan walls with wainscoting/panel detail\n- A wooden floor\n- Through the glass doors, I can see what appears to be an outdoor scene (balcony/terrace with some landscape)\n- A decorative curtain rod at the top\n\nThis appears to be a product photo or interior design photo showcasing the curtains.\n\nLet me rate each dimension:\n\n- recognizability: 5 - very clearly shows curtains on French doors\n- ambiguity: 1 - very clear what this is\n- natural_photo_typicality: 3 - it looks like a product photo/interior design photo, somewhat staged\n- visual_clutter: 2 - relatively clean composition\n- object_centricity: 4 - the curtains are the main focus\n- scene_centricity: 4 - it's also showing the room/setting\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 3 (curtains, doors, sconces)\n- estimated_distinct_object_categories: 3 (curtains, doors, sconces)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: true (visible through windows)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: \"object\" (curtains) or \"scene\" - I'll go with \"object\" since the curtains are the clear focus\nimage_style: \"natural_photo\" - looks like a product photograph\nsemantic_domain: \"interior_design\" or \"home_decor\"\n\nshort_caption: \"Colorful striped curtains frame white French doors in an interior with wall sconces.\"\n\nmain_objects: [\"curtains\", \"french doors\", \"wall sconces\"]\n\npossible_interpretations: [\"product photo of curtains\", \"interior design showcase\", \"staged room display\"]\n\nuncertainty_notes: \"Appears to be a product photograph; the outdoor view through doors is somewhat blurred/enhanced.\"\n\nquality_flags: [\"product_photo\", \"possibly_staged\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an interior scene with:\n- Colorful striped curtains (red, blue, yellow, green, orange) framing a set of white French doors\n- Two wall sconces on either side with candle-style lights\n- Beige/tan walls with wainscoting/panel detail\n- A wooden floor\n- Through the glass doors, I can see what appears to be an outdoor scene (balcony/terrace with some landscape)\n- A decorative curtain rod at the top\n\nThis appears to be a product photo or interior design photo showcasing the curtains.\n\nLet me rate each dimension:\n\n- recognizability: 5 - very clearly shows curtains on French doors\n- ambiguity: 1 - very clear what this is\n- natural_photo_typicality: 3 - it looks like a product photo/interior design photo, somewhat staged\n- visual_clutter: 2 - relatively clean composition\n- object_centricity: 4 - the curtains are the main focus\n- scene_centricity: 4 - it's also showing the room/setting\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 3 (curtains, doors, sconces)\n- estimated_distinct_object_categories: 3 (curtains, doors, sconces)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: true (visible through windows)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: \"object\" (curtains) or \"scene\" - I'll go with \"object\" since the curtains are the clear focus\nimage_style: \"natural_photo\" - looks like a product photograph\nsemantic_domain: \"interior_design\" or \"home_decor\"\n\nshort_caption: \"Colorful striped curtains frame white French doors in an interior with wall sconces.\"\n\nmain_objects: [\"curtains\", \"french doors\", \"wall sconces\"]\n\npossible_interpretations: [\"product photo of curtains\", \"interior design showcase\", \"staged room display\"]\n\nuncertainty_notes: \"Appears to be a product photograph; the outdoor view through doors is somewhat blurred/enhanced.\"\n\nquality_flags: [\"product_photo\", \"possibly_staged\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 902,
+          "total_tokens": 2424,
+          "cost": 0.00138876,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00138876,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010824
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 586,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

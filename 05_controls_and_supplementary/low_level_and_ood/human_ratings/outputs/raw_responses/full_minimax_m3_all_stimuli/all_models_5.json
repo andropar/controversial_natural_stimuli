@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_5",
+    "stim_key": "all_models_5",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 5,
+    "file_index": 5,
+    "image_name": "image_0005.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0005.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 2,\n  \"ambiguity\": 5,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 2,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"unclear\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor_people\",\n  \"short_caption\": \"Blurry indoor scene with partial views of people near a doorway and tiled wall.\",\n  \"main_objects\": [\"person\", \"tiled wall\", \"doorway\"],\n  \"possible_interpretations\": [\n    \"people walking past a doorway\",\n    \"an elevator or lobby scene\",\n    \"a hallway with passersby\",\n    \"someone entering or leaving a room\",\n    \"a reflection in glass\"\n  ],\n  \"uncertainty_notes\": \"Image is heavily blurred; identities, faces, and exact context of the scene are unclear. Hard to determine precise relationship between the figures and the environment.\",\n  \"quality_flags\": [\"motion_blur\", \"out_of_focus\", \"low_clarity\", \"truncated_subjects\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318741-3MwirCwZOFQvpWoInP8i",
+        "object": "chat.completion",
+        "created": 1780318741,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 2,\n  \"ambiguity\": 5,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 2,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"unclear\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor_people\",\n  \"short_caption\": \"Blurry indoor scene with partial views of people near a doorway and tiled wall.\",\n  \"main_objects\": [\"person\", \"tiled wall\", \"doorway\"],\n  \"possible_interpretations\": [\n    \"people walking past a doorway\",\n    \"an elevator or lobby scene\",\n    \"a hallway with passersby\",\n    \"someone entering or leaving a room\",\n    \"a reflection in glass\"\n  ],\n  \"uncertainty_notes\": \"Image is heavily blurred; identities, faces, and exact context of the scene are unclear. Hard to determine precise relationship between the figures and the environment.\",\n  \"quality_flags\": [\"motion_blur\", \"out_of_focus\", \"low_clarity\", \"truncated_subjects\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "The image shows a blurry scene with what appears to be a person in the foreground (left side, dark clothing) and possibly another person on the right side (lighter clothing). There's a dark tiled wall on the left and a bright/light area in the middle-right, possibly a doorway or window. The image is quite blurry and lacks clear focal point.\n\nLet me analyze:\n- Recognizability: Low - the image is blurry and hard to identify specific content. Maybe 2.\n- Ambiguity: High - many possible interpretations. 4-5.\n- Natural photo typicality: It looks like a natural photo but is blurry. 3.\n- Visual clutter: Moderate - a few elements but not very cluttered. 2-3.\n- Object centricity: Low - no clear central object. 2.\n- Scene centricity: Moderate - it seems to be a scene. 3.\n- Caption confidence: Low - hard to caption confidently. 2.\n\nContains person: yes - blurry figures visible\nContains face: no - faces aren't clearly visible\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nIndoor: yes - appears to be indoor\nOutdoor: no\nArtificial/rendered: no\nOcclusion/truncation: yes - persons are truncated\nUnusual viewpoint: somewhat\nMultiple main objects: yes\n\nDominant content type: unclear or person\nImage style: natural_photo\nSemantic domain: indoor/people\n\nMain objects: person, doorway/wall\nCaption: \"Blurry scene of a person near a doorway with a tiled wall\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a blurry scene with what appears to be a person in the foreground (left side, dark clothing) and possibly another person on the right side (lighter clothing). There's a dark tiled wall on the left and a bright/light area in the middle-right, possibly a doorway or window. The image is quite blurry and lacks clear focal point.\n\nLet me analyze:\n- Recognizability: Low - the image is blurry and hard to identify specific content. Maybe 2.\n- Ambiguity: High - many possible interpretations. 4-5.\n- Natural photo typicality: It looks like a natural photo but is blurry. 3.\n- Visual clutter: Moderate - a few elements but not very cluttered. 2-3.\n- Object centricity: Low - no clear central object. 2.\n- Scene centricity: Moderate - it seems to be a scene. 3.\n- Caption confidence: Low - hard to caption confidently. 2.\n\nContains person: yes - blurry figures visible\nContains face: no - faces aren't clearly visible\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nIndoor: yes - appears to be indoor\nOutdoor: no\nArtificial/rendered: no\nOcclusion/truncation: yes - persons are truncated\nUnusual viewpoint: somewhat\nMultiple main objects: yes\n\nDominant content type: unclear or person\nImage style: natural_photo\nSemantic domain: indoor/people\n\nMain objects: person, doorway/wall\nCaption: \"Blurry scene of a person near a doorway with a tiled wall\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 721,
+          "total_tokens": 2243,
+          "cost": 0.00129444,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129444,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008652
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 368,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

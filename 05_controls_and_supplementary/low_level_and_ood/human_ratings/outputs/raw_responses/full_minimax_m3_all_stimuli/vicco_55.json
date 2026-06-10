@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_55",
+    "stim_key": "vicco_55",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 55,
+    "file_index": 54,
+    "image_name": "shared_4rep_vicco_055.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_055.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 5, \"scene_centricity\": 1, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 2, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"kitchenware/tableware\", \"short_caption\": \"Stainless steel mug with cylindrical handle on a dark surface near a woven basket.\", \"main_objects\": [\"stainless steel mug\", \"woven basket\"], \"possible_interpretations\": [\"stainless steel camping mug\", \"metal coffee cup\", \"kitchen tableware\", \"insulated travel mug\"], \"uncertainty_notes\": \"Contents inside the mug are not clearly visible; background is partially out of focus.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319450-E1JqMyP8Bcg64IlZ1sfK",
+        "object": "chat.completion",
+        "created": 1780319450,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 5, \"scene_centricity\": 1, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 2, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"kitchenware/tableware\", \"short_caption\": \"Stainless steel mug with cylindrical handle on a dark surface near a woven basket.\", \"main_objects\": [\"stainless steel mug\", \"woven basket\"], \"possible_interpretations\": [\"stainless steel camping mug\", \"metal coffee cup\", \"kitchen tableware\", \"insulated travel mug\"], \"uncertainty_notes\": \"Contents inside the mug are not clearly visible; background is partially out of focus.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a stainless steel mug or cup with a cylindrical handle on the right side. It appears to be sitting on a dark surface (possibly a table). Behind it is what looks like a woven basket or textured background.\n\nLet me go through each annotation:\n\n- Recognizability: The object is very clear - a metal mug/cup. 5\n- Ambiguity: Not ambiguous - clearly a mug. 1\n- Natural photo typicality: Looks like a natural photo. 4\n- Visual clutter: Not much clutter - one main object with a textured background. 2\n- Object centricity: Yes, the mug dominates. 5\n- Scene centricity: No, it's object-focused, not a scene. 1\n- Caption confidence: High confidence. 5\n\nSalient objects: 1 main object (the mug)\nDistinct categories: 1-2 (mug, basket/background)\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false (it might contain a dark liquid but I can't be sure)\nContains indoor scene: true (appears to be indoors)\nContains outdoor scene: false\nContains artificial content: false\nContains occlusion: false\nContains unusual viewpoint: false (slightly above angle but normal)\nContains multiple main objects: false\n\nDominant content type: object\nImage style: natural_photo\nSemantic domain: kitchenware/tableware\n\nShort caption: \"Stainless steel mug with cylindrical handle on a dark surface\"\n\nMain objects: [\"stainless steel mug\", \"woven basket (background)\"]\n\nPossible interpretations: \n- A metal camping mug\n- A stainless steel coffee cup\n- A kitchen/tableware item\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a stainless steel mug or cup with a cylindrical handle on the right side. It appears to be sitting on a dark surface (possibly a table). Behind it is what looks like a woven basket or textured background.\n\nLet me go through each annotation:\n\n- Recognizability: The object is very clear - a metal mug/cup. 5\n- Ambiguity: Not ambiguous - clearly a mug. 1\n- Natural photo typicality: Looks like a natural photo. 4\n- Visual clutter: Not much clutter - one main object with a textured background. 2\n- Object centricity: Yes, the mug dominates. 5\n- Scene centricity: No, it's object-focused, not a scene. 1\n- Caption confidence: High confidence. 5\n\nSalient objects: 1 main object (the mug)\nDistinct categories: 1-2 (mug, basket/background)\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false (it might contain a dark liquid but I can't be sure)\nContains indoor scene: true (appears to be indoors)\nContains outdoor scene: false\nContains artificial content: false\nContains occlusion: false\nContains unusual viewpoint: false (slightly above angle but normal)\nContains multiple main objects: false\n\nDominant content type: object\nImage style: natural_photo\nSemantic domain: kitchenware/tableware\n\nShort caption: \"Stainless steel mug with cylindrical handle on a dark surface\"\n\nMain objects: [\"stainless steel mug\", \"woven basket (background)\"]\n\nPossible interpretations: \n- A metal camping mug\n- A stainless steel coffee cup\n- A kitchen/tableware item\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 673,
+          "total_tokens": 2195,
+          "cost": 0.00111396,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00111396,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008076
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 431,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

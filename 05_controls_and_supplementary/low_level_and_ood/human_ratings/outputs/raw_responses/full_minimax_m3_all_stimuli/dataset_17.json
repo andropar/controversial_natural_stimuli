@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_17",
+    "stim_key": "dataset_17",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 17,
+    "file_index": 17,
+    "image_name": "image_0017.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0017.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 7, \"estimated_distinct_object_categories\": 6, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"edited_photo\", \"semantic_domain\": \"tableware/dining\", \"short_caption\": \"Festive table setting with red and black plaid linens, plates, silverware, wooden candlesticks, and floral arrangement.\", \"main_objects\": [\"plate\", \"napkin\", \"fork\", \"knife\", \"candlesticks\", \"floral arrangement\", \"wooden grinder\", \"placemat\", \"tablecloth\"], \"possible_interpretations\": [\"holiday table setting\", \"Christmas themed dining setup\", \"farmhouse style place setting\", \"styled lifestyle photography\"], \"uncertainty_notes\": \"Top-edge items (candles, grinder) are partially cropped; no food present on the plates.\", \"quality_flags\": [\"partially_cropped_top\", \"stylized_staging\"]}",
+      "response": {
+        "id": "gen-1780318982-HlAdXpuoo8DJWVr2tDQ4",
+        "object": "chat.completion",
+        "created": 1780318982,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 7, \"estimated_distinct_object_categories\": 6, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"edited_photo\", \"semantic_domain\": \"tableware/dining\", \"short_caption\": \"Festive table setting with red and black plaid linens, plates, silverware, wooden candlesticks, and floral arrangement.\", \"main_objects\": [\"plate\", \"napkin\", \"fork\", \"knife\", \"candlesticks\", \"floral arrangement\", \"wooden grinder\", \"placemat\", \"tablecloth\"], \"possible_interpretations\": [\"holiday table setting\", \"Christmas themed dining setup\", \"farmhouse style place setting\", \"styled lifestyle photography\"], \"uncertainty_notes\": \"Top-edge items (candles, grinder) are partially cropped; no food present on the plates.\", \"quality_flags\": [\"partially_cropped_top\", \"stylized_staging\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I see a table setting with:\n- A red and black checkered/buffalo plaid tablecloth\n- Wooden candlesticks with white candles (top left)\n- A wooden pepper grinder or similar wooden object\n- A floral arrangement with green and pink roses\n- A white plate with a gray plate on top\n- A red and black checkered napkin with a gold leaf-shaped napkin ring\n- A silver fork on the left\n- A silver knife on the right\n- A placemat underneath\n\nThis is a styled table setting photograph, likely for a holiday/Christmas theme given the red and black plaid pattern.\n\nLet me rate each dimension:\n\n- recognizability: 5 - very clearly recognizable as a table setting\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 4 - looks like a styled photograph, typical of food/lifestyle photography\n- visual_clutter: 3 - several items but well-organized\n- object_centricity: 3 - centered on the plate but it's a scene\n- scene_centricity: 4 - it's a tabletop scene/place setting\n- caption_confidence: 5 - easy to caption\n\nSalient objects: plate, napkin, cutlery, candlesticks, flowers, wooden grinder - about 6-7\nDistinct categories: plates, cutlery, candles, flowers, napkin, tablecloth - about 6\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false (no food visible, just empty plates)\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false (some items cut off at top edges)\ncontains_unusual_viewpoint: true (overhead/bird's eye view)\ncontains_multiple_main_objects: true\n\ndominant_content_type: scene\nimage_style: edited_photo (looks styled)\nsemantic_domain: tabletop/dining/tableware\n\nshort_caption: \"Festive table setting with red and black plaid linens, plates, silverware, wooden candlesticks, and floral centerpiece\"\n\nmain_objects: [\"plate\", \"napkin\", \"fork\", \"knife\", \"candlesticks\", \"floral arrangement\", \"wooden grinder\", \"placemat\"]\n\npossible_interpretations: [\"holiday table setting\", \"Christmas table setting\", \"farmhouse style dining setup\", \"styled dining photography\"]\n\nuncertainty_notes: \"Some items at top edge are partially cut off; no food is present on the plates\"\n\nquality_flags: [\"partially_cropped_top\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I see a table setting with:\n- A red and black checkered/buffalo plaid tablecloth\n- Wooden candlesticks with white candles (top left)\n- A wooden pepper grinder or similar wooden object\n- A floral arrangement with green and pink roses\n- A white plate with a gray plate on top\n- A red and black checkered napkin with a gold leaf-shaped napkin ring\n- A silver fork on the left\n- A silver knife on the right\n- A placemat underneath\n\nThis is a styled table setting photograph, likely for a holiday/Christmas theme given the red and black plaid pattern.\n\nLet me rate each dimension:\n\n- recognizability: 5 - very clearly recognizable as a table setting\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 4 - looks like a styled photograph, typical of food/lifestyle photography\n- visual_clutter: 3 - several items but well-organized\n- object_centricity: 3 - centered on the plate but it's a scene\n- scene_centricity: 4 - it's a tabletop scene/place setting\n- caption_confidence: 5 - easy to caption\n\nSalient objects: plate, napkin, cutlery, candlesticks, flowers, wooden grinder - about 6-7\nDistinct categories: plates, cutlery, candles, flowers, napkin, tablecloth - about 6\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false (no food visible, just empty plates)\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false (some items cut off at top edges)\ncontains_unusual_viewpoint: true (overhead/bird's eye view)\ncontains_multiple_main_objects: true\n\ndominant_content_type: scene\nimage_style: edited_photo (looks styled)\nsemantic_domain: tabletop/dining/tableware\n\nshort_caption: \"Festive table setting with red and black plaid linens, plates, silverware, wooden candlesticks, and floral centerpiece\"\n\nmain_objects: [\"plate\", \"napkin\", \"fork\", \"knife\", \"candlesticks\", \"floral arrangement\", \"wooden grinder\", \"placemat\"]\n\npossible_interpretations: [\"holiday table setting\", \"Christmas table setting\", \"farmhouse style dining setup\", \"styled dining photography\"]\n\nuncertainty_notes: \"Some items at top edge are partially cut off; no food is present on the plates\"\n\nquality_flags: [\"partially_cropped_top\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 915,
+          "total_tokens": 2437,
+          "cost": 0.00152724,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00152724,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.001098
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 620,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

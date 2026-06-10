@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_102",
+    "stim_key": "vicco_102",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 102,
+    "file_index": 101,
+    "image_name": "shared_4rep_vicco_102.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_102.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"advertising\",\n  \"short_caption\": \"Close-up of a smiling woman's face on a circular advertising display\",\n  \"main_objects\": [\"advertisement poster\", \"woman's face\", \"circular display frame\", \"glass building\"],\n  \"possible_interpretations\": [\"beauty product advertisement\", \"fashion or cosmetic ad\", \"retail storefront display\", \"commercial signage\", \"lifestyle brand promotion\"],\n  \"uncertainty_notes\": \"Image is a photograph of a printed advertisement, not the ad graphic itself; specific product or brand not visible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319506-wD8QCu5qTB3IUWALGXNj",
+        "object": "chat.completion",
+        "created": 1780319506,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"advertising\",\n  \"short_caption\": \"Close-up of a smiling woman's face on a circular advertising display\",\n  \"main_objects\": [\"advertisement poster\", \"woman's face\", \"circular display frame\", \"glass building\"],\n  \"possible_interpretations\": [\"beauty product advertisement\", \"fashion or cosmetic ad\", \"retail storefront display\", \"commercial signage\", \"lifestyle brand promotion\"],\n  \"uncertainty_notes\": \"Image is a photograph of a printed advertisement, not the ad graphic itself; specific product or brand not visible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a large close-up advertisement or poster of a smiling woman's face with bright green eyes. The poster appears to be displayed in a circular/oval frame, possibly on a storefront or display case. The background shows what looks like a glass building interior with lights visible.\n\nLet me analyze the image properties:\n- It's clearly a face/portrait advertisement\n- The image appears to be a photograph taken of a printed advertisement/poster\n- There's a circular black frame around the face\n- The background shows architectural elements (glass, lights)\n\nLet me fill in the schema:\n\n- recognizability: 5 - very clearly a woman's face in an advertisement\n- ambiguity: 1 - very clear what's depicted\n- natural_photo_typicality: 3 - it's a photo of an ad/poster, not a typical natural scene\n- visual_clutter: 2 - relatively simple, face dominates\n- object_centricity: 2 - it's more of a scene/context\n- scene_centricity: 3 - the display context matters\n- caption_confidence: 5 - very confident about caption\n\n- estimated_salient_object_count: 1 (the face/portrait)\n- estimated_distinct_object_categories: 2 (portrait, display frame)\n\n- contains_person: true (the woman in the ad)\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (appears to be indoor setting with glass)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (it's an advertisement/poster)\n- contains_occlusion_or_truncation: true (the face is partially cut by the circular frame)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"person_face\"\n- image_style: \"natural_photo\" (a photo of a real-world scene with an ad)\n- semantic_domain: \"advertising\" or \"portrait\"\n\nshort_caption: \"Close-up of a smiling woman's face on a circular advertising display\"\n\nmain_objects: [\"advertisement poster\", \"woman's face\", \"circular frame\", \"glass building\"]\n\npossible_interpretations: [\"beauty product advertisement\", \"fashion advertisement\", \"cosmetic advertisement\", \"retail display\", \"commercial signage\"]\n\nuncertainty_notes: \"The image shows a real photograph of an advertisement display rather than the ad itself as a graphic\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a large close-up advertisement or poster of a smiling woman's face with bright green eyes. The poster appears to be displayed in a circular/oval frame, possibly on a storefront or display case. The background shows what looks like a glass building interior with lights visible.\n\nLet me analyze the image properties:\n- It's clearly a face/portrait advertisement\n- The image appears to be a photograph taken of a printed advertisement/poster\n- There's a circular black frame around the face\n- The background shows architectural elements (glass, lights)\n\nLet me fill in the schema:\n\n- recognizability: 5 - very clearly a woman's face in an advertisement\n- ambiguity: 1 - very clear what's depicted\n- natural_photo_typicality: 3 - it's a photo of an ad/poster, not a typical natural scene\n- visual_clutter: 2 - relatively simple, face dominates\n- object_centricity: 2 - it's more of a scene/context\n- scene_centricity: 3 - the display context matters\n- caption_confidence: 5 - very confident about caption\n\n- estimated_salient_object_count: 1 (the face/portrait)\n- estimated_distinct_object_categories: 2 (portrait, display frame)\n\n- contains_person: true (the woman in the ad)\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (appears to be indoor setting with glass)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (it's an advertisement/poster)\n- contains_occlusion_or_truncation: true (the face is partially cut by the circular frame)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"person_face\"\n- image_style: \"natural_photo\" (a photo of a real-world scene with an ad)\n- semantic_domain: \"advertising\" or \"portrait\"\n\nshort_caption: \"Close-up of a smiling woman's face on a circular advertising display\"\n\nmain_objects: [\"advertisement poster\", \"woman's face\", \"circular frame\", \"glass building\"]\n\npossible_interpretations: [\"beauty product advertisement\", \"fashion advertisement\", \"cosmetic advertisement\", \"retail display\", \"commercial signage\"]\n\nuncertainty_notes: \"The image shows a real photograph of an advertisement display rather than the ad itself as a graphic\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 873,
+          "total_tokens": 2395,
+          "cost": 0.00135396,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00135396,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010476
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 608,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

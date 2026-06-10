@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_56",
+    "stim_key": "training_objective_56",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 56,
+    "file_index": 56,
+    "image_name": "image_0056.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0056.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\":4,\"ambiguity\":2,\"natural_photo_typicality\":2,\"visual_clutter\":2,\"object_centricity\":3,\"scene_centricity\":3,\"caption_confidence\":4,\"estimated_salient_object_count\":2,\"estimated_distinct_object_categories\":2,\"contains_person\":true,\"contains_face\":true,\"contains_animal\":false,\"contains_text\":false,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":true,\"contains_outdoor_scene\":false,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":false,\"contains_multiple_main_objects\":true,\"dominant_content_type\":\"person_face\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"cinema\",\"short_caption\":\"Bearded man in tan shirt beside woman holding glass in dimly lit indoor scene\",\"main_objects\":[\"man\",\"woman\",\"incense sticks\",\"glass\"],\"possible_interpretations\":[\"film still\",\"religious or ceremonial gathering\",\"dramatic indoor scene\",\"family moment\"],\"uncertainty_notes\":\"Cinematic color grading and lighting suggest this is a film still; specific narrative context unclear\",\"quality_flags\":[\"cinematic_grading\",\"low_light\",\"shallow_depth_of_field\"]}",
+      "response": {
+        "id": "gen-1780319340-zpKOCx7UnOMYrv2IJ53T",
+        "object": "chat.completion",
+        "created": 1780319340,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\":4,\"ambiguity\":2,\"natural_photo_typicality\":2,\"visual_clutter\":2,\"object_centricity\":3,\"scene_centricity\":3,\"caption_confidence\":4,\"estimated_salient_object_count\":2,\"estimated_distinct_object_categories\":2,\"contains_person\":true,\"contains_face\":true,\"contains_animal\":false,\"contains_text\":false,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":true,\"contains_outdoor_scene\":false,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":false,\"contains_multiple_main_objects\":true,\"dominant_content_type\":\"person_face\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"cinema\",\"short_caption\":\"Bearded man in tan shirt beside woman holding glass in dimly lit indoor scene\",\"main_objects\":[\"man\",\"woman\",\"incense sticks\",\"glass\"],\"possible_interpretations\":[\"film still\",\"religious or ceremonial gathering\",\"dramatic indoor scene\",\"family moment\"],\"uncertainty_notes\":\"Cinematic color grading and lighting suggest this is a film still; specific narrative context unclear\",\"quality_flags\":[\"cinematic_grading\",\"low_light\",\"shallow_depth_of_field\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be a cinematic/film still with two people. There's a man in the foreground wearing a tan/beige shirt, who appears to be middle-aged with a beard. He looks serious or contemplative. There's a woman in the background on the left side, who appears younger, with long dark hair, holding what looks like a glass or cup to her face. There appear to be incense sticks or similar thin objects in the foreground, and the lighting is dim/warm suggesting an indoor setting, possibly a religious or ceremonial context.\n\nLet me annotate this:\n\n- recognizability: 4 - The main subjects are clearly recognizable as people\n- ambiguity: 2 - Pretty clear what's happening, though the specific context is ambiguous\n- natural_photo_typicality: 2 - This looks like a film still, not a typical natural photo (has cinematic lighting, color grading)\n- visual_clutter: 2 - Relatively clean composition with clear subjects\n- object_centricity: 3 - There are two main people, somewhat object-centric\n- scene_centricity: 3 - The setting/lighting contributes to the mood\n- caption_confidence: 4 - Can describe what's visible\n\n- estimated_salient_object_count: 2 (two people)\n- estimated_distinct_object_categories: 2 (man, woman)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it's a photo, not rendered)\n- contains_occlusion_or_truncation: true (woman is partially cut off on the left)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (two people)\n\n- dominant_content_type: \"person_face\" (the man is the dominant figure)\n- image_style: \"natural_photo\" (though it's a film still, it's still a natural photo)\n- semantic_domain: \"cinema\" or \"portrait\"\n\n- short_caption: \"Man in tan shirt with woman holding glass in dimly lit indoor setting\"\n- main_objects: [\"man\", \"woman\", \"incense sticks\", \"glass\"]\n- possible_interpretations: [\"film still\", \"religious ceremony\", \"dramatic scene\", \"family gathering\"]\n- uncertainty_notes: \"Cinematic color grading suggests this is a film still; specific context unclear\"\n- quality_flags: [\"cinematic_grading\", \"low_light\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be a cinematic/film still with two people. There's a man in the foreground wearing a tan/beige shirt, who appears to be middle-aged with a beard. He looks serious or contemplative. There's a woman in the background on the left side, who appears younger, with long dark hair, holding what looks like a glass or cup to her face. There appear to be incense sticks or similar thin objects in the foreground, and the lighting is dim/warm suggesting an indoor setting, possibly a religious or ceremonial context.\n\nLet me annotate this:\n\n- recognizability: 4 - The main subjects are clearly recognizable as people\n- ambiguity: 2 - Pretty clear what's happening, though the specific context is ambiguous\n- natural_photo_typicality: 2 - This looks like a film still, not a typical natural photo (has cinematic lighting, color grading)\n- visual_clutter: 2 - Relatively clean composition with clear subjects\n- object_centricity: 3 - There are two main people, somewhat object-centric\n- scene_centricity: 3 - The setting/lighting contributes to the mood\n- caption_confidence: 4 - Can describe what's visible\n\n- estimated_salient_object_count: 2 (two people)\n- estimated_distinct_object_categories: 2 (man, woman)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it's a photo, not rendered)\n- contains_occlusion_or_truncation: true (woman is partially cut off on the left)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (two people)\n\n- dominant_content_type: \"person_face\" (the man is the dominant figure)\n- image_style: \"natural_photo\" (though it's a film still, it's still a natural photo)\n- semantic_domain: \"cinema\" or \"portrait\"\n\n- short_caption: \"Man in tan shirt with woman holding glass in dimly lit indoor setting\"\n- main_objects: [\"man\", \"woman\", \"incense sticks\", \"glass\"]\n- possible_interpretations: [\"film still\", \"religious ceremony\", \"dramatic scene\", \"family gathering\"]\n- uncertainty_notes: \"Cinematic color grading suggests this is a film still; specific context unclear\"\n- quality_flags: [\"cinematic_grading\", \"low_light\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 809,
+          "total_tokens": 2123,
+          "cost": 0.00121476,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00121476,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.0009708
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 612,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

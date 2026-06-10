@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_249",
+    "stim_key": "vicco_249",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 249,
+    "file_index": 248,
+    "image_name": "shared_4rep_vicco_249.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_249.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 2, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": true, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"mixed\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"comics/books\", \"short_caption\": \"Photograph of a French graphic novel page showing a blond young man in dialogue.\", \"main_objects\": [\"comic book\", \"illustrated character\", \"speech bubbles\", \"knit fabric\"], \"possible_interpretations\": [\"photograph of a comic book being read\", \"photo of a graphic novel on a blanket\", \"reference image of a comic panel\"], \"uncertainty_notes\": \"The illustrated scene within the panel is not fully visible; only one main panel is shown. The fabric on the left appears to be a knitted blanket.\", \"quality_flags\": [\"angled_shot\", \"partial_panel_visible\", \"mixed_illustration_and_photo\"]}",
+      "response": {
+        "id": "gen-1780319675-VjOwFXfREUrrnnVYyfb3",
+        "object": "chat.completion",
+        "created": 1780319675,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 2, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": true, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"mixed\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"comics/books\", \"short_caption\": \"Photograph of a French graphic novel page showing a blond young man in dialogue.\", \"main_objects\": [\"comic book\", \"illustrated character\", \"speech bubbles\", \"knit fabric\"], \"possible_interpretations\": [\"photograph of a comic book being read\", \"photo of a graphic novel on a blanket\", \"reference image of a comic panel\"], \"uncertainty_notes\": \"The illustrated scene within the panel is not fully visible; only one main panel is shown. The fabric on the left appears to be a knitted blanket.\", \"quality_flags\": [\"angled_shot\", \"partial_panel_visible\", \"mixed_illustration_and_photo\"]}",
+              "refusal": null,
+              "reasoning": "The image shows a comic book page, specifically what appears to be a French-language graphic novel. The visible panel shows a young man with blond hair speaking in speech bubbles with French text. The comic book is photographed on what appears to be a textured surface (possibly a knitted blanket or similar fabric). The image is a photograph of a physical book/comic, not the comic content itself.\n\nLet me analyze:\n- This is a photo of a comic book page, taken at an angle\n- The main content is a comic panel with a character (blond young man) and French dialogue\n- There's a fabric/blanket visible on the left side\n- The book pages are visible\n- It's not a typical \"natural photo\" - it's a photo of an illustrated page\n\nLet me rate:\n- recognizability: 4 - clearly recognizable as a comic book\n- ambiguity: 2 - not many interpretations, it's clearly a comic book page\n- natural_photo_typicality: 2 - it's a photo but of a book, not a typical natural scene\n- visual_clutter: 3 - has the comic panel, text bubbles, fabric, book pages\n- object_centricity: 2 - no single dominant object, it's a mixed scene\n- scene_centricity: 3 - it's more of a scene/context shot\n- caption_confidence: 4 - easy to caption as \"comic book page\"\n\nContent analysis:\n- contains_text: true (French speech bubbles)\n- contains_face: true (the drawn character's face)\n- contains_person: true (illustrated person)\n- contains_animal: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (depicted in panel, and the book is on what looks like indoor surface)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (it's a comic/illustration)\n- contains_occlusion_or_truncation: true (panel is cut off on right)\n- contains_unusual_viewpoint: true (angled shot)\n- contains_multiple_main_objects: false (one main panel)\n\nMain objects: comic book, panel, character illustration, speech bubbles\nDominant content: mixed (comic panel and book photo)\nImage style: edited_photo or natural_photo of a book... I'd say natural_photo since it's a photo of a real book\nSemantic domain: comics/illustration/books",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a comic book page, specifically what appears to be a French-language graphic novel. The visible panel shows a young man with blond hair speaking in speech bubbles with French text. The comic book is photographed on what appears to be a textured surface (possibly a knitted blanket or similar fabric). The image is a photograph of a physical book/comic, not the comic content itself.\n\nLet me analyze:\n- This is a photo of a comic book page, taken at an angle\n- The main content is a comic panel with a character (blond young man) and French dialogue\n- There's a fabric/blanket visible on the left side\n- The book pages are visible\n- It's not a typical \"natural photo\" - it's a photo of an illustrated page\n\nLet me rate:\n- recognizability: 4 - clearly recognizable as a comic book\n- ambiguity: 2 - not many interpretations, it's clearly a comic book page\n- natural_photo_typicality: 2 - it's a photo but of a book, not a typical natural scene\n- visual_clutter: 3 - has the comic panel, text bubbles, fabric, book pages\n- object_centricity: 2 - no single dominant object, it's a mixed scene\n- scene_centricity: 3 - it's more of a scene/context shot\n- caption_confidence: 4 - easy to caption as \"comic book page\"\n\nContent analysis:\n- contains_text: true (French speech bubbles)\n- contains_face: true (the drawn character's face)\n- contains_person: true (illustrated person)\n- contains_animal: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (depicted in panel, and the book is on what looks like indoor surface)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (it's a comic/illustration)\n- contains_occlusion_or_truncation: true (panel is cut off on right)\n- contains_unusual_viewpoint: true (angled shot)\n- contains_multiple_main_objects: false (one main panel)\n\nMain objects: comic book, panel, character illustration, speech bubbles\nDominant content: mixed (comic panel and book photo)\nImage style: edited_photo or natural_photo of a book... I'd say natural_photo since it's a photo of a real book\nSemantic domain: comics/illustration/books",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 846,
+          "total_tokens": 2368,
+          "cost": 0.00132156,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00132156,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010152
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 558,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

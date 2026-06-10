@@ -15,27 +15,27 @@ mechanistic follow-up with image-blocked cross-validation.
 ## Pipeline
 
 ```bash
-/data/home_roth/_stachelschwein/miniforge3/bin/python analysis/01_matched_counterfactual_ladder.py
-/data/home_roth/_stachelschwein/miniforge3/bin/python analysis/02_reliability_and_residual_readout.py
-/data/home_roth/_stachelschwein/miniforge3/bin/python analysis/03_pair_level_variance_partition.py
-/data/home_roth/_stachelschwein/miniforge3/bin/python analysis/04_make_explanation_summary_figure.py
+python analysis/01_matched_counterfactual_ladder.py
+python analysis/02_reliability_and_residual_readout.py
+python analysis/03_pair_level_variance_partition.py
+python analysis/04_make_explanation_summary_figure.py
 ```
 
 or:
 
 ```bash
-/data/home_roth/_stachelschwein/miniforge3/bin/python analysis/run_all.py
+python analysis/run_all.py
 ```
 
 ## Outputs
 
-- `data/matched_counterfactual_ladder_by_cell.csv`
-- `data/matched_counterfactual_ladder_summary.csv`
-- `data/reliability_control_by_cell.csv`
-- `data/reliability_control_summary.csv`
-- `data/residual_readout_summary.csv`
-- `data/pair_variance_partition_by_cell.csv`
-- `data/pair_variance_partition_summary.csv`
+- `results/matched_counterfactual_ladder_by_cell.csv`
+- `results/matched_counterfactual_ladder_summary.csv`
+- `results/reliability_control_by_cell.csv`
+- `results/reliability_control_summary.csv`
+- `results/residual_readout_summary.csv`
+- `results/pair_variance_partition_by_cell.csv`
+- `results/pair_variance_partition_summary.csv`
 - `figures/explanation_summary.{pdf,png}`
 
 ## Interpretation

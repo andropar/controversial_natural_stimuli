@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_81",
+    "stim_key": "vicco_81",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 81,
+    "file_index": 80,
+    "image_name": "shared_4rep_vicco_081.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_081.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife\",\n  \"short_caption\": \"Close-up portrait of an elephant's face showing textured gray wrinkled skin and eye.\",\n  \"main_objects\": [\"elephant head\", \"ear\", \"trunk\", \"eye\", \"vegetation\"],\n  \"possible_interpretations\": [\"elephant close-up portrait\", \"Asian elephant face\", \"elephant in natural habitat\", \"zoo or sanctuary elephant\"],\n  \"uncertainty_notes\": \"Species identification uncertain (likely Asian based on ear shape and head profile); exact setting unclear but appears to be outdoor daytime.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319480-ESzUMYksquZNO1G86pA3",
+        "object": "chat.completion",
+        "created": 1780319480,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife\",\n  \"short_caption\": \"Close-up portrait of an elephant's face showing textured gray wrinkled skin and eye.\",\n  \"main_objects\": [\"elephant head\", \"ear\", \"trunk\", \"eye\", \"vegetation\"],\n  \"possible_interpretations\": [\"elephant close-up portrait\", \"Asian elephant face\", \"elephant in natural habitat\", \"zoo or sanctuary elephant\"],\n  \"uncertainty_notes\": \"Species identification uncertain (likely Asian based on ear shape and head profile); exact setting unclear but appears to be outdoor daytime.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a close-up of an elephant's face, filling most of the frame. I can see the textured gray skin, eye, ear, and trunk details. There's some vegetation (bamboo or similar) in the background on the right side. The image appears to be a natural photograph taken in what looks like a natural or zoo setting.\n\nLet me annotate this carefully:\n\n- Recognizability: Very high, clearly an elephant - 5\n- Ambiguity: Low, only one clear interpretation - 1\n- Natural photo typicality: Looks like a natural photo - 4\n- Visual clutter: Low, mostly the elephant's face - 2\n- Object centricity: High, the elephant's head dominates - 4\n- Scene centricity: Low, it's object-focused - 2\n- Caption confidence: High - 5\n\nSalient objects: 1 main (elephant head)\nDistinct categories: 1 (elephant) plus background vegetation\n\nContains person: false\nContains face: not a human face, but animal face - false (face refers to human typically)\nContains animal: true\nContains text: false\nContains vehicle: false\nContains food: false\nIndoor scene: false\nOutdoor scene: true\nArtificial/rendered: false\nOcclusion/truncation: the elephant's body is cut off, so yes there's truncation\nUnusual viewpoint: somewhat close-up but not extremely unusual - false\nMultiple main objects: false\n\nDominant content type: animal\nImage style: natural_photo\nSemantic domain: wildlife/animal\n\nShort caption: \"Close-up portrait of an elephant's face showing textured gray skin and eye.\"\n\nMain objects: [\"elephant head\", \"ear\", \"trunk\", \"eye\"]\nPossible interpretations: [\"elephant face close-up\", \"Asian elephant portrait\"]\nUncertainty notes: \"Species could be Asian or African; lighting suggests outdoor daytime\"\nQuality flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a close-up of an elephant's face, filling most of the frame. I can see the textured gray skin, eye, ear, and trunk details. There's some vegetation (bamboo or similar) in the background on the right side. The image appears to be a natural photograph taken in what looks like a natural or zoo setting.\n\nLet me annotate this carefully:\n\n- Recognizability: Very high, clearly an elephant - 5\n- Ambiguity: Low, only one clear interpretation - 1\n- Natural photo typicality: Looks like a natural photo - 4\n- Visual clutter: Low, mostly the elephant's face - 2\n- Object centricity: High, the elephant's head dominates - 4\n- Scene centricity: Low, it's object-focused - 2\n- Caption confidence: High - 5\n\nSalient objects: 1 main (elephant head)\nDistinct categories: 1 (elephant) plus background vegetation\n\nContains person: false\nContains face: not a human face, but animal face - false (face refers to human typically)\nContains animal: true\nContains text: false\nContains vehicle: false\nContains food: false\nIndoor scene: false\nOutdoor scene: true\nArtificial/rendered: false\nOcclusion/truncation: the elephant's body is cut off, so yes there's truncation\nUnusual viewpoint: somewhat close-up but not extremely unusual - false\nMultiple main objects: false\n\nDominant content type: animal\nImage style: natural_photo\nSemantic domain: wildlife/animal\n\nShort caption: \"Close-up portrait of an elephant's face showing textured gray skin and eye.\"\n\nMain objects: [\"elephant head\", \"ear\", \"trunk\", \"eye\"]\nPossible interpretations: [\"elephant face close-up\", \"Asian elephant portrait\"]\nUncertainty notes: \"Species could be Asian or African; lighting suggests outdoor daytime\"\nQuality flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 749,
+          "total_tokens": 2271,
+          "cost": 0.00120516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00120516,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008988
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 451,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

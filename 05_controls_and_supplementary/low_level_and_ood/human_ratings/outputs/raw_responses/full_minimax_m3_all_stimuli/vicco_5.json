@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_5",
+    "stim_key": "vicco_5",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 5,
+    "file_index": 4,
+    "image_name": "shared_4rep_vicco_005.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_005.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: No valid JSON object found in model response"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 12,\n  \"estimated_distinct_object_categories\": 10,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor_room\",\n  \"short_caption\": \"Cluttered bedroom interior with bed, coat rack, shelves, chair, and air conditioner on wooden floor\",\n  \"main_objects\": [\"bed\", \"coat rack\", \"chair\", \"shelves\", \"air conditioner\", \"radiator\", \"bar stools\", \"table\", \"curtain\", \"blanket\", \"rose\"],\n  \"possible_interpretations\": [\"Bedroom with laundry drying on rack\", \"Studio apartment living space\", \"Small multi-purpose room with sleeping area\"],\n  \"uncertainty_notes\": \"Unclear if purely a bedroom or multi-purpose living space due to mix of furniture types and laundry items\",\n  \"quality_flags\": [\"cluttered\", \"dim_lighting\", \"mixed_room_function\"]\n}",
+      "response": {
+        "id": "gen-1780319419-WtizkYndwEHtbBKNgJP9",
+        "object": "chat.completion",
+        "created": 1780319419,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 12,\n  \"estimated_distinct_object_categories\": 10,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor_room\",\n  \"short_caption\": \"Cluttered bedroom interior with bed, coat rack, shelves, chair, and air conditioner on wooden floor\",\n  \"main_objects\": [\"bed\", \"coat rack\", \"chair\", \"shelves\", \"air conditioner\", \"radiator\", \"bar stools\", \"table\", \"curtain\", \"blanket\", \"rose\"],\n  \"possible_interpretations\": [\"Bedroom with laundry drying on rack\", \"Studio apartment living space\", \"Small multi-purpose room with sleeping area\"],\n  \"uncertainty_notes\": \"Unclear if purely a bedroom or multi-purpose living space due to mix of furniture types and laundry items\",\n  \"quality_flags\": [\"cluttered\", \"dim_lighting\", \"mixed_room_function\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a bedroom interior with various furniture and objects. I can see:\n- A bed with white sheets on the left\n- A wooden floor\n- A radiator\n- Built-in shelves/wardrobe with various items\n- A chair with a yellow basin on it\n- A small table/desk\n- Bar stools\n- A coat rack with towels and clothing hanging\n- An air conditioner on the wall\n- A curtain\n- A red rose\n- Some magazines/books\n- A plastic bag on the floor\n- A hula hoop\n- A textured blanket/throw in the foreground right\n- A plant\n- Some text/sign on the wall (appears to say \"ROUTE\")\n\nThis is a cluttered indoor room scene. Let me rate each dimension:\n\n- recognizability: 4 - clearly an indoor room, fairly recognizable\n- ambiguity: 2 - it's clearly a bedroom/room\n- natural_photo_typicality: 4 - looks like a typical phone photo of a room\n- visual_clutter: 4 - many objects, cluttered\n- object_centricity: 2 - no single dominant object, it's a scene\n- scene_centricity: 5 - this is clearly a place/scene\n- caption_confidence: 4 - easy to caption\n\nCounts:\n- estimated_salient_object_count: many objects, probably 10+\n- estimated_distinct_object_categories: bed, chair, radiator, shelves, coat rack, table, stools, air conditioner, plant, books, curtain, blanket - about 10-12 categories\n\nFlags:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (the \"ROUTE\" sign)\n- contains_vehicle: false\n- contains_food: false (rose is not food)\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (foreground blanket is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: \"scene\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"indoor_room\"\n\nshort_caption: \"Cluttered bedroom interior with bed, coat rack, shelves, chair, and air conditioner on wooden floor\"\n\nmain_objects: [\"bed\", \"coat rack\", \"chair\", \"shelves\", \"air conditioner\", \"radiator\", \"bar stools\", \"table\", \"curtain\", \"blanket\"]\n\npossible_interpretations: [\"Bedroom with laundry drying\", \"Studio apartment living space\", \"Storage room with bed\"]\n\nuncertainty_notes: \"Unclear if purely a bedroom or multi-purpose room due to mix of items\"\n\nquality_flags: [\"cluttered\", \"low_light\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a bedroom interior with various furniture and objects. I can see:\n- A bed with white sheets on the left\n- A wooden floor\n- A radiator\n- Built-in shelves/wardrobe with various items\n- A chair with a yellow basin on it\n- A small table/desk\n- Bar stools\n- A coat rack with towels and clothing hanging\n- An air conditioner on the wall\n- A curtain\n- A red rose\n- Some magazines/books\n- A plastic bag on the floor\n- A hula hoop\n- A textured blanket/throw in the foreground right\n- A plant\n- Some text/sign on the wall (appears to say \"ROUTE\")\n\nThis is a cluttered indoor room scene. Let me rate each dimension:\n\n- recognizability: 4 - clearly an indoor room, fairly recognizable\n- ambiguity: 2 - it's clearly a bedroom/room\n- natural_photo_typicality: 4 - looks like a typical phone photo of a room\n- visual_clutter: 4 - many objects, cluttered\n- object_centricity: 2 - no single dominant object, it's a scene\n- scene_centricity: 5 - this is clearly a place/scene\n- caption_confidence: 4 - easy to caption\n\nCounts:\n- estimated_salient_object_count: many objects, probably 10+\n- estimated_distinct_object_categories: bed, chair, radiator, shelves, coat rack, table, stools, air conditioner, plant, books, curtain, blanket - about 10-12 categories\n\nFlags:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (the \"ROUTE\" sign)\n- contains_vehicle: false\n- contains_food: false (rose is not food)\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (foreground blanket is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: \"scene\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"indoor_room\"\n\nshort_caption: \"Cluttered bedroom interior with bed, coat rack, shelves, chair, and air conditioner on wooden floor\"\n\nmain_objects: [\"bed\", \"coat rack\", \"chair\", \"shelves\", \"air conditioner\", \"radiator\", \"bar stools\", \"table\", \"curtain\", \"blanket\"]\n\npossible_interpretations: [\"Bedroom with laundry drying\", \"Studio apartment living space\", \"Storage room with bed\"]\n\nuncertainty_notes: \"Unclear if purely a bedroom or multi-purpose room due to mix of items\"\n\nquality_flags: [\"cluttered\", \"low_light\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 975,
+          "total_tokens": 2513,
+          "cost": 0.00148116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00148116,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.00117
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 630,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

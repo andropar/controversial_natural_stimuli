@@ -1,0 +1,86 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_105",
+    "stim_key": "vicco_105",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 105,
+    "file_index": 104,
+    "image_name": "shared_4rep_vicco_105.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_105.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: Missing required fields: ['contains_unusual_viewpoint']"
+    },
+    {
+      "attempt": 2,
+      "ok": false,
+      "error": "ValidationError: Missing required fields: ['contains_unusual_viewpoint']"
+    },
+    {
+      "attempt": 3,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor_child\",\n  \"short_caption\": \"Young girl in pink jacket sitting outdoors with school supplies, viewed from behind\",\n  \"main_objects\": [\"girl\", \"pink jacket\", \"pencil case\", \"backpack\", \"notebook\"],\n  \"possible_interpretations\": [\n    \"Girl drawing or writing in a notebook outside\",\n    \"Child taking a break during an outdoor activity\",\n    \"Girl showing her pencil case to someone\"\n  ],\n  \"uncertainty_notes\": \"Face not visible, exact activity and context unclear\",\n  \"quality_flags\": [\"face not visible\", \"subject viewed from behind\", \"partially truncated composition\"]\n}",
+      "response": {
+        "id": "gen-1780319579-PgMpcU2dA4gWIOmswgCm",
+        "object": "chat.completion",
+        "created": 1780319579,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor_child\",\n  \"short_caption\": \"Young girl in pink jacket sitting outdoors with school supplies, viewed from behind\",\n  \"main_objects\": [\"girl\", \"pink jacket\", \"pencil case\", \"backpack\", \"notebook\"],\n  \"possible_interpretations\": [\n    \"Girl drawing or writing in a notebook outside\",\n    \"Child taking a break during an outdoor activity\",\n    \"Girl showing her pencil case to someone\"\n  ],\n  \"uncertainty_notes\": \"Face not visible, exact activity and context unclear\",\n  \"quality_flags\": [\"face not visible\", \"subject viewed from behind\", \"partially truncated composition\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully and provide annotations according to the schema.\n\nThe image shows:\n- A young girl with long brown hair in pigtails, viewed from behind\n- She's wearing a bright pink/magenta hooded jacket\n- She appears to be sitting on the ground outdoors\n- She's holding what looks like a notebook/sketchbook\n- There's a pink pencil case with a cartoon/illustration of two girls on it, lying on the ground to the left\n- She has a backpack/bag next to her (navy blue with green and pink patterns)\n- The ground appears to be dirt/soil with some grass\n- Her face is not visible (turned away from camera)\n\nLet me rate each dimension:\n\n- recognizability: 4 - clear what's happening, though face is not visible\n- ambiguity: 2 - fairly clear scene, child sitting outdoors with belongings\n- natural_photo_typicality: 5 - looks like a typical candid photograph\n- visual_clutter: 3 - several objects but not too cluttered\n- object_centricity: 3 - the child is the main focus but seen from behind\n- scene_centricity: 3 - it's both an object (person) and outdoor setting\n- caption_confidence: 4 - can describe well\n\nCounts:\n- salient objects: girl, pencil case, backpack, notebook, water bottle - about 4-5\n- distinct categories: person, school supplies (notebook, pencil case), bag, bottle - about 4\n\nBooleans:\n- contains_person: true\n- contains_face: false (turned away)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false (maybe a drink?)\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (the pencil case has an illustration but it's a real photo)\n- contains_occlusion_or_truncation: true (face is cut off/truncated)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (girl is clearly the main)\n\ndominant_content_type: person (but face not visible, so maybe \"person_face\" doesn't fit - let me use \"person\" - but the options don't have just \"person\". Let me use \"person_face\" since it's about a person, though face is not shown. Actually looking at options: \"object\", \"scene\", \"texture_pattern\", \"closeup_detail\", \"person_face\", \"animal\", \"food\", \"text_document\", \"mixed\", \"unclear\". Since the person is the main content but face isn't visible, \"mixed\" might be more appropriate, or \"person_face\" since person is main subject. I'll go with \"person_face\" as it's the closest match for a person being the main subject.\n\nimage_style: natural_photo\nsemantic_domain: outdoor, child, school\n\nshort_caption: \"Young girl in pink jacket sitting outdoors with school supplies, viewed from behind\"\n\nmain_objects: girl, pink jacket, pencil case, backpack, notebook\n\npossible_interpretations: \n- Girl drawing/writing in notebook outside\n- Girl having a snack break outside\n- Child taking a break during outdoor activity\n\nuncertainty_notes: Face not visible, exact activity unclear\n\nquality_flags: face not visible, subject from behind",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully and provide annotations according to the schema.\n\nThe image shows:\n- A young girl with long brown hair in pigtails, viewed from behind\n- She's wearing a bright pink/magenta hooded jacket\n- She appears to be sitting on the ground outdoors\n- She's holding what looks like a notebook/sketchbook\n- There's a pink pencil case with a cartoon/illustration of two girls on it, lying on the ground to the left\n- She has a backpack/bag next to her (navy blue with green and pink patterns)\n- The ground appears to be dirt/soil with some grass\n- Her face is not visible (turned away from camera)\n\nLet me rate each dimension:\n\n- recognizability: 4 - clear what's happening, though face is not visible\n- ambiguity: 2 - fairly clear scene, child sitting outdoors with belongings\n- natural_photo_typicality: 5 - looks like a typical candid photograph\n- visual_clutter: 3 - several objects but not too cluttered\n- object_centricity: 3 - the child is the main focus but seen from behind\n- scene_centricity: 3 - it's both an object (person) and outdoor setting\n- caption_confidence: 4 - can describe well\n\nCounts:\n- salient objects: girl, pencil case, backpack, notebook, water bottle - about 4-5\n- distinct categories: person, school supplies (notebook, pencil case), bag, bottle - about 4\n\nBooleans:\n- contains_person: true\n- contains_face: false (turned away)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false (maybe a drink?)\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (the pencil case has an illustration but it's a real photo)\n- contains_occlusion_or_truncation: true (face is cut off/truncated)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (girl is clearly the main)\n\ndominant_content_type: person (but face not visible, so maybe \"person_face\" doesn't fit - let me use \"person\" - but the options don't have just \"person\". Let me use \"person_face\" since it's about a person, though face is not shown. Actually looking at options: \"object\", \"scene\", \"texture_pattern\", \"closeup_detail\", \"person_face\", \"animal\", \"food\", \"text_document\", \"mixed\", \"unclear\". Since the person is the main content but face isn't visible, \"mixed\" might be more appropriate, or \"person_face\" since person is main subject. I'll go with \"person_face\" as it's the closest match for a person being the main subject.\n\nimage_style: natural_photo\nsemantic_domain: outdoor, child, school\n\nshort_caption: \"Young girl in pink jacket sitting outdoors with school supplies, viewed from behind\"\n\nmain_objects: girl, pink jacket, pencil case, backpack, notebook\n\npossible_interpretations: \n- Girl drawing/writing in notebook outside\n- Girl having a snack break outside\n- Child taking a break during outdoor activity\n\nuncertainty_notes: Face not visible, exact activity unclear\n\nquality_flags: face not visible, subject from behind",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 1057,
+          "total_tokens": 2595,
+          "cost": 0.00170244,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00170244,
+            "upstream_inference_prompt_cost": 0.00043404,
+            "upstream_inference_completions_cost": 0.0012684
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 783,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

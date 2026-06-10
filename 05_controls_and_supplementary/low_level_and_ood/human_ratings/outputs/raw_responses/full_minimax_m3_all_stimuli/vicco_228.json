@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_228",
+    "stim_key": "vicco_228",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 228,
+    "file_index": 227,
+    "image_name": "shared_4rep_vicco_228.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_228.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_landscape\",\n  \"short_caption\": \"European town skyline at sunset with church spire and colorful cloudy sky\",\n  \"main_objects\": [\"buildings\", \"church spire\", \"sky\", \"clouds\", \"rooftops\", \"trees\"],\n  \"possible_interpretations\": [\n    \"town skyline at sunset\",\n    \"European cityscape viewed from elevated position\",\n    \"rooftop view of residential neighborhood at dusk\"\n  ],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; orientation suggests viewer may need to rotate to perceive correctly. Lighting and time of day could be sunrise or sunset.\",\n  \"quality_flags\": [\"rotated_orientation\"]\n}",
+      "response": {
+        "id": "gen-1780319651-buH9wYNrf4manJ0IzDV6",
+        "object": "chat.completion",
+        "created": 1780319651,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_landscape\",\n  \"short_caption\": \"European town skyline at sunset with church spire and colorful cloudy sky\",\n  \"main_objects\": [\"buildings\", \"church spire\", \"sky\", \"clouds\", \"rooftops\", \"trees\"],\n  \"possible_interpretations\": [\n    \"town skyline at sunset\",\n    \"European cityscape viewed from elevated position\",\n    \"rooftop view of residential neighborhood at dusk\"\n  ],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; orientation suggests viewer may need to rotate to perceive correctly. Lighting and time of day could be sunrise or sunset.\",\n  \"quality_flags\": [\"rotated_orientation\"]\n}",
+              "refusal": null,
+              "reasoning": "The image is rotated 90 degrees (sideways). It shows a European town/cityscape at sunset or sunrise, with buildings, a church spire in the distance, and a colorful sky with clouds. Let me analyze it carefully.\n\nThe image appears to be a natural photograph of a town skyline with a dramatic sky. The main content is a scenic urban view.\n\nLet me assess each dimension:\n- Recognizability: 4 - Clearly a town/cityscape, though rotated\n- Ambiguity: 2 - Pretty clearly a town scene\n- Natural photo typicality: 5 - Looks like a natural photograph\n- Visual clutter: 3 - Many buildings but organized\n- Object centricity: 2 - No single object dominates\n- Scene centricity: 5 - It's a cityscape/scene\n- Caption confidence: 4 - Can describe it well\n\nSalient object count: many buildings, maybe 5-10 distinct ones\nDistinct categories: buildings, sky, church spire, trees - about 3-4\n\ncontains_person: false (no visible people)\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (image is rotated/cropped at edges)\ncontains_unusual_viewpoint: true (rotated 90 degrees)\ncontains_multiple_main_objects: false\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: urban_landscape or cityscape\n\nShort caption: \"European town skyline at sunset with church spire and colorful clouds\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image is rotated 90 degrees (sideways). It shows a European town/cityscape at sunset or sunrise, with buildings, a church spire in the distance, and a colorful sky with clouds. Let me analyze it carefully.\n\nThe image appears to be a natural photograph of a town skyline with a dramatic sky. The main content is a scenic urban view.\n\nLet me assess each dimension:\n- Recognizability: 4 - Clearly a town/cityscape, though rotated\n- Ambiguity: 2 - Pretty clearly a town scene\n- Natural photo typicality: 5 - Looks like a natural photograph\n- Visual clutter: 3 - Many buildings but organized\n- Object centricity: 2 - No single object dominates\n- Scene centricity: 5 - It's a cityscape/scene\n- Caption confidence: 4 - Can describe it well\n\nSalient object count: many buildings, maybe 5-10 distinct ones\nDistinct categories: buildings, sky, church spire, trees - about 3-4\n\ncontains_person: false (no visible people)\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (image is rotated/cropped at edges)\ncontains_unusual_viewpoint: true (rotated 90 degrees)\ncontains_multiple_main_objects: false\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: urban_landscape or cityscape\n\nShort caption: \"European town skyline at sunset with church spire and colorful clouds\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 723,
+          "total_tokens": 2245,
+          "cost": 0.00129684,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129684,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008676
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 395,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

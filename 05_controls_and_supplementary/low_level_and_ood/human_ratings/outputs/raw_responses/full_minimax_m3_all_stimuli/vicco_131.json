@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_131",
+    "stim_key": "vicco_131",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 131,
+    "file_index": 130,
+    "image_name": "shared_4rep_vicco_131.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_131.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"industrial/construction\",\n  \"short_caption\": \"A cylindrical metal pipe with an open end lying on cracked concrete.\",\n  \"main_objects\": [\"metal pipe\", \"concrete surface\"],\n  \"possible_interpretations\": [\n    \"Galvanized steel drainage or ventilation pipe\",\n    \"Aluminum duct or tube\",\n    \"Industrial metal pipe segment\",\n    \"Construction material specimen\"\n  ],\n  \"uncertainty_notes\": \"Exact material and purpose of the pipe are unclear; viewpoint shows the interior of the open end which has dark staining or residue.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319541-dPoKWiFFQY28ECuBVqtW",
+        "object": "chat.completion",
+        "created": 1780319541,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"industrial/construction\",\n  \"short_caption\": \"A cylindrical metal pipe with an open end lying on cracked concrete.\",\n  \"main_objects\": [\"metal pipe\", \"concrete surface\"],\n  \"possible_interpretations\": [\n    \"Galvanized steel drainage or ventilation pipe\",\n    \"Aluminum duct or tube\",\n    \"Industrial metal pipe segment\",\n    \"Construction material specimen\"\n  ],\n  \"uncertainty_notes\": \"Exact material and purpose of the pipe are unclear; viewpoint shows the interior of the open end which has dark staining or residue.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I see a metal pipe or tube with a visible opening/cap, lying on a concrete surface. The pipe appears cylindrical, possibly made of galvanized steel or aluminum, with some staining or marks on its surface. The concrete background has cracks and texture.\n\nLet me annotate this based on the schema:\n\n- Recognizability: The main object (a metal pipe/tube) is clearly recognizable. I'd say 4.\n- Ambiguity: Low ambiguity - it's clearly a metal pipe/tube. 1-2.\n- Natural_photo_typicality: Looks like a natural photograph, though somewhat utilitarian. 4.\n- Visual_clutter: The image is fairly simple - pipe and concrete. 2.\n- Object_centricity: The pipe is the central object, clearly dominant. 4.\n- Scene_centricity: It's mostly an object, not a scene. 2.\n- Caption_confidence: High confidence. 4.\n\nCounts: 1 main object (the pipe), 1-2 categories (pipe, concrete surface).\n\nContains: No person, face, animal, text, vehicle, food. Indoor/outdoor - could be either, looks more like outdoor/industrial. No artificial rendered content. The pipe opening has some unusual viewpoint (looking into the end). Single main object.\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: industrial / construction materials\n\nCaption: \"A metal pipe with visible end opening resting on cracked concrete surface\"\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I see a metal pipe or tube with a visible opening/cap, lying on a concrete surface. The pipe appears cylindrical, possibly made of galvanized steel or aluminum, with some staining or marks on its surface. The concrete background has cracks and texture.\n\nLet me annotate this based on the schema:\n\n- Recognizability: The main object (a metal pipe/tube) is clearly recognizable. I'd say 4.\n- Ambiguity: Low ambiguity - it's clearly a metal pipe/tube. 1-2.\n- Natural_photo_typicality: Looks like a natural photograph, though somewhat utilitarian. 4.\n- Visual_clutter: The image is fairly simple - pipe and concrete. 2.\n- Object_centricity: The pipe is the central object, clearly dominant. 4.\n- Scene_centricity: It's mostly an object, not a scene. 2.\n- Caption_confidence: High confidence. 4.\n\nCounts: 1 main object (the pipe), 1-2 categories (pipe, concrete surface).\n\nContains: No person, face, animal, text, vehicle, food. Indoor/outdoor - could be either, looks more like outdoor/industrial. No artificial rendered content. The pipe opening has some unusual viewpoint (looking into the end). Single main object.\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: industrial / construction materials\n\nCaption: \"A metal pipe with visible end opening resting on cracked concrete surface\"\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 657,
+          "total_tokens": 2179,
+          "cost": 0.00109476,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00109476,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0007884
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 357,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

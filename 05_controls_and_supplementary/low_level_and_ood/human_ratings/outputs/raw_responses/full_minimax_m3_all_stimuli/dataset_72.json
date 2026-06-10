@@ -1,0 +1,86 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_72",
+    "stim_key": "dataset_72",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 72,
+    "file_index": 72,
+    "image_name": "image_0072.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0072.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: Missing required fields: ['contains_unusual_viewpoint']"
+    },
+    {
+      "attempt": 2,
+      "ok": false,
+      "error": "ValidationError: Missing required fields: ['contains_unusual_viewpoint']"
+    },
+    {
+      "attempt": 3,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"crafts\",\n  \"short_caption\": \"Hand holding a handmade fabric journal with lace cover and pearl flower embellishment\",\n  \"main_objects\": [\"handmade journal\", \"lace fabric\", \"flower embellishment\", \"hand with rings\", \"wooden background\"],\n  \"possible_interpretations\": [\"handmade fabric journal\", \"artisan scrapbook\", \"shabby chic notebook\", \"vintage style memory book\"],\n  \"uncertainty_notes\": \"Setting unclear; could be outdoor on wooden deck or table indoors. Hand partially occludes left edge of journal.\",\n  \"quality_flags\": [\"partial occlusion by hand\", \"slightly soft focus\", \"casual composition\"]\n}",
+      "response": {
+        "id": "gen-1780319094-dW70w09PLL6qiw5ZcWvU",
+        "object": "chat.completion",
+        "created": 1780319094,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"crafts\",\n  \"short_caption\": \"Hand holding a handmade fabric journal with lace cover and pearl flower embellishment\",\n  \"main_objects\": [\"handmade journal\", \"lace fabric\", \"flower embellishment\", \"hand with rings\", \"wooden background\"],\n  \"possible_interpretations\": [\"handmade fabric journal\", \"artisan scrapbook\", \"shabby chic notebook\", \"vintage style memory book\"],\n  \"uncertainty_notes\": \"Setting unclear; could be outdoor on wooden deck or table indoors. Hand partially occludes left edge of journal.\",\n  \"quality_flags\": [\"partial occlusion by hand\", \"slightly soft focus\", \"casual composition\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a handmade journal or notebook with lace fabric on the cover, held by a hand with rings. The background appears to be wooden planks. There's a decorative flower embellishment with a pearl center on the cover. The journal has fabric pages and green/dark fabric binding.\n\nLet me analyze the properties:\n- Recognizability: Clear what it is - a handmade journal/notebook. 4\n- Ambiguity: Pretty clear it's a journal. 2\n- Natural_photo_typicality: Looks like a casual photo, not particularly stylized. 3\n- Visual_clutter: Has multiple fabrics, textures, but the main object is clear. 3\n- Object_centricity: The journal dominates the image. 5\n- Scene_centricity: Not really a scene. 1\n- Caption_confidence: Easy to caption. 4\n\nMain object: handmade fabric journal with lace\nContains person: yes (hand visible)\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor: maybe - could be outdoor with wood, ambiguous\nContains outdoor: possibly (wooden background)\nContains artificial: the journal is handmade/artificial\nContains occlusion: hand is partially occluding\nContains unusual viewpoint: no\nContains multiple main objects: no\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: crafts/journals",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a handmade journal or notebook with lace fabric on the cover, held by a hand with rings. The background appears to be wooden planks. There's a decorative flower embellishment with a pearl center on the cover. The journal has fabric pages and green/dark fabric binding.\n\nLet me analyze the properties:\n- Recognizability: Clear what it is - a handmade journal/notebook. 4\n- Ambiguity: Pretty clear it's a journal. 2\n- Natural_photo_typicality: Looks like a casual photo, not particularly stylized. 3\n- Visual_clutter: Has multiple fabrics, textures, but the main object is clear. 3\n- Object_centricity: The journal dominates the image. 5\n- Scene_centricity: Not really a scene. 1\n- Caption_confidence: Easy to caption. 4\n\nMain object: handmade fabric journal with lace\nContains person: yes (hand visible)\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor: maybe - could be outdoor with wood, ambiguous\nContains outdoor: possibly (wooden background)\nContains artificial: the journal is handmade/artificial\nContains occlusion: hand is partially occluding\nContains unusual viewpoint: no\nContains multiple main objects: no\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: crafts/journals",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 657,
+          "total_tokens": 2195,
+          "cost": 0.00088404,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1524,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00088404,
+            "upstream_inference_prompt_cost": 9.564e-05,
+            "upstream_inference_completions_cost": 0.0007884
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 340,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

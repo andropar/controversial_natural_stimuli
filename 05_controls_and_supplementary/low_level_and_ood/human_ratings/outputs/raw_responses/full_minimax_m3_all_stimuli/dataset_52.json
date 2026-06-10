@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_52",
+    "stim_key": "dataset_52",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 52,
+    "file_index": 52,
+    "image_name": "image_0052.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0052.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 5, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"home/fireplace\", \"short_caption\": \"Black cast iron wood-burning stove with visible fire inside a brick hearth\", \"main_objects\": [\"wood stove\", \"brick fireplace\", \"flames\"], \"possible_interpretations\": [\"wood-burning Jotul stove in a brick hearth\", \"cast iron fireplace insert with active fire\", \"decorative heating stove with Gothic arched door\"], \"uncertainty_notes\": \"Brand text on stove is small; interior fire details are partially obscured by the glass door\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319022-3UsOnpYhz3OjYkhE3blq",
+        "object": "chat.completion",
+        "created": 1780319022,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 5, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"home/fireplace\", \"short_caption\": \"Black cast iron wood-burning stove with visible fire inside a brick hearth\", \"main_objects\": [\"wood stove\", \"brick fireplace\", \"flames\"], \"possible_interpretations\": [\"wood-burning Jotul stove in a brick hearth\", \"cast iron fireplace insert with active fire\", \"decorative heating stove with Gothic arched door\"], \"uncertainty_notes\": \"Brand text on stove is small; interior fire details are partially obscured by the glass door\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "The image shows a black cast iron wood-burning stove with a Gothic arched window design. Inside the stove, there's a visible fire with flames. The stove is positioned in front of a brick fireplace/hearth. The stove has decorative elements including an oval emblem on the door, and there appears to be some text \"Jotul\" branding visible. The stove has four legs and a decorative top edge.\n\nLet me annotate this carefully:\n\n- recognizability: 5 - Very clear what it is (a wood stove)\n- ambiguity: 1 - Very clear, one main interpretation\n- natural_photo_typicality: 4 - Looks like a natural photograph\n- visual_clutter: 2 - Not too cluttered, mostly the stove and brick\n- object_centricity: 5 - The stove dominates the image\n- scene_centricity: 2 - It's an object in a setting, not really a scene\n- caption_confidence: 5 - Easy to caption\n\nSalient objects: 1 (the stove)\nDistinct categories: 2-3 (stove, brick fireplace, fire)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: true (Jotul brand text visible)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: object\nimage_style: natural_photo\nsemantic_domain: home/fireplace\n\nShort caption: \"Black cast iron wood-burning stove with fire inside, in front of brick fireplace\"\n\nMain objects: [\"wood stove\", \"brick fireplace\", \"fire\"]\n\nPossible interpretations: [\"wood-burning stove in a brick hearth\", \"fireplace insert stove\", \"cast iron heating stove\"]\n\nUncertainty notes: Some details inside the stove (like the fire) are partially obscured by the door glass\nQuality flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a black cast iron wood-burning stove with a Gothic arched window design. Inside the stove, there's a visible fire with flames. The stove is positioned in front of a brick fireplace/hearth. The stove has decorative elements including an oval emblem on the door, and there appears to be some text \"Jotul\" branding visible. The stove has four legs and a decorative top edge.\n\nLet me annotate this carefully:\n\n- recognizability: 5 - Very clear what it is (a wood stove)\n- ambiguity: 1 - Very clear, one main interpretation\n- natural_photo_typicality: 4 - Looks like a natural photograph\n- visual_clutter: 2 - Not too cluttered, mostly the stove and brick\n- object_centricity: 5 - The stove dominates the image\n- scene_centricity: 2 - It's an object in a setting, not really a scene\n- caption_confidence: 5 - Easy to caption\n\nSalient objects: 1 (the stove)\nDistinct categories: 2-3 (stove, brick fireplace, fire)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: true (Jotul brand text visible)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: object\nimage_style: natural_photo\nsemantic_domain: home/fireplace\n\nShort caption: \"Black cast iron wood-burning stove with fire inside, in front of brick fireplace\"\n\nMain objects: [\"wood stove\", \"brick fireplace\", \"fire\"]\n\nPossible interpretations: [\"wood-burning stove in a brick hearth\", \"fireplace insert stove\", \"cast iron heating stove\"]\n\nUncertainty notes: Some details inside the stove (like the fire) are partially obscured by the door glass\nQuality flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 732,
+          "total_tokens": 2254,
+          "cost": 0.00118476,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00118476,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008784
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 478,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_92",
+    "stim_key": "all_models_92",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 92,
+    "file_index": 92,
+    "image_name": "image_0092.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0092.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"newborn portraiture\",\n  \"short_caption\": \"Newborn baby sleeping on a bed with a tufted headboard, wrapped in a pineapple-patterned swaddle.\",\n  \"main_objects\": [\"newborn baby\", \"swaddle blanket\", \"bed\", \"tufted headboard\", \"headband\"],\n  \"possible_interpretations\": [\"newborn portrait photography\", \"baby announcement photo\", \"staged lifestyle photograph\"],\n  \"uncertainty_notes\": \"Image is clear and unambiguous. Professional newborn photography style is evident but no reason to flag as artificial content.\",\n  \"quality_flags\": [\"soft_edited_lighting\", \"staged_composition\"]\n}",
+      "response": {
+        "id": "gen-1780318835-VxUQNr6gxpmOOrbMDSOt",
+        "object": "chat.completion",
+        "created": 1780318835,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"newborn portraiture\",\n  \"short_caption\": \"Newborn baby sleeping on a bed with a tufted headboard, wrapped in a pineapple-patterned swaddle.\",\n  \"main_objects\": [\"newborn baby\", \"swaddle blanket\", \"bed\", \"tufted headboard\", \"headband\"],\n  \"possible_interpretations\": [\"newborn portrait photography\", \"baby announcement photo\", \"staged lifestyle photograph\"],\n  \"uncertainty_notes\": \"Image is clear and unambiguous. Professional newborn photography style is evident but no reason to flag as artificial content.\",\n  \"quality_flags\": [\"soft_edited_lighting\", \"staged_composition\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a newborn baby wrapped in a pineapple-patterned swaddle/blanket, lying on a white bed or surface with a tufted white upholstered headboard in the background. The baby appears to be sleeping, wearing a small white headband. The lighting is soft and bright, typical of newborn photography.\n\nLet me annotate according to the schema:\n\n- recognizability: The main content is clearly recognizable - a newborn baby on a bed. 5\n- ambiguity: Very low ambiguity - it's clearly a newborn photo. 1\n- natural_photo_typicality: This looks like a professional/styled newborn photograph with good lighting. It looks like a typical natural photo, perhaps slightly edited. 4\n- visual_clutter: Quite clean, minimal elements. 1-2\n- object_centricity: The baby is the clear central subject. 5\n- scene_centricity: It's more about the baby than the scene, though the bed/headboard provides context. 2\n- caption_confidence: High confidence in a simple caption. 5\n\n- estimated_salient_object_count: 1 (the baby)\n- estimated_distinct_object_categories: 2-3 (baby, blanket, bed/headboard)\n\n- contains_person: Yes (baby is a person)\n- contains_face: Yes\n- contains_animal: No\n- contains_text: No\n- contains_vehicle: No\n- contains_food: No\n- contains_indoor_scene: Yes\n- contains_outdoor_scene: No\n- contains_artificial_or_rendered_content: No\n- contains_occlusion_or_truncation: No\n- contains_unusual_viewpoint: No\n- contains_multiple_main_objects: No\n\n- dominant_content_type: person_face (it's a baby portrait, though face is partially shown)\n- image_style: natural_photo (possibly slightly edited but appears natural)\n- semantic_domain: \"newborn photography\" or \"lifestyle\"\n\n- short_caption: \"Newborn baby sleeping on a bed with a tufted headboard, wrapped in a pineapple-patterned swaddle.\"\n\n- main_objects: [\"newborn baby\", \"swaddle blanket\", \"bed\", \"headboard\", \"headband\"]\n\n- possible_interpretations: It's pretty unambiguous, but maybe: newborn portrait, baby announcement photo, lifestyle photography\n\n- uncertainty_notes: Image is clear and unambiguous\n\n- quality_flags: possibly professional/staged photography",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a newborn baby wrapped in a pineapple-patterned swaddle/blanket, lying on a white bed or surface with a tufted white upholstered headboard in the background. The baby appears to be sleeping, wearing a small white headband. The lighting is soft and bright, typical of newborn photography.\n\nLet me annotate according to the schema:\n\n- recognizability: The main content is clearly recognizable - a newborn baby on a bed. 5\n- ambiguity: Very low ambiguity - it's clearly a newborn photo. 1\n- natural_photo_typicality: This looks like a professional/styled newborn photograph with good lighting. It looks like a typical natural photo, perhaps slightly edited. 4\n- visual_clutter: Quite clean, minimal elements. 1-2\n- object_centricity: The baby is the clear central subject. 5\n- scene_centricity: It's more about the baby than the scene, though the bed/headboard provides context. 2\n- caption_confidence: High confidence in a simple caption. 5\n\n- estimated_salient_object_count: 1 (the baby)\n- estimated_distinct_object_categories: 2-3 (baby, blanket, bed/headboard)\n\n- contains_person: Yes (baby is a person)\n- contains_face: Yes\n- contains_animal: No\n- contains_text: No\n- contains_vehicle: No\n- contains_food: No\n- contains_indoor_scene: Yes\n- contains_outdoor_scene: No\n- contains_artificial_or_rendered_content: No\n- contains_occlusion_or_truncation: No\n- contains_unusual_viewpoint: No\n- contains_multiple_main_objects: No\n\n- dominant_content_type: person_face (it's a baby portrait, though face is partially shown)\n- image_style: natural_photo (possibly slightly edited but appears natural)\n- semantic_domain: \"newborn photography\" or \"lifestyle\"\n\n- short_caption: \"Newborn baby sleeping on a bed with a tufted headboard, wrapped in a pineapple-patterned swaddle.\"\n\n- main_objects: [\"newborn baby\", \"swaddle blanket\", \"bed\", \"headboard\", \"headband\"]\n\n- possible_interpretations: It's pretty unambiguous, but maybe: newborn portrait, baby announcement photo, lifestyle photography\n\n- uncertainty_notes: Image is clear and unambiguous\n\n- quality_flags: possibly professional/staged photography",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 873,
+          "total_tokens": 2395,
+          "cost": 0.00135396,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00135396,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010476
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 569,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

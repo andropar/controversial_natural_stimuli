@@ -6,7 +6,7 @@ noise-ceiling, spread, rank, OOD, layer/discriminability, and model-roster
 outputs into paper-facing CSV files. Expensive image feature extraction and
 RSA recomputation live in their own section scripts.
 
-Outputs in experiments/cstim_paper/03_statistics/data:
+Outputs in 03_alignment_inference/results:
   - primary_endpoint_summary.csv
   - rank_correlations.csv
   - noise_ceiling_variant_summary.csv
@@ -158,7 +158,13 @@ def build_primary_endpoint_summary() -> pd.DataFrame:
 
     # If the held-out unique pipeline has produced results, append its subject
     # level endpoint summary without making this script depend on that pipeline.
-    heldout_path = _PAPER / "05_heldout_unique_baseline" / "results" / "heldout_unique_endpoint_summary.csv"
+    heldout_path = (
+        config.SHARE_ROOT
+        / "05_controls_and_supplementary"
+        / "counterfactual_baselines"
+        / "results"
+        / "heldout_unique_endpoint_summary.csv"
+    )
     if heldout_path.exists():
         heldout = pd.read_csv(heldout_path)
         complete_subjects = heldout["subject"].nunique() >= len(SUBJECTS)

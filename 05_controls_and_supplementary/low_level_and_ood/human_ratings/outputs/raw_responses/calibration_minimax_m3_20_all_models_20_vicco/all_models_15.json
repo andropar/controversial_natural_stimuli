@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_15",
+    "stim_key": "all_models_15",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 15,
+    "file_index": 15,
+    "image_name": "image_0015.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0015.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"outdoor\",\n  \"short_caption\": \"Tilt-shifted forest scene with a couple embracing among trees\",\n  \"main_objects\": [\"trees\", \"couple\", \"foliage\"],\n  \"possible_interpretations\": [\n    \"couple kissing in a forest\",\n    \"tilt-shift miniature effect of a wooded garden\",\n    \"person embracing another near tree trunks\"\n  ],\n  \"uncertainty_notes\": \"Heavy blur and tilt-shift effect reduce recognizability of details; couple's exact pose and facial features are difficult to discern\",\n  \"quality_flags\": [\"heavy_blur\", \"tilt_shift_effect\", \"small_subjects\"]\n}",
+      "response": {
+        "id": "gen-1780318166-HrP6qTyJ9V453OwmjXwM",
+        "object": "chat.completion",
+        "created": 1780318166,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"outdoor\",\n  \"short_caption\": \"Tilt-shifted forest scene with a couple embracing among trees\",\n  \"main_objects\": [\"trees\", \"couple\", \"foliage\"],\n  \"possible_interpretations\": [\n    \"couple kissing in a forest\",\n    \"tilt-shift miniature effect of a wooded garden\",\n    \"person embracing another near tree trunks\"\n  ],\n  \"uncertainty_notes\": \"Heavy blur and tilt-shift effect reduce recognizability of details; couple's exact pose and facial features are difficult to discern\",\n  \"quality_flags\": [\"heavy_blur\", \"tilt_shift_effect\", \"small_subjects\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I see a heavily blurred/tiltshifted style image showing what appears to be a forested area with green trees and foliage dominating the scene. In the lower center portion, there are two people standing close together, appearing to embrace or kiss. The image has a distinctive miniature/tilt-shift effect with selective focus, making it look like a model scene.\n\nLet me annotate based on the schema:\n\n- Recognizability: The content is somewhat hard to make out due to the heavy blur, but trees and people are recognizable. I'd say 3.\n- Ambiguity: Low ambiguity - it's clearly a forested scene with people, but the blur makes details hard to see. Maybe 2.\n- Natural photo typicality: It looks like an edited photo with tilt-shift effect, so 2-3.\n- Visual clutter: Lots of foliage and leaves, but the blur simplifies it. I'd say 3.\n- Object centricity: No single dominant object - it's a scene. 2.\n- Scene centricity: Yes, this is clearly a scene - a forest/garden. 5.\n- Caption confidence: Moderate - I can describe the scene but details are blurry. 3-4.\n\nObjects: trees, people (couple), foliage\nPerson: yes, two people visible\nFace: possibly, but very small and blurry\nAnimal: no\nText: no\nVehicle: no\nFood: no\nIndoor: no\nOutdoor: yes\nArtificial/rendered: edited photo (tilt-shift)\nOcclusion/truncation: the people are partially obscured by trees\nUnusual viewpoint: no\nMultiple main objects: no, scene is main\n\nSalient objects: trees, couple\nCategories: trees, people, foliage\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I see a heavily blurred/tiltshifted style image showing what appears to be a forested area with green trees and foliage dominating the scene. In the lower center portion, there are two people standing close together, appearing to embrace or kiss. The image has a distinctive miniature/tilt-shift effect with selective focus, making it look like a model scene.\n\nLet me annotate based on the schema:\n\n- Recognizability: The content is somewhat hard to make out due to the heavy blur, but trees and people are recognizable. I'd say 3.\n- Ambiguity: Low ambiguity - it's clearly a forested scene with people, but the blur makes details hard to see. Maybe 2.\n- Natural photo typicality: It looks like an edited photo with tilt-shift effect, so 2-3.\n- Visual clutter: Lots of foliage and leaves, but the blur simplifies it. I'd say 3.\n- Object centricity: No single dominant object - it's a scene. 2.\n- Scene centricity: Yes, this is clearly a scene - a forest/garden. 5.\n- Caption confidence: Moderate - I can describe the scene but details are blurry. 3-4.\n\nObjects: trees, people (couple), foliage\nPerson: yes, two people visible\nFace: possibly, but very small and blurry\nAnimal: no\nText: no\nVehicle: no\nFood: no\nIndoor: no\nOutdoor: yes\nArtificial/rendered: edited photo (tilt-shift)\nOcclusion/truncation: the people are partially obscured by trees\nUnusual viewpoint: no\nMultiple main objects: no, scene is main\n\nSalient objects: trees, couple\nCategories: trees, people, foliage\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 722,
+          "total_tokens": 2244,
+          "cost": 0.00129564,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129564,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008664
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 404,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

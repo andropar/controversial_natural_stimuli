@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_147",
+    "stim_key": "vicco_147",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 147,
+    "file_index": 146,
+    "image_name": "shared_4rep_vicco_147.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_147.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor themed facility\",\n  \"short_caption\": \"Wheelchair in front of a wall mural showing a hammerhead shark swimming underwater\",\n  \"main_objects\": [\"wheelchair\", \"hammerhead shark mural\"],\n  \"possible_interpretations\": [\"hospital or hospice themed room with shark mural\", \"aquarium or marine exhibit viewing area\", \"care facility with decorative underwater wall\", \"artistic installation combining medical equipment with marine imagery\"],\n  \"uncertainty_notes\": \"The exact setting is unclear; the shark appears to be a large printed/painted mural rather than a real animal, and the location could be a medical facility, aquarium, or themed care environment\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319559-jREnHMhB1oN5qRKowkKc",
+        "object": "chat.completion",
+        "created": 1780319559,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor themed facility\",\n  \"short_caption\": \"Wheelchair in front of a wall mural showing a hammerhead shark swimming underwater\",\n  \"main_objects\": [\"wheelchair\", \"hammerhead shark mural\"],\n  \"possible_interpretations\": [\"hospital or hospice themed room with shark mural\", \"aquarium or marine exhibit viewing area\", \"care facility with decorative underwater wall\", \"artistic installation combining medical equipment with marine imagery\"],\n  \"uncertainty_notes\": \"The exact setting is unclear; the shark appears to be a large printed/painted mural rather than a real animal, and the location could be a medical facility, aquarium, or themed care environment\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a wheelchair in the foreground with a large painted or printed backdrop behind it depicting a hammerhead shark underwater. This appears to be a scene at an aquarium, marine exhibit, or possibly a hospital/hospice setting with a themed room. The shark is painted on what appears to be a wall, and the wheelchair is positioned in front of it, creating an interesting visual juxtaposition.\n\nLet me analyze:\n- Main content: wheelchair in foreground, painted shark on wall in background\n- The shark appears to be a mural or large print\n- The setting looks like it could be a hospice, hospital, or aquarium viewing area\n- There's a possible reddish/brown object on the right edge that might be part of a chair or railing\n\nLet me provide the annotations:\n\n- recognizability: 4 - clearly recognizable as wheelchair and shark mural\n- ambiguity: 2 - pretty clear what's depicted\n- natural_photo_typicality: 3 - it's a natural photo but the scene itself is unusual\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 3 - the wheelchair is a clear object in foreground\n- scene_centricity: 4 - the shark mural/scene dominates\n- caption_confidence: 4 - can describe confidently\n\n- estimated_salient_object_count: 2 (wheelchair, shark)\n- estimated_distinct_object_categories: 2\n\n- contains_person: false\n- contains_face: false\n- contains_animal: true (shark, though depicted)\n- contains_text: false\n- contains_vehicle: false (wheelchair is mobility aid, not really a vehicle)\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (the shark is a mural/print)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: mixed\n- image_style: natural_photo\n- semantic_domain: indoor aquarium or themed facility\n\n- short_caption: \"Wheelchair positioned in front of a wall mural depicting a hammerhead shark underwater\"\n- main_objects: [\"wheelchair\", \"hammerhead shark mural\"]\n- possible_interpretations: [\"aquarium viewing area\", \"hospital or hospice themed room\", \"themed care facility\", \"decorative wall in a medical facility\"]\n- uncertainty_notes: \"The context of where this photo was taken is unclear - could be a hospital, hospice, aquarium, or other facility with a shark-themed wall\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a wheelchair in the foreground with a large painted or printed backdrop behind it depicting a hammerhead shark underwater. This appears to be a scene at an aquarium, marine exhibit, or possibly a hospital/hospice setting with a themed room. The shark is painted on what appears to be a wall, and the wheelchair is positioned in front of it, creating an interesting visual juxtaposition.\n\nLet me analyze:\n- Main content: wheelchair in foreground, painted shark on wall in background\n- The shark appears to be a mural or large print\n- The setting looks like it could be a hospice, hospital, or aquarium viewing area\n- There's a possible reddish/brown object on the right edge that might be part of a chair or railing\n\nLet me provide the annotations:\n\n- recognizability: 4 - clearly recognizable as wheelchair and shark mural\n- ambiguity: 2 - pretty clear what's depicted\n- natural_photo_typicality: 3 - it's a natural photo but the scene itself is unusual\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 3 - the wheelchair is a clear object in foreground\n- scene_centricity: 4 - the shark mural/scene dominates\n- caption_confidence: 4 - can describe confidently\n\n- estimated_salient_object_count: 2 (wheelchair, shark)\n- estimated_distinct_object_categories: 2\n\n- contains_person: false\n- contains_face: false\n- contains_animal: true (shark, though depicted)\n- contains_text: false\n- contains_vehicle: false (wheelchair is mobility aid, not really a vehicle)\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (the shark is a mural/print)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: mixed\n- image_style: natural_photo\n- semantic_domain: indoor aquarium or themed facility\n\n- short_caption: \"Wheelchair positioned in front of a wall mural depicting a hammerhead shark underwater\"\n- main_objects: [\"wheelchair\", \"hammerhead shark mural\"]\n- possible_interpretations: [\"aquarium viewing area\", \"hospital or hospice themed room\", \"themed care facility\", \"decorative wall in a medical facility\"]\n- uncertainty_notes: \"The context of where this photo was taken is unclear - could be a hospital, hospice, aquarium, or other facility with a shark-themed wall\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 909,
+          "total_tokens": 2431,
+          "cost": 0.00152004,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00152004,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010908
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 629,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

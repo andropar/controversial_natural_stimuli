@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_35",
+    "stim_key": "architecture_35",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 35,
+    "file_index": 35,
+    "image_name": "image_0035.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0035.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: No valid JSON object found in model response"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_building\",\n  \"short_caption\": \"A dirt-floored crawl space beneath a house with wooden support posts and exposed floor joists.\",\n  \"main_objects\": [\"wooden support posts\", \"floor joists\", \"stone foundation walls\", \"dirt floor\", \"electrical wiring\"],\n  \"possible_interpretations\": [\n    \"house crawl space\",\n    \"basement under construction\",\n    \"foundation inspection area\",\n    \"storage crawl space\",\n    \"unfinished basement\"\n  ],\n  \"uncertainty_notes\": \"The space is dimly lit with limited detail visibility in shadowed regions; the function of the space is clearly a crawl space but exact purpose is inferred.\",\n  \"quality_flags\": [\"low_light\", \"noisy_shadows\"]\n}",
+      "response": {
+        "id": "gen-1780318907-1BGaw6J8rlWr0Ymx8Xsl",
+        "object": "chat.completion",
+        "created": 1780318907,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_building\",\n  \"short_caption\": \"A dirt-floored crawl space beneath a house with wooden support posts and exposed floor joists.\",\n  \"main_objects\": [\"wooden support posts\", \"floor joists\", \"stone foundation walls\", \"dirt floor\", \"electrical wiring\"],\n  \"possible_interpretations\": [\n    \"house crawl space\",\n    \"basement under construction\",\n    \"foundation inspection area\",\n    \"storage crawl space\",\n    \"unfinished basement\"\n  ],\n  \"uncertainty_notes\": \"The space is dimly lit with limited detail visibility in shadowed regions; the function of the space is clearly a crawl space but exact purpose is inferred.\",\n  \"quality_flags\": [\"low_light\", \"noisy_shadows\"]\n}",
+              "refusal": null,
+              "reasoning": "The user wants me to annotate the image according to the schema. Let me analyze the image:\n\n- It's a crawl space under a house/building\n- Shows wooden support beams, concrete/stone foundation walls\n- Dirt floor\n- Exposed joists/wooden beams overhead\n- Some wiring visible\n- Dim lighting, appears to be a basement/crawlspace\n\nLet me provide the annotations based on the schema.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The user wants me to annotate the image according to the schema. Let me analyze the image:\n\n- It's a crawl space under a house/building\n- Shows wooden support beams, concrete/stone foundation walls\n- Dirt floor\n- Exposed joists/wooden beams overhead\n- Some wiring visible\n- Dim lighting, appears to be a basement/crawlspace\n\nLet me provide the annotations based on the schema.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 471,
+          "total_tokens": 2009,
+          "cost": 0.00099924,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00099924,
+            "upstream_inference_prompt_cost": 0.00043404,
+            "upstream_inference_completions_cost": 0.0005652
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 101,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_16",
+    "stim_key": "all_models_16",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 16,
+    "file_index": 16,
+    "image_name": "image_0016.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0016.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion/footwear\",\n  \"short_caption\": \"Black and white close-up of a canvas sneaker with a hand-drawn cityscape design.\",\n  \"main_objects\": [\"canvas sneaker\", \"shoelaces\", \"cityscape illustration\", \"dark fabric\"],\n  \"possible_interpretations\": [\"custom-painted high-top sneaker\", \"Converse Chuck Taylor with city artwork\", \"shoe product photo\"],\n  \"uncertainty_notes\": \"Image is dark and low contrast; full shape of shoe and background details are hard to discern. Color may be desaturated or originally black and white.\",\n  \"quality_flags\": [\"low_light\", \"monochrome_or_desaturated\", \"partial_occlusion_by_pants\", \"shallow_focus_blur\"]\n}",
+      "response": {
+        "id": "gen-1780318741-lS5J7T0M2RIH6rII4iRO",
+        "object": "chat.completion",
+        "created": 1780318741,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion/footwear\",\n  \"short_caption\": \"Black and white close-up of a canvas sneaker with a hand-drawn cityscape design.\",\n  \"main_objects\": [\"canvas sneaker\", \"shoelaces\", \"cityscape illustration\", \"dark fabric\"],\n  \"possible_interpretations\": [\"custom-painted high-top sneaker\", \"Converse Chuck Taylor with city artwork\", \"shoe product photo\"],\n  \"uncertainty_notes\": \"Image is dark and low contrast; full shape of shoe and background details are hard to discern. Color may be desaturated or originally black and white.\",\n  \"quality_flags\": [\"low_light\", \"monochrome_or_desaturated\", \"partial_occlusion_by_pants\", \"shallow_focus_blur\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a close-up of a sneaker/canvas shoe (looks like a Converse Chuck Taylor high-top) with a custom hand-drawn cityscape design on the side. The drawing depicts a city skyline with buildings. The image is in black and white or very low color. The shoe has white laces and metal eyelets. There appears to be a dark fabric (pants/jeans) visible in the upper left. In the background, there's what appears to be a wall with some decoration, possibly a fish-shaped object.\n\nLet me rate each dimension:\n\n- recognizability: The shoe is clearly recognizable, but the image is dark and a bit blurry. I'd say 4.\n- ambiguity: Pretty clear what's being shown - a sneaker. Low ambiguity. 1-2.\n- natural_photo_typicality: It looks like a regular photo, though dark and possibly edited to black and white. 3-4.\n- visual_clutter: The shoe has a detailed cityscape drawing, but the rest is relatively simple. 2-3.\n- object_centricity: The shoe is the clear central object. 5.\n- scene_centricity: It's more object-focused than scene-focused. 1-2.\n- caption_confidence: Pretty confident about the content. 4.\n\nCounts:\n- salient objects: mainly 1 (the shoe)\n- distinct categories: shoe, fabric/clothing, background wall decoration ~ 2-3\n\nContains:\n- person: no person visible (just clothing fabric)\n- face: no\n- animal: no\n- text: no\n- vehicle: no\n- food: no\n- indoor scene: appears to be indoor (wall visible)\n- outdoor scene: no\n- artificial content: the cityscape is drawn/artistic, yes\n- occlusion: the pants partially occlude the shoe top\n- unusual viewpoint: close-up, somewhat unusual angle\n- multiple main objects: no, just one main shoe\n\nDominant content: object (shoe)\nImage style: edited_photo (black and white, possibly edited)\nSemantic domain: fashion/footwear\n\nCaption: A black and white close-up of a canvas sneaker featuring a hand-drawn cityscape design.\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a close-up of a sneaker/canvas shoe (looks like a Converse Chuck Taylor high-top) with a custom hand-drawn cityscape design on the side. The drawing depicts a city skyline with buildings. The image is in black and white or very low color. The shoe has white laces and metal eyelets. There appears to be a dark fabric (pants/jeans) visible in the upper left. In the background, there's what appears to be a wall with some decoration, possibly a fish-shaped object.\n\nLet me rate each dimension:\n\n- recognizability: The shoe is clearly recognizable, but the image is dark and a bit blurry. I'd say 4.\n- ambiguity: Pretty clear what's being shown - a sneaker. Low ambiguity. 1-2.\n- natural_photo_typicality: It looks like a regular photo, though dark and possibly edited to black and white. 3-4.\n- visual_clutter: The shoe has a detailed cityscape drawing, but the rest is relatively simple. 2-3.\n- object_centricity: The shoe is the clear central object. 5.\n- scene_centricity: It's more object-focused than scene-focused. 1-2.\n- caption_confidence: Pretty confident about the content. 4.\n\nCounts:\n- salient objects: mainly 1 (the shoe)\n- distinct categories: shoe, fabric/clothing, background wall decoration ~ 2-3\n\nContains:\n- person: no person visible (just clothing fabric)\n- face: no\n- animal: no\n- text: no\n- vehicle: no\n- food: no\n- indoor scene: appears to be indoor (wall visible)\n- outdoor scene: no\n- artificial content: the cityscape is drawn/artistic, yes\n- occlusion: the pants partially occlude the shoe top\n- unusual viewpoint: close-up, somewhat unusual angle\n- multiple main objects: no, just one main shoe\n\nDominant content: object (shoe)\nImage style: edited_photo (black and white, possibly edited)\nSemantic domain: fashion/footwear\n\nCaption: A black and white close-up of a canvas sneaker featuring a hand-drawn cityscape design.\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 851,
+          "total_tokens": 2373,
+          "cost": 0.00145044,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00145044,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010212
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 509,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_52",
+    "stim_key": "architecture_52",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 52,
+    "file_index": 52,
+    "image_name": "image_0052.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0052.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 2, \"object_centricity\": 4, \"scene_centricity\": 3, \"caption_confidence\": 5, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 5, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": true, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"pet_outdoor\", \"short_caption\": \"A Yorkshire Terrier sitting on the porch of a large tan wooden doghouse in a backyard.\", \"main_objects\": [\"doghouse\", \"Yorkshire terrier\", \"wooden fence\", \"grass lawn\", \"tree branches\"], \"possible_interpretations\": [\"A pet dog resting in its outdoor doghouse\", \"A product display photo of a deluxe doghouse\", \"A backyard pet enclosure scene\"], \"uncertainty_notes\": \"Unclear whether this is a staged product shot or a real pet in a home setting; dog breed appears to be a Yorkshire Terrier but could be similar small terrier.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780318901-377PkWXSibQwqKgIXHZG",
+        "object": "chat.completion",
+        "created": 1780318901,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 2, \"object_centricity\": 4, \"scene_centricity\": 3, \"caption_confidence\": 5, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 5, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": true, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"pet_outdoor\", \"short_caption\": \"A Yorkshire Terrier sitting on the porch of a large tan wooden doghouse in a backyard.\", \"main_objects\": [\"doghouse\", \"Yorkshire terrier\", \"wooden fence\", \"grass lawn\", \"tree branches\"], \"possible_interpretations\": [\"A pet dog resting in its outdoor doghouse\", \"A product display photo of a deluxe doghouse\", \"A backyard pet enclosure scene\"], \"uncertainty_notes\": \"Unclear whether this is a staged product shot or a real pet in a home setting; dog breed appears to be a Yorkshire Terrier but could be similar small terrier.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a large, ornate doghouse in a backyard setting. The doghouse is tan/beige with a gray shingled roof, white trim, and has an open design with a covered porch area. A small Yorkshire Terrier (Yorkie) is sitting inside the doghouse on the covered porch. The background shows a wooden fence, grass, and some bare tree branches. The sky is blue with some clouds.\n\nLet me rate each attribute:\n\n- recognizability: The main content (doghouse with dog) is very clear. 5\n- ambiguity: Single clear interpretation. 1\n- natural_photo_typicality: Looks like a typical natural photograph. 5\n- visual_clutter: Relatively low clutter, mostly the doghouse and dog. 2\n- object_centricity: The doghouse is the central object dominating the image. 4\n- scene_centricity: It's a scene too, but object-centric. 3\n- caption_confidence: Very confident. 5\n\nSalient objects: doghouse, dog, fence - around 3\nDistinct categories: doghouse, dog, fence, grass, tree, sky - 5-6\n\nContains: person (no), face (no), animal (yes, dog), text (no), vehicle (no), food (no), indoor (no), outdoor (yes), artificial/rendered (no), occlusion (no), unusual viewpoint (no), multiple main objects (somewhat - doghouse and dog).\n\nDominant content: object (doghouse with dog)\nImage style: natural_photo\nSemantic domain: pet/animal or home_outdoor\n\nShort caption: \"A Yorkshire Terrier sitting inside a large tan doghouse in a backyard.\"\n\nMain objects: doghouse, Yorkshire terrier, wooden fence, grass\n\nPossible interpretations: 1. A doghouse display/product photo, 2. A pet enjoying its outdoor home, 3. A backyard pet setup\n\nQuality flags: none significant",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a large, ornate doghouse in a backyard setting. The doghouse is tan/beige with a gray shingled roof, white trim, and has an open design with a covered porch area. A small Yorkshire Terrier (Yorkie) is sitting inside the doghouse on the covered porch. The background shows a wooden fence, grass, and some bare tree branches. The sky is blue with some clouds.\n\nLet me rate each attribute:\n\n- recognizability: The main content (doghouse with dog) is very clear. 5\n- ambiguity: Single clear interpretation. 1\n- natural_photo_typicality: Looks like a typical natural photograph. 5\n- visual_clutter: Relatively low clutter, mostly the doghouse and dog. 2\n- object_centricity: The doghouse is the central object dominating the image. 4\n- scene_centricity: It's a scene too, but object-centric. 3\n- caption_confidence: Very confident. 5\n\nSalient objects: doghouse, dog, fence - around 3\nDistinct categories: doghouse, dog, fence, grass, tree, sky - 5-6\n\nContains: person (no), face (no), animal (yes, dog), text (no), vehicle (no), food (no), indoor (no), outdoor (yes), artificial/rendered (no), occlusion (no), unusual viewpoint (no), multiple main objects (somewhat - doghouse and dog).\n\nDominant content: object (doghouse with dog)\nImage style: natural_photo\nSemantic domain: pet/animal or home_outdoor\n\nShort caption: \"A Yorkshire Terrier sitting inside a large tan doghouse in a backyard.\"\n\nMain objects: doghouse, Yorkshire terrier, wooden fence, grass\n\nPossible interpretations: 1. A doghouse display/product photo, 2. A pet enjoying its outdoor home, 3. A backyard pet setup\n\nQuality flags: none significant",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 751,
+          "total_tokens": 2165,
+          "cost": 0.00129804,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129804,
+            "upstream_inference_prompt_cost": 0.00039684,
+            "upstream_inference_completions_cost": 0.0009012
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 438,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

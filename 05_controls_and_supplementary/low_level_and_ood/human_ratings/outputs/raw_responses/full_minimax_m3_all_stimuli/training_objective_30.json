@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_30",
+    "stim_key": "training_objective_30",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 30,
+    "file_index": 30,
+    "image_name": "image_0030.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0030.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"surfing/recreation\",\n  \"short_caption\": \"A smiling man lying on concrete between three surfboards, viewed from above.\",\n  \"main_objects\": [\"man\", \"surfboard\", \"cap\", \"pants\", \"t-shirt\"],\n  \"possible_interpretations\": [\"surfer resting with boards\", \"shaper showing off new boards\", \"group photo of surfer and gear\"],\n  \"uncertainty_notes\": \"Feet slightly cut off at bottom edge; overhead perspective is unusual but image is otherwise clear.\",\n  \"quality_flags\": [\"feet_truncated\"]\n}",
+      "response": {
+        "id": "gen-1780319239-QPuPyKoKytNeFE8gR0P2",
+        "object": "chat.completion",
+        "created": 1780319239,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"surfing/recreation\",\n  \"short_caption\": \"A smiling man lying on concrete between three surfboards, viewed from above.\",\n  \"main_objects\": [\"man\", \"surfboard\", \"cap\", \"pants\", \"t-shirt\"],\n  \"possible_interpretations\": [\"surfer resting with boards\", \"shaper showing off new boards\", \"group photo of surfer and gear\"],\n  \"uncertainty_notes\": \"Feet slightly cut off at bottom edge; overhead perspective is unusual but image is otherwise clear.\",\n  \"quality_flags\": [\"feet_truncated\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a man lying on a concrete/pavement surface, flanked by three surfboards. He's wearing a gray t-shirt, dark pants, a cap, and appears to be smiling. The surfboards are different colors - one white/clear on the left with black trim, one white in the middle (appears to be a fish-style with a split tail), and one light blue on the right. The shot is from above (bird's eye view).\n\nLet me rate the various attributes:\n\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - pretty unambiguous, man with surfboards\n- natural_photo_typicality: 4 - looks like a real photo, though the overhead angle is somewhat unusual\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 3 - there's a clear subject (the man) but also clear objects (surfboards)\n- scene_centricity: 2 - not really a scene, more of a portrait with objects\n- caption_confidence: 5 - easy to caption\n\nOther attributes:\n- contains_person: true\n- contains_face: true (partially visible, but face is visible)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true (concrete/pavement suggests outdoor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (though his feet are cut off at the bottom)\n- contains_multiple_main_objects: true (man + 3 surfboards)\n- contains_unusual_viewpoint: true (overhead/bird's eye)\n\nMain objects: man, surfboard (x3)\nSalient object count: 4 (1 person + 3 surfboards)\nDistinct categories: 2 (person, surfboard)\n\nDominant content type: mixed (person and objects)\nImage style: natural_photo\nSemantic domain: surfing/recreation\n\nShort caption: \"A man lying on concrete between three surfboards viewed from above\"\n\nLet me finalize the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a man lying on a concrete/pavement surface, flanked by three surfboards. He's wearing a gray t-shirt, dark pants, a cap, and appears to be smiling. The surfboards are different colors - one white/clear on the left with black trim, one white in the middle (appears to be a fish-style with a split tail), and one light blue on the right. The shot is from above (bird's eye view).\n\nLet me rate the various attributes:\n\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - pretty unambiguous, man with surfboards\n- natural_photo_typicality: 4 - looks like a real photo, though the overhead angle is somewhat unusual\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 3 - there's a clear subject (the man) but also clear objects (surfboards)\n- scene_centricity: 2 - not really a scene, more of a portrait with objects\n- caption_confidence: 5 - easy to caption\n\nOther attributes:\n- contains_person: true\n- contains_face: true (partially visible, but face is visible)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true (concrete/pavement suggests outdoor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (though his feet are cut off at the bottom)\n- contains_multiple_main_objects: true (man + 3 surfboards)\n- contains_unusual_viewpoint: true (overhead/bird's eye)\n\nMain objects: man, surfboard (x3)\nSalient object count: 4 (1 person + 3 surfboards)\nDistinct categories: 2 (person, surfboard)\n\nDominant content type: mixed (person and objects)\nImage style: natural_photo\nSemantic domain: surfing/recreation\n\nShort caption: \"A man lying on concrete between three surfboards viewed from above\"\n\nLet me finalize the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 795,
+          "total_tokens": 2317,
+          "cost": 0.00126036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000954
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 492,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

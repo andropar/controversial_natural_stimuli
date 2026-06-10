@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_139",
+    "stim_key": "vicco_139",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 139,
+    "file_index": 138,
+    "image_name": "shared_4rep_vicco_139.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_139.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor home life\",\n  \"short_caption\": \"Young girl sitting on a rug knitting pink yarn in a living room with a TV and shelving unit.\",\n  \"main_objects\": [\"girl\", \"pink yarn\", \"rug\", \"television\", \"shelving unit\", \"stuffed toys\", \"remote control\"],\n  \"possible_interpretations\": [\n    \"Girl knitting pink yarn\",\n    \"Child doing crafts at home\",\n    \"Person sewing or embroidering\",\n    \"Child playing with yarn on the floor\",\n    \"Relaxed indoor home activity\"\n  ],\n  \"uncertainty_notes\": \"Girl's face is partially visible and angled downward, making her expression hard to read. Exact craft activity (knitting vs. sewing vs. crocheting) is difficult to determine.\",\n  \"quality_flags\": []\n}\n```",
+      "response": {
+        "id": "gen-1780319547-oQMtlGXaA8puT2qUimEZ",
+        "object": "chat.completion",
+        "created": 1780319547,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor home life\",\n  \"short_caption\": \"Young girl sitting on a rug knitting pink yarn in a living room with a TV and shelving unit.\",\n  \"main_objects\": [\"girl\", \"pink yarn\", \"rug\", \"television\", \"shelving unit\", \"stuffed toys\", \"remote control\"],\n  \"possible_interpretations\": [\n    \"Girl knitting pink yarn\",\n    \"Child doing crafts at home\",\n    \"Person sewing or embroidering\",\n    \"Child playing with yarn on the floor\",\n    \"Relaxed indoor home activity\"\n  ],\n  \"uncertainty_notes\": \"Girl's face is partially visible and angled downward, making her expression hard to read. Exact craft activity (knitting vs. sewing vs. crocheting) is difficult to determine.\",\n  \"quality_flags\": []\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a young girl with curly hair sitting on a gray rug on a wooden parquet floor. She appears to be knitting or doing some craft work with a pink/red yarn. She's wearing a white t-shirt, has a pink cap on the floor next to her, and white socks. In the background, there's a TV on a wooden stand with a remote control, a white shelving unit with various items including stuffed animals (looks like a Furby), baskets, and board games. There's also what appears to be a water bottle or thermos on the TV stand.\n\nLet me provide the annotations:\n\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - quite clear, a girl knitting/crafting\n- natural_photo_typicality: 5 - looks like a typical home photo\n- visual_clutter: 3 - there are several items but organized\n- object_centricity: 2 - the girl is the focus but the scene is dominant\n- scene_centricity: 4 - this is mainly a living room scene\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 5-6 (girl, TV, shelf, rug, knitting, cap)\n- estimated_distinct_object_categories: 5 (person, electronics, furniture, toys, clothing)\n\n- contains_person: true\n- contains_face: true (partially, her face is visible but she's looking down)\n- contains_animal: false (stuffed animals but not real)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"person_face\" - actually more like person\n- image_style: \"natural_photo\"\n- semantic_domain: \"indoor home life\"\n\nShort caption: \"Young girl with curly hair sitting on a rug knitting pink yarn in a living room.\"\n\nMain objects: girl, yarn, rug, TV, shelving unit, stuffed animals, remote control, water bottle\n\nPossible interpretations:\n1. Girl knitting pink yarn\n2. Child doing crafts at home\n3. Girl playing with yarn\n4. Person sewing/embroidering\n5. Relaxed home activity\n\nUncertainty: Face partially visible, looking down",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a young girl with curly hair sitting on a gray rug on a wooden parquet floor. She appears to be knitting or doing some craft work with a pink/red yarn. She's wearing a white t-shirt, has a pink cap on the floor next to her, and white socks. In the background, there's a TV on a wooden stand with a remote control, a white shelving unit with various items including stuffed animals (looks like a Furby), baskets, and board games. There's also what appears to be a water bottle or thermos on the TV stand.\n\nLet me provide the annotations:\n\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - quite clear, a girl knitting/crafting\n- natural_photo_typicality: 5 - looks like a typical home photo\n- visual_clutter: 3 - there are several items but organized\n- object_centricity: 2 - the girl is the focus but the scene is dominant\n- scene_centricity: 4 - this is mainly a living room scene\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 5-6 (girl, TV, shelf, rug, knitting, cap)\n- estimated_distinct_object_categories: 5 (person, electronics, furniture, toys, clothing)\n\n- contains_person: true\n- contains_face: true (partially, her face is visible but she's looking down)\n- contains_animal: false (stuffed animals but not real)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"person_face\" - actually more like person\n- image_style: \"natural_photo\"\n- semantic_domain: \"indoor home life\"\n\nShort caption: \"Young girl with curly hair sitting on a rug knitting pink yarn in a living room.\"\n\nMain objects: girl, yarn, rug, TV, shelving unit, stuffed animals, remote control, water bottle\n\nPossible interpretations:\n1. Girl knitting pink yarn\n2. Child doing crafts at home\n3. Girl playing with yarn\n4. Person sewing/embroidering\n5. Relaxed home activity\n\nUncertainty: Face partially visible, looking down",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 924,
+          "total_tokens": 2446,
+          "cost": 0.00141516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00141516,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011088
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 577,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

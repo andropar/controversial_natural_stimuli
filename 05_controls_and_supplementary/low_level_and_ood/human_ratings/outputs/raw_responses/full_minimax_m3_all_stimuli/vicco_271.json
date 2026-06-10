@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_271",
+    "stim_key": "vicco_271",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 271,
+    "file_index": 270,
+    "image_name": "shared_4rep_vicco_271.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_271.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: Missing required fields: ['contains_unusual_viewpoint']"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban/street\",\n  \"short_caption\": \"A small doll with pink shoes sits atop a graffiti-covered metal utility box against a green hedge.\",\n  \"main_objects\": [\"doll\", \"utility box\", \"graffiti\", \"hedge\"],\n  \"possible_interpretations\": [\"lost doll placed on utility box\", \"doll left by child on street furniture\", \"deliberate street art display with toy\", \"decorated utility box in residential area\"],\n  \"uncertainty_notes\": \"Exact purpose of the metal box unclear; small text on label partially legible as 'Stadtwerke' suggesting German municipal utility\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319732-kFCJiHf9t0b3OkyewmUN",
+        "object": "chat.completion",
+        "created": 1780319732,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban/street\",\n  \"short_caption\": \"A small doll with pink shoes sits atop a graffiti-covered metal utility box against a green hedge.\",\n  \"main_objects\": [\"doll\", \"utility box\", \"graffiti\", \"hedge\"],\n  \"possible_interpretations\": [\"lost doll placed on utility box\", \"doll left by child on street furniture\", \"deliberate street art display with toy\", \"decorated utility box in residential area\"],\n  \"uncertainty_notes\": \"Exact purpose of the metal box unclear; small text on label partially legible as 'Stadtwerke' suggesting German municipal utility\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully and provide structured annotations.\n\nThe image shows:\n- A small doll/stuffed toy with brown hair (in pigtails with pink bows) and pink feet sitting on top of a metal utility box\n- The utility box has graffiti/sticker art on it, including what appears to be a character face and the number \"16\"\n- Behind is a dense green hedge/bush\n- The box has moss/lichen on it suggesting outdoor setting\n\nLet me rate each dimension:\n\n- recognizability: 4 - clearly shows a doll on a utility box with graffiti\n- ambiguity: 2 - quite clear what it is\n- natural_photo_typicality: 4 - looks like a natural photograph\n- visual_clutter: 3 - has multiple elements (doll, box, graffiti, foliage)\n- object_centricity: 3 - the doll is a focal point but the box with graffiti is also prominent\n- scene_centricity: 2 - more about objects than a scene\n- caption_confidence: 4 - can easily caption\n\nSalient objects: doll, utility box, graffiti, hedge - about 3-4\nDistinct categories: doll/toy, utility box, graffiti/sticker, foliage - about 4\n\nContains person: false (doll, not a real person)\nContains face: the doll has a face, and the graffiti has a face - true\nContains animal: false\nContains text: true (\"16\", \"Stadtwerke\" possibly)\nContains vehicle: false\nContains food: false\nContains indoor scene: false\nContains outdoor scene: true\nContains artificial or rendered: false\nContains occlusion or truncation: false\nContains unusual viewpoint: false\nContains multiple main objects: true (doll and box with graffiti)\n\nDominant content type: mixed (object + scene elements)\nImage style: natural_photo\nSemantic domain: urban/street\n\nShort caption: \"A small doll with pink shoes sits atop a graffiti-covered metal utility box against a green hedge.\"\n\nMain objects: doll, utility box, graffiti, hedge\nPossible interpretations: doll on utility box; lost toy; street art with toy\nUncertainty notes: hard to tell if the box is electrical or some other utility type\nQuality flags: none major",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully and provide structured annotations.\n\nThe image shows:\n- A small doll/stuffed toy with brown hair (in pigtails with pink bows) and pink feet sitting on top of a metal utility box\n- The utility box has graffiti/sticker art on it, including what appears to be a character face and the number \"16\"\n- Behind is a dense green hedge/bush\n- The box has moss/lichen on it suggesting outdoor setting\n\nLet me rate each dimension:\n\n- recognizability: 4 - clearly shows a doll on a utility box with graffiti\n- ambiguity: 2 - quite clear what it is\n- natural_photo_typicality: 4 - looks like a natural photograph\n- visual_clutter: 3 - has multiple elements (doll, box, graffiti, foliage)\n- object_centricity: 3 - the doll is a focal point but the box with graffiti is also prominent\n- scene_centricity: 2 - more about objects than a scene\n- caption_confidence: 4 - can easily caption\n\nSalient objects: doll, utility box, graffiti, hedge - about 3-4\nDistinct categories: doll/toy, utility box, graffiti/sticker, foliage - about 4\n\nContains person: false (doll, not a real person)\nContains face: the doll has a face, and the graffiti has a face - true\nContains animal: false\nContains text: true (\"16\", \"Stadtwerke\" possibly)\nContains vehicle: false\nContains food: false\nContains indoor scene: false\nContains outdoor scene: true\nContains artificial or rendered: false\nContains occlusion or truncation: false\nContains unusual viewpoint: false\nContains multiple main objects: true (doll and box with graffiti)\n\nDominant content type: mixed (object + scene elements)\nImage style: natural_photo\nSemantic domain: urban/street\n\nShort caption: \"A small doll with pink shoes sits atop a graffiti-covered metal utility box against a green hedge.\"\n\nMain objects: doll, utility box, graffiti, hedge\nPossible interpretations: doll on utility box; lost toy; street art with toy\nUncertainty notes: hard to tell if the box is electrical or some other utility type\nQuality flags: none major",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 826,
+          "total_tokens": 2364,
+          "cost": 0.00130236,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00130236,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.0009912
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 531,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_82",
+    "stim_key": "architecture_82",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 82,
+    "file_index": 82,
+    "image_name": "image_0082.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0082.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 9,\n  \"estimated_distinct_object_categories\": 8,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_living_room\",\n  \"short_caption\": \"Cozy living room with armchair, coffee table, flat-screen TV, plants, and orange curtains\",\n  \"main_objects\": [\"armchair\", \"coffee table\", \"flat-screen TV\", \"entertainment center\", \"potted palm\", \"topiary\", \"curtains\", \"wall art\", \"lamp\", \"staircase\"],\n  \"possible_interpretations\": [\"residential living room\", \"staged interior design photo\", \"catalog or stock photo of a living room\"],\n  \"uncertainty_notes\": \"Image has a very polished, idealized composition that may be a render or heavily staged photo; the decorative fruit bowl suggests a staged interior.\",\n  \"quality_flags\": []\n}\n```",
+      "response": {
+        "id": "gen-1780318936-9jfoXdOonwBg2QNtehXG",
+        "object": "chat.completion",
+        "created": 1780318936,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 9,\n  \"estimated_distinct_object_categories\": 8,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_living_room\",\n  \"short_caption\": \"Cozy living room with armchair, coffee table, flat-screen TV, plants, and orange curtains\",\n  \"main_objects\": [\"armchair\", \"coffee table\", \"flat-screen TV\", \"entertainment center\", \"potted palm\", \"topiary\", \"curtains\", \"wall art\", \"lamp\", \"staircase\"],\n  \"possible_interpretations\": [\"residential living room\", \"staged interior design photo\", \"catalog or stock photo of a living room\"],\n  \"uncertainty_notes\": \"Image has a very polished, idealized composition that may be a render or heavily staged photo; the decorative fruit bowl suggests a staged interior.\",\n  \"quality_flags\": []\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a living room interior with:\n- A brown armchair with a pillow\n- A wooden coffee table with books and a bowl of fruit (apples)\n- A flat-screen TV on a wooden entertainment center\n- A potted palm plant in a wicker basket\n- A topiary plant\n- Orange curtains on windows\n- A wall art piece (abstract painting)\n- A green vase on a shelf\n- A staircase in the upper left\n- A side table with a lamp\n- A rug on the floor\n- A bookshelf\n\nThis looks like it could be a staged/decorated interior - possibly a catalog or stock photo. The composition is very balanced and ideal-looking, suggesting it might be a real photo or a high-quality render. Given the slight artificial feel, it could be a real staged photo or possibly a render.\n\nLet me rate the attributes:\n- recognizability: 5 - very clear living room\n- ambiguity: 1 - clearly a living room\n- natural_photo_typicality: 4 - looks like a real photo but somewhat staged\n- visual_clutter: 3 - moderate amount of items\n- object_centricity: 2 - no single central object, more of a scene\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 5 - easy to caption\n\nObject count: many items - chair, table, TV, plants, curtains, etc. maybe 8-10 salient objects\nDistinct categories: chair, table, TV, plants, curtains, art, lamp, books - maybe 8-10\n\nContains: no people, no animals, no food (just decorative fruit), no text visible, no vehicles, no faces. Indoor scene yes, outdoor scene no (windows show outdoors but scene is indoor). Artificial/rendered - possibly, looks somewhat like a render. No occlusion/truncation really. No unusual viewpoint - standard eye level. No multiple main objects - it's a scene.\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a living room interior with:\n- A brown armchair with a pillow\n- A wooden coffee table with books and a bowl of fruit (apples)\n- A flat-screen TV on a wooden entertainment center\n- A potted palm plant in a wicker basket\n- A topiary plant\n- Orange curtains on windows\n- A wall art piece (abstract painting)\n- A green vase on a shelf\n- A staircase in the upper left\n- A side table with a lamp\n- A rug on the floor\n- A bookshelf\n\nThis looks like it could be a staged/decorated interior - possibly a catalog or stock photo. The composition is very balanced and ideal-looking, suggesting it might be a real photo or a high-quality render. Given the slight artificial feel, it could be a real staged photo or possibly a render.\n\nLet me rate the attributes:\n- recognizability: 5 - very clear living room\n- ambiguity: 1 - clearly a living room\n- natural_photo_typicality: 4 - looks like a real photo but somewhat staged\n- visual_clutter: 3 - moderate amount of items\n- object_centricity: 2 - no single central object, more of a scene\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 5 - easy to caption\n\nObject count: many items - chair, table, TV, plants, curtains, etc. maybe 8-10 salient objects\nDistinct categories: chair, table, TV, plants, curtains, art, lamp, books - maybe 8-10\n\nContains: no people, no animals, no food (just decorative fruit), no text visible, no vehicles, no faces. Indoor scene yes, outdoor scene no (windows show outdoors but scene is indoor). Artificial/rendered - possibly, looks somewhat like a render. No occlusion/truncation really. No unusual viewpoint - standard eye level. No multiple main objects - it's a scene.\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 802,
+          "total_tokens": 2324,
+          "cost": 0.00139164,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139164,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009624
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 454,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

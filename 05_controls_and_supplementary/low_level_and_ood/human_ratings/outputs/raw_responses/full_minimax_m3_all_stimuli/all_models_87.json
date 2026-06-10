@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_87",
+    "stim_key": "all_models_87",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 87,
+    "file_index": 87,
+    "image_name": "image_0087.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0087.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home_decor\",\n  \"short_caption\": \"Close-up of blue and white patterned curtain on a rod with metal grommets.\",\n  \"main_objects\": [\"curtain\", \"curtain rod\", \"grommets\"],\n  \"possible_interpretations\": [\"patterned curtain\", \"window drapery fabric\", \"decorative textile product\"],\n  \"uncertainty_notes\": \"Likely a retail product photo; the curtain extends beyond the frame so its full dimensions are not visible.\",\n  \"quality_flags\": [\"likely_product_photo\", \"curtain_truncated_at_frame\"]\n}",
+      "response": {
+        "id": "gen-1780318830-04Kxy6PmMEqKxeuJAbII",
+        "object": "chat.completion",
+        "created": 1780318830,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home_decor\",\n  \"short_caption\": \"Close-up of blue and white patterned curtain on a rod with metal grommets.\",\n  \"main_objects\": [\"curtain\", \"curtain rod\", \"grommets\"],\n  \"possible_interpretations\": [\"patterned curtain\", \"window drapery fabric\", \"decorative textile product\"],\n  \"uncertainty_notes\": \"Likely a retail product photo; the curtain extends beyond the frame so its full dimensions are not visible.\",\n  \"quality_flags\": [\"likely_product_photo\", \"curtain_truncated_at_frame\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a close-up of a patterned curtain. It has a geometric diamond/oval pattern in blue/navy on a white/cream background. The curtain is hung on a white rod with metal grommets (eyelets) at the top. This appears to be a product photo, likely from a retail website.\n\nLet me analyze:\n- Recognizability: It's clearly a curtain with a pattern, very recognizable. 5\n- Ambiguity: Low ambiguity, it's clearly a curtain. 1\n- Natural photo typicality: It looks like a product photo, somewhat artificial lighting and framing. 3\n- Visual clutter: The pattern is repetitive but not overly cluttered. 2\n- Object centricity: The curtain is the central object. 4\n- Scene centricity: Not really a scene, more of an object. 2\n- Caption confidence: High, easy to caption. 5\n\nEstimated salient object count: 1 (the curtain)\nEstimated distinct object categories: 2 (curtain, curtain rod/grommets)\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor scene: true (curtain implies indoor)\nContains outdoor scene: false\nContains artificial or rendered content: false\nContains occlusion or truncation: true (curtain extends beyond frame)\nContains unusual viewpoint: false\nContains multiple main objects: false\n\nDominant content type: texture_pattern or closeup_detail... I'd say \"closeup_detail\" since it's a close view of a curtain showing its pattern. Actually, \"object\" since it's clearly a curtain.\n\nImage style: natural_photo\nSemantic domain: home_decor or interior\n\nShort caption: Close-up of blue and white patterned curtain hanging on a white rod with metal grommets.\n\nMain objects: curtain, curtain rod, grommets\n\nPossible interpretations: a curtain, window treatment, fabric pattern\n\nUncertainty notes: Standard product photo, content is clear and unambiguous.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a close-up of a patterned curtain. It has a geometric diamond/oval pattern in blue/navy on a white/cream background. The curtain is hung on a white rod with metal grommets (eyelets) at the top. This appears to be a product photo, likely from a retail website.\n\nLet me analyze:\n- Recognizability: It's clearly a curtain with a pattern, very recognizable. 5\n- Ambiguity: Low ambiguity, it's clearly a curtain. 1\n- Natural photo typicality: It looks like a product photo, somewhat artificial lighting and framing. 3\n- Visual clutter: The pattern is repetitive but not overly cluttered. 2\n- Object centricity: The curtain is the central object. 4\n- Scene centricity: Not really a scene, more of an object. 2\n- Caption confidence: High, easy to caption. 5\n\nEstimated salient object count: 1 (the curtain)\nEstimated distinct object categories: 2 (curtain, curtain rod/grommets)\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor scene: true (curtain implies indoor)\nContains outdoor scene: false\nContains artificial or rendered content: false\nContains occlusion or truncation: true (curtain extends beyond frame)\nContains unusual viewpoint: false\nContains multiple main objects: false\n\nDominant content type: texture_pattern or closeup_detail... I'd say \"closeup_detail\" since it's a close view of a curtain showing its pattern. Actually, \"object\" since it's clearly a curtain.\n\nImage style: natural_photo\nSemantic domain: home_decor or interior\n\nShort caption: Close-up of blue and white patterned curtain hanging on a white rod with metal grommets.\n\nMain objects: curtain, curtain rod, grommets\n\nPossible interpretations: a curtain, window treatment, fabric pattern\n\nUncertainty notes: Standard product photo, content is clear and unambiguous.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 770,
+          "total_tokens": 2292,
+          "cost": 0.00135324,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00135324,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.000924
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 492,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

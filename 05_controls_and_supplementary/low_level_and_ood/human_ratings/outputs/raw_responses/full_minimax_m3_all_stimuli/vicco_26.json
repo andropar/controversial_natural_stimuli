@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_26",
+    "stim_key": "vicco_26",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 26,
+    "file_index": 25,
+    "image_name": "shared_4rep_vicco_026.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_026.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food\",\n  \"short_caption\": \"A rectangular sheet pan with a golden baked good sitting on a trash can.\",\n  \"main_objects\": [\"baking tray\", \"baked good\", \"trash can\"],\n  \"possible_interpretations\": [\"sheet cake\", \"cornbread\", \"sheet pan dessert\", \"baked custard\", \"focaccia\"],\n  \"uncertainty_notes\": \"Exact type of baked good is unclear; the placement on a trash can is unusual but the food itself is the clear focus.\",\n  \"quality_flags\": [\"unusual_object_placement\", \"casual_smartphone_photo\"]\n}",
+      "response": {
+        "id": "gen-1780319415-tQpanpjj1DOnEn8xfSbN",
+        "object": "chat.completion",
+        "created": 1780319415,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food\",\n  \"short_caption\": \"A rectangular sheet pan with a golden baked good sitting on a trash can.\",\n  \"main_objects\": [\"baking tray\", \"baked good\", \"trash can\"],\n  \"possible_interpretations\": [\"sheet cake\", \"cornbread\", \"sheet pan dessert\", \"baked custard\", \"focaccia\"],\n  \"uncertainty_notes\": \"Exact type of baked good is unclear; the placement on a trash can is unusual but the food itself is the clear focus.\",\n  \"quality_flags\": [\"unusual_object_placement\", \"casual_smartphone_photo\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a rectangular baking tray with what appears to be a baked good - looks like a sheet cake, cornbread, or similar yellow/golden baked item. The tray is black with perforated edges. It's sitting on top of what looks like a white trash can or bin, near a white door and white wall on a tiled floor. The setting appears to be a kitchen or utility area.\n\nLet me assess each criterion:\n\n- Recognizability: The baked good is clearly visible, but exactly what it is (cake, cornbread, sheet pan dessert) is somewhat ambiguous. I'd say 4.\n- Ambiguity: There's some ambiguity about exactly what the baked item is, and the setting is odd (on a trash can). I'd say 3.\n- Natural photo typicality: Looks like a typical phone photo of food. 4.\n- Visual clutter: The main subject is clear, with simple background. 2.\n- Object centricity: The baking tray with food is clearly the central object. 5.\n- Scene centricity: Not really a scene-focused image, more object-focused. 2.\n- Caption confidence: Pretty easy to caption. 4.\n\nSalient objects: 1 main (the tray with food), maybe 2 if counting the trash can.\nDistinct categories: 2-3 (baked good/tray, trash can, door/wall)\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: yes (baked good)\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial content: no\nContains occlusion/truncation: no\nContains unusual viewpoint: slightly, taken from above at an angle - maybe a bit unusual. I'd say no.\nContains multiple main objects: no, the tray dominates\n\nDominant content: object (the food/tray)\nImage style: natural_photo\nSemantic domain: food\n\nCaption: \"A rectangular sheet pan of yellow baked good sitting on a trash can.\"\n\nMain objects: [\"baking tray\", \"baked good/cake\", \"trash can\"]\n\nPossible interpretations: [\"sheet cake\", \"cornbread\", \"sheet pan dessert\", \"focaccia\", \"baked custard\"]\n\nUncertainty: \"Exact type of baked good unclear; unusual placement on trash can.\"\n\nQuality flags: [\"unusual_object_placement\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a rectangular baking tray with what appears to be a baked good - looks like a sheet cake, cornbread, or similar yellow/golden baked item. The tray is black with perforated edges. It's sitting on top of what looks like a white trash can or bin, near a white door and white wall on a tiled floor. The setting appears to be a kitchen or utility area.\n\nLet me assess each criterion:\n\n- Recognizability: The baked good is clearly visible, but exactly what it is (cake, cornbread, sheet pan dessert) is somewhat ambiguous. I'd say 4.\n- Ambiguity: There's some ambiguity about exactly what the baked item is, and the setting is odd (on a trash can). I'd say 3.\n- Natural photo typicality: Looks like a typical phone photo of food. 4.\n- Visual clutter: The main subject is clear, with simple background. 2.\n- Object centricity: The baking tray with food is clearly the central object. 5.\n- Scene centricity: Not really a scene-focused image, more object-focused. 2.\n- Caption confidence: Pretty easy to caption. 4.\n\nSalient objects: 1 main (the tray with food), maybe 2 if counting the trash can.\nDistinct categories: 2-3 (baked good/tray, trash can, door/wall)\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: yes (baked good)\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial content: no\nContains occlusion/truncation: no\nContains unusual viewpoint: slightly, taken from above at an angle - maybe a bit unusual. I'd say no.\nContains multiple main objects: no, the tray dominates\n\nDominant content: object (the food/tray)\nImage style: natural_photo\nSemantic domain: food\n\nCaption: \"A rectangular sheet pan of yellow baked good sitting on a trash can.\"\n\nMain objects: [\"baking tray\", \"baked good/cake\", \"trash can\"]\n\nPossible interpretations: [\"sheet cake\", \"cornbread\", \"sheet pan dessert\", \"focaccia\", \"baked custard\"]\n\nUncertainty: \"Exact type of baked good unclear; unusual placement on trash can.\"\n\nQuality flags: [\"unusual_object_placement\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 850,
+          "total_tokens": 2372,
+          "cost": 0.00132636,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00132636,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.00102
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 552,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

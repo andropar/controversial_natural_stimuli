@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_84",
+    "stim_key": "sota_84",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 84,
+    "file_index": 84,
+    "image_name": "image_0084.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0084.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_decor\",\n  \"short_caption\": \"Framed abstract painting on gray wall above a shelf with a pink bottle, white vase, and books.\",\n  \"main_objects\": [\"framed abstract painting\", \"pink glass bottle\", \"white ceramic vase\", \"books\", \"shelf\"],\n  \"possible_interpretations\": [\"styled interior decor photograph\", \"home decor vignette\", \"art display in a living space\", \"minimalist interior design scene\"],\n  \"uncertainty_notes\": \"Image appears to be a styled or staged interior photograph; painting style is abstract and not clearly representational.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319186-682SzUvDlS0o4tMvou98",
+        "object": "chat.completion",
+        "created": 1780319186,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_decor\",\n  \"short_caption\": \"Framed abstract painting on gray wall above a shelf with a pink bottle, white vase, and books.\",\n  \"main_objects\": [\"framed abstract painting\", \"pink glass bottle\", \"white ceramic vase\", \"books\", \"shelf\"],\n  \"possible_interpretations\": [\"styled interior decor photograph\", \"home decor vignette\", \"art display in a living space\", \"minimalist interior design scene\"],\n  \"uncertainty_notes\": \"Image appears to be a styled or staged interior photograph; painting style is abstract and not clearly representational.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an interior scene with:\n- A light gray wall as the background\n- A framed abstract painting/artwork hanging on the wall (prominent feature)\n- A dark shelf/console table at the bottom\n- On the shelf: a pink/rose colored glass bottle/vase, a white ceramic vase/pot (rounded, with lid), and what appears to be books stacked on the left side\n- The abstract painting has white, dark red/maroon, green, pink, and gray brushstrokes\n\nLet me rate the dimensions:\n- recognizability: 4 - clearly shows an interior design scene with art\n- ambiguity: 2 - pretty clear what it is, an interior vignette\n- natural_photo_typicality: 4 - looks like a natural photograph, possibly styled\n- visual_clutter: 2 - relatively clean, minimal composition\n- object_centricity: 3 - the painting is prominent but there are multiple objects\n- scene_centricity: 4 - this is mainly a scene/place (interior)\n- caption_confidence: 4 - can easily caption this\n\nCounts:\n- estimated_salient_object_count: 4 (painting, pink bottle, white vase, books)\n- estimated_distinct_object_categories: 4 (artwork, vase, ceramic vessel, books)\n\nContains:\n- person: false\n- face: false\n- animal: false\n- text: false (some marks on books but not really text)\n- vehicle: false\n- food: false\n- indoor_scene: true\n- outdoor_scene: false\n- artificial_or_rendered_content: false (it's a photo, though could be styled)\n- occlusion_or_truncation: false\n- unusual_viewpoint: false\n- multiple_main_objects: true (painting + shelf items)\n\nDominant content: scene (it's an interior vignette)\nImage style: natural_photo (could be edited/styled but appears photographic)\nSemantic domain: interior_decor or home_decor\n\nShort caption: \"Abstract framed painting on gray wall above shelf with decorative vases and books\"\n\nMain objects: framed abstract painting, pink glass bottle, white ceramic vase, books\n\nPossible interpretations:\n- Interior design styled photograph\n- Home decor showcase\n- Art gallery display\n- Living room vignette\n\nUncertainty notes: The image may be a styled/staged interior photograph\nQuality flags: none significant",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an interior scene with:\n- A light gray wall as the background\n- A framed abstract painting/artwork hanging on the wall (prominent feature)\n- A dark shelf/console table at the bottom\n- On the shelf: a pink/rose colored glass bottle/vase, a white ceramic vase/pot (rounded, with lid), and what appears to be books stacked on the left side\n- The abstract painting has white, dark red/maroon, green, pink, and gray brushstrokes\n\nLet me rate the dimensions:\n- recognizability: 4 - clearly shows an interior design scene with art\n- ambiguity: 2 - pretty clear what it is, an interior vignette\n- natural_photo_typicality: 4 - looks like a natural photograph, possibly styled\n- visual_clutter: 2 - relatively clean, minimal composition\n- object_centricity: 3 - the painting is prominent but there are multiple objects\n- scene_centricity: 4 - this is mainly a scene/place (interior)\n- caption_confidence: 4 - can easily caption this\n\nCounts:\n- estimated_salient_object_count: 4 (painting, pink bottle, white vase, books)\n- estimated_distinct_object_categories: 4 (artwork, vase, ceramic vessel, books)\n\nContains:\n- person: false\n- face: false\n- animal: false\n- text: false (some marks on books but not really text)\n- vehicle: false\n- food: false\n- indoor_scene: true\n- outdoor_scene: false\n- artificial_or_rendered_content: false (it's a photo, though could be styled)\n- occlusion_or_truncation: false\n- unusual_viewpoint: false\n- multiple_main_objects: true (painting + shelf items)\n\nDominant content: scene (it's an interior vignette)\nImage style: natural_photo (could be edited/styled but appears photographic)\nSemantic domain: interior_decor or home_decor\n\nShort caption: \"Abstract framed painting on gray wall above shelf with decorative vases and books\"\n\nMain objects: framed abstract painting, pink glass bottle, white ceramic vase, books\n\nPossible interpretations:\n- Interior design styled photograph\n- Home decor showcase\n- Art gallery display\n- Living room vignette\n\nUncertainty notes: The image may be a styled/staged interior photograph\nQuality flags: none significant",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 853,
+          "total_tokens": 2375,
+          "cost": 0.00132996,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00132996,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010236
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 570,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

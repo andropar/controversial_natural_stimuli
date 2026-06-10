@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_10",
+    "stim_key": "dataset_10",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 10,
+    "file_index": 10,
+    "image_name": "image_0010.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0010.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: short_caption must be <= 20 words"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"craft_textile\",\n  \"short_caption\": \"Overhead view of a handmade log cabin quilt block on a fluffy white rug with fabric strips\",\n  \"main_objects\": [\"quilt block\", \"fabric strips\", \"child's hand\", \"sheepskin rug\"],\n  \"possible_interpretations\": [\n    \"handmade quilt in progress\",\n    \"quilting or sewing project\",\n    \"craft tutorial or blog photo\",\n    \"textile art display\",\n    \"mother and child crafting activity\"\n  ],\n  \"uncertainty_notes\": \"A small child's hand is visible at the bottom edge holding a fabric strip, suggesting an adult is working alongside a child, but no other contextual clues confirm this.\",\n  \"quality_flags\": [\"partial body part visible (child's hand)\", \"fabric strips extend beyond frame edges\"]\n}",
+      "response": {
+        "id": "gen-1780319011-eMSo5Zb4Zgykk6IsmCXO",
+        "object": "chat.completion",
+        "created": 1780319011,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"craft_textile\",\n  \"short_caption\": \"Overhead view of a handmade log cabin quilt block on a fluffy white rug with fabric strips\",\n  \"main_objects\": [\"quilt block\", \"fabric strips\", \"child's hand\", \"sheepskin rug\"],\n  \"possible_interpretations\": [\n    \"handmade quilt in progress\",\n    \"quilting or sewing project\",\n    \"craft tutorial or blog photo\",\n    \"textile art display\",\n    \"mother and child crafting activity\"\n  ],\n  \"uncertainty_notes\": \"A small child's hand is visible at the bottom edge holding a fabric strip, suggesting an adult is working alongside a child, but no other contextual clues confirm this.\",\n  \"quality_flags\": [\"partial body part visible (child's hand)\", \"fabric strips extend beyond frame edges\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a quilt block or fabric piece laid on a fluffy white rug/sheepskin. The quilt block has a log cabin or geometric pattern with navy blue, cream/beige, light blue, and small amounts of rust/brown and floral print fabrics. There are fabric strips/ribbons scattered around it. At the bottom, there's a small child's hand visible.\n\nLet me go through the schema:\n\n- recognizability: 4 - clearly a quilt/fabric craft\n- ambiguity: 2 - pretty clear what's happening\n- natural_photo_typicality: 4 - looks like a natural photo\n- visual_clutter: 3 - several fabric strips around but the central focus is clear\n- object_centricity: 4 - the quilt block is central and dominant\n- scene_centricity: 2 - it's more object focused\n- caption_confidence: 4 - easy to describe\n\nSalient objects: quilt block, fabric strips, child's hand, fluffy rug\nDistinct categories: 4 (quilt, fabric strips, rug, hand)\n\ncontains_person: true (hand visible)\ncontains_face: false\ncontains_animal: false (no real animal, just sheepskin rug)\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true (likely indoors on a rug)\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (the hand and some fabric strips are cut off at edges)\ncontains_unusual_viewpoint: true (overhead/top-down view)\ncontains_multiple_main_objects: false (the quilt block is clearly the main object)\n\ndominant_content_type: object\nimage_style: natural_photo\nsemantic_domain: craft/textile\n\nshort_caption: Overhead view of a handmade log cabin style quilt block on a fluffy white rug with fabric strips.\n\nmain_objects: quilt block, fabric strips, child's hand, sheepskin rug\n\npossible_interpretations:\n- handmade quilt in progress\n- quilting tutorial photo\n- craft project display\n- textile art piece\n\nuncertainty_notes: child's hand visible at bottom suggests an adult working with a child, but no other context visible.\n\nquality_flags: child's hand partially visible (might be considered a quality issue for some stimulus sets)",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a quilt block or fabric piece laid on a fluffy white rug/sheepskin. The quilt block has a log cabin or geometric pattern with navy blue, cream/beige, light blue, and small amounts of rust/brown and floral print fabrics. There are fabric strips/ribbons scattered around it. At the bottom, there's a small child's hand visible.\n\nLet me go through the schema:\n\n- recognizability: 4 - clearly a quilt/fabric craft\n- ambiguity: 2 - pretty clear what's happening\n- natural_photo_typicality: 4 - looks like a natural photo\n- visual_clutter: 3 - several fabric strips around but the central focus is clear\n- object_centricity: 4 - the quilt block is central and dominant\n- scene_centricity: 2 - it's more object focused\n- caption_confidence: 4 - easy to describe\n\nSalient objects: quilt block, fabric strips, child's hand, fluffy rug\nDistinct categories: 4 (quilt, fabric strips, rug, hand)\n\ncontains_person: true (hand visible)\ncontains_face: false\ncontains_animal: false (no real animal, just sheepskin rug)\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true (likely indoors on a rug)\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (the hand and some fabric strips are cut off at edges)\ncontains_unusual_viewpoint: true (overhead/top-down view)\ncontains_multiple_main_objects: false (the quilt block is clearly the main object)\n\ndominant_content_type: object\nimage_style: natural_photo\nsemantic_domain: craft/textile\n\nshort_caption: Overhead view of a handmade log cabin style quilt block on a fluffy white rug with fabric strips.\n\nmain_objects: quilt block, fabric strips, child's hand, sheepskin rug\n\npossible_interpretations:\n- handmade quilt in progress\n- quilting tutorial photo\n- craft project display\n- textile art piece\n\nuncertainty_notes: child's hand visible at bottom suggests an adult working with a child, but no other context visible.\n\nquality_flags: child's hand partially visible (might be considered a quality issue for some stimulus sets)",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 876,
+          "total_tokens": 2414,
+          "cost": 0.00148524,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00148524,
+            "upstream_inference_prompt_cost": 0.00043404,
+            "upstream_inference_completions_cost": 0.0010512
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 560,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

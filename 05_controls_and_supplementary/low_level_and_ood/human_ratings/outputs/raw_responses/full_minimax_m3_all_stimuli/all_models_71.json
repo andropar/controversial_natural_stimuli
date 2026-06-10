@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_71",
+    "stim_key": "all_models_71",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 71,
+    "file_index": 71,
+    "image_name": "image_0071.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0071.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"diplomacy\",\n  \"short_caption\": \"Two men at podiums with Canadian and American flags against a gold curtain\",\n  \"main_objects\": [\"Canadian flag\", \"American flag\", \"two podiums\", \"gold curtain\", \"two men in suits\"],\n  \"possible_interpretations\": [\"Bilateral press conference\", \"Diplomatic meeting\", \"Joint political statement\"],\n  \"uncertainty_notes\": \"Individuals are only partially visible at the edges; identities not described. Possible emblem text on podiums not legible.\",\n  \"quality_flags\": [\"partial_occlusion_of_subjects\", \"subjects_truncated_at_edges\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318812-fI8uTTPTXIpF9nFXqwsN",
+        "object": "chat.completion",
+        "created": 1780318812,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"diplomacy\",\n  \"short_caption\": \"Two men at podiums with Canadian and American flags against a gold curtain\",\n  \"main_objects\": [\"Canadian flag\", \"American flag\", \"two podiums\", \"gold curtain\", \"two men in suits\"],\n  \"possible_interpretations\": [\"Bilateral press conference\", \"Diplomatic meeting\", \"Joint political statement\"],\n  \"uncertainty_notes\": \"Individuals are only partially visible at the edges; identities not described. Possible emblem text on podiums not legible.\",\n  \"quality_flags\": [\"partial_occlusion_of_subjects\", \"subjects_truncated_at_edges\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "The image shows two men at podiums with the Canadian flag on the left and the American flag on the right, against a gold/yellow curtain backdrop. This appears to be a diplomatic press conference setting. I can see two people partially - one on the left side (partially visible, appears to be a younger man with dark hair) and one on the right (partially visible, appears to be an older man with blonde/orange hair). There are also two podiums/lecterns visible.\n\nLet me provide conservative annotations based on what I can see clearly:\n\n- Recognizability: The setting is clearly a diplomatic press conference with national flags, but the people are partially cut off\n- Ambiguity: Low - it's clearly a press conference setting\n- Natural photo typicality: High - looks like a typical press photo\n- Visual clutter: Moderate - flags, curtains, podiums, but not chaotic\n- Object centricity: The people are central but partially cut off\n- Scene centricity: The scene (press conference) is important\n- Contains person: yes\n- Contains face: yes (partially)\n- Contains text: possibly on podiums but not clearly readable\n- Main objects: flags, podiums, people, curtain\n\nI should be careful not to identify the specific individuals by name.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows two men at podiums with the Canadian flag on the left and the American flag on the right, against a gold/yellow curtain backdrop. This appears to be a diplomatic press conference setting. I can see two people partially - one on the left side (partially visible, appears to be a younger man with dark hair) and one on the right (partially visible, appears to be an older man with blonde/orange hair). There are also two podiums/lecterns visible.\n\nLet me provide conservative annotations based on what I can see clearly:\n\n- Recognizability: The setting is clearly a diplomatic press conference with national flags, but the people are partially cut off\n- Ambiguity: Low - it's clearly a press conference setting\n- Natural photo typicality: High - looks like a typical press photo\n- Visual clutter: Moderate - flags, curtains, podiums, but not chaotic\n- Object centricity: The people are central but partially cut off\n- Scene centricity: The scene (press conference) is important\n- Contains person: yes\n- Contains face: yes (partially)\n- Contains text: possibly on podiums but not clearly readable\n- Main objects: flags, podiums, people, curtain\n\nI should be careful not to identify the specific individuals by name.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1363,
+          "completion_tokens": 628,
+          "total_tokens": 1991,
+          "cost": 0.00113514,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00113514,
+            "upstream_inference_prompt_cost": 0.00038154,
+            "upstream_inference_completions_cost": 0.0007536
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 319,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

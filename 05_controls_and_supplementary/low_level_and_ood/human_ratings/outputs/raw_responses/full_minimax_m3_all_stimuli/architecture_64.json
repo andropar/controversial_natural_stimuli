@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_64",
+    "stim_key": "architecture_64",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 64,
+    "file_index": 64,
+    "image_name": "image_0064.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0064.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"rustic_architecture\",\n  \"short_caption\": \"Close-up of a rustic wooden gate with metal hinge and diamond-shaped cutouts\",\n  \"main_objects\": [\"wooden gate\", \"metal hinge\", \"wooden planks\"],\n  \"possible_interpretations\": [\"barn door\", \"rustic stable gate\", \"decorative wooden door\", \"shuttered entrance\", \"old farm gate\"],\n  \"uncertainty_notes\": \"Background context is partially obscured; setting could be a barn, shop, or restaurant interior based on glimpsed glassware\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318919-ghXcn06FhVrPdpngjyuX",
+        "object": "chat.completion",
+        "created": 1780318919,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"rustic_architecture\",\n  \"short_caption\": \"Close-up of a rustic wooden gate with metal hinge and diamond-shaped cutouts\",\n  \"main_objects\": [\"wooden gate\", \"metal hinge\", \"wooden planks\"],\n  \"possible_interpretations\": [\"barn door\", \"rustic stable gate\", \"decorative wooden door\", \"shuttered entrance\", \"old farm gate\"],\n  \"uncertainty_notes\": \"Background context is partially obscured; setting could be a barn, shop, or restaurant interior based on glimpsed glassware\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a wooden gate or door, likely in a barn or rustic setting. Key features:\n- Vertical wooden planks/boards forming the main structure\n- A diagonal wooden brace creating a triangular pattern on the lower portion\n- Metal hinge hardware with bolts visible on the left side\n- Small diamond-shaped cutouts near the top of the gate\n- Warm lighting suggesting indoor or evening setting\n- In the background (left side), there appears to be some objects on shelves - possibly glasses, bottles, or display items, suggesting this might be in a shop, restaurant, or barn converted to a venue\n- The wood has a weathered, rustic appearance with visible grain\n\nLet me rate according to the schema:\n\n- recognizability: 4 - Clearly recognizable as a wooden gate/door\n- ambiguity: 2 - Pretty clear what it is, though setting could vary\n- natural_photo_typicality: 4 - Looks like a natural photograph\n- visual_clutter: 3 - Some complexity with the background objects but main subject is clear\n- object_centricity: 3 - The gate is the main subject but it's also scene-like\n- scene_centricity: 3 - Could be considered both an object and a scene element\n- caption_confidence: 4 - Easy to caption\n\nEstimated objects: 1 main (the gate), maybe 2-3 in background\nDistinct categories: wood gate, hinge, background items (glasses/dishes)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false - possibly glasses but not clearly food\n- contains_indoor_scene: true - appears indoor based on lighting and background\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true - the background objects are partially visible/cut off\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: \"object\" - the gate is the main subject\nimage_style: \"natural_photo\"\nsemantic_domain: \"rustic\" or \"agricultural\" or \"architecture\"\n\nshort_caption: \"Close-up of a rustic wooden gate with metal hinge and diamond cutouts\"\n\nmain_objects: [\"wooden gate\", \"metal hinge\", \"wooden planks\"]\n\npossible_interpretations: [\"barn door\", \"rustic gate\", \"stable door\", \"decorative wooden door\"]\n\nuncertainty_notes: \"Background context is partially obscured; setting could be barn, restaurant, or shop\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a wooden gate or door, likely in a barn or rustic setting. Key features:\n- Vertical wooden planks/boards forming the main structure\n- A diagonal wooden brace creating a triangular pattern on the lower portion\n- Metal hinge hardware with bolts visible on the left side\n- Small diamond-shaped cutouts near the top of the gate\n- Warm lighting suggesting indoor or evening setting\n- In the background (left side), there appears to be some objects on shelves - possibly glasses, bottles, or display items, suggesting this might be in a shop, restaurant, or barn converted to a venue\n- The wood has a weathered, rustic appearance with visible grain\n\nLet me rate according to the schema:\n\n- recognizability: 4 - Clearly recognizable as a wooden gate/door\n- ambiguity: 2 - Pretty clear what it is, though setting could vary\n- natural_photo_typicality: 4 - Looks like a natural photograph\n- visual_clutter: 3 - Some complexity with the background objects but main subject is clear\n- object_centricity: 3 - The gate is the main subject but it's also scene-like\n- scene_centricity: 3 - Could be considered both an object and a scene element\n- caption_confidence: 4 - Easy to caption\n\nEstimated objects: 1 main (the gate), maybe 2-3 in background\nDistinct categories: wood gate, hinge, background items (glasses/dishes)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false - possibly glasses but not clearly food\n- contains_indoor_scene: true - appears indoor based on lighting and background\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true - the background objects are partially visible/cut off\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: \"object\" - the gate is the main subject\nimage_style: \"natural_photo\"\nsemantic_domain: \"rustic\" or \"agricultural\" or \"architecture\"\n\nshort_caption: \"Close-up of a rustic wooden gate with metal hinge and diamond cutouts\"\n\nmain_objects: [\"wooden gate\", \"metal hinge\", \"wooden planks\"]\n\npossible_interpretations: [\"barn door\", \"rustic gate\", \"stable door\", \"decorative wooden door\"]\n\nuncertainty_notes: \"Background context is partially obscured; setting could be barn, restaurant, or shop\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 902,
+          "total_tokens": 2216,
+          "cost": 0.00144924,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00144924,
+            "upstream_inference_prompt_cost": 0.00036684,
+            "upstream_inference_completions_cost": 0.0010824
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 639,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

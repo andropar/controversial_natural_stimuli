@@ -16,11 +16,11 @@ Headline: of N pairs tied-and-near-ceiling on baseline, what fraction become
 separated on cstim?
 
 Done for both mRSA-transfer and fRSA, using the paper-layer values from
-02_rsa_scores/data/{subject}/{wrsa_transfer,crsa}_scores.csv.
+01_brain_model_alignment/results/rsa_scores/{subject}/{wrsa_transfer,crsa}_scores.csv.
 
 Output:
-    scripts/claude/discriminability/data/pair_separation_{mrsa,frsa}.csv
-    scripts/claude/discriminability/data/pair_separation_summary.csv
+    results/pair_separation_{mrsa,frsa}.csv
+    results/pair_separation_summary.csv
 """
 
 import sys
@@ -32,10 +32,9 @@ import pandas as pd
 from scipy.stats import ttest_rel
 from statsmodels.stats.multitest import multipletests
 
-PROJECT = Path(__file__).resolve().parents[4]
-PAPER = PROJECT / "experiments" / "cstim_paper"
-sys.path.insert(0, str(PAPER))
-sys.path.insert(0, str(PROJECT))
+STAGE = Path(__file__).resolve().parents[2]
+SHARE_ROOT = STAGE.parents[2]
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
 
 from config import MODEL_SETS, MODEL_DISPLAY_NAMES, RSA_DATA_DIR, SUBJECTS  # noqa
 

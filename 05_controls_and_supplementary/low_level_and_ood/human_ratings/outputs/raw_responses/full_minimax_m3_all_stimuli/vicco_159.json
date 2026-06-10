@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_159",
+    "stim_key": "vicco_159",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 159,
+    "file_index": 158,
+    "image_name": "shared_4rep_vicco_159.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_159.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 4, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 5, \"estimated_salient_object_count\": 12, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": true, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"urban cityscape\", \"short_caption\": \"Manhattan skyline with Empire State and Chrysler Buildings viewed from across the East River\", \"main_objects\": [\"skyscrapers\", \"Empire State Building\", \"Chrysler Building\", \"river\", \"boat\", \"waterfront promenade\"], \"possible_interpretations\": [\"NYC midtown skyline from East River\", \"Manhattan waterfront cityscape\", \"urban skyline photography\"], \"uncertainty_notes\": \"Backlit buildings reduce detail in facade; minor haze in atmosphere\", \"quality_flags\": [\"backlit\", \"slight atmospheric haze\"]}",
+      "response": {
+        "id": "gen-1780319572-NHGHIAbj9j57vDxwuOzK",
+        "object": "chat.completion",
+        "created": 1780319572,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 4, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 5, \"estimated_salient_object_count\": 12, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": true, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"urban cityscape\", \"short_caption\": \"Manhattan skyline with Empire State and Chrysler Buildings viewed from across the East River\", \"main_objects\": [\"skyscrapers\", \"Empire State Building\", \"Chrysler Building\", \"river\", \"boat\", \"waterfront promenade\"], \"possible_interpretations\": [\"NYC midtown skyline from East River\", \"Manhattan waterfront cityscape\", \"urban skyline photography\"], \"uncertainty_notes\": \"Backlit buildings reduce detail in facade; minor haze in atmosphere\", \"quality_flags\": [\"backlit\", \"slight atmospheric haze\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a cityscape view from across a body of water, likely the East River looking at Midtown Manhattan, New York City. I can identify:\n- The Empire State Building (visible with its distinctive spire)\n- The Chrysler Building (visible on the right with its Art Deco crown)\n- Multiple skyscrapers and high-rise buildings\n- A waterfront with what appears to be a pier/promenade\n- A boat on the left side of the water\n- Cloudy sky\n- The East River in the foreground\n\nLet me rate this according to the schema:\n\n- recognizability: 5 - Very recognizable as Manhattan/NYC skyline\n- ambiguity: 1 - Very clear what's depicted\n- natural_photo_typicality: 5 - Looks like a typical photograph\n- visual_clutter: 4 - Many buildings and details\n- object_centricity: 2 - No single central object, it's a scene\n- scene_centricity: 5 - Clearly a scene/place\n- caption_confidence: 5 - Easy to caption\n\nEstimated salient object count: Many buildings, maybe 10-15 prominent ones\nEstimated distinct object categories: 3-4 (skyscrapers, water, boat, sky)\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: possibly some small text on buildings but not clearly readable\nContains vehicle: true (boat)\nContains food: false\nContains indoor: false\nContains outdoor: true\nContains artificial/rendered: false\nContains occlusion/truncation: false\nContains unusual viewpoint: false\nContains multiple main objects: true\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: urban cityscape\n\nShort caption: Manhattan skyline with Empire State Building viewed from across the East River\nMain objects: skyscrapers, Empire State Building, Chrysler Building, river, boat\nPossible interpretations: NYC skyline, Manhattan from East River, midtown Manhattan\n\nQuality flags: backlit buildings, slightly hazy",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a cityscape view from across a body of water, likely the East River looking at Midtown Manhattan, New York City. I can identify:\n- The Empire State Building (visible with its distinctive spire)\n- The Chrysler Building (visible on the right with its Art Deco crown)\n- Multiple skyscrapers and high-rise buildings\n- A waterfront with what appears to be a pier/promenade\n- A boat on the left side of the water\n- Cloudy sky\n- The East River in the foreground\n\nLet me rate this according to the schema:\n\n- recognizability: 5 - Very recognizable as Manhattan/NYC skyline\n- ambiguity: 1 - Very clear what's depicted\n- natural_photo_typicality: 5 - Looks like a typical photograph\n- visual_clutter: 4 - Many buildings and details\n- object_centricity: 2 - No single central object, it's a scene\n- scene_centricity: 5 - Clearly a scene/place\n- caption_confidence: 5 - Easy to caption\n\nEstimated salient object count: Many buildings, maybe 10-15 prominent ones\nEstimated distinct object categories: 3-4 (skyscrapers, water, boat, sky)\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: possibly some small text on buildings but not clearly readable\nContains vehicle: true (boat)\nContains food: false\nContains indoor: false\nContains outdoor: true\nContains artificial/rendered: false\nContains occlusion/truncation: false\nContains unusual viewpoint: false\nContains multiple main objects: true\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: urban cityscape\n\nShort caption: Manhattan skyline with Empire State Building viewed from across the East River\nMain objects: skyscrapers, Empire State Building, Chrysler Building, river, boat\nPossible interpretations: NYC skyline, Manhattan from East River, midtown Manhattan\n\nQuality flags: backlit buildings, slightly hazy",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 735,
+          "total_tokens": 2257,
+          "cost": 0.00118836,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00118836,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000882
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 500,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

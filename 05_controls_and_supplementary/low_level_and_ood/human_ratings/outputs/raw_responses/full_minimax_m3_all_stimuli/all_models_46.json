@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_46",
+    "stim_key": "all_models_46",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 46,
+    "file_index": 46,
+    "image_name": "image_0046.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0046.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"texture_pattern\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"texture/material\",\n  \"short_caption\": \"Close-up of a stacked stone wall with beige rectangular tile cladding.\",\n  \"main_objects\": [\"stone wall\", \"stone tiles\", \"stone veneer\"],\n  \"possible_interpretations\": [\"decorative stone cladding wall\", \"interior accent wall\", \"exterior building facade\", \"stone veneer texture sample\"],\n  \"uncertainty_notes\": \"Cannot determine whether wall is interior or exterior; scale and context are unclear due to tight framing.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318786-F3a0XnFaF6MLSLegNKCD",
+        "object": "chat.completion",
+        "created": 1780318786,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"texture_pattern\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"texture/material\",\n  \"short_caption\": \"Close-up of a stacked stone wall with beige rectangular tile cladding.\",\n  \"main_objects\": [\"stone wall\", \"stone tiles\", \"stone veneer\"],\n  \"possible_interpretations\": [\"decorative stone cladding wall\", \"interior accent wall\", \"exterior building facade\", \"stone veneer texture sample\"],\n  \"uncertainty_notes\": \"Cannot determine whether wall is interior or exterior; scale and context are unclear due to tight framing.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a textured stone wall made of stacked, thin, rectangular light-colored stone tiles. It appears to be a close-up of a stone veneer or cladding wall, with a repeating horizontal pattern of irregularly sized stone strips in beige/cream tones.\n\nLet me annotate this carefully:\n\n- recognizability: 5 - clearly a stone wall texture\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a natural photograph of a stone wall\n- visual_clutter: 3 - busy pattern with many stones but uniform overall\n- object_centricity: 1 - no single central object, it's a pattern\n- scene_centricity: 1 - not a scene, just a texture\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: many stones but as a pattern\n- estimated_distinct_object_categories: 1 (stone tiles)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: false (could be either, but it's a texture closeup)\n- contains_artificial_or_rendered_content: false (looks like real stone)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: texture_pattern\n- image_style: natural_photo\n- semantic_domain: texture/material\n\n- short_caption: \"Close-up of a stacked stone wall texture with beige rectangular tiles\"\n- main_objects: [\"stone wall\", \"stone tiles\"]\n- possible_interpretations: [\"stone veneer wall\", \"decorative stone cladding\", \"building facade texture\"]\n- uncertainty_notes: \"Could be interior or exterior wall, hard to tell scale\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a textured stone wall made of stacked, thin, rectangular light-colored stone tiles. It appears to be a close-up of a stone veneer or cladding wall, with a repeating horizontal pattern of irregularly sized stone strips in beige/cream tones.\n\nLet me annotate this carefully:\n\n- recognizability: 5 - clearly a stone wall texture\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a natural photograph of a stone wall\n- visual_clutter: 3 - busy pattern with many stones but uniform overall\n- object_centricity: 1 - no single central object, it's a pattern\n- scene_centricity: 1 - not a scene, just a texture\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: many stones but as a pattern\n- estimated_distinct_object_categories: 1 (stone tiles)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: false (could be either, but it's a texture closeup)\n- contains_artificial_or_rendered_content: false (looks like real stone)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: texture_pattern\n- image_style: natural_photo\n- semantic_domain: texture/material\n\n- short_caption: \"Close-up of a stacked stone wall texture with beige rectangular tiles\"\n- main_objects: [\"stone wall\", \"stone tiles\"]\n- possible_interpretations: [\"stone veneer wall\", \"decorative stone cladding\", \"building facade texture\"]\n- uncertainty_notes: \"Could be interior or exterior wall, hard to tell scale\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 736,
+          "total_tokens": 2258,
+          "cost": 0.00118956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00118956,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008832
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 454,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

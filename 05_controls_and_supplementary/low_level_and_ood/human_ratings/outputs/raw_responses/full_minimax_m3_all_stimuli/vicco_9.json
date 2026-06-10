@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_9",
+    "stim_key": "vicco_9",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 9,
+    "file_index": 8,
+    "image_name": "shared_4rep_vicco_009.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_009.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 3, \"ambiguity\": 4, \"natural_photo_typicality\": 4, \"visual_clutter\": 4, \"object_centricity\": 2, \"scene_centricity\": 3, \"caption_confidence\": 3, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 1, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": true, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"street_art\", \"short_caption\": \"Colorful chalk drawing of a figure on dark asphalt pavement\", \"main_objects\": [\"chalk drawing\", \"pavement\", \"human figure outline\"], \"possible_interpretations\": [\"child's chalk drawing of a person\", \"hopscotch or street game markings\", \"abstract chalk art on pavement\", \"graffiti-style chalk scribbles\", \"remnants of multiple chalk drawings overlapping\"], \"uncertainty_notes\": \"Specific meaning of chalk marks is unclear; figure shape is suggested but not definitive\", \"quality_flags\": [\"subjective_content\", \"partially_truncated\", \"low_contrast_background\"]}",
+      "response": {
+        "id": "gen-1780319395-kodiQWdrAnXHKgsetXta",
+        "object": "chat.completion",
+        "created": 1780319395,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 3, \"ambiguity\": 4, \"natural_photo_typicality\": 4, \"visual_clutter\": 4, \"object_centricity\": 2, \"scene_centricity\": 3, \"caption_confidence\": 3, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 1, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": true, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"street_art\", \"short_caption\": \"Colorful chalk drawing of a figure on dark asphalt pavement\", \"main_objects\": [\"chalk drawing\", \"pavement\", \"human figure outline\"], \"possible_interpretations\": [\"child's chalk drawing of a person\", \"hopscotch or street game markings\", \"abstract chalk art on pavement\", \"graffiti-style chalk scribbles\", \"remnants of multiple chalk drawings overlapping\"], \"uncertainty_notes\": \"Specific meaning of chalk marks is unclear; figure shape is suggested but not definitive\", \"quality_flags\": [\"subjective_content\", \"partially_truncated\", \"low_contrast_background\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a chalk drawing on what appears to be dark asphalt or pavement. The drawing features colorful chalk marks in pink, blue, green, yellow, and other colors, with what looks like figures or abstract designs - possibly a person/figure drawn in chalk, with various colored sections.\n\nLet me assess each dimension:\n\n- Recognizability: The content is somewhat clear - it's a chalk drawing on pavement. I'd say 3 - you can tell it's chalk art but the specific content is somewhat abstract.\n- Ambiguity: 4 - the chalk drawing could be interpreted in multiple ways (figure, abstract art, hopscotch, etc.)\n- Natural photo typicality: 4 - this is a natural photo, though the subject is human-made\n- Visual clutter: 4 - many competing marks, colors, shapes\n- Object centricity: 2 - no single clear central object\n- Scene centricity: 3 - it's a scene of pavement with chalk\n- Caption confidence: 3 - can describe generally but specifics are uncertain\n\nThe image contains text-like marks but they appear to be abstract chalk drawings, not actual text. No people, animals, vehicles, food visible directly. It's an outdoor scene (pavement/sidewalk).\n\nLet me build the JSON response.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a chalk drawing on what appears to be dark asphalt or pavement. The drawing features colorful chalk marks in pink, blue, green, yellow, and other colors, with what looks like figures or abstract designs - possibly a person/figure drawn in chalk, with various colored sections.\n\nLet me assess each dimension:\n\n- Recognizability: The content is somewhat clear - it's a chalk drawing on pavement. I'd say 3 - you can tell it's chalk art but the specific content is somewhat abstract.\n- Ambiguity: 4 - the chalk drawing could be interpreted in multiple ways (figure, abstract art, hopscotch, etc.)\n- Natural photo typicality: 4 - this is a natural photo, though the subject is human-made\n- Visual clutter: 4 - many competing marks, colors, shapes\n- Object centricity: 2 - no single clear central object\n- Scene centricity: 3 - it's a scene of pavement with chalk\n- Caption confidence: 3 - can describe generally but specifics are uncertain\n\nThe image contains text-like marks but they appear to be abstract chalk drawings, not actual text. No people, animals, vehicles, food visible directly. It's an outdoor scene (pavement/sidewalk).\n\nLet me build the JSON response.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 600,
+          "total_tokens": 2122,
+          "cost": 0.00102636,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00102636,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.00072
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 313,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

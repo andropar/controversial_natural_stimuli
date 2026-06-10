@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_32",
+    "stim_key": "all_models_32",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 32,
+    "file_index": 32,
+    "image_name": "image_0032.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0032.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 1,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"illustration_or_render\",\n  \"semantic_domain\": \"anime_character_sketch\",\n\n  \"short_caption\": \"Pencil sketch on lined notebook paper of several anime-style characters, including a chibi figure on top of a head.\",\n  \"main_objects\": [\"anime characters\", \"chibi figure\", \"notebook paper\", \"heart symbol\", \"star marking\"],\n  \"possible_interpretations\": [\n    \"fan art of anime characters\",\n    \"original character design sketches\",\n    \"children's drawing of cartoon figures\",\n    \"storyboard concept art\"\n  ],\n  \"uncertainty_notes\": \"Characters appear to be from a specific anime/manga series but cannot be confidently identified; image is a photograph of a hand-drawn sketch so lighting and paper texture are visible.\",\n  \"quality_flags\": [\"photographed_drawing\", \"paper_visible\", \"partial_occlusion\", \"uneven_lighting\"]\n}",
+      "response": {
+        "id": "gen-1780318766-4nYwtDNi4uhd87qLoYii",
+        "object": "chat.completion",
+        "created": 1780318766,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 1,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"illustration_or_render\",\n  \"semantic_domain\": \"anime_character_sketch\",\n\n  \"short_caption\": \"Pencil sketch on lined notebook paper of several anime-style characters, including a chibi figure on top of a head.\",\n  \"main_objects\": [\"anime characters\", \"chibi figure\", \"notebook paper\", \"heart symbol\", \"star marking\"],\n  \"possible_interpretations\": [\n    \"fan art of anime characters\",\n    \"original character design sketches\",\n    \"children's drawing of cartoon figures\",\n    \"storyboard concept art\"\n  ],\n  \"uncertainty_notes\": \"Characters appear to be from a specific anime/manga series but cannot be confidently identified; image is a photograph of a hand-drawn sketch so lighting and paper texture are visible.\",\n  \"quality_flags\": [\"photographed_drawing\", \"paper_visible\", \"partial_occlusion\", \"uneven_lighting\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a pencil sketch on lined notebook paper depicting several anime/manga-style characters. I can see:\n- A small chibi character on top of a larger character's head (left side)\n- A character with a star marking on their head\n- A character below with dark shaded hair\n- A character on the right side with a heart above\n- Another character further right\n\nThis is a hand-drawn sketch on lined paper, not a natural photograph. It's artwork/drawing.\n\nLet me annotate this conservatively:\n- recognizability: The content is recognizable as anime-style character drawings (3-4)\n- ambiguity: Some ambiguity in what specific characters or story (3)\n- natural_photo_typicality: Very low - this is a sketch, not a photo (1)\n- visual_clutter: Multiple characters and details (3-4)\n- object_centricity: Multiple characters, not one central object (2)\n- scene_centricity: More of character drawings than a scene (2)\n- caption_confidence: Reasonably confident in describing it (4)\n\nContains: people (drawn), no faces with realistic features, no animals, no text, no vehicles, no food, no indoor/outdoor scene per se, contains artificial content (drawing), no occlusion necessarily, no unusual viewpoint, multiple main objects (characters).",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a pencil sketch on lined notebook paper depicting several anime/manga-style characters. I can see:\n- A small chibi character on top of a larger character's head (left side)\n- A character with a star marking on their head\n- A character below with dark shaded hair\n- A character on the right side with a heart above\n- Another character further right\n\nThis is a hand-drawn sketch on lined paper, not a natural photograph. It's artwork/drawing.\n\nLet me annotate this conservatively:\n- recognizability: The content is recognizable as anime-style character drawings (3-4)\n- ambiguity: Some ambiguity in what specific characters or story (3)\n- natural_photo_typicality: Very low - this is a sketch, not a photo (1)\n- visual_clutter: Multiple characters and details (3-4)\n- object_centricity: Multiple characters, not one central object (2)\n- scene_centricity: More of character drawings than a scene (2)\n- caption_confidence: Reasonably confident in describing it (4)\n\nContains: people (drawn), no faces with realistic features, no animals, no text, no vehicles, no food, no indoor/outdoor scene per se, contains artificial content (drawing), no occlusion necessarily, no unusual viewpoint, multiple main objects (characters).",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 670,
+          "total_tokens": 2192,
+          "cost": 0.00123324,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00123324,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.000804
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 323,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

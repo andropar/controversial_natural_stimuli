@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_73",
+    "stim_key": "architecture_73",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 73,
+    "file_index": 73,
+    "image_name": "image_0073.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0073.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_decor\",\n  \"short_caption\": \"White distressed fireplace filled with stacked log rounds, topped with vases and a decorative wooden sled\",\n  \"main_objects\": [\"fireplace\", \"wood log rounds\", \"white vases\", \"wooden sled\", \"monogrammed chair\", \"dried flowers\"],\n  \"possible_interpretations\": [\"rustic shabby-chic fireplace decor\", \"staged home interior photo\", \"non-functional decorative fireplace\", \"farmhouse-style living room\"],\n  \"uncertainty_notes\": \"Image is cropped at the top (mantel items partially cut off) and left side (chair truncated); exact vase count and decor details at the top are partially obscured.\",\n  \"quality_flags\": [\"top_cropped\", \"side_cropped\", \"stylized_interior\"]\n}",
+      "response": {
+        "id": "gen-1780318926-SApkwAL9Hnk2Eg0HF4me",
+        "object": "chat.completion",
+        "created": 1780318926,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_decor\",\n  \"short_caption\": \"White distressed fireplace filled with stacked log rounds, topped with vases and a decorative wooden sled\",\n  \"main_objects\": [\"fireplace\", \"wood log rounds\", \"white vases\", \"wooden sled\", \"monogrammed chair\", \"dried flowers\"],\n  \"possible_interpretations\": [\"rustic shabby-chic fireplace decor\", \"staged home interior photo\", \"non-functional decorative fireplace\", \"farmhouse-style living room\"],\n  \"uncertainty_notes\": \"Image is cropped at the top (mantel items partially cut off) and left side (chair truncated); exact vase count and decor details at the top are partially obscured.\",\n  \"quality_flags\": [\"top_cropped\", \"side_cropped\", \"stylized_interior\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a white, distressed/shabby-chic style fireplace mantel. The fireplace opening is filled with stacked wood log rounds (cross-sections of logs) arranged to create a decorative pattern. On top of the mantel, there are white vases and what appears to be a wooden sled decoration with some dried flowers/branches. There's a chair with a monogrammed cushion visible in the lower left corner. The setting appears to be indoors, in a home with light/white walls and a gray floor.\n\nLet me annotate according to the schema:\n\n- recognizability: 4 - The scene is fairly recognizable as a decorative fireplace setup\n- ambiguity: 2 - It's clearly a decorated fireplace\n- natural_photo_typicality: 3 - It's a real photo but very styled/curated\n- visual_clutter: 3 - Multiple decorative elements but not overly busy\n- object_centricity: 3 - The fireplace is the central focus\n- scene_centricity: 4 - This is more of a room/interior scene\n\n- estimated_salient_object_count: 5 (fireplace, vases, sled, chair, plants)\n- estimated_distinct_object_categories: 5\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (the monogram isn't readable text really)\n- contains_vehicle: false (sled is a decorative object)\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the chair is cut off, mantel is cut off at top)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"scene\" - this is primarily an interior scene\n- image_style: \"natural_photo\"\n- semantic_domain: \"interior_decor\"\n\n- short_caption: \"White shabby-chic fireplace decorated with stacked log rounds, vases, and a wooden sled on the mantel\"\n- main_objects: [\"fireplace\", \"wood logs\", \"vases\", \"wooden sled\", \"chair\", \"dried flowers\"]\n- possible_interpretations: [\"decorative fireplace\", \"home interior scene\", \"shabby-chic decor\", \"rustic fireplace design\"]\n- uncertainty_notes: \"Image is cropped at top and bottom; some objects partially visible\"\n- quality_flags: [\"partial_cropping\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a white, distressed/shabby-chic style fireplace mantel. The fireplace opening is filled with stacked wood log rounds (cross-sections of logs) arranged to create a decorative pattern. On top of the mantel, there are white vases and what appears to be a wooden sled decoration with some dried flowers/branches. There's a chair with a monogrammed cushion visible in the lower left corner. The setting appears to be indoors, in a home with light/white walls and a gray floor.\n\nLet me annotate according to the schema:\n\n- recognizability: 4 - The scene is fairly recognizable as a decorative fireplace setup\n- ambiguity: 2 - It's clearly a decorated fireplace\n- natural_photo_typicality: 3 - It's a real photo but very styled/curated\n- visual_clutter: 3 - Multiple decorative elements but not overly busy\n- object_centricity: 3 - The fireplace is the central focus\n- scene_centricity: 4 - This is more of a room/interior scene\n\n- estimated_salient_object_count: 5 (fireplace, vases, sled, chair, plants)\n- estimated_distinct_object_categories: 5\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (the monogram isn't readable text really)\n- contains_vehicle: false (sled is a decorative object)\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the chair is cut off, mantel is cut off at top)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"scene\" - this is primarily an interior scene\n- image_style: \"natural_photo\"\n- semantic_domain: \"interior_decor\"\n\n- short_caption: \"White shabby-chic fireplace decorated with stacked log rounds, vases, and a wooden sled on the mantel\"\n- main_objects: [\"fireplace\", \"wood logs\", \"vases\", \"wooden sled\", \"chair\", \"dried flowers\"]\n- possible_interpretations: [\"decorative fireplace\", \"home interior scene\", \"shabby-chic decor\", \"rustic fireplace design\"]\n- uncertainty_notes: \"Image is cropped at top and bottom; some objects partially visible\"\n- quality_flags: [\"partial_cropping\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1467,
+          "completion_tokens": 916,
+          "total_tokens": 2383,
+          "cost": 0.00151194,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00151194,
+            "upstream_inference_prompt_cost": 0.00041274,
+            "upstream_inference_completions_cost": 0.0010992
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 577,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

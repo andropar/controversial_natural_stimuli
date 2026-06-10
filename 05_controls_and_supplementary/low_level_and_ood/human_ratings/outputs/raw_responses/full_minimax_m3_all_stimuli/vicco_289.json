@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_289",
+    "stim_key": "vicco_289",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 289,
+    "file_index": 288,
+    "image_name": "shared_4rep_vicco_289.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_289.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"acrobatics/yoga\",\n  \"short_caption\": \"Two people performing an acroyoga pose on a grassy lawn in front of a yellow building.\",\n  \"main_objects\": [\"person lying on grass\", \"person balanced horizontally\", \"grass lawn\", \"flower bed\", \"yellow building\", \"red and white barrier\"],\n  \"possible_interpretations\": [\"acroyoga pose in a park\", \"partner acrobatics practice outdoors\", \"photograph capturing balance exercise in a garden\"],\n  \"uncertainty_notes\": \"The faces of the people are not visible; one person is partially cropped out of the frame.\",\n  \"quality_flags\": [\"partial cropping of subject\", \"faces not visible\"]\n}",
+      "response": {
+        "id": "gen-1780319723-WsK1BPU9MjjCDy4W7y4E",
+        "object": "chat.completion",
+        "created": 1780319723,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"acrobatics/yoga\",\n  \"short_caption\": \"Two people performing an acroyoga pose on a grassy lawn in front of a yellow building.\",\n  \"main_objects\": [\"person lying on grass\", \"person balanced horizontally\", \"grass lawn\", \"flower bed\", \"yellow building\", \"red and white barrier\"],\n  \"possible_interpretations\": [\"acroyoga pose in a park\", \"partner acrobatics practice outdoors\", \"photograph capturing balance exercise in a garden\"],\n  \"uncertainty_notes\": \"The faces of the people are not visible; one person is partially cropped out of the frame.\",\n  \"quality_flags\": [\"partial cropping of subject\", \"faces not visible\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows two people performing an acroyoga pose in what appears to be a public park or garden. One person is lying on the grass in a blue top, while the other person is balanced horizontally on top, supported by the first person's feet. They're outdoors on a green lawn with flower beds and what appears to be a historic building (yellow with white trim) and a red-and-white barrier in the background.\n\nLet me annotate this carefully:\n\n- Recognizability: 4 - The main content (acroyoga pose) is clearly recognizable\n- Ambiguity: 2 - There's a clear main interpretation (acroyoga)\n- Natural photo typicality: 4 - Looks like a natural photograph\n- Visual clutter: 3 - Multiple elements but not overly cluttered\n- Object-centricity: 3 - The people are the main focus but it's also a scene\n- Scene-centricity: 3 - The setting is prominent\n- Caption confidence: 4 - Can describe it concisely\n\nSalient objects: 2 people, plus background elements\nDistinct categories: people, building, grass, flowers, barrier\n\nContains person: yes\nContains face: no (faces not visible)\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial/rendered: no\nContains occlusion/truncation: yes (one person is partially out of frame)\nContains unusual viewpoint: somewhat (the angle of the horizontal person)\nContains multiple main objects: yes (two people)\n\nDominant content type: person (but it's a person in action)\nImage style: natural_photo\nSemantic domain: yoga/acrobatics/sport\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows two people performing an acroyoga pose in what appears to be a public park or garden. One person is lying on the grass in a blue top, while the other person is balanced horizontally on top, supported by the first person's feet. They're outdoors on a green lawn with flower beds and what appears to be a historic building (yellow with white trim) and a red-and-white barrier in the background.\n\nLet me annotate this carefully:\n\n- Recognizability: 4 - The main content (acroyoga pose) is clearly recognizable\n- Ambiguity: 2 - There's a clear main interpretation (acroyoga)\n- Natural photo typicality: 4 - Looks like a natural photograph\n- Visual clutter: 3 - Multiple elements but not overly cluttered\n- Object-centricity: 3 - The people are the main focus but it's also a scene\n- Scene-centricity: 3 - The setting is prominent\n- Caption confidence: 4 - Can describe it concisely\n\nSalient objects: 2 people, plus background elements\nDistinct categories: people, building, grass, flowers, barrier\n\nContains person: yes\nContains face: no (faces not visible)\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial/rendered: no\nContains occlusion/truncation: yes (one person is partially out of frame)\nContains unusual viewpoint: somewhat (the angle of the horizontal person)\nContains multiple main objects: yes (two people)\n\nDominant content type: person (but it's a person in action)\nImage style: natural_photo\nSemantic domain: yoga/acrobatics/sport\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 733,
+          "total_tokens": 2255,
+          "cost": 0.00130884,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00130884,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008796
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 429,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

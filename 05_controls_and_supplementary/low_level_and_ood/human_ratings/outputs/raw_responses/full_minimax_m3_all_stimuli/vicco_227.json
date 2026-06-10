@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_227",
+    "stim_key": "vicco_227",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 227,
+    "file_index": 226,
+    "image_name": "shared_4rep_vicco_227.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_227.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": true, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"nature_waterfall\", \"short_caption\": \"Waterfall cascading over a large rock formation surrounded by bamboo vegetation\", \"main_objects\": [\"waterfall\", \"rock formation\", \"bamboo\"], \"possible_interpretations\": [\"natural waterfall in forest\", \"constructed waterfall in park or zoo\", \"ornamental garden water feature\"], \"uncertainty_notes\": \"The rock formation appears somewhat constructed or shaped, suggesting this may be a designed water feature rather than fully natural, but it cannot be confirmed from the image alone.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319650-rfylGJyiMnkgGYu65GoY",
+        "object": "chat.completion",
+        "created": 1780319650,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": true, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"nature_waterfall\", \"short_caption\": \"Waterfall cascading over a large rock formation surrounded by bamboo vegetation\", \"main_objects\": [\"waterfall\", \"rock formation\", \"bamboo\"], \"possible_interpretations\": [\"natural waterfall in forest\", \"constructed waterfall in park or zoo\", \"ornamental garden water feature\"], \"uncertainty_notes\": \"The rock formation appears somewhat constructed or shaped, suggesting this may be a designed water feature rather than fully natural, but it cannot be confirmed from the image alone.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see a waterfall flowing over a large rock formation, with bamboo or similar vegetation in the background. The water is cascading down from a narrow opening between rocks, creating a curtain-like effect. The setting appears to be a natural or naturalistic outdoor scene.\n\nLet me assess each dimension:\n\n- Recognizability: Very clear - a waterfall over rocks with vegetation. 5\n- Ambiguity: Very low ambiguity - clearly a waterfall scene. 1\n- Natural photo typicality: Looks like a natural photo, though it could be in a zoo or park setting given the somewhat arranged appearance of the rocks. 4\n- Visual clutter: Moderate - rocks, water, vegetation. 3\n- Object centricity: There's a main subject (waterfall) but it's a scene. 2\n- Scene centricity: This is primarily a scene/place. 5\n- Caption confidence: High - easy to describe. 5\n\nSalient objects: 1 (the waterfall feature)\nDistinct object categories: 2-3 (water, rocks, vegetation)\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor scene: false\nContains outdoor scene: true\nContains artificial content: possibly - the rock formation looks somewhat artificial (constructed waterfall feature)\nContains occlusion: no\nUnusual viewpoint: no\nMultiple main objects: no\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: nature/waterfall\n\nShort caption: \"Waterfall cascading over a large rock formation surrounded by bamboo vegetation\"\n\nMain objects: waterfall, rock, bamboo\n\nPossible interpretations: waterfall in natural setting, waterfall in park/zoo, artificial water feature\n\nUncertainty: whether the rock formation is natural or artificial/constructed",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see a waterfall flowing over a large rock formation, with bamboo or similar vegetation in the background. The water is cascading down from a narrow opening between rocks, creating a curtain-like effect. The setting appears to be a natural or naturalistic outdoor scene.\n\nLet me assess each dimension:\n\n- Recognizability: Very clear - a waterfall over rocks with vegetation. 5\n- Ambiguity: Very low ambiguity - clearly a waterfall scene. 1\n- Natural photo typicality: Looks like a natural photo, though it could be in a zoo or park setting given the somewhat arranged appearance of the rocks. 4\n- Visual clutter: Moderate - rocks, water, vegetation. 3\n- Object centricity: There's a main subject (waterfall) but it's a scene. 2\n- Scene centricity: This is primarily a scene/place. 5\n- Caption confidence: High - easy to describe. 5\n\nSalient objects: 1 (the waterfall feature)\nDistinct object categories: 2-3 (water, rocks, vegetation)\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor scene: false\nContains outdoor scene: true\nContains artificial content: possibly - the rock formation looks somewhat artificial (constructed waterfall feature)\nContains occlusion: no\nUnusual viewpoint: no\nMultiple main objects: no\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: nature/waterfall\n\nShort caption: \"Waterfall cascading over a large rock formation surrounded by bamboo vegetation\"\n\nMain objects: waterfall, rock, bamboo\n\nPossible interpretations: waterfall in natural setting, waterfall in park/zoo, artificial water feature\n\nUncertainty: whether the rock formation is natural or artificial/constructed",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 689,
+          "total_tokens": 2211,
+          "cost": 0.00113316,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00113316,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008268
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 469,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

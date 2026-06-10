@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_29",
+    "stim_key": "training_objective_29",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 29,
+    "file_index": 29,
+    "image_name": "image_0029.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0029.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wedding_event\",\n  \"short_caption\": \"A tiered white cake with white and black floral decorations displayed on a gold stand.\",\n  \"main_objects\": [\"tiered cake\", \"cake stand\", \"round table\", \"tablecloth\", \"floral decorations\"],\n  \"possible_interpretations\": [\"Wedding cake\", \"Celebration cake\", \"Event cake display\"],\n  \"uncertainty_notes\": \"Content is unambiguous; professional photography style but appears natural.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319239-EltqKmDO8LhPcBPswXPJ",
+        "object": "chat.completion",
+        "created": 1780319239,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wedding_event\",\n  \"short_caption\": \"A tiered white cake with white and black floral decorations displayed on a gold stand.\",\n  \"main_objects\": [\"tiered cake\", \"cake stand\", \"round table\", \"tablecloth\", \"floral decorations\"],\n  \"possible_interpretations\": [\"Wedding cake\", \"Celebration cake\", \"Event cake display\"],\n  \"uncertainty_notes\": \"Content is unambiguous; professional photography style but appears natural.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a tiered wedding cake decorated with white and dark flowers, placed on a gold cake stand on a round table with a champagne/gold colored tablecloth. The background is a dark chevron-patterned wall. There are some flowers visible on the left and right edges of the image.\n\nLet me annotate this carefully:\n\n- recognizability: 5 - Very clear, a typical viewer would immediately recognize this as a wedding cake\n- ambiguity: 1 - Very clear interpretation, a tiered decorated cake\n- natural_photo_typicality: 4 - Looks like a professional photograph, natural lighting, realistic\n- visual_clutter: 2 - The background is simple, the cake is the main focus, minimal competing elements\n- object_centricity: 5 - The cake is clearly the central, dominant object\n- scene_centricity: 2 - It's more about the object than the scene, though there is a setting\n- caption_confidence: 5 - Very confident about a concise caption\n\n- estimated_salient_object_count: 1 (the cake)\n- estimated_distinct_object_categories: 3 (cake, table, flowers)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: true (cake is food)\n- contains_indoor_scene: true (indoor setting)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: object\n- image_style: natural_photo (or edited_photo - it's a professional photo, likely slightly edited but appears natural)\n- semantic_domain: wedding/event\n\n- short_caption: \"A tiered white wedding cake with white and black floral decorations on a gold stand.\"\n- main_objects: [\"tiered cake\", \"cake stand\", \"round table\", \"tablecloth\", \"flowers\"]\n- possible_interpretations: [\"Wedding cake display\", \"Celebration cake\", \"Event cake decoration\"]\n- uncertainty_notes: \"Image appears professionally taken; minimal uncertainty about content.\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a tiered wedding cake decorated with white and dark flowers, placed on a gold cake stand on a round table with a champagne/gold colored tablecloth. The background is a dark chevron-patterned wall. There are some flowers visible on the left and right edges of the image.\n\nLet me annotate this carefully:\n\n- recognizability: 5 - Very clear, a typical viewer would immediately recognize this as a wedding cake\n- ambiguity: 1 - Very clear interpretation, a tiered decorated cake\n- natural_photo_typicality: 4 - Looks like a professional photograph, natural lighting, realistic\n- visual_clutter: 2 - The background is simple, the cake is the main focus, minimal competing elements\n- object_centricity: 5 - The cake is clearly the central, dominant object\n- scene_centricity: 2 - It's more about the object than the scene, though there is a setting\n- caption_confidence: 5 - Very confident about a concise caption\n\n- estimated_salient_object_count: 1 (the cake)\n- estimated_distinct_object_categories: 3 (cake, table, flowers)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: true (cake is food)\n- contains_indoor_scene: true (indoor setting)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: object\n- image_style: natural_photo (or edited_photo - it's a professional photo, likely slightly edited but appears natural)\n- semantic_domain: wedding/event\n\n- short_caption: \"A tiered white wedding cake with white and black floral decorations on a gold stand.\"\n- main_objects: [\"tiered cake\", \"cake stand\", \"round table\", \"tablecloth\", \"flowers\"]\n- possible_interpretations: [\"Wedding cake display\", \"Celebration cake\", \"Event cake decoration\"]\n- uncertainty_notes: \"Image appears professionally taken; minimal uncertainty about content.\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 800,
+          "total_tokens": 2322,
+          "cost": 0.00126636,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126636,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.00096
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 535,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

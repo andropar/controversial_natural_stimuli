@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_88",
+    "stim_key": "dataset_88",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 88,
+    "file_index": 88,
+    "image_name": "image_0088.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0088.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 3, \"visual_clutter\": 2, \"object_centricity\": 5, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 2, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": true, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"product_or_keepsake\", \"short_caption\": \"Wooden photo block displaying a printed family photo of three children in a forest.\", \"main_objects\": [\"wooden photo block\", \"printed photograph\", \"children\", \"white bucket\", \"fallen log\"], \"possible_interpretations\": [\"wooden photo block product display\", \"printed keepsake of a family forest outing\", \"decorative photo on natural wood\"], \"uncertainty_notes\": \"The image is a product-style photograph of a wooden block with an embedded photo; faces of the two larger children are visible but the toddler's face is small and partially turned away.\", \"quality_flags\": [\"printed_photo_on_object\", \"product_shot\"]}",
+      "response": {
+        "id": "gen-1780319059-GVmfxoa836eTLQxJXPI8",
+        "object": "chat.completion",
+        "created": 1780319060,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 3, \"visual_clutter\": 2, \"object_centricity\": 5, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 2, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": true, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"product_or_keepsake\", \"short_caption\": \"Wooden photo block displaying a printed family photo of three children in a forest.\", \"main_objects\": [\"wooden photo block\", \"printed photograph\", \"children\", \"white bucket\", \"fallen log\"], \"possible_interpretations\": [\"wooden photo block product display\", \"printed keepsake of a family forest outing\", \"decorative photo on natural wood\"], \"uncertainty_notes\": \"The image is a product-style photograph of a wooden block with an embedded photo; faces of the two larger children are visible but the toddler's face is small and partially turned away.\", \"quality_flags\": [\"printed_photo_on_object\", \"product_shot\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a wooden photo block/print - it's a thick piece of wood with a photograph printed on it. The photo within shows three children sitting on a fallen log in a forest. Two older children (a boy in a blue sweater and a child in a red striped shirt) and a toddler in red sitting next to a white bucket. The wood block itself has natural bark/wood edges.\n\nThe main subject is the wooden photo block displaying a family photo.\n\nLet me rate this:\n- Recognizability: Clear what it is - a wooden photo block with a printed photo. 5\n- Ambiguity: Low ambiguity - it's clearly a wooden photo block with a family photo. 1\n- Natural photo typicality: This is a product photo, somewhat typical of product photography. 3\n- Visual clutter: Moderate - the photo has trees, grass, children, but not overly cluttered. 2-3\n- Object centricity: The wooden block is the central object. 5\n- Scene centricity: The scene within the photo is outdoor forest, but the main image is the product. 2\n\nThe image contains a printed photo of people, but the main image is a product shot of a wooden block.\n\n- contains_person: yes (in the printed photo)\n- contains_face: yes\n- contains_animal: no\n- contains_text: no visible text\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: no (the photo is outdoor, but the overall image is on a surface)\n- contains_outdoor_scene: yes (the printed photo shows outdoor forest)\n- contains_artificial_or_rendered_content: somewhat (it's a printed photo on wood)\n- contains_occlusion_or_truncation: no\n- contains_unusual_viewpoint: no\n- contains_multiple_main_objects: the block itself + the children in the photo\n\nMain content: The dominant object is the wooden photo block.\n\nShort caption: \"Wooden photo block displaying a family photo of three children in a forest.\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a wooden photo block/print - it's a thick piece of wood with a photograph printed on it. The photo within shows three children sitting on a fallen log in a forest. Two older children (a boy in a blue sweater and a child in a red striped shirt) and a toddler in red sitting next to a white bucket. The wood block itself has natural bark/wood edges.\n\nThe main subject is the wooden photo block displaying a family photo.\n\nLet me rate this:\n- Recognizability: Clear what it is - a wooden photo block with a printed photo. 5\n- Ambiguity: Low ambiguity - it's clearly a wooden photo block with a family photo. 1\n- Natural photo typicality: This is a product photo, somewhat typical of product photography. 3\n- Visual clutter: Moderate - the photo has trees, grass, children, but not overly cluttered. 2-3\n- Object centricity: The wooden block is the central object. 5\n- Scene centricity: The scene within the photo is outdoor forest, but the main image is the product. 2\n\nThe image contains a printed photo of people, but the main image is a product shot of a wooden block.\n\n- contains_person: yes (in the printed photo)\n- contains_face: yes\n- contains_animal: no\n- contains_text: no visible text\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: no (the photo is outdoor, but the overall image is on a surface)\n- contains_outdoor_scene: yes (the printed photo shows outdoor forest)\n- contains_artificial_or_rendered_content: somewhat (it's a printed photo on wood)\n- contains_occlusion_or_truncation: no\n- contains_unusual_viewpoint: no\n- contains_multiple_main_objects: the block itself + the children in the photo\n\nMain content: The dominant object is the wooden photo block.\n\nShort caption: \"Wooden photo block displaying a family photo of three children in a forest.\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 774,
+          "total_tokens": 2296,
+          "cost": 0.00123516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00123516,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009288
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 483,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

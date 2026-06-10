@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_8",
+    "stim_key": "vicco_8",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 8,
+    "file_index": 7,
+    "image_name": "shared_4rep_vicco_008.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_008.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"tools\",\n  \"short_caption\": \"Thinning shears resting on a textured blue fabric surface\",\n  \"main_objects\": [\"thinning shears\", \"fabric surface\"],\n  \"possible_interpretations\": [\"hair thinning scissors on a salon mat\", \"professional hair shears on textured upholstery\", \"barber's thinning shears on fabric\"],\n  \"uncertainty_notes\": \"Identification as thinning shears is supported by visible serrations on the upper blade\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318198-dey84Na4xIyxqtbNluhI",
+        "object": "chat.completion",
+        "created": 1780318199,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"tools\",\n  \"short_caption\": \"Thinning shears resting on a textured blue fabric surface\",\n  \"main_objects\": [\"thinning shears\", \"fabric surface\"],\n  \"possible_interpretations\": [\"hair thinning scissors on a salon mat\", \"professional hair shears on textured upholstery\", \"barber's thinning shears on fabric\"],\n  \"uncertainty_notes\": \"Identification as thinning shears is supported by visible serrations on the upper blade\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a pair of hair-cutting scissors (thinning shears, given the serrated/teeth on one blade) lying on a textured fabric surface that appears to be blue/grey with a cross-hatch pattern, possibly a salon mat or chair upholstery.\n\nLet me analyze this carefully:\n- Main object: thinning shears/hair scissors\n- The background is a textured fabric\n- One blade has teeth (serrations) characteristic of thinning shears\n- Natural photo, well-lit\n- Single main object dominates\n\nLet me fill in the schema:\n\n- recognizability: 5 (very clearly scissors/shears)\n- ambiguity: 1 (clearly hair scissors)\n- natural_photo_typicality: 4 (looks like a typical photo)\n- visual_clutter: 2 (some texture in background but not cluttered)\n- object_centricity: 5 (scissors dominate)\n- scene_centricity: 1 (not a scene)\n- caption_confidence: 5\n\n- estimated_salient_object_count: 1\n- estimated_distinct_object_categories: 2 (scissors, fabric/surface)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (not really a scene, more of a closeup)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"tools\"\n\n- short_caption: \"Thinning shears resting on a textured blue fabric surface\"\n- main_objects: [\"thinning shears\", \"fabric surface\"]\n- possible_interpretations: [\"hair cutting shears on salon mat\", \"professional hair scissors on textured upholstery\"]\n- uncertainty_notes: \"Type of shears (thinning vs regular) is clear from serrated blade\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a pair of hair-cutting scissors (thinning shears, given the serrated/teeth on one blade) lying on a textured fabric surface that appears to be blue/grey with a cross-hatch pattern, possibly a salon mat or chair upholstery.\n\nLet me analyze this carefully:\n- Main object: thinning shears/hair scissors\n- The background is a textured fabric\n- One blade has teeth (serrations) characteristic of thinning shears\n- Natural photo, well-lit\n- Single main object dominates\n\nLet me fill in the schema:\n\n- recognizability: 5 (very clearly scissors/shears)\n- ambiguity: 1 (clearly hair scissors)\n- natural_photo_typicality: 4 (looks like a typical photo)\n- visual_clutter: 2 (some texture in background but not cluttered)\n- object_centricity: 5 (scissors dominate)\n- scene_centricity: 1 (not a scene)\n- caption_confidence: 5\n\n- estimated_salient_object_count: 1\n- estimated_distinct_object_categories: 2 (scissors, fabric/surface)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (not really a scene, more of a closeup)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"tools\"\n\n- short_caption: \"Thinning shears resting on a textured blue fabric surface\"\n- main_objects: [\"thinning shears\", \"fabric surface\"]\n- possible_interpretations: [\"hair cutting shears on salon mat\", \"professional hair scissors on textured upholstery\"]\n- uncertainty_notes: \"Type of shears (thinning vs regular) is clear from serrated blade\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 772,
+          "total_tokens": 2294,
+          "cost": 0.00135564,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00135564,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009264
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 483,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

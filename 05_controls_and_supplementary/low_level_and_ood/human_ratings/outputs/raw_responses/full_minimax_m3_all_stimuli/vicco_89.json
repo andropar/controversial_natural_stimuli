@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_89",
+    "stim_key": "vicco_89",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 89,
+    "file_index": 88,
+    "image_name": "shared_4rep_vicco_089.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_089.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 40,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"aquarium/wildlife\",\n  \"short_caption\": \"Moon jellyfish drifting in a blue-lit aquarium tank while a visitor takes a photo\",\n  \"main_objects\": [\"moon jellyfish\", \"aquarium tank\", \"smartphone\", \"person's hand\"],\n  \"possible_interpretations\": [\n    \"Jellyfish aquarium exhibit\",\n    \"Visitor photographing jellyfish through glass\",\n    \"Moon jellyfish display in a public aquarium\"\n  ],\n  \"uncertainty_notes\": \"Exact jellyfish count is difficult; person's face is not visible; some reflections on the glass may obscure details.\",\n  \"quality_flags\": [\"glass_reflections\", \"low_light_on_foreground_subject\"]\n}",
+      "response": {
+        "id": "gen-1780319492-fEpZcj2R4AcNxaOroHG2",
+        "object": "chat.completion",
+        "created": 1780319492,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 40,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"aquarium/wildlife\",\n  \"short_caption\": \"Moon jellyfish drifting in a blue-lit aquarium tank while a visitor takes a photo\",\n  \"main_objects\": [\"moon jellyfish\", \"aquarium tank\", \"smartphone\", \"person's hand\"],\n  \"possible_interpretations\": [\n    \"Jellyfish aquarium exhibit\",\n    \"Visitor photographing jellyfish through glass\",\n    \"Moon jellyfish display in a public aquarium\"\n  ],\n  \"uncertainty_notes\": \"Exact jellyfish count is difficult; person's face is not visible; some reflections on the glass may obscure details.\",\n  \"quality_flags\": [\"glass_reflections\", \"low_light_on_foreground_subject\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an aquarium scene with many moon jellyfish (Aurelia aurita) floating in blue-lit water. There's a curved glass tank visible. In the lower right corner, I can see a person's hand holding a phone, taking a photo of the jellyfish. The person appears to be wearing a colorful patterned garment.\n\nLet me assess each criterion:\n\n- recognizability: 5 - Very clearly jellyfish in an aquarium\n- ambiguity: 1 - Very clear what's happening\n- natural_photo_typicality: 4 - Looks like a typical photo, though taken at an aquarium\n- visual_clutter: 4 - Many jellyfish create visual clutter\n- object_centricity: 2 - Multiple jellyfish, no single dominant one\n- scene_centricity: 4 - It's mainly the aquarium scene\n- caption_confidence: 5 - Easy to caption\n\nEstimated salient objects: many jellyfish (probably 30+), one phone, one hand\nDistinct categories: 2-3 (jellyfish, phone, person/hand)\n\nContains: person (hand visible), but no face, no animal (jellyfish are animals technically), no text, no vehicle, no food. Indoor scene yes. No artificial content. Some occlusion. The viewpoint shows the person taking a photo - slight unusual perspective with the phone in frame.\n\nMultiple main objects: yes (many jellyfish)\n\nDominant content: animal (jellyfish)\nImage style: natural_photo\nSemantic domain: aquarium/wildlife\n\nShort caption: \"Moon jellyfish floating in a blue-lit aquarium tank while a visitor takes a photo\"\n\nMain objects: moon jellyfish, aquarium tank, smartphone, person\n\nPossible interpretations: \n- Jellyfish aquarium display\n- Visitor photographing jellyfish\n- Moon jellyfish exhibit\n\nUncertainty notes: The exact number of jellyfish is hard to count; the person's face is not visible.\n\nQuality flags: reflections on glass, low light on subject (hand)",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an aquarium scene with many moon jellyfish (Aurelia aurita) floating in blue-lit water. There's a curved glass tank visible. In the lower right corner, I can see a person's hand holding a phone, taking a photo of the jellyfish. The person appears to be wearing a colorful patterned garment.\n\nLet me assess each criterion:\n\n- recognizability: 5 - Very clearly jellyfish in an aquarium\n- ambiguity: 1 - Very clear what's happening\n- natural_photo_typicality: 4 - Looks like a typical photo, though taken at an aquarium\n- visual_clutter: 4 - Many jellyfish create visual clutter\n- object_centricity: 2 - Multiple jellyfish, no single dominant one\n- scene_centricity: 4 - It's mainly the aquarium scene\n- caption_confidence: 5 - Easy to caption\n\nEstimated salient objects: many jellyfish (probably 30+), one phone, one hand\nDistinct categories: 2-3 (jellyfish, phone, person/hand)\n\nContains: person (hand visible), but no face, no animal (jellyfish are animals technically), no text, no vehicle, no food. Indoor scene yes. No artificial content. Some occlusion. The viewpoint shows the person taking a photo - slight unusual perspective with the phone in frame.\n\nMultiple main objects: yes (many jellyfish)\n\nDominant content: animal (jellyfish)\nImage style: natural_photo\nSemantic domain: aquarium/wildlife\n\nShort caption: \"Moon jellyfish floating in a blue-lit aquarium tank while a visitor takes a photo\"\n\nMain objects: moon jellyfish, aquarium tank, smartphone, person\n\nPossible interpretations: \n- Jellyfish aquarium display\n- Visitor photographing jellyfish\n- Moon jellyfish exhibit\n\nUncertainty notes: The exact number of jellyfish is hard to count; the person's face is not visible.\n\nQuality flags: reflections on glass, low light on subject (hand)",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 779,
+          "total_tokens": 2301,
+          "cost": 0.00124116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00124116,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009348
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 479,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

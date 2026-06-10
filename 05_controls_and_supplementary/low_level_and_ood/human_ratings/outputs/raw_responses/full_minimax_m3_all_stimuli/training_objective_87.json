@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_87",
+    "stim_key": "training_objective_87",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 87,
+    "file_index": 87,
+    "image_name": "image_0087.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0087.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"lifestyle\", \"short_caption\": \"Person carrying a colorful triangular-patterned yoga mat bag near a white porch.\", \"main_objects\": [\"yoga mat bag\", \"person\", \"porch lattice\"], \"possible_interpretations\": [\"yoga mat carrier\", \"art portfolio\", \"instrument case\", \"rolled poster tube\"], \"uncertainty_notes\": \"Person's head and face are cropped out; bag contents are inferred from shape and size.\", \"quality_flags\": [\"face_not_visible\", \"person_truncated\"]}",
+      "response": {
+        "id": "gen-1780319369-4nEZH5OZlShsn41msiMC",
+        "object": "chat.completion",
+        "created": 1780319369,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"lifestyle\", \"short_caption\": \"Person carrying a colorful triangular-patterned yoga mat bag near a white porch.\", \"main_objects\": [\"yoga mat bag\", \"person\", \"porch lattice\"], \"possible_interpretations\": [\"yoga mat carrier\", \"art portfolio\", \"instrument case\", \"rolled poster tube\"], \"uncertainty_notes\": \"Person's head and face are cropped out; bag contents are inferred from shape and size.\", \"quality_flags\": [\"face_not_visible\", \"person_truncated\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a person standing outside near what appears to be a white wooden structure (possibly a porch with lattice work) and some dry plants/grass. The person is wearing a purple long-sleeve shirt and dark pants. They are carrying a long, cylindrical bag with a colorful triangular pattern in various colors (pink, blue, navy, white, peach, gold). The bag appears to be designed for carrying a yoga mat, based on its shape and size.\n\nThe person's face is not visible - the image is cropped from approximately neck/shoulder down. There's a strap visible going over their shoulder.\n\nLet me assess each dimension:\n\n- recognizability: 4 - The main content (a person with a yoga mat bag) is fairly recognizable\n- ambiguity: 2 - Pretty clear what's shown\n- natural_photo_typicality: 4 - Looks like a natural photo, possibly slightly edited\n- visual_clutter: 3 - Some competing elements (background, plants, structure, person, bag)\n- object_centricity: 4 - The bag is the focal point\n- scene_centricity: 3 - There's a setting but the object is dominant\n- caption_confidence: 4 - Can describe confidently\n\nSalient objects: 2 (person, yoga mat bag)\nDistinct categories: 2-3 (person, bag, building/lattice)\n\nContains person: yes (body visible, no face)\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial or rendered content: no\nContains occlusion or truncation: yes (face is cropped out)\nContains unusual viewpoint: no\nContains multiple main objects: somewhat - person and bag\n\nDominant content: object (the bag)\nImage style: natural_photo\nSemantic domain: lifestyle/fashion\n\nShort caption: \"Person holding a colorful triangular-patterned yoga mat bag near a white porch.\"\n\nMain objects: yoga mat bag, person, porch\nPossible interpretations: yoga mat bag, art portfolio, instrument case\nUncertainty: face not visible\nQuality flags: person face cropped/truncated",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a person standing outside near what appears to be a white wooden structure (possibly a porch with lattice work) and some dry plants/grass. The person is wearing a purple long-sleeve shirt and dark pants. They are carrying a long, cylindrical bag with a colorful triangular pattern in various colors (pink, blue, navy, white, peach, gold). The bag appears to be designed for carrying a yoga mat, based on its shape and size.\n\nThe person's face is not visible - the image is cropped from approximately neck/shoulder down. There's a strap visible going over their shoulder.\n\nLet me assess each dimension:\n\n- recognizability: 4 - The main content (a person with a yoga mat bag) is fairly recognizable\n- ambiguity: 2 - Pretty clear what's shown\n- natural_photo_typicality: 4 - Looks like a natural photo, possibly slightly edited\n- visual_clutter: 3 - Some competing elements (background, plants, structure, person, bag)\n- object_centricity: 4 - The bag is the focal point\n- scene_centricity: 3 - There's a setting but the object is dominant\n- caption_confidence: 4 - Can describe confidently\n\nSalient objects: 2 (person, yoga mat bag)\nDistinct categories: 2-3 (person, bag, building/lattice)\n\nContains person: yes (body visible, no face)\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial or rendered content: no\nContains occlusion or truncation: yes (face is cropped out)\nContains unusual viewpoint: no\nContains multiple main objects: somewhat - person and bag\n\nDominant content: object (the bag)\nImage style: natural_photo\nSemantic domain: lifestyle/fashion\n\nShort caption: \"Person holding a colorful triangular-patterned yoga mat bag near a white porch.\"\n\nMain objects: yoga mat bag, person, porch\nPossible interpretations: yoga mat bag, art portfolio, instrument case\nUncertainty: face not visible\nQuality flags: person face cropped/truncated",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1267,
+          "completion_tokens": 761,
+          "total_tokens": 2028,
+          "cost": 0.00114306,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00114306,
+            "upstream_inference_prompt_cost": 0.00022986,
+            "upstream_inference_completions_cost": 0.0009132
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 535,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

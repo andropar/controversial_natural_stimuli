@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_25",
+    "stim_key": "dataset_25",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 25,
+    "file_index": 25,
+    "image_name": "image_0025.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0025.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 12,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wine cellar storage\",\n  \"short_caption\": \"Rows of wooden wine barrels stacked against a dark wall in a cellar.\",\n  \"main_objects\": [\"wooden wine barrels\", \"dark wall\", \"small square window\"],\n  \"possible_interpretations\": [\"wine aging cellar\", \"distillery barrel storage\", \"winery production room\", \"restaurant wine storage\"],\n  \"uncertainty_notes\": \"Text on barrel heads is not clearly legible; exact type of barrels (wine vs whiskey) cannot be determined from visible labels.\",\n  \"quality_flags\": [\"low light conditions\", \"peripheral truncation of barrels\"]\n}",
+      "response": {
+        "id": "gen-1780318989-yw3Q5SVt86PQNJVgKxFr",
+        "object": "chat.completion",
+        "created": 1780318989,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 12,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wine cellar storage\",\n  \"short_caption\": \"Rows of wooden wine barrels stacked against a dark wall in a cellar.\",\n  \"main_objects\": [\"wooden wine barrels\", \"dark wall\", \"small square window\"],\n  \"possible_interpretations\": [\"wine aging cellar\", \"distillery barrel storage\", \"winery production room\", \"restaurant wine storage\"],\n  \"uncertainty_notes\": \"Text on barrel heads is not clearly legible; exact type of barrels (wine vs whiskey) cannot be determined from visible labels.\",\n  \"quality_flags\": [\"low light conditions\", \"peripheral truncation of barrels\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows multiple wooden wine barrels arranged in rows in what appears to be a wine cellar or storage area. The barrels are light-colored wood with metal bands, and they're stacked against a dark gray/charcoal wall. There's a small dark square window or vent high up on the wall. The lighting is dim and atmospheric.\n\nLet me annotate according to the schema:\n\n- recognizability: The image is clearly recognizable as wine barrels in a cellar. 4-5.\n- ambiguity: Pretty clear what it is. 1-2.\n- natural_photo_typicality: Looks like a natural photo of a wine cellar. 4-5.\n- visual_clutter: The barrels repeat but it's a clean composition. 2-3.\n- object_centricity: The barrels are the main objects but there are many. 3.\n- scene_centricity: It's both - shows a place (cellar) with objects. 3-4.\n- caption_confidence: High confidence. 4-5.\n\nCounts:\n- salient objects: ~10+ barrels visible\n- distinct categories: 1 (barrels) or 2 (barrels + wall/window)\n\nContains:\n- person: no\n- face: no\n- animal: no\n- text: maybe some text on barrels but hard to see\n- vehicle: no\n- food: no (wine-related but not food shown directly)\n- indoor: yes\n- outdoor: no\n- artificial/rendered: no\n- occlusion: some barrels partially visible at edges\n- unusual viewpoint: no, standard view\n- multiple main objects: yes\n\nDominant content: scene or mixed (scene with objects)\nImage style: natural_photo\nSemantic domain: wine cellar / food and drink storage\n\nShort caption: \"Rows of wooden wine barrels stored against a dark wall in a cellar.\"\n\nMain objects: wooden barrels, wall, small window/vent\n\nPossible interpretations: wine cellar, distillery, aging room\n\nUncertainty notes: Some barrels have small text but not clearly readable.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows multiple wooden wine barrels arranged in rows in what appears to be a wine cellar or storage area. The barrels are light-colored wood with metal bands, and they're stacked against a dark gray/charcoal wall. There's a small dark square window or vent high up on the wall. The lighting is dim and atmospheric.\n\nLet me annotate according to the schema:\n\n- recognizability: The image is clearly recognizable as wine barrels in a cellar. 4-5.\n- ambiguity: Pretty clear what it is. 1-2.\n- natural_photo_typicality: Looks like a natural photo of a wine cellar. 4-5.\n- visual_clutter: The barrels repeat but it's a clean composition. 2-3.\n- object_centricity: The barrels are the main objects but there are many. 3.\n- scene_centricity: It's both - shows a place (cellar) with objects. 3-4.\n- caption_confidence: High confidence. 4-5.\n\nCounts:\n- salient objects: ~10+ barrels visible\n- distinct categories: 1 (barrels) or 2 (barrels + wall/window)\n\nContains:\n- person: no\n- face: no\n- animal: no\n- text: maybe some text on barrels but hard to see\n- vehicle: no\n- food: no (wine-related but not food shown directly)\n- indoor: yes\n- outdoor: no\n- artificial/rendered: no\n- occlusion: some barrels partially visible at edges\n- unusual viewpoint: no, standard view\n- multiple main objects: yes\n\nDominant content: scene or mixed (scene with objects)\nImage style: natural_photo\nSemantic domain: wine cellar / food and drink storage\n\nShort caption: \"Rows of wooden wine barrels stored against a dark wall in a cellar.\"\n\nMain objects: wooden barrels, wall, small window/vent\n\nPossible interpretations: wine cellar, distillery, aging room\n\nUncertainty notes: Some barrels have small text but not clearly readable.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 776,
+          "total_tokens": 2298,
+          "cost": 0.00136044,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00136044,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009312
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 469,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_99",
+    "stim_key": "all_models_99",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 99,
+    "file_index": 99,
+    "image_name": "image_0099.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0099.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 2,\n  \"ambiguity\": 4,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 2,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor architecture\",\n  \"short_caption\": \"Very dark indoor scene with rough stone wall and partial objects on the left.\",\n  \"main_objects\": [\"stone wall\", \"shelving unit\", \"small object\"],\n  \"possible_interpretations\": [\"stairwell with stone wall\", \"fireplace area\", \"dark basement or cellar\", \"shadowed interior corner\", \"foggy/overexposed photo artifact\"],\n  \"uncertainty_notes\": \"Extreme darkness obscures most details; left-side objects only partially visible, identity unclear.\",\n  \"quality_flags\": [\"extreme_low_light\", \"low_contrast\", \"underexposed\", \"detail_loss_in_shadow\"]\n}",
+      "response": {
+        "id": "gen-1780318843-qPkkHQwnJNdF15oyoZxN",
+        "object": "chat.completion",
+        "created": 1780318843,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 2,\n  \"ambiguity\": 4,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 2,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor architecture\",\n  \"short_caption\": \"Very dark indoor scene with rough stone wall and partial objects on the left.\",\n  \"main_objects\": [\"stone wall\", \"shelving unit\", \"small object\"],\n  \"possible_interpretations\": [\"stairwell with stone wall\", \"fireplace area\", \"dark basement or cellar\", \"shadowed interior corner\", \"foggy/overexposed photo artifact\"],\n  \"uncertainty_notes\": \"Extreme darkness obscures most details; left-side objects only partially visible, identity unclear.\",\n  \"quality_flags\": [\"extreme_low_light\", \"low_contrast\", \"underexposed\", \"detail_loss_in_shadow\"]\n}",
+              "refusal": null,
+              "reasoning": "The image appears to be a very dark, low-light photograph of what looks like an indoor scene. I can see what might be a staircase or architectural element with rough/stone-like texture, and possibly some objects on the left side. The image is very dark and hard to make out clearly. There seems to be something on the left that could be shelving with items, and the right side shows what looks like a stone or rough-textured wall, possibly part of a fireplace or stairwell.\n\nLet me annotate conservatively:\n- Very dark, hard to recognize clearly\n- Low recognizability due to darkness\n- Not very ambiguous in terms of interpretations, but hard to tell what's there\n- Does not look like a typical natural photo due to extreme darkness\n- Low clutter due to darkness hiding details\n- No clear central object\n- Could be a scene/place\n- Low caption confidence",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image appears to be a very dark, low-light photograph of what looks like an indoor scene. I can see what might be a staircase or architectural element with rough/stone-like texture, and possibly some objects on the left side. The image is very dark and hard to make out clearly. There seems to be something on the left that could be shelving with items, and the right side shows what looks like a stone or rough-textured wall, possibly part of a fireplace or stairwell.\n\nLet me annotate conservatively:\n- Very dark, hard to recognize clearly\n- Low recognizability due to darkness\n- Not very ambiguous in terms of interpretations, but hard to tell what's there\n- Does not look like a typical natural photo due to extreme darkness\n- Low clutter due to darkness hiding details\n- No clear central object\n- Could be a scene/place\n- Low caption confidence",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 547,
+          "total_tokens": 1861,
+          "cost": 0.00090036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00090036,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.0006564
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 221,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

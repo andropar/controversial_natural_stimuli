@@ -19,10 +19,10 @@ Usage:
 import sys
 from pathlib import Path
 
-_PAPER = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_PAPER.parents[1]))  # project root
-sys.path.insert(0, str(_PAPER / "figures"))  # for style.py
+STAGE = Path(__file__).resolve().parents[3]
+SHARE_ROOT = STAGE.parent
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
 import config
 
 import numpy as np
@@ -37,7 +37,7 @@ MODEL_DISPLAY_NAMES = config.MODEL_DISPLAY_NAMES
 SUBJECTS = config.SUBJECTS
 STATS_DATA_DIR = config.STATS_DATA_DIR
 RSA_DATA_DIR = config.RSA_DATA_DIR
-FIGURES_DIR = Path(__file__).resolve().parent
+FIGURES_DIR = STAGE / "figures" / "rsa_scores"
 get_subject_data_dir = config.get_subject_data_dir
 
 from style import apply_style, FONT, DPI, W_DOUBLE
@@ -152,7 +152,7 @@ def load_noise_ceilings() -> pd.DataFrame:
 
 
 def load_between_subject_nc() -> pd.DataFrame:
-    path = _PAPER / "03_statistics" / "results" / "between_subject_noise_ceilings.csv"
+    path = SHARE_ROOT / "02_alignment_reliability" / "results" / "between_subject_noise_ceilings.csv"
     return pd.read_csv(path)
 
 

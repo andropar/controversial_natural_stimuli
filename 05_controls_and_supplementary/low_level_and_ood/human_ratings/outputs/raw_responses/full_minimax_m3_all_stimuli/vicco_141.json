@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_141",
+    "stim_key": "vicco_141",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 141,
+    "file_index": 140,
+    "image_name": "shared_4rep_vicco_141.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_141.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture/interior\",\n\n  \"short_caption\": \"Multi-level museum atrium with angular staircases, glass railings, and overhead skylight\",\n  \"main_objects\": [\"staircase\", \"glass railing\", \"skylight\", \"gallery space\", \"wood flooring\"],\n  \"possible_interpretations\": [\"museum atrium\", \"art gallery interior\", \"public building lobby\", \"university atrium\", \"exhibition space\"],\n  \"uncertainty_notes\": \"Exact building function is uncertain; could be museum, gallery, or institutional building. Person is too distant to discern details.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319547-WrCdRzTVDiNcG1Qn7AVF",
+        "object": "chat.completion",
+        "created": 1780319547,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture/interior\",\n\n  \"short_caption\": \"Multi-level museum atrium with angular staircases, glass railings, and overhead skylight\",\n  \"main_objects\": [\"staircase\", \"glass railing\", \"skylight\", \"gallery space\", \"wood flooring\"],\n  \"possible_interpretations\": [\"museum atrium\", \"art gallery interior\", \"public building lobby\", \"university atrium\", \"exhibition space\"],\n  \"uncertainty_notes\": \"Exact building function is uncertain; could be museum, gallery, or institutional building. Person is too distant to discern details.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a multi-level modern interior space, likely a museum, gallery, or large public building. I can see:\n- Multiple floors connected by staircases\n- Glass railings\n- A large skylight or ceiling structure\n- Wood flooring on the lower level\n- What appears to be gallery/exhibition space on the upper level with artwork or displays\n- A person visible on one of the middle levels\n- Modern architectural design with angular ceiling elements\n\nLet me rate the attributes:\n\n- recognizability: 4 - It's clearly an interior architectural space, recognizable as a museum or public building atrium\n- ambiguity: 2 - Pretty clear it's an interior atrium space\n- natural_photo_typicality: 4 - Looks like a typical photograph\n- visual_clutter: 2 - Clean, minimalist design\n- object_centricity: 1 - No single dominant object\n- scene_centricity: 5 - This is clearly a scene/place\n- caption_confidence: 4 - I can describe it confidently\n\n- estimated_salient_object_count: ~3 (staircases, gallery space, skylight)\n- estimated_distinct_object_categories: ~4 (stairs, railings, ceiling, gallery items)\n\n- contains_person: true (a small figure visible)\n- contains_face: false (too small/distant)\n- contains_animal: false\n- contains_text: false (might be some but not clearly readable)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (elevated looking down)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"architecture/interior\"\n\nshort_caption: \"Multi-level museum atrium with staircases, glass railings, and skylight\"\n\nmain_objects: [\"staircase\", \"glass railing\", \"skylight\", \"gallery space\"]\n\npossible_interpretations: [\"museum atrium\", \"public building interior\", \"gallery space\", \"office building lobby\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a multi-level modern interior space, likely a museum, gallery, or large public building. I can see:\n- Multiple floors connected by staircases\n- Glass railings\n- A large skylight or ceiling structure\n- Wood flooring on the lower level\n- What appears to be gallery/exhibition space on the upper level with artwork or displays\n- A person visible on one of the middle levels\n- Modern architectural design with angular ceiling elements\n\nLet me rate the attributes:\n\n- recognizability: 4 - It's clearly an interior architectural space, recognizable as a museum or public building atrium\n- ambiguity: 2 - Pretty clear it's an interior atrium space\n- natural_photo_typicality: 4 - Looks like a typical photograph\n- visual_clutter: 2 - Clean, minimalist design\n- object_centricity: 1 - No single dominant object\n- scene_centricity: 5 - This is clearly a scene/place\n- caption_confidence: 4 - I can describe it confidently\n\n- estimated_salient_object_count: ~3 (staircases, gallery space, skylight)\n- estimated_distinct_object_categories: ~4 (stairs, railings, ceiling, gallery items)\n\n- contains_person: true (a small figure visible)\n- contains_face: false (too small/distant)\n- contains_animal: false\n- contains_text: false (might be some but not clearly readable)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (elevated looking down)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"architecture/interior\"\n\nshort_caption: \"Multi-level museum atrium with staircases, glass railings, and skylight\"\n\nmain_objects: [\"staircase\", \"glass railing\", \"skylight\", \"gallery space\"]\n\npossible_interpretations: [\"museum atrium\", \"public building interior\", \"gallery space\", \"office building lobby\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 820,
+          "total_tokens": 2342,
+          "cost": 0.00129036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000984
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 534,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

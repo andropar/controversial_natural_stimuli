@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_68",
+    "stim_key": "dataset_68",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 68,
+    "file_index": 68,
+    "image_name": "image_0068.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0068.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 2, \"object_centricity\": 5, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 2, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": true, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"animal\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"dog agility\", \"short_caption\": \"White and tan sheltie dog walking on a green agility ramp\", \"main_objects\": [\"dog\", \"agility ramp\"], \"possible_interpretations\": [\"dog agility training\", \"dog agility competition\", \"dog performing on agility equipment\"], \"uncertainty_notes\": \"Background is heavily blurred; indoor vs outdoor setting is uncertain. Breed appears to be Shetland Sheepdog or Rough Collie.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319039-Gxcjc6fSXZqm04QegHgP",
+        "object": "chat.completion",
+        "created": 1780319039,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 2, \"object_centricity\": 5, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 2, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": true, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"animal\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"dog agility\", \"short_caption\": \"White and tan sheltie dog walking on a green agility ramp\", \"main_objects\": [\"dog\", \"agility ramp\"], \"possible_interpretations\": [\"dog agility training\", \"dog agility competition\", \"dog performing on agility equipment\"], \"uncertainty_notes\": \"Background is heavily blurred; indoor vs outdoor setting is uncertain. Breed appears to be Shetland Sheepdog or Rough Collie.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "The image shows a white and tan dog (looks like a Shetland Sheepdog or Rough Collie) walking on a green agility ramp/equipment, likely at a dog agility training or competition. The background is blurred but appears to be an outdoor or indoor agility course area.\n\nLet me analyze each attribute:\n\n- recognizability: The dog is clearly visible and recognizable. Maybe 4-5.\n- ambiguity: The image is pretty clear - it's a dog on agility equipment. Low ambiguity, maybe 1-2.\n- natural_photo_typicality: Looks like a natural photograph. 4-5.\n- visual_clutter: Background is blurred, single main subject. Low clutter, 2.\n- object_centricity: The dog is the clear central subject. 5.\n- scene_centricity: While there's a setting (agility course), the dog dominates. 2.\n- caption_confidence: High confidence in caption. 5.\n\n- salient_object_count: 1 (the dog)\n- distinct_object_categories: 2 (dog, agility ramp)\n- contains_person: false\n- contains_face: false (animal face)\n- contains_animal: true\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: possibly - looks like it could be an indoor facility or outdoor. Hard to tell, lean true since the blurred background suggests walls/building structure.\n- contains_outdoor_scene: could be either, looks like covered area\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (eye-level is fairly standard for dog photos)\n- contains_multiple_main_objects: false\n\ndominant_content_type: \"animal\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"animal/dog agility\"\n\nshort_caption: \"White and tan sheltie dog walking on green agility ramp\"\nmain_objects: [\"dog\", \"agility ramp\"]\npossible_interpretations: [\"dog agility training\", \"dog agility competition\", \"dog walking on exercise equipment\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a white and tan dog (looks like a Shetland Sheepdog or Rough Collie) walking on a green agility ramp/equipment, likely at a dog agility training or competition. The background is blurred but appears to be an outdoor or indoor agility course area.\n\nLet me analyze each attribute:\n\n- recognizability: The dog is clearly visible and recognizable. Maybe 4-5.\n- ambiguity: The image is pretty clear - it's a dog on agility equipment. Low ambiguity, maybe 1-2.\n- natural_photo_typicality: Looks like a natural photograph. 4-5.\n- visual_clutter: Background is blurred, single main subject. Low clutter, 2.\n- object_centricity: The dog is the clear central subject. 5.\n- scene_centricity: While there's a setting (agility course), the dog dominates. 2.\n- caption_confidence: High confidence in caption. 5.\n\n- salient_object_count: 1 (the dog)\n- distinct_object_categories: 2 (dog, agility ramp)\n- contains_person: false\n- contains_face: false (animal face)\n- contains_animal: true\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: possibly - looks like it could be an indoor facility or outdoor. Hard to tell, lean true since the blurred background suggests walls/building structure.\n- contains_outdoor_scene: could be either, looks like covered area\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (eye-level is fairly standard for dog photos)\n- contains_multiple_main_objects: false\n\ndominant_content_type: \"animal\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"animal/dog agility\"\n\nshort_caption: \"White and tan sheltie dog walking on green agility ramp\"\nmain_objects: [\"dog\", \"agility ramp\"]\npossible_interpretations: [\"dog agility training\", \"dog agility competition\", \"dog walking on exercise equipment\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 735,
+          "total_tokens": 2257,
+          "cost": 0.00131124,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131124,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.000882
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 486,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

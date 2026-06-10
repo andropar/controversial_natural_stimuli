@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_10",
+    "stim_key": "all_models_10",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 10,
+    "file_index": 10,
+    "image_name": "image_0010.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0010.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"agriculture\",\n  \"short_caption\": \"A farmer in a conical hat stands in a flooded rice paddy planting seedlings\",\n  \"main_objects\": [\"farmer\", \"conical hat\", \"rice paddy\", \"young rice plants\"],\n  \"possible_interpretations\": [\"rice planting in an Asian paddy\", \"traditional farmer tending crops\", \"flooded rice field inspection\"],\n  \"uncertainty_notes\": \"Exact activity (planting, inspecting, or tending) is unclear since the person is viewed from behind and small in the frame\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318010-Fnvu6DV2dNIANAw3JAHu",
+        "object": "chat.completion",
+        "created": 1780318010,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"agriculture\",\n  \"short_caption\": \"A farmer in a conical hat stands in a flooded rice paddy planting seedlings\",\n  \"main_objects\": [\"farmer\", \"conical hat\", \"rice paddy\", \"young rice plants\"],\n  \"possible_interpretations\": [\"rice planting in an Asian paddy\", \"traditional farmer tending crops\", \"flooded rice field inspection\"],\n  \"uncertainty_notes\": \"Exact activity (planting, inspecting, or tending) is unclear since the person is viewed from behind and small in the frame\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a person wearing a conical hat (likely a traditional Asian rice farmer's hat) standing in a flooded rice paddy field. The person is viewed from behind, wearing a light-colored shirt and dark pants, holding what appears to be seedlings or planting materials. The field has rows of young rice plants growing in water, with reflective water surfaces between the rows. The image appears to be taken from a slightly elevated angle, looking down at the field.\n\nLet me go through the schema:\n\n- recognizability: 4 - The scene is clearly recognizable as a rice paddy farmer\n- ambiguity: 2 - Quite clear what it depicts\n- natural_photo_typicality: 4 - Looks like a typical documentary/travel photograph\n- visual_clutter: 2 - Relatively simple composition with the farmer and rows\n- object_centricity: 2 - The person is a focal point but the scene dominates\n- scene_centricity: 5 - Primarily a scene/place\n- caption_confidence: 4 - Confident in describing it\n\n- estimated_salient_object_count: 1 (the farmer)\n- estimated_distinct_object_categories: 2 (person, rice paddy)\n\n- contains_person: true\n- contains_face: false (back view)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (slightly elevated but not unusual)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"person\" or \"scene\" - I'd say \"scene\" since the person is small in the field\n- image_style: \"natural_photo\"\n- semantic_domain: \"agriculture\" or \"rural life\"\n\n- short_caption: \"A farmer in a conical hat stands in a flooded rice paddy field\" (under 20 words)\n- main_objects: [\"farmer\", \"conical hat\", \"rice paddy\", \"young rice plants\"]\n- possible_interpretations: [\"rice planting in Asia\", \"traditional farming\", \"flooded rice field with farmer\"]\n- uncertainty_notes: \"The exact activity (planting, inspecting, or tending) is unclear from behind\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a person wearing a conical hat (likely a traditional Asian rice farmer's hat) standing in a flooded rice paddy field. The person is viewed from behind, wearing a light-colored shirt and dark pants, holding what appears to be seedlings or planting materials. The field has rows of young rice plants growing in water, with reflective water surfaces between the rows. The image appears to be taken from a slightly elevated angle, looking down at the field.\n\nLet me go through the schema:\n\n- recognizability: 4 - The scene is clearly recognizable as a rice paddy farmer\n- ambiguity: 2 - Quite clear what it depicts\n- natural_photo_typicality: 4 - Looks like a typical documentary/travel photograph\n- visual_clutter: 2 - Relatively simple composition with the farmer and rows\n- object_centricity: 2 - The person is a focal point but the scene dominates\n- scene_centricity: 5 - Primarily a scene/place\n- caption_confidence: 4 - Confident in describing it\n\n- estimated_salient_object_count: 1 (the farmer)\n- estimated_distinct_object_categories: 2 (person, rice paddy)\n\n- contains_person: true\n- contains_face: false (back view)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (slightly elevated but not unusual)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"person\" or \"scene\" - I'd say \"scene\" since the person is small in the field\n- image_style: \"natural_photo\"\n- semantic_domain: \"agriculture\" or \"rural life\"\n\n- short_caption: \"A farmer in a conical hat stands in a flooded rice paddy field\" (under 20 words)\n- main_objects: [\"farmer\", \"conical hat\", \"rice paddy\", \"young rice plants\"]\n- possible_interpretations: [\"rice planting in Asia\", \"traditional farming\", \"flooded rice field with farmer\"]\n- uncertainty_notes: \"The exact activity (planting, inspecting, or tending) is unclear from behind\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 859,
+          "total_tokens": 2173,
+          "cost": 0.00139764,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139764,
+            "upstream_inference_prompt_cost": 0.00036684,
+            "upstream_inference_completions_cost": 0.0010308
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 561,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

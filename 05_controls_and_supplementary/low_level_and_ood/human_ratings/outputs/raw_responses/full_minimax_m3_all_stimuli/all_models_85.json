@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_85",
+    "stim_key": "all_models_85",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 85,
+    "file_index": 85,
+    "image_name": "image_0085.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0085.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"residential_aerial\",\n  \"short_caption\": \"Aerial drone view of a large suburban house with green lawn, patio, and neighboring homes.\",\n  \"main_objects\": [\"house\", \"roof\", \"lawn\", \"trees\", \"patio umbrella\", \"car\", \"driveway\"],\n  \"possible_interpretations\": [\"drone aerial view of a suburban residence\", \"real estate listing photo\", \"overhead view of a large home and grounds\", \"bird's-eye view of residential neighborhood\"],\n  \"uncertainty_notes\": \"The aerial/bird's-eye viewpoint is unusual but the scene content is clearly identifiable. Neighboring houses are partially cut off at the right edge.\",\n  \"quality_flags\": [\"aerial_viewpoint\", \"edge_truncation\"]\n}",
+      "response": {
+        "id": "gen-1780318829-HFwEohKSskItG9Qn237d",
+        "object": "chat.completion",
+        "created": 1780318829,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"residential_aerial\",\n  \"short_caption\": \"Aerial drone view of a large suburban house with green lawn, patio, and neighboring homes.\",\n  \"main_objects\": [\"house\", \"roof\", \"lawn\", \"trees\", \"patio umbrella\", \"car\", \"driveway\"],\n  \"possible_interpretations\": [\"drone aerial view of a suburban residence\", \"real estate listing photo\", \"overhead view of a large home and grounds\", \"bird's-eye view of residential neighborhood\"],\n  \"uncertainty_notes\": \"The aerial/bird's-eye viewpoint is unusual but the scene content is clearly identifiable. Neighboring houses are partially cut off at the right edge.\",\n  \"quality_flags\": [\"aerial_viewpoint\", \"edge_truncation\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows an aerial/drone view of a suburban residential area. I can see:\n- A large house with a gray shingled roof in the center\n- A neighboring house on the right\n- Green lawns and trees\n- A driveway with what appears to be a red car\n- A patio area with a red umbrella\n- A curved road/driveway\n- Some landscaping with bushes and trees\n- The viewpoint is from above (bird's eye view)\n\nLet me rate this according to the schema:\n\n- recognizability: 5 - clearly recognizable as a suburban home from above\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 3 - it's a photo but from an unusual aerial perspective\n- visual_clutter: 3 - multiple elements but organized\n- object_centricity: 3 - the house is central but it's also a scene\n- scene_centricity: 4 - this is primarily showing a residential scene\n- caption_confidence: 5 - easy to caption\n\nSalient objects: house, trees, cars, patio/umbrella, neighboring house\nDistinct categories: 4-5 (houses, trees, cars, patio furniture, road)\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: yes (red car)\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial_or_rendered_content: no\nContains occlusion_or_truncation: no (well, parts of neighboring houses are cut off)\nContains unusual_viewpoint: yes (aerial view)\nContains multiple_main_objects: no - one main house\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: residential/aerial\n\nShort caption: \"Aerial view of a large suburban house with green lawn and neighboring homes\"\n\nMain objects: house, roof, lawn, trees, patio, umbrella, car, driveway\n\nPossible interpretations: suburban home aerial view, real estate photo, drone photography of residence\n\nUncertainty notes: The aerial perspective is unusual but the content is clear. The neighboring house on the right is partially cut off.\n\nQuality flags: aerial_viewpoint",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows an aerial/drone view of a suburban residential area. I can see:\n- A large house with a gray shingled roof in the center\n- A neighboring house on the right\n- Green lawns and trees\n- A driveway with what appears to be a red car\n- A patio area with a red umbrella\n- A curved road/driveway\n- Some landscaping with bushes and trees\n- The viewpoint is from above (bird's eye view)\n\nLet me rate this according to the schema:\n\n- recognizability: 5 - clearly recognizable as a suburban home from above\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 3 - it's a photo but from an unusual aerial perspective\n- visual_clutter: 3 - multiple elements but organized\n- object_centricity: 3 - the house is central but it's also a scene\n- scene_centricity: 4 - this is primarily showing a residential scene\n- caption_confidence: 5 - easy to caption\n\nSalient objects: house, trees, cars, patio/umbrella, neighboring house\nDistinct categories: 4-5 (houses, trees, cars, patio furniture, road)\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: yes (red car)\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial_or_rendered_content: no\nContains occlusion_or_truncation: no (well, parts of neighboring houses are cut off)\nContains unusual_viewpoint: yes (aerial view)\nContains multiple_main_objects: no - one main house\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: residential/aerial\n\nShort caption: \"Aerial view of a large suburban house with green lawn and neighboring homes\"\n\nMain objects: house, roof, lawn, trees, patio, umbrella, car, driveway\n\nPossible interpretations: suburban home aerial view, real estate photo, drone photography of residence\n\nUncertainty notes: The aerial perspective is unusual but the content is clear. The neighboring house on the right is partially cut off.\n\nQuality flags: aerial_viewpoint",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1363,
+          "completion_tokens": 846,
+          "total_tokens": 2209,
+          "cost": 0.00139674,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139674,
+            "upstream_inference_prompt_cost": 0.00038154,
+            "upstream_inference_completions_cost": 0.0010152
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 530,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -9,15 +9,15 @@ from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 
-_PAPER = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_PAPER.parents[1]))
-sys.path.insert(0, str(_PAPER / "figures"))
+STAGE = Path(__file__).resolve().parents[2]
+SHARE_ROOT = STAGE.parents[2]
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
 
 from style_improved import apply_style, FONT, DPI, W_SINGLE, OKABE_ITO, add_panel_label  # noqa: E402
 
-DATA = _PAPER / "06_ood" / "results" / "ood_residualization_results.csv"
-FIG = _PAPER / "06_ood" / "figures"
+DATA = STAGE / "results" / "ood_residualization_results.csv"
+FIG = STAGE / "figures" / "supplementary"
 
 LABELS = {
     "delta_alignment ~ delta_ood_feature + delta_ood_pred": "PPCA OOD axes",

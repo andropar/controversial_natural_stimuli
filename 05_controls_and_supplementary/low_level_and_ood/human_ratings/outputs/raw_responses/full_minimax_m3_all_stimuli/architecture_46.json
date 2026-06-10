@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_46",
+    "stim_key": "architecture_46",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 46,
+    "file_index": 46,
+    "image_name": "image_0046.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0046.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: Unexpected message content type: NoneType"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"furniture\",\n  \"short_caption\": \"A wooden dining table with six cream-upholstered chairs on a tiled floor.\",\n  \"main_objects\": [\"dining table\", \"upholstered chairs\"],\n  \"possible_interpretations\": [\"dining room furniture set\", \"product photo for furniture retailer\", \"showroom or catalog display\"],\n  \"uncertainty_notes\": \"The clean minimal background and lighting suggest a staged product/catalog photograph rather than a natural interior scene.\",\n  \"quality_flags\": [\"staged product photo\", \"minimal background\", \"no people or decor\"]\n}",
+      "response": {
+        "id": "gen-1780319017-PWDWVgyeCD9b8bF534YM",
+        "object": "chat.completion",
+        "created": 1780319017,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"furniture\",\n  \"short_caption\": \"A wooden dining table with six cream-upholstered chairs on a tiled floor.\",\n  \"main_objects\": [\"dining table\", \"upholstered chairs\"],\n  \"possible_interpretations\": [\"dining room furniture set\", \"product photo for furniture retailer\", \"showroom or catalog display\"],\n  \"uncertainty_notes\": \"The clean minimal background and lighting suggest a staged product/catalog photograph rather than a natural interior scene.\",\n  \"quality_flags\": [\"staged product photo\", \"minimal background\", \"no people or decor\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a wooden dining table with six upholstered chairs in a neutral cream/beige fabric. The setting appears to be a studio or staged room with a light stone/travertine tiled floor and a plain off-white background wall. This looks like a product/furniture photograph rather than a natural scene.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - Very clearly a dining table and chairs\n- ambiguity: 1 - Very clear what's in the image\n- natural_photo_typicality: 2 - This is a product/furniture photo, not a typical natural photo\n- visual_clutter: 2 - Relatively clean, minimal background\n- object_centricity: 4 - The dining set is the clear central object\n- scene_centricity: 2 - It's more about the furniture than a scene\n- caption_confidence: 5 - Very easy to caption\n\n- estimated_salient_object_count: 7 (table + 6 chairs)\n- estimated_distinct_object_categories: 2 (table, chairs)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (it's a staged product photo)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (table and 6 chairs)\n\n- dominant_content_type: \"object\"\n- image_style: \"edited_photo\" (product photography with clean background)\n- semantic_domain: \"furniture\"\n\n- short_caption: \"A wooden dining table with six cream-upholstered chairs in a staged room.\"\n- main_objects: [\"dining table\", \"upholstered chairs\"]\n- possible_interpretations: [\"dining room furniture set\", \"product photo for furniture retailer\", \"showroom display\"]\n- uncertainty_notes: \"Looks like a product/catalog photo rather than a natural scene\"\n- quality_flags: [\"staged product photo\", \"minimal background\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a wooden dining table with six upholstered chairs in a neutral cream/beige fabric. The setting appears to be a studio or staged room with a light stone/travertine tiled floor and a plain off-white background wall. This looks like a product/furniture photograph rather than a natural scene.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - Very clearly a dining table and chairs\n- ambiguity: 1 - Very clear what's in the image\n- natural_photo_typicality: 2 - This is a product/furniture photo, not a typical natural photo\n- visual_clutter: 2 - Relatively clean, minimal background\n- object_centricity: 4 - The dining set is the clear central object\n- scene_centricity: 2 - It's more about the furniture than a scene\n- caption_confidence: 5 - Very easy to caption\n\n- estimated_salient_object_count: 7 (table + 6 chairs)\n- estimated_distinct_object_categories: 2 (table, chairs)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (it's a staged product photo)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (table and 6 chairs)\n\n- dominant_content_type: \"object\"\n- image_style: \"edited_photo\" (product photography with clean background)\n- semantic_domain: \"furniture\"\n\n- short_caption: \"A wooden dining table with six cream-upholstered chairs in a staged room.\"\n- main_objects: [\"dining table\", \"upholstered chairs\"]\n- possible_interpretations: [\"dining room furniture set\", \"product photo for furniture retailer\", \"showroom display\"]\n- uncertainty_notes: \"Looks like a product/catalog photo rather than a natural scene\"\n- quality_flags: [\"staged product photo\", \"minimal background\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 802,
+          "total_tokens": 2340,
+          "cost": 0.00127356,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00127356,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.0009624
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 500,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

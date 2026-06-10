@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_0",
+    "stim_key": "all_models_0",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 0,
+    "file_index": 0,
+    "image_name": "image_0000.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0000.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wedding portrait\",\n  \"short_caption\": \"Bride and groom walking down stone steps of a grand columned building\",\n  \"main_objects\": [\"bride\", \"groom\", \"wedding bouquet\", \"stone steps\", \"stone columns\", \"ornate doorway\"],\n  \"possible_interpretations\": [\"wedding portrait\", \"engagement photo\", \"newlyweds leaving ceremony venue\", \"formal couple photo on courthouse steps\"],\n  \"uncertainty_notes\": \"Specific building identity is unclear but appears institutional or governmental; exact moment in wedding day unknown.\",\n  \"quality_flags\": [\"watermark_present\", \"professional_photography\", \"good_lighting\"]\n}",
+      "response": {
+        "id": "gen-1780318741-sTcBN2wipb37tEFtZECS",
+        "object": "chat.completion",
+        "created": 1780318741,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wedding portrait\",\n  \"short_caption\": \"Bride and groom walking down stone steps of a grand columned building\",\n  \"main_objects\": [\"bride\", \"groom\", \"wedding bouquet\", \"stone steps\", \"stone columns\", \"ornate doorway\"],\n  \"possible_interpretations\": [\"wedding portrait\", \"engagement photo\", \"newlyweds leaving ceremony venue\", \"formal couple photo on courthouse steps\"],\n  \"uncertainty_notes\": \"Specific building identity is unclear but appears institutional or governmental; exact moment in wedding day unknown.\",\n  \"quality_flags\": [\"watermark_present\", \"professional_photography\", \"good_lighting\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a bride and groom on stone steps in front of a large building with classical columns and an ornate entrance. The bride is wearing a white wedding dress and holding a bouquet, and the groom is in a gray suit. The building appears to be a government or institutional building with large stone columns, decorative wall sconces, and a tall entrance with metalwork above the doors. There's a watermark \"KATIE FIN PHOTOGRAPHY\" in the bottom right corner.\n\nLet me rate the various dimensions:\n\n- recognizability: Very clear what's happening - wedding photo, couple on steps. 5\n- ambiguity: Low ambiguity - clearly a wedding couple on steps. 1\n- natural_photo_typicality: Professional wedding photography, very typical. 5\n- visual_clutter: Moderate - architectural details, but clean composition. 2\n- object_centricity: The couple is the central focus. 4\n- scene_centricity: The building/setting is prominent. 3\n- caption_confidence: High confidence in caption. 5\n\nEstimated objects: couple (2 people), bouquet, building, steps, columns, doors\nDistinct categories: people, architecture, flowers\n\nContains person: yes\nContains face: yes (both visible)\nContains animal: no\nContains text: yes (watermark)\nContains vehicle: no\nContains food: no\nContains indoor: no\nContains outdoor: yes\nContains artificial/rendered: no\nContains occlusion: no\nContains unusual viewpoint: no (slightly low angle but typical)\nContains multiple main objects: could argue the couple is the main subject with two people\n\nDominant content: person (couple) or scene - I'll go with \"person\" since there are clear people\nImage style: natural_photo (professional wedding photography)\nSemantic domain: wedding/portrait\n\nShort caption: \"Bride and groom descending stone steps of a grand columned building\"\nMain objects: bride, groom, bouquet, stone steps, columns, building\nPossible interpretations: wedding portrait, engagement photo, newlyweds exiting venue\nUncertainty: The exact building isn't identifiable\nQuality flags: watermark present",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a bride and groom on stone steps in front of a large building with classical columns and an ornate entrance. The bride is wearing a white wedding dress and holding a bouquet, and the groom is in a gray suit. The building appears to be a government or institutional building with large stone columns, decorative wall sconces, and a tall entrance with metalwork above the doors. There's a watermark \"KATIE FIN PHOTOGRAPHY\" in the bottom right corner.\n\nLet me rate the various dimensions:\n\n- recognizability: Very clear what's happening - wedding photo, couple on steps. 5\n- ambiguity: Low ambiguity - clearly a wedding couple on steps. 1\n- natural_photo_typicality: Professional wedding photography, very typical. 5\n- visual_clutter: Moderate - architectural details, but clean composition. 2\n- object_centricity: The couple is the central focus. 4\n- scene_centricity: The building/setting is prominent. 3\n- caption_confidence: High confidence in caption. 5\n\nEstimated objects: couple (2 people), bouquet, building, steps, columns, doors\nDistinct categories: people, architecture, flowers\n\nContains person: yes\nContains face: yes (both visible)\nContains animal: no\nContains text: yes (watermark)\nContains vehicle: no\nContains food: no\nContains indoor: no\nContains outdoor: yes\nContains artificial/rendered: no\nContains occlusion: no\nContains unusual viewpoint: no (slightly low angle but typical)\nContains multiple main objects: could argue the couple is the main subject with two people\n\nDominant content: person (couple) or scene - I'll go with \"person\" since there are clear people\nImage style: natural_photo (professional wedding photography)\nSemantic domain: wedding/portrait\n\nShort caption: \"Bride and groom descending stone steps of a grand columned building\"\nMain objects: bride, groom, bouquet, stone steps, columns, building\nPossible interpretations: wedding portrait, engagement photo, newlyweds exiting venue\nUncertainty: The exact building isn't identifiable\nQuality flags: watermark present",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 811,
+          "total_tokens": 2333,
+          "cost": 0.00140244,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00140244,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009732
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 543,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

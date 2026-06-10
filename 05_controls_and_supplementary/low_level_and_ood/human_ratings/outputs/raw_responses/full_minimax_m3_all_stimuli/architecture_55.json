@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_55",
+    "stim_key": "architecture_55",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 55,
+    "file_index": 55,
+    "image_name": "image_0055.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0055.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\":3,\"ambiguity\":3,\"natural_photo_typicality\":4,\"visual_clutter\":4,\"object_centricity\":2,\"scene_centricity\":4,\"caption_confidence\":3,\"estimated_salient_object_count\":15,\"estimated_distinct_object_categories\":2,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":false,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":true,\"contains_outdoor_scene\":false,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":true,\"contains_multiple_main_objects\":true,\"dominant_content_type\":\"mixed\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"footwear/closet\",\"short_caption\":\"Blurry photo of multiple pairs of shoes arranged on white shelves.\",\"main_objects\":[\"shoes\",\"shelves\"],\"possible_interpretations\":[\"shoe store display\",\"personal closet shoe rack\",\"retail shoe wall\"],\"uncertainty_notes\":\"Image is significantly out of focus, making fine details hard to discern; cannot distinguish individual shoe styles with certainty.\",\"quality_flags\":[\"blurry\",\"out_of_focus\"]}",
+      "response": {
+        "id": "gen-1780318906-k2GgVLtKvzi04g2UN8DO",
+        "object": "chat.completion",
+        "created": 1780318906,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\":3,\"ambiguity\":3,\"natural_photo_typicality\":4,\"visual_clutter\":4,\"object_centricity\":2,\"scene_centricity\":4,\"caption_confidence\":3,\"estimated_salient_object_count\":15,\"estimated_distinct_object_categories\":2,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":false,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":true,\"contains_outdoor_scene\":false,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":true,\"contains_multiple_main_objects\":true,\"dominant_content_type\":\"mixed\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"footwear/closet\",\"short_caption\":\"Blurry photo of multiple pairs of shoes arranged on white shelves.\",\"main_objects\":[\"shoes\",\"shelves\"],\"possible_interpretations\":[\"shoe store display\",\"personal closet shoe rack\",\"retail shoe wall\"],\"uncertainty_notes\":\"Image is significantly out of focus, making fine details hard to discern; cannot distinguish individual shoe styles with certainty.\",\"quality_flags\":[\"blurry\",\"out_of_focus\"]}",
+              "refusal": null,
+              "reasoning": "The image shows a shoe display/closet with multiple pairs of shoes arranged on white shelves. The image is blurry/out of focus. I can see various shoes including what appear to be sandals, flats, and other footwear in different colors (browns, tans, some darker colors). The setting appears to be indoors, likely a closet or shoe store display.\n\nLet me annotate this carefully:\n\n- recognizability: The image is quite blurry, making it hard to see fine details, but the general content (shoes on shelves) is recognizable. I'd say 3.\n- ambiguity: The image could be a shoe store display, a personal closet, or a shoe rack. Some ambiguity. 2-3.\n- natural_photo_typicality: Looks like a typical photo, though blurry. 4.\n- visual_clutter: Many shoes on shelves, somewhat cluttered. 4.\n- object_centricity: Multiple objects (shoes), no single dominant object. 2.\n- scene_centricity: It's a scene of a shoe display/storage. 4.\n- caption_confidence: Reasonably confident about what's shown despite blur. 3.\n\nCounts: many shoes visible, perhaps 15-20 pairs across multiple shelves. Salient objects: multiple shoes.\nDistinct categories: shoes, shelves.\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (some shoes cut off at edges)\n- contains_unusual_viewpoint: true (angled/tilted perspective, not straight on)\n- contains_multiple_main_objects: true (many shoes)\n\ndominant_content_type: mixed (many objects in a scene-like arrangement, but could also be \"object\" since shoes are the main thing)\nimage_style: natural_photo\nsemantic_domain: footwear/closet\n\nLet me finalize the values.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a shoe display/closet with multiple pairs of shoes arranged on white shelves. The image is blurry/out of focus. I can see various shoes including what appear to be sandals, flats, and other footwear in different colors (browns, tans, some darker colors). The setting appears to be indoors, likely a closet or shoe store display.\n\nLet me annotate this carefully:\n\n- recognizability: The image is quite blurry, making it hard to see fine details, but the general content (shoes on shelves) is recognizable. I'd say 3.\n- ambiguity: The image could be a shoe store display, a personal closet, or a shoe rack. Some ambiguity. 2-3.\n- natural_photo_typicality: Looks like a typical photo, though blurry. 4.\n- visual_clutter: Many shoes on shelves, somewhat cluttered. 4.\n- object_centricity: Multiple objects (shoes), no single dominant object. 2.\n- scene_centricity: It's a scene of a shoe display/storage. 4.\n- caption_confidence: Reasonably confident about what's shown despite blur. 3.\n\nCounts: many shoes visible, perhaps 15-20 pairs across multiple shelves. Salient objects: multiple shoes.\nDistinct categories: shoes, shelves.\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (some shoes cut off at edges)\n- contains_unusual_viewpoint: true (angled/tilted perspective, not straight on)\n- contains_multiple_main_objects: true (many shoes)\n\ndominant_content_type: mixed (many objects in a scene-like arrangement, but could also be \"object\" since shoes are the main thing)\nimage_style: natural_photo\nsemantic_domain: footwear/closet\n\nLet me finalize the values.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1267,
+          "completion_tokens": 689,
+          "total_tokens": 1956,
+          "cost": 0.00117954,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00117954,
+            "upstream_inference_prompt_cost": 0.00035274,
+            "upstream_inference_completions_cost": 0.0008268
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 480,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

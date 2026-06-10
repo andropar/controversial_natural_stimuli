@@ -8,13 +8,14 @@ from pathlib import Path
 import pandas as pd
 
 
-PAPER = Path(__file__).resolve().parents[1]
-OUT = PAPER / "13_roi_analysis" / "results"
+STAGE = Path(__file__).resolve().parents[1]
+SHARE_ROOT = STAGE.parents[2]
+OUT = STAGE / "results"
 OUT.mkdir(parents=True, exist_ok=True)
 
 
 def main() -> None:
-    primary = pd.read_csv(PAPER / "03_statistics" / "results" / "primary_endpoint_summary.csv")
+    primary = pd.read_csv(SHARE_ROOT / "03_alignment_inference" / "results" / "primary_endpoint_summary.csv")
     rows = []
     for _, r in primary.iterrows():
         rows.append(
@@ -40,7 +41,7 @@ def main() -> None:
     note.write_text(
         "# ROI Feasibility Note\n\n"
         "The current paper cache contains `visual_mask` and `hlvis_mask` in "
-        "`01_brain_data/data/{subject}/voxel_metadata.npz`. It does not contain "
+        "`01_brain_model_alignment/cache_or_heavy/brain_data_cache/data/{subject}/voxel_metadata.npz`. It does not contain "
         "parcel labels or masks for early visual, ventral/object, or scene ROIs. "
         "Accordingly, `roi_results.csv` reports the primary hlvis endpoint only. "
         "Additional ROI splits require adding the atlas/parcel masks to the cache "

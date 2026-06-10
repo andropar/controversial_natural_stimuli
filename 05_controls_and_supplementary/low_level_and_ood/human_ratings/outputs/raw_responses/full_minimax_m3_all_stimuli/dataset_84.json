@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_84",
+    "stim_key": "dataset_84",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 84,
+    "file_index": 84,
+    "image_name": "image_0084.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0084.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 9,\n  \"estimated_distinct_object_categories\": 8,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior/children/playroom\",\n  \"short_caption\": \"Children's playroom with striped carpet, yellow table, chairs with teddy bears, and a bookshelf of books.\",\n  \"main_objects\": [\"yellow table\", \"white chairs\", \"teddy bears\", \"bookshelf\", \"children's books\", \"rag doll\", \"art supplies\", \"striped carpet\"],\n  \"possible_interpretations\": [\"children's playroom\", \"nursery interior\", \"staged lifestyle photo of a kid's room\"],\n  \"uncertainty_notes\": \"Text on book spines is not clearly legible; carpet pattern strongly competes with furniture for visual attention.\",\n  \"quality_flags\": [\"staged_composition\", \"low_camera_angle\", \"busy_background_pattern\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319058-szyoQGtg1xiywG9eMA9Q",
+        "object": "chat.completion",
+        "created": 1780319058,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 9,\n  \"estimated_distinct_object_categories\": 8,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior/children/playroom\",\n  \"short_caption\": \"Children's playroom with striped carpet, yellow table, chairs with teddy bears, and a bookshelf of books.\",\n  \"main_objects\": [\"yellow table\", \"white chairs\", \"teddy bears\", \"bookshelf\", \"children's books\", \"rag doll\", \"art supplies\", \"striped carpet\"],\n  \"possible_interpretations\": [\"children's playroom\", \"nursery interior\", \"staged lifestyle photo of a kid's room\"],\n  \"uncertainty_notes\": \"Text on book spines is not clearly legible; carpet pattern strongly competes with furniture for visual attention.\",\n  \"quality_flags\": [\"staged_composition\", \"low_camera_angle\", \"busy_background_pattern\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a children's playroom or bedroom. There's a small yellow table with two white chairs, teddy bears on the chairs, a bookshelf filled with children's books, a rag doll on another chair, some art supplies on the floor, and a striped multicolored carpet covering the floor. The carpet has a pattern of many thin stripes in various colors (red, blue, white, cream).\n\nLet me assess each dimension:\n\n- Recognizability: The content is clearly recognizable as a children's play area. 5\n- Ambiguity: Not many alternative interpretations - clearly a child's playroom. 1\n- Natural photo typicality: Looks like a staged lifestyle photo, but still a natural photo. 4\n- Visual clutter: Multiple objects present (table, chairs, bears, books, doll, art supplies, patterned carpet) - moderate to high clutter. 3-4\n- Object centricity: No single dominant object, but the carpet pattern is very dominant. 2\n- Scene centricity: This is clearly a scene/place. 5\n- Caption confidence: Easy to caption. 5\n\nSalient objects: table, chairs, teddy bears, bookshelf, books, doll, art supplies, carpet - many objects\nDistinct categories: table, chair, teddy bear, bookshelf, book, doll, art supplies, carpet - about 7-8\n\nContains person: No\nContains face: No\nContains animal: No (teddy bears are toys)\nContains text: Possibly on book spines but hard to read - could say yes\nContains vehicle: No\nContains food: No\nContains indoor scene: Yes\nContains outdoor scene: No\nContains artificial/rendered: No\nContains occlusion/truncation: Some objects partially behind others\nContains unusual viewpoint: The low angle emphasizes the carpet pattern - somewhat unusual\nContains multiple main objects: Yes\n\nDominant content type: scene\nImage style: natural_photo (possibly slightly edited/staged)\nSemantic domain: interior/children/room\n\nShort caption: \"Children's playroom with striped carpet, small yellow table, chairs with teddy bears, and bookshelf\"\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a children's playroom or bedroom. There's a small yellow table with two white chairs, teddy bears on the chairs, a bookshelf filled with children's books, a rag doll on another chair, some art supplies on the floor, and a striped multicolored carpet covering the floor. The carpet has a pattern of many thin stripes in various colors (red, blue, white, cream).\n\nLet me assess each dimension:\n\n- Recognizability: The content is clearly recognizable as a children's play area. 5\n- Ambiguity: Not many alternative interpretations - clearly a child's playroom. 1\n- Natural photo typicality: Looks like a staged lifestyle photo, but still a natural photo. 4\n- Visual clutter: Multiple objects present (table, chairs, bears, books, doll, art supplies, patterned carpet) - moderate to high clutter. 3-4\n- Object centricity: No single dominant object, but the carpet pattern is very dominant. 2\n- Scene centricity: This is clearly a scene/place. 5\n- Caption confidence: Easy to caption. 5\n\nSalient objects: table, chairs, teddy bears, bookshelf, books, doll, art supplies, carpet - many objects\nDistinct categories: table, chair, teddy bear, bookshelf, book, doll, art supplies, carpet - about 7-8\n\nContains person: No\nContains face: No\nContains animal: No (teddy bears are toys)\nContains text: Possibly on book spines but hard to read - could say yes\nContains vehicle: No\nContains food: No\nContains indoor scene: Yes\nContains outdoor scene: No\nContains artificial/rendered: No\nContains occlusion/truncation: Some objects partially behind others\nContains unusual viewpoint: The low angle emphasizes the carpet pattern - somewhat unusual\nContains multiple main objects: Yes\n\nDominant content type: scene\nImage style: natural_photo (possibly slightly edited/staged)\nSemantic domain: interior/children/room\n\nShort caption: \"Children's playroom with striped carpet, small yellow table, chairs with teddy bears, and bookshelf\"\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 833,
+          "total_tokens": 2355,
+          "cost": 0.00130596,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00130596,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009996
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 524,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_22",
+    "stim_key": "sota_22",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 22,
+    "file_index": 22,
+    "image_name": "image_0022.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0022.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home improvement\",\n  \"short_caption\": \"Person painting an interior wall turquoise blue with a roller.\",\n  \"main_objects\": [\"wall\", \"paint roller\", \"person\", \"paint\"],\n  \"possible_interpretations\": [\"a person painting a wall\", \"interior home renovation\", \"a painter at work\"],\n  \"uncertainty_notes\": \"Person is heavily cropped; only arm, partial torso, and leg visible, making identity and full context uncertain.\",\n  \"quality_flags\": [\"person_truncated\", \"subject_at_edge\"]\n}",
+      "response": {
+        "id": "gen-1780319105-lp5L8cHYbwn7sU4dCX8d",
+        "object": "chat.completion",
+        "created": 1780319105,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home improvement\",\n  \"short_caption\": \"Person painting an interior wall turquoise blue with a roller.\",\n  \"main_objects\": [\"wall\", \"paint roller\", \"person\", \"paint\"],\n  \"possible_interpretations\": [\"a person painting a wall\", \"interior home renovation\", \"a painter at work\"],\n  \"uncertainty_notes\": \"Person is heavily cropped; only arm, partial torso, and leg visible, making identity and full context uncertain.\",\n  \"quality_flags\": [\"person_truncated\", \"subject_at_edge\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a person on the right side painting a wall with a paint roller. The wall is being painted turquoise/cyan blue. I can see the person's arm holding a paint roller, and they're wearing what appears to be denim/jeans. The wall is mostly white/cream with a large section painted bright turquoise blue. There's a drop cloth at the bottom.\n\nLet me analyze this:\n- Recognizability: Clear - it's a person painting a wall\n- Ambiguity: Low - one main interpretation\n- Natural photo typicality: High - looks like a real photo\n- Visual clutter: Low - mostly one large color area\n- Object centricity: Moderate - the wall dominates but the person is on the edge\n- Scene centricity: Moderate - it's a scene of painting\n- Caption confidence: High\n\nMain objects: wall, paint roller, person, paint\nContains person: yes (partially visible - arm and leg)\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: yes (interior wall)\nContains outdoor scene: no\nContains artificial/rendered: no\nContains occlusion/truncation: yes (person is truncated at edges)\nContains unusual viewpoint: somewhat (cropped, showing only part of person)\nContains multiple main objects: no\n\nDominant content: scene or object (the wall is dominant)\nImage style: natural_photo\nSemantic domain: home improvement/painting\n\nLet me construct the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a person on the right side painting a wall with a paint roller. The wall is being painted turquoise/cyan blue. I can see the person's arm holding a paint roller, and they're wearing what appears to be denim/jeans. The wall is mostly white/cream with a large section painted bright turquoise blue. There's a drop cloth at the bottom.\n\nLet me analyze this:\n- Recognizability: Clear - it's a person painting a wall\n- Ambiguity: Low - one main interpretation\n- Natural photo typicality: High - looks like a real photo\n- Visual clutter: Low - mostly one large color area\n- Object centricity: Moderate - the wall dominates but the person is on the edge\n- Scene centricity: Moderate - it's a scene of painting\n- Caption confidence: High\n\nMain objects: wall, paint roller, person, paint\nContains person: yes (partially visible - arm and leg)\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: yes (interior wall)\nContains outdoor scene: no\nContains artificial/rendered: no\nContains occlusion/truncation: yes (person is truncated at edges)\nContains unusual viewpoint: somewhat (cropped, showing only part of person)\nContains multiple main objects: no\n\nDominant content: scene or object (the wall is dominant)\nImage style: natural_photo\nSemantic domain: home improvement/painting\n\nLet me construct the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1267,
+          "completion_tokens": 646,
+          "total_tokens": 1913,
+          "cost": 0.00100506,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00100506,
+            "upstream_inference_prompt_cost": 0.00022986,
+            "upstream_inference_completions_cost": 0.0007752
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 367,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

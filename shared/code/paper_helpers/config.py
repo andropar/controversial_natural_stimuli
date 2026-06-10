@@ -137,7 +137,16 @@ OOD_DATA_DIR = (
 CONSENSUS_DATA_DIR = SHARE_ROOT / "05_controls_and_supplementary" / "integrated_explanation" / "results"
 
 # Feature cache (shared across sections)
-FEATURE_CACHE_DIR = PAPER_ROOT / "cache" / "feature_cache"
+_SHARED_FEATURE_CACHE_DIR = (
+    SHARE_ROOT / "shared" / "cache_or_heavy" / "cstim_paper_feature_cache" / "feature_cache"
+)
+_LEGACY_FEATURE_CACHE_DIR = PAPER_ROOT / "cache" / "feature_cache"
+FEATURE_CACHE_DIR = Path(
+    os.environ.get(
+        "CSTIMS_FEATURE_CACHE_DIR",
+        _SHARED_FEATURE_CACHE_DIR if _SHARED_FEATURE_CACHE_DIR.exists() else _LEGACY_FEATURE_CACHE_DIR,
+    )
+)
 CSTIM_FEATURE_CACHE = FEATURE_CACHE_DIR / "cstim"
 DV_FEATURE_CACHE = FEATURE_CACHE_DIR / "deepvision"
 VICCO_FEATURE_CACHE = FEATURE_CACHE_DIR / "vicco"

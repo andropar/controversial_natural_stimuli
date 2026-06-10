@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_59",
+    "stim_key": "vicco_59",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 59,
+    "file_index": 58,
+    "image_name": "shared_4rep_vicco_059.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_059.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"alpine landscape\",\n  \"short_caption\": \"A dirt path leads through a grassy alpine meadow toward dramatic rocky mountain peaks under a blue sky.\",\n  \"main_objects\": [\"mountain range\", \"evergreen trees\", \"dirt path\", \"grassy slope\"],\n  \"possible_interpretations\": [\"Alpine hiking trail in summer\", \"Mountain landscape in the Austrian or Italian Alps\", \"Scenic countryside mountain view\"],\n  \"uncertainty_notes\": \"Specific location cannot be determined; possible small trail sign visible near the path but text not legible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319454-fADYyajd0sTxHSQxyTU2",
+        "object": "chat.completion",
+        "created": 1780319454,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"alpine landscape\",\n  \"short_caption\": \"A dirt path leads through a grassy alpine meadow toward dramatic rocky mountain peaks under a blue sky.\",\n  \"main_objects\": [\"mountain range\", \"evergreen trees\", \"dirt path\", \"grassy slope\"],\n  \"possible_interpretations\": [\"Alpine hiking trail in summer\", \"Mountain landscape in the Austrian or Italian Alps\", \"Scenic countryside mountain view\"],\n  \"uncertainty_notes\": \"Specific location cannot be determined; possible small trail sign visible near the path but text not legible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a mountain landscape with a dirt path/road leading toward the mountains. There are evergreen trees on the left side, grassy slopes, and a dramatic rocky mountain range in the background under a blue sky with wispy clouds. This looks like it could be the Austrian or Italian Alps, possibly the Wilder Kaiser mountain range based on the appearance.\n\nLet me analyze the schema fields:\n\n- recognizability: 5 - very clear mountain landscape\n- ambiguity: 1 - very clear what this is\n- natural_photo_typicality: 5 - looks like a typical landscape photo\n- visual_clutter: 2 - relatively simple composition, mountain and path\n- object_centricity: 1 - no central object, it's a scene\n- scene_centricity: 5 - clearly a scene/landscape\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 1 (the mountain range) or could be 2-3 with the path\n- estimated_distinct_object_categories: 3 (mountains, trees, path/road)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (there might be a sign by the path, hard to tell)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: landscape/mountain\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a mountain landscape with a dirt path/road leading toward the mountains. There are evergreen trees on the left side, grassy slopes, and a dramatic rocky mountain range in the background under a blue sky with wispy clouds. This looks like it could be the Austrian or Italian Alps, possibly the Wilder Kaiser mountain range based on the appearance.\n\nLet me analyze the schema fields:\n\n- recognizability: 5 - very clear mountain landscape\n- ambiguity: 1 - very clear what this is\n- natural_photo_typicality: 5 - looks like a typical landscape photo\n- visual_clutter: 2 - relatively simple composition, mountain and path\n- object_centricity: 1 - no central object, it's a scene\n- scene_centricity: 5 - clearly a scene/landscape\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 1 (the mountain range) or could be 2-3 with the path\n- estimated_distinct_object_categories: 3 (mountains, trees, path/road)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (there might be a sign by the path, hard to tell)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: landscape/mountain\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 706,
+          "total_tokens": 2228,
+          "cost": 0.00115356,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00115356,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008472
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 394,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

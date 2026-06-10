@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_17",
+    "stim_key": "training_objective_17",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 17,
+    "file_index": 17,
+    "image_name": "image_0017.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0017.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food/restaurant\",\n  \"short_caption\": \"Smiling chef behind a service window with a fresh salad plate in the foreground\",\n  \"main_objects\": [\"salad\", \"white plate\", \"chef\", \"cucumbers\", \"stainless steel counter\", \"overhead kitchen rack\"],\n  \"possible_interpretations\": [\"Chef placing a salad order through a kitchen pass\", \"Server grabbing a printed ticket above a finished salad\", \"Line cook presenting a salad at a service window\"],\n  \"uncertainty_notes\": \"Unclear exactly what the man is reaching for above; ticket, light, or other kitchen fixture\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319224-XQNrJSSUE0SZFeFjO3aX",
+        "object": "chat.completion",
+        "created": 1780319224,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food/restaurant\",\n  \"short_caption\": \"Smiling chef behind a service window with a fresh salad plate in the foreground\",\n  \"main_objects\": [\"salad\", \"white plate\", \"chef\", \"cucumbers\", \"stainless steel counter\", \"overhead kitchen rack\"],\n  \"possible_interpretations\": [\"Chef placing a salad order through a kitchen pass\", \"Server grabbing a printed ticket above a finished salad\", \"Line cook presenting a salad at a service window\"],\n  \"uncertainty_notes\": \"Unclear exactly what the man is reaching for above; ticket, light, or other kitchen fixture\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a restaurant kitchen scene viewed through what appears to be a serving window/hatch. In the foreground, there's a large white plate with a salad (cucumbers, lettuce, tomatoes, what looks like croutons, and other vegetables). Behind the plate, there's a smiling young man in a dark shirt (possibly a chef or server) reaching up, possibly to grab a ticket or order from a line. The setting appears to be a commercial kitchen with stainless steel surfaces, overhead lights, and various kitchen equipment visible in the background.\n\nLet me annotate according to the schema:\n\n- recognizability: The main content is very clear - a salad plate in a kitchen. 5\n- ambiguity: Low ambiguity - it's clearly food being prepared/served in a kitchen. 1\n- natural_photo_typicality: Looks like a typical natural photograph. 5\n- visual_clutter: Moderate clutter - kitchen background has many items. 3\n- object_centricity: The salad plate is the main central object, but the person is also prominent. 3\n- scene_centricity: It's a scene (kitchen) with objects. 3\n- caption_confidence: High confidence. 5\n\n- estimated_salient_object_count: 2 (salad plate, person)\n- estimated_distinct_object_categories: 4-5 (salad, plate, person, kitchen equipment, overhead structure)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (well, the person is framed within the window)\n- contains_multiple_main_objects: true (plate and person)\n\n- dominant_content_type: mixed (food + person + scene)\n- image_style: natural_photo\n- semantic_domain: food/restaurant\n\n- short_caption: \"Chef in kitchen serving a fresh salad plate through a service window\"\n- main_objects: [\"salad\", \"plate\", \"chef\", \"kitchen window\", \"cucumbers\"]\n- possible_interpretations: [\"Chef preparing to serve a salad\", \"Server retrieving an order ticket\", \"Line cook at a salad station\"]\n\nLet me finalize the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a restaurant kitchen scene viewed through what appears to be a serving window/hatch. In the foreground, there's a large white plate with a salad (cucumbers, lettuce, tomatoes, what looks like croutons, and other vegetables). Behind the plate, there's a smiling young man in a dark shirt (possibly a chef or server) reaching up, possibly to grab a ticket or order from a line. The setting appears to be a commercial kitchen with stainless steel surfaces, overhead lights, and various kitchen equipment visible in the background.\n\nLet me annotate according to the schema:\n\n- recognizability: The main content is very clear - a salad plate in a kitchen. 5\n- ambiguity: Low ambiguity - it's clearly food being prepared/served in a kitchen. 1\n- natural_photo_typicality: Looks like a typical natural photograph. 5\n- visual_clutter: Moderate clutter - kitchen background has many items. 3\n- object_centricity: The salad plate is the main central object, but the person is also prominent. 3\n- scene_centricity: It's a scene (kitchen) with objects. 3\n- caption_confidence: High confidence. 5\n\n- estimated_salient_object_count: 2 (salad plate, person)\n- estimated_distinct_object_categories: 4-5 (salad, plate, person, kitchen equipment, overhead structure)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (well, the person is framed within the window)\n- contains_multiple_main_objects: true (plate and person)\n\n- dominant_content_type: mixed (food + person + scene)\n- image_style: natural_photo\n- semantic_domain: food/restaurant\n\n- short_caption: \"Chef in kitchen serving a fresh salad plate through a service window\"\n- main_objects: [\"salad\", \"plate\", \"chef\", \"kitchen window\", \"cucumbers\"]\n- possible_interpretations: [\"Chef preparing to serve a salad\", \"Server retrieving an order ticket\", \"Line cook at a salad station\"]\n\nLet me finalize the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 866,
+          "total_tokens": 2388,
+          "cost": 0.00134556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00134556,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010392
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 565,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

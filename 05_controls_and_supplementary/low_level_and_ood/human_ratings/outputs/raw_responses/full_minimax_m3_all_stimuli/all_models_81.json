@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_81",
+    "stim_key": "all_models_81",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 81,
+    "file_index": 81,
+    "image_name": "image_0081.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0081.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: dominant_content_type has invalid value: 'person'"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports\",\n  \"short_caption\": \"A ski jumper in mid-flight wearing a blue Uvex helmet and red competition suit against rails\",\n  \"main_objects\": [\"ski jumper\", \"helmet\", \"ski goggles\", \"competition suit\", \"metal rails\"],\n  \"possible_interpretations\": [\"ski jumper during a competition jump\", \"winter sport athlete in mid-flight\", \"action shot of ski jumping event\"],\n  \"uncertainty_notes\": \"Face is partially obscured by goggles and helmet brim; dramatic tilted viewpoint and motion blur suggest fast action\",\n  \"quality_flags\": [\"motion_blur\", \"unusual_angle\", \"partial_occlusion_by_foreground\"]\n}",
+      "response": {
+        "id": "gen-1780318851-XTb6aGvlxcxisMZBNv1K",
+        "object": "chat.completion",
+        "created": 1780318851,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports\",\n  \"short_caption\": \"A ski jumper in mid-flight wearing a blue Uvex helmet and red competition suit against rails\",\n  \"main_objects\": [\"ski jumper\", \"helmet\", \"ski goggles\", \"competition suit\", \"metal rails\"],\n  \"possible_interpretations\": [\"ski jumper during a competition jump\", \"winter sport athlete in mid-flight\", \"action shot of ski jumping event\"],\n  \"uncertainty_notes\": \"Face is partially obscured by goggles and helmet brim; dramatic tilted viewpoint and motion blur suggest fast action\",\n  \"quality_flags\": [\"motion_blur\", \"unusual_angle\", \"partial_occlusion_by_foreground\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a ski jumper in mid-flight, wearing a blue Uvex helmet, ski goggles, and a competition suit. The photo is taken from below/side angle showing the jumper against what appears to be snowy/white background with metal rails (likely the ski jump track). The image has motion blur and a dynamic angle.\n\nLet me analyze:\n- Recognizability: Clear ski jumper, very recognizable (5)\n- Ambiguity: Quite clear what it is, low ambiguity (1)\n- Natural photo typicality: Yes, looks like a typical sports photo (5)\n- Visual clutter: Some clutter from rails, but relatively clean (2)\n- Object centricity: The person/jumper is the central subject (5)\n- Scene centricity: Mostly about the athlete, not really a scene (1)\n- Caption confidence: High confidence in caption (5)\n\nSalient objects: 1 person (ski jumper), helmet, goggles, ski suit, rails\nCategories: person, sports equipment, structure (rails)\n\ncontains_person: true\ncontains_face: true (partially visible)\ncontains_animal: false\ncontains_text: true (uvex branding on helmet)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (partially cut off by rails)\ncontains_unusual_viewpoint: true (dramatic angle)\ncontains_multiple_main_objects: false\n\ndominant_content_type: person_face (or person - the person is the main subject)\nimage_style: natural_photo\nsemantic_domain: sports\n\nShort caption: \"A ski jumper in mid-flight wearing a blue Uvex helmet and competition suit\"\n\nMain objects: ski jumper, helmet, goggles, ski suit, metal rails\n\nPossible interpretations: ski jumper mid-flight, athlete in competition, winter sports action shot\n\nUncertainty notes: The face is partially obscured by goggles and helmet, viewpoint is unusual\n\nQuality flags: motion blur, unusual angle, partial occlusion by foreground rails",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a ski jumper in mid-flight, wearing a blue Uvex helmet, ski goggles, and a competition suit. The photo is taken from below/side angle showing the jumper against what appears to be snowy/white background with metal rails (likely the ski jump track). The image has motion blur and a dynamic angle.\n\nLet me analyze:\n- Recognizability: Clear ski jumper, very recognizable (5)\n- Ambiguity: Quite clear what it is, low ambiguity (1)\n- Natural photo typicality: Yes, looks like a typical sports photo (5)\n- Visual clutter: Some clutter from rails, but relatively clean (2)\n- Object centricity: The person/jumper is the central subject (5)\n- Scene centricity: Mostly about the athlete, not really a scene (1)\n- Caption confidence: High confidence in caption (5)\n\nSalient objects: 1 person (ski jumper), helmet, goggles, ski suit, rails\nCategories: person, sports equipment, structure (rails)\n\ncontains_person: true\ncontains_face: true (partially visible)\ncontains_animal: false\ncontains_text: true (uvex branding on helmet)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (partially cut off by rails)\ncontains_unusual_viewpoint: true (dramatic angle)\ncontains_multiple_main_objects: false\n\ndominant_content_type: person_face (or person - the person is the main subject)\nimage_style: natural_photo\nsemantic_domain: sports\n\nShort caption: \"A ski jumper in mid-flight wearing a blue Uvex helmet and competition suit\"\n\nMain objects: ski jumper, helmet, goggles, ski suit, metal rails\n\nPossible interpretations: ski jumper mid-flight, athlete in competition, winter sports action shot\n\nUncertainty notes: The face is partially obscured by goggles and helmet, viewpoint is unusual\n\nQuality flags: motion blur, unusual angle, partial occlusion by foreground rails",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 791,
+          "total_tokens": 2329,
+          "cost": 0.00138324,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00138324,
+            "upstream_inference_prompt_cost": 0.00043404,
+            "upstream_inference_completions_cost": 0.0009492
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 506,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

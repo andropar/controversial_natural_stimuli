@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_84",
+    "stim_key": "all_models_84",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 84,
+    "file_index": 84,
+    "image_name": "image_0084.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0084.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports\",\n  \"short_caption\": \"An orange basketball sitting on a wooden indoor basketball court with painted lines and lettering.\",\n  \"main_objects\": [\"basketball\", \"basketball court floor\", \"painted court markings\", \"floor text logo\"],\n  \"possible_interpretations\": [\"basketball left on a court during or after a game\", \"practice ball at the center or sideline of a court\", \"product or marketing shot of a basketball on a branded court\"],\n  \"uncertainty_notes\": \"Floor text is partially cut off ('BUCK LIV...' and 'CENTER'); the small text on the basketball is not fully legible. Exact court location and event context are unclear.\",\n  \"quality_flags\": [\"partially_legible_text\", \"mild_blur_in_background\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318827-Ucq2BkkoJNoafyYAoaNp",
+        "object": "chat.completion",
+        "created": 1780318827,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports\",\n  \"short_caption\": \"An orange basketball sitting on a wooden indoor basketball court with painted lines and lettering.\",\n  \"main_objects\": [\"basketball\", \"basketball court floor\", \"painted court markings\", \"floor text logo\"],\n  \"possible_interpretations\": [\"basketball left on a court during or after a game\", \"practice ball at the center or sideline of a court\", \"product or marketing shot of a basketball on a branded court\"],\n  \"uncertainty_notes\": \"Floor text is partially cut off ('BUCK LIV...' and 'CENTER'); the small text on the basketball is not fully legible. Exact court location and event context are unclear.\",\n  \"quality_flags\": [\"partially_legible_text\", \"mild_blur_in_background\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a basketball court with:\n- A wooden floor with visible grain/planks\n- Orange/red painted areas (likely team logos or court markings) at the top\n- A white curved line (free throw line or three-point line)\n- Black text on the floor that reads \"UCK LIV\" and \"ENTER\" (partially visible, likely \"BUCK LIVING CENTER\" or similar)\n- A basketball (orange and tan/brown) sitting on the floor near the bottom center\n- The basketball has \"Brielle Co.\" or similar text on it\n\nLet me rate the dimensions:\n\n- recognizability: The main content (basketball on a court) is quite clear. 4\n- ambiguity: The image is fairly clear - it's a basketball on a court. 2\n- natural_photo_typicality: This looks like a typical natural photograph of a basketball court. 4\n- visual_clutter: The court has text, lines, and logos, which creates some visual complexity but not overly cluttered. 3\n- object_centricity: The basketball is a central object, though it's small in the frame. 3\n- scene_centricity: The image is mostly about the place (the court) with a ball in it. 4\n- caption_confidence: Pretty confident I can caption this. 4\n\nObject counts:\n- estimated_salient_object_count: 1 (the basketball is the salient object)\n- estimated_distinct_object_categories: 2 (basketball, basketball court)\n\nContains:\n- person: no\n- face: no\n- animal: no\n- text: yes (BUCK LIVING CENTER, text on ball)\n- vehicle: no\n- food: no\n- indoor_scene: yes (basketball court is typically indoor)\n- outdoor_scene: no\n- artificial_or_rendered_content: no\n- occlusion_or_truncation: the text is cut off, but that's not really occlusion of objects\n- unusual_viewpoint: the viewpoint is angled but not unusual\n- multiple_main_objects: no\n\nDominant content type: scene (it's mostly about the court)\nImage style: natural_photo\nSemantic domain: sports\n\nShort caption: \"An orange basketball sitting on a wooden basketball court with painted lines and lettering.\"\n\nMain objects: [\"basketball\", \"basketball court\", \"painted court lines\", \"text/logo on floor\"]\n\nPossible interpretations:\n- \"Basketball resting on a court floor\"\n- \"Practice basketball left on the court\"\n- \"Basketball at center court\"\n\nUncertainty notes: The text is partially visible; cannot read the full court name. The ball's text is small and slightly blurry.\n\nQuality flags: [\"partially_legible_text\", \"shallow_depth_of_field_blur_at_edges\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a basketball court with:\n- A wooden floor with visible grain/planks\n- Orange/red painted areas (likely team logos or court markings) at the top\n- A white curved line (free throw line or three-point line)\n- Black text on the floor that reads \"UCK LIV\" and \"ENTER\" (partially visible, likely \"BUCK LIVING CENTER\" or similar)\n- A basketball (orange and tan/brown) sitting on the floor near the bottom center\n- The basketball has \"Brielle Co.\" or similar text on it\n\nLet me rate the dimensions:\n\n- recognizability: The main content (basketball on a court) is quite clear. 4\n- ambiguity: The image is fairly clear - it's a basketball on a court. 2\n- natural_photo_typicality: This looks like a typical natural photograph of a basketball court. 4\n- visual_clutter: The court has text, lines, and logos, which creates some visual complexity but not overly cluttered. 3\n- object_centricity: The basketball is a central object, though it's small in the frame. 3\n- scene_centricity: The image is mostly about the place (the court) with a ball in it. 4\n- caption_confidence: Pretty confident I can caption this. 4\n\nObject counts:\n- estimated_salient_object_count: 1 (the basketball is the salient object)\n- estimated_distinct_object_categories: 2 (basketball, basketball court)\n\nContains:\n- person: no\n- face: no\n- animal: no\n- text: yes (BUCK LIVING CENTER, text on ball)\n- vehicle: no\n- food: no\n- indoor_scene: yes (basketball court is typically indoor)\n- outdoor_scene: no\n- artificial_or_rendered_content: no\n- occlusion_or_truncation: the text is cut off, but that's not really occlusion of objects\n- unusual_viewpoint: the viewpoint is angled but not unusual\n- multiple_main_objects: no\n\nDominant content type: scene (it's mostly about the court)\nImage style: natural_photo\nSemantic domain: sports\n\nShort caption: \"An orange basketball sitting on a wooden basketball court with painted lines and lettering.\"\n\nMain objects: [\"basketball\", \"basketball court\", \"painted court lines\", \"text/logo on floor\"]\n\nPossible interpretations:\n- \"Basketball resting on a court floor\"\n- \"Practice basketball left on the court\"\n- \"Basketball at center court\"\n\nUncertainty notes: The text is partially visible; cannot read the full court name. The ball's text is small and slightly blurry.\n\nQuality flags: [\"partially_legible_text\", \"shallow_depth_of_field_blur_at_edges\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1222,
+          "completion_tokens": 972,
+          "total_tokens": 2194,
+          "cost": 0.00150564,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00150564,
+            "upstream_inference_prompt_cost": 0.00033924,
+            "upstream_inference_completions_cost": 0.0011664
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 641,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

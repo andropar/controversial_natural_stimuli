@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_85",
+    "stim_key": "vicco_85",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 85,
+    "file_index": 84,
+    "image_name": "shared_4rep_vicco_085.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_085.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"domestic_life\",\n\n  \"short_caption\": \"A woman pets a small white dog while holding a video camera beside a young child.\",\n  \"main_objects\": [\"woman\", \"small white dog\", \"young child\", \"video camera\", \"potted plant\"],\n  \"possible_interpretations\": [\n    \"A family moment being recorded on video\",\n    \"A mother tending to her child and family pet indoors\",\n    \"A casual candid snapshot of domestic life\"\n  ],\n  \"uncertainty_notes\": \"Relationship between the people is unclear; image grain and color cast suggest an older film photograph.\",\n  \"quality_flags\": [\"slight_grain\", \"dated_color_balance\", \"mild_blur\"]\n}",
+      "response": {
+        "id": "gen-1780319488-VEb0U3RxhsRytQ0M58u1",
+        "object": "chat.completion",
+        "created": 1780319488,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"domestic_life\",\n\n  \"short_caption\": \"A woman pets a small white dog while holding a video camera beside a young child.\",\n  \"main_objects\": [\"woman\", \"small white dog\", \"young child\", \"video camera\", \"potted plant\"],\n  \"possible_interpretations\": [\n    \"A family moment being recorded on video\",\n    \"A mother tending to her child and family pet indoors\",\n    \"A casual candid snapshot of domestic life\"\n  ],\n  \"uncertainty_notes\": \"Relationship between the people is unclear; image grain and color cast suggest an older film photograph.\",\n  \"quality_flags\": [\"slight_grain\", \"dated_color_balance\", \"mild_blur\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a woman crouching down, petting a small white dog while holding what appears to be a Sony video camera. Next to her is a small child/toddler in a teal shirt with overalls. The setting appears to be indoors, with a potted plant visible in the background and what looks like wooden furniture or paneling on the right side.\n\nLet me analyze the schema:\n\n- recognizability: The content is quite clear - a woman, a dog, and a child. I'd rate this 5.\n- ambiguity: There's some ambiguity about context but main subjects are clear. I'd rate 2.\n- natural_photo_typicality: Looks like a typical candid photo, slightly dated quality. Rate 4.\n- visual_clutter: There are several elements but the main subjects are distinguishable. Rate 3.\n- object_centricity: There are multiple main subjects (woman, dog, child). Rate 3.\n- scene_centricity: It's more about the people and animal than the scene. Rate 2.\n- caption_confidence: I can describe it well. Rate 4.\n\n- estimated_salient_object_count: 3 (woman, dog, child)\n- estimated_distinct_object_categories: 3 (person, animal, camera)\n\n- contains_person: true\n- contains_face: true (partially - woman's face visible, child's face partially visible)\n- contains_animal: true\n- contains_text: true (SONY on camera)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (camera is partially out of frame)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"mixed\" (person, animal)\n- image_style: \"natural_photo\" (looks like a candid photograph, possibly older film photo)\n- semantic_domain: \"family_pets\" or \"domestic_life\"\n\n- short_caption: \"A woman pets a white dog while holding a video camera next to a small child.\"\n- main_objects: [\"woman\", \"white dog\", \"child\", \"video camera\", \"potted plant\"]\n- possible_interpretations: [\"A family moment being recorded on video\", \"A mother watching her child play with the family dog\", \"A casual indoor gathering\"]\n- uncertainty_notes: \"The relationship between people is unclear; image quality suggests an older film photograph.\"\n- quality_flags: [\"slightly_grainy\", \"dated_photo_quality\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a woman crouching down, petting a small white dog while holding what appears to be a Sony video camera. Next to her is a small child/toddler in a teal shirt with overalls. The setting appears to be indoors, with a potted plant visible in the background and what looks like wooden furniture or paneling on the right side.\n\nLet me analyze the schema:\n\n- recognizability: The content is quite clear - a woman, a dog, and a child. I'd rate this 5.\n- ambiguity: There's some ambiguity about context but main subjects are clear. I'd rate 2.\n- natural_photo_typicality: Looks like a typical candid photo, slightly dated quality. Rate 4.\n- visual_clutter: There are several elements but the main subjects are distinguishable. Rate 3.\n- object_centricity: There are multiple main subjects (woman, dog, child). Rate 3.\n- scene_centricity: It's more about the people and animal than the scene. Rate 2.\n- caption_confidence: I can describe it well. Rate 4.\n\n- estimated_salient_object_count: 3 (woman, dog, child)\n- estimated_distinct_object_categories: 3 (person, animal, camera)\n\n- contains_person: true\n- contains_face: true (partially - woman's face visible, child's face partially visible)\n- contains_animal: true\n- contains_text: true (SONY on camera)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (camera is partially out of frame)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"mixed\" (person, animal)\n- image_style: \"natural_photo\" (looks like a candid photograph, possibly older film photo)\n- semantic_domain: \"family_pets\" or \"domestic_life\"\n\n- short_caption: \"A woman pets a white dog while holding a video camera next to a small child.\"\n- main_objects: [\"woman\", \"white dog\", \"child\", \"video camera\", \"potted plant\"]\n- possible_interpretations: [\"A family moment being recorded on video\", \"A mother watching her child play with the family dog\", \"A casual indoor gathering\"]\n- uncertainty_notes: \"The relationship between people is unclear; image quality suggests an older film photograph.\"\n- quality_flags: [\"slightly_grainy\", \"dated_photo_quality\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 919,
+          "total_tokens": 2441,
+          "cost": 0.00140916,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00140916,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011028
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 596,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

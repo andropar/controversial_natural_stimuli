@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_94",
+    "stim_key": "sota_94",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 94,
+    "file_index": 94,
+    "image_name": "image_0094.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0094.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home_decor\",\n  \"short_caption\": \"Child holding up a large pillow with a colorful woodland animal print pattern.\",\n  \"main_objects\": [\"pillow\", \"child (partial)\"],\n  \"possible_interpretations\": [\"pillow product display\", \"sewing or DIY project showcase\", \"blog photo of handmade cushion\"],\n  \"uncertainty_notes\": \"Child is cropped at the shoulders; only hands and pink top are visible. Watermark suggests a blog or tutorial source.\",\n  \"quality_flags\": [\"watermark\", \"truncated_person\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319195-6gZzmWGk84MCKdPWuHcn",
+        "object": "chat.completion",
+        "created": 1780319195,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home_decor\",\n  \"short_caption\": \"Child holding up a large pillow with a colorful woodland animal print pattern.\",\n  \"main_objects\": [\"pillow\", \"child (partial)\"],\n  \"possible_interpretations\": [\"pillow product display\", \"sewing or DIY project showcase\", \"blog photo of handmade cushion\"],\n  \"uncertainty_notes\": \"Child is cropped at the shoulders; only hands and pink top are visible. Watermark suggests a blog or tutorial source.\",\n  \"quality_flags\": [\"watermark\", \"truncated_person\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "The image shows a child holding up a large square pillow with a woodland animal pattern. The pillow has foxes, deer/fawns, and squirrels on a white background. The child is only visible from the chest down, wearing a pink top. There's a watermark \"SWOODSONSAYS.COM\" in the bottom left corner. The setting appears to be indoors on a wooden floor against a beige wall.\n\nLet me analyze this:\n\n- Recognizability: The main content (a patterned pillow) is clearly visible. 5\n- Ambiguity: Pretty clear what's shown. 1\n- Natural_photo_typicality: Looks like a typical blog/product photo. 4\n- Visual_clutter: The pillow has many animal motifs but they're repetitive. Moderate clutter. 3\n- Object_centricity: The pillow is the clear central object. 5\n- Scene_centricity: Not really a scene, more of an object photo. 2\n- Caption_confidence: High confidence in a concise caption. 5\n\nSalient objects: pillow, child (partial)\nObject categories: pillow, person, animal patterns (printed)\n\nContains person: yes (partial - hands and torso visible)\nContains face: no\nContains animal: no (they're printed/illustrated)\nContains text: yes (watermark)\nContains vehicle: no\nContains food: no\nIndoor scene: yes\nOutdoor scene: no\nArtificial/rendered: no\nOcclusion/truncation: yes (child is truncated)\nUnusual viewpoint: no\nMultiple main objects: no (pillow is the main object)\n\nDominant content: object (the pillow)\nImage style: natural_photo (blog-style photo)\nSemantic domain: home/decor\n\nShort caption: \"Child holding up a large pillow with colorful woodland animal print pattern.\"\n\nMain objects: pillow, child (partial)\nPossible interpretations: pillow being shown off, product photo, sewing project\nUncertainty notes: child is partially visible, watermark indicates blog source\nQuality flags: watermark, partial person",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a child holding up a large square pillow with a woodland animal pattern. The pillow has foxes, deer/fawns, and squirrels on a white background. The child is only visible from the chest down, wearing a pink top. There's a watermark \"SWOODSONSAYS.COM\" in the bottom left corner. The setting appears to be indoors on a wooden floor against a beige wall.\n\nLet me analyze this:\n\n- Recognizability: The main content (a patterned pillow) is clearly visible. 5\n- Ambiguity: Pretty clear what's shown. 1\n- Natural_photo_typicality: Looks like a typical blog/product photo. 4\n- Visual_clutter: The pillow has many animal motifs but they're repetitive. Moderate clutter. 3\n- Object_centricity: The pillow is the clear central object. 5\n- Scene_centricity: Not really a scene, more of an object photo. 2\n- Caption_confidence: High confidence in a concise caption. 5\n\nSalient objects: pillow, child (partial)\nObject categories: pillow, person, animal patterns (printed)\n\nContains person: yes (partial - hands and torso visible)\nContains face: no\nContains animal: no (they're printed/illustrated)\nContains text: yes (watermark)\nContains vehicle: no\nContains food: no\nIndoor scene: yes\nOutdoor scene: no\nArtificial/rendered: no\nOcclusion/truncation: yes (child is truncated)\nUnusual viewpoint: no\nMultiple main objects: no (pillow is the main object)\n\nDominant content: object (the pillow)\nImage style: natural_photo (blog-style photo)\nSemantic domain: home/decor\n\nShort caption: \"Child holding up a large pillow with colorful woodland animal print pattern.\"\n\nMain objects: pillow, child (partial)\nPossible interpretations: pillow being shown off, product photo, sewing project\nUncertainty notes: child is partially visible, watermark indicates blog source\nQuality flags: watermark, partial person",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 760,
+          "total_tokens": 2282,
+          "cost": 0.00121836,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00121836,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000912
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 478,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

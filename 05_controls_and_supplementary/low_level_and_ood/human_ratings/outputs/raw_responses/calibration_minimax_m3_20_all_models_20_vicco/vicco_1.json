@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_1",
+    "stim_key": "vicco_1",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 1,
+    "file_index": 0,
+    "image_name": "shared_4rep_vicco_001.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_001.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"domestic_mishap_debris\",\n\n  \"short_caption\": \"Broken ceramic plate and shattered pot with spilled soil on a tile floor\",\n  \"main_objects\": [\"broken plate\", \"shattered pot pieces\", \"spilled soil\", \"tile floor\", \"small plant\"],\n  \"possible_interpretations\": [\"broken flower pot after a fall\", \"knocked-over planter accident\", \"plant repotting debris on floor\", \"aftermath of dropped ceramic dish with plant\"],\n  \"uncertainty_notes\": \"Exact context of breakage unclear; could be outdoor patio; identity of dark objects at top edge ambiguous\",\n  \"quality_flags\": [\"tilted_angle\", \"unusual_top_down_perspective\", \"debris_subject_matter\"]\n}",
+      "response": {
+        "id": "gen-1780318166-EqweH0uHDCchoZAw0SXE",
+        "object": "chat.completion",
+        "created": 1780318166,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"domestic_mishap_debris\",\n\n  \"short_caption\": \"Broken ceramic plate and shattered pot with spilled soil on a tile floor\",\n  \"main_objects\": [\"broken plate\", \"shattered pot pieces\", \"spilled soil\", \"tile floor\", \"small plant\"],\n  \"possible_interpretations\": [\"broken flower pot after a fall\", \"knocked-over planter accident\", \"plant repotting debris on floor\", \"aftermath of dropped ceramic dish with plant\"],\n  \"uncertainty_notes\": \"Exact context of breakage unclear; could be outdoor patio; identity of dark objects at top edge ambiguous\",\n  \"quality_flags\": [\"tilted_angle\", \"unusual_top_down_perspective\", \"debris_subject_matter\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be a top-down view of a tiled floor (possibly stone or ceramic tiles with a greenish-gray color) with a broken white ceramic plate or dish in the foreground covered with dark soil/dirt and a white powdery substance. In the background, there are broken pieces of what looks like another white ceramic item (possibly a pot or planter) along with some soil, a small green plant, and what might be parts of a dark object (possibly plastic pots or containers) at the very top.\n\nThe scene appears to be the aftermath of a broken plant pot - the dirt and plant remnants scattered across the floor, with the broken pieces of the pot/planter visible.\n\nLet me rate this:\n\n- Recognizability: The scene is fairly clear - it's a broken pot/planter with spilled soil on a tile floor. I'd say 4.\n- Ambiguity: There's a main interpretation (broken planter), but the specific context is somewhat ambiguous. I'd say 2-3.\n- Natural photo typicality: This looks like a regular photo taken with a phone. 4.\n- Visual clutter: There's quite a bit going on - broken pieces, soil, plant, tiles. 3-4.\n- Object centricity: There's no single dominant object, it's more of a scene of debris. 2.\n- Scene centricity: This is more of a scene than a single object. 3-4.\n- Caption confidence: 3-4.\n\nMain objects: broken plate, soil, tile floor, plant, broken pot pieces\nSemantic domain: indoor/outdoor scene with debris\n\nLet me finalize the annotations.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be a top-down view of a tiled floor (possibly stone or ceramic tiles with a greenish-gray color) with a broken white ceramic plate or dish in the foreground covered with dark soil/dirt and a white powdery substance. In the background, there are broken pieces of what looks like another white ceramic item (possibly a pot or planter) along with some soil, a small green plant, and what might be parts of a dark object (possibly plastic pots or containers) at the very top.\n\nThe scene appears to be the aftermath of a broken plant pot - the dirt and plant remnants scattered across the floor, with the broken pieces of the pot/planter visible.\n\nLet me rate this:\n\n- Recognizability: The scene is fairly clear - it's a broken pot/planter with spilled soil on a tile floor. I'd say 4.\n- Ambiguity: There's a main interpretation (broken planter), but the specific context is somewhat ambiguous. I'd say 2-3.\n- Natural photo typicality: This looks like a regular photo taken with a phone. 4.\n- Visual clutter: There's quite a bit going on - broken pieces, soil, plant, tiles. 3-4.\n- Object centricity: There's no single dominant object, it's more of a scene of debris. 2.\n- Scene centricity: This is more of a scene than a single object. 3-4.\n- Caption confidence: 3-4.\n\nMain objects: broken plate, soil, tile floor, plant, broken pot pieces\nSemantic domain: indoor/outdoor scene with debris\n\nLet me finalize the annotations.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 720,
+          "total_tokens": 2242,
+          "cost": 0.00129324,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129324,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.000864
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 387,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

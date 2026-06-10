@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_44",
+    "stim_key": "dataset_44",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 44,
+    "file_index": 44,
+    "image_name": "image_0044.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0044.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"garden/balcony\",\n  \"short_caption\": \"Potted yucca plant on a balcony with a yellow watering can and hanging planter against a bamboo screen.\",\n  \"main_objects\": [\"yucca plant\", \"yellow watering can\", \"wall-mounted planter\", \"bamboo screen\", \"metal fence\"],\n  \"possible_interpretations\": [\"balcony garden scene\", \"patio decoration\", \"outdoor plant display\"],\n  \"uncertainty_notes\": \"Some objects are partially truncated at the edges; exact plant species uncertain but resembles dracaena/yucca.\",\n  \"quality_flags\": [\"partial_truncation\"]\n}",
+      "response": {
+        "id": "gen-1780319015-vcMLY3zt1wy9gUS1mY8n",
+        "object": "chat.completion",
+        "created": 1780319015,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"garden/balcony\",\n  \"short_caption\": \"Potted yucca plant on a balcony with a yellow watering can and hanging planter against a bamboo screen.\",\n  \"main_objects\": [\"yucca plant\", \"yellow watering can\", \"wall-mounted planter\", \"bamboo screen\", \"metal fence\"],\n  \"possible_interpretations\": [\"balcony garden scene\", \"patio decoration\", \"outdoor plant display\"],\n  \"uncertainty_notes\": \"Some objects are partially truncated at the edges; exact plant species uncertain but resembles dracaena/yucca.\",\n  \"quality_flags\": [\"partial_truncation\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- A yucca-like plant (dracaena) in a pot in the foreground\n- A brown plastic planter box mounted on a bamboo/reed fence\n- A yellow watering can hanging on a blue metal fence\n- A bamboo/reed privacy screen in the background\n- Blue metal fence/railing\n- The setting appears to be a balcony or garden area\n\nLet me rate each dimension:\n\n- recognizability: 4 - clearly shows plants and garden items\n- ambiguity: 2 - fairly clear what's shown\n- natural_photo_typicality: 3 - looks like a real photo but somewhat composed\n- visual_clutter: 3 - several items but not too cluttered\n- object_centricity: 2 - no single dominant object, more of a scene\n- scene_centricity: 4 - this is primarily a scene/garden setting\n- caption_confidence: 4 - easy to describe\n\nCounts:\n- Salient objects: plant, planter, watering can, fence - about 3-4\n- Distinct categories: plant, planter, watering can, fence - 4\n\nContains:\n- person: false\n- face: false\n- animal: false\n- text: false\n- vehicle: false\n- food: false\n- indoor: false (outdoor balcony/garden)\n- outdoor: true\n- artificial: the items are artificial objects but it's a natural photo\n- occlusion: some truncation at edges\n- unusual viewpoint: no\n- multiple main objects: yes\n\nDominant content: mixed (scene with objects)\nImage style: natural_photo\nSemantic domain: garden/outdoor/balcony\n\nCaption: A potted yucca plant on a balcony with a yellow watering can and planter box against a bamboo screen.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- A yucca-like plant (dracaena) in a pot in the foreground\n- A brown plastic planter box mounted on a bamboo/reed fence\n- A yellow watering can hanging on a blue metal fence\n- A bamboo/reed privacy screen in the background\n- Blue metal fence/railing\n- The setting appears to be a balcony or garden area\n\nLet me rate each dimension:\n\n- recognizability: 4 - clearly shows plants and garden items\n- ambiguity: 2 - fairly clear what's shown\n- natural_photo_typicality: 3 - looks like a real photo but somewhat composed\n- visual_clutter: 3 - several items but not too cluttered\n- object_centricity: 2 - no single dominant object, more of a scene\n- scene_centricity: 4 - this is primarily a scene/garden setting\n- caption_confidence: 4 - easy to describe\n\nCounts:\n- Salient objects: plant, planter, watering can, fence - about 3-4\n- Distinct categories: plant, planter, watering can, fence - 4\n\nContains:\n- person: false\n- face: false\n- animal: false\n- text: false\n- vehicle: false\n- food: false\n- indoor: false (outdoor balcony/garden)\n- outdoor: true\n- artificial: the items are artificial objects but it's a natural photo\n- occlusion: some truncation at edges\n- unusual viewpoint: no\n- multiple main objects: yes\n\nDominant content: mixed (scene with objects)\nImage style: natural_photo\nSemantic domain: garden/outdoor/balcony\n\nCaption: A potted yucca plant on a balcony with a yellow watering can and planter box against a bamboo screen.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 731,
+          "total_tokens": 2145,
+          "cost": 0.00115116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00115116,
+            "upstream_inference_prompt_cost": 0.00027396,
+            "upstream_inference_completions_cost": 0.0008772
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 404,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

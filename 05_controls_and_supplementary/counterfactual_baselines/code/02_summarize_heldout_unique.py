@@ -10,17 +10,17 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-_PAPER = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_PAPER / "figures"))
-sys.path.insert(0, str(_PAPER.parents[1]))
+STAGE = Path(__file__).resolve().parents[1]
+SHARE_ROOT = STAGE.parents[1]
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
 
 import config  # noqa: E402
 from style_improved import OKABE_ITO, apply_style, shade  # noqa: E402
 
 
-DATA = _PAPER / "05_heldout_unique_baseline" / "results"
-FIGURES = _PAPER / "05_heldout_unique_baseline" / "figures"
+DATA = STAGE / "results"
+FIGURES = STAGE / "figures"
 FIGURES.mkdir(parents=True, exist_ok=True)
 
 MODEL_SETS = ["all_models", "sota", "training_objective", "architecture", "dataset"]

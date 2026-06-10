@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_72",
+    "stim_key": "vicco_72",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 72,
+    "file_index": 71,
+    "image_name": "shared_4rep_vicco_072.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_072.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature_wildlife\",\n\n  \"short_caption\": \"A small lizard resting on a rock among gravel, green plants, and fallen flowers in a garden.\",\n  \"main_objects\": [\"lizard\", \"rock\", \"green plant\", \"fallen flowers\", \"gravel\"],\n  \"possible_interpretations\": [\n    \"A lizard basking in a garden\",\n    \"A small anole on a stone\",\n    \"Garden wildlife scene\"\n  ],\n  \"uncertainty_notes\": \"Lizard species is uncertain; it appears to be an anole or similar small lizard. The tail may be partially occluded by foliage.\",\n  \"quality_flags\": [\"slight_motion_or_focus_softness_on_lizard\"]\n}",
+      "response": {
+        "id": "gen-1780319471-EdF2NBG49Jgs4fLDUdmD",
+        "object": "chat.completion",
+        "created": 1780319471,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature_wildlife\",\n\n  \"short_caption\": \"A small lizard resting on a rock among gravel, green plants, and fallen flowers in a garden.\",\n  \"main_objects\": [\"lizard\", \"rock\", \"green plant\", \"fallen flowers\", \"gravel\"],\n  \"possible_interpretations\": [\n    \"A lizard basking in a garden\",\n    \"A small anole on a stone\",\n    \"Garden wildlife scene\"\n  ],\n  \"uncertainty_notes\": \"Lizard species is uncertain; it appears to be an anole or similar small lizard. The tail may be partially occluded by foliage.\",\n  \"quality_flags\": [\"slight_motion_or_focus_softness_on_lizard\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nI can see a small lizard (appears to be an anole or similar species) on a rock among gravel, soil, and small plants. There are green leaves from a plant on the right side, rocks, some small pink/white flowers, and a stone wall or rock face in the background. The setting appears to be a garden or natural outdoor environment.\n\nLet me rate each dimension:\n\n- recognizability: The main subject (lizard) is clearly visible but somewhat small in the frame. The scene is recognizable as a garden/natural setting. I'd say 4.\n- ambiguity: There's really one main interpretation - a lizard in a garden. Low ambiguity. 1-2.\n- natural_photo_typicality: This looks like a typical nature/garden photo. 5.\n- visual_clutter: There are multiple elements - rocks, gravel, plants, flowers, lizard. Moderate to high clutter. 3-4.\n- object_centricity: The lizard is somewhat centered but small; the plants on the right are also prominent. Mixed. 2-3.\n- scene_centricity: The image shows a scene/garden environment. 4.\n- caption_confidence: Pretty confident in describing this. 4.\n\nSalient objects: lizard, plants, rocks, flowers. About 4-5 salient objects.\nDistinct object categories: lizard (animal), plants, rocks/stones, flowers - about 3-4.\n\nContains: animal (lizard), outdoor scene, no person, no text, etc.\n\nMain content type: animal (the lizard seems to be the focus)\nStyle: natural photo\nDomain: nature/wildlife/garden\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nI can see a small lizard (appears to be an anole or similar species) on a rock among gravel, soil, and small plants. There are green leaves from a plant on the right side, rocks, some small pink/white flowers, and a stone wall or rock face in the background. The setting appears to be a garden or natural outdoor environment.\n\nLet me rate each dimension:\n\n- recognizability: The main subject (lizard) is clearly visible but somewhat small in the frame. The scene is recognizable as a garden/natural setting. I'd say 4.\n- ambiguity: There's really one main interpretation - a lizard in a garden. Low ambiguity. 1-2.\n- natural_photo_typicality: This looks like a typical nature/garden photo. 5.\n- visual_clutter: There are multiple elements - rocks, gravel, plants, flowers, lizard. Moderate to high clutter. 3-4.\n- object_centricity: The lizard is somewhat centered but small; the plants on the right are also prominent. Mixed. 2-3.\n- scene_centricity: The image shows a scene/garden environment. 4.\n- caption_confidence: Pretty confident in describing this. 4.\n\nSalient objects: lizard, plants, rocks, flowers. About 4-5 salient objects.\nDistinct object categories: lizard (animal), plants, rocks/stones, flowers - about 3-4.\n\nContains: animal (lizard), outdoor scene, no person, no text, etc.\n\nMain content type: animal (the lizard seems to be the focus)\nStyle: natural photo\nDomain: nature/wildlife/garden\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 726,
+          "total_tokens": 2248,
+          "cost": 0.00117756,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00117756,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008712
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 383,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_12",
+    "stim_key": "vicco_12",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 12,
+    "file_index": 11,
+    "image_name": "shared_4rep_vicco_012.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_012.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food_dining\",\n  \"short_caption\": \"Branded hamburger with arugula on a plate at a restaurant under blue ambient lighting\",\n  \"main_objects\": [\"hamburger\", \"plate\", \"arugula\", \"glass\", \"smartphone\"],\n  \"possible_interpretations\": [\"A branded burger at a restaurant\", \"Food photo with branded bun stamp\", \"Casual dining meal under mood lighting\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; blue/purple ambient lighting is atypical and may distort color perception; text on bun partially legible\",\n  \"quality_flags\": [\"unusual_orientation\", \"atypical_color_lighting\", \"partial_occlusion\"]\n}",
+      "response": {
+        "id": "gen-1780318220-jF8AdQnD1tIMXniYbxHn",
+        "object": "chat.completion",
+        "created": 1780318220,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food_dining\",\n  \"short_caption\": \"Branded hamburger with arugula on a plate at a restaurant under blue ambient lighting\",\n  \"main_objects\": [\"hamburger\", \"plate\", \"arugula\", \"glass\", \"smartphone\"],\n  \"possible_interpretations\": [\"A branded burger at a restaurant\", \"Food photo with branded bun stamp\", \"Casual dining meal under mood lighting\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; blue/purple ambient lighting is atypical and may distort color perception; text on bun partially legible\",\n  \"quality_flags\": [\"unusual_orientation\", \"atypical_color_lighting\", \"partial_occlusion\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a hamburger/burger on a white plate with blue rings. The burger has text branded on the bun (appears to say \"GRILLD\" or similar). There's arugula/greens, what looks like mayonnaise, and some other toppings. The image is taken in a restaurant setting with blue/purple ambient lighting. There are glasses, possibly a phone, and other items on the table. The image appears to be rotated 90 degrees (sideways orientation).\n\nLet me analyze the image carefully:\n\n- Main content: A hamburger on a plate\n- Setting: Restaurant/dining table\n- Lighting: Blue/purple ambient lighting (atypical for natural photos)\n- Orientation: The image appears rotated - the burger is sideways\n- Visible items: burger, plate, glass, what looks like a phone, person partially visible, table\n\nNow let me rate according to the schema:\n\n- recognizability: 5 - The burger is clearly recognizable\n- ambiguity: 1 - Very clear what the image shows\n- natural_photo_typicality: 2 - The blue/purple lighting is unusual, and the orientation is odd\n- visual_clutter: 3 - Multiple items visible (plate, glass, phone, person, table)\n- object_centricity: 4 - The burger is the clear central object\n- scene_centricity: 2 - It's more about the object than the scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1 (the burger is the main subject, though there are other items)\n- estimated_distinct_object_categories: 4-5 (burger, plate, glass, phone, person)\n\n- contains_person: true (partially visible)\n- contains_face: false (no clear face visible)\n- contains_animal: false\n- contains_text: true (text on the bun)\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: true (restaurant)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person partially visible, items cropped)\n- contains_unusual_viewpoint: true (rotated orientation)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"food\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"food_dining\"\n\nShort caption: \"Branded hamburger on a plate with arugula at a restaurant under blue lighting\"\n\nMain objects: [\"hamburger\", \"plate\", \"arugula\", \"glass\", \"phone\"]\n\nPossible interpretations: [\"A branded burger at a restaurant\", \"Food photography with branded bun\", \"Casual dining meal\"]\n\nUncertainty notes: \"Image is rotated 90 degrees; lighting is unusual blue/purple ambient\"\n\nQuality flags: [\"unusual_orientation\", \"atypical_lighting\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a hamburger/burger on a white plate with blue rings. The burger has text branded on the bun (appears to say \"GRILLD\" or similar). There's arugula/greens, what looks like mayonnaise, and some other toppings. The image is taken in a restaurant setting with blue/purple ambient lighting. There are glasses, possibly a phone, and other items on the table. The image appears to be rotated 90 degrees (sideways orientation).\n\nLet me analyze the image carefully:\n\n- Main content: A hamburger on a plate\n- Setting: Restaurant/dining table\n- Lighting: Blue/purple ambient lighting (atypical for natural photos)\n- Orientation: The image appears rotated - the burger is sideways\n- Visible items: burger, plate, glass, what looks like a phone, person partially visible, table\n\nNow let me rate according to the schema:\n\n- recognizability: 5 - The burger is clearly recognizable\n- ambiguity: 1 - Very clear what the image shows\n- natural_photo_typicality: 2 - The blue/purple lighting is unusual, and the orientation is odd\n- visual_clutter: 3 - Multiple items visible (plate, glass, phone, person, table)\n- object_centricity: 4 - The burger is the clear central object\n- scene_centricity: 2 - It's more about the object than the scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1 (the burger is the main subject, though there are other items)\n- estimated_distinct_object_categories: 4-5 (burger, plate, glass, phone, person)\n\n- contains_person: true (partially visible)\n- contains_face: false (no clear face visible)\n- contains_animal: false\n- contains_text: true (text on the bun)\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: true (restaurant)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person partially visible, items cropped)\n- contains_unusual_viewpoint: true (rotated orientation)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"food\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"food_dining\"\n\nShort caption: \"Branded hamburger on a plate with arugula at a restaurant under blue lighting\"\n\nMain objects: [\"hamburger\", \"plate\", \"arugula\", \"glass\", \"phone\"]\n\nPossible interpretations: [\"A branded burger at a restaurant\", \"Food photography with branded bun\", \"Casual dining meal\"]\n\nUncertainty notes: \"Image is rotated 90 degrees; lighting is unusual blue/purple ambient\"\n\nQuality flags: [\"unusual_orientation\", \"atypical_lighting\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 965,
+          "total_tokens": 2487,
+          "cost": 0.00158724,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00158724,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.001158
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 663,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

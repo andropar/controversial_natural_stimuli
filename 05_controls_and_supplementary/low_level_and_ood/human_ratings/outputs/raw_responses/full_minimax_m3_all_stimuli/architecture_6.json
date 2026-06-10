@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_6",
+    "stim_key": "architecture_6",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 6,
+    "file_index": 6,
+    "image_name": "image_0006.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0006.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_cafe\",\n  \"short_caption\": \"Outdoor café terrace with wooden seating, closed umbrellas, and a black car parked in front.\",\n  \"main_objects\": [\"outdoor café terrace\", \"wooden chairs\", \"tables\", \"closed umbrellas\", \"black sedan\", \"round sign\"],\n  \"possible_interpretations\": [\"street-side café exterior\", \"coffee shop patio\", \"urban café terrace\", \"small restaurant outdoor area\"],\n  \"uncertainty_notes\": \"Sign text partially cut off ('New York Cup...'), exact name of establishment unclear.\",\n  \"quality_flags\": [\"watermark_present\", \"partial_text_in_sign\"]\n}",
+      "response": {
+        "id": "gen-1780318851-4TFvG6hFdzfvQU4EsxIW",
+        "object": "chat.completion",
+        "created": 1780318851,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_cafe\",\n  \"short_caption\": \"Outdoor café terrace with wooden seating, closed umbrellas, and a black car parked in front.\",\n  \"main_objects\": [\"outdoor café terrace\", \"wooden chairs\", \"tables\", \"closed umbrellas\", \"black sedan\", \"round sign\"],\n  \"possible_interpretations\": [\"street-side café exterior\", \"coffee shop patio\", \"urban café terrace\", \"small restaurant outdoor area\"],\n  \"uncertainty_notes\": \"Sign text partially cut off ('New York Cup...'), exact name of establishment unclear.\",\n  \"quality_flags\": [\"watermark_present\", \"partial_text_in_sign\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an outdoor café/coffee shop scene. I can see:\n- A building with a balcony on the upper floor\n- An outdoor seating area with wooden chairs and tables\n- Two closed umbrellas (white/cream colored)\n- A black sedan car parked in the foreground\n- A round yellow sign that says \"New York Cup...\" (likely \"New York Cafe\" or similar)\n- A trash bin\n- Some trees/greenery\n- Power lines visible in the background\n- A watermark/logo \"DS\" in the bottom right corner\n- The setting appears to be an urban street with a café terrace\n\nLet me assess each dimension:\n\n- recognizability: 4 - clearly recognizable as a café exterior scene\n- ambiguity: 2 - fairly clear what the scene depicts\n- natural_photo_typicality: 4 - looks like a typical natural photograph\n- visual_clutter: 3 - moderate amount of objects (chairs, tables, umbrellas, car, building, trees)\n- object_centricity: 2 - no single dominant object, it's more of a scene\n- scene_centricity: 4 - clearly a place/scene (café exterior)\n- caption_confidence: 4 - I can describe it well\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (the New York Cup sign, the DS watermark)\n- contains_vehicle: true (the black car)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (the café is the main subject)\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: urban_café\n\nMain objects: outdoor café seating, black car, umbrellas, wooden chairs, tables, New York Cup sign",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an outdoor café/coffee shop scene. I can see:\n- A building with a balcony on the upper floor\n- An outdoor seating area with wooden chairs and tables\n- Two closed umbrellas (white/cream colored)\n- A black sedan car parked in the foreground\n- A round yellow sign that says \"New York Cup...\" (likely \"New York Cafe\" or similar)\n- A trash bin\n- Some trees/greenery\n- Power lines visible in the background\n- A watermark/logo \"DS\" in the bottom right corner\n- The setting appears to be an urban street with a café terrace\n\nLet me assess each dimension:\n\n- recognizability: 4 - clearly recognizable as a café exterior scene\n- ambiguity: 2 - fairly clear what the scene depicts\n- natural_photo_typicality: 4 - looks like a typical natural photograph\n- visual_clutter: 3 - moderate amount of objects (chairs, tables, umbrellas, car, building, trees)\n- object_centricity: 2 - no single dominant object, it's more of a scene\n- scene_centricity: 4 - clearly a place/scene (café exterior)\n- caption_confidence: 4 - I can describe it well\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (the New York Cup sign, the DS watermark)\n- contains_vehicle: true (the black car)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (the café is the main subject)\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: urban_café\n\nMain objects: outdoor café seating, black car, umbrellas, wooden chairs, tables, New York Cup sign",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 792,
+          "total_tokens": 2314,
+          "cost": 0.00137964,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00137964,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009504
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 469,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_167",
+    "stim_key": "vicco_167",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 167,
+    "file_index": 166,
+    "image_name": "shared_4rep_vicco_167.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_167.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"woodworking_tools\",\n  \"short_caption\": \"Wooden vise clamping a braided metal hose on a carved workbench\",\n  \"main_objects\": [\"wooden vise\", \"braided metal hose\", \"carved wooden workbench\"],\n  \"possible_interpretations\": [\n    \"woodworking vise holding a flexible metal hose\",\n    \"clamp securing tubing for a craft or repair task\",\n    \"detail shot of a handcrafted workbench tool\"\n  ],\n  \"uncertainty_notes\": \"The purpose of clamping the hose in the vise is unclear; context of the work is not visible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319582-Nu1xytBYZaDh7KAzNCkS",
+        "object": "chat.completion",
+        "created": 1780319582,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"woodworking_tools\",\n  \"short_caption\": \"Wooden vise clamping a braided metal hose on a carved workbench\",\n  \"main_objects\": [\"wooden vise\", \"braided metal hose\", \"carved wooden workbench\"],\n  \"possible_interpretations\": [\n    \"woodworking vise holding a flexible metal hose\",\n    \"clamp securing tubing for a craft or repair task\",\n    \"detail shot of a handcrafted workbench tool\"\n  ],\n  \"uncertainty_notes\": \"The purpose of clamping the hose in the vise is unclear; context of the work is not visible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a close-up of a wooden workbench or table with a wooden vise or clamp mechanism. The vise has a curved wooden handle/lever that is being used to clamp something. There's a braided metal hose (looks like a flexible water hose) passing through or being held by the vise. The wood has a heavily textured, carved/scratched surface showing tool marks. Below the workbench, there appears to be dirt/ground with some debris.\n\nKey elements:\n- Wooden workbench with carved/textured surface\n- Wooden vise/clamp mechanism\n- Curved wooden handle\n- Braided metal flexible hose\n- Ground/dirt below with debris\n- The workbench appears to have ornate carved patterns\n\nLet me rate this:\n\n- recognizability: 4 - It's clearly recognizable as a woodworking vise on a workbench\n- ambiguity: 2 - Fairly clear what's happening (a vise clamping a hose)\n- natural_photo_typicality: 5 - Looks like a natural photograph\n- visual_clutter: 2 - Mostly focused on the vise and bench\n- object_centricity: 4 - The vise is the clear central subject\n- scene_centricity: 2 - More object-focused than scene\n- caption_confidence: 4 - Can describe confidently\n\n- estimated_salient_object_count: 2 (vise and hose)\n- estimated_distinct_object_categories: 2 (wood vise, metal hose)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (appears outdoor based on ground visible)\n- contains_outdoor_scene: true (partial outdoor view with ground)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (close-up, angled view)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"closeup_detail\" or \"object\" - I'll go with \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"woodworking\" or \"tools\" or \"crafts\"\n\nshort_caption: \"Wooden vise clamping a braided metal hose on a carved workbench\"\nmain_objects: [\"wooden vise\", \"braided metal hose\", \"carved workbench\"]\npossible_interpretations: [\"woodworking vise holding a hose\", \"clamp securing flexible tubing\", \"craftsman's workbench detail\"]\nuncertainty_notes: \"Purpose of clamping the hose in the vise is unclear; could be for a craft project or repair work\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a close-up of a wooden workbench or table with a wooden vise or clamp mechanism. The vise has a curved wooden handle/lever that is being used to clamp something. There's a braided metal hose (looks like a flexible water hose) passing through or being held by the vise. The wood has a heavily textured, carved/scratched surface showing tool marks. Below the workbench, there appears to be dirt/ground with some debris.\n\nKey elements:\n- Wooden workbench with carved/textured surface\n- Wooden vise/clamp mechanism\n- Curved wooden handle\n- Braided metal flexible hose\n- Ground/dirt below with debris\n- The workbench appears to have ornate carved patterns\n\nLet me rate this:\n\n- recognizability: 4 - It's clearly recognizable as a woodworking vise on a workbench\n- ambiguity: 2 - Fairly clear what's happening (a vise clamping a hose)\n- natural_photo_typicality: 5 - Looks like a natural photograph\n- visual_clutter: 2 - Mostly focused on the vise and bench\n- object_centricity: 4 - The vise is the clear central subject\n- scene_centricity: 2 - More object-focused than scene\n- caption_confidence: 4 - Can describe confidently\n\n- estimated_salient_object_count: 2 (vise and hose)\n- estimated_distinct_object_categories: 2 (wood vise, metal hose)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (appears outdoor based on ground visible)\n- contains_outdoor_scene: true (partial outdoor view with ground)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (close-up, angled view)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"closeup_detail\" or \"object\" - I'll go with \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"woodworking\" or \"tools\" or \"crafts\"\n\nshort_caption: \"Wooden vise clamping a braided metal hose on a carved workbench\"\nmain_objects: [\"wooden vise\", \"braided metal hose\", \"carved workbench\"]\npossible_interpretations: [\"woodworking vise holding a hose\", \"clamp securing flexible tubing\", \"craftsman's workbench detail\"]\nuncertainty_notes: \"Purpose of clamping the hose in the vise is unclear; could be for a craft project or repair work\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 915,
+          "total_tokens": 2437,
+          "cost": 0.00140436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00140436,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.001098
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 623,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

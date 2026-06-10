@@ -17,15 +17,15 @@ main analysis script is `01_heldout_unique_baseline.py`, and
 `02_summarize_heldout_unique.py` builds paper-facing aggregate tables and a
 summary figure. The analysis writes:
 
-- `data/unique_image_low_level_stats.csv`
-- `data/heldout_unique_splits.csv`
-- `data/heldout_unique_baseline_results.csv`
-- `data/baseline_matching_diagnostics.csv`
-- `data/matched_baseline_results.csv`
-- `data/heldout_unique_endpoint_by_split.csv`
-- `data/heldout_unique_endpoint_summary.csv`
-- `data/heldout_unique_aggregate_summary.csv`
-- `data/heldout_unique_completion_status.csv`
+- `results/unique_image_low_level_stats.csv`
+- `results/heldout_unique_splits.csv`
+- `results/heldout_unique_baseline_results.csv`
+- `results/baseline_matching_diagnostics.csv`
+- `results/matched_baseline_results.csv`
+- `results/heldout_unique_endpoint_by_split.csv`
+- `results/heldout_unique_endpoint_summary.csv`
+- `results/heldout_unique_aggregate_summary.csv`
+- `results/heldout_unique_completion_status.csv`
 - `figures/heldout_unique_baseline_summary.{pdf,png}`
 
 Low-level matching for unique images requires per-image low-level statistics for

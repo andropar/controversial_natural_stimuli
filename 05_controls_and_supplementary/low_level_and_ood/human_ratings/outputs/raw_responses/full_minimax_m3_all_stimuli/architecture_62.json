@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_62",
+    "stim_key": "architecture_62",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 62,
+    "file_index": 62,
+    "image_name": "image_0062.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0062.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"food_and_dining\",\n  \"short_caption\": \"Elegant dining table with tropical fruit centerpiece, small appetizers, wine bottle, wine glass, and soup bowl.\",\n  \"main_objects\": [\"fruit arrangement\", \"appetizers\", \"wine bottle\", \"wine glass\", \"soup bowl\", \"napkin and cutlery\"],\n  \"possible_interpretations\": [\"Fine dining table setting\", \"Hotel room service presentation\", \"Restaurant meal course\"],\n  \"uncertainty_notes\": \"Specific varieties of fruit and appetizers are difficult to identify; wine label text is partially obscured; a 'Travel' watermark appears in the lower left corner.\",\n  \"quality_flags\": [\"watermark\"]\n}",
+      "response": {
+        "id": "gen-1780318917-Py1LqZGRcH5OsgIzSqpG",
+        "object": "chat.completion",
+        "created": 1780318917,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"food_and_dining\",\n  \"short_caption\": \"Elegant dining table with tropical fruit centerpiece, small appetizers, wine bottle, wine glass, and soup bowl.\",\n  \"main_objects\": [\"fruit arrangement\", \"appetizers\", \"wine bottle\", \"wine glass\", \"soup bowl\", \"napkin and cutlery\"],\n  \"possible_interpretations\": [\"Fine dining table setting\", \"Hotel room service presentation\", \"Restaurant meal course\"],\n  \"uncertainty_notes\": \"Specific varieties of fruit and appetizers are difficult to identify; wine label text is partially obscured; a 'Travel' watermark appears in the lower left corner.\",\n  \"quality_flags\": [\"watermark\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a dining table setup with:\n- A decorative fruit arrangement on a pedestal/stand (with grapes, mango, avocado, longan fruits, and tropical leaves)\n- A white rectangular plate with what appears to be small canapés/pastries (looks like small sandwiches or appetizers, including what appears to be a macaron)\n- A wine bottle in a metal holder/stand (appears to be a white wine)\n- A wine glass\n- A white bowl with what appears to be soup or a white liquid on a saucer\n- A white plate with folded white napkins and silverware\n- The setting appears to be an indoor restaurant or hotel dining room\n- There's a \"Travel\" watermark/logo in the bottom left corner\n\nLet me rate based on the schema:\n\n- recognizability: 5 - very clear what's shown\n- ambiguity: 1 - quite clear what it is\n- natural_photo_typicality: 4 - looks like a typical photo, though has watermark and seems somewhat staged\n- visual_clutter: 4 - many objects present\n- object_centricity: 2 - it's more of a scene/setting with multiple items\n- scene_centricity: 4 - it's a dining scene/setting\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 6-7 (fruit stand, plate of food, wine bottle, wine glass, bowl, plate with napkin)\n- estimated_distinct_object_categories: 6 (fruit display, appetizers/canapés, wine bottle, wine glass, soup bowl, plate with cutlery)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (wine label, \"Travel\" watermark)\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: \"mixed\" (food and dining items)\nimage_style: \"edited_photo\" (has watermark suggesting it may be edited/processed)\nsemantic_domain: \"food_and_dining\" or \"dining\"\n\nshort_caption: \"Elegant dining table with fruit centerpiece, appetizers, wine, and soup.\"\n\nmain_objects: [\"fruit arrangement\", \"appetizers\", \"wine bottle\", \"wine glass\", \"soup bowl\", \"napkin\"]\n\npossible_interpretations: [\"Fine dining setup\", \"Hotel room service\", \"Restaurant table\"]\n\nuncertainty_notes: \"Image has 'Travel' watermark; specific food items and wine variety are hard to identify precisely.\"\n\nquality_flags: [\"watermark\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a dining table setup with:\n- A decorative fruit arrangement on a pedestal/stand (with grapes, mango, avocado, longan fruits, and tropical leaves)\n- A white rectangular plate with what appears to be small canapés/pastries (looks like small sandwiches or appetizers, including what appears to be a macaron)\n- A wine bottle in a metal holder/stand (appears to be a white wine)\n- A wine glass\n- A white bowl with what appears to be soup or a white liquid on a saucer\n- A white plate with folded white napkins and silverware\n- The setting appears to be an indoor restaurant or hotel dining room\n- There's a \"Travel\" watermark/logo in the bottom left corner\n\nLet me rate based on the schema:\n\n- recognizability: 5 - very clear what's shown\n- ambiguity: 1 - quite clear what it is\n- natural_photo_typicality: 4 - looks like a typical photo, though has watermark and seems somewhat staged\n- visual_clutter: 4 - many objects present\n- object_centricity: 2 - it's more of a scene/setting with multiple items\n- scene_centricity: 4 - it's a dining scene/setting\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 6-7 (fruit stand, plate of food, wine bottle, wine glass, bowl, plate with napkin)\n- estimated_distinct_object_categories: 6 (fruit display, appetizers/canapés, wine bottle, wine glass, soup bowl, plate with cutlery)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (wine label, \"Travel\" watermark)\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: \"mixed\" (food and dining items)\nimage_style: \"edited_photo\" (has watermark suggesting it may be edited/processed)\nsemantic_domain: \"food_and_dining\" or \"dining\"\n\nshort_caption: \"Elegant dining table with fruit centerpiece, appetizers, wine, and soup.\"\n\nmain_objects: [\"fruit arrangement\", \"appetizers\", \"wine bottle\", \"wine glass\", \"soup bowl\", \"napkin\"]\n\npossible_interpretations: [\"Fine dining setup\", \"Hotel room service\", \"Restaurant table\"]\n\nuncertainty_notes: \"Image has 'Travel' watermark; specific food items and wine variety are hard to identify precisely.\"\n\nquality_flags: [\"watermark\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 964,
+          "total_tokens": 2486,
+          "cost": 0.00146316,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00146316,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011568
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 645,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

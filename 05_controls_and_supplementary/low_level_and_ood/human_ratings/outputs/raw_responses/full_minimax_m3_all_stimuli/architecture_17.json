@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_17",
+    "stim_key": "architecture_17",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 17,
+    "file_index": 17,
+    "image_name": "image_0017.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0017.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor home office\",\n\n  \"short_caption\": \"Wall-mounted wooden bookshelf filled with books and decorative patterned boxes\",\n  \"main_objects\": [\"books\", \"bookshelf\", \"decorative box\", \"desk tray\"],\n  \"possible_interpretations\": [\"home library bookshelf\", \"personal study shelf\", \"office bookcase\", \"bedroom reading nook\"],\n  \"uncertainty_notes\": \"Individual book titles are not clearly legible from this distance and angle\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318864-oZTDSMUqb6hkM9OuMcfU",
+        "object": "chat.completion",
+        "created": 1780318864,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor home office\",\n\n  \"short_caption\": \"Wall-mounted wooden bookshelf filled with books and decorative patterned boxes\",\n  \"main_objects\": [\"books\", \"bookshelf\", \"decorative box\", \"desk tray\"],\n  \"possible_interpretations\": [\"home library bookshelf\", \"personal study shelf\", \"office bookcase\", \"bedroom reading nook\"],\n  \"uncertainty_notes\": \"Individual book titles are not clearly legible from this distance and angle\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a wall-mounted bookshelf with multiple shelves filled with books, some decorative boxes (one with a red and white floral/patterned design), and a small desk organizer/tray at the bottom left with some papers in it. There appears to be a small electronic device or computer at the bottom.\n\nLet me go through the schema:\n\n- recognizability: 5 - very clearly a bookshelf with books\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 4 - looks like a typical photo, though slightly staged\n- visual_clutter: 4 - many books and objects creating visual complexity\n- object_centricity: 2 - no single dominant object, it's a scene\n- scene_centricity: 4 - this is clearly a scene/place\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: many books, but as groups - maybe 3-4 shelf groups\n- estimated_distinct_object_categories: 4 (books, decorative boxes, desk organizer, electronic device)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (book spines with text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (many books, but no single main)\n\n- dominant_content_type: \"scene\" or \"mixed\" - it's a bookshelf scene\n- image_style: \"natural_photo\"\n- semantic_domain: \"indoor/interior/home_office\"\n\n- short_caption: \"Wall-mounted wooden bookshelf filled with books and decorative boxes\"\n- main_objects: [\"books\", \"bookshelf\", \"decorative box\", \"desk tray\"]\n- possible_interpretations: [\"home library\", \"office bookshelf\", \"personal book collection\", \"study room shelf\"]\n- uncertainty_notes: \"Books are too small to read individual titles clearly\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a wall-mounted bookshelf with multiple shelves filled with books, some decorative boxes (one with a red and white floral/patterned design), and a small desk organizer/tray at the bottom left with some papers in it. There appears to be a small electronic device or computer at the bottom.\n\nLet me go through the schema:\n\n- recognizability: 5 - very clearly a bookshelf with books\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 4 - looks like a typical photo, though slightly staged\n- visual_clutter: 4 - many books and objects creating visual complexity\n- object_centricity: 2 - no single dominant object, it's a scene\n- scene_centricity: 4 - this is clearly a scene/place\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: many books, but as groups - maybe 3-4 shelf groups\n- estimated_distinct_object_categories: 4 (books, decorative boxes, desk organizer, electronic device)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (book spines with text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (many books, but no single main)\n\n- dominant_content_type: \"scene\" or \"mixed\" - it's a bookshelf scene\n- image_style: \"natural_photo\"\n- semantic_domain: \"indoor/interior/home_office\"\n\n- short_caption: \"Wall-mounted wooden bookshelf filled with books and decorative boxes\"\n- main_objects: [\"books\", \"bookshelf\", \"decorative box\", \"desk tray\"]\n- possible_interpretations: [\"home library\", \"office bookshelf\", \"personal book collection\", \"study room shelf\"]\n- uncertainty_notes: \"Books are too small to read individual titles clearly\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 783,
+          "total_tokens": 2305,
+          "cost": 0.00136884,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00136884,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009396
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 508,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -46,7 +46,7 @@ import matplotlib.pyplot as plt
 import config
 from style_improved import (
     apply_style, FONT, DPI, W_DOUBLE,
-    MODEL_SET_ORDER, MODEL_SET_DISPLAY_SHORT, model_set_color,
+    MODEL_SET_ORDER, MODEL_SET_DISPLAY_SHORT,
     add_panel_label,
 )
 
@@ -66,6 +66,19 @@ OUTPUT_TARGETS = [
     (INSILICO_CURVE_DIR, INSILICO_CURVE_DIR / "png"),
     (MANUSCRIPT_FIGURES_DIR, MANUSCRIPT_FIGURES_DIR),
 ]
+
+# Match the composite Figure 1 bottom-row model-set palette.
+MODEL_SET_COLORS = {
+    "all_models": "#222222",
+    "sota": "#6A3D9A",
+    "training_objective": "#8C564B",
+    "architecture": "#009E73",
+    "dataset": "#E7298A",
+}
+
+
+def model_set_color(name: str) -> str:
+    return MODEL_SET_COLORS.get(name, "#666666")
 
 
 @lru_cache(maxsize=None)

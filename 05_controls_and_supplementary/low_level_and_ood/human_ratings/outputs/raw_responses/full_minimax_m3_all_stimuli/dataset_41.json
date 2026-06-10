@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_41",
+    "stim_key": "dataset_41",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 41,
+    "file_index": 41,
+    "image_name": "image_0041.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0041.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion accessories\",\n  \"short_caption\": \"Magenta and beige plaid crossbody handbag with leather flap and gold clasp on stone surface\",\n  \"main_objects\": [\"handbag\", \"crossbody bag\", \"clasp\", \"strap\"],\n  \"possible_interpretations\": [\"designer handbag product photo\", \"luxury crossbody bag advertisement\", \"fashion e-commerce listing\", \"Burberry-style plaid bag\"],\n  \"uncertainty_notes\": \"Staged product photography; brand identity uncertain but plaid pattern resembles Burberry Haymarket check.\",\n  \"quality_flags\": [\"studio_lighting\", \"product_photography\", \"plain_background\"]\n}",
+      "response": {
+        "id": "gen-1780319010-b00wUhJZ13Z9FqNVHi0E",
+        "object": "chat.completion",
+        "created": 1780319010,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion accessories\",\n  \"short_caption\": \"Magenta and beige plaid crossbody handbag with leather flap and gold clasp on stone surface\",\n  \"main_objects\": [\"handbag\", \"crossbody bag\", \"clasp\", \"strap\"],\n  \"possible_interpretations\": [\"designer handbag product photo\", \"luxury crossbody bag advertisement\", \"fashion e-commerce listing\", \"Burberry-style plaid bag\"],\n  \"uncertainty_notes\": \"Staged product photography; brand identity uncertain but plaid pattern resembles Burberry Haymarket check.\",\n  \"quality_flags\": [\"studio_lighting\", \"product_photography\", \"plain_background\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a handbag/crossbody bag with a distinctive checkered/plaid pattern (likely Burberry style) and a magenta/pink flap, sitting on what appears to be a stone or marble surface. This looks like a product photography shot, likely for e-commerce.\n\nLet me analyze:\n- Recognizability: Very clear, it's a handbag - 5\n- Ambiguity: Low, clearly a handbag - 1\n- Natural photo typicality: This is product photography, not really a \"natural\" photo - 2\n- Visual clutter: Very clean, single object - 1\n- Object centricity: High, single object dominates - 5\n- Scene centricity: Low, not really a scene - 1\n- Caption confidence: High, can easily caption - 5\n\nSalient objects: 1 (the bag)\nDistinct categories: 1 (handbag)\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: no (I see what might be a brand stamp but it's small)\nContains vehicle: no\nContains food: no\nContains indoor scene: yes (studio setting)\nContains outdoor scene: no\nContains artificial/rendered: no, but it's styled product photography\nContains occlusion: no\nContains unusual viewpoint: no\nContains multiple main objects: no\n\nDominant content: object\nImage style: edited_photo (product photography)\nSemantic domain: fashion/accessories\n\nShort caption: Pink and beige plaid crossbody handbag with a leather flap and gold clasp.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a handbag/crossbody bag with a distinctive checkered/plaid pattern (likely Burberry style) and a magenta/pink flap, sitting on what appears to be a stone or marble surface. This looks like a product photography shot, likely for e-commerce.\n\nLet me analyze:\n- Recognizability: Very clear, it's a handbag - 5\n- Ambiguity: Low, clearly a handbag - 1\n- Natural photo typicality: This is product photography, not really a \"natural\" photo - 2\n- Visual clutter: Very clean, single object - 1\n- Object centricity: High, single object dominates - 5\n- Scene centricity: Low, not really a scene - 1\n- Caption confidence: High, can easily caption - 5\n\nSalient objects: 1 (the bag)\nDistinct categories: 1 (handbag)\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: no (I see what might be a brand stamp but it's small)\nContains vehicle: no\nContains food: no\nContains indoor scene: yes (studio setting)\nContains outdoor scene: no\nContains artificial/rendered: no, but it's styled product photography\nContains occlusion: no\nContains unusual viewpoint: no\nContains multiple main objects: no\n\nDominant content: object\nImage style: edited_photo (product photography)\nSemantic domain: fashion/accessories\n\nShort caption: Pink and beige plaid crossbody handbag with a leather flap and gold clasp.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 679,
+          "total_tokens": 2201,
+          "cost": 0.00112116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00112116,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008148
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 353,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

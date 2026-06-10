@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_72",
+    "stim_key": "sota_72",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 72,
+    "file_index": 72,
+    "image_name": "image_0072.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0072.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 2, \"natural_photo_typicality\": 5, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"person_face\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"hospital_birthing\", \"short_caption\": \"Partner kisses woman's hand while she lies in hospital bed wearing a cold compress\", \"main_objects\": [\"man with glasses\", \"woman in bed\", \"hospital bed\", \"medical monitoring equipment\", \"cold compress headband\", \"wall-mounted papers and phone\"], \"possible_interpretations\": [\"partner supporting during labor\", \"emotional support during childbirth\", \"post-birth intimate moment\", \"medical procedure with family support\"], \"uncertainty_notes\": \"Black and white photography; exact stage of labor/birth is unclear but hospital/birthing context is evident from medical equipment, belly, and bed setup\", \"quality_flags\": [\"black_and_white\", \"partial_occlusion_of_female_face\", \"background_text_illegible\"]}",
+      "response": {
+        "id": "gen-1780319170-mHLF7TAXZhggR2nn1eu0",
+        "object": "chat.completion",
+        "created": 1780319170,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 2, \"natural_photo_typicality\": 5, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"person_face\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"hospital_birthing\", \"short_caption\": \"Partner kisses woman's hand while she lies in hospital bed wearing a cold compress\", \"main_objects\": [\"man with glasses\", \"woman in bed\", \"hospital bed\", \"medical monitoring equipment\", \"cold compress headband\", \"wall-mounted papers and phone\"], \"possible_interpretations\": [\"partner supporting during labor\", \"emotional support during childbirth\", \"post-birth intimate moment\", \"medical procedure with family support\"], \"uncertainty_notes\": \"Black and white photography; exact stage of labor/birth is unclear but hospital/birthing context is evident from medical equipment, belly, and bed setup\", \"quality_flags\": [\"black_and_white\", \"partial_occlusion_of_female_face\", \"background_text_illegible\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image is a black and white photograph showing what appears to be a hospital/birthing room scene. There's a man wearing glasses and a dark shirt leaning over and kissing/holding the hand of a woman who is lying in a hospital bed. The woman has a cloth/headband on her forehead (likely a cold compress) and appears to be in labor or post-labor. There's medical equipment visible including what looks like a phone/intercom system on the wall, medical monitors, and various papers/notices posted on the wall. The woman appears to be pregnant (visible belly under the sheets) and there are medical monitoring devices attached to her abdomen.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - Very clear scene, easily recognizable as a hospital/birthing scene\n- ambiguity: 2 - Fairly clear what's happening, a partner supporting during labor/birth\n- natural_photo_typicality: 5 - Looks like a typical candid photograph\n- visual_clutter: 3 - Some medical equipment and papers in background, but the main subjects are clear\n- object_centricity: 2 - The people are the focus, not objects\n- scene_centricity: 4 - It's a scene with multiple elements (people, hospital room, equipment)\n- caption_confidence: 5 - Very confident about what's happening\n\n- estimated_salient_object_count: 3 (man, woman, medical bed/equipment)\n- estimated_distinct_object_categories: 3 (people, medical equipment, hospital furnishings)\n\n- contains_person: true\n- contains_face: true (both faces visible, woman's partially obscured)\n- contains_animal: false\n- contains_text: true (papers on wall)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (hospital room)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (man's body partially cut off, woman partially covered by sheets)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (man and woman are both main subjects)\n\n- dominant_content_type: \"person_face\" or \"mixed\" - there are two people as main subjects\n- image_style: \"natural_photo\" but black and white\n- semantic_domain: \"hospital/birthing\"\n\nShort caption: \"Partner kisses woman's hand during childbirth in hospital bed\"\n\nMain objects: man, woman, hospital bed, medical equipment, cold compress, papers on wall\n\nPossible interpretations:\n1. Partner supporting during labor\n2. Post-birth moment\n3. Emotional support during medical procedure\n\nUncertainty notes: Black and white makes it harder to determine exact medical context, but scene is clearly hospital/birthing related.\n\nQuality flags: black_and_white, low_lighting_somewhat, contains_text_illegible",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image is a black and white photograph showing what appears to be a hospital/birthing room scene. There's a man wearing glasses and a dark shirt leaning over and kissing/holding the hand of a woman who is lying in a hospital bed. The woman has a cloth/headband on her forehead (likely a cold compress) and appears to be in labor or post-labor. There's medical equipment visible including what looks like a phone/intercom system on the wall, medical monitors, and various papers/notices posted on the wall. The woman appears to be pregnant (visible belly under the sheets) and there are medical monitoring devices attached to her abdomen.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - Very clear scene, easily recognizable as a hospital/birthing scene\n- ambiguity: 2 - Fairly clear what's happening, a partner supporting during labor/birth\n- natural_photo_typicality: 5 - Looks like a typical candid photograph\n- visual_clutter: 3 - Some medical equipment and papers in background, but the main subjects are clear\n- object_centricity: 2 - The people are the focus, not objects\n- scene_centricity: 4 - It's a scene with multiple elements (people, hospital room, equipment)\n- caption_confidence: 5 - Very confident about what's happening\n\n- estimated_salient_object_count: 3 (man, woman, medical bed/equipment)\n- estimated_distinct_object_categories: 3 (people, medical equipment, hospital furnishings)\n\n- contains_person: true\n- contains_face: true (both faces visible, woman's partially obscured)\n- contains_animal: false\n- contains_text: true (papers on wall)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (hospital room)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (man's body partially cut off, woman partially covered by sheets)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (man and woman are both main subjects)\n\n- dominant_content_type: \"person_face\" or \"mixed\" - there are two people as main subjects\n- image_style: \"natural_photo\" but black and white\n- semantic_domain: \"hospital/birthing\"\n\nShort caption: \"Partner kisses woman's hand during childbirth in hospital bed\"\n\nMain objects: man, woman, hospital bed, medical equipment, cold compress, papers on wall\n\nPossible interpretations:\n1. Partner supporting during labor\n2. Post-birth moment\n3. Emotional support during medical procedure\n\nUncertainty notes: Black and white makes it harder to determine exact medical context, but scene is clearly hospital/birthing related.\n\nQuality flags: black_and_white, low_lighting_somewhat, contains_text_illegible",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1363,
+          "completion_tokens": 967,
+          "total_tokens": 2330,
+          "cost": 0.00141906,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00141906,
+            "upstream_inference_prompt_cost": 0.00025866,
+            "upstream_inference_completions_cost": 0.0011604
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 712,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

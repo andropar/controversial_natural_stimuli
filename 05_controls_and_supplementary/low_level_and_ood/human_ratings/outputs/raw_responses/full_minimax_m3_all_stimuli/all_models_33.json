@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_33",
+    "stim_key": "all_models_33",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 33,
+    "file_index": 33,
+    "image_name": "image_0033.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0033.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"interior/home decor\",\n  \"short_caption\": \"Round blue abstract-patterned area rug staged in bright room with lounge chair, side table, and succulent.\",\n  \"main_objects\": [\"round blue rug\", \"lounge chair\", \"striped pillow\", \"side table\", \"potted succulent\", \"framed artwork\"],\n  \"possible_interpretations\": [\n    \"product photo of an area rug in a styled room\",\n    \"interior design showcase with a modern blue rug as focal point\",\n    \"home decor catalog image featuring a contemporary living space\"\n  ],\n  \"uncertainty_notes\": \"Image appears to be a staged product/marketing photo rather than a candid natural photograph; lighting is even and composition emphasizes the rug.\",\n  \"quality_flags\": [\"staged_product_shot\", \"lounge_chair_truncated\", \"bright_overexposed_background\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318766-AAPWtHWYw5MVdO3VNGVo",
+        "object": "chat.completion",
+        "created": 1780318766,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"interior/home decor\",\n  \"short_caption\": \"Round blue abstract-patterned area rug staged in bright room with lounge chair, side table, and succulent.\",\n  \"main_objects\": [\"round blue rug\", \"lounge chair\", \"striped pillow\", \"side table\", \"potted succulent\", \"framed artwork\"],\n  \"possible_interpretations\": [\n    \"product photo of an area rug in a styled room\",\n    \"interior design showcase with a modern blue rug as focal point\",\n    \"home decor catalog image featuring a contemporary living space\"\n  ],\n  \"uncertainty_notes\": \"Image appears to be a staged product/marketing photo rather than a candid natural photograph; lighting is even and composition emphasizes the rug.\",\n  \"quality_flags\": [\"staged_product_shot\", \"lounge_chair_truncated\", \"bright_overexposed_background\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an interior scene with:\n- A large round blue and white patterned area rug as the dominant feature\n- A modern lounge chair with a striped (navy/white) pillow on the left\n- A small side table on the right with a gold/brass top and metallic base, holding a small potted plant (succulent) and what appears to be a book\n- A framed picture/artwork on the wall\n- French doors in the background showing a garden/outdoor scene with trees\n- Wooden flooring\n- This appears to be a product/staged photo, likely for a rug\n\nLet me assess each dimension:\n\n- recognizability: Very clear, easy to identify the main elements (4-5)\n- ambiguity: Low ambiguity, it's clearly an interior room scene (1-2)\n- natural_photo_typicality: This looks like a staged product photo rather than a natural snapshot (3-4)\n- visual_clutter: Moderate, several objects but organized (3)\n- object_centricity: The rug is the central object dominating the image (4)\n- scene_centricity: It's also a room scene (3-4)\n- caption_confidence: High confidence (4-5)\n\nObjects: rug, chair, pillow, side table, plant, book, framed art, doors, trees\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: true (visible through doors)\n- contains_artificial_or_rendered_content: possibly, looks like a product photo\n- contains_occlusion_or_truncation: the chair is partially cut off\n- contains_multiple_main_objects: true (rug, chair, table)\n\ndominant_content_type: object (the rug is the main subject)\nimage_style: natural_photo but likely edited/staged\nsemantic_domain: interior/home decor\n\nLet me write the short caption.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an interior scene with:\n- A large round blue and white patterned area rug as the dominant feature\n- A modern lounge chair with a striped (navy/white) pillow on the left\n- A small side table on the right with a gold/brass top and metallic base, holding a small potted plant (succulent) and what appears to be a book\n- A framed picture/artwork on the wall\n- French doors in the background showing a garden/outdoor scene with trees\n- Wooden flooring\n- This appears to be a product/staged photo, likely for a rug\n\nLet me assess each dimension:\n\n- recognizability: Very clear, easy to identify the main elements (4-5)\n- ambiguity: Low ambiguity, it's clearly an interior room scene (1-2)\n- natural_photo_typicality: This looks like a staged product photo rather than a natural snapshot (3-4)\n- visual_clutter: Moderate, several objects but organized (3)\n- object_centricity: The rug is the central object dominating the image (4)\n- scene_centricity: It's also a room scene (3-4)\n- caption_confidence: High confidence (4-5)\n\nObjects: rug, chair, pillow, side table, plant, book, framed art, doors, trees\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: true (visible through doors)\n- contains_artificial_or_rendered_content: possibly, looks like a product photo\n- contains_occlusion_or_truncation: the chair is partially cut off\n- contains_multiple_main_objects: true (rug, chair, table)\n\ndominant_content_type: object (the rug is the main subject)\nimage_style: natural_photo but likely edited/staged\nsemantic_domain: interior/home decor\n\nLet me write the short caption.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 836,
+          "total_tokens": 2358,
+          "cost": 0.00143244,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00143244,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010032
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 471,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

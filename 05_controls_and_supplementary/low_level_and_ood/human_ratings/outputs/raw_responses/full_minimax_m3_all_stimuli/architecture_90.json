@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_90",
+    "stim_key": "architecture_90",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 90,
+    "file_index": 90,
+    "image_name": "image_0090.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0090.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 3, \"visual_clutter\": 2, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 6, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"scene\", \"image_style\": \"edited_photo\", \"semantic_domain\": \"interior_design\", \"short_caption\": \"A staged bedroom with a dark wood bed, gray bedding, matching crystal-based lamps, and framed wall art.\", \"main_objects\": [\"bed\", \"table lamps\", \"framed pictures\", \"nightstands\", \"bench\", \"throw pillow\"], \"possible_interpretations\": [\"staged master bedroom\", \"bedroom furniture showroom\", \"real estate listing photo\", \"interior design catalog image\", \"hotel suite bedroom\"], \"uncertainty_notes\": \"Image appears to be a professionally staged interior photograph, likely for furniture retail, catalog, or real estate use. Slight color grading visible.\", \"quality_flags\": [\"staged_scene\", \"professional_photography\", \"symmetrical_composition\"]}",
+      "response": {
+        "id": "gen-1780318949-kC4RBzGd5xmDYPbuNSuG",
+        "object": "chat.completion",
+        "created": 1780318949,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 3, \"visual_clutter\": 2, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 6, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"scene\", \"image_style\": \"edited_photo\", \"semantic_domain\": \"interior_design\", \"short_caption\": \"A staged bedroom with a dark wood bed, gray bedding, matching crystal-based lamps, and framed wall art.\", \"main_objects\": [\"bed\", \"table lamps\", \"framed pictures\", \"nightstands\", \"bench\", \"throw pillow\"], \"possible_interpretations\": [\"staged master bedroom\", \"bedroom furniture showroom\", \"real estate listing photo\", \"interior design catalog image\", \"hotel suite bedroom\"], \"uncertainty_notes\": \"Image appears to be a professionally staged interior photograph, likely for furniture retail, catalog, or real estate use. Slight color grading visible.\", \"quality_flags\": [\"staged_scene\", \"professional_photography\", \"symmetrical_composition\"]}",
+              "refusal": null,
+              "reasoning": "The user wants me to annotate this image according to a specific schema. Let me carefully analyze the image:\n\nThe image shows a bedroom with:\n- A bed with a dark wooden frame/sleigh bed\n- Gray and white bedding/comforter with floral/damask pattern\n- Yellow decorative pillow\n- Gray pillows\n- Three framed pictures on the wall above the bed (black frames, white mats, appear to show tree branches)\n- Two matching table lamps with white shades and crystal/glass bases on nightstands\n- A nightstand on the left with some flowers/vase\n- A nightstand on the right with picture frames\n- A white bench at the foot of the bed\n- Gray walls\n- Carpeted floor\n\nThis is clearly a staged/styled interior photograph, likely for a home decor catalog or real estate listing. It looks like a professional photograph.\n\nLet me rate according to the schema:\n\n- recognizability: 5 - Very clearly recognizable as a bedroom\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 3 - It's a photograph but appears staged/professional, not a candid natural photo\n- visual_clutter: 2 - Reasonably clean, organized\n- object_centricity: 3 - The bed is the central object\n- scene_centricity: 4 - It's primarily showing a room/scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 4-5 (bed, lamps, pictures, bench)\n- estimated_distinct_object_categories: 5-6 (bed, lamp, picture, bench, nightstand, pillow)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it's a photo, though staged)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (the bed dominates)\n\n- dominant_content_type: \"scene\"\n- image_style: \"edited_photo\" (staged interior, possibly color-graded)\n- semantic_domain: \"interior_design\" or \"bedroom\"\n\nshort_caption: \"A staged bedroom with a dark wood bed, gray bedding, matching lamps, and framed art.\"\nmain_objects: [\"bed\", \"lamps\", \"framed pictures\", \"nightstand\", \"bench\", \"pillows\"]\npossible_interpretations: [\"hotel room\", \"master bedroom\", \"bedroom furniture showcase\", \"real estate listing\", \"interior design photo\"]\nuncertainty_notes: \"Image appears to be a professional interior design or real estate photo\"\nquality_flags: [\"staged\", \"professional_photography\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The user wants me to annotate this image according to a specific schema. Let me carefully analyze the image:\n\nThe image shows a bedroom with:\n- A bed with a dark wooden frame/sleigh bed\n- Gray and white bedding/comforter with floral/damask pattern\n- Yellow decorative pillow\n- Gray pillows\n- Three framed pictures on the wall above the bed (black frames, white mats, appear to show tree branches)\n- Two matching table lamps with white shades and crystal/glass bases on nightstands\n- A nightstand on the left with some flowers/vase\n- A nightstand on the right with picture frames\n- A white bench at the foot of the bed\n- Gray walls\n- Carpeted floor\n\nThis is clearly a staged/styled interior photograph, likely for a home decor catalog or real estate listing. It looks like a professional photograph.\n\nLet me rate according to the schema:\n\n- recognizability: 5 - Very clearly recognizable as a bedroom\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 3 - It's a photograph but appears staged/professional, not a candid natural photo\n- visual_clutter: 2 - Reasonably clean, organized\n- object_centricity: 3 - The bed is the central object\n- scene_centricity: 4 - It's primarily showing a room/scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 4-5 (bed, lamps, pictures, bench)\n- estimated_distinct_object_categories: 5-6 (bed, lamp, picture, bench, nightstand, pillow)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it's a photo, though staged)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (the bed dominates)\n\n- dominant_content_type: \"scene\"\n- image_style: \"edited_photo\" (staged interior, possibly color-graded)\n- semantic_domain: \"interior_design\" or \"bedroom\"\n\nshort_caption: \"A staged bedroom with a dark wood bed, gray bedding, matching lamps, and framed art.\"\nmain_objects: [\"bed\", \"lamps\", \"framed pictures\", \"nightstand\", \"bench\", \"pillows\"]\npossible_interpretations: [\"hotel room\", \"master bedroom\", \"bedroom furniture showcase\", \"real estate listing\", \"interior design photo\"]\nuncertainty_notes: \"Image appears to be a professional interior design or real estate photo\"\nquality_flags: [\"staged\", \"professional_photography\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 955,
+          "total_tokens": 2477,
+          "cost": 0.00157524,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00157524,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.001146
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 655,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

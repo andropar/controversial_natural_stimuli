@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_224",
+    "stim_key": "vicco_224",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 224,
+    "file_index": 223,
+    "image_name": "shared_4rep_vicco_224.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_224.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature_aquatic\",\n  \"short_caption\": \"Split-level view of a clear stream showing plants and rocks above water and a sandy bottom below.\",\n  \"main_objects\": [\"rocks\", \"plants\", \"water surface\", \"underwater substrate\"],\n  \"possible_interpretations\": [\"tropical stream with clear water\", \"pond or spring with submerged plants\", \"shallow river with visible bottom\"],\n  \"uncertainty_notes\": \"Specific location type unclear; underwater details are somewhat blurry due to water clarity and movement.\",\n  \"quality_flags\": [\"split_view_composition\", \"slight_underwater_blur\"]\n}",
+      "response": {
+        "id": "gen-1780319648-nNi3ctzl84p8t81YScPy",
+        "object": "chat.completion",
+        "created": 1780319648,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature_aquatic\",\n  \"short_caption\": \"Split-level view of a clear stream showing plants and rocks above water and a sandy bottom below.\",\n  \"main_objects\": [\"rocks\", \"plants\", \"water surface\", \"underwater substrate\"],\n  \"possible_interpretations\": [\"tropical stream with clear water\", \"pond or spring with submerged plants\", \"shallow river with visible bottom\"],\n  \"uncertainty_notes\": \"Specific location type unclear; underwater details are somewhat blurry due to water clarity and movement.\",\n  \"quality_flags\": [\"split_view_composition\", \"slight_underwater_blur\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a split view - above water and below water. The top portion shows a natural outdoor scene with rocks, plants/grasses, and what appears to be a tree trunk, along with the water surface. The bottom portion shows an underwater view of a sandy/rocky bottom with greenish water. This is a typical split-shot or over-under photograph, common in nature photography.\n\nLet me annotate this carefully:\n\n- Recognizability: The content is fairly clear - it's a split shot of water with a natural scene above and underwater view below. Rating: 4\n- Ambiguity: Not many interpretations - it's clearly a water scene with above/below view. Rating: 2\n- Natural photo typicality: Looks like a natural photograph, though the split shot is somewhat stylized. Rating: 4\n- Visual clutter: Multiple elements (rocks, plants, water surface, underwater view). Rating: 3\n- Object centricity: No single dominant object - it's more of a scene. Rating: 2\n- Scene centricity: Yes, this is primarily a scene. Rating: 4\n- Caption confidence: Can be confidently captioned. Rating: 4\n\nEstimated salient object count: Several - rocks, plants, water surface, underwater substrate. Maybe 4-5.\nDistinct object categories: rocks, plants, water, underwater substrate. Maybe 3-4.\n\nNo person, face, animal, text, vehicle, food visible.\nIndoor: no\nOutdoor: yes\nArtificial/rendered: no\nOcclusion/truncation: not really\nUnusual viewpoint: yes, split view is somewhat unusual\nMultiple main objects: somewhat, but it's more of a scene\n\nDominant content: scene\nImage style: natural photo\nSemantic domain: nature/aquatic\n\nShort caption: \"Split-level view of a clear stream with rocks, plants above and sandy bottom below water.\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a split view - above water and below water. The top portion shows a natural outdoor scene with rocks, plants/grasses, and what appears to be a tree trunk, along with the water surface. The bottom portion shows an underwater view of a sandy/rocky bottom with greenish water. This is a typical split-shot or over-under photograph, common in nature photography.\n\nLet me annotate this carefully:\n\n- Recognizability: The content is fairly clear - it's a split shot of water with a natural scene above and underwater view below. Rating: 4\n- Ambiguity: Not many interpretations - it's clearly a water scene with above/below view. Rating: 2\n- Natural photo typicality: Looks like a natural photograph, though the split shot is somewhat stylized. Rating: 4\n- Visual clutter: Multiple elements (rocks, plants, water surface, underwater view). Rating: 3\n- Object centricity: No single dominant object - it's more of a scene. Rating: 2\n- Scene centricity: Yes, this is primarily a scene. Rating: 4\n- Caption confidence: Can be confidently captioned. Rating: 4\n\nEstimated salient object count: Several - rocks, plants, water surface, underwater substrate. Maybe 4-5.\nDistinct object categories: rocks, plants, water, underwater substrate. Maybe 3-4.\n\nNo person, face, animal, text, vehicle, food visible.\nIndoor: no\nOutdoor: yes\nArtificial/rendered: no\nOcclusion/truncation: not really\nUnusual viewpoint: yes, split view is somewhat unusual\nMultiple main objects: somewhat, but it's more of a scene\n\nDominant content: scene\nImage style: natural photo\nSemantic domain: nature/aquatic\n\nShort caption: \"Split-level view of a clear stream with rocks, plants above and sandy bottom below water.\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 742,
+          "total_tokens": 2264,
+          "cost": 0.00119676,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00119676,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008904
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 444,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

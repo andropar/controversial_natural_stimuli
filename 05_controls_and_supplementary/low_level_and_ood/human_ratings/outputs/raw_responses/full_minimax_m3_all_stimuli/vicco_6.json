@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_6",
+    "stim_key": "vicco_6",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 6,
+    "file_index": 5,
+    "image_name": "shared_4rep_vicco_006.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_006.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor_recreation\",\n\n  \"short_caption\": \"Woman in black athletic wear paddling a canoe down a tree-lined river\",\n  \"main_objects\": [\"person\", \"canoe\", \"paddle\", \"river\", \"trees\"],\n  \"possible_interpretations\": [\n    \"woman canoeing on a calm forest river\",\n    \"person kayaking on a wooded waterway\",\n    \"leisurely solo paddle through a green corridor\"\n  ],\n  \"uncertainty_notes\": \"Only the back of the head is visible, no facial features. The vessel appears to be an open canoe rather than a kayak based on the visible interior seat structure. A small sticker is visible on the canoe but is not legible text.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319392-HBp1EEZcGDuGHU7lU5nh",
+        "object": "chat.completion",
+        "created": 1780319392,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor_recreation\",\n\n  \"short_caption\": \"Woman in black athletic wear paddling a canoe down a tree-lined river\",\n  \"main_objects\": [\"person\", \"canoe\", \"paddle\", \"river\", \"trees\"],\n  \"possible_interpretations\": [\n    \"woman canoeing on a calm forest river\",\n    \"person kayaking on a wooded waterway\",\n    \"leisurely solo paddle through a green corridor\"\n  ],\n  \"uncertainty_notes\": \"Only the back of the head is visible, no facial features. The vessel appears to be an open canoe rather than a kayak based on the visible interior seat structure. A small sticker is visible on the canoe but is not legible text.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a person from behind, sitting in what appears to be a canoe. The person has dark hair tied up in a bun, wearing a black sports bra/tank top with blue straps visible underneath, and black shorts. They are holding what appears to be a paddle. The canoe is on a river or calm body of water, with lush green trees lining the banks. The scene is outdoors on a sunny day with some clouds in the sky.\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - very clearly recognizable as a person canoeing on a river\n- ambiguity: 1 - very clear single interpretation\n- natural_photo_typicality: 5 - looks like a typical natural photograph\n- visual_clutter: 2 - relatively uncluttered, main subject is clear\n- object_centricity: 3 - there's a clear person but it's also a scene\n- scene_centricity: 4 - it's more of a scene with the person as part of it\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 2 (person, canoe)\n- estimated_distinct_object_categories: 3-4 (person, canoe, water, trees)\n\n- contains_person: true\n- contains_face: false (back of head visible)\n- contains_animal: false\n- contains_text: false (there might be a small sticker/label on the canoe but it's not clear text)\n- contains_vehicle: true (canoe is a vehicle/vessel)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (typical POV from behind)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: person (but partially - could be \"mixed\" since it's person + scene)\n- image_style: natural_photo\n- semantic_domain: outdoor recreation / canoeing\n\n- short_caption: \"Woman in black athletic wear paddling a canoe on a tree-lined river\"\n- main_objects: [\"person\", \"canoe\", \"paddle\", \"river\", \"trees\"]\n- possible_interpretations: [\"woman canoeing on a calm river\", \"person kayaking (though it looks more like a canoe)\", \"leisurely paddle on a forest river\"]\n- uncertainty_notes: \"Cannot see face, only back of head. The vessel could be a kayak or canoe - looks like a canoe based on the open structure.\"\n\nWait, looking more carefully - she's sitting in what looks like a canoe (open boat with visible interior), and holding what appears to be a paddle. It's not a kayak since you sit on top of those.\n\nLet me reconsider object_centricity vs scene_centricity. The person is the clear focal point, so object_centricity might be higher. But it's also clearly depicting a scene/activity. I'll go with person as the main subject, so object_centricity around 3-4.\n\nActually, looking again, the person is the central figure but the scene context (river, trees) is very prominent. I'd say object_centricity: 3, scene_centricity: 4.\n\nFor dominant_content_type, since there's a clear person as the main subject, I'll go with \"person\" - but she's seen from behind, no face. Maybe \"mixed\" is more appropriate since it's person + scene. Let me go with \"person\" since the person dominates the frame.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a person from behind, sitting in what appears to be a canoe. The person has dark hair tied up in a bun, wearing a black sports bra/tank top with blue straps visible underneath, and black shorts. They are holding what appears to be a paddle. The canoe is on a river or calm body of water, with lush green trees lining the banks. The scene is outdoors on a sunny day with some clouds in the sky.\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - very clearly recognizable as a person canoeing on a river\n- ambiguity: 1 - very clear single interpretation\n- natural_photo_typicality: 5 - looks like a typical natural photograph\n- visual_clutter: 2 - relatively uncluttered, main subject is clear\n- object_centricity: 3 - there's a clear person but it's also a scene\n- scene_centricity: 4 - it's more of a scene with the person as part of it\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 2 (person, canoe)\n- estimated_distinct_object_categories: 3-4 (person, canoe, water, trees)\n\n- contains_person: true\n- contains_face: false (back of head visible)\n- contains_animal: false\n- contains_text: false (there might be a small sticker/label on the canoe but it's not clear text)\n- contains_vehicle: true (canoe is a vehicle/vessel)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (typical POV from behind)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: person (but partially - could be \"mixed\" since it's person + scene)\n- image_style: natural_photo\n- semantic_domain: outdoor recreation / canoeing\n\n- short_caption: \"Woman in black athletic wear paddling a canoe on a tree-lined river\"\n- main_objects: [\"person\", \"canoe\", \"paddle\", \"river\", \"trees\"]\n- possible_interpretations: [\"woman canoeing on a calm river\", \"person kayaking (though it looks more like a canoe)\", \"leisurely paddle on a forest river\"]\n- uncertainty_notes: \"Cannot see face, only back of head. The vessel could be a kayak or canoe - looks like a canoe based on the open structure.\"\n\nWait, looking more carefully - she's sitting in what looks like a canoe (open boat with visible interior), and holding what appears to be a paddle. It's not a kayak since you sit on top of those.\n\nLet me reconsider object_centricity vs scene_centricity. The person is the clear focal point, so object_centricity might be higher. But it's also clearly depicting a scene/activity. I'll go with person as the main subject, so object_centricity around 3-4.\n\nActually, looking again, the person is the central figure but the scene context (river, trees) is very prominent. I'd say object_centricity: 3, scene_centricity: 4.\n\nFor dominant_content_type, since there's a clear person as the main subject, I'll go with \"person\" - but she's seen from behind, no face. Maybe \"mixed\" is more appropriate since it's person + scene. Let me go with \"person\" since the person dominates the frame.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 1124,
+          "total_tokens": 2646,
+          "cost": 0.00165516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00165516,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0013488
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 810,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

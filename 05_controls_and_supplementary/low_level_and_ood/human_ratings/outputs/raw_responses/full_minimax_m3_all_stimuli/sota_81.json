@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_81",
+    "stim_key": "sota_81",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 81,
+    "file_index": 81,
+    "image_name": "image_0081.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0081.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"landscape_outdoor\",\n  \"short_caption\": \"A person stands on a rocky cliff edge overlooking a hazy mountain canyon with pine forests below.\",\n  \"main_objects\": [\"person\", \"rocky cliff\", \"mountain\", \"pine trees\"],\n  \"possible_interpretations\": [\n    \"A hiker or rock climber surveying a valley\",\n    \"A person contemplating the view from a cliff\",\n    \"A tourist at a scenic overlook\"\n  ],\n  \"uncertainty_notes\": \"Face is too small/distant to confirm; hazy atmosphere could be fog or wildfire smoke.\",\n  \"quality_flags\": [\"low_visibility\", \"person_partially_truncated\"]\n}",
+      "response": {
+        "id": "gen-1780319182-ll9P2XiyDbrCQlqx8lzX",
+        "object": "chat.completion",
+        "created": 1780319182,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"landscape_outdoor\",\n  \"short_caption\": \"A person stands on a rocky cliff edge overlooking a hazy mountain canyon with pine forests below.\",\n  \"main_objects\": [\"person\", \"rocky cliff\", \"mountain\", \"pine trees\"],\n  \"possible_interpretations\": [\n    \"A hiker or rock climber surveying a valley\",\n    \"A person contemplating the view from a cliff\",\n    \"A tourist at a scenic overlook\"\n  ],\n  \"uncertainty_notes\": \"Face is too small/distant to confirm; hazy atmosphere could be fog or wildfire smoke.\",\n  \"quality_flags\": [\"low_visibility\", \"person_partially_truncated\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a person standing on the edge of a cliff/rocky outcrop, looking down into a vast canyon or valley. There's a misty/hazy atmosphere, with forested mountains in the background and rocky cliff faces. The person appears to be wearing dark clothing and a cap. The scene is very atmospheric with muted colors, likely from smoke or fog.\n\nLet me assess each dimension:\n\n- Recognizability: Clear what's happening - person on cliff edge overlooking a mountain valley. 4-5\n- Ambiguity: Low ambiguity - it's clearly a person on a cliff. 1-2\n- Natural photo typicality: Looks like a real photograph, though the hazy atmosphere could be from wildfire smoke. 4\n- Visual clutter: The scene has multiple elements but they're spread out. 3\n- Object centricity: The person is small relative to the scene, but is a focal point. The scene dominates. 2\n- Scene centricity: Yes, this is primarily a landscape/scene image. 5\n- Caption confidence: Easy to caption. 4-5\n\nSalient objects: 1 person, the cliff they're standing on. Maybe 2 main salient items.\nObject categories: person, rock/cliff, trees, mountains - about 4 categories.\n\nContains person: yes\nContains face: hard to tell, the person is small and far, but there might be a face visible\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial or rendered content: no\nContains occlusion or truncation: the person's body may be partially out of frame\nContains unusual viewpoint: somewhat unusual - the photographer is behind/above the person looking out\nContains multiple main objects: no, one main subject (person) and the scene\n\nDominant content: scene\nImage style: natural_photo (though hazy)\nSemantic domain: landscape/nature/outdoor\n\nShort caption: \"A person standing on a cliff edge overlooking a misty mountain valley\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a person standing on the edge of a cliff/rocky outcrop, looking down into a vast canyon or valley. There's a misty/hazy atmosphere, with forested mountains in the background and rocky cliff faces. The person appears to be wearing dark clothing and a cap. The scene is very atmospheric with muted colors, likely from smoke or fog.\n\nLet me assess each dimension:\n\n- Recognizability: Clear what's happening - person on cliff edge overlooking a mountain valley. 4-5\n- Ambiguity: Low ambiguity - it's clearly a person on a cliff. 1-2\n- Natural photo typicality: Looks like a real photograph, though the hazy atmosphere could be from wildfire smoke. 4\n- Visual clutter: The scene has multiple elements but they're spread out. 3\n- Object centricity: The person is small relative to the scene, but is a focal point. The scene dominates. 2\n- Scene centricity: Yes, this is primarily a landscape/scene image. 5\n- Caption confidence: Easy to caption. 4-5\n\nSalient objects: 1 person, the cliff they're standing on. Maybe 2 main salient items.\nObject categories: person, rock/cliff, trees, mountains - about 4 categories.\n\nContains person: yes\nContains face: hard to tell, the person is small and far, but there might be a face visible\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial or rendered content: no\nContains occlusion or truncation: the person's body may be partially out of frame\nContains unusual viewpoint: somewhat unusual - the photographer is behind/above the person looking out\nContains multiple main objects: no, one main subject (person) and the scene\n\nDominant content: scene\nImage style: natural_photo (though hazy)\nSemantic domain: landscape/nature/outdoor\n\nShort caption: \"A person standing on a cliff edge overlooking a misty mountain valley\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 791,
+          "total_tokens": 2313,
+          "cost": 0.00125556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00125556,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009492
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 503,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

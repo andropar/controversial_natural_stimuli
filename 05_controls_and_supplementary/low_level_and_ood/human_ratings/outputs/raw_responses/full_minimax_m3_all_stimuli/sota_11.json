@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_11",
+    "stim_key": "sota_11",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 11,
+    "file_index": 11,
+    "image_name": "image_0011.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0011.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"portrait_event\",\n  \"short_caption\": \"Man in checkered shirt standing before a blue backdrop with airplane silhouettes\",\n  \"main_objects\": [\"man\", \"checkered shirt\", \"airplane silhouette backdrop\"],\n  \"possible_interpretations\": [\n    \"Press conference or promotional event photo\",\n    \"Travel or airline industry event\",\n    \"Posed portrait with branded backdrop\"\n  ],\n  \"uncertainty_notes\": \"Image is low resolution and slightly blurry; backdrop context and identity of the person are unclear\",\n  \"quality_flags\": [\"low_resolution\", \"slight_blur\", \"partial_face_crop\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319088-iZekIo0GHW61PJHXfLJb",
+        "object": "chat.completion",
+        "created": 1780319088,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"portrait_event\",\n  \"short_caption\": \"Man in checkered shirt standing before a blue backdrop with airplane silhouettes\",\n  \"main_objects\": [\"man\", \"checkered shirt\", \"airplane silhouette backdrop\"],\n  \"possible_interpretations\": [\n    \"Press conference or promotional event photo\",\n    \"Travel or airline industry event\",\n    \"Posed portrait with branded backdrop\"\n  ],\n  \"uncertainty_notes\": \"Image is low resolution and slightly blurry; backdrop context and identity of the person are unclear\",\n  \"quality_flags\": [\"low_resolution\", \"slight_blur\", \"partial_face_crop\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "The image shows a man in a pink/red checkered shirt on the right side of the frame. The background is blue with white airplane/silhouette icons that appear to be a pattern. This looks like it could be a press conference or promotional event backdrop, possibly related to travel or an airline.\n\nLet me analyze:\n- Person: yes, clearly a man\n- Face: yes, visible\n- Animal: no\n- Text: no visible text\n- Vehicle: the airplane icons are in the background but these are decorative graphics, not actual vehicles\n- Food: no\n- Indoor: appears to be a backdrop, likely indoor setting\n- Outdoor: no\n- Artificial/rendered: the airplane icons are graphic elements\n- Occlusion: no\n- Unusual viewpoint: no\n- Multiple main objects: no, one main person\n\nThe image appears somewhat low resolution/blurry. The background with airplane silhouettes suggests a travel/airline context.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a man in a pink/red checkered shirt on the right side of the frame. The background is blue with white airplane/silhouette icons that appear to be a pattern. This looks like it could be a press conference or promotional event backdrop, possibly related to travel or an airline.\n\nLet me analyze:\n- Person: yes, clearly a man\n- Face: yes, visible\n- Animal: no\n- Text: no visible text\n- Vehicle: the airplane icons are in the background but these are decorative graphics, not actual vehicles\n- Food: no\n- Indoor: appears to be a backdrop, likely indoor setting\n- Outdoor: no\n- Artificial/rendered: the airplane icons are graphic elements\n- Occlusion: no\n- Unusual viewpoint: no\n- Multiple main objects: no, one main person\n\nThe image appears somewhat low resolution/blurry. The background with airplane silhouettes suggests a travel/airline context.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 994,
+          "completion_tokens": 551,
+          "total_tokens": 1545,
+          "cost": 0.00080916,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00080916,
+            "upstream_inference_prompt_cost": 0.00014796,
+            "upstream_inference_completions_cost": 0.0006612
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 228,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

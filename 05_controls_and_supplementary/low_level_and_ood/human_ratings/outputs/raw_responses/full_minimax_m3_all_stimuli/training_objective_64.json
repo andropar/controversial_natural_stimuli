@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_64",
+    "stim_key": "training_objective_64",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 64,
+    "file_index": 64,
+    "image_name": "image_0064.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0064.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"music equipment\",\n  \"short_caption\": \"A Vox guitar amplifier on a wheeled flight case beside a person and a road case.\",\n  \"main_objects\": [\"Vox amplifier\", \"wheeled flight case\", \"road case\", \"person\"],\n  \"possible_interpretations\": [\n    \"Vox guitar amplifier on transport dolly\",\n    \"Music equipment being loaded or unloaded\",\n    \"Backstage or rehearsal space setup\",\n    \"Music gear in a storage or studio area\"\n  ],\n  \"uncertainty_notes\": \"Person's head and face are not visible; activity being performed is unclear.\",\n  \"quality_flags\": [\"person_partially_out_of_frame\", \"no_face_visible\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319342-TzFtCaBDovfsCvL0ZTlX",
+        "object": "chat.completion",
+        "created": 1780319342,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"music equipment\",\n  \"short_caption\": \"A Vox guitar amplifier on a wheeled flight case beside a person and a road case.\",\n  \"main_objects\": [\"Vox amplifier\", \"wheeled flight case\", \"road case\", \"person\"],\n  \"possible_interpretations\": [\n    \"Vox guitar amplifier on transport dolly\",\n    \"Music equipment being loaded or unloaded\",\n    \"Backstage or rehearsal space setup\",\n    \"Music gear in a storage or studio area\"\n  ],\n  \"uncertainty_notes\": \"Person's head and face are not visible; activity being performed is unclear.\",\n  \"quality_flags\": [\"person_partially_out_of_frame\", \"no_face_visible\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- A Vox guitar amplifier (recognizable brand) sitting on a flight case with wheels\n- A person partially visible on the right side, wearing a purple/maroon hoodie and jeans, appearing to be bending over or working with equipment\n- Another flight case/road case to the right\n- White wall background and gray floor\n- Indoor setting\n\nLet me annotate based on the schema:\n\nRecognizability: The main content (Vox amp on flight case) is clearly recognizable - 5\nAmbiguity: Pretty straightforward - low ambiguity - 1 or 2\nNatural_photo_typicality: Looks like a typical photo - 4\nVisual_clutter: Relatively simple scene - 2\nObject_centricity: The amp is the central object - 4\nScene_centricity: More object-focused than scene - 2\nCaption_confidence: Easy to caption - 4\n\nSalient objects: Vox amp, flight case with wheels, person, road case\nDistinct categories: amp, case, person = 3\n\nContains person: yes\nContains face: no (face not visible)\nContains animal: no\nContains text: yes (VOX logo)\nContains vehicle: no (has wheels but it's equipment, not vehicle)\nContains food: no\nIndoor scene: yes\nOutdoor: no\nArtificial/rendered: no\nOcclusion/truncation: yes (person is partially cut off)\nUnusual viewpoint: no\nMultiple main objects: somewhat - amp and person\n\nDominant content: object (the amp)\nImage style: natural_photo\nSemantic domain: music/equipment\n\nShort caption: \"A Vox guitar amplifier on a wheeled flight case next to a person and road case\"\n\nMain objects: Vox amplifier, flight case, road case, person\n\nPossible interpretations: \n- Guitar amp being moved/setup\n- Equipment for a music event\n- Music store/warehouse\n- Someone preparing gear\n\nUncertainty notes: Person's face not visible, only torso/hand shown",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- A Vox guitar amplifier (recognizable brand) sitting on a flight case with wheels\n- A person partially visible on the right side, wearing a purple/maroon hoodie and jeans, appearing to be bending over or working with equipment\n- Another flight case/road case to the right\n- White wall background and gray floor\n- Indoor setting\n\nLet me annotate based on the schema:\n\nRecognizability: The main content (Vox amp on flight case) is clearly recognizable - 5\nAmbiguity: Pretty straightforward - low ambiguity - 1 or 2\nNatural_photo_typicality: Looks like a typical photo - 4\nVisual_clutter: Relatively simple scene - 2\nObject_centricity: The amp is the central object - 4\nScene_centricity: More object-focused than scene - 2\nCaption_confidence: Easy to caption - 4\n\nSalient objects: Vox amp, flight case with wheels, person, road case\nDistinct categories: amp, case, person = 3\n\nContains person: yes\nContains face: no (face not visible)\nContains animal: no\nContains text: yes (VOX logo)\nContains vehicle: no (has wheels but it's equipment, not vehicle)\nContains food: no\nIndoor scene: yes\nOutdoor: no\nArtificial/rendered: no\nOcclusion/truncation: yes (person is partially cut off)\nUnusual viewpoint: no\nMultiple main objects: somewhat - amp and person\n\nDominant content: object (the amp)\nImage style: natural_photo\nSemantic domain: music/equipment\n\nShort caption: \"A Vox guitar amplifier on a wheeled flight case next to a person and road case\"\n\nMain objects: Vox amplifier, flight case, road case, person\n\nPossible interpretations: \n- Guitar amp being moved/setup\n- Equipment for a music event\n- Music store/warehouse\n- Someone preparing gear\n\nUncertainty notes: Person's face not visible, only torso/hand shown",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 788,
+          "total_tokens": 2202,
+          "cost": 0.00121956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00121956,
+            "upstream_inference_prompt_cost": 0.00027396,
+            "upstream_inference_completions_cost": 0.0009456
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 478,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

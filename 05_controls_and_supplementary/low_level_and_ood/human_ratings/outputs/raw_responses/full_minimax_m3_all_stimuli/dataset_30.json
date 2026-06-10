@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_30",
+    "stim_key": "dataset_30",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 30,
+    "file_index": 30,
+    "image_name": "image_0030.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0030.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"industrial_safety\",\n\n  \"short_caption\": \"Green emergency shower safety sign with directional arrow at an industrial facility.\",\n  \"main_objects\": [\"emergency shower sign\", \"industrial pipes\", \"storage tanks\", \"orange life raft container\"],\n  \"possible_interpretations\": [\"industrial workplace safety signage\", \"offshore platform or refinery emergency equipment\", \"factory hazard direction sign\"],\n  \"uncertainty_notes\": \"The pictogram on the sign depicts a stylized human head, not a real person or face.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318997-eluCg9CzfMcGniTy9iHP",
+        "object": "chat.completion",
+        "created": 1780318997,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"industrial_safety\",\n\n  \"short_caption\": \"Green emergency shower safety sign with directional arrow at an industrial facility.\",\n  \"main_objects\": [\"emergency shower sign\", \"industrial pipes\", \"storage tanks\", \"orange life raft container\"],\n  \"possible_interpretations\": [\"industrial workplace safety signage\", \"offshore platform or refinery emergency equipment\", \"factory hazard direction sign\"],\n  \"uncertainty_notes\": \"The pictogram on the sign depicts a stylized human head, not a real person or face.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an industrial setting with:\n- A prominent green \"Emergency shower\" sign with a pictogram of a person under a shower head, with a left-pointing arrow below it\n- The sign is mounted on a black board\n- In the background, there's an industrial facility with pipes, tanks, and what appears to be an orange life raft or safety equipment container\n- Concrete barriers or platforms in the foreground\n- Overcast sky\n\nLet me rate each dimension:\n\n- recognizability: 4 - The main content (emergency shower sign) is clearly recognizable\n- ambiguity: 1 - The image is fairly unambiguous; it's an emergency shower sign at an industrial site\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 3 - There are several elements but the sign dominates\n- object_centricity: 4 - The emergency shower sign is the clear central object\n- scene_centricity: 3 - There's an industrial scene context but object is dominant\n- caption_confidence: 5 - Easy to caption\n\nEstimated salient object count: 1 (the sign) with background elements\nEstimated distinct object categories: 3-4 (sign, pipes, tanks, life raft container)\n\nContains person: false (only a pictogram)\nContains face: false (pictogram face only)\nContains animal: false\nContains text: true (\"Emergency shower\" and arrow)\nContains vehicle: false\nContains food: false\nContains indoor_scene: false\nContains outdoor_scene: true\nContains artificial_or_rendered_content: false\nContains occlusion_or_truncation: false\nContains unusual_viewpoint: false\nContains multiple_main_objects: false\n\nDominant content type: object (the sign)\nImage style: natural_photo\nSemantic domain: industrial safety\n\nShort caption: \"Green emergency shower safety sign with arrow at industrial facility\"\n\nMain objects: emergency shower sign, industrial pipes, tanks, life raft container\n\nPossible interpretations: Could be interpreted as industrial safety equipment, factory hazard sign, offshore platform safety sign\n\nLet me finalize the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an industrial setting with:\n- A prominent green \"Emergency shower\" sign with a pictogram of a person under a shower head, with a left-pointing arrow below it\n- The sign is mounted on a black board\n- In the background, there's an industrial facility with pipes, tanks, and what appears to be an orange life raft or safety equipment container\n- Concrete barriers or platforms in the foreground\n- Overcast sky\n\nLet me rate each dimension:\n\n- recognizability: 4 - The main content (emergency shower sign) is clearly recognizable\n- ambiguity: 1 - The image is fairly unambiguous; it's an emergency shower sign at an industrial site\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 3 - There are several elements but the sign dominates\n- object_centricity: 4 - The emergency shower sign is the clear central object\n- scene_centricity: 3 - There's an industrial scene context but object is dominant\n- caption_confidence: 5 - Easy to caption\n\nEstimated salient object count: 1 (the sign) with background elements\nEstimated distinct object categories: 3-4 (sign, pipes, tanks, life raft container)\n\nContains person: false (only a pictogram)\nContains face: false (pictogram face only)\nContains animal: false\nContains text: true (\"Emergency shower\" and arrow)\nContains vehicle: false\nContains food: false\nContains indoor_scene: false\nContains outdoor_scene: true\nContains artificial_or_rendered_content: false\nContains occlusion_or_truncation: false\nContains unusual_viewpoint: false\nContains multiple_main_objects: false\n\nDominant content type: object (the sign)\nImage style: natural_photo\nSemantic domain: industrial safety\n\nShort caption: \"Green emergency shower safety sign with arrow at industrial facility\"\n\nMain objects: emergency shower sign, industrial pipes, tanks, life raft container\n\nPossible interpretations: Could be interpreted as industrial safety equipment, factory hazard sign, offshore platform safety sign\n\nLet me finalize the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 771,
+          "total_tokens": 2085,
+          "cost": 0.00116916,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00116916,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.0009252
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 543,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

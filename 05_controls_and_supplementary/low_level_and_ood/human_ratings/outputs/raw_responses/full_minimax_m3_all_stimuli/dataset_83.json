@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_83",
+    "stim_key": "dataset_83",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 83,
+    "file_index": 83,
+    "image_name": "image_0083.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0083.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior architecture\",\n  \"short_caption\": \"A partially open white interior door revealing a bright room beyond.\",\n  \"main_objects\": [\"door\", \"doorknob\", \"doorway\", \"wall\", \"window\"],\n  \"possible_interpretations\": [\n    \"A door leading to a bathroom\",\n    \"A door leading to a closet\",\n    \"An interior doorway in a hallway\",\n    \"A bedroom entrance\"\n  ],\n  \"uncertainty_notes\": \"The room visible through the doorway cannot be definitively identified due to the limited partial view and bright window glare.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319057-FVWickMBdLPp16Piga4q",
+        "object": "chat.completion",
+        "created": 1780319057,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior architecture\",\n  \"short_caption\": \"A partially open white interior door revealing a bright room beyond.\",\n  \"main_objects\": [\"door\", \"doorknob\", \"doorway\", \"wall\", \"window\"],\n  \"possible_interpretations\": [\n    \"A door leading to a bathroom\",\n    \"A door leading to a closet\",\n    \"An interior doorway in a hallway\",\n    \"A bedroom entrance\"\n  ],\n  \"uncertainty_notes\": \"The room visible through the doorway cannot be definitively identified due to the limited partial view and bright window glare.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a partially open white interior door in a doorway. Through the doorway, I can see what appears to be a bathroom or another room with a window letting in light. The walls are white/off-white, and the floor visible through the doorway has some tile pattern. There's a doorknob visible on the door.\n\nLet me go through the schema:\n\n- recognizability: The content is clearly recognizable - it's a door in a doorway. 4-5\n- ambiguity: Not many interpretations - it's clearly a door. 1-2\n- natural_photo_typicality: Looks like a typical real estate or interior photo. 4\n- visual_clutter: Very minimal - mostly white walls and a door. 1-2\n- object_centricity: The door is the central object, but it's also part of a scene. 3\n- scene_centricity: It's more of a scene showing an interior space. 3-4\n- caption_confidence: Pretty confident I can describe it. 4\n\n- estimated_salient_object_count: 1 main object (the door)\n- estimated_distinct_object_categories: 2-3 (door, doorknob, maybe window)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (or could be argued for the partial view through door)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: object (door is the main subject) or scene - I'd lean toward object since the door is clearly the focus\nimage_style: natural_photo\nsemantic_domain: interior/architecture\n\nshort_caption: \"A partially open white interior door revealing a bright room beyond.\"\n\nmain_objects: [\"door\", \"doorknob\", \"doorway\", \"wall\"]\n\npossible_interpretations: \n- \"A door leading to a bathroom\"\n- \"A door leading to a closet\"\n- \"A bedroom doorway\"\n- \"An interior hallway door\"\n\nuncertainty_notes: \"The room visible through the doorway is hard to identify specifically due to the limited view.\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a partially open white interior door in a doorway. Through the doorway, I can see what appears to be a bathroom or another room with a window letting in light. The walls are white/off-white, and the floor visible through the doorway has some tile pattern. There's a doorknob visible on the door.\n\nLet me go through the schema:\n\n- recognizability: The content is clearly recognizable - it's a door in a doorway. 4-5\n- ambiguity: Not many interpretations - it's clearly a door. 1-2\n- natural_photo_typicality: Looks like a typical real estate or interior photo. 4\n- visual_clutter: Very minimal - mostly white walls and a door. 1-2\n- object_centricity: The door is the central object, but it's also part of a scene. 3\n- scene_centricity: It's more of a scene showing an interior space. 3-4\n- caption_confidence: Pretty confident I can describe it. 4\n\n- estimated_salient_object_count: 1 main object (the door)\n- estimated_distinct_object_categories: 2-3 (door, doorknob, maybe window)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (or could be argued for the partial view through door)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: object (door is the main subject) or scene - I'd lean toward object since the door is clearly the focus\nimage_style: natural_photo\nsemantic_domain: interior/architecture\n\nshort_caption: \"A partially open white interior door revealing a bright room beyond.\"\n\nmain_objects: [\"door\", \"doorknob\", \"doorway\", \"wall\"]\n\npossible_interpretations: \n- \"A door leading to a bathroom\"\n- \"A door leading to a closet\"\n- \"A bedroom doorway\"\n- \"An interior hallway door\"\n\nuncertainty_notes: \"The room visible through the doorway is hard to identify specifically due to the limited view.\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1467,
+          "completion_tokens": 854,
+          "total_tokens": 2321,
+          "cost": 0.00131466,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131466,
+            "upstream_inference_prompt_cost": 0.00028986,
+            "upstream_inference_completions_cost": 0.0010248
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 555,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

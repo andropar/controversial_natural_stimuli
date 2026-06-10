@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_35",
+    "stim_key": "all_models_35",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 35,
+    "file_index": 35,
+    "image_name": "image_0035.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0035.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"detention/portrait\",\n  \"short_caption\": \"A man in a white shirt looks through a metal grid of an enclosure, hands gripping the mesh.\",\n  \"main_objects\": [\"man\", \"metal grid\", \"white shirt\"],\n  \"possible_interpretations\": [\"detained person behind bars\", \"prisoner in a holding cell\", \"worker behind industrial safety mesh\", \"artistic portrait with symbolic confinement\", \"visitor at a secured checkpoint\"],\n  \"uncertainty_notes\": \"Exact context (prison, industrial, transport) cannot be determined; face is partially occluded by the grid pattern.\",\n  \"quality_flags\": [\"face_occluded_by_grid\", \"slight_motion_or_focus_softness\"]\n}",
+      "response": {
+        "id": "gen-1780318768-pmsJSHAZOZG61yhEzHbD",
+        "object": "chat.completion",
+        "created": 1780318768,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"detention/portrait\",\n  \"short_caption\": \"A man in a white shirt looks through a metal grid of an enclosure, hands gripping the mesh.\",\n  \"main_objects\": [\"man\", \"metal grid\", \"white shirt\"],\n  \"possible_interpretations\": [\"detained person behind bars\", \"prisoner in a holding cell\", \"worker behind industrial safety mesh\", \"artistic portrait with symbolic confinement\", \"visitor at a secured checkpoint\"],\n  \"uncertainty_notes\": \"Exact context (prison, industrial, transport) cannot be determined; face is partially occluded by the grid pattern.\",\n  \"quality_flags\": [\"face_occluded_by_grid\", \"slight_motion_or_focus_softness\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a man behind a metal grid/cage or mesh barrier. He appears to be looking through or behind the grid. He's wearing a white shirt and what looks like a necklace or pendant. His hands are visible, gripping or touching the grid. The setting appears to be some kind of enclosure or caged area.\n\nLet me assess the various attributes:\n\n- Recognizability: Clear - a man behind a metal grid is easily recognizable. 5\n- Ambiguity: Low - it's fairly clear what's depicted. 1-2\n- Natural photo typicality: Looks like a natural photograph, possibly documentary/photojournalism style. 4\n- Visual clutter: Moderate - the grid pattern is busy, but the main subject is clear. 3\n- Object-centricity: There's a clear central person. 4\n- Scene-centricity: The scene aspect (cage/enclosure) is present but the person dominates. 3\n- Caption confidence: High - I can describe this confidently. 5\n\nSalient objects: man, metal grid/cage\nObject categories: person, metal grid/enclosure\n\nContains person: yes\nContains face: yes (partially visible through grid)\nContains text: no\nContains vehicle: no\nContains food: no\nIndoor/outdoor: appears indoor based on lighting\nArtificial content: no\nOcclusion: yes (the grid partially occludes the face)\nMultiple main objects: arguably yes (man and grid)\n\nDominant content type: person_face\nImage style: natural_photo\nSemantic domain: prison/detention or similar\n\nShort caption: \"A man behind a metal grid looking through the bars of an enclosure.\"\n\nPossible interpretations: detained person, prisoner, worker in industrial setting, artistic portrait\n\nUncertainty: The exact context (prison vs. industrial vs. other) is unclear.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a man behind a metal grid/cage or mesh barrier. He appears to be looking through or behind the grid. He's wearing a white shirt and what looks like a necklace or pendant. His hands are visible, gripping or touching the grid. The setting appears to be some kind of enclosure or caged area.\n\nLet me assess the various attributes:\n\n- Recognizability: Clear - a man behind a metal grid is easily recognizable. 5\n- Ambiguity: Low - it's fairly clear what's depicted. 1-2\n- Natural photo typicality: Looks like a natural photograph, possibly documentary/photojournalism style. 4\n- Visual clutter: Moderate - the grid pattern is busy, but the main subject is clear. 3\n- Object-centricity: There's a clear central person. 4\n- Scene-centricity: The scene aspect (cage/enclosure) is present but the person dominates. 3\n- Caption confidence: High - I can describe this confidently. 5\n\nSalient objects: man, metal grid/cage\nObject categories: person, metal grid/enclosure\n\nContains person: yes\nContains face: yes (partially visible through grid)\nContains text: no\nContains vehicle: no\nContains food: no\nIndoor/outdoor: appears indoor based on lighting\nArtificial content: no\nOcclusion: yes (the grid partially occludes the face)\nMultiple main objects: arguably yes (man and grid)\n\nDominant content type: person_face\nImage style: natural_photo\nSemantic domain: prison/detention or similar\n\nShort caption: \"A man behind a metal grid looking through the bars of an enclosure.\"\n\nPossible interpretations: detained person, prisoner, worker in industrial setting, artistic portrait\n\nUncertainty: The exact context (prison vs. industrial vs. other) is unclear.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1363,
+          "completion_tokens": 760,
+          "total_tokens": 2123,
+          "cost": 0.00129354,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129354,
+            "upstream_inference_prompt_cost": 0.00038154,
+            "upstream_inference_completions_cost": 0.000912
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 450,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_3",
+    "stim_key": "all_models_3",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 3,
+    "file_index": 3,
+    "image_name": "image_0003.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0003.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 2, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 2, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"clothing\", \"short_caption\": \"Pink patterned baby onesie with green trim laid flat beside pink roses on white wood\", \"main_objects\": [\"baby onesie\", \"roses\", \"brand label\"], \"possible_interpretations\": [\"styled baby clothing product photo\", \"baby shower or nursery flat lay\", \"children's apparel catalog image\"], \"uncertainty_notes\": \"Brand label text is too small to read clearly; flat lay composition suggests styled product photography rather than candid photo.\", \"quality_flags\": [\"small_text\"]}",
+      "response": {
+        "id": "gen-1780318741-oIFcE0tyJxf8IHjEiJt0",
+        "object": "chat.completion",
+        "created": 1780318741,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 2, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 2, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"clothing\", \"short_caption\": \"Pink patterned baby onesie with green trim laid flat beside pink roses on white wood\", \"main_objects\": [\"baby onesie\", \"roses\", \"brand label\"], \"possible_interpretations\": [\"styled baby clothing product photo\", \"baby shower or nursery flat lay\", \"children's apparel catalog image\"], \"uncertainty_notes\": \"Brand label text is too small to read clearly; flat lay composition suggests styled product photography rather than candid photo.\", \"quality_flags\": [\"small_text\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I see a baby onesie/romper with a pink and white pattern featuring paisley/decorative motifs. It has green trim around the neck, cuffs, and ankles. The onesie is laid flat on a white wooden plank surface. To the lower right, there's a bouquet of pink and red roses with green leaves.\n\nLet me go through the schema:\n\n- Recognizability: The main content (baby onesie) is very clear and recognizable. 5\n- Ambiguity: Pretty clear what's shown - a baby onesie and flowers. 1-2\n- Natural_photo_typicality: This looks like a styled product photo, not a typical natural photograph. 2\n- Visual_clutter: The onesie has a busy pattern, but the composition is fairly clean. 3\n- Object_centricity: The onesie is the central object. 4\n- Scene_centricity: It's more object-focused than scene-focused. 2\n- Caption_confidence: Easy to caption. 5\n\n- estimated_salient_object_count: 2 (onesie, flowers)\n- estimated_distinct_object_categories: 2 (clothing, flowers)\n\n- contains_person: false (no person, just clothing)\n- contains_face: false\n- contains_animal: false\n- contains_text: there appears to be a small label/brand on the onesie\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: false (it's a styled flat lay)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (top-down view is common for product photos)\n- contains_multiple_main_objects: false (onesie is clearly main)\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\" (though styled)\n- semantic_domain: \"clothing\" or \"product\"\n\nShort caption: \"Pink patterned baby onesie with green trim laid flat beside pink roses\"\n\nMain objects: onesie, roses\n\nPossible interpretations: baby clothes flat lay, product photography, baby shower image\n\nQuality flags: possibly small text on label",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I see a baby onesie/romper with a pink and white pattern featuring paisley/decorative motifs. It has green trim around the neck, cuffs, and ankles. The onesie is laid flat on a white wooden plank surface. To the lower right, there's a bouquet of pink and red roses with green leaves.\n\nLet me go through the schema:\n\n- Recognizability: The main content (baby onesie) is very clear and recognizable. 5\n- Ambiguity: Pretty clear what's shown - a baby onesie and flowers. 1-2\n- Natural_photo_typicality: This looks like a styled product photo, not a typical natural photograph. 2\n- Visual_clutter: The onesie has a busy pattern, but the composition is fairly clean. 3\n- Object_centricity: The onesie is the central object. 4\n- Scene_centricity: It's more object-focused than scene-focused. 2\n- Caption_confidence: Easy to caption. 5\n\n- estimated_salient_object_count: 2 (onesie, flowers)\n- estimated_distinct_object_categories: 2 (clothing, flowers)\n\n- contains_person: false (no person, just clothing)\n- contains_face: false\n- contains_animal: false\n- contains_text: there appears to be a small label/brand on the onesie\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: false (it's a styled flat lay)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (top-down view is common for product photos)\n- contains_multiple_main_objects: false (onesie is clearly main)\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\" (though styled)\n- semantic_domain: \"clothing\" or \"product\"\n\nShort caption: \"Pink patterned baby onesie with green trim laid flat beside pink roses\"\n\nMain objects: onesie, roses\n\nPossible interpretations: baby clothes flat lay, product photography, baby shower image\n\nQuality flags: possibly small text on label",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 774,
+          "total_tokens": 2296,
+          "cost": 0.00135804,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00135804,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009288
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 505,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

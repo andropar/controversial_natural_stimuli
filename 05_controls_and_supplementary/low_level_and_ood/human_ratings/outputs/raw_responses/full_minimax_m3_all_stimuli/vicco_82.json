@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_82",
+    "stim_key": "vicco_82",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 82,
+    "file_index": 81,
+    "image_name": "shared_4rep_vicco_082.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_082.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature\",\n  \"short_caption\": \"Dew-covered spider web strung across a metal framework at night.\",\n  \"main_objects\": [\"spider web\", \"metal beams\"],\n  \"possible_interpretations\": [\"spider web on industrial structure\", \"spider web on bridge or tower\", \"spider web on scaffolding\"],\n  \"uncertainty_notes\": \"A small bright spot near the web's center may be a spider, but it is not clearly visible. The setting could be outdoor or sheltered industrial environment; lighting makes exact context uncertain.\",\n  \"quality_flags\": [\"low_light\", \"monochrome_sepia_tone\", \"backlit_subject\"]\n}",
+      "response": {
+        "id": "gen-1780319481-HRUjFwNvuXBhGxUm9GQy",
+        "object": "chat.completion",
+        "created": 1780319481,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature\",\n  \"short_caption\": \"Dew-covered spider web strung across a metal framework at night.\",\n  \"main_objects\": [\"spider web\", \"metal beams\"],\n  \"possible_interpretations\": [\"spider web on industrial structure\", \"spider web on bridge or tower\", \"spider web on scaffolding\"],\n  \"uncertainty_notes\": \"A small bright spot near the web's center may be a spider, but it is not clearly visible. The setting could be outdoor or sheltered industrial environment; lighting makes exact context uncertain.\",\n  \"quality_flags\": [\"low_light\", \"monochrome_sepia_tone\", \"backlit_subject\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a spider web in what appears to be a nighttime or low-light setting. The web is glistening with dew or moisture, making the strands visible. There are structural metal beams or framework visible behind/around the web, suggesting this might be in an industrial setting or between structural elements. The image has a dark, moody quality with the web being the main subject catching light.\n\nLet me assess each dimension:\n\n- recognizability: The spider web is clearly recognizable. 4\n- ambiguity: Pretty clear it's a spider web on metal structure. 1-2\n- natural_photo_typicality: It looks like a real photograph, though low-light. 4\n- visual_clutter: The web has many lines but it's relatively focused. 3\n- object_centricity: The web is the central object. 4\n- scene_centricity: Not really a scene, more of a close-up. 2\n- caption_confidence: High confidence. 4\n\nEstimated salient objects: 1 (the web, though it spans structure)\nDistinct categories: 2 (web, metal structure)\nNo people, animals visible (maybe the spider? not clearly), no text, no vehicles, no food\nIndoor or outdoor? Hard to tell - could be outdoor structure at night, or indoor industrial. I'll say neither clearly.\nArtificial content: yes, the metal beams\nOcclusion: somewhat\nUnusual viewpoint: low angle looking up, somewhat unusual\n\nLet me think about whether there's a spider - I can see a small bright spot in the center that could be a spider, but it's not clearly visible. I won't say contains_animal.\n\nDominant content: object (the web)\nImage style: natural_photo\nSemantic domain: nature/urban_wildlife",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a spider web in what appears to be a nighttime or low-light setting. The web is glistening with dew or moisture, making the strands visible. There are structural metal beams or framework visible behind/around the web, suggesting this might be in an industrial setting or between structural elements. The image has a dark, moody quality with the web being the main subject catching light.\n\nLet me assess each dimension:\n\n- recognizability: The spider web is clearly recognizable. 4\n- ambiguity: Pretty clear it's a spider web on metal structure. 1-2\n- natural_photo_typicality: It looks like a real photograph, though low-light. 4\n- visual_clutter: The web has many lines but it's relatively focused. 3\n- object_centricity: The web is the central object. 4\n- scene_centricity: Not really a scene, more of a close-up. 2\n- caption_confidence: High confidence. 4\n\nEstimated salient objects: 1 (the web, though it spans structure)\nDistinct categories: 2 (web, metal structure)\nNo people, animals visible (maybe the spider? not clearly), no text, no vehicles, no food\nIndoor or outdoor? Hard to tell - could be outdoor structure at night, or indoor industrial. I'll say neither clearly.\nArtificial content: yes, the metal beams\nOcclusion: somewhat\nUnusual viewpoint: low angle looking up, somewhat unusual\n\nLet me think about whether there's a spider - I can see a small bright spot in the center that could be a spider, but it's not clearly visible. I won't say contains_animal.\n\nDominant content: object (the web)\nImage style: natural_photo\nSemantic domain: nature/urban_wildlife",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 735,
+          "total_tokens": 2257,
+          "cost": 0.00118836,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00118836,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000882
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 424,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

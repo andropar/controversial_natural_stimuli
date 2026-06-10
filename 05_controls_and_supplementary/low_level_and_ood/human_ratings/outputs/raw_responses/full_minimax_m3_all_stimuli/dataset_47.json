@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_47",
+    "stim_key": "dataset_47",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 47,
+    "file_index": 47,
+    "image_name": "image_0047.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0047.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 30,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"restaurant_interior\",\n  \"short_caption\": \"Wine glasses hanging from a brass and glass storage rack in a restaurant.\",\n  \"main_objects\": [\"wine glasses\", \"brass rack\", \"glass shelves\"],\n  \"possible_interpretations\": [\n    \"Wine glasses stored on a rack in a bar or restaurant\",\n    \"Stemware storage in a kitchen or dining venue\",\n    \"Upside-down wine glasses on a display rack\"\n  ],\n  \"uncertainty_notes\": \"Exact number of glasses difficult to determine due to perspective and overlap.\",\n  \"quality_flags\": [\"shallow depth of field\", \"some motion blur or bokeh in foreground\"]\n}",
+      "response": {
+        "id": "gen-1780319017-SJxmdKOcPSe7gO27izNg",
+        "object": "chat.completion",
+        "created": 1780319017,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 30,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"restaurant_interior\",\n  \"short_caption\": \"Wine glasses hanging from a brass and glass storage rack in a restaurant.\",\n  \"main_objects\": [\"wine glasses\", \"brass rack\", \"glass shelves\"],\n  \"possible_interpretations\": [\n    \"Wine glasses stored on a rack in a bar or restaurant\",\n    \"Stemware storage in a kitchen or dining venue\",\n    \"Upside-down wine glasses on a display rack\"\n  ],\n  \"uncertainty_notes\": \"Exact number of glasses difficult to determine due to perspective and overlap.\",\n  \"quality_flags\": [\"shallow depth of field\", \"some motion blur or bokeh in foreground\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a wine glass storage rack with many wine glasses hanging upside down from a brass/gold colored metal frame with glass shelves. This appears to be in a restaurant or bar setting (indoor scene). The glasses are arranged in rows both on top of and hanging from the rack.\n\nLet me analyze the image properties:\n- Recognizability: Very clear what's shown (wine glasses on a rack) - 5\n- Ambiguity: Pretty clear single interpretation - 1\n- Natural photo typicality: Looks like a natural photograph - 5\n- Visual clutter: Many glasses, but organized - 3-4\n- Object centricity: The wine glasses are the main subject - 4\n- Scene centricity: It's an indoor scene - 3\n- Caption confidence: Easy to caption - 5\n\nObject count: Many wine glasses (hard to count exactly, maybe 20+)\nDistinct object categories: wine glasses, rack/shelf - 2-3\n\nContains: glassware, indoor scene, artificial content (the rack is man-made but the image itself isn't artificial)\n\nLet me construct the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a wine glass storage rack with many wine glasses hanging upside down from a brass/gold colored metal frame with glass shelves. This appears to be in a restaurant or bar setting (indoor scene). The glasses are arranged in rows both on top of and hanging from the rack.\n\nLet me analyze the image properties:\n- Recognizability: Very clear what's shown (wine glasses on a rack) - 5\n- Ambiguity: Pretty clear single interpretation - 1\n- Natural photo typicality: Looks like a natural photograph - 5\n- Visual clutter: Many glasses, but organized - 3-4\n- Object centricity: The wine glasses are the main subject - 4\n- Scene centricity: It's an indoor scene - 3\n- Caption confidence: Easy to caption - 5\n\nObject count: Many wine glasses (hard to count exactly, maybe 20+)\nDistinct object categories: wine glasses, rack/shelf - 2-3\n\nContains: glassware, indoor scene, artificial content (the rack is man-made but the image itself isn't artificial)\n\nLet me construct the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1467,
+          "completion_tokens": 590,
+          "total_tokens": 2057,
+          "cost": 0.00099786,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00099786,
+            "upstream_inference_prompt_cost": 0.00028986,
+            "upstream_inference_completions_cost": 0.000708
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 258,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

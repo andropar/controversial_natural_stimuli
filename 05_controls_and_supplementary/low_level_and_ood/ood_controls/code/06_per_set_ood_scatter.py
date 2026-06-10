@@ -10,9 +10,9 @@ evaluated in its own feature/prediction space), so this is the per-model
 OOD axis flagged in the dissociation caption — not a global axis.
 
 Reads:
-  experiments/cstim_paper/06_ood/data/ood_vs_alignment.csv
+  05_controls_and_supplementary/low_level_and_ood/ood_controls/results/ood_vs_alignment.csv
 Writes:
-  experiments/cstim_paper/06_ood/figures/ood_per_model.{pdf,png}
+  05_controls_and_supplementary/low_level_and_ood/ood_controls/figures/supplementary/ood_per_model.{pdf,png}
 """
 
 from pathlib import Path

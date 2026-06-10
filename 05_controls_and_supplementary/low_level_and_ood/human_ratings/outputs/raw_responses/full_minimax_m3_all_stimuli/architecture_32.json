@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_32",
+    "stim_key": "architecture_32",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 32,
+    "file_index": 32,
+    "image_name": "image_0032.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0032.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 9,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior design\",\n  \"short_caption\": \"Modern kitchen and dining room with hexagonal tile flooring, shown as a composite scene and detail view.\",\n  \"main_objects\": [\"hexagonal tiles\", \"bar stools\", \"dining table\", \"chairs\", \"bowl of lemons\", \"shelves\", \"kitchen island\", \"pendant lights\"],\n  \"possible_interpretations\": [\n    \"Interior design portfolio showing room context and flooring detail\",\n    \"Marketing photo for tile flooring product\",\n    \"Kitchen and dining area with mixed materials\",\n    \"Renovation showcase image\",\n    \"Before-and-after or context-and-detail pairing\"\n  ],\n  \"uncertainty_notes\": \"Composite image with a wide interior scene on top and a close-up texture shot of the same flooring on bottom; not a single unified photograph.\",\n  \"quality_flags\": [\"composite_image\", \"split_layout\", \"mixed_views\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318883-I0fFMNMBbe8PPdwXFjVM",
+        "object": "chat.completion",
+        "created": 1780318883,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 9,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior design\",\n  \"short_caption\": \"Modern kitchen and dining room with hexagonal tile flooring, shown as a composite scene and detail view.\",\n  \"main_objects\": [\"hexagonal tiles\", \"bar stools\", \"dining table\", \"chairs\", \"bowl of lemons\", \"shelves\", \"kitchen island\", \"pendant lights\"],\n  \"possible_interpretations\": [\n    \"Interior design portfolio showing room context and flooring detail\",\n    \"Marketing photo for tile flooring product\",\n    \"Kitchen and dining area with mixed materials\",\n    \"Renovation showcase image\",\n    \"Before-and-after or context-and-detail pairing\"\n  ],\n  \"uncertainty_notes\": \"Composite image with a wide interior scene on top and a close-up texture shot of the same flooring on bottom; not a single unified photograph.\",\n  \"quality_flags\": [\"composite_image\", \"split_layout\", \"mixed_views\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "The image is a composite/split image. The top portion shows an interior scene of a kitchen and dining area with hexagonal tile flooring, bar stools, a dining table with chairs, a bowl of lemons, shelving, and a modern interior. The bottom portion is a close-up texture/detail shot of the same hexagonal tile flooring with wood and various gray/white tiles.\n\nLet me analyze this carefully:\n\n- Recognizability: The top image is a clear modern kitchen/dining interior. The bottom is a clear close-up of tile flooring. Both are quite recognizable. I'd say 4.\n\n- Ambiguity: The image is a composite of two related but distinct views. There's some ambiguity about whether this is a \"before/after\" or just a context/detail pairing. I'd say 3.\n\n- Natural_photo_typicality: These look like interior design photos, likely staged/marketing photos. Quite typical of real estate or interior design photography. I'd say 4.\n\n- Visual_clutter: The top image has many objects (shelves with items, stools, chairs, table, bowl, kitchen appliances, etc.). The bottom is simpler. Overall medium-high clutter. 3-4.\n\n- Object_centricity: The top image has multiple objects but no single dominant one. The bottom is a texture pattern. I'd say 2-3.\n\n- Scene_centricity: The top is clearly a scene/place. I'd say 4.\n\n- Caption_confidence: I can describe this confidently - modern kitchen and dining room with hexagonal tile flooring. 4.\n\n- estimated_salient_object_count: Top has many - stools, chairs, table, bowl of fruit, shelves, kitchen island, etc. Maybe 8-10.\n- estimated_distinct_object_categories: chairs, table, stools, bowl, shelves, kitchen appliances, decorative items. Maybe 6-7.\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: true (lemons in bowl)\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (looks like real photography)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (kitchen and dining area, or top and bottom panels)\n\n- dominant_content_type: \"scene\" or \"mixed\" - given it's a composite, I'd say \"mixed\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"interior design\" or \"home decor\"\n\n- short_caption: \"Modern kitchen and dining area with hexagonal tile flooring\" (or noting the composite nature)\n\n- main_objects: hexagonal tiles, bar stools, dining table, chairs, bowl of lemons, shelves, kitchen island\n- possible_interpretations: \"interior design portfolio image\", \"kitchen and dining room\", \"tile flooring close-up\", \"before and after\", \"context and detail pairing\"\n- uncertainty_notes: \"Composite image with scene view on top and texture/detail on bottom\"\n- quality_flags: [\"composite_image\", \"split_layout\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image is a composite/split image. The top portion shows an interior scene of a kitchen and dining area with hexagonal tile flooring, bar stools, a dining table with chairs, a bowl of lemons, shelving, and a modern interior. The bottom portion is a close-up texture/detail shot of the same hexagonal tile flooring with wood and various gray/white tiles.\n\nLet me analyze this carefully:\n\n- Recognizability: The top image is a clear modern kitchen/dining interior. The bottom is a clear close-up of tile flooring. Both are quite recognizable. I'd say 4.\n\n- Ambiguity: The image is a composite of two related but distinct views. There's some ambiguity about whether this is a \"before/after\" or just a context/detail pairing. I'd say 3.\n\n- Natural_photo_typicality: These look like interior design photos, likely staged/marketing photos. Quite typical of real estate or interior design photography. I'd say 4.\n\n- Visual_clutter: The top image has many objects (shelves with items, stools, chairs, table, bowl, kitchen appliances, etc.). The bottom is simpler. Overall medium-high clutter. 3-4.\n\n- Object_centricity: The top image has multiple objects but no single dominant one. The bottom is a texture pattern. I'd say 2-3.\n\n- Scene_centricity: The top is clearly a scene/place. I'd say 4.\n\n- Caption_confidence: I can describe this confidently - modern kitchen and dining room with hexagonal tile flooring. 4.\n\n- estimated_salient_object_count: Top has many - stools, chairs, table, bowl of fruit, shelves, kitchen island, etc. Maybe 8-10.\n- estimated_distinct_object_categories: chairs, table, stools, bowl, shelves, kitchen appliances, decorative items. Maybe 6-7.\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: true (lemons in bowl)\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (looks like real photography)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (kitchen and dining area, or top and bottom panels)\n\n- dominant_content_type: \"scene\" or \"mixed\" - given it's a composite, I'd say \"mixed\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"interior design\" or \"home decor\"\n\n- short_caption: \"Modern kitchen and dining area with hexagonal tile flooring\" (or noting the composite nature)\n\n- main_objects: hexagonal tiles, bar stools, dining table, chairs, bowl of lemons, shelves, kitchen island\n- possible_interpretations: \"interior design portfolio image\", \"kitchen and dining room\", \"tile flooring close-up\", \"before and after\", \"context and detail pairing\"\n- uncertainty_notes: \"Composite image with scene view on top and texture/detail on bottom\"\n- quality_flags: [\"composite_image\", \"split_layout\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 1072,
+          "total_tokens": 2594,
+          "cost": 0.00171564,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00171564,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0012864
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 743,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_140",
+    "stim_key": "vicco_140",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 140,
+    "file_index": 139,
+    "image_name": "shared_4rep_vicco_140.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_140.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"consumer electronics\",\n  \"short_caption\": \"A hand holding a white wireless earbud and its detached silicone tip over a paved surface.\",\n  \"main_objects\": [\"wireless earbud\", \"silicone ear tip\", \"hand\", \"ring\"],\n  \"possible_interpretations\": [\"AirPod with removed ear tip\", \"Showing earbud design\", \"Lost or replaced ear tip\"],\n  \"uncertainty_notes\": \"Exact earbud model is uncertain but shape strongly resembles an Apple AirPod.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319547-OXX4cC1aFAPT8rGBqULz",
+        "object": "chat.completion",
+        "created": 1780319547,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"consumer electronics\",\n  \"short_caption\": \"A hand holding a white wireless earbud and its detached silicone tip over a paved surface.\",\n  \"main_objects\": [\"wireless earbud\", \"silicone ear tip\", \"hand\", \"ring\"],\n  \"possible_interpretations\": [\"AirPod with removed ear tip\", \"Showing earbud design\", \"Lost or replaced ear tip\"],\n  \"uncertainty_notes\": \"Exact earbud model is uncertain but shape strongly resembles an Apple AirPod.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an open human hand (palm up) holding what appears to be a single white wireless earbud (looks like an AirPod) and its separate silicone ear tip/cover. The hand has a ring on one of the fingers. The background shows a paved ground with metal grating, and there's a glimpse of someone's leg in dark pants and a white sneaker at the bottom.\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clearly recognizable as a hand holding a wireless earbud\n- ambiguity: 1 - Very clear, single interpretation\n- natural_photo_typicality: 5 - Looks like a typical natural photo (though it's a casual snapshot)\n- visual_clutter: 2 - Not many competing elements, fairly clean\n- object_centricity: 4 - The earbud is the central focus, with the hand as context\n- scene_centricity: 2 - Not really a scene, more object-focused\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 2 (earbud and ear tip)\n- estimated_distinct_object_categories: 2 (earbud, hand, ring)\n\n- contains_person: true (hand visible, partial person at bottom)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true (pavement visible)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (fairly standard first-person view)\n- contains_multiple_main_objects: false\n\ndominant_content_type: object (the earbud is the focus)\nimage_style: natural_photo\nsemantic_domain: \"consumer electronics\" or \"everyday objects\"\n\nshort_caption: \"A hand holding a white wireless earbud and its silicone tip outdoors.\"\nmain_objects: [\"wireless earbud\", \"silicone ear tip\", \"hand\", \"ring\"]\npossible_interpretations: [\"AirPod missing its tip\", \"Earbud with detached silicone cover\", \"Showing earbud design\"]\nuncertainty_notes: \"Earbud brand not fully clear but appears to be AirPod style\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an open human hand (palm up) holding what appears to be a single white wireless earbud (looks like an AirPod) and its separate silicone ear tip/cover. The hand has a ring on one of the fingers. The background shows a paved ground with metal grating, and there's a glimpse of someone's leg in dark pants and a white sneaker at the bottom.\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clearly recognizable as a hand holding a wireless earbud\n- ambiguity: 1 - Very clear, single interpretation\n- natural_photo_typicality: 5 - Looks like a typical natural photo (though it's a casual snapshot)\n- visual_clutter: 2 - Not many competing elements, fairly clean\n- object_centricity: 4 - The earbud is the central focus, with the hand as context\n- scene_centricity: 2 - Not really a scene, more object-focused\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 2 (earbud and ear tip)\n- estimated_distinct_object_categories: 2 (earbud, hand, ring)\n\n- contains_person: true (hand visible, partial person at bottom)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true (pavement visible)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (fairly standard first-person view)\n- contains_multiple_main_objects: false\n\ndominant_content_type: object (the earbud is the focus)\nimage_style: natural_photo\nsemantic_domain: \"consumer electronics\" or \"everyday objects\"\n\nshort_caption: \"A hand holding a white wireless earbud and its silicone tip outdoors.\"\nmain_objects: [\"wireless earbud\", \"silicone ear tip\", \"hand\", \"ring\"]\npossible_interpretations: [\"AirPod missing its tip\", \"Earbud with detached silicone cover\", \"Showing earbud design\"]\nuncertainty_notes: \"Earbud brand not fully clear but appears to be AirPod style\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 827,
+          "total_tokens": 2349,
+          "cost": 0.00129876,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129876,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009924
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 534,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_2",
+    "stim_key": "all_models_2",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 2,
+    "file_index": 2,
+    "image_name": "image_0002.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0002.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"fashion/accessories\",\n  \"short_caption\": \"Person in polka-dot dress holding a woven rattan handbag with gingham lining\",\n  \"main_objects\": [\"rattan handbag\", \"polka-dot dress\", \"ring\"],\n  \"possible_interpretations\": [\n    \"fashion editorial photograph\",\n    \"handbag product showcase\",\n    \"styled lifestyle fashion image\"\n  ],\n  \"uncertainty_notes\": \"Person's face is cropped out, limiting person-related features. Setting appears to be a staged interior with a white paneled background.\",\n  \"quality_flags\": [\"face_cropped\", \"studio_lighting\", \"editorial_composition\"]\n}",
+      "response": {
+        "id": "gen-1780318741-Mi2Ge2cSqjK6ch0VHrbS",
+        "object": "chat.completion",
+        "created": 1780318741,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"fashion/accessories\",\n  \"short_caption\": \"Person in polka-dot dress holding a woven rattan handbag with gingham lining\",\n  \"main_objects\": [\"rattan handbag\", \"polka-dot dress\", \"ring\"],\n  \"possible_interpretations\": [\n    \"fashion editorial photograph\",\n    \"handbag product showcase\",\n    \"styled lifestyle fashion image\"\n  ],\n  \"uncertainty_notes\": \"Person's face is cropped out, limiting person-related features. Setting appears to be a staged interior with a white paneled background.\",\n  \"quality_flags\": [\"face_cropped\", \"studio_lighting\", \"editorial_composition\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a person wearing a white/cream colored dress with black polka dots, holding a woven rattan/wicker handbag. The bag has a structured rectangular cage-like frame with a blue and white checkered/gingham fabric interior. The person's face is not visible - we only see from roughly the torso down to the lower legs/feet. There's a ring visible on the person's hand. The background appears to be a white paneled wall or door, suggesting an indoor setting. The style looks like a fashion product/editorial photograph.\n\nLet me assess each criterion:\n\n- recognizability: Very clear - clearly a fashion shot with a handbag. 5\n- ambiguity: Low ambiguity, clear what it shows. 1\n- natural_photo_typicality: It looks like a professional fashion photo, somewhat staged/editorial but still a natural photograph. 4\n- visual_clutter: Quite minimal, clean composition. 2\n- object_centricity: The handbag is the clear central object. 5\n- scene_centricity: Not really a scene-focused image, more object-focused. 1\n- caption_confidence: High - easy to describe. 5\n\n- estimated_salient_object_count: 2 (the bag and the dress/person)\n- estimated_distinct_object_categories: 2 (handbag, dress/clothing)\n\n- contains_person: Yes (partial, no face)\n- contains_face: No\n- contains_animal: No\n- contains_text: No\n- contains_vehicle: No\n- contains_food: No\n- contains_indoor_scene: Yes (white paneled background)\n- contains_outdoor_scene: No\n- contains_artificial_or_rendered_content: No\n- contains_occlusion_or_truncation: Yes (person's face/head is cropped out)\n- contains_unusual_viewpoint: No\n- contains_multiple_main_objects: Yes (bag and dress are both prominent)\n\n- dominant_content_type: object (the handbag is central)\n- image_style: natural_photo (though editorial/styled)\n- semantic_domain: fashion/accessories\n\nLet me write the short caption: \"Woman in polka dot dress holding a woven rattan handbag with gingham lining\"\n\nMain objects: handbag, dress, ring\n\nPossible interpretations: \"fashion product photo\", \"lifestyle fashion editorial\", \"product showcase for handbag\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a person wearing a white/cream colored dress with black polka dots, holding a woven rattan/wicker handbag. The bag has a structured rectangular cage-like frame with a blue and white checkered/gingham fabric interior. The person's face is not visible - we only see from roughly the torso down to the lower legs/feet. There's a ring visible on the person's hand. The background appears to be a white paneled wall or door, suggesting an indoor setting. The style looks like a fashion product/editorial photograph.\n\nLet me assess each criterion:\n\n- recognizability: Very clear - clearly a fashion shot with a handbag. 5\n- ambiguity: Low ambiguity, clear what it shows. 1\n- natural_photo_typicality: It looks like a professional fashion photo, somewhat staged/editorial but still a natural photograph. 4\n- visual_clutter: Quite minimal, clean composition. 2\n- object_centricity: The handbag is the clear central object. 5\n- scene_centricity: Not really a scene-focused image, more object-focused. 1\n- caption_confidence: High - easy to describe. 5\n\n- estimated_salient_object_count: 2 (the bag and the dress/person)\n- estimated_distinct_object_categories: 2 (handbag, dress/clothing)\n\n- contains_person: Yes (partial, no face)\n- contains_face: No\n- contains_animal: No\n- contains_text: No\n- contains_vehicle: No\n- contains_food: No\n- contains_indoor_scene: Yes (white paneled background)\n- contains_outdoor_scene: No\n- contains_artificial_or_rendered_content: No\n- contains_occlusion_or_truncation: Yes (person's face/head is cropped out)\n- contains_unusual_viewpoint: No\n- contains_multiple_main_objects: Yes (bag and dress are both prominent)\n\n- dominant_content_type: object (the handbag is central)\n- image_style: natural_photo (though editorial/styled)\n- semantic_domain: fashion/accessories\n\nLet me write the short caption: \"Woman in polka dot dress holding a woven rattan handbag with gingham lining\"\n\nMain objects: handbag, dress, ring\n\nPossible interpretations: \"fashion product photo\", \"lifestyle fashion editorial\", \"product showcase for handbag\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 862,
+          "total_tokens": 2384,
+          "cost": 0.00134076,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00134076,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010344
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 555,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

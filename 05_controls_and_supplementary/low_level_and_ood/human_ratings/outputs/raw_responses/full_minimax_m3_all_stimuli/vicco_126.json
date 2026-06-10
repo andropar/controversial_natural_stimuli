@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_126",
+    "stim_key": "vicco_126",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 126,
+    "file_index": 125,
+    "image_name": "shared_4rep_vicco_126.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_126.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"everyday_objects\",\n  \"short_caption\": \"Two shoes and a bottle of Lipton iced tea on a wooden floor\",\n  \"main_objects\": [\"white sneaker\", \"Lipton iced tea bottle\", \"black Vans shoe\", \"wooden floor\"],\n  \"possible_interpretations\": [\"casual photo of items on floor\", \"comparison of footwear styles\", \"still life of personal belongings\"],\n  \"uncertainty_notes\": \"Composition is casual and the reason for grouping these items is unclear, but individual objects are identifiable.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319535-ajHaFH8fKzhlrqG5opHF",
+        "object": "chat.completion",
+        "created": 1780319535,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"everyday_objects\",\n  \"short_caption\": \"Two shoes and a bottle of Lipton iced tea on a wooden floor\",\n  \"main_objects\": [\"white sneaker\", \"Lipton iced tea bottle\", \"black Vans shoe\", \"wooden floor\"],\n  \"possible_interpretations\": [\"casual photo of items on floor\", \"comparison of footwear styles\", \"still life of personal belongings\"],\n  \"uncertainty_notes\": \"Composition is casual and the reason for grouping these items is unclear, but individual objects are identifiable.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a pair of white sneakers/boots on the left, a bottle of Lipton lemon iced tea in the middle, and a black Vans shoe on the right, all placed on a wooden floor. Let me analyze this carefully.\n\nMain objects:\n- White sneaker/boot (left)\n- Lipton iced tea bottle with yellow cap (center)\n- Black Vans shoe (right)\n- Wooden floor (background)\n\nLet me rate the attributes:\n- recognizability: 4 - items are clearly recognizable\n- ambiguity: 1 - the contents are quite clear, though composition is unusual\n- natural_photo_typicality: 3 - looks like a casual phone photo, not staged professionally\n- visual_clutter: 2 - three items on a floor, relatively simple\n- object_centricity: 3 - objects are present but no single dominant one\n- scene_centricity: 2 - it's more object-focused than scene-focused\n- caption_confidence: 4 - can describe confidently\n\nSalient object count: 3\nDistinct categories: shoes (2), beverage bottle (1) = 3 categories\ncontains_text: yes (Lipton, Vans visible)\ncontains_vehicle: no\ncontains_food: no (drink bottle)\ncontains_indoor_scene: yes (wooden floor, indoor)\ncontains_outdoor_scene: no\ncontains_person: no\ncontains_face: no\ncontains_animal: no\ncontains_artificial_or_rendered_content: no\ncontains_occlusion_or_truncation: no\ncontains_unusual_viewpoint: maybe slightly (top-down angle)\ncontains_multiple_main_objects: yes\n\ndominant_content_type: mixed (multiple objects)\nimage_style: natural_photo\nsemantic_domain: everyday_objects\n\nshort_caption: \"Two shoes and a bottle of Lipton iced tea on a wooden floor\"\n\nmain_objects: [\"white sneaker\", \"Lipton iced tea bottle\", \"black Vans shoe\", \"wooden floor\"]\n\npossible_interpretations: [\"casual photo of items on floor\", \"before/after comparison of footwear\", \"still life of personal belongings\"]\n\nuncertainty_notes: \"Composition is unusual but items are clear\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a pair of white sneakers/boots on the left, a bottle of Lipton lemon iced tea in the middle, and a black Vans shoe on the right, all placed on a wooden floor. Let me analyze this carefully.\n\nMain objects:\n- White sneaker/boot (left)\n- Lipton iced tea bottle with yellow cap (center)\n- Black Vans shoe (right)\n- Wooden floor (background)\n\nLet me rate the attributes:\n- recognizability: 4 - items are clearly recognizable\n- ambiguity: 1 - the contents are quite clear, though composition is unusual\n- natural_photo_typicality: 3 - looks like a casual phone photo, not staged professionally\n- visual_clutter: 2 - three items on a floor, relatively simple\n- object_centricity: 3 - objects are present but no single dominant one\n- scene_centricity: 2 - it's more object-focused than scene-focused\n- caption_confidence: 4 - can describe confidently\n\nSalient object count: 3\nDistinct categories: shoes (2), beverage bottle (1) = 3 categories\ncontains_text: yes (Lipton, Vans visible)\ncontains_vehicle: no\ncontains_food: no (drink bottle)\ncontains_indoor_scene: yes (wooden floor, indoor)\ncontains_outdoor_scene: no\ncontains_person: no\ncontains_face: no\ncontains_animal: no\ncontains_artificial_or_rendered_content: no\ncontains_occlusion_or_truncation: no\ncontains_unusual_viewpoint: maybe slightly (top-down angle)\ncontains_multiple_main_objects: yes\n\ndominant_content_type: mixed (multiple objects)\nimage_style: natural_photo\nsemantic_domain: everyday_objects\n\nshort_caption: \"Two shoes and a bottle of Lipton iced tea on a wooden floor\"\n\nmain_objects: [\"white sneaker\", \"Lipton iced tea bottle\", \"black Vans shoe\", \"wooden floor\"]\n\npossible_interpretations: [\"casual photo of items on floor\", \"before/after comparison of footwear\", \"still life of personal belongings\"]\n\nuncertainty_notes: \"Composition is unusual but items are clear\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 801,
+          "total_tokens": 2323,
+          "cost": 0.00126756,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126756,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009612
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 498,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

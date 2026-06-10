@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_49",
+    "stim_key": "vicco_49",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 49,
+    "file_index": 48,
+    "image_name": "shared_4rep_vicco_049.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_049.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"domestic activity\",\n  \"short_caption\": \"A hooded person uses a large knife to open a floral-patterned product box on a wooden table.\",\n  \"main_objects\": [\"person\", \"knife\", \"product box\", \"furry blanket\", \"smartphone\"],\n  \"possible_interpretations\": [\n    \"person unboxing a tea or food product\",\n    \"dramatic or staged scene with knife\",\n    \"opening difficult-to-open packaging\",\n    \"cosplay or role-play scene\",\n    \"preparing to open a botanical/herbal product box\"\n  ],\n  \"uncertainty_notes\": \"Face is partially obscured by hood; intent of the knife use is ambiguous; box contents are not clearly identifiable from the visible label.\",\n  \"quality_flags\": [\"partially obscured face\", \"contextually unusual prop use\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319446-K6baCZymCYatuYUkUhA1",
+        "object": "chat.completion",
+        "created": 1780319446,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"domestic activity\",\n  \"short_caption\": \"A hooded person uses a large knife to open a floral-patterned product box on a wooden table.\",\n  \"main_objects\": [\"person\", \"knife\", \"product box\", \"furry blanket\", \"smartphone\"],\n  \"possible_interpretations\": [\n    \"person unboxing a tea or food product\",\n    \"dramatic or staged scene with knife\",\n    \"opening difficult-to-open packaging\",\n    \"cosplay or role-play scene\",\n    \"preparing to open a botanical/herbal product box\"\n  ],\n  \"uncertainty_notes\": \"Face is partially obscured by hood; intent of the knife use is ambiguous; box contents are not clearly identifiable from the visible label.\",\n  \"quality_flags\": [\"partially obscured face\", \"contextually unusual prop use\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a person wearing a dark hooded jacket, leaning over a table. They are holding a large knife in their right hand, with the blade pointing down toward a green and white product box that has floral/botanical designs on it. The person appears to be opening or cutting into the box. There's a furry gray blanket or throw in the background, and the person is on a wooden table surface. A phone is visible in the lower left corner.\n\nThe person's face is partially obscured by the hood, but I can see their lower face, nose, and mouth. Their expression seems focused on the task.\n\nLet me assess each dimension:\n\n- recognizability: 4 - The scene is fairly clear, though the action is somewhat unusual/intense\n- ambiguity: 3 - Could be unboxing, threatening, or some staged scene\n- natural_photo_typicality: 4 - Looks like a natural photo, though the setup is unusual\n- visual_clutter: 2 - Not very cluttered, focused on a few elements\n- object_centricity: 2 - There's a person and objects, but the person is central\n- scene_centricity: 2 - It's more about the person and action\n- caption_confidence: 4 - Can describe well\n\nSalient objects: person, knife, product box, blanket, phone\nDistinct categories: person, knife, box, blanket, phone - about 5\n\nContains person: yes\nContains face: yes (partially)\nContains animal: no\nContains text: yes (on the box)\nContains vehicle: no\nContains food: maybe (the box might contain food/tea based on botanical design)\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial or rendered content: no\nContains occlusion or truncation: yes (face is partially hidden by hood)\nContains unusual viewpoint: no\nContains multiple main objects: yes (person, knife, box)\n\nDominant content type: person_face or mixed - I'd say mixed since there are multiple elements\nImage style: natural_photo\nSemantic domain: domestic, unboxing, or activity\n\nShort caption: \"A hooded person uses a large knife to open a floral-patterned product box on a table.\"\n\nMain objects: person, knife, product box, blanket, phone\n\nPossible interpretations: unboxing a product, opening food packaging, staged/dramatic scene, cutting open tea box\n\nUncertainty notes: The face is partially obscured by the hood, making identification difficult. The intent of the scene is ambiguous - could be normal unboxing or something more dramatic.\n\nQuality flags: partially obscured face, unusual knife use context",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a person wearing a dark hooded jacket, leaning over a table. They are holding a large knife in their right hand, with the blade pointing down toward a green and white product box that has floral/botanical designs on it. The person appears to be opening or cutting into the box. There's a furry gray blanket or throw in the background, and the person is on a wooden table surface. A phone is visible in the lower left corner.\n\nThe person's face is partially obscured by the hood, but I can see their lower face, nose, and mouth. Their expression seems focused on the task.\n\nLet me assess each dimension:\n\n- recognizability: 4 - The scene is fairly clear, though the action is somewhat unusual/intense\n- ambiguity: 3 - Could be unboxing, threatening, or some staged scene\n- natural_photo_typicality: 4 - Looks like a natural photo, though the setup is unusual\n- visual_clutter: 2 - Not very cluttered, focused on a few elements\n- object_centricity: 2 - There's a person and objects, but the person is central\n- scene_centricity: 2 - It's more about the person and action\n- caption_confidence: 4 - Can describe well\n\nSalient objects: person, knife, product box, blanket, phone\nDistinct categories: person, knife, box, blanket, phone - about 5\n\nContains person: yes\nContains face: yes (partially)\nContains animal: no\nContains text: yes (on the box)\nContains vehicle: no\nContains food: maybe (the box might contain food/tea based on botanical design)\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial or rendered content: no\nContains occlusion or truncation: yes (face is partially hidden by hood)\nContains unusual viewpoint: no\nContains multiple main objects: yes (person, knife, box)\n\nDominant content type: person_face or mixed - I'd say mixed since there are multiple elements\nImage style: natural_photo\nSemantic domain: domestic, unboxing, or activity\n\nShort caption: \"A hooded person uses a large knife to open a floral-patterned product box on a table.\"\n\nMain objects: person, knife, product box, blanket, phone\n\nPossible interpretations: unboxing a product, opening food packaging, staged/dramatic scene, cutting open tea box\n\nUncertainty notes: The face is partially obscured by the hood, making identification difficult. The intent of the scene is ambiguous - could be normal unboxing or something more dramatic.\n\nQuality flags: partially obscured face, unusual knife use context",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 946,
+          "total_tokens": 2468,
+          "cost": 0.00144156,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00144156,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011352
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 649,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

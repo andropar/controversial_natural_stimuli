@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_27",
+    "stim_key": "sota_27",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 27,
+    "file_index": 27,
+    "image_name": "image_0027.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0027.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife\",\n  \"short_caption\": \"Two ospreys perched in a stick nest atop a wooden platform\",\n  \"main_objects\": [\"osprey\", \"osprey\", \"nest\", \"wooden platform\", \"wooden post\"],\n  \"possible_interpretations\": [\n    \"Pair of ospreys nesting on a man-made platform\",\n    \"Raptor pair guarding their nest on a tall post\"\n  ],\n  \"uncertainty_notes\": \"Birds strongly resemble ospreys but exact species not 100% certain; nest and platform suggest a wildlife management or utility structure.\",\n  \"quality_flags\": [\"plain_overcast_background\", \"slight_motion_blur_on_bird\"]\n}",
+      "response": {
+        "id": "gen-1780319113-iug4lN3xPYCObTQ00z6t",
+        "object": "chat.completion",
+        "created": 1780319113,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife\",\n  \"short_caption\": \"Two ospreys perched in a stick nest atop a wooden platform\",\n  \"main_objects\": [\"osprey\", \"osprey\", \"nest\", \"wooden platform\", \"wooden post\"],\n  \"possible_interpretations\": [\n    \"Pair of ospreys nesting on a man-made platform\",\n    \"Raptor pair guarding their nest on a tall post\"\n  ],\n  \"uncertainty_notes\": \"Birds strongly resemble ospreys but exact species not 100% certain; nest and platform suggest a wildlife management or utility structure.\",\n  \"quality_flags\": [\"plain_overcast_background\", \"slight_motion_blur_on_bird\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows two birds (appearing to be ospreys) standing in a nest built on top of a wooden platform structure. The platform is on a tall wooden post. The background is a plain, overcast sky. The birds have distinctive markings - white underparts, dark brown backs and wings, with what appears to be a crest/head pattern typical of ospreys.\n\nLet me go through each annotation:\n\n- recognizability: 5 - very clear, easily recognizable as ospreys on a nest platform\n- ambiguity: 1 - very clear what's happening\n- natural_photo_typicality: 4 - looks like a natural photograph, though the sky is plain\n- visual_clutter: 2 - relatively clean composition\n- object_centricity: 4 - the birds are the clear focus\n- scene_centricity: 3 - it's somewhat of a scene with sky as background\n- caption_confidence: 5 - very confident in caption\n\n- estimated_salient_object_count: 2 (two birds)\n- estimated_distinct_object_categories: 2 (birds, nest/platform)\n\n- contains_person: false\n- contains_face: false (bird faces, not human)\n- contains_animal: true (birds)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (the platform is artificial but the photo is natural)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (slightly low angle but not unusual)\n- contains_multiple_main_objects: true (two birds)\n\n- dominant_content_type: \"animal\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"wildlife\" or \"nature\"\n\n- short_caption: \"Two ospreys perched in a stick nest on a wooden platform\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows two birds (appearing to be ospreys) standing in a nest built on top of a wooden platform structure. The platform is on a tall wooden post. The background is a plain, overcast sky. The birds have distinctive markings - white underparts, dark brown backs and wings, with what appears to be a crest/head pattern typical of ospreys.\n\nLet me go through each annotation:\n\n- recognizability: 5 - very clear, easily recognizable as ospreys on a nest platform\n- ambiguity: 1 - very clear what's happening\n- natural_photo_typicality: 4 - looks like a natural photograph, though the sky is plain\n- visual_clutter: 2 - relatively clean composition\n- object_centricity: 4 - the birds are the clear focus\n- scene_centricity: 3 - it's somewhat of a scene with sky as background\n- caption_confidence: 5 - very confident in caption\n\n- estimated_salient_object_count: 2 (two birds)\n- estimated_distinct_object_categories: 2 (birds, nest/platform)\n\n- contains_person: false\n- contains_face: false (bird faces, not human)\n- contains_animal: true (birds)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (the platform is artificial but the photo is natural)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (slightly low angle but not unusual)\n- contains_multiple_main_objects: true (two birds)\n\n- dominant_content_type: \"animal\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"wildlife\" or \"nature\"\n\n- short_caption: \"Two ospreys perched in a stick nest on a wooden platform\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 780,
+          "total_tokens": 2302,
+          "cost": 0.00124236,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00124236,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000936
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 445,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

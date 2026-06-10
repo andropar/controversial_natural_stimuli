@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_178",
+    "stim_key": "vicco_178",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 178,
+    "file_index": 177,
+    "image_name": "shared_4rep_vicco_178.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_178.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"beach/coastal\",\n  \"short_caption\": \"Beach at dusk with city skyline, people walking on sand and ocean waves\",\n  \"main_objects\": [\"beach\", \"ocean\", \"buildings\", \"people\", \"sky\", \"palm trees\"],\n  \"possible_interpretations\": [\"a beach city at sunset\", \"a coastal resort town in the evening\"],\n  \"uncertainty_notes\": \"Faces are too distant to discern; exact location is unclear but appears to be a tropical urban beach.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319596-EMx6MQwNNkz9773y7zIC",
+        "object": "chat.completion",
+        "created": 1780319596,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"beach/coastal\",\n  \"short_caption\": \"Beach at dusk with city skyline, people walking on sand and ocean waves\",\n  \"main_objects\": [\"beach\", \"ocean\", \"buildings\", \"people\", \"sky\", \"palm trees\"],\n  \"possible_interpretations\": [\"a beach city at sunset\", \"a coastal resort town in the evening\"],\n  \"uncertainty_notes\": \"Faces are too distant to discern; exact location is unclear but appears to be a tropical urban beach.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a beach scene at dusk/sunset with a pink and gray cloudy sky. There are high-rise buildings (likely hotels/condos) along the coastline, people walking on the sandy beach, and waves rolling in from the ocean. The scene appears to be a typical urban beach (looks like it could be Miami or a similar coastal city). The lighting suggests evening/sunset time.\n\nLet me analyze each attribute:\n\n- Recognizability: Very clear - clearly a beach scene with buildings, people, ocean. 5\n- Ambiguity: Low ambiguity - very clearly a beach city scene. 1\n- Natural_photo_typicality: Looks like a typical natural photograph. 5\n- Visual_clutter: There's quite a bit going on - buildings, people, clouds, waves, sand. 3\n- Object_centricity: Not really object-centric, more of a scene. 2\n- Scene_centricity: Definitely a scene - beach/coastal city. 5\n- Caption_confidence: High confidence. 5\n\nObjects: buildings, people, ocean, sand, clouds, waves\nSalient objects: buildings, groups of people\nDistinct categories: ~5-6 (buildings, people, ocean, sand, sky, vegetation/palm trees)\n\nContains person: yes\nContains face: faces are too small/distant to really see\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial_or_rendered_content: no\nContains occlusion_or_truncation: some buildings may be cut off, but not really\nContains unusual_viewpoint: no\nContains multiple_main_objects: no, it's a scene\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: beach/coastal\n\nCaption: Beach scene at sunset with city skyline, people walking on sand and ocean waves\nMain objects: buildings, people, ocean, sand, sky, palm trees",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a beach scene at dusk/sunset with a pink and gray cloudy sky. There are high-rise buildings (likely hotels/condos) along the coastline, people walking on the sandy beach, and waves rolling in from the ocean. The scene appears to be a typical urban beach (looks like it could be Miami or a similar coastal city). The lighting suggests evening/sunset time.\n\nLet me analyze each attribute:\n\n- Recognizability: Very clear - clearly a beach scene with buildings, people, ocean. 5\n- Ambiguity: Low ambiguity - very clearly a beach city scene. 1\n- Natural_photo_typicality: Looks like a typical natural photograph. 5\n- Visual_clutter: There's quite a bit going on - buildings, people, clouds, waves, sand. 3\n- Object_centricity: Not really object-centric, more of a scene. 2\n- Scene_centricity: Definitely a scene - beach/coastal city. 5\n- Caption_confidence: High confidence. 5\n\nObjects: buildings, people, ocean, sand, clouds, waves\nSalient objects: buildings, groups of people\nDistinct categories: ~5-6 (buildings, people, ocean, sand, sky, vegetation/palm trees)\n\nContains person: yes\nContains face: faces are too small/distant to really see\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial_or_rendered_content: no\nContains occlusion_or_truncation: some buildings may be cut off, but not really\nContains unusual_viewpoint: no\nContains multiple_main_objects: no, it's a scene\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: beach/coastal\n\nCaption: Beach scene at sunset with city skyline, people walking on sand and ocean waves\nMain objects: buildings, people, ocean, sand, sky, palm trees",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 754,
+          "total_tokens": 2276,
+          "cost": 0.00121116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00121116,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009048
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 458,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

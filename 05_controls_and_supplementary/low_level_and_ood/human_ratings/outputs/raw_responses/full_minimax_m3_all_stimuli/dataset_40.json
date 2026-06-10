@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_40",
+    "stim_key": "dataset_40",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 40,
+    "file_index": 40,
+    "image_name": "image_0040.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0040.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"technology/electronics\",\n  \"short_caption\": \"An iPad displaying a home screen of app icons rests on a patterned rug.\",\n  \"main_objects\": [\"iPad\", \"rug\", \"app icons\"],\n  \"possible_interpretations\": [\"iPad on a rug\", \"Apple tablet on carpet\", \"iPad home screen on patterned textile\"],\n  \"uncertainty_notes\": \"Image is shot at a perspective angle; some app labels are partially legible due to viewing angle and screen glare.\",\n  \"quality_flags\": [\"perspective_distortion\", \"screen_glare\", \"partial_label_legibility\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319009-i1vVZl3NQKZs4GE7v1bH",
+        "object": "chat.completion",
+        "created": 1780319009,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"technology/electronics\",\n  \"short_caption\": \"An iPad displaying a home screen of app icons rests on a patterned rug.\",\n  \"main_objects\": [\"iPad\", \"rug\", \"app icons\"],\n  \"possible_interpretations\": [\"iPad on a rug\", \"Apple tablet on carpet\", \"iPad home screen on patterned textile\"],\n  \"uncertainty_notes\": \"Image is shot at a perspective angle; some app labels are partially legible due to viewing angle and screen glare.\",\n  \"quality_flags\": [\"perspective_distortion\", \"screen_glare\", \"partial_label_legibility\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "The image shows an iPad (Apple tablet) displayed on what appears to be a patterned rug or carpet. The screen shows various app icons like Safari, Mail, iTunes, App Store, Notes, Game Center, Reminders, Calendar, and others. The iPad is photographed at an angle, showing perspective distortion. The background is a textured woven rug with reddish/brown patterns.\n\nLet me analyze this carefully:\n\n- Recognizability: The iPad and its apps are clearly recognizable. Rating: 5\n- Ambiguity: Pretty clear what's shown - an iPad on a rug. Rating: 1-2\n- Natural photo typicality: Looks like a typical natural photo. Rating: 4\n- Visual clutter: The screen has many app icons, and the rug has a pattern. Rating: 3\n- Object centricity: The iPad is the main subject. Rating: 5\n- Scene centricity: It's more of an object than a scene. Rating: 2\n- Caption confidence: High, easy to caption. Rating: 5\n\nSalient objects: 1 (iPad), but the screen has many app icons\nDistinct object categories: 2 (iPad/tablet, rug)\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: true (app labels visible)\nContains vehicle: false\nContains food: false\nContains indoor scene: true (appears to be indoors on a rug)\nContains outdoor scene: false\nContains artificial or rendered content: true (the screen displays digital content)\nContains occlusion or truncation: false\nContains unusual viewpoint: true (shot at an angle showing perspective)\nContains multiple main objects: false\n\nDominant content: object (the iPad)\nImage style: natural_photo\nSemantic domain: technology/electronics\n\nShort caption: \"An iPad displaying app icons rests on a patterned rug.\"\nMain objects: [\"iPad\", \"rug\", \"app icons\"]\nPossible interpretations: [\"iPad on a rug\", \"Apple tablet on carpet\", \"iPad home screen displayed on rug\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows an iPad (Apple tablet) displayed on what appears to be a patterned rug or carpet. The screen shows various app icons like Safari, Mail, iTunes, App Store, Notes, Game Center, Reminders, Calendar, and others. The iPad is photographed at an angle, showing perspective distortion. The background is a textured woven rug with reddish/brown patterns.\n\nLet me analyze this carefully:\n\n- Recognizability: The iPad and its apps are clearly recognizable. Rating: 5\n- Ambiguity: Pretty clear what's shown - an iPad on a rug. Rating: 1-2\n- Natural photo typicality: Looks like a typical natural photo. Rating: 4\n- Visual clutter: The screen has many app icons, and the rug has a pattern. Rating: 3\n- Object centricity: The iPad is the main subject. Rating: 5\n- Scene centricity: It's more of an object than a scene. Rating: 2\n- Caption confidence: High, easy to caption. Rating: 5\n\nSalient objects: 1 (iPad), but the screen has many app icons\nDistinct object categories: 2 (iPad/tablet, rug)\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: true (app labels visible)\nContains vehicle: false\nContains food: false\nContains indoor scene: true (appears to be indoors on a rug)\nContains outdoor scene: false\nContains artificial or rendered content: true (the screen displays digital content)\nContains occlusion or truncation: false\nContains unusual viewpoint: true (shot at an angle showing perspective)\nContains multiple main objects: false\n\nDominant content: object (the iPad)\nImage style: natural_photo\nSemantic domain: technology/electronics\n\nShort caption: \"An iPad displaying app icons rests on a patterned rug.\"\nMain objects: [\"iPad\", \"rug\", \"app icons\"]\nPossible interpretations: [\"iPad on a rug\", \"Apple tablet on carpet\", \"iPad home screen displayed on rug\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 782,
+          "total_tokens": 2304,
+          "cost": 0.00136764,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00136764,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009384
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 476,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

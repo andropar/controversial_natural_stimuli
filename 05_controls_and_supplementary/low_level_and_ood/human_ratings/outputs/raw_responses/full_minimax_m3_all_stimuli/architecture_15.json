@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_15",
+    "stim_key": "architecture_15",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 15,
+    "file_index": 15,
+    "image_name": "image_0015.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0015.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture/rooftop\",\n  \"short_caption\": \"A rooftop terrace with decorative blue and white tile work, terracotta wall, and a satellite dish\",\n  \"main_objects\": [\"satellite dish\", \"terracotta wall\", \"decorative tiles\", \"tile floor\", \"roof tiles\"],\n  \"possible_interpretations\": [\"Mediterranean-style rooftop terrace\", \"rooftop with traditional azulejo tilework\", \"rooftop terrace of a residential building\", \"outdoor terrace with patterned tile flooring\"],\n  \"uncertainty_notes\": \"The gray strip at the bottom of the image appears to be an unusual crop or rendering artifact; the sky has a slightly gradient quality but appears natural\",\n  \"quality_flags\": [\"bottom_crop_artifact\", \"tilted_horizon\", \"low_sky_detail\"]\n}",
+      "response": {
+        "id": "gen-1780318861-ul6BVXwEUrzpfUvkvnFZ",
+        "object": "chat.completion",
+        "created": 1780318861,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture/rooftop\",\n  \"short_caption\": \"A rooftop terrace with decorative blue and white tile work, terracotta wall, and a satellite dish\",\n  \"main_objects\": [\"satellite dish\", \"terracotta wall\", \"decorative tiles\", \"tile floor\", \"roof tiles\"],\n  \"possible_interpretations\": [\"Mediterranean-style rooftop terrace\", \"rooftop with traditional azulejo tilework\", \"rooftop terrace of a residential building\", \"outdoor terrace with patterned tile flooring\"],\n  \"uncertainty_notes\": \"The gray strip at the bottom of the image appears to be an unusual crop or rendering artifact; the sky has a slightly gradient quality but appears natural\",\n  \"quality_flags\": [\"bottom_crop_artifact\", \"tilted_horizon\", \"low_sky_detail\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a rooftop or terrace with:\n- A large brown/terracotta colored wall\n- A roof with terracotta tiles at the top\n- A satellite dish on the wall\n- Decorative tile work (azulejos) on the lower portion of the wall with blue and white patterns\n- A tiled floor with blue, white, and dark patterned tiles\n- A gray/overcast sky\n- The bottom portion appears to be a gray area, possibly a rendering artifact or crop issue\n\nLet me annotate this carefully:\n\n- Recognizability: Clear scene of a tiled rooftop terrace, fairly recognizable - 4\n- Ambiguity: Low ambiguity, clearly a rooftop terrace - 2\n- Natural photo typicality: Looks like a typical natural photograph, though the bottom gray area is odd - 3\n- Visual clutter: Moderate - patterned tiles are busy but it's a fairly simple scene - 3\n- Object-centricity: Not really object-centric, more of a scene - 2\n- Scene-centricity: Yes, this is primarily a scene/place - 5\n- Caption confidence: High - 4\n\nObjects: satellite dish, roof tiles, decorative wall tiles, floor tiles\nContains person: no\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial or rendered content: the bottom gray area looks like it could be a rendering artifact\nContains occlusion or truncation: the bottom is cut off oddly\nContains unusual viewpoint: somewhat, the upward angle\nContains multiple main objects: no, it's more of a scene\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: architecture/rooftop\n\nShort caption: \"A rooftop terrace with decorative blue and white tile work and a satellite dish\"\n\nMain objects: [\"satellite dish\", \"wall\", \"tiles\", \"roof\"]\n\nPossible interpretations: [\"rooftop terrace with tile decoration\", \"Mediterranean-style building exterior\", \"rooftop with satellite dish\"]\n\nThe bottom gray strip is unusual - it might be a rendering error or a composite issue.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a rooftop or terrace with:\n- A large brown/terracotta colored wall\n- A roof with terracotta tiles at the top\n- A satellite dish on the wall\n- Decorative tile work (azulejos) on the lower portion of the wall with blue and white patterns\n- A tiled floor with blue, white, and dark patterned tiles\n- A gray/overcast sky\n- The bottom portion appears to be a gray area, possibly a rendering artifact or crop issue\n\nLet me annotate this carefully:\n\n- Recognizability: Clear scene of a tiled rooftop terrace, fairly recognizable - 4\n- Ambiguity: Low ambiguity, clearly a rooftop terrace - 2\n- Natural photo typicality: Looks like a typical natural photograph, though the bottom gray area is odd - 3\n- Visual clutter: Moderate - patterned tiles are busy but it's a fairly simple scene - 3\n- Object-centricity: Not really object-centric, more of a scene - 2\n- Scene-centricity: Yes, this is primarily a scene/place - 5\n- Caption confidence: High - 4\n\nObjects: satellite dish, roof tiles, decorative wall tiles, floor tiles\nContains person: no\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial or rendered content: the bottom gray area looks like it could be a rendering artifact\nContains occlusion or truncation: the bottom is cut off oddly\nContains unusual viewpoint: somewhat, the upward angle\nContains multiple main objects: no, it's more of a scene\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: architecture/rooftop\n\nShort caption: \"A rooftop terrace with decorative blue and white tile work and a satellite dish\"\n\nMain objects: [\"satellite dish\", \"wall\", \"tiles\", \"roof\"]\n\nPossible interpretations: [\"rooftop terrace with tile decoration\", \"Mediterranean-style building exterior\", \"rooftop with satellite dish\"]\n\nThe bottom gray strip is unusual - it might be a rendering error or a composite issue.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 850,
+          "total_tokens": 2372,
+          "cost": 0.00144924,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00144924,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.00102
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 530,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

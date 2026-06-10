@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_3",
+    "stim_key": "vicco_3",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 3,
+    "file_index": 2,
+    "image_name": "shared_4rep_vicco_003.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_003.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\":5,\"ambiguity\":3,\"natural_photo_typicality\":4,\"visual_clutter\":4,\"object_centricity\":2,\"scene_centricity\":5,\"caption_confidence\":4,\"estimated_salient_object_count\":6,\"estimated_distinct_object_categories\":4,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":true,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":false,\"contains_outdoor_scene\":true,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":true,\"contains_multiple_main_objects\":false,\"dominant_content_type\":\"scene\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"urban_street\",\"short_caption\":\"Building exterior wall covered in colorful graffiti tags with windows and basement vents\",\"main_objects\":[\"graffiti\",\"building wall\",\"windows\",\"basement vents\",\"sidewalk\"],\"possible_interpretations\":[\"urban street scene with graffiti\",\"vandalized building facade\",\"street art on residential building\",\"angled view of graffiti-covered wall\"],\"uncertainty_notes\":\"Graffiti text is stylized and largely illegible; exact tag meanings cannot be determined\",\"quality_flags\":[]}",
+      "response": {
+        "id": "gen-1780318190-u1DHYywSZ6U9kBl0CviX",
+        "object": "chat.completion",
+        "created": 1780318190,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\":5,\"ambiguity\":3,\"natural_photo_typicality\":4,\"visual_clutter\":4,\"object_centricity\":2,\"scene_centricity\":5,\"caption_confidence\":4,\"estimated_salient_object_count\":6,\"estimated_distinct_object_categories\":4,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":true,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":false,\"contains_outdoor_scene\":true,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":true,\"contains_multiple_main_objects\":false,\"dominant_content_type\":\"scene\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"urban_street\",\"short_caption\":\"Building exterior wall covered in colorful graffiti tags with windows and basement vents\",\"main_objects\":[\"graffiti\",\"building wall\",\"windows\",\"basement vents\",\"sidewalk\"],\"possible_interpretations\":[\"urban street scene with graffiti\",\"vandalized building facade\",\"street art on residential building\",\"angled view of graffiti-covered wall\"],\"uncertainty_notes\":\"Graffiti text is stylized and largely illegible; exact tag meanings cannot be determined\",\"quality_flags\":[]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a building exterior with extensive graffiti on the wall. There are windows visible at the top, and below them is a wall covered in colorful graffiti tags in blue, green, red, and black. There appear to be small basement-level windows or vents. The sidewalk is visible at the bottom. The perspective is angled, showing the wall receding into the distance.\n\nLet me assess each dimension:\n\n- recognizability: The main content (graffiti on building wall) is clearly recognizable. 5\n- ambiguity: Multiple interpretations possible (graffiti art, vandalism, urban decay, street art scene). 3\n- natural_photo_typicality: Looks like a typical natural photograph. 4\n- visual_clutter: Lots of competing elements - multiple graffiti tags, windows, architectural details. 4\n- object_centricity: No single central object; the wall is the main subject but it's a scene. 2\n- scene_centricity: This is mainly a scene/place. 5\n- caption_confidence: Pretty confident I can caption this. 4\n\nSalient objects:\n- Graffiti tags\n- Building wall\n- Windows\n- Basement vents/windows\n\nNo people, animals, food, vehicles, faces, or text that I can read.\nContains outdoor scene: yes\nContains artificial/rendered: no, it's a real photo\nContains text: the graffiti contains stylized text but not readable text\nOcclusion/truncation: the image is cropped/truncated at edges\nUnusual viewpoint: the angled perspective is somewhat unusual\n\nLet me set the flags accordingly.\n\nFor the main objects: graffiti, building wall, windows, sidewalk\nPossible interpretations: urban graffiti scene, building exterior with street art tags, vandalized building wall\nUncertainty notes: graffiti is stylized and not clearly readable as text\nQuality flags: none significant",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a building exterior with extensive graffiti on the wall. There are windows visible at the top, and below them is a wall covered in colorful graffiti tags in blue, green, red, and black. There appear to be small basement-level windows or vents. The sidewalk is visible at the bottom. The perspective is angled, showing the wall receding into the distance.\n\nLet me assess each dimension:\n\n- recognizability: The main content (graffiti on building wall) is clearly recognizable. 5\n- ambiguity: Multiple interpretations possible (graffiti art, vandalism, urban decay, street art scene). 3\n- natural_photo_typicality: Looks like a typical natural photograph. 4\n- visual_clutter: Lots of competing elements - multiple graffiti tags, windows, architectural details. 4\n- object_centricity: No single central object; the wall is the main subject but it's a scene. 2\n- scene_centricity: This is mainly a scene/place. 5\n- caption_confidence: Pretty confident I can caption this. 4\n\nSalient objects:\n- Graffiti tags\n- Building wall\n- Windows\n- Basement vents/windows\n\nNo people, animals, food, vehicles, faces, or text that I can read.\nContains outdoor scene: yes\nContains artificial/rendered: no, it's a real photo\nContains text: the graffiti contains stylized text but not readable text\nOcclusion/truncation: the image is cropped/truncated at edges\nUnusual viewpoint: the angled perspective is somewhat unusual\n\nLet me set the flags accordingly.\n\nFor the main objects: graffiti, building wall, windows, sidewalk\nPossible interpretations: urban graffiti scene, building exterior with street art tags, vandalized building wall\nUncertainty notes: graffiti is stylized and not clearly readable as text\nQuality flags: none significant",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 646,
+          "total_tokens": 2168,
+          "cost": 0.00120444,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00120444,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0007752
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 468,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

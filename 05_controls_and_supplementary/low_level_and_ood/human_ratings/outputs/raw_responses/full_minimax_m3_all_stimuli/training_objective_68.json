@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_68",
+    "stim_key": "training_objective_68",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 68,
+    "file_index": 68,
+    "image_name": "image_0068.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0068.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: No valid JSON object found in model response"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"novelty_toys\",\n  \"short_caption\": \"Four rubber ducks with propeller helmets on a car dashboard display\",\n  \"main_objects\": [\"rubber duck\", \"propeller helmet\", \"car dashboard\", \"digital display\"],\n  \"possible_interpretations\": [\n    \"Novelty rubber ducks dressed as helicopter pilots on a car dashboard\",\n    \"Toy ducks arranged on a car's altimeter/barometer display\"\n  ],\n  \"uncertainty_notes\": \"Image is clear; ducks are clearly toy/novelty items with miniature helicopter helmets and spinning propellers.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319367-fe8Oxw3VqZPhAKJUUaOA",
+        "object": "chat.completion",
+        "created": 1780319367,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"novelty_toys\",\n  \"short_caption\": \"Four rubber ducks with propeller helmets on a car dashboard display\",\n  \"main_objects\": [\"rubber duck\", \"propeller helmet\", \"car dashboard\", \"digital display\"],\n  \"possible_interpretations\": [\n    \"Novelty rubber ducks dressed as helicopter pilots on a car dashboard\",\n    \"Toy ducks arranged on a car's altimeter/barometer display\"\n  ],\n  \"uncertainty_notes\": \"Image is clear; ducks are clearly toy/novelty items with miniature helicopter helmets and spinning propellers.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows four small rubber ducks with propellers on their heads (like helicopter rotors) and colored helmets (yellow, black, blue, pink). They are placed on what appears to be a car dashboard, with a display showing altitude (ALTI 60m), barometric pressure (BARO 992 hPa), and compass information. The background shows a blurred view through the windshield of trees/foliage.\n\nLet me annotate this carefully:\n\n- recognizability: 4 - The objects are clearly recognizable as novelty rubber ducks with helicopter helmets\n- ambiguity: 1 - Very clear what's in the image\n- natural_photo_typicality: 4 - Looks like a real photograph taken from a car\n- visual_clutter: 2 - Few main objects, relatively simple composition\n- object_centricity: 4 - The ducks dominate the image\n- scene_centricity: 2 - There is a sense of place (car interior with outdoor view) but objects dominate\n- caption_confidence: 4 - Easy to caption\n\n- estimated_salient_object_count: 4 (the four ducks)\n- estimated_distinct_object_categories: 2 (rubber ducks, car dashboard)\n\n- contains_person: false\n- contains_face: false (duck faces but not human)\n- contains_animal: false (toy ducks, not real animals)\n- contains_text: true (ALTI, BARO, etc.)\n- contains_vehicle: true (car dashboard)\n- contains_food: false\n- contains_indoor_scene: true (inside car)\n- contains_outdoor_scene: true (visible through windshield)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (four ducks)\n\n- dominant_content_type: \"object\" (the ducks are the main focus)\n- image_style: \"natural_photo\"\n- semantic_domain: \"novelty_toys\" or \"toys\"\n\n- short_caption: \"Four novelty rubber ducks with propeller helmets on a car dashboard\"\n- main_objects: [\"rubber duck\", \"propeller helmet\", \"car dashboard\", \"altitude display\"]\n- possible_interpretations: [\"Novelty rubber ducks as helicopter pilots on car dashboard\", \"Toy ducks dressed as helicopter crew\"]\n- uncertainty_notes: \"None - the image is quite clear\"\n- quality_flags: []\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows four small rubber ducks with propellers on their heads (like helicopter rotors) and colored helmets (yellow, black, blue, pink). They are placed on what appears to be a car dashboard, with a display showing altitude (ALTI 60m), barometric pressure (BARO 992 hPa), and compass information. The background shows a blurred view through the windshield of trees/foliage.\n\nLet me annotate this carefully:\n\n- recognizability: 4 - The objects are clearly recognizable as novelty rubber ducks with helicopter helmets\n- ambiguity: 1 - Very clear what's in the image\n- natural_photo_typicality: 4 - Looks like a real photograph taken from a car\n- visual_clutter: 2 - Few main objects, relatively simple composition\n- object_centricity: 4 - The ducks dominate the image\n- scene_centricity: 2 - There is a sense of place (car interior with outdoor view) but objects dominate\n- caption_confidence: 4 - Easy to caption\n\n- estimated_salient_object_count: 4 (the four ducks)\n- estimated_distinct_object_categories: 2 (rubber ducks, car dashboard)\n\n- contains_person: false\n- contains_face: false (duck faces but not human)\n- contains_animal: false (toy ducks, not real animals)\n- contains_text: true (ALTI, BARO, etc.)\n- contains_vehicle: true (car dashboard)\n- contains_food: false\n- contains_indoor_scene: true (inside car)\n- contains_outdoor_scene: true (visible through windshield)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (four ducks)\n\n- dominant_content_type: \"object\" (the ducks are the main focus)\n- image_style: \"natural_photo\"\n- semantic_domain: \"novelty_toys\" or \"toys\"\n\n- short_caption: \"Four novelty rubber ducks with propeller helmets on a car dashboard\"\n- main_objects: [\"rubber duck\", \"propeller helmet\", \"car dashboard\", \"altitude display\"]\n- possible_interpretations: [\"Novelty rubber ducks as helicopter pilots on car dashboard\", \"Toy ducks dressed as helicopter crew\"]\n- uncertainty_notes: \"None - the image is quite clear\"\n- quality_flags: []\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 850,
+          "total_tokens": 2388,
+          "cost": 0.00133116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00133116,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.00102
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 555,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

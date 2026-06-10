@@ -24,22 +24,22 @@ from scipy import stats
 from scipy.spatial.distance import pdist
 from tqdm import tqdm
 
-PROJECT_ROOT = Path(__file__).resolve().parents[4]
-PAPER_ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(PROJECT_ROOT))
-sys.path.insert(0, str(PAPER_ROOT))
+STAGE = Path(__file__).resolve().parents[2]
+SHARE_ROOT = STAGE.parents[2]
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
+sys.path.insert(0, str(SHARE_ROOT))
 
 from config import UNIQUE_ENCODING_DIRS, MODEL_LIST_CSV, MODEL_SETS
 from cstims.encoding.linear import load_encoding_params_by_encoding, encode_batch_for_all_encodings
 from cstims.feature_extraction.universal_extractor import UniversalFeatureExtractor
 
 # ── Paths ────────────────────────────────────────────────────────────────────
-SELECTION_ROOT = PROJECT_ROOT / "outputs" / "final_cstims_v2_full"
-TIMESTAMP = "20251222_175721"
-LAION_SAMPLE_DIR = PROJECT_ROOT / "results" / "LAION_natural_sample"
+SELECTION_ROOT = SHARE_ROOT / "00_stimulus_selection" / "results" / "selected_stimuli"
+LAION_SAMPLE_DIR = SHARE_ROOT / "external_data" / "LAION_natural_sample"
 LAION_FEATURES_DIR = LAION_SAMPLE_DIR / "features"
 LAION_IMAGES_DIR = LAION_SAMPLE_DIR / "images"
-OUTPUT_ROOT = PAPER_ROOT / "00_selection_evaluation" / "results"
+OUTPUT_ROOT = STAGE / "results"
 
 ALL_MODEL_SETS = ["all_models", "architecture", "dataset", "sota", "training_objective"]
 ENCODING_NAMES = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]
@@ -313,8 +313,7 @@ def process_model_set(model_set: str, device: torch.device):
     print(f"{'='*60}")
 
     # Load payload
-    payload_path = (SELECTION_ROOT / model_set / "method-raw_plus_all_encodings"
-                    / TIMESTAMP / "selected_stimuli_data.pkl")
+    payload_path = SELECTION_ROOT / model_set / "selected_stimuli_data.pkl"
     print(f"Loading payload...")
     with open(payload_path, "rb") as f:
         payload = pickle.load(f)
@@ -420,8 +419,7 @@ def main():
         if not all_models:
             # Load from payloads
             for ms in model_sets_to_run:
-                payload_path = (SELECTION_ROOT / ms / "method-raw_plus_all_encodings"
-                                / TIMESTAMP / "selected_stimuli_data.pkl")
+                payload_path = SELECTION_ROOT / ms / "selected_stimuli_data.pkl"
                 with open(payload_path, "rb") as f:
                     payload = pickle.load(f)
                 all_models = sorted(set(all_models) | set(payload["model_names"]))

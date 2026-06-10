@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_42",
+    "stim_key": "architecture_42",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 42,
+    "file_index": 42,
+    "image_name": "image_0042.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0042.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 5, \"estimated_salient_object_count\": 15, \"estimated_distinct_object_categories\": 8, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": true, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"event/banquet\", \"short_caption\": \"Round tables with white linens and place settings arranged inside a white event tent with string lights\", \"main_objects\": [\"round tables\", \"white folding chairs\", \"place settings\", \"floral centerpieces\", \"tent\", \"string lights\", \"tablecloths\"], \"possible_interpretations\": [\"wedding reception\", \"formal banquet\", \"outdoor event setup\", \"vendor showcase\", \"catered gathering\"], \"uncertainty_notes\": \"Background details including a 'Bowl' sign and merchandise display are somewhat unclear; no people visible to confirm event type\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780318892-YIUlvesKX8RwXLO7pL0J",
+        "object": "chat.completion",
+        "created": 1780318892,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 5, \"estimated_salient_object_count\": 15, \"estimated_distinct_object_categories\": 8, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": true, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"event/banquet\", \"short_caption\": \"Round tables with white linens and place settings arranged inside a white event tent with string lights\", \"main_objects\": [\"round tables\", \"white folding chairs\", \"place settings\", \"floral centerpieces\", \"tent\", \"string lights\", \"tablecloths\"], \"possible_interpretations\": [\"wedding reception\", \"formal banquet\", \"outdoor event setup\", \"vendor showcase\", \"catered gathering\"], \"uncertainty_notes\": \"Background details including a 'Bowl' sign and merchandise display are somewhat unclear; no people visible to confirm event type\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an indoor event space, specifically a large white tent/marquee set up for what appears to be a formal event like a wedding reception or banquet. I can see:\n\n- Round tables with white tablecloths\n- White folding chairs arranged around the tables\n- Place settings with plates, glasses, and napkins\n- Floral centerpieces on the tables\n- String lights hanging from the tent ceiling\n- A vendor or merchandise display in the background\n- Grass floor (the tent is set up outdoors on grass)\n- A \"Bowl\" sign visible in the background\n\nLet me rate the various attributes:\n\n- Recognizability: Very clear, easy to identify as a banquet/event setup - 5\n- Ambiguity: Low, it's clearly an event setup - 1\n- Natural photo typicality: Yes, looks like a natural photograph - 4\n- Visual clutter: Moderate - many tables, chairs, place settings - 3\n- Object centricity: No single dominant object, it's more of a scene - 2\n- Scene centricity: Yes, this is primarily a scene/place - 5\n- Caption confidence: High - can easily caption this - 5\n\nSalient objects: tables, chairs, place settings, centerpieces, tent, lights - many objects\nDistinct categories: tables, chairs, plates, glasses, napkins, flowers, tent, lights - probably 6-8\n\nContains person: No visible people\nContains face: No\nContains animal: No\nContains text: There's a \"Bowl\" sign visible\nContains vehicle: No\nContains food: There appear to be some food items on plates\nContains indoor scene: It's a tent, somewhat indoor but also outdoor\nContains outdoor scene: It's a tent set up outdoors on grass\nContains artificial or rendered content: No\nContains occlusion or truncation: The image cuts off at the edges\nContains unusual viewpoint: No, fairly standard\nContains multiple main objects: Yes, multiple tables and setups\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: event/banquet\n\nShort caption: Round tables with white linens set for a banquet inside a white tent with string lights.\n\nMain objects: round tables, white folding chairs, place settings, floral centerpieces, tent, string lights\n\nPossible interpretations: wedding reception, banquet, formal event, outdoor party, vendor showcase\n\nUncertainty notes: Some details in the background are hard to see clearly\nQuality flags: None particularly",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an indoor event space, specifically a large white tent/marquee set up for what appears to be a formal event like a wedding reception or banquet. I can see:\n\n- Round tables with white tablecloths\n- White folding chairs arranged around the tables\n- Place settings with plates, glasses, and napkins\n- Floral centerpieces on the tables\n- String lights hanging from the tent ceiling\n- A vendor or merchandise display in the background\n- Grass floor (the tent is set up outdoors on grass)\n- A \"Bowl\" sign visible in the background\n\nLet me rate the various attributes:\n\n- Recognizability: Very clear, easy to identify as a banquet/event setup - 5\n- Ambiguity: Low, it's clearly an event setup - 1\n- Natural photo typicality: Yes, looks like a natural photograph - 4\n- Visual clutter: Moderate - many tables, chairs, place settings - 3\n- Object centricity: No single dominant object, it's more of a scene - 2\n- Scene centricity: Yes, this is primarily a scene/place - 5\n- Caption confidence: High - can easily caption this - 5\n\nSalient objects: tables, chairs, place settings, centerpieces, tent, lights - many objects\nDistinct categories: tables, chairs, plates, glasses, napkins, flowers, tent, lights - probably 6-8\n\nContains person: No visible people\nContains face: No\nContains animal: No\nContains text: There's a \"Bowl\" sign visible\nContains vehicle: No\nContains food: There appear to be some food items on plates\nContains indoor scene: It's a tent, somewhat indoor but also outdoor\nContains outdoor scene: It's a tent set up outdoors on grass\nContains artificial or rendered content: No\nContains occlusion or truncation: The image cuts off at the edges\nContains unusual viewpoint: No, fairly standard\nContains multiple main objects: Yes, multiple tables and setups\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: event/banquet\n\nShort caption: Round tables with white linens set for a banquet inside a white tent with string lights.\n\nMain objects: round tables, white folding chairs, place settings, floral centerpieces, tent, string lights\n\nPossible interpretations: wedding reception, banquet, formal event, outdoor party, vendor showcase\n\nUncertainty notes: Some details in the background are hard to see clearly\nQuality flags: None particularly",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 853,
+          "total_tokens": 2375,
+          "cost": 0.00132996,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00132996,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010236
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 619,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_53",
+    "stim_key": "dataset_53",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 53,
+    "file_index": 53,
+    "image_name": "image_0053.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0053.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"jewelry\",\n\n  \"short_caption\": \"A delicate gold bar pendant necklace resting on a weathered light-colored surface.\",\n  \"main_objects\": [\"gold bar pendant\", \"chain necklace\"],\n  \"possible_interpretations\": [\"a gold bar pendant necklace\", \"a minimalist jewelry product photo\", \"a delicate chain necklace with a horizontal bar charm\"],\n  \"uncertainty_notes\": \"The exact material of the background surface is unclear; could be painted wood, stone, or plaster.\",\n  \"quality_flags\": [\"shallow_depth_of_field\", \"soft_focus_background\"]\n}",
+      "response": {
+        "id": "gen-1780319023-ZbDvHyxtMYBgqkeNO1cF",
+        "object": "chat.completion",
+        "created": 1780319023,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"jewelry\",\n\n  \"short_caption\": \"A delicate gold bar pendant necklace resting on a weathered light-colored surface.\",\n  \"main_objects\": [\"gold bar pendant\", \"chain necklace\"],\n  \"possible_interpretations\": [\"a gold bar pendant necklace\", \"a minimalist jewelry product photo\", \"a delicate chain necklace with a horizontal bar charm\"],\n  \"uncertainty_notes\": \"The exact material of the background surface is unclear; could be painted wood, stone, or plaster.\",\n  \"quality_flags\": [\"shallow_depth_of_field\", \"soft_focus_background\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a gold bar pendant necklace laid out on what appears to be a light-colored, slightly textured surface (possibly a weathered wooden plank or stone surface). The pendant is a thin, horizontal gold bar attached to a delicate gold chain. The composition is minimalist with a shallow depth of field - the pendant and part of the chain are in focus, while the chain extending upward becomes progressively blurrier.\n\nLet me annotate this carefully:\n\n- Recognizability: The main object (a gold bar necklace/pendant) is clearly visible. 4\n- Ambiguity: Pretty unambiguous - it's a necklace on a surface. 1\n- Natural photo typicality: Looks like a typical product/lifestyle photograph. 4\n- Visual clutter: Very minimal, mostly clean background. 1\n- Object centricity: The necklace pendant is the clear central object. 5\n- Scene centricity: Not really a scene, more of a product/object shot. 1\n- Caption confidence: High, easy to describe. 5\n\nSalient objects: 1 (the necklace)\nDistinct categories: 1 (jewelry)\n\nContains: no person, face, animal, text, vehicle, food. Not really indoor/outdoor clearly. Not artificial/rendered. No occlusion. No unusual viewpoint really. No multiple main objects.\n\nDominant content: object\nImage style: natural_photo (or possibly edited_photo since it has that product photography look)\nSemantic domain: jewelry or fashion",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a gold bar pendant necklace laid out on what appears to be a light-colored, slightly textured surface (possibly a weathered wooden plank or stone surface). The pendant is a thin, horizontal gold bar attached to a delicate gold chain. The composition is minimalist with a shallow depth of field - the pendant and part of the chain are in focus, while the chain extending upward becomes progressively blurrier.\n\nLet me annotate this carefully:\n\n- Recognizability: The main object (a gold bar necklace/pendant) is clearly visible. 4\n- Ambiguity: Pretty unambiguous - it's a necklace on a surface. 1\n- Natural photo typicality: Looks like a typical product/lifestyle photograph. 4\n- Visual clutter: Very minimal, mostly clean background. 1\n- Object centricity: The necklace pendant is the clear central object. 5\n- Scene centricity: Not really a scene, more of a product/object shot. 1\n- Caption confidence: High, easy to describe. 5\n\nSalient objects: 1 (the necklace)\nDistinct categories: 1 (jewelry)\n\nContains: no person, face, animal, text, vehicle, food. Not really indoor/outdoor clearly. Not artificial/rendered. No occlusion. No unusual viewpoint really. No multiple main objects.\n\nDominant content: object\nImage style: natural_photo (or possibly edited_photo since it has that product photography look)\nSemantic domain: jewelry or fashion",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 645,
+          "total_tokens": 2167,
+          "cost": 0.00108036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00108036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000774
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 354,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

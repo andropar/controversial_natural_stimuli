@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_77",
+    "stim_key": "training_objective_77",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 77,
+    "file_index": 77,
+    "image_name": "image_0077.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0077.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 3, \"caption_confidence\": 5, \"estimated_salient_object_count\": 10, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": true, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"military\", \"short_caption\": \"Group of soldiers in camouflage uniforms carrying cardboard boxes near a white bus\", \"main_objects\": [\"soldiers\", \"cardboard boxes\", \"bus\", \"military caps\", \"combat boots\"], \"possible_interpretations\": [\"soldiers unloading supply boxes from a bus\", \"military aid or logistics operation\", \"troops transporting equipment\", \"soldiers moving supply packages\", \"military personnel loading cargo\"], \"uncertainty_notes\": \"Some figures are partially cropped at the edges; specific military branch or exact context (e.g., deployment, relief) cannot be determined from the image alone.\", \"quality_flags\": [\"partially_cropped_subjects\"]}",
+      "response": {
+        "id": "gen-1780319364-cSh43kT8qxqP6eYD0jUU",
+        "object": "chat.completion",
+        "created": 1780319364,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 3, \"caption_confidence\": 5, \"estimated_salient_object_count\": 10, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": true, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"military\", \"short_caption\": \"Group of soldiers in camouflage uniforms carrying cardboard boxes near a white bus\", \"main_objects\": [\"soldiers\", \"cardboard boxes\", \"bus\", \"military caps\", \"combat boots\"], \"possible_interpretations\": [\"soldiers unloading supply boxes from a bus\", \"military aid or logistics operation\", \"troops transporting equipment\", \"soldiers moving supply packages\", \"military personnel loading cargo\"], \"uncertainty_notes\": \"Some figures are partially cropped at the edges; specific military branch or exact context (e.g., deployment, relief) cannot be determined from the image alone.\", \"quality_flags\": [\"partially_cropped_subjects\"]}",
+              "refusal": null,
+              "reasoning": "The image shows a group of soldiers in military camouflage uniforms carrying cardboard boxes near what appears to be a white bus or vehicle. Let me analyze this carefully for the annotation.\n\n- Multiple soldiers visible\n- They are carrying cardboard boxes\n- Background shows a white vehicle (likely a bus)\n- Military setting\n- The image appears to be a natural photograph\n- There are several people and multiple boxes\n\nLet me rate each dimension:\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - very clear interpretation (soldiers carrying boxes)\n- natural_photo_typicality: 5 - looks like a typical news/documentary photo\n- visual_clutter: 3 - several soldiers and boxes, some background\n- object_centricity: 2 - multiple people dominate rather than a single object\n- scene_centricity: 3 - it's a scene of activity\n- caption_confidence: 5 - very confident in caption\n\n- estimated_salient_object_count: ~7 soldiers + multiple boxes\n- estimated_distinct_object_categories: 3 (people, boxes, vehicle)\n\nFlags:\n- contains_person: true\n- contains_face: true (some faces visible)\n- contains_animal: false\n- contains_text: false (maybe some text on boxes but not prominent)\n- contains_vehicle: true (the bus/vehicle)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (some figures partially cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\nDominant content: scene or person - I'll go with \"scene\" since it's a group activity\nImage style: natural_photo\nSemantic domain: military\n\nCaption: \"Group of soldiers in camouflage uniforms carrying cardboard boxes near a white bus\"\n\nMain objects: soldiers, cardboard boxes, bus\n\nPossible interpretations: \n1. Soldiers unloading supplies\n2. Military aid distribution\n3. Soldiers loading boxes for transport\n4. Relief or logistics operation\n\nUncertainty: Some faces partially obscured, specific military context unclear",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a group of soldiers in military camouflage uniforms carrying cardboard boxes near what appears to be a white bus or vehicle. Let me analyze this carefully for the annotation.\n\n- Multiple soldiers visible\n- They are carrying cardboard boxes\n- Background shows a white vehicle (likely a bus)\n- Military setting\n- The image appears to be a natural photograph\n- There are several people and multiple boxes\n\nLet me rate each dimension:\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - very clear interpretation (soldiers carrying boxes)\n- natural_photo_typicality: 5 - looks like a typical news/documentary photo\n- visual_clutter: 3 - several soldiers and boxes, some background\n- object_centricity: 2 - multiple people dominate rather than a single object\n- scene_centricity: 3 - it's a scene of activity\n- caption_confidence: 5 - very confident in caption\n\n- estimated_salient_object_count: ~7 soldiers + multiple boxes\n- estimated_distinct_object_categories: 3 (people, boxes, vehicle)\n\nFlags:\n- contains_person: true\n- contains_face: true (some faces visible)\n- contains_animal: false\n- contains_text: false (maybe some text on boxes but not prominent)\n- contains_vehicle: true (the bus/vehicle)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (some figures partially cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\nDominant content: scene or person - I'll go with \"scene\" since it's a group activity\nImage style: natural_photo\nSemantic domain: military\n\nCaption: \"Group of soldiers in camouflage uniforms carrying cardboard boxes near a white bus\"\n\nMain objects: soldiers, cardboard boxes, bus\n\nPossible interpretations: \n1. Soldiers unloading supplies\n2. Military aid distribution\n3. Soldiers loading boxes for transport\n4. Relief or logistics operation\n\nUncertainty: Some faces partially obscured, specific military context unclear",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 790,
+          "total_tokens": 2204,
+          "cost": 0.00122196,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00122196,
+            "upstream_inference_prompt_cost": 0.00027396,
+            "upstream_inference_completions_cost": 0.000948
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 545,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_70",
+    "stim_key": "sota_70",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 70,
+    "file_index": 70,
+    "image_name": "image_0070.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0070.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"event_announcement\",\n\n  \"short_caption\": \"Two men holding a banner showing a proposed church building design.\",\n  \"main_objects\": [\"banner\", \"poster\", \"men\", \"building rendering\"],\n  \"possible_interpretations\": [\n    \"Public unveiling of a building project for Pioneer Youth Church\",\n    \"Fundraising or awareness campaign event for a proposed church\",\n    \"Community members presenting architectural plans\"\n  ],\n  \"uncertainty_notes\": \"The left person is partially cropped; exact context of the event is not fully clear beyond the banner text.\",\n  \"quality_flags\": [\"partial_crop\", \"contains_rendered_embedded_image\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319168-aBOz079vRHTPo5PGeeeo",
+        "object": "chat.completion",
+        "created": 1780319168,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"event_announcement\",\n\n  \"short_caption\": \"Two men holding a banner showing a proposed church building design.\",\n  \"main_objects\": [\"banner\", \"poster\", \"men\", \"building rendering\"],\n  \"possible_interpretations\": [\n    \"Public unveiling of a building project for Pioneer Youth Church\",\n    \"Fundraising or awareness campaign event for a proposed church\",\n    \"Community members presenting architectural plans\"\n  ],\n  \"uncertainty_notes\": \"The left person is partially cropped; exact context of the event is not fully clear beyond the banner text.\",\n  \"quality_flags\": [\"partial_crop\", \"contains_rendered_embedded_image\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "The image shows two men holding up a large banner or poster. The banner displays an architectural rendering of a building with text reading \"Proposed Site for PIONEER YOUTH CHURCH\". The rendering shows a multi-story building with a brown roof. The men are standing outdoors with greenery in the background. One man on the left is partially visible, and the man on the right is more fully visible wearing a gray t-shirt with \"IMPACT\" text on it.\n\nLet me analyze this for the schema:\n\n- recognizability: High - clearly a banner/poster with people\n- ambiguity: Low - one clear interpretation\n- natural_photo_typicality: This is a natural photo but contains a rendered architectural image on the banner\n- visual_clutter: Moderate - several elements (people, banner, background, text)\n- object_centricity: The banner is central but it's not a single object focus\n- scene_centricity: More about the scene of people presenting a banner\n- caption_confidence: High\n\nContains: persons, text, artificial/rendered content (the building rendering)\nThe banner itself contains a rendered building image.\n\nMain objects: banner, poster, men, building rendering\nDominant content: mixed (people and a banner/poster)\nImage style: natural_photo\nSemantic domain: event/announcement",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows two men holding up a large banner or poster. The banner displays an architectural rendering of a building with text reading \"Proposed Site for PIONEER YOUTH CHURCH\". The rendering shows a multi-story building with a brown roof. The men are standing outdoors with greenery in the background. One man on the left is partially visible, and the man on the right is more fully visible wearing a gray t-shirt with \"IMPACT\" text on it.\n\nLet me analyze this for the schema:\n\n- recognizability: High - clearly a banner/poster with people\n- ambiguity: Low - one clear interpretation\n- natural_photo_typicality: This is a natural photo but contains a rendered architectural image on the banner\n- visual_clutter: Moderate - several elements (people, banner, background, text)\n- object_centricity: The banner is central but it's not a single object focus\n- scene_centricity: More about the scene of people presenting a banner\n- caption_confidence: High\n\nContains: persons, text, artificial/rendered content (the building rendering)\nThe banner itself contains a rendered building image.\n\nMain objects: banner, poster, men, building rendering\nDominant content: mixed (people and a banner/poster)\nImage style: natural_photo\nSemantic domain: event/announcement",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1062,
+          "completion_tokens": 634,
+          "total_tokens": 1696,
+          "cost": 0.00092916,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00092916,
+            "upstream_inference_prompt_cost": 0.00016836,
+            "upstream_inference_completions_cost": 0.0007608
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 329,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

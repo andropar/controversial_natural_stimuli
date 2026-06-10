@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_44",
+    "stim_key": "vicco_44",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 44,
+    "file_index": 43,
+    "image_name": "shared_4rep_vicco_044.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_044.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"beach water sports outdoor recreation\",\n  \"short_caption\": \"A man kitesurfing on a beach while a woman holding a small dog watches from the surf.\",\n  \"main_objects\": [\"man in wetsuit\", \"woman in red hoodie\", \"small dog\", \"kite control bar\", \"kite lines\", \"ocean waves\", \"wet sand beach\"],\n  \"possible_interpretations\": [\n    \"Kitesurfing lesson or practice at the beach\",\n    \"Man being pulled by kite while woman holds a dog and observes\",\n    \"Couple enjoying beach day with kitesurfing activity\",\n    \"Kite buggy or land kiting activity in shallow surf\"\n  ],\n  \"uncertainty_notes\": \"The item the woman is holding is small and could be a dog or a stuffed animal; kite itself is off-frame; exact activity could be kitesurfing, kite buggying, or kite training on land.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319440-XQBPiMkBO4utt4DsaVJD",
+        "object": "chat.completion",
+        "created": 1780319440,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"beach water sports outdoor recreation\",\n  \"short_caption\": \"A man kitesurfing on a beach while a woman holding a small dog watches from the surf.\",\n  \"main_objects\": [\"man in wetsuit\", \"woman in red hoodie\", \"small dog\", \"kite control bar\", \"kite lines\", \"ocean waves\", \"wet sand beach\"],\n  \"possible_interpretations\": [\n    \"Kitesurfing lesson or practice at the beach\",\n    \"Man being pulled by kite while woman holds a dog and observes\",\n    \"Couple enjoying beach day with kitesurfing activity\",\n    \"Kite buggy or land kiting activity in shallow surf\"\n  ],\n  \"uncertainty_notes\": \"The item the woman is holding is small and could be a dog or a stuffed animal; kite itself is off-frame; exact activity could be kitesurfing, kite buggying, or kite training on land.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a beach scene with:\n- A man in a wetsuit who appears to be kitesurfing or learning to kitesurf, being pulled by lines\n- A woman in a red/maroon hoodie and beanie holding what looks like a small dog or stuffed animal\n- Ocean waves in the background\n- Cloudy sky\n- Wet sandy beach in the foreground\n- Kite lines visible going up to the upper right\n\nThis is a natural photograph of an outdoor beach scene with two people.\n\nLet me rate each dimension:\n\n- recognizability: 4 - The scene is quite clear, people are recognizable, activity is identifiable\n- ambiguity: 2 - There's a clear interpretation (kitesurfing lesson or practice at beach)\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 2 - Not too cluttered, clear subjects with relatively simple background\n- object_centricity: 3 - The people are the main focus but it's also a scene\n- scene_centricity: 4 - The beach/ocean scene is prominent\n- caption_confidence: 4 - Easy to describe concisely\n\nLet me count objects:\n- 2 people\n- Possibly 1 dog/animal being held\n- Kite (off-screen but lines visible)\n- Waves, sand, sky\n\nDistinct categories: people, animal(?), water, sky, sand\n\nContains:\n- person: yes\n- face: yes (visible faces)\n- animal: maybe (could be a small dog)\n- text: no\n- vehicle: no\n- food: no\n- indoor: no\n- outdoor: yes\n- artificial: no\n- occlusion: no\n- unusual viewpoint: no\n- multiple main objects: somewhat (two people are prominent)\n\nLet me reconsider - the woman is holding something that could be a small dog or a stuffed animal. Hard to tell.\n\nDominant content type: person or scene - I'd say \"mixed\" since there are two people as subjects in a scene\nActually, \"person\" might be more appropriate since the people are clearly the main subjects\n\nImage style: natural_photo\n\nSemantic domain: beach, water sports, outdoor recreation\n\nShort caption: \"A man kitesurfing being instructed by a woman holding a small dog on a beach\"\n\nMain objects: man, woman, dog, kite lines, waves, beach\n\nPossible interpretations:\n- Kitesurfing lesson on the beach\n- Man practicing kitesurfing while woman watches\n- Couple at beach with pet\n\nUncertainty notes: The item the woman is holding could be a dog or stuffed animal; hard to tell if it's an actual kitesurfing setup or other activity.\n\nQuality flags: none major",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a beach scene with:\n- A man in a wetsuit who appears to be kitesurfing or learning to kitesurf, being pulled by lines\n- A woman in a red/maroon hoodie and beanie holding what looks like a small dog or stuffed animal\n- Ocean waves in the background\n- Cloudy sky\n- Wet sandy beach in the foreground\n- Kite lines visible going up to the upper right\n\nThis is a natural photograph of an outdoor beach scene with two people.\n\nLet me rate each dimension:\n\n- recognizability: 4 - The scene is quite clear, people are recognizable, activity is identifiable\n- ambiguity: 2 - There's a clear interpretation (kitesurfing lesson or practice at beach)\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 2 - Not too cluttered, clear subjects with relatively simple background\n- object_centricity: 3 - The people are the main focus but it's also a scene\n- scene_centricity: 4 - The beach/ocean scene is prominent\n- caption_confidence: 4 - Easy to describe concisely\n\nLet me count objects:\n- 2 people\n- Possibly 1 dog/animal being held\n- Kite (off-screen but lines visible)\n- Waves, sand, sky\n\nDistinct categories: people, animal(?), water, sky, sand\n\nContains:\n- person: yes\n- face: yes (visible faces)\n- animal: maybe (could be a small dog)\n- text: no\n- vehicle: no\n- food: no\n- indoor: no\n- outdoor: yes\n- artificial: no\n- occlusion: no\n- unusual viewpoint: no\n- multiple main objects: somewhat (two people are prominent)\n\nLet me reconsider - the woman is holding something that could be a small dog or a stuffed animal. Hard to tell.\n\nDominant content type: person or scene - I'd say \"mixed\" since there are two people as subjects in a scene\nActually, \"person\" might be more appropriate since the people are clearly the main subjects\n\nImage style: natural_photo\n\nSemantic domain: beach, water sports, outdoor recreation\n\nShort caption: \"A man kitesurfing being instructed by a woman holding a small dog on a beach\"\n\nMain objects: man, woman, dog, kite lines, waves, beach\n\nPossible interpretations:\n- Kitesurfing lesson on the beach\n- Man practicing kitesurfing while woman watches\n- Couple at beach with pet\n\nUncertainty notes: The item the woman is holding could be a dog or stuffed animal; hard to tell if it's an actual kitesurfing setup or other activity.\n\nQuality flags: none major",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 1001,
+          "total_tokens": 2523,
+          "cost": 0.00150756,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00150756,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0012012
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 640,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

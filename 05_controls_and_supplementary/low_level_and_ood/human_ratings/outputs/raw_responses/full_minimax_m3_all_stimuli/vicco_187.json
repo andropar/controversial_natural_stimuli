@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_187",
+    "stim_key": "vicco_187",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 187,
+    "file_index": 186,
+    "image_name": "shared_4rep_vicco_187.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_187.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"market/food\",\n\n  \"short_caption\": \"Fish market display with various whole fish and small silver fish on ice with yellow price tags\",\n  \"main_objects\": [\"small silver fish\", \"whole fish on ice\", \"yellow price tags\", \"market bins\"],\n  \"possible_interpretations\": [\"fish market display\", \"seafood vendor stall\", \"fresh fish counter\", \"fishmonger's shop\"],\n  \"uncertainty_notes\": \"Some fish species difficult to identify precisely; exact type of small fish in front bin unclear (possibly anchovies or smelts)\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319605-no0Qkyf6DVlBOR0c04mv",
+        "object": "chat.completion",
+        "created": 1780319605,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"market/food\",\n\n  \"short_caption\": \"Fish market display with various whole fish and small silver fish on ice with yellow price tags\",\n  \"main_objects\": [\"small silver fish\", \"whole fish on ice\", \"yellow price tags\", \"market bins\"],\n  \"possible_interpretations\": [\"fish market display\", \"seafood vendor stall\", \"fresh fish counter\", \"fishmonger's shop\"],\n  \"uncertainty_notes\": \"Some fish species difficult to identify precisely; exact type of small fish in front bin unclear (possibly anchovies or smelts)\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a fish market display with various fish and seafood items on ice. There are multiple trays/containers with different types of fish, each marked with yellow price tags. The prices visible include \"4.40 LB\", \"3.60 LB\", \"3.20 LB\" in the upper section, and \"4.40 LB\" on the front bin. There's a large bin in the foreground filled with small silver fish (likely anchovies or smelts). The middle section shows different types of whole fish on ice, and the back shows more seafood including what appears to be salmon or red fish.\n\nLet me assess each dimension:\n\n- Recognizability: Very clear - clearly a fish market display. 5\n- Ambiguity: Low - the content is clearly a fish market. 1\n- Natural_photo_typicality: High - looks like a natural photograph. 5\n- Visual_clutter: High - many fish, multiple sections, price tags. 4\n- Object_centricity: Moderate - the fish bin in front is prominent but there are many objects. 3\n- Scene_centricity: Moderate - it's a market scene but with many objects. 4\n- Caption_confidence: High - easy to caption. 5\n\nObjects: fish, ice, price tags, bins, plastic bags\n- No people, faces, animals (well, fish could be considered animals), text (price tags), no vehicles, food (fish is food), indoor scene (likely indoor market), no artificial/rendered content, no occlusion in the unusual sense, no multiple main objects specifically (many fish but they form a display).\n\nFish are animals. Contains food (fish). Indoor market setting. Contains text (price tags).\n\nEstimated salient object count: many fish but as a group, maybe 3-4 main display sections\nEstimated distinct object categories: fish, ice, price tags, bins, plastic - around 4-5\n\nMain objects: small silver fish, whole fish, ice, price tags, market bins\n\nPossible interpretations: fish market display, seafood market, fishmonger's stall\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a fish market display with various fish and seafood items on ice. There are multiple trays/containers with different types of fish, each marked with yellow price tags. The prices visible include \"4.40 LB\", \"3.60 LB\", \"3.20 LB\" in the upper section, and \"4.40 LB\" on the front bin. There's a large bin in the foreground filled with small silver fish (likely anchovies or smelts). The middle section shows different types of whole fish on ice, and the back shows more seafood including what appears to be salmon or red fish.\n\nLet me assess each dimension:\n\n- Recognizability: Very clear - clearly a fish market display. 5\n- Ambiguity: Low - the content is clearly a fish market. 1\n- Natural_photo_typicality: High - looks like a natural photograph. 5\n- Visual_clutter: High - many fish, multiple sections, price tags. 4\n- Object_centricity: Moderate - the fish bin in front is prominent but there are many objects. 3\n- Scene_centricity: Moderate - it's a market scene but with many objects. 4\n- Caption_confidence: High - easy to caption. 5\n\nObjects: fish, ice, price tags, bins, plastic bags\n- No people, faces, animals (well, fish could be considered animals), text (price tags), no vehicles, food (fish is food), indoor scene (likely indoor market), no artificial/rendered content, no occlusion in the unusual sense, no multiple main objects specifically (many fish but they form a display).\n\nFish are animals. Contains food (fish). Indoor market setting. Contains text (price tags).\n\nEstimated salient object count: many fish but as a group, maybe 3-4 main display sections\nEstimated distinct object categories: fish, ice, price tags, bins, plastic - around 4-5\n\nMain objects: small silver fish, whole fish, ice, price tags, market bins\n\nPossible interpretations: fish market display, seafood market, fishmonger's stall\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 793,
+          "total_tokens": 2315,
+          "cost": 0.00125796,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00125796,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009516
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 493,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

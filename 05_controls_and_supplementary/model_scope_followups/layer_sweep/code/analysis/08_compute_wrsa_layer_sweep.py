@@ -11,7 +11,7 @@ For each (subject, model, layer, set):
     vicco rows (1000 bootstraps by default, matching 02_compute_wrsa_transfer)
 
 Output:
-    11_layer_sweep/data/wrsa_layer_sweep.csv
+    results/wrsa_layer_sweep.csv
 """
 
 import _paths  # noqa: F401

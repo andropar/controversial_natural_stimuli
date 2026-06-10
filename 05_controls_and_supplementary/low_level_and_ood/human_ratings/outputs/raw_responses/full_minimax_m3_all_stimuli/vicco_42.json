@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_42",
+    "stim_key": "vicco_42",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 42,
+    "file_index": 41,
+    "image_name": "shared_4rep_vicco_042.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_042.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 5, \"object_centricity\": 2, \"scene_centricity\": 3, \"caption_confidence\": 5, \"estimated_salient_object_count\": 18, \"estimated_distinct_object_categories\": 6, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"domestic/entryway\", \"short_caption\": \"A cluttered pile of various shoes scattered on a wooden hallway floor.\", \"main_objects\": [\"sneakers\", \"boots\", \"dress shoes\", \"plastic bag\", \"duffel bag\"], \"possible_interpretations\": [\"shoes piled in an entryway\", \"someone's shoe collection on display\", \"items dropped from a bag\", \"closet or storage area\"], \"uncertainty_notes\": \"Image is taken from a steep downward angle making some shoes partially cropped; lighting is uneven with some shadows obscuring details.\", \"quality_flags\": [\"cluttered_composition\", \"downward_viewpoint\", \"partial_occlusion\"]}",
+      "response": {
+        "id": "gen-1780319438-psaavIfSDW9KRl6RMfII",
+        "object": "chat.completion",
+        "created": 1780319438,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 5, \"object_centricity\": 2, \"scene_centricity\": 3, \"caption_confidence\": 5, \"estimated_salient_object_count\": 18, \"estimated_distinct_object_categories\": 6, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"domestic/entryway\", \"short_caption\": \"A cluttered pile of various shoes scattered on a wooden hallway floor.\", \"main_objects\": [\"sneakers\", \"boots\", \"dress shoes\", \"plastic bag\", \"duffel bag\"], \"possible_interpretations\": [\"shoes piled in an entryway\", \"someone's shoe collection on display\", \"items dropped from a bag\", \"closet or storage area\"], \"uncertainty_notes\": \"Image is taken from a steep downward angle making some shoes partially cropped; lighting is uneven with some shadows obscuring details.\", \"quality_flags\": [\"cluttered_composition\", \"downward_viewpoint\", \"partial_occlusion\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a collection of various shoes scattered on a wooden floor, appearing to be in an entryway or hallway. I can see:\n- Multiple pairs of shoes including sneakers, boots, and dress shoes\n- A black plastic bag or item on the left\n- What appears to be a teal/turquoise bag in the background\n- Wooden flooring\n- A white wall/door on the left\n- The shoes include Air Max boots, white sneakers, navy sneakers with stripes, black boots, and various other footwear\n\nLet me annotate this according to the schema:\n\n- Recognizability: 5 - clearly recognizable as a collection of shoes on a floor\n- Ambiguity: 1 - very clear what's shown\n- Natural_photo_typicality: 4 - looks like a typical casual phone photo\n- Visual_clutter: 5 - many shoes and items competing for attention\n- Object_centricity: 2 - multiple objects, no single central one\n- Scene_centricity: 3 - it's a scene of an entryway with many objects\n- Caption_confidence: 5 - very confident in describing this\n\nSalient objects: many shoes, perhaps 15+ individual shoes\nDistinct categories: sneakers, boots, dress shoes - maybe 4-5 categories\n\nNo people, faces, animals, vehicles, food\nContains text - possibly \"AirWair\" on the boots\nIndoor scene - yes\nOutdoor - no\nArtificial/rendered - no\nOcclusion - shoes overlap each other\nUnusual viewpoint - slightly, looking down\nMultiple main objects - yes\n\nDominant content type: object (multiple objects)\nImage style: natural_photo\nSemantic domain: home/domestic\n\nLet me count more carefully. I see roughly:\n- Several pairs of white sneakers\n- Black boots\n- Navy/dark sneakers\n- Brown leather shoes\n- White sneakers\n- Black dress shoes\n- Black plastic bag\n- A teal bag\n\nProbably 12-20 individual shoes visible, with about 5-6 distinct categories.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a collection of various shoes scattered on a wooden floor, appearing to be in an entryway or hallway. I can see:\n- Multiple pairs of shoes including sneakers, boots, and dress shoes\n- A black plastic bag or item on the left\n- What appears to be a teal/turquoise bag in the background\n- Wooden flooring\n- A white wall/door on the left\n- The shoes include Air Max boots, white sneakers, navy sneakers with stripes, black boots, and various other footwear\n\nLet me annotate this according to the schema:\n\n- Recognizability: 5 - clearly recognizable as a collection of shoes on a floor\n- Ambiguity: 1 - very clear what's shown\n- Natural_photo_typicality: 4 - looks like a typical casual phone photo\n- Visual_clutter: 5 - many shoes and items competing for attention\n- Object_centricity: 2 - multiple objects, no single central one\n- Scene_centricity: 3 - it's a scene of an entryway with many objects\n- Caption_confidence: 5 - very confident in describing this\n\nSalient objects: many shoes, perhaps 15+ individual shoes\nDistinct categories: sneakers, boots, dress shoes - maybe 4-5 categories\n\nNo people, faces, animals, vehicles, food\nContains text - possibly \"AirWair\" on the boots\nIndoor scene - yes\nOutdoor - no\nArtificial/rendered - no\nOcclusion - shoes overlap each other\nUnusual viewpoint - slightly, looking down\nMultiple main objects - yes\n\nDominant content type: object (multiple objects)\nImage style: natural_photo\nSemantic domain: home/domestic\n\nLet me count more carefully. I see roughly:\n- Several pairs of white sneakers\n- Black boots\n- Navy/dark sneakers\n- Brown leather shoes\n- White sneakers\n- Black dress shoes\n- Black plastic bag\n- A teal bag\n\nProbably 12-20 individual shoes visible, with about 5-6 distinct categories.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 773,
+          "total_tokens": 2295,
+          "cost": 0.00123396,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00123396,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009276
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 482,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

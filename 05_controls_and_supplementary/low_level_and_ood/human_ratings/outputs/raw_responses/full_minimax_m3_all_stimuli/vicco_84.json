@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_84",
+    "stim_key": "vicco_84",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 84,
+    "file_index": 83,
+    "image_name": "shared_4rep_vicco_084.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_084.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_street\",\n  \"short_caption\": \"Upward view of urban street with lamp post, traffic signals, overhead wires, and a building against blue sky\",\n  \"main_objects\": [\"lamp post\", \"traffic lights\", \"overhead wires\", \"building\", \"trees\", \"street signs\"],\n  \"possible_interpretations\": [\"urban street scene\", \"European city intersection with tram lines\", \"view of city traffic infrastructure\"],\n  \"uncertainty_notes\": \"The red pedestrian signal is small and partially visible. The specific city or country cannot be determined from visible cues alone.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319485-BIwniPt128pR4iQ2FV2W",
+        "object": "chat.completion",
+        "created": 1780319485,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_street\",\n  \"short_caption\": \"Upward view of urban street with lamp post, traffic signals, overhead wires, and a building against blue sky\",\n  \"main_objects\": [\"lamp post\", \"traffic lights\", \"overhead wires\", \"building\", \"trees\", \"street signs\"],\n  \"possible_interpretations\": [\"urban street scene\", \"European city intersection with tram lines\", \"view of city traffic infrastructure\"],\n  \"uncertainty_notes\": \"The red pedestrian signal is small and partially visible. The specific city or country cannot be determined from visible cues alone.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an urban street scene from a low/upward angle, looking up at:\n- A tall lamp post/street light with multiple circular lights at the top\n- Traffic lights (one appears to have a red pedestrian signal visible)\n- A blue directional arrow sign\n- A yellow diamond-shaped sign\n- Overhead tram/trolley cables/wires\n- A building on the right side (appears to be a multi-story residential or commercial building with a distinctive architectural style)\n- Trees on the left\n- Clear blue sky\n- The perspective is unusual - looking up from below\n\nLet me assess each criterion:\n\n- recognizability: 4 - Clearly an urban street scene with identifiable elements\n- ambiguity: 2 - Pretty clear what it is (urban street with traffic infrastructure)\n- natural_photo_typicality: 3 - It's a photo but has an unusual upward angle\n- visual_clutter: 3 - Multiple elements (wires, signs, building, lights) but not too cluttered\n- object_centricity: 2 - No single dominant object, more of a scene\n- scene_centricity: 4 - This is mainly an urban scene\n- caption_confidence: 4 - Easy to describe\n\n- estimated_salient_object_count: 3 (lamp post, traffic lights, building)\n- estimated_distinct_object_categories: 4 (street furniture, building, vegetation, sky)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (no readable text visible)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (lamp post is cut off at top in some sense, though visible)\n- contains_unusual_viewpoint: true (upward angle)\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"urban_street\"\n\n- short_caption: \"Upward view of urban street with lamp post, traffic signals, overhead wires, and building against blue sky\"\n- main_objects: [\"lamp post\", \"traffic lights\", \"overhead wires\", \"building\", \"trees\", \"street signs\"]\n- possible_interpretations: [\"urban street scene\", \"European city street with tram lines\", \"intersection with traffic infrastructure\"]\n- uncertainty_notes: \"The red pedestrian signal is partially visible. The exact location/city is unclear from the image.\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an urban street scene from a low/upward angle, looking up at:\n- A tall lamp post/street light with multiple circular lights at the top\n- Traffic lights (one appears to have a red pedestrian signal visible)\n- A blue directional arrow sign\n- A yellow diamond-shaped sign\n- Overhead tram/trolley cables/wires\n- A building on the right side (appears to be a multi-story residential or commercial building with a distinctive architectural style)\n- Trees on the left\n- Clear blue sky\n- The perspective is unusual - looking up from below\n\nLet me assess each criterion:\n\n- recognizability: 4 - Clearly an urban street scene with identifiable elements\n- ambiguity: 2 - Pretty clear what it is (urban street with traffic infrastructure)\n- natural_photo_typicality: 3 - It's a photo but has an unusual upward angle\n- visual_clutter: 3 - Multiple elements (wires, signs, building, lights) but not too cluttered\n- object_centricity: 2 - No single dominant object, more of a scene\n- scene_centricity: 4 - This is mainly an urban scene\n- caption_confidence: 4 - Easy to describe\n\n- estimated_salient_object_count: 3 (lamp post, traffic lights, building)\n- estimated_distinct_object_categories: 4 (street furniture, building, vegetation, sky)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (no readable text visible)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (lamp post is cut off at top in some sense, though visible)\n- contains_unusual_viewpoint: true (upward angle)\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"urban_street\"\n\n- short_caption: \"Upward view of urban street with lamp post, traffic signals, overhead wires, and building against blue sky\"\n- main_objects: [\"lamp post\", \"traffic lights\", \"overhead wires\", \"building\", \"trees\", \"street signs\"]\n- possible_interpretations: [\"urban street scene\", \"European city street with tram lines\", \"intersection with traffic infrastructure\"]\n- uncertainty_notes: \"The red pedestrian signal is partially visible. The exact location/city is unclear from the image.\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 906,
+          "total_tokens": 2428,
+          "cost": 0.00139356,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139356,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010872
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 626,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

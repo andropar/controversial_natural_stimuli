@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_19",
+    "stim_key": "vicco_19",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 19,
+    "file_index": 18,
+    "image_name": "shared_4rep_vicco_019.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_019.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: Missing required fields: ['contains_unusual_viewpoint']"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 4,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor_furniture_items\",\n  \"short_caption\": \"Dark wooden chair with blue plastic bag, white cloth, and gray fabric in a room with bookshelves.\",\n  \"main_objects\": [\"wooden chair\", \"blue plastic bag\", \"white cloth\", \"gray fabric\", \"books\"],\n  \"possible_interpretations\": [\n    \"Items placed on a chair in a study or library\",\n    \"Cleaning supplies or laundry temporarily set on a chair\",\n    \"A piano or storage bench with leftover materials\",\n    \"Cluttered storage in a small indoor space\",\n    \"Casual snapshot of belongings in a room\"\n  ],\n  \"uncertainty_notes\": \"Purpose of the blue plastic-wrapped item is unclear; contents and context of the room are ambiguous due to limited view.\",\n  \"quality_flags\": [\"casual_snapshot\", \"partially_framed_objects\", \"cluttered_background\"]\n}",
+      "response": {
+        "id": "gen-1780318268-ZSwUR9Utmq1zbt92TUAS",
+        "object": "chat.completion",
+        "created": 1780318268,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 4,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor_furniture_items\",\n  \"short_caption\": \"Dark wooden chair with blue plastic bag, white cloth, and gray fabric in a room with bookshelves.\",\n  \"main_objects\": [\"wooden chair\", \"blue plastic bag\", \"white cloth\", \"gray fabric\", \"books\"],\n  \"possible_interpretations\": [\n    \"Items placed on a chair in a study or library\",\n    \"Cleaning supplies or laundry temporarily set on a chair\",\n    \"A piano or storage bench with leftover materials\",\n    \"Cluttered storage in a small indoor space\",\n    \"Casual snapshot of belongings in a room\"\n  ],\n  \"uncertainty_notes\": \"Purpose of the blue plastic-wrapped item is unclear; contents and context of the room are ambiguous due to limited view.\",\n  \"quality_flags\": [\"casual_snapshot\", \"partially_framed_objects\", \"cluttered_background\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a dark wooden chair (possibly a piano bench or similar seating) with what appears to be a rolled-up blue plastic bag or fabric, some white cloth/fabric, and a dark gray piece of fabric or clothing resting on it. In the background, there are books on shelves, suggesting an indoor setting, possibly a library, bookstore, or someone's home/study.\n\nLet me annotate based on the schema:\n\n- recognizability: The image is somewhat confusing - it's not immediately clear what's happening. A chair with some items on it. I'd say 3.\n- ambiguity: There are multiple interpretations - what is on the chair, where is this, etc. I'd say 3-4.\n- natural_photo_typicality: Looks like a casual phone photo, fairly typical. 4.\n- visual_clutter: Multiple objects visible - chair, blue item, white item, gray fabric, books in background. Moderate clutter. 3.\n- object_centricity: There's no single clear central object - it's more of a scene. 2.\n- scene_centricity: It's more of a scene/setting view. 3-4.\n- caption_confidence: Moderate - I can describe it but it's a bit confusing. 3.\n\nEstimated salient objects: 3-4 (chair, blue plastic bag, white cloth, gray fabric)\nDistinct categories: 3-4 (furniture, plastic bag, fabric/cloth, books)\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: yes (book spines visible)\nContains vehicle: no\nContains food: no\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial_or_rendered_content: no\nContains occlusion_or_truncation: yes (chair is partially visible, some items are partially hidden)\nContains unusual_viewpoint: somewhat - the angle is a bit unusual\nContains multiple_main_objects: yes\n\nDominant content: mixed\nImage style: natural_photo\nSemantic domain: indoor_furniture_items\n\nShort caption: \"Dark wooden chair holding blue plastic bag, white cloth, and gray fabric in a room with bookshelves.\"\n\nMain objects: chair, blue plastic bag, white cloth, gray fabric, books\n\nPossible interpretations:\n- Chair with items left on it in a study/library\n- Storage or pile of items on a bench\n- Cleaning supplies or materials on a chair\n\nUncertainty: Hard to tell exact purpose of the items, the blue bag contents unclear.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a dark wooden chair (possibly a piano bench or similar seating) with what appears to be a rolled-up blue plastic bag or fabric, some white cloth/fabric, and a dark gray piece of fabric or clothing resting on it. In the background, there are books on shelves, suggesting an indoor setting, possibly a library, bookstore, or someone's home/study.\n\nLet me annotate based on the schema:\n\n- recognizability: The image is somewhat confusing - it's not immediately clear what's happening. A chair with some items on it. I'd say 3.\n- ambiguity: There are multiple interpretations - what is on the chair, where is this, etc. I'd say 3-4.\n- natural_photo_typicality: Looks like a casual phone photo, fairly typical. 4.\n- visual_clutter: Multiple objects visible - chair, blue item, white item, gray fabric, books in background. Moderate clutter. 3.\n- object_centricity: There's no single clear central object - it's more of a scene. 2.\n- scene_centricity: It's more of a scene/setting view. 3-4.\n- caption_confidence: Moderate - I can describe it but it's a bit confusing. 3.\n\nEstimated salient objects: 3-4 (chair, blue plastic bag, white cloth, gray fabric)\nDistinct categories: 3-4 (furniture, plastic bag, fabric/cloth, books)\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: yes (book spines visible)\nContains vehicle: no\nContains food: no\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial_or_rendered_content: no\nContains occlusion_or_truncation: yes (chair is partially visible, some items are partially hidden)\nContains unusual_viewpoint: somewhat - the angle is a bit unusual\nContains multiple_main_objects: yes\n\nDominant content: mixed\nImage style: natural_photo\nSemantic domain: indoor_furniture_items\n\nShort caption: \"Dark wooden chair holding blue plastic bag, white cloth, and gray fabric in a room with bookshelves.\"\n\nMain objects: chair, blue plastic bag, white cloth, gray fabric, books\n\nPossible interpretations:\n- Chair with items left on it in a study/library\n- Storage or pile of items on a bench\n- Cleaning supplies or materials on a chair\n\nUncertainty: Hard to tell exact purpose of the items, the blue bag contents unclear.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 922,
+          "total_tokens": 2460,
+          "cost": 0.00154044,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00154044,
+            "upstream_inference_prompt_cost": 0.00043404,
+            "upstream_inference_completions_cost": 0.0011064
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 593,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

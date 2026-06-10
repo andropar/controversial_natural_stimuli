@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_24",
+    "stim_key": "dataset_24",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 24,
+    "file_index": 24,
+    "image_name": "image_0024.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0024.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 3,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"building/architecture\",\n\n  \"short_caption\": \"Blurry view of a brick building with two windows and potted plants along the wall\",\n  \"main_objects\": [\"brick building\", \"windows\", \"potted plants\", \"fallen leaves\"],\n  \"possible_interpretations\": [\"residential building exterior\", \"urban street scene from moving vehicle\", \"backyard view of a townhouse\"],\n  \"uncertainty_notes\": \"Significant motion blur reduces fine detail; exact building type and surroundings are difficult to determine.\",\n  \"quality_flags\": [\"motion_blur\", \"low_sharpness\"]\n}",
+      "response": {
+        "id": "gen-1780318988-RRUbZccqxEo7cxMF314d",
+        "object": "chat.completion",
+        "created": 1780318988,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 3,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"building/architecture\",\n\n  \"short_caption\": \"Blurry view of a brick building with two windows and potted plants along the wall\",\n  \"main_objects\": [\"brick building\", \"windows\", \"potted plants\", \"fallen leaves\"],\n  \"possible_interpretations\": [\"residential building exterior\", \"urban street scene from moving vehicle\", \"backyard view of a townhouse\"],\n  \"uncertainty_notes\": \"Significant motion blur reduces fine detail; exact building type and surroundings are difficult to determine.\",\n  \"quality_flags\": [\"motion_blur\", \"low_sharpness\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be a brick building with two visible windows. The image is quite blurry, suggesting motion blur - likely taken from a moving vehicle. There's a brick wall in the foreground, and the building has a beige/cream colored upper portion with red/brown brick lower portion. There appear to be some plants/flowers near the base of the building. The ground appears to have fallen leaves on it.\n\nLet me assess each dimension:\n\n- recognizability: The building and basic scene are recognizable, but blur reduces clarity. Maybe 3.\n- ambiguity: Not many interpretations - it's clearly a building exterior. 2.\n- natural_photo_typicality: Looks like a typical photo, but blurry. 3.\n- visual_clutter: Moderate - brick texture, windows, some plants, fallen leaves. 3.\n- object_centricity: No single central object, it's a building facade. 2.\n- scene_centricity: Yes, this is a scene of a building. 5.\n- caption_confidence: I'd be fairly confident in a basic caption. 3.\n\nObject counts:\n- salient objects: 2 windows, some plants, building\n- distinct categories: building, windows, plants, leaves, ground\n\nNo person, face, animal, text, vehicle, food visible.\nIndoor/outdoor: outdoor scene\nNo artificial content, no occlusion really, no unusual viewpoint\nNo multiple main objects in the traditional sense\n\nDominant content: scene\nImage style: natural_photo (blurry but still photo)\nSemantic domain: building/architecture\n\nCaption: \"Blurry view of a brick building with two windows and plants along the wall\"\n\nLet me finalize the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be a brick building with two visible windows. The image is quite blurry, suggesting motion blur - likely taken from a moving vehicle. There's a brick wall in the foreground, and the building has a beige/cream colored upper portion with red/brown brick lower portion. There appear to be some plants/flowers near the base of the building. The ground appears to have fallen leaves on it.\n\nLet me assess each dimension:\n\n- recognizability: The building and basic scene are recognizable, but blur reduces clarity. Maybe 3.\n- ambiguity: Not many interpretations - it's clearly a building exterior. 2.\n- natural_photo_typicality: Looks like a typical photo, but blurry. 3.\n- visual_clutter: Moderate - brick texture, windows, some plants, fallen leaves. 3.\n- object_centricity: No single central object, it's a building facade. 2.\n- scene_centricity: Yes, this is a scene of a building. 5.\n- caption_confidence: I'd be fairly confident in a basic caption. 3.\n\nObject counts:\n- salient objects: 2 windows, some plants, building\n- distinct categories: building, windows, plants, leaves, ground\n\nNo person, face, animal, text, vehicle, food visible.\nIndoor/outdoor: outdoor scene\nNo artificial content, no occlusion really, no unusual viewpoint\nNo multiple main objects in the traditional sense\n\nDominant content: scene\nImage style: natural_photo (blurry but still photo)\nSemantic domain: building/architecture\n\nCaption: \"Blurry view of a brick building with two windows and plants along the wall\"\n\nLet me finalize the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 702,
+          "total_tokens": 2224,
+          "cost": 0.00127164,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00127164,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008424
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 418,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_49",
+    "stim_key": "dataset_49",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 49,
+    "file_index": 49,
+    "image_name": "image_0049.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0049.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"bathroom plumbing\",\n  \"short_caption\": \"Chrome widespread bathroom faucet running water into a white sink against a concrete wall.\",\n  \"main_objects\": [\"faucet spout\", \"cross handles\", \"white sink\", \"water stream\"],\n  \"possible_interpretations\": [\"A modern bathroom sink with running water\"],\n  \"uncertainty_notes\": \"Image is a staged product-style photograph; faucet handles and spout are the clear focus.\",\n  \"quality_flags\": [\"product_photography_styling\"]\n}",
+      "response": {
+        "id": "gen-1780319018-bhotX8gf900o9tTvF60G",
+        "object": "chat.completion",
+        "created": 1780319018,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"bathroom plumbing\",\n  \"short_caption\": \"Chrome widespread bathroom faucet running water into a white sink against a concrete wall.\",\n  \"main_objects\": [\"faucet spout\", \"cross handles\", \"white sink\", \"water stream\"],\n  \"possible_interpretations\": [\"A modern bathroom sink with running water\"],\n  \"uncertainty_notes\": \"Image is a staged product-style photograph; faucet handles and spout are the clear focus.\",\n  \"quality_flags\": [\"product_photography_styling\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a bathroom sink with a chrome/silver faucet (widespread style with two handles and a central spout). Water is flowing from the spout. The background appears to be a concrete or stone-textured wall. The sink is white porcelain/ceramic. The image looks like a professional product photograph.\n\nLet me rate the dimensions:\n- recognizability: 5 - Very clearly a faucet/sink\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 4 - Looks like a real photo, though styled/product-like\n- visual_clutter: 2 - Not cluttered, clean composition\n- object_centricity: 4 - Faucet is the clear central focus\n- scene_centricity: 2 - More object-focused than scene\n- caption_confidence: 5 - Easy to caption\n\nCounts:\n- estimated_salient_object_count: 3 (faucet spout, two handles, sink)\n- estimated_distinct_object_categories: 2 (faucet fixtures, sink)\n\nBoolean checks:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (bathroom)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (looks like a real photo, though could be product photography)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\nDominant content: object\nImage style: natural_photo (it looks like a product photograph but is a real photo)\nSemantic domain: bathroom/plumbing\n\nCaption: \"Chrome bathroom faucet with running water over a white sink against a stone wall.\"\n\nMain objects: faucet, sink, handles, water stream\nPossible interpretations: just one main interpretation",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a bathroom sink with a chrome/silver faucet (widespread style with two handles and a central spout). Water is flowing from the spout. The background appears to be a concrete or stone-textured wall. The sink is white porcelain/ceramic. The image looks like a professional product photograph.\n\nLet me rate the dimensions:\n- recognizability: 5 - Very clearly a faucet/sink\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 4 - Looks like a real photo, though styled/product-like\n- visual_clutter: 2 - Not cluttered, clean composition\n- object_centricity: 4 - Faucet is the clear central focus\n- scene_centricity: 2 - More object-focused than scene\n- caption_confidence: 5 - Easy to caption\n\nCounts:\n- estimated_salient_object_count: 3 (faucet spout, two handles, sink)\n- estimated_distinct_object_categories: 2 (faucet fixtures, sink)\n\nBoolean checks:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (bathroom)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (looks like a real photo, though could be product photography)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\nDominant content: object\nImage style: natural_photo (it looks like a product photograph but is a real photo)\nSemantic domain: bathroom/plumbing\n\nCaption: \"Chrome bathroom faucet with running water over a white sink against a stone wall.\"\n\nMain objects: faucet, sink, handles, water stream\nPossible interpretations: just one main interpretation",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 741,
+          "total_tokens": 2263,
+          "cost": 0.00131844,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131844,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008892
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 457,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

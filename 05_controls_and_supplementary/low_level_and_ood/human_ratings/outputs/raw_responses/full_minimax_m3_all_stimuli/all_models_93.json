@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_93",
+    "stim_key": "all_models_93",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 93,
+    "file_index": 93,
+    "image_name": "image_0093.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0093.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: short_caption must be <= 20 words"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 3, \"visual_clutter\": 3, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 4, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"home/bathroom/decor\", \"short_caption\": \"Shower curtain with dragonfly and watercolor design in bathroom with white vanity\", \"main_objects\": [\"shower curtain\", \"vanity cabinet\", \"round mirror\", \"folded towels\", \"dragonfly illustrations\"], \"possible_interpretations\": [\"product photo of decorative shower curtain\", \"bathroom interior decor scene\", \"home furnishings catalog image\", \"lifestyle decor photography\"], \"uncertainty_notes\": \"Likely a staged product or catalog photograph; dragonflies are printed/illustrated decorations on the curtain fabric, not real animals.\", \"quality_flags\": [\"staged_product_photo\", \"partial_occlusion\", \"decorative_text_illegible\"]}",
+      "response": {
+        "id": "gen-1780318857-E1cH9y4Va1b1CXVsUkaP",
+        "object": "chat.completion",
+        "created": 1780318857,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 3, \"visual_clutter\": 3, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 4, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"home/bathroom/decor\", \"short_caption\": \"Shower curtain with dragonfly and watercolor design in bathroom with white vanity\", \"main_objects\": [\"shower curtain\", \"vanity cabinet\", \"round mirror\", \"folded towels\", \"dragonfly illustrations\"], \"possible_interpretations\": [\"product photo of decorative shower curtain\", \"bathroom interior decor scene\", \"home furnishings catalog image\", \"lifestyle decor photography\"], \"uncertainty_notes\": \"Likely a staged product or catalog photograph; dragonflies are printed/illustrated decorations on the curtain fabric, not real animals.\", \"quality_flags\": [\"staged_product_photo\", \"partial_occlusion\", \"decorative_text_illegible\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a shower curtain with a dragonfly and floral/watercolor design in green and gray tones. The curtain has text/script writing on it as decorative elements. Behind the curtain, I can see a bathroom setting with a white cabinet/vanity, a round mirror, and what appears to be folded white towels on top of the cabinet.\n\nKey observations:\n- Main subject: Shower curtain with dragonfly and floral patterns\n- Setting: Bathroom interior\n- Style: Product photography, likely a catalog or e-commerce image\n- Contains: dragonfly illustrations, script text decoration, bathroom furniture, mirror\n- No people, no faces, no animals (dragonflies are illustrated, not real)\n- Indoor scene\n- Somewhat cluttered with decorative elements\n\nLet me rate each dimension:\n\nRecognizability: 4 - Clearly a bathroom shower curtain scene\nAmbiguity: 2 - Fairly clear what's being shown\nNatural_photo_typicality: 3 - Looks like a product photo, somewhat staged\nVisual_clutter: 3 - Multiple decorative elements on the curtain, but not overwhelming\nObject_centricity: 3 - The curtain is the main focus, but it's also showing a scene\nScene_centricity: 4 - Shows a bathroom scene/setting\n\nCaption_confidence: 4 - Can confidently describe it\n\nEstimated_salient_object_count: 3 (curtain, cabinet, mirror)\nEstimated_distinct_object_categories: 3-4 (shower curtain, furniture, mirror, towels)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false (dragonflies are illustrations)\ncontains_text: true (script writing on curtain)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false (it's a photo)\ncontains_occlusion_or_truncation: true (curtain is partially blocking the view)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: object (shower curtain is main focus)\nimage_style: natural_photo (it's a real photograph, though staged)\nsemantic_domain: home/bathroom/decor\n\nShort caption: \"Shower curtain with dragonfly design in bathroom setting with white vanity\"\n\nMain objects: shower curtain, vanity cabinet, mirror, towels\n\nPossible interpretations:\n- Product photo of shower curtain\n- Bathroom interior decoration\n- Home decor catalog image\n\nUncertainty notes: The image appears to be a product/catalog photo; dragonflies are decorative illustrations, not real animals.\n\nQuality flags: staged product photo, partial occlusion",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a shower curtain with a dragonfly and floral/watercolor design in green and gray tones. The curtain has text/script writing on it as decorative elements. Behind the curtain, I can see a bathroom setting with a white cabinet/vanity, a round mirror, and what appears to be folded white towels on top of the cabinet.\n\nKey observations:\n- Main subject: Shower curtain with dragonfly and floral patterns\n- Setting: Bathroom interior\n- Style: Product photography, likely a catalog or e-commerce image\n- Contains: dragonfly illustrations, script text decoration, bathroom furniture, mirror\n- No people, no faces, no animals (dragonflies are illustrated, not real)\n- Indoor scene\n- Somewhat cluttered with decorative elements\n\nLet me rate each dimension:\n\nRecognizability: 4 - Clearly a bathroom shower curtain scene\nAmbiguity: 2 - Fairly clear what's being shown\nNatural_photo_typicality: 3 - Looks like a product photo, somewhat staged\nVisual_clutter: 3 - Multiple decorative elements on the curtain, but not overwhelming\nObject_centricity: 3 - The curtain is the main focus, but it's also showing a scene\nScene_centricity: 4 - Shows a bathroom scene/setting\n\nCaption_confidence: 4 - Can confidently describe it\n\nEstimated_salient_object_count: 3 (curtain, cabinet, mirror)\nEstimated_distinct_object_categories: 3-4 (shower curtain, furniture, mirror, towels)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false (dragonflies are illustrations)\ncontains_text: true (script writing on curtain)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false (it's a photo)\ncontains_occlusion_or_truncation: true (curtain is partially blocking the view)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: object (shower curtain is main focus)\nimage_style: natural_photo (it's a real photograph, though staged)\nsemantic_domain: home/bathroom/decor\n\nShort caption: \"Shower curtain with dragonfly design in bathroom setting with white vanity\"\n\nMain objects: shower curtain, vanity cabinet, mirror, towels\n\nPossible interpretations:\n- Product photo of shower curtain\n- Bathroom interior decoration\n- Home decor catalog image\n\nUncertainty notes: The image appears to be a product/catalog photo; dragonflies are decorative illustrations, not real animals.\n\nQuality flags: staged product photo, partial occlusion",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 898,
+          "total_tokens": 2436,
+          "cost": 0.00151164,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00151164,
+            "upstream_inference_prompt_cost": 0.00043404,
+            "upstream_inference_completions_cost": 0.0010776
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 666,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

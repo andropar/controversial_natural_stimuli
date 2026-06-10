@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_1",
+    "stim_key": "sota_1",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 1,
+    "file_index": 1,
+    "image_name": "image_0001.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0001.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nursery interior\",\n\n  \"short_caption\": \"Nursery wall with two small pastel animal artworks above a wooden crib railing.\",\n  \"main_objects\": [\"wall art\", \"elephant figure\", \"pink character\", \"crib railing\", \"partial person\"],\n  \"possible_interpretations\": [\"Nursery room decor\", \"Children's bedroom wall art\", \"Baby's room scene\"],\n  \"uncertainty_notes\": \"The pink character's species is unclear; the partial figure in the lower right corner is heavily cropped and its identity cannot be determined.\",\n  \"quality_flags\": [\"partial subject at edge\", \"small subject size\"]\n}",
+      "response": {
+        "id": "gen-1780319073-SpkgnLRkkRD9N36O7u1w",
+        "object": "chat.completion",
+        "created": 1780319073,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nursery interior\",\n\n  \"short_caption\": \"Nursery wall with two small pastel animal artworks above a wooden crib railing.\",\n  \"main_objects\": [\"wall art\", \"elephant figure\", \"pink character\", \"crib railing\", \"partial person\"],\n  \"possible_interpretations\": [\"Nursery room decor\", \"Children's bedroom wall art\", \"Baby's room scene\"],\n  \"uncertainty_notes\": \"The pink character's species is unclear; the partial figure in the lower right corner is heavily cropped and its identity cannot be determined.\",\n  \"quality_flags\": [\"partial subject at edge\", \"small subject size\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be a nursery or child's room wall with two small decorative pieces of art hanging on it. The artworks appear to be small canvas or paper pieces with pastel checkered backgrounds - one features a blue elephant (possibly a stuffed toy or illustration) and the other features a pink/red character (possibly a pig or another animal). Below the artwork is what appears to be a wooden crib railing. In the bottom right corner, I can partially see what might be a baby or child's face.\n\nLet me annotate this:\n\n- recognizability: 3 - the image is fairly clear but small and not the typical photo subject\n- ambiguity: 2 - it's clearly a nursery wall with art and a crib\n- natural_photo_typicality: 3 - looks like a casual photo, not a professional shot\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 2 - more of a scene\n- scene_centricity: 4 - clearly shows a room/scene\n- caption_confidence: 4 - easy to describe\n\n- contains_person: true (partially visible in bottom right)\n- contains_face: true (partial face visible)\n- contains_animal: true (elephant illustration/toy and possibly a pig)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (the wall art is physical, not digital)\n- contains_occlusion_or_truncation: true (person is cut off at the edge)\n- contains_multiple_main_objects: false\n- contains_unusual_viewpoint: false\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"nursery\" or \"interior\"\n\n- short_caption: \"Nursery wall with two small animal artworks above a wooden crib railing\"\n- main_objects: [\"wall art\", \"elephant\", \"pink character\", \"crib railing\"]\n- possible_interpretations: [\"Nursery room decor\", \"Children's bedroom wall art\", \"Baby's room\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be a nursery or child's room wall with two small decorative pieces of art hanging on it. The artworks appear to be small canvas or paper pieces with pastel checkered backgrounds - one features a blue elephant (possibly a stuffed toy or illustration) and the other features a pink/red character (possibly a pig or another animal). Below the artwork is what appears to be a wooden crib railing. In the bottom right corner, I can partially see what might be a baby or child's face.\n\nLet me annotate this:\n\n- recognizability: 3 - the image is fairly clear but small and not the typical photo subject\n- ambiguity: 2 - it's clearly a nursery wall with art and a crib\n- natural_photo_typicality: 3 - looks like a casual photo, not a professional shot\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 2 - more of a scene\n- scene_centricity: 4 - clearly shows a room/scene\n- caption_confidence: 4 - easy to describe\n\n- contains_person: true (partially visible in bottom right)\n- contains_face: true (partial face visible)\n- contains_animal: true (elephant illustration/toy and possibly a pig)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (the wall art is physical, not digital)\n- contains_occlusion_or_truncation: true (person is cut off at the edge)\n- contains_multiple_main_objects: false\n- contains_unusual_viewpoint: false\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"nursery\" or \"interior\"\n\n- short_caption: \"Nursery wall with two small animal artworks above a wooden crib railing\"\n- main_objects: [\"wall art\", \"elephant\", \"pink character\", \"crib railing\"]\n- possible_interpretations: [\"Nursery room decor\", \"Children's bedroom wall art\", \"Baby's room\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 838,
+          "completion_tokens": 817,
+          "total_tokens": 1655,
+          "cost": 0.00108156,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00108156,
+            "upstream_inference_prompt_cost": 0.00010116,
+            "upstream_inference_completions_cost": 0.0009804
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 505,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

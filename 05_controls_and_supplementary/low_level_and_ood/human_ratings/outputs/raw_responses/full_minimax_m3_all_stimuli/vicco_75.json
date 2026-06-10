@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_75",
+    "stim_key": "vicco_75",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 75,
+    "file_index": 74,
+    "image_name": "shared_4rep_vicco_075.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_075.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"marine/underwater\",\n  \"short_caption\": \"Underwater coral reef with a yellow camouflaged fish nestled among branching corals.\",\n  \"main_objects\": [\"coral reef\", \"branching corals\", \"yellow leaf-like fish\", \"small distant fish\"],\n  \"possible_interpretations\": [\"coral reef ecosystem\", \"camouflaged leaf scorpionfish\", \"underwater nature scene\", \"marine wildlife habitat\"],\n  \"uncertainty_notes\": \"The yellow object could be a leaf scorpionfish, seaweed, or sponge; lighting is dim with typical underwater blue cast.\",\n  \"quality_flags\": [\"underwater_color_cast\", \"low_light\", \"mild_softness\", \"partial_occlusion_of_main_subject\"]\n}",
+      "response": {
+        "id": "gen-1780319473-Efo10mOJm7qBXPgnWWaa",
+        "object": "chat.completion",
+        "created": 1780319473,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"marine/underwater\",\n  \"short_caption\": \"Underwater coral reef with a yellow camouflaged fish nestled among branching corals.\",\n  \"main_objects\": [\"coral reef\", \"branching corals\", \"yellow leaf-like fish\", \"small distant fish\"],\n  \"possible_interpretations\": [\"coral reef ecosystem\", \"camouflaged leaf scorpionfish\", \"underwater nature scene\", \"marine wildlife habitat\"],\n  \"uncertainty_notes\": \"The yellow object could be a leaf scorpionfish, seaweed, or sponge; lighting is dim with typical underwater blue cast.\",\n  \"quality_flags\": [\"underwater_color_cast\", \"low_light\", \"mild_softness\", \"partial_occlusion_of_main_subject\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It appears to be an underwater photograph showing a coral reef scene. I can see:\n- Various coral structures, including branching corals (likely Acropora or similar)\n- A yellow/green leaf-like organism that appears to be a leaf scorpionfish or similar camouflaged fish\n- Some whitish/cream colored structures that could be soft coral or sponges\n- Blue water in the background\n- Small fish visible in the distance\n- The scene has a natural underwater lighting quality\n\nLet me annotate based on the schema:\n\n- Recognizability: The image clearly shows an underwater coral reef scene - 4\n- Ambiguity: Multiple interpretations possible (coral, fish, underwater scene) - 3\n- Natural photo typicality: Looks like a typical underwater nature photograph - 4\n- Visual clutter: Lots of coral structures and details - 4\n- Object centricity: There's a focal yellow fish but the scene is complex - 3\n- Scene centricity: It's clearly a scene/environment - 5\n- Caption confidence: Reasonably confident - 4\n\nThe yellow object looks like it could be a leaf scorpionfish (Taenianotus triacanthus) which mimics dead leaves/seaweed. But I should be conservative.\n\nDistinct objects: coral branches, yellow fish-like organism, possibly soft coral/sponge, small fish in background.\n\nMain objects: coral reef, yellow fish (possibly leaf scorpionfish), small fish, water column\nCategories: coral, fish, marine life, water\n\nNo people, faces, text, vehicles, food, indoor scene.\nOutdoor scene (underwater outdoor).\nNot artificial/rendered.\nSome occlusion of the yellow fish by surrounding coral.\nViewpoint is somewhat unusual - low angle underwater shot.\nNot multiple main objects - one dominant scene.\n\nDominant content: scene (underwater reef)\nImage style: natural_photo\nSemantic domain: marine/underwater\n\nShort caption: \"Underwater coral reef scene with yellow camouflaged fish and branching corals\"\n\nPossible interpretations: coral reef, fish habitat, underwater ecosystem, marine photography\n\nQuality flags: underwater lighting affects color, some blur/softness",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It appears to be an underwater photograph showing a coral reef scene. I can see:\n- Various coral structures, including branching corals (likely Acropora or similar)\n- A yellow/green leaf-like organism that appears to be a leaf scorpionfish or similar camouflaged fish\n- Some whitish/cream colored structures that could be soft coral or sponges\n- Blue water in the background\n- Small fish visible in the distance\n- The scene has a natural underwater lighting quality\n\nLet me annotate based on the schema:\n\n- Recognizability: The image clearly shows an underwater coral reef scene - 4\n- Ambiguity: Multiple interpretations possible (coral, fish, underwater scene) - 3\n- Natural photo typicality: Looks like a typical underwater nature photograph - 4\n- Visual clutter: Lots of coral structures and details - 4\n- Object centricity: There's a focal yellow fish but the scene is complex - 3\n- Scene centricity: It's clearly a scene/environment - 5\n- Caption confidence: Reasonably confident - 4\n\nThe yellow object looks like it could be a leaf scorpionfish (Taenianotus triacanthus) which mimics dead leaves/seaweed. But I should be conservative.\n\nDistinct objects: coral branches, yellow fish-like organism, possibly soft coral/sponge, small fish in background.\n\nMain objects: coral reef, yellow fish (possibly leaf scorpionfish), small fish, water column\nCategories: coral, fish, marine life, water\n\nNo people, faces, text, vehicles, food, indoor scene.\nOutdoor scene (underwater outdoor).\nNot artificial/rendered.\nSome occlusion of the yellow fish by surrounding coral.\nViewpoint is somewhat unusual - low angle underwater shot.\nNot multiple main objects - one dominant scene.\n\nDominant content: scene (underwater reef)\nImage style: natural_photo\nSemantic domain: marine/underwater\n\nShort caption: \"Underwater coral reef scene with yellow camouflaged fish and branching corals\"\n\nPossible interpretations: coral reef, fish habitat, underwater ecosystem, marine photography\n\nQuality flags: underwater lighting affects color, some blur/softness",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 819,
+          "total_tokens": 2341,
+          "cost": 0.00128916,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00128916,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009828
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 549,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

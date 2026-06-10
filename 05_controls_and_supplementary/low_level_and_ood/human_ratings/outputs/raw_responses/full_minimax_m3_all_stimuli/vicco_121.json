@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_121",
+    "stim_key": "vicco_121",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 121,
+    "file_index": 120,
+    "image_name": "shared_4rep_vicco_121.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_121.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"indoor_workspace\",\n  \"short_caption\": \"Black and white photo of people in a room with large grid windows, displayed sideways.\",\n  \"main_objects\": [\"people\", \"windows\", \"desks\", \"chairs\"],\n  \"possible_interpretations\": [\"vintage office or workshop\", \"classroom setting\", \"studio with models\", \"historical photograph of workers\", \"meeting room\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees (sideways orientation), appears to be an old black and white photograph possibly on display, exact activity of people is unclear due to angle and image quality.\",\n  \"quality_flags\": [\"rotated_orientation\", \"low_resolution\", \"monochrome\", \"aged_photograph\", \"displayed_under_glass\"]\n}",
+      "response": {
+        "id": "gen-1780319525-DXSwlX69ntF71EzQ6eln",
+        "object": "chat.completion",
+        "created": 1780319525,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"indoor_workspace\",\n  \"short_caption\": \"Black and white photo of people in a room with large grid windows, displayed sideways.\",\n  \"main_objects\": [\"people\", \"windows\", \"desks\", \"chairs\"],\n  \"possible_interpretations\": [\"vintage office or workshop\", \"classroom setting\", \"studio with models\", \"historical photograph of workers\", \"meeting room\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees (sideways orientation), appears to be an old black and white photograph possibly on display, exact activity of people is unclear due to angle and image quality.\",\n  \"quality_flags\": [\"rotated_orientation\", \"low_resolution\", \"monochrome\", \"aged_photograph\", \"displayed_under_glass\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. The image appears to be rotated 90 degrees (sideways). It's a black and white photograph showing what looks like an interior scene with large windows/glass panels, and several people. I can see at least 2-3 people in the image, appearing to be in some kind of institutional or office setting. The image has a vintage/old quality to it, possibly a historical photograph.\n\nLet me look more carefully:\n- There are large windows with grid patterns\n- Multiple people visible (appears to be 2-3 people)\n- The setting looks like it could be a workshop, classroom, or office\n- There appear to be desks or tables\n- The image is in black and white, suggesting it's an older photograph\n- The image quality shows some age/aging effects\n\nLet me provide the annotations:",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. The image appears to be rotated 90 degrees (sideways). It's a black and white photograph showing what looks like an interior scene with large windows/glass panels, and several people. I can see at least 2-3 people in the image, appearing to be in some kind of institutional or office setting. The image has a vintage/old quality to it, possibly a historical photograph.\n\nLet me look more carefully:\n- There are large windows with grid patterns\n- Multiple people visible (appears to be 2-3 people)\n- The setting looks like it could be a workshop, classroom, or office\n- There appear to be desks or tables\n- The image is in black and white, suggesting it's an older photograph\n- The image quality shows some age/aging effects\n\nLet me provide the annotations:",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 557,
+          "total_tokens": 2079,
+          "cost": 0.00097476,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00097476,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0006684
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 206,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_65",
+    "stim_key": "vicco_65",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 65,
+    "file_index": 64,
+    "image_name": "shared_4rep_vicco_065.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_065.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture_zoo\",\n  \"short_caption\": \"An elephant stands beside an ornate brick archway with geometric patterns, with a small bird on the ground.\",\n  \"main_objects\": [\"elephant\", \"ornate brick archway\", \"bird\", \"decorated brick wall\"],\n  \"possible_interpretations\": [\"historic building entrance\", \"zoo elephant enclosure gate\", \"ornamental temple or palace wall\", \"architectural heritage site\"],\n  \"uncertainty_notes\": \"Specific location and building function not identifiable; exact elephant species (likely Asian) uncertain from partial view.\",\n  \"quality_flags\": [\"elephant truncated at right edge\"]\n}",
+      "response": {
+        "id": "gen-1780319464-Yr6xOWkeRJdQZICOUi0h",
+        "object": "chat.completion",
+        "created": 1780319464,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture_zoo\",\n  \"short_caption\": \"An elephant stands beside an ornate brick archway with geometric patterns, with a small bird on the ground.\",\n  \"main_objects\": [\"elephant\", \"ornate brick archway\", \"bird\", \"decorated brick wall\"],\n  \"possible_interpretations\": [\"historic building entrance\", \"zoo elephant enclosure gate\", \"ornamental temple or palace wall\", \"architectural heritage site\"],\n  \"uncertainty_notes\": \"Specific location and building function not identifiable; exact elephant species (likely Asian) uncertain from partial view.\",\n  \"quality_flags\": [\"elephant truncated at right edge\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- A large ornate brick wall with geometric patterns, featuring an arched doorway with decorative brickwork\n- The wall has intricate diamond and rectangular patterns made from different colored bricks\n- An elephant on the right side of the image, partially visible\n- A small black bird (possibly a crow) on the ground in the foreground\n- The ground appears to be dirt/earthen with some branches\n- The architectural style looks like it could be from a zoo or historic building, possibly the Berlin Zoo's Elephant Gate (Elefantentor)\n\nLet me rate this:\n\n- recognizability: 4 - The main elements (brick archway, elephant, bird) are clearly recognizable\n- ambiguity: 2 - It's pretty clear what the image shows\n- natural_photo_typicality: 4 - Looks like a typical photograph\n- visual_clutter: 3 - The wall has many patterns but the composition is relatively clean\n- object_centricity: 3 - The archway/door is a central focal point, with the elephant as another subject\n- scene_centricity: 4 - This is mainly about the architectural scene\n- caption_confidence: 4 - I can describe it well\n\nCounts:\n- salient objects: elephant, bird, archway door - about 3\n- distinct categories: elephant, bird, building/door - 3\n\nBooleans:\n- person: false\n- face: false\n- animal: true (elephant, bird)\n- text: false\n- vehicle: false\n- food: false\n- indoor: false\n- outdoor: true\n- artificial/rendered: false\n- occlusion/truncation: true (elephant is cut off on the right)\n- unusual viewpoint: false\n- multiple main objects: true (archway and elephant)\n\nDominant content: scene (with animal)\nImage style: natural_photo\nSemantic domain: architecture/zoo\n\nCaption: \"An elephant stands beside an ornate brick archway with geometric patterns, while a small bird walks on the dirt ground.\"\n\nMain objects: elephant, brick archway, bird, decorative brick wall\nPossible interpretations: zoo entrance, historic gate, temple entrance\nUncertainty: location/specific context unknown\nQuality flags: elephant truncated at edge",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- A large ornate brick wall with geometric patterns, featuring an arched doorway with decorative brickwork\n- The wall has intricate diamond and rectangular patterns made from different colored bricks\n- An elephant on the right side of the image, partially visible\n- A small black bird (possibly a crow) on the ground in the foreground\n- The ground appears to be dirt/earthen with some branches\n- The architectural style looks like it could be from a zoo or historic building, possibly the Berlin Zoo's Elephant Gate (Elefantentor)\n\nLet me rate this:\n\n- recognizability: 4 - The main elements (brick archway, elephant, bird) are clearly recognizable\n- ambiguity: 2 - It's pretty clear what the image shows\n- natural_photo_typicality: 4 - Looks like a typical photograph\n- visual_clutter: 3 - The wall has many patterns but the composition is relatively clean\n- object_centricity: 3 - The archway/door is a central focal point, with the elephant as another subject\n- scene_centricity: 4 - This is mainly about the architectural scene\n- caption_confidence: 4 - I can describe it well\n\nCounts:\n- salient objects: elephant, bird, archway door - about 3\n- distinct categories: elephant, bird, building/door - 3\n\nBooleans:\n- person: false\n- face: false\n- animal: true (elephant, bird)\n- text: false\n- vehicle: false\n- food: false\n- indoor: false\n- outdoor: true\n- artificial/rendered: false\n- occlusion/truncation: true (elephant is cut off on the right)\n- unusual viewpoint: false\n- multiple main objects: true (archway and elephant)\n\nDominant content: scene (with animal)\nImage style: natural_photo\nSemantic domain: architecture/zoo\n\nCaption: \"An elephant stands beside an ornate brick archway with geometric patterns, while a small bird walks on the dirt ground.\"\n\nMain objects: elephant, brick archway, bird, decorative brick wall\nPossible interpretations: zoo entrance, historic gate, temple entrance\nUncertainty: location/specific context unknown\nQuality flags: elephant truncated at edge",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 832,
+          "total_tokens": 2354,
+          "cost": 0.00130476,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00130476,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009984
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 546,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

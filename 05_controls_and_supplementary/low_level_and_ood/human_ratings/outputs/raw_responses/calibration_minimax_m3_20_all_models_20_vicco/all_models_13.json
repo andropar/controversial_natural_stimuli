@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_13",
+    "stim_key": "all_models_13",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 13,
+    "file_index": 13,
+    "image_name": "image_0013.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0013.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"home decor\",\n  \"short_caption\": \"Purple area rug with singer silhouette and 'Lose Yourself' text in a styled living room.\",\n  \"main_objects\": [\"purple rug\", \"white armchair\", \"side table\", \"potted plant\", \"books\", \"fruit bowl\", \"coral throw blanket\"],\n  \"possible_interpretations\": [\"product photo of decorative rug\", \"fan merchandise rug with musician silhouette\", \"styled interior decor scene\", \"Freddie Mercury themed home accessory\"],\n  \"uncertainty_notes\": \"Text on rug is truncated; silhouette identity is suggestive but not definitive; 'Pubsmusic' watermark suggests commercial product listing.\",\n  \"quality_flags\": [\"watermark\", \"truncated text\", \"commercial product photo\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318166-mgSK80wsjA8rXThVILtS",
+        "object": "chat.completion",
+        "created": 1780318166,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"home decor\",\n  \"short_caption\": \"Purple area rug with singer silhouette and 'Lose Yourself' text in a styled living room.\",\n  \"main_objects\": [\"purple rug\", \"white armchair\", \"side table\", \"potted plant\", \"books\", \"fruit bowl\", \"coral throw blanket\"],\n  \"possible_interpretations\": [\"product photo of decorative rug\", \"fan merchandise rug with musician silhouette\", \"styled interior decor scene\", \"Freddie Mercury themed home accessory\"],\n  \"uncertainty_notes\": \"Text on rug is truncated; silhouette identity is suggestive but not definitive; 'Pubsmusic' watermark suggests commercial product listing.\",\n  \"quality_flags\": [\"watermark\", \"truncated text\", \"commercial product photo\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "The image shows a purple area rug in a living room setting. The rug has a silhouette of a figure (appears to be Freddie Mercury-like) with the text \"LOSE YOURSELF\" (partially visible). The room contains white chairs, a side table with a plant, a bench with books and fruit, and a coral-colored throw blanket. There's a watermark \"Pubsmusic\" visible on the image.\n\nLet me annotate this carefully:\n\n- Recognizability: The main content (a decorative rug with a silhouette and text) is clearly visible. Rating: 4\n- Ambiguity: The image has a clear main subject (the rug) though it contains multiple elements. Rating: 2\n- Natural photo typicality: This appears to be a product photo, staged. Rating: 3\n- Visual clutter: There are multiple objects (chairs, table, plant, bench, books, fruit, rug, blanket) but the rug is dominant. Rating: 3\n- Object centricity: The rug is the central dominant object. Rating: 5\n- Scene centricity: It's both a scene (living room) and focused on an object (rug). Rating: 3\n- Caption confidence: I can confidently describe this. Rating: 4\n\nEstimated salient object count: 1 (the rug) or maybe 2-3 if counting furniture\nEstimated distinct object categories: rug, chair, table, plant, bench, books, fruit, blanket - about 7-8\n\nContains person: no (silhouette is on the rug, not a real person)\nContains face: no\nContains animal: no\nContains text: yes (\"LOSE YOURSELF\" and watermarks)\nContains vehicle: no\nContains food: yes (fruit in bowl - pears/apples)\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial or rendered content: somewhat (it's a product photo, possibly with some rendering)\nContains occlusion or truncation: yes (text is cut off \"LOSE YOURSELF\")\nContains unusual viewpoint: no\nContains multiple main objects: no (the rug is clearly the main subject)\n\nDominant content type: object (the rug)\nImage style: edited_photo (product photo with watermark)\nSemantic domain: home decor\n\nShort caption: \"Purple area rug with Freddie Mercury silhouette and 'Lose Yourself' text in a living room setting\"\n\nMain objects: purple rug, white armchair, side table, potted plant, books, fruit bowl, coral throw blanket\n\nPossible interpretations: product photo, living room decor, fan merchandise rug\n\nUncertainty notes: The silhouette on the rug appears to depict Freddie Mercury but the face is partially obscured/cut off in the design. The text is truncated.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a purple area rug in a living room setting. The rug has a silhouette of a figure (appears to be Freddie Mercury-like) with the text \"LOSE YOURSELF\" (partially visible). The room contains white chairs, a side table with a plant, a bench with books and fruit, and a coral-colored throw blanket. There's a watermark \"Pubsmusic\" visible on the image.\n\nLet me annotate this carefully:\n\n- Recognizability: The main content (a decorative rug with a silhouette and text) is clearly visible. Rating: 4\n- Ambiguity: The image has a clear main subject (the rug) though it contains multiple elements. Rating: 2\n- Natural photo typicality: This appears to be a product photo, staged. Rating: 3\n- Visual clutter: There are multiple objects (chairs, table, plant, bench, books, fruit, rug, blanket) but the rug is dominant. Rating: 3\n- Object centricity: The rug is the central dominant object. Rating: 5\n- Scene centricity: It's both a scene (living room) and focused on an object (rug). Rating: 3\n- Caption confidence: I can confidently describe this. Rating: 4\n\nEstimated salient object count: 1 (the rug) or maybe 2-3 if counting furniture\nEstimated distinct object categories: rug, chair, table, plant, bench, books, fruit, blanket - about 7-8\n\nContains person: no (silhouette is on the rug, not a real person)\nContains face: no\nContains animal: no\nContains text: yes (\"LOSE YOURSELF\" and watermarks)\nContains vehicle: no\nContains food: yes (fruit in bowl - pears/apples)\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial or rendered content: somewhat (it's a product photo, possibly with some rendering)\nContains occlusion or truncation: yes (text is cut off \"LOSE YOURSELF\")\nContains unusual viewpoint: no\nContains multiple main objects: no (the rug is clearly the main subject)\n\nDominant content type: object (the rug)\nImage style: edited_photo (product photo with watermark)\nSemantic domain: home decor\n\nShort caption: \"Purple area rug with Freddie Mercury silhouette and 'Lose Yourself' text in a living room setting\"\n\nMain objects: purple rug, white armchair, side table, potted plant, books, fruit bowl, coral throw blanket\n\nPossible interpretations: product photo, living room decor, fan merchandise rug\n\nUncertainty notes: The silhouette on the rug appears to depict Freddie Mercury but the face is partially obscured/cut off in the design. The text is truncated.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 943,
+          "total_tokens": 2465,
+          "cost": 0.00122628,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1508,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00122628,
+            "upstream_inference_prompt_cost": 9.468e-05,
+            "upstream_inference_completions_cost": 0.0011316
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 629,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_6",
+    "stim_key": "vicco_6",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 6,
+    "file_index": 5,
+    "image_name": "shared_4rep_vicco_006.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_006.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: dominant_content_type has invalid value: 'person'"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"recreation/outdoor\",\n  \"short_caption\": \"Woman viewed from behind paddling a red canoe on a calm tree-lined river\",\n  \"main_objects\": [\"woman\", \"canoe\", \"paddle\", \"river\", \"trees\"],\n  \"possible_interpretations\": [\"Woman canoeing alone on a river\", \"Person paddling downstream through a forested waterway\", \"Leisure canoeing trip on a calm lake or river\"],\n  \"uncertainty_notes\": \"Face not visible, only back of head shown. A small yellow sticker on the canoe may contain text but is not clearly legible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318214-XMdawt2AbPqJ6bRHEMl2",
+        "object": "chat.completion",
+        "created": 1780318214,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"recreation/outdoor\",\n  \"short_caption\": \"Woman viewed from behind paddling a red canoe on a calm tree-lined river\",\n  \"main_objects\": [\"woman\", \"canoe\", \"paddle\", \"river\", \"trees\"],\n  \"possible_interpretations\": [\"Woman canoeing alone on a river\", \"Person paddling downstream through a forested waterway\", \"Leisure canoeing trip on a calm lake or river\"],\n  \"uncertainty_notes\": \"Face not visible, only back of head shown. A small yellow sticker on the canoe may contain text but is not clearly legible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a woman from behind, sitting in what appears to be a canoe. She's wearing a black tank top with criss-cross strap details and a black skirt. She has dark hair pulled up in a bun. She's holding a paddle. The canoe is red/maroon colored. The setting is a calm river or lake surrounded by lush green trees. The water is calm and reflects the trees and sky.\n\nLet me annotate this systematically:\n\n- recognizability: 5 - Very clear what's happening\n- ambiguity: 1 - Very clear single interpretation (woman canoeing on a river)\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 2 - Relatively clean composition, mostly water, trees, and person\n- object_centricity: 2 - The person is the main focus but it's also a scene\n- scene_centricity: 4 - The scene (river, trees) is a major element\n- caption_confidence: 5 - Very confident in captioning\n\n- estimated_salient_object_count: 2 (person, canoe)\n- estimated_distinct_object_categories: 3 (person, canoe, trees/water scene)\n\n- contains_person: true\n- contains_face: false (back of head)\n- contains_animal: false\n- contains_text: true (there appears to be a yellow label/sticker on the canoe)\n- contains_vehicle: true (canoe is a water vehicle)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"person_face\" - well, it's a person but we can't see the face... \"mixed\" might be better since it's person + scene\n- image_style: \"natural_photo\"\n- semantic_domain: \"recreation/outdoor\"\n\n- short_caption: \"Woman in a black outfit paddling a red canoe on a calm river surrounded by trees\"\n- main_objects: [\"woman\", \"canoe\", \"paddle\", \"river\", \"trees\"]\n- possible_interpretations: [\"Woman canoeing alone\", \"Person paddling a canoe on a river\", \"Canoeing trip on a calm river\"]\n- uncertainty_notes: \"Face not visible, only back of person shown. There appears to be a small yellow label on the canoe that may contain text but it's not clearly readable.\"\n- quality_flags: []\n\nFor dominant_content_type, since the person is the main subject but we don't see their face, \"person\" would be more accurate. But the schema options are \"object\", \"scene\", \"texture_pattern\", \"closeup_detail\", \"person_face\", \"animal\", \"food\", \"text_document\", \"mixed\", \"unclear\". The person is visible but not the face. I'll go with \"mixed\" since it's both a person and a scene.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a woman from behind, sitting in what appears to be a canoe. She's wearing a black tank top with criss-cross strap details and a black skirt. She has dark hair pulled up in a bun. She's holding a paddle. The canoe is red/maroon colored. The setting is a calm river or lake surrounded by lush green trees. The water is calm and reflects the trees and sky.\n\nLet me annotate this systematically:\n\n- recognizability: 5 - Very clear what's happening\n- ambiguity: 1 - Very clear single interpretation (woman canoeing on a river)\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 2 - Relatively clean composition, mostly water, trees, and person\n- object_centricity: 2 - The person is the main focus but it's also a scene\n- scene_centricity: 4 - The scene (river, trees) is a major element\n- caption_confidence: 5 - Very confident in captioning\n\n- estimated_salient_object_count: 2 (person, canoe)\n- estimated_distinct_object_categories: 3 (person, canoe, trees/water scene)\n\n- contains_person: true\n- contains_face: false (back of head)\n- contains_animal: false\n- contains_text: true (there appears to be a yellow label/sticker on the canoe)\n- contains_vehicle: true (canoe is a water vehicle)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"person_face\" - well, it's a person but we can't see the face... \"mixed\" might be better since it's person + scene\n- image_style: \"natural_photo\"\n- semantic_domain: \"recreation/outdoor\"\n\n- short_caption: \"Woman in a black outfit paddling a red canoe on a calm river surrounded by trees\"\n- main_objects: [\"woman\", \"canoe\", \"paddle\", \"river\", \"trees\"]\n- possible_interpretations: [\"Woman canoeing alone\", \"Person paddling a canoe on a river\", \"Canoeing trip on a calm river\"]\n- uncertainty_notes: \"Face not visible, only back of person shown. There appears to be a small yellow label on the canoe that may contain text but it's not clearly readable.\"\n- quality_flags: []\n\nFor dominant_content_type, since the person is the main subject but we don't see their face, \"person\" would be more accurate. But the schema options are \"object\", \"scene\", \"texture_pattern\", \"closeup_detail\", \"person_face\", \"animal\", \"food\", \"text_document\", \"mixed\", \"unclear\". The person is visible but not the face. I'll go with \"mixed\" since it's both a person and a scene.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 992,
+          "total_tokens": 2530,
+          "cost": 0.00162444,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00162444,
+            "upstream_inference_prompt_cost": 0.00043404,
+            "upstream_inference_completions_cost": 0.0011904
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 682,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

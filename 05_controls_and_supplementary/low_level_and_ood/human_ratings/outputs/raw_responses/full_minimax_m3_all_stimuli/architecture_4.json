@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_4",
+    "stim_key": "architecture_4",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 4,
+    "file_index": 4,
+    "image_name": "image_0004.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0004.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 3,\n\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home_interior\",\n\n  \"short_caption\": \"Cubby bookshelf with books, board games, framed photos and a small suitcase in dim lighting\",\n  \"main_objects\": [\"shelving unit\", \"books\", \"board games\", \"framed photos\", \"suitcase\", \"jar\"],\n  \"possible_interpretations\": [\"two views of same bookshelf in different lighting\", \"before/after lighting comparison\", \"split exposure comparison of room\"],\n  \"uncertainty_notes\": \"Right half is severely underexposed making detail identification difficult; some board game titles partially visible but not fully legible.\",\n  \"quality_flags\": [\"underexposed_right_half\", \"split_or_composite_layout\", \"low_light_conditions\"]\n}",
+      "response": {
+        "id": "gen-1780318849-GuFeUthMNAyYO96CboqU",
+        "object": "chat.completion",
+        "created": 1780318849,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 3,\n\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home_interior\",\n\n  \"short_caption\": \"Cubby bookshelf with books, board games, framed photos and a small suitcase in dim lighting\",\n  \"main_objects\": [\"shelving unit\", \"books\", \"board games\", \"framed photos\", \"suitcase\", \"jar\"],\n  \"possible_interpretations\": [\"two views of same bookshelf in different lighting\", \"before/after lighting comparison\", \"split exposure comparison of room\"],\n  \"uncertainty_notes\": \"Right half is severely underexposed making detail identification difficult; some board game titles partially visible but not fully legible.\",\n  \"quality_flags\": [\"underexposed_right_half\", \"split_or_composite_layout\", \"low_light_conditions\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It appears to be a split or composite image showing two views of what looks like a bookshelf/cubby storage unit. The left side is a clearer, lit photo showing a white shelving unit with books, board games, a small suitcase, framed photos, and a decorative item. The right side appears to be the same scene but in much darker lighting, making it hard to see details.\n\nLet me annotate:\n\n- recognizability: The left side is fairly recognizable as a bookshelf with various items. The right side is too dark to recognize much. I'd say 3.\n- ambiguity: Two views of the same scene with different lighting, so somewhat ambiguous. 2-3.\n- natural_photo_typicality: Looks like a typical home photo, though the split/dark version is unusual. 3.\n- visual_clutter: Many items on shelves - books, games, photos, suitcase. 4.\n- object_centricity: No single dominant object, it's a scene. 2.\n- scene_centricity: Yes, this is mainly a room/place scene. 4-5.\n- caption_confidence: Fairly confident - it's a bookshelf with items. 3-4.\n\n- estimated_salient_object_count: The shelf unit itself, books, games - many items. Maybe 5+.\n- estimated_distinct_object_categories: Books, board games, framed photos, suitcase, decorative items - 4-5.\n\n- contains_person: No visible person in scene, though there are photos of people.\n- contains_face: No real face, but faces in framed photos.\n- contains_animal: No.\n- contains_text: Yes, book titles, game names.\n- contains_vehicle: No.\n- contains_food: No.\n- contains_indoor_scene: Yes.\n- contains_outdoor_scene: No.\n- contains_artificial_or_rendered_content: No.\n- contains_occlusion_or_truncation: Some occlusion of items.\n- contains_multiple_main_objects: Yes, multiple books/games.\n\n- dominant_content_type: scene or mixed. The shelf is the main feature, it's a scene.\n- image_style: natural_photo, though appears to have a dark overlay/split.\n- semantic_domain: home/indoor\n\nShort caption: \"Bookshelf with books, board games, framed photos, and a small suitcase in dim lighting\"\n\nLet me finalize values.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It appears to be a split or composite image showing two views of what looks like a bookshelf/cubby storage unit. The left side is a clearer, lit photo showing a white shelving unit with books, board games, a small suitcase, framed photos, and a decorative item. The right side appears to be the same scene but in much darker lighting, making it hard to see details.\n\nLet me annotate:\n\n- recognizability: The left side is fairly recognizable as a bookshelf with various items. The right side is too dark to recognize much. I'd say 3.\n- ambiguity: Two views of the same scene with different lighting, so somewhat ambiguous. 2-3.\n- natural_photo_typicality: Looks like a typical home photo, though the split/dark version is unusual. 3.\n- visual_clutter: Many items on shelves - books, games, photos, suitcase. 4.\n- object_centricity: No single dominant object, it's a scene. 2.\n- scene_centricity: Yes, this is mainly a room/place scene. 4-5.\n- caption_confidence: Fairly confident - it's a bookshelf with items. 3-4.\n\n- estimated_salient_object_count: The shelf unit itself, books, games - many items. Maybe 5+.\n- estimated_distinct_object_categories: Books, board games, framed photos, suitcase, decorative items - 4-5.\n\n- contains_person: No visible person in scene, though there are photos of people.\n- contains_face: No real face, but faces in framed photos.\n- contains_animal: No.\n- contains_text: Yes, book titles, game names.\n- contains_vehicle: No.\n- contains_food: No.\n- contains_indoor_scene: Yes.\n- contains_outdoor_scene: No.\n- contains_artificial_or_rendered_content: No.\n- contains_occlusion_or_truncation: Some occlusion of items.\n- contains_multiple_main_objects: Yes, multiple books/games.\n\n- dominant_content_type: scene or mixed. The shelf is the main feature, it's a scene.\n- image_style: natural_photo, though appears to have a dark overlay/split.\n- semantic_domain: home/indoor\n\nShort caption: \"Bookshelf with books, board games, framed photos, and a small suitcase in dim lighting\"\n\nLet me finalize values.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 870,
+          "total_tokens": 2392,
+          "cost": 0.00135036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00135036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.001044
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 541,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

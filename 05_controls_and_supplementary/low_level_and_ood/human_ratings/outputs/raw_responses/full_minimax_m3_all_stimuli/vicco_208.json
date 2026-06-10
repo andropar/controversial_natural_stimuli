@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_208",
+    "stim_key": "vicco_208",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 208,
+    "file_index": 207,
+    "image_name": "shared_4rep_vicco_208.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_208.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 4, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 4, \"estimated_salient_object_count\": 12, \"estimated_distinct_object_categories\": 8, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"interior/antique\", \"short_caption\": \"Antique Victorian parlor interior with silver tea service on lace-covered table\", \"main_objects\": [\"floral armchair\", \"silver tea set\", \"lace tablecloth\", \"wooden cabinet\", \"ornate wooden chair\", \"floral wallpaper\", \"patterned rug\", \"table lamp\", \"upholstered sofa\", \"books\", \"statuette\", \"flower arrangement\"], \"possible_interpretations\": [\"historical home interior\", \"museum period room display\", \"antique shop staging\", \"Victorian parlor recreation\", \"period film set\"], \"uncertainty_notes\": \"Exact period and setting unclear; could be museum, private collection, or staged photograph. Some objects on cabinet partially obscured.\", \"quality_flags\": [\"cluttered composition\", \"warm interior lighting\"]}",
+      "response": {
+        "id": "gen-1780319631-n5O5FhBcDKPfAZUG7f2N",
+        "object": "chat.completion",
+        "created": 1780319631,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 4, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 4, \"estimated_salient_object_count\": 12, \"estimated_distinct_object_categories\": 8, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"interior/antique\", \"short_caption\": \"Antique Victorian parlor interior with silver tea service on lace-covered table\", \"main_objects\": [\"floral armchair\", \"silver tea set\", \"lace tablecloth\", \"wooden cabinet\", \"ornate wooden chair\", \"floral wallpaper\", \"patterned rug\", \"table lamp\", \"upholstered sofa\", \"books\", \"statuette\", \"flower arrangement\"], \"possible_interpretations\": [\"historical home interior\", \"museum period room display\", \"antique shop staging\", \"Victorian parlor recreation\", \"period film set\"], \"uncertainty_notes\": \"Exact period and setting unclear; could be museum, private collection, or staged photograph. Some objects on cabinet partially obscured.\", \"quality_flags\": [\"cluttered composition\", \"warm interior lighting\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a Victorian-era or antique interior scene with:\n- A floral upholstered armchair with a round cushion\n- A wooden cabinet/sideboard in the background\n- A table with a white lace tablecloth\n- A silver tea/coffee service set with multiple pieces (teapot, coffee pot, creamer, sugar bowl, cups)\n- An ornate wooden chair\n- A sofa in the background\n- A lamp with floral shade\n- Floral wallpaper\n- A patterned rug\n- Books and decorative items on top of the cabinet\n- A statuette/figurine on the cabinet\n\nThis appears to be a museum or historical home interior display. Let me rate this according to the schema.\n\n- recognizability: 4 - clearly an antique interior scene\n- ambiguity: 2 - fairly clear what it shows\n- natural_photo_typicality: 4 - looks like a natural photograph of an interior\n- visual_clutter: 4 - many objects competing for attention\n- object_centricity: 2 - no single dominant object\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 4\n\n- salient_object_count: ~10-15 (chair, cabinet, tea set with multiple pieces, table, sofa, etc.)\n- distinct_object_categories: ~7-8\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false (maybe a dog figurine, but not clear)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: interior/antique\n\nshort_caption: \"Antique Victorian parlor with silver tea service and floral upholstered furniture\"\nmain_objects: armchair, silver tea set, lace-covered table, wooden cabinet, ornate chair, floral wallpaper, rug\npossible_interpretations: museum exhibit, historical home, antique shop, staged photograph, period film set",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a Victorian-era or antique interior scene with:\n- A floral upholstered armchair with a round cushion\n- A wooden cabinet/sideboard in the background\n- A table with a white lace tablecloth\n- A silver tea/coffee service set with multiple pieces (teapot, coffee pot, creamer, sugar bowl, cups)\n- An ornate wooden chair\n- A sofa in the background\n- A lamp with floral shade\n- Floral wallpaper\n- A patterned rug\n- Books and decorative items on top of the cabinet\n- A statuette/figurine on the cabinet\n\nThis appears to be a museum or historical home interior display. Let me rate this according to the schema.\n\n- recognizability: 4 - clearly an antique interior scene\n- ambiguity: 2 - fairly clear what it shows\n- natural_photo_typicality: 4 - looks like a natural photograph of an interior\n- visual_clutter: 4 - many objects competing for attention\n- object_centricity: 2 - no single dominant object\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 4\n\n- salient_object_count: ~10-15 (chair, cabinet, tea set with multiple pieces, table, sofa, etc.)\n- distinct_object_categories: ~7-8\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false (maybe a dog figurine, but not clear)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: interior/antique\n\nshort_caption: \"Antique Victorian parlor with silver tea service and floral upholstered furniture\"\nmain_objects: armchair, silver tea set, lace-covered table, wooden cabinet, ornate chair, floral wallpaper, rug\npossible_interpretations: museum exhibit, historical home, antique shop, staged photograph, period film set",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 842,
+          "total_tokens": 2364,
+          "cost": 0.00131676,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131676,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010104
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 527,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

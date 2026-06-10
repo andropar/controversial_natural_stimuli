@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_47",
+    "stim_key": "all_models_47",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 47,
+    "file_index": 47,
+    "image_name": "image_0047.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0047.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports/ceremony\",\n  \"short_caption\": \"Athletes posing playfully inside the large Olympic rings against a snowy mountain backdrop.\",\n  \"main_objects\": [\"Olympic rings\", \"athletes\", \"snowy mountains\"],\n  \"possible_interpretations\": [\"Team posing with Olympic symbol at Winter Games\", \"Promotional Olympic photo shoot\", \"Athletes celebrating Olympic participation\"],\n  \"uncertainty_notes\": \"Specific identity of athletes and exact event not determinable; one person on far left is partially cropped.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318786-149H6Bj5ThhJn6Y8SH4g",
+        "object": "chat.completion",
+        "created": 1780318786,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports/ceremony\",\n  \"short_caption\": \"Athletes posing playfully inside the large Olympic rings against a snowy mountain backdrop.\",\n  \"main_objects\": [\"Olympic rings\", \"athletes\", \"snowy mountains\"],\n  \"possible_interpretations\": [\"Team posing with Olympic symbol at Winter Games\", \"Promotional Olympic photo shoot\", \"Athletes celebrating Olympic participation\"],\n  \"uncertainty_notes\": \"Specific identity of athletes and exact event not determinable; one person on far left is partially cropped.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows the Olympic rings - five interlocking rings in blue, yellow, black, green, and red. There are people posing within/around the rings - they appear to be athletes (possibly Team GB based on the navy blue tracksuits). One person is standing inside the black ring, and two people are sitting/reclining in the yellow and green rings respectively. The background shows a snowy mountain landscape with bare trees.\n\nLet me go through each annotation:\n\n- recognizability: 5 - The Olympic rings are very recognizable, and the people and scene are clear\n- ambiguity: 2 - It's pretty clear what's happening (athletes posing with Olympic rings)\n- natural_photo_typicality: 3 - It looks like a natural photo but with somewhat staged composition\n- visual_clutter: 3 - There are multiple elements (rings, people, mountains, trees) but it's not too cluttered\n- object_centricity: 4 - The Olympic rings are the dominant feature\n- scene_centricity: 3 - There's a scenic mountain backdrop, but the rings are the focus\n- caption_confidence: 4 - Pretty confident about the content\n\n- estimated_salient_object_count: 3 (rings, people group, mountain)\n- estimated_distinct_object_categories: 3 (people, Olympic rings, mountain landscape)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false (might be small text on clothing but not clearly visible)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (the rings are real physical objects)\n- contains_occlusion_or_truncation: true (people are partially behind/in the rings, one person on left is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (rings and people)\n\n- dominant_content_type: \"object\" (Olympic rings dominate)\n- image_style: \"natural_photo\"\n- semantic_domain: \"sports\" or \"ceremony\"\n\n- short_caption: \"Athletes posing playfully within the Olympic rings against a snowy mountain backdrop\"\n- main_objects: [\"Olympic rings\", \"athletes\", \"mountains\"]\n- possible_interpretations: [\"Team GB athletes at Olympics\", \"Olympic promotional photo\", \"Athletes posing with Olympic symbol\"]\n- uncertainty_notes: \"Cannot determine exact event or specific identities of athletes\"\n- quality_flags: [\"slight_compression_artifacts\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows the Olympic rings - five interlocking rings in blue, yellow, black, green, and red. There are people posing within/around the rings - they appear to be athletes (possibly Team GB based on the navy blue tracksuits). One person is standing inside the black ring, and two people are sitting/reclining in the yellow and green rings respectively. The background shows a snowy mountain landscape with bare trees.\n\nLet me go through each annotation:\n\n- recognizability: 5 - The Olympic rings are very recognizable, and the people and scene are clear\n- ambiguity: 2 - It's pretty clear what's happening (athletes posing with Olympic rings)\n- natural_photo_typicality: 3 - It looks like a natural photo but with somewhat staged composition\n- visual_clutter: 3 - There are multiple elements (rings, people, mountains, trees) but it's not too cluttered\n- object_centricity: 4 - The Olympic rings are the dominant feature\n- scene_centricity: 3 - There's a scenic mountain backdrop, but the rings are the focus\n- caption_confidence: 4 - Pretty confident about the content\n\n- estimated_salient_object_count: 3 (rings, people group, mountain)\n- estimated_distinct_object_categories: 3 (people, Olympic rings, mountain landscape)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false (might be small text on clothing but not clearly visible)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (the rings are real physical objects)\n- contains_occlusion_or_truncation: true (people are partially behind/in the rings, one person on left is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (rings and people)\n\n- dominant_content_type: \"object\" (Olympic rings dominate)\n- image_style: \"natural_photo\"\n- semantic_domain: \"sports\" or \"ceremony\"\n\n- short_caption: \"Athletes posing playfully within the Olympic rings against a snowy mountain backdrop\"\n- main_objects: [\"Olympic rings\", \"athletes\", \"mountains\"]\n- possible_interpretations: [\"Team GB athletes at Olympics\", \"Olympic promotional photo\", \"Athletes posing with Olympic symbol\"]\n- uncertainty_notes: \"Cannot determine exact event or specific identities of athletes\"\n- quality_flags: [\"slight_compression_artifacts\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 873,
+          "total_tokens": 2395,
+          "cost": 0.00147684,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00147684,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010476
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 626,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

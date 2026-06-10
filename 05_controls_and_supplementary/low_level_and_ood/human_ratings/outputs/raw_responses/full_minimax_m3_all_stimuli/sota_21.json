@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_21",
+    "stim_key": "sota_21",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 21,
+    "file_index": 21,
+    "image_name": "image_0021.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0021.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"graduation ceremony\",\n  \"short_caption\": \"Young woman in graduation cap and gown speaking at a Wichita State University podium\",\n  \"main_objects\": [\"woman\", \"graduation gown\", \"graduation cap\", \"podium\", \"microphone\", \"plants\"],\n  \"possible_interpretations\": [\"student giving graduation speech\", \"valedictorian addressing audience\", \"honorary degree recipient speaking\", \"commencement ceremony speaker\"],\n  \"uncertainty_notes\": \"Specific role of speaker (valedictorian, honor student, faculty) is unclear; lighting is stage-style which is typical for the setting\",\n  \"quality_flags\": []\n}\n```",
+      "response": {
+        "id": "gen-1780319101-nsT9Q1bWx6yvmswHeRmX",
+        "object": "chat.completion",
+        "created": 1780319101,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"graduation ceremony\",\n  \"short_caption\": \"Young woman in graduation cap and gown speaking at a Wichita State University podium\",\n  \"main_objects\": [\"woman\", \"graduation gown\", \"graduation cap\", \"podium\", \"microphone\", \"plants\"],\n  \"possible_interpretations\": [\"student giving graduation speech\", \"valedictorian addressing audience\", \"honorary degree recipient speaking\", \"commencement ceremony speaker\"],\n  \"uncertainty_notes\": \"Specific role of speaker (valedictorian, honor student, faculty) is unclear; lighting is stage-style which is typical for the setting\",\n  \"quality_flags\": []\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a young woman in graduation regalia (cap and gown) standing at a podium. The podium has a seal/emblem that reads \"WICHITA STATE UNIVERSITY\" with \"1868\" visible. She's giving what appears to be a graduation speech, with a microphone in front of her. There are some green plants/foliage visible at the bottom of the image. The background is dark, suggesting an indoor auditorium or stage setting.\n\nLet me go through each annotation:\n\n- recognizability: Very clear, easily recognizable as graduation ceremony - 5\n- ambiguity: Very low ambiguity, one clear interpretation - 1\n- natural_photo_typicality: Looks like a typical event photograph - 4\n- visual_clutter: Relatively clean composition with main subject and podium - 2\n- object_centricity: Has a clear central person - 4 (but it's person-centric)\n- scene_centricity: It's more about the person than the scene itself - 2\n- caption_confidence: High confidence in describing this - 5\n\nEstimated counts:\n- salient_object_count: 2 (woman, podium) or 3 (woman, podium, microphone)\n- distinct_object_categories: 3 (person, podium, microphone, plants)\n\nContains:\n- person: yes\n- face: yes\n- animal: no\n- text: yes (Wichita State University seal)\n- vehicle: no\n- food: no\n- indoor_scene: yes\n- outdoor_scene: no\n- artificial_or_rendered: no\n- occlusion_or_truncation: no\n- unusual_viewpoint: no\n- multiple_main_objects: no (woman is the main subject)\n\nDominant content: person_face or could be person (person in context)\nImage style: natural_photo\nSemantic domain: graduation/ceremony/education\n\nShort caption: \"Young woman in graduation gown speaking at Wichita State University podium\"\n\nMain objects: woman, graduation cap and gown, podium, microphone\n\nPossible interpretations: graduate giving speech, valedictorian address, commencement ceremony speaker\n\nQuality flags: none significant",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a young woman in graduation regalia (cap and gown) standing at a podium. The podium has a seal/emblem that reads \"WICHITA STATE UNIVERSITY\" with \"1868\" visible. She's giving what appears to be a graduation speech, with a microphone in front of her. There are some green plants/foliage visible at the bottom of the image. The background is dark, suggesting an indoor auditorium or stage setting.\n\nLet me go through each annotation:\n\n- recognizability: Very clear, easily recognizable as graduation ceremony - 5\n- ambiguity: Very low ambiguity, one clear interpretation - 1\n- natural_photo_typicality: Looks like a typical event photograph - 4\n- visual_clutter: Relatively clean composition with main subject and podium - 2\n- object_centricity: Has a clear central person - 4 (but it's person-centric)\n- scene_centricity: It's more about the person than the scene itself - 2\n- caption_confidence: High confidence in describing this - 5\n\nEstimated counts:\n- salient_object_count: 2 (woman, podium) or 3 (woman, podium, microphone)\n- distinct_object_categories: 3 (person, podium, microphone, plants)\n\nContains:\n- person: yes\n- face: yes\n- animal: no\n- text: yes (Wichita State University seal)\n- vehicle: no\n- food: no\n- indoor_scene: yes\n- outdoor_scene: no\n- artificial_or_rendered: no\n- occlusion_or_truncation: no\n- unusual_viewpoint: no\n- multiple_main_objects: no (woman is the main subject)\n\nDominant content: person_face or could be person (person in context)\nImage style: natural_photo\nSemantic domain: graduation/ceremony/education\n\nShort caption: \"Young woman in graduation gown speaking at Wichita State University podium\"\n\nMain objects: woman, graduation cap and gown, podium, microphone\n\nPossible interpretations: graduate giving speech, valedictorian address, commencement ceremony speaker\n\nQuality flags: none significant",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 802,
+          "total_tokens": 2324,
+          "cost": 0.00126876,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126876,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009624
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 504,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

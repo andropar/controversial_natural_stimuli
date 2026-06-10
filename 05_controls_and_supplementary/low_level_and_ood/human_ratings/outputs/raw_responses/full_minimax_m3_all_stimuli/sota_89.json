@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_89",
+    "stim_key": "sota_89",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 89,
+    "file_index": 89,
+    "image_name": "image_0089.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0089.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 2, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"stationery/calendar\", \"short_caption\": \"Spiral-bound monthly calendar featuring a photo of a child in a green jacket\", \"main_objects\": [\"spiral calendar\", \"printed photograph of a child\"], \"possible_interpretations\": [\"A monthly desk calendar product photo\", \"A photo of a printed calendar page\"], \"uncertainty_notes\": \"The child visible is part of the printed calendar image, not a real person in the scene; only lower face is shown so face is not fully visible.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319191-8RqaOjT0OMMNVq47fF0B",
+        "object": "chat.completion",
+        "created": 1780319191,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 2, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"stationery/calendar\", \"short_caption\": \"Spiral-bound monthly calendar featuring a photo of a child in a green jacket\", \"main_objects\": [\"spiral calendar\", \"printed photograph of a child\"], \"possible_interpretations\": [\"A monthly desk calendar product photo\", \"A photo of a printed calendar page\"], \"uncertainty_notes\": \"The child visible is part of the printed calendar image, not a real person in the scene; only lower face is shown so face is not fully visible.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "The image shows a spiral-bound desk calendar (weekly/monthly view) with a photo of a child wearing a green jacket and red plaid shirt in the background. The calendar has days of the week (Sunday through Saturday) and date numbers visible. The image is taken at an angle showing the calendar page.\n\nLet me annotate this carefully:\n\n- Recognizability: Clear - a calendar with a photo. 5\n- Ambiguity: Low - it's clearly a calendar. 1\n- Natural photo typicality: It looks like a typical photograph of a calendar. 4\n- Visual clutter: Moderate - the calendar grid plus the photo. 3\n- Object-centricity: The calendar is the central object. 4\n- Scene-centricity: Not really a scene, more of an object. 2\n- Caption confidence: High - \"a calendar with a child's photo\". 5\n\nContains: person (yes, partial - child visible in background photo), face (partially - chin/mouth visible), no animal, contains text (days of week, dates), no vehicle, no food, no indoor/outdoor scene directly (but the photo within the calendar shows outdoor), no artificial/rendered, no occlusion, no unusual viewpoint (slight angle), no multiple main objects (just the calendar).\n\nActually, the child is part of a photo within the calendar, not a real person in the scene. But the photo itself contains a person. I'll mark contains_person as true since the child is visible.\n\nFace: only chin/mouth visible, not really a face. I'll mark false.\n\nMain objects: calendar, photograph\nDominant content: object (calendar)\nImage style: natural_photo\nSemantic domain: office/stationery/calendar",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a spiral-bound desk calendar (weekly/monthly view) with a photo of a child wearing a green jacket and red plaid shirt in the background. The calendar has days of the week (Sunday through Saturday) and date numbers visible. The image is taken at an angle showing the calendar page.\n\nLet me annotate this carefully:\n\n- Recognizability: Clear - a calendar with a photo. 5\n- Ambiguity: Low - it's clearly a calendar. 1\n- Natural photo typicality: It looks like a typical photograph of a calendar. 4\n- Visual clutter: Moderate - the calendar grid plus the photo. 3\n- Object-centricity: The calendar is the central object. 4\n- Scene-centricity: Not really a scene, more of an object. 2\n- Caption confidence: High - \"a calendar with a child's photo\". 5\n\nContains: person (yes, partial - child visible in background photo), face (partially - chin/mouth visible), no animal, contains text (days of week, dates), no vehicle, no food, no indoor/outdoor scene directly (but the photo within the calendar shows outdoor), no artificial/rendered, no occlusion, no unusual viewpoint (slight angle), no multiple main objects (just the calendar).\n\nActually, the child is part of a photo within the calendar, not a real person in the scene. But the photo itself contains a person. I'll mark contains_person as true since the child is visible.\n\nFace: only chin/mouth visible, not really a face. I'll mark false.\n\nMain objects: calendar, photograph\nDominant content: object (calendar)\nImage style: natural_photo\nSemantic domain: office/stationery/calendar",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 665,
+          "total_tokens": 2187,
+          "cost": 0.00110436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00110436,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000798
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 404,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

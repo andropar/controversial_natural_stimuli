@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_81",
+    "stim_key": "architecture_81",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 81,
+    "file_index": 81,
+    "image_name": "image_0081.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0081.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: short_caption must be <= 20 words"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 2, \"natural_photo_typicality\": 3, \"visual_clutter\": 3, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 4, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"outdoor_patio\", \"short_caption\": \"Outdoor patio with two dark wicker armchairs, red cushions, a side table, books, and tropical plants\", \"main_objects\": [\"wicker armchair\", \"wicker side table\", \"tropical plants\", \"books\"], \"possible_interpretations\": [\"residential patio seating area\", \"outdoor furniture product photo\", \"courtyard garden setting\", \"hotel or resort terrace\"], \"uncertainty_notes\": \"Image may be a staged product/lifestyle photograph rather than a candid scene\", \"quality_flags\": [\"possibly_staged\"]}",
+      "response": {
+        "id": "gen-1780318960-XCeUGVQ8bqhu3rdxjnIg",
+        "object": "chat.completion",
+        "created": 1780318960,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 2, \"natural_photo_typicality\": 3, \"visual_clutter\": 3, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 4, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"outdoor_patio\", \"short_caption\": \"Outdoor patio with two dark wicker armchairs, red cushions, a side table, books, and tropical plants\", \"main_objects\": [\"wicker armchair\", \"wicker side table\", \"tropical plants\", \"books\"], \"possible_interpretations\": [\"residential patio seating area\", \"outdoor furniture product photo\", \"courtyard garden setting\", \"hotel or resort terrace\"], \"uncertainty_notes\": \"Image may be a staged product/lifestyle photograph rather than a candid scene\", \"quality_flags\": [\"possibly_staged\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see:\n- Two dark wicker/rattan armchairs with red cushions\n- A small wicker side table between them\n- Some books/magazines on the table\n- Green plants/foliage in the background\n- A stone/concrete patio floor\n- An archway or doorway structure in the background\n- This appears to be an outdoor patio/terrace setting\n\nLet me annotate according to the schema:\n\n- recognizability: High - clearly an outdoor patio scene with furniture (4-5)\n- ambiguity: Low - it's clearly a patio setting (2)\n- natural_photo_typicality: Moderate - looks like a product/lifestyle photo but natural (3-4)\n- visual_clutter: Moderate - several items but not overly cluttered (3)\n- object_centricity: The furniture is prominent but the scene also dominates (3)\n- scene_centricity: This is both a scene and has objects - moderate to high (4)\n- caption_confidence: High - I can describe it confidently (4)\n\nSalient objects: 2 chairs, 1 table, plants - maybe 3-4 main objects\nDistinct categories: chairs, table, plants, books = 4\n\nContains: no people, no faces, no animals, no text visible, no vehicles, no food, no indoor scene, yes outdoor scene, no artificial/rendered, no occlusion, no unusual viewpoint, no multiple main objects (chairs are a pair but similar)\n\nWait - \"contains_multiple_main_objects\" - the two chairs and table could be considered multiple main objects, but they're a set/furniture grouping. I'll say true since there are clearly multiple salient items.\n\nDominant content: could be scene or object - it's a mix, but the patio setting is dominant. I'll say \"scene\" or \"mixed\". Actually the furniture is prominent, but the overall impression is of a patio scene. I'll go with \"scene\".\n\nImage style: looks like a natural photo, possibly slightly staged for product photography. \"natural_photo\"\n\nSemantic domain: \"outdoor_furniture\" or \"patio\" or \"home_outdoor\"\n\nShort caption: \"Outdoor patio with two dark wicker armchairs, red cushions, side table, and tropical plants\"\n\nMain objects: wicker armchairs, side table, plants, books\n\nPossible interpretations: patio setting, outdoor furniture display, garden seating area, courtyard\n\nUncertainty notes: Image may be a product/lifestyle photo rather than candid\n\nQuality flags: possibly_staged",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see:\n- Two dark wicker/rattan armchairs with red cushions\n- A small wicker side table between them\n- Some books/magazines on the table\n- Green plants/foliage in the background\n- A stone/concrete patio floor\n- An archway or doorway structure in the background\n- This appears to be an outdoor patio/terrace setting\n\nLet me annotate according to the schema:\n\n- recognizability: High - clearly an outdoor patio scene with furniture (4-5)\n- ambiguity: Low - it's clearly a patio setting (2)\n- natural_photo_typicality: Moderate - looks like a product/lifestyle photo but natural (3-4)\n- visual_clutter: Moderate - several items but not overly cluttered (3)\n- object_centricity: The furniture is prominent but the scene also dominates (3)\n- scene_centricity: This is both a scene and has objects - moderate to high (4)\n- caption_confidence: High - I can describe it confidently (4)\n\nSalient objects: 2 chairs, 1 table, plants - maybe 3-4 main objects\nDistinct categories: chairs, table, plants, books = 4\n\nContains: no people, no faces, no animals, no text visible, no vehicles, no food, no indoor scene, yes outdoor scene, no artificial/rendered, no occlusion, no unusual viewpoint, no multiple main objects (chairs are a pair but similar)\n\nWait - \"contains_multiple_main_objects\" - the two chairs and table could be considered multiple main objects, but they're a set/furniture grouping. I'll say true since there are clearly multiple salient items.\n\nDominant content: could be scene or object - it's a mix, but the patio setting is dominant. I'll say \"scene\" or \"mixed\". Actually the furniture is prominent, but the overall impression is of a patio scene. I'll go with \"scene\".\n\nImage style: looks like a natural photo, possibly slightly staged for product photography. \"natural_photo\"\n\nSemantic domain: \"outdoor_furniture\" or \"patio\" or \"home_outdoor\"\n\nShort caption: \"Outdoor patio with two dark wicker armchairs, red cushions, side table, and tropical plants\"\n\nMain objects: wicker armchairs, side table, plants, books\n\nPossible interpretations: patio setting, outdoor furniture display, garden seating area, courtyard\n\nUncertainty notes: Image may be a product/lifestyle photo rather than candid\n\nQuality flags: possibly_staged",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 841,
+          "total_tokens": 2379,
+          "cost": 0.00132036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00132036,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.0010092
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 598,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

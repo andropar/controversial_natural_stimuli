@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_1",
+    "stim_key": "all_models_1",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 1,
+    "file_index": 1,
+    "image_name": "image_0001.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0001.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"interior_design\",\n  \"short_caption\": \"Modern minimalist black-and-white dining room with table, chairs, and pendant lamp\",\n  \"main_objects\": [\"dining table\", \"chairs\", \"pendant lamp\", \"vase with branches\", \"wall shelves\", \"picture frames\", \"rug\"],\n  \"possible_interpretations\": [\"interior design photo\", \"furniture catalog image\", \"architectural visualization\"],\n  \"uncertainty_notes\": \"Image is heavily styled; may be a 3D render given the pristine lighting and composition, but appears photographic.\",\n  \"quality_flags\": [\"heavily_styled\", \"high_contrast\", \"monochrome\", \"professional_composition\"]\n}",
+      "response": {
+        "id": "gen-1780317740-Zw5dOZn7bJq7t7pLx5Xu",
+        "object": "chat.completion",
+        "created": 1780317740,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"interior_design\",\n  \"short_caption\": \"Modern minimalist black-and-white dining room with table, chairs, and pendant lamp\",\n  \"main_objects\": [\"dining table\", \"chairs\", \"pendant lamp\", \"vase with branches\", \"wall shelves\", \"picture frames\", \"rug\"],\n  \"possible_interpretations\": [\"interior design photo\", \"furniture catalog image\", \"architectural visualization\"],\n  \"uncertainty_notes\": \"Image is heavily styled; may be a 3D render given the pristine lighting and composition, but appears photographic.\",\n  \"quality_flags\": [\"heavily_styled\", \"high_contrast\", \"monochrome\", \"professional_composition\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a modern, minimalist interior scene - a dining room with a black dining table, black chairs, a pendant lamp, decorative items on a shelf, a vase with branches, and a fluffy rug. It's a styled interior design photograph with a dark/monochrome aesthetic.\n\nLet me analyze each attribute:\n\n- recognizability: 5 - clearly recognizable as a modern dining room interior\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 3 - it's a photo but heavily styled/posed for interior design purposes, not a candid natural photo\n- visual_clutter: 2 - quite minimalist, though several objects are present\n- object_centricity: 2 - the table and chairs are central but it's more of a scene\n- scene_centricity: 5 - clearly a scene/place (dining room)\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: ~5-6 (table, chairs, pendant lamp, vase, shelf items, rug)\n- estimated_distinct_object_categories: ~6 (table, chair, lamp, vase, picture frame, rug, shelf)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it could be rendered but appears to be a styled photo - I'll say false)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (table is the main object)\n\n- dominant_content_type: scene\n- image_style: natural_photo (or possibly edited_photo since it's heavily styled)\n- semantic_domain: interior design / home\n\nshort_caption: \"Modern minimalist dining room with black table, chairs, and pendant lamp\"\n\nmain_objects: dining table, chairs, pendant lamp, vase with branches, shelves, rug\n\npossible_interpretations: interior design photo, furniture catalog image, architectural visualization\n\nquality_flags: heavily_styled, high_contrast, monochrome",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a modern, minimalist interior scene - a dining room with a black dining table, black chairs, a pendant lamp, decorative items on a shelf, a vase with branches, and a fluffy rug. It's a styled interior design photograph with a dark/monochrome aesthetic.\n\nLet me analyze each attribute:\n\n- recognizability: 5 - clearly recognizable as a modern dining room interior\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 3 - it's a photo but heavily styled/posed for interior design purposes, not a candid natural photo\n- visual_clutter: 2 - quite minimalist, though several objects are present\n- object_centricity: 2 - the table and chairs are central but it's more of a scene\n- scene_centricity: 5 - clearly a scene/place (dining room)\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: ~5-6 (table, chairs, pendant lamp, vase, shelf items, rug)\n- estimated_distinct_object_categories: ~6 (table, chair, lamp, vase, picture frame, rug, shelf)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it could be rendered but appears to be a styled photo - I'll say false)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (table is the main object)\n\n- dominant_content_type: scene\n- image_style: natural_photo (or possibly edited_photo since it's heavily styled)\n- semantic_domain: interior design / home\n\nshort_caption: \"Modern minimalist dining room with black table, chairs, and pendant lamp\"\n\nmain_objects: dining table, chairs, pendant lamp, vase with branches, shelves, rug\n\npossible_interpretations: interior design photo, furniture catalog image, architectural visualization\n\nquality_flags: heavily_styled, high_contrast, monochrome",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1138,
+          "completion_tokens": 830,
+          "total_tokens": 1968,
+          "cost": 0.00131004,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131004,
+            "upstream_inference_prompt_cost": 0.00031404,
+            "upstream_inference_completions_cost": 0.000996
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 519,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

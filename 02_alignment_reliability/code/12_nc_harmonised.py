@@ -7,11 +7,11 @@ brain-alignment results are insensitive to the choice of NC and that the
 metric--ceiling pairing in earlier drafts was presentational.
 
 Reads:
-  experiments/cstim_paper/03_statistics/data/rdm_noise_ceilings.csv
-  experiments/cstim_paper/03_statistics/data/between_subject_noise_ceilings.csv
+  02_alignment_reliability/results/rdm_noise_ceilings.csv
+  02_alignment_reliability/results/between_subject_noise_ceilings.csv
 
 Writes:
-  experiments/cstim_paper/03_statistics/figures/nc_harmonised.{pdf,png}
+  02_alignment_reliability/figures/supplementary/nc_harmonised.{pdf,png}
 """
 
 from pathlib import Path

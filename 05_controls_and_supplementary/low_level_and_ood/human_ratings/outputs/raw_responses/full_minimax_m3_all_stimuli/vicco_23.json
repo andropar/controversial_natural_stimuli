@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_23",
+    "stim_key": "vicco_23",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 23,
+    "file_index": 22,
+    "image_name": "shared_4rep_vicco_023.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_023.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 30,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"grocery/market\",\n\n  \"short_caption\": \"Fruit market display with crates of yellow pears, green pears, apples, and oranges\",\n  \"main_objects\": [\"yellow pears\", \"green pears\", \"red apples\", \"oranges\", \"plastic crates\", \"price labels\", \"food posters\"],\n  \"possible_interpretations\": [\"fruit market display\", \"grocery store produce section\", \"wholesale fruit vendor\"],\n  \"uncertainty_notes\": \"Yellow fruits could be quinces rather than pears; exact variety unclear from image alone\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319411-j11AkBujWSOReooIBKha",
+        "object": "chat.completion",
+        "created": 1780319411,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 30,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"grocery/market\",\n\n  \"short_caption\": \"Fruit market display with crates of yellow pears, green pears, apples, and oranges\",\n  \"main_objects\": [\"yellow pears\", \"green pears\", \"red apples\", \"oranges\", \"plastic crates\", \"price labels\", \"food posters\"],\n  \"possible_interpretations\": [\"fruit market display\", \"grocery store produce section\", \"wholesale fruit vendor\"],\n  \"uncertainty_notes\": \"Yellow fruits could be quinces rather than pears; exact variety unclear from image alone\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a fruit display in what appears to be a market or grocery store. I can see:\n- Multiple crates/boxes of various fruits\n- Yellow pears (or quinces) in several boxes\n- Green pears in one box\n- Red apples in one box\n- Oranges/mandarins in the front left\n- What appears to be other produce\n- Some posters/photos in the upper left showing food items\n- Graffiti on a wall in the upper right (\"VEG...\" visible)\n- The setting appears to be indoor (a market)\n\nThis is clearly a fruit/produce market display. Let me rate each dimension:\n\n- recognizability: 5 - very clearly recognizable as a fruit market\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a natural photo of a market\n- visual_clutter: 4 - many different items, lots of visual information\n- object_centricity: 2 - it's more of a scene than a single object\n- scene_centricity: 5 - clearly a place/scene (market)\n- caption_confidence: 5 - easy to caption\n\nSalient objects: Many crates of fruit, so many objects\nDistinct categories: pears (yellow), pears (green), apples, oranges - about 4-5\n\nContains person: No\nContains face: No\nContains animal: No\nContains text: Yes (graffiti \"VEG\", some labels)\nContains vehicle: No\nContains food: Yes (fruit)\nContains indoor_scene: Yes (indoor market)\nContains outdoor_scene: No\nContains artificial_or_rendered_content: No\nContains occlusion_or_truncation: Some crates are cut off\nContains unusual_viewpoint: No, fairly standard\nContains multiple_main_objects: Yes\n\nDominant content: scene (with objects)\nImage style: natural_photo\nSemantic domain: food/market/grocery\n\nShort caption: \"Fruit market display with crates of pears, apples, and oranges\"\n\nMain objects: yellow pears, green pears, red apples, oranges, crates\nPossible interpretations: fruit market, grocery store produce section, wholesale fruit display\nUncertainty notes: Some fruits might be quinces rather than pears\nQuality flags: none significant",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a fruit display in what appears to be a market or grocery store. I can see:\n- Multiple crates/boxes of various fruits\n- Yellow pears (or quinces) in several boxes\n- Green pears in one box\n- Red apples in one box\n- Oranges/mandarins in the front left\n- What appears to be other produce\n- Some posters/photos in the upper left showing food items\n- Graffiti on a wall in the upper right (\"VEG...\" visible)\n- The setting appears to be indoor (a market)\n\nThis is clearly a fruit/produce market display. Let me rate each dimension:\n\n- recognizability: 5 - very clearly recognizable as a fruit market\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a natural photo of a market\n- visual_clutter: 4 - many different items, lots of visual information\n- object_centricity: 2 - it's more of a scene than a single object\n- scene_centricity: 5 - clearly a place/scene (market)\n- caption_confidence: 5 - easy to caption\n\nSalient objects: Many crates of fruit, so many objects\nDistinct categories: pears (yellow), pears (green), apples, oranges - about 4-5\n\nContains person: No\nContains face: No\nContains animal: No\nContains text: Yes (graffiti \"VEG\", some labels)\nContains vehicle: No\nContains food: Yes (fruit)\nContains indoor_scene: Yes (indoor market)\nContains outdoor_scene: No\nContains artificial_or_rendered_content: No\nContains occlusion_or_truncation: Some crates are cut off\nContains unusual_viewpoint: No, fairly standard\nContains multiple_main_objects: Yes\n\nDominant content: scene (with objects)\nImage style: natural_photo\nSemantic domain: food/market/grocery\n\nShort caption: \"Fruit market display with crates of pears, apples, and oranges\"\n\nMain objects: yellow pears, green pears, red apples, oranges, crates\nPossible interpretations: fruit market, grocery store produce section, wholesale fruit display\nUncertainty notes: Some fruits might be quinces rather than pears\nQuality flags: none significant",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 820,
+          "total_tokens": 2342,
+          "cost": 0.00129036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000984
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 533,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

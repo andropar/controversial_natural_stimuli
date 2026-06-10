@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_74",
+    "stim_key": "architecture_74",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 74,
+    "file_index": 74,
+    "image_name": "image_0074.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0074.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: Missing required fields: ['contains_unusual_viewpoint']"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"bedroom\",\n  \"short_caption\": \"A bedroom with a queen bed featuring black, white, and red patterned bedding against a green wall.\",\n  \"main_objects\": [\"bed\", \"pillows\", \"blanket\", \"framed pictures\", \"green wall\"],\n  \"possible_interpretations\": [\"bedroom in a home\", \"hotel room\", \"vacation rental listing\", \"bed and breakfast room\"],\n  \"uncertainty_notes\": \"Text overlay at bottom suggests this is from a real estate or rental listing, but content is otherwise straightforward.\",\n  \"quality_flags\": [\"text_overlay\"]\n}",
+      "response": {
+        "id": "gen-1780318956-reXhXojbN9nFYsNLTSuE",
+        "object": "chat.completion",
+        "created": 1780318956,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"bedroom\",\n  \"short_caption\": \"A bedroom with a queen bed featuring black, white, and red patterned bedding against a green wall.\",\n  \"main_objects\": [\"bed\", \"pillows\", \"blanket\", \"framed pictures\", \"green wall\"],\n  \"possible_interpretations\": [\"bedroom in a home\", \"hotel room\", \"vacation rental listing\", \"bed and breakfast room\"],\n  \"uncertainty_notes\": \"Text overlay at bottom suggests this is from a real estate or rental listing, but content is otherwise straightforward.\",\n  \"quality_flags\": [\"text_overlay\"]\n}",
+              "refusal": null,
+              "reasoning": "The user wants me to annotate this image according to the schema. Let me analyze the image:\n\n- It shows a bedroom with a queen bed\n- Green walls\n- Bedding with black, white, and red patterns (looks like some kind of design, possibly stencil art)\n- Two pillows matching the design\n- Some framed pictures on a nightstand/shelf\n- A grey comforter/blanket at the foot\n- There's text overlay at the bottom that reads \"...mber one with a comfortable queen bed and cozy linens.\" (partial text - likely \"Number one\" or \"Bedroom one\")\n\nLet me fill in the schema:\n\n- recognizability: 5 - very clear what it is\n- ambiguity: 1 - clearly a bedroom with bed\n- natural_photo_typicality: 4 - looks like a typical real photo of a bedroom, though there is text overlay suggesting it's a real estate listing photo\n- visual_clutter: 2 - relatively clean, mainly bed and wall\n- object_centricity: 3 - the bed is the central object but it's also showing the room\n- scene_centricity: 4 - it's showing a room/scene\n- caption_confidence: 5 - easy to caption\n- estimated_salient_object_count: 4 (bed, pillows, blanket, pictures)\n- estimated_distinct_object_categories: 3-4\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (overlay text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (the text overlay is added but the image is real)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n- dominant_content_type: \"scene\" (or \"object\" for the bed - I'll go with scene since it's a bedroom view)\n- image_style: \"edited_photo\" (due to text overlay)\n- semantic_domain: \"bedroom\" or \"interior\"\n- short_caption: \"A bedroom with a queen bed featuring black, white, and red patterned bedding against a green wall.\"\n- main_objects: [\"bed\", \"pillows\", \"blanket\", \"pictures\", \"wall\"]\n- possible_interpretations: [\"bedroom in home\", \"hotel room\", \"vacation rental listing\"]\n- uncertainty_notes: \"Text overlay suggests this is from a real estate or rental listing\"\n- quality_flags: [\"text_overlay\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The user wants me to annotate this image according to the schema. Let me analyze the image:\n\n- It shows a bedroom with a queen bed\n- Green walls\n- Bedding with black, white, and red patterns (looks like some kind of design, possibly stencil art)\n- Two pillows matching the design\n- Some framed pictures on a nightstand/shelf\n- A grey comforter/blanket at the foot\n- There's text overlay at the bottom that reads \"...mber one with a comfortable queen bed and cozy linens.\" (partial text - likely \"Number one\" or \"Bedroom one\")\n\nLet me fill in the schema:\n\n- recognizability: 5 - very clear what it is\n- ambiguity: 1 - clearly a bedroom with bed\n- natural_photo_typicality: 4 - looks like a typical real photo of a bedroom, though there is text overlay suggesting it's a real estate listing photo\n- visual_clutter: 2 - relatively clean, mainly bed and wall\n- object_centricity: 3 - the bed is the central object but it's also showing the room\n- scene_centricity: 4 - it's showing a room/scene\n- caption_confidence: 5 - easy to caption\n- estimated_salient_object_count: 4 (bed, pillows, blanket, pictures)\n- estimated_distinct_object_categories: 3-4\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (overlay text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (the text overlay is added but the image is real)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n- dominant_content_type: \"scene\" (or \"object\" for the bed - I'll go with scene since it's a bedroom view)\n- image_style: \"edited_photo\" (due to text overlay)\n- semantic_domain: \"bedroom\" or \"interior\"\n- short_caption: \"A bedroom with a queen bed featuring black, white, and red patterned bedding against a green wall.\"\n- main_objects: [\"bed\", \"pillows\", \"blanket\", \"pictures\", \"wall\"]\n- possible_interpretations: [\"bedroom in home\", \"hotel room\", \"vacation rental listing\"]\n- uncertainty_notes: \"Text overlay suggests this is from a real estate or rental listing\"\n- quality_flags: [\"text_overlay\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 900,
+          "total_tokens": 2438,
+          "cost": 0.00139116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139116,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.00108
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 576,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_236",
+    "stim_key": "vicco_236",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 236,
+    "file_index": 235,
+    "image_name": "shared_4rep_vicco_236.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_236.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor/mountain/parking\",\n  \"short_caption\": \"Parking lot with cars next to buildings at the base of a forested mountain\",\n  \"main_objects\": [\"cars\", \"buildings\", \"parking sign\", \"mountainside\", \"trees\"],\n  \"possible_interpretations\": [\"mountain resort parking area\", \"alpine village parking lot\", \"ski area parking\", \"hiking trailhead parking\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; exact purpose of buildings and number of cars somewhat unclear due to angle and partial overlap\",\n  \"quality_flags\": [\"rotated_90_degrees\"]\n}",
+      "response": {
+        "id": "gen-1780319660-foX2taBcReevbapzxw77",
+        "object": "chat.completion",
+        "created": 1780319660,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor/mountain/parking\",\n  \"short_caption\": \"Parking lot with cars next to buildings at the base of a forested mountain\",\n  \"main_objects\": [\"cars\", \"buildings\", \"parking sign\", \"mountainside\", \"trees\"],\n  \"possible_interpretations\": [\"mountain resort parking area\", \"alpine village parking lot\", \"ski area parking\", \"hiking trailhead parking\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; exact purpose of buildings and number of cars somewhat unclear due to angle and partial overlap\",\n  \"quality_flags\": [\"rotated_90_degrees\"]\n}",
+              "refusal": null,
+              "reasoning": "The image appears to be rotated 90 degrees. It shows a parking lot with cars, some buildings, and a forested mountain in the background. Let me analyze it properly considering the rotation.\n\nLooking at the image (mentally rotating it): There's a parking area with several cars parked, some buildings (looks like a restaurant or mountain lodge), a parking sign, and a steep forested mountainside in the background under a blue sky with some clouds.\n\nLet me provide the annotations:\n\n- recognizability: 4 - clear scene of a mountain parking area\n- ambiguity: 2 - fairly clear what's depicted\n- natural_photo_typicality: 5 - looks like a typical photograph\n- visual_clutter: 3 - multiple cars, buildings, trees, but organized\n- object_centricity: 2 - no single dominant object, more of a scene\n- scene_centricity: 4 - clearly a place/scene\n- caption_confidence: 4 - can describe it well\n\n- estimated_salient_object_count: ~6-8 cars, some buildings\n- estimated_distinct_object_categories: 3-4 (cars, buildings, trees, mountains)\n\n- contains_person: false (don't see any clearly)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (parking sign visible)\n- contains_vehicle: true (multiple cars)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (image is rotated 90 degrees)\n- contains_multiple_main_objects: true (multiple cars)\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: outdoor/mountain/parking\n\nshort_caption: \"Parking lot with cars beside a forested mountain under blue sky\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image appears to be rotated 90 degrees. It shows a parking lot with cars, some buildings, and a forested mountain in the background. Let me analyze it properly considering the rotation.\n\nLooking at the image (mentally rotating it): There's a parking area with several cars parked, some buildings (looks like a restaurant or mountain lodge), a parking sign, and a steep forested mountainside in the background under a blue sky with some clouds.\n\nLet me provide the annotations:\n\n- recognizability: 4 - clear scene of a mountain parking area\n- ambiguity: 2 - fairly clear what's depicted\n- natural_photo_typicality: 5 - looks like a typical photograph\n- visual_clutter: 3 - multiple cars, buildings, trees, but organized\n- object_centricity: 2 - no single dominant object, more of a scene\n- scene_centricity: 4 - clearly a place/scene\n- caption_confidence: 4 - can describe it well\n\n- estimated_salient_object_count: ~6-8 cars, some buildings\n- estimated_distinct_object_categories: 3-4 (cars, buildings, trees, mountains)\n\n- contains_person: false (don't see any clearly)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (parking sign visible)\n- contains_vehicle: true (multiple cars)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (image is rotated 90 degrees)\n- contains_multiple_main_objects: true (multiple cars)\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: outdoor/mountain/parking\n\nshort_caption: \"Parking lot with cars beside a forested mountain under blue sky\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 758,
+          "total_tokens": 2280,
+          "cost": 0.00121596,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00121596,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009096
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 449,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_21",
+    "stim_key": "vicco_21",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 21,
+    "file_index": 20,
+    "image_name": "shared_4rep_vicco_021.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_021.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 5,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 30,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"humanitarian_aid_storage\",\n  \"short_caption\": \"A room filled with labeled cardboard boxes, plastic bags, and jars on a wooden table.\",\n  \"main_objects\": [\"cardboard boxes\", \"plastic bags\", \"jars\", \"tape\", \"wooden table\", \"desk\", \"speaker stand\"],\n  \"possible_interpretations\": [\n    \"Humanitarian aid packing center\",\n    \"Volunteer sorting station\",\n    \"Small business storage room\",\n    \"Warehouse organization area\",\n    \"Donation collection point\"\n  ],\n  \"uncertainty_notes\": \"Specific context unclear; multilingual labels (Russian/Ukrainian/Kazakh) suggest cross-border humanitarian logistics but exact purpose cannot be confirmed.\",\n  \"quality_flags\": [\"foreign_language_text\", \"dim_indoor_lighting\", \"high_clutter\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319410-BAmvWZj5PfjXKkKPyAPK",
+        "object": "chat.completion",
+        "created": 1780319410,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 5,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 30,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"humanitarian_aid_storage\",\n  \"short_caption\": \"A room filled with labeled cardboard boxes, plastic bags, and jars on a wooden table.\",\n  \"main_objects\": [\"cardboard boxes\", \"plastic bags\", \"jars\", \"tape\", \"wooden table\", \"desk\", \"speaker stand\"],\n  \"possible_interpretations\": [\n    \"Humanitarian aid packing center\",\n    \"Volunteer sorting station\",\n    \"Small business storage room\",\n    \"Warehouse organization area\",\n    \"Donation collection point\"\n  ],\n  \"uncertainty_notes\": \"Specific context unclear; multilingual labels (Russian/Ukrainian/Kazakh) suggest cross-border humanitarian logistics but exact purpose cannot be confirmed.\",\n  \"quality_flags\": [\"foreign_language_text\", \"dim_indoor_lighting\", \"high_clutter\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an indoor room/space filled with many cardboard boxes. There are boxes labeled with text (appears to be in Cyrillic - Russian/Ukrainian). I can see:\n- Many cardboard boxes of various sizes\n- Some boxes contain items wrapped in black plastic bags\n- In the foreground, there's a wooden table/desk with jars (appears to be canned goods with yellow lids), a roll of tape, and a handwritten note\n- In the background, there's a desk with what appears to be a laptop or equipment, a speaker stand, and a poster on the wall\n- The boxes have labels like \"BL-M\", \"AR\", and one has \"КОРОБ СРЕД ОРТАША ҚОРАП 50x40x40 см 80 литров\" (which is in Kazakh - \"Medium box, 50x40x40 cm, 80 liters\")\n- The setting appears to be a storage room or workspace, possibly for humanitarian aid distribution (given the language mix of Russian/Ukrainian/Kazakh)\n\nThis looks like it could be a volunteer/aid packing center, possibly for Ukraine-related humanitarian efforts.\n\nLet me now rate each dimension:\n\n- recognizability: 4 - The content is fairly clear - a room full of boxes, jars, supplies\n- ambiguity: 2 - Pretty clear what it is, though specific context (aid distribution vs storage) is somewhat ambiguous\n- natural_photo_typicality: 4 - Looks like a typical phone photo of a real scene\n- visual_clutter: 5 - Very cluttered with many boxes and items\n- object_centricity: 2 - No single central object; it's a scene of many objects\n- scene_centricity: 4 - The image is dominated by the room/scene\n- caption_confidence: 4 - I can describe this with reasonable confidence\n\nSalient objects: many boxes, jars, bags, table, desk\nDistinct categories: cardboard boxes, jars/cans, plastic bags, furniture, tape\n\nContains: \n- person: no visible person\n- face: no\n- animal: no\n- text: yes (handwritten notes, labels on boxes, poster)\n- vehicle: no\n- food: yes (canned goods visible)\n- indoor scene: yes\n- outdoor scene: no\n- artificial content: no\n- occlusion: yes (items inside boxes occluded)\n- unusual viewpoint: no\n- multiple main objects: yes\n\nDominant content: scene (room full of boxes)\nImage style: natural_photo\nSemantic domain: storage, humanitarian aid, packing\n\nShort caption: \"A room filled with labeled cardboard boxes, plastic bags, and canned jars on a wooden table.\"\n\nPossible interpretations:\n- Humanitarian aid packing center\n- Storage room for a small business\n- Volunteer sorting area\n- Warehouse organization\n\nQuality flags: text in foreign languages, some motion blur possible, somewhat dim lighting",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an indoor room/space filled with many cardboard boxes. There are boxes labeled with text (appears to be in Cyrillic - Russian/Ukrainian). I can see:\n- Many cardboard boxes of various sizes\n- Some boxes contain items wrapped in black plastic bags\n- In the foreground, there's a wooden table/desk with jars (appears to be canned goods with yellow lids), a roll of tape, and a handwritten note\n- In the background, there's a desk with what appears to be a laptop or equipment, a speaker stand, and a poster on the wall\n- The boxes have labels like \"BL-M\", \"AR\", and one has \"КОРОБ СРЕД ОРТАША ҚОРАП 50x40x40 см 80 литров\" (which is in Kazakh - \"Medium box, 50x40x40 cm, 80 liters\")\n- The setting appears to be a storage room or workspace, possibly for humanitarian aid distribution (given the language mix of Russian/Ukrainian/Kazakh)\n\nThis looks like it could be a volunteer/aid packing center, possibly for Ukraine-related humanitarian efforts.\n\nLet me now rate each dimension:\n\n- recognizability: 4 - The content is fairly clear - a room full of boxes, jars, supplies\n- ambiguity: 2 - Pretty clear what it is, though specific context (aid distribution vs storage) is somewhat ambiguous\n- natural_photo_typicality: 4 - Looks like a typical phone photo of a real scene\n- visual_clutter: 5 - Very cluttered with many boxes and items\n- object_centricity: 2 - No single central object; it's a scene of many objects\n- scene_centricity: 4 - The image is dominated by the room/scene\n- caption_confidence: 4 - I can describe this with reasonable confidence\n\nSalient objects: many boxes, jars, bags, table, desk\nDistinct categories: cardboard boxes, jars/cans, plastic bags, furniture, tape\n\nContains: \n- person: no visible person\n- face: no\n- animal: no\n- text: yes (handwritten notes, labels on boxes, poster)\n- vehicle: no\n- food: yes (canned goods visible)\n- indoor scene: yes\n- outdoor scene: no\n- artificial content: no\n- occlusion: yes (items inside boxes occluded)\n- unusual viewpoint: no\n- multiple main objects: yes\n\nDominant content: scene (room full of boxes)\nImage style: natural_photo\nSemantic domain: storage, humanitarian aid, packing\n\nShort caption: \"A room filled with labeled cardboard boxes, plastic bags, and canned jars on a wooden table.\"\n\nPossible interpretations:\n- Humanitarian aid packing center\n- Storage room for a small business\n- Volunteer sorting area\n- Warehouse organization\n\nQuality flags: text in foreign languages, some motion blur possible, somewhat dim lighting",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 1010,
+          "total_tokens": 2532,
+          "cost": 0.00151836,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00151836,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.001212
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 696,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

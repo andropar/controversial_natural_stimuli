@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_262",
+    "stim_key": "vicco_262",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 262,
+    "file_index": 261,
+    "image_name": "shared_4rep_vicco_262.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_262.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"billiards_room\",\n\n  \"short_caption\": \"Ornate wood-paneled billiards room with snooker table, hanging lamps, and carved fireplace\",\n  \"main_objects\": [\"snooker table\", \"snooker balls\", \"cue stick\", \"fabric pendant lamps\", \"carved fireplace\", \"persian rug\", \"wood paneling\", \"leather armchair\"],\n  \"possible_interpretations\": [\"Victorian or Edwardian billiards room in a stately home\", \"Private club billiards room\", \"Manor house games room\"],\n  \"uncertainty_notes\": \"Slight tilt/angle; some objects partially cropped at edges; unclear if this is a museum/heritage property or active use.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319688-iXkGmZD1rqslXwpU87Ue",
+        "object": "chat.completion",
+        "created": 1780319688,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"billiards_room\",\n\n  \"short_caption\": \"Ornate wood-paneled billiards room with snooker table, hanging lamps, and carved fireplace\",\n  \"main_objects\": [\"snooker table\", \"snooker balls\", \"cue stick\", \"fabric pendant lamps\", \"carved fireplace\", \"persian rug\", \"wood paneling\", \"leather armchair\"],\n  \"possible_interpretations\": [\"Victorian or Edwardian billiards room in a stately home\", \"Private club billiards room\", \"Manor house games room\"],\n  \"uncertainty_notes\": \"Slight tilt/angle; some objects partially cropped at edges; unclear if this is a museum/heritage property or active use.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a billiards/snooker room with:\n- A large green snooker table with red and colored balls, a cue stick\n- Ornate red fabric lampshades hanging above the table\n- Wood-paneled walls with elaborate carvings\n- A large fireplace with stone/marble surround\n- Candelabras on the mantelpiece\n- An ornate Persian-style rug on wooden floor\n- Heavy red curtains\n- Leather chair visible\n- A small framed picture on the floor near the fireplace\n- Ornate ceiling\n\nThis appears to be a stately home or manor house billiards room.\n\nLet me rate this:\n\n- recognizability: 5 - Very clearly recognizable as a billiards room\n- ambiguity: 1 - Very clear what's shown\n- natural_photo_typicality: 4 - Looks like a natural photograph\n- visual_clutter: 3 - Many decorative elements but organized\n- object_centricity: 3 - The snooker table is prominent but the room is also a feature\n- scene_centricity: 4 - It's clearly a room/scene\n- caption_confidence: 5 - Easy to caption\n\nSalient objects: snooker table, balls, lamps, fireplace, rug, walls\nObject categories: ~5-6 (table, lamps, fireplace, rug, chair, decor)\n\nNo people, no animals, no text, no vehicles, no food\nIndoor scene: yes\nOutdoor: no\nArtificial content: no\nOcclusion: slight truncation\nUnusual viewpoint: no (slightly elevated but normal)\nMultiple main objects: could argue yes - table and room\n\nDominant content: scene (it's a room)\nImage style: natural_photo\nSemantic domain: billiards_room or interior\n\nShort caption: \"Ornate wood-paneled billiards room with snooker table, lamps, and fireplace\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a billiards/snooker room with:\n- A large green snooker table with red and colored balls, a cue stick\n- Ornate red fabric lampshades hanging above the table\n- Wood-paneled walls with elaborate carvings\n- A large fireplace with stone/marble surround\n- Candelabras on the mantelpiece\n- An ornate Persian-style rug on wooden floor\n- Heavy red curtains\n- Leather chair visible\n- A small framed picture on the floor near the fireplace\n- Ornate ceiling\n\nThis appears to be a stately home or manor house billiards room.\n\nLet me rate this:\n\n- recognizability: 5 - Very clearly recognizable as a billiards room\n- ambiguity: 1 - Very clear what's shown\n- natural_photo_typicality: 4 - Looks like a natural photograph\n- visual_clutter: 3 - Many decorative elements but organized\n- object_centricity: 3 - The snooker table is prominent but the room is also a feature\n- scene_centricity: 4 - It's clearly a room/scene\n- caption_confidence: 5 - Easy to caption\n\nSalient objects: snooker table, balls, lamps, fireplace, rug, walls\nObject categories: ~5-6 (table, lamps, fireplace, rug, chair, decor)\n\nNo people, no animals, no text, no vehicles, no food\nIndoor scene: yes\nOutdoor: no\nArtificial content: no\nOcclusion: slight truncation\nUnusual viewpoint: no (slightly elevated but normal)\nMultiple main objects: could argue yes - table and room\n\nDominant content: scene (it's a room)\nImage style: natural_photo\nSemantic domain: billiards_room or interior\n\nShort caption: \"Ornate wood-paneled billiards room with snooker table, lamps, and fireplace\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 776,
+          "total_tokens": 2298,
+          "cost": 0.00123756,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00123756,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009312
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 428,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

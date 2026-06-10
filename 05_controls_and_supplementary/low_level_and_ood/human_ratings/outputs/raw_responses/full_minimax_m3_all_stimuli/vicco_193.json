@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_193",
+    "stim_key": "vicco_193",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 193,
+    "file_index": 192,
+    "image_name": "shared_4rep_vicco_193.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_193.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"toys_miniature\",\n\n  \"short_caption\": \"Playmobil construction worker figure in a miniature lumber yard scene with wooden beams and a workbench.\",\n  \"main_objects\": [\"playmobil figure\", \"hard hat\", \"yellow jacket\", \"workbench\", \"wooden beams\", \"small mushroom\"],\n  \"possible_interpretations\": [\n    \"Playmobil toy construction worker on a diorama set\",\n    \"Miniature model of a construction worker at a lumber site\"\n  ],\n  \"uncertainty_notes\": \"Person/face refers to the toy's painted face, not a real human. Scene is a miniature play setup, not a real outdoor or indoor environment.\",\n  \"quality_flags\": [\"miniature_scene\", \"toy_figure\", \"shallow_depth_of_field\"]\n}",
+      "response": {
+        "id": "gen-1780319612-ZeFHEKGimGIqwzvz8uYm",
+        "object": "chat.completion",
+        "created": 1780319612,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"toys_miniature\",\n\n  \"short_caption\": \"Playmobil construction worker figure in a miniature lumber yard scene with wooden beams and a workbench.\",\n  \"main_objects\": [\"playmobil figure\", \"hard hat\", \"yellow jacket\", \"workbench\", \"wooden beams\", \"small mushroom\"],\n  \"possible_interpretations\": [\n    \"Playmobil toy construction worker on a diorama set\",\n    \"Miniature model of a construction worker at a lumber site\"\n  ],\n  \"uncertainty_notes\": \"Person/face refers to the toy's painted face, not a real human. Scene is a miniature play setup, not a real outdoor or indoor environment.\",\n  \"quality_flags\": [\"miniature_scene\", \"toy_figure\", \"shallow_depth_of_field\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see a Playmobil toy figure (a construction worker character) standing in what appears to be a construction site diorama. The figure is wearing a green hard hat with \"P&M\" text, a yellow jacket, a checkered/plaid shirt, dark blue pants, and black boots. The setting includes wooden beams, a workbench with what appears to be small tools or items, gravel/sand ground, and a small red and white mushroom in the lower left.\n\nLet me annotate this according to the schema:\n\n- recognizability: 5 - Very clear, easily recognizable toy figure\n- ambiguity: 1 - Very clear interpretation, a Playmobil toy\n- natural_photo_typicality: 3 - It's a photo but of toys/miniature scene, not a typical natural scene\n- visual_clutter: 3 - Multiple elements but the main figure stands out\n- object_centricity: 5 - The toy figure dominates the image\n- scene_centricity: 2 - There's a scene but it's centered on the figure\n- caption_confidence: 5 - Easy to describe\n\n- estimated_salient_object_count: 1 (the main figure) plus some secondary items\n- estimated_distinct_object_categories: 3-4 (figure, workbench, wooden structures, mushroom)\n\n- contains_person: false (it's a toy figure, not a real person)\n- contains_face: true (the toy has a face)\n- contains_animal: false\n- contains_text: true (\"P&M\" on hard hat)\n- contains_vehicle: false\n- contains_food: false (mushroom is decorative)\n- contains_indoor_scene: false\n- contains_outdoor_scene: false (it's a miniature/play scene)\n- contains_artificial_or_rendered_content: true (toys are artificial)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the toy figure)\n- image_style: \"natural_photo\" (photograph of toys)\n- semantic_domain: \"toys\" or \"miniature\" or \"playmobil\"\n\nLet me finalize my response.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see a Playmobil toy figure (a construction worker character) standing in what appears to be a construction site diorama. The figure is wearing a green hard hat with \"P&M\" text, a yellow jacket, a checkered/plaid shirt, dark blue pants, and black boots. The setting includes wooden beams, a workbench with what appears to be small tools or items, gravel/sand ground, and a small red and white mushroom in the lower left.\n\nLet me annotate this according to the schema:\n\n- recognizability: 5 - Very clear, easily recognizable toy figure\n- ambiguity: 1 - Very clear interpretation, a Playmobil toy\n- natural_photo_typicality: 3 - It's a photo but of toys/miniature scene, not a typical natural scene\n- visual_clutter: 3 - Multiple elements but the main figure stands out\n- object_centricity: 5 - The toy figure dominates the image\n- scene_centricity: 2 - There's a scene but it's centered on the figure\n- caption_confidence: 5 - Easy to describe\n\n- estimated_salient_object_count: 1 (the main figure) plus some secondary items\n- estimated_distinct_object_categories: 3-4 (figure, workbench, wooden structures, mushroom)\n\n- contains_person: false (it's a toy figure, not a real person)\n- contains_face: true (the toy has a face)\n- contains_animal: false\n- contains_text: true (\"P&M\" on hard hat)\n- contains_vehicle: false\n- contains_food: false (mushroom is decorative)\n- contains_indoor_scene: false\n- contains_outdoor_scene: false (it's a miniature/play scene)\n- contains_artificial_or_rendered_content: true (toys are artificial)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the toy figure)\n- image_style: \"natural_photo\" (photograph of toys)\n- semantic_domain: \"toys\" or \"miniature\" or \"playmobil\"\n\nLet me finalize my response.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 858,
+          "total_tokens": 2380,
+          "cost": 0.00133596,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00133596,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010296
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 494,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

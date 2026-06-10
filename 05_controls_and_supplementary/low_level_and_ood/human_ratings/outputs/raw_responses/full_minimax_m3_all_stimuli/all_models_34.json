@@ -1,0 +1,86 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_34",
+    "stim_key": "all_models_34",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 34,
+    "file_index": 34,
+    "image_name": "image_0034.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0034.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: dominant_content_type has invalid value: 'person'"
+    },
+    {
+      "attempt": 2,
+      "ok": false,
+      "error": "ValidationError: dominant_content_type has invalid value: 'person'"
+    },
+    {
+      "attempt": 3,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"social_event\",\n  \"short_caption\": \"Several people looking down from behind a metal railing against blue sky\",\n  \"main_objects\": [\"people\", \"metal railing\", \"grating\"],\n  \"possible_interpretations\": [\n    \"Spectators at a sporting event in stadium seating\",\n    \"People on an observation deck or balcony\",\n    \"Workers on an elevated platform\",\n    \"Tourists on a bridge or overpass\",\n    \"Crowd at a concert or public gathering\"\n  ],\n  \"uncertainty_notes\": \"The exact context/event is unclear, but people behind a metal railing viewed from below is clearly visible\",\n  \"quality_flags\": [\"unusual_low_angle\", \"partial_occlusion_by_railings\"]\n}",
+      "response": {
+        "id": "gen-1780318820-kPsZBaBScahiLoK2NtlP",
+        "object": "chat.completion",
+        "created": 1780318820,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"social_event\",\n  \"short_caption\": \"Several people looking down from behind a metal railing against blue sky\",\n  \"main_objects\": [\"people\", \"metal railing\", \"grating\"],\n  \"possible_interpretations\": [\n    \"Spectators at a sporting event in stadium seating\",\n    \"People on an observation deck or balcony\",\n    \"Workers on an elevated platform\",\n    \"Tourists on a bridge or overpass\",\n    \"Crowd at a concert or public gathering\"\n  ],\n  \"uncertainty_notes\": \"The exact context/event is unclear, but people behind a metal railing viewed from below is clearly visible\",\n  \"quality_flags\": [\"unusual_low_angle\", \"partial_occlusion_by_railings\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows several people standing behind a metal railing/grating, looking down at the camera. They appear to be on an elevated platform or structure. The sky is clear blue in the background. The people are wearing casual clothing - one in blue, others in orange shirts. The viewpoint is from below looking up.\n\nLet me analyze this carefully:\n\n- Multiple people visible\n- Metal railing/grating in foreground\n- Clear blue sky background\n- Low angle viewpoint (looking up)\n- People wearing orange and blue clothing\n- This looks like it could be at a sporting event, concert venue, or observation deck\n\nLet me construct the JSON response based on the schema.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows several people standing behind a metal railing/grating, looking down at the camera. They appear to be on an elevated platform or structure. The sky is clear blue in the background. The people are wearing casual clothing - one in blue, others in orange shirts. The viewpoint is from below looking up.\n\nLet me analyze this carefully:\n\n- Multiple people visible\n- Metal railing/grating in foreground\n- Clear blue sky background\n- Low angle viewpoint (looking up)\n- People wearing orange and blue clothing\n- This looks like it could be at a sporting event, concert venue, or observation deck\n\nLet me construct the JSON response based on the schema.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 512,
+          "total_tokens": 2050,
+          "cost": 0.00092556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00092556,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.0006144
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 174,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

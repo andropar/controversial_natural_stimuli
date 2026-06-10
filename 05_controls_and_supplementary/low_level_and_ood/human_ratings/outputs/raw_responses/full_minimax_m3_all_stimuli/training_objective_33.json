@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_33",
+    "stim_key": "training_objective_33",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 33,
+    "file_index": 33,
+    "image_name": "image_0033.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0033.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"beauty_makeup\",\n  \"short_caption\": \"A makeup artist applies brow product to a smiling woman's face in front of a chevron-patterned wall.\",\n  \"main_objects\": [\"woman\", \"makeup artist\", \"makeup brush\", \"chevron wall\", \"bracelet\"],\n  \"possible_interpretations\": [\"professional makeup application\", \"beauty tutorial photoshoot\", \"editorial beauty feature\"],\n  \"uncertainty_notes\": \"Specific identity of individuals and exact makeup tool not identifiable; otherwise content is clear.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319240-YRD2Yhl93he0WyeornTC",
+        "object": "chat.completion",
+        "created": 1780319240,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"beauty_makeup\",\n  \"short_caption\": \"A makeup artist applies brow product to a smiling woman's face in front of a chevron-patterned wall.\",\n  \"main_objects\": [\"woman\", \"makeup artist\", \"makeup brush\", \"chevron wall\", \"bracelet\"],\n  \"possible_interpretations\": [\"professional makeup application\", \"beauty tutorial photoshoot\", \"editorial beauty feature\"],\n  \"uncertainty_notes\": \"Specific identity of individuals and exact makeup tool not identifiable; otherwise content is clear.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nI see two women in what appears to be a makeup application scene. One woman on the left is the subject, smiling, with dark hair pulled back, wearing a black jacket. The other woman on the right appears to be a makeup artist, holding what looks like a makeup brush/pencil near the first woman's face/brow area. She's wearing a dark navy/black shirt and has a gold bracelet. The background features a distinctive gray and white chevron/zigzag pattern.\n\nLet me annotate according to the schema:\n\n- Recognizability: Very clear what's happening - 5\n- Ambiguity: Low ambiguity, clear makeup application scene - 1\n- Natural photo typicality: Looks like a natural photo - 4\n- Visual clutter: Moderate with the chevron background but two clear subjects - 3\n- Object-centricity: Two people are central - not really object-centric\n- Scene-centricity: More of a scene with people\n- Caption confidence: High - 5\n\nTwo women visible, contains people, contains faces.\nThe makeup artist is holding a brush/tool.\nBackground is indoor (chevron wall pattern).\nNo text, no vehicles, no food, no animals.\n\nMain objects: makeup brush, two women, chevron wall\n\nLet me construct the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nI see two women in what appears to be a makeup application scene. One woman on the left is the subject, smiling, with dark hair pulled back, wearing a black jacket. The other woman on the right appears to be a makeup artist, holding what looks like a makeup brush/pencil near the first woman's face/brow area. She's wearing a dark navy/black shirt and has a gold bracelet. The background features a distinctive gray and white chevron/zigzag pattern.\n\nLet me annotate according to the schema:\n\n- Recognizability: Very clear what's happening - 5\n- Ambiguity: Low ambiguity, clear makeup application scene - 1\n- Natural photo typicality: Looks like a natural photo - 4\n- Visual clutter: Moderate with the chevron background but two clear subjects - 3\n- Object-centricity: Two people are central - not really object-centric\n- Scene-centricity: More of a scene with people\n- Caption confidence: High - 5\n\nTwo women visible, contains people, contains faces.\nThe makeup artist is holding a brush/tool.\nBackground is indoor (chevron wall pattern).\nNo text, no vehicles, no food, no animals.\n\nMain objects: makeup brush, two women, chevron wall\n\nLet me construct the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1267,
+          "completion_tokens": 610,
+          "total_tokens": 1877,
+          "cost": 0.00096186,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00096186,
+            "upstream_inference_prompt_cost": 0.00022986,
+            "upstream_inference_completions_cost": 0.000732
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 316,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

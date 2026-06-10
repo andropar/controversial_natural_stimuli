@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_96",
+    "stim_key": "all_models_96",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 96,
+    "file_index": 96,
+    "image_name": "image_0096.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0096.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"office_interior\",\n  \"short_caption\": \"Modern law office reception with white tufted chairs, marble wall, and AGES logo.\",\n  \"main_objects\": [\"chairs\", \"side table\", \"reception desk\", \"potted plant\", \"marble wall\", \"logo signage\"],\n  \"possible_interpretations\": [\"law firm reception area\", \"corporate office waiting room\", \"modern business lobby\", \"legal consultancy entrance\"],\n  \"uncertainty_notes\": \"Faint reflection in glass partition on left may suggest a person nearby, but no person is clearly visible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318841-VOgQaUMXU3AVcm3O6NI3",
+        "object": "chat.completion",
+        "created": 1780318841,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"office_interior\",\n  \"short_caption\": \"Modern law office reception with white tufted chairs, marble wall, and AGES logo.\",\n  \"main_objects\": [\"chairs\", \"side table\", \"reception desk\", \"potted plant\", \"marble wall\", \"logo signage\"],\n  \"possible_interpretations\": [\"law firm reception area\", \"corporate office waiting room\", \"modern business lobby\", \"legal consultancy entrance\"],\n  \"uncertainty_notes\": \"Faint reflection in glass partition on left may suggest a person nearby, but no person is clearly visible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a modern law office reception/waiting area. There's a marble wall with the logo \"AGES\" and text that appears to be in Portuguese \"Advogados & Consultores Estrategicos\" (Lawyers & Strategic Consultants). There are two white tufted chairs, a small round table, a reception desk on the right with a plant, and a glass partition on the left.\n\nLet me analyze the schema:\n\n- recognizability: 5 - very clear what this is\n- ambiguity: 1 - very clear, it's a law office waiting area\n- natural_photo_typicality: 4 - looks like a typical interior photo, possibly some HDR/edited\n- visual_clutter: 2 - relatively clean, minimal objects\n- object_centricity: 2 - more scene-focused than object-focused\n- scene_centricity: 5 - it's clearly a scene/place\n- caption_confidence: 5\n\n- estimated_salient_object_count: 4 (two chairs, table, desk, plant)\n- estimated_distinct_object_categories: 4-5 (chairs, table, desk, plant, wall logo)\n\n- contains_person: false (though there might be a partial figure in the glass reflection)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (AGES logo)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: scene\n- image_style: natural_photo (possibly edited)\n- semantic_domain: office/interior\n\n- short_caption: Modern law office reception with white chairs, marble wall, and AGES logo\n- main_objects: chairs, table, reception desk, plant, marble wall\n- possible_interpretations: law firm reception, business office waiting area, modern lobby\n- uncertainty_notes: slight reflection visible in glass partition\n- quality_flags:",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a modern law office reception/waiting area. There's a marble wall with the logo \"AGES\" and text that appears to be in Portuguese \"Advogados & Consultores Estrategicos\" (Lawyers & Strategic Consultants). There are two white tufted chairs, a small round table, a reception desk on the right with a plant, and a glass partition on the left.\n\nLet me analyze the schema:\n\n- recognizability: 5 - very clear what this is\n- ambiguity: 1 - very clear, it's a law office waiting area\n- natural_photo_typicality: 4 - looks like a typical interior photo, possibly some HDR/edited\n- visual_clutter: 2 - relatively clean, minimal objects\n- object_centricity: 2 - more scene-focused than object-focused\n- scene_centricity: 5 - it's clearly a scene/place\n- caption_confidence: 5\n\n- estimated_salient_object_count: 4 (two chairs, table, desk, plant)\n- estimated_distinct_object_categories: 4-5 (chairs, table, desk, plant, wall logo)\n\n- contains_person: false (though there might be a partial figure in the glass reflection)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (AGES logo)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: scene\n- image_style: natural_photo (possibly edited)\n- semantic_domain: office/interior\n\n- short_caption: Modern law office reception with white chairs, marble wall, and AGES logo\n- main_objects: chairs, table, reception desk, plant, marble wall\n- possible_interpretations: law firm reception, business office waiting area, modern lobby\n- uncertainty_notes: slight reflection visible in glass partition\n- quality_flags:",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1179,
+          "completion_tokens": 793,
+          "total_tokens": 1972,
+          "cost": 0.00127794,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00127794,
+            "upstream_inference_prompt_cost": 0.00032634,
+            "upstream_inference_completions_cost": 0.0009516
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 485,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

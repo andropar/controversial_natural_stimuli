@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_60",
+    "stim_key": "all_models_60",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 60,
+    "file_index": 60,
+    "image_name": "image_0060.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0060.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"library\",\n  \"short_caption\": \"Rows of bookshelves filled with books in a library.\",\n  \"main_objects\": [\"bookshelves\", \"books\"],\n  \"possible_interpretations\": [\"library interior\", \"bookstore\", \"archive room\", \"reading room\"],\n  \"uncertainty_notes\": \"Specific library or bookstore cannot be determined; some book titles are partially legible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318796-i74CyfyT1eVuzw1W35aB",
+        "object": "chat.completion",
+        "created": 1780318796,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"library\",\n  \"short_caption\": \"Rows of bookshelves filled with books in a library.\",\n  \"main_objects\": [\"bookshelves\", \"books\"],\n  \"possible_interpretations\": [\"library interior\", \"bookstore\", \"archive room\", \"reading room\"],\n  \"uncertainty_notes\": \"Specific library or bookstore cannot be determined; some book titles are partially legible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The user wants me to annotate an image showing library bookshelves with books. Let me analyze the image carefully and provide structured annotations according to the schema.\n\nThe image shows:\n- Multiple rows of library bookshelves with books\n- The books are arranged on white/cream colored shelves\n- There's a perspective view showing rows of shelves extending into the background\n- The image is a natural photograph taken indoors\n- The main content is the library/books scene\n- I can see some text on the books (titles like \"PASALE\", \"HISTO\", etc.)\n- The image has a shallow depth of field with the foreground books in focus\n\nLet me rate each aspect:\n- Recognizability: High - clearly recognizable as a library bookshelf scene (5)\n- Ambiguity: Low - it's clearly books on shelves (1)\n- Natural photo typicality: High - looks like a typical photograph (5)\n- Visual clutter: High - many books create clutter (4-5)\n- Object centricity: Medium - books are objects but it's more of a scene (2-3)\n- Scene centricity: High - this is primarily a scene (5)\n- Caption confidence: High (5)\n\nSalient object count: Many books, but they are the main content\nDistinct object categories: books, shelves, maybe a few others\n\nLet me construct the JSON response.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The user wants me to annotate an image showing library bookshelves with books. Let me analyze the image carefully and provide structured annotations according to the schema.\n\nThe image shows:\n- Multiple rows of library bookshelves with books\n- The books are arranged on white/cream colored shelves\n- There's a perspective view showing rows of shelves extending into the background\n- The image is a natural photograph taken indoors\n- The main content is the library/books scene\n- I can see some text on the books (titles like \"PASALE\", \"HISTO\", etc.)\n- The image has a shallow depth of field with the foreground books in focus\n\nLet me rate each aspect:\n- Recognizability: High - clearly recognizable as a library bookshelf scene (5)\n- Ambiguity: Low - it's clearly books on shelves (1)\n- Natural photo typicality: High - looks like a typical photograph (5)\n- Visual clutter: High - many books create clutter (4-5)\n- Object centricity: Medium - books are objects but it's more of a scene (2-3)\n- Scene centricity: High - this is primarily a scene (5)\n- Caption confidence: High (5)\n\nSalient object count: Many books, but they are the main content\nDistinct object categories: books, shelves, maybe a few others\n\nLet me construct the JSON response.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 586,
+          "total_tokens": 2108,
+          "cost": 0.00113244,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00113244,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0007032
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 329,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

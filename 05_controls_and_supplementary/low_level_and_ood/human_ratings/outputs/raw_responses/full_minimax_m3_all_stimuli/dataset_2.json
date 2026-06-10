@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_2",
+    "stim_key": "dataset_2",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 2,
+    "file_index": 2,
+    "image_name": "image_0002.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0002.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature_landscape\",\n  \"short_caption\": \"A multi-tiered waterfall cascading down rocky cliffs with green vegetation under an overcast sky.\",\n  \"main_objects\": [\"waterfall\", \"rocky cliffs\", \"vegetation\", \"sky\"],\n  \"possible_interpretations\": [\"natural waterfall in a canyon or gorge\", \"mountain waterfall with terraced rock formations\"],\n  \"uncertainty_notes\": \"Small yellow object in lower left corner is unclear; the cream borders suggest the photo may have been framed or composited.\",\n  \"quality_flags\": [\"decorative_borders\", \"overcast_lighting\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318961-Qy1cZHmGK0vJiPt0N4lM",
+        "object": "chat.completion",
+        "created": 1780318961,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature_landscape\",\n  \"short_caption\": \"A multi-tiered waterfall cascading down rocky cliffs with green vegetation under an overcast sky.\",\n  \"main_objects\": [\"waterfall\", \"rocky cliffs\", \"vegetation\", \"sky\"],\n  \"possible_interpretations\": [\"natural waterfall in a canyon or gorge\", \"mountain waterfall with terraced rock formations\"],\n  \"uncertainty_notes\": \"Small yellow object in lower left corner is unclear; the cream borders suggest the photo may have been framed or composited.\",\n  \"quality_flags\": [\"decorative_borders\", \"overcast_lighting\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a waterfall cascading down rocky cliffs with vegetation growing on the rocks. The sky appears overcast/hazy. There are multiple tiers of water flowing down the rocks. The image is presented in portrait orientation with cream/beige borders on the sides.\n\nLet me assess each dimension:\n\n- Recognizability: Very clear - it's a waterfall scene with rocky cliffs and vegetation. 5\n- Ambiguity: Low ambiguity - clearly a waterfall in nature. 1\n- Natural_photo_typicality: Looks like a typical natural photo, though borders suggest some editing/framing. 4\n- Visual_clutter: Moderate - rocky terrain with vegetation, multiple cascade levels, but it's a cohesive scene. 3\n- Object_centricity: The waterfall is the main feature, but it's part of a broader scene. 2\n- Scene_centricity: High - this is clearly a natural landscape/scene. 5\n- Caption_confidence: Very confident in a simple caption. 5\n\nSalient objects: waterfall, rocks, vegetation/cliffs - 1-2 main salient features\nDistinct categories: waterfall, rock formations, vegetation, sky\n\nNo people, faces, animals, vehicles, food, text visible. There's what might be a small yellow object in the lower left, but it's unclear.\n\nNo indoor scene, outdoor scene yes. Not artificial or rendered. No obvious occlusion of main subjects. Standard viewpoint. Not multiple main objects (the scene is one cohesive landscape).\n\nDominant content type: scene\nImage style: natural_photo (with borders)\nSemantic domain: nature/landscape",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a waterfall cascading down rocky cliffs with vegetation growing on the rocks. The sky appears overcast/hazy. There are multiple tiers of water flowing down the rocks. The image is presented in portrait orientation with cream/beige borders on the sides.\n\nLet me assess each dimension:\n\n- Recognizability: Very clear - it's a waterfall scene with rocky cliffs and vegetation. 5\n- Ambiguity: Low ambiguity - clearly a waterfall in nature. 1\n- Natural_photo_typicality: Looks like a typical natural photo, though borders suggest some editing/framing. 4\n- Visual_clutter: Moderate - rocky terrain with vegetation, multiple cascade levels, but it's a cohesive scene. 3\n- Object_centricity: The waterfall is the main feature, but it's part of a broader scene. 2\n- Scene_centricity: High - this is clearly a natural landscape/scene. 5\n- Caption_confidence: Very confident in a simple caption. 5\n\nSalient objects: waterfall, rocks, vegetation/cliffs - 1-2 main salient features\nDistinct categories: waterfall, rock formations, vegetation, sky\n\nNo people, faces, animals, vehicles, food, text visible. There's what might be a small yellow object in the lower left, but it's unclear.\n\nNo indoor scene, outdoor scene yes. Not artificial or rendered. No obvious occlusion of main subjects. Standard viewpoint. Not multiple main objects (the scene is one cohesive landscape).\n\nDominant content type: scene\nImage style: natural_photo (with borders)\nSemantic domain: nature/landscape",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 687,
+          "total_tokens": 2209,
+          "cost": 0.00113076,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00113076,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008244
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 394,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

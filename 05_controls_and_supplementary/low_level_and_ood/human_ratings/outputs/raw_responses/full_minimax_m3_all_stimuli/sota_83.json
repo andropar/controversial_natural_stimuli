@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_83",
+    "stim_key": "sota_83",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 83,
+    "file_index": 83,
+    "image_name": "image_0083.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0083.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"party celebration\",\n  \"short_caption\": \"Two smiling women and a person in a horse mask pose at a party photo booth.\",\n  \"main_objects\": [\"woman with glasses\", \"woman in blonde curly wig\", \"person in horse mask\", \"gold chevron backdrop\"],\n  \"possible_interpretations\": [\"party photo booth picture\", \"costume party celebration\", \"friends posing for a fun photo\"],\n  \"uncertainty_notes\": \"The horse mask may suggest a costume or novelty party; exact event context is unknown.\",\n  \"quality_flags\": [\"leftmost figure partially cropped\", \"flash photography\"]\n}",
+      "response": {
+        "id": "gen-1780319186-QkNn7YKYLIlKVvXAMBNq",
+        "object": "chat.completion",
+        "created": 1780319186,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"party celebration\",\n  \"short_caption\": \"Two smiling women and a person in a horse mask pose at a party photo booth.\",\n  \"main_objects\": [\"woman with glasses\", \"woman in blonde curly wig\", \"person in horse mask\", \"gold chevron backdrop\"],\n  \"possible_interpretations\": [\"party photo booth picture\", \"costume party celebration\", \"friends posing for a fun photo\"],\n  \"uncertainty_notes\": \"The horse mask may suggest a costume or novelty party; exact event context is unknown.\",\n  \"quality_flags\": [\"leftmost figure partially cropped\", \"flash photography\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be a photo booth or party photo. There are two women smiling at the camera, one wearing a curly blonde wig, and a person on the left wearing a horse/animal mask. The background is a decorative wall with gold glitter chevron/zigzag patterns on a light/cream background.\n\nLet me provide conservative annotations:\n\n- Recognizability: Clear - this is clearly a party/photo booth photo with people. 5\n- Ambiguity: Low ambiguity - it's clearly a party photo. 1\n- Natural photo typicality: It's a natural photo (photo booth style). 4\n- Visual clutter: Moderate - chevron background, three subjects, but not extremely cluttered. 3\n- Object centricity: Low - this is more of a scene/group photo. 2\n- Scene centricity: Moderate - it's a party scene setting. 3\n\nFor boolean fields:\n- contains_person: true\n- contains_face: true\n- contains_animal: false (the mask is not a real animal, it's a mask)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (appears to be indoor photo booth)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the person on left is partially cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\nDominant content: person_face (there are faces)\nImage style: natural_photo\nSemantic domain: party/celebration\n\nShort caption: \"Two women and a person in a horse mask pose at a party photo booth.\"\n\nMain objects: woman with glasses, woman in blonde wig, person in horse mask, gold chevron backdrop\n\nPossible interpretations: party photo booth, costume party, celebration event\n\nQuality flags: cropped figure, artificial lighting",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be a photo booth or party photo. There are two women smiling at the camera, one wearing a curly blonde wig, and a person on the left wearing a horse/animal mask. The background is a decorative wall with gold glitter chevron/zigzag patterns on a light/cream background.\n\nLet me provide conservative annotations:\n\n- Recognizability: Clear - this is clearly a party/photo booth photo with people. 5\n- Ambiguity: Low ambiguity - it's clearly a party photo. 1\n- Natural photo typicality: It's a natural photo (photo booth style). 4\n- Visual clutter: Moderate - chevron background, three subjects, but not extremely cluttered. 3\n- Object centricity: Low - this is more of a scene/group photo. 2\n- Scene centricity: Moderate - it's a party scene setting. 3\n\nFor boolean fields:\n- contains_person: true\n- contains_face: true\n- contains_animal: false (the mask is not a real animal, it's a mask)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (appears to be indoor photo booth)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the person on left is partially cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\nDominant content: person_face (there are faces)\nImage style: natural_photo\nSemantic domain: party/celebration\n\nShort caption: \"Two women and a person in a horse mask pose at a party photo booth.\"\n\nMain objects: woman with glasses, woman in blonde wig, person in horse mask, gold chevron backdrop\n\nPossible interpretations: party photo booth, costume party, celebration event\n\nQuality flags: cropped figure, artificial lighting",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 759,
+          "total_tokens": 2073,
+          "cost": 0.00115476,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00115476,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.0009108
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 468,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

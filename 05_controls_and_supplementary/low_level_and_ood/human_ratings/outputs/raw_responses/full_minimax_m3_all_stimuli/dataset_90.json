@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_90",
+    "stim_key": "dataset_90",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 90,
+    "file_index": 90,
+    "image_name": "image_0090.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0090.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home_interior\",\n  \"short_caption\": \"A dark wooden chair against a wall with black and yellow floral patterned wallpaper.\",\n  \"main_objects\": [\"chair\", \"wallpaper\", \"wall\", \"floor\"],\n  \"possible_interpretations\": [\"interior design photo\", \"wallpaper product showcase\", \"styled home decor image\"],\n  \"uncertainty_notes\": \"The chair is partially cropped on the right edge of the frame.\",\n  \"quality_flags\": [\"chair_cropped\", \"repetitive_pattern_dominant\"]\n}",
+      "response": {
+        "id": "gen-1780319061-PZtLEwZ67xuYRaVherod",
+        "object": "chat.completion",
+        "created": 1780319061,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home_interior\",\n  \"short_caption\": \"A dark wooden chair against a wall with black and yellow floral patterned wallpaper.\",\n  \"main_objects\": [\"chair\", \"wallpaper\", \"wall\", \"floor\"],\n  \"possible_interpretations\": [\"interior design photo\", \"wallpaper product showcase\", \"styled home decor image\"],\n  \"uncertainty_notes\": \"The chair is partially cropped on the right edge of the frame.\",\n  \"quality_flags\": [\"chair_cropped\", \"repetitive_pattern_dominant\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a wall with a floral wallpaper pattern featuring line-drawn flowers (appears to be anemones or poppies) in black/mustard yellow on a cream/beige background. On the right side, there's a dark wooden chair partially visible. The floor appears to be light colored.\n\nLet me annotate this:\n\n- Recognizability: Clear - it's a wallpapered wall with a chair. 4\n- Ambiguity: Low - clear interpretation. 2\n- Natural_photo_typicality: It looks like a styled product photo, somewhat typical. 3\n- Visual_clutter: The pattern is repetitive and busy. 4\n- Object_centricity: No single dominant object - more of a scene. 2\n- Scene_centricity: Yes, it's showing a room/scene. 4\n- Caption_confidence: High. 4\n\n- Salient objects: 2 (chair, wall/wallpaper)\n- Distinct categories: 2 (chair, wallpaper)\n\n- Person: no\n- Face: no\n- Animal: no\n- Text: no\n- Vehicle: no\n- Food: no\n- Indoor: yes\n- Outdoor: no\n- Artificial/rendered: possibly, it looks like a product photo\n- Occlusion: the chair is partially cropped\n- Unusual viewpoint: no\n- Multiple main objects: no\n\nDominant content: scene (it's a room interior)\nImage style: natural_photo (looks like a product photo)\nSemantic domain: home_interior or interior_design\n\nShort caption: \"A dark wooden chair against a wall with floral patterned wallpaper.\"\n\nMain objects: chair, wallpaper\nPossible interpretations: interior design photo, product photo, decor showcase\nUncertainty notes: chair is partially visible\nQuality flags: chair is cropped on right side",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a wall with a floral wallpaper pattern featuring line-drawn flowers (appears to be anemones or poppies) in black/mustard yellow on a cream/beige background. On the right side, there's a dark wooden chair partially visible. The floor appears to be light colored.\n\nLet me annotate this:\n\n- Recognizability: Clear - it's a wallpapered wall with a chair. 4\n- Ambiguity: Low - clear interpretation. 2\n- Natural_photo_typicality: It looks like a styled product photo, somewhat typical. 3\n- Visual_clutter: The pattern is repetitive and busy. 4\n- Object_centricity: No single dominant object - more of a scene. 2\n- Scene_centricity: Yes, it's showing a room/scene. 4\n- Caption_confidence: High. 4\n\n- Salient objects: 2 (chair, wall/wallpaper)\n- Distinct categories: 2 (chair, wallpaper)\n\n- Person: no\n- Face: no\n- Animal: no\n- Text: no\n- Vehicle: no\n- Food: no\n- Indoor: yes\n- Outdoor: no\n- Artificial/rendered: possibly, it looks like a product photo\n- Occlusion: the chair is partially cropped\n- Unusual viewpoint: no\n- Multiple main objects: no\n\nDominant content: scene (it's a room interior)\nImage style: natural_photo (looks like a product photo)\nSemantic domain: home_interior or interior_design\n\nShort caption: \"A dark wooden chair against a wall with floral patterned wallpaper.\"\n\nMain objects: chair, wallpaper\nPossible interpretations: interior design photo, product photo, decor showcase\nUncertainty notes: chair is partially visible\nQuality flags: chair is cropped on right side",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1138,
+          "completion_tokens": 714,
+          "total_tokens": 1852,
+          "cost": 0.00104796,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00104796,
+            "upstream_inference_prompt_cost": 0.00019116,
+            "upstream_inference_completions_cost": 0.0008568
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 414,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

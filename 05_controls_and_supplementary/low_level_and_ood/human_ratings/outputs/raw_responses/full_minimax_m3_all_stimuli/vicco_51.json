@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_51",
+    "stim_key": "vicco_51",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 51,
+    "file_index": 50,
+    "image_name": "shared_4rep_vicco_051.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_051.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 3, \"natural_photo_typicality\": 5, \"visual_clutter\": 4, \"object_centricity\": 3, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": true, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"animal\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"wildlife/animals\", \"short_caption\": \"Several sparrows foraging on straw-covered ground near a hay bale\", \"main_objects\": [\"sparrows\", \"hay bale\", \"straw\", \"dirt ground\"], \"possible_interpretations\": [\"sparrows feeding near hay storage\", \"farmyard birds foraging\", \"small birds on straw\", \"birds at rural feeding area\"], \"uncertainty_notes\": \"Exact bird species uncertain but consistent with house sparrows; setting could be a farm, stable, or rural area\", \"quality_flags\": [\"cluttered_background\", \"small_subjects\"]}",
+      "response": {
+        "id": "gen-1780319447-C8O3jgDudgmFutDyviWO",
+        "object": "chat.completion",
+        "created": 1780319447,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 3, \"natural_photo_typicality\": 5, \"visual_clutter\": 4, \"object_centricity\": 3, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": true, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"animal\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"wildlife/animals\", \"short_caption\": \"Several sparrows foraging on straw-covered ground near a hay bale\", \"main_objects\": [\"sparrows\", \"hay bale\", \"straw\", \"dirt ground\"], \"possible_interpretations\": [\"sparrows feeding near hay storage\", \"farmyard birds foraging\", \"small birds on straw\", \"birds at rural feeding area\"], \"uncertainty_notes\": \"Exact bird species uncertain but consistent with house sparrows; setting could be a farm, stable, or rural area\", \"quality_flags\": [\"cluttered_background\", \"small_subjects\"]}",
+              "refusal": null,
+              "reasoning": "The image shows several small birds (sparrows) on the ground with hay/straw scattered around. There appears to be a hay bale in the upper left corner. The birds are foraging on dirt ground covered with loose straw.\n\nLet me analyze this for the schema:\n- Recognizability: The birds are recognizable as sparrows, clearly visible. 4\n- Ambiguity: Multiple interpretations possible - could be a farm scene, or just birds near hay. 3\n- Natural photo typicality: Looks like a natural photograph. 5\n- Visual clutter: Quite a bit of straw/hay everywhere, multiple birds. 4\n- Object centricity: The birds are the main subjects but there are multiple of them. 3\n- Scene centricity: More of a scene (farm/outdoor ground with hay). 3\n- Caption confidence: 4\n\nSalient objects: ~4 birds, 1 hay bale = 5\nDistinct categories: birds, hay bale, straw, ground = 3-4\n\nContains person: false\nContains face: false\nContains animal: true (birds)\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor: false\nContains outdoor: true\nContains artificial: false\nContains occlusion: the birds are somewhat hidden in straw, partial - true\nContains unusual viewpoint: not really\nContains multiple main objects: true (multiple birds)\n\nDominant content: animal (birds)\nImage style: natural_photo\nSemantic domain: wildlife/animals\n\nCaption: Sparrows foraging on straw-covered ground near a hay bale.\n\nMain objects: sparrows, hay bale, straw\n\nPossible interpretations: birds near hay bale, farm scene, sparrows foraging\n\nUncertainty: bird species identification uncertain (likely house sparrows), exact setting unclear\n\nQuality flags: somewhat cluttered background",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows several small birds (sparrows) on the ground with hay/straw scattered around. There appears to be a hay bale in the upper left corner. The birds are foraging on dirt ground covered with loose straw.\n\nLet me analyze this for the schema:\n- Recognizability: The birds are recognizable as sparrows, clearly visible. 4\n- Ambiguity: Multiple interpretations possible - could be a farm scene, or just birds near hay. 3\n- Natural photo typicality: Looks like a natural photograph. 5\n- Visual clutter: Quite a bit of straw/hay everywhere, multiple birds. 4\n- Object centricity: The birds are the main subjects but there are multiple of them. 3\n- Scene centricity: More of a scene (farm/outdoor ground with hay). 3\n- Caption confidence: 4\n\nSalient objects: ~4 birds, 1 hay bale = 5\nDistinct categories: birds, hay bale, straw, ground = 3-4\n\nContains person: false\nContains face: false\nContains animal: true (birds)\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor: false\nContains outdoor: true\nContains artificial: false\nContains occlusion: the birds are somewhat hidden in straw, partial - true\nContains unusual viewpoint: not really\nContains multiple main objects: true (multiple birds)\n\nDominant content: animal (birds)\nImage style: natural_photo\nSemantic domain: wildlife/animals\n\nCaption: Sparrows foraging on straw-covered ground near a hay bale.\n\nMain objects: sparrows, hay bale, straw\n\nPossible interpretations: birds near hay bale, farm scene, sparrows foraging\n\nUncertainty: bird species identification uncertain (likely house sparrows), exact setting unclear\n\nQuality flags: somewhat cluttered background",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 701,
+          "total_tokens": 2223,
+          "cost": 0.00127044,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00127044,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008412
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 443,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

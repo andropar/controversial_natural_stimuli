@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_8",
+    "stim_key": "all_models_8",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 8,
+    "file_index": 8,
+    "image_name": "image_0008.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0008.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion/closet organization\",\n\n  \"short_caption\": \"Woman reaching into organized closet to select a white shirt on a hanger, with text overlay.\",\n  \"main_objects\": [\"woman\", \"white shirt\", \"clothes hangers\", \"closet shelves\", \"text overlay\"],\n  \"possible_interpretations\": [\n    \"Woman choosing an outfit from her organized closet\",\n    \"Closet organization or wardrobe styling video thumbnail\",\n    \"Fashion or lifestyle vlog about clothing\",\n    \"Home organization content featuring closet\"\n  ],\n  \"uncertainty_notes\": \"Text overlay partially obscures the scene; the full title text is not visible (only 'ANGE' and 'dressing' are shown). The woman's face is not visible, so demographic details are uncertain.\",\n  \"quality_flags\": [\"text_overlay_obscures_content\", \"thumbnail_style_composition\"]\n}",
+      "response": {
+        "id": "gen-1780317954-Vx8Uw8jhQr2o3mHwl250",
+        "object": "chat.completion",
+        "created": 1780317954,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion/closet organization\",\n\n  \"short_caption\": \"Woman reaching into organized closet to select a white shirt on a hanger, with text overlay.\",\n  \"main_objects\": [\"woman\", \"white shirt\", \"clothes hangers\", \"closet shelves\", \"text overlay\"],\n  \"possible_interpretations\": [\n    \"Woman choosing an outfit from her organized closet\",\n    \"Closet organization or wardrobe styling video thumbnail\",\n    \"Fashion or lifestyle vlog about clothing\",\n    \"Home organization content featuring closet\"\n  ],\n  \"uncertainty_notes\": \"Text overlay partially obscures the scene; the full title text is not visible (only 'ANGE' and 'dressing' are shown). The woman's face is not visible, so demographic details are uncertain.\",\n  \"quality_flags\": [\"text_overlay_obscures_content\", \"thumbnail_style_composition\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a person in a white/light gray long-sleeved top reaching into a closet to pick up or look at a white shirt/blouse on a hanger. The closet has organized clothing on both sides - hangers on the left and right, with shelves visible on the right side. There's text overlay on the image that says \"ANGE\" and \"dressing\" in a stylized font, suggesting this is a thumbnail for a video, likely YouTube. The text appears to be part of a title, possibly \"Fragrance dressing\" or similar.\n\nLet me analyze the visual elements:\n- Person: Yes, a woman with brown hair seen from behind/side\n- Face: Not really visible, back/side view\n- Animal: No\n- Text: Yes, \"ANGE\" and \"dressing\"\n- Vehicle: No\n- Food: No\n- Indoor scene: Yes, this is a closet\n- Outdoor: No\n- Artificial/rendered content: The text overlay suggests this is edited for a video thumbnail\n- Occlusion/truncation: Somewhat, the text covers part of the image\n- Unusual viewpoint: No, fairly standard\n- Multiple main objects: Yes - person, closet, clothes, text\n\nFor ratings:\n- Recognizability: 4 - clearly shows a woman at a closet\n- Ambiguity: 2 - pretty clear what's happening\n- Natural photo typicality: 3 - looks like a photo but with text overlay\n- Visual clutter: 3 - closet is somewhat cluttered with clothes\n- Object centricity: 2 - more scene-focused\n- Scene centricity: 4 - it's clearly a closet scene\n- Caption confidence: 4 - easy to describe\n\nSalient objects: person, closet, clothes on hangers, shelves, text overlay\nCategories: person, clothing, furniture/storage, text\n\nStyle: This is a photo with text overlay - edited_photo or screenshot. Given the YouTube-style thumbnail aesthetic, I'd say edited_photo.\n\nSemantic domain: fashion/lifestyle/closet organization\n\nLet me construct the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a person in a white/light gray long-sleeved top reaching into a closet to pick up or look at a white shirt/blouse on a hanger. The closet has organized clothing on both sides - hangers on the left and right, with shelves visible on the right side. There's text overlay on the image that says \"ANGE\" and \"dressing\" in a stylized font, suggesting this is a thumbnail for a video, likely YouTube. The text appears to be part of a title, possibly \"Fragrance dressing\" or similar.\n\nLet me analyze the visual elements:\n- Person: Yes, a woman with brown hair seen from behind/side\n- Face: Not really visible, back/side view\n- Animal: No\n- Text: Yes, \"ANGE\" and \"dressing\"\n- Vehicle: No\n- Food: No\n- Indoor scene: Yes, this is a closet\n- Outdoor: No\n- Artificial/rendered content: The text overlay suggests this is edited for a video thumbnail\n- Occlusion/truncation: Somewhat, the text covers part of the image\n- Unusual viewpoint: No, fairly standard\n- Multiple main objects: Yes - person, closet, clothes, text\n\nFor ratings:\n- Recognizability: 4 - clearly shows a woman at a closet\n- Ambiguity: 2 - pretty clear what's happening\n- Natural photo typicality: 3 - looks like a photo but with text overlay\n- Visual clutter: 3 - closet is somewhat cluttered with clothes\n- Object centricity: 2 - more scene-focused\n- Scene centricity: 4 - it's clearly a closet scene\n- Caption confidence: 4 - easy to describe\n\nSalient objects: person, closet, clothes on hangers, shelves, text overlay\nCategories: person, clothing, furniture/storage, text\n\nStyle: This is a photo with text overlay - edited_photo or screenshot. Given the YouTube-style thumbnail aesthetic, I'd say edited_photo.\n\nSemantic domain: fashion/lifestyle/closet organization\n\nLet me construct the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 834,
+          "total_tokens": 2248,
+          "cost": 0.00139764,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139764,
+            "upstream_inference_prompt_cost": 0.00039684,
+            "upstream_inference_completions_cost": 0.0010008
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 466,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_83",
+    "stim_key": "training_objective_83",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 83,
+    "file_index": 83,
+    "image_name": "image_0083.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0083.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion\",\n  \"short_caption\": \"Woman wearing a black embroidered tunic and patterned hijab against a mosaic tile wall.\",\n  \"main_objects\": [\"woman\", \"black tunic\", \"patterned hijab\", \"mosaic tile wall\"],\n  \"possible_interpretations\": [\"fashion product photo\", \"modest clothing catalog image\", \"e-commerce listing photo\"],\n  \"uncertainty_notes\": \"Face is partially cropped (eyes not visible). Watermark suggests commercial product photography. Setting may be outdoor or semi-outdoor based on tile wall.\",\n  \"quality_flags\": [\"contains_watermark\", \"face_partially_cropped\"]\n}",
+      "response": {
+        "id": "gen-1780319367-agfau49166x1Pq9x2fQk",
+        "object": "chat.completion",
+        "created": 1780319367,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion\",\n  \"short_caption\": \"Woman wearing a black embroidered tunic and patterned hijab against a mosaic tile wall.\",\n  \"main_objects\": [\"woman\", \"black tunic\", \"patterned hijab\", \"mosaic tile wall\"],\n  \"possible_interpretations\": [\"fashion product photo\", \"modest clothing catalog image\", \"e-commerce listing photo\"],\n  \"uncertainty_notes\": \"Face is partially cropped (eyes not visible). Watermark suggests commercial product photography. Setting may be outdoor or semi-outdoor based on tile wall.\",\n  \"quality_flags\": [\"contains_watermark\", \"face_partially_cropped\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a woman wearing a black long shirt/tunic with a decorative pattern near the bottom, and a patterned hijab/headscarf. She's standing against a wall of small mosaic tiles. The image appears to be from a fashion/retail website (e-modesta.com watermark visible).\n\nLet me go through each annotation:\n\n- Recognizability: High - clear fashion product photo of a woman in modest clothing\n- Ambiguity: Low - clearly a fashion/clothing product photo\n- Natural_photo_typicality: It's a posed fashion photo with watermark, so somewhat typical of product photography\n- Visual_clutter: Moderate - busy tile background but the subject is clear\n- Object_centricity: The clothing is central but it's a person modeling\n- Scene_centricity: More of a product/portrait than a scene\n- Caption_confidence: High\n\nSalient objects: the woman, the black tunic/dress, the hijab, the tiled wall\n- Person: yes\n- Face: partially visible (lower face, no eyes)\n- Animal: no\n- Text: yes (watermark \"e-modesta.com\")\n- Vehicle: no\n- Food: no\n- Indoor: no (appears outdoor or in a building with tile wall)\n- Outdoor: ambiguous, but the tile wall suggests possibly outdoor or covered area\n- Artificial content: yes (watermark)\n\nLet me provide the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a woman wearing a black long shirt/tunic with a decorative pattern near the bottom, and a patterned hijab/headscarf. She's standing against a wall of small mosaic tiles. The image appears to be from a fashion/retail website (e-modesta.com watermark visible).\n\nLet me go through each annotation:\n\n- Recognizability: High - clear fashion product photo of a woman in modest clothing\n- Ambiguity: Low - clearly a fashion/clothing product photo\n- Natural_photo_typicality: It's a posed fashion photo with watermark, so somewhat typical of product photography\n- Visual_clutter: Moderate - busy tile background but the subject is clear\n- Object_centricity: The clothing is central but it's a person modeling\n- Scene_centricity: More of a product/portrait than a scene\n- Caption_confidence: High\n\nSalient objects: the woman, the black tunic/dress, the hijab, the tiled wall\n- Person: yes\n- Face: partially visible (lower face, no eyes)\n- Animal: no\n- Text: yes (watermark \"e-modesta.com\")\n- Vehicle: no\n- Food: no\n- Indoor: no (appears outdoor or in a building with tile wall)\n- Outdoor: ambiguous, but the tile wall suggests possibly outdoor or covered area\n- Artificial content: yes (watermark)\n\nLet me provide the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1363,
+          "completion_tokens": 652,
+          "total_tokens": 2015,
+          "cost": 0.00104106,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00104106,
+            "upstream_inference_prompt_cost": 0.00025866,
+            "upstream_inference_completions_cost": 0.0007824
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 333,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

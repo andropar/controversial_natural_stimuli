@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_24",
+    "stim_key": "architecture_24",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 24,
+    "file_index": 24,
+    "image_name": "image_0024.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0024.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior/bathroom\",\n  \"short_caption\": \"Tiled bathroom interior with glass-enclosed shower, toilet, and vanity\",\n  \"main_objects\": [\"glass shower enclosure\", \"toilet\", \"vanity\", \"sink\", \"framed artwork\", \"towel ring\", \"shower fixtures\"],\n  \"possible_interpretations\": [\"residential bathroom\", \"hotel bathroom\", \"upscale master bathroom\"],\n  \"uncertainty_notes\": \"Image is clear and unambiguous; residential vs commercial bathroom is the main interpretation choice\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318873-K6ZlxnB3XNHLjhopFKVj",
+        "object": "chat.completion",
+        "created": 1780318873,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior/bathroom\",\n  \"short_caption\": \"Tiled bathroom interior with glass-enclosed shower, toilet, and vanity\",\n  \"main_objects\": [\"glass shower enclosure\", \"toilet\", \"vanity\", \"sink\", \"framed artwork\", \"towel ring\", \"shower fixtures\"],\n  \"possible_interpretations\": [\"residential bathroom\", \"hotel bathroom\", \"upscale master bathroom\"],\n  \"uncertainty_notes\": \"Image is clear and unambiguous; residential vs commercial bathroom is the main interpretation choice\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a bathroom interior with:\n- A glass-enclosed shower with multiple shower heads/fixtures\n- Greenish/grey tiled walls and floor\n- A toilet (partially visible on the right)\n- A vanity/counter with what appears to be a sink (bottom right)\n- A framed picture/artwork on the right wall\n- A towel ring/hook on the wall\n- A light switch on the right wall\n- The shower has a built-in bench/seat\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clearly a bathroom, easily recognizable\n- ambiguity: 1 - Very clear what this is, no ambiguity\n- natural_photo_typicality: 4 - Looks like a typical interior photograph\n- visual_clutter: 3 - Moderate amount of detail, multiple objects but organized\n- object_centricity: 2 - No single dominant object, it's a scene\n- scene_centricity: 5 - Definitely a scene/place focused\n- caption_confidence: 5 - Easy to caption\n\nObject counts:\n- estimated_salient_object_count: multiple salient items (shower, toilet, sink, picture)\n- estimated_distinct_object_categories: 4-5 (shower, toilet, sink/vanity, framed art, light fixture)\n\nContains:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (toilet is partially cut off, sink is partially visible)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (shower, toilet, sink)\n\ndominant_content_type: \"scene\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"interior/bathroom\"\n\nshort_caption: \"A tiled bathroom with glass shower enclosure, toilet, and vanity\"\nmain_objects: [\"shower\", \"toilet\", \"vanity\", \"sink\", \"framed picture\", \"towel ring\"]\npossible_interpretations: [\"residential bathroom\", \"hotel bathroom\", \"master bathroom\"]\nuncertainty_notes: \"Image is clear and unambiguous\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a bathroom interior with:\n- A glass-enclosed shower with multiple shower heads/fixtures\n- Greenish/grey tiled walls and floor\n- A toilet (partially visible on the right)\n- A vanity/counter with what appears to be a sink (bottom right)\n- A framed picture/artwork on the right wall\n- A towel ring/hook on the wall\n- A light switch on the right wall\n- The shower has a built-in bench/seat\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clearly a bathroom, easily recognizable\n- ambiguity: 1 - Very clear what this is, no ambiguity\n- natural_photo_typicality: 4 - Looks like a typical interior photograph\n- visual_clutter: 3 - Moderate amount of detail, multiple objects but organized\n- object_centricity: 2 - No single dominant object, it's a scene\n- scene_centricity: 5 - Definitely a scene/place focused\n- caption_confidence: 5 - Easy to caption\n\nObject counts:\n- estimated_salient_object_count: multiple salient items (shower, toilet, sink, picture)\n- estimated_distinct_object_categories: 4-5 (shower, toilet, sink/vanity, framed art, light fixture)\n\nContains:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (toilet is partially cut off, sink is partially visible)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (shower, toilet, sink)\n\ndominant_content_type: \"scene\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"interior/bathroom\"\n\nshort_caption: \"A tiled bathroom with glass shower enclosure, toilet, and vanity\"\nmain_objects: [\"shower\", \"toilet\", \"vanity\", \"sink\", \"framed picture\", \"towel ring\"]\npossible_interpretations: [\"residential bathroom\", \"hotel bathroom\", \"master bathroom\"]\nuncertainty_notes: \"Image is clear and unambiguous\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 841,
+          "total_tokens": 2363,
+          "cost": 0.00131556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131556,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010092
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 537,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

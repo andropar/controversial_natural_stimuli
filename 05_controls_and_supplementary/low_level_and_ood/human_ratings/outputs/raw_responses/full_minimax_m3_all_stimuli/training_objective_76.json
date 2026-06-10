@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_76",
+    "stim_key": "training_objective_76",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 76,
+    "file_index": 76,
+    "image_name": "image_0076.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0076.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"petting_zoo_farm\",\n  \"short_caption\": \"Boy in red cap feeding a horned goat through a wire fence at a farm\",\n  \"main_objects\": [\"boy\", \"goat\", \"ladle\", \"blue cup\", \"wire fence\"],\n  \"possible_interpretations\": [\n    \"Child feeding a goat at a petting zoo\",\n    \"Boy offering food to a horned farm animal through a fence\",\n    \"Family farm visit with livestock interaction\"\n  ],\n  \"uncertainty_notes\": \"Animal may be a goat or sheep given horn shape; ladle contents unclear; setting is likely a petting zoo or hobby farm\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319359-T8yYirOCzsNmNbsezuTB",
+        "object": "chat.completion",
+        "created": 1780319359,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"petting_zoo_farm\",\n  \"short_caption\": \"Boy in red cap feeding a horned goat through a wire fence at a farm\",\n  \"main_objects\": [\"boy\", \"goat\", \"ladle\", \"blue cup\", \"wire fence\"],\n  \"possible_interpretations\": [\n    \"Child feeding a goat at a petting zoo\",\n    \"Boy offering food to a horned farm animal through a fence\",\n    \"Family farm visit with livestock interaction\"\n  ],\n  \"uncertainty_notes\": \"Animal may be a goat or sheep given horn shape; ladle contents unclear; setting is likely a petting zoo or hobby farm\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully and provide structured annotations.\n\nThe image shows:\n- A boy/young person on the left wearing a red cap and blue/teal t-shirt\n- He is holding a black ladle/spoon and a blue cup\n- He appears to be feeding an animal through a wire fence\n- On the right is a brown goat/sheep with curved horns\n- Background shows a farm/petting zoo setting with grass, fence, trees, and some farm buildings\n- Another animal is partially visible on the right edge\n\nLet me rate each dimension:\n- Recognizability: 5 - very clear what's happening\n- Ambiguity: 1 - single clear interpretation (feeding a goat at a petting zoo)\n- Natural photo typicality: 5 - looks like a typical natural photograph\n- Visual clutter: 3 - moderate, fence creates pattern, background has some elements\n- Object centricity: 2 - there are two main subjects (boy and goat), no single dominant object\n- Scene centricity: 3 - it's a scene but the interaction is the focus\n- Caption confidence: 5 - very confident\n\nCounts:\n- Salient objects: 2 (boy, goat) plus tools\n- Distinct categories: ~4 (person, goat, utensils, fence)\n\nBooleans:\n- contains_person: true\n- contains_face: true (partial, profile view)\n- contains_animal: true\n- contains_text: false\n- contains_vehicle: false\n- contains_food: true (possibly, the ladle might have food)\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (fence occludes both subjects, person partially cut off, second animal cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (boy and goat)\n\nDominant content: mixed (person and animal)\nImage style: natural_photo\nSemantic domain: petting_zoo / farm\n\nShort caption: \"Boy in red cap feeding a horned goat through a wire fence at a farm\"\n\nMain objects: boy, goat, ladle, cup, wire fence\n\nPossible interpretations:\n- Boy feeding a goat at a petting zoo\n- Child interacting with farm animal\n- Farm visit experience\n\nUncertainty notes: Goat species (could be sheep or goat - the curved horns suggest goat), exact setting (petting zoo vs farm)\n\nQuality flags: none major",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully and provide structured annotations.\n\nThe image shows:\n- A boy/young person on the left wearing a red cap and blue/teal t-shirt\n- He is holding a black ladle/spoon and a blue cup\n- He appears to be feeding an animal through a wire fence\n- On the right is a brown goat/sheep with curved horns\n- Background shows a farm/petting zoo setting with grass, fence, trees, and some farm buildings\n- Another animal is partially visible on the right edge\n\nLet me rate each dimension:\n- Recognizability: 5 - very clear what's happening\n- Ambiguity: 1 - single clear interpretation (feeding a goat at a petting zoo)\n- Natural photo typicality: 5 - looks like a typical natural photograph\n- Visual clutter: 3 - moderate, fence creates pattern, background has some elements\n- Object centricity: 2 - there are two main subjects (boy and goat), no single dominant object\n- Scene centricity: 3 - it's a scene but the interaction is the focus\n- Caption confidence: 5 - very confident\n\nCounts:\n- Salient objects: 2 (boy, goat) plus tools\n- Distinct categories: ~4 (person, goat, utensils, fence)\n\nBooleans:\n- contains_person: true\n- contains_face: true (partial, profile view)\n- contains_animal: true\n- contains_text: false\n- contains_vehicle: false\n- contains_food: true (possibly, the ladle might have food)\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (fence occludes both subjects, person partially cut off, second animal cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (boy and goat)\n\nDominant content: mixed (person and animal)\nImage style: natural_photo\nSemantic domain: petting_zoo / farm\n\nShort caption: \"Boy in red cap feeding a horned goat through a wire fence at a farm\"\n\nMain objects: boy, goat, ladle, cup, wire fence\n\nPossible interpretations:\n- Boy feeding a goat at a petting zoo\n- Child interacting with farm animal\n- Farm visit experience\n\nUncertainty notes: Goat species (could be sheep or goat - the curved horns suggest goat), exact setting (petting zoo vs farm)\n\nQuality flags: none major",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 892,
+          "total_tokens": 2206,
+          "cost": 0.00131436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131436,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.0010704
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 582,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

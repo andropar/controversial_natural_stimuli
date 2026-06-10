@@ -15,7 +15,7 @@ Usage:
     python 04_compute_rsa_large_benchmark.py --encoding-root ... --resume
 
 Outputs:
-    experiments/cstim_paper/02_rsa_scores/data/rsa_large_benchmark_scores.csv
+    01_brain_model_alignment/results/rsa_scores/rsa_large_benchmark_scores.csv
 """
 
 import argparse
@@ -50,7 +50,7 @@ from cstims.feature_extraction.universal_extractor import UniversalFeatureExtrac
 # All stimulus sets to evaluate every model on
 ALL_GROUPS = ["architecture", "dataset", "sota", "training_objective", "all_models", "vicco"]
 
-# model_list_large.csv location: rsa_based_selection/data/resources/model_list_large.csv
+# model_list_large.csv location: 00_stimulus_selection/resources/model_list_large.csv
 MODEL_LIST_LARGE = (
     Path(__file__).resolve().parents[3]
     / "00_stimulus_selection"

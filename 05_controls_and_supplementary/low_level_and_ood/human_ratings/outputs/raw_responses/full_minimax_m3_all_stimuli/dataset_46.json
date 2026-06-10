@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_46",
+    "stim_key": "dataset_46",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 46,
+    "file_index": 46,
+    "image_name": "image_0046.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0046.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 4, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"edited_photo\", \"semantic_domain\": \"lifestyle/home/gift\", \"short_caption\": \"A scented candle jar rests on a white linen pouch in warm sunlight.\", \"main_objects\": [\"scented candle jar\", \"linen pouch\", \"cushions\"], \"possible_interpretations\": [\"lifestyle product photo\", \"gift set display\", \"wellness or spa setting\", \"home decor flat lay\"], \"uncertainty_notes\": \"Cannot definitively determine if setting is indoor or outdoor; background cushions and rattan suggest patio or sunroom.\", \"quality_flags\": [\"shallow depth of field\", \"warm natural lighting\", \"styled product composition\"]}",
+      "response": {
+        "id": "gen-1780319016-t9I9pdzJYR6fItEUDSj0",
+        "object": "chat.completion",
+        "created": 1780319016,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 4, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"edited_photo\", \"semantic_domain\": \"lifestyle/home/gift\", \"short_caption\": \"A scented candle jar rests on a white linen pouch in warm sunlight.\", \"main_objects\": [\"scented candle jar\", \"linen pouch\", \"cushions\"], \"possible_interpretations\": [\"lifestyle product photo\", \"gift set display\", \"wellness or spa setting\", \"home decor flat lay\"], \"uncertainty_notes\": \"Cannot definitively determine if setting is indoor or outdoor; background cushions and rattan suggest patio or sunroom.\", \"quality_flags\": [\"shallow depth of field\", \"warm natural lighting\", \"styled product composition\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I see a small jar of what appears to be a scented candle (\"Pour L'Air - Nurturing Daydream\" - Scented Candle) sitting on what looks like a white linen bag or pouch with \"MAKING\" visible (likely part of a brand name). The background shows cushions/pillows, possibly on outdoor furniture like a daybed or sofa, with bright natural sunlight creating a warm, serene atmosphere.\n\nLet me go through the schema:\n\n- recognizability: The main objects are clearly recognizable - a candle jar and a bag. 4\n- ambiguity: The scene is fairly clear - it's a candle on a bag with cushions in background. Low ambiguity. 2\n- natural_photo_typicality: This looks like a styled lifestyle photograph. It's natural but clearly composed/edited. 3-4\n- visual_clutter: The image is quite minimal, mostly soft background. 2\n- object_centricity: The candle jar is the clear central object. 4\n- scene_centricity: It's more object-focused than scene-focused. 2\n- caption_confidence: Fairly confident. 4\n\n- estimated_salient_object_count: 2-3 (candle jar, bag, cushions in background)\n- estimated_distinct_object_categories: 3-4 (candle, fabric bag, cushions, possibly wicker/rattan)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (visible text on candle label and bag)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: possibly - could be indoor or outdoor\n- contains_outdoor_scene: possibly - hard to tell, could be patio\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: partial - cushions truncated\n- contains_multiple_main_objects: false - one main object (candle)\n\n- dominant_content_type: object\n- image_style: edited_photo (looks styled with warm light, could be natural photo too)\n- semantic_domain: lifestyle/home/gift\n\n- short_caption: \"A scented candle jar sits on a linen pouch in soft sunlight.\"\n- main_objects: [\"scented candle\", \"linen pouch\", \"cushions\"]\n- possible_interpretations: [\"lifestyle product photo\", \"gift set display\", \"spa/wellness setting\"]\n- uncertainty_notes: \"Hard to determine if indoor or outdoor setting due to shallow depth of field and soft background.\"\n- quality_flags: [\"shallow depth of field\", \"warm lighting\", \"styled composition\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I see a small jar of what appears to be a scented candle (\"Pour L'Air - Nurturing Daydream\" - Scented Candle) sitting on what looks like a white linen bag or pouch with \"MAKING\" visible (likely part of a brand name). The background shows cushions/pillows, possibly on outdoor furniture like a daybed or sofa, with bright natural sunlight creating a warm, serene atmosphere.\n\nLet me go through the schema:\n\n- recognizability: The main objects are clearly recognizable - a candle jar and a bag. 4\n- ambiguity: The scene is fairly clear - it's a candle on a bag with cushions in background. Low ambiguity. 2\n- natural_photo_typicality: This looks like a styled lifestyle photograph. It's natural but clearly composed/edited. 3-4\n- visual_clutter: The image is quite minimal, mostly soft background. 2\n- object_centricity: The candle jar is the clear central object. 4\n- scene_centricity: It's more object-focused than scene-focused. 2\n- caption_confidence: Fairly confident. 4\n\n- estimated_salient_object_count: 2-3 (candle jar, bag, cushions in background)\n- estimated_distinct_object_categories: 3-4 (candle, fabric bag, cushions, possibly wicker/rattan)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (visible text on candle label and bag)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: possibly - could be indoor or outdoor\n- contains_outdoor_scene: possibly - hard to tell, could be patio\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: partial - cushions truncated\n- contains_multiple_main_objects: false - one main object (candle)\n\n- dominant_content_type: object\n- image_style: edited_photo (looks styled with warm light, could be natural photo too)\n- semantic_domain: lifestyle/home/gift\n\n- short_caption: \"A scented candle jar sits on a linen pouch in soft sunlight.\"\n- main_objects: [\"scented candle\", \"linen pouch\", \"cushions\"]\n- possible_interpretations: [\"lifestyle product photo\", \"gift set display\", \"spa/wellness setting\"]\n- uncertainty_notes: \"Hard to determine if indoor or outdoor setting due to shallow depth of field and soft background.\"\n- quality_flags: [\"shallow depth of field\", \"warm lighting\", \"styled composition\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1363,
+          "completion_tokens": 879,
+          "total_tokens": 2242,
+          "cost": 0.00131346,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131346,
+            "upstream_inference_prompt_cost": 0.00025866,
+            "upstream_inference_completions_cost": 0.0010548
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 599,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

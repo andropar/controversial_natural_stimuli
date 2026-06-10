@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_112",
+    "stim_key": "vicco_112",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 112,
+    "file_index": 111,
+    "image_name": "shared_4rep_vicco_112.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_112.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"performance_recording\",\n  \"short_caption\": \"A person plays a keyboard on a dimly lit stage while a camera's display in the foreground records them.\",\n  \"main_objects\": [\"person\", \"keyboard\", \"camera display\", \"microphone\"],\n  \"possible_interpretations\": [\n    \"live music performance being recorded\",\n    \"camera screen showing a video recording of a musician\",\n    \"behind-the-scenes view of a video shoot\"\n  ],\n  \"uncertainty_notes\": \"The background is heavily blue-lit making details hard to discern; the person is somewhat out of focus.\",\n  \"quality_flags\": [\"low_light\", \"motion_blur\", \"color_cast\"]\n}",
+      "response": {
+        "id": "gen-1780319519-0jJYJBdyRWnSLZkpuDR4",
+        "object": "chat.completion",
+        "created": 1780319519,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"performance_recording\",\n  \"short_caption\": \"A person plays a keyboard on a dimly lit stage while a camera's display in the foreground records them.\",\n  \"main_objects\": [\"person\", \"keyboard\", \"camera display\", \"microphone\"],\n  \"possible_interpretations\": [\n    \"live music performance being recorded\",\n    \"camera screen showing a video recording of a musician\",\n    \"behind-the-scenes view of a video shoot\"\n  ],\n  \"uncertainty_notes\": \"The background is heavily blue-lit making details hard to discern; the person is somewhat out of focus.\",\n  \"quality_flags\": [\"low_light\", \"motion_blur\", \"color_cast\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see a scene that appears to be in a dark, blue-lit environment. There's a person in the background who appears to be playing a keyboard or musical instrument. In the foreground, there's a digital camera screen/display showing a recording of the same person. The camera display shows a timer \"00:00:10\" and recording indicators.\n\nLet me annotate this image according to the schema:\n\n- Recognizability: The image is quite clear - I can see a person, a keyboard, and a camera display. Score: 4\n- Ambiguity: Not much ambiguity - it's clearly a performance being recorded. Score: 1\n- Natural photo typicality: It looks like a natural photo, though it's a bit unusual due to the blue lighting. Score: 4\n- Visual clutter: There's the person, keyboard, camera display, and various UI elements. Score: 3\n- Object centricity: There's a main object (the camera display) but also a scene. Score: 3\n- Scene centricity: It's more of a scene (performance setting). Score: 4\n- Caption confidence: Pretty high confidence. Score: 4\n\nThe dominant content is a scene/mixed - there's a person performing with a keyboard and a camera recording them.\n\nContains:\n- Person: yes\n- Face: yes (blurred/in background)\n- Animal: no\n- Text: yes (timer display)\n- Vehicle: no\n- Food: no\n- Indoor scene: yes\n- Outdoor scene: no\n- Artificial/rendered: no\n- Occlusion/truncation: yes (person is somewhat obscured)\n- Unusual viewpoint: somewhat - it's shot from behind a camera\n- Multiple main objects: yes (person, keyboard, camera display)",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see a scene that appears to be in a dark, blue-lit environment. There's a person in the background who appears to be playing a keyboard or musical instrument. In the foreground, there's a digital camera screen/display showing a recording of the same person. The camera display shows a timer \"00:00:10\" and recording indicators.\n\nLet me annotate this image according to the schema:\n\n- Recognizability: The image is quite clear - I can see a person, a keyboard, and a camera display. Score: 4\n- Ambiguity: Not much ambiguity - it's clearly a performance being recorded. Score: 1\n- Natural photo typicality: It looks like a natural photo, though it's a bit unusual due to the blue lighting. Score: 4\n- Visual clutter: There's the person, keyboard, camera display, and various UI elements. Score: 3\n- Object centricity: There's a main object (the camera display) but also a scene. Score: 3\n- Scene centricity: It's more of a scene (performance setting). Score: 4\n- Caption confidence: Pretty high confidence. Score: 4\n\nThe dominant content is a scene/mixed - there's a person performing with a keyboard and a camera recording them.\n\nContains:\n- Person: yes\n- Face: yes (blurred/in background)\n- Animal: no\n- Text: yes (timer display)\n- Vehicle: no\n- Food: no\n- Indoor scene: yes\n- Outdoor scene: no\n- Artificial/rendered: no\n- Occlusion/truncation: yes (person is somewhat obscured)\n- Unusual viewpoint: somewhat - it's shot from behind a camera\n- Multiple main objects: yes (person, keyboard, camera display)",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 734,
+          "total_tokens": 2256,
+          "cost": 0.00118716,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00118716,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008808
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 407,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

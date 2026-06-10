@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_70",
+    "stim_key": "training_objective_70",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 70,
+    "file_index": 70,
+    "image_name": "image_0070.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0070.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"geometric object / 3d printing\",\n  \"short_caption\": \"Black and white dodecahedron labeled M8 sitting on a reflective surface\",\n  \"main_objects\": [\"dodecahedron\", \"M8 text label\"],\n  \"possible_interpretations\": [\"3D-printed dodecahedron\", \"decorative geometric ball\", \"puzzle or game piece\", \"soccer ball style model\"],\n  \"uncertainty_notes\": \"Background is heavily blurred making scene context unclear; exact purpose of the object is unknown.\",\n  \"quality_flags\": [\"shallow_depth_of_field\", \"blurred_background\"]\n}",
+      "response": {
+        "id": "gen-1780319346-YwJkmIx9DYgZvBnqH6h6",
+        "object": "chat.completion",
+        "created": 1780319346,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"geometric object / 3d printing\",\n  \"short_caption\": \"Black and white dodecahedron labeled M8 sitting on a reflective surface\",\n  \"main_objects\": [\"dodecahedron\", \"M8 text label\"],\n  \"possible_interpretations\": [\"3D-printed dodecahedron\", \"decorative geometric ball\", \"puzzle or game piece\", \"soccer ball style model\"],\n  \"uncertainty_notes\": \"Background is heavily blurred making scene context unclear; exact purpose of the object is unknown.\",\n  \"quality_flags\": [\"shallow_depth_of_field\", \"blurred_background\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a black and white 3D-printed dodecahedron or similar polyhedron with \"M8\" text on it, sitting on a reflective surface. The background appears blurred with some warm lighting and what might be plants or decorative elements.\n\nLet me analyze:\n- It's a soccer ball-like geometric object (dodecahedron shape, which has 12 pentagonal faces like a soccer ball pattern)\n- Has \"M8\" text/label on it\n- Appears to be 3D printed based on the layer lines visible\n- Black and white coloring\n- Sits on a reflective surface\n- Blurred indoor background with warm lighting\n\nAnnotations:\n- recognizability: 4 - clearly a geometric ball-like object\n- ambiguity: 2 - mostly clear what it is\n- natural_photo_typicality: 3 - it's a photo but of an unusual object\n- visual_clutter: 2 - one main object with simple background\n- object_centricity: 5 - single dominant object\n- scene_centricity: 1 - not a scene\n- caption_confidence: 4\n\n- estimated_salient_object_count: 1\n- estimated_distinct_object_categories: 1\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (M8)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (background looks indoor)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it's a real photo of a 3D printed object)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"3d printing\" or \"geometric object\"\n\n- short_caption: \"Black and white dodecahedron with M8 label on a reflective surface\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a black and white 3D-printed dodecahedron or similar polyhedron with \"M8\" text on it, sitting on a reflective surface. The background appears blurred with some warm lighting and what might be plants or decorative elements.\n\nLet me analyze:\n- It's a soccer ball-like geometric object (dodecahedron shape, which has 12 pentagonal faces like a soccer ball pattern)\n- Has \"M8\" text/label on it\n- Appears to be 3D printed based on the layer lines visible\n- Black and white coloring\n- Sits on a reflective surface\n- Blurred indoor background with warm lighting\n\nAnnotations:\n- recognizability: 4 - clearly a geometric ball-like object\n- ambiguity: 2 - mostly clear what it is\n- natural_photo_typicality: 3 - it's a photo but of an unusual object\n- visual_clutter: 2 - one main object with simple background\n- object_centricity: 5 - single dominant object\n- scene_centricity: 1 - not a scene\n- caption_confidence: 4\n\n- estimated_salient_object_count: 1\n- estimated_distinct_object_categories: 1\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (M8)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (background looks indoor)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it's a real photo of a 3D printed object)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"3d printing\" or \"geometric object\"\n\n- short_caption: \"Black and white dodecahedron with M8 label on a reflective surface\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 772,
+          "total_tokens": 2086,
+          "cost": 0.00117036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00117036,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.0009264
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 444,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

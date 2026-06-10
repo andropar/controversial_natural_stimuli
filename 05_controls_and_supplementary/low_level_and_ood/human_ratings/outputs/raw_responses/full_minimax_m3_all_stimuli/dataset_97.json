@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_97",
+    "stim_key": "dataset_97",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 97,
+    "file_index": 97,
+    "image_name": "image_0097.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0097.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor winter park\",\n  \"short_caption\": \"Stone monument in a snow-covered park with bare winter trees\",\n  \"main_objects\": [\"stone monument\", \"bare trees\", \"snow\", \"fence\"],\n  \"possible_interpretations\": [\"war memorial in a winter park\", \"historical monument in a town park\", \"memorial obelisk in a snowy public garden\"],\n  \"uncertainty_notes\": \"Inscription on monument not legible; exact location and significance unknown.\",\n  \"quality_flags\": []\n}\n```",
+      "response": {
+        "id": "gen-1780319069-YwA29smmwAp4NSR66Zw5",
+        "object": "chat.completion",
+        "created": 1780319069,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor winter park\",\n  \"short_caption\": \"Stone monument in a snow-covered park with bare winter trees\",\n  \"main_objects\": [\"stone monument\", \"bare trees\", \"snow\", \"fence\"],\n  \"possible_interpretations\": [\"war memorial in a winter park\", \"historical monument in a town park\", \"memorial obelisk in a snowy public garden\"],\n  \"uncertainty_notes\": \"Inscription on monument not legible; exact location and significance unknown.\",\n  \"quality_flags\": []\n}\n```",
+              "refusal": null,
+              "reasoning": "The image shows a winter scene with a stone monument/obelisk in the foreground, surrounded by snow-covered trees in what appears to be a park. The scene is dominated by the snowy landscape with bare trees, and the monument serves as a focal point. Let me analyze this carefully.\n\n- Recognizability: Clear winter park scene with monument - easily recognizable. 5\n- Ambiguity: Low ambiguity - it's clearly a winter park scene with a monument. 1\n- Natural_photo_typicality: Looks like a typical natural photograph of a snowy park. 4\n- Visual_clutter: Moderate - many trees and the monument, but not overly cluttered. 3\n- Object_centricity: The monument is a clear central object. 4\n- Scene_centricity: Also strongly a scene (winter park). 4\n- Caption_confidence: High confidence in describing the scene. 5\n\nEstimated salient objects: monument, trees - maybe 2-3\nDistinct object categories: monument, tree, snow - 3\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: possibly some text on monument but not clearly visible\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial or rendered content: no\nContains occlusion or truncation: no\nContains unusual viewpoint: no\nContains multiple main objects: no, monument is clearly the main\n\nDominant content: scene (with object element)\nImage style: natural_photo\nSemantic domain: outdoor/winter/park\n\nShort caption: \"Stone monument in a snow-covered park with bare winter trees\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a winter scene with a stone monument/obelisk in the foreground, surrounded by snow-covered trees in what appears to be a park. The scene is dominated by the snowy landscape with bare trees, and the monument serves as a focal point. Let me analyze this carefully.\n\n- Recognizability: Clear winter park scene with monument - easily recognizable. 5\n- Ambiguity: Low ambiguity - it's clearly a winter park scene with a monument. 1\n- Natural_photo_typicality: Looks like a typical natural photograph of a snowy park. 4\n- Visual_clutter: Moderate - many trees and the monument, but not overly cluttered. 3\n- Object_centricity: The monument is a clear central object. 4\n- Scene_centricity: Also strongly a scene (winter park). 4\n- Caption_confidence: High confidence in describing the scene. 5\n\nEstimated salient objects: monument, trees - maybe 2-3\nDistinct object categories: monument, tree, snow - 3\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: possibly some text on monument but not clearly visible\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial or rendered content: no\nContains occlusion or truncation: no\nContains unusual viewpoint: no\nContains multiple main objects: no, monument is clearly the main\n\nDominant content: scene (with object element)\nImage style: natural_photo\nSemantic domain: outdoor/winter/park\n\nShort caption: \"Stone monument in a snow-covered park with bare winter trees\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1027,
+          "completion_tokens": 677,
+          "total_tokens": 1704,
+          "cost": 0.00097026,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00097026,
+            "upstream_inference_prompt_cost": 0.00015786,
+            "upstream_inference_completions_cost": 0.0008124
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 398,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

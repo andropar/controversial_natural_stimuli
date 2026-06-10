@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_85",
+    "stim_key": "training_objective_85",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 85,
+    "file_index": 85,
+    "image_name": "image_0085.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0085.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"portrait_indoor_industrial\",\n  \"short_caption\": \"Two men in dress shirts embracing affectionately in an industrial warehouse\",\n  \"main_objects\": [\"men\", \"dress shirts\", \"warehouse interior\", \"metal trusses\", \"skylights\"],\n  \"possible_interpretations\": [\"romantic couple\", \"close friends or brothers\", \"posed portrait session\", \"candid affectionate moment\"],\n  \"uncertainty_notes\": \"Nature of the relationship between the two men is ambiguous; setting could be a warehouse, factory, or converted industrial space.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319367-W1hoFl2Cp3YxCUPU3Axf",
+        "object": "chat.completion",
+        "created": 1780319367,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"portrait_indoor_industrial\",\n  \"short_caption\": \"Two men in dress shirts embracing affectionately in an industrial warehouse\",\n  \"main_objects\": [\"men\", \"dress shirts\", \"warehouse interior\", \"metal trusses\", \"skylights\"],\n  \"possible_interpretations\": [\"romantic couple\", \"close friends or brothers\", \"posed portrait session\", \"candid affectionate moment\"],\n  \"uncertainty_notes\": \"Nature of the relationship between the two men is ambiguous; setting could be a warehouse, factory, or converted industrial space.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows two men in dress shirts embracing or standing close together, looking at each other affectionately, in what appears to be an industrial warehouse or large open building with a high ceiling featuring skylights and metal beams/trusses. The setting has a rustic, industrial feel with natural light coming through the roof.\n\nLet me analyze the image according to the schema:\n\n- Two men in light-colored dress shirts (one white, one light blue)\n- They appear to be in an intimate or affectionate moment\n- Setting: industrial warehouse with high ceiling, metal trusses, skylights\n- Natural light from above\n- The composition focuses on the two men\n- It's a photograph, likely professional\n\nLet me rate each:\n- recognizability: 5 - very clear what's happening\n- ambiguity: 2 - some ambiguity about relationship but scene is clear\n- natural_photo_typicality: 4 - looks like a natural photo, possibly posed but realistic\n- visual_clutter: 3 - some background detail but main subjects are clear\n- object_centricity: 3 - two people are the focus but it's also a scene\n- scene_centricity: 3 - the warehouse setting is prominent too\n- caption_confidence: 4 - confident about the general content\n\nEstimated salient object count: 2 (two people)\nEstimated distinct object categories: 3 (people, building structure, clothing)\n\nContains person: true\nContains face: true\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor scene: true (warehouse interior)\nContains outdoor scene: false\nContains artificial or rendered content: false\nContains occlusion or truncation: false\nContains unusual viewpoint: false (slightly low angle but not unusual)\nContains multiple main objects: true (two people as main subjects)\n\nDominant content type: person_face or person (two people)\nImage style: natural_photo\nSemantic domain: portrait/relationship/indoor industrial\n\nShort caption: \"Two men in dress shirts embracing affectionately in an industrial warehouse\"\n\nMain objects: men, dress shirts, warehouse interior, metal trusses, skylights\n\nPossible interpretations: \n- Two men in a romantic relationship\n- Two friends or brothers\n- A candid moment of affection\n- A posed portrait\n\nUncertainty: Relationship between the two men is not entirely clear",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows two men in dress shirts embracing or standing close together, looking at each other affectionately, in what appears to be an industrial warehouse or large open building with a high ceiling featuring skylights and metal beams/trusses. The setting has a rustic, industrial feel with natural light coming through the roof.\n\nLet me analyze the image according to the schema:\n\n- Two men in light-colored dress shirts (one white, one light blue)\n- They appear to be in an intimate or affectionate moment\n- Setting: industrial warehouse with high ceiling, metal trusses, skylights\n- Natural light from above\n- The composition focuses on the two men\n- It's a photograph, likely professional\n\nLet me rate each:\n- recognizability: 5 - very clear what's happening\n- ambiguity: 2 - some ambiguity about relationship but scene is clear\n- natural_photo_typicality: 4 - looks like a natural photo, possibly posed but realistic\n- visual_clutter: 3 - some background detail but main subjects are clear\n- object_centricity: 3 - two people are the focus but it's also a scene\n- scene_centricity: 3 - the warehouse setting is prominent too\n- caption_confidence: 4 - confident about the general content\n\nEstimated salient object count: 2 (two people)\nEstimated distinct object categories: 3 (people, building structure, clothing)\n\nContains person: true\nContains face: true\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor scene: true (warehouse interior)\nContains outdoor scene: false\nContains artificial or rendered content: false\nContains occlusion or truncation: false\nContains unusual viewpoint: false (slightly low angle but not unusual)\nContains multiple main objects: true (two people as main subjects)\n\nDominant content type: person_face or person (two people)\nImage style: natural_photo\nSemantic domain: portrait/relationship/indoor industrial\n\nShort caption: \"Two men in dress shirts embracing affectionately in an industrial warehouse\"\n\nMain objects: men, dress shirts, warehouse interior, metal trusses, skylights\n\nPossible interpretations: \n- Two men in a romantic relationship\n- Two friends or brothers\n- A candid moment of affection\n- A posed portrait\n\nUncertainty: Relationship between the two men is not entirely clear",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 831,
+          "total_tokens": 2353,
+          "cost": 0.00130356,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00130356,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009972
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 609,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

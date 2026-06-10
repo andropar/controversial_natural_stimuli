@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_233",
+    "stim_key": "vicco_233",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 233,
+    "file_index": 232,
+    "image_name": "shared_4rep_vicco_233.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_233.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife/zoo\",\n  \"short_caption\": \"Two lionesses resting on a rock in a lush zoo enclosure\",\n  \"main_objects\": [\"lioness\", \"rock\", \"trees\", \"vegetation\", \"wooden post\", \"boulders\"],\n  \"possible_interpretations\": [\n    \"Two lions in a zoo habitat\",\n    \"Lionesses resting on rocks in an enclosure\",\n    \"Big cats in a naturalistic zoo exhibit\",\n    \"Lions in an autumn landscape\"\n  ],\n  \"uncertainty_notes\": \"The setting appears to be a zoo enclosure based on the wooden post and constructed rock formation, but could potentially be a wildlife park. The lionesses' faces are not fully visible to the viewer.\",\n  \"quality_flags\": [\"animal_faces_not_facing_camera\", \"constructed_environment\"]\n}",
+      "response": {
+        "id": "gen-1780319658-qBAFbJkwIAEsZKlSqq2a",
+        "object": "chat.completion",
+        "created": 1780319658,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife/zoo\",\n  \"short_caption\": \"Two lionesses resting on a rock in a lush zoo enclosure\",\n  \"main_objects\": [\"lioness\", \"rock\", \"trees\", \"vegetation\", \"wooden post\", \"boulders\"],\n  \"possible_interpretations\": [\n    \"Two lions in a zoo habitat\",\n    \"Lionesses resting on rocks in an enclosure\",\n    \"Big cats in a naturalistic zoo exhibit\",\n    \"Lions in an autumn landscape\"\n  ],\n  \"uncertainty_notes\": \"The setting appears to be a zoo enclosure based on the wooden post and constructed rock formation, but could potentially be a wildlife park. The lionesses' faces are not fully visible to the viewer.\",\n  \"quality_flags\": [\"animal_faces_not_facing_camera\", \"constructed_environment\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows two lionesses resting on a large rock formation in what appears to be a zoo enclosure. The setting includes:\n- Two lionesses (tan/light brown colored cats) lying on a large gray rock\n- A cave-like opening in the rock formation on the left\n- Lush green vegetation, trees, and bushes in the background\n- Autumn-colored leaves on some trees\n- A wooden post/fence on the right side\n- Several large boulders scattered around\n- Green grass\n- This looks like a zoo habitat given the constructed rock elements and the wooden post\n\nLet me rate according to the schema:\n\n- recognizability: 4 - The main subjects (lionesses) are clearly recognizable\n- ambiguity: 2 - It's pretty clear what's happening (lions in a zoo enclosure)\n- natural_photo_typicality: 3 - It looks like a real photo but it's a constructed zoo environment\n- visual_clutter: 4 - Lots of competing elements (rocks, trees, vegetation, animals, post)\n- object_centricity: 3 - The lions are notable but the scene is also prominent\n- scene_centricity: 4 - This is mainly a place/scene with the animals as part of it\n- caption_confidence: 4 - Easy to caption\n\n- estimated_salient_object_count: 2 (the two lionesses)\n- estimated_distinct_object_categories: maybe 3-4 (lions, rocks, trees/vegetation, wooden post)\n\n- contains_person: false\n- contains_face: no visible faces clearly (animals in profile)\n- contains_animal: true\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (it's a real photo of a zoo, though the environment is constructed)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (two lionesses)\n\n- dominant_content_type: animal\n- image_style: natural_photo\n- semantic_domain: wildlife/zoo\n\nShort caption: \"Two lionesses resting on a rock in a zoo enclosure with lush vegetation.\"\n\nMain objects: [\"lioness\", \"rock\", \"trees\", \"vegetation\", \"wooden post\"]\n\nPossible interpretations:\n- \"Two lions in a zoo habitat\"\n- \"Lionesses resting in an enclosure\"\n- \"Wildlife in a zoo setting\"\n\nUncertainty notes: The zoo nature is implied by the wooden post and constructed rock formation, but it's not 100% certain it could be a wildlife park or similar.\n\nQuality flags: could note that faces are not clearly visible",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows two lionesses resting on a large rock formation in what appears to be a zoo enclosure. The setting includes:\n- Two lionesses (tan/light brown colored cats) lying on a large gray rock\n- A cave-like opening in the rock formation on the left\n- Lush green vegetation, trees, and bushes in the background\n- Autumn-colored leaves on some trees\n- A wooden post/fence on the right side\n- Several large boulders scattered around\n- Green grass\n- This looks like a zoo habitat given the constructed rock elements and the wooden post\n\nLet me rate according to the schema:\n\n- recognizability: 4 - The main subjects (lionesses) are clearly recognizable\n- ambiguity: 2 - It's pretty clear what's happening (lions in a zoo enclosure)\n- natural_photo_typicality: 3 - It looks like a real photo but it's a constructed zoo environment\n- visual_clutter: 4 - Lots of competing elements (rocks, trees, vegetation, animals, post)\n- object_centricity: 3 - The lions are notable but the scene is also prominent\n- scene_centricity: 4 - This is mainly a place/scene with the animals as part of it\n- caption_confidence: 4 - Easy to caption\n\n- estimated_salient_object_count: 2 (the two lionesses)\n- estimated_distinct_object_categories: maybe 3-4 (lions, rocks, trees/vegetation, wooden post)\n\n- contains_person: false\n- contains_face: no visible faces clearly (animals in profile)\n- contains_animal: true\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (it's a real photo of a zoo, though the environment is constructed)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (two lionesses)\n\n- dominant_content_type: animal\n- image_style: natural_photo\n- semantic_domain: wildlife/zoo\n\nShort caption: \"Two lionesses resting on a rock in a zoo enclosure with lush vegetation.\"\n\nMain objects: [\"lioness\", \"rock\", \"trees\", \"vegetation\", \"wooden post\"]\n\nPossible interpretations:\n- \"Two lions in a zoo habitat\"\n- \"Lionesses resting in an enclosure\"\n- \"Wildlife in a zoo setting\"\n\nUncertainty notes: The zoo nature is implied by the wooden post and constructed rock formation, but it's not 100% certain it could be a wildlife park or similar.\n\nQuality flags: could note that faces are not clearly visible",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 969,
+          "total_tokens": 2491,
+          "cost": 0.00146916,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00146916,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011628
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 646,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

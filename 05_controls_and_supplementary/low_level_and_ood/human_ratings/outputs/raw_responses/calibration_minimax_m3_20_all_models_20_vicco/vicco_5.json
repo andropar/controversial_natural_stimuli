@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_5",
+    "stim_key": "vicco_5",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 5,
+    "file_index": 4,
+    "image_name": "shared_4rep_vicco_005.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_005.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 12,\n  \"estimated_distinct_object_categories\": 9,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home/bedroom\",\n\n  \"short_caption\": \"Cluttered bedroom interior with bed, coat rack, chairs, desk, and shelving unit\",\n  \"main_objects\": [\"bed\", \"coat rack\", \"stacked chairs\", \"desk\", \"shelving unit\", \"mirror\", \"radiator\", \"chandelier\", \"hula hoop\"],\n  \"possible_interpretations\": [\"bedroom\", \"studio apartment\", \"shared living space\", \"dorm room\", \"bed-sitting room\"],\n  \"uncertainty_notes\": \"Some items partially obscured; exact purpose of some objects unclear; small figurines and items on shelves not individually identifiable\",\n  \"quality_flags\": [\"slight low-light noise\", \"framing cuts off objects at edges\", \"cluttered composition\"]\n}",
+      "response": {
+        "id": "gen-1780318192-wxhw3ry4JzSI7lq6T7oh",
+        "object": "chat.completion",
+        "created": 1780318192,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 12,\n  \"estimated_distinct_object_categories\": 9,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home/bedroom\",\n\n  \"short_caption\": \"Cluttered bedroom interior with bed, coat rack, chairs, desk, and shelving unit\",\n  \"main_objects\": [\"bed\", \"coat rack\", \"stacked chairs\", \"desk\", \"shelving unit\", \"mirror\", \"radiator\", \"chandelier\", \"hula hoop\"],\n  \"possible_interpretations\": [\"bedroom\", \"studio apartment\", \"shared living space\", \"dorm room\", \"bed-sitting room\"],\n  \"uncertainty_notes\": \"Some items partially obscured; exact purpose of some objects unclear; small figurines and items on shelves not individually identifiable\",\n  \"quality_flags\": [\"slight low-light noise\", \"framing cuts off objects at edges\", \"cluttered composition\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an indoor room, appears to be a bedroom or studio apartment. I can see:\n- A bed on the left with white/cream bedding\n- A chandelier at the top\n- Shelving unit with various items (figurines, magnets on a door/closet)\n- An air conditioning unit on the wall\n- A coat rack with a \"ROUTE\" sign and towels/cloths\n- Stacked chairs\n- A radiator\n- A mirror or screen\n- A desk with items on the right side (books, papers, a rose)\n- A hula hoop\n- A bag\n- Wooden floor\n- A chair/sofa in the bottom right with a knitted throw\n- Plants on the right\n\nThis is clearly an indoor scene with multiple objects - quite cluttered actually. There's no single dominant object - it's a room view.\n\nLet me rate:\n- recognizability: 4 - clearly recognizable as a room/bedroom\n- ambiguity: 2 - fairly clear what it is\n- natural_photo_typicality: 4 - looks like a typical phone photo of a room\n- visual_clutter: 4 - many objects, somewhat cluttered\n- object_centricity: 2 - no single dominant object\n- scene_centricity: 5 - it's primarily a scene/place\n- caption_confidence: 4 - can describe it well\n\nSalient objects: many - let me estimate around 10-15 salient items\nDistinct categories: bed, shelf, coat rack, chairs, desk, mirror, radiator, hula hoop, bag, chandelier, AC unit, plants - maybe 8-10 categories\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: yes (ROUTE sign, some text on items)\nContains vehicle: no\nContains food: no\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial/rendered: no\nContains occlusion/truncation: yes (items cut off at edges)\nContains unusual viewpoint: no\nContains multiple main objects: yes\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: home/bedroom/indoor\n\nShort caption: \"Cluttered bedroom interior with bed, coat rack, chairs, desk, and shelving\"\nMain objects: bed, coat rack, chairs, desk, shelf, mirror, radiator\nPossible interpretations: bedroom, studio apartment, shared living space\nUncertainty: some items hard to identify\nQuality flags: cluttered, some motion blur perhaps",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an indoor room, appears to be a bedroom or studio apartment. I can see:\n- A bed on the left with white/cream bedding\n- A chandelier at the top\n- Shelving unit with various items (figurines, magnets on a door/closet)\n- An air conditioning unit on the wall\n- A coat rack with a \"ROUTE\" sign and towels/cloths\n- Stacked chairs\n- A radiator\n- A mirror or screen\n- A desk with items on the right side (books, papers, a rose)\n- A hula hoop\n- A bag\n- Wooden floor\n- A chair/sofa in the bottom right with a knitted throw\n- Plants on the right\n\nThis is clearly an indoor scene with multiple objects - quite cluttered actually. There's no single dominant object - it's a room view.\n\nLet me rate:\n- recognizability: 4 - clearly recognizable as a room/bedroom\n- ambiguity: 2 - fairly clear what it is\n- natural_photo_typicality: 4 - looks like a typical phone photo of a room\n- visual_clutter: 4 - many objects, somewhat cluttered\n- object_centricity: 2 - no single dominant object\n- scene_centricity: 5 - it's primarily a scene/place\n- caption_confidence: 4 - can describe it well\n\nSalient objects: many - let me estimate around 10-15 salient items\nDistinct categories: bed, shelf, coat rack, chairs, desk, mirror, radiator, hula hoop, bag, chandelier, AC unit, plants - maybe 8-10 categories\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: yes (ROUTE sign, some text on items)\nContains vehicle: no\nContains food: no\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial/rendered: no\nContains occlusion/truncation: yes (items cut off at edges)\nContains unusual viewpoint: no\nContains multiple main objects: yes\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: home/bedroom/indoor\n\nShort caption: \"Cluttered bedroom interior with bed, coat rack, chairs, desk, and shelving\"\nMain objects: bed, coat rack, chairs, desk, shelf, mirror, radiator\nPossible interpretations: bedroom, studio apartment, shared living space\nUncertainty: some items hard to identify\nQuality flags: cluttered, some motion blur perhaps",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 913,
+          "total_tokens": 2435,
+          "cost": 0.00140196,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00140196,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010956
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 569,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

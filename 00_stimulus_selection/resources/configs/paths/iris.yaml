@@ -5,7 +5,7 @@ paths:
   preprocessed_dirs:
     raw: /SSD/datasets/cstims_laion_natural_subset_memmaps
     fitted: /SSD/datasets/cstims_laion_natural_subset_memmaps_encoded
-  model_list_csv: /home/jroth/rsa_based_selection/data/resources/model_list.csv
-  output_base: /home/jroth/rsa_based_selection/outputs/select_controversial_stimuli
-  encoding_root: /home/jroth/rsa_based_selection/experiments/encoding_fitting/results/encoding_20251222_141301
-  classifier_path: /home/jroth/rsa_based_selection/data/resources/laion_natural_img_clf.pkl
+  model_list_csv: /home/jroth/cstims/00_stimulus_selection/resources/model_list.csv
+  output_base: /home/jroth/cstims/00_stimulus_selection/results/selected_stimuli
+  encoding_root: /home/jroth/cstims/01_brain_model_alignment/results/encoding_models/encoding_20251222_141301
+  classifier_path: /home/jroth/cstims/00_stimulus_selection/resources/laion_natural_img_clf.pkl

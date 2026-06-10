@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_40",
+    "stim_key": "all_models_40",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 40,
+    "file_index": 40,
+    "image_name": "image_0040.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0040.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature/landscape\",\n  \"short_caption\": \"Sunlit slot canyon with smooth, wave-like sandstone walls in warm orange tones.\",\n  \"main_objects\": [\"sandstone walls\", \"slot canyon passage\", \"sunlight beam\"],\n  \"possible_interpretations\": [\"slot canyon such as Antelope Canyon\", \"narrow sandstone gorge\", \"eroded rock passage\"],\n  \"uncertainty_notes\": \"Specific canyon location unknown; colors may be slightly enhanced in post-processing.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318770-z5OCbuiBLvwFzndXip1N",
+        "object": "chat.completion",
+        "created": 1780318770,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature/landscape\",\n  \"short_caption\": \"Sunlit slot canyon with smooth, wave-like sandstone walls in warm orange tones.\",\n  \"main_objects\": [\"sandstone walls\", \"slot canyon passage\", \"sunlight beam\"],\n  \"possible_interpretations\": [\"slot canyon such as Antelope Canyon\", \"narrow sandstone gorge\", \"eroded rock passage\"],\n  \"uncertainty_notes\": \"Specific canyon location unknown; colors may be slightly enhanced in post-processing.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a narrow slot canyon with smooth, undulating sandstone walls in warm orange, red, and golden tones. Sunlight filters in from above, creating a dramatic contrast between the illuminated upper portion and the shadowed lower areas. The characteristic flowing, wave-like erosion patterns of the rock are very prominent. This looks like it could be Antelope Canyon or a similar slot canyon in the American Southwest.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - Very recognizable as a slot canyon\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 4 - Looks like a typical natural photograph, though slightly enhanced in colors possibly\n- visual_clutter: 1 - Very minimal, clean composition\n- object_centricity: 1 - No single object dominates\n- scene_centricity: 5 - This is clearly a scene/place\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1 (the canyon passage)\n- estimated_distinct_object_categories: 1 (sandstone walls)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (or maybe true since it's looking up through a narrow canyon?)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\" (possibly edited for color enhancement, but looks natural)\n- semantic_domain: \"nature/landscape\"\n\n- short_caption: \"Sunlit slot canyon with smooth, wave-like sandstone walls in warm orange tones.\"\n- main_objects: [\"sandstone walls\", \"slot canyon passage\", \"sunlight beam\"]\n- possible_interpretations: [\"slot canyon (e.g., Antelope Canyon)\", \"narrow rock gorge\", \"natural rock formation\"]\n- uncertainty_notes: \"Colors may be slightly enhanced; specific canyon location uncertain.\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a narrow slot canyon with smooth, undulating sandstone walls in warm orange, red, and golden tones. Sunlight filters in from above, creating a dramatic contrast between the illuminated upper portion and the shadowed lower areas. The characteristic flowing, wave-like erosion patterns of the rock are very prominent. This looks like it could be Antelope Canyon or a similar slot canyon in the American Southwest.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - Very recognizable as a slot canyon\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 4 - Looks like a typical natural photograph, though slightly enhanced in colors possibly\n- visual_clutter: 1 - Very minimal, clean composition\n- object_centricity: 1 - No single object dominates\n- scene_centricity: 5 - This is clearly a scene/place\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1 (the canyon passage)\n- estimated_distinct_object_categories: 1 (sandstone walls)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (or maybe true since it's looking up through a narrow canyon?)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\" (possibly edited for color enhancement, but looks natural)\n- semantic_domain: \"nature/landscape\"\n\n- short_caption: \"Sunlit slot canyon with smooth, wave-like sandstone walls in warm orange tones.\"\n- main_objects: [\"sandstone walls\", \"slot canyon passage\", \"sunlight beam\"]\n- possible_interpretations: [\"slot canyon (e.g., Antelope Canyon)\", \"narrow rock gorge\", \"natural rock formation\"]\n- uncertainty_notes: \"Colors may be slightly enhanced; specific canyon location uncertain.\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 792,
+          "total_tokens": 2314,
+          "cost": 0.00137964,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00137964,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009504
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 529,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

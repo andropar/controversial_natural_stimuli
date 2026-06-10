@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_16",
+    "stim_key": "architecture_16",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 16,
+    "file_index": 16,
+    "image_name": "image_0016.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0016.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"still life / tableware\",\n\n  \"short_caption\": \"Top-down view of white ceramic cups and a plate on a wooden table\",\n  \"main_objects\": [\"mug\", \"cup\", \"plate\", \"wooden table\"],\n  \"possible_interpretations\": [\n    \"tableware on a dining table\",\n    \"café or kitchen scene\",\n    \"product or stock photo of dishes\"\n  ],\n  \"uncertainty_notes\": \"Mug and cup may be the same category; the smaller vessel could be a teacup or espresso cup. No food, people, or context cues are visible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318863-Xh5TOu6IAJbeUlnqsQyk",
+        "object": "chat.completion",
+        "created": 1780318863,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"still life / tableware\",\n\n  \"short_caption\": \"Top-down view of white ceramic cups and a plate on a wooden table\",\n  \"main_objects\": [\"mug\", \"cup\", \"plate\", \"wooden table\"],\n  \"possible_interpretations\": [\n    \"tableware on a dining table\",\n    \"café or kitchen scene\",\n    \"product or stock photo of dishes\"\n  ],\n  \"uncertainty_notes\": \"Mug and cup may be the same category; the smaller vessel could be a teacup or espresso cup. No food, people, or context cues are visible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I see a top-down view of white ceramic tableware on a wooden surface. There's a large white mug/cup at the top with its handle visible, another smaller white cup at the bottom left, and a white plate/saucer on the right side. The wooden surface appears to be a table with visible grain pattern.\n\nLet me annotate this according to the schema:\n\n- Recognizability: Clear - white ceramic tableware on wooden surface. 5\n- Ambiguity: Low - the objects are clearly identifiable. 1\n- Natural_photo_typicality: Looks like a typical photograph. 4\n- Visual_clutter: Low - clean composition with few items. 2\n- Object_centricity: Multiple objects present, but they are clear. 3\n- Scene_centricity: It's a closeup of objects, not really a scene. 2\n- Caption_confidence: High - easy to describe. 5\n\nObjects: mug, cup, plate, wooden table\nSalient object count: 3\nDistinct categories: 3 (mug, cup, plate - or just 2: cup and plate)\n\nLet me think more carefully:\n- 2 cups/mugs (one large, one smaller) - these could be same category\n- 1 plate/saucer\n- Wooden table\n\nDistinct categories: maybe 2-3 (cups, plate)\n\nNo people, animals, text, vehicles, food visible.\nIndoor scene - yes\nOutdoor - no\nArtificial - yes, ceramic\nOcclusion - the cups are partially out of frame (truncation)\nUnusual viewpoint - it's top-down which is somewhat unusual\nMultiple main objects - yes\n\nDominant content type: object\nImage style: natural_photo\nSemantic domain: still life / tableware / home goods\n\nShort caption: \"Top-down view of white ceramic cups and a plate on a wooden table\"\n\nPossible interpretations: this is a top-down photo of tableware; could be a café setting; could be for a product photo",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I see a top-down view of white ceramic tableware on a wooden surface. There's a large white mug/cup at the top with its handle visible, another smaller white cup at the bottom left, and a white plate/saucer on the right side. The wooden surface appears to be a table with visible grain pattern.\n\nLet me annotate this according to the schema:\n\n- Recognizability: Clear - white ceramic tableware on wooden surface. 5\n- Ambiguity: Low - the objects are clearly identifiable. 1\n- Natural_photo_typicality: Looks like a typical photograph. 4\n- Visual_clutter: Low - clean composition with few items. 2\n- Object_centricity: Multiple objects present, but they are clear. 3\n- Scene_centricity: It's a closeup of objects, not really a scene. 2\n- Caption_confidence: High - easy to describe. 5\n\nObjects: mug, cup, plate, wooden table\nSalient object count: 3\nDistinct categories: 3 (mug, cup, plate - or just 2: cup and plate)\n\nLet me think more carefully:\n- 2 cups/mugs (one large, one smaller) - these could be same category\n- 1 plate/saucer\n- Wooden table\n\nDistinct categories: maybe 2-3 (cups, plate)\n\nNo people, animals, text, vehicles, food visible.\nIndoor scene - yes\nOutdoor - no\nArtificial - yes, ceramic\nOcclusion - the cups are partially out of frame (truncation)\nUnusual viewpoint - it's top-down which is somewhat unusual\nMultiple main objects - yes\n\nDominant content type: object\nImage style: natural_photo\nSemantic domain: still life / tableware / home goods\n\nShort caption: \"Top-down view of white ceramic cups and a plate on a wooden table\"\n\nPossible interpretations: this is a top-down photo of tableware; could be a café setting; could be for a product photo",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 780,
+          "total_tokens": 2302,
+          "cost": 0.00124236,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00124236,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000936
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 455,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

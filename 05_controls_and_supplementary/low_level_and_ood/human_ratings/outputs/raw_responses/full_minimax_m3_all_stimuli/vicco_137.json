@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_137",
+    "stim_key": "vicco_137",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 137,
+    "file_index": 136,
+    "image_name": "shared_4rep_vicco_137.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_137.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"beach sunset\",\n  \"short_caption\": \"Group of people silhouetted on a beach at sunset\",\n  \"main_objects\": [\"people\", \"beach\", \"ocean\", \"sunset sky\"],\n  \"possible_interpretations\": [\"group of friends at the beach\", \"family gathering at sunset\", \"people watching the sunset over the ocean\"],\n  \"uncertainty_notes\": \"Faces are not visible due to low light and silhouetting; exact number of people is approximate\",\n  \"quality_flags\": [\"low light\", \"grainy\", \"subjects in silhouette\"]\n}",
+      "response": {
+        "id": "gen-1780319546-bcI1OZOIhi6poAWKdi2K",
+        "object": "chat.completion",
+        "created": 1780319546,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"beach sunset\",\n  \"short_caption\": \"Group of people silhouetted on a beach at sunset\",\n  \"main_objects\": [\"people\", \"beach\", \"ocean\", \"sunset sky\"],\n  \"possible_interpretations\": [\"group of friends at the beach\", \"family gathering at sunset\", \"people watching the sunset over the ocean\"],\n  \"uncertainty_notes\": \"Faces are not visible due to low light and silhouetting; exact number of people is approximate\",\n  \"quality_flags\": [\"low light\", \"grainy\", \"subjects in silhouette\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a group of people standing on a beach at sunset/dusk. The sky has soft colors - pinks, oranges, blues. There appear to be silhouettes of several people, possibly 6-7 individuals. One person appears to be wearing white pants. The image is quite dark overall, with the people appearing as silhouettes against the lighter sky and water.\n\nLet me analyze each field:\n\n- recognizability: The scene is clearly a beach at sunset with people, so quite recognizable. 4\n- ambiguity: Low ambiguity - clearly a beach scene. 1\n- natural_photo_typicality: Looks like a natural photo, though slightly grainy/dark. 4\n- visual_clutter: The image is mostly empty (sky, water, sand) with a small group of people. Low clutter. 2\n- object_centricity: The people are small in the frame, not dominant. 2\n- scene_centricity: This is clearly a scene-focused image - beach, sky, sunset. 5\n- caption_confidence: A concise caption can easily capture this. 5\n\n- estimated_salient_object_count: 6-7 people\n- estimated_distinct_object_categories: 1-2 (people, maybe clothing)\n\n- contains_person: true\n- contains_face: false (silhouettes, can't see faces)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (group of people)\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"beach/sunset\"\n\n- short_caption: \"Group of people silhouetted on a beach at sunset\"\n- main_objects: [\"people\", \"beach\", \"ocean\", \"sky\"]\n- possible_interpretations: [\"group of friends at beach\", \"family gathering at sunset\", \"people watching the sunset\"]\n- uncertainty_notes: \"Faces are not visible due to low light; exact number of people is approximate\"\n- quality_flags: [\"low light\", \"grainy\", \"subjects in silhouette\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a group of people standing on a beach at sunset/dusk. The sky has soft colors - pinks, oranges, blues. There appear to be silhouettes of several people, possibly 6-7 individuals. One person appears to be wearing white pants. The image is quite dark overall, with the people appearing as silhouettes against the lighter sky and water.\n\nLet me analyze each field:\n\n- recognizability: The scene is clearly a beach at sunset with people, so quite recognizable. 4\n- ambiguity: Low ambiguity - clearly a beach scene. 1\n- natural_photo_typicality: Looks like a natural photo, though slightly grainy/dark. 4\n- visual_clutter: The image is mostly empty (sky, water, sand) with a small group of people. Low clutter. 2\n- object_centricity: The people are small in the frame, not dominant. 2\n- scene_centricity: This is clearly a scene-focused image - beach, sky, sunset. 5\n- caption_confidence: A concise caption can easily capture this. 5\n\n- estimated_salient_object_count: 6-7 people\n- estimated_distinct_object_categories: 1-2 (people, maybe clothing)\n\n- contains_person: true\n- contains_face: false (silhouettes, can't see faces)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (group of people)\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"beach/sunset\"\n\n- short_caption: \"Group of people silhouetted on a beach at sunset\"\n- main_objects: [\"people\", \"beach\", \"ocean\", \"sky\"]\n- possible_interpretations: [\"group of friends at beach\", \"family gathering at sunset\", \"people watching the sunset\"]\n- uncertainty_notes: \"Faces are not visible due to low light; exact number of people is approximate\"\n- quality_flags: [\"low light\", \"grainy\", \"subjects in silhouette\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 839,
+          "total_tokens": 2361,
+          "cost": 0.00131316,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131316,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010068
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 524,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

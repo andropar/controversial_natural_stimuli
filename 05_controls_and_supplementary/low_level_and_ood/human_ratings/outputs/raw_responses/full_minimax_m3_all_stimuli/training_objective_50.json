@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_50",
+    "stim_key": "training_objective_50",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 50,
+    "file_index": 50,
+    "image_name": "image_0050.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0050.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"domestic family\",\n  \"short_caption\": \"Black and white photo of a mother leaning over her baby lying on a bed\",\n  \"main_objects\": [\"woman\", \"baby\", \"bed\", \"blanket\", \"pillow\", \"nightstand\"],\n  \"possible_interpretations\": [\"mother caring for baby on bed\", \"parent tending to infant\", \"tender domestic moment\"],\n  \"uncertainty_notes\": \"Image is monochrome; background objects on nightstand are indistinct but appear to include a small figurine and containers.\",\n  \"quality_flags\": [\"black_and_white\", \"soft_focus_background\"]\n}",
+      "response": {
+        "id": "gen-1780319317-H4fbUTUa9hGmh0aFlXtl",
+        "object": "chat.completion",
+        "created": 1780319317,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"domestic family\",\n  \"short_caption\": \"Black and white photo of a mother leaning over her baby lying on a bed\",\n  \"main_objects\": [\"woman\", \"baby\", \"bed\", \"blanket\", \"pillow\", \"nightstand\"],\n  \"possible_interpretations\": [\"mother caring for baby on bed\", \"parent tending to infant\", \"tender domestic moment\"],\n  \"uncertainty_notes\": \"Image is monochrome; background objects on nightstand are indistinct but appear to include a small figurine and containers.\",\n  \"quality_flags\": [\"black_and_white\", \"soft_focus_background\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully and provide structured annotations.\n\nThe image is a black and white photograph showing a woman leaning over a baby lying on a bed. The woman has long dark hair and is wearing a dark long-sleeved shirt. She's looking down at the baby with what appears to be a gentle expression. The baby is lying on a white blanket/bedding, wearing a diaper. In the background, there's a pillow on the bed and what appears to be a nightstand with some items (possibly a piggy bank, some containers). The setting appears to be a bedroom.\n\nLet me assess each dimension:\n\n- recognizability: Very clear scene - mother with baby on bed. 5\n- ambiguity: Low ambiguity - clear domestic scene. 1\n- natural_photo_typicality: Looks like a typical natural photograph (though B&W). 4\n- visual_clutter: Moderate - some items in background but main focus is clear. 2\n- object_centricity: There are two main subjects (person and baby). 3\n- scene_centricity: It's a domestic scene/setting. 3\n- caption_confidence: High confidence in describing it. 5\n\nEstimated salient object count: 2 (woman, baby)\nEstimated distinct object categories: 3-4 (person, baby, bed, nightstand items)\n\ncontains_person: true\ncontains_face: true (woman's face visible, baby's face partially visible)\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false (the woman isn't truncated significantly, the baby's feet are visible)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true (mother and baby)\n\ndominant_content_type: \"person_face\" or \"mixed\" - it has a person and a baby. Since both are humans, I'd say \"person_face\" but there are two people. Maybe \"mixed\" since it includes scene elements.\n\nActually, since the main content is people (mother and baby), I'll go with \"person_face\" or just categorize based on the primary focus. The mother is the dominant subject in terms of size/position. Let me say \"person_face\" since the main subject is a person.\n\nimage_style: \"edited_photo\" - it's black and white which suggests some editing\nsemantic_domain: \"domestic\" or \"family\" or \"lifestyle\"\n\nshort_caption: \"Black and white photo of a mother leaning over her baby on a bed\"\n\nmain_objects: [\"woman\", \"baby\", \"bed\", \"blanket\", \"pillow\", \"nightstand\"]\n\npossible_interpretations: [\"mother caring for baby on bed\", \"parent changing baby\", \"tender moment between parent and child\"]\n\nuncertainty_notes: \"Image is black and white, may suggest artistic editing. Background items on nightstand are somewhat indistinct.\"\n\nquality_flags: [\"black_and_white\", \"low_contrast_in_background\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully and provide structured annotations.\n\nThe image is a black and white photograph showing a woman leaning over a baby lying on a bed. The woman has long dark hair and is wearing a dark long-sleeved shirt. She's looking down at the baby with what appears to be a gentle expression. The baby is lying on a white blanket/bedding, wearing a diaper. In the background, there's a pillow on the bed and what appears to be a nightstand with some items (possibly a piggy bank, some containers). The setting appears to be a bedroom.\n\nLet me assess each dimension:\n\n- recognizability: Very clear scene - mother with baby on bed. 5\n- ambiguity: Low ambiguity - clear domestic scene. 1\n- natural_photo_typicality: Looks like a typical natural photograph (though B&W). 4\n- visual_clutter: Moderate - some items in background but main focus is clear. 2\n- object_centricity: There are two main subjects (person and baby). 3\n- scene_centricity: It's a domestic scene/setting. 3\n- caption_confidence: High confidence in describing it. 5\n\nEstimated salient object count: 2 (woman, baby)\nEstimated distinct object categories: 3-4 (person, baby, bed, nightstand items)\n\ncontains_person: true\ncontains_face: true (woman's face visible, baby's face partially visible)\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false (the woman isn't truncated significantly, the baby's feet are visible)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true (mother and baby)\n\ndominant_content_type: \"person_face\" or \"mixed\" - it has a person and a baby. Since both are humans, I'd say \"person_face\" but there are two people. Maybe \"mixed\" since it includes scene elements.\n\nActually, since the main content is people (mother and baby), I'll go with \"person_face\" or just categorize based on the primary focus. The mother is the dominant subject in terms of size/position. Let me say \"person_face\" since the main subject is a person.\n\nimage_style: \"edited_photo\" - it's black and white which suggests some editing\nsemantic_domain: \"domestic\" or \"family\" or \"lifestyle\"\n\nshort_caption: \"Black and white photo of a mother leaning over her baby on a bed\"\n\nmain_objects: [\"woman\", \"baby\", \"bed\", \"blanket\", \"pillow\", \"nightstand\"]\n\npossible_interpretations: [\"mother caring for baby on bed\", \"parent changing baby\", \"tender moment between parent and child\"]\n\nuncertainty_notes: \"Image is black and white, may suggest artistic editing. Background items on nightstand are somewhat indistinct.\"\n\nquality_flags: [\"black_and_white\", \"low_contrast_in_background\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 995,
+          "total_tokens": 2517,
+          "cost": 0.00150036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00150036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.001194
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 721,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

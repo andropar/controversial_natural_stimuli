@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_234",
+    "stim_key": "vicco_234",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 234,
+    "file_index": 233,
+    "image_name": "shared_4rep_vicco_234.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_234.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 3,\n  \"ambiguity\": 4,\n  \"natural_photo_typicality\": 1,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 2,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"text_document\",\n  \"image_style\": \"illustration_or_render\",\n  \"semantic_domain\": \"diagram\",\n  \"short_caption\": \"Hand-drawn flowchart with labeled boxes, arrows, and annotations on paper\",\n  \"main_objects\": [\"rectangular boxes\", \"arrows\", \"handwritten text\", \"circular sketch\", \"dollar sign\"],\n  \"possible_interpretations\": [\n    \"technical diagram or schematic\",\n    \"mind map or brainstorming sketch\",\n    \"flowchart showing process flow\",\n    \"circuit or system diagram\",\n    \"random doodles on notebook page\"\n  ],\n  \"uncertainty_notes\": \"Hand-drawn content is partially legible; exact meaning of annotations and symbols is unclear\",\n  \"quality_flags\": [\"handwritten\", \"partially_legible\", \"non_photographic\", \"tilted_perspective\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319658-6Y6jkabR0aECGAkwZ3F2",
+        "object": "chat.completion",
+        "created": 1780319658,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 3,\n  \"ambiguity\": 4,\n  \"natural_photo_typicality\": 1,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 2,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"text_document\",\n  \"image_style\": \"illustration_or_render\",\n  \"semantic_domain\": \"diagram\",\n  \"short_caption\": \"Hand-drawn flowchart with labeled boxes, arrows, and annotations on paper\",\n  \"main_objects\": [\"rectangular boxes\", \"arrows\", \"handwritten text\", \"circular sketch\", \"dollar sign\"],\n  \"possible_interpretations\": [\n    \"technical diagram or schematic\",\n    \"mind map or brainstorming sketch\",\n    \"flowchart showing process flow\",\n    \"circuit or system diagram\",\n    \"random doodles on notebook page\"\n  ],\n  \"uncertainty_notes\": \"Hand-drawn content is partially legible; exact meaning of annotations and symbols is unclear\",\n  \"quality_flags\": [\"handwritten\", \"partially_legible\", \"non_photographic\", \"tilted_perspective\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It appears to be a hand-drawn sketch on paper, showing what looks like a diagram or flowchart with various boxes, arrows, numbers, and annotations. I can see:\n\n- Several rectangular boxes with numbers/characters inside them\n- Arrows connecting various elements\n- What appears to be a large circle or arc in the upper left\n- Some text/labels around the boxes\n- A \"X\" symbol in one box\n- Numbers like \"3B\", \"2S\", \"2X\" visible\n- Some scribbled text\n\nThis is clearly a hand-drawn diagram/flowchart, not a natural photograph. It's an illustration/render type content.\n\nLet me provide the annotations:\n\n- Recognizability: It's somewhat hard to read but recognizable as a diagram/schematic - maybe 3\n- Ambiguity: High ambiguity since the content is unclear - 4\n- Natural photo typicality: Very low, this is a hand-drawn sketch - 1\n- Visual clutter: Moderate to high clutter with many elements - 3\n- Object centricity: No clear single object - 2\n- Scene centricity: Not really a scene - 1\n- Caption confidence: Low confidence in a concise caption - 2\n\nContains:\n- No person, face, animal, vehicle, food\n- Contains text (numbers and labels)\n- Not indoor/outdoor scene\n- Contains artificial/rendered content (it's a drawing)\n- No occlusion or unusual viewpoint per se\n- Multiple main objects/elements\n\nDominant content: text_document or mixed\nImage style: illustration_or_render\nSemantic domain: diagram/schematic\n\nLet me finalize my answer.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It appears to be a hand-drawn sketch on paper, showing what looks like a diagram or flowchart with various boxes, arrows, numbers, and annotations. I can see:\n\n- Several rectangular boxes with numbers/characters inside them\n- Arrows connecting various elements\n- What appears to be a large circle or arc in the upper left\n- Some text/labels around the boxes\n- A \"X\" symbol in one box\n- Numbers like \"3B\", \"2S\", \"2X\" visible\n- Some scribbled text\n\nThis is clearly a hand-drawn diagram/flowchart, not a natural photograph. It's an illustration/render type content.\n\nLet me provide the annotations:\n\n- Recognizability: It's somewhat hard to read but recognizable as a diagram/schematic - maybe 3\n- Ambiguity: High ambiguity since the content is unclear - 4\n- Natural photo typicality: Very low, this is a hand-drawn sketch - 1\n- Visual clutter: Moderate to high clutter with many elements - 3\n- Object centricity: No clear single object - 2\n- Scene centricity: Not really a scene - 1\n- Caption confidence: Low confidence in a concise caption - 2\n\nContains:\n- No person, face, animal, vehicle, food\n- Contains text (numbers and labels)\n- Not indoor/outdoor scene\n- Contains artificial/rendered content (it's a drawing)\n- No occlusion or unusual viewpoint per se\n- Multiple main objects/elements\n\nDominant content: text_document or mixed\nImage style: illustration_or_render\nSemantic domain: diagram/schematic\n\nLet me finalize my answer.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 729,
+          "total_tokens": 2251,
+          "cost": 0.00118116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00118116,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008748
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 393,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

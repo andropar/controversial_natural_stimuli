@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_170",
+    "stim_key": "vicco_170",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 170,
+    "file_index": 169,
+    "image_name": "shared_4rep_vicco_170.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_170.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_street_art\",\n  \"short_caption\": \"A long wall covered in colorful street art murals beside a white apartment building under a cloudy sky.\",\n  \"main_objects\": [\"mural wall\", \"apartment building\", \"cell tower\", \"trees\", \"pavement\", \"painted car\", \"painted figure\"],\n  \"possible_interpretations\": [\n    \"street art mural in an urban parking area\",\n    \"decorated construction barrier in a city\",\n    \"public art installation along a street\"\n  ],\n  \"uncertainty_notes\": \"Difficult to determine exact location; the mural depicts vehicles and figures but they are painted, not real objects in the scene.\",\n  \"quality_flags\": [\"slight lens distortion\", \"high contrast between dark road and bright wall\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319588-9PaS4WvqY2i9aWnISw8U",
+        "object": "chat.completion",
+        "created": 1780319588,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_street_art\",\n  \"short_caption\": \"A long wall covered in colorful street art murals beside a white apartment building under a cloudy sky.\",\n  \"main_objects\": [\"mural wall\", \"apartment building\", \"cell tower\", \"trees\", \"pavement\", \"painted car\", \"painted figure\"],\n  \"possible_interpretations\": [\n    \"street art mural in an urban parking area\",\n    \"decorated construction barrier in a city\",\n    \"public art installation along a street\"\n  ],\n  \"uncertainty_notes\": \"Difficult to determine exact location; the mural depicts vehicles and figures but they are painted, not real objects in the scene.\",\n  \"quality_flags\": [\"slight lens distortion\", \"high contrast between dark road and bright wall\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an outdoor scene featuring:\n- A long wall covered in colorful street art/murals\n- The murals include various designs: a figure in a safety vest, a green car, a pink/red truck, graffiti-style elements\n- Behind the wall, there's a large white multi-story building (appears to be an apartment or institutional building) with many windows\n- A cell tower/antenna on top of the building\n- Trees on the right side\n- An asphalt road/parking area in the foreground with scattered leaves and puddles\n- Cloudy sky\n\nLet me rate the dimensions:\n- recognizability: 4 - clearly recognizable as a wall with murals and a building\n- ambiguity: 2 - fairly clear interpretation\n- natural_photo_typicality: 4 - looks like a typical photograph\n- visual_clutter: 4 - lots of competing elements in the mural and scene\n- object_centricity: 2 - no single dominant object, more of a scene\n- scene_centricity: 4 - clearly a place/scene\n- caption_confidence: 4 - confident in describing it\n\nLet me count objects and categories:\n- Wall with murals\n- Building\n- Trees\n- Road/asphalt\n- Cell tower\n- Various mural elements (figure, cars)\n\nCategories: wall art, building, trees, road, vehicle (in mural), person figure (in mural)\n\nContains: artificial content (mural is painted but depicts realistic elements), no actual people, no faces, no animals, no text visible, no actual vehicles, no food, outdoor scene, no occlusion, normal viewpoint, multiple main objects.\n\nDominant content: This is a mix - could be scene or object. The mural is prominent. I'd say \"scene\" with murals as main feature.\n\nImage style: natural_photo (it's a photograph of a scene that includes art)\n\nSemantic domain: urban_street_art or outdoor_street\n\nLet me construct the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an outdoor scene featuring:\n- A long wall covered in colorful street art/murals\n- The murals include various designs: a figure in a safety vest, a green car, a pink/red truck, graffiti-style elements\n- Behind the wall, there's a large white multi-story building (appears to be an apartment or institutional building) with many windows\n- A cell tower/antenna on top of the building\n- Trees on the right side\n- An asphalt road/parking area in the foreground with scattered leaves and puddles\n- Cloudy sky\n\nLet me rate the dimensions:\n- recognizability: 4 - clearly recognizable as a wall with murals and a building\n- ambiguity: 2 - fairly clear interpretation\n- natural_photo_typicality: 4 - looks like a typical photograph\n- visual_clutter: 4 - lots of competing elements in the mural and scene\n- object_centricity: 2 - no single dominant object, more of a scene\n- scene_centricity: 4 - clearly a place/scene\n- caption_confidence: 4 - confident in describing it\n\nLet me count objects and categories:\n- Wall with murals\n- Building\n- Trees\n- Road/asphalt\n- Cell tower\n- Various mural elements (figure, cars)\n\nCategories: wall art, building, trees, road, vehicle (in mural), person figure (in mural)\n\nContains: artificial content (mural is painted but depicts realistic elements), no actual people, no faces, no animals, no text visible, no actual vehicles, no food, outdoor scene, no occlusion, normal viewpoint, multiple main objects.\n\nDominant content: This is a mix - could be scene or object. The mural is prominent. I'd say \"scene\" with murals as main feature.\n\nImage style: natural_photo (it's a photograph of a scene that includes art)\n\nSemantic domain: urban_street_art or outdoor_street\n\nLet me construct the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 801,
+          "total_tokens": 2323,
+          "cost": 0.00126756,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126756,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009612
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 472,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_245",
+    "stim_key": "vicco_245",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 245,
+    "file_index": 244,
+    "image_name": "shared_4rep_vicco_245.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_245.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban storefront\",\n\n  \"short_caption\": \"Pink neon Europreisbrecher sign on a nighttime storefront\",\n  \"main_objects\": [\"neon sign\", \"storefront\", \"car\", \"windows\"],\n  \"possible_interpretations\": [\"discount shop\", \"bar\", \"nightclub\", \"retail store\", \"convenience store\"],\n  \"uncertainty_notes\": \"Interior details through window are partially obscured; car at bottom is truncated.\",\n  \"quality_flags\": [\"nighttime\", \"neon_glare\", \"low_light_upper_facade\"]\n}",
+      "response": {
+        "id": "gen-1780319671-IXtO643Dc4IgZsDSAkOd",
+        "object": "chat.completion",
+        "created": 1780319671,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban storefront\",\n\n  \"short_caption\": \"Pink neon Europreisbrecher sign on a nighttime storefront\",\n  \"main_objects\": [\"neon sign\", \"storefront\", \"car\", \"windows\"],\n  \"possible_interpretations\": [\"discount shop\", \"bar\", \"nightclub\", \"retail store\", \"convenience store\"],\n  \"uncertainty_notes\": \"Interior details through window are partially obscured; car at bottom is truncated.\",\n  \"quality_flags\": [\"nighttime\", \"neon_glare\", \"low_light_upper_facade\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a storefront at night with a bright pink/magenta neon sign reading \"EUROPREISBRECHER\" (German for \"European price breaker\" - likely a discount store). Above the sign is a building with windows. Below/inside the store you can see some interior elements and what appears to be a car in the foreground. The image is taken at night, giving it a dark background with the neon sign being the most prominent feature.\n\nLet me annotate this carefully:\n\n- recognizability: The main content (neon sign on storefront) is clearly recognizable. 4-5.\n- ambiguity: Not very ambiguous - it's clearly a storefront with a neon sign. 1-2.\n- natural_photo_typicality: Looks like a typical nighttime street photo. 4.\n- visual_clutter: Moderate - the sign, windows, store interior, car. 3.\n- object_centricity: The neon sign is the central object. 4.\n- scene_centricity: It's a scene (storefront at night). Could be either. Maybe 3.\n- caption_confidence: High confidence for a brief caption. 5.\n\nEstimates:\n- salient objects: sign, storefront, windows, car - maybe 3-4\n- distinct categories: sign, building, car - 3\n\nContains text: Yes (EUROPREISBRECHER)\nContains vehicle: Yes (car at bottom)\nIndoor/outdoor: outdoor scene\nNo people/faces/animals visible\nNo food\nNo unusual viewpoint\n\nDominant content: scene or text_document? The neon sign is text but it's in a scene context. I'd say scene.\n\nImage style: natural_photo\n\nSemantic domain: storefront, retail, urban\n\nShort caption: \"Pink neon Europreisbrecher sign on a nighttime storefront\"\n\nMain objects: neon sign, storefront, car, windows\n\nPossible interpretations: discount store, bar, shop, nightclub\n\nQuality flags: nighttime, low light on building facade, neon glare",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a storefront at night with a bright pink/magenta neon sign reading \"EUROPREISBRECHER\" (German for \"European price breaker\" - likely a discount store). Above the sign is a building with windows. Below/inside the store you can see some interior elements and what appears to be a car in the foreground. The image is taken at night, giving it a dark background with the neon sign being the most prominent feature.\n\nLet me annotate this carefully:\n\n- recognizability: The main content (neon sign on storefront) is clearly recognizable. 4-5.\n- ambiguity: Not very ambiguous - it's clearly a storefront with a neon sign. 1-2.\n- natural_photo_typicality: Looks like a typical nighttime street photo. 4.\n- visual_clutter: Moderate - the sign, windows, store interior, car. 3.\n- object_centricity: The neon sign is the central object. 4.\n- scene_centricity: It's a scene (storefront at night). Could be either. Maybe 3.\n- caption_confidence: High confidence for a brief caption. 5.\n\nEstimates:\n- salient objects: sign, storefront, windows, car - maybe 3-4\n- distinct categories: sign, building, car - 3\n\nContains text: Yes (EUROPREISBRECHER)\nContains vehicle: Yes (car at bottom)\nIndoor/outdoor: outdoor scene\nNo people/faces/animals visible\nNo food\nNo unusual viewpoint\n\nDominant content: scene or text_document? The neon sign is text but it's in a scene context. I'd say scene.\n\nImage style: natural_photo\n\nSemantic domain: storefront, retail, urban\n\nShort caption: \"Pink neon Europreisbrecher sign on a nighttime storefront\"\n\nMain objects: neon sign, storefront, car, windows\n\nPossible interpretations: discount store, bar, shop, nightclub\n\nQuality flags: nighttime, low light on building facade, neon glare",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 752,
+          "total_tokens": 2274,
+          "cost": 0.00120876,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00120876,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009024
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 456,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

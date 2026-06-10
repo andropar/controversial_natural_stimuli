@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_61",
+    "stim_key": "sota_61",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 61,
+    "file_index": 61,
+    "image_name": "image_0061.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0061.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"street_art\",\n\n  \"short_caption\": \"Stencil street art of a suited man using a stethoscope on a large red painted heart on a brick wall.\",\n  \"main_objects\": [\"brick wall\", \"stencil figure of a man in a suit\", \"red heart outline\", \"stethoscope\"],\n  \"possible_interpretations\": [\n    \"Banksy-style street art commenting on healthcare\",\n    \"Stencil graffiti art on a brick wall\",\n    \"Artistic depiction of a doctor examining the heart of love\"\n  ],\n  \"uncertainty_notes\": \"The specific artist (likely Banksy) cannot be confirmed from the image alone; content is depicted street art, not a real scene.\",\n  \"quality_flags\": []\n}\n```",
+      "response": {
+        "id": "gen-1780319153-KO2ePguOP3jMihyQgrN1",
+        "object": "chat.completion",
+        "created": 1780319153,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"street_art\",\n\n  \"short_caption\": \"Stencil street art of a suited man using a stethoscope on a large red painted heart on a brick wall.\",\n  \"main_objects\": [\"brick wall\", \"stencil figure of a man in a suit\", \"red heart outline\", \"stethoscope\"],\n  \"possible_interpretations\": [\n    \"Banksy-style street art commenting on healthcare\",\n    \"Stencil graffiti art on a brick wall\",\n    \"Artistic depiction of a doctor examining the heart of love\"\n  ],\n  \"uncertainty_notes\": \"The specific artist (likely Banksy) cannot be confirmed from the image alone; content is depicted street art, not a real scene.\",\n  \"quality_flags\": []\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a brick wall with street art/graffiti depicting a man in a suit who appears to be stethoscope-wearing (it's a stethoscope) examining a large red heart, as if he's a doctor checking on the heart. The heart is drawn in red outline, and the man figure is rendered in black and white stencil style. This appears to be the famous Banksy artwork \"The Physician\" or similar.\n\nLet me annotate this systematically:\n\n- Recognizability: Very recognizable - clear street art depicting a doctor examining a heart. 5\n- Ambiguity: Low ambiguity - the content is clear, though it could be interpreted as commentary on healthcare/love. 2\n- Natural photo typicality: This is a photo of street art, so it's a photo but of art. Moderate. 3\n- Visual clutter: Relatively low clutter - wall + heart + figure. 2\n- Object-centricity: There's a central figure (the man) and the heart, but it's more of a scene. 3\n- Scene-centricity: It's a wall scene. 4\n- Caption confidence: High - easy to describe. 5\n\nSalient objects: the heart, the doctor figure\n- contains_person: yes (depicted in art)\n- contains_face: yes (the figure has a face)\n- contains_animal: no\n- contains_text: no\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: no\n- contains_outdoor_scene: yes (wall, likely outdoor)\n- contains_artificial_or_rendered_content: yes (it's street art)\n- contains_occlusion_or_truncation: no\n- contains_unusual_viewpoint: no\n- contains_multiple_main_objects: yes (heart and figure)\n\nDominant content: mixed (art depicting person and object)\nImage style: natural_photo (photo of street art)\nSemantic domain: street_art / urban_art\n\nLet me finalize this.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a brick wall with street art/graffiti depicting a man in a suit who appears to be stethoscope-wearing (it's a stethoscope) examining a large red heart, as if he's a doctor checking on the heart. The heart is drawn in red outline, and the man figure is rendered in black and white stencil style. This appears to be the famous Banksy artwork \"The Physician\" or similar.\n\nLet me annotate this systematically:\n\n- Recognizability: Very recognizable - clear street art depicting a doctor examining a heart. 5\n- Ambiguity: Low ambiguity - the content is clear, though it could be interpreted as commentary on healthcare/love. 2\n- Natural photo typicality: This is a photo of street art, so it's a photo but of art. Moderate. 3\n- Visual clutter: Relatively low clutter - wall + heart + figure. 2\n- Object-centricity: There's a central figure (the man) and the heart, but it's more of a scene. 3\n- Scene-centricity: It's a wall scene. 4\n- Caption confidence: High - easy to describe. 5\n\nSalient objects: the heart, the doctor figure\n- contains_person: yes (depicted in art)\n- contains_face: yes (the figure has a face)\n- contains_animal: no\n- contains_text: no\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: no\n- contains_outdoor_scene: yes (wall, likely outdoor)\n- contains_artificial_or_rendered_content: yes (it's street art)\n- contains_occlusion_or_truncation: no\n- contains_unusual_viewpoint: no\n- contains_multiple_main_objects: yes (heart and figure)\n\nDominant content: mixed (art depicting person and object)\nImage style: natural_photo (photo of street art)\nSemantic domain: street_art / urban_art\n\nLet me finalize this.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 795,
+          "total_tokens": 2317,
+          "cost": 0.00138324,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00138324,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.000954
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 444,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

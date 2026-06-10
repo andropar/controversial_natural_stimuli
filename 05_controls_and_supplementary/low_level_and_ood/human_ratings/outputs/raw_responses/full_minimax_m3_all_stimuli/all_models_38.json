@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_38",
+    "stim_key": "all_models_38",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 38,
+    "file_index": 38,
+    "image_name": "image_0038.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0038.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 2, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 4, \"estimated_salient_object_count\": 8, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"aerial_imagery\", \"short_caption\": \"Aerial view of a grass sports field bordered by buildings and a dirt area\", \"main_objects\": [\"grass field\", \"dirt field\", \"residential buildings\", \"roads\"], \"possible_interpretations\": [\"satellite view of a sports field\", \"aerial view of a school grounds\", \"top-down view of a park area\"], \"uncertainty_notes\": \"Image is slightly soft/blurry typical of satellite imagery; difficult to discern fine details of buildings or any vehicles\", \"quality_flags\": [\"slight_blur\", \"aerial_viewpoint\", \"low_resolution_detail\"]}",
+      "response": {
+        "id": "gen-1780318769-Gef4ESWKeaKMjGXEvm5Q",
+        "object": "chat.completion",
+        "created": 1780318769,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 2, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 4, \"estimated_salient_object_count\": 8, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"aerial_imagery\", \"short_caption\": \"Aerial view of a grass sports field bordered by buildings and a dirt area\", \"main_objects\": [\"grass field\", \"dirt field\", \"residential buildings\", \"roads\"], \"possible_interpretations\": [\"satellite view of a sports field\", \"aerial view of a school grounds\", \"top-down view of a park area\"], \"uncertainty_notes\": \"Image is slightly soft/blurry typical of satellite imagery; difficult to discern fine details of buildings or any vehicles\", \"quality_flags\": [\"slight_blur\", \"aerial_viewpoint\", \"low_resolution_detail\"]}",
+              "refusal": null,
+              "reasoning": "This is an aerial/satellite view of what appears to be a sports field or grassy area surrounded by buildings and a dirt/sand area. Let me analyze it carefully.\n\nLooking at the image:\n- It's a top-down aerial view (likely satellite or drone)\n- There's a large grassy field in the center\n- A dirt/sand field adjacent to it\n- Buildings/houses around the perimeter\n- Some roads visible\n- The image has a slight blur/softness typical of satellite imagery\n- The viewpoint is unusual (top-down aerial)\n\nFor the ratings:\n- recognizability: 4 - The content is clear, you can identify the field, buildings, etc.\n- ambiguity: 2 - It's fairly clear what this is\n- natural_photo_typicality: 2 - This is a satellite/aerial view, not a typical natural photo\n- visual_clutter: 3 - Multiple elements but not overly cluttered\n- object_centricity: 2 - No single clear object dominates, it's more of a scene\n- scene_centricity: 5 - This is clearly a scene/place view\n- caption_confidence: 4 - Can describe it well\n\nEstimated counts:\n- salient objects: multiple buildings visible, a field\n- distinct categories: buildings, grass field, dirt field, roads (~4)\n\nContent flags:\n- contains_person: false (too small to see people)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: maybe, hard to tell\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (it's a real photo, though aerial)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (aerial view)\n- contains_multiple_main_objects: false (it's a scene)\n\nDominant content: scene\nImage style: natural_photo (satellite imagery is a form of natural photo)\nSemantic domain: aerial/satellite imagery, or \"aerial\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "This is an aerial/satellite view of what appears to be a sports field or grassy area surrounded by buildings and a dirt/sand area. Let me analyze it carefully.\n\nLooking at the image:\n- It's a top-down aerial view (likely satellite or drone)\n- There's a large grassy field in the center\n- A dirt/sand field adjacent to it\n- Buildings/houses around the perimeter\n- Some roads visible\n- The image has a slight blur/softness typical of satellite imagery\n- The viewpoint is unusual (top-down aerial)\n\nFor the ratings:\n- recognizability: 4 - The content is clear, you can identify the field, buildings, etc.\n- ambiguity: 2 - It's fairly clear what this is\n- natural_photo_typicality: 2 - This is a satellite/aerial view, not a typical natural photo\n- visual_clutter: 3 - Multiple elements but not overly cluttered\n- object_centricity: 2 - No single clear object dominates, it's more of a scene\n- scene_centricity: 5 - This is clearly a scene/place view\n- caption_confidence: 4 - Can describe it well\n\nEstimated counts:\n- salient objects: multiple buildings visible, a field\n- distinct categories: buildings, grass field, dirt field, roads (~4)\n\nContent flags:\n- contains_person: false (too small to see people)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: maybe, hard to tell\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (it's a real photo, though aerial)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (aerial view)\n- contains_multiple_main_objects: false (it's a scene)\n\nDominant content: scene\nImage style: natural_photo (satellite imagery is a form of natural photo)\nSemantic domain: aerial/satellite imagery, or \"aerial\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 766,
+          "total_tokens": 2288,
+          "cost": 0.00134844,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00134844,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009192
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 476,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

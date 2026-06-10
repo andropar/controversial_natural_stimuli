@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_2",
+    "stim_key": "sota_2",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 2,
+    "file_index": 2,
+    "image_name": "image_0002.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0002.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 3, \"ambiguity\": 3, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 1, \"scene_centricity\": 4, \"caption_confidence\": 3, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 2, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"outdoor waterside infrastructure\", \"short_caption\": \"Concrete embankment beside rippling water with a partially visible person at the edge\", \"main_objects\": [\"concrete slope\", \"water\", \"person (partially visible)\"], \"possible_interpretations\": [\"concrete embankment next to a river or canal\", \"dam or retaining wall surface\", \"pier or quay edge beside water\", \"stone steps leading to water\", \"waterside walkway from an overhead angle\"], \"uncertainty_notes\": \"Person is heavily truncated and details are unclear; exact location and purpose of the structure are ambiguous due to the unusual top-down angle.\", \"quality_flags\": [\"unusual composition\", \"partial occlusion of person\", \"unusual top-down viewpoint\"]}",
+      "response": {
+        "id": "gen-1780319078-3KUtkJQdoToRrUImtPr5",
+        "object": "chat.completion",
+        "created": 1780319078,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 3, \"ambiguity\": 3, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 1, \"scene_centricity\": 4, \"caption_confidence\": 3, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 2, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"outdoor waterside infrastructure\", \"short_caption\": \"Concrete embankment beside rippling water with a partially visible person at the edge\", \"main_objects\": [\"concrete slope\", \"water\", \"person (partially visible)\"], \"possible_interpretations\": [\"concrete embankment next to a river or canal\", \"dam or retaining wall surface\", \"pier or quay edge beside water\", \"stone steps leading to water\", \"waterside walkway from an overhead angle\"], \"uncertainty_notes\": \"Person is heavily truncated and details are unclear; exact location and purpose of the structure are ambiguous due to the unusual top-down angle.\", \"quality_flags\": [\"unusual composition\", \"partial occlusion of person\", \"unusual top-down viewpoint\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be a concrete or stone embankment/slope next to water (likely a river or canal). There's a textured concrete surface in the foreground/middle area, water with ripples on the upper left, and a small portion of what looks like a person (wearing white) in the lower left corner, possibly holding something. The angle is unusual - taken from above looking down at the slope.\n\nKey observations:\n- Main content: Concrete embankment/wall with water alongside\n- There's a person partially visible in the lower left\n- The image is dominated by texture and surface rather than a clear central object\n- Unusual viewpoint (looking down at an angle)\n- Natural photo style\n- Outdoor scene (water visible)\n- Some occlusion/truncation of the person\n\nLet me rate:\n- recognizability: 3 - The content is somewhat recognizable (concrete slope with water), but it's an unusual composition\n- ambiguity: 3 - Could be interpreted as concrete wall, embankment, dam, etc.\n- natural_photo_typicality: 4 - Looks like a natural photograph\n- visual_clutter: 2 - Relatively simple with mainly texture\n- object_centricity: 2 - No clear central object, more of a surface/texture composition\n- scene_centricity: 4 - It's mainly showing a place/environment\n- caption_confidence: 3 - Can describe it but composition is unusual\n\nSalient objects: 1 (the person partially visible) or 2 (person + the embankment as a feature)\nDistinct categories: 2 (person, concrete surface/water scene)\n\nBooleans:\n- contains_person: true (partial)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person is cut off)\n- contains_unusual_viewpoint: true (looking down at slope)\n- contains_multiple_main_objects: false\n\nDominant content: scene or texture_pattern - the surface texture is dominant, but it's a scene. I'll go with \"scene\" since it shows a place.\n\nImage style: natural_photo\n\nSemantic domain: outdoor/urban or water\n\nShort caption: \"Concrete embankment beside rippling water with a partially visible person\"\n\nMain objects: concrete slope, water, person (partial)\n\nPossible interpretations:\n- Concrete embankment beside water\n- River bank or canal wall\n- Dam surface\n- Stairs or pier edge\n\nUncertainty notes: Person is heavily truncated, hard to identify; the exact location/setting is unclear\n\nQuality flags: unusual composition, partial occlusion, unusual viewpoint",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be a concrete or stone embankment/slope next to water (likely a river or canal). There's a textured concrete surface in the foreground/middle area, water with ripples on the upper left, and a small portion of what looks like a person (wearing white) in the lower left corner, possibly holding something. The angle is unusual - taken from above looking down at the slope.\n\nKey observations:\n- Main content: Concrete embankment/wall with water alongside\n- There's a person partially visible in the lower left\n- The image is dominated by texture and surface rather than a clear central object\n- Unusual viewpoint (looking down at an angle)\n- Natural photo style\n- Outdoor scene (water visible)\n- Some occlusion/truncation of the person\n\nLet me rate:\n- recognizability: 3 - The content is somewhat recognizable (concrete slope with water), but it's an unusual composition\n- ambiguity: 3 - Could be interpreted as concrete wall, embankment, dam, etc.\n- natural_photo_typicality: 4 - Looks like a natural photograph\n- visual_clutter: 2 - Relatively simple with mainly texture\n- object_centricity: 2 - No clear central object, more of a surface/texture composition\n- scene_centricity: 4 - It's mainly showing a place/environment\n- caption_confidence: 3 - Can describe it but composition is unusual\n\nSalient objects: 1 (the person partially visible) or 2 (person + the embankment as a feature)\nDistinct categories: 2 (person, concrete surface/water scene)\n\nBooleans:\n- contains_person: true (partial)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person is cut off)\n- contains_unusual_viewpoint: true (looking down at slope)\n- contains_multiple_main_objects: false\n\nDominant content: scene or texture_pattern - the surface texture is dominant, but it's a scene. I'll go with \"scene\" since it shows a place.\n\nImage style: natural_photo\n\nSemantic domain: outdoor/urban or water\n\nShort caption: \"Concrete embankment beside rippling water with a partially visible person\"\n\nMain objects: concrete slope, water, person (partial)\n\nPossible interpretations:\n- Concrete embankment beside water\n- River bank or canal wall\n- Dam surface\n- Stairs or pier edge\n\nUncertainty notes: Person is heavily truncated, hard to identify; the exact location/setting is unclear\n\nQuality flags: unusual composition, partial occlusion, unusual viewpoint",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 954,
+          "total_tokens": 2268,
+          "cost": 0.00138876,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00138876,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.0011448
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 697,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

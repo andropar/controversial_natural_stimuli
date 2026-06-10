@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_15",
+    "stim_key": "all_models_15",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 15,
+    "file_index": 15,
+    "image_name": "image_0015.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0015.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"nature\",\n  \"short_caption\": \"Blurred forest scene with a small couple embracing among trees\",\n  \"main_objects\": [\"trees\", \"foliage\", \"couple\"],\n  \"possible_interpretations\": [\n    \"A romantic couple in a lush green forest\",\n    \"A wedding or engagement photo with artistic blur\",\n    \"An overgrown woodland path with two people\",\n    \"A tilt-shift style nature portrait of a couple\"\n  ],\n  \"uncertainty_notes\": \"Heavy blur obscures details; the couple is small in frame and may be hard to identify without context\",\n  \"quality_flags\": [\"heavy_blur\", \"small_subject\", \"tilt_shift_or_shallow_dof\"]\n}",
+      "response": {
+        "id": "gen-1780318741-J9b3ra6xPHWjHozBeKIN",
+        "object": "chat.completion",
+        "created": 1780318741,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"nature\",\n  \"short_caption\": \"Blurred forest scene with a small couple embracing among trees\",\n  \"main_objects\": [\"trees\", \"foliage\", \"couple\"],\n  \"possible_interpretations\": [\n    \"A romantic couple in a lush green forest\",\n    \"A wedding or engagement photo with artistic blur\",\n    \"An overgrown woodland path with two people\",\n    \"A tilt-shift style nature portrait of a couple\"\n  ],\n  \"uncertainty_notes\": \"Heavy blur obscures details; the couple is small in frame and may be hard to identify without context\",\n  \"quality_flags\": [\"heavy_blur\", \"small_subject\", \"tilt_shift_or_shallow_dof\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a heavily blurred scene of a forest or wooded area with green foliage. In the lower center, there appears to be a small figure of a couple - a man and woman appearing to embrace or be close together. The image has significant bokeh/blur, likely from a tilt-shift or shallow depth of field effect.\n\nLet me analyze:\n- The main content is a forest scene with trees\n- There's a small couple visible at the bottom center\n- The image is heavily blurred\n- It looks like a natural photograph, possibly with artistic blur effect\n\nRecognizability: The scene is recognizable as a forest with trees, but the blur makes specific details hard to see. Maybe 3-4. The couple is small and hard to identify clearly.\n\nAmbiguity: Multiple interpretations possible - just trees, or a couple in a forest. Maybe 3.\n\nNatural photo typicality: It looks like a natural photo with tilt-shift blur effect. 3-4.\n\nVisual clutter: Many trees and foliage elements. 4.\n\nObject centricity: No single dominant object - it's a scene with small figures. 1-2.\n\nScene centricity: This is primarily a scene. 5.\n\nCaption confidence: Moderate - can describe it as a blurred forest scene with a couple. 3.\n\nThe couple appears to be embracing, suggesting a romantic or wedding photo context.\n\nLet me set:\n- contains_person: true (two people visible)\n- contains_face: hard to tell due to blur, probably false or unclear\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (natural photo with blur effect)\n- contains_occlusion_or_truncation: true (heavily blurred)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (the trees are background, couple is the subject)\n\nDominant content: scene (mostly forest/trees)\nImage style: edited_photo (due to heavy blur/tilt-shift effect)",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a heavily blurred scene of a forest or wooded area with green foliage. In the lower center, there appears to be a small figure of a couple - a man and woman appearing to embrace or be close together. The image has significant bokeh/blur, likely from a tilt-shift or shallow depth of field effect.\n\nLet me analyze:\n- The main content is a forest scene with trees\n- There's a small couple visible at the bottom center\n- The image is heavily blurred\n- It looks like a natural photograph, possibly with artistic blur effect\n\nRecognizability: The scene is recognizable as a forest with trees, but the blur makes specific details hard to see. Maybe 3-4. The couple is small and hard to identify clearly.\n\nAmbiguity: Multiple interpretations possible - just trees, or a couple in a forest. Maybe 3.\n\nNatural photo typicality: It looks like a natural photo with tilt-shift blur effect. 3-4.\n\nVisual clutter: Many trees and foliage elements. 4.\n\nObject centricity: No single dominant object - it's a scene with small figures. 1-2.\n\nScene centricity: This is primarily a scene. 5.\n\nCaption confidence: Moderate - can describe it as a blurred forest scene with a couple. 3.\n\nThe couple appears to be embracing, suggesting a romantic or wedding photo context.\n\nLet me set:\n- contains_person: true (two people visible)\n- contains_face: hard to tell due to blur, probably false or unclear\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (natural photo with blur effect)\n- contains_occlusion_or_truncation: true (heavily blurred)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (the trees are background, couple is the subject)\n\nDominant content: scene (mostly forest/trees)\nImage style: edited_photo (due to heavy blur/tilt-shift effect)",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 810,
+          "total_tokens": 2332,
+          "cost": 0.00106668,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1508,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00106668,
+            "upstream_inference_prompt_cost": 9.468e-05,
+            "upstream_inference_completions_cost": 0.000972
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 511,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

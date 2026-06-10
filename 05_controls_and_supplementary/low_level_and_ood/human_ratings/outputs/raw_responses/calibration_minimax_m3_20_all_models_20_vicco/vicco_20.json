@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_20",
+    "stim_key": "vicco_20",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 20,
+    "file_index": 19,
+    "image_name": "shared_4rep_vicco_020.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_020.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"transport_storage\",\n\n  \"short_caption\": \"Overstuffed car trunk filled with cardboard boxes and storage containers.\",\n  \"main_objects\": [\"cardboard box\", \"blue plastic case\", \"clear storage bin\", \"car trunk\", \"shipping label\", \"fabric bag\"],\n  \"possible_interpretations\": [\n    \"A car trunk packed for moving or a trip\",\n    \"Items being transported for storage or donation\",\n    \"A family loading supplies for travel\"\n  ],\n  \"uncertainty_notes\": \"Image appears rotated 90 degrees; specific contents of boxes are unclear; text on labels is partially legible.\",\n  \"quality_flags\": [\"rotated_orientation\", \"partial_text_legibility\", \"cluttered_composition\"]\n}",
+      "response": {
+        "id": "gen-1780318244-RXiQfmwnHpPmr30kmLxp",
+        "object": "chat.completion",
+        "created": 1780318244,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"transport_storage\",\n\n  \"short_caption\": \"Overstuffed car trunk filled with cardboard boxes and storage containers.\",\n  \"main_objects\": [\"cardboard box\", \"blue plastic case\", \"clear storage bin\", \"car trunk\", \"shipping label\", \"fabric bag\"],\n  \"possible_interpretations\": [\n    \"A car trunk packed for moving or a trip\",\n    \"Items being transported for storage or donation\",\n    \"A family loading supplies for travel\"\n  ],\n  \"uncertainty_notes\": \"Image appears rotated 90 degrees; specific contents of boxes are unclear; text on labels is partially legible.\",\n  \"quality_flags\": [\"rotated_orientation\", \"partial_text_legibility\", \"cluttered_composition\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. The image appears to be rotated 90 degrees (sideways). It shows the interior of a car trunk/hatchback that is packed with various items including cardboard boxes, a blue container/case, and other miscellaneous items. The view is from outside the car looking into the open trunk.\n\nLet me assess each dimension:\n\n- Recognizability: Clear what's happening - packed car trunk. 4\n- Ambiguity: Pretty clear context, not many interpretations. 2\n- Natural photo typicality: Looks like a natural phone photo. 4\n- Visual clutter: Many items packed together, quite cluttered. 4\n- Object centricity: Multiple objects, no single dominant one. 2\n- Scene centricity: It's more of a scene (trunk interior) with objects. 4\n- Caption confidence: Easy to describe. 4\n\nObjects: cardboard boxes, blue plastic case, clear storage bin, car trunk, various items\n- No person, face, animal, text (there are shipping labels but primarily objects), vehicle (the car itself), no food, indoor/outdoor (outdoor scene of a car), no artificial/rendered, occlusion yes (items stacked)\n- Dominant content: mixed (multiple objects in a scene)\n- Image style: natural_photo\n- Semantic domain: travel/moving/storage\n\nThe image is rotated 90 degrees - the trunk opening appears on the left side of the image as viewed, suggesting the image was taken in portrait but displayed rotated.\n\nLet me provide counts:\n- Salient objects: many - 5+ (boxes, blue case, clear bin, car parts, etc.)\n- Distinct categories: ~4-5 (boxes, plastic container, tools/items, car)\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. The image appears to be rotated 90 degrees (sideways). It shows the interior of a car trunk/hatchback that is packed with various items including cardboard boxes, a blue container/case, and other miscellaneous items. The view is from outside the car looking into the open trunk.\n\nLet me assess each dimension:\n\n- Recognizability: Clear what's happening - packed car trunk. 4\n- Ambiguity: Pretty clear context, not many interpretations. 2\n- Natural photo typicality: Looks like a natural phone photo. 4\n- Visual clutter: Many items packed together, quite cluttered. 4\n- Object centricity: Multiple objects, no single dominant one. 2\n- Scene centricity: It's more of a scene (trunk interior) with objects. 4\n- Caption confidence: Easy to describe. 4\n\nObjects: cardboard boxes, blue plastic case, clear storage bin, car trunk, various items\n- No person, face, animal, text (there are shipping labels but primarily objects), vehicle (the car itself), no food, indoor/outdoor (outdoor scene of a car), no artificial/rendered, occlusion yes (items stacked)\n- Dominant content: mixed (multiple objects in a scene)\n- Image style: natural_photo\n- Semantic domain: travel/moving/storage\n\nThe image is rotated 90 degrees - the trunk opening appears on the left side of the image as viewed, suggesting the image was taken in portrait but displayed rotated.\n\nLet me provide counts:\n- Salient objects: many - 5+ (boxes, blue case, clear bin, car parts, etc.)\n- Distinct categories: ~4-5 (boxes, plastic container, tools/items, car)\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 739,
+          "total_tokens": 2261,
+          "cost": 0.00131604,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131604,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008868
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 411,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_47",
+    "stim_key": "architecture_47",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 47,
+    "file_index": 47,
+    "image_name": "image_0047.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0047.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"bedroom_interior\",\n  \"short_caption\": \"A bright bedroom with a wooden slatted bed, dresser with mirror, potted plant, and botanical wall art.\",\n  \"main_objects\": [\"bed\", \"dresser\", \"mirror\", \"potted plant\", \"framed prints\", \"nightstand\", \"area rug\", \"decorative boxes\"],\n  \"possible_interpretations\": [\"bedroom interior\", \"furniture catalog photo\", \"home decor staged scene\", \"master bedroom design\"],\n  \"uncertainty_notes\": \"Image appears to be a professional or staged furniture/catalog photograph rather than a candid shot. Glimpse of greenery visible through the window is minor.\",\n  \"quality_flags\": [\"staged_or_catalog_appearance\", \"professional_lighting\"]\n}",
+      "response": {
+        "id": "gen-1780318896-AZTHzrTmqwWTDt1VaGFe",
+        "object": "chat.completion",
+        "created": 1780318896,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"bedroom_interior\",\n  \"short_caption\": \"A bright bedroom with a wooden slatted bed, dresser with mirror, potted plant, and botanical wall art.\",\n  \"main_objects\": [\"bed\", \"dresser\", \"mirror\", \"potted plant\", \"framed prints\", \"nightstand\", \"area rug\", \"decorative boxes\"],\n  \"possible_interpretations\": [\"bedroom interior\", \"furniture catalog photo\", \"home decor staged scene\", \"master bedroom design\"],\n  \"uncertainty_notes\": \"Image appears to be a professional or staged furniture/catalog photograph rather than a candid shot. Glimpse of greenery visible through the window is minor.\",\n  \"quality_flags\": [\"staged_or_catalog_appearance\", \"professional_lighting\"]\n}",
+              "refusal": null,
+              "reasoning": "The user wants me to annotate a natural image using a specific schema. Let me analyze the image:\n\nThe image shows a bedroom interior with:\n- A wooden bed frame with slatted headboard and footboard\n- A gray and white patterned bedspread/comforter\n- Multiple pillows on the bed\n- A large wooden dresser with mirror on the left\n- A vase with branches/flowers on the dresser\n- Decorative boxes on the dresser\n- A potted plant (fiddle leaf fig or similar) next to the bed\n- Two framed botanical prints above the bed\n- A large window with white curtains/blinds\n- A nightstand on the right\n- A gray area rug on the wooden floor\n- A small framed picture on the wall\n- Wall sconce/decorative item\n\nLet me assess each dimension:\n\nRecognizability: The main content is clearly a bedroom - very recognizable. 5\nAmbiguity: There's only one plausible interpretation - it's a bedroom. 1\nNatural_photo_typicality: This looks like a staged/professional photograph, possibly a furniture catalog photo. It's natural-looking but very staged. 3-4\nVisual_clutter: There are several objects but well-arranged. 3\nObject_centricity: The bed is the dominant object but it's also showing the whole scene. 3\nScene_centricity: This is primarily a scene/place. 5\nCaption_confidence: Very confident about what this is. 5\n\nSalient object count: bed, dresser, mirror, plant, framed prints, rug, nightstand - around 6-7\nDistinct object categories: bed, dresser, mirror, plant, picture frame, rug, nightstand, pillow - about 6-7\n\nContains_person: false\nContains_face: false\nContains_animal: false\nContains_text: false\nContains_vehicle: false\nContains_food: false\nContains_indoor_scene: true\nContains_outdoor_scene: false (though there might be a glimpse through the window)\nContains_artificial_or_rendered_content: false (looks like a real photo, though staged)\nContains_occlusion_or_truncation: false\nContains_unusual_viewpoint: false\nContains_multiple_main_objects: true (bed and dresser are both significant)\n\nDominant content type: scene (it's a bedroom scene, though with prominent furniture objects)\nImage style: natural_photo (looks like a real staged photo, possibly catalog)\nSemantic domain: bedroom/interior/furniture\n\nShort caption: A bright bedroom with a wooden slatted bed, dresser with mirror, potted plant, and botanical wall art.\n\nMain objects: bed, dresser, mirror, potted plant, framed prints, nightstand, area rug, decorative boxes\n\nPossible interpretations: bedroom interior, furniture showroom photo, home decor catalog image\n\nUncertainty notes: Image is likely a professional furniture/catalog photo rather than a candid shot.\n\nQuality flags: staged/catalog appearance",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The user wants me to annotate a natural image using a specific schema. Let me analyze the image:\n\nThe image shows a bedroom interior with:\n- A wooden bed frame with slatted headboard and footboard\n- A gray and white patterned bedspread/comforter\n- Multiple pillows on the bed\n- A large wooden dresser with mirror on the left\n- A vase with branches/flowers on the dresser\n- Decorative boxes on the dresser\n- A potted plant (fiddle leaf fig or similar) next to the bed\n- Two framed botanical prints above the bed\n- A large window with white curtains/blinds\n- A nightstand on the right\n- A gray area rug on the wooden floor\n- A small framed picture on the wall\n- Wall sconce/decorative item\n\nLet me assess each dimension:\n\nRecognizability: The main content is clearly a bedroom - very recognizable. 5\nAmbiguity: There's only one plausible interpretation - it's a bedroom. 1\nNatural_photo_typicality: This looks like a staged/professional photograph, possibly a furniture catalog photo. It's natural-looking but very staged. 3-4\nVisual_clutter: There are several objects but well-arranged. 3\nObject_centricity: The bed is the dominant object but it's also showing the whole scene. 3\nScene_centricity: This is primarily a scene/place. 5\nCaption_confidence: Very confident about what this is. 5\n\nSalient object count: bed, dresser, mirror, plant, framed prints, rug, nightstand - around 6-7\nDistinct object categories: bed, dresser, mirror, plant, picture frame, rug, nightstand, pillow - about 6-7\n\nContains_person: false\nContains_face: false\nContains_animal: false\nContains_text: false\nContains_vehicle: false\nContains_food: false\nContains_indoor_scene: true\nContains_outdoor_scene: false (though there might be a glimpse through the window)\nContains_artificial_or_rendered_content: false (looks like a real photo, though staged)\nContains_occlusion_or_truncation: false\nContains_unusual_viewpoint: false\nContains_multiple_main_objects: true (bed and dresser are both significant)\n\nDominant content type: scene (it's a bedroom scene, though with prominent furniture objects)\nImage style: natural_photo (looks like a real staged photo, possibly catalog)\nSemantic domain: bedroom/interior/furniture\n\nShort caption: A bright bedroom with a wooden slatted bed, dresser with mirror, potted plant, and botanical wall art.\n\nMain objects: bed, dresser, mirror, potted plant, framed prints, nightstand, area rug, decorative boxes\n\nPossible interpretations: bedroom interior, furniture showroom photo, home decor catalog image\n\nUncertainty notes: Image is likely a professional furniture/catalog photo rather than a candid shot.\n\nQuality flags: staged/catalog appearance",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 993,
+          "total_tokens": 2515,
+          "cost": 0.00149796,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00149796,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011916
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 705,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

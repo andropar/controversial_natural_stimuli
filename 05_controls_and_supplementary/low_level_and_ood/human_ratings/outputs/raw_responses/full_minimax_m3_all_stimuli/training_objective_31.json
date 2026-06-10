@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_31",
+    "stim_key": "training_objective_31",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 31,
+    "file_index": 31,
+    "image_name": "image_0031.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0031.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 2, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 2, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": true, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"mixed\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"underwater marine\", \"short_caption\": \"Scuba divers encounter a large manta ray underwater\", \"main_objects\": [\"manta ray\", \"scuba diver\", \"snorkel\"], \"possible_interpretations\": [\"scuba divers observing a manta ray\", \"underwater wildlife encounter\", \"manta ray diving expedition\", \"marine photography scene\"], \"uncertainty_notes\": \"Diver's faces are partially turned away; exact species of manta ray not fully confirmable from ventral view\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319239-PDM2sxx3XvKpZWr4xtNF",
+        "object": "chat.completion",
+        "created": 1780319239,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 2, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 2, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": true, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"mixed\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"underwater marine\", \"short_caption\": \"Scuba divers encounter a large manta ray underwater\", \"main_objects\": [\"manta ray\", \"scuba diver\", \"snorkel\"], \"possible_interpretations\": [\"scuba divers observing a manta ray\", \"underwater wildlife encounter\", \"manta ray diving expedition\", \"marine photography scene\"], \"uncertainty_notes\": \"Diver's faces are partially turned away; exact species of manta ray not fully confirmable from ventral view\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully:\n\nThe image shows an underwater scene with:\n- A large manta ray swimming in the blue water (dominant central object)\n- Two scuba divers in the foreground (one with blonde hair and pink wetsuit, another below)\n- Deep blue ocean water as the background\n- Some bubbles visible\n- A rocky/coral bottom visible at the lower edge\n\nThis is clearly a natural underwater photograph, likely taken in a tropical location known for manta ray encounters.\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clear what's happening\n- ambiguity: 1 - Very clear single interpretation\n- natural_photo_typicality: 5 - Looks like a typical underwater nature photograph\n- visual_clutter: 2 - Some elements but not cluttered\n- object_centricity: 3 - Manta ray is central but divers also prominent\n- scene_centricity: 4 - It's both a scene and has objects; the underwater environment is prominent\n- caption_confidence: 5 - Easy to caption\n\nObject counts:\n- Salient objects: manta ray + 2 divers = 3\n- Distinct categories: manta ray, scuba divers = 2\n\nBooleans:\n- contains_person: true (divers)\n- contains_face: true (diver face visible)\n- contains_animal: true (manta ray)\n- contains_text: false (might have brand but not clear text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true (underwater is outdoor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (divers partially cut off)\n- contains_unusual_viewpoint: false (normal diving perspective)\n- contains_multiple_main_objects: true (manta ray and divers)\n\nDominant content type: mixed (animal + person + scene)\nImage style: natural_photo\nSemantic domain: underwater/marine\n\nShort caption: Scuba divers observing a large manta ray underwater\nMain objects: manta ray, scuba diver, snorkel\nPossible interpretations: divers watching manta ray, manta ray encounter, underwater photography",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully:\n\nThe image shows an underwater scene with:\n- A large manta ray swimming in the blue water (dominant central object)\n- Two scuba divers in the foreground (one with blonde hair and pink wetsuit, another below)\n- Deep blue ocean water as the background\n- Some bubbles visible\n- A rocky/coral bottom visible at the lower edge\n\nThis is clearly a natural underwater photograph, likely taken in a tropical location known for manta ray encounters.\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clear what's happening\n- ambiguity: 1 - Very clear single interpretation\n- natural_photo_typicality: 5 - Looks like a typical underwater nature photograph\n- visual_clutter: 2 - Some elements but not cluttered\n- object_centricity: 3 - Manta ray is central but divers also prominent\n- scene_centricity: 4 - It's both a scene and has objects; the underwater environment is prominent\n- caption_confidence: 5 - Easy to caption\n\nObject counts:\n- Salient objects: manta ray + 2 divers = 3\n- Distinct categories: manta ray, scuba divers = 2\n\nBooleans:\n- contains_person: true (divers)\n- contains_face: true (diver face visible)\n- contains_animal: true (manta ray)\n- contains_text: false (might have brand but not clear text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true (underwater is outdoor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (divers partially cut off)\n- contains_unusual_viewpoint: false (normal diving perspective)\n- contains_multiple_main_objects: true (manta ray and divers)\n\nDominant content type: mixed (animal + person + scene)\nImage style: natural_photo\nSemantic domain: underwater/marine\n\nShort caption: Scuba divers observing a large manta ray underwater\nMain objects: manta ray, scuba diver, snorkel\nPossible interpretations: divers watching manta ray, manta ray encounter, underwater photography",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1267,
+          "completion_tokens": 760,
+          "total_tokens": 2027,
+          "cost": 0.00114186,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00114186,
+            "upstream_inference_prompt_cost": 0.00022986,
+            "upstream_inference_completions_cost": 0.000912
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 524,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

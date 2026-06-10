@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_70",
+    "stim_key": "vicco_70",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 70,
+    "file_index": 69,
+    "image_name": "shared_4rep_vicco_070.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_070.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"animals\",\n  \"short_caption\": \"A white long-haired goat with curved horns rests in green grass near a wooden fence.\",\n  \"main_objects\": [\"goat\", \"grass\", \"wooden fence\", \"collar\", \"ear tag\", \"horn\"],\n  \"possible_interpretations\": [\"A goat resting in a pasture\", \"A farm animal near a fence\", \"A livestock animal in a grassy enclosure\"],\n  \"uncertainty_notes\": \"Image appears rotated approximately 90 degrees counter-clockwise; subject matter and composition are otherwise straightforward.\",\n  \"quality_flags\": [\"rotated_orientation\"]\n}",
+      "response": {
+        "id": "gen-1780319471-sxemt8yeC4oOb6T7H9fX",
+        "object": "chat.completion",
+        "created": 1780319471,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"animals\",\n  \"short_caption\": \"A white long-haired goat with curved horns rests in green grass near a wooden fence.\",\n  \"main_objects\": [\"goat\", \"grass\", \"wooden fence\", \"collar\", \"ear tag\", \"horn\"],\n  \"possible_interpretations\": [\"A goat resting in a pasture\", \"A farm animal near a fence\", \"A livestock animal in a grassy enclosure\"],\n  \"uncertainty_notes\": \"Image appears rotated approximately 90 degrees counter-clockwise; subject matter and composition are otherwise straightforward.\",\n  \"quality_flags\": [\"rotated_orientation\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a white, long-haired goat with curved horns lying in green grass. The goat is wearing a black collar with a yellow ear tag. The image appears to be rotated 90 degrees (sideways orientation) - the goat's head is pointing to the left, and the grass is on the right side. There's a wooden fence in the background and some trees/vegetation.\n\nLet me analyze this carefully:\n\n- The goat is clearly the main subject\n- It has long white shaggy fur\n- Curved horns are visible\n- Black collar with yellow ear tag\n- Green grass surrounding it\n- Wooden fence in background\n- The image appears to be rotated/oriented sideways\n\nFor the annotations:\n\n- recognizability: 5 - very clear what the subject is\n- ambiguity: 1 - very unambiguous, clearly a goat\n- natural_photo_typicality: 4 - looks like a natural photo, though orientation is unusual\n- visual_clutter: 2 - relatively simple, grass and fence in background\n- object_centricity: 5 - the goat dominates the image\n- scene_centricity: 2 - mostly about the animal, though there's a setting\n- caption_confidence: 5 - easy to caption\n\nSalient objects: 1 (the goat)\nDistinct categories: 2 (goat, fence/grass)\n\nContains animal: true\nContains person: false\nContains face: false (animal face, not human)\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor: false\nContains outdoor: true\nContains artificial: false\nContains occlusion: false\nContains unusual viewpoint: true (rotated image)\nContains multiple main objects: false\n\nDominant content type: animal\nImage style: natural_photo\nSemantic domain: animals\n\nShort caption: A white long-haired goat with curved horns rests in green grass near a wooden fence.\n\nMain objects: goat, grass, fence, collar, ear tag\n\nPossible interpretations: A goat resting in a pasture, a farm animal in its enclosure\n\nUncertainty notes: Image appears rotated 90 degrees; composition is otherwise straightforward.\n\nQuality flags: rotated_orientation",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a white, long-haired goat with curved horns lying in green grass. The goat is wearing a black collar with a yellow ear tag. The image appears to be rotated 90 degrees (sideways orientation) - the goat's head is pointing to the left, and the grass is on the right side. There's a wooden fence in the background and some trees/vegetation.\n\nLet me analyze this carefully:\n\n- The goat is clearly the main subject\n- It has long white shaggy fur\n- Curved horns are visible\n- Black collar with yellow ear tag\n- Green grass surrounding it\n- Wooden fence in background\n- The image appears to be rotated/oriented sideways\n\nFor the annotations:\n\n- recognizability: 5 - very clear what the subject is\n- ambiguity: 1 - very unambiguous, clearly a goat\n- natural_photo_typicality: 4 - looks like a natural photo, though orientation is unusual\n- visual_clutter: 2 - relatively simple, grass and fence in background\n- object_centricity: 5 - the goat dominates the image\n- scene_centricity: 2 - mostly about the animal, though there's a setting\n- caption_confidence: 5 - easy to caption\n\nSalient objects: 1 (the goat)\nDistinct categories: 2 (goat, fence/grass)\n\nContains animal: true\nContains person: false\nContains face: false (animal face, not human)\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor: false\nContains outdoor: true\nContains artificial: false\nContains occlusion: false\nContains unusual viewpoint: true (rotated image)\nContains multiple main objects: false\n\nDominant content type: animal\nImage style: natural_photo\nSemantic domain: animals\n\nShort caption: A white long-haired goat with curved horns rests in green grass near a wooden fence.\n\nMain objects: goat, grass, fence, collar, ear tag\n\nPossible interpretations: A goat resting in a pasture, a farm animal in its enclosure\n\nUncertainty notes: Image appears rotated 90 degrees; composition is otherwise straightforward.\n\nQuality flags: rotated_orientation",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 794,
+          "total_tokens": 2316,
+          "cost": 0.00125916,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00125916,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009528
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 527,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

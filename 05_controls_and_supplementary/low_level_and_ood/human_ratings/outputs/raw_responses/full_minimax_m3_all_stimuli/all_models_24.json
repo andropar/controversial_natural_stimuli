@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_24",
+    "stim_key": "all_models_24",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 24,
+    "file_index": 24,
+    "image_name": "image_0024.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0024.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"vehicle/destruction\",\n  \"short_caption\": \"A burnt-out, charred car with yellow caution tape, with part of a person visible beside it.\",\n  \"main_objects\": [\"burnt car\", \"caution tape\", \"person (partial)\"],\n  \"possible_interpretations\": [\"burnt car after a fire\", \"wrecked vehicle from an accident or incident\", \"crime or investigation scene with damaged car\", \"staged or salvaged burnt vehicle\"],\n  \"uncertainty_notes\": \"Cause of the fire and full scene context are unclear; only a partial view of a person is visible on the right edge.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318756-EB5fgJp34ETBfD5xkT9E",
+        "object": "chat.completion",
+        "created": 1780318756,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"vehicle/destruction\",\n  \"short_caption\": \"A burnt-out, charred car with yellow caution tape, with part of a person visible beside it.\",\n  \"main_objects\": [\"burnt car\", \"caution tape\", \"person (partial)\"],\n  \"possible_interpretations\": [\"burnt car after a fire\", \"wrecked vehicle from an accident or incident\", \"crime or investigation scene with damaged car\", \"staged or salvaged burnt vehicle\"],\n  \"uncertainty_notes\": \"Cause of the fire and full scene context are unclear; only a partial view of a person is visible on the right edge.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a burnt-out, destroyed car (sedan) that has been severely damaged by fire. The car is charred, with black soot and white ash covering its surface. The windows are gone, the interior is gutted, and the body panels are warped. There's yellow caution tape wrapped around it. A person's arm and part of their body is visible on the right side of the frame. The setting appears to be outdoors, possibly on a road or paved area with a wall or rocky surface in the background.\n\nLet me annotate this:\n\n- recognizability: High - clearly a burnt car (5)\n- ambiguity: Low - one clear interpretation (1-2)\n- natural_photo_typicality: Looks like a natural photo of a scene (4-5)\n- visual_clutter: Moderate - mostly focused on the car (2-3)\n- object_centricity: High - the car dominates (5)\n- scene_centricity: Moderate - the setting is also visible (3)\n- caption_confidence: High (5)\n\n- estimated_salient_object_count: 2 (car, person partial)\n- estimated_distinct_object_categories: 2 (vehicle, person)\n\n- contains_person: true (partially visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: true\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person is truncated, car parts are cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: object\n- image_style: natural_photo\n- semantic_domain: vehicle/accident/destruction\n\n- short_caption: A burnt-out, charred car with yellow caution tape, partially showing a person beside it.\n- main_objects: [\"burnt car\", \"caution tape\", \"person (partial)\"]\n- possible_interpretations: [\"burnt car after a fire\", \"wrecked vehicle after an accident\", \"crime scene with damaged car\"]\n- uncertainty_notes: The cause of the fire/damage is unclear; the full context is not visible.\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a burnt-out, destroyed car (sedan) that has been severely damaged by fire. The car is charred, with black soot and white ash covering its surface. The windows are gone, the interior is gutted, and the body panels are warped. There's yellow caution tape wrapped around it. A person's arm and part of their body is visible on the right side of the frame. The setting appears to be outdoors, possibly on a road or paved area with a wall or rocky surface in the background.\n\nLet me annotate this:\n\n- recognizability: High - clearly a burnt car (5)\n- ambiguity: Low - one clear interpretation (1-2)\n- natural_photo_typicality: Looks like a natural photo of a scene (4-5)\n- visual_clutter: Moderate - mostly focused on the car (2-3)\n- object_centricity: High - the car dominates (5)\n- scene_centricity: Moderate - the setting is also visible (3)\n- caption_confidence: High (5)\n\n- estimated_salient_object_count: 2 (car, person partial)\n- estimated_distinct_object_categories: 2 (vehicle, person)\n\n- contains_person: true (partially visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: true\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person is truncated, car parts are cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: object\n- image_style: natural_photo\n- semantic_domain: vehicle/accident/destruction\n\n- short_caption: A burnt-out, charred car with yellow caution tape, partially showing a person beside it.\n- main_objects: [\"burnt car\", \"caution tape\", \"person (partial)\"]\n- possible_interpretations: [\"burnt car after a fire\", \"wrecked vehicle after an accident\", \"crime scene with damaged car\"]\n- uncertainty_notes: The cause of the fire/damage is unclear; the full context is not visible.\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1267,
+          "completion_tokens": 838,
+          "total_tokens": 2105,
+          "cost": 0.00135834,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00135834,
+            "upstream_inference_prompt_cost": 0.00035274,
+            "upstream_inference_completions_cost": 0.0010056
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 518,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

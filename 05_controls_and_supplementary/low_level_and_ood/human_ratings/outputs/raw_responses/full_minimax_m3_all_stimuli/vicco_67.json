@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_67",
+    "stim_key": "vicco_67",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 67,
+    "file_index": 66,
+    "image_name": "shared_4rep_vicco_067.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_067.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife\",\n  \"short_caption\": \"Group of pink flamingos wading in shallow water surrounded by green vegetation\",\n  \"main_objects\": [\"flamingos\", \"water\", \"reeds\", \"foliage\"],\n  \"possible_interpretations\": [\"flamingos foraging in a natural wetland\", \"flamingos in a zoo pond enclosure\", \"flamingos wading in a marsh\"],\n  \"uncertainty_notes\": \"One flamingo's head is partially occluded by vegetation; cannot definitively determine if setting is wild or captive\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319465-eDt5VbGkpDT5X0xtHXrV",
+        "object": "chat.completion",
+        "created": 1780319465,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife\",\n  \"short_caption\": \"Group of pink flamingos wading in shallow water surrounded by green vegetation\",\n  \"main_objects\": [\"flamingos\", \"water\", \"reeds\", \"foliage\"],\n  \"possible_interpretations\": [\"flamingos foraging in a natural wetland\", \"flamingos in a zoo pond enclosure\", \"flamingos wading in a marsh\"],\n  \"uncertainty_notes\": \"One flamingo's head is partially occluded by vegetation; cannot definitively determine if setting is wild or captive\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows flamingos wading in water. I can see at least 4-5 flamingos - some pink/light pink colored wading birds with long legs and curved necks, standing in shallow water. There's vegetation/reeds in the background and some green plants in the foreground. The setting appears to be a natural wetland or pond environment.\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - clearly recognizable as flamingos in water\n- ambiguity: 1 - very clear what's shown\n- natural_photo_typicality: 5 - looks like a typical nature photograph\n- visual_clutter: 3 - several flamingos plus vegetation, but not extremely cluttered\n- object_centricity: 4 - the flamingos are the clear subjects\n- scene_centricity: 3 - it's also showing an environment/setting\n- caption_confidence: 5 - easy to caption\n\nEstimated salient object count: 5 flamingos\nEstimated distinct object categories: 2 (flamingos, plants/vegetation)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: true (flamingos are birds/animals)\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (one flamingo's head is partially obscured)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true (multiple flamingos)\n\ndominant_content_type: \"animal\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"wildlife\"\n\nshort_caption: \"Group of pink flamingos wading in shallow water surrounded by green vegetation\"\nmain_objects: [\"flamingos\", \"water\", \"reeds\", \"plants\"]\npossible_interpretations: [\"flamingos feeding in a wetland\", \"flamingos at a zoo enclosure\", \"flamingos in a natural pond\"]\nuncertainty_notes: \"Could be a natural habitat or a zoo enclosure; cannot determine definitively\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows flamingos wading in water. I can see at least 4-5 flamingos - some pink/light pink colored wading birds with long legs and curved necks, standing in shallow water. There's vegetation/reeds in the background and some green plants in the foreground. The setting appears to be a natural wetland or pond environment.\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - clearly recognizable as flamingos in water\n- ambiguity: 1 - very clear what's shown\n- natural_photo_typicality: 5 - looks like a typical nature photograph\n- visual_clutter: 3 - several flamingos plus vegetation, but not extremely cluttered\n- object_centricity: 4 - the flamingos are the clear subjects\n- scene_centricity: 3 - it's also showing an environment/setting\n- caption_confidence: 5 - easy to caption\n\nEstimated salient object count: 5 flamingos\nEstimated distinct object categories: 2 (flamingos, plants/vegetation)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: true (flamingos are birds/animals)\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (one flamingo's head is partially obscured)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true (multiple flamingos)\n\ndominant_content_type: \"animal\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"wildlife\"\n\nshort_caption: \"Group of pink flamingos wading in shallow water surrounded by green vegetation\"\nmain_objects: [\"flamingos\", \"water\", \"reeds\", \"plants\"]\npossible_interpretations: [\"flamingos feeding in a wetland\", \"flamingos at a zoo enclosure\", \"flamingos in a natural pond\"]\nuncertainty_notes: \"Could be a natural habitat or a zoo enclosure; cannot determine definitively\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 786,
+          "total_tokens": 2308,
+          "cost": 0.00124956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00124956,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009432
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 499,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

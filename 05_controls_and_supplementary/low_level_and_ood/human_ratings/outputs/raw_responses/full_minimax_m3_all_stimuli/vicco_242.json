@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_242",
+    "stim_key": "vicco_242",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 242,
+    "file_index": 241,
+    "image_name": "shared_4rep_vicco_242.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_242.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 12,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"toys/plush\",\n  \"short_caption\": \"A tightly packed group of identical stuffed meerkat plush toys on display.\",\n  \"main_objects\": [\"stuffed meerkat plush toys\"],\n  \"possible_interpretations\": [\n    \"store display of meerkat plush toys\",\n    \"stuffed meerkats piled together\",\n    \"collection of meerkat stuffed animals\"\n  ],\n  \"uncertainty_notes\": \"Exact count of plush toys difficult to determine due to overlap and cropping.\",\n  \"quality_flags\": [\"densely_packed\", \"shallow_depth_of_field\"]\n}",
+      "response": {
+        "id": "gen-1780319667-d2VKVebjvllCrXUktOwo",
+        "object": "chat.completion",
+        "created": 1780319667,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 12,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"toys/plush\",\n  \"short_caption\": \"A tightly packed group of identical stuffed meerkat plush toys on display.\",\n  \"main_objects\": [\"stuffed meerkat plush toys\"],\n  \"possible_interpretations\": [\n    \"store display of meerkat plush toys\",\n    \"stuffed meerkats piled together\",\n    \"collection of meerkat stuffed animals\"\n  ],\n  \"uncertainty_notes\": \"Exact count of plush toys difficult to determine due to overlap and cropping.\",\n  \"quality_flags\": [\"densely_packed\", \"shallow_depth_of_field\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows multiple plush/stuffed meerkats arranged closely together. They have white/cream colored faces with dark brown eye patches and noses. They appear to be in a store display. Let me annotate this carefully.\n\n- recognizability: 5 - very clearly recognizable as stuffed meerkats\n- ambiguity: 1 - very clear what they are\n- natural_photo_typicality: 3 - it's a photo of artificial objects, not a natural scene\n- visual_clutter: 4 - many similar objects packed together\n- object_centricity: 3 - multiple objects, none singularly dominant\n- scene_centricity: 2 - objects dominate over scene context\n- caption_confidence: 5 - easy to caption\n\nObjects: many stuffed meerkat toys\nCategories: 1 (stuffed animals/toys)\nSalient object count: many, let's say 10+\nNo people, no faces (animal-like but plush), no text, no vehicles, no food\nIndoor or outdoor: appears indoor (store display)\nArtificial content: yes (plush toys)\nOcclusion: yes, partially occluded by each other\nMultiple main objects: yes\n\nImage style: natural_photo\nDominant content: object (or could be closeup_detail given the tight framing)\nSemantic domain: toys/plush",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows multiple plush/stuffed meerkats arranged closely together. They have white/cream colored faces with dark brown eye patches and noses. They appear to be in a store display. Let me annotate this carefully.\n\n- recognizability: 5 - very clearly recognizable as stuffed meerkats\n- ambiguity: 1 - very clear what they are\n- natural_photo_typicality: 3 - it's a photo of artificial objects, not a natural scene\n- visual_clutter: 4 - many similar objects packed together\n- object_centricity: 3 - multiple objects, none singularly dominant\n- scene_centricity: 2 - objects dominate over scene context\n- caption_confidence: 5 - easy to caption\n\nObjects: many stuffed meerkat toys\nCategories: 1 (stuffed animals/toys)\nSalient object count: many, let's say 10+\nNo people, no faces (animal-like but plush), no text, no vehicles, no food\nIndoor or outdoor: appears indoor (store display)\nArtificial content: yes (plush toys)\nOcclusion: yes, partially occluded by each other\nMultiple main objects: yes\n\nImage style: natural_photo\nDominant content: object (or could be closeup_detail given the tight framing)\nSemantic domain: toys/plush",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 617,
+          "total_tokens": 2139,
+          "cost": 0.00104676,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00104676,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0007404
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 300,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

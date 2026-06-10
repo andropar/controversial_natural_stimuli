@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_194",
+    "stim_key": "vicco_194",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 194,
+    "file_index": 193,
+    "image_name": "shared_4rep_vicco_194.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_194.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_street\",\n  \"short_caption\": \"A garbage truck collecting recycling bins on a city sidewalk near a Döner King restaurant.\",\n  \"main_objects\": [\"garbage truck\", \"recycling bins\", \"apartment building\", \"tree\", \"döner restaurant sign\", \"street posters\"],\n  \"possible_interpretations\": [\"municipal garbage collection on a residential street\", \"trash pickup day in a European city\", \"urban scene with a Döner King shop nearby\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees counterclockwise; Döner King sign suggests a European city, possibly German. Exact location not identifiable.\",\n  \"quality_flags\": [\"rotated_orientation\", \"truncated_vehicle\"]\n}",
+      "response": {
+        "id": "gen-1780319613-KxfRp4npzKWCJVg42P5a",
+        "object": "chat.completion",
+        "created": 1780319613,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_street\",\n  \"short_caption\": \"A garbage truck collecting recycling bins on a city sidewalk near a Döner King restaurant.\",\n  \"main_objects\": [\"garbage truck\", \"recycling bins\", \"apartment building\", \"tree\", \"döner restaurant sign\", \"street posters\"],\n  \"possible_interpretations\": [\"municipal garbage collection on a residential street\", \"trash pickup day in a European city\", \"urban scene with a Döner King shop nearby\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees counterclockwise; Döner King sign suggests a European city, possibly German. Exact location not identifiable.\",\n  \"quality_flags\": [\"rotated_orientation\", \"truncated_vehicle\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. The image appears to be rotated 90 degrees (sideways). It shows an urban street scene with:\n\n- A garbage/recycling truck in the foreground\n- Blue and red recycling/garbage bins on the sidewalk\n- A \"Döner King\" restaurant sign visible on a building\n- Pink/salmon colored apartment buildings\n- Trees lining the street\n- Paved sidewalk with hexagonal pattern\n- Posters/flyers on what appears to be a pillar or pole\n\nLet me provide the annotations:\n\n- Recognizability: The scene is quite recognizable as an urban street with garbage collection - 4\n- Ambiguity: Multiple plausible interpretations (garbage day, street scene, urban area) but fairly clear - 2\n- Natural photo typicality: Looks like a typical natural photograph - 4\n- Visual clutter: Multiple objects, bins, truck, buildings, trees - 4\n- Object centricity: There's a main truck object but it's part of a larger scene - 2\n- Scene centricity: This is primarily a scene/place - 5\n- Caption confidence: High confidence in describing it - 4\n\nSalient objects: truck, bins, buildings, trees - around 5-6\nDistinct categories: truck, bin, building, tree, sign, poster - about 6\n\n- contains_person: No visible person\n- contains_face: No\n- contains_animal: No\n- contains_text: Yes (Döner King sign, posters)\n- contains_vehicle: Yes (truck)\n- contains_food: No (just a sign for a food place)\n- contains_indoor_scene: No\n- contains_outdoor_scene: Yes\n- contains_artificial_or_rendered: No\n- contains_occlusion_or_truncation: Yes (truck is large/prominent)\n- contains_unusual_viewpoint: The image is rotated 90 degrees, which is unusual - Yes\n- contains_multiple_main_objects: Yes (truck and bins are both prominent)\n\nDominant content: scene (it's a street scene with the truck being a prominent element)\nImage style: natural_photo\nSemantic domain: urban_street or street_scene\n\nLet me finalize this.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. The image appears to be rotated 90 degrees (sideways). It shows an urban street scene with:\n\n- A garbage/recycling truck in the foreground\n- Blue and red recycling/garbage bins on the sidewalk\n- A \"Döner King\" restaurant sign visible on a building\n- Pink/salmon colored apartment buildings\n- Trees lining the street\n- Paved sidewalk with hexagonal pattern\n- Posters/flyers on what appears to be a pillar or pole\n\nLet me provide the annotations:\n\n- Recognizability: The scene is quite recognizable as an urban street with garbage collection - 4\n- Ambiguity: Multiple plausible interpretations (garbage day, street scene, urban area) but fairly clear - 2\n- Natural photo typicality: Looks like a typical natural photograph - 4\n- Visual clutter: Multiple objects, bins, truck, buildings, trees - 4\n- Object centricity: There's a main truck object but it's part of a larger scene - 2\n- Scene centricity: This is primarily a scene/place - 5\n- Caption confidence: High confidence in describing it - 4\n\nSalient objects: truck, bins, buildings, trees - around 5-6\nDistinct categories: truck, bin, building, tree, sign, poster - about 6\n\n- contains_person: No visible person\n- contains_face: No\n- contains_animal: No\n- contains_text: Yes (Döner King sign, posters)\n- contains_vehicle: Yes (truck)\n- contains_food: No (just a sign for a food place)\n- contains_indoor_scene: No\n- contains_outdoor_scene: Yes\n- contains_artificial_or_rendered: No\n- contains_occlusion_or_truncation: Yes (truck is large/prominent)\n- contains_unusual_viewpoint: The image is rotated 90 degrees, which is unusual - Yes\n- contains_multiple_main_objects: Yes (truck and bins are both prominent)\n\nDominant content: scene (it's a street scene with the truck being a prominent element)\nImage style: natural_photo\nSemantic domain: urban_street or street_scene\n\nLet me finalize this.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 842,
+          "total_tokens": 2364,
+          "cost": 0.00131676,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131676,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010104
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 502,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

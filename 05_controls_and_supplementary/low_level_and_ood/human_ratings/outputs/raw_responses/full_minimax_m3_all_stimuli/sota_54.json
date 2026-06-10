@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_54",
+    "stim_key": "sota_54",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 54,
+    "file_index": 54,
+    "image_name": "image_0054.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0054.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"street_life\",\n  \"short_caption\": \"Silhouetted man smoking near a window on a foggy, rainy street\",\n  \"main_objects\": [\"man\", \"cigarette\", \"blue umbrella\", \"car\", \"window frame\"],\n  \"possible_interpretations\": [\n    \"Man smoking while waiting by a window on a rainy day\",\n    \"Person taking a break near a storefront in foggy weather\",\n    \"Candid moment of urban life in misty conditions\"\n  ],\n  \"uncertainty_notes\": \"Face is in profile/silhouette, limiting facial detail. Background vehicles and person are blurry due to fog and distance. Exact location unclear.\",\n  \"quality_flags\": [\"low_contrast\", \"backlit_silhouette\", \"foggy_atmospheric\", \"window_framing\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319145-y0UPYBKWHsFGGwjdIPIF",
+        "object": "chat.completion",
+        "created": 1780319145,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"street_life\",\n  \"short_caption\": \"Silhouetted man smoking near a window on a foggy, rainy street\",\n  \"main_objects\": [\"man\", \"cigarette\", \"blue umbrella\", \"car\", \"window frame\"],\n  \"possible_interpretations\": [\n    \"Man smoking while waiting by a window on a rainy day\",\n    \"Person taking a break near a storefront in foggy weather\",\n    \"Candid moment of urban life in misty conditions\"\n  ],\n  \"uncertainty_notes\": \"Face is in profile/silhouette, limiting facial detail. Background vehicles and person are blurry due to fog and distance. Exact location unclear.\",\n  \"quality_flags\": [\"low_contrast\", \"backlit_silhouette\", \"foggy_atmospheric\", \"window_framing\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a man in silhouette, standing near what appears to be a window or doorway, smoking a cigarette. He's wearing a dark jacket. The background is foggy/misty with poor visibility, showing what appears to be a street scene with some vehicles (possibly a car) and another person with a blue umbrella. The atmosphere is rainy and overcast. The image is taken from inside looking out, creating a frame with the window/door edges visible.\n\nKey observations:\n- Main subject: A man smoking, shown in silhouette/profile\n- Setting: Near a window/doorway, looking out at a rainy, foggy street\n- Background: Misty, low visibility, with vehicles and another person with umbrella\n- Style: Natural photograph, somewhat artistic/moody\n- The man is in shadow/silhouette against a bright, foggy background\n- There's a blue umbrella visible in the background\n- The image has a frame/border suggesting it's taken through a window\n\nLet me rate the dimensions:\n- recognizability: 4 - The main content (man smoking) is clearly recognizable\n- ambiguity: 2 - Pretty clear what's happening\n- natural_photo_typicality: 4 - Looks like a natural photograph\n- visual_clutter: 3 - Some background elements but not too cluttered\n- object_centricity: 3 - The man is the main focus but there's significant scene context\n- scene_centricity: 3 - The atmospheric scene is also important\n- caption_confidence: 4 - I can confidently caption this\n\nSalient objects:\n- The smoking man (main)\n- Vehicles in background\n- Person with blue umbrella\n- Window/frame elements\n\nCategories: man, vehicle, umbrella, window frame - about 4 distinct categories\n\nBooleans:\n- contains_person: true\n- contains_face: true (though in profile/silhouette, the face is visible)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: true (car in background)\n- contains_food: false\n- contains_indoor_scene: true (partially - the window frame)\n- contains_outdoor_scene: true (the street scene)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the man is partially framed by the window)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\nDominant content: person (the man is the clear main subject)\nImage style: natural_photo\nSemantic domain: street scene / urban life\n\nCaption: \"Silhouetted man smoking near a window on a foggy, rainy street\"\n\nLet me refine my ratings and finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a man in silhouette, standing near what appears to be a window or doorway, smoking a cigarette. He's wearing a dark jacket. The background is foggy/misty with poor visibility, showing what appears to be a street scene with some vehicles (possibly a car) and another person with a blue umbrella. The atmosphere is rainy and overcast. The image is taken from inside looking out, creating a frame with the window/door edges visible.\n\nKey observations:\n- Main subject: A man smoking, shown in silhouette/profile\n- Setting: Near a window/doorway, looking out at a rainy, foggy street\n- Background: Misty, low visibility, with vehicles and another person with umbrella\n- Style: Natural photograph, somewhat artistic/moody\n- The man is in shadow/silhouette against a bright, foggy background\n- There's a blue umbrella visible in the background\n- The image has a frame/border suggesting it's taken through a window\n\nLet me rate the dimensions:\n- recognizability: 4 - The main content (man smoking) is clearly recognizable\n- ambiguity: 2 - Pretty clear what's happening\n- natural_photo_typicality: 4 - Looks like a natural photograph\n- visual_clutter: 3 - Some background elements but not too cluttered\n- object_centricity: 3 - The man is the main focus but there's significant scene context\n- scene_centricity: 3 - The atmospheric scene is also important\n- caption_confidence: 4 - I can confidently caption this\n\nSalient objects:\n- The smoking man (main)\n- Vehicles in background\n- Person with blue umbrella\n- Window/frame elements\n\nCategories: man, vehicle, umbrella, window frame - about 4 distinct categories\n\nBooleans:\n- contains_person: true\n- contains_face: true (though in profile/silhouette, the face is visible)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: true (car in background)\n- contains_food: false\n- contains_indoor_scene: true (partially - the window frame)\n- contains_outdoor_scene: true (the street scene)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the man is partially framed by the window)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\nDominant content: person (the man is the clear main subject)\nImage style: natural_photo\nSemantic domain: street scene / urban life\n\nCaption: \"Silhouetted man smoking near a window on a foggy, rainy street\"\n\nLet me refine my ratings and finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 967,
+          "total_tokens": 2489,
+          "cost": 0.00146676,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00146676,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011604
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 650,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

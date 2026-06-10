@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_34",
+    "stim_key": "architecture_34",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 34,
+    "file_index": 34,
+    "image_name": "image_0034.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0034.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home/decor\",\n  \"short_caption\": \"White macramé hanging chair with fluffy pillow and gray blanket in a bright room corner.\",\n  \"main_objects\": [\"hanging macramé chair\", \"fluffy pillow\", \"gray blanket\", \"shag rug\", \"curtain\", \"string lights\", \"plant leaves\"],\n  \"possible_interpretations\": [\"bohemian-style hanging chair in a bedroom\", \"stylish indoor reading nook\", \"home decor product photo\"],\n  \"uncertainty_notes\": \"Slight warm color cast suggests possible white balance or filter, but content is unambiguous.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318883-pDObzd4XJLMswLV3GeZh",
+        "object": "chat.completion",
+        "created": 1780318883,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home/decor\",\n  \"short_caption\": \"White macramé hanging chair with fluffy pillow and gray blanket in a bright room corner.\",\n  \"main_objects\": [\"hanging macramé chair\", \"fluffy pillow\", \"gray blanket\", \"shag rug\", \"curtain\", \"string lights\", \"plant leaves\"],\n  \"possible_interpretations\": [\"bohemian-style hanging chair in a bedroom\", \"stylish indoor reading nook\", \"home decor product photo\"],\n  \"uncertainty_notes\": \"Slight warm color cast suggests possible white balance or filter, but content is unambiguous.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a hanging macramé hammock chair in a room. The chair is round/circular with a white rope/woven structure, contains a white fluffy pillow and a gray fluffy blanket, and hangs from the ceiling by white ropes. There's a white curtain to the left, string lights in the upper left, some green plant leaves in the upper right corner, and a cream/white shag rug on the floor. The walls are white/light colored.\n\nLet me rate the properties:\n\n- recognizability: 5 - very clearly a hanging chair in a room\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a natural photo, possibly slightly styled\n- visual_clutter: 2 - relatively clean composition with a few elements\n- object_centricity: 4 - the hanging chair is the clear central object\n- scene_centricity: 3 - it's a room scene but dominated by one object\n- caption_confidence: 5 - easy to caption\n\nSalient objects: 1 main (the chair), plus pillow, blanket, plant, rug\nDistinct categories: chair, pillow, blanket, plant, rug, curtain, lights = about 6-7\n\nContains: no person, no face, no animal, no text, no vehicle, no food, indoor scene, not outdoor, no artificial/rendered content, no occlusion, no unusual viewpoint, single main object\n\nDominant content: object\nImage style: natural_photo (though possibly styled/edited, looks natural)\nSemantic domain: home/decor\n\nShort caption: \"White macramé hanging chair with fluffy pillow and gray blanket in a bright room\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a hanging macramé hammock chair in a room. The chair is round/circular with a white rope/woven structure, contains a white fluffy pillow and a gray fluffy blanket, and hangs from the ceiling by white ropes. There's a white curtain to the left, string lights in the upper left, some green plant leaves in the upper right corner, and a cream/white shag rug on the floor. The walls are white/light colored.\n\nLet me rate the properties:\n\n- recognizability: 5 - very clearly a hanging chair in a room\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a natural photo, possibly slightly styled\n- visual_clutter: 2 - relatively clean composition with a few elements\n- object_centricity: 4 - the hanging chair is the clear central object\n- scene_centricity: 3 - it's a room scene but dominated by one object\n- caption_confidence: 5 - easy to caption\n\nSalient objects: 1 main (the chair), plus pillow, blanket, plant, rug\nDistinct categories: chair, pillow, blanket, plant, rug, curtain, lights = about 6-7\n\nContains: no person, no face, no animal, no text, no vehicle, no food, indoor scene, not outdoor, no artificial/rendered content, no occlusion, no unusual viewpoint, single main object\n\nDominant content: object\nImage style: natural_photo (though possibly styled/edited, looks natural)\nSemantic domain: home/decor\n\nShort caption: \"White macramé hanging chair with fluffy pillow and gray blanket in a bright room\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 716,
+          "total_tokens": 2238,
+          "cost": 0.00128844,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00128844,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008592
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 393,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

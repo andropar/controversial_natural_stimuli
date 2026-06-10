@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_75",
+    "stim_key": "all_models_75",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 75,
+    "file_index": 75,
+    "image_name": "image_0075.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0075.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture_dwelling\",\n\n  \"short_caption\": \"Yellow wooden door of a traditional white yurt with a partially visible person\",\n  \"main_objects\": [\"yurt\", \"wooden door\", \"person\"],\n  \"possible_interpretations\": [\n    \"traditional Mongolian yurt entrance\",\n    \"nomadic dwelling\",\n    \"cultural architecture detail\"\n  ],\n  \"uncertainty_notes\": \"Person on the right is partially cut off and no face is visible; cultural origin of yurt not definitively identifiable.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318819-YyPKKhhIUWmY9yvVRkjd",
+        "object": "chat.completion",
+        "created": 1780318819,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture_dwelling\",\n\n  \"short_caption\": \"Yellow wooden door of a traditional white yurt with a partially visible person\",\n  \"main_objects\": [\"yurt\", \"wooden door\", \"person\"],\n  \"possible_interpretations\": [\n    \"traditional Mongolian yurt entrance\",\n    \"nomadic dwelling\",\n    \"cultural architecture detail\"\n  ],\n  \"uncertainty_notes\": \"Person on the right is partially cut off and no face is visible; cultural origin of yurt not definitively identifiable.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a yurt (traditional Central Asian/Mongolian dwelling) with:\n- A white canvas/felt covering forming the round structure\n- A yellow/ochre wooden door that is the central focus\n- A metal chimney pipe visible at the top\n- Blue trim/binding along the roofline\n- Ropes tied around the yurt\n- A person partially visible on the right side wearing what appears to be a brownish/pinkish traditional garment\n- Blue sky with some clouds in the background\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clearly recognizable as a yurt with a door\n- ambiguity: 1 - Very clear what it is, not much ambiguity\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 2 - Relatively simple composition with a few main elements\n- object_centricity: 4 - The door is the dominant central object\n- scene_centricity: 3 - It's somewhere between object-focused and scene-focused\n- caption_confidence: 5 - Very confident in a concise caption\n\nContent flags:\n- contains_person: yes (partially visible on right)\n- contains_face: no\n- contains_animal: no\n- contains_text: no\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: no\n- contains_outdoor_scene: yes\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: yes (person is truncated)\n- contains_unusual_viewpoint: no\n- contains_multiple_main_objects: no (mainly the door is central)\n\nSalient object count: 2 (door, yurt structure)\nDistinct object categories: 3 (door, yurt/tent, person)\n\nDominant content type: object (the door/yurt is the main focus)\nImage style: natural_photo\nSemantic domain: architecture/dwelling/cultural",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a yurt (traditional Central Asian/Mongolian dwelling) with:\n- A white canvas/felt covering forming the round structure\n- A yellow/ochre wooden door that is the central focus\n- A metal chimney pipe visible at the top\n- Blue trim/binding along the roofline\n- Ropes tied around the yurt\n- A person partially visible on the right side wearing what appears to be a brownish/pinkish traditional garment\n- Blue sky with some clouds in the background\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clearly recognizable as a yurt with a door\n- ambiguity: 1 - Very clear what it is, not much ambiguity\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 2 - Relatively simple composition with a few main elements\n- object_centricity: 4 - The door is the dominant central object\n- scene_centricity: 3 - It's somewhere between object-focused and scene-focused\n- caption_confidence: 5 - Very confident in a concise caption\n\nContent flags:\n- contains_person: yes (partially visible on right)\n- contains_face: no\n- contains_animal: no\n- contains_text: no\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: no\n- contains_outdoor_scene: yes\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: yes (person is truncated)\n- contains_unusual_viewpoint: no\n- contains_multiple_main_objects: no (mainly the door is central)\n\nSalient object count: 2 (door, yurt structure)\nDistinct object categories: 3 (door, yurt/tent, person)\n\nDominant content type: object (the door/yurt is the main focus)\nImage style: natural_photo\nSemantic domain: architecture/dwelling/cultural",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1138,
+          "completion_tokens": 751,
+          "total_tokens": 1889,
+          "cost": 0.00109236,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00109236,
+            "upstream_inference_prompt_cost": 0.00019116,
+            "upstream_inference_completions_cost": 0.0009012
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 454,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_66",
+    "stim_key": "architecture_66",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 66,
+    "file_index": 66,
+    "image_name": "image_0066.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0066.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 4, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 2, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"woodworking/tools\", \"short_caption\": \"Bad Axe Tool Works hand saw resting on a wooden board in a workshop.\", \"main_objects\": [\"hand saw\", \"wooden board\", \"workshop floor mats\"], \"possible_interpretations\": [\"hand saw on wood ready for cutting\", \"product display of woodworking tool\", \"workshop tool resting between uses\", \"closeup of saw branding and craftsmanship\"], \"uncertainty_notes\": \"Whether the saw is in active use or being displayed is unclear; the low close-up angle emphasizes the blade and handle.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780318922-Ftw573fAsrDyYjaMt78Q",
+        "object": "chat.completion",
+        "created": 1780318922,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 4, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 2, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"woodworking/tools\", \"short_caption\": \"Bad Axe Tool Works hand saw resting on a wooden board in a workshop.\", \"main_objects\": [\"hand saw\", \"wooden board\", \"workshop floor mats\"], \"possible_interpretations\": [\"hand saw on wood ready for cutting\", \"product display of woodworking tool\", \"workshop tool resting between uses\", \"closeup of saw branding and craftsmanship\"], \"uncertainty_notes\": \"Whether the saw is in active use or being displayed is unclear; the low close-up angle emphasizes the blade and handle.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a hand saw (specifically a \"Bad Axe Tool Works\" backsaw) resting on a wooden board. The saw has a wooden handle with a circular logo/medallion, and the blade has text printed on it including \"Bad Axe Tool Works\" and what appears to be \"La Crosse, Wisconsin U.S.A.\" There's a pencil line drawn on the wooden board, suggesting a woodworking context. The background shows what looks like a workshop with foam floor tiles (interlocking puzzle mats in blue, green, red, yellow).\n\nLet me assess each attribute:\n\n- Recognizability: The image clearly shows a hand saw and wood, very recognizable. 5\n- Ambiguity: Low ambiguity - it's clearly a saw on wood. 1\n- Natural_photo_typicality: Looks like a natural photograph, not edited or rendered. 4\n- Visual_clutter: Moderate - workshop background visible but main subjects are clear. 2-3\n- Object_centricity: Yes, the saw and wood plank dominate. 4\n- Scene_centricity: It's more object-focused than scene-focused. 2\n- Caption_confidence: High confidence in describing it. 4\n\nSalient objects: saw, wood plank, workshop floor mats\n- estimated_salient_object_count: 2-3\n- estimated_distinct_object_categories: 2 (tool, wood)\n\nContains:\n- person: false\n- face: false\n- animal: false\n- text: true (on the saw blade)\n- vehicle: false\n- food: false\n- indoor_scene: true (workshop)\n- outdoor_scene: false\n- artificial_or_rendered: false\n- occlusion_or_truncation: false (maybe slightly truncated saw handle)\n- unusual_viewpoint: true (close-up low angle)\n- multiple_main_objects: true (saw and wood)\n\nDominant content type: object\nImage style: natural_photo\nSemantic domain: woodworking/tools\n\nShort caption: \"Bad Axe Tool Works hand saw resting on a wooden board in a workshop.\"\n\nMain objects: hand saw, wooden board, workshop floor mats\n\nPossible interpretations:\n- A woodworking tool being displayed\n- A saw about to be used for cutting\n- A product photo of the saw\n- Tools in a workshop setting\n\nUncertainty notes: The exact purpose/context (display vs. active use) is somewhat unclear.\n\nQuality flags: none significant",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a hand saw (specifically a \"Bad Axe Tool Works\" backsaw) resting on a wooden board. The saw has a wooden handle with a circular logo/medallion, and the blade has text printed on it including \"Bad Axe Tool Works\" and what appears to be \"La Crosse, Wisconsin U.S.A.\" There's a pencil line drawn on the wooden board, suggesting a woodworking context. The background shows what looks like a workshop with foam floor tiles (interlocking puzzle mats in blue, green, red, yellow).\n\nLet me assess each attribute:\n\n- Recognizability: The image clearly shows a hand saw and wood, very recognizable. 5\n- Ambiguity: Low ambiguity - it's clearly a saw on wood. 1\n- Natural_photo_typicality: Looks like a natural photograph, not edited or rendered. 4\n- Visual_clutter: Moderate - workshop background visible but main subjects are clear. 2-3\n- Object_centricity: Yes, the saw and wood plank dominate. 4\n- Scene_centricity: It's more object-focused than scene-focused. 2\n- Caption_confidence: High confidence in describing it. 4\n\nSalient objects: saw, wood plank, workshop floor mats\n- estimated_salient_object_count: 2-3\n- estimated_distinct_object_categories: 2 (tool, wood)\n\nContains:\n- person: false\n- face: false\n- animal: false\n- text: true (on the saw blade)\n- vehicle: false\n- food: false\n- indoor_scene: true (workshop)\n- outdoor_scene: false\n- artificial_or_rendered: false\n- occlusion_or_truncation: false (maybe slightly truncated saw handle)\n- unusual_viewpoint: true (close-up low angle)\n- multiple_main_objects: true (saw and wood)\n\nDominant content type: object\nImage style: natural_photo\nSemantic domain: woodworking/tools\n\nShort caption: \"Bad Axe Tool Works hand saw resting on a wooden board in a workshop.\"\n\nMain objects: hand saw, wooden board, workshop floor mats\n\nPossible interpretations:\n- A woodworking tool being displayed\n- A saw about to be used for cutting\n- A product photo of the saw\n- Tools in a workshop setting\n\nUncertainty notes: The exact purpose/context (display vs. active use) is somewhat unclear.\n\nQuality flags: none significant",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 823,
+          "total_tokens": 2345,
+          "cost": 0.00141684,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00141684,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009876
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 563,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

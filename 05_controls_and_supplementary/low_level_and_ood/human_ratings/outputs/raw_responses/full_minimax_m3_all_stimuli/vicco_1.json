@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_1",
+    "stim_key": "vicco_1",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 1,
+    "file_index": 0,
+    "image_name": "shared_4rep_vicco_001.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_001.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"household_gardening_accident\",\n  \"short_caption\": \"Top-down view of a broken white ceramic plant pot with spilled soil on a tiled floor.\",\n  \"main_objects\": [\"broken ceramic pot\", \"scattered soil\", \"ceramic shards\", \"plant seedling\", \"tiled floor\", \"black tool or part\"],\n  \"possible_interpretations\": [\n    \"A potted plant fell and broke, spilling soil on the floor\",\n    \"A broken flower pot with surviving seedling\",\n    \"An accidental damage to a houseplant\"\n  ],\n  \"uncertainty_notes\": \"Hard to determine exact setting (indoor vs covered patio); small black objects at top are unclear (could be tools, tool handles, or part of the pot).\",\n  \"quality_flags\": [\"unusual_top_down_viewpoint\", \"cluttered_with_debris\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319389-ZUr3w6HcUpzV6ukzgF9u",
+        "object": "chat.completion",
+        "created": 1780319389,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"household_gardening_accident\",\n  \"short_caption\": \"Top-down view of a broken white ceramic plant pot with spilled soil on a tiled floor.\",\n  \"main_objects\": [\"broken ceramic pot\", \"scattered soil\", \"ceramic shards\", \"plant seedling\", \"tiled floor\", \"black tool or part\"],\n  \"possible_interpretations\": [\n    \"A potted plant fell and broke, spilling soil on the floor\",\n    \"A broken flower pot with surviving seedling\",\n    \"An accidental damage to a houseplant\"\n  ],\n  \"uncertainty_notes\": \"Hard to determine exact setting (indoor vs covered patio); small black objects at top are unclear (could be tools, tool handles, or part of the pot).\",\n  \"quality_flags\": [\"unusual_top_down_viewpoint\", \"cluttered_with_debris\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a top-down view of a tiled floor with what appears to be a broken/destroyed white ceramic pot or vase. There's soil/dirt scattered across the floor, broken ceramic pieces, a small plant seedling that seems to have survived, and what looks like the bottom portion of a pot with soil still in it. There are also some black objects (possibly tools or parts of something) at the top of the image. The setting appears to be a patio or outdoor/indoor tiled area.\n\nLet me think about the characteristics:\n\n- recognizability: The content is recognizable - a broken plant pot with soil spilled. Maybe 4.\n- ambiguity: Not very ambiguous - it's clearly a broken pot with spilled soil. Maybe 2.\n- natural_photo_typicality: This looks like a typical natural photograph someone might take to document an accident. 4.\n- visual_clutter: There's significant clutter - soil scattered, broken pieces, plant remnants, tools. Maybe 4.\n- object_centricity: There's a main object (the broken pot with soil) but also significant scene elements. Maybe 3.\n- scene_centricity: It's more of a scene showing the aftermath. Maybe 3-4.\n- caption_confidence: Fairly confident about what it shows. 4.\n\nFor the boolean fields:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: possibly - could be a covered patio\n- contains_outdoor_scene: possibly - the tiled area could be outdoor\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the pot is truncated/broken)\n- contains_unusual_viewpoint: true (top-down view)\n- contains_multiple_main_objects: false (one main object - the broken pot)\n\nThe dominant content type is mixed - it has both object and scene elements. The broken pot with soil is the main object on a tiled floor scene.\n\nImage style: natural_photo\nSemantic domain: gardening/accident/household\n\nMain objects: broken pot, soil, ceramic shards, plant seedling, tiled floor\nPossible interpretations: broken flower pot with soil spilled, plant pot accident, potted plant broken\n\nLet me finalize the counts:\n- estimated_salient_object_count: ~3-5 (broken pot, scattered pieces, plant, soil pile, tools)\n- estimated_distinct_object_categories: ~3-4 (ceramic, plant, tools, floor)\n\nActually, let me reconsider. The main \"subject\" is the broken pot with soil. The tiles are background.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a top-down view of a tiled floor with what appears to be a broken/destroyed white ceramic pot or vase. There's soil/dirt scattered across the floor, broken ceramic pieces, a small plant seedling that seems to have survived, and what looks like the bottom portion of a pot with soil still in it. There are also some black objects (possibly tools or parts of something) at the top of the image. The setting appears to be a patio or outdoor/indoor tiled area.\n\nLet me think about the characteristics:\n\n- recognizability: The content is recognizable - a broken plant pot with soil spilled. Maybe 4.\n- ambiguity: Not very ambiguous - it's clearly a broken pot with spilled soil. Maybe 2.\n- natural_photo_typicality: This looks like a typical natural photograph someone might take to document an accident. 4.\n- visual_clutter: There's significant clutter - soil scattered, broken pieces, plant remnants, tools. Maybe 4.\n- object_centricity: There's a main object (the broken pot with soil) but also significant scene elements. Maybe 3.\n- scene_centricity: It's more of a scene showing the aftermath. Maybe 3-4.\n- caption_confidence: Fairly confident about what it shows. 4.\n\nFor the boolean fields:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: possibly - could be a covered patio\n- contains_outdoor_scene: possibly - the tiled area could be outdoor\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the pot is truncated/broken)\n- contains_unusual_viewpoint: true (top-down view)\n- contains_multiple_main_objects: false (one main object - the broken pot)\n\nThe dominant content type is mixed - it has both object and scene elements. The broken pot with soil is the main object on a tiled floor scene.\n\nImage style: natural_photo\nSemantic domain: gardening/accident/household\n\nMain objects: broken pot, soil, ceramic shards, plant seedling, tiled floor\nPossible interpretations: broken flower pot with soil spilled, plant pot accident, potted plant broken\n\nLet me finalize the counts:\n- estimated_salient_object_count: ~3-5 (broken pot, scattered pieces, plant, soil pile, tools)\n- estimated_distinct_object_categories: ~3-4 (ceramic, plant, tools, floor)\n\nActually, let me reconsider. The main \"subject\" is the broken pot with soil. The tiles are background.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 972,
+          "total_tokens": 2494,
+          "cost": 0.00147276,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00147276,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011664
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 648,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

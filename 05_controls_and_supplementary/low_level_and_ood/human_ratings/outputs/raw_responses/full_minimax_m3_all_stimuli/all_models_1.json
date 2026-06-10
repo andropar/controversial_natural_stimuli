@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_1",
+    "stim_key": "all_models_1",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 1,
+    "file_index": 1,
+    "image_name": "image_0001.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0001.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"illustration_or_render\",\n  \"semantic_domain\": \"interior_design\",\n  \"short_caption\": \"Modern minimalist dining room with black table, chairs, and pendant light\",\n  \"main_objects\": [\"dining table\", \"chairs\", \"pendant lamp\", \"shelf\", \"vase with branches\", \"framed pictures\", \"rug\"],\n  \"possible_interpretations\": [\"modern dining room interior\", \"3D rendered interior design scene\", \"minimalist home decor\", \"contemporary open-plan living and dining area\"],\n  \"uncertainty_notes\": \"The image has a very polished, almost perfect quality suggesting it may be a 3D rendering rather than a photograph; exact objects on the table are hard to discern.\",\n  \"quality_flags\": [\"possibly_rendered\", \"low_detail_shadows\", \"stylized_lighting\"]\n}",
+      "response": {
+        "id": "gen-1780318741-8RtpufixblfaKLpho3ZE",
+        "object": "chat.completion",
+        "created": 1780318741,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"illustration_or_render\",\n  \"semantic_domain\": \"interior_design\",\n  \"short_caption\": \"Modern minimalist dining room with black table, chairs, and pendant light\",\n  \"main_objects\": [\"dining table\", \"chairs\", \"pendant lamp\", \"shelf\", \"vase with branches\", \"framed pictures\", \"rug\"],\n  \"possible_interpretations\": [\"modern dining room interior\", \"3D rendered interior design scene\", \"minimalist home decor\", \"contemporary open-plan living and dining area\"],\n  \"uncertainty_notes\": \"The image has a very polished, almost perfect quality suggesting it may be a 3D rendering rather than a photograph; exact objects on the table are hard to discern.\",\n  \"quality_flags\": [\"possibly_rendered\", \"low_detail_shadows\", \"stylized_lighting\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a modern interior space, specifically what appears to be a dining area. I can see:\n- A dark/black dining table\n- Black chairs around the table\n- A pendant light hanging from the ceiling\n- A shelf with decorative items (vases, branches)\n- Framed pictures on a dark wall\n- A vase with dried branches\n- A rug on the floor\n- Modern, minimalist decor\n- Two-toned walls (light and dark gray/black)\n\nThe image has a very stylized, almost rendered quality to it - it could be a 3D rendering or a heavily styled photo. The lighting and surfaces look quite perfect, suggesting it might be an interior design rendering or a very polished catalog photo.\n\nLet me rate according to the schema:\n\n- recognizability: 4 - clearly an interior/dining room scene\n- ambiguity: 2 - fairly clear what it is (a dining room)\n- natural_photo_typicality: 2 - looks more like a rendering or very stylized photo\n- visual_clutter: 2 - minimalist, not cluttered\n- object_centricity: 3 - has a table as central but it's more of a scene\n- scene_centricity: 5 - clearly a place/scene\n- caption_confidence: 4\n\nEstimated objects: table, chairs (3-4), pendant lamp, vases, pictures, rug, shelf, branches\nDistinct categories: furniture, lighting, decor, wall art, flooring - maybe 4-5\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: true (likely a rendering)\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: scene\nimage_style: could be \"edited_photo\" or \"illustration_or_render\" - leaning toward render\nsemantic_domain: interior_design\n\nLet me provide the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a modern interior space, specifically what appears to be a dining area. I can see:\n- A dark/black dining table\n- Black chairs around the table\n- A pendant light hanging from the ceiling\n- A shelf with decorative items (vases, branches)\n- Framed pictures on a dark wall\n- A vase with dried branches\n- A rug on the floor\n- Modern, minimalist decor\n- Two-toned walls (light and dark gray/black)\n\nThe image has a very stylized, almost rendered quality to it - it could be a 3D rendering or a heavily styled photo. The lighting and surfaces look quite perfect, suggesting it might be an interior design rendering or a very polished catalog photo.\n\nLet me rate according to the schema:\n\n- recognizability: 4 - clearly an interior/dining room scene\n- ambiguity: 2 - fairly clear what it is (a dining room)\n- natural_photo_typicality: 2 - looks more like a rendering or very stylized photo\n- visual_clutter: 2 - minimalist, not cluttered\n- object_centricity: 3 - has a table as central but it's more of a scene\n- scene_centricity: 5 - clearly a place/scene\n- caption_confidence: 4\n\nEstimated objects: table, chairs (3-4), pendant lamp, vases, pictures, rug, shelf, branches\nDistinct categories: furniture, lighting, decor, wall art, flooring - maybe 4-5\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: true (likely a rendering)\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: scene\nimage_style: could be \"edited_photo\" or \"illustration_or_render\" - leaning toward render\nsemantic_domain: interior_design\n\nLet me provide the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1138,
+          "completion_tokens": 835,
+          "total_tokens": 1973,
+          "cost": 0.00131604,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131604,
+            "upstream_inference_prompt_cost": 0.00031404,
+            "upstream_inference_completions_cost": 0.001002
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 496,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

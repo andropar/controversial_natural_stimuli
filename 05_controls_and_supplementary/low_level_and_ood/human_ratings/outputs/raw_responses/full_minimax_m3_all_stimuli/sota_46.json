@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_46",
+    "stim_key": "sota_46",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 46,
+    "file_index": 46,
+    "image_name": "image_0046.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0046.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife_beach\",\n  \"short_caption\": \"A colorful macaw perched on a wooden railing overlooking a beach and ocean.\",\n  \"main_objects\": [\"parrot\", \"wooden railing\", \"ocean\", \"sky\"],\n  \"possible_interpretations\": [\"A macaw perched at a beach\", \"A wild parrot near the ocean\", \"A pet parrot at a coastal property\", \"A parrot on a beachside deck\"],\n  \"uncertainty_notes\": \"The parrot's body and tail are partially cut off on the right edge of the frame; exact species (likely Military or Great Green Macaw) is uncertain.\",\n  \"quality_flags\": [\"subject_truncation\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319136-1kf9kLNClhZY5kXRXCTL",
+        "object": "chat.completion",
+        "created": 1780319136,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife_beach\",\n  \"short_caption\": \"A colorful macaw perched on a wooden railing overlooking a beach and ocean.\",\n  \"main_objects\": [\"parrot\", \"wooden railing\", \"ocean\", \"sky\"],\n  \"possible_interpretations\": [\"A macaw perched at a beach\", \"A wild parrot near the ocean\", \"A pet parrot at a coastal property\", \"A parrot on a beachside deck\"],\n  \"uncertainty_notes\": \"The parrot's body and tail are partially cut off on the right edge of the frame; exact species (likely Military or Great Green Macaw) is uncertain.\",\n  \"quality_flags\": [\"subject_truncation\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully:\n\n1. Main content: A colorful parrot (appears to be a Military Macaw or similar) perched on a wooden railing/ledge, with a beach and ocean scene in the background.\n\n2. Recognizability: The parrot is clearly recognizable, the scene is clear. I'd rate this 5.\n\n3. Ambiguity: The image has a fairly clear interpretation - a parrot at the beach. Low ambiguity. I'd rate this 1-2.\n\n4. Natural photo typicality: Looks like a typical natural photograph, though possibly with some processing. I'd say 4-5.\n\n5. Visual clutter: The image is relatively clean - parrot, wooden railing, ocean, sky. Not too cluttered. I'd rate this 2.\n\n6. Object centricity: The parrot is a clear central/main subject, though it's on the right side. I'd rate 3-4.\n\n7. Scene centricity: The background is a clear beach/ocean scene, but the parrot dominates. I'd say 3.\n\n8. Caption confidence: Easy to caption. 5.\n\n9. Salient objects: 1 main object (the parrot), though the scene has multiple elements.\n\n10. Distinct categories: parrot, wooden railing, ocean, sky, beach - probably 3-4.\n\n11. Contains person: No\n12. Contains face: No (bird face, not human)\n13. Contains animal: Yes (parrot)\n14. Contains text: No\n15. Contains vehicle: No\n16. Contains food: No\n17. Contains indoor scene: No\n18. Contains outdoor scene: Yes\n19. Contains artificial or rendered content: No\n20. Contains occlusion or truncation: The parrot's body is partially cut off on the right side\n21. Contains unusual viewpoint: No, fairly standard\n22. Contains multiple main objects: No, one main subject (parrot)\n\nDominant content type: animal\nImage style: natural_photo\nSemantic domain: nature/wildlife/beach\n\nShort caption: \"A colorful parrot perched on a wooden railing overlooking a beach and ocean.\"\n\nMain objects: parrot, wooden railing, ocean\n\nPossible interpretations: \n- A parrot at a beach\n- A wild parrot near the coast\n- A pet parrot at a beach house\n\nUncertainty notes: The parrot's body is partially cut off on the right edge of the frame.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully:\n\n1. Main content: A colorful parrot (appears to be a Military Macaw or similar) perched on a wooden railing/ledge, with a beach and ocean scene in the background.\n\n2. Recognizability: The parrot is clearly recognizable, the scene is clear. I'd rate this 5.\n\n3. Ambiguity: The image has a fairly clear interpretation - a parrot at the beach. Low ambiguity. I'd rate this 1-2.\n\n4. Natural photo typicality: Looks like a typical natural photograph, though possibly with some processing. I'd say 4-5.\n\n5. Visual clutter: The image is relatively clean - parrot, wooden railing, ocean, sky. Not too cluttered. I'd rate this 2.\n\n6. Object centricity: The parrot is a clear central/main subject, though it's on the right side. I'd rate 3-4.\n\n7. Scene centricity: The background is a clear beach/ocean scene, but the parrot dominates. I'd say 3.\n\n8. Caption confidence: Easy to caption. 5.\n\n9. Salient objects: 1 main object (the parrot), though the scene has multiple elements.\n\n10. Distinct categories: parrot, wooden railing, ocean, sky, beach - probably 3-4.\n\n11. Contains person: No\n12. Contains face: No (bird face, not human)\n13. Contains animal: Yes (parrot)\n14. Contains text: No\n15. Contains vehicle: No\n16. Contains food: No\n17. Contains indoor scene: No\n18. Contains outdoor scene: Yes\n19. Contains artificial or rendered content: No\n20. Contains occlusion or truncation: The parrot's body is partially cut off on the right side\n21. Contains unusual viewpoint: No, fairly standard\n22. Contains multiple main objects: No, one main subject (parrot)\n\nDominant content type: animal\nImage style: natural_photo\nSemantic domain: nature/wildlife/beach\n\nShort caption: \"A colorful parrot perched on a wooden railing overlooking a beach and ocean.\"\n\nMain objects: parrot, wooden railing, ocean\n\nPossible interpretations: \n- A parrot at a beach\n- A wild parrot near the coast\n- A pet parrot at a beach house\n\nUncertainty notes: The parrot's body is partially cut off on the right edge of the frame.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 859,
+          "total_tokens": 2381,
+          "cost": 0.00146004,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00146004,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010308
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 543,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

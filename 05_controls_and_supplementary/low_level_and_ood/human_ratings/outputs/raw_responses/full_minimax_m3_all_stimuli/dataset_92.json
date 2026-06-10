@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_92",
+    "stim_key": "dataset_92",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 92,
+    "file_index": 92,
+    "image_name": "image_0092.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0092.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: short_caption must be <= 20 words"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"print_publication\", \"short_caption\": \"An open magazine titled 'Living at The Cape' rests on crumpled brown kraft paper.\", \"main_objects\": [\"magazine\", \"kraft paper\", \"coastal photograph\", \"headline text\"], \"possible_interpretations\": [\"a magazine spread mockup on craft paper\", \"a lifestyle publication about coastal development\", \"a design portfolio sample\"], \"uncertainty_notes\": \"The people in the embedded beach photo are very small and only barely discernible as figures.\", \"quality_flags\": [\"angled_top_down_viewpoint\", \"styled_product_shot\"]}",
+      "response": {
+        "id": "gen-1780319089-CFtkfZOBFmtii1UkWXIr",
+        "object": "chat.completion",
+        "created": 1780319089,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"print_publication\", \"short_caption\": \"An open magazine titled 'Living at The Cape' rests on crumpled brown kraft paper.\", \"main_objects\": [\"magazine\", \"kraft paper\", \"coastal photograph\", \"headline text\"], \"possible_interpretations\": [\"a magazine spread mockup on craft paper\", \"a lifestyle publication about coastal development\", \"a design portfolio sample\"], \"uncertainty_notes\": \"The people in the embedded beach photo are very small and only barely discernible as figures.\", \"quality_flags\": [\"angled_top_down_viewpoint\", \"styled_product_shot\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an open magazine or brochure lying on crumpled brown/kraft paper. The magazine has a full-page spread with:\n- A large landscape photograph on the left page showing a coastal scene with sandy beach, rocky shoreline, and blue sky with clouds. There appear to be small figures (people) walking on the beach.\n- Text on the right page with a heading \"Living at The Cape\" in green/teal color, followed by body text about developing natural habitats.\n- The magazine is on crumpled brown paper, photographed from above at an angle.\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - very clear what this is\n- ambiguity: 1 - quite unambiguous\n- natural_photo_typicality: 4 - looks like a natural photo, though it's a styled product shot\n- visual_clutter: 3 - has multiple elements but not overly cluttered\n- object_centricity: 2 - the magazine is the main object but it contains a scene\n- scene_centricity: 2 - the magazine itself isn't a scene, but contains a scene\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 1 (the magazine)\n- estimated_distinct_object_categories: 2 (magazine, paper)\n\n- contains_person: true (small figures visible on the beach in the image within the magazine)\n- contains_face: false\n- contains_animal: false\n- contains_text: true\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (the actual photo within the magazine shows an outdoor scene, but the main image is of a magazine on paper)\n- contains_outdoor_scene: true (within the magazine)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the magazine is the main subject)\n- image_style: \"natural_photo\" (it's a photograph of a magazine)\n- semantic_domain: \"design\" or \"print\" or \"lifestyle\"\n\n- short_caption: \"An open magazine about 'Living at The Cape' lies on crumpled brown paper.\"\n- main_objects: [\"magazine\", \"brown paper\", \"beach photograph\", \"text\"]\n- possible_interpretations: [\"a design portfolio mockup\", \"a magazine spread about coastal living\", \"a lifestyle publication\"]\n\nLet me reconsider some ratings:\n- natural_photo_typicality: This is a product/lifestyle photo. It looks natural but is a styled shot. I'd say 4.\n- visual_clutter: 3 - the crumpled paper adds some visual noise but not too much\n- object_centricity: 4 - the magazine is clearly the central object\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an open magazine or brochure lying on crumpled brown/kraft paper. The magazine has a full-page spread with:\n- A large landscape photograph on the left page showing a coastal scene with sandy beach, rocky shoreline, and blue sky with clouds. There appear to be small figures (people) walking on the beach.\n- Text on the right page with a heading \"Living at The Cape\" in green/teal color, followed by body text about developing natural habitats.\n- The magazine is on crumpled brown paper, photographed from above at an angle.\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - very clear what this is\n- ambiguity: 1 - quite unambiguous\n- natural_photo_typicality: 4 - looks like a natural photo, though it's a styled product shot\n- visual_clutter: 3 - has multiple elements but not overly cluttered\n- object_centricity: 2 - the magazine is the main object but it contains a scene\n- scene_centricity: 2 - the magazine itself isn't a scene, but contains a scene\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 1 (the magazine)\n- estimated_distinct_object_categories: 2 (magazine, paper)\n\n- contains_person: true (small figures visible on the beach in the image within the magazine)\n- contains_face: false\n- contains_animal: false\n- contains_text: true\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (the actual photo within the magazine shows an outdoor scene, but the main image is of a magazine on paper)\n- contains_outdoor_scene: true (within the magazine)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the magazine is the main subject)\n- image_style: \"natural_photo\" (it's a photograph of a magazine)\n- semantic_domain: \"design\" or \"print\" or \"lifestyle\"\n\n- short_caption: \"An open magazine about 'Living at The Cape' lies on crumpled brown paper.\"\n- main_objects: [\"magazine\", \"brown paper\", \"beach photograph\", \"text\"]\n- possible_interpretations: [\"a design portfolio mockup\", \"a magazine spread about coastal living\", \"a lifestyle publication\"]\n\nLet me reconsider some ratings:\n- natural_photo_typicality: This is a product/lifestyle photo. It looks natural but is a styled shot. I'd say 4.\n- visual_clutter: 3 - the crumpled paper adds some visual noise but not too much\n- object_centricity: 4 - the magazine is clearly the central object\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 910,
+          "total_tokens": 2448,
+          "cost": 0.00152604,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00152604,
+            "upstream_inference_prompt_cost": 0.00043404,
+            "upstream_inference_completions_cost": 0.001092
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 661,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

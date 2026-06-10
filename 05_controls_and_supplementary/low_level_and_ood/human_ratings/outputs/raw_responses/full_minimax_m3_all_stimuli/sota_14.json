@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_14",
+    "stim_key": "sota_14",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 14,
+    "file_index": 14,
+    "image_name": "image_0014.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0014.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor portrait landscape\",\n\n  \"short_caption\": \"A woman looks up smiling with a forested mountain and cloudy sky behind her.\",\n  \"main_objects\": [\"woman\", \"mountain\", \"trees\", \"clouds\"],\n  \"possible_interpretations\": [\"outdoor portrait with landscape\", \"lifestyle or candid photo\", \"travel or nature memory\", \"editorial portrait in nature\"],\n  \"uncertainty_notes\": \"Person is small in frame and partially cropped at the bottom; intent of subject focus versus scene focus is ambiguous.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319091-yad3ok0CoJPGObRne7tf",
+        "object": "chat.completion",
+        "created": 1780319091,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor portrait landscape\",\n\n  \"short_caption\": \"A woman looks up smiling with a forested mountain and cloudy sky behind her.\",\n  \"main_objects\": [\"woman\", \"mountain\", \"trees\", \"clouds\"],\n  \"possible_interpretations\": [\"outdoor portrait with landscape\", \"lifestyle or candid photo\", \"travel or nature memory\", \"editorial portrait in nature\"],\n  \"uncertainty_notes\": \"Person is small in frame and partially cropped at the bottom; intent of subject focus versus scene focus is ambiguous.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a woman with curly reddish-brown hair in the lower left corner, looking upward with what appears to be a smile. Behind her is a mountain landscape with forested slopes and a large cloudy sky taking up most of the upper portion of the image. The mountain appears to be a typical Rocky Mountain-style peak with some snow patches visible.\n\nLet me go through the schema:\n\n- recognizability: 5 - very clear what we're looking at\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 5 - looks like a typical natural photo\n- visual_clutter: 2 - relatively simple composition with sky, mountain, trees, and one person\n- object_centricity: 2 - the person is small in the frame, not dominant\n- scene_centricity: 5 - this is mainly a scene/landscape\n- caption_confidence: 4 - confident in a caption\n\nEstimated salient object count: 1 (the person is the main subject, though small)\nEstimated distinct object categories: 3 (person, mountain, trees, sky)\n\ncontains_person: true\ncontains_face: true (partially visible, looking up)\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (person is cut off at the bottom)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: \"person_face\" - though it's also a scene, the person is clearly the subject\nActually, looking more carefully, the person is quite small and the scene dominates. But the person seems to be the main subject. I'll say \"mixed\" or \"person_face\". The person's face is visible and seems to be the emotional focal point. Let me go with \"person_face\".\n\nimage_style: \"natural_photo\"\nsemantic_domain: \"outdoor portrait landscape\"\n\nshort_caption: \"A woman looks up smiling with a mountain and cloudy sky in the background.\"\nmain_objects: [\"woman\", \"mountain\", \"trees\", \"clouds\"]\npossible_interpretations: [\"portrait with landscape\", \"outdoor lifestyle photo\", \"travel/memories photo\", \"candid moment\"]\nuncertainty_notes: \"The person's face is partially visible and cropped at the bottom; main subject intent is somewhat ambiguous between person and landscape.\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a woman with curly reddish-brown hair in the lower left corner, looking upward with what appears to be a smile. Behind her is a mountain landscape with forested slopes and a large cloudy sky taking up most of the upper portion of the image. The mountain appears to be a typical Rocky Mountain-style peak with some snow patches visible.\n\nLet me go through the schema:\n\n- recognizability: 5 - very clear what we're looking at\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 5 - looks like a typical natural photo\n- visual_clutter: 2 - relatively simple composition with sky, mountain, trees, and one person\n- object_centricity: 2 - the person is small in the frame, not dominant\n- scene_centricity: 5 - this is mainly a scene/landscape\n- caption_confidence: 4 - confident in a caption\n\nEstimated salient object count: 1 (the person is the main subject, though small)\nEstimated distinct object categories: 3 (person, mountain, trees, sky)\n\ncontains_person: true\ncontains_face: true (partially visible, looking up)\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (person is cut off at the bottom)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: \"person_face\" - though it's also a scene, the person is clearly the subject\nActually, looking more carefully, the person is quite small and the scene dominates. But the person seems to be the main subject. I'll say \"mixed\" or \"person_face\". The person's face is visible and seems to be the emotional focal point. Let me go with \"person_face\".\n\nimage_style: \"natural_photo\"\nsemantic_domain: \"outdoor portrait landscape\"\n\nshort_caption: \"A woman looks up smiling with a mountain and cloudy sky in the background.\"\nmain_objects: [\"woman\", \"mountain\", \"trees\", \"clouds\"]\npossible_interpretations: [\"portrait with landscape\", \"outdoor lifestyle photo\", \"travel/memories photo\", \"candid moment\"]\nuncertainty_notes: \"The person's face is partially visible and cropped at the bottom; main subject intent is somewhat ambiguous between person and landscape.\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1467,
+          "completion_tokens": 866,
+          "total_tokens": 2333,
+          "cost": 0.00132906,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00132906,
+            "upstream_inference_prompt_cost": 0.00028986,
+            "upstream_inference_completions_cost": 0.0010392
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 610,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

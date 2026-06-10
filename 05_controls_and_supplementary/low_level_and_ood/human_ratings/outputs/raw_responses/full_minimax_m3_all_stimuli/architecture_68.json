@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_68",
+    "stim_key": "architecture_68",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 68,
+    "file_index": 68,
+    "image_name": "image_0068.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0068.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"vintage car interior\",\n  \"short_caption\": \"Vintage car interior rear seat view through back window\",\n  \"main_objects\": [\"car rear seat\", \"car interior roof\", \"rear window\", \"vintage cars outside\"],\n  \"possible_interpretations\": [\n    \"vintage car interior at a car museum\",\n    \"back seat view of a classic automobile\",\n    \"interior of an antique vehicle on display\"\n  ],\n  \"uncertainty_notes\": \"Distant person and vehicles through the window are small and somewhat unclear; the specific make/model of the car is not identifiable.\",\n  \"quality_flags\": [\"small_distant_subject\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318925-GiMT9PIo2pUtHfsTOFtZ",
+        "object": "chat.completion",
+        "created": 1780318925,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"vintage car interior\",\n  \"short_caption\": \"Vintage car interior rear seat view through back window\",\n  \"main_objects\": [\"car rear seat\", \"car interior roof\", \"rear window\", \"vintage cars outside\"],\n  \"possible_interpretations\": [\n    \"vintage car interior at a car museum\",\n    \"back seat view of a classic automobile\",\n    \"interior of an antique vehicle on display\"\n  ],\n  \"uncertainty_notes\": \"Distant person and vehicles through the window are small and somewhat unclear; the specific make/model of the car is not identifiable.\",\n  \"quality_flags\": [\"small_distant_subject\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows the interior of a vintage car, looking from the front seat area toward the back. I can see:\n- A rear bench seat with fabric upholstery (beige/tan colored)\n- The back of the front seat visible on the left\n- A rear window showing what appears to be a car museum or garage with other vintage cars (including an orange/red car and possibly a military-style vehicle) and a person standing\n- The interior roof lining and pillars of the car\n- The view is from inside an old car looking backward\n\nLet me annotate according to the schema:\n\n- recognizability: 4 - quite clear what we're seeing\n- ambiguity: 2 - fairly unambiguous, it's clearly a vintage car interior\n- natural_photo_typicality: 4 - looks like a natural photograph\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 3 - the car interior is the main subject but it's more of a scene\n- scene_centricity: 4 - this is more of a scene/place (interior view)\n- caption_confidence: 4 - confident about caption\n\n- estimated_salient_object_count: 2 (car interior, view through window)\n- estimated_distinct_object_categories: 3 (car seat, car interior, museum/exterior vehicles)\n\n- contains_person: false (a person is visible through the window but small)\n- Actually, let me reconsider - I can see a person in the distance through the window. I'll say false since they're not a main subject.\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: true (the car itself, and other cars visible through window)\n- contains_food: false\n- contains_indoor_scene: true (car interior, and museum visible)\n- contains_outdoor_scene: false (it's through a window, but the main scene is indoor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (unusual backward-facing view from front of car)\n- contains_multiple_main_objects: false\n\ndominant_content_type: scene (interior scene of a car)\nimage_style: natural_photo\nsemantic_domain: \"vintage car interior\"\n\nshort_caption: \"Vintage car interior rear seat view toward museum\"\nmain_objects: [\"car rear seat\", \"car interior\", \"rear window\", \"vintage cars\"]\n\nLet me finalize this.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows the interior of a vintage car, looking from the front seat area toward the back. I can see:\n- A rear bench seat with fabric upholstery (beige/tan colored)\n- The back of the front seat visible on the left\n- A rear window showing what appears to be a car museum or garage with other vintage cars (including an orange/red car and possibly a military-style vehicle) and a person standing\n- The interior roof lining and pillars of the car\n- The view is from inside an old car looking backward\n\nLet me annotate according to the schema:\n\n- recognizability: 4 - quite clear what we're seeing\n- ambiguity: 2 - fairly unambiguous, it's clearly a vintage car interior\n- natural_photo_typicality: 4 - looks like a natural photograph\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 3 - the car interior is the main subject but it's more of a scene\n- scene_centricity: 4 - this is more of a scene/place (interior view)\n- caption_confidence: 4 - confident about caption\n\n- estimated_salient_object_count: 2 (car interior, view through window)\n- estimated_distinct_object_categories: 3 (car seat, car interior, museum/exterior vehicles)\n\n- contains_person: false (a person is visible through the window but small)\n- Actually, let me reconsider - I can see a person in the distance through the window. I'll say false since they're not a main subject.\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: true (the car itself, and other cars visible through window)\n- contains_food: false\n- contains_indoor_scene: true (car interior, and museum visible)\n- contains_outdoor_scene: false (it's through a window, but the main scene is indoor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (unusual backward-facing view from front of car)\n- contains_multiple_main_objects: false\n\ndominant_content_type: scene (interior scene of a car)\nimage_style: natural_photo\nsemantic_domain: \"vintage car interior\"\n\nshort_caption: \"Vintage car interior rear seat view toward museum\"\nmain_objects: [\"car rear seat\", \"car interior\", \"rear window\", \"vintage cars\"]\n\nLet me finalize this.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 892,
+          "total_tokens": 2414,
+          "cost": 0.00149964,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00149964,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010704
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 594,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

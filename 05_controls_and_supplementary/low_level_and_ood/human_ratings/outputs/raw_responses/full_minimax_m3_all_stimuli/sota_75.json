@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_75",
+    "stim_key": "sota_75",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 75,
+    "file_index": 75,
+    "image_name": "image_0075.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0075.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"event_celebrity\",\n  \"short_caption\": \"A smiling blonde woman and a brown-haired man at a Comic-Con event.\",\n  \"main_objects\": [\"woman\", \"man\"],\n  \"possible_interpretations\": [\"Comic-Con press event\", \"promotional photo\", \"convention panel appearance\"],\n  \"uncertainty_notes\": \"Comic-Con logo in background is blurred; exact identity of individuals not labeled.\",\n  \"quality_flags\": [\"background_blur\"]\n}",
+      "response": {
+        "id": "gen-1780319173-WEtBFcXIeRKJB7lTuFhm",
+        "object": "chat.completion",
+        "created": 1780319173,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"event_celebrity\",\n  \"short_caption\": \"A smiling blonde woman and a brown-haired man at a Comic-Con event.\",\n  \"main_objects\": [\"woman\", \"man\"],\n  \"possible_interpretations\": [\"Comic-Con press event\", \"promotional photo\", \"convention panel appearance\"],\n  \"uncertainty_notes\": \"Comic-Con logo in background is blurred; exact identity of individuals not labeled.\",\n  \"quality_flags\": [\"background_blur\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows two people at what appears to be a Comic-Con event. On the left is a woman with blonde hair, smiling, wearing a black top. On the right is a man with short brown hair, looking down, wearing a white shirt. The background appears to be a Comic-Con banner with the distinctive yellow and red logo visible (though blurry).\n\nLet me annotate this image according to the schema.\n\n- Recognizability: The subjects are clearly people, faces are visible. 5\n- Ambiguity: The image clearly shows two people at an event. Low ambiguity. 1\n- Natural photo typicality: Looks like a typical event/promotional photo. 4\n- Visual clutter: Background is blurred, two main subjects. Low clutter. 2\n- Object centricity: No single central object, this is about people. 2\n- Scene centricity: There's a scene context (Comic-Con backdrop) but the people dominate. 2\n- Caption confidence: High confidence in a concise caption. 5\n\nSalient objects: 2 (two people)\nDistinct object categories: 2 (woman, man)\n\nContains person: true\nContains face: true\nContains animal: false\nContains text: false (Comic-Con logo is blurry/text-like but not clearly readable text)\nContains vehicle: false\nContains food: false\nIndoor: false\nOutdoor: false (event setting, could be either - looks like a panel/event)\nActually this looks like an indoor event setting.\nArtificial content: false\nOcclusion: false\nUnusual viewpoint: false\nMultiple main objects: true (two people)\n\nDominant content type: person_face\nImage style: natural_photo\nSemantic domain: event/celebrity\n\nShort caption: A blonde woman smiling and a brown-haired man at a Comic-Con event.\nMain objects: woman, man\nPossible interpretations: Comic-Con panel, promotional photo, press event\nUncertainty notes: Comic-Con logo is blurry in background\nQuality flags: slight blur in background",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows two people at what appears to be a Comic-Con event. On the left is a woman with blonde hair, smiling, wearing a black top. On the right is a man with short brown hair, looking down, wearing a white shirt. The background appears to be a Comic-Con banner with the distinctive yellow and red logo visible (though blurry).\n\nLet me annotate this image according to the schema.\n\n- Recognizability: The subjects are clearly people, faces are visible. 5\n- Ambiguity: The image clearly shows two people at an event. Low ambiguity. 1\n- Natural photo typicality: Looks like a typical event/promotional photo. 4\n- Visual clutter: Background is blurred, two main subjects. Low clutter. 2\n- Object centricity: No single central object, this is about people. 2\n- Scene centricity: There's a scene context (Comic-Con backdrop) but the people dominate. 2\n- Caption confidence: High confidence in a concise caption. 5\n\nSalient objects: 2 (two people)\nDistinct object categories: 2 (woman, man)\n\nContains person: true\nContains face: true\nContains animal: false\nContains text: false (Comic-Con logo is blurry/text-like but not clearly readable text)\nContains vehicle: false\nContains food: false\nIndoor: false\nOutdoor: false (event setting, could be either - looks like a panel/event)\nActually this looks like an indoor event setting.\nArtificial content: false\nOcclusion: false\nUnusual viewpoint: false\nMultiple main objects: true (two people)\n\nDominant content type: person_face\nImage style: natural_photo\nSemantic domain: event/celebrity\n\nShort caption: A blonde woman smiling and a brown-haired man at a Comic-Con event.\nMain objects: woman, man\nPossible interpretations: Comic-Con panel, promotional photo, press event\nUncertainty notes: Comic-Con logo is blurry in background\nQuality flags: slight blur in background",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1179,
+          "completion_tokens": 738,
+          "total_tokens": 1917,
+          "cost": 0.00121194,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00121194,
+            "upstream_inference_prompt_cost": 0.00032634,
+            "upstream_inference_completions_cost": 0.0008856
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 482,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

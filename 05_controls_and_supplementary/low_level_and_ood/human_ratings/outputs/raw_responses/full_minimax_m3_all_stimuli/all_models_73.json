@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_73",
+    "stim_key": "all_models_73",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 73,
+    "file_index": 73,
+    "image_name": "image_0073.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0073.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: dominant_content_type has invalid value: 'person'"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban street\",\n  \"short_caption\": \"Top-down view of a person walking across a zebra crosswalk, casting a long shadow.\",\n  \"main_objects\": [\"person\", \"zebra crosswalk\", \"shadow\"],\n  \"possible_interpretations\": [\n    \"Person walking on a pedestrian crosswalk\",\n    \"Top-down view of a pedestrian crossing the street\"\n  ],\n  \"uncertainty_notes\": \"The person is small and only partially detailed due to the overhead angle; face not visible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318839-Cb7C2vk4AZfm92SgYOwR",
+        "object": "chat.completion",
+        "created": 1780318839,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban street\",\n  \"short_caption\": \"Top-down view of a person walking across a zebra crosswalk, casting a long shadow.\",\n  \"main_objects\": [\"person\", \"zebra crosswalk\", \"shadow\"],\n  \"possible_interpretations\": [\n    \"Person walking on a pedestrian crosswalk\",\n    \"Top-down view of a pedestrian crossing the street\"\n  ],\n  \"uncertainty_notes\": \"The person is small and only partially detailed due to the overhead angle; face not visible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a top-down view of a person walking on a zebra crossing (crosswalk). The person appears to be wearing a light-colored shirt, and their shadow is visible on the crosswalk stripes. The view is from above, looking down at the asphalt road with white painted crosswalk stripes.\n\nLet me analyze each attribute:\n\n- recognizability: 5 - very clearly recognizable as a crosswalk with a person\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 4 - looks like a typical photograph, though with an unusual top-down perspective\n- visual_clutter: 2 - relatively simple composition, just the crosswalk and one person\n- object_centricity: 3 - the person is central but small relative to the scene\n- scene_centricity: 4 - more of a scene/place (crosswalk) than a single object\n- caption_confidence: 5 - easy to caption\n\nSalient objects: 1 person, 1 category\nContains person: yes\nContains face: no (back of head, not really a clear face)\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial content: no\nContains occlusion: no\nContains unusual viewpoint: yes (top-down bird's eye view)\nContains multiple main objects: no\n\nDominant content: person\nImage style: natural_photo\nSemantic domain: street/urban\n\nCaption: \"Top-down view of a person walking on a zebra crosswalk with their shadow visible.\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a top-down view of a person walking on a zebra crossing (crosswalk). The person appears to be wearing a light-colored shirt, and their shadow is visible on the crosswalk stripes. The view is from above, looking down at the asphalt road with white painted crosswalk stripes.\n\nLet me analyze each attribute:\n\n- recognizability: 5 - very clearly recognizable as a crosswalk with a person\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 4 - looks like a typical photograph, though with an unusual top-down perspective\n- visual_clutter: 2 - relatively simple composition, just the crosswalk and one person\n- object_centricity: 3 - the person is central but small relative to the scene\n- scene_centricity: 4 - more of a scene/place (crosswalk) than a single object\n- caption_confidence: 5 - easy to caption\n\nSalient objects: 1 person, 1 category\nContains person: yes\nContains face: no (back of head, not really a clear face)\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial content: no\nContains occlusion: no\nContains unusual viewpoint: yes (top-down bird's eye view)\nContains multiple main objects: no\n\nDominant content: person\nImage style: natural_photo\nSemantic domain: street/urban\n\nCaption: \"Top-down view of a person walking on a zebra crosswalk with their shadow visible.\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 666,
+          "total_tokens": 2204,
+          "cost": 0.00123324,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00123324,
+            "upstream_inference_prompt_cost": 0.00043404,
+            "upstream_inference_completions_cost": 0.0007992
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 376,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_99",
+    "stim_key": "sota_99",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 99,
+    "file_index": 99,
+    "image_name": "image_0099.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0099.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor recreation\",\n\n  \"short_caption\": \"Person fly fishing from a boat on a coastal waterway with dunes in the background\",\n  \"main_objects\": [\"person\", \"fishing rod\", \"fishing reel\", \"boat\", \"water\", \"grassland\", \"dunes\", \"sky\"],\n  \"possible_interpretations\": [\"A person fly fishing from a boat\", \"Coastal saltwater fly fishing scene\", \"Recreational angling in a marsh or estuary\"],\n  \"uncertainty_notes\": \"Person is truncated on the left side, showing only torso, arm, and part of head/cap. The rod is bent, suggesting either casting or a fish on the line; cannot determine which.\",\n  \"quality_flags\": [\"person_truncated\", \"main_subject_partially_out_of_frame\"]\n}",
+      "response": {
+        "id": "gen-1780319201-M7rkruMW02ZJgeYc7uGg",
+        "object": "chat.completion",
+        "created": 1780319201,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor recreation\",\n\n  \"short_caption\": \"Person fly fishing from a boat on a coastal waterway with dunes in the background\",\n  \"main_objects\": [\"person\", \"fishing rod\", \"fishing reel\", \"boat\", \"water\", \"grassland\", \"dunes\", \"sky\"],\n  \"possible_interpretations\": [\"A person fly fishing from a boat\", \"Coastal saltwater fly fishing scene\", \"Recreational angling in a marsh or estuary\"],\n  \"uncertainty_notes\": \"Person is truncated on the left side, showing only torso, arm, and part of head/cap. The rod is bent, suggesting either casting or a fish on the line; cannot determine which.\",\n  \"quality_flags\": [\"person_truncated\", \"main_subject_partially_out_of_frame\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a person fly fishing from a boat. I can see:\n- A person on the left side wearing a dark hoodie/sweatshirt, holding a fly fishing rod that is bent (indicating a fish is on the line or casting)\n- A fishing reel with yellow/green fly line\n- A body of water (lake or estuary)\n- Grassland/marsh on the far shore\n- Sandy dunes/beach area in the background\n- Trees in the distance\n- A blue sky with wispy clouds\n- Part of a boat at the bottom\n\nThis is clearly an outdoor scene with a person engaged in fly fishing.\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clear what's happening\n- ambiguity: 1 - Very unambiguous, clearly fly fishing\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 2 - Relatively clean scene with main subjects clear\n- object_centricity: 2 - The person/rod is a focal point but it's more of a scene\n- scene_centricity: 4 - This is primarily a scene (outdoor landscape with activity)\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 3 (person, rod, boat)\n- estimated_distinct_object_categories: 4 (person, fishing rod, boat, landscape features)\n\n- contains_person: true\n- contains_face: false (person is cropped, showing only body/arm)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false (boat, but not a vehicle per se)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person is truncated)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (main subject is the fishing activity)\n\n- dominant_content_type: \"person\" or \"scene\" - I'd say \"scene\" since the landscape dominates, with the person as a secondary element. Actually, the person and fishing action are quite prominent. Let me go with \"person\" since the person and rod are the main subject.\n- image_style: \"natural_photo\"\n- semantic_domain: \"outdoor recreation\" or \"fishing\"\n\nShort caption: \"Person fly fishing from a boat on a coastal waterway\"\n\nMain objects: person, fishing rod, boat, water, dunes, sky, grass\n\nPossible interpretations: \n1. A person fly fishing from a boat\n2. A fishing scene on a coastal marsh/lagoon\n\nUncertainty notes: Person is cropped/truncated on the left side.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a person fly fishing from a boat. I can see:\n- A person on the left side wearing a dark hoodie/sweatshirt, holding a fly fishing rod that is bent (indicating a fish is on the line or casting)\n- A fishing reel with yellow/green fly line\n- A body of water (lake or estuary)\n- Grassland/marsh on the far shore\n- Sandy dunes/beach area in the background\n- Trees in the distance\n- A blue sky with wispy clouds\n- Part of a boat at the bottom\n\nThis is clearly an outdoor scene with a person engaged in fly fishing.\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clear what's happening\n- ambiguity: 1 - Very unambiguous, clearly fly fishing\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 2 - Relatively clean scene with main subjects clear\n- object_centricity: 2 - The person/rod is a focal point but it's more of a scene\n- scene_centricity: 4 - This is primarily a scene (outdoor landscape with activity)\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 3 (person, rod, boat)\n- estimated_distinct_object_categories: 4 (person, fishing rod, boat, landscape features)\n\n- contains_person: true\n- contains_face: false (person is cropped, showing only body/arm)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false (boat, but not a vehicle per se)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person is truncated)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (main subject is the fishing activity)\n\n- dominant_content_type: \"person\" or \"scene\" - I'd say \"scene\" since the landscape dominates, with the person as a secondary element. Actually, the person and fishing action are quite prominent. Let me go with \"person\" since the person and rod are the main subject.\n- image_style: \"natural_photo\"\n- semantic_domain: \"outdoor recreation\" or \"fishing\"\n\nShort caption: \"Person fly fishing from a boat on a coastal waterway\"\n\nMain objects: person, fishing rod, boat, water, dunes, sky, grass\n\nPossible interpretations: \n1. A person fly fishing from a boat\n2. A fishing scene on a coastal marsh/lagoon\n\nUncertainty notes: Person is cropped/truncated on the left side.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1467,
+          "completion_tokens": 969,
+          "total_tokens": 2436,
+          "cost": 0.00145266,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00145266,
+            "upstream_inference_prompt_cost": 0.00028986,
+            "upstream_inference_completions_cost": 0.0011628
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 631,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

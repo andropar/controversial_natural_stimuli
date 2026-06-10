@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_91",
+    "stim_key": "all_models_91",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 91,
+    "file_index": 91,
+    "image_name": "image_0091.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0091.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior decor\",\n\n  \"short_caption\": \"Indoor room with colorful flower wall decal, wooden bench, green blanket, and patterned pillow\",\n  \"main_objects\": [\"wall decal\", \"wooden bench\", \"green throw blanket\", \"patterned pillow\", \"wooden floor\"],\n  \"possible_interpretations\": [\"Interior decoration showcase\", \"Product photo for wall decal stickers\", \"Living room setting\"],\n  \"uncertainty_notes\": \"Image appears to be a staged product or lifestyle photo, possibly for marketing wall decals\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318835-nXtCFxZ03Jy4U2UMIpKY",
+        "object": "chat.completion",
+        "created": 1780318835,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior decor\",\n\n  \"short_caption\": \"Indoor room with colorful flower wall decal, wooden bench, green blanket, and patterned pillow\",\n  \"main_objects\": [\"wall decal\", \"wooden bench\", \"green throw blanket\", \"patterned pillow\", \"wooden floor\"],\n  \"possible_interpretations\": [\"Interior decoration showcase\", \"Product photo for wall decal stickers\", \"Living room setting\"],\n  \"uncertainty_notes\": \"Image appears to be a staged product or lifestyle photo, possibly for marketing wall decals\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an indoor scene with:\n- A light-colored wall (whitish/pale blue) with a decorative wall decal/sticker featuring stylized flowers and vines in various colors (pink, green, blue, purple, white)\n- A wooden bench or chair on the right side\n- A green throw blanket draped over the bench\n- A decorative pillow with a leaf/floral pattern\n- A light wooden floor\n- This appears to be a staged product photo or interior design photo\n\nLet me assess each attribute:\n\n- recognizability: The scene is clearly recognizable as an interior with wall decoration - 4\n- ambiguity: Not many interpretations - 2\n- natural_photo_typicality: It looks like a typical interior photo, possibly staged - 4\n- visual_clutter: Fairly clean, simple composition - 2\n- object_centricity: No single dominant object, more of a scene - 2\n- scene_centricity: This is mainly a room/interior scene - 4\n- caption_confidence: Easy to caption - 4\n\n- estimated_salient_object_count: Maybe 4-5 (wall decal, bench, blanket, pillow, floor)\n- estimated_distinct_object_categories: 4-5 (wall decoration, furniture, textile, pillow, floor)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (the wall decal is physical, not rendered)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: \"scene\"\nimage_style: \"natural_photo\" (possibly staged/edited but looks natural)\nsemantic_domain: \"interior\" or \"home decor\"\n\nshort_caption: \"Indoor room with flower wall decal, wooden bench, green blanket and patterned pillow\"\n\nmain_objects: [\"wall decal\", \"wooden bench\", \"green blanket\", \"decorative pillow\", \"wooden floor\"]\n\npossible_interpretations: [\"Interior decoration showcase\", \"Product photo for wall decals\", \"Living room scene\"]\n\nuncertainty_notes: \"Image may be staged for product display purposes\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an indoor scene with:\n- A light-colored wall (whitish/pale blue) with a decorative wall decal/sticker featuring stylized flowers and vines in various colors (pink, green, blue, purple, white)\n- A wooden bench or chair on the right side\n- A green throw blanket draped over the bench\n- A decorative pillow with a leaf/floral pattern\n- A light wooden floor\n- This appears to be a staged product photo or interior design photo\n\nLet me assess each attribute:\n\n- recognizability: The scene is clearly recognizable as an interior with wall decoration - 4\n- ambiguity: Not many interpretations - 2\n- natural_photo_typicality: It looks like a typical interior photo, possibly staged - 4\n- visual_clutter: Fairly clean, simple composition - 2\n- object_centricity: No single dominant object, more of a scene - 2\n- scene_centricity: This is mainly a room/interior scene - 4\n- caption_confidence: Easy to caption - 4\n\n- estimated_salient_object_count: Maybe 4-5 (wall decal, bench, blanket, pillow, floor)\n- estimated_distinct_object_categories: 4-5 (wall decoration, furniture, textile, pillow, floor)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (the wall decal is physical, not rendered)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: \"scene\"\nimage_style: \"natural_photo\" (possibly staged/edited but looks natural)\nsemantic_domain: \"interior\" or \"home decor\"\n\nshort_caption: \"Indoor room with flower wall decal, wooden bench, green blanket and patterned pillow\"\n\nmain_objects: [\"wall decal\", \"wooden bench\", \"green blanket\", \"decorative pillow\", \"wooden floor\"]\n\npossible_interpretations: [\"Interior decoration showcase\", \"Product photo for wall decals\", \"Living room scene\"]\n\nuncertainty_notes: \"Image may be staged for product display purposes\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 857,
+          "total_tokens": 2379,
+          "cost": 0.00145764,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00145764,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010284
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 565,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

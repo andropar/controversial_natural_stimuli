@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_9",
+    "stim_key": "architecture_9",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 9,
+    "file_index": 9,
+    "image_name": "image_0009.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0009.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 1, \"visual_clutter\": 2, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 5, \"estimated_salient_object_count\": 8, \"estimated_distinct_object_categories\": 6, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": true, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"illustration_or_render\", \"semantic_domain\": \"interior/kitchen\", \"short_caption\": \"3D rendered modern kitchen with island, cooktop, farmhouse sink, and bar stools\", \"main_objects\": [\"kitchen island\", \"bar stools\", \"farmhouse sink\", \"refrigerator\", \"microwave\", \"cooktop\", \"cabinets\", \"window\"], \"possible_interpretations\": [\"modern kitchen interior\", \"3D architectural render of a kitchen\", \"kitchen design visualization\"], \"uncertainty_notes\": \"Image is clearly a computer-generated 3D rendering rather than a photograph, evident from lighting, textures, and overall appearance.\", \"quality_flags\": [\"rendered_or_illustrated\"]}",
+      "response": {
+        "id": "gen-1780318855-jP8anSRaNC7EXlUKpZn1",
+        "object": "chat.completion",
+        "created": 1780318855,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 1, \"visual_clutter\": 2, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 5, \"estimated_salient_object_count\": 8, \"estimated_distinct_object_categories\": 6, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": true, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"illustration_or_render\", \"semantic_domain\": \"interior/kitchen\", \"short_caption\": \"3D rendered modern kitchen with island, cooktop, farmhouse sink, and bar stools\", \"main_objects\": [\"kitchen island\", \"bar stools\", \"farmhouse sink\", \"refrigerator\", \"microwave\", \"cooktop\", \"cabinets\", \"window\"], \"possible_interpretations\": [\"modern kitchen interior\", \"3D architectural render of a kitchen\", \"kitchen design visualization\"], \"uncertainty_notes\": \"Image is clearly a computer-generated 3D rendering rather than a photograph, evident from lighting, textures, and overall appearance.\", \"quality_flags\": [\"rendered_or_illustrated\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It appears to be a 3D rendered/CGI image of a modern kitchen. I can see:\n\n- White cabinetry (upper and lower)\n- A stainless steel refrigerator\n- A built-in microwave\n- A farmhouse-style white sink\n- A cooktop on a kitchen island with orange/terracotta countertops\n- Brown tiled backsplash\n- Three bar stools with wooden seats\n- A window showing trees/foliage outside\n- A dishwasher (stainless steel)\n\nThis is clearly a computer-generated/rendered image (3D rendering), not a natural photograph. The lighting, textures, and overall appearance are characteristic of 3D rendering software.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - very clear what's in the image (a kitchen)\n- ambiguity: 1 - very clear, one obvious interpretation\n- natural_photo_typicality: 1 - this is clearly a 3D render, not a natural photo\n- visual_clutter: 2 - relatively organized kitchen scene, not cluttered\n- object_centricity: 3 - there's a central island but it's more of a scene\n- scene_centricity: 5 - it's clearly a kitchen scene/room\n- caption_confidence: 5 - very easy to caption\n\nCounts:\n- salient objects: many but the main ones are the island, stools, sink, fridge\n- distinct categories: cabinetry, appliances, stools, sink, window - about 5\n\nContains:\n- person: no\n- face: no\n- animal: no\n- text: no\n- vehicle: no\n- food: no\n- indoor: yes\n- outdoor: window shows outdoor but scene is indoor\n- artificial/rendered: yes (3D render)\n- occlusion: some occlusion of dishwasher\n- unusual viewpoint: no\n- multiple main objects: somewhat (island, stools, etc.)\n\nDominant content: scene\nImage style: illustration_or_render\nSemantic domain: kitchen/interior\n\nShort caption: \"3D rendered modern kitchen with island, cooktop, farmhouse sink, and three bar stools\"\n\nMain objects: kitchen island, bar stools, farmhouse sink, refrigerator, microwave, cooktop, cabinets, window\n\nPossible interpretations: modern kitchen interior, 3D rendered kitchen design, kitchen showroom render\n\nUncertainty: this is clearly a 3D render, not a photograph",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It appears to be a 3D rendered/CGI image of a modern kitchen. I can see:\n\n- White cabinetry (upper and lower)\n- A stainless steel refrigerator\n- A built-in microwave\n- A farmhouse-style white sink\n- A cooktop on a kitchen island with orange/terracotta countertops\n- Brown tiled backsplash\n- Three bar stools with wooden seats\n- A window showing trees/foliage outside\n- A dishwasher (stainless steel)\n\nThis is clearly a computer-generated/rendered image (3D rendering), not a natural photograph. The lighting, textures, and overall appearance are characteristic of 3D rendering software.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - very clear what's in the image (a kitchen)\n- ambiguity: 1 - very clear, one obvious interpretation\n- natural_photo_typicality: 1 - this is clearly a 3D render, not a natural photo\n- visual_clutter: 2 - relatively organized kitchen scene, not cluttered\n- object_centricity: 3 - there's a central island but it's more of a scene\n- scene_centricity: 5 - it's clearly a kitchen scene/room\n- caption_confidence: 5 - very easy to caption\n\nCounts:\n- salient objects: many but the main ones are the island, stools, sink, fridge\n- distinct categories: cabinetry, appliances, stools, sink, window - about 5\n\nContains:\n- person: no\n- face: no\n- animal: no\n- text: no\n- vehicle: no\n- food: no\n- indoor: yes\n- outdoor: window shows outdoor but scene is indoor\n- artificial/rendered: yes (3D render)\n- occlusion: some occlusion of dishwasher\n- unusual viewpoint: no\n- multiple main objects: somewhat (island, stools, etc.)\n\nDominant content: scene\nImage style: illustration_or_render\nSemantic domain: kitchen/interior\n\nShort caption: \"3D rendered modern kitchen with island, cooktop, farmhouse sink, and three bar stools\"\n\nMain objects: kitchen island, bar stools, farmhouse sink, refrigerator, microwave, cooktop, cabinets, window\n\nPossible interpretations: modern kitchen interior, 3D rendered kitchen design, kitchen showroom render\n\nUncertainty: this is clearly a 3D render, not a photograph",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 836,
+          "total_tokens": 2358,
+          "cost": 0.00143244,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00143244,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010032
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 557,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_89",
+    "stim_key": "dataset_89",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 89,
+    "file_index": 89,
+    "image_name": "image_0089.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0089.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home decor\",\n  \"short_caption\": \"Honeycomb-patterned wooden wall clock with bee decorations mounted on a white paneled wall.\",\n  \"main_objects\": [\"wall clock\", \"honeycomb pattern\", \"bee decorations\", \"clock hands\"],\n  \"possible_interpretations\": [\"decorative honeycomb wall clock\", \"bee-themed kitchen clock\", \"rustic wooden art clock\"],\n  \"uncertainty_notes\": \"Bees appear to be small decorative illustrations or figures within the open hexagons; not clearly real insect photographs.\",\n  \"quality_flags\": []\n}\n```",
+      "response": {
+        "id": "gen-1780319060-i8X5G7XsSkbOLzrGayHp",
+        "object": "chat.completion",
+        "created": 1780319060,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home decor\",\n  \"short_caption\": \"Honeycomb-patterned wooden wall clock with bee decorations mounted on a white paneled wall.\",\n  \"main_objects\": [\"wall clock\", \"honeycomb pattern\", \"bee decorations\", \"clock hands\"],\n  \"possible_interpretations\": [\"decorative honeycomb wall clock\", \"bee-themed kitchen clock\", \"rustic wooden art clock\"],\n  \"uncertainty_notes\": \"Bees appear to be small decorative illustrations or figures within the open hexagons; not clearly real insect photographs.\",\n  \"quality_flags\": []\n}\n```",
+              "refusal": null,
+              "reasoning": "The image shows a decorative wall clock with a honeycomb design. The clock appears to be made of wood or wood-like material, with hexagonal shapes forming a honeycomb pattern. Some hexagons are filled (solid) and others are just frames (open). The clock hands are in the center - black hour and minute hands with a red second hand. Within the open hexagons, there are small bee figures. The clock is mounted on a white wall with vertical paneling.\n\nLet me annotate this carefully:\n\n- Recognizability: Very clear what it is - a honeycomb-themed wall clock with bees. 5\n- Ambiguity: Pretty unambiguous as a decorative clock. 1\n- Natural photo typicality: It looks like a product photo, but quite natural. 4\n- Visual clutter: Moderate - many hexagonal cells but organized pattern. 3\n- Object-centricity: Yes, the clock dominates. 4\n- Scene-centricity: It's more of an object than a scene. 2\n- Caption confidence: High - can easily describe. 5\n\nSalient objects: The clock is the main object. I'd say 1 main salient object (the clock as a whole).\nDistinct categories: clock, bee decorations, wall - maybe 2-3.\n\nNo people, faces, animals (well, bees but those are decorative, not real animals), text, vehicles, food.\nIndoor scene: yes, mounted on a wall indoors.\nOutdoor: no.\nArtificial/rendered: no, appears to be a real photograph.\nOcclusion: no.\nUnusual viewpoint: no, straight-on.\nMultiple main objects: no, one clock.\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: home decor / decorative objects\n\nShort caption: \"Honeycomb-shaped wooden wall clock with bee decorations mounted on a white wall\"\n\nMain objects: wall clock, honeycomb pattern, bee decorations\n\nPossible interpretations: decorative wall clock, honeycomb art piece, bee-themed clock\n\nUncertainty: bees appear to be small decorative elements, hard to tell if they're real illustrations or 3D figures\n\nQuality flags: none really",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a decorative wall clock with a honeycomb design. The clock appears to be made of wood or wood-like material, with hexagonal shapes forming a honeycomb pattern. Some hexagons are filled (solid) and others are just frames (open). The clock hands are in the center - black hour and minute hands with a red second hand. Within the open hexagons, there are small bee figures. The clock is mounted on a white wall with vertical paneling.\n\nLet me annotate this carefully:\n\n- Recognizability: Very clear what it is - a honeycomb-themed wall clock with bees. 5\n- Ambiguity: Pretty unambiguous as a decorative clock. 1\n- Natural photo typicality: It looks like a product photo, but quite natural. 4\n- Visual clutter: Moderate - many hexagonal cells but organized pattern. 3\n- Object-centricity: Yes, the clock dominates. 4\n- Scene-centricity: It's more of an object than a scene. 2\n- Caption confidence: High - can easily describe. 5\n\nSalient objects: The clock is the main object. I'd say 1 main salient object (the clock as a whole).\nDistinct categories: clock, bee decorations, wall - maybe 2-3.\n\nNo people, faces, animals (well, bees but those are decorative, not real animals), text, vehicles, food.\nIndoor scene: yes, mounted on a wall indoors.\nOutdoor: no.\nArtificial/rendered: no, appears to be a real photograph.\nOcclusion: no.\nUnusual viewpoint: no, straight-on.\nMultiple main objects: no, one clock.\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: home decor / decorative objects\n\nShort caption: \"Honeycomb-shaped wooden wall clock with bee decorations mounted on a white wall\"\n\nMain objects: wall clock, honeycomb pattern, bee decorations\n\nPossible interpretations: decorative wall clock, honeycomb art piece, bee-themed clock\n\nUncertainty: bees appear to be small decorative elements, hard to tell if they're real illustrations or 3D figures\n\nQuality flags: none really",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 778,
+          "total_tokens": 2300,
+          "cost": 0.00123996,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00123996,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009336
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 504,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

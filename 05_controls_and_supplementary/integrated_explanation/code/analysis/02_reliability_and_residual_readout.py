@@ -9,12 +9,27 @@ import numpy as np
 import pandas as pd
 
 
-PAPER = Path(__file__).resolve().parents[2]
-DATA = PAPER / "18_explain_alignment_effect" / "results"
-FIGURES = PAPER / "18_explain_alignment_effect" / "figures"
-PRIMARY = PAPER / "03_statistics" / "results" / "primary_endpoint_summary.csv"
-RESIDUAL_SUMMARY = PAPER / "10_residual_reliability" / "results" / "residual_decomposition_summary.csv"
-RESIDUAL_CONTRASTS = PAPER / "10_residual_reliability" / "results" / "residual_decomposition_contrasts.csv"
+STAGE = Path(__file__).resolve().parents[2]
+SHARE_ROOT = STAGE.parents[1]
+DATA = STAGE / "results"
+FIGURES = STAGE / "figures"
+PRIMARY = SHARE_ROOT / "03_alignment_inference" / "results" / "primary_endpoint_summary.csv"
+RESIDUAL_SUMMARY = (
+    SHARE_ROOT
+    / "05_controls_and_supplementary"
+    / "reliability_and_residual_structure"
+    / "residual_reliability"
+    / "results"
+    / "residual_decomposition_summary.csv"
+)
+RESIDUAL_CONTRASTS = (
+    SHARE_ROOT
+    / "05_controls_and_supplementary"
+    / "reliability_and_residual_structure"
+    / "residual_reliability"
+    / "results"
+    / "residual_decomposition_contrasts.csv"
+)
 
 DATA.mkdir(parents=True, exist_ok=True)
 FIGURES.mkdir(parents=True, exist_ok=True)

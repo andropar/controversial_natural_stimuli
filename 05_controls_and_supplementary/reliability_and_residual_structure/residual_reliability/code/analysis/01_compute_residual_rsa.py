@@ -24,7 +24,7 @@ indexing). Encoders are cached per (subject, model).
 
 Vicco baseline: bootstrap resamples of N=100 from the 292 images.
 
-Output: data/residual_rsa.csv
+Output: results/residual_rsa.csv
 """
 
 from __future__ import annotations
@@ -34,9 +34,9 @@ import gc
 import sys
 from pathlib import Path
 
-_PAPER = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_PAPER.parents[1]))
+STAGE = Path(__file__).resolve().parents[2]
+SHARE_ROOT = STAGE.parents[2]
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
 
 import numpy as np
 import pandas as pd
@@ -56,9 +56,11 @@ from utils import (
 )
 
 
-N_VICCO_BOOTSTRAPS = 10
+N_VICCO_SUBSAMPLES = 10
 VICCO_SAMPLE_SIZE = 100
 N_CV_FOLDS = 10
+N_CV_REPEATS = 50
+CV_RANDOM_STATE = 42
 RIDGE_ALPHAS = np.logspace(-2, 6, 30)
 GROUPS_CONTROVERSIAL = ["all_models", "architecture", "dataset", "sota", "training_objective"]
 ALL_MODELS = config.MODEL_SETS["all_models"]
@@ -176,24 +178,46 @@ def _ridge_oof_ranked(
     n_stim: int,
     alphas: np.ndarray = RIDGE_ALPHAS,
     n_folds: int = N_CV_FOLDS,
-) -> np.ndarray:
-    """OOF ridge predictions on rank-transformed RDMs; stimulus-level CV."""
+    n_repeats: int = N_CV_REPEATS,
+    random_state: int = CV_RANDOM_STATE,
+    return_counts: bool = False,
+) -> np.ndarray | tuple[np.ndarray, np.ndarray]:
+    """OOF ridge predictions on rank-transformed RDMs with repeated image-blocked CV.
+
+    A single image-blocked K-fold partition can only score pairs whose two
+    images land in the same held-out fold. Repeating the partition gives most
+    image pairs at least one no-shared-image out-of-fold prediction while
+    preserving the strict train/test image separation.
+    """
     y = stats.rankdata(brain_vec).astype(np.float64)
     X = np.column_stack([stats.rankdata(v).astype(np.float64) for v in model_vecs])
 
-    splits = stimulus_cv_splits(n_stim, n_splits=n_folds)
+    n_repeats = max(1, int(n_repeats))
+    pred_sum = np.zeros_like(y, dtype=np.float64)
+    pred_count = np.zeros_like(y, dtype=np.int32)
+
+    for rep in range(n_repeats):
+        splits = stimulus_cv_splits(
+            n_stim, n_splits=n_folds, random_state=random_state + rep
+        )
+        for train_idx, test_idx in splits:
+            if len(test_idx) == 0:
+                continue
+            mean = X[train_idx].mean(axis=0)
+            std = X[train_idx].std(axis=0) + 1e-8
+            X_tr = (X[train_idx] - mean) / std
+            X_te = (X[test_idx] - mean) / std
+
+            ridge = RidgeCV(alphas=alphas, scoring="neg_mean_squared_error")
+            ridge.fit(X_tr, y[train_idx])
+            pred_sum[test_idx] += ridge.predict(X_te)
+            pred_count[test_idx] += 1
+
     y_pred = np.full_like(y, np.nan)
-
-    for train_idx, test_idx in splits:
-        mean = X[train_idx].mean(axis=0)
-        std = X[train_idx].std(axis=0) + 1e-8
-        X_tr = (X[train_idx] - mean) / std
-        X_te = (X[test_idx] - mean) / std
-
-        ridge = RidgeCV(alphas=alphas, scoring="neg_mean_squared_error")
-        ridge.fit(X_tr, y[train_idx])
-        y_pred[test_idx] = ridge.predict(X_te)
-
+    covered = pred_count > 0
+    y_pred[covered] = pred_sum[covered] / pred_count[covered]
+    if return_counts:
+        return y_pred, pred_count
     return y_pred
 
 
@@ -260,6 +284,8 @@ def analyze_cell(
     model_rdms: dict[str, np.ndarray],   # {model: N×N}
     sub_idx: np.ndarray | None = None,
     n_stim_override: int | None = None,
+    cv_repeats: int = N_CV_REPEATS,
+    cv_seed: int = CV_RANDOM_STATE,
 ) -> dict:
     """Compute single-best, ensemble, NC, residual reliability for one cell.
 
@@ -284,9 +310,19 @@ def analyze_cell(
 
     # Ensemble OOF on full-rep brain
     model_vec_list = [model_vecs[m] for m in ALL_MODELS]
-    oof_full = _ridge_oof_ranked(brain_full, model_vec_list, n_stim)
+    oof_full, oof_counts = _ridge_oof_ranked(
+        brain_full,
+        model_vec_list,
+        n_stim,
+        n_repeats=cv_repeats,
+        random_state=cv_seed,
+        return_counts=True,
+    )
     brain_full_r = stats.rankdata(brain_full)
     r_ensemble = _spearman(brain_full_r, oof_full)
+    n_pairs_total = int(len(brain_full))
+    n_pairs_oof = int((oof_counts > 0).sum())
+    pair_coverage = n_pairs_oof / n_pairs_total if n_pairs_total else np.nan
 
     # Noise ceiling from split-half
     r_halves = _spearman(brain_even, brain_odd)
@@ -294,8 +330,20 @@ def analyze_cell(
     correlation_ceiling = np.sqrt(noise_ceiling) if noise_ceiling > 0 else np.nan
 
     # Residual reliability: fit ensemble on each half, correlate residuals
-    oof_even = _ridge_oof_ranked(brain_even, model_vec_list, n_stim)
-    oof_odd  = _ridge_oof_ranked(brain_odd,  model_vec_list, n_stim)
+    oof_even = _ridge_oof_ranked(
+        brain_even,
+        model_vec_list,
+        n_stim,
+        n_repeats=cv_repeats,
+        random_state=cv_seed,
+    )
+    oof_odd = _ridge_oof_ranked(
+        brain_odd,
+        model_vec_list,
+        n_stim,
+        n_repeats=cv_repeats,
+        random_state=cv_seed,
+    )
     resid_even = stats.rankdata(brain_even) - oof_even
     resid_odd  = stats.rankdata(brain_odd)  - oof_odd
     residual_reliability = _sb_correct(_spearman(resid_even, resid_odd))
@@ -314,6 +362,17 @@ def analyze_cell(
         "r_ensemble": r_ensemble,  # Backwards-compatible alias.
         "r_ensemble_cv": r_ensemble,
         "r_ensemble_full_fit": r_ensemble_full_fit,
+        "cv_folds_image_blocked": int(N_CV_FOLDS),
+        "cv_repeats_image_blocked": int(cv_repeats),
+        "cv_random_state": int(cv_seed),
+        "n_pairs_total": n_pairs_total,
+        "n_pairs_oof_predicted": n_pairs_oof,
+        "oof_pair_coverage": pair_coverage,
+        "oof_pair_prediction_count_min": int(oof_counts[oof_counts > 0].min()) if n_pairs_oof else 0,
+        "oof_pair_prediction_count_median": (
+            float(np.median(oof_counts[oof_counts > 0])) if n_pairs_oof else np.nan
+        ),
+        "oof_pair_prediction_count_max": int(oof_counts.max()) if len(oof_counts) else 0,
         "noise_ceiling": noise_ceiling,  # Backwards-compatible alias.
         "noise_ceiling_reliability": noise_ceiling,
         "correlation_ceiling": correlation_ceiling,
@@ -373,7 +432,20 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--subject", default="all")
     parser.add_argument("--output", default=None)
-    parser.add_argument("--n-vicco-bootstraps", type=int, default=N_VICCO_BOOTSTRAPS)
+    parser.add_argument(
+        "--n-vicco-bootstraps",
+        type=int,
+        default=None,
+        help="Deprecated name. Samples are N-matched draws without replacement.",
+    )
+    parser.add_argument(
+        "--n-vicco-subsamples",
+        type=int,
+        default=N_VICCO_SUBSAMPLES,
+        help="Number of N=100 Vicco baseline subsamples drawn without replacement.",
+    )
+    parser.add_argument("--cv-repeats", type=int, default=N_CV_REPEATS)
+    parser.add_argument("--cv-seed", type=int, default=CV_RANDOM_STATE)
     parser.add_argument(
         "--rsa-type", choices=["all", "fixed", "mixed"], default="all",
         help="Run one RSA type or both (default: all).",
@@ -386,12 +458,17 @@ def main():
 
     subjects = parse_subject_arg(args.subject)
     rsa_types = ["fixed", "mixed"] if args.rsa_type == "all" else [args.rsa_type]
+    n_vicco_subsamples = (
+        args.n_vicco_bootstraps
+        if args.n_vicco_bootstraps is not None
+        else args.n_vicco_subsamples
+    )
     requested_groups = (
         set(g.strip() for g in args.groups.split(",") if g.strip())
         if args.groups else set(GROUPS_CONTROVERSIAL + ["vicco"])
     )
     out_path = Path(args.output) if args.output else (
-        _PAPER / "10_residual_reliability" / "results" / "residual_rsa.csv"
+        STAGE / "results" / "residual_rsa.csv"
     )
     out_path.parent.mkdir(parents=True, exist_ok=True)
     if out_path.exists():
@@ -432,7 +509,12 @@ def main():
                 model_rdms = _model_rdm_matrices(
                     group, stim_idx, subject, rsa_type, encoding_cache
                 )
-                result = analyze_cell(brain_rdms, model_rdms)
+                result = analyze_cell(
+                    brain_rdms,
+                    model_rdms,
+                    cv_repeats=args.cv_repeats,
+                    cv_seed=args.cv_seed,
+                )
                 del model_rdms, encoding_cache
                 gc.collect()
                 cell_rows.append({
@@ -441,6 +523,8 @@ def main():
                     "stimulus_type": "controversial",
                     "rsa_type": rsa_type,
                     "bootstrap_idx": 0,
+                    "subsample_idx": 0,
+                    "baseline_sampling": "none",
                     "n_stimuli": len(keys),
                     **result,
                 })
@@ -490,9 +574,11 @@ def main():
         if n_vicco is None:
             continue
 
+        # The shared helper samples without replacement; this is an N-matched
+        # baseline subsampling scheme, not a bootstrap in the statistical sense.
         boots = bootstrap_sample_indices(
             n_total=n_vicco, n_sample=VICCO_SAMPLE_SIZE,
-            n_bootstrap=args.n_vicco_bootstraps, seed=0,
+            n_bootstrap=n_vicco_subsamples, seed=0,
         )
         for bidx, sub_idx in enumerate(tqdm(boots, desc=f"  vicco [{rsa_type}]")):
             cell_rows = []
@@ -500,6 +586,8 @@ def main():
                 result = analyze_cell(
                     brain_rdms_full, model_rdms_full,
                     sub_idx=sub_idx, n_stim_override=VICCO_SAMPLE_SIZE,
+                    cv_repeats=args.cv_repeats,
+                    cv_seed=args.cv_seed,
                 )
                 cell_rows.append({
                     "subject": subject,
@@ -507,6 +595,8 @@ def main():
                     "stimulus_type": "vicco",
                     "rsa_type": rsa_type,
                     "bootstrap_idx": bidx,
+                    "subsample_idx": bidx,
+                    "baseline_sampling": "n_matched_without_replacement",
                     "n_stimuli": VICCO_SAMPLE_SIZE,
                     **result,
                 })

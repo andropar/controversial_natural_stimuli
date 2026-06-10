@@ -9,17 +9,10 @@ are recorded as unavailable unless local annotations are added.
 ## Contents Snapshot
 
 - Folder: `05_controls_and_supplementary/stimulus_and_pair_diagnostics/stimulus_characterization`
-- Figures in this folder tree: 5
+- Figures in this folder tree: 0
 - Data/table-like files in this folder tree: 7
 - Python scripts in this folder tree: 4
-- Main child folders: `code/`, `results/`, `figures/`
+- Main child folders: `code/`, `results/`
 
-Use the tables below as a trace from rendered files back to the nearby code, staged data, score tables, or reports that produced them.
-
-## Figure Index
-
-| Figure directory | Figures | README |
-|---|---:|---|
-| `05_controls_and_supplementary/stimulus_and_pair_diagnostics/stimulus_characterization/figures` | 4 | `05_controls_and_supplementary/stimulus_and_pair_diagnostics/stimulus_characterization/figures/README.md` |
-| `05_controls_and_supplementary/stimulus_and_pair_diagnostics/stimulus_characterization/figures/png` | 1 | `05_controls_and_supplementary/stimulus_and_pair_diagnostics/stimulus_characterization/figures/png/README.md` |
+Rendered stimulus-image figures are intentionally omitted from the public share.
 <!-- END AUTO-FIGURE-PROVENANCE -->

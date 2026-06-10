@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_92",
+    "stim_key": "training_objective_92",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 92,
+    "file_index": 92,
+    "image_name": "image_0092.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0092.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"music\",\n\n  \"short_caption\": \"Person playing a white electric guitar in front of a bass amplifier\",\n  \"main_objects\": [\"white electric guitar\", \"person torso and hands\", \"graphic t-shirt\", \"jeans\", \"amplifier\"],\n  \"possible_interpretations\": [\n    \"musician practicing or rehearsing\",\n    \"musician posing with a guitar\",\n    \"guitar demonstration or product shot\",\n    \"band practice in a studio\"\n  ],\n  \"uncertainty_notes\": \"Face and head are cropped out; cannot identify person. T-shirt text partially obscured but appears to read 'SICK DESIRES'. Amplifier brand partially visible as 'STINGRAY'.\",\n  \"quality_flags\": [\"truncated_subject\", \"no_face_visible\", \"dark_lighting\", \"slight_motion_blur\"]\n}",
+      "response": {
+        "id": "gen-1780319374-siXV5VRipDK8ec186JcM",
+        "object": "chat.completion",
+        "created": 1780319374,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"music\",\n\n  \"short_caption\": \"Person playing a white electric guitar in front of a bass amplifier\",\n  \"main_objects\": [\"white electric guitar\", \"person torso and hands\", \"graphic t-shirt\", \"jeans\", \"amplifier\"],\n  \"possible_interpretations\": [\n    \"musician practicing or rehearsing\",\n    \"musician posing with a guitar\",\n    \"guitar demonstration or product shot\",\n    \"band practice in a studio\"\n  ],\n  \"uncertainty_notes\": \"Face and head are cropped out; cannot identify person. T-shirt text partially obscured but appears to read 'SICK DESIRES'. Amplifier brand partially visible as 'STINGRAY'.\",\n  \"quality_flags\": [\"truncated_subject\", \"no_face_visible\", \"dark_lighting\", \"slight_motion_blur\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a person (only torso and hands visible, face not shown) playing a white electric guitar. They're wearing a dark jacket over a graphic t-shirt with what appears to be a bulldog design and \"SICK DESIRES\" or similar text. They're wearing jeans. The background shows what appears to be a music amplifier (I can see \"STINGRAY\" text suggesting an Ampeg SVT or similar bass amp). The person has a ring on one finger.\n\nLet me assess each attribute:\n\n- recognizability: Very clear what's happening - person playing electric guitar. 5\n- ambiguity: Quite clear, not much ambiguity. 1\n- natural_photo_typicality: Looks like a typical photograph, though somewhat dark/moody lighting. 4\n- visual_clutter: Some elements but not overly cluttered. The guitar, person, amp, t-shirt design. 3\n- object_centricity: The guitar is prominent but it's an action shot. 4\n- scene_centricity: Not really a scene focus, more of an object/portrait. 2\n- caption_confidence: Very confident in a caption. 5\n\nSalient objects: guitar, person (hands/torso), amplifier, t-shirt design\nDistinct categories: 3-4 (instrument, clothing, person, equipment)\n\ncontains_person: yes (hands, torso)\ncontains_face: no (face not shown)\ncontains_animal: the t-shirt has an animal graphic but it's a printed image, not an actual animal\ncontains_text: yes (\"SICK DESIRES\", \"STINGRAY\", etc.)\ncontains_vehicle: no\ncontains_food: no\ncontains_indoor_scene: appears to be indoor (studio setting with amp)\ncontains_outdoor_scene: no\ncontains_artificial_or_rendered_content: no\ncontains_occlusion_or_truncation: yes, the person is cut off (no head/face visible)\ncontains_unusual_viewpoint: somewhat, the framing cuts off the head which is unusual\ncontains_multiple_main_objects: could argue guitar is main, but person is also there\n\ndominant_content_type: object (guitar) or mixed - I'll say object since guitar dominates\nimage_style: natural_photo\nsemantic_domain: music\n\nShort caption: \"Person playing a white electric guitar in front of an amplifier\"\nMain objects: electric guitar, person, amplifier, graphic t-shirt, jeans\n\nPossible interpretations: \n- Musician practicing/rehearsing\n- Musician performing/posing for photo\n- Guitar lesson\n- Band practice\n\nQuality flags: face not visible, truncated body, somewhat dark lighting",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a person (only torso and hands visible, face not shown) playing a white electric guitar. They're wearing a dark jacket over a graphic t-shirt with what appears to be a bulldog design and \"SICK DESIRES\" or similar text. They're wearing jeans. The background shows what appears to be a music amplifier (I can see \"STINGRAY\" text suggesting an Ampeg SVT or similar bass amp). The person has a ring on one finger.\n\nLet me assess each attribute:\n\n- recognizability: Very clear what's happening - person playing electric guitar. 5\n- ambiguity: Quite clear, not much ambiguity. 1\n- natural_photo_typicality: Looks like a typical photograph, though somewhat dark/moody lighting. 4\n- visual_clutter: Some elements but not overly cluttered. The guitar, person, amp, t-shirt design. 3\n- object_centricity: The guitar is prominent but it's an action shot. 4\n- scene_centricity: Not really a scene focus, more of an object/portrait. 2\n- caption_confidence: Very confident in a caption. 5\n\nSalient objects: guitar, person (hands/torso), amplifier, t-shirt design\nDistinct categories: 3-4 (instrument, clothing, person, equipment)\n\ncontains_person: yes (hands, torso)\ncontains_face: no (face not shown)\ncontains_animal: the t-shirt has an animal graphic but it's a printed image, not an actual animal\ncontains_text: yes (\"SICK DESIRES\", \"STINGRAY\", etc.)\ncontains_vehicle: no\ncontains_food: no\ncontains_indoor_scene: appears to be indoor (studio setting with amp)\ncontains_outdoor_scene: no\ncontains_artificial_or_rendered_content: no\ncontains_occlusion_or_truncation: yes, the person is cut off (no head/face visible)\ncontains_unusual_viewpoint: somewhat, the framing cuts off the head which is unusual\ncontains_multiple_main_objects: could argue guitar is main, but person is also there\n\ndominant_content_type: object (guitar) or mixed - I'll say object since guitar dominates\nimage_style: natural_photo\nsemantic_domain: music\n\nShort caption: \"Person playing a white electric guitar in front of an amplifier\"\nMain objects: electric guitar, person, amplifier, graphic t-shirt, jeans\n\nPossible interpretations: \n- Musician practicing/rehearsing\n- Musician performing/posing for photo\n- Guitar lesson\n- Band practice\n\nQuality flags: face not visible, truncated body, somewhat dark lighting",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 943,
+          "total_tokens": 2357,
+          "cost": 0.00140556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00140556,
+            "upstream_inference_prompt_cost": 0.00027396,
+            "upstream_inference_completions_cost": 0.0011316
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 614,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

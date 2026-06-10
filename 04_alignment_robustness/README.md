@@ -11,7 +11,7 @@ retained robustness figures in `figures/`.
 
 ## How To Read This Stage
 
-Start with `data/distance_metric_claim_robustness_summary.csv` for the compact
+Start with `results/distance_metric_claim_robustness_summary.csv` for the compact
 metric-sensitivity check. The other data tables show the same robustness
 questions at finer resolution: distance-metric variants, mixed-distance ranks,
 and model-RDM spread diagnostics.

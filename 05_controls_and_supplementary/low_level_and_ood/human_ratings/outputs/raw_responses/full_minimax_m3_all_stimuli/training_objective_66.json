@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_66",
+    "stim_key": "training_objective_66",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 66,
+    "file_index": 66,
+    "image_name": "image_0066.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0066.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"humanitarian/refugee_camp\",\n\n  \"short_caption\": \"A man crouches beside a UNHCR tent in a muddy refugee camp\",\n  \"main_objects\": [\"man\", \"UNHCR tent\", \"mud puddle\", \"tent ropes\"],\n  \"possible_interpretations\": [\n    \"man washing hands in muddy water\",\n    \"man collecting water from a puddle\",\n    \"man retrieving an object from the ground near a tent\"\n  ],\n  \"uncertainty_notes\": \"Face is partially obscured and low resolution makes exact action ambiguous; camp location and context inferred from UNHCR branding.\",\n  \"quality_flags\": [\"low_resolution\", \"partially_obscured_face\"]\n}",
+      "response": {
+        "id": "gen-1780319342-lFEvjkk6h14tu8xri4qx",
+        "object": "chat.completion",
+        "created": 1780319342,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"humanitarian/refugee_camp\",\n\n  \"short_caption\": \"A man crouches beside a UNHCR tent in a muddy refugee camp\",\n  \"main_objects\": [\"man\", \"UNHCR tent\", \"mud puddle\", \"tent ropes\"],\n  \"possible_interpretations\": [\n    \"man washing hands in muddy water\",\n    \"man collecting water from a puddle\",\n    \"man retrieving an object from the ground near a tent\"\n  ],\n  \"uncertainty_notes\": \"Face is partially obscured and low resolution makes exact action ambiguous; camp location and context inferred from UNHCR branding.\",\n  \"quality_flags\": [\"low_resolution\", \"partially_obscured_face\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a man crouching/squatting outside a UNHCR (UN Refugee Agency) tent in what appears to be a refugee camp. The ground is muddy/wet with puddles. The man is wearing a dark jacket and appears to be washing his hands or doing something with water in the mud. There are multiple tents visible, with guy lines/ropes. The setting looks like a refugee camp in difficult conditions.\n\nLet me annotate based on the schema:\n\n- Recognizability: The content is quite clear - a man at a refugee camp. 4\n- Ambiguity: The scene is fairly clear, not many interpretations. 2\n- Natural photo typicality: Looks like a typical documentary/news photo. 4\n- Visual clutter: Multiple elements - tents, ropes, man, mud, puddles. 3\n- Object centricity: There's a central person, but the scene context is important too. 3\n- Scene centricity: The setting/scene is very important - refugee camp. 4\n- Caption confidence: 4 - can describe concisely\n\nEstimated salient objects: person, tent, ropes, puddles\nDistinct categories: person, tent, ground/environment\n\nContains person: true\nContains face: true (partially visible)\nContains animal: false\nContains text: true (UNHCR text visible)\nContains vehicle: false\nContains food: false\nContains indoor scene: false\nContains outdoor scene: true\nContains artificial or rendered: false\nContains occlusion or truncation: true (face partially obscured)\nContains unusual viewpoint: false\nContains multiple main objects: false (one main person)\n\nDominant content: person (or mixed)\nImage style: natural_photo\nSemantic domain: refugee_camp or humanitarian\n\nShort caption: \"A man crouches beside a UNHCR tent at a muddy refugee camp\"\n\nMain objects: man, UNHCR tent, mud puddle, tent ropes\nPossible interpretations: man washing hands, man collecting water, man picking something up from ground\n\nQuality flags: low resolution, partially obscured face",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a man crouching/squatting outside a UNHCR (UN Refugee Agency) tent in what appears to be a refugee camp. The ground is muddy/wet with puddles. The man is wearing a dark jacket and appears to be washing his hands or doing something with water in the mud. There are multiple tents visible, with guy lines/ropes. The setting looks like a refugee camp in difficult conditions.\n\nLet me annotate based on the schema:\n\n- Recognizability: The content is quite clear - a man at a refugee camp. 4\n- Ambiguity: The scene is fairly clear, not many interpretations. 2\n- Natural photo typicality: Looks like a typical documentary/news photo. 4\n- Visual clutter: Multiple elements - tents, ropes, man, mud, puddles. 3\n- Object centricity: There's a central person, but the scene context is important too. 3\n- Scene centricity: The setting/scene is very important - refugee camp. 4\n- Caption confidence: 4 - can describe concisely\n\nEstimated salient objects: person, tent, ropes, puddles\nDistinct categories: person, tent, ground/environment\n\nContains person: true\nContains face: true (partially visible)\nContains animal: false\nContains text: true (UNHCR text visible)\nContains vehicle: false\nContains food: false\nContains indoor scene: false\nContains outdoor scene: true\nContains artificial or rendered: false\nContains occlusion or truncation: true (face partially obscured)\nContains unusual viewpoint: false\nContains multiple main objects: false (one main person)\n\nDominant content: person (or mixed)\nImage style: natural_photo\nSemantic domain: refugee_camp or humanitarian\n\nShort caption: \"A man crouches beside a UNHCR tent at a muddy refugee camp\"\n\nMain objects: man, UNHCR tent, mud puddle, tent ropes\nPossible interpretations: man washing hands, man collecting water, man picking something up from ground\n\nQuality flags: low resolution, partially obscured face",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 786,
+          "total_tokens": 2308,
+          "cost": 0.00124956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00124956,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009432
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 506,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_12",
+    "stim_key": "all_models_12",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 12,
+    "file_index": 12,
+    "image_name": "image_0012.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0012.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"bedroom decor\",\n  \"short_caption\": \"Wooden nightstand with white pumpkin decor beside a bed\",\n  \"main_objects\": [\"nightstand\", \"drawer knobs\", \"white pumpkins\", \"bedding\"],\n  \"possible_interpretations\": [\"bedroom vignette with nightstand and fall decor\", \"styled interior furniture photograph\", \"autumn-themed bedroom corner\"],\n  \"uncertainty_notes\": \"Close-up angle crops out portions of the pumpkins and bed; exact style of pumpkins is partially obscured\",\n  \"quality_flags\": [\"cropped_subjects\", \"elevated_viewpoint\"]\n}",
+      "response": {
+        "id": "gen-1780318741-i5lldDTHXiF21ZGq073k",
+        "object": "chat.completion",
+        "created": 1780318741,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"bedroom decor\",\n  \"short_caption\": \"Wooden nightstand with white pumpkin decor beside a bed\",\n  \"main_objects\": [\"nightstand\", \"drawer knobs\", \"white pumpkins\", \"bedding\"],\n  \"possible_interpretations\": [\"bedroom vignette with nightstand and fall decor\", \"styled interior furniture photograph\", \"autumn-themed bedroom corner\"],\n  \"uncertainty_notes\": \"Close-up angle crops out portions of the pumpkins and bed; exact style of pumpkins is partially obscured\",\n  \"quality_flags\": [\"cropped_subjects\", \"elevated_viewpoint\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a wooden nightstand or side table with dark metal/black frame and wood drawer fronts with round knobs. On top of the nightstand are decorative white pumpkins (autumn/fall decor). To the left, there's a bed with textured white/cream bedding visible. The image is taken from an elevated angle looking down at the nightstand.\n\nLet me analyze each attribute:\n\n- Recognizability: The furniture and decor are clearly visible and recognizable. 4-5\n- Ambiguity: Low ambiguity - clearly shows a nightstand with decor. 1-2\n- Natural_photo_typicality: Looks like a natural interior photograph, possibly styled. 4\n- Visual_clutter: Moderate - a few objects but not very busy. 2\n- Object_centricity: The nightstand is the central focus. 4\n- Scene_centricity: It's a scene but object-focused. 2\n- Caption_confidence: Easy to caption. 4\n\n- estimated_salient_object_count: 2-3 (nightstand, pumpkins, bed)\n- estimated_distinct_object_categories: 3 (furniture, decorative items, bedding)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (pumpkins cut off at top, bed cut off at left)\n- contains_unusual_viewpoint: true (elevated/angled view)\n- contains_multiple_main_objects: false (nightstand is dominant)\n\n- dominant_content_type: object (the nightstand)\n- image_style: natural_photo\n- semantic_domain: home/bedroom decor\n\n- short_caption: \"A wooden nightstand with white pumpkin decor next to a bed\"\n- main_objects: [\"nightstand\", \"pumpkins\", \"bed\", \"knobs\"]\n- possible_interpretations: [\"bedroom scene with nightstand and fall decor\", \"styled furniture photography\", \"autumn-themed bedroom vignette\"]\n- uncertainty_notes: \"Composition is close-up, parts of objects are cropped out of frame\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a wooden nightstand or side table with dark metal/black frame and wood drawer fronts with round knobs. On top of the nightstand are decorative white pumpkins (autumn/fall decor). To the left, there's a bed with textured white/cream bedding visible. The image is taken from an elevated angle looking down at the nightstand.\n\nLet me analyze each attribute:\n\n- Recognizability: The furniture and decor are clearly visible and recognizable. 4-5\n- Ambiguity: Low ambiguity - clearly shows a nightstand with decor. 1-2\n- Natural_photo_typicality: Looks like a natural interior photograph, possibly styled. 4\n- Visual_clutter: Moderate - a few objects but not very busy. 2\n- Object_centricity: The nightstand is the central focus. 4\n- Scene_centricity: It's a scene but object-focused. 2\n- Caption_confidence: Easy to caption. 4\n\n- estimated_salient_object_count: 2-3 (nightstand, pumpkins, bed)\n- estimated_distinct_object_categories: 3 (furniture, decorative items, bedding)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (pumpkins cut off at top, bed cut off at left)\n- contains_unusual_viewpoint: true (elevated/angled view)\n- contains_multiple_main_objects: false (nightstand is dominant)\n\n- dominant_content_type: object (the nightstand)\n- image_style: natural_photo\n- semantic_domain: home/bedroom decor\n\n- short_caption: \"A wooden nightstand with white pumpkin decor next to a bed\"\n- main_objects: [\"nightstand\", \"pumpkins\", \"bed\", \"knobs\"]\n- possible_interpretations: [\"bedroom scene with nightstand and fall decor\", \"styled furniture photography\", \"autumn-themed bedroom vignette\"]\n- uncertainty_notes: \"Composition is close-up, parts of objects are cropped out of frame\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1363,
+          "completion_tokens": 827,
+          "total_tokens": 2190,
+          "cost": 0.00137394,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00137394,
+            "upstream_inference_prompt_cost": 0.00038154,
+            "upstream_inference_completions_cost": 0.0009924
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 512,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

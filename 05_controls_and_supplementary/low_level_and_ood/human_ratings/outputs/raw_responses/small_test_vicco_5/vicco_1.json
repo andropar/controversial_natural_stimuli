@@ -1,0 +1,82 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_1",
+    "stim_key": "vicco_1",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 1,
+    "file_index": 0,
+    "image_name": "shared_4rep_vicco_001.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_001.jpg"
+  },
+  "model": "google/gemini-3.5-flash",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"household\",\n  \"short_caption\": \"Broken white ceramic pieces and spilled dark soil scattered across a tiled floor.\",\n  \"main_objects\": [\n    \"broken ceramic shards\",\n    \"spilled soil\",\n    \"tiled floor\"\n  ],\n  \"possible_interpretations\": [\n    \"a broken ceramic planter pot with spilled soil\",\n    \"a broken plate or dish with dirt on the floor\"\n  ],\n  \"uncertainty_notes\": \"It is ambiguous whether the broken ceramic was a planter pot or a plate/dish, though the presence of soil suggests a plant pot.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780316650-VyxejEE0Tc4FTUsCdADu",
+        "object": "chat.completion",
+        "created": 1780316650,
+        "model": "google/gemini-3.5-flash-20260519",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"household\",\n  \"short_caption\": \"Broken white ceramic pieces and spilled dark soil scattered across a tiled floor.\",\n  \"main_objects\": [\n    \"broken ceramic shards\",\n    \"spilled soil\",\n    \"tiled floor\"\n  ],\n  \"possible_interpretations\": [\n    \"a broken ceramic planter pot with spilled soil\",\n    \"a broken plate or dish with dirt on the floor\"\n  ],\n  \"uncertainty_notes\": \"It is ambiguous whether the broken ceramic was a planter pot or a plate/dish, though the presence of soil suggests a plant pot.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "**Analyzing Image Content**\n\nI'm currently analyzing the visual data, specifically focusing on identifying and classifying the broken ceramic fragments and the spilled soil. My process involves segmenting these elements from the background and ensuring accurate bounding box or polygonal annotations as per the schema requirements.\n\n**Assessing Image Characteristics**\n\nMy recent focus has been on evaluating the distinct attributes of the image. I've assessed factors like recognizability and ambiguity, deeming them quite high and low respectively. Clutter and object centrality are moderate, with a high caption confidence and a clear focus on distinct categories like ceramic shards and soil.\n\n**Confirming Image Properties**\n\nI've confirmed the absence of faces, animals, text, vehicles, and artificial content. The scene is predominantly indoor, featuring multiple main objects with some truncation and an unusual overhead viewpoint. Mixed content, specifically objects like broken ceramic and soil, characterizes the image style as natural.\n\n",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "**Analyzing Image Content**\n\nI'm currently analyzing the visual data, specifically focusing on identifying and classifying the broken ceramic fragments and the spilled soil. My process involves segmenting these elements from the background and ensuring accurate bounding box or polygonal annotations as per the schema requirements.\n\n**Assessing Image Characteristics**\n\nMy recent focus has been on evaluating the distinct attributes of the image. I've assessed factors like recognizability and ambiguity, deeming them quite high and low respectively. Clutter and object centrality are moderate, with a high caption confidence and a clear focus on distinct categories like ceramic shards and soil.\n\n**Confirming Image Properties**\n\nI've confirmed the absence of faces, animals, text, vehicles, and artificial content. The scene is predominantly indoor, featuring multiple main objects with some truncation and an unusual overhead viewpoint. Mixed content, specifically objects like broken ceramic and soil, characterizes the image style as natural.\n\n",
+                  "format": "google-gemini-v1",
+                  "index": 0
+                },
+                {
+                  "type": "reasoning.encrypted",
+                  "data": "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",
+                  "format": "google-gemini-v1",
+                  "index": 1
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1731,
+          "completion_tokens": 1322,
+          "total_tokens": 3053,
+          "cost": 0.0144945,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0144945,
+            "upstream_inference_prompt_cost": 0.0025965,
+            "upstream_inference_completions_cost": 0.011898
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 914,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

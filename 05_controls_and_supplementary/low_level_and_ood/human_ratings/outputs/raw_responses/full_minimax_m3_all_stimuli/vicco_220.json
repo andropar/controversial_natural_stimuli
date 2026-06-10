@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_220",
+    "stim_key": "vicco_220",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 220,
+    "file_index": 219,
+    "image_name": "shared_4rep_vicco_220.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_220.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture\",\n  \"short_caption\": \"Stone cloister walkway with vaulted Gothic arches and a hanging lantern\",\n  \"main_objects\": [\"stone arches\", \"vaulted ceiling\", \"hanging lantern\", \"stone floor\", \"tall windows\"],\n  \"possible_interpretations\": [\"cathedral or monastery cloister\", \"historic university covered walkway\", \"college corridor\"],\n  \"uncertainty_notes\": \"Plaques are visible on the far wall but text is not clearly legible\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319643-GocrNL9yrpCkcFR4Jivj",
+        "object": "chat.completion",
+        "created": 1780319643,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture\",\n  \"short_caption\": \"Stone cloister walkway with vaulted Gothic arches and a hanging lantern\",\n  \"main_objects\": [\"stone arches\", \"vaulted ceiling\", \"hanging lantern\", \"stone floor\", \"tall windows\"],\n  \"possible_interpretations\": [\"cathedral or monastery cloister\", \"historic university covered walkway\", \"college corridor\"],\n  \"uncertainty_notes\": \"Plaques are visible on the far wall but text is not clearly legible\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a Gothic-style stone cloister or covered walkway with vaulted ceilings, arched openings, stone columns, a tiled stone floor, and a hanging lantern. There are windows on the left side. The scene is clearly architectural - looks like it could be a cathedral cloister, university (possibly Oxford-style) covered walkway, or similar historic building. There are no people, animals, vehicles, food, or text visible.\n\nLet me annotate this:\n\n- recognizability: 5 - clearly an architectural walkway/cloister\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 5 - looks like a typical photograph\n- visual_clutter: 2 - relatively clean, mostly architectural elements\n- object_centricity: 1 - it's a scene, not a central object\n- scene_centricity: 5 - it's clearly a scene/place\n- caption_confidence: 5 - easy to caption\n\n- salient_object_count: null (it's a scene)\n- distinct_object_categories: maybe 2-3 (lantern, bench/stone seats, windows)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (there might be some plaques on the wall but not clearly text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (it's a covered walkway, semi-indoor)\n- contains_outdoor_scene: false (covered/indoor space)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: architecture\n\n- short_caption: \"Stone cloister walkway with vaulted Gothic ceiling and hanging lantern\"\n- main_objects: [\"arches\", \"lantern\", \"stone columns\", \"stone floor\", \"windows\"]\n- possible_interpretations: [\"cathedral cloister\", \"university covered walkway\", \"monastery corridor\"]\n- uncertainty_notes: \"Some plaques visible on far wall but text not clearly legible\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a Gothic-style stone cloister or covered walkway with vaulted ceilings, arched openings, stone columns, a tiled stone floor, and a hanging lantern. There are windows on the left side. The scene is clearly architectural - looks like it could be a cathedral cloister, university (possibly Oxford-style) covered walkway, or similar historic building. There are no people, animals, vehicles, food, or text visible.\n\nLet me annotate this:\n\n- recognizability: 5 - clearly an architectural walkway/cloister\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 5 - looks like a typical photograph\n- visual_clutter: 2 - relatively clean, mostly architectural elements\n- object_centricity: 1 - it's a scene, not a central object\n- scene_centricity: 5 - it's clearly a scene/place\n- caption_confidence: 5 - easy to caption\n\n- salient_object_count: null (it's a scene)\n- distinct_object_categories: maybe 2-3 (lantern, bench/stone seats, windows)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (there might be some plaques on the wall but not clearly text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (it's a covered walkway, semi-indoor)\n- contains_outdoor_scene: false (covered/indoor space)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: architecture\n\n- short_caption: \"Stone cloister walkway with vaulted Gothic ceiling and hanging lantern\"\n- main_objects: [\"arches\", \"lantern\", \"stone columns\", \"stone floor\", \"windows\"]\n- possible_interpretations: [\"cathedral cloister\", \"university covered walkway\", \"monastery corridor\"]\n- uncertainty_notes: \"Some plaques visible on far wall but text not clearly legible\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 795,
+          "total_tokens": 2317,
+          "cost": 0.00126036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000954
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 511,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

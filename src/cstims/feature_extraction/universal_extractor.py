@@ -3,7 +3,7 @@
 This module provides a :class:`UniversalFeatureExtractor` which relies on
 ``torchvision``'s feature extraction helpers when possible and falls back to
 module-level forward hooks otherwise.  It supports models enumerated in
-``data/resources/model_list.csv`` by delegating model loading and preprocessing
+``00_stimulus_selection/resources/model_list.csv`` by delegating model loading and preprocessing
 logic to :mod:`deepjuice` while handling the feature capture locally.
 """
 

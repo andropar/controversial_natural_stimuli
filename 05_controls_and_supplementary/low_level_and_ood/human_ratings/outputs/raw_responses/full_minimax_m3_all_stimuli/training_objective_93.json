@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_93",
+    "stim_key": "training_objective_93",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 93,
+    "file_index": 93,
+    "image_name": "image_0093.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0093.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"portrait\",\n  \"short_caption\": \"Woman in purple headscarf holding a baby and an umbrella at night\",\n  \"main_objects\": [\"woman\", \"baby\", \"umbrella\", \"headscarf\", \"bracelet\"],\n  \"possible_interpretations\": [\n    \"Portrait of a mother holding her child at night\",\n    \"Nighttime outdoor scene with a woman and baby under an umbrella\",\n    \"Documentary-style portrait of a woman in traditional dress\"\n  ],\n  \"uncertainty_notes\": \"Low light conditions limit visibility of background and clothing details; identity and cultural context not inferable from image alone.\",\n  \"quality_flags\": [\"low_light\", \"dark_background\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319375-bFwrGYyaWniZ10aVOWNM",
+        "object": "chat.completion",
+        "created": 1780319375,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"portrait\",\n  \"short_caption\": \"Woman in purple headscarf holding a baby and an umbrella at night\",\n  \"main_objects\": [\"woman\", \"baby\", \"umbrella\", \"headscarf\", \"bracelet\"],\n  \"possible_interpretations\": [\n    \"Portrait of a mother holding her child at night\",\n    \"Nighttime outdoor scene with a woman and baby under an umbrella\",\n    \"Documentary-style portrait of a woman in traditional dress\"\n  ],\n  \"uncertainty_notes\": \"Low light conditions limit visibility of background and clothing details; identity and cultural context not inferable from image alone.\",\n  \"quality_flags\": [\"low_light\", \"dark_background\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "The image shows a woman wearing a purple headscarf/veil, holding a baby wrapped in a cloth, and holding an open umbrella. The setting appears to be outdoors at night, with very dark background and some vegetation visible. She is wearing what appears to be a beaded bracelet.\n\nLet me analyze the image properties:\n\n- Recognizability: Clear, main content is easily recognizable - a woman with baby and umbrella\n- Ambiguity: Low ambiguity, clear scene\n- Natural photo typicality: Looks like a natural photograph, though dark/nighttime\n- Visual clutter: Low, mostly dark background with the subject\n- Object-centricity: Medium - person dominates\n- Scene-centricity: Low - it's more about the person\n- Caption confidence: High\n\nContains:\n- Person: yes\n- Face: yes\n- Animal: no\n- Text: no\n- Vehicle: no\n- Food: no\n- Indoor: no\n- Outdoor: yes\n- Artificial/rendered: no\n- Occlusion/truncation: no\n- Unusual viewpoint: no\n- Multiple main objects: arguably yes (woman, baby, umbrella)\n\nMain objects: woman, baby, umbrella\nPossible interpretations: portrait of mother and child, nighttime scene with woman and baby\n\nQuality flags: low light, dark background",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a woman wearing a purple headscarf/veil, holding a baby wrapped in a cloth, and holding an open umbrella. The setting appears to be outdoors at night, with very dark background and some vegetation visible. She is wearing what appears to be a beaded bracelet.\n\nLet me analyze the image properties:\n\n- Recognizability: Clear, main content is easily recognizable - a woman with baby and umbrella\n- Ambiguity: Low ambiguity, clear scene\n- Natural photo typicality: Looks like a natural photograph, though dark/nighttime\n- Visual clutter: Low, mostly dark background with the subject\n- Object-centricity: Medium - person dominates\n- Scene-centricity: Low - it's more about the person\n- Caption confidence: High\n\nContains:\n- Person: yes\n- Face: yes\n- Animal: no\n- Text: no\n- Vehicle: no\n- Food: no\n- Indoor: no\n- Outdoor: yes\n- Artificial/rendered: no\n- Occlusion/truncation: no\n- Unusual viewpoint: no\n- Multiple main objects: arguably yes (woman, baby, umbrella)\n\nMain objects: woman, baby, umbrella\nPossible interpretations: portrait of mother and child, nighttime scene with woman and baby\n\nQuality flags: low light, dark background",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 642,
+          "total_tokens": 2164,
+          "cost": 0.00107676,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00107676,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0007704
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 309,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

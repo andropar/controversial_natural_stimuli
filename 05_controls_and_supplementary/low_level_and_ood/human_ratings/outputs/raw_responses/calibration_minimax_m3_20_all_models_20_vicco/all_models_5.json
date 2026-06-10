@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_5",
+    "stim_key": "all_models_5",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 5,
+    "file_index": 5,
+    "image_name": "image_0005.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0005.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 2,\n  \"ambiguity\": 4,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 2,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor scene\",\n\n  \"short_caption\": \"Blurry indoor view with two partially visible people near a tiled doorway or window frame.\",\n  \"main_objects\": [\"person in dark clothing\", \"person in light clothing\", \"tiled wall\", \"window or door frame\"],\n  \"possible_interpretations\": [\n    \"Two people standing near a window or doorway indoors\",\n    \"A blurry candid moment between two people in a tiled room\",\n    \"Someone looking through a doorway at another person\",\n    \"A motion-blurred encounter or passing scene\",\n    \"An out-of-focus indoor architectural detail with bystanders\"\n  ],\n  \"uncertainty_notes\": \"Image is significantly out of focus, making faces, expressions, and fine details unidentifiable. The relationship between the two people and the architectural elements is unclear.\",\n  \"quality_flags\": [\"blurry\", \"out_of_focus\", \"partially_occluded_subjects\", \"low_clarity\"]\n}",
+      "response": {
+        "id": "gen-1780317868-37OCz2ywv6w4kL5lMgEK",
+        "object": "chat.completion",
+        "created": 1780317868,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 2,\n  \"ambiguity\": 4,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 2,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor scene\",\n\n  \"short_caption\": \"Blurry indoor view with two partially visible people near a tiled doorway or window frame.\",\n  \"main_objects\": [\"person in dark clothing\", \"person in light clothing\", \"tiled wall\", \"window or door frame\"],\n  \"possible_interpretations\": [\n    \"Two people standing near a window or doorway indoors\",\n    \"A blurry candid moment between two people in a tiled room\",\n    \"Someone looking through a doorway at another person\",\n    \"A motion-blurred encounter or passing scene\",\n    \"An out-of-focus indoor architectural detail with bystanders\"\n  ],\n  \"uncertainty_notes\": \"Image is significantly out of focus, making faces, expressions, and fine details unidentifiable. The relationship between the two people and the architectural elements is unclear.\",\n  \"quality_flags\": [\"blurry\", \"out_of_focus\", \"partially_occluded_subjects\", \"low_clarity\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see what appears to be a person in the foreground (back of head/shoulder, wearing a dark gray/blue garment) on the left side, and on the right side there appears to be another person partially visible wearing light-colored clothing. Between them seems to be a window or door frame with dark tiles visible on the left side.\n\nThe image is quite blurry/out of focus, making details hard to discern. It looks like an indoor scene, possibly near a window or doorway with tiled walls.\n\nLet me rate based on the schema:\n- Recognizability: Low because it's very blurry, maybe 2\n- Ambiguity: High due to blurriness, maybe 4\n- Natural photo typicality: It looks like a natural photo, maybe 3\n- Visual clutter: Moderate, maybe 3\n- Object centricity: No clear central object, maybe 2\n- Scene centricity: More of a scene with people, maybe 3\n- Caption confidence: Low due to blur, maybe 2\n\nEstimates:\n- Salient objects: 2 (two partial people)\n- Distinct categories: 2 (people, door/window frame)\n\nContains:\n- Person: yes (partial figures)\n- Face: no (faces not clearly visible)\n- Animal: no\n- Text: no\n- Vehicle: no\n- Food: no\n- Indoor: yes\n- Outdoor: no\n- Artificial/rendered: no\n- Occlusion/truncation: yes (people are truncated by frame edges)\n- Unusual viewpoint: somewhat, yes\n- Multiple main objects: possibly\n\nDominant content: mixed (people + scene)\nImage style: natural_photo\nSemantic domain: indoor/scene\n\nShort caption: Blurry indoor scene with two partially visible people near a window or doorway.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see what appears to be a person in the foreground (back of head/shoulder, wearing a dark gray/blue garment) on the left side, and on the right side there appears to be another person partially visible wearing light-colored clothing. Between them seems to be a window or door frame with dark tiles visible on the left side.\n\nThe image is quite blurry/out of focus, making details hard to discern. It looks like an indoor scene, possibly near a window or doorway with tiled walls.\n\nLet me rate based on the schema:\n- Recognizability: Low because it's very blurry, maybe 2\n- Ambiguity: High due to blurriness, maybe 4\n- Natural photo typicality: It looks like a natural photo, maybe 3\n- Visual clutter: Moderate, maybe 3\n- Object centricity: No clear central object, maybe 2\n- Scene centricity: More of a scene with people, maybe 3\n- Caption confidence: Low due to blur, maybe 2\n\nEstimates:\n- Salient objects: 2 (two partial people)\n- Distinct categories: 2 (people, door/window frame)\n\nContains:\n- Person: yes (partial figures)\n- Face: no (faces not clearly visible)\n- Animal: no\n- Text: no\n- Vehicle: no\n- Food: no\n- Indoor: yes\n- Outdoor: no\n- Artificial/rendered: no\n- Occlusion/truncation: yes (people are truncated by frame edges)\n- Unusual viewpoint: somewhat, yes\n- Multiple main objects: possibly\n\nDominant content: mixed (people + scene)\nImage style: natural_photo\nSemantic domain: indoor/scene\n\nShort caption: Blurry indoor scene with two partially visible people near a window or doorway.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 801,
+          "total_tokens": 2323,
+          "cost": 0.00139044,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139044,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009612
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 412,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

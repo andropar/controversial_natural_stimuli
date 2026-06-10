@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_98",
+    "stim_key": "training_objective_98",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 98,
+    "file_index": 98,
+    "image_name": "image_0098.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0098.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"military/person\",\n  \"short_caption\": \"Close-up of a person in multicam military uniform kneeling on a metal grate\",\n  \"main_objects\": [\"camouflage pants\", \"tactical boot\", \"metal grate\"],\n  \"possible_interpretations\": [\n    \"Military training or operation\",\n    \"Soldier preparing or inspecting equipment\",\n    \"Boot product photography\",\n    \"Tactical kneeling stance\"\n  ],\n  \"uncertainty_notes\": \"Setting and context unclear; could be indoor range or outdoor. Boot brand partially visible. Person's upper body not shown.\",\n  \"quality_flags\": [\"partial_body_visible\", \"low_angle_viewpoint\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319385-8i5jAv9CZKslxm6NqxWg",
+        "object": "chat.completion",
+        "created": 1780319385,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"military/person\",\n  \"short_caption\": \"Close-up of a person in multicam military uniform kneeling on a metal grate\",\n  \"main_objects\": [\"camouflage pants\", \"tactical boot\", \"metal grate\"],\n  \"possible_interpretations\": [\n    \"Military training or operation\",\n    \"Soldier preparing or inspecting equipment\",\n    \"Boot product photography\",\n    \"Tactical kneeling stance\"\n  ],\n  \"uncertainty_notes\": \"Setting and context unclear; could be indoor range or outdoor. Boot brand partially visible. Person's upper body not shown.\",\n  \"quality_flags\": [\"partial_body_visible\", \"low_angle_viewpoint\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a close-up view of a person kneeling. I can see:\n- Multicam camouflage pants/uniform (military style)\n- A black tactical/military boot (appears to be a Merrell brand based on the visible logo)\n- The person is kneeling on what appears to be a perforated metal surface (possibly a grate or platform)\n- Multiple layers of camo fabric visible\n- The viewpoint is from a low angle, showing the lower body/torso area\n\nLet me assess each dimension:\n\n- recognizability: The content is fairly clear - military personnel in camo kneeling. I'd say 4.\n- ambiguity: The specific context isn't entirely clear, but the general subject is. Maybe 2.\n- natural_photo_typicality: Looks like a natural photo, possibly with some editing. 4.\n- visual_clutter: There's a lot of pattern/texture from the camo, but not many distinct objects. 3.\n- object_centricity: Not really object-centric, more about the person/figure. 2.\n- scene_centricity: Not a scene, it's a close-up of a person. 1.\n- caption_confidence: Pretty confident about what's shown. 4.\n\nEstimated counts:\n- salient_object_count: 2 (boot, person/legs)\n- distinct_object_categories: 3 (clothing/boots, person, metal surface)\n\nContent flags:\n- contains_person: yes (partial, lower body)\n- contains_face: no\n- contains_animal: no\n- contains_text: no (there's a small brand logo but no readable text)\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: unclear, possibly\n- contains_outdoor_scene: possibly\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: yes (person is partially shown, cropped)\n- contains_unusual_viewpoint: somewhat unusual low angle\n- contains_multiple_main_objects: no\n\nDominant content: person (partial body)\nImage style: natural_photo\nSemantic domain: military/person\n\nShort caption: \"Close-up of a person in multicam military uniform kneeling on a metal grate\"\n\nMain objects: camouflage pants, tactical boot, metal grate\n\nPossible interpretations: \n- Military training exercise\n- Soldier preparing equipment\n- Tactical operation\n- Boot product photo (given the prominence of the boot)\n\nUncertainty notes: Setting unclear, could be indoor or outdoor. Brand on boot is partially visible.\n\nQuality flags: low contrast in some areas, partial body visible",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a close-up view of a person kneeling. I can see:\n- Multicam camouflage pants/uniform (military style)\n- A black tactical/military boot (appears to be a Merrell brand based on the visible logo)\n- The person is kneeling on what appears to be a perforated metal surface (possibly a grate or platform)\n- Multiple layers of camo fabric visible\n- The viewpoint is from a low angle, showing the lower body/torso area\n\nLet me assess each dimension:\n\n- recognizability: The content is fairly clear - military personnel in camo kneeling. I'd say 4.\n- ambiguity: The specific context isn't entirely clear, but the general subject is. Maybe 2.\n- natural_photo_typicality: Looks like a natural photo, possibly with some editing. 4.\n- visual_clutter: There's a lot of pattern/texture from the camo, but not many distinct objects. 3.\n- object_centricity: Not really object-centric, more about the person/figure. 2.\n- scene_centricity: Not a scene, it's a close-up of a person. 1.\n- caption_confidence: Pretty confident about what's shown. 4.\n\nEstimated counts:\n- salient_object_count: 2 (boot, person/legs)\n- distinct_object_categories: 3 (clothing/boots, person, metal surface)\n\nContent flags:\n- contains_person: yes (partial, lower body)\n- contains_face: no\n- contains_animal: no\n- contains_text: no (there's a small brand logo but no readable text)\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: unclear, possibly\n- contains_outdoor_scene: possibly\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: yes (person is partially shown, cropped)\n- contains_unusual_viewpoint: somewhat unusual low angle\n- contains_multiple_main_objects: no\n\nDominant content: person (partial body)\nImage style: natural_photo\nSemantic domain: military/person\n\nShort caption: \"Close-up of a person in multicam military uniform kneeling on a metal grate\"\n\nMain objects: camouflage pants, tactical boot, metal grate\n\nPossible interpretations: \n- Military training exercise\n- Soldier preparing equipment\n- Tactical operation\n- Boot product photo (given the prominence of the boot)\n\nUncertainty notes: Setting unclear, could be indoor or outdoor. Brand on boot is partially visible.\n\nQuality flags: low contrast in some areas, partial body visible",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1138,
+          "completion_tokens": 896,
+          "total_tokens": 2034,
+          "cost": 0.00126636,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126636,
+            "upstream_inference_prompt_cost": 0.00019116,
+            "upstream_inference_completions_cost": 0.0010752
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 618,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -11,10 +11,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
-_PAPER = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_PAPER.parents[1]))
-sys.path.insert(0, str(_PAPER / "figures"))
+STAGE = Path(__file__).resolve().parents[3]
+SHARE_ROOT = STAGE.parent
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
 
 from style_improved import (  # noqa: E402
     apply_style,
@@ -27,8 +27,8 @@ from style_improved import (  # noqa: E402
     add_panel_label,
 )
 
-DATA = _PAPER / "03_statistics" / "results" / "posthoc_model_family_summary.csv"
-FIG = _PAPER / "02_rsa_scores" / "figures"
+DATA = SHARE_ROOT / "03_alignment_inference" / "results" / "posthoc_model_family_summary.csv"
+FIG = STAGE / "figures" / "rsa_scores"
 
 FAMILY_ORDER = ["supervised_classification", "image_text", "self_supervised"]
 FAMILY_LABEL = {

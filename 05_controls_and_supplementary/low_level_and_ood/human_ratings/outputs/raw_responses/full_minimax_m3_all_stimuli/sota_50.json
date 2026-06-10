@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_50",
+    "stim_key": "sota_50",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 50,
+    "file_index": 50,
+    "image_name": "image_0050.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0050.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home decor / product\",\n\n  \"short_caption\": \"Engraved wooden picture frame with sample family photo on a wooden table\",\n  \"main_objects\": [\"wooden picture frame\", \"family photograph\", \"wooden table surface\"],\n  \"possible_interpretations\": [\n    \"product listing photo for a customizable engraved picture frame\",\n    \"personal gift display showing sample text placement\",\n    \"promotional image demonstrating engraving options\"\n  ],\n  \"uncertainty_notes\": \"Family photo subjects are within the frame; outdoor background is part of the inset photo, not the surrounding scene\",\n  \"quality_flags\": [\"placeholder_text_in_image\", \"product_photography\"]\n}",
+      "response": {
+        "id": "gen-1780319139-eDt1zISv5h4lVnq22GcO",
+        "object": "chat.completion",
+        "created": 1780319139,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home decor / product\",\n\n  \"short_caption\": \"Engraved wooden picture frame with sample family photo on a wooden table\",\n  \"main_objects\": [\"wooden picture frame\", \"family photograph\", \"wooden table surface\"],\n  \"possible_interpretations\": [\n    \"product listing photo for a customizable engraved picture frame\",\n    \"personal gift display showing sample text placement\",\n    \"promotional image demonstrating engraving options\"\n  ],\n  \"uncertainty_notes\": \"Family photo subjects are within the frame; outdoor background is part of the inset photo, not the surrounding scene\",\n  \"quality_flags\": [\"placeholder_text_in_image\", \"product_photography\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows an engraved wooden picture frame sitting on a wooden surface. The frame has placeholder text \"YOUR CUSTOM TEXT\" at the top and \"ENGRAVED HERE\" at the bottom, indicating this is a product photo/sample for a customizable frame. The frame contains a photo of what appears to be an Asian family - two adults and two young children, all smiling at the camera, outdoors with greenery visible in the background.\n\nLet me analyze this systematically:\n\n- Recognizability: The main content (a wooden picture frame with placeholder text and a family photo) is very clear. 5\n- Ambiguity: The product nature is clear, though the \"main content\" could be interpreted as the frame itself or the family photo inside. Low ambiguity. 2\n- Natural_photo_typicality: This looks like a product photo, somewhat staged but realistic. 3-4\n- Visual_clutter: The frame area is simple, the family photo has some background. 2\n- Object_centricity: The picture frame is the central object. 5\n- Scene_centricity: It's an object-focused image. 1\n- Caption_confidence: Easy to describe. 5\n\nMain objects: picture frame, family photo, wooden table\nSalient object count: 1 (the frame) - the family is inside the frame\nDistinct categories: frame, photo, surface\n\nContains: text (yes - \"YOUR CUSTOM TEXT\", \"ENGRAVED HERE\"), people/faces (yes - in the photo)\nThe family photo contains people and faces.\n\nThe image style is natural_photo (product photography).\nDominant content: object (the frame is the main subject).\nSemantic domain: home decor / product / gift",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows an engraved wooden picture frame sitting on a wooden surface. The frame has placeholder text \"YOUR CUSTOM TEXT\" at the top and \"ENGRAVED HERE\" at the bottom, indicating this is a product photo/sample for a customizable frame. The frame contains a photo of what appears to be an Asian family - two adults and two young children, all smiling at the camera, outdoors with greenery visible in the background.\n\nLet me analyze this systematically:\n\n- Recognizability: The main content (a wooden picture frame with placeholder text and a family photo) is very clear. 5\n- Ambiguity: The product nature is clear, though the \"main content\" could be interpreted as the frame itself or the family photo inside. Low ambiguity. 2\n- Natural_photo_typicality: This looks like a product photo, somewhat staged but realistic. 3-4\n- Visual_clutter: The frame area is simple, the family photo has some background. 2\n- Object_centricity: The picture frame is the central object. 5\n- Scene_centricity: It's an object-focused image. 1\n- Caption_confidence: Easy to describe. 5\n\nMain objects: picture frame, family photo, wooden table\nSalient object count: 1 (the frame) - the family is inside the frame\nDistinct categories: frame, photo, surface\n\nContains: text (yes - \"YOUR CUSTOM TEXT\", \"ENGRAVED HERE\"), people/faces (yes - in the photo)\nThe family photo contains people and faces.\n\nThe image style is natural_photo (product photography).\nDominant content: object (the frame is the main subject).\nSemantic domain: home decor / product / gift",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 715,
+          "total_tokens": 2237,
+          "cost": 0.00116436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00116436,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000858
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 400,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

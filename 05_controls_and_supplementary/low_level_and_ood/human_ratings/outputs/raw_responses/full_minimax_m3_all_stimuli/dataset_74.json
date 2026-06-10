@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_74",
+    "stim_key": "dataset_74",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 74,
+    "file_index": 74,
+    "image_name": "image_0074.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0074.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home decor\",\n  \"short_caption\": \"A white ceramic vase with green stems beside two lit glass candle holders on a shelf.\",\n  \"main_objects\": [\"white ceramic vase\", \"glass candle holder\", \"lit candle\"],\n  \"possible_interpretations\": [\"home decor arrangement\", \"shelf styling vignette\", \"ambiance display\"],\n  \"uncertainty_notes\": \"Plant species in the vase not clearly identifiable; mirror frame in upper left is partially visible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319045-b1vMgehkJzIe6bBbCSd2",
+        "object": "chat.completion",
+        "created": 1780319045,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home decor\",\n  \"short_caption\": \"A white ceramic vase with green stems beside two lit glass candle holders on a shelf.\",\n  \"main_objects\": [\"white ceramic vase\", \"glass candle holder\", \"lit candle\"],\n  \"possible_interpretations\": [\"home decor arrangement\", \"shelf styling vignette\", \"ambiance display\"],\n  \"uncertainty_notes\": \"Plant species in the vase not clearly identifiable; mirror frame in upper left is partially visible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a home decor arrangement on a white surface (likely a shelf or table). I can see:\n- A large white ceramic vase with green plant stems/foliage coming out the top\n- Two green/gray glass candle holders with a textured/dimpled pattern, each containing lit candles\n- A partial view of a round mirror or frame in the upper left corner\n- The wall is a neutral gray/beige color\n- The lighting is warm and ambient\n\nLet me assess the various dimensions:\n\n- Recognizability: Very clear - typical home decor arrangement, easily recognizable\n- Ambiguity: Low - it's clearly vases and candle holders on a shelf\n- Natural photo typicality: Looks like a natural photograph, perhaps slightly styled\n- Visual clutter: Low to moderate - 3 main items, not crowded\n- Object centrality: Yes, the objects dominate the scene\n- Scene centricity: Could go either way - it's a styled vignette but the objects are prominent\n- Caption confidence: High - easy to caption\n\nMain objects: white vase with greenery, two glass candle holders with lit candles\nScene type: indoor home decor arrangement\nContains artificial content? The vase and candle holders are artificial objects but the image itself is a natural photo\n\nLet me construct the JSON response.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a home decor arrangement on a white surface (likely a shelf or table). I can see:\n- A large white ceramic vase with green plant stems/foliage coming out the top\n- Two green/gray glass candle holders with a textured/dimpled pattern, each containing lit candles\n- A partial view of a round mirror or frame in the upper left corner\n- The wall is a neutral gray/beige color\n- The lighting is warm and ambient\n\nLet me assess the various dimensions:\n\n- Recognizability: Very clear - typical home decor arrangement, easily recognizable\n- Ambiguity: Low - it's clearly vases and candle holders on a shelf\n- Natural photo typicality: Looks like a natural photograph, perhaps slightly styled\n- Visual clutter: Low to moderate - 3 main items, not crowded\n- Object centrality: Yes, the objects dominate the scene\n- Scene centricity: Could go either way - it's a styled vignette but the objects are prominent\n- Caption confidence: High - easy to caption\n\nMain objects: white vase with greenery, two glass candle holders with lit candles\nScene type: indoor home decor arrangement\nContains artificial content? The vase and candle holders are artificial objects but the image itself is a natural photo\n\nLet me construct the JSON response.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 595,
+          "total_tokens": 2117,
+          "cost": 0.00114324,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00114324,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.000714
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 337,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

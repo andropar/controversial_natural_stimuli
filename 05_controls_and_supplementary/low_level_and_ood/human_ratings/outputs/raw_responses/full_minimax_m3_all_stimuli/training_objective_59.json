@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_59",
+    "stim_key": "training_objective_59",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 59,
+    "file_index": 59,
+    "image_name": "image_0059.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0059.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"clothing\",\n  \"short_caption\": \"Distressed ripped blue jeans displayed against a white paneled door.\",\n  \"main_objects\": [\"ripped jeans\", \"paneled door\", \"doorknobs\"],\n  \"possible_interpretations\": [\"product photo of distressed jeans\", \"casual snapshot of jeans on a closet door\", \"online resale listing photo\"],\n  \"uncertainty_notes\": \"Jeans are cut off at the top and bottom, so full garment shape is not visible.\",\n  \"quality_flags\": [\"framing_cuts_off_subject\", \"casual_snapshot_lighting\"]\n}",
+      "response": {
+        "id": "gen-1780319340-FRG8alDrVxrZIsBW4p5I",
+        "object": "chat.completion",
+        "created": 1780319340,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"clothing\",\n  \"short_caption\": \"Distressed ripped blue jeans displayed against a white paneled door.\",\n  \"main_objects\": [\"ripped jeans\", \"paneled door\", \"doorknobs\"],\n  \"possible_interpretations\": [\"product photo of distressed jeans\", \"casual snapshot of jeans on a closet door\", \"online resale listing photo\"],\n  \"uncertainty_notes\": \"Jeans are cut off at the top and bottom, so full garment shape is not visible.\",\n  \"quality_flags\": [\"framing_cuts_off_subject\", \"casual_snapshot_lighting\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a pair of distressed/ripped blue jeans hanging or laid against a white paneled door or wall. The jeans have multiple tears and worn areas, particularly on the knees and thighs. There are two brass-colored doorknobs visible at the bottom.\n\nLet me annotate this carefully:\n\n- Recognizability: Very clear - it's a pair of jeans. 5\n- Ambiguity: Low - clearly jeans. 1\n- Natural photo typicality: Looks like a typical photo, maybe a bit casual/snapshot. 4\n- Visual clutter: Low - just jeans on a door. 1\n- Object centricity: High - jeans dominate. 5\n- Scene centricity: Low - it's an object photo. 1\n- Caption confidence: High. 5\n\n- Salient object count: 1 (jeans)\n- Distinct categories: 1 (jeans/clothing), maybe 2 with the door\n\n- Contains person: false\n- Contains face: false\n- Contains animal: false\n- Contains text: false\n- Contains vehicle: false\n- Contains food: false\n- Contains indoor scene: true (indoor with door)\n- Contains outdoor scene: false\n- Contains artificial or rendered content: false\n- Contains occlusion or truncation: true (top is cut off, bottom cut off)\n- Contains unusual viewpoint: false\n- Contains multiple main objects: false\n\nDominant content type: object\nImage style: natural_photo\nSemantic domain: clothing or fashion\n\nShort caption: \"Pair of distressed ripped blue jeans displayed against a white paneled door.\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a pair of distressed/ripped blue jeans hanging or laid against a white paneled door or wall. The jeans have multiple tears and worn areas, particularly on the knees and thighs. There are two brass-colored doorknobs visible at the bottom.\n\nLet me annotate this carefully:\n\n- Recognizability: Very clear - it's a pair of jeans. 5\n- Ambiguity: Low - clearly jeans. 1\n- Natural photo typicality: Looks like a typical photo, maybe a bit casual/snapshot. 4\n- Visual clutter: Low - just jeans on a door. 1\n- Object centricity: High - jeans dominate. 5\n- Scene centricity: Low - it's an object photo. 1\n- Caption confidence: High. 5\n\n- Salient object count: 1 (jeans)\n- Distinct categories: 1 (jeans/clothing), maybe 2 with the door\n\n- Contains person: false\n- Contains face: false\n- Contains animal: false\n- Contains text: false\n- Contains vehicle: false\n- Contains food: false\n- Contains indoor scene: true (indoor with door)\n- Contains outdoor scene: false\n- Contains artificial or rendered content: false\n- Contains occlusion or truncation: true (top is cut off, bottom cut off)\n- Contains unusual viewpoint: false\n- Contains multiple main objects: false\n\nDominant content type: object\nImage style: natural_photo\nSemantic domain: clothing or fashion\n\nShort caption: \"Pair of distressed ripped blue jeans displayed against a white paneled door.\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 678,
+          "total_tokens": 2200,
+          "cost": 0.00111996,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00111996,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008136
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 363,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

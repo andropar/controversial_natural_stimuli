@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_98",
+    "stim_key": "vicco_98",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 98,
+    "file_index": 97,
+    "image_name": "shared_4rep_vicco_098.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_098.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"people\",\n  \"short_caption\": \"A toddler in red overalls sitting on dirt near stone pillars beside an adult\",\n  \"main_objects\": [\"toddler\", \"adult\", \"red overalls\", \"stone pillars\", \"dirt ground\"],\n  \"possible_interpretations\": [\"child sitting outdoors with a parent\", \"family moment at a historical or natural site\", \"parent guiding a young child\"],\n  \"uncertainty_notes\": \"Faces not visible; exact location or event context is unclear; only the adult's hands and lower body are shown\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319501-cW5ftNm4OVjeguz05yfz",
+        "object": "chat.completion",
+        "created": 1780319501,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"people\",\n  \"short_caption\": \"A toddler in red overalls sitting on dirt near stone pillars beside an adult\",\n  \"main_objects\": [\"toddler\", \"adult\", \"red overalls\", \"stone pillars\", \"dirt ground\"],\n  \"possible_interpretations\": [\"child sitting outdoors with a parent\", \"family moment at a historical or natural site\", \"parent guiding a young child\"],\n  \"uncertainty_notes\": \"Faces not visible; exact location or event context is unclear; only the adult's hands and lower body are shown\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a young child (toddler) sitting on the ground, viewed from behind. The child has blonde hair pulled up in a small topknot/ponytail, and is wearing a green and dark striped long-sleeved shirt with red overalls/dungarees. To the left, there is an adult (only arms/hands and part of body visible) sitting with their hand resting on their knee. The setting appears to be some kind of stone or concrete structure, possibly near pillars or architectural ruins. The ground appears to be dirt or sand.\n\nLet me provide the annotations:\n\n- recognizability: 4 - clearly shows a child and adult\n- ambiguity: 2 - pretty clear scene\n- natural_photo_typicality: 4 - looks like a natural photograph\n- visual_clutter: 2 - relatively simple scene\n- object_centricity: 2 - the child is somewhat central but the scene composition includes the adult\n- scene_centricity: 3 - it's both a scene and has people\n- caption_confidence: 4 - can describe well\n\n- estimated_salient_object_count: 2 (child and adult)\n- estimated_distinct_object_categories: 2 (person, adult)\n\n- contains_person: true\n- contains_face: false (faces not visible, both shown from behind)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true (appears outdoors)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (adult is truncated)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (child and adult)\n\n- dominant_content_type: \"person_face\" - but face not visible, so maybe \"person_face\" or \"object\"... Actually since face is the typical, but faces aren't visible here, \"person_face\" might not be right. Let me go with \"mixed\" since there are people and a scene.\n\nActually, looking again, the main subject is a person (child) and there's another person. The scene is secondary. I'll say \"person_face\" as the dominant content type since it's person-centric, but noting no face visible.\n\nHmm, let me reconsider. The child is the main subject, shown from behind. There's an adult next to them. The setting is a stone/dirt area. I'll go with \"person_face\" since the focus is on the people.\n\n- image_style: \"natural_photo\"\n- semantic_domain: \"people\"\n\n- short_caption: \"A toddler in red overalls sitting on dirt next to an adult's hand\"\n- main_objects: [\"toddler\", \"adult\", \"red overalls\", \"stone pillars\"]\n- possible_interpretations: [\"child sitting outdoors with parent\", \"family moment\", \"child at archaeological/historical site\"]\n- uncertainty_notes: \"Faces not visible; context of location unclear\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a young child (toddler) sitting on the ground, viewed from behind. The child has blonde hair pulled up in a small topknot/ponytail, and is wearing a green and dark striped long-sleeved shirt with red overalls/dungarees. To the left, there is an adult (only arms/hands and part of body visible) sitting with their hand resting on their knee. The setting appears to be some kind of stone or concrete structure, possibly near pillars or architectural ruins. The ground appears to be dirt or sand.\n\nLet me provide the annotations:\n\n- recognizability: 4 - clearly shows a child and adult\n- ambiguity: 2 - pretty clear scene\n- natural_photo_typicality: 4 - looks like a natural photograph\n- visual_clutter: 2 - relatively simple scene\n- object_centricity: 2 - the child is somewhat central but the scene composition includes the adult\n- scene_centricity: 3 - it's both a scene and has people\n- caption_confidence: 4 - can describe well\n\n- estimated_salient_object_count: 2 (child and adult)\n- estimated_distinct_object_categories: 2 (person, adult)\n\n- contains_person: true\n- contains_face: false (faces not visible, both shown from behind)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true (appears outdoors)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (adult is truncated)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (child and adult)\n\n- dominant_content_type: \"person_face\" - but face not visible, so maybe \"person_face\" or \"object\"... Actually since face is the typical, but faces aren't visible here, \"person_face\" might not be right. Let me go with \"mixed\" since there are people and a scene.\n\nActually, looking again, the main subject is a person (child) and there's another person. The scene is secondary. I'll say \"person_face\" as the dominant content type since it's person-centric, but noting no face visible.\n\nHmm, let me reconsider. The child is the main subject, shown from behind. There's an adult next to them. The setting is a stone/dirt area. I'll go with \"person_face\" since the focus is on the people.\n\n- image_style: \"natural_photo\"\n- semantic_domain: \"people\"\n\n- short_caption: \"A toddler in red overalls sitting on dirt next to an adult's hand\"\n- main_objects: [\"toddler\", \"adult\", \"red overalls\", \"stone pillars\"]\n- possible_interpretations: [\"child sitting outdoors with parent\", \"family moment\", \"child at archaeological/historical site\"]\n- uncertainty_notes: \"Faces not visible; context of location unclear\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 986,
+          "total_tokens": 2508,
+          "cost": 0.00148956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00148956,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011832
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 705,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_8",
+    "stim_key": "sota_8",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 8,
+    "file_index": 8,
+    "image_name": "image_0008.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0008.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports\",\n  \"short_caption\": \"Close-up of a curling stone and two sweepers with brooms on a curling rink.\",\n  \"main_objects\": [\"curling stone\", \"curling broom\", \"ice rink\", \"person's leg\", \"gloved hand\"],\n  \"possible_interpretations\": [\"curling match in progress\", \"curling practice session\", \"close-up of curling equipment on ice\"],\n  \"uncertainty_notes\": \"Faces and full bodies of players are cropped out; context is clearly curling but exact event type is unclear.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319087-QCfocfg2qqzakrABxsSp",
+        "object": "chat.completion",
+        "created": 1780319087,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports\",\n  \"short_caption\": \"Close-up of a curling stone and two sweepers with brooms on a curling rink.\",\n  \"main_objects\": [\"curling stone\", \"curling broom\", \"ice rink\", \"person's leg\", \"gloved hand\"],\n  \"possible_interpretations\": [\"curling match in progress\", \"curling practice session\", \"close-up of curling equipment on ice\"],\n  \"uncertainty_notes\": \"Faces and full bodies of players are cropped out; context is clearly curling but exact event type is unclear.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a close-up of a curling scene. I can see a granite curling stone with a red handle in the center, two curling brooms/brushes being held by people (one wearing a black glove, one with bare hand visible), a person's leg/pant and shoe in the upper right, and the ice surface with the characteristic red and blue curling circles (house/target). The image focuses on the action of sweeping or playing curling.\n\nLet me analyze:\n- Main content: curling stone, brooms/brushes, ice rink with target circles\n- Two people partially visible (hands and a leg)\n- Recognizable: curling sport scene, very clear\n- Ambiguity: low, clearly curling\n- Natural photo: yes, looks like a natural photo\n- Visual clutter: moderate, several objects but focused\n- Object centricity: the curling stone is central\n- Scene centricity: also scene-like (ice rink)\n- Caption confidence: high\n\nMain objects: curling stone, curling brooms, ice, person's leg, gloved hand\nContains person: yes (hands and leg)\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: yes (curling rink)\nContains outdoor scene: no\nContains artificial content: no\nContains occlusion: yes (broom partially covers, hand cropped)\nContains unusual viewpoint: somewhat, close-up angle\nContains multiple main objects: yes (stone and brooms)\n\nDominant content: object or scene - I'd say object with scene context\nImage style: natural_photo\nSemantic domain: sports",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a close-up of a curling scene. I can see a granite curling stone with a red handle in the center, two curling brooms/brushes being held by people (one wearing a black glove, one with bare hand visible), a person's leg/pant and shoe in the upper right, and the ice surface with the characteristic red and blue curling circles (house/target). The image focuses on the action of sweeping or playing curling.\n\nLet me analyze:\n- Main content: curling stone, brooms/brushes, ice rink with target circles\n- Two people partially visible (hands and a leg)\n- Recognizable: curling sport scene, very clear\n- Ambiguity: low, clearly curling\n- Natural photo: yes, looks like a natural photo\n- Visual clutter: moderate, several objects but focused\n- Object centricity: the curling stone is central\n- Scene centricity: also scene-like (ice rink)\n- Caption confidence: high\n\nMain objects: curling stone, curling brooms, ice, person's leg, gloved hand\nContains person: yes (hands and leg)\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: yes (curling rink)\nContains outdoor scene: no\nContains artificial content: no\nContains occlusion: yes (broom partially covers, hand cropped)\nContains unusual viewpoint: somewhat, close-up angle\nContains multiple main objects: yes (stone and brooms)\n\nDominant content: object or scene - I'd say object with scene context\nImage style: natural_photo\nSemantic domain: sports",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 681,
+          "total_tokens": 2203,
+          "cost": 0.00112356,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00112356,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008172
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 391,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

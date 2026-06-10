@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_91",
+    "stim_key": "training_objective_91",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 91,
+    "file_index": 91,
+    "image_name": "image_0091.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0091.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 8,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"interior_decor\",\n  \"short_caption\": \"Two marble wall shelves with leather straps holding a vase, framed art, figurines, candle, and books above a potted plant.\",\n  \"main_objects\": [\"marble shelf\", \"white vase\", \"framed artwork\", \"brass penguin figurines\", \"glass candle\", \"books\", \"potted snake plant\", \"terracotta pot\"],\n  \"possible_interpretations\": [\"home interior decor styling\", \"shelving product display\", \"lifestyle/interior design photo\", \"styled vignette\"],\n  \"uncertainty_notes\": \"Penguin objects are decorative figurines, not real animals. Bottom-right picture frame is partially cut off at the edge. The scene appears deliberately staged rather than candid.\",\n  \"quality_flags\": [\"staged_composition\", \"partial_object_visible\", \"even_lighting\"]\n}",
+      "response": {
+        "id": "gen-1780319374-CgyPmgsJ71OH3FfdXljf",
+        "object": "chat.completion",
+        "created": 1780319374,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 8,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"interior_decor\",\n  \"short_caption\": \"Two marble wall shelves with leather straps holding a vase, framed art, figurines, candle, and books above a potted plant.\",\n  \"main_objects\": [\"marble shelf\", \"white vase\", \"framed artwork\", \"brass penguin figurines\", \"glass candle\", \"books\", \"potted snake plant\", \"terracotta pot\"],\n  \"possible_interpretations\": [\"home interior decor styling\", \"shelving product display\", \"lifestyle/interior design photo\", \"styled vignette\"],\n  \"uncertainty_notes\": \"Penguin objects are decorative figurines, not real animals. Bottom-right picture frame is partially cut off at the edge. The scene appears deliberately staged rather than candid.\",\n  \"quality_flags\": [\"staged_composition\", \"partial_object_visible\", \"even_lighting\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows two marble shelves mounted on a white wall with brown leather straps. On the top shelf, there's a white vase and a small framed picture/artwork. On the bottom shelf, there are two small brass penguin figurines, a white candle in a glass jar, and a couple of books (one appears to be a reddish/coral colored book). Below the shelves is a potted snake plant (sansevieria) in a terracotta pot, and the corner of another framed picture is visible at the bottom right.\n\nLet me assess the dimensions:\n\n- recognizability: 5 - very clear what's shown\n- ambiguity: 1 - very clear interpretation, home decor/shelves\n- natural_photo_typicality: 3 - looks like a styled product/lifestyle photo\n- visual_clutter: 2 - relatively organized, few items\n- object_centricity: 3 - the shelves and their contents are the focus\n- scene_centricity: 3 - it's a home interior scene with objects\n- caption_confidence: 5 - easy to caption\n\nEstimated salient objects: shelves, vase, frame, book, candle, penguin figurines, plant, pot - around 7-8\nDistinct categories: shelves, vase, picture frame, book, candle, figurine, plant, pot - around 7-8\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false (penguin figurines are decorative, not real animals)\ncontains_text: false (the book has text but it's not really readable/legible)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (the bottom picture frame is cut off)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true (shelves with various decorative items)\n\ndominant_content_type: \"mixed\" or \"scene\" - it's a home interior scene with multiple objects\nimage_style: \"edited_photo\" - this looks like a styled/staged photo, possibly for interior design\nsemantic_domain: \"interior_decor\" or \"home_decor\"\n\nshort_caption: \"Two marble wall shelves with leather straps holding decorative items above a potted plant\"\n\nmain_objects: [\"marble shelf\", \"white vase\", \"framed picture\", \"brass penguin figurines\", \"candle\", \"books\", \"potted snake plant\"]\n\npossible_interpretations: [\"home interior decoration\", \"shelf styling photo\", \"interior design inspiration\", \"lifestyle product photo\"]\n\nuncertainty_notes: \"The penguin figurines are decorative objects, not real animals. The bottom picture frame is partially cut off.\"\n\nquality_flags: [\"stylized_staging\", \"partial_object_visible\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows two marble shelves mounted on a white wall with brown leather straps. On the top shelf, there's a white vase and a small framed picture/artwork. On the bottom shelf, there are two small brass penguin figurines, a white candle in a glass jar, and a couple of books (one appears to be a reddish/coral colored book). Below the shelves is a potted snake plant (sansevieria) in a terracotta pot, and the corner of another framed picture is visible at the bottom right.\n\nLet me assess the dimensions:\n\n- recognizability: 5 - very clear what's shown\n- ambiguity: 1 - very clear interpretation, home decor/shelves\n- natural_photo_typicality: 3 - looks like a styled product/lifestyle photo\n- visual_clutter: 2 - relatively organized, few items\n- object_centricity: 3 - the shelves and their contents are the focus\n- scene_centricity: 3 - it's a home interior scene with objects\n- caption_confidence: 5 - easy to caption\n\nEstimated salient objects: shelves, vase, frame, book, candle, penguin figurines, plant, pot - around 7-8\nDistinct categories: shelves, vase, picture frame, book, candle, figurine, plant, pot - around 7-8\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false (penguin figurines are decorative, not real animals)\ncontains_text: false (the book has text but it's not really readable/legible)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (the bottom picture frame is cut off)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true (shelves with various decorative items)\n\ndominant_content_type: \"mixed\" or \"scene\" - it's a home interior scene with multiple objects\nimage_style: \"edited_photo\" - this looks like a styled/staged photo, possibly for interior design\nsemantic_domain: \"interior_decor\" or \"home_decor\"\n\nshort_caption: \"Two marble wall shelves with leather straps holding decorative items above a potted plant\"\n\nmain_objects: [\"marble shelf\", \"white vase\", \"framed picture\", \"brass penguin figurines\", \"candle\", \"books\", \"potted snake plant\"]\n\npossible_interpretations: [\"home interior decoration\", \"shelf styling photo\", \"interior design inspiration\", \"lifestyle product photo\"]\n\nuncertainty_notes: \"The penguin figurines are decorative objects, not real animals. The bottom picture frame is partially cut off.\"\n\nquality_flags: [\"stylized_staging\", \"partial_object_visible\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 988,
+          "total_tokens": 2510,
+          "cost": 0.00149196,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00149196,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011856
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 663,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

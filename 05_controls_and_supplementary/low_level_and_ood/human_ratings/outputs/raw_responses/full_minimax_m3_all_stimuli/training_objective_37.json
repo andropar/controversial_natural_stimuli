@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_37",
+    "stim_key": "training_objective_37",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 37,
+    "file_index": 37,
+    "image_name": "image_0037.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0037.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: Missing required fields: ['contains_unusual_viewpoint']"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 9, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"person_face\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"sports_team_photo\", \"short_caption\": \"College golf team in matching striped shirts posing with a wooden championship plaque outdoors.\", \"main_objects\": [\"men\", \"caps\", \"striped polo shirts\", \"wooden plaque trophy\", \"grass\", \"trees\"], \"possible_interpretations\": [\"college golf team celebrating a championship win\", \"golf team posing with a tournament trophy\", \"university sports team group photo with award\"], \"uncertainty_notes\": \"Edge person on the left is partially cropped; specific school may be Cal Poly based on cap logo but not fully verifiable.\", \"quality_flags\": [\"edge_truncation_left\"]}",
+      "response": {
+        "id": "gen-1780319337-nUeMWh2xMN1kG4GXLxKY",
+        "object": "chat.completion",
+        "created": 1780319337,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 9, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"person_face\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"sports_team_photo\", \"short_caption\": \"College golf team in matching striped shirts posing with a wooden championship plaque outdoors.\", \"main_objects\": [\"men\", \"caps\", \"striped polo shirts\", \"wooden plaque trophy\", \"grass\", \"trees\"], \"possible_interpretations\": [\"college golf team celebrating a championship win\", \"golf team posing with a tournament trophy\", \"university sports team group photo with award\"], \"uncertainty_notes\": \"Edge person on the left is partially cropped; specific school may be Cal Poly based on cap logo but not fully verifiable.\", \"quality_flags\": [\"edge_truncation_left\"]}",
+              "refusal": null,
+              "reasoning": "The user wants me to annotate an image showing a group of young men in matching striped polo shirts and white caps, posing together with a trophy/plaque. This looks like a golf team celebrating a championship. Let me provide the JSON annotations.\n\nThe image shows:\n- Multiple young men (appears to be 8 people visible) wearing matching navy and white striped polo shirts\n- White caps with \"Cal\" logos (likely Cal Poly)\n- They're holding/posing with a wooden plaque/trophy\n- Outdoor setting with green grass and trees in background\n- Overcast sky\n- This appears to be a college golf team celebrating\n\nLet me create the JSON response.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The user wants me to annotate an image showing a group of young men in matching striped polo shirts and white caps, posing together with a trophy/plaque. This looks like a golf team celebrating a championship. Let me provide the JSON annotations.\n\nThe image shows:\n- Multiple young men (appears to be 8 people visible) wearing matching navy and white striped polo shirts\n- White caps with \"Cal\" logos (likely Cal Poly)\n- They're holding/posing with a wooden plaque/trophy\n- Outdoor setting with green grass and trees in background\n- Overcast sky\n- This appears to be a college golf team celebrating\n\nLet me create the JSON response.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1330,
+          "completion_tokens": 467,
+          "total_tokens": 1797,
+          "cost": 0.00080916,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00080916,
+            "upstream_inference_prompt_cost": 0.00024876,
+            "upstream_inference_completions_cost": 0.0005604
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 166,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

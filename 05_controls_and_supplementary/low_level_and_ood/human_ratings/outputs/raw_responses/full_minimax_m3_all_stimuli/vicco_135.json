@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_135",
+    "stim_key": "vicco_135",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 135,
+    "file_index": 134,
+    "image_name": "shared_4rep_vicco_135.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_135.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 5,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 9,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home_decor_craft\",\n\n  \"short_caption\": \"Colorful dreamcatchers with feathers hanging from a wooden ceiling\",\n  \"main_objects\": [\"dreamcatchers\", \"feathers\", \"wooden ceiling\", \"arched window\"],\n  \"possible_interpretations\": [\"bohemian market or craft shop\", \"boho home decor display\", \"outdoor festival decoration\", \"native american craft display\"],\n  \"uncertainty_notes\": \"Exact setting is unclear - could be a market stall, shop, or home; partially outdoor setting visible through window\",\n  \"quality_flags\": [\"cluttered_composition\", \"objects_truncated_at_edges\", \"slight_motion_blur_on_feathers\"]\n}",
+      "response": {
+        "id": "gen-1780319546-Y3EyflYUgA6snSPhxJ61",
+        "object": "chat.completion",
+        "created": 1780319546,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 5,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 9,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home_decor_craft\",\n\n  \"short_caption\": \"Colorful dreamcatchers with feathers hanging from a wooden ceiling\",\n  \"main_objects\": [\"dreamcatchers\", \"feathers\", \"wooden ceiling\", \"arched window\"],\n  \"possible_interpretations\": [\"bohemian market or craft shop\", \"boho home decor display\", \"outdoor festival decoration\", \"native american craft display\"],\n  \"uncertainty_notes\": \"Exact setting is unclear - could be a market stall, shop, or home; partially outdoor setting visible through window\",\n  \"quality_flags\": [\"cluttered_composition\", \"objects_truncated_at_edges\", \"slight_motion_blur_on_feathers\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows multiple dreamcatchers hanging from what appears to be a wooden ceiling or structure. The dreamcatchers are colorful, featuring various colors like pink, white, blue, teal, yellow, and purple feathers. There are multiple dreamcatcher hoops of different sizes with web-like patterns inside them. In the background, I can see what appears to be a window or arched opening with a reddish/orange wall, and possibly some trees visible through it.\n\nLet me annotate this image based on the schema:\n\n- Recognizability: The objects (dreamcatchers) are clearly recognizable. 5\n- Ambiguity: Pretty clear what we're looking at. 1\n- Natural_photo_typicality: This looks like a typical photograph. 4\n- Visual_clutter: There are many dreamcatchers with lots of feathers, quite cluttered. 4\n- Object_centricity: Multiple objects dominate, no single central object. 2\n- Scene_centricity: It's more about the objects than the setting. 3\n- Caption_confidence: I can caption it confidently. 4\n\nEstimated salient object count: Many dreamcatchers, maybe 8-10 visible\nDistinct object categories: 2 (dreamcatchers, window/architecture)\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: yes (appears to be under a covered structure)\nContains outdoor scene: partially - through the window we can see trees\nContains artificial or rendered content: no\nContains occlusion or truncation: yes, dreamcatchers are cut off at edges\nContains unusual viewpoint: somewhat - looking up at hanging objects\nContains multiple main objects: yes\n\nDominant content type: object\nImage style: natural_photo\nSemantic domain: home decor / craft\n\nShort caption: \"Colorful dreamcatchers with feathers hanging from a wooden ceiling\"\nMain objects: [\"dreamcatchers\", \"feathers\", \"wooden structure\", \"window\"]\nPossible interpretations: [\"bohemian market stall\", \"outdoor craft shop\", \"boho home decor display\", \"festival decorations\"]\nUncertainty notes: \"Setting unclear - could be market, shop, or home\"\nQuality flags: [\"cluttered_composition\", \"objects_truncated\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows multiple dreamcatchers hanging from what appears to be a wooden ceiling or structure. The dreamcatchers are colorful, featuring various colors like pink, white, blue, teal, yellow, and purple feathers. There are multiple dreamcatcher hoops of different sizes with web-like patterns inside them. In the background, I can see what appears to be a window or arched opening with a reddish/orange wall, and possibly some trees visible through it.\n\nLet me annotate this image based on the schema:\n\n- Recognizability: The objects (dreamcatchers) are clearly recognizable. 5\n- Ambiguity: Pretty clear what we're looking at. 1\n- Natural_photo_typicality: This looks like a typical photograph. 4\n- Visual_clutter: There are many dreamcatchers with lots of feathers, quite cluttered. 4\n- Object_centricity: Multiple objects dominate, no single central object. 2\n- Scene_centricity: It's more about the objects than the setting. 3\n- Caption_confidence: I can caption it confidently. 4\n\nEstimated salient object count: Many dreamcatchers, maybe 8-10 visible\nDistinct object categories: 2 (dreamcatchers, window/architecture)\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: yes (appears to be under a covered structure)\nContains outdoor scene: partially - through the window we can see trees\nContains artificial or rendered content: no\nContains occlusion or truncation: yes, dreamcatchers are cut off at edges\nContains unusual viewpoint: somewhat - looking up at hanging objects\nContains multiple main objects: yes\n\nDominant content type: object\nImage style: natural_photo\nSemantic domain: home decor / craft\n\nShort caption: \"Colorful dreamcatchers with feathers hanging from a wooden ceiling\"\nMain objects: [\"dreamcatchers\", \"feathers\", \"wooden structure\", \"window\"]\nPossible interpretations: [\"bohemian market stall\", \"outdoor craft shop\", \"boho home decor display\", \"festival decorations\"]\nUncertainty notes: \"Setting unclear - could be market, shop, or home\"\nQuality flags: [\"cluttered_composition\", \"objects_truncated\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 856,
+          "total_tokens": 2378,
+          "cost": 0.00133356,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00133356,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010272
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 568,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

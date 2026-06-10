@@ -6,7 +6,7 @@ as the unique encoding features and beta columns. DeepVision image metadata CSVs
 provide that order, so this script writes one row per subject x image_idx.
 
 Output:
-  experiments/cstim_paper/05_heldout_unique_baseline/data/unique_image_low_level_stats.csv
+  05_controls_and_supplementary/counterfactual_baselines/results/unique_image_low_level_stats.csv
 """
 
 from __future__ import annotations
@@ -20,18 +20,25 @@ import pandas as pd
 from PIL import Image
 from tqdm import tqdm
 
-_PAPER = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_PAPER.parents[1]))
+STAGE = Path(__file__).resolve().parents[1]
+SHARE_ROOT = STAGE.parents[1]
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
 
 import config  # noqa: E402
 
 
-OUT = _PAPER / "05_heldout_unique_baseline" / "results" / "unique_image_low_level_stats.csv"
+OUT = STAGE / "results" / "unique_image_low_level_stats.csv"
 
 
 def _load_compute_stats():
-    path = _PAPER / "08_image_statistics" / "01_compute_image_stats.py"
+    path = (
+        SHARE_ROOT
+        / "05_controls_and_supplementary"
+        / "low_level_and_ood"
+        / "image_statistics"
+        / "code"
+        / "01_compute_image_stats.py"
+    )
     spec = importlib.util.spec_from_file_location("cstim_image_stats", path)
     if spec is None or spec.loader is None:
         raise RuntimeError(f"Could not import compute_stats from {path}")

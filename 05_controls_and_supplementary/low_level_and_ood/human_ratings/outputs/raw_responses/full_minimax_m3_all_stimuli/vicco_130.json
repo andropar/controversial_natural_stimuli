@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_130",
+    "stim_key": "vicco_130",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 130,
+    "file_index": 129,
+    "image_name": "shared_4rep_vicco_130.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_130.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"portrait\",\n\n  \"short_caption\": \"Woman with curly red hair sitting indoors wearing a colorful tropical-patterned shirt\",\n  \"main_objects\": [\"woman\", \"patterned shirt\", \"wall light fixture\"],\n  \"possible_interpretations\": [\"casual portrait\", \"candid self-portrait\", \"Polaroid-style snapshot\", \"low-angle candid photo\"],\n  \"uncertainty_notes\": \"Vintage film quality suggests older photograph; unclear if self-taken or by another person\",\n  \"quality_flags\": [\"vintage film appearance\", \"slightly washed colors\", \"low camera angle\"]\n}",
+      "response": {
+        "id": "gen-1780319541-YJdhJB5impVqStLs5JH3",
+        "object": "chat.completion",
+        "created": 1780319541,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"portrait\",\n\n  \"short_caption\": \"Woman with curly red hair sitting indoors wearing a colorful tropical-patterned shirt\",\n  \"main_objects\": [\"woman\", \"patterned shirt\", \"wall light fixture\"],\n  \"possible_interpretations\": [\"casual portrait\", \"candid self-portrait\", \"Polaroid-style snapshot\", \"low-angle candid photo\"],\n  \"uncertainty_notes\": \"Vintage film quality suggests older photograph; unclear if self-taken or by another person\",\n  \"quality_flags\": [\"vintage film appearance\", \"slightly washed colors\", \"low camera angle\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a woman with curly red/auburn hair sitting in what appears to be an indoor setting. She's wearing a colorful patterned shirt (turquoise/teal with green and orange tropical/floral patterns). She's looking upward and to the side, with a slight smile or neutral expression. The setting appears to be a room with plain walls. There's what looks like a light fixture or wall mount visible in the upper left area. The photo has a vintage, possibly Polaroid quality to it, with slightly washed-out colors typical of older film photography.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - Very clearly a person in an indoor setting\n- ambiguity: 1 - Very clear what's shown\n- natural_photo_typicality: 4 - Looks like a natural photo, though has some vintage/film quality\n- visual_clutter: 2 - Relatively simple composition\n- object_centricity: 3 - The person is the focus but it's more of a portrait\n- scene_centricity: 2 - Mainly a person/portrait, not really a scene\n- caption_confidence: 4 - Easy to caption\n\n- estimated_salient_object_count: 1 (the woman)\n- estimated_distinct_object_categories: 2 (person, light fixture)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (her legs/knees are cut off at the bottom)\n- contains_unusual_viewpoint: true (low angle, looking up at her)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"person_face\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"portrait\"\n\n- short_caption: \"Woman with curly red hair sitting indoors wearing a colorful patterned shirt\"\n- main_objects: [\"woman\", \"shirt\", \"wall light\"]\n- possible_interpretations: [\"casual portrait\", \"candid photograph\", \"selfie taken by the subject herself\", \"Polaroid-style portrait\"]\n- uncertainty_notes: \"Unclear if this is a selfie given the angle; vintage film quality\"\n- quality_flags: [\"vintage film appearance\", \"low angle viewpoint\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a woman with curly red/auburn hair sitting in what appears to be an indoor setting. She's wearing a colorful patterned shirt (turquoise/teal with green and orange tropical/floral patterns). She's looking upward and to the side, with a slight smile or neutral expression. The setting appears to be a room with plain walls. There's what looks like a light fixture or wall mount visible in the upper left area. The photo has a vintage, possibly Polaroid quality to it, with slightly washed-out colors typical of older film photography.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - Very clearly a person in an indoor setting\n- ambiguity: 1 - Very clear what's shown\n- natural_photo_typicality: 4 - Looks like a natural photo, though has some vintage/film quality\n- visual_clutter: 2 - Relatively simple composition\n- object_centricity: 3 - The person is the focus but it's more of a portrait\n- scene_centricity: 2 - Mainly a person/portrait, not really a scene\n- caption_confidence: 4 - Easy to caption\n\n- estimated_salient_object_count: 1 (the woman)\n- estimated_distinct_object_categories: 2 (person, light fixture)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (her legs/knees are cut off at the bottom)\n- contains_unusual_viewpoint: true (low angle, looking up at her)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"person_face\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"portrait\"\n\n- short_caption: \"Woman with curly red hair sitting indoors wearing a colorful patterned shirt\"\n- main_objects: [\"woman\", \"shirt\", \"wall light\"]\n- possible_interpretations: [\"casual portrait\", \"candid photograph\", \"selfie taken by the subject herself\", \"Polaroid-style portrait\"]\n- uncertainty_notes: \"Unclear if this is a selfie given the angle; vintage film quality\"\n- quality_flags: [\"vintage film appearance\", \"low angle viewpoint\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 864,
+          "total_tokens": 2386,
+          "cost": 0.00134316,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00134316,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010368
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 572,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_87",
+    "stim_key": "vicco_87",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 87,
+    "file_index": 86,
+    "image_name": "shared_4rep_vicco_087.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_087.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor_bar\",\n  \"short_caption\": \"Dimly lit traditional bar with vaulted ceiling, patrons socializing, and a mounted TV showing sports.\",\n  \"main_objects\": [\"bar patrons\", \"chandelier\", \"television\", \"bar stools\", \"tables\", \"wall art\", \"vaulted ceiling\"],\n  \"possible_interpretations\": [\"a traditional European pub\", \"a sports bar\", \"a cocktail lounge\", \"a hotel bar\", \"a wine bar\"],\n  \"uncertainty_notes\": \"Faces in the background are small and hard to resolve; exact type of bar establishment is unclear.\",\n  \"quality_flags\": [\"low_light\", \"background_faces_unclear\"]\n}",
+      "response": {
+        "id": "gen-1780319490-uV2ykHO4SMW15UeoNL4L",
+        "object": "chat.completion",
+        "created": 1780319490,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor_bar\",\n  \"short_caption\": \"Dimly lit traditional bar with vaulted ceiling, patrons socializing, and a mounted TV showing sports.\",\n  \"main_objects\": [\"bar patrons\", \"chandelier\", \"television\", \"bar stools\", \"tables\", \"wall art\", \"vaulted ceiling\"],\n  \"possible_interpretations\": [\"a traditional European pub\", \"a sports bar\", \"a cocktail lounge\", \"a hotel bar\", \"a wine bar\"],\n  \"uncertainty_notes\": \"Faces in the background are small and hard to resolve; exact type of bar establishment is unclear.\",\n  \"quality_flags\": [\"low_light\", \"background_faces_unclear\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an indoor bar/pub scene with:\n- A vaulted/arched ceiling with patterned wallpaper or finish\n- A chandelier hanging from the ceiling\n- A TV/monitor mounted on the wall showing what appears to be sports/football\n- Dark wood paneling and bar area\n- Several people sitting at tables and the bar\n- A man in a yellow/mustard sweater in the foreground (back to camera)\n- Other patrons seated throughout\n- A colorful artwork/painting on the right wall\n- Bar stools, tables\n- Candles on tables\n- A man in a white shirt appears to be talking to others\n- The setting looks like a traditional European pub or bar\n\nLet me rate the various attributes:\n\nrecognizability: 5 - Very clearly a bar/pub scene\nambiguity: 1 - Very clear what the image shows\nnatural_photo_typicality: 4 - Looks like a natural photo, though slightly dim/indoor lighting\nvisual_clutter: 4 - Lots of elements, people, decor\nobject_centricity: 1 - Not object-focused, it's a scene\nscene_centricity: 5 - Clearly a scene/place\ncaption_confidence: 5 - Easy to caption\n\nestimated_salient_object_count: 4 (people, TV, chandelier, artwork)\nestimated_distinct_object_categories: 6-7 (people, furniture, TV, lights, artwork, bottles, etc.)\n\ncontains_person: true\ncontains_face: true (some visible)\ncontains_animal: false\ncontains_text: false (no readable text)\ncontains_vehicle: false\ncontains_food: false (maybe drinks but not clearly food)\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (foreground person is truncated)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true\n\ndominant_content_type: \"scene\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"indoor_bar\"\n\nshort_caption: \"Dimly lit traditional bar with vaulted ceiling, patrons socializing, mounted TV showing sports.\"\n\nmain_objects: [\"bar patrons\", \"chandelier\", \"television\", \"bar stools\", \"tables\", \"wall art\", \"vaulted ceiling\"]\n\npossible_interpretations: [\"A traditional European pub\", \"A sports bar\", \"A wine bar or cocktail lounge\", \"A hotel bar\", \"A restaurant bar area\"]\n\nuncertainty_notes: \"Faces in background are not clearly distinguishable; specific type of bar establishment is uncertain.\"\nquality_flags: [\"low_light\", \"some_motion_blur\", \"background_faces_unclear\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an indoor bar/pub scene with:\n- A vaulted/arched ceiling with patterned wallpaper or finish\n- A chandelier hanging from the ceiling\n- A TV/monitor mounted on the wall showing what appears to be sports/football\n- Dark wood paneling and bar area\n- Several people sitting at tables and the bar\n- A man in a yellow/mustard sweater in the foreground (back to camera)\n- Other patrons seated throughout\n- A colorful artwork/painting on the right wall\n- Bar stools, tables\n- Candles on tables\n- A man in a white shirt appears to be talking to others\n- The setting looks like a traditional European pub or bar\n\nLet me rate the various attributes:\n\nrecognizability: 5 - Very clearly a bar/pub scene\nambiguity: 1 - Very clear what the image shows\nnatural_photo_typicality: 4 - Looks like a natural photo, though slightly dim/indoor lighting\nvisual_clutter: 4 - Lots of elements, people, decor\nobject_centricity: 1 - Not object-focused, it's a scene\nscene_centricity: 5 - Clearly a scene/place\ncaption_confidence: 5 - Easy to caption\n\nestimated_salient_object_count: 4 (people, TV, chandelier, artwork)\nestimated_distinct_object_categories: 6-7 (people, furniture, TV, lights, artwork, bottles, etc.)\n\ncontains_person: true\ncontains_face: true (some visible)\ncontains_animal: false\ncontains_text: false (no readable text)\ncontains_vehicle: false\ncontains_food: false (maybe drinks but not clearly food)\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (foreground person is truncated)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true\n\ndominant_content_type: \"scene\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"indoor_bar\"\n\nshort_caption: \"Dimly lit traditional bar with vaulted ceiling, patrons socializing, mounted TV showing sports.\"\n\nmain_objects: [\"bar patrons\", \"chandelier\", \"television\", \"bar stools\", \"tables\", \"wall art\", \"vaulted ceiling\"]\n\npossible_interpretations: [\"A traditional European pub\", \"A sports bar\", \"A wine bar or cocktail lounge\", \"A hotel bar\", \"A restaurant bar area\"]\n\nuncertainty_notes: \"Faces in background are not clearly distinguishable; specific type of bar establishment is uncertain.\"\nquality_flags: [\"low_light\", \"some_motion_blur\", \"background_faces_unclear\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 935,
+          "total_tokens": 2457,
+          "cost": 0.00142836,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00142836,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.001122
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 630,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

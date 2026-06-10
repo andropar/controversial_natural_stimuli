@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_155",
+    "stim_key": "vicco_155",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 155,
+    "file_index": 154,
+    "image_name": "shared_4rep_vicco_155.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_155.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature_astronomy\",\n  \"short_caption\": \"Aurora borealis with green and purple curtains over a silhouetted conifer forest at night\",\n  \"main_objects\": [\"aurora borealis\", \"stars\", \"coniferous trees\", \"dark structure silhouette\"],\n  \"possible_interpretations\": [\"aurora borealis at high latitude\", \"night sky with light phenomenon\", \"northern lights over forest\"],\n  \"uncertainty_notes\": \"The dark shape on the right edge is ambiguous, possibly a building or roof silhouette partially in frame\",\n  \"quality_flags\": [\"low_light_noise\", \"partially_cropped_object_on_right\"]\n}",
+      "response": {
+        "id": "gen-1780319568-2Z3ympvheEIgqMjA0f6u",
+        "object": "chat.completion",
+        "created": 1780319568,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature_astronomy\",\n  \"short_caption\": \"Aurora borealis with green and purple curtains over a silhouetted conifer forest at night\",\n  \"main_objects\": [\"aurora borealis\", \"stars\", \"coniferous trees\", \"dark structure silhouette\"],\n  \"possible_interpretations\": [\"aurora borealis at high latitude\", \"night sky with light phenomenon\", \"northern lights over forest\"],\n  \"uncertainty_notes\": \"The dark shape on the right edge is ambiguous, possibly a building or roof silhouette partially in frame\",\n  \"quality_flags\": [\"low_light_noise\", \"partially_cropped_object_on_right\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a night sky with the aurora borealis (northern lights) displaying green and purple/violet colors. There are stars visible in the sky. At the bottom, there are silhouettes of coniferous trees (evergreen trees). On the right side, there appears to be a dark silhouette of what could be a building or structure.\n\nLet me analyze the image according to the schema:\n\n- recognizability: The aurora borealis is clearly recognizable. 5\n- ambiguity: Pretty unambiguous - it's clearly an aurora. 1\n- natural_photo_typicality: Looks like a typical natural photograph. 5\n- visual_clutter: Not too cluttered - mainly the aurora, stars, and tree silhouettes. 2\n- object_centricity: No single central object - it's a scene. 2\n- scene_centricity: This is clearly a scene. 5\n- caption_confidence: High confidence in a caption. 5\n\n- estimated_salient_object_count: The aurora is the main subject, trees are secondary. Maybe 2-3.\n- estimated_distinct_object_categories: aurora, stars, trees, building silhouette. 4\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the structure on the right is truncated)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: nature/astronomy\n\n- short_caption: \"Aurora borealis over a forest of coniferous trees at night\"\n- main_objects: aurora borealis, stars, coniferous trees\n- possible_interpretations: aurora borealis, light pollution, natural phenomenon\n- uncertainty_notes: The dark shape on the right is unclear - could be a building\n- quality_flags: some noise typical of night photography",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a night sky with the aurora borealis (northern lights) displaying green and purple/violet colors. There are stars visible in the sky. At the bottom, there are silhouettes of coniferous trees (evergreen trees). On the right side, there appears to be a dark silhouette of what could be a building or structure.\n\nLet me analyze the image according to the schema:\n\n- recognizability: The aurora borealis is clearly recognizable. 5\n- ambiguity: Pretty unambiguous - it's clearly an aurora. 1\n- natural_photo_typicality: Looks like a typical natural photograph. 5\n- visual_clutter: Not too cluttered - mainly the aurora, stars, and tree silhouettes. 2\n- object_centricity: No single central object - it's a scene. 2\n- scene_centricity: This is clearly a scene. 5\n- caption_confidence: High confidence in a caption. 5\n\n- estimated_salient_object_count: The aurora is the main subject, trees are secondary. Maybe 2-3.\n- estimated_distinct_object_categories: aurora, stars, trees, building silhouette. 4\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the structure on the right is truncated)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: nature/astronomy\n\n- short_caption: \"Aurora borealis over a forest of coniferous trees at night\"\n- main_objects: aurora borealis, stars, coniferous trees\n- possible_interpretations: aurora borealis, light pollution, natural phenomenon\n- uncertainty_notes: The dark shape on the right is unclear - could be a building\n- quality_flags: some noise typical of night photography",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 812,
+          "total_tokens": 2334,
+          "cost": 0.00128076,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00128076,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009744
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 497,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_80",
+    "stim_key": "training_objective_80",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 80,
+    "file_index": 80,
+    "image_name": "image_0080.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0080.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"pets_animals\",\n  \"short_caption\": \"Extreme close-up of a white Golden Retriever's face with a boat behind.\",\n  \"main_objects\": [\"dog\", \"boat\"],\n  \"possible_interpretations\": [\"A dog resting at a marina\", \"A close-up portrait of a Golden Retriever\", \"A dog on a boat dock\"],\n  \"uncertainty_notes\": \"Wide-angle/fisheye distortion present due to very close camera proximity to the dog.\",\n  \"quality_flags\": [\"wide_angle_distortion\", \"shallow_depth_of_field\"]\n}",
+      "response": {
+        "id": "gen-1780319366-HxCg6O2iz6vIoo9x06QY",
+        "object": "chat.completion",
+        "created": 1780319366,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"pets_animals\",\n  \"short_caption\": \"Extreme close-up of a white Golden Retriever's face with a boat behind.\",\n  \"main_objects\": [\"dog\", \"boat\"],\n  \"possible_interpretations\": [\"A dog resting at a marina\", \"A close-up portrait of a Golden Retriever\", \"A dog on a boat dock\"],\n  \"uncertainty_notes\": \"Wide-angle/fisheye distortion present due to very close camera proximity to the dog.\",\n  \"quality_flags\": [\"wide_angle_distortion\", \"shallow_depth_of_field\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a close-up of a white/cream colored dog, likely a Golden Retriever or similar breed. The dog's face takes up most of the frame in a very close-up shot. In the background, there appears to be a boat (orange/yellow) and water, suggesting a marina or harbor setting. The image has a slight wide-angle/fisheye distortion due to the close proximity.\n\nLet me go through the schema:\n\n- recognizability: 5 - The dog is very clearly recognizable\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 4 - Looks like a natural photo, though with wide-angle distortion\n- visual_clutter: 2 - Mostly the dog dominates, with some background elements\n- object_centricity: 5 - The dog's face is the clear central subject\n- scene_centricity: 1 - It's an object/animal-centric image, not a scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1 (the dog)\n- estimated_distinct_object_categories: 2 (dog, boat in background)\n\n- contains_person: false\n- contains_face: true (animal face)\n- contains_animal: true\n- contains_text: false\n- contains_vehicle: true (boat in background)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (well, the dog fills the frame but isn't really occluded)\n- contains_multiple_main_objects: false\n- contains_unusual_viewpoint: true (extreme close-up, wide-angle distortion)\n\n- dominant_content_type: \"animal\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"pets\" or \"animals\"\n\n- short_caption: \"Close-up of a white Golden Retriever's face with a boat in the background\"\n- main_objects: [\"dog\", \"boat\"]\n- possible_interpretations: [\"A dog resting at a marina\", \"A dog on a boat dock\", \"A close-up portrait of a Golden Retriever\"]\n- uncertainty_notes: \"Slight wide-angle distortion from close proximity\"\n- quality_flags: [\"wide_angle_distortion\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a close-up of a white/cream colored dog, likely a Golden Retriever or similar breed. The dog's face takes up most of the frame in a very close-up shot. In the background, there appears to be a boat (orange/yellow) and water, suggesting a marina or harbor setting. The image has a slight wide-angle/fisheye distortion due to the close proximity.\n\nLet me go through the schema:\n\n- recognizability: 5 - The dog is very clearly recognizable\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 4 - Looks like a natural photo, though with wide-angle distortion\n- visual_clutter: 2 - Mostly the dog dominates, with some background elements\n- object_centricity: 5 - The dog's face is the clear central subject\n- scene_centricity: 1 - It's an object/animal-centric image, not a scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1 (the dog)\n- estimated_distinct_object_categories: 2 (dog, boat in background)\n\n- contains_person: false\n- contains_face: true (animal face)\n- contains_animal: true\n- contains_text: false\n- contains_vehicle: true (boat in background)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (well, the dog fills the frame but isn't really occluded)\n- contains_multiple_main_objects: false\n- contains_unusual_viewpoint: true (extreme close-up, wide-angle distortion)\n\n- dominant_content_type: \"animal\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"pets\" or \"animals\"\n\n- short_caption: \"Close-up of a white Golden Retriever's face with a boat in the background\"\n- main_objects: [\"dog\", \"boat\"]\n- possible_interpretations: [\"A dog resting at a marina\", \"A dog on a boat dock\", \"A close-up portrait of a Golden Retriever\"]\n- uncertainty_notes: \"Slight wide-angle distortion from close proximity\"\n- quality_flags: [\"wide_angle_distortion\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 829,
+          "total_tokens": 2243,
+          "cost": 0.00126876,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126876,
+            "upstream_inference_prompt_cost": 0.00027396,
+            "upstream_inference_completions_cost": 0.0009948
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 524,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

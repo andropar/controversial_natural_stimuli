@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_129",
+    "stim_key": "vicco_129",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 129,
+    "file_index": 128,
+    "image_name": "shared_4rep_vicco_129.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_129.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports/rock climbing\",\n  \"short_caption\": \"Natural rock climbing hold mounted on green circular base on indoor climbing wall\",\n  \"main_objects\": [\"rock\", \"green mount\", \"climbing holds\"],\n  \"possible_interpretations\": [\"indoor climbing wall with a rock hold\", \"geological specimen display\", \"art installation featuring a rock on a magnet\", \"climbing gym equipment closeup\"],\n  \"uncertainty_notes\": \"Image appears rotated 90 degrees; exact purpose of the green circular mount is unclear but resembles a magnetic or bolt-on climbing hold fixture.\",\n  \"quality_flags\": [\"rotated_orientation\", \"closeup_with_partial_context\"]\n}",
+      "response": {
+        "id": "gen-1780319541-GU8D8F1AYRkSa7OjEMir",
+        "object": "chat.completion",
+        "created": 1780319541,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports/rock climbing\",\n  \"short_caption\": \"Natural rock climbing hold mounted on green circular base on indoor climbing wall\",\n  \"main_objects\": [\"rock\", \"green mount\", \"climbing holds\"],\n  \"possible_interpretations\": [\"indoor climbing wall with a rock hold\", \"geological specimen display\", \"art installation featuring a rock on a magnet\", \"climbing gym equipment closeup\"],\n  \"uncertainty_notes\": \"Image appears rotated 90 degrees; exact purpose of the green circular mount is unclear but resembles a magnetic or bolt-on climbing hold fixture.\",\n  \"quality_flags\": [\"rotated_orientation\", \"closeup_with_partial_context\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be a rock or stone-like object attached to a green circular/cylindrical base, possibly a magnet or mount. Below on the wall/surface, there are colorful shapes that look like climbing holds (blue and white/red ones). This looks like it could be from an indoor climbing wall setup, or possibly a bouldering problem start hold.\n\nThe green circular piece appears to be some kind of mounting hardware, and the rough textured object attached to it looks like a natural rock or climbing hold. The background shows other colorful climbing holds on what appears to be a climbing wall surface.\n\nLet me rate each dimension:\n\n- recognizability: The main content is somewhat unusual - it looks like a rock on a green mount with climbing holds in the background. A typical viewer might recognize this as a climbing wall setup, but the specific object is unusual. I'd say 3.\n- ambiguity: There's some ambiguity - could be a climbing hold, a rock specimen on display, etc. I'd say 3.\n- natural_photo_typicality: This looks like a real photograph, not edited. 4.\n- visual_clutter: There are several climbing holds visible and the main object is the focus. Moderate clutter, maybe 3.\n- object_centricity: The rock-on-green-mount is the clear central focus. 4.\n- scene_centricity: It's more object-focused than scene-focused, though context is provided. 2.\n- caption_confidence: I can describe it fairly well. 4.\n\nThe image appears to be rotated 90 degrees (the climbing holds on the bottom suggest the wall is oriented differently).\n\nMain objects: rock, green mount/magnet, climbing holds\nContains: no person, no face, no animal, no text, no vehicle, no food, indoor scene (climbing gym), no artificial rendered content, contains occlusion, unusual viewpoint (rotated), possibly multiple main objects.\n\nLet me finalize my annotations.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be a rock or stone-like object attached to a green circular/cylindrical base, possibly a magnet or mount. Below on the wall/surface, there are colorful shapes that look like climbing holds (blue and white/red ones). This looks like it could be from an indoor climbing wall setup, or possibly a bouldering problem start hold.\n\nThe green circular piece appears to be some kind of mounting hardware, and the rough textured object attached to it looks like a natural rock or climbing hold. The background shows other colorful climbing holds on what appears to be a climbing wall surface.\n\nLet me rate each dimension:\n\n- recognizability: The main content is somewhat unusual - it looks like a rock on a green mount with climbing holds in the background. A typical viewer might recognize this as a climbing wall setup, but the specific object is unusual. I'd say 3.\n- ambiguity: There's some ambiguity - could be a climbing hold, a rock specimen on display, etc. I'd say 3.\n- natural_photo_typicality: This looks like a real photograph, not edited. 4.\n- visual_clutter: There are several climbing holds visible and the main object is the focus. Moderate clutter, maybe 3.\n- object_centricity: The rock-on-green-mount is the clear central focus. 4.\n- scene_centricity: It's more object-focused than scene-focused, though context is provided. 2.\n- caption_confidence: I can describe it fairly well. 4.\n\nThe image appears to be rotated 90 degrees (the climbing holds on the bottom suggest the wall is oriented differently).\n\nMain objects: rock, green mount/magnet, climbing holds\nContains: no person, no face, no animal, no text, no vehicle, no food, indoor scene (climbing gym), no artificial rendered content, contains occlusion, unusual viewpoint (rotated), possibly multiple main objects.\n\nLet me finalize my annotations.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 768,
+          "total_tokens": 2290,
+          "cost": 0.00122796,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00122796,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009216
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 488,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

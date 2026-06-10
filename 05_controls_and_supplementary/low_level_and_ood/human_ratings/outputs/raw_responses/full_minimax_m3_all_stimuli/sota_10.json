@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_10",
+    "stim_key": "sota_10",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 10,
+    "file_index": 10,
+    "image_name": "image_0010.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0010.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"still life / portrait\",\n  \"short_caption\": \"Ornate silver frame holding a photo of a smiling woman in a white dress on a couch.\",\n  \"main_objects\": [\"ornate picture frame\", \"woman in white dress\", \"white couch\"],\n  \"possible_interpretations\": [\"wedding portrait in decorative frame\", \"bride photo display\", \"formal portrait in vintage frame\", \"keepsake frame with portrait\"],\n  \"uncertainty_notes\": \"Image shows a photo within a photo; cannot determine the woman's actual identity or specific occasion.\",\n  \"quality_flags\": [\"framed_photograph_of_photograph\"]\n}",
+      "response": {
+        "id": "gen-1780319088-U5ZhDz3pQxhQwN7XoIh9",
+        "object": "chat.completion",
+        "created": 1780319088,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"still life / portrait\",\n  \"short_caption\": \"Ornate silver frame holding a photo of a smiling woman in a white dress on a couch.\",\n  \"main_objects\": [\"ornate picture frame\", \"woman in white dress\", \"white couch\"],\n  \"possible_interpretations\": [\"wedding portrait in decorative frame\", \"bride photo display\", \"formal portrait in vintage frame\", \"keepsake frame with portrait\"],\n  \"uncertainty_notes\": \"Image shows a photo within a photo; cannot determine the woman's actual identity or specific occasion.\",\n  \"quality_flags\": [\"framed_photograph_of_photograph\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I see an ornate silver/gold picture frame containing a photograph of a woman in what appears to be a white dress (possibly a wedding dress) reclining on a white couch. She's smiling, has her hair pulled back, and is wearing makeup. The frame has decorative corner elements and beaded detailing.\n\nLet me go through each annotation:\n\n- recognizability: The main content is a framed photo of a woman in a wedding dress - very clear. 5\n- ambiguity: There's some ambiguity - is this a wedding photo, a bride photo, formal portrait? But the content is fairly clear. 2\n- natural_photo_typicality: This is a photo of a photo in a frame, so it's a bit unusual. The composition is a still life of a frame. 3\n- visual_clutter: The ornate frame adds detail, but overall the image is fairly clean. 3\n- object_centricity: The frame and photo together form the central object. 4\n- scene_centricity: It's more of an object focus than a scene. 2\n- caption_confidence: Pretty confident in a caption. 4\n\nSalient objects: the frame, the woman in the photo, the couch, the dress\nObject categories: frame, person, furniture, dress\n\n- contains_person: true (in the photo)\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (the photo shows indoor, and the frame is shown indoors)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (the frame and the woman)\n\ndominant_content_type: object (the frame is the dominant object containing a photo)\nimage_style: natural_photo\nsemantic_domain: still life / portrait\n\nshort_caption: Ornate silver frame containing a photo of a smiling woman in a white dress on a white couch.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I see an ornate silver/gold picture frame containing a photograph of a woman in what appears to be a white dress (possibly a wedding dress) reclining on a white couch. She's smiling, has her hair pulled back, and is wearing makeup. The frame has decorative corner elements and beaded detailing.\n\nLet me go through each annotation:\n\n- recognizability: The main content is a framed photo of a woman in a wedding dress - very clear. 5\n- ambiguity: There's some ambiguity - is this a wedding photo, a bride photo, formal portrait? But the content is fairly clear. 2\n- natural_photo_typicality: This is a photo of a photo in a frame, so it's a bit unusual. The composition is a still life of a frame. 3\n- visual_clutter: The ornate frame adds detail, but overall the image is fairly clean. 3\n- object_centricity: The frame and photo together form the central object. 4\n- scene_centricity: It's more of an object focus than a scene. 2\n- caption_confidence: Pretty confident in a caption. 4\n\nSalient objects: the frame, the woman in the photo, the couch, the dress\nObject categories: frame, person, furniture, dress\n\n- contains_person: true (in the photo)\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (the photo shows indoor, and the frame is shown indoors)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (the frame and the woman)\n\ndominant_content_type: object (the frame is the dominant object containing a photo)\nimage_style: natural_photo\nsemantic_domain: still life / portrait\n\nshort_caption: Ornate silver frame containing a photo of a smiling woman in a white dress on a white couch.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 804,
+          "total_tokens": 2326,
+          "cost": 0.00127116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00127116,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009648
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 493,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

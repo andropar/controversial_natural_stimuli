@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_261",
+    "stim_key": "vicco_261",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 261,
+    "file_index": 260,
+    "image_name": "shared_4rep_vicco_261.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_261.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 1,\n  \"ambiguity\": 5,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 2,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"texture_pattern\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"abstract\",\n  \"short_caption\": \"Iridescent swirling blue-green surface with organic rippled textures\",\n  \"main_objects\": [\"swirling pattern\", \"iridescent surface\"],\n  \"possible_interpretations\": [\n    \"oil or petroleum film on water\",\n    \"macro photo of a mineral or gemstone surface\",\n    \"iridescent soap film or bubble\",\n    \"butterfly wing or peacock feather scales\",\n    \"abstract liquid art or chemical reaction\"\n  ],\n  \"uncertainty_notes\": \"Highly ambiguous image; cannot determine whether this is a macro photograph of a natural surface, a fluid dynamics shot, or possibly a digitally created abstract pattern. The texture and color suggest an iridescent phenomenon but specific identification is not possible.\",\n  \"quality_flags\": [\"low_resolution\", \"ambiguous_content\", \"possible_compression_artifacts\", \"scratches_or_marks_visible\"]\n}",
+      "response": {
+        "id": "gen-1780319687-J3iQcLXDOqH4RVU6UvAM",
+        "object": "chat.completion",
+        "created": 1780319687,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 1,\n  \"ambiguity\": 5,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 2,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"texture_pattern\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"abstract\",\n  \"short_caption\": \"Iridescent swirling blue-green surface with organic rippled textures\",\n  \"main_objects\": [\"swirling pattern\", \"iridescent surface\"],\n  \"possible_interpretations\": [\n    \"oil or petroleum film on water\",\n    \"macro photo of a mineral or gemstone surface\",\n    \"iridescent soap film or bubble\",\n    \"butterfly wing or peacock feather scales\",\n    \"abstract liquid art or chemical reaction\"\n  ],\n  \"uncertainty_notes\": \"Highly ambiguous image; cannot determine whether this is a macro photograph of a natural surface, a fluid dynamics shot, or possibly a digitally created abstract pattern. The texture and color suggest an iridescent phenomenon but specific identification is not possible.\",\n  \"quality_flags\": [\"low_resolution\", \"ambiguous_content\", \"possible_compression_artifacts\", \"scratches_or_marks_visible\"]\n}",
+              "refusal": null,
+              "reasoning": "The image appears to be a highly textured, abstract image with swirling patterns in blue, green, and dark tones. It looks like it could be a close-up of water surface, oil on water, or some kind of mineral/crystal structure. The colors suggest possibly a liquid surface with iridescent reflections, or perhaps a macro shot of something textured.\n\nLet me analyze it carefully:\n- It has swirling, organic patterns\n- Colors are predominantly blue, teal, green, with some reddish/pink tones at the bottom\n- The patterns look like ripples or fluid dynamics\n- It could be: oil on water (petroleum on water), a mineral surface, fabric texture, or some kind of abstract pattern\n- No clear object, person, animal, or text\n- It looks like it could be a natural photo (perhaps a macro shot) or could be an edited/rendered image\n\nGiven the difficulty of interpretation, I'll be conservative in my annotations.\n\n- Recognizability: Low (1-2) - hard to tell what this is\n- Ambiguity: High (4-5) - many possible interpretations\n- Natural photo typicality: Moderate (3) - could be a macro photo\n- Visual clutter: High (4) - lots of competing details\n- Object centricity: Low (1) - no clear object\n- Scene centricity: Low (2) - no clear scene\n- Caption confidence: Low (2) - hard to caption\n\nDominant content type: likely \"texture_pattern\" or \"closeup_detail\"\nImage style: \"natural_photo\" possibly, or \"abstract_or_texture\"\nSemantic domain: \"abstract\" or \"nature\"\n\nPossible interpretations:\n- Oil/petroleum on water surface\n- Iridescent mineral surface\n- Macro shot of a butterfly wing\n- Abstract liquid art\n- Soap film\n- Peacock feathers\n- Opal or gemstone surface\n\nNo persons, faces, animals, text, vehicles, food visible.\nIndoor/outdoor unclear.\nNo occlusion visible.\nNo unusual viewpoint necessarily.\nNo multiple main objects - it's a texture.\n\nThe image has some pixelation/compression artifacts and what appear to be scratches or marks.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image appears to be a highly textured, abstract image with swirling patterns in blue, green, and dark tones. It looks like it could be a close-up of water surface, oil on water, or some kind of mineral/crystal structure. The colors suggest possibly a liquid surface with iridescent reflections, or perhaps a macro shot of something textured.\n\nLet me analyze it carefully:\n- It has swirling, organic patterns\n- Colors are predominantly blue, teal, green, with some reddish/pink tones at the bottom\n- The patterns look like ripples or fluid dynamics\n- It could be: oil on water (petroleum on water), a mineral surface, fabric texture, or some kind of abstract pattern\n- No clear object, person, animal, or text\n- It looks like it could be a natural photo (perhaps a macro shot) or could be an edited/rendered image\n\nGiven the difficulty of interpretation, I'll be conservative in my annotations.\n\n- Recognizability: Low (1-2) - hard to tell what this is\n- Ambiguity: High (4-5) - many possible interpretations\n- Natural photo typicality: Moderate (3) - could be a macro photo\n- Visual clutter: High (4) - lots of competing details\n- Object centricity: Low (1) - no clear object\n- Scene centricity: Low (2) - no clear scene\n- Caption confidence: Low (2) - hard to caption\n\nDominant content type: likely \"texture_pattern\" or \"closeup_detail\"\nImage style: \"natural_photo\" possibly, or \"abstract_or_texture\"\nSemantic domain: \"abstract\" or \"nature\"\n\nPossible interpretations:\n- Oil/petroleum on water surface\n- Iridescent mineral surface\n- Macro shot of a butterfly wing\n- Abstract liquid art\n- Soap film\n- Peacock feathers\n- Opal or gemstone surface\n\nNo persons, faces, animals, text, vehicles, food visible.\nIndoor/outdoor unclear.\nNo occlusion visible.\nNo unusual viewpoint necessarily.\nNo multiple main objects - it's a texture.\n\nThe image has some pixelation/compression artifacts and what appear to be scratches or marks.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 855,
+          "total_tokens": 2377,
+          "cost": 0.00145524,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00145524,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.001026
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 511,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_7",
+    "stim_key": "all_models_7",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 7,
+    "file_index": 7,
+    "image_name": "image_0007.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0007.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"technology product presentation\",\n  \"short_caption\": \"A presenter gestures beside multiple device screens displaying the Google Chrome browser logo.\",\n  \"main_objects\": [\"tablet screens\", \"smartphone\", \"Google Chrome logo\", \"presenter\", \"hand\", \"glasses\"],\n  \"possible_interpretations\": [\n    \"Chrome browser product launch or keynote\",\n    \"Technology trade show display\",\n    \"Marketing or promotional photo for Chrome\",\n    \"Conference presentation about Google products\"\n  ],\n  \"uncertainty_notes\": \"The presenter's face is only partially visible at the right edge; specific context of the event is not determinable from the image alone.\",\n  \"quality_flags\": [\"partial_subject_truncation\", \"shallow_dof_background\"]\n}",
+      "response": {
+        "id": "gen-1780317927-ZwUhedSqA8Su1kEsiogY",
+        "object": "chat.completion",
+        "created": 1780317927,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"technology product presentation\",\n  \"short_caption\": \"A presenter gestures beside multiple device screens displaying the Google Chrome browser logo.\",\n  \"main_objects\": [\"tablet screens\", \"smartphone\", \"Google Chrome logo\", \"presenter\", \"hand\", \"glasses\"],\n  \"possible_interpretations\": [\n    \"Chrome browser product launch or keynote\",\n    \"Technology trade show display\",\n    \"Marketing or promotional photo for Chrome\",\n    \"Conference presentation about Google products\"\n  ],\n  \"uncertainty_notes\": \"The presenter's face is only partially visible at the right edge; specific context of the event is not determinable from the image alone.\",\n  \"quality_flags\": [\"partial_subject_truncation\", \"shallow_dof_background\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a presentation scene with multiple device screens (tablets/iPads and smartphones) displaying the Google Chrome browser logo. On the right side, there's a person (partially visible - I can see an arm/hand and partial face with glasses) appearing to give a presentation. The background is dark/black.\n\nKey elements:\n- Multiple device screens showing Google Chrome logo\n- A person on the right side (partial view, seems to be presenting)\n- Dark background suggesting a stage/presentation setting\n- Chrome browser icon in various sizes on different devices\n\nLet me rate the various attributes:\n\n- recognizability: 4 - clearly shows Chrome on multiple devices with a presenter\n- ambiguity: 2 - fairly clear it's a Chrome browser promotional/presentation image\n- natural_photo_typicality: 4 - looks like a natural photograph of a presentation\n- visual_clutter: 3 - multiple screens but relatively organized\n- object_centricity: 3 - the screens are dominant but multiple\n- scene_centricity: 3 - it's a scene of a presentation\n- caption_confidence: 4 - easy to describe\n\nSalient objects: the screens displaying Chrome, and the presenter\nDistinct categories: devices/screens, person, Chrome logo\n\n- contains_person: true\n- contains_face: true (partially visible)\n- contains_animal: false\n- contains_text: false (no readable text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: likely true (presentation stage)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person is partially out of frame)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\nDominant content type: scene (or mixed - it's a scene with a person and products)\nImage style: natural_photo\nSemantic domain: technology/product presentation\n\nShort caption: \"A presenter stands beside multiple device screens displaying the Google Chrome browser logo.\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a presentation scene with multiple device screens (tablets/iPads and smartphones) displaying the Google Chrome browser logo. On the right side, there's a person (partially visible - I can see an arm/hand and partial face with glasses) appearing to give a presentation. The background is dark/black.\n\nKey elements:\n- Multiple device screens showing Google Chrome logo\n- A person on the right side (partial view, seems to be presenting)\n- Dark background suggesting a stage/presentation setting\n- Chrome browser icon in various sizes on different devices\n\nLet me rate the various attributes:\n\n- recognizability: 4 - clearly shows Chrome on multiple devices with a presenter\n- ambiguity: 2 - fairly clear it's a Chrome browser promotional/presentation image\n- natural_photo_typicality: 4 - looks like a natural photograph of a presentation\n- visual_clutter: 3 - multiple screens but relatively organized\n- object_centricity: 3 - the screens are dominant but multiple\n- scene_centricity: 3 - it's a scene of a presentation\n- caption_confidence: 4 - easy to describe\n\nSalient objects: the screens displaying Chrome, and the presenter\nDistinct categories: devices/screens, person, Chrome logo\n\n- contains_person: true\n- contains_face: true (partially visible)\n- contains_animal: false\n- contains_text: false (no readable text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: likely true (presentation stage)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person is partially out of frame)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\nDominant content type: scene (or mixed - it's a scene with a person and products)\nImage style: natural_photo\nSemantic domain: technology/product presentation\n\nShort caption: \"A presenter stands beside multiple device screens displaying the Google Chrome browser logo.\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 804,
+          "total_tokens": 2326,
+          "cost": 0.00139404,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139404,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009648
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 526,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

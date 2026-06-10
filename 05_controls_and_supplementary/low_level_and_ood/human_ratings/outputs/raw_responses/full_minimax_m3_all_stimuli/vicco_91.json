@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_91",
+    "stim_key": "vicco_91",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 91,
+    "file_index": 90,
+    "image_name": "shared_4rep_vicco_091.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_091.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor_plants\",\n  \"short_caption\": \"A small spiky cactus in a terracotta pot with a hand reaching toward it indoors.\",\n  \"main_objects\": [\"cactus\", \"terracotta pot\", \"ceramic planter\", \"hand\", \"wooden tray\"],\n  \"possible_interpretations\": [\n    \"person examining or touching a small indoor cactus plant\",\n    \"cactus being repotted or shown off on a table\",\n    \"close-up of a succulent houseplant on a dark surface\"\n  ],\n  \"uncertainty_notes\": \"Background person is partially visible and out of focus; exact cactus species is unclear but appears to be a Mammillaria-type.\",\n  \"quality_flags\": []\n}\n```",
+      "response": {
+        "id": "gen-1780319495-Oy6A5TQ42UGCUZE1HmKf",
+        "object": "chat.completion",
+        "created": 1780319495,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor_plants\",\n  \"short_caption\": \"A small spiky cactus in a terracotta pot with a hand reaching toward it indoors.\",\n  \"main_objects\": [\"cactus\", \"terracotta pot\", \"ceramic planter\", \"hand\", \"wooden tray\"],\n  \"possible_interpretations\": [\n    \"person examining or touching a small indoor cactus plant\",\n    \"cactus being repotted or shown off on a table\",\n    \"close-up of a succulent houseplant on a dark surface\"\n  ],\n  \"uncertainty_notes\": \"Background person is partially visible and out of focus; exact cactus species is unclear but appears to be a Mammillaria-type.\",\n  \"quality_flags\": []\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nI see a small cactus in a terracotta pot, which is placed inside a larger ceramic/stone container. A person's hand is visible on the left side, reaching toward or touching the cactus. The setting appears to be indoors, possibly at a table with a dark surface. There's also what appears to be a wooden tray or frame to the right, and a person in a blue striped shirt is partially visible in the background.\n\nKey elements:\n- Small cactus (main subject) - has multiple stems, looks like a Mammillaria or similar species\n- Terracotta pot containing the cactus\n- Larger stone/ceramic outer container\n- Human hand/fingers (left side)\n- Background person in blue striped shirt (partially visible)\n- Dark table surface\n- Wooden tray/object on the right\n- Indoor setting\n\nLet me rate the dimensions:\n- recognizability: 4 - The main subject (cactus) is clearly recognizable\n- ambiguity: 2 - Pretty clear what's happening\n- natural_photo_typicality: 4 - Looks like a typical photograph\n- visual_clutter: 2 - Not too cluttered, focused on the cactus\n- object_centricity: 4 - The cactus is the clear central object\n- scene_centricity: 2 - More object-focused than scene-focused\n- caption_confidence: 4 - Easy to caption\n\nLet me construct the JSON response.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nI see a small cactus in a terracotta pot, which is placed inside a larger ceramic/stone container. A person's hand is visible on the left side, reaching toward or touching the cactus. The setting appears to be indoors, possibly at a table with a dark surface. There's also what appears to be a wooden tray or frame to the right, and a person in a blue striped shirt is partially visible in the background.\n\nKey elements:\n- Small cactus (main subject) - has multiple stems, looks like a Mammillaria or similar species\n- Terracotta pot containing the cactus\n- Larger stone/ceramic outer container\n- Human hand/fingers (left side)\n- Background person in blue striped shirt (partially visible)\n- Dark table surface\n- Wooden tray/object on the right\n- Indoor setting\n\nLet me rate the dimensions:\n- recognizability: 4 - The main subject (cactus) is clearly recognizable\n- ambiguity: 2 - Pretty clear what's happening\n- natural_photo_typicality: 4 - Looks like a typical photograph\n- visual_clutter: 2 - Not too cluttered, focused on the cactus\n- object_centricity: 4 - The cactus is the clear central object\n- scene_centricity: 2 - More object-focused than scene-focused\n- caption_confidence: 4 - Easy to caption\n\nLet me construct the JSON response.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 671,
+          "total_tokens": 2193,
+          "cost": 0.00111156,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00111156,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008052
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 338,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

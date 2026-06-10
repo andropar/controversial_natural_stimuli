@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_65",
+    "stim_key": "training_objective_65",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 65,
+    "file_index": 65,
+    "image_name": "image_0065.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0065.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 2,\n  \"ambiguity\": 4,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 2,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"people\",\n  \"short_caption\": \"Heavily pixelated image of two people, possibly working together with fabric or material\",\n  \"main_objects\": [\"person in white\", \"person in blue shirt\", \"fabric or textile material\"],\n  \"possible_interpretations\": [\n    \"Two people working together on a textile or sewing task\",\n    \"A tailor or craftsperson demonstrating work to another person\",\n    \"An instructor showing a technique to a student\",\n    \"Two people examining or handling cloth material\",\n    \"A traditional craft or garment-making activity\"\n  ],\n  \"uncertainty_notes\": \"Image is severely pixelated/low-resolution, making facial features, specific actions, and setting details difficult to determine with confidence. Faces are cut off at the top of frame.\",\n  \"quality_flags\": [\"heavy_pixelation\", \"low_resolution\", \"blurred\", \"faces_truncated\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319342-sL3nLofjpQGpMyju5SHW",
+        "object": "chat.completion",
+        "created": 1780319342,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 2,\n  \"ambiguity\": 4,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 2,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"people\",\n  \"short_caption\": \"Heavily pixelated image of two people, possibly working together with fabric or material\",\n  \"main_objects\": [\"person in white\", \"person in blue shirt\", \"fabric or textile material\"],\n  \"possible_interpretations\": [\n    \"Two people working together on a textile or sewing task\",\n    \"A tailor or craftsperson demonstrating work to another person\",\n    \"An instructor showing a technique to a student\",\n    \"Two people examining or handling cloth material\",\n    \"A traditional craft or garment-making activity\"\n  ],\n  \"uncertainty_notes\": \"Image is severely pixelated/low-resolution, making facial features, specific actions, and setting details difficult to determine with confidence. Faces are cut off at the top of frame.\",\n  \"quality_flags\": [\"heavy_pixelation\", \"low_resolution\", \"blurred\", \"faces_truncated\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image appears to be a highly pixelated/blurred photograph showing what looks like two people, possibly engaged in some activity together. There's a person in the center who appears to be wearing a white/cream colored garment, and another person to the right in a blue shirt. The image is very low resolution with significant pixelation/blur applied to it.\n\nLet me consider the schema requirements:\n\n- recognizability: Due to heavy pixelation, it's hard to recognize specifics, but I can make out people. Maybe 2-3.\n- ambiguity: Multiple interpretations possible - what they're doing, the context. Maybe 3-4.\n- natural_photo_typicality: It looks like a natural photo but heavily degraded. Maybe 2.\n- visual_clutter: The pixelation creates a lot of visual noise, but there aren't many distinct objects. Maybe 2-3.\n- object_centricity: There are people but no clear single central object. Maybe 2.\n- scene_centricity: It's a scene with people in it. Maybe 3-4.\n\nThe image contains people (appears to be), possibly an indoor or outdoor setting that's hard to tell due to blur.\n\nLet me look more carefully - the person in white seems to be working with fabric or some material. There could be a sewing or textile activity. The person on the right in blue could be observing or assisting.\n\nGiven the heavy pixelation, my confidence is limited.\n\n- contains_person: true\n- contains_face: Possibly, but very blurred - hard to tell definitively\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: possibly, unclear\n- contains_outdoor_scene: possibly, unclear\n- contains_artificial_or_rendered_content: false (it's a heavily pixelated photo)\n- contains_occlusion_or_truncation: true (faces are cut off at top)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (two people)\n\ndominant_content_type: \"person_face\" or \"mixed\" - I'll go with \"person_face\" since people are the main subject\nimage_style: \"edited_photo\" due to heavy pixelation/blur\nsemantic_domain: \"people\"\n\nshort_caption: \"Two blurred people, possibly working with fabric or textiles together\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image appears to be a highly pixelated/blurred photograph showing what looks like two people, possibly engaged in some activity together. There's a person in the center who appears to be wearing a white/cream colored garment, and another person to the right in a blue shirt. The image is very low resolution with significant pixelation/blur applied to it.\n\nLet me consider the schema requirements:\n\n- recognizability: Due to heavy pixelation, it's hard to recognize specifics, but I can make out people. Maybe 2-3.\n- ambiguity: Multiple interpretations possible - what they're doing, the context. Maybe 3-4.\n- natural_photo_typicality: It looks like a natural photo but heavily degraded. Maybe 2.\n- visual_clutter: The pixelation creates a lot of visual noise, but there aren't many distinct objects. Maybe 2-3.\n- object_centricity: There are people but no clear single central object. Maybe 2.\n- scene_centricity: It's a scene with people in it. Maybe 3-4.\n\nThe image contains people (appears to be), possibly an indoor or outdoor setting that's hard to tell due to blur.\n\nLet me look more carefully - the person in white seems to be working with fabric or some material. There could be a sewing or textile activity. The person on the right in blue could be observing or assisting.\n\nGiven the heavy pixelation, my confidence is limited.\n\n- contains_person: true\n- contains_face: Possibly, but very blurred - hard to tell definitively\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: possibly, unclear\n- contains_outdoor_scene: possibly, unclear\n- contains_artificial_or_rendered_content: false (it's a heavily pixelated photo)\n- contains_occlusion_or_truncation: true (faces are cut off at top)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (two people)\n\ndominant_content_type: \"person_face\" or \"mixed\" - I'll go with \"person_face\" since people are the main subject\nimage_style: \"edited_photo\" due to heavy pixelation/blur\nsemantic_domain: \"people\"\n\nshort_caption: \"Two blurred people, possibly working with fabric or textiles together\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 907,
+          "total_tokens": 2221,
+          "cost": 0.00133236,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00133236,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.0010884
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 573,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

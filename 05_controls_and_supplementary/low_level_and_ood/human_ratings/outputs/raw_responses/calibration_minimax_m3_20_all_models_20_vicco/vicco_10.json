@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_10",
+    "stim_key": "vicco_10",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 10,
+    "file_index": 9,
+    "image_name": "shared_4rep_vicco_010.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_010.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 9,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food/dining\",\n  \"short_caption\": \"Breakfast table with granola, fruit, croissant, coffee, and juice, person in colorful sweater behind.\",\n  \"main_objects\": [\"coffee cup\", \"granola bowl\", \"croissant\", \"green juice glass\", \"watermelon\", \"red gerbera daisies\", \"water glass\", \"person in patterned sweater\"],\n  \"possible_interpretations\": [\"café breakfast\", \"hotel breakfast buffet\", \"brunch with a companion\", \"candid meal photo\"],\n  \"uncertainty_notes\": \"Person's face is not visible. Exact beverage contents (e.g., green juice vs. smoothie) are inferred from color.\",\n  \"quality_flags\": [\"person_truncated\", \"candid_angle\", \"cluttered_table\"]\n}",
+      "response": {
+        "id": "gen-1780318211-wcLYAjuHcrIrRaxM3IoX",
+        "object": "chat.completion",
+        "created": 1780318211,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 9,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food/dining\",\n  \"short_caption\": \"Breakfast table with granola, fruit, croissant, coffee, and juice, person in colorful sweater behind.\",\n  \"main_objects\": [\"coffee cup\", \"granola bowl\", \"croissant\", \"green juice glass\", \"watermelon\", \"red gerbera daisies\", \"water glass\", \"person in patterned sweater\"],\n  \"possible_interpretations\": [\"café breakfast\", \"hotel breakfast buffet\", \"brunch with a companion\", \"candid meal photo\"],\n  \"uncertainty_notes\": \"Person's face is not visible. Exact beverage contents (e.g., green juice vs. smoothie) are inferred from color.\",\n  \"quality_flags\": [\"person_truncated\", \"candid_angle\", \"cluttered_table\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a breakfast/brunch scene at what appears to be a restaurant or café table. I can see:\n- A person wearing a colorful patterned sweater/jacket (Andean or similar style) in the background, partially visible\n- A white coffee cup on a saucer with a spoon\n- A clear glass with water\n- A white bowl with granola/muesli\n- A small white bowl (appears empty, possibly had yogurt or porridge)\n- A plate with watermelon, cantaloupe, and what looks like physalis/gooseberry\n- A glass of what appears to be green juice or smoothie\n- A croissant on a white plate\n- A small vase with red/pink gerbera daisies\n- Another plate with crumbs\n- Various utensils (spoons)\n\nThis is clearly a food/dining scene with a person partially visible in the background.\n\nLet me rate this:\n\n- recognizability: 5 - Very clear what this is\n- ambiguity: 1 - Very clear scene (breakfast/brunch)\n- natural_photo_typicality: 4 - Looks like a typical natural photo, slightly candid\n- visual_clutter: 4 - Many items on the table\n- object_centricity: 2 - No single dominant object, it's a scene\n- scene_centricity: 4 - It's primarily a dining scene\n- caption_confidence: 5 - Easy to caption\n\nEstimated counts:\n- salient_object_count: ~8-10 (cups, bowls, plates, glass, flowers, food items)\n- distinct_object_categories: ~6-7 (beverages, food, flowers, tableware, clothing)\n\nBooleans:\n- contains_person: true (person visible behind table)\n- contains_face: false (face not visible)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: true (appears to be indoor dining)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person is truncated)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\nDominant content type: \"mixed\" (food, scene, person partially)\nImage style: \"natural_photo\"\nSemantic domain: \"food\" or \"dining\"\n\nShort caption: \"Breakfast table with granola, fruit, croissant, coffee, and juice, with a person in colorful sweater.\"\n\nMain objects: coffee cup, granola bowl, croissant, green juice glass, watermelon, flowers, water glass\n\nPossible interpretations:\n- Breakfast at a café\n- Brunch meal\n- Hotel breakfast\n\nUncertainty notes: Person's face not visible, so we can't identify them. The exact beverage types are uncertain (could be different juices).",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a breakfast/brunch scene at what appears to be a restaurant or café table. I can see:\n- A person wearing a colorful patterned sweater/jacket (Andean or similar style) in the background, partially visible\n- A white coffee cup on a saucer with a spoon\n- A clear glass with water\n- A white bowl with granola/muesli\n- A small white bowl (appears empty, possibly had yogurt or porridge)\n- A plate with watermelon, cantaloupe, and what looks like physalis/gooseberry\n- A glass of what appears to be green juice or smoothie\n- A croissant on a white plate\n- A small vase with red/pink gerbera daisies\n- Another plate with crumbs\n- Various utensils (spoons)\n\nThis is clearly a food/dining scene with a person partially visible in the background.\n\nLet me rate this:\n\n- recognizability: 5 - Very clear what this is\n- ambiguity: 1 - Very clear scene (breakfast/brunch)\n- natural_photo_typicality: 4 - Looks like a typical natural photo, slightly candid\n- visual_clutter: 4 - Many items on the table\n- object_centricity: 2 - No single dominant object, it's a scene\n- scene_centricity: 4 - It's primarily a dining scene\n- caption_confidence: 5 - Easy to caption\n\nEstimated counts:\n- salient_object_count: ~8-10 (cups, bowls, plates, glass, flowers, food items)\n- distinct_object_categories: ~6-7 (beverages, food, flowers, tableware, clothing)\n\nBooleans:\n- contains_person: true (person visible behind table)\n- contains_face: false (face not visible)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: true (appears to be indoor dining)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person is truncated)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\nDominant content type: \"mixed\" (food, scene, person partially)\nImage style: \"natural_photo\"\nSemantic domain: \"food\" or \"dining\"\n\nShort caption: \"Breakfast table with granola, fruit, croissant, coffee, and juice, with a person in colorful sweater.\"\n\nMain objects: coffee cup, granola bowl, croissant, green juice glass, watermelon, flowers, water glass\n\nPossible interpretations:\n- Breakfast at a café\n- Brunch meal\n- Hotel breakfast\n\nUncertainty notes: Person's face not visible, so we can't identify them. The exact beverage types are uncertain (could be different juices).",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 982,
+          "total_tokens": 2504,
+          "cost": 0.00160764,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00160764,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0011784
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 656,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

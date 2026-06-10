@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_50",
+    "stim_key": "vicco_50",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 50,
+    "file_index": 49,
+    "image_name": "shared_4rep_vicco_050.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_050.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"art_supplies\", \"short_caption\": \"A paintbrush with paint stains resting on a dark plastic drop cloth with small paint dollops nearby\", \"main_objects\": [\"paintbrush\", \"paint dollops\", \"bottle\"], \"possible_interpretations\": [\"artist's workspace\", \"painting project in progress\", \"used painting supplies\", \"craft or art studio setting\"], \"uncertainty_notes\": \"Indoor/outdoor setting is uncertain; some background objects (bottle, cork-like item) are only partially visible at the edges\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319446-U8I5cmA1DbFOqQOdjNbt",
+        "object": "chat.completion",
+        "created": 1780319446,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"art_supplies\", \"short_caption\": \"A paintbrush with paint stains resting on a dark plastic drop cloth with small paint dollops nearby\", \"main_objects\": [\"paintbrush\", \"paint dollops\", \"bottle\"], \"possible_interpretations\": [\"artist's workspace\", \"painting project in progress\", \"used painting supplies\", \"craft or art studio setting\"], \"uncertainty_notes\": \"Indoor/outdoor setting is uncertain; some background objects (bottle, cork-like item) are only partially visible at the edges\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a paintbrush lying on a dark plastic or tarp-like surface. The paintbrush has a wooden handle with a red painted end, and it has blue paint marks on it. The bristles are pinkish/reddish and appear to have been used. There's a metal ferrule connecting the bristles to the handle, and there are some numbers/text on the handle (appears to be \"50\" and \"30\" markings, and \"WOOD HANDLE\" text).\n\nIn the background, I can see:\n- A bottle or container at the top right (appears to have a barcode)\n- Small dollops of paint (white, yellow, blue) scattered on the surface\n- A piece of what looks like a cork or wood at the top\n- The surface is a dark gray/black plastic sheet or drop cloth\n\nLet me rate this:\n\n- recognizability: 5 - clearly a paintbrush on a work surface\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a real photo, maybe slightly staged but realistic\n- visual_clutter: 3 - main object clear, but some background elements\n- object_centricity: 4 - the paintbrush is the clear central focus\n- scene_centricity: 2 - more object-focused than scene\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 1 (the paintbrush) with some secondary items\n- estimated_distinct_object_categories: 2-3 (paintbrush, paint dollops, bottle)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (numbers and text on brush)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (likely indoor work area)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: object\nimage_style: natural_photo\nsemantic_domain: art_supplies / tools\n\nshort_caption: \"A used paintbrush with paint stains lying on a dark plastic drop cloth\"\n\nmain_objects: [\"paintbrush\", \"paint dollops\", \"paint bottle\"]\n\npossible_interpretations: [\"artist's workspace\", \"painting in progress\", \"used art supplies\"]\n\nuncertainty_notes: \"The exact context (indoor/outdoor studio) is somewhat ambiguous but it appears to be an art/craft workspace\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a paintbrush lying on a dark plastic or tarp-like surface. The paintbrush has a wooden handle with a red painted end, and it has blue paint marks on it. The bristles are pinkish/reddish and appear to have been used. There's a metal ferrule connecting the bristles to the handle, and there are some numbers/text on the handle (appears to be \"50\" and \"30\" markings, and \"WOOD HANDLE\" text).\n\nIn the background, I can see:\n- A bottle or container at the top right (appears to have a barcode)\n- Small dollops of paint (white, yellow, blue) scattered on the surface\n- A piece of what looks like a cork or wood at the top\n- The surface is a dark gray/black plastic sheet or drop cloth\n\nLet me rate this:\n\n- recognizability: 5 - clearly a paintbrush on a work surface\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a real photo, maybe slightly staged but realistic\n- visual_clutter: 3 - main object clear, but some background elements\n- object_centricity: 4 - the paintbrush is the clear central focus\n- scene_centricity: 2 - more object-focused than scene\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 1 (the paintbrush) with some secondary items\n- estimated_distinct_object_categories: 2-3 (paintbrush, paint dollops, bottle)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (numbers and text on brush)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (likely indoor work area)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: object\nimage_style: natural_photo\nsemantic_domain: art_supplies / tools\n\nshort_caption: \"A used paintbrush with paint stains lying on a dark plastic drop cloth\"\n\nmain_objects: [\"paintbrush\", \"paint dollops\", \"paint bottle\"]\n\npossible_interpretations: [\"artist's workspace\", \"painting in progress\", \"used art supplies\"]\n\nuncertainty_notes: \"The exact context (indoor/outdoor studio) is somewhat ambiguous but it appears to be an art/craft workspace\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 871,
+          "total_tokens": 2393,
+          "cost": 0.00135156,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00135156,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010452
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 601,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

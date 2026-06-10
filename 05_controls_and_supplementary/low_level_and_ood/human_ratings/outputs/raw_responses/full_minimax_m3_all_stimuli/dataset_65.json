@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_65",
+    "stim_key": "dataset_65",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 65,
+    "file_index": 65,
+    "image_name": "image_0065.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0065.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 1,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home decor / product\",\n\n  \"short_caption\": \"Two square Kartell table clocks with translucent amber faces and Roman numerals on a white background.\",\n  \"main_objects\": [\"square table clock\", \"square table clock\"],\n  \"possible_interpretations\": [\"product photo of two designer clocks\", \"stylized product display\", \"editorial home decor shot\"],\n  \"uncertainty_notes\": \"The exact amber/gold tone and brand 'Kartell' are visible, but image is clearly a controlled studio product shot rather than a candid photograph.\",\n  \"quality_flags\": [\"studio_product_shot\", \"white_background\", \"minimalist\"]\n}",
+      "response": {
+        "id": "gen-1780319038-gvJmzCUq7B3zRWMY1Z62",
+        "object": "chat.completion",
+        "created": 1780319038,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 1,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home decor / product\",\n\n  \"short_caption\": \"Two square Kartell table clocks with translucent amber faces and Roman numerals on a white background.\",\n  \"main_objects\": [\"square table clock\", \"square table clock\"],\n  \"possible_interpretations\": [\"product photo of two designer clocks\", \"stylized product display\", \"editorial home decor shot\"],\n  \"uncertainty_notes\": \"The exact amber/gold tone and brand 'Kartell' are visible, but image is clearly a controlled studio product shot rather than a candid photograph.\",\n  \"quality_flags\": [\"studio_product_shot\", \"white_background\", \"minimalist\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows two square clocks with translucent/amber-colored faces in clear acrylic cases. They are branded \"Kartell\" - a design brand. The clocks have Roman numerals (XII, III, VI, IX visible). They sit on a white surface against a white background. This looks like a product photograph.\n\nLet me analyze:\n- Two clocks, clearly visible\n- Brand: Kartell\n- Style: product photography, studio shot\n- Roman numerals as time markers\n- Clean, minimalist presentation\n\nRatings:\n- recognizability: 5 (very clearly clocks)\n- ambiguity: 1 (clearly two clocks)\n- natural_photo_typicality: 3 (it's a photo but a controlled product photo, not a natural scene)\n- visual_clutter: 1 (very clean, minimalist)\n- object_centricity: 4 (clocks are the focus, though there are two)\n- scene_centricity: 1 (not a scene, just objects on white)\n- caption_confidence: 5 (easy to caption)\n\nObjects:\n- 2 clocks\n- contains_text: true (Roman numerals, \"Kartell\" brand)\n- contains_artificial_or_rendered_content: false (it's a photo)\n- contains_multiple_main_objects: true (two clocks)\n\nMain objects: clocks, table clock\nSemantic domain: home decor / product\nImage style: natural_photo (it's a product photo)\nDominant content_type: object",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows two square clocks with translucent/amber-colored faces in clear acrylic cases. They are branded \"Kartell\" - a design brand. The clocks have Roman numerals (XII, III, VI, IX visible). They sit on a white surface against a white background. This looks like a product photograph.\n\nLet me analyze:\n- Two clocks, clearly visible\n- Brand: Kartell\n- Style: product photography, studio shot\n- Roman numerals as time markers\n- Clean, minimalist presentation\n\nRatings:\n- recognizability: 5 (very clearly clocks)\n- ambiguity: 1 (clearly two clocks)\n- natural_photo_typicality: 3 (it's a photo but a controlled product photo, not a natural scene)\n- visual_clutter: 1 (very clean, minimalist)\n- object_centricity: 4 (clocks are the focus, though there are two)\n- scene_centricity: 1 (not a scene, just objects on white)\n- caption_confidence: 5 (easy to caption)\n\nObjects:\n- 2 clocks\n- contains_text: true (Roman numerals, \"Kartell\" brand)\n- contains_artificial_or_rendered_content: false (it's a photo)\n- contains_multiple_main_objects: true (two clocks)\n\nMain objects: clocks, table clock\nSemantic domain: home decor / product\nImage style: natural_photo (it's a product photo)\nDominant content_type: object",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 651,
+          "total_tokens": 2173,
+          "cost": 0.00108756,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00108756,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0007812
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 323,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

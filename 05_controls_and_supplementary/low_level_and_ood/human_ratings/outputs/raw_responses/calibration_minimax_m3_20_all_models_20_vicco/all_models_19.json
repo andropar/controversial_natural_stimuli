@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_19",
+    "stim_key": "all_models_19",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 19,
+    "file_index": 19,
+    "image_name": "image_0019.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0019.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 2, \"ambiguity\": 3, \"natural_photo_typicality\": 3, \"visual_clutter\": 2, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 3, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"retail_store\", \"short_caption\": \"Blurred interior of a clothing retail store with displays and ceiling lights\", \"main_objects\": [\"clothing rack\", \"orange garment\", \"display counter\", \"ceiling lights\"], \"possible_interpretations\": [\"clothing store\", \"fashion boutique\", \"retail showroom\", \"department store interior\"], \"uncertainty_notes\": \"Heavy defocus blur prevents identification of specific items, people, or signage; general scene type inferred from visible clothing racks and bright lighting pattern\", \"quality_flags\": [\"heavy_blur\", \"out_of_focus\", \"low_detail\"]}",
+      "response": {
+        "id": "gen-1780318166-d6qPiwKiJ8WwMgmHoU3y",
+        "object": "chat.completion",
+        "created": 1780318166,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 2, \"ambiguity\": 3, \"natural_photo_typicality\": 3, \"visual_clutter\": 2, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 3, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"retail_store\", \"short_caption\": \"Blurred interior of a clothing retail store with displays and ceiling lights\", \"main_objects\": [\"clothing rack\", \"orange garment\", \"display counter\", \"ceiling lights\"], \"possible_interpretations\": [\"clothing store\", \"fashion boutique\", \"retail showroom\", \"department store interior\"], \"uncertainty_notes\": \"Heavy defocus blur prevents identification of specific items, people, or signage; general scene type inferred from visible clothing racks and bright lighting pattern\", \"quality_flags\": [\"heavy_blur\", \"out_of_focus\", \"low_detail\"]}",
+              "refusal": null,
+              "reasoning": "The image appears to be a heavily blurred photograph of what looks like a clothing/fashion retail store interior. I can see:\n- A bright interior with ceiling lights forming a pattern\n- Clothing racks/displays with garments, including what appears to be an orange item prominently on the right\n- A central aisle/counter\n- Possibly mannequins or display forms\n- The overall scene is very out of focus/blurred\n\nLet me annotate this carefully:\n\n- Recognizability: The content is very blurred but the general setting (clothing store interior) is somewhat recognizable. I'd say 2-3.\n- Ambiguity: Due to the heavy blur, there's some ambiguity but the general scene is still identifiable as a store. Maybe 2-3.\n- Natural photo typicality: It looks like a real photograph taken in a store, though heavily defocused. 3.\n- Visual clutter: There's a lot going on - lights, clothing, displays, but it's all blurred together. Maybe 2-3 due to blur reducing perceived detail.\n- Object centricity: No single clear central object; it's a scene. 2.\n- Scene centricity: Yes, this is primarily a scene/place. 4.\n- Caption confidence: Moderate - we can say it's a clothing store but details are unclear. 2-3.\n\nSalient objects: I can vaguely make out clothing items, a counter/display, ceiling lights. Hard to count precisely due to blur. Maybe 3-5 salient regions.\n\nDistinct categories: clothing, furniture/display, lighting fixtures, possibly mannequins - maybe 3-4.\n\nContains person: Possibly silhouettes of people but very unclear. I'll say false since I can't confirm.\nContains face: No clearly visible faces due to blur. False.\nContains animal: No.\nContains text: No visible text.\nContains vehicle: No.\nContains food: No.\nContains indoor scene: Yes, clearly.\nContains outdoor scene: No.\nContains artificial or rendered content: No, it appears to be a real photo.\nContains occlusion or truncation: The blur makes things unclear, but not really occlusion per se. False.\nContains unusual viewpoint: Slightly unusual due to heavy defocus, but otherwise normal. False.\nContains multiple main objects: Yes, multiple displays and items. True.\n\nDominant content type: scene (it's a retail store scene)\nImage style: natural_photo (though heavily defocused)\nSemantic domain: retail/shopping/store\n\nShort caption: \"Blurred interior of a clothing retail store with displays and ceiling lights\"\n\nMain objects: clothing rack, orange garment, display counter, ceiling lights\n\nPossible interpretations: clothing store, fashion boutique, retail showroom, department store\n\nUncertainty: Heavy blur prevents detailed identification of specific items or any people\n\nQuality flags: heavy blur, out of focus",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image appears to be a heavily blurred photograph of what looks like a clothing/fashion retail store interior. I can see:\n- A bright interior with ceiling lights forming a pattern\n- Clothing racks/displays with garments, including what appears to be an orange item prominently on the right\n- A central aisle/counter\n- Possibly mannequins or display forms\n- The overall scene is very out of focus/blurred\n\nLet me annotate this carefully:\n\n- Recognizability: The content is very blurred but the general setting (clothing store interior) is somewhat recognizable. I'd say 2-3.\n- Ambiguity: Due to the heavy blur, there's some ambiguity but the general scene is still identifiable as a store. Maybe 2-3.\n- Natural photo typicality: It looks like a real photograph taken in a store, though heavily defocused. 3.\n- Visual clutter: There's a lot going on - lights, clothing, displays, but it's all blurred together. Maybe 2-3 due to blur reducing perceived detail.\n- Object centricity: No single clear central object; it's a scene. 2.\n- Scene centricity: Yes, this is primarily a scene/place. 4.\n- Caption confidence: Moderate - we can say it's a clothing store but details are unclear. 2-3.\n\nSalient objects: I can vaguely make out clothing items, a counter/display, ceiling lights. Hard to count precisely due to blur. Maybe 3-5 salient regions.\n\nDistinct categories: clothing, furniture/display, lighting fixtures, possibly mannequins - maybe 3-4.\n\nContains person: Possibly silhouettes of people but very unclear. I'll say false since I can't confirm.\nContains face: No clearly visible faces due to blur. False.\nContains animal: No.\nContains text: No visible text.\nContains vehicle: No.\nContains food: No.\nContains indoor scene: Yes, clearly.\nContains outdoor scene: No.\nContains artificial or rendered content: No, it appears to be a real photo.\nContains occlusion or truncation: The blur makes things unclear, but not really occlusion per se. False.\nContains unusual viewpoint: Slightly unusual due to heavy defocus, but otherwise normal. False.\nContains multiple main objects: Yes, multiple displays and items. True.\n\nDominant content type: scene (it's a retail store scene)\nImage style: natural_photo (though heavily defocused)\nSemantic domain: retail/shopping/store\n\nShort caption: \"Blurred interior of a clothing retail store with displays and ceiling lights\"\n\nMain objects: clothing rack, orange garment, display counter, ceiling lights\n\nPossible interpretations: clothing store, fashion boutique, retail showroom, department store\n\nUncertainty: Heavy blur prevents detailed identification of specific items or any people\n\nQuality flags: heavy blur, out of focus",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 897,
+          "total_tokens": 2419,
+          "cost": 0.00150564,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00150564,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010764
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 702,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

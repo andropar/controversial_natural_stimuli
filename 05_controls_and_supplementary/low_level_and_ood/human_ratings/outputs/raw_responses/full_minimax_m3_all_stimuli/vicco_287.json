@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_287",
+    "stim_key": "vicco_287",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 287,
+    "file_index": 286,
+    "image_name": "shared_4rep_vicco_287.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_287.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\":5,\"ambiguity\":2,\"natural_photo_typicality\":5,\"visual_clutter\":4,\"object_centricity\":2,\"scene_centricity\":5,\"caption_confidence\":5,\"estimated_salient_object_count\":15,\"estimated_distinct_object_categories\":4,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":true,\"contains_text\":false,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":false,\"contains_outdoor_scene\":true,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":false,\"contains_multiple_main_objects\":true,\"dominant_content_type\":\"scene\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"nature_pond\",\"short_caption\":\"A pond with orange fish swimming among green lily pads and pink and white water lilies.\",\"main_objects\":[\"fish\",\"lily pads\",\"water lily flowers\",\"algae\",\"water surface\"],\"possible_interpretations\":[\"ornamental koi pond\",\"natural pond with wildlife\",\"garden water feature\",\"aquatic ecosystem scene\"],\"uncertainty_notes\":\"Fish species identification uncertain (likely koi or goldfish); number of fish difficult to count precisely due to water reflections and algae.\",\"quality_flags\":[\"water reflections\",\"partially submerged objects\"]}",
+      "response": {
+        "id": "gen-1780319721-Z6hXakehctM8HrN9Lw6E",
+        "object": "chat.completion",
+        "created": 1780319721,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\":5,\"ambiguity\":2,\"natural_photo_typicality\":5,\"visual_clutter\":4,\"object_centricity\":2,\"scene_centricity\":5,\"caption_confidence\":5,\"estimated_salient_object_count\":15,\"estimated_distinct_object_categories\":4,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":true,\"contains_text\":false,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":false,\"contains_outdoor_scene\":true,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":false,\"contains_multiple_main_objects\":true,\"dominant_content_type\":\"scene\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"nature_pond\",\"short_caption\":\"A pond with orange fish swimming among green lily pads and pink and white water lilies.\",\"main_objects\":[\"fish\",\"lily pads\",\"water lily flowers\",\"algae\",\"water surface\"],\"possible_interpretations\":[\"ornamental koi pond\",\"natural pond with wildlife\",\"garden water feature\",\"aquatic ecosystem scene\"],\"uncertainty_notes\":\"Fish species identification uncertain (likely koi or goldfish); number of fish difficult to count precisely due to water reflections and algae.\",\"quality_flags\":[\"water reflections\",\"partially submerged objects\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I see a pond scene with:\n- Water surface (pond)\n- Lily pads scattered across the water\n- A pink/magenta water lily flower on the right side\n- A white water lily on the left\n- Orange/red fish (likely koi or goldfish) swimming underwater\n- Green algae or aquatic vegetation\n- Reflections on the water surface\n\nLet me provide conservative annotations based on what I can see.\n\nRecognizability: The main content is clearly a pond with fish and water lilies - quite recognizable. 5\nAmbiguity: The scene is fairly clear, not many interpretations. 2\nNatural_photo_typicality: Looks like a typical natural photograph. 5\nVisual_clutter: There are many elements - lily pads, algae, fish, flowers. 4\nObject_centricity: No single dominant object, it's more of a scene. 2\nScene_centricity: This is primarily a scene/place. 5\nCaption_confidence: Easy to caption. 5\n\nSalient objects: fish (multiple), lily pads, water lilies - let me count distinct salient items. There are many fish (~10+), numerous lily pads, 2 flowers. I'd estimate maybe 3-4 main categories.\n\nContains person: false\nContains face: false\nContains animal: true (fish)\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor: false\nContains outdoor: true\nContains artificial: false\nContains occlusion: some fish are partially visible through water\nContains unusual viewpoint: slight - looking down at pond\nContains multiple main objects: true\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: nature/pond\n\nShort caption: \"A pond with orange fish swimming among green lily pads and pink and white water lilies.\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I see a pond scene with:\n- Water surface (pond)\n- Lily pads scattered across the water\n- A pink/magenta water lily flower on the right side\n- A white water lily on the left\n- Orange/red fish (likely koi or goldfish) swimming underwater\n- Green algae or aquatic vegetation\n- Reflections on the water surface\n\nLet me provide conservative annotations based on what I can see.\n\nRecognizability: The main content is clearly a pond with fish and water lilies - quite recognizable. 5\nAmbiguity: The scene is fairly clear, not many interpretations. 2\nNatural_photo_typicality: Looks like a typical natural photograph. 5\nVisual_clutter: There are many elements - lily pads, algae, fish, flowers. 4\nObject_centricity: No single dominant object, it's more of a scene. 2\nScene_centricity: This is primarily a scene/place. 5\nCaption_confidence: Easy to caption. 5\n\nSalient objects: fish (multiple), lily pads, water lilies - let me count distinct salient items. There are many fish (~10+), numerous lily pads, 2 flowers. I'd estimate maybe 3-4 main categories.\n\nContains person: false\nContains face: false\nContains animal: true (fish)\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor: false\nContains outdoor: true\nContains artificial: false\nContains occlusion: some fish are partially visible through water\nContains unusual viewpoint: slight - looking down at pond\nContains multiple main objects: true\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: nature/pond\n\nShort caption: \"A pond with orange fish swimming among green lily pads and pink and white water lilies.\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 661,
+          "total_tokens": 2183,
+          "cost": 0.00109956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00109956,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0007932
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 440,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

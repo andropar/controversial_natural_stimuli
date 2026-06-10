@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_226",
+    "stim_key": "vicco_226",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 226,
+    "file_index": 225,
+    "image_name": "shared_4rep_vicco_226.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_226.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food/agriculture\",\n  \"short_caption\": \"Large display of red and green apples arranged on wooden shelves at a farm stand.\",\n  \"main_objects\": [\"apples\", \"wooden display shelves\", \"trees\", \"house\", \"flowers\"],\n  \"possible_interpretations\": [\"apple display at farm stand\", \"orchard harvest arrangement\", \"apple market stand\", \"decorative apple sculpture display\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; orientation is sideways. Exact type of display (market vs. decorative) is somewhat unclear from view alone.\",\n  \"quality_flags\": [\"rotated_orientation\"]\n}",
+      "response": {
+        "id": "gen-1780319649-sUQkFjdTriTI6q5X75Tb",
+        "object": "chat.completion",
+        "created": 1780319649,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food/agriculture\",\n  \"short_caption\": \"Large display of red and green apples arranged on wooden shelves at a farm stand.\",\n  \"main_objects\": [\"apples\", \"wooden display shelves\", \"trees\", \"house\", \"flowers\"],\n  \"possible_interpretations\": [\"apple display at farm stand\", \"orchard harvest arrangement\", \"apple market stand\", \"decorative apple sculpture display\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; orientation is sideways. Exact type of display (market vs. decorative) is somewhat unclear from view alone.\",\n  \"quality_flags\": [\"rotated_orientation\"]\n}",
+              "refusal": null,
+              "reasoning": "The image is rotated 90 degrees. It shows what appears to be a large display of apples arranged on a wooden structure, likely a farm stand or orchard display. There are many red and green apples. In the background, there are trees, grass, a building/house, and some flowers. The image appears to be a natural photograph taken at an apple orchard or farm.\n\nLet me analyze the details:\n- The main content is a large display/arrangement of apples on wooden shelving\n- Background shows a rural/farm scene with trees, grass, a house\n- Some flowers visible\n- The image is rotated (sideways orientation)\n- It looks like a typical natural photo\n\nRatings:\n- recognizability: 5 - very clear what's shown\n- ambiguity: 1 - it's clearly an apple display\n- natural_photo_typicality: 5 - looks like a natural photograph\n- visual_clutter: 4 - lots of apples creating visual complexity, plus background elements\n- object_centricity: 3 - the apples are the main focus but there's significant scene context\n- scene_centricity: 4 - it's a scene at a farm/orchard\n- caption_confidence: 5 - easy to caption\n\nEstimated salient object count: hundreds of apples but as a collection - could say 1 (the apple display)\nDistinct object categories: 3-4 (apples, trees, house, flowers)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: true (apples)\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: true (rotated image)\ncontains_multiple_main_objects: false\n\ndominant_content_type: object (the apple display)\nimage_style: natural_photo\nsemantic_domain: food/agriculture\n\nshort_caption: \"Large display of red and green apples arranged on wooden shelves at a farm stand.\"\n\nmain_objects: [\"apples\", \"wooden shelves\", \"trees\", \"house\", \"flowers\"]\n\npossible_interpretations: [\"apple display at farm stand\", \"orchard apple arrangement\", \"harvest display\"]\n\nuncertainty_notes: \"Image appears rotated 90 degrees; orientation is sideways.\"\n\nquality_flags: [\"rotated_orientation\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image is rotated 90 degrees. It shows what appears to be a large display of apples arranged on a wooden structure, likely a farm stand or orchard display. There are many red and green apples. In the background, there are trees, grass, a building/house, and some flowers. The image appears to be a natural photograph taken at an apple orchard or farm.\n\nLet me analyze the details:\n- The main content is a large display/arrangement of apples on wooden shelving\n- Background shows a rural/farm scene with trees, grass, a house\n- Some flowers visible\n- The image is rotated (sideways orientation)\n- It looks like a typical natural photo\n\nRatings:\n- recognizability: 5 - very clear what's shown\n- ambiguity: 1 - it's clearly an apple display\n- natural_photo_typicality: 5 - looks like a natural photograph\n- visual_clutter: 4 - lots of apples creating visual complexity, plus background elements\n- object_centricity: 3 - the apples are the main focus but there's significant scene context\n- scene_centricity: 4 - it's a scene at a farm/orchard\n- caption_confidence: 5 - easy to caption\n\nEstimated salient object count: hundreds of apples but as a collection - could say 1 (the apple display)\nDistinct object categories: 3-4 (apples, trees, house, flowers)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: true (apples)\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: true (rotated image)\ncontains_multiple_main_objects: false\n\ndominant_content_type: object (the apple display)\nimage_style: natural_photo\nsemantic_domain: food/agriculture\n\nshort_caption: \"Large display of red and green apples arranged on wooden shelves at a farm stand.\"\n\nmain_objects: [\"apples\", \"wooden shelves\", \"trees\", \"house\", \"flowers\"]\n\npossible_interpretations: [\"apple display at farm stand\", \"orchard apple arrangement\", \"harvest display\"]\n\nuncertainty_notes: \"Image appears rotated 90 degrees; orientation is sideways.\"\n\nquality_flags: [\"rotated_orientation\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 854,
+          "total_tokens": 2376,
+          "cost": 0.00133116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00133116,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010248
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 570,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

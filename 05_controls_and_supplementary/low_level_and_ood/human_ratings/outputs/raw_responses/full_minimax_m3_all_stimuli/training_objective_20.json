@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_20",
+    "stim_key": "training_objective_20",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 20,
+    "file_index": 20,
+    "image_name": "image_0020.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0020.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"event presentation\",\n  \"short_caption\": \"Woman in orange dress holding a children's book on stage at a reading event\",\n  \"main_objects\": [\"woman\", \"children's book\", \"presentation screen\", \"armchair\", \"small table\", \"microphone\"],\n  \"possible_interpretations\": [\"Author presenting a children's book at a reading event\", \"Educator speaking at a literacy conference\", \"Panelist discussing reading initiatives\", \"Storyteller introducing a picture book to an audience\"],\n  \"uncertainty_notes\": \"Text on the screen is truncated at the right edge; exact event context and speaker's role are unclear from the image alone.\",\n  \"quality_flags\": [\"text_truncated\", \"slight_motion_blur\"]\n}",
+      "response": {
+        "id": "gen-1780319229-KOU3rDXuY2kNTV0SU1Kc",
+        "object": "chat.completion",
+        "created": 1780319229,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"event presentation\",\n  \"short_caption\": \"Woman in orange dress holding a children's book on stage at a reading event\",\n  \"main_objects\": [\"woman\", \"children's book\", \"presentation screen\", \"armchair\", \"small table\", \"microphone\"],\n  \"possible_interpretations\": [\"Author presenting a children's book at a reading event\", \"Educator speaking at a literacy conference\", \"Panelist discussing reading initiatives\", \"Storyteller introducing a picture book to an audience\"],\n  \"uncertainty_notes\": \"Text on the screen is truncated at the right edge; exact event context and speaker's role are unclear from the image alone.\",\n  \"quality_flags\": [\"text_truncated\", \"slight_motion_blur\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a woman in an orange/coral dress sitting in a chair on what appears to be a stage. She's holding up a children's book (appears to be a picture book with illustrations). Behind her is a presentation screen with Chinese characters \"多元閱讀聯合\" and English text \"United Front for Open L...\" (truncated). There's a colorful banner/header at the top of the screen with rainbow-like colors.\n\nThere's a microphone on a small table in front of her, and what appears to be another chair to the left. The setting looks like a panel discussion or presentation event.\n\nLet me annotate based on the schema:\n\n- recognizability: 4 - clear what's happening\n- ambiguity: 2 - fairly clear scene\n- natural_photo_typicality: 4 - looks like a natural photograph\n- visual_clutter: 3 - moderate, with the screen, person, chairs, table\n- object_centricity: 2 - the person is a focus but it's also a scene\n- scene_centricity: 4 - clearly a scene/event setting\n- caption_confidence: 4 - can caption reasonably\n\n- estimated_salient_object_count: 3-4 (woman, book, screen, chairs)\n- estimated_distinct_object_categories: 4 (person, book, screen/display, furniture)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: true (Chinese and English text on screen)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (text is truncated, chair cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (the woman is clearly the main subject)\n\n- dominant_content_type: \"person_face\" or \"person\" - I'll go with \"person_face\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"event\" or \"presentation\"\n\nshort_caption: \"Woman in orange dress holding a children's book on stage at a presentation\"\n\nmain_objects: [\"woman\", \"children's book\", \"presentation screen\", \"chairs\", \"microphone\", \"small table\"]\n\npossible_interpretations: [\"Author presenting a children's book at a reading event\", \"Educator speaking at a literacy conference\", \"Panelist discussing reading initiatives\"]\n\nuncertainty_notes: \"Text on screen is truncated; exact event context is unclear\"\n\nquality_flags: [\"text_truncated\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a woman in an orange/coral dress sitting in a chair on what appears to be a stage. She's holding up a children's book (appears to be a picture book with illustrations). Behind her is a presentation screen with Chinese characters \"多元閱讀聯合\" and English text \"United Front for Open L...\" (truncated). There's a colorful banner/header at the top of the screen with rainbow-like colors.\n\nThere's a microphone on a small table in front of her, and what appears to be another chair to the left. The setting looks like a panel discussion or presentation event.\n\nLet me annotate based on the schema:\n\n- recognizability: 4 - clear what's happening\n- ambiguity: 2 - fairly clear scene\n- natural_photo_typicality: 4 - looks like a natural photograph\n- visual_clutter: 3 - moderate, with the screen, person, chairs, table\n- object_centricity: 2 - the person is a focus but it's also a scene\n- scene_centricity: 4 - clearly a scene/event setting\n- caption_confidence: 4 - can caption reasonably\n\n- estimated_salient_object_count: 3-4 (woman, book, screen, chairs)\n- estimated_distinct_object_categories: 4 (person, book, screen/display, furniture)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: true (Chinese and English text on screen)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (text is truncated, chair cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (the woman is clearly the main subject)\n\n- dominant_content_type: \"person_face\" or \"person\" - I'll go with \"person_face\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"event\" or \"presentation\"\n\nshort_caption: \"Woman in orange dress holding a children's book on stage at a presentation\"\n\nmain_objects: [\"woman\", \"children's book\", \"presentation screen\", \"chairs\", \"microphone\", \"small table\"]\n\npossible_interpretations: [\"Author presenting a children's book at a reading event\", \"Educator speaking at a literacy conference\", \"Panelist discussing reading initiatives\"]\n\nuncertainty_notes: \"Text on screen is truncated; exact event context is unclear\"\n\nquality_flags: [\"text_truncated\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1222,
+          "completion_tokens": 921,
+          "total_tokens": 2143,
+          "cost": 0.00132156,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00132156,
+            "upstream_inference_prompt_cost": 0.00021636,
+            "upstream_inference_completions_cost": 0.0011052
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 617,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

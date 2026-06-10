@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_81",
+    "stim_key": "training_objective_81",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 81,
+    "file_index": 81,
+    "image_name": "image_0081.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0081.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 2, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 3, \"caption_confidence\": 5, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": true, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": true, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"leathercraft_artwork\", \"short_caption\": \"Hand-tooled dyed leather artwork of a doe and fawn near a log cabin with mountains, on weathered wood.\", \"main_objects\": [\"leather artwork\", \"doe\", \"fawn\", \"log cabin\", \"mountains\", \"pine trees\", \"monogram TK\"], \"possible_interpretations\": [\"leather wallet or book cover\", \"decorative leather art piece\", \"rustic home decor item\"], \"uncertainty_notes\": \"Image shows a crafted leather object rather than a natural scene; animal/cabin are depicted within the leather, not real subjects.\", \"quality_flags\": [\"subject_is_artifact\"]}",
+      "response": {
+        "id": "gen-1780319366-5q6tpfDeu2dqRyZOTwVT",
+        "object": "chat.completion",
+        "created": 1780319366,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 2, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 3, \"caption_confidence\": 5, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": true, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": true, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"leathercraft_artwork\", \"short_caption\": \"Hand-tooled dyed leather artwork of a doe and fawn near a log cabin with mountains, on weathered wood.\", \"main_objects\": [\"leather artwork\", \"doe\", \"fawn\", \"log cabin\", \"mountains\", \"pine trees\", \"monogram TK\"], \"possible_interpretations\": [\"leather wallet or book cover\", \"decorative leather art piece\", \"rustic home decor item\"], \"uncertainty_notes\": \"Image shows a crafted leather object rather than a natural scene; animal/cabin are depicted within the leather, not real subjects.\", \"quality_flags\": [\"subject_is_artifact\"]}",
+              "refusal": null,
+              "reasoning": "The image shows a leather craft item - a piece of tooled/dyed leather featuring an artwork of two deer (a doe and fawn) near a log cabin with mountains and pine trees in the background. The leather has the artist's monogram \"TK\" stamped in the bottom right corner. The leather piece is photographed on a weathered wooden surface.\n\nLet me annotate this carefully:\n\n- recognizability: The content is clear - it's a leather artwork with a deer/cabin scene. I'd say 5.\n- ambiguity: Low ambiguity - it's clearly a leather craft piece with a depicted scene. 1.\n- natural_photo_typicality: It's a photograph of a crafted item, so not a typical natural photo. The subject is artistic/manufactured. 2.\n- visual_clutter: Moderate - the scene has deer, cabin, mountains, trees, grass, plus the wood background. 3.\n- object_centricity: The leather artwork is the main subject. 4.\n- scene_centricity: The depicted scene within the leather is a scene, but the object (leather piece) dominates. 3.\n\n- contains_animal: Yes - deer are depicted (even if in artwork)\n- contains_text: Yes - \"TK\" monogram\n- contains_indoor_scene: The cabin is depicted, and the photo itself is likely indoor\n- contains_artificial_or_rendered_content: Yes - the leather art is hand-crafted/artificial\n- contains_multiple_main_objects: Yes - two deer\n\n- dominant_content_type: This is tricky - it's an object (leather piece) that contains a scene. I'll go with \"object\" since the physical leather is what we see.\n- image_style: \"natural_photo\" of an object\n- semantic_domain: \"leathercraft\" or \"artwork\"\n\nCaption: \"Hand-tooled leather artwork depicting a doe and fawn near a log cabin, resting on weathered wood.\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a leather craft item - a piece of tooled/dyed leather featuring an artwork of two deer (a doe and fawn) near a log cabin with mountains and pine trees in the background. The leather has the artist's monogram \"TK\" stamped in the bottom right corner. The leather piece is photographed on a weathered wooden surface.\n\nLet me annotate this carefully:\n\n- recognizability: The content is clear - it's a leather artwork with a deer/cabin scene. I'd say 5.\n- ambiguity: Low ambiguity - it's clearly a leather craft piece with a depicted scene. 1.\n- natural_photo_typicality: It's a photograph of a crafted item, so not a typical natural photo. The subject is artistic/manufactured. 2.\n- visual_clutter: Moderate - the scene has deer, cabin, mountains, trees, grass, plus the wood background. 3.\n- object_centricity: The leather artwork is the main subject. 4.\n- scene_centricity: The depicted scene within the leather is a scene, but the object (leather piece) dominates. 3.\n\n- contains_animal: Yes - deer are depicted (even if in artwork)\n- contains_text: Yes - \"TK\" monogram\n- contains_indoor_scene: The cabin is depicted, and the photo itself is likely indoor\n- contains_artificial_or_rendered_content: Yes - the leather art is hand-crafted/artificial\n- contains_multiple_main_objects: Yes - two deer\n\n- dominant_content_type: This is tricky - it's an object (leather piece) that contains a scene. I'll go with \"object\" since the physical leather is what we see.\n- image_style: \"natural_photo\" of an object\n- semantic_domain: \"leathercraft\" or \"artwork\"\n\nCaption: \"Hand-tooled leather artwork depicting a doe and fawn near a log cabin, resting on weathered wood.\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 737,
+          "total_tokens": 2051,
+          "cost": 0.00112836,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00112836,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.0008844
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 435,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

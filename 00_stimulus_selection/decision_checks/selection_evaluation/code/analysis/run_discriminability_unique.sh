@@ -1,10 +1,11 @@
 #!/bin/bash
 # Run 02_compute_discriminability.py with unique encodings for all model sets.
 
-SCRIPT=/u/rothj/cstims/experiments/cstim_paper/00_selection_evaluation/analysis/02_compute_discriminability.py
-SLURM=/u/rothj/laion_natural/scripts/start_as_slurm_job.py
-SELECTION_ROOT=/u/rothj/cstims/outputs/final_cstims_v2_full
-OUTPUT_ROOT=/u/rothj/cstims/experiments/cstim_paper/00_selection_evaluation/data
+ROOT=${ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../../../../.." && pwd)}
+SCRIPT=${SCRIPT:-"${ROOT}/00_stimulus_selection/decision_checks/selection_evaluation/code/analysis/02_compute_discriminability.py"}
+SELECTION_ROOT=${SELECTION_ROOT:-"${ROOT}/00_stimulus_selection/results/selected_stimuli"}
+OUTPUT_ROOT=${OUTPUT_ROOT:-"${ROOT}/00_stimulus_selection/decision_checks/selection_evaluation/results"}
+SLURM=${SLURM:?Set SLURM to the start_as_slurm_job.py wrapper before running this helper}
 TIMESTAMP=20251222_175721
 
 MODEL_SETS=(all_models architecture dataset sota training_objective)

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_69",
+    "stim_key": "all_models_69",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 69,
+    "file_index": 69,
+    "image_name": "image_0069.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0069.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"music\",\n\n  \"short_caption\": \"Hands playing a piano with an open hymnal of sheet music on the stand.\",\n  \"main_objects\": [\"piano\", \"hands\", \"hymnal\", \"sheet music\"],\n  \"possible_interpretations\": [\"person playing piano\", \"church pianist reading hymnal\", \"piano practice session\", \"musician performing from sheet music\"],\n  \"uncertainty_notes\": \"Indoor setting inferred; hymnal vs. standard sheet music unclear without readable text; only hands and arms are visible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318811-7wSVXBZICsuOgPPSHWQ4",
+        "object": "chat.completion",
+        "created": 1780318811,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"music\",\n\n  \"short_caption\": \"Hands playing a piano with an open hymnal of sheet music on the stand.\",\n  \"main_objects\": [\"piano\", \"hands\", \"hymnal\", \"sheet music\"],\n  \"possible_interpretations\": [\"person playing piano\", \"church pianist reading hymnal\", \"piano practice session\", \"musician performing from sheet music\"],\n  \"uncertainty_notes\": \"Indoor setting inferred; hymnal vs. standard sheet music unclear without readable text; only hands and arms are visible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows hands playing a piano, with sheet music/hymnals open on the piano's music stand. I can see:\n- Two hands on piano keys\n- An open book (looks like a hymnal or music book) with musical notation\n- Another book/page visible to the right with more sheet music and lyrics\n- The piano itself (dark wood)\n\nLet me rate each dimension:\n\n- recognizability: Very clear what's happening - person playing piano with sheet music. 5\n- ambiguity: Low ambiguity, clear scene. 1\n- natural_photo_typicality: Looks like a natural photo. 5\n- visual_clutter: Moderate clutter with sheet music, books, piano keys, hands. 3\n- object_centricity: Multiple main objects (piano, hands, books) but could lean toward object-centric. 3\n- scene_centricity: More of an object/activity scene. 2\n- caption_confidence: High confidence for caption. 5\n\n- estimated_salient_object_count: 4 (hands, piano, two books)\n- estimated_distinct_object_categories: 3 (piano, person/hands, books)\n\n- contains_person: yes (hands visible)\n- contains_face: no\n- contains_animal: no\n- contains_text: yes (sheet music notation, lyrics)\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: likely yes\n- contains_outdoor_scene: no\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: hands are partially shown (truncation of body)\n- contains_multiple_main_objects: yes (piano, books, hands)\n- contains_unusual_viewpoint: slightly tilted angle but not unusual\n\n- dominant_content_type: \"mixed\" (person hands + object)\n- image_style: \"natural_photo\"\n- semantic_domain: \"music\" or \"performance\"\n\n- short_caption: \"Hands playing piano with open hymnal sheet music on stand\"\n- main_objects: [\"piano\", \"hands\", \"hymnal\", \"sheet music\"]\n- possible_interpretations: [\"person playing piano\", \"church pianist\", \"piano practice\", \"musician performing\"]\n- uncertainty_notes: \"Hymnal vs. regular sheet music; indoor setting assumed\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows hands playing a piano, with sheet music/hymnals open on the piano's music stand. I can see:\n- Two hands on piano keys\n- An open book (looks like a hymnal or music book) with musical notation\n- Another book/page visible to the right with more sheet music and lyrics\n- The piano itself (dark wood)\n\nLet me rate each dimension:\n\n- recognizability: Very clear what's happening - person playing piano with sheet music. 5\n- ambiguity: Low ambiguity, clear scene. 1\n- natural_photo_typicality: Looks like a natural photo. 5\n- visual_clutter: Moderate clutter with sheet music, books, piano keys, hands. 3\n- object_centricity: Multiple main objects (piano, hands, books) but could lean toward object-centric. 3\n- scene_centricity: More of an object/activity scene. 2\n- caption_confidence: High confidence for caption. 5\n\n- estimated_salient_object_count: 4 (hands, piano, two books)\n- estimated_distinct_object_categories: 3 (piano, person/hands, books)\n\n- contains_person: yes (hands visible)\n- contains_face: no\n- contains_animal: no\n- contains_text: yes (sheet music notation, lyrics)\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: likely yes\n- contains_outdoor_scene: no\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: hands are partially shown (truncation of body)\n- contains_multiple_main_objects: yes (piano, books, hands)\n- contains_unusual_viewpoint: slightly tilted angle but not unusual\n\n- dominant_content_type: \"mixed\" (person hands + object)\n- image_style: \"natural_photo\"\n- semantic_domain: \"music\" or \"performance\"\n\n- short_caption: \"Hands playing piano with open hymnal sheet music on stand\"\n- main_objects: [\"piano\", \"hands\", \"hymnal\", \"sheet music\"]\n- possible_interpretations: [\"person playing piano\", \"church pianist\", \"piano practice\", \"musician performing\"]\n- uncertainty_notes: \"Hymnal vs. regular sheet music; indoor setting assumed\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 840,
+          "total_tokens": 2362,
+          "cost": 0.00143724,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00143724,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.001008
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 527,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

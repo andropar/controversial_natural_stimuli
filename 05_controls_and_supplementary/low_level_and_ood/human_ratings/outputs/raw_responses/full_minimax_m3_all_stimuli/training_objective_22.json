@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_22",
+    "stim_key": "training_objective_22",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 22,
+    "file_index": 22,
+    "image_name": "image_0022.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0022.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"menswear_fashion\",\n  \"short_caption\": \"Man wearing grey windowpane double-breasted blazer with striped shirt, brown knit tie, and patterned pocket square\",\n  \"main_objects\": [\"blazer\", \"dress shirt\", \"knit tie\", \"pocket square\"],\n  \"possible_interpretations\": [\"sartorial menswear photograph\", \"fashion editorial closeup\", \"outfit detail shot\", \"tailoring showcase\"],\n  \"uncertainty_notes\": \"Face is cropped; only lower beard/chin visible. Indoor/outdoor setting not fully determinable from background.\",\n  \"quality_flags\": [\"face_truncated\"]\n}",
+      "response": {
+        "id": "gen-1780319231-1YrMtu4OwfJMp3tfdam9",
+        "object": "chat.completion",
+        "created": 1780319231,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"menswear_fashion\",\n  \"short_caption\": \"Man wearing grey windowpane double-breasted blazer with striped shirt, brown knit tie, and patterned pocket square\",\n  \"main_objects\": [\"blazer\", \"dress shirt\", \"knit tie\", \"pocket square\"],\n  \"possible_interpretations\": [\"sartorial menswear photograph\", \"fashion editorial closeup\", \"outfit detail shot\", \"tailoring showcase\"],\n  \"uncertainty_notes\": \"Face is cropped; only lower beard/chin visible. Indoor/outdoor setting not fully determinable from background.\",\n  \"quality_flags\": [\"face_truncated\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a close-up of a man's torso wearing formal attire. I can see:\n- A grey windowpane check double-breasted blazer/suit jacket\n- A striped dress shirt (white with thin dark stripes)\n- A dark brown knit tie\n- A brown patterned pocket square in the breast pocket\n- Part of a beard/face at the top of the image (chin and lower face)\n- The head/face is mostly cut off at the top\n\nLet me rate each dimension:\n\n- recognizability: 4 - The main content (formal menswear) is clearly recognizable\n- ambiguity: 1 - Very clear what we're looking at\n- natural_photo_typicality: 4 - Looks like a typical fashion photograph\n- visual_clutter: 2 - Mostly clean, just the clothing items\n- object_centricity: 4 - The suit/jacket is the clear focus\n- scene_centricity: 1 - Not a scene, focuses on clothing\n- caption_confidence: 4 - Easy to caption\n\n- estimated_salient_object_count: 4 (jacket, shirt, tie, pocket square)\n- estimated_distinct_object_categories: 3 (jacket, shirt, tie/pocket square as accessories)\n\n- contains_person: true (partially visible)\n- contains_face: true (partial - chin/beard)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (likely indoor based on lighting)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (face is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (the suit is the main subject)\n\n- dominant_content_type: \"object\" (or possibly \"closeup_detail\" - it's a closeup of clothing)\n- image_style: \"natural_photo\"\n- semantic_domain: \"fashion/menswear\"\n\n- short_caption: \"Man in grey windowpane check double-breasted blazer with brown knit tie and pocket square\"\n- main_objects: [\"blazer\", \"shirt\", \"tie\", \"pocket square\"]\n- possible_interpretations: [\"fashion photo of menswear\", \"sartorial detail shot\", \"outfit of the day photo\"]\n- uncertainty_notes: \"Face is cropped out, only chin/beard visible\"\n- quality_flags: [\"face_truncated\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a close-up of a man's torso wearing formal attire. I can see:\n- A grey windowpane check double-breasted blazer/suit jacket\n- A striped dress shirt (white with thin dark stripes)\n- A dark brown knit tie\n- A brown patterned pocket square in the breast pocket\n- Part of a beard/face at the top of the image (chin and lower face)\n- The head/face is mostly cut off at the top\n\nLet me rate each dimension:\n\n- recognizability: 4 - The main content (formal menswear) is clearly recognizable\n- ambiguity: 1 - Very clear what we're looking at\n- natural_photo_typicality: 4 - Looks like a typical fashion photograph\n- visual_clutter: 2 - Mostly clean, just the clothing items\n- object_centricity: 4 - The suit/jacket is the clear focus\n- scene_centricity: 1 - Not a scene, focuses on clothing\n- caption_confidence: 4 - Easy to caption\n\n- estimated_salient_object_count: 4 (jacket, shirt, tie, pocket square)\n- estimated_distinct_object_categories: 3 (jacket, shirt, tie/pocket square as accessories)\n\n- contains_person: true (partially visible)\n- contains_face: true (partial - chin/beard)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (likely indoor based on lighting)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (face is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (the suit is the main subject)\n\n- dominant_content_type: \"object\" (or possibly \"closeup_detail\" - it's a closeup of clothing)\n- image_style: \"natural_photo\"\n- semantic_domain: \"fashion/menswear\"\n\n- short_caption: \"Man in grey windowpane check double-breasted blazer with brown knit tie and pocket square\"\n- main_objects: [\"blazer\", \"shirt\", \"tie\", \"pocket square\"]\n- possible_interpretations: [\"fashion photo of menswear\", \"sartorial detail shot\", \"outfit of the day photo\"]\n- uncertainty_notes: \"Face is cropped out, only chin/beard visible\"\n- quality_flags: [\"face_truncated\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1062,
+          "completion_tokens": 894,
+          "total_tokens": 1956,
+          "cost": 0.00124116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00124116,
+            "upstream_inference_prompt_cost": 0.00016836,
+            "upstream_inference_completions_cost": 0.0010728
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 555,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_48",
+    "stim_key": "training_objective_48",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 48,
+    "file_index": 48,
+    "image_name": "image_0048.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0048.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"fashion lifestyle\",\n  \"short_caption\": \"White button-up shirt dress flat-lay with straw hat and pink flowers on wooden surface.\",\n  \"main_objects\": [\"white shirt dress\", \"straw hat\", \"pink flower bouquet\", \"book\", \"wooden table\"],\n  \"possible_interpretations\": [\n    \"fashion product photo\",\n    \"lifestyle flat-lay composition\",\n    \"blog-style outfit flat-lay\",\n    \"online clothing store listing\"\n  ],\n  \"uncertainty_notes\": \"Shirt is partially cropped at the top; cannot fully confirm whether it is a dress or a tunic. Book on the left is only partially visible.\",\n  \"quality_flags\": [\"partially_cropped_subject\", \"stylized_flat_lay\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319317-3qMpInqo4wrl98A9AlhV",
+        "object": "chat.completion",
+        "created": 1780319317,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"fashion lifestyle\",\n  \"short_caption\": \"White button-up shirt dress flat-lay with straw hat and pink flowers on wooden surface.\",\n  \"main_objects\": [\"white shirt dress\", \"straw hat\", \"pink flower bouquet\", \"book\", \"wooden table\"],\n  \"possible_interpretations\": [\n    \"fashion product photo\",\n    \"lifestyle flat-lay composition\",\n    \"blog-style outfit flat-lay\",\n    \"online clothing store listing\"\n  ],\n  \"uncertainty_notes\": \"Shirt is partially cropped at the top; cannot fully confirm whether it is a dress or a tunic. Book on the left is only partially visible.\",\n  \"quality_flags\": [\"partially_cropped_subject\", \"stylized_flat_lay\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I see a flat-lay style photograph showing:\n- A white button-up shirt/dress (appears to be a shirt dress) laid out on a dark wooden surface\n- A straw/Panama hat in the upper right corner\n- A bouquet of pink flowers (roses) in the upper right\n- What appears to be a book or notebook edge on the left side (dark blue/navy)\n- The wooden planks of the surface are visible throughout\n\nThis looks like a styled fashion/lifestyle flat-lay photograph, commonly used for fashion blogs or online clothing stores.\n\nLet me rate the dimensions:\n- recognizability: 4 - clearly a white shirt/dress with accessories\n- ambiguity: 2 - pretty clear what it is\n- natural_photo_typicality: 4 - looks like a typical styled photo\n- visual_clutter: 2 - relatively clean, just a few items\n- object_centricity: 3 - the shirt is the main focus but there are accessories\n- scene_centricity: 2 - more object-focused than scene\n- caption_confidence: 4 - easy to caption\n\nObjects: shirt/dress, hat, flowers, book, wooden surface\nNo person, face, animal, vehicle, food, indoor scene clearly, outdoor scene clearly\n\nThe setting appears to be indoors (on a table), but it's hard to tell definitively. It could be either.\n\nLet me construct the JSON response.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I see a flat-lay style photograph showing:\n- A white button-up shirt/dress (appears to be a shirt dress) laid out on a dark wooden surface\n- A straw/Panama hat in the upper right corner\n- A bouquet of pink flowers (roses) in the upper right\n- What appears to be a book or notebook edge on the left side (dark blue/navy)\n- The wooden planks of the surface are visible throughout\n\nThis looks like a styled fashion/lifestyle flat-lay photograph, commonly used for fashion blogs or online clothing stores.\n\nLet me rate the dimensions:\n- recognizability: 4 - clearly a white shirt/dress with accessories\n- ambiguity: 2 - pretty clear what it is\n- natural_photo_typicality: 4 - looks like a typical styled photo\n- visual_clutter: 2 - relatively clean, just a few items\n- object_centricity: 3 - the shirt is the main focus but there are accessories\n- scene_centricity: 2 - more object-focused than scene\n- caption_confidence: 4 - easy to caption\n\nObjects: shirt/dress, hat, flowers, book, wooden surface\nNo person, face, animal, vehicle, food, indoor scene clearly, outdoor scene clearly\n\nThe setting appears to be indoors (on a table), but it's hard to tell definitively. It could be either.\n\nLet me construct the JSON response.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1467,
+          "completion_tokens": 688,
+          "total_tokens": 2155,
+          "cost": 0.00091698,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1453,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00091698,
+            "upstream_inference_prompt_cost": 9.138e-05,
+            "upstream_inference_completions_cost": 0.0008256
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 332,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

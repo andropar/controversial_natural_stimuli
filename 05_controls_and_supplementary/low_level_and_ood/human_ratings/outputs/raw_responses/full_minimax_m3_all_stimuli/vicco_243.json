@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_243",
+    "stim_key": "vicco_243",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 243,
+    "file_index": 242,
+    "image_name": "shared_4rep_vicco_243.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_243.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"construction/industrial\",\n  \"short_caption\": \"A tall construction crane silhouetted against a cloudy sky, viewed from below.\",\n  \"main_objects\": [\"construction crane\"],\n  \"possible_interpretations\": [\n    \"Tower crane at a construction site photographed from ground level\",\n    \"Industrial crane machinery against an overcast sky\"\n  ],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; subject and orientation confirmed despite rotation.\",\n  \"quality_flags\": [\"rotated_orientation\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319667-hJnpDhHw9BEjT7Ks6uDO",
+        "object": "chat.completion",
+        "created": 1780319667,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"construction/industrial\",\n  \"short_caption\": \"A tall construction crane silhouetted against a cloudy sky, viewed from below.\",\n  \"main_objects\": [\"construction crane\"],\n  \"possible_interpretations\": [\n    \"Tower crane at a construction site photographed from ground level\",\n    \"Industrial crane machinery against an overcast sky\"\n  ],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; subject and orientation confirmed despite rotation.\",\n  \"quality_flags\": [\"rotated_orientation\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "The image shows a construction crane photographed from below against a cloudy sky. The image appears to be rotated 90 degrees (sideways). The crane's lattice structure is clearly visible with its jib and tower sections. There are clouds in the background. Let me analyze this carefully.\n\n- Recognizability: The main content (a construction crane) is clearly recognizable despite the rotated orientation. 4-5.\n- Ambiguity: Low ambiguity - it's clearly a crane against the sky. 1-2.\n- Natural photo typicality: Looks like a natural photo, though rotated. 4.\n- Visual clutter: The crane structure has many details, and clouds add texture, but the composition is relatively simple. 3.\n- Object centricity: The crane is the dominant object. 4.\n- Scene centricity: It's mainly an object (crane) against a sky background. 2.\n- Caption confidence: High confidence in a concise caption. 4.\n\nSalient objects: 1 (the crane)\nDistinct categories: 1 (crane), maybe 2 (crane, sky/clouds as background)\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: the crane could be considered a vehicle/machinery, but I'll say no since it's construction equipment\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial or rendered content: no (natural photo)\nContains occlusion or truncation: the crane extends beyond the frame\nContains unusual viewpoint: yes - shot from below, also rotated\nContains multiple main objects: no\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: construction/industrial\n\nShort caption: \"A tall construction crane silhouetted against a cloudy sky, viewed from below.\"\n\nMain objects: [\"construction crane\", \"clouds\"]\n\nPossible interpretations: \n- A construction crane against a cloudy sky\n- Industrial equipment photographed from a low angle\n\nUncertainty: Image is rotated 90 degrees, which may affect interpretation.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a construction crane photographed from below against a cloudy sky. The image appears to be rotated 90 degrees (sideways). The crane's lattice structure is clearly visible with its jib and tower sections. There are clouds in the background. Let me analyze this carefully.\n\n- Recognizability: The main content (a construction crane) is clearly recognizable despite the rotated orientation. 4-5.\n- Ambiguity: Low ambiguity - it's clearly a crane against the sky. 1-2.\n- Natural photo typicality: Looks like a natural photo, though rotated. 4.\n- Visual clutter: The crane structure has many details, and clouds add texture, but the composition is relatively simple. 3.\n- Object centricity: The crane is the dominant object. 4.\n- Scene centricity: It's mainly an object (crane) against a sky background. 2.\n- Caption confidence: High confidence in a concise caption. 4.\n\nSalient objects: 1 (the crane)\nDistinct categories: 1 (crane), maybe 2 (crane, sky/clouds as background)\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: the crane could be considered a vehicle/machinery, but I'll say no since it's construction equipment\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial or rendered content: no (natural photo)\nContains occlusion or truncation: the crane extends beyond the frame\nContains unusual viewpoint: yes - shot from below, also rotated\nContains multiple main objects: no\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: construction/industrial\n\nShort caption: \"A tall construction crane silhouetted against a cloudy sky, viewed from below.\"\n\nMain objects: [\"construction crane\", \"clouds\"]\n\nPossible interpretations: \n- A construction crane against a cloudy sky\n- Industrial equipment photographed from a low angle\n\nUncertainty: Image is rotated 90 degrees, which may affect interpretation.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 750,
+          "total_tokens": 2272,
+          "cost": 0.00120636,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00120636,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 509,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

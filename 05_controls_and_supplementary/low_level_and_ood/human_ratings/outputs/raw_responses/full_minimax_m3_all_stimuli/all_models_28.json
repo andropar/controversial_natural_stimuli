@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_28",
+    "stim_key": "all_models_28",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 28,
+    "file_index": 28,
+    "image_name": "image_0028.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0028.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"text_document\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"motivational/text\",\n\n  \"short_caption\": \"Two hands holding a sign reading 'GOOD VIBES ONLY' against a bright yellow background.\",\n  \"main_objects\": [\"hands\", \"sign\", \"text\"],\n  \"possible_interpretations\": [\"motivational stock photo\", \"social media content\", \"advertising image\", \"inspirational message\"],\n  \"uncertainty_notes\": \"Setting context is ambiguous; the vivid yellow backdrop suggests a stylized studio shoot rather than a candid moment.\",\n  \"quality_flags\": [\"vibrant_saturated_colors\", \"stylized_lighting\", \"truncated_subject\"]\n}",
+      "response": {
+        "id": "gen-1780318764-GBiq9vW5QSO3aB692v5P",
+        "object": "chat.completion",
+        "created": 1780318764,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"text_document\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"motivational/text\",\n\n  \"short_caption\": \"Two hands holding a sign reading 'GOOD VIBES ONLY' against a bright yellow background.\",\n  \"main_objects\": [\"hands\", \"sign\", \"text\"],\n  \"possible_interpretations\": [\"motivational stock photo\", \"social media content\", \"advertising image\", \"inspirational message\"],\n  \"uncertainty_notes\": \"Setting context is ambiguous; the vivid yellow backdrop suggests a stylized studio shoot rather than a candid moment.\",\n  \"quality_flags\": [\"vibrant_saturated_colors\", \"stylized_lighting\", \"truncated_subject\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows two hands holding up a white banner/sign with blue text that reads \"GOOD VIBES ONLY\" against a bright yellow background. The person holding the sign is not visible (only their hands and arms are shown). The image has a clean, stylized, possibly stock photo or commercial look with vibrant colors.\n\nLet me go through the schema:\n\n- recognizability: Very clear what it shows - hands holding a sign. 5\n- ambiguity: Pretty unambiguous - it's clearly a sign with text. 1\n- natural_photo_typicality: It looks like a professional/stock photo, somewhat stylized with the bright yellow background. Not a typical natural photo. 3\n- visual_clutter: Very minimal, clean composition. 1\n- object_centricity: The sign is the central object. 4\n- scene_centricity: It's more object-focused than scene-focused. 2\n- caption_confidence: Very confident in a concise caption. 5\n\n- estimated_salient_object_count: 1 (the sign) or 2 (sign + hands). I'll say 2.\n- estimated_distinct_object_categories: 2 (sign, hands/arms)\n\n- contains_person: true (hands visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: true\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (yellow background, ambiguous setting)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (looks like a real photo)\n- contains_occlusion_or_truncation: true (the sign is cut off at edges, person is truncated)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: text_document (since the sign with text is the main content)\n- image_style: natural_photo (looks like a styled photo, possibly edited but still a photo)\n- semantic_domain: motivational/messaging/text\n\nshort_caption: \"Two hands holding a sign reading 'GOOD VIBES ONLY' against a yellow background.\"\nmain_objects: [\"hands\", \"sign\", \"text\"]\npossible_interpretations: [\"motivational message\", \"stock photo\", \"social media content\", \"advertising\"]\nuncertainty_notes: \"The setting/context is ambiguous - could be studio or outdoor\"\nquality_flags: [\"vibrant colors\", \"stylized\", \"truncated subject\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows two hands holding up a white banner/sign with blue text that reads \"GOOD VIBES ONLY\" against a bright yellow background. The person holding the sign is not visible (only their hands and arms are shown). The image has a clean, stylized, possibly stock photo or commercial look with vibrant colors.\n\nLet me go through the schema:\n\n- recognizability: Very clear what it shows - hands holding a sign. 5\n- ambiguity: Pretty unambiguous - it's clearly a sign with text. 1\n- natural_photo_typicality: It looks like a professional/stock photo, somewhat stylized with the bright yellow background. Not a typical natural photo. 3\n- visual_clutter: Very minimal, clean composition. 1\n- object_centricity: The sign is the central object. 4\n- scene_centricity: It's more object-focused than scene-focused. 2\n- caption_confidence: Very confident in a concise caption. 5\n\n- estimated_salient_object_count: 1 (the sign) or 2 (sign + hands). I'll say 2.\n- estimated_distinct_object_categories: 2 (sign, hands/arms)\n\n- contains_person: true (hands visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: true\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (yellow background, ambiguous setting)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (looks like a real photo)\n- contains_occlusion_or_truncation: true (the sign is cut off at edges, person is truncated)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: text_document (since the sign with text is the main content)\n- image_style: natural_photo (looks like a styled photo, possibly edited but still a photo)\n- semantic_domain: motivational/messaging/text\n\nshort_caption: \"Two hands holding a sign reading 'GOOD VIBES ONLY' against a yellow background.\"\nmain_objects: [\"hands\", \"sign\", \"text\"]\npossible_interpretations: [\"motivational message\", \"stock photo\", \"social media content\", \"advertising\"]\nuncertainty_notes: \"The setting/context is ambiguous - could be studio or outdoor\"\nquality_flags: [\"vibrant colors\", \"stylized\", \"truncated subject\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 869,
+          "total_tokens": 2391,
+          "cost": 0.00147204,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00147204,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010428
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 573,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

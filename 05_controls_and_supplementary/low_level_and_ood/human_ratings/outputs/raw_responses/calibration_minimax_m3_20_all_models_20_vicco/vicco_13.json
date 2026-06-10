@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_13",
+    "stim_key": "vicco_13",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 13,
+    "file_index": 12,
+    "image_name": "shared_4rep_vicco_013.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_013.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food/dining\",\n  \"short_caption\": \"Person eating bowls of orange soup with rice and condiments on a red tray\",\n  \"main_objects\": [\"soup bowl\", \"rice bowl\", \"cucumber containers\", \"sauce bottle\", \"napkin\", \"red tray\"],\n  \"possible_interpretations\": [\"Thai curry meal\", \"Tom yum soup meal\", \"Asian restaurant dining\", \"spicy noodle soup meal\"],\n  \"uncertainty_notes\": \"Specific type of soup is not fully identifiable; person is heavily cropped showing only hands and torso\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318221-2ds4PzMmapTe92sVtrCv",
+        "object": "chat.completion",
+        "created": 1780318221,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food/dining\",\n  \"short_caption\": \"Person eating bowls of orange soup with rice and condiments on a red tray\",\n  \"main_objects\": [\"soup bowl\", \"rice bowl\", \"cucumber containers\", \"sauce bottle\", \"napkin\", \"red tray\"],\n  \"possible_interpretations\": [\"Thai curry meal\", \"Tom yum soup meal\", \"Asian restaurant dining\", \"spicy noodle soup meal\"],\n  \"uncertainty_notes\": \"Specific type of soup is not fully identifiable; person is heavily cropped showing only hands and torso\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a person eating at what appears to be a restaurant. There are two bowls of orange/red soup (likely Thai curry or tom yum), a small bowl of white rice, small containers with what looks like cucumbers or pickles, a bottle (possibly a sauce), and a napkin on a red tray. The person's hands are visible holding a spoon.\n\nLet me rate based on the schema:\n\n- recognizability: 5 - very clear, typical scene\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 4 - looks like a natural photo, slightly casual\n- visual_clutter: 3 - moderate clutter with multiple items\n- object_centricity: 3 - the bowl of soup is central but multiple items\n- scene_centricity: 3 - it's a meal scene\n- caption_confidence: 4 - fairly confident in a caption\n\nestimated_salient_object_count: 6 (two bowls of soup, rice bowl, two small containers, bottle)\nestimated_distinct_object_categories: 5 (soup, rice, condiments, bottle, napkin, tray)\n\ncontains_person: true (hands visible)\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: true\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (person is cropped, only hands/torso visible)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true (two bowls of soup)\n\ndominant_content_type: \"food\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"food/dining\"\n\nshort_caption: \"Person eating bowls of orange soup with rice and condiments on a red tray\"\n\nmain_objects: [\"soup bowl\", \"rice bowl\", \"cucumber containers\", \"sauce bottle\", \"napkin\", \"tray\"]\n\npossible_interpretations: [\"Thai curry meal\", \"Tom yum soup meal\", \"Asian restaurant meal\"]\n\nuncertainty_notes: \"Type of soup not fully identifiable; person is cropped\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a person eating at what appears to be a restaurant. There are two bowls of orange/red soup (likely Thai curry or tom yum), a small bowl of white rice, small containers with what looks like cucumbers or pickles, a bottle (possibly a sauce), and a napkin on a red tray. The person's hands are visible holding a spoon.\n\nLet me rate based on the schema:\n\n- recognizability: 5 - very clear, typical scene\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 4 - looks like a natural photo, slightly casual\n- visual_clutter: 3 - moderate clutter with multiple items\n- object_centricity: 3 - the bowl of soup is central but multiple items\n- scene_centricity: 3 - it's a meal scene\n- caption_confidence: 4 - fairly confident in a caption\n\nestimated_salient_object_count: 6 (two bowls of soup, rice bowl, two small containers, bottle)\nestimated_distinct_object_categories: 5 (soup, rice, condiments, bottle, napkin, tray)\n\ncontains_person: true (hands visible)\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: true\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (person is cropped, only hands/torso visible)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true (two bowls of soup)\n\ndominant_content_type: \"food\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"food/dining\"\n\nshort_caption: \"Person eating bowls of orange soup with rice and condiments on a red tray\"\n\nmain_objects: [\"soup bowl\", \"rice bowl\", \"cucumber containers\", \"sauce bottle\", \"napkin\", \"tray\"]\n\npossible_interpretations: [\"Thai curry meal\", \"Tom yum soup meal\", \"Asian restaurant meal\"]\n\nuncertainty_notes: \"Type of soup not fully identifiable; person is cropped\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 804,
+          "total_tokens": 2326,
+          "cost": 0.00139404,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139404,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009648
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 503,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

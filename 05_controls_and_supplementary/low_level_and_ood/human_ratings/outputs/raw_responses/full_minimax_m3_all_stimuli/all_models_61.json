@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_61",
+    "stim_key": "all_models_61",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 61,
+    "file_index": 61,
+    "image_name": "image_0061.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0061.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"texture_pattern\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture/materials\",\n  \"short_caption\": \"Close-up of a red brick wall with gray mortar joints\",\n  \"main_objects\": [\"bricks\", \"mortar\"],\n  \"possible_interpretations\": [\"brick wall exterior\", \"brick wall interior\", \"brick texture sample\"],\n  \"uncertainty_notes\": \"Cannot determine if interior or exterior wall without additional context; orientation of bricks varies (some appear rotated).\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318797-7UKrN4ZAr0Xo4uDdXpHe",
+        "object": "chat.completion",
+        "created": 1780318797,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"texture_pattern\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture/materials\",\n  \"short_caption\": \"Close-up of a red brick wall with gray mortar joints\",\n  \"main_objects\": [\"bricks\", \"mortar\"],\n  \"possible_interpretations\": [\"brick wall exterior\", \"brick wall interior\", \"brick texture sample\"],\n  \"uncertainty_notes\": \"Cannot determine if interior or exterior wall without additional context; orientation of bricks varies (some appear rotated).\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a close-up view of a brick wall. The bricks are reddish-brown with gray mortar between them. This is a texture/pattern image with no central object, no people, no animals, no text. It's a typical photograph of a building material.\n\nLet me analyze each attribute:\n\n- recognizability: 5 - Very clearly a brick wall\n- ambiguity: 1 - Very few interpretations, clearly a brick wall\n- natural_photo_typicality: 5 - Looks like a typical photograph\n- visual_clutter: 2 - Some variation but mostly repetitive pattern\n- object_centricity: 1 - No central object\n- scene_centricity: 2 - It's a closeup of a surface, not really a scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: null (no distinct objects, just pattern)\n- estimated_distinct_object_categories: 1 (bricks)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (could be either, but it's just a wall texture)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"texture_pattern\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"architecture/materials\"\n\n- short_caption: \"Close-up of a red brick wall with gray mortar\"\n- main_objects: [\"bricks\", \"mortar\"]\n- possible_interpretations: [\"brick wall exterior\", \"brick wall interior\", \"brick texture/pattern\"]\n- uncertainty_notes: \"Cannot determine if this is interior or exterior without more context\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a close-up view of a brick wall. The bricks are reddish-brown with gray mortar between them. This is a texture/pattern image with no central object, no people, no animals, no text. It's a typical photograph of a building material.\n\nLet me analyze each attribute:\n\n- recognizability: 5 - Very clearly a brick wall\n- ambiguity: 1 - Very few interpretations, clearly a brick wall\n- natural_photo_typicality: 5 - Looks like a typical photograph\n- visual_clutter: 2 - Some variation but mostly repetitive pattern\n- object_centricity: 1 - No central object\n- scene_centricity: 2 - It's a closeup of a surface, not really a scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: null (no distinct objects, just pattern)\n- estimated_distinct_object_categories: 1 (bricks)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (could be either, but it's just a wall texture)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"texture_pattern\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"architecture/materials\"\n\n- short_caption: \"Close-up of a red brick wall with gray mortar\"\n- main_objects: [\"bricks\", \"mortar\"]\n- possible_interpretations: [\"brick wall exterior\", \"brick wall interior\", \"brick texture/pattern\"]\n- uncertainty_notes: \"Cannot determine if this is interior or exterior without more context\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 722,
+          "total_tokens": 2244,
+          "cost": 0.00129564,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129564,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008664
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 444,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

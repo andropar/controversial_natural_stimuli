@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_164",
+    "stim_key": "vicco_164",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 164,
+    "file_index": 163,
+    "image_name": "shared_4rep_vicco_164.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_164.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"indoor_plants\", \"short_caption\": \"A large potted Monstera plant in a black pot in an indoor corner near a radiator.\", \"main_objects\": [\"Monstera plant\", \"black plant pot\", \"moss pole\", \"radiator\", \"windowsill\"], \"possible_interpretations\": [\"Large indoor Monstera houseplant\", \"Tropical potted plant in room corner\", \"Decorative houseplant near window and radiator\"], \"uncertainty_notes\": \"The support stick/moss pole is partially visible; exact plant species is confidently Monstera deliciosa.\", \"quality_flags\": [\"leaves_truncated_at_image_edges\"]}",
+      "response": {
+        "id": "gen-1780319577-VcbTgPNCrV0hu9yJyHLZ",
+        "object": "chat.completion",
+        "created": 1780319577,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"indoor_plants\", \"short_caption\": \"A large potted Monstera plant in a black pot in an indoor corner near a radiator.\", \"main_objects\": [\"Monstera plant\", \"black plant pot\", \"moss pole\", \"radiator\", \"windowsill\"], \"possible_interpretations\": [\"Large indoor Monstera houseplant\", \"Tropical potted plant in room corner\", \"Decorative houseplant near window and radiator\"], \"uncertainty_notes\": \"The support stick/moss pole is partially visible; exact plant species is confidently Monstera deliciosa.\", \"quality_flags\": [\"leaves_truncated_at_image_edges\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a large Monstera deliciosa plant (Swiss cheese plant) in a black pot, placed in what appears to be an indoor corner. The plant has characteristic large, glossy, perforated leaves. There's a white wall behind it, a white windowsill on the right, and a radiator visible in the bottom right. There's also what appears to be a moss pole or support stick in the pot. The lighting suggests indoor conditions.\n\nLet me rate each dimension:\n\n- recognizability: 5 - The plant is very clearly identifiable as a Monstera\n- ambiguity: 1 - Very clear what this is\n- natural_photo_typicality: 4 - Looks like a typical smartphone photo taken indoors\n- visual_clutter: 2 - The plant is the clear focus, with minimal background elements\n- object_centricity: 4 - The plant is the dominant central object\n- scene_centricity: 2 - It's more about the object than the scene\n- caption_confidence: 5 - Easy to caption\n\nCounts:\n- salient_object_count: 1 (the plant)\n- distinct_categories: 2-3 (plant, pot, radiator, wall)\n\nContains:\n- person: false\n- face: false\n- animal: false\n- text: false\n- vehicle: false\n- food: false\n- indoor_scene: true\n- outdoor_scene: false\n- artificial_or_rendered: false\n- occlusion_or_truncation: true (some leaves are cut off at edges)\n- unusual_viewpoint: false\n- multiple_main_objects: false\n\nDominant content type: object (the plant)\nImage style: natural_photo\nSemantic domain: indoor plants / home decor\n\nShort caption: \"A large potted Monstera plant in a black pot in an indoor corner.\"\n\nMain objects: [\"Monstera plant\", \"black pot\", \"moss pole\", \"radiator\"]\n\nPossible interpretations: [\"Large indoor Monstera plant\", \"Potted houseplant in corner\", \"Tropical plant near window\"]\n\nUncertainty notes: None significant\nQuality flags: [\"plant_leaves_truncated_at_edges\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a large Monstera deliciosa plant (Swiss cheese plant) in a black pot, placed in what appears to be an indoor corner. The plant has characteristic large, glossy, perforated leaves. There's a white wall behind it, a white windowsill on the right, and a radiator visible in the bottom right. There's also what appears to be a moss pole or support stick in the pot. The lighting suggests indoor conditions.\n\nLet me rate each dimension:\n\n- recognizability: 5 - The plant is very clearly identifiable as a Monstera\n- ambiguity: 1 - Very clear what this is\n- natural_photo_typicality: 4 - Looks like a typical smartphone photo taken indoors\n- visual_clutter: 2 - The plant is the clear focus, with minimal background elements\n- object_centricity: 4 - The plant is the dominant central object\n- scene_centricity: 2 - It's more about the object than the scene\n- caption_confidence: 5 - Easy to caption\n\nCounts:\n- salient_object_count: 1 (the plant)\n- distinct_categories: 2-3 (plant, pot, radiator, wall)\n\nContains:\n- person: false\n- face: false\n- animal: false\n- text: false\n- vehicle: false\n- food: false\n- indoor_scene: true\n- outdoor_scene: false\n- artificial_or_rendered: false\n- occlusion_or_truncation: true (some leaves are cut off at edges)\n- unusual_viewpoint: false\n- multiple_main_objects: false\n\nDominant content type: object (the plant)\nImage style: natural_photo\nSemantic domain: indoor plants / home decor\n\nShort caption: \"A large potted Monstera plant in a black pot in an indoor corner.\"\n\nMain objects: [\"Monstera plant\", \"black pot\", \"moss pole\", \"radiator\"]\n\nPossible interpretations: [\"Large indoor Monstera plant\", \"Potted houseplant in corner\", \"Tropical plant near window\"]\n\nUncertainty notes: None significant\nQuality flags: [\"plant_leaves_truncated_at_edges\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 781,
+          "total_tokens": 2303,
+          "cost": 0.00124356,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00124356,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009372
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 490,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

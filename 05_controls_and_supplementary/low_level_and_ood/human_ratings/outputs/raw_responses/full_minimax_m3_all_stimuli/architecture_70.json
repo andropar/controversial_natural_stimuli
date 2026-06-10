@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_70",
+    "stim_key": "architecture_70",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 70,
+    "file_index": 70,
+    "image_name": "image_0070.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0070.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior/home\",\n  \"short_caption\": \"Low-angle view of hardwood floor with cabinet and white object in background\",\n  \"main_objects\": [\"hardwood floor\", \"cabinet with drawer\", \"white object\", \"baseboard\"],\n  \"possible_interpretations\": [\n    \"Hardwood flooring in a residential room\",\n    \"Close-up detail shot of wood plank flooring\",\n    \"Floor view near bathroom or closet area\"\n  ],\n  \"uncertainty_notes\": \"The white object on the right is partially cut off and could be a toilet, trash can, or appliance; its identity is uncertain.\",\n  \"quality_flags\": [\"low_angle_viewpoint\", \"subject_partially_out_of_frame\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318925-FDCh2SZwVgENbYFX8i8h",
+        "object": "chat.completion",
+        "created": 1780318925,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior/home\",\n  \"short_caption\": \"Low-angle view of hardwood floor with cabinet and white object in background\",\n  \"main_objects\": [\"hardwood floor\", \"cabinet with drawer\", \"white object\", \"baseboard\"],\n  \"possible_interpretations\": [\n    \"Hardwood flooring in a residential room\",\n    \"Close-up detail shot of wood plank flooring\",\n    \"Floor view near bathroom or closet area\"\n  ],\n  \"uncertainty_notes\": \"The white object on the right is partially cut off and could be a toilet, trash can, or appliance; its identity is uncertain.\",\n  \"quality_flags\": [\"low_angle_viewpoint\", \"subject_partially_out_of_frame\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "The image shows a close-up of a hardwood floor with a piece of furniture (looks like a cabinet or dresser with a yellow knob) and a white object (possibly a toilet or trash can) in the background. The camera angle is low to the ground, focusing mainly on the wood floor planks. There's a wall and baseboard visible on the left.\n\nLet me analyze this:\n- Main content: wood floor (hardwood flooring)\n- Background: cabinet/dresser with yellow knob, white object, wall with baseboard\n- Viewpoint: low angle, unusual (close to floor)\n\nRatings:\n- recognizability: 3-4 (it's clearly a wood floor, but the framing is odd)\n- ambiguity: 2 (it's pretty clear - wood floor in a room)\n- natural_photo_typicality: 4 (looks like a natural photo)\n- visual_clutter: 2 (relatively simple, mostly the floor with some background)\n- object_centricity: 2 (no clear central object; floor is the subject)\n- scene_centricity: 4 (it's showing a scene/place, room interior)\n- caption_confidence: 4 (can describe it well)\n\nEstimated objects: 2-3 (floor, cabinet, white object)\nCategories: floor, furniture\n\nBooleans:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (cabinet and white object are cut off)\n- contains_unusual_viewpoint: true (low angle close to floor)\n- contains_multiple_main_objects: false\n\nDominant content: scene or texture_pattern - probably scene since it shows a room\nImage style: natural_photo\nSemantic domain: interior/home\n\nCaption: \"Low-angle view of hardwood floor with cabinet in background\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a close-up of a hardwood floor with a piece of furniture (looks like a cabinet or dresser with a yellow knob) and a white object (possibly a toilet or trash can) in the background. The camera angle is low to the ground, focusing mainly on the wood floor planks. There's a wall and baseboard visible on the left.\n\nLet me analyze this:\n- Main content: wood floor (hardwood flooring)\n- Background: cabinet/dresser with yellow knob, white object, wall with baseboard\n- Viewpoint: low angle, unusual (close to floor)\n\nRatings:\n- recognizability: 3-4 (it's clearly a wood floor, but the framing is odd)\n- ambiguity: 2 (it's pretty clear - wood floor in a room)\n- natural_photo_typicality: 4 (looks like a natural photo)\n- visual_clutter: 2 (relatively simple, mostly the floor with some background)\n- object_centricity: 2 (no clear central object; floor is the subject)\n- scene_centricity: 4 (it's showing a scene/place, room interior)\n- caption_confidence: 4 (can describe it well)\n\nEstimated objects: 2-3 (floor, cabinet, white object)\nCategories: floor, furniture\n\nBooleans:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (cabinet and white object are cut off)\n- contains_unusual_viewpoint: true (low angle close to floor)\n- contains_multiple_main_objects: false\n\nDominant content: scene or texture_pattern - probably scene since it shows a room\nImage style: natural_photo\nSemantic domain: interior/home\n\nCaption: \"Low-angle view of hardwood floor with cabinet in background\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 799,
+          "total_tokens": 2321,
+          "cost": 0.00126516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126516,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009588
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 463,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

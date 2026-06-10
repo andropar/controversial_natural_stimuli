@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_148",
+    "stim_key": "vicco_148",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 148,
+    "file_index": 147,
+    "image_name": "shared_4rep_vicco_148.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_148.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"tools/hardware\",\n\n  \"short_caption\": \"Person holding a Kraft electric drill indoors on a wooden floor\",\n  \"main_objects\": [\"electric drill\", \"hand\", \"power cord\", \"wooden floor\", \"chair\"],\n  \"possible_interpretations\": [\"a person about to use a drill\", \"examining or showing a power drill\", \"storing a drill after use\"],\n  \"uncertainty_notes\": \"Drill model number partially legible; exact background items unclear\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319559-eehkstP2xQufIHjWLzS9",
+        "object": "chat.completion",
+        "created": 1780319559,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"tools/hardware\",\n\n  \"short_caption\": \"Person holding a Kraft electric drill indoors on a wooden floor\",\n  \"main_objects\": [\"electric drill\", \"hand\", \"power cord\", \"wooden floor\", \"chair\"],\n  \"possible_interpretations\": [\"a person about to use a drill\", \"examining or showing a power drill\", \"storing a drill after use\"],\n  \"uncertainty_notes\": \"Drill model number partially legible; exact background items unclear\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a person holding a power drill (appears to be a Kraft KCB 110 or similar model). The drill is silver/gray with black accents, has a power cord wrapped around it, and the person is holding it with their hand visible. The setting appears to be indoors, on a wooden floor, with what looks like a red object (possibly a chair) in the upper portion, and a piece of furniture on the left side. There's also what appears to be a striped rug or fabric visible.\n\nLet me go through the schema:\n\n- recognizability: 5 - The drill is very clearly visible and recognizable\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 4 - Looks like a typical casual photo\n- visual_clutter: 2 - Not too cluttered, drill dominates\n- object_centricity: 5 - The drill is the clear central object\n- scene_centricity: 1 - Not a scene, it's an object-focused image\n- caption_confidence: 5 - Very confident about a caption\n\n- estimated_salient_object_count: 1 (the drill is clearly main, with hand secondary)\n- estimated_distinct_object_categories: 3 (drill, hand/person, floor/furniture)\n\n- contains_person: true (hand visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (KRAFT logo, KCB 110, STOP label)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (drill cord wraps around, partially obscures)\n- contains_unusual_viewpoint: true (first-person POV looking down)\n- contains_multiple_main_objects: false\n\ndominant_content_type: object\nimage_style: natural_photo\nsemantic_domain: tools/hardware\n\nshort_caption: \"Person holding a Kraft electric drill indoors on a wooden floor\"\nmain_objects: [\"electric drill\", \"hand\", \"power cord\"]\npossible_interpretations: [\"a person about to use a drill\", \"showing off a new drill\", \"storing or examining a drill\"]\nuncertainty_notes: \"Drill model is partially legible; some background elements are unclear\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a person holding a power drill (appears to be a Kraft KCB 110 or similar model). The drill is silver/gray with black accents, has a power cord wrapped around it, and the person is holding it with their hand visible. The setting appears to be indoors, on a wooden floor, with what looks like a red object (possibly a chair) in the upper portion, and a piece of furniture on the left side. There's also what appears to be a striped rug or fabric visible.\n\nLet me go through the schema:\n\n- recognizability: 5 - The drill is very clearly visible and recognizable\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 4 - Looks like a typical casual photo\n- visual_clutter: 2 - Not too cluttered, drill dominates\n- object_centricity: 5 - The drill is the clear central object\n- scene_centricity: 1 - Not a scene, it's an object-focused image\n- caption_confidence: 5 - Very confident about a caption\n\n- estimated_salient_object_count: 1 (the drill is clearly main, with hand secondary)\n- estimated_distinct_object_categories: 3 (drill, hand/person, floor/furniture)\n\n- contains_person: true (hand visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (KRAFT logo, KCB 110, STOP label)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (drill cord wraps around, partially obscures)\n- contains_unusual_viewpoint: true (first-person POV looking down)\n- contains_multiple_main_objects: false\n\ndominant_content_type: object\nimage_style: natural_photo\nsemantic_domain: tools/hardware\n\nshort_caption: \"Person holding a Kraft electric drill indoors on a wooden floor\"\nmain_objects: [\"electric drill\", \"hand\", \"power cord\"]\npossible_interpretations: [\"a person about to use a drill\", \"showing off a new drill\", \"storing or examining a drill\"]\nuncertainty_notes: \"Drill model is partially legible; some background elements are unclear\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 833,
+          "total_tokens": 2355,
+          "cost": 0.00130596,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00130596,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009996
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 549,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

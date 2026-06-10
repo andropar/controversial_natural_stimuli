@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_27",
+    "stim_key": "all_models_27",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 27,
+    "file_index": 27,
+    "image_name": "image_0027.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0027.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"holiday_christmas\",\n  \"short_caption\": \"Two people wearing red Santa hats viewed from behind near a softly lit Christmas tree.\",\n  \"main_objects\": [\"santa hat\", \"person in tan coat\", \"person in striped clothing\", \"christmas tree\"],\n  \"possible_interpretations\": [\n    \"A couple enjoying a Christmas tree together\",\n    \"Family members admiring holiday decorations\",\n    \"Friends gathered at Christmas\",\n    \"Mother and child by a tree\",\n    \"Two people in a holiday setting\"\n  ],\n  \"uncertainty_notes\": \"Faces not visible; relationship between the two people is unknown. Indoor setting assumed from lighting and tree proximity but not fully certain.\",\n  \"quality_flags\": [\"backlit\", \"shallow_depth_of_field\", \"bokeh_background\"]\n}",
+      "response": {
+        "id": "gen-1780318763-3ni11sRHc1pjxk9MOCHv",
+        "object": "chat.completion",
+        "created": 1780318763,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"holiday_christmas\",\n  \"short_caption\": \"Two people wearing red Santa hats viewed from behind near a softly lit Christmas tree.\",\n  \"main_objects\": [\"santa hat\", \"person in tan coat\", \"person in striped clothing\", \"christmas tree\"],\n  \"possible_interpretations\": [\n    \"A couple enjoying a Christmas tree together\",\n    \"Family members admiring holiday decorations\",\n    \"Friends gathered at Christmas\",\n    \"Mother and child by a tree\",\n    \"Two people in a holiday setting\"\n  ],\n  \"uncertainty_notes\": \"Faces not visible; relationship between the two people is unknown. Indoor setting assumed from lighting and tree proximity but not fully certain.\",\n  \"quality_flags\": [\"backlit\", \"shallow_depth_of_field\", \"bokeh_background\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows two people from behind, both wearing red Santa hats. They appear to be sitting together, possibly watching a Christmas tree that's in the background with blurred lights (bokeh effect). The scene is warm and festive. One person appears to be wearing a brown/tan coat, and the other has striped clothing visible.\n\nLet me annotate based on the schema:\n\n- Recognizability: Clear - it's a recognizable scene of people at Christmas time. 5\n- Ambiguity: Low - clearly a Christmas scene with people. 1\n- Natural photo typicality: Yes, looks like a typical photograph. 4\n- Visual clutter: Moderate - Christmas tree lights in background, two people in foreground. 3\n- Object centricity: There are people but the scene with tree is also prominent. 3\n- Scene centricity: Strong scene element with the Christmas tree. 4\n- Caption confidence: High - I can describe this well. 5\n\n- Salient object count: 2 (two people) plus the tree\n- Distinct categories: people, Christmas tree, hats\n\n- Contains person: yes\n- Contains face: no (we see them from behind)\n- Contains animal: no\n- Contains text: no (there's a small tag on the hat but not really text)\n- Contains vehicle: no\n- Contains food: no\n- Contains indoor scene: yes (likely indoors near a tree)\n- Contains outdoor scene: unclear, looks indoor\n- Contains artificial/rendered: no\n- Contains occlusion: no\n- Contains unusual viewpoint: somewhat - viewing from behind\n- Contains multiple main objects: yes (two people)\n\n- Dominant content: person or scene\n- Image style: natural_photo\n- Semantic domain: holiday/christmas\n\nShort caption: Two people wearing Santa hats viewed from behind, watching a Christmas tree with bokeh lights.\n\nMain objects: Santa hats, people, Christmas tree\n\nPossible interpretations: \n- Couple at Christmas\n- Family members at holiday\n- Friends enjoying Christmas tree\n- Mother and child at Christmas\n\nUncertainty notes: View is from behind so identities/relationships unknown. Indoor/outdoor uncertain.\n\nQuality flags: backlit, bokeh",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows two people from behind, both wearing red Santa hats. They appear to be sitting together, possibly watching a Christmas tree that's in the background with blurred lights (bokeh effect). The scene is warm and festive. One person appears to be wearing a brown/tan coat, and the other has striped clothing visible.\n\nLet me annotate based on the schema:\n\n- Recognizability: Clear - it's a recognizable scene of people at Christmas time. 5\n- Ambiguity: Low - clearly a Christmas scene with people. 1\n- Natural photo typicality: Yes, looks like a typical photograph. 4\n- Visual clutter: Moderate - Christmas tree lights in background, two people in foreground. 3\n- Object centricity: There are people but the scene with tree is also prominent. 3\n- Scene centricity: Strong scene element with the Christmas tree. 4\n- Caption confidence: High - I can describe this well. 5\n\n- Salient object count: 2 (two people) plus the tree\n- Distinct categories: people, Christmas tree, hats\n\n- Contains person: yes\n- Contains face: no (we see them from behind)\n- Contains animal: no\n- Contains text: no (there's a small tag on the hat but not really text)\n- Contains vehicle: no\n- Contains food: no\n- Contains indoor scene: yes (likely indoors near a tree)\n- Contains outdoor scene: unclear, looks indoor\n- Contains artificial/rendered: no\n- Contains occlusion: no\n- Contains unusual viewpoint: somewhat - viewing from behind\n- Contains multiple main objects: yes (two people)\n\n- Dominant content: person or scene\n- Image style: natural_photo\n- Semantic domain: holiday/christmas\n\nShort caption: Two people wearing Santa hats viewed from behind, watching a Christmas tree with bokeh lights.\n\nMain objects: Santa hats, people, Christmas tree\n\nPossible interpretations: \n- Couple at Christmas\n- Family members at holiday\n- Friends enjoying Christmas tree\n- Mother and child at Christmas\n\nUncertainty notes: View is from behind so identities/relationships unknown. Indoor/outdoor uncertain.\n\nQuality flags: backlit, bokeh",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1267,
+          "completion_tokens": 848,
+          "total_tokens": 2115,
+          "cost": 0.00137034,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00137034,
+            "upstream_inference_prompt_cost": 0.00035274,
+            "upstream_inference_completions_cost": 0.0010176
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 548,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

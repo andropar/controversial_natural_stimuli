@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_115",
+    "stim_key": "vicco_115",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 115,
+    "file_index": 114,
+    "image_name": "shared_4rep_vicco_115.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_115.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 6,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food/kitchen\",\n\n  \"short_caption\": \"Bowl of small red potatoes with person peeling one on kitchen counter\",\n  \"main_objects\": [\"bowl of red potatoes\", \"hands\", \"knife\", \"glass bowl with chopped onions\", \"container of capers\", \"checkered kitchen towel\", \"fresh herbs\"],\n  \"possible_interpretations\": [\"preparing potatoes for a meal\", \"ingredient prep for cooking\", \"peeling potatoes for a recipe\", \"sorting or cleaning potatoes\"],\n  \"uncertainty_notes\": \"Exact type of chopped vegetable in glass bowl uncertain (possibly onions or cabbage). Person's identity and full body not visible.\",\n  \"quality_flags\": [\"top-down overhead perspective\", \"partial person visible (hands only)\"]\n}",
+      "response": {
+        "id": "gen-1780319521-aIAgMKKuFweGCN5Wr90B",
+        "object": "chat.completion",
+        "created": 1780319521,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 6,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food/kitchen\",\n\n  \"short_caption\": \"Bowl of small red potatoes with person peeling one on kitchen counter\",\n  \"main_objects\": [\"bowl of red potatoes\", \"hands\", \"knife\", \"glass bowl with chopped onions\", \"container of capers\", \"checkered kitchen towel\", \"fresh herbs\"],\n  \"possible_interpretations\": [\"preparing potatoes for a meal\", \"ingredient prep for cooking\", \"peeling potatoes for a recipe\", \"sorting or cleaning potatoes\"],\n  \"uncertainty_notes\": \"Exact type of chopped vegetable in glass bowl uncertain (possibly onions or cabbage). Person's identity and full body not visible.\",\n  \"quality_flags\": [\"top-down overhead perspective\", \"partial person visible (hands only)\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a top-down view of a kitchen counter with:\n- A large bowl filled with small red/pink potatoes (the dominant element)\n- A person's hands on the right side, peeling a potato with a knife\n- A glass bowl with what appears to be chopped onions or cabbage at the top\n- A small terracotta bowl with what looks like capers or small items (top left)\n- A container with capers covered in plastic wrap (left side)\n- A white/yellow checkered kitchen towel\n- Some herbs (possibly rosemary or similar) on the left\n- A phone or dark object on the lower left\n- The counter appears to be a typical kitchen surface\n\nLet me provide the annotations:\n\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - very clear scene\n- natural_photo_typicality: 4 - looks like a typical natural photo\n- visual_clutter: 3 - several items but organized\n- object_centricity: 4 - the bowl of potatoes is the clear central object\n- scene_centricity: 2 - more object focused\n- caption_confidence: 5 - very confident\n\n- estimated_salient_object_count: 4-5 (bowl of potatoes, hands with knife, bowl of onions, capers, herbs)\n- estimated_distinct_object_categories: 5-6\n\n- contains_person: true (hands visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: true (kitchen)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (well, hands are cut off, but not really occlusion)\n- contains_unusual_viewpoint: true (top-down view is somewhat unusual)\n- contains_multiple_main_objects: false (one main object - bowl of potatoes)\n\n- dominant_content_type: \"object\" (bowl of potatoes is dominant)\n- image_style: \"natural_photo\"\n- semantic_domain: \"food/kitchen\"\n\n- short_caption: \"Bowl of red potatoes with person peeling one in kitchen\"\n- main_objects: [\"bowl of potatoes\", \"hands\", \"knife\", \"bowl of onions\", \"capers\"]\n- possible_interpretations: [\"preparing potatoes for cooking\", \"ingredient preparation\", \"cooking prep\"]\n\nLet me finalize the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a top-down view of a kitchen counter with:\n- A large bowl filled with small red/pink potatoes (the dominant element)\n- A person's hands on the right side, peeling a potato with a knife\n- A glass bowl with what appears to be chopped onions or cabbage at the top\n- A small terracotta bowl with what looks like capers or small items (top left)\n- A container with capers covered in plastic wrap (left side)\n- A white/yellow checkered kitchen towel\n- Some herbs (possibly rosemary or similar) on the left\n- A phone or dark object on the lower left\n- The counter appears to be a typical kitchen surface\n\nLet me provide the annotations:\n\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - very clear scene\n- natural_photo_typicality: 4 - looks like a typical natural photo\n- visual_clutter: 3 - several items but organized\n- object_centricity: 4 - the bowl of potatoes is the clear central object\n- scene_centricity: 2 - more object focused\n- caption_confidence: 5 - very confident\n\n- estimated_salient_object_count: 4-5 (bowl of potatoes, hands with knife, bowl of onions, capers, herbs)\n- estimated_distinct_object_categories: 5-6\n\n- contains_person: true (hands visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: true (kitchen)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (well, hands are cut off, but not really occlusion)\n- contains_unusual_viewpoint: true (top-down view is somewhat unusual)\n- contains_multiple_main_objects: false (one main object - bowl of potatoes)\n\n- dominant_content_type: \"object\" (bowl of potatoes is dominant)\n- image_style: \"natural_photo\"\n- semantic_domain: \"food/kitchen\"\n\n- short_caption: \"Bowl of red potatoes with person peeling one in kitchen\"\n- main_objects: [\"bowl of potatoes\", \"hands\", \"knife\", \"bowl of onions\", \"capers\"]\n- possible_interpretations: [\"preparing potatoes for cooking\", \"ingredient preparation\", \"cooking prep\"]\n\nLet me finalize the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 902,
+          "total_tokens": 2424,
+          "cost": 0.00138876,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00138876,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010824
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 571,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

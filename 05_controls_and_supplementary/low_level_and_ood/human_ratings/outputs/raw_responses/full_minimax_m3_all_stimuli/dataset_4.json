@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_4",
+    "stim_key": "dataset_4",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 4,
+    "file_index": 4,
+    "image_name": "image_0004.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0004.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"hardware/musical_instrument\",\n  \"short_caption\": \"Polished metal cover with six holes resting on weathered wooden planks\",\n  \"main_objects\": [\"chrome metal cover\", \"wooden plank surface\"],\n  \"possible_interpretations\": [\"guitar humbucker pickup cover\", \"chrome vent or hardware cover\", \"decorative metal box lid\", \"musical instrument hardware component\"],\n  \"uncertainty_notes\": \"Exact identity of the metal object is uncertain; resembles a humbucker pickup cover but could be other hardware.\",\n  \"quality_flags\": []\n}\n```",
+      "response": {
+        "id": "gen-1780318965-ieH1zSxfyQvGkkx4UL5s",
+        "object": "chat.completion",
+        "created": 1780318965,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"hardware/musical_instrument\",\n  \"short_caption\": \"Polished metal cover with six holes resting on weathered wooden planks\",\n  \"main_objects\": [\"chrome metal cover\", \"wooden plank surface\"],\n  \"possible_interpretations\": [\"guitar humbucker pickup cover\", \"chrome vent or hardware cover\", \"decorative metal box lid\", \"musical instrument hardware component\"],\n  \"uncertainty_notes\": \"Exact identity of the metal object is uncertain; resembles a humbucker pickup cover but could be other hardware.\",\n  \"quality_flags\": []\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a chrome/polished metal object with six holes in a row, sitting on a weathered wooden surface. It looks like it could be a guitar pickup cover or similar musical instrument hardware. The object is highly reflective, showing reflections of sky and surroundings. The wooden surface beneath has a rough, aged texture with visible grain and cracks.\n\nLet me assess each dimension:\n\n- recognizability: The object is somewhat recognizable as a metal cover with holes, possibly a guitar pickup cover, but not immediately obvious to all viewers. I'd say 3-4.\n- ambiguity: There's some ambiguity - it could be a guitar pickup, a vent cover, or other hardware. I'd say 3.\n- natural_photo_typicality: This looks like a natural photograph, though the composition is somewhat staged. I'd say 4.\n- visual_clutter: Not very cluttered - one main object on a simple background. 2.\n- object_centricity: Yes, there's a clear central object. 4.\n- scene_centricity: Not really a scene, more of an object shot. 2.\n- caption_confidence: I could caption it as a metal cover on wood, fairly confident. 3-4.\n\nMain objects: metal cover, wooden surface\nContains: no person, no face, no animal, no text, no vehicle, no food, outdoor or close-up scene, artificial content, no clear occlusion\nDominant content: object\nImage style: natural_photo\nSemantic domain: hardware/musical instruments/objects\n\nLet me finalize:\n- estimated_salient_object_count: 1\n- estimated_distinct_object_categories: 2 (metal cover, wooden plank)\n\nThe object appears to be a guitar pickup cover (specifically looks like a humbucker pickup cover) based on the shape and six pole piece holes.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a chrome/polished metal object with six holes in a row, sitting on a weathered wooden surface. It looks like it could be a guitar pickup cover or similar musical instrument hardware. The object is highly reflective, showing reflections of sky and surroundings. The wooden surface beneath has a rough, aged texture with visible grain and cracks.\n\nLet me assess each dimension:\n\n- recognizability: The object is somewhat recognizable as a metal cover with holes, possibly a guitar pickup cover, but not immediately obvious to all viewers. I'd say 3-4.\n- ambiguity: There's some ambiguity - it could be a guitar pickup, a vent cover, or other hardware. I'd say 3.\n- natural_photo_typicality: This looks like a natural photograph, though the composition is somewhat staged. I'd say 4.\n- visual_clutter: Not very cluttered - one main object on a simple background. 2.\n- object_centricity: Yes, there's a clear central object. 4.\n- scene_centricity: Not really a scene, more of an object shot. 2.\n- caption_confidence: I could caption it as a metal cover on wood, fairly confident. 3-4.\n\nMain objects: metal cover, wooden surface\nContains: no person, no face, no animal, no text, no vehicle, no food, outdoor or close-up scene, artificial content, no clear occlusion\nDominant content: object\nImage style: natural_photo\nSemantic domain: hardware/musical instruments/objects\n\nLet me finalize:\n- estimated_salient_object_count: 1\n- estimated_distinct_object_categories: 2 (metal cover, wooden plank)\n\nThe object appears to be a guitar pickup cover (specifically looks like a humbucker pickup cover) based on the shape and six pole piece holes.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 727,
+          "total_tokens": 2249,
+          "cost": 0.00117876,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00117876,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008724
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 440,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_75",
+    "stim_key": "dataset_75",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 75,
+    "file_index": 75,
+    "image_name": "image_0075.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0075.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_home_office\",\n  \"short_caption\": \"A desk with a white lamp, teacup, pencil and papers against a herringbone wood wall\",\n  \"main_objects\": [\"desk_lamp\", \"wooden_desk\", \"teacup\", \"saucer\", \"pencil\", \"papers\", \"scissors\"],\n  \"possible_interpretations\": [\"home office still life\", \"interior design photo\", \"lifestyle product shot\", \"workspace scene\"],\n  \"uncertainty_notes\": \"Context and exact setting purpose unclear; the lamp is partially cropped at the top of the frame.\",\n  \"quality_flags\": [\"partial_cropping\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319045-cNfab19LxfoVPGd1tBr0",
+        "object": "chat.completion",
+        "created": 1780319045,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_home_office\",\n  \"short_caption\": \"A desk with a white lamp, teacup, pencil and papers against a herringbone wood wall\",\n  \"main_objects\": [\"desk_lamp\", \"wooden_desk\", \"teacup\", \"saucer\", \"pencil\", \"papers\", \"scissors\"],\n  \"possible_interpretations\": [\"home office still life\", \"interior design photo\", \"lifestyle product shot\", \"workspace scene\"],\n  \"uncertainty_notes\": \"Context and exact setting purpose unclear; the lamp is partially cropped at the top of the frame.\",\n  \"quality_flags\": [\"partial_cropping\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- A wooden herringbone parquet wall/floor covering the entire background\n- A white desk lamp (adjustable, articulated arm style) on the left side\n- A wooden desk/table in the lower left\n- A teacup with decorative pattern (dark flowers/dots) on a saucer\n- A pencil\n- Some papers/notebooks (yellow and white)\n- A pair of small scissors\n- The setting appears to be an interior space, likely a home office or study area\n\nLet me rate according to the schema:\n\n- recognizability: 4 - The objects are clearly recognizable\n- ambiguity: 2 - It's clearly a desk scene with a herringbone wood background\n- natural_photo_typicality: 4 - Looks like a natural photograph\n- visual_clutter: 2 - Limited objects, mostly clean composition\n- object_centricity: 3 - Objects present but background is prominent\n- scene_centricity: 3 - Could be either, but the setting/scene is somewhat important\n- caption_confidence: 4 - Easy to describe\n\n- estimated_salient_object_count: 4-5 (lamp, cup, papers, pencil, scissors)\n- estimated_distinct_object_categories: 4 (lamp, cup, stationery, desk)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false (cup but no food)\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (lamp is partially cut off at top)\n- contains_multiple_main_objects: false (mostly one scene with related items)\n\n- dominant_content_type: \"scene\" or \"mixed\" - it's a mix of scene and objects\n- image_style: \"natural_photo\"\n- semantic_domain: \"interior\" or \"lifestyle\" or \"home_office\"\n\nShort caption: \"A desk with a white lamp, teacup, and stationery against a herringbone wood wall\"\n\nMain objects: lamp, desk, teacup, saucer, pencil, papers, scissors\n\nPossible interpretations: still life, interior design, home office, product photography, lifestyle photo\n\nUncertainty: The exact purpose/context is unclear but the items are clear",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- A wooden herringbone parquet wall/floor covering the entire background\n- A white desk lamp (adjustable, articulated arm style) on the left side\n- A wooden desk/table in the lower left\n- A teacup with decorative pattern (dark flowers/dots) on a saucer\n- A pencil\n- Some papers/notebooks (yellow and white)\n- A pair of small scissors\n- The setting appears to be an interior space, likely a home office or study area\n\nLet me rate according to the schema:\n\n- recognizability: 4 - The objects are clearly recognizable\n- ambiguity: 2 - It's clearly a desk scene with a herringbone wood background\n- natural_photo_typicality: 4 - Looks like a natural photograph\n- visual_clutter: 2 - Limited objects, mostly clean composition\n- object_centricity: 3 - Objects present but background is prominent\n- scene_centricity: 3 - Could be either, but the setting/scene is somewhat important\n- caption_confidence: 4 - Easy to describe\n\n- estimated_salient_object_count: 4-5 (lamp, cup, papers, pencil, scissors)\n- estimated_distinct_object_categories: 4 (lamp, cup, stationery, desk)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false (cup but no food)\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (lamp is partially cut off at top)\n- contains_multiple_main_objects: false (mostly one scene with related items)\n\n- dominant_content_type: \"scene\" or \"mixed\" - it's a mix of scene and objects\n- image_style: \"natural_photo\"\n- semantic_domain: \"interior\" or \"lifestyle\" or \"home_office\"\n\nShort caption: \"A desk with a white lamp, teacup, and stationery against a herringbone wood wall\"\n\nMain objects: lamp, desk, teacup, saucer, pencil, papers, scissors\n\nPossible interpretations: still life, interior design, home office, product photography, lifestyle photo\n\nUncertainty: The exact purpose/context is unclear but the items are clear",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1467,
+          "completion_tokens": 875,
+          "total_tokens": 2342,
+          "cost": 0.00133986,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00133986,
+            "upstream_inference_prompt_cost": 0.00028986,
+            "upstream_inference_completions_cost": 0.00105
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 553,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

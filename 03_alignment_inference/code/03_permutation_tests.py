@@ -13,11 +13,11 @@ assignments. If this is tractable (<= EXHAUSTIVE_MAX) we enumerate them
 exhaustively; otherwise we draw N_MC_PERMUTATIONS Monte Carlo samples.
 
 Inputs:
-    experiments/cstim_paper/02_rsa_scores/data/{sub}/wrsa_transfer_scores.csv
-    experiments/cstim_paper/02_rsa_scores/data/{sub}/crsa_scores.csv
+    01_brain_model_alignment/results/rsa_scores/{sub}/wrsa_transfer_scores.csv
+    01_brain_model_alignment/results/rsa_scores/{sub}/crsa_scores.csv
 
 Outputs:
-    experiments/cstim_paper/03_statistics/data/permutation_test_results.csv
+    03_alignment_inference/results/permutation_test_results.csv
 
 Usage:
     python 03_permutation_tests.py

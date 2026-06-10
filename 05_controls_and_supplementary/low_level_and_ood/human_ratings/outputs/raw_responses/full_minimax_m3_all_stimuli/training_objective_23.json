@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_23",
+    "stim_key": "training_objective_23",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 23,
+    "file_index": 23,
+    "image_name": "image_0023.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0023.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"children play\",\n  \"short_caption\": \"Young child smiling inside a colorful bouncy castle viewed through safety netting\",\n  \"main_objects\": [\"child\", \"bouncy castle\", \"mesh netting\", \"pirate shirt\"],\n  \"possible_interpretations\": [\"child playing in bouncy castle\", \"toddler at indoor play area\", \"kid jumping in inflatable play structure\", \"children's party in play center\"],\n  \"uncertainty_notes\": \"Image is viewed through safety netting which partially obscures the child's face. Background figure is only partially visible and hard to identify.\",\n  \"quality_flags\": [\"view_through_net\", \"partial_occlusion\", \"background_person_partially_visible\"]\n}",
+      "response": {
+        "id": "gen-1780319316-Z6qEHeS5upjzkRRB3om0",
+        "object": "chat.completion",
+        "created": 1780319316,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"children play\",\n  \"short_caption\": \"Young child smiling inside a colorful bouncy castle viewed through safety netting\",\n  \"main_objects\": [\"child\", \"bouncy castle\", \"mesh netting\", \"pirate shirt\"],\n  \"possible_interpretations\": [\"child playing in bouncy castle\", \"toddler at indoor play area\", \"kid jumping in inflatable play structure\", \"children's party in play center\"],\n  \"uncertainty_notes\": \"Image is viewed through safety netting which partially obscures the child's face. Background figure is only partially visible and hard to identify.\",\n  \"quality_flags\": [\"view_through_net\", \"partial_occlusion\", \"background_person_partially_visible\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a young child (toddler) inside what appears to be a bouncy castle or inflatable play structure. The child is wearing a red shirt with \"ROCK-NORTH\" text and what looks like a pirate graphic. The child is smiling and appears to be jumping or playing. The bouncy castle has yellow and blue/purple colors, and there's a mesh netting visible. In the background, I can see another person (partially visible) and what might be another child or person.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - Very clear what's happening\n- ambiguity: 1 - Very clear interpretation\n- natural_photo_typicality: 4 - Looks like a typical photo, though taken through netting\n- visual_clutter: 3 - Moderate clutter with netting, colors, multiple people\n- object_centricity: 3 - The child is central but it's also a scene\n- scene_centricity: 4 - It's primarily a scene (bouncy castle play area)\n- caption_confidence: 5 - Very confident about caption\n\n- estimated_salient_object_count: 2 (child, bouncy castle)\n- estimated_distinct_object_categories: 3 (person, play structure, netting)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: true (on shirt: \"ROCK-NORTH\", \"JAM\")\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (could be indoor or outdoor)\n- contains_outdoor_scene: true (likely outdoor based on lighting)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (partially behind netting)\n- contains_multiple_main_objects: false (one main subject - the child)\n\n- dominant_content_type: \"person_face\" (a child)\n- image_style: \"natural_photo\"\n- semantic_domain: \"play\" or \"children\" or \"recreation\"\n\nShort caption: \"Young child smiling inside a colorful bouncy castle\"\n\nMain objects: child, bouncy castle, mesh netting, pirate shirt\n\nPossible interpretations: child playing in bouncy castle, toddler at party, kid jumping in inflatable\n\nUncertainty notes: View is through netting which slightly obscures the image. Background person is partially visible.\n\nQuality flags: view_through_net, partial_occlusion",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a young child (toddler) inside what appears to be a bouncy castle or inflatable play structure. The child is wearing a red shirt with \"ROCK-NORTH\" text and what looks like a pirate graphic. The child is smiling and appears to be jumping or playing. The bouncy castle has yellow and blue/purple colors, and there's a mesh netting visible. In the background, I can see another person (partially visible) and what might be another child or person.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - Very clear what's happening\n- ambiguity: 1 - Very clear interpretation\n- natural_photo_typicality: 4 - Looks like a typical photo, though taken through netting\n- visual_clutter: 3 - Moderate clutter with netting, colors, multiple people\n- object_centricity: 3 - The child is central but it's also a scene\n- scene_centricity: 4 - It's primarily a scene (bouncy castle play area)\n- caption_confidence: 5 - Very confident about caption\n\n- estimated_salient_object_count: 2 (child, bouncy castle)\n- estimated_distinct_object_categories: 3 (person, play structure, netting)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: true (on shirt: \"ROCK-NORTH\", \"JAM\")\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (could be indoor or outdoor)\n- contains_outdoor_scene: true (likely outdoor based on lighting)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (partially behind netting)\n- contains_multiple_main_objects: false (one main subject - the child)\n\n- dominant_content_type: \"person_face\" (a child)\n- image_style: \"natural_photo\"\n- semantic_domain: \"play\" or \"children\" or \"recreation\"\n\nShort caption: \"Young child smiling inside a colorful bouncy castle\"\n\nMain objects: child, bouncy castle, mesh netting, pirate shirt\n\nPossible interpretations: child playing in bouncy castle, toddler at party, kid jumping in inflatable\n\nUncertainty notes: View is through netting which slightly obscures the image. Background person is partially visible.\n\nQuality flags: view_through_net, partial_occlusion",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 881,
+          "total_tokens": 2403,
+          "cost": 0.00136356,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00136356,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010572
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 573,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

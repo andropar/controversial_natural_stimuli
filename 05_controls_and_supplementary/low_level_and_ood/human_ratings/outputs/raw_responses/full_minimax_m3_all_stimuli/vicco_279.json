@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_279",
+    "stim_key": "vicco_279",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 279,
+    "file_index": 278,
+    "image_name": "shared_4rep_vicco_279.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_279.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sky_clouds\",\n  \"short_caption\": \"Aerial view of a vast white cloudscape seen from an airplane window\",\n  \"main_objects\": [\"clouds\", \"sky\"],\n  \"possible_interpretations\": [\n    \"View of clouds from an airplane\",\n    \"Aerial photograph above cloud layer\",\n    \"Sky panorama with cloud cover\"\n  ],\n  \"uncertainty_notes\": \"Slight window reflection in upper right suggests the photo was taken through an aircraft window, but the image itself is of natural clouds.\",\n  \"quality_flags\": [\"slight_window_reflection\"]\n}",
+      "response": {
+        "id": "gen-1780319710-aFj67qbCWVJ28IS6O3sg",
+        "object": "chat.completion",
+        "created": 1780319710,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sky_clouds\",\n  \"short_caption\": \"Aerial view of a vast white cloudscape seen from an airplane window\",\n  \"main_objects\": [\"clouds\", \"sky\"],\n  \"possible_interpretations\": [\n    \"View of clouds from an airplane\",\n    \"Aerial photograph above cloud layer\",\n    \"Sky panorama with cloud cover\"\n  ],\n  \"uncertainty_notes\": \"Slight window reflection in upper right suggests the photo was taken through an aircraft window, but the image itself is of natural clouds.\",\n  \"quality_flags\": [\"slight_window_reflection\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a view from above the clouds, likely taken from an airplane window. It depicts a vast expanse of fluffy white clouds with a blue sky visible at the top. There appears to be some slight window reflection/glare in the upper right area, suggesting this was shot through an aircraft window.\n\nLet me analyze the characteristics:\n- Recognizability: Very clear - it's obviously a cloudscape viewed from above\n- Ambiguity: Low - the interpretation is fairly clear\n- Natural photo typicality: High - looks like a natural photograph\n- Visual clutter: Moderate - lots of cloud detail but uniform content\n- Object centricity: Low - no single central object\n- Scene centricity: High - it's primarily a scene/landscape\n- Caption confidence: High - easy to caption\n\nThere are no people, faces, animals, text, vehicles, or food visible. This is an outdoor scene (though aerial). No occlusion or unusual viewpoint beyond being from an airplane.\n\nThe dominant content is the cloudscape scene, taken from an aerial/elevated perspective.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a view from above the clouds, likely taken from an airplane window. It depicts a vast expanse of fluffy white clouds with a blue sky visible at the top. There appears to be some slight window reflection/glare in the upper right area, suggesting this was shot through an aircraft window.\n\nLet me analyze the characteristics:\n- Recognizability: Very clear - it's obviously a cloudscape viewed from above\n- Ambiguity: Low - the interpretation is fairly clear\n- Natural photo typicality: High - looks like a natural photograph\n- Visual clutter: Moderate - lots of cloud detail but uniform content\n- Object centricity: Low - no single central object\n- Scene centricity: High - it's primarily a scene/landscape\n- Caption confidence: High - easy to caption\n\nThere are no people, faces, animals, text, vehicles, or food visible. This is an outdoor scene (though aerial). No occlusion or unusual viewpoint beyond being from an airplane.\n\nThe dominant content is the cloudscape scene, taken from an aerial/elevated perspective.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 561,
+          "total_tokens": 2083,
+          "cost": 0.00097956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00097956,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0006732
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 268,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

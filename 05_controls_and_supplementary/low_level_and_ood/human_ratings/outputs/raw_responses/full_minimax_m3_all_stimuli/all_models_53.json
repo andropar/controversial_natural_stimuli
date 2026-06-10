@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_53",
+    "stim_key": "all_models_53",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 53,
+    "file_index": 53,
+    "image_name": "image_0053.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0053.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"events\",\n  \"short_caption\": \"Woman in pink dress speaks at microphone on stage with other women present\",\n  \"main_objects\": [\"woman in pink dress\", \"microphone\", \"woman in black outfit\", \"woman in patterned dress\", \"envelope or card\"],\n  \"possible_interpretations\": [\"awards ceremony\", \"formal stage speech\", \"recognition event\", \"theatrical performance\", \"presentation\"],\n  \"uncertainty_notes\": \"Large watermark overlays central image area; specific event type cannot be determined; faces partially obscured by watermark\",\n  \"quality_flags\": [\"watermark_overlay\", \"low_light\", \"dark_background\", \"faces_partially_obscured\"]\n}",
+      "response": {
+        "id": "gen-1780318792-2EMpivsALMLTtAzBeuLB",
+        "object": "chat.completion",
+        "created": 1780318792,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"events\",\n  \"short_caption\": \"Woman in pink dress speaks at microphone on stage with other women present\",\n  \"main_objects\": [\"woman in pink dress\", \"microphone\", \"woman in black outfit\", \"woman in patterned dress\", \"envelope or card\"],\n  \"possible_interpretations\": [\"awards ceremony\", \"formal stage speech\", \"recognition event\", \"theatrical performance\", \"presentation\"],\n  \"uncertainty_notes\": \"Large watermark overlays central image area; specific event type cannot be determined; faces partially obscured by watermark\",\n  \"quality_flags\": [\"watermark_overlay\", \"low_light\", \"dark_background\", \"faces_partially_obscured\"]\n}",
+              "refusal": null,
+              "reasoning": "The user wants me to annotate an image with structured data according to a specific schema. Let me carefully analyze the image.\n\nThe image shows what appears to be a stage or event setting with women. There's a woman in a pink/magenta dress speaking into a microphone at center-right. There are other women in the background - one in a black outfit to the left, and others in patterned clothing. The image has a prominent watermark \"DREW ALTIZER PHOTOGRAPHY 6580-806\" overlaid on it. The image is dark with stage lighting.\n\nLet me fill in the schema:\n\n- recognizability: The main content is recognizable - it's people at what appears to be an event/ceremony. 4\n- ambiguity: There's some ambiguity about the specific event, but it's clear it's a speaking event. 2\n- natural_photo_typicality: It looks like a natural photo of an event, though it has watermark. 4\n- visual_clutter: There are a few people and a watermark, moderate clutter. 3\n- object_centricity: There's a clear central person (speaker). 4\n- scene_centricity: It's more about the people than the scene, though it's a stage setting. 3\n- caption_confidence: I can be confident about a general caption. 4\n\n- estimated_salient_object_count: 3 (three women visible)\n- estimated_distinct_object_categories: 3 (women, microphone, paper/card)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: true (watermark)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (appears to be indoor event)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (multiple women)\n\n- dominant_content_type: person_face (or could be \"person\" - the main subject is a person)\n- image_style: edited_photo (has watermark overlay)\n- semantic_domain: \"events\"\n\n- short_caption: \"Woman in pink dress speaks at microphone during ceremony with other women on stage\"\n- main_objects: [\"woman in pink dress\", \"microphone\", \"woman in black\", \"woman in patterned dress\", \"card/paper\"]\n- possible_interpretations: [\"awards ceremony\", \"speech at formal event\", \"stage presentation\", \"recognition event\"]\n- uncertainty_notes: \"Watermark overlays central portion of image; specific event type unclear\"\n- quality_flags: [\"watermark_overlay\", \"low_light\", \"dark_background\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The user wants me to annotate an image with structured data according to a specific schema. Let me carefully analyze the image.\n\nThe image shows what appears to be a stage or event setting with women. There's a woman in a pink/magenta dress speaking into a microphone at center-right. There are other women in the background - one in a black outfit to the left, and others in patterned clothing. The image has a prominent watermark \"DREW ALTIZER PHOTOGRAPHY 6580-806\" overlaid on it. The image is dark with stage lighting.\n\nLet me fill in the schema:\n\n- recognizability: The main content is recognizable - it's people at what appears to be an event/ceremony. 4\n- ambiguity: There's some ambiguity about the specific event, but it's clear it's a speaking event. 2\n- natural_photo_typicality: It looks like a natural photo of an event, though it has watermark. 4\n- visual_clutter: There are a few people and a watermark, moderate clutter. 3\n- object_centricity: There's a clear central person (speaker). 4\n- scene_centricity: It's more about the people than the scene, though it's a stage setting. 3\n- caption_confidence: I can be confident about a general caption. 4\n\n- estimated_salient_object_count: 3 (three women visible)\n- estimated_distinct_object_categories: 3 (women, microphone, paper/card)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: true (watermark)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (appears to be indoor event)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (multiple women)\n\n- dominant_content_type: person_face (or could be \"person\" - the main subject is a person)\n- image_style: edited_photo (has watermark overlay)\n- semantic_domain: \"events\"\n\n- short_caption: \"Woman in pink dress speaks at microphone during ceremony with other women on stage\"\n- main_objects: [\"woman in pink dress\", \"microphone\", \"woman in black\", \"woman in patterned dress\", \"card/paper\"]\n- possible_interpretations: [\"awards ceremony\", \"speech at formal event\", \"stage presentation\", \"recognition event\"]\n- uncertainty_notes: \"Watermark overlays central portion of image; specific event type unclear\"\n- quality_flags: [\"watermark_overlay\", \"low_light\", \"dark_background\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 934,
+          "total_tokens": 2456,
+          "cost": 0.00155004,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00155004,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0011208
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 629,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

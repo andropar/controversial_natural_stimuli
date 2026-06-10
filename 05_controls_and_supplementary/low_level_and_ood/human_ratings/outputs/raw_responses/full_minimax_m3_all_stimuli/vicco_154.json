@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_154",
+    "stim_key": "vicco_154",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 154,
+    "file_index": 153,
+    "image_name": "shared_4rep_vicco_154.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_154.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"appliance\",\n  \"short_caption\": \"Underside of a eufy RoboVac 11S robot vacuum showing wheels and brush\",\n  \"main_objects\": [\"robot vacuum\", \"drive wheel\", \"main brush\", \"side wheel\", \"label sticker\"],\n  \"possible_interpretations\": [\"underside of a robot vacuum cleaner\", \"close-up of robotic device mechanism\", \"robot vacuum with exposed internal parts\"],\n  \"uncertainty_notes\": \"Image shows clear text labels identifying it as eufy RoboVac 11S; the device is partially out of frame\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319566-5oOZHuZKctdTID2XA7v8",
+        "object": "chat.completion",
+        "created": 1780319566,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"appliance\",\n  \"short_caption\": \"Underside of a eufy RoboVac 11S robot vacuum showing wheels and brush\",\n  \"main_objects\": [\"robot vacuum\", \"drive wheel\", \"main brush\", \"side wheel\", \"label sticker\"],\n  \"possible_interpretations\": [\"underside of a robot vacuum cleaner\", \"close-up of robotic device mechanism\", \"robot vacuum with exposed internal parts\"],\n  \"uncertainty_notes\": \"Image shows clear text labels identifying it as eufy RoboVac 11S; the device is partially out of frame\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows the underside of a robot vacuum cleaner (specifically a RoboVac 11S by eufy), revealing its mechanical components including wheels, a main brush, and various internal parts. The image is taken at a close-up angle, showing the bottom/side of the device on what appears to be a wooden floor.\n\nLet me annotate this systematically:\n\n- Recognizability: The main content is recognizable - it's clearly the underside of a robot vacuum. 4\n- Ambiguity: Not many interpretations - it's clearly a robot vacuum underside. 1\n- Natural photo typicality: It looks like a natural photo, though it has some unusual angle. 4\n- Visual clutter: There are many mechanical parts visible, but it's still organized. 3\n- Object-centricity: The robot vacuum dominates the image. 5\n- Scene-centricity: Not really a scene, more an object. 1\n- Caption confidence: High - I can describe it clearly. 5\n\nObjects: robot vacuum, wheels, brush, mechanical components\nContains text: Yes (eufy logo, RoboVac 11S label, CE marking, etc.)\nContains person/face/animal/vehicle/food: No\nIndoor scene: Yes (wooden floor visible)\nOutdoor: No\nArtificial/rendered: No\nOcclusion/truncation: The vacuum is partially cut off by frame edges\nMultiple main objects: The vacuum is the main subject, but multiple components are visible\n\nDominant content: object (closeup of robot vacuum underside)\nImage style: natural_photo\nSemantic domain: appliance/electronics",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows the underside of a robot vacuum cleaner (specifically a RoboVac 11S by eufy), revealing its mechanical components including wheels, a main brush, and various internal parts. The image is taken at a close-up angle, showing the bottom/side of the device on what appears to be a wooden floor.\n\nLet me annotate this systematically:\n\n- Recognizability: The main content is recognizable - it's clearly the underside of a robot vacuum. 4\n- Ambiguity: Not many interpretations - it's clearly a robot vacuum underside. 1\n- Natural photo typicality: It looks like a natural photo, though it has some unusual angle. 4\n- Visual clutter: There are many mechanical parts visible, but it's still organized. 3\n- Object-centricity: The robot vacuum dominates the image. 5\n- Scene-centricity: Not really a scene, more an object. 1\n- Caption confidence: High - I can describe it clearly. 5\n\nObjects: robot vacuum, wheels, brush, mechanical components\nContains text: Yes (eufy logo, RoboVac 11S label, CE marking, etc.)\nContains person/face/animal/vehicle/food: No\nIndoor scene: Yes (wooden floor visible)\nOutdoor: No\nArtificial/rendered: No\nOcclusion/truncation: The vacuum is partially cut off by frame edges\nMultiple main objects: The vacuum is the main subject, but multiple components are visible\n\nDominant content: object (closeup of robot vacuum underside)\nImage style: natural_photo\nSemantic domain: appliance/electronics",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 689,
+          "total_tokens": 2211,
+          "cost": 0.00113316,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00113316,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008268
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 381,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

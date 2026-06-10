@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_15",
+    "stim_key": "dataset_15",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 15,
+    "file_index": 15,
+    "image_name": "image_0015.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0015.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"vehicle\",\n  \"short_caption\": \"Yellow Dodge Charger R/T classic muscle car in a studio setting\",\n  \"main_objects\": [\"yellow muscle car\", \"Dodge Charger R/T\"],\n  \"possible_interpretations\": [\n    \"classic American muscle car on display in showroom\",\n    \"Dodge Charger R/T studio photograph\",\n    \"1970s muscle car promotional photo\"\n  ],\n  \"uncertainty_notes\": \"Exact year of the Charger R/T is hard to pinpoint without clearer badging, but appears to be early 1970s based on styling.\",\n  \"quality_flags\": []\n}\n```",
+      "response": {
+        "id": "gen-1780318978-tBRIeQEhG0ktX47Wp6CW",
+        "object": "chat.completion",
+        "created": 1780318978,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"vehicle\",\n  \"short_caption\": \"Yellow Dodge Charger R/T classic muscle car in a studio setting\",\n  \"main_objects\": [\"yellow muscle car\", \"Dodge Charger R/T\"],\n  \"possible_interpretations\": [\n    \"classic American muscle car on display in showroom\",\n    \"Dodge Charger R/T studio photograph\",\n    \"1970s muscle car promotional photo\"\n  ],\n  \"uncertainty_notes\": \"Exact year of the Charger R/T is hard to pinpoint without clearer badging, but appears to be early 1970s based on styling.\",\n  \"quality_flags\": []\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a classic yellow muscle car, appearing to be a Dodge Charger R/T, with a black roof and black hood stripe. It's photographed in what appears to be a showroom or studio setting with a light gray/white background and tiled floor. The car has \"R/T\" badging visible and appears to be from the early 1970s era.\n\nLet me annotate according to the schema:\n\n- recognizability: Very clear, a classic muscle car - 5\n- ambiguity: Very low ambiguity, clearly a car - 1\n- natural_photo_typicality: It looks like a professional studio photo, somewhat typical of car photography - 3-4\n- visual_clutter: Low clutter, one main object on plain background - 1\n- object_centricity: The car clearly dominates - 5\n- scene_centricity: Not really a scene, more of an object shot - 1\n- caption_confidence: High confidence in caption - 5\n\n- estimated_salient_object_count: 1\n- estimated_distinct_object_categories: 1 (car)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (R/T badging, Charger R/T text)\n- contains_vehicle: true\n- contains_food: false\n- contains_indoor_scene: true (appears to be indoor studio/showroom)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the car is somewhat truncated at the rear)\n- contains_unusual_viewpoint: false (relatively standard 3/4 view)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"vehicle\"\n\n- short_caption: \"Yellow Dodge Charger R/T classic muscle car in showroom\"\n- main_objects: [\"yellow muscle car\", \"Dodge Charger R/T\"]\n- possible_interpretations: [\"classic American muscle car on display\", \"Dodge Charger R/T showroom photo\", \"1970s muscle car photograph\"]\n\nLet me finalize the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a classic yellow muscle car, appearing to be a Dodge Charger R/T, with a black roof and black hood stripe. It's photographed in what appears to be a showroom or studio setting with a light gray/white background and tiled floor. The car has \"R/T\" badging visible and appears to be from the early 1970s era.\n\nLet me annotate according to the schema:\n\n- recognizability: Very clear, a classic muscle car - 5\n- ambiguity: Very low ambiguity, clearly a car - 1\n- natural_photo_typicality: It looks like a professional studio photo, somewhat typical of car photography - 3-4\n- visual_clutter: Low clutter, one main object on plain background - 1\n- object_centricity: The car clearly dominates - 5\n- scene_centricity: Not really a scene, more of an object shot - 1\n- caption_confidence: High confidence in caption - 5\n\n- estimated_salient_object_count: 1\n- estimated_distinct_object_categories: 1 (car)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (R/T badging, Charger R/T text)\n- contains_vehicle: true\n- contains_food: false\n- contains_indoor_scene: true (appears to be indoor studio/showroom)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the car is somewhat truncated at the rear)\n- contains_unusual_viewpoint: false (relatively standard 3/4 view)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"vehicle\"\n\n- short_caption: \"Yellow Dodge Charger R/T classic muscle car in showroom\"\n- main_objects: [\"yellow muscle car\", \"Dodge Charger R/T\"]\n- possible_interpretations: [\"classic American muscle car on display\", \"Dodge Charger R/T showroom photo\", \"1970s muscle car photograph\"]\n\nLet me finalize the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 820,
+          "total_tokens": 2342,
+          "cost": 0.00129036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000984
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 494,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

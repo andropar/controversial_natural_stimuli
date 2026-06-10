@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_95",
+    "stim_key": "training_objective_95",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 95,
+    "file_index": 95,
+    "image_name": "image_0095.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0095.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"fashion/lifestyle portrait\",\n  \"short_caption\": \"Tattooed man in black 'Next Level Faith' t-shirt and cap standing by a metal shutter.\",\n  \"main_objects\": [\"man\", \"t-shirt\", \"baseball cap\", \"metal roll-up door\", \"tattoos\"],\n  \"possible_interpretations\": [\n    \"Lifestyle or athleisure brand promotional photo\",\n    \"Casual portrait of a man in branded clothing\"\n  ],\n  \"uncertainty_notes\": \"Face is partially shadowed by cap; exact branding context unclear but text is legible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319376-rDUikXP5x8AafcBP31MP",
+        "object": "chat.completion",
+        "created": 1780319376,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"fashion/lifestyle portrait\",\n  \"short_caption\": \"Tattooed man in black 'Next Level Faith' t-shirt and cap standing by a metal shutter.\",\n  \"main_objects\": [\"man\", \"t-shirt\", \"baseball cap\", \"metal roll-up door\", \"tattoos\"],\n  \"possible_interpretations\": [\n    \"Lifestyle or athleisure brand promotional photo\",\n    \"Casual portrait of a man in branded clothing\"\n  ],\n  \"uncertainty_notes\": \"Face is partially shadowed by cap; exact branding context unclear but text is legible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully and provide structured annotations.\n\nThe image shows a man wearing a black t-shirt with \"NEXT LEVEL FAITH\" text and a black baseball cap with \"THIS IS WAR\" text. He has a beard and visible tattoos on his arms. He's standing in front of a yellow/tan metal roll-up door (commercial shutter), with a red brick/painted wall on the left side. His head is tilted down and to the right, with his face partially shadowed by the cap.\n\nLet me rate the attributes:\n- Recognizability: 5 - very clear, easily recognizable\n- Ambiguity: 1 - very clear single interpretation\n- Natural photo typicality: 4 - looks like a natural photo, possibly somewhat posed\n- Visual clutter: 2 - relatively clean composition\n- Object centricity: 3 - person is central but it's also scene-like\n- Scene centricity: 3 - the background scene is prominent\n- Caption confidence: 5 - easy to describe\n\nSalient objects: 1 main (the man)\nDistinct categories: ~3 (person, clothing, building elements)\n\nContains person: true\nContains face: yes but partially obscured\nContains animal: false\nContains text: true (\"NEXT LEVEL FAITH\", \"THIS IS WAR\")\nContains vehicle: false\nContains food: false\nContains indoor scene: false\nContains outdoor scene: true\nContains artificial/rendered: false\nContains occlusion/truncation: false\nContains unusual viewpoint: false\nContains multiple main objects: false\n\nDominant content: person_face (or could be person)\nImage style: natural_photo (looks like a photo, possibly with some editing for promotional purposes)\nSemantic domain: fashion/portrait/lifestyle\n\nLet me construct the JSON response.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully and provide structured annotations.\n\nThe image shows a man wearing a black t-shirt with \"NEXT LEVEL FAITH\" text and a black baseball cap with \"THIS IS WAR\" text. He has a beard and visible tattoos on his arms. He's standing in front of a yellow/tan metal roll-up door (commercial shutter), with a red brick/painted wall on the left side. His head is tilted down and to the right, with his face partially shadowed by the cap.\n\nLet me rate the attributes:\n- Recognizability: 5 - very clear, easily recognizable\n- Ambiguity: 1 - very clear single interpretation\n- Natural photo typicality: 4 - looks like a natural photo, possibly somewhat posed\n- Visual clutter: 2 - relatively clean composition\n- Object centricity: 3 - person is central but it's also scene-like\n- Scene centricity: 3 - the background scene is prominent\n- Caption confidence: 5 - easy to describe\n\nSalient objects: 1 main (the man)\nDistinct categories: ~3 (person, clothing, building elements)\n\nContains person: true\nContains face: yes but partially obscured\nContains animal: false\nContains text: true (\"NEXT LEVEL FAITH\", \"THIS IS WAR\")\nContains vehicle: false\nContains food: false\nContains indoor scene: false\nContains outdoor scene: true\nContains artificial/rendered: false\nContains occlusion/truncation: false\nContains unusual viewpoint: false\nContains multiple main objects: false\n\nDominant content: person_face (or could be person)\nImage style: natural_photo (looks like a photo, possibly with some editing for promotional purposes)\nSemantic domain: fashion/portrait/lifestyle\n\nLet me construct the JSON response.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1363,
+          "completion_tokens": 717,
+          "total_tokens": 2080,
+          "cost": 0.00111906,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00111906,
+            "upstream_inference_prompt_cost": 0.00025866,
+            "upstream_inference_completions_cost": 0.0008604
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 430,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

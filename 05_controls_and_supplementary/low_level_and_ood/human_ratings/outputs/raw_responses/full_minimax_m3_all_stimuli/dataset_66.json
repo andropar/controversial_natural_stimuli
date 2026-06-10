@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_66",
+    "stim_key": "dataset_66",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 66,
+    "file_index": 66,
+    "image_name": "image_0066.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0066.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"military_aviation\",\n  \"short_caption\": \"Military bomber aircraft on tarmac with a passenger jet in the sky\",\n  \"main_objects\": [\"bomber aircraft\", \"passenger jet\", \"airfield\", \"sky\", \"clouds\"],\n  \"possible_interpretations\": [\n    \"Chinese Air Force bomber on a runway\",\n    \"News photo of a military aircraft with another plane overhead\",\n    \"Display of a strategic bomber at an airfield\"\n  ],\n  \"uncertainty_notes\": \"Aircraft is partially cropped on the right edge; the small distant plane is hard to identify beyond being a commercial jet.\",\n  \"quality_flags\": [\"caption_text_overlay\", \"subject_partially_cropped\"]\n}",
+      "response": {
+        "id": "gen-1780319038-yx5JZqWm1D06ixkdr8wU",
+        "object": "chat.completion",
+        "created": 1780319038,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"military_aviation\",\n  \"short_caption\": \"Military bomber aircraft on tarmac with a passenger jet in the sky\",\n  \"main_objects\": [\"bomber aircraft\", \"passenger jet\", \"airfield\", \"sky\", \"clouds\"],\n  \"possible_interpretations\": [\n    \"Chinese Air Force bomber on a runway\",\n    \"News photo of a military aircraft with another plane overhead\",\n    \"Display of a strategic bomber at an airfield\"\n  ],\n  \"uncertainty_notes\": \"Aircraft is partially cropped on the right edge; the small distant plane is hard to identify beyond being a commercial jet.\",\n  \"quality_flags\": [\"caption_text_overlay\", \"subject_partially_cropped\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be a military aircraft - specifically a bomber with \"D98\" markings in red on its side. There's also a commercial passenger jet visible in the upper left portion of the sky. The foreground aircraft appears to be a Chinese military bomber (based on the caption text at the bottom mentioning \"Chinese Air Force\"). The image has a Reuters/Stringer caption at the bottom.\n\nLet me go through the schema:\n\n- recognizability: The main content (military bomber aircraft) is clearly recognizable. I'd say 5.\n- ambiguity: The image is fairly clear - it's an aircraft on a tarmac with another plane in the sky. Low ambiguity. 1 or 2.\n- natural_photo_typicality: Looks like a typical news photograph. 5.\n- visual_clutter: The image is relatively clean - sky, aircraft, ground. Some clutter from the caption text at bottom. 2.\n- object_centricity: The bomber is the clear central object, dominating the frame. 5.\n- scene_centricity: While there's a scene (tarmac/sky), it's dominated by the aircraft object. 2.\n- caption_confidence: High confidence in describing it. 5.\n\nCounts:\n- estimated_salient_object_count: 2 (the bomber and the distant jet)\n- estimated_distinct_object_categories: 2 (military aircraft, commercial aircraft)\n\nBooleans:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (D98 marking and bottom caption)\n- contains_vehicle: true (aircraft)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true (tarmac/airfield)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the bomber is partially cut off on the right side)\n- contains_unusual_viewpoint: false (typical ground view of aircraft)\n- contains_multiple_main_objects: true (two aircraft, though one is much more prominent)\n\ndominant_content_type: object\nimage_style: natural_photo\nsemantic_domain: military/aviation\n\nShort caption: \"Military bomber aircraft on tarmac with passenger jet in sky\"\nMain objects: [\"bomber aircraft\", \"passenger jet\", \"airfield\", \"sky\"]\nPossible interpretations: [\"Chinese military bomber on display\", \"Aircraft on tarmac with another plane taking off/landing\", \"News photo of Chinese Air Force bomber\"]\n\nQuality flags: caption text overlay present, aircraft partially cropped on right",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be a military aircraft - specifically a bomber with \"D98\" markings in red on its side. There's also a commercial passenger jet visible in the upper left portion of the sky. The foreground aircraft appears to be a Chinese military bomber (based on the caption text at the bottom mentioning \"Chinese Air Force\"). The image has a Reuters/Stringer caption at the bottom.\n\nLet me go through the schema:\n\n- recognizability: The main content (military bomber aircraft) is clearly recognizable. I'd say 5.\n- ambiguity: The image is fairly clear - it's an aircraft on a tarmac with another plane in the sky. Low ambiguity. 1 or 2.\n- natural_photo_typicality: Looks like a typical news photograph. 5.\n- visual_clutter: The image is relatively clean - sky, aircraft, ground. Some clutter from the caption text at bottom. 2.\n- object_centricity: The bomber is the clear central object, dominating the frame. 5.\n- scene_centricity: While there's a scene (tarmac/sky), it's dominated by the aircraft object. 2.\n- caption_confidence: High confidence in describing it. 5.\n\nCounts:\n- estimated_salient_object_count: 2 (the bomber and the distant jet)\n- estimated_distinct_object_categories: 2 (military aircraft, commercial aircraft)\n\nBooleans:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (D98 marking and bottom caption)\n- contains_vehicle: true (aircraft)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true (tarmac/airfield)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the bomber is partially cut off on the right side)\n- contains_unusual_viewpoint: false (typical ground view of aircraft)\n- contains_multiple_main_objects: true (two aircraft, though one is much more prominent)\n\ndominant_content_type: object\nimage_style: natural_photo\nsemantic_domain: military/aviation\n\nShort caption: \"Military bomber aircraft on tarmac with passenger jet in sky\"\nMain objects: [\"bomber aircraft\", \"passenger jet\", \"airfield\", \"sky\"]\nPossible interpretations: [\"Chinese military bomber on display\", \"Aircraft on tarmac with another plane taking off/landing\", \"News photo of Chinese Air Force bomber\"]\n\nQuality flags: caption text overlay present, aircraft partially cropped on right",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 909,
+          "total_tokens": 2431,
+          "cost": 0.00152004,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00152004,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010908
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 619,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

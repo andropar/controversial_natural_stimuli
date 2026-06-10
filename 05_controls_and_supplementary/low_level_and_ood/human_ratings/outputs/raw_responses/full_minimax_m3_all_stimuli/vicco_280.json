@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_280",
+    "stim_key": "vicco_280",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 280,
+    "file_index": 279,
+    "image_name": "shared_4rep_vicco_280.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_280.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature_trees_autumn\",\n  \"short_caption\": \"Upward view of yellow autumn ginkgo tree branches against a blue sky.\",\n  \"main_objects\": [\"tree branches\", \"yellow leaves\", \"sky\"],\n  \"possible_interpretations\": [\"autumn ginkgo tree canopy\", \"yellow-leaved tree seen from below\", \"fall foliage against sky\"],\n  \"uncertainty_notes\": \"Species not definitively identifiable; likely ginkgo due to leaf shape and color but could be another yellow-leaved deciduous tree.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319711-Hb3W3obHxnt3aU6k9syT",
+        "object": "chat.completion",
+        "created": 1780319711,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature_trees_autumn\",\n  \"short_caption\": \"Upward view of yellow autumn ginkgo tree branches against a blue sky.\",\n  \"main_objects\": [\"tree branches\", \"yellow leaves\", \"sky\"],\n  \"possible_interpretations\": [\"autumn ginkgo tree canopy\", \"yellow-leaved tree seen from below\", \"fall foliage against sky\"],\n  \"uncertainty_notes\": \"Species not definitively identifiable; likely ginkgo due to leaf shape and color but could be another yellow-leaved deciduous tree.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a view looking up into a tree with yellow/golden leaves, likely a ginkgo tree in autumn, against a partly cloudy blue sky. Let me analyze this carefully.\n\n- recognizability: High - clearly identifiable as a tree canopy with yellow leaves\n- ambiguity: Low - one clear interpretation (autumn tree from below)\n- natural_photo_typicality: High - looks like a typical natural photograph\n- visual_clutter: High - many leaves, branches, creating busy visual field\n- object_centricity: Medium - the tree is the central subject but no single focal point\n- scene_centricity: Medium-high - it's a view of a scene/environment\n- caption_confidence: High - easy to caption\n\nMain objects: tree branches, leaves, sky\nDominant content: scene/texture pattern - it's a canopy view\nImage style: natural photo\nSemantic domain: nature/trees/autumn",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a view looking up into a tree with yellow/golden leaves, likely a ginkgo tree in autumn, against a partly cloudy blue sky. Let me analyze this carefully.\n\n- recognizability: High - clearly identifiable as a tree canopy with yellow leaves\n- ambiguity: Low - one clear interpretation (autumn tree from below)\n- natural_photo_typicality: High - looks like a typical natural photograph\n- visual_clutter: High - many leaves, branches, creating busy visual field\n- object_centricity: Medium - the tree is the central subject but no single focal point\n- scene_centricity: Medium-high - it's a view of a scene/environment\n- caption_confidence: High - easy to caption\n\nMain objects: tree branches, leaves, sky\nDominant content: scene/texture pattern - it's a canopy view\nImage style: natural photo\nSemantic domain: nature/trees/autumn",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 528,
+          "total_tokens": 2050,
+          "cost": 0.00093996,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00093996,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0006336
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 220,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_87",
+    "stim_key": "sota_87",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 87,
+    "file_index": 87,
+    "image_name": "image_0087.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0087.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"clothing\",\n\n  \"short_caption\": \"Black sleeveless dress on a mannequin against a white wooden background\",\n  \"main_objects\": [\"black dress\", \"mannequin\"],\n  \"possible_interpretations\": [\"product photo of a black dress\", \"black top on a dress form\", \"sleeveless summer dress on display\"],\n  \"uncertainty_notes\": \"Whether the garment is a full dress or a top is slightly unclear due to framing\",\n  \"quality_flags\": [\"product_photography\", \"mannequin_display\", \"studio_setup\"]\n}",
+      "response": {
+        "id": "gen-1780319187-hhd0MZRpUuriOId5Fsow",
+        "object": "chat.completion",
+        "created": 1780319187,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"clothing\",\n\n  \"short_caption\": \"Black sleeveless dress on a mannequin against a white wooden background\",\n  \"main_objects\": [\"black dress\", \"mannequin\"],\n  \"possible_interpretations\": [\"product photo of a black dress\", \"black top on a dress form\", \"sleeveless summer dress on display\"],\n  \"uncertainty_notes\": \"Whether the garment is a full dress or a top is slightly unclear due to framing\",\n  \"quality_flags\": [\"product_photography\", \"mannequin_display\", \"studio_setup\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a black dress or top displayed on a mannequin/dress form. The dress appears to be a sleeveless black garment with thin straps, a scoop or V-neckline, and a gathered/ruched waist with what looks like a tie detail. The background is a white/light wooden plank wall, which appears to be a typical product photography setup.\n\nLet me go through the schema fields:\n\n- recognizability: The main content (a black dress on a mannequin) is clearly recognizable. 5\n- ambiguity: The image is fairly clear - it's a dress on a mannequin. Low ambiguity. 1\n- natural_photo_typicality: This is a product photo, not a typical natural photograph. It's staged/posed. 2\n- visual_clutter: Not much clutter, clean product shot. 1\n- object_centricity: The dress is the clear central object. 5\n- scene_centricity: The image is object-focused, not scene-focused. 1\n- caption_confidence: High confidence in describing this. 5\n\n- estimated_salient_object_count: 1 (the dress)\n- estimated_distinct_object_categories: 2 (dress, mannequin)\n\n- contains_person: No (it's a mannequin)\n- contains_face: No\n- contains_animal: No\n- contains_text: No\n- contains_vehicle: No\n- contains_food: No\n- contains_indoor_scene: Yes (studio setting with wooden background)\n- contains_outdoor_scene: No\n- contains_artificial_or_rendered_content: No\n- contains_occlusion_or_truncation: Yes (the dress is partially shown, top of mannequin is cut off)\n- contains_unusual_viewpoint: No\n- contains_multiple_main_objects: No\n\n- dominant_content_type: \"object\"\n- image_style: \"edited_photo\" (product photography)\n- semantic_domain: \"clothing\" or \"fashion\"\n\n- short_caption: \"Black sleeveless dress displayed on a mannequin against a white wooden background\"\n- main_objects: [\"black dress\", \"mannequin\"]\n- possible_interpretations: [\"black dress product photo\", \"black top on display form\", \"sleeveless summer dress\"]\n- uncertainty_notes: \"Style of garment (dress vs top) and exact category slightly ambiguous\"\n- quality_flags: [\"product_photo\", \"mannequin_display\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a black dress or top displayed on a mannequin/dress form. The dress appears to be a sleeveless black garment with thin straps, a scoop or V-neckline, and a gathered/ruched waist with what looks like a tie detail. The background is a white/light wooden plank wall, which appears to be a typical product photography setup.\n\nLet me go through the schema fields:\n\n- recognizability: The main content (a black dress on a mannequin) is clearly recognizable. 5\n- ambiguity: The image is fairly clear - it's a dress on a mannequin. Low ambiguity. 1\n- natural_photo_typicality: This is a product photo, not a typical natural photograph. It's staged/posed. 2\n- visual_clutter: Not much clutter, clean product shot. 1\n- object_centricity: The dress is the clear central object. 5\n- scene_centricity: The image is object-focused, not scene-focused. 1\n- caption_confidence: High confidence in describing this. 5\n\n- estimated_salient_object_count: 1 (the dress)\n- estimated_distinct_object_categories: 2 (dress, mannequin)\n\n- contains_person: No (it's a mannequin)\n- contains_face: No\n- contains_animal: No\n- contains_text: No\n- contains_vehicle: No\n- contains_food: No\n- contains_indoor_scene: Yes (studio setting with wooden background)\n- contains_outdoor_scene: No\n- contains_artificial_or_rendered_content: No\n- contains_occlusion_or_truncation: Yes (the dress is partially shown, top of mannequin is cut off)\n- contains_unusual_viewpoint: No\n- contains_multiple_main_objects: No\n\n- dominant_content_type: \"object\"\n- image_style: \"edited_photo\" (product photography)\n- semantic_domain: \"clothing\" or \"fashion\"\n\n- short_caption: \"Black sleeveless dress displayed on a mannequin against a white wooden background\"\n- main_objects: [\"black dress\", \"mannequin\"]\n- possible_interpretations: [\"black dress product photo\", \"black top on display form\", \"sleeveless summer dress\"]\n- uncertainty_notes: \"Style of garment (dress vs top) and exact category slightly ambiguous\"\n- quality_flags: [\"product_photo\", \"mannequin_display\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1179,
+          "completion_tokens": 847,
+          "total_tokens": 2026,
+          "cost": 0.00121986,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00121986,
+            "upstream_inference_prompt_cost": 0.00020346,
+            "upstream_inference_completions_cost": 0.0010164
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 545,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

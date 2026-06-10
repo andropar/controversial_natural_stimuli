@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_67",
+    "stim_key": "architecture_67",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 67,
+    "file_index": 67,
+    "image_name": "image_0067.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0067.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 3, \"visual_clutter\": 4, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 4, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 5, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"indoor_education\", \"short_caption\": \"Cardboard WWII air raid shelter display in a classroom with helmets, posters, and shelves of papers\", \"main_objects\": [\"cardboard shelter\", \"air raid precautions poster\", \"military helmet\", \"paper folders\", \"binder\", \"colorful poster\"], \"possible_interpretations\": [\"WWII educational classroom display\", \"school history project recreation\", \"museum exhibit installation\", \"wartime shelter art piece\"], \"uncertainty_notes\": \"Exact setting unclear; could be a school, museum, or community center. The cardboard shelter is clearly handmade, suggesting a school project context.\", \"quality_flags\": [\"slight_motion_blur\", \"uneven_lighting\", \"partially_occluded_background\"]}",
+      "response": {
+        "id": "gen-1780318925-P31E8rm8DtKcWdeRSXhY",
+        "object": "chat.completion",
+        "created": 1780318925,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 3, \"visual_clutter\": 4, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 4, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 5, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"indoor_education\", \"short_caption\": \"Cardboard WWII air raid shelter display in a classroom with helmets, posters, and shelves of papers\", \"main_objects\": [\"cardboard shelter\", \"air raid precautions poster\", \"military helmet\", \"paper folders\", \"binder\", \"colorful poster\"], \"possible_interpretations\": [\"WWII educational classroom display\", \"school history project recreation\", \"museum exhibit installation\", \"wartime shelter art piece\"], \"uncertainty_notes\": \"Exact setting unclear; could be a school, museum, or community center. The cardboard shelter is clearly handmade, suggesting a school project context.\", \"quality_flags\": [\"slight_motion_blur\", \"uneven_lighting\", \"partially_occluded_background\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be an indoor scene, likely a classroom or office, featuring a cardboard structure that looks like a DIY air raid shelter. The structure has corrugated cardboard walls forming an entrance/doorway. Inside the dark opening, there's a blue poster with \"AIR RAID PRECAUTIONS\" text and various instructions like \"KEEP COOL\", \"DON'T SCREAM\", \"DON'T RUN\", \"PREVENT DISORDER\", \"OBEY ALL INSTRUCTIONS\".\n\nTo the left, I can see:\n- Some artwork/poster with red and black colors (possibly a skyline)\n- Two helmets on a shelf (one appears to be a British-style helmet, the other darker)\n- Papers/folders on shelves\n- Pink/purple binders\n\nTo the right:\n- A light-colored wall with an electrical outlet/switch\n- What appears to be a colorful poster or artwork at the top right\n\nThe setting is clearly an indoor educational space (classroom), with a WWII-themed display or art project.\n\nLet me rate this:\n\n- recognizability: 4 - The main content (air raid shelter display) is clearly recognizable\n- ambiguity: 2 - It's fairly clear what this is\n- natural_photo_typicality: 3 - It's a real photo but of an unusual constructed scene\n- visual_clutter: 4 - Many competing elements (posters, shelves, items, cardboard structure)\n- object_centricity: 3 - The shelter is central but there's a lot of context\n- scene_centricity: 4 - It's more of a scene than a single object\n- caption_confidence: 4 - I can write a clear caption\n\n- estimated_salient_object_count: 3 (shelter, helmets, posters)\n- estimated_distinct_object_categories: 4-5\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (AIR RAID PRECAUTIONS sign)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"object\" (the shelter structure) or \"scene\" - I'll go with \"scene\" since it shows a whole environment\n- Actually, the air raid shelter is the clear focus - I'll go with \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"indoor\" or \"classroom\" or \"historical_education\"\n\nshort_caption: \"A cardboard WWII air raid shelter display in a classroom with helmets and educational posters\"\n\nmain_objects: [\"cardboard shelter\", \"air raid poster\", \"military helmet\", \"papers\", \"binder\"]\n\npossible_interpretations: [\"WWII classroom educational display\", \"school history project\", \"museum exhibit reconstruction\"]\n\nuncertainty_notes: \"Difficult to determine exact classroom context; the shelter could be a student art project or educational installation\"\n\nquality_flags: [\"slightly_blurry\", \"mixed_lighting\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be an indoor scene, likely a classroom or office, featuring a cardboard structure that looks like a DIY air raid shelter. The structure has corrugated cardboard walls forming an entrance/doorway. Inside the dark opening, there's a blue poster with \"AIR RAID PRECAUTIONS\" text and various instructions like \"KEEP COOL\", \"DON'T SCREAM\", \"DON'T RUN\", \"PREVENT DISORDER\", \"OBEY ALL INSTRUCTIONS\".\n\nTo the left, I can see:\n- Some artwork/poster with red and black colors (possibly a skyline)\n- Two helmets on a shelf (one appears to be a British-style helmet, the other darker)\n- Papers/folders on shelves\n- Pink/purple binders\n\nTo the right:\n- A light-colored wall with an electrical outlet/switch\n- What appears to be a colorful poster or artwork at the top right\n\nThe setting is clearly an indoor educational space (classroom), with a WWII-themed display or art project.\n\nLet me rate this:\n\n- recognizability: 4 - The main content (air raid shelter display) is clearly recognizable\n- ambiguity: 2 - It's fairly clear what this is\n- natural_photo_typicality: 3 - It's a real photo but of an unusual constructed scene\n- visual_clutter: 4 - Many competing elements (posters, shelves, items, cardboard structure)\n- object_centricity: 3 - The shelter is central but there's a lot of context\n- scene_centricity: 4 - It's more of a scene than a single object\n- caption_confidence: 4 - I can write a clear caption\n\n- estimated_salient_object_count: 3 (shelter, helmets, posters)\n- estimated_distinct_object_categories: 4-5\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (AIR RAID PRECAUTIONS sign)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"object\" (the shelter structure) or \"scene\" - I'll go with \"scene\" since it shows a whole environment\n- Actually, the air raid shelter is the clear focus - I'll go with \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"indoor\" or \"classroom\" or \"historical_education\"\n\nshort_caption: \"A cardboard WWII air raid shelter display in a classroom with helmets and educational posters\"\n\nmain_objects: [\"cardboard shelter\", \"air raid poster\", \"military helmet\", \"papers\", \"binder\"]\n\npossible_interpretations: [\"WWII classroom educational display\", \"school history project\", \"museum exhibit reconstruction\"]\n\nuncertainty_notes: \"Difficult to determine exact classroom context; the shelter could be a student art project or educational installation\"\n\nquality_flags: [\"slightly_blurry\", \"mixed_lighting\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 1016,
+          "total_tokens": 2538,
+          "cost": 0.00152556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00152556,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0012192
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 745,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_81",
+    "stim_key": "dataset_81",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 81,
+    "file_index": 81,
+    "image_name": "image_0081.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0081.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"accessories\",\n  \"short_caption\": \"A wristwatch with a camouflage fabric strap and green dial on a white surface.\",\n  \"main_objects\": [\"wristwatch\", \"camouflage strap\", \"leather band\"],\n  \"possible_interpretations\": [\"wristwatch\", \"vintage fashion watch\", \"watch listed for sale\"],\n  \"uncertainty_notes\": \"Dial text and brand markings are not clearly legible; possible listing-style photo.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319053-5YoVBTCpZwv3XGY9kJY2",
+        "object": "chat.completion",
+        "created": 1780319053,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"accessories\",\n  \"short_caption\": \"A wristwatch with a camouflage fabric strap and green dial on a white surface.\",\n  \"main_objects\": [\"wristwatch\", \"camouflage strap\", \"leather band\"],\n  \"possible_interpretations\": [\"wristwatch\", \"vintage fashion watch\", \"watch listed for sale\"],\n  \"uncertainty_notes\": \"Dial text and brand markings are not clearly legible; possible listing-style photo.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a wristwatch with a camouflage-patterned strap (green, brown, red tones) laid flat on a white/light surface. The watch face is rectangular/square with a light green/mint colored dial. There's a black leather section at the bottom of the strap. The image appears to be a casual photograph, possibly taken for a sale listing (like eBay or similar) given the plain background and casual composition.\n\nLet me annotate this:\n\n- Recognizability: The watch is clearly recognizable. 5\n- Ambiguity: Very low ambiguity, it's clearly a watch. 1\n- Natural photo typicality: Looks like a typical casual photo, perhaps for a listing. 4\n- Visual clutter: Very low, single object on plain background. 1\n- Object centricity: Yes, the watch dominates. 5\n- Scene centricity: No, it's object-focused. 1\n- Caption confidence: High confidence in caption. 5\n\n- Estimated salient object count: 1\n- Estimated distinct object categories: 1 (watch)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (might have small text on dial but not clearly readable)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (just a plain surface)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: object\n- image_style: natural_photo\n- semantic_domain: accessories/watches\n\nShort caption: A wristwatch with a camouflage fabric strap and green dial lying on a white surface.\n\nMain objects: watch, camouflage strap\n\nPossible interpretations: wristwatch for sale, vintage watch, fashion accessory",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a wristwatch with a camouflage-patterned strap (green, brown, red tones) laid flat on a white/light surface. The watch face is rectangular/square with a light green/mint colored dial. There's a black leather section at the bottom of the strap. The image appears to be a casual photograph, possibly taken for a sale listing (like eBay or similar) given the plain background and casual composition.\n\nLet me annotate this:\n\n- Recognizability: The watch is clearly recognizable. 5\n- Ambiguity: Very low ambiguity, it's clearly a watch. 1\n- Natural photo typicality: Looks like a typical casual photo, perhaps for a listing. 4\n- Visual clutter: Very low, single object on plain background. 1\n- Object centricity: Yes, the watch dominates. 5\n- Scene centricity: No, it's object-focused. 1\n- Caption confidence: High confidence in caption. 5\n\n- Estimated salient object count: 1\n- Estimated distinct object categories: 1 (watch)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (might have small text on dial but not clearly readable)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (just a plain surface)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: object\n- image_style: natural_photo\n- semantic_domain: accessories/watches\n\nShort caption: A wristwatch with a camouflage fabric strap and green dial lying on a white surface.\n\nMain objects: watch, camouflage strap\n\nPossible interpretations: wristwatch for sale, vintage watch, fashion accessory",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1179,
+          "completion_tokens": 722,
+          "total_tokens": 1901,
+          "cost": 0.00106986,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00106986,
+            "upstream_inference_prompt_cost": 0.00020346,
+            "upstream_inference_completions_cost": 0.0008664
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 456,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_235",
+    "stim_key": "vicco_235",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 235,
+    "file_index": 234,
+    "image_name": "shared_4rep_vicco_235.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_235.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"transportation_roadway\",\n  \"short_caption\": \"View from inside a car on a highway with overhead signs and bare trees\",\n  \"main_objects\": [\"highway\", \"lane markings\", \"blue directional sign\", \"red overhead sign\", \"vehicles\", \"trees\", \"street lamps\", \"dashboard frame\"],\n  \"possible_interpretations\": [\"Highway driving scene from inside a vehicle\", \"Rotated road photograph\", \"Dashboard camera view of a motorway\", \"European highway with directional signage\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; signs are not fully legible; specific location and sign contents unclear.\",\n  \"quality_flags\": [\"rotated_orientation\", \"viewed_through_windshield\", \"partially_obscured_by_dashboard\"]\n}",
+      "response": {
+        "id": "gen-1780319659-pLxXzRKTYURkgNCGI8pw",
+        "object": "chat.completion",
+        "created": 1780319659,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"transportation_roadway\",\n  \"short_caption\": \"View from inside a car on a highway with overhead signs and bare trees\",\n  \"main_objects\": [\"highway\", \"lane markings\", \"blue directional sign\", \"red overhead sign\", \"vehicles\", \"trees\", \"street lamps\", \"dashboard frame\"],\n  \"possible_interpretations\": [\"Highway driving scene from inside a vehicle\", \"Rotated road photograph\", \"Dashboard camera view of a motorway\", \"European highway with directional signage\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; signs are not fully legible; specific location and sign contents unclear.\",\n  \"quality_flags\": [\"rotated_orientation\", \"viewed_through_windshield\", \"partially_obscured_by_dashboard\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. The image appears to be rotated 90 degrees - it's taken from inside a vehicle (likely through a windshield, as there's a dark frame visible on the right side suggesting the dashboard/A-pillar). The view shows a highway/road with:\n\n- A multi-lane road with white lane markings\n- A red overhead sign/gantry (possibly a speed limit or warning sign)\n- A blue road sign (appears to be a directional sign)\n- Other vehicles in the distance (cars, possibly trucks)\n- Bare trees lining the road\n- Cloudy/overcast sky\n- Street lamps/light poles\n- An electronic message sign (the orange/amber dots visible)\n- A bridge or gantry structure in the distance\n\nThe image is rotated 90 degrees clockwise from what would be the natural orientation. This is a typical view from inside a car driving on a highway.\n\nLet me provide ratings:\n- recognizability: 3-4 (it's clearly a highway scene but rotated, making it somewhat confusing)\n- ambiguity: 2 (clearly a road/highway scene)\n- natural_photo_typicality: 3 (it's a natural photo but taken from inside a vehicle through a windshield)\n- visual_clutter: 3 (multiple elements but not extremely cluttered)\n- object_centricity: 2 (it's a scene rather than object-centric)\n- scene_centricity: 5 (definitely a scene/place)\n- caption_confidence: 3 (the rotation makes it harder to caption confidently)\n\nLet me fill in the rest of the fields.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. The image appears to be rotated 90 degrees - it's taken from inside a vehicle (likely through a windshield, as there's a dark frame visible on the right side suggesting the dashboard/A-pillar). The view shows a highway/road with:\n\n- A multi-lane road with white lane markings\n- A red overhead sign/gantry (possibly a speed limit or warning sign)\n- A blue road sign (appears to be a directional sign)\n- Other vehicles in the distance (cars, possibly trucks)\n- Bare trees lining the road\n- Cloudy/overcast sky\n- Street lamps/light poles\n- An electronic message sign (the orange/amber dots visible)\n- A bridge or gantry structure in the distance\n\nThe image is rotated 90 degrees clockwise from what would be the natural orientation. This is a typical view from inside a car driving on a highway.\n\nLet me provide ratings:\n- recognizability: 3-4 (it's clearly a highway scene but rotated, making it somewhat confusing)\n- ambiguity: 2 (clearly a road/highway scene)\n- natural_photo_typicality: 3 (it's a natural photo but taken from inside a vehicle through a windshield)\n- visual_clutter: 3 (multiple elements but not extremely cluttered)\n- object_centricity: 2 (it's a scene rather than object-centric)\n- scene_centricity: 5 (definitely a scene/place)\n- caption_confidence: 3 (the rotation makes it harder to caption confidently)\n\nLet me fill in the rest of the fields.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 711,
+          "total_tokens": 2233,
+          "cost": 0.00115956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00115956,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008532
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 368,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

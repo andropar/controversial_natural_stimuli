@@ -23,7 +23,7 @@ brain-alignment drop observed in
 ## Run
 
 ```
-python 01_compute_image_stats.py                       # vicco + 5 controversial sets -> data/image_stats.csv
+python 01_compute_image_stats.py                       # vicco + 5 controversial sets -> results/image_stats.csv
 python 03_compute_training_image_stats.py              # LAION-fMRI shared (encoder training) -> appended
 python 02_low_level_rdm_brain_alignment.py             # pixel/stats RDM ↔ brain RDM per set
 python figures/plot_stat_distributions.py              # marginal distributions + permutation-test stars vs training
@@ -50,7 +50,7 @@ whether low-level structure could be driving the drop at all.
 
 Brain-RDM alignment of low-level RDMs is uniformly small (|r| < 0.06) for
 every stimulus set, including vicco. Low-level image structure does not
-track the model-RSA drop seen in `02_rsa_scores`; the drop is model-specific.
+track the model-RSA drop seen in the RSA score tables; the drop is model-specific.
 
 <!-- BEGIN AUTO-FIGURE-PROVENANCE -->
 ## Contents Snapshot

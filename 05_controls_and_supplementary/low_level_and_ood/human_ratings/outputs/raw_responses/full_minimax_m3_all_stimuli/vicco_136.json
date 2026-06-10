@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_136",
+    "stim_key": "vicco_136",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 136,
+    "file_index": 135,
+    "image_name": "shared_4rep_vicco_136.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_136.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architectural/industrial\",\n  \"short_caption\": \"Overhead view of a metal diamond-plate staircase with green railings descending to a polished floor\",\n  \"main_objects\": [\"staircase\", \"metal stairs\", \"railings\", \"stanchion\", \"concrete floor\"],\n  \"possible_interpretations\": [\n    \"Industrial or fire escape staircase viewed from above\",\n    \"Stairwell in a public building or venue\",\n    \"Stairs leading down from an upper floor or platform\"\n  ],\n  \"uncertainty_notes\": \"The unusual overhead/tilted perspective makes spatial orientation difficult; the exact setting (indoor vs. covered outdoor, commercial vs. industrial) is not entirely clear from visible cues alone.\",\n  \"quality_flags\": [\"unusual_viewpoint\", \"rotated_or_tilted_composition\", \"no_clear_focal_subject\"]\n}",
+      "response": {
+        "id": "gen-1780319546-kVqOlFl597kEQNvYjWI0",
+        "object": "chat.completion",
+        "created": 1780319546,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architectural/industrial\",\n  \"short_caption\": \"Overhead view of a metal diamond-plate staircase with green railings descending to a polished floor\",\n  \"main_objects\": [\"staircase\", \"metal stairs\", \"railings\", \"stanchion\", \"concrete floor\"],\n  \"possible_interpretations\": [\n    \"Industrial or fire escape staircase viewed from above\",\n    \"Stairwell in a public building or venue\",\n    \"Stairs leading down from an upper floor or platform\"\n  ],\n  \"uncertainty_notes\": \"The unusual overhead/tilted perspective makes spatial orientation difficult; the exact setting (indoor vs. covered outdoor, commercial vs. industrial) is not entirely clear from visible cues alone.\",\n  \"quality_flags\": [\"unusual_viewpoint\", \"rotated_or_tilted_composition\", \"no_clear_focal_subject\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a view looking down at a staircase from above. I can see:\n- Metal diamond-plate stairs (industrial/fire escape style)\n- Green and white painted railings\n- A concrete or polished floor at the bottom\n- Some stanchions or posts (possibly for crowd control)\n- The perspective is from above looking down, which is an unusual viewpoint\n\nThe image appears to be rotated or taken from an unusual overhead perspective. The composition is somewhat disorienting due to the angle.\n\nLet me rate the dimensions:\n- Recognizability: The content is somewhat clear (staircase, floor, railings) but the unusual viewpoint makes it harder to immediately recognize. Maybe 3-4.\n- Ambiguity: There's not much ambiguity - it's clearly a staircase area. Maybe 2.\n- Natural_photo_typicality: This looks like a regular photo, though with unusual composition. 4.\n- Visual_clutter: Multiple elements (stairs, railings, posts, floor reflections) but not extremely cluttered. 3.\n- Object_centricity: No single dominant object - it's more of a scene. 2.\n- Scene_centricity: Yes, this is primarily showing a place/scene. 4-5.\n- Caption_confidence: I can describe it confidently. 4.\n\nLet me check the booleans:\n- contains_person: No\n- contains_face: No\n- contains_animal: No\n- contains_text: No\n- contains_vehicle: No\n- contains_food: No\n- contains_indoor_scene: Yes (looks indoor, could be industrial or fire escape)\n- contains_outdoor_scene: Could be outdoor too (fire escape often outdoor), but the floor looks like indoor concrete. I'll say indoor primarily.\n- contains_artificial_or_rendered_content: No\n- contains_occlusion_or_truncation: Some truncation at edges but nothing major\n- contains_unusual_viewpoint: Yes, definitely unusual overhead perspective\n- contains_multiple_main_objects: No single main object, but multiple elements\n\nWait, looking again, the image might actually be rotated 90 degrees - or the perspective is looking down from above the top of a staircase. The metal plate stairs go down, and we're seeing the floor below. This is an unusual viewpoint.\n\nMain objects: staircase, metal stairs, railings, stanchions, floor\nDominant content_type: scene\nImage style: natural_photo\nSemantic domain: architectural/industrial\n\nLet me finalize the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a view looking down at a staircase from above. I can see:\n- Metal diamond-plate stairs (industrial/fire escape style)\n- Green and white painted railings\n- A concrete or polished floor at the bottom\n- Some stanchions or posts (possibly for crowd control)\n- The perspective is from above looking down, which is an unusual viewpoint\n\nThe image appears to be rotated or taken from an unusual overhead perspective. The composition is somewhat disorienting due to the angle.\n\nLet me rate the dimensions:\n- Recognizability: The content is somewhat clear (staircase, floor, railings) but the unusual viewpoint makes it harder to immediately recognize. Maybe 3-4.\n- Ambiguity: There's not much ambiguity - it's clearly a staircase area. Maybe 2.\n- Natural_photo_typicality: This looks like a regular photo, though with unusual composition. 4.\n- Visual_clutter: Multiple elements (stairs, railings, posts, floor reflections) but not extremely cluttered. 3.\n- Object_centricity: No single dominant object - it's more of a scene. 2.\n- Scene_centricity: Yes, this is primarily showing a place/scene. 4-5.\n- Caption_confidence: I can describe it confidently. 4.\n\nLet me check the booleans:\n- contains_person: No\n- contains_face: No\n- contains_animal: No\n- contains_text: No\n- contains_vehicle: No\n- contains_food: No\n- contains_indoor_scene: Yes (looks indoor, could be industrial or fire escape)\n- contains_outdoor_scene: Could be outdoor too (fire escape often outdoor), but the floor looks like indoor concrete. I'll say indoor primarily.\n- contains_artificial_or_rendered_content: No\n- contains_occlusion_or_truncation: Some truncation at edges but nothing major\n- contains_unusual_viewpoint: Yes, definitely unusual overhead perspective\n- contains_multiple_main_objects: No single main object, but multiple elements\n\nWait, looking again, the image might actually be rotated 90 degrees - or the perspective is looking down from above the top of a staircase. The metal plate stairs go down, and we're seeing the floor below. This is an unusual viewpoint.\n\nMain objects: staircase, metal stairs, railings, stanchions, floor\nDominant content_type: scene\nImage style: natural_photo\nSemantic domain: architectural/industrial\n\nLet me finalize the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 925,
+          "total_tokens": 2447,
+          "cost": 0.00141636,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00141636,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.00111
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 604,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

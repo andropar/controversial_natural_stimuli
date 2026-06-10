@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_61",
+    "stim_key": "architecture_61",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 61,
+    "file_index": 61,
+    "image_name": "image_0061.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0061.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor/government/office\",\n  \"short_caption\": \"Formal meeting room with wooden conference table, fireplace, and decorative urns on mantel\",\n  \"main_objects\": [\"conference table\", \"fireplace\", \"mantelpiece\", \"urns\", \"plant arrangement\", \"leather chair\", \"ashtrays\", \"silver pitcher\", \"papers\"],\n  \"possible_interpretations\": [\"White House Cabinet Room\", \"government conference room\", \"historic boardroom\", \"formal executive meeting space\"],\n  \"uncertainty_notes\": \"The specific location cannot be confirmed; the painting above the fireplace is too small to identify; only a partial hand of a person is visible at the right edge.\",\n  \"quality_flags\": [\"person_partially_out_of_frame\", \"small_distant_details_unresolvable\"]\n}",
+      "response": {
+        "id": "gen-1780318913-KNNLdTJcxjKOsMmlYpLz",
+        "object": "chat.completion",
+        "created": 1780318913,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor/government/office\",\n  \"short_caption\": \"Formal meeting room with wooden conference table, fireplace, and decorative urns on mantel\",\n  \"main_objects\": [\"conference table\", \"fireplace\", \"mantelpiece\", \"urns\", \"plant arrangement\", \"leather chair\", \"ashtrays\", \"silver pitcher\", \"papers\"],\n  \"possible_interpretations\": [\"White House Cabinet Room\", \"government conference room\", \"historic boardroom\", \"formal executive meeting space\"],\n  \"uncertainty_notes\": \"The specific location cannot be confirmed; the painting above the fireplace is too small to identify; only a partial hand of a person is visible at the right edge.\",\n  \"quality_flags\": [\"person_partially_out_of_frame\", \"small_distant_details_unresolvable\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be a formal meeting room, likely in a government building (possibly the White House Cabinet Room or similar). Key elements I can see:\n\n1. A long wooden conference table dominates the foreground\n2. A fireplace with a dark opening in the background\n3. A mantelpiece with decorative urns on either side\n4. A green plant/boxwood arrangement on the mantel\n5. A framed picture/painting above the fireplace (appears to be a portrait, though details are unclear)\n6. A leather chair (likely the president's chair) at the head of the table\n7. Ashtrays or small dishes placed on the table\n8. Papers/documents on the table\n9. A silver pitcher on the right side\n10. A person's hand visible on the right side holding a pencil\n11. Various other items on the table\n\nThis looks like it could be the Cabinet Room in the White House based on the formal setup with the fireplace and the style of the room.\n\nLet me rate based on the schema:\n\n- recognizability: 4 - The scene is clearly recognizable as a formal meeting/conference room\n- ambiguity: 2 - It's fairly clear what kind of room this is\n- natural_photo_typicality: 4 - Looks like a typical photograph\n- visual_clutter: 3 - There are multiple objects but not overly cluttered\n- object_centricity: 2 - More of a scene than a single object\n- scene_centricity: 5 - Definitely a scene\n- caption_confidence: 4 - Can write a clear caption\n\n- estimated_salient_object_count: 6 (table, chairs, fireplace, ashtrays, pitcher, plant arrangement)\n- estimated_distinct_object_categories: 5 (furniture, fireplace, decorative items, tableware, plant)\n\n- contains_person: true (hand visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the person is mostly off-frame)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: \"indoor/government/office\"\n\nShort caption: \"Formal meeting room with wooden conference table, fireplace, and decorative urns on mantel\"\n\nMain objects: conference table, fireplace, mantelpiece, urns, plant, leather chair, ashtrays, pitcher, papers\n\nPossible interpretations: \n- White House Cabinet Room\n- Government meeting room\n- Formal conference room\n- Boardroom in a historic building\n\nUncertainty notes: The specific location is uncertain; the painting is too small to identify clearly",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be a formal meeting room, likely in a government building (possibly the White House Cabinet Room or similar). Key elements I can see:\n\n1. A long wooden conference table dominates the foreground\n2. A fireplace with a dark opening in the background\n3. A mantelpiece with decorative urns on either side\n4. A green plant/boxwood arrangement on the mantel\n5. A framed picture/painting above the fireplace (appears to be a portrait, though details are unclear)\n6. A leather chair (likely the president's chair) at the head of the table\n7. Ashtrays or small dishes placed on the table\n8. Papers/documents on the table\n9. A silver pitcher on the right side\n10. A person's hand visible on the right side holding a pencil\n11. Various other items on the table\n\nThis looks like it could be the Cabinet Room in the White House based on the formal setup with the fireplace and the style of the room.\n\nLet me rate based on the schema:\n\n- recognizability: 4 - The scene is clearly recognizable as a formal meeting/conference room\n- ambiguity: 2 - It's fairly clear what kind of room this is\n- natural_photo_typicality: 4 - Looks like a typical photograph\n- visual_clutter: 3 - There are multiple objects but not overly cluttered\n- object_centricity: 2 - More of a scene than a single object\n- scene_centricity: 5 - Definitely a scene\n- caption_confidence: 4 - Can write a clear caption\n\n- estimated_salient_object_count: 6 (table, chairs, fireplace, ashtrays, pitcher, plant arrangement)\n- estimated_distinct_object_categories: 5 (furniture, fireplace, decorative items, tableware, plant)\n\n- contains_person: true (hand visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the person is mostly off-frame)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: \"indoor/government/office\"\n\nShort caption: \"Formal meeting room with wooden conference table, fireplace, and decorative urns on mantel\"\n\nMain objects: conference table, fireplace, mantelpiece, urns, plant, leather chair, ashtrays, pitcher, papers\n\nPossible interpretations: \n- White House Cabinet Room\n- Government meeting room\n- Formal conference room\n- Boardroom in a historic building\n\nUncertainty notes: The specific location is uncertain; the painting is too small to identify clearly",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 1007,
+          "total_tokens": 2321,
+          "cost": 0.00145236,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00145236,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.0012084
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 702,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

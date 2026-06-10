@@ -1,0 +1,82 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_2",
+    "stim_key": "vicco_2",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 2,
+    "file_index": 1,
+    "image_name": "shared_4rep_vicco_002.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_002.jpg"
+  },
+  "model": "google/gemini-3.5-flash",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 8,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"shopping\",\n  \"short_caption\": \"Two women browse a clothing rack outside a vintage clothing store with a pink neon sign.\",\n  \"main_objects\": [\n    \"woman in tan coat\",\n    \"woman in black jacket\",\n    \"clothing rack\",\n    \"neon sign\",\n    \"smiley face balloon\"\n  ],\n  \"possible_interpretations\": [\n    \"women shopping for vintage clothes\",\n    \"friends browsing an outdoor clothing display\"\n  ],\n  \"uncertainty_notes\": \"The scene is clear and unambiguous.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780316660-74OiSIBQU2PivKuJGkS1",
+        "object": "chat.completion",
+        "created": 1780316660,
+        "model": "google/gemini-3.5-flash-20260519",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 8,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"shopping\",\n  \"short_caption\": \"Two women browse a clothing rack outside a vintage clothing store with a pink neon sign.\",\n  \"main_objects\": [\n    \"woman in tan coat\",\n    \"woman in black jacket\",\n    \"clothing rack\",\n    \"neon sign\",\n    \"smiley face balloon\"\n  ],\n  \"possible_interpretations\": [\n    \"women shopping for vintage clothes\",\n    \"friends browsing an outdoor clothing display\"\n  ],\n  \"uncertainty_notes\": \"The scene is clear and unambiguous.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "**Analyzing Image Content**\n\nMy current focus is on meticulously dissecting the visual elements within the provided image. I'm breaking down the scene into its core components: identifying the primary subjects, their actions, and the surrounding environmental details, specifically noting the \"Awoke Vintage\" signage and the nature of the clothing display. This detailed analysis is crucial for the subsequent annotation process.\n\n**Detailing Visual Observations**\n\nI'm now rating the image's content. Recognizability and typicality are high at 5, with minimal ambiguity. I've noted significant visual clutter with numerous details, and it's more scene-centric (4) than object-centric (2). I'm confident in captioning it, estimating around three salient objects and eight distinct categories.\n\n**Classifying Image Attributes**\n\nI've completed the binary attribute classification. Crucially, I've confirmed the presence of a face and text, while definitively excluding animals and vehicles. The scene is clearly outdoors, not indoor, and is a photograph of real content, not artificial. I've also noted occlusion and a lack of unusual viewpoints, with multiple main objects present, leading me to classify the dominant content as \"mixed.\"\n\n",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "**Analyzing Image Content**\n\nMy current focus is on meticulously dissecting the visual elements within the provided image. I'm breaking down the scene into its core components: identifying the primary subjects, their actions, and the surrounding environmental details, specifically noting the \"Awoke Vintage\" signage and the nature of the clothing display. This detailed analysis is crucial for the subsequent annotation process.\n\n**Detailing Visual Observations**\n\nI'm now rating the image's content. Recognizability and typicality are high at 5, with minimal ambiguity. I've noted significant visual clutter with numerous details, and it's more scene-centric (4) than object-centric (2). I'm confident in captioning it, estimating around three salient objects and eight distinct categories.\n\n**Classifying Image Attributes**\n\nI've completed the binary attribute classification. Crucially, I've confirmed the presence of a face and text, while definitively excluding animals and vehicles. The scene is clearly outdoors, not indoor, and is a photograph of real content, not artificial. I've also noted occlusion and a lack of unusual viewpoints, with multiple main objects present, leading me to classify the dominant content as \"mixed.\"\n\n",
+                  "format": "google-gemini-v1",
+                  "index": 0
+                },
+                {
+                  "type": "reasoning.encrypted",
+                  "data": "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",
+                  "format": "google-gemini-v1",
+                  "index": 1
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1731,
+          "completion_tokens": 1212,
+          "total_tokens": 2943,
+          "cost": 0.0135045,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0135045,
+            "upstream_inference_prompt_cost": 0.0025965,
+            "upstream_inference_completions_cost": 0.010908
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 814,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

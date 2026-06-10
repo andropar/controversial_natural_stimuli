@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_246",
+    "stim_key": "vicco_246",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 246,
+    "file_index": 245,
+    "image_name": "shared_4rep_vicco_246.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_246.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"cafe_dining_portrait\",\n\n  \"short_caption\": \"Smiling woman in black jacket holding a sandwich in a city cafe\",\n  \"main_objects\": [\"woman\", \"black puffer jacket\", \"sandwich\", \"paper cup\", \"potted plant\"],\n  \"possible_interpretations\": [\"A woman enjoying a meal at an urban cafe\"],\n  \"uncertainty_notes\": \"Window signage text is partially obscured; specific food item (sandwich/hot dog) is not fully visible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319672-41dVZqxrhJsZD0uXNMqL",
+        "object": "chat.completion",
+        "created": 1780319672,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"cafe_dining_portrait\",\n\n  \"short_caption\": \"Smiling woman in black jacket holding a sandwich in a city cafe\",\n  \"main_objects\": [\"woman\", \"black puffer jacket\", \"sandwich\", \"paper cup\", \"potted plant\"],\n  \"possible_interpretations\": [\"A woman enjoying a meal at an urban cafe\"],\n  \"uncertainty_notes\": \"Window signage text is partially obscured; specific food item (sandwich/hot dog) is not fully visible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a woman with short brown hair, smiling at the camera. She's wearing a black puffy jacket (appears to be a Jack Wolfskin brand based on the visible logo) over an orange/coral colored top. She's holding what appears to be a sandwich or hot dog in a bun. In front of her is a paper cup with a beverage (likely coffee or tea). The background shows a window view of a city street with buildings, a truck, and some greenery (a potted plant). The setting appears to be inside a cafe or restaurant, with the window text partially visible (appears to say \"facelif\" and \"FOODS\" and a phone number).\n\nLet me annotate based on the schema:\n\n- Recognizability: High - clearly shows a person, food, and indoor cafe setting\n- Ambiguity: Low - one clear interpretation\n- Natural photo typicality: High - looks like a natural smartphone photo\n- Visual clutter: Moderate - some background elements but person is clear\n- Object centricity: Low - person dominates, not objects\n- Scene centricity: Low-moderate - some scene context but person focused\n- Caption confidence: High\n\n- Salient object count: 2-3 (person, food, cup)\n- Distinct categories: 3-4 (person, food, drink, building/scene elements)\n\n- Person: yes\n- Face: yes\n- Animal: no\n- Text: yes (partial window text)\n- Vehicle: yes (truck in background)\n- Food: yes (sandwich)\n- Indoor: yes (cafe interior)\n- Outdoor: yes (city visible through window)\n- Artificial/rendered: no\n- Occlusion/truncation: no\n- Unusual viewpoint: no\n- Multiple main objects: no (person is main)\n\n- Dominant content: person_face\n- Image style: natural_photo\n- Semantic domain: cafe/dining or portrait\n\n- Caption: \"Smiling woman in black jacket holding a sandwich in a cafe with city view\"\n\n- Main objects: woman, sandwich, coffee cup, jacket\n- Possible interpretations: just one main interpretation\n- Uncertainty: window text partially visible\n- Quality flags: none major",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a woman with short brown hair, smiling at the camera. She's wearing a black puffy jacket (appears to be a Jack Wolfskin brand based on the visible logo) over an orange/coral colored top. She's holding what appears to be a sandwich or hot dog in a bun. In front of her is a paper cup with a beverage (likely coffee or tea). The background shows a window view of a city street with buildings, a truck, and some greenery (a potted plant). The setting appears to be inside a cafe or restaurant, with the window text partially visible (appears to say \"facelif\" and \"FOODS\" and a phone number).\n\nLet me annotate based on the schema:\n\n- Recognizability: High - clearly shows a person, food, and indoor cafe setting\n- Ambiguity: Low - one clear interpretation\n- Natural photo typicality: High - looks like a natural smartphone photo\n- Visual clutter: Moderate - some background elements but person is clear\n- Object centricity: Low - person dominates, not objects\n- Scene centricity: Low-moderate - some scene context but person focused\n- Caption confidence: High\n\n- Salient object count: 2-3 (person, food, cup)\n- Distinct categories: 3-4 (person, food, drink, building/scene elements)\n\n- Person: yes\n- Face: yes\n- Animal: no\n- Text: yes (partial window text)\n- Vehicle: yes (truck in background)\n- Food: yes (sandwich)\n- Indoor: yes (cafe interior)\n- Outdoor: yes (city visible through window)\n- Artificial/rendered: no\n- Occlusion/truncation: no\n- Unusual viewpoint: no\n- Multiple main objects: no (person is main)\n\n- Dominant content: person_face\n- Image style: natural_photo\n- Semantic domain: cafe/dining or portrait\n\n- Caption: \"Smiling woman in black jacket holding a sandwich in a cafe with city view\"\n\n- Main objects: woman, sandwich, coffee cup, jacket\n- Possible interpretations: just one main interpretation\n- Uncertainty: window text partially visible\n- Quality flags: none major",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 795,
+          "total_tokens": 2317,
+          "cost": 0.00126036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000954
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 514,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

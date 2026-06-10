@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_2",
+    "stim_key": "vicco_2",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 2,
+    "file_index": 1,
+    "image_name": "shared_4rep_vicco_002.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_002.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"street/vintage shopping\",\n\n  \"short_caption\": \"Two women browse a clothing rack outside a vintage store with a neon sign and smiley balloon.\",\n  \"main_objects\": [\"women\", \"clothing rack\", \"neon sign\", \"balloon\"],\n  \"possible_interpretations\": [\n    \"vintage clothing shopping\",\n    \"street photography of urban lifestyle\",\n    \"candid documentation of small business\",\n    \"fashion blog photo\"\n  ],\n  \"uncertainty_notes\": \"One woman's face is visible in profile, the other's back is turned. Exact relationship between women unknown.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319389-8kysBN3yDLnxmd3xa90v",
+        "object": "chat.completion",
+        "created": 1780319389,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"street/vintage shopping\",\n\n  \"short_caption\": \"Two women browse a clothing rack outside a vintage store with a neon sign and smiley balloon.\",\n  \"main_objects\": [\"women\", \"clothing rack\", \"neon sign\", \"balloon\"],\n  \"possible_interpretations\": [\n    \"vintage clothing shopping\",\n    \"street photography of urban lifestyle\",\n    \"candid documentation of small business\",\n    \"fashion blog photo\"\n  ],\n  \"uncertainty_notes\": \"One woman's face is visible in profile, the other's back is turned. Exact relationship between women unknown.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows two women at what appears to be a vintage clothing store called \"Awoke Vintage\" (visible in neon sign in the window). One woman has long blonde hair, wearing a black jacket, a gray headband, and is looking to the side. The other woman has long brown hair, is wearing a tan/camel colored coat, and is browsing through a rack of clothes. There's a yellow smiley face balloon visible in the window. The store window has a neon sign reading \"Awoke Vintage\". There's a coffee shop visible on the left side (\"COFFEE\" sign partially visible). The setting appears to be on a sidewalk in front of the store, with autumn leaves on the ground.\n\nLet me rate this:\n- recognizability: 5 - very clearly recognizable\n- ambiguity: 1 - very clear what's happening\n- natural_photo_typicality: 5 - looks like a typical candid photograph\n- visual_clutter: 3 - moderate, clothing rack has many items\n- object_centricity: 2 - it's more of a scene with people\n- scene_centricity: 4 - it's a street scene in front of a shop\n- caption_confidence: 5 - easy to caption\n\nObjects: 2 people, clothing rack, balloon, neon sign\nDistinct categories: people, clothing, balloon, signage\n\nContains person: true\nContains face: yes, one face is visible (the blonde woman's profile)\nContains animal: false\nContains text: true (Awoke Vintage, COFFEE, OPEN)\nContains vehicle: false\nContains food: false\nContains indoor scene: false (outdoor/street)\nContains outdoor scene: true\nContains artificial or rendered content: false\nContains occlusion or truncation: false\nContains unusual viewpoint: false\nContains multiple main objects: true (two women, clothing rack)\n\nDominant content type: mixed (people + scene)\nImage style: natural_photo\nSemantic domain: street/shopping/vintage clothing\n\nShort caption: \"Two women browse a clothing rack outside a vintage store with a neon sign.\"\n\nPossible interpretations: vintage shopping, street photography, urban lifestyle",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows two women at what appears to be a vintage clothing store called \"Awoke Vintage\" (visible in neon sign in the window). One woman has long blonde hair, wearing a black jacket, a gray headband, and is looking to the side. The other woman has long brown hair, is wearing a tan/camel colored coat, and is browsing through a rack of clothes. There's a yellow smiley face balloon visible in the window. The store window has a neon sign reading \"Awoke Vintage\". There's a coffee shop visible on the left side (\"COFFEE\" sign partially visible). The setting appears to be on a sidewalk in front of the store, with autumn leaves on the ground.\n\nLet me rate this:\n- recognizability: 5 - very clearly recognizable\n- ambiguity: 1 - very clear what's happening\n- natural_photo_typicality: 5 - looks like a typical candid photograph\n- visual_clutter: 3 - moderate, clothing rack has many items\n- object_centricity: 2 - it's more of a scene with people\n- scene_centricity: 4 - it's a street scene in front of a shop\n- caption_confidence: 5 - easy to caption\n\nObjects: 2 people, clothing rack, balloon, neon sign\nDistinct categories: people, clothing, balloon, signage\n\nContains person: true\nContains face: yes, one face is visible (the blonde woman's profile)\nContains animal: false\nContains text: true (Awoke Vintage, COFFEE, OPEN)\nContains vehicle: false\nContains food: false\nContains indoor scene: false (outdoor/street)\nContains outdoor scene: true\nContains artificial or rendered content: false\nContains occlusion or truncation: false\nContains unusual viewpoint: false\nContains multiple main objects: true (two women, clothing rack)\n\nDominant content type: mixed (people + scene)\nImage style: natural_photo\nSemantic domain: street/shopping/vintage clothing\n\nShort caption: \"Two women browse a clothing rack outside a vintage store with a neon sign.\"\n\nPossible interpretations: vintage shopping, street photography, urban lifestyle",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 798,
+          "total_tokens": 2320,
+          "cost": 0.00126396,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126396,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009576
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 520,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_70",
+    "stim_key": "dataset_70",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 70,
+    "file_index": 70,
+    "image_name": "image_0070.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0070.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture/street\",\n  \"short_caption\": \"Mediterranean-style white building with flower balconies, a palm tree, an ornate lamp, and a red Vespa scooter.\",\n  \"main_objects\": [\"white building\", \"balconies with flowers\", \"ornate street lamp\", \"palm tree\", \"Vespa scooter\", \"potted plants\"],\n  \"possible_interpretations\": [\"Andalusian plaza in southern Spain\", \"Mediterranean town square\", \"tourist street scene in a European village\"],\n  \"uncertainty_notes\": \"Exact location cannot be determined; architectural style strongly suggests southern Spain but similar scenes exist elsewhere in the Mediterranean.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319040-i6Lo6oTDZR1HnEZmXWZ4",
+        "object": "chat.completion",
+        "created": 1780319040,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture/street\",\n  \"short_caption\": \"Mediterranean-style white building with flower balconies, a palm tree, an ornate lamp, and a red Vespa scooter.\",\n  \"main_objects\": [\"white building\", \"balconies with flowers\", \"ornate street lamp\", \"palm tree\", \"Vespa scooter\", \"potted plants\"],\n  \"possible_interpretations\": [\"Andalusian plaza in southern Spain\", \"Mediterranean town square\", \"tourist street scene in a European village\"],\n  \"uncertainty_notes\": \"Exact location cannot be determined; architectural style strongly suggests southern Spain but similar scenes exist elsewhere in the Mediterranean.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a white-washed building with multiple floors, featuring balconies with flower boxes (red/pink flowers), a black ornate street lamp in the foreground, a tall palm tree on the right side, potted plants, and what appears to be a red and white Vespa scooter on the right. There's also a small tree/shrub on the left. The setting looks Mediterranean, possibly Spanish.\n\nLet me rate according to the schema:\n\n- recognizability: 5 - Very clear what's shown\n- ambiguity: 1 - Single clear interpretation\n- natural_photo_typicality: 4 - Looks like a typical natural photograph, though the composition is quite staged/touristic\n- visual_clutter: 3 - Multiple elements but organized\n- object_centricity: 2 - No single dominant object; it's a scene\n- scene_centricity: 5 - Clearly a place/scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: ~5-6 (building, lamp, palm tree, scooter, plants, flower boxes)\n- estimated_distinct_object_categories: 5 (building, lamp, tree, vehicle, plants)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (no visible text)\n- contains_vehicle: true (scooter)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (building, lamp, scooter, palm tree)\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"architecture/street\"\n\n- short_caption: \"Mediterranean-style white building with balconies, palm tree, ornate lamp, and a red Vespa scooter\"\n- main_objects: [\"white building\", \"balconies with flowers\", \"street lamp\", \"palm tree\", \"Vespa scooter\", \"potted plants\"]\n- possible_interpretations: [\"Spanish/Mediterranean plaza\", \"tourist photo of European town\", \"street scene in southern Spain\"]\n- uncertainty_notes: \"Cannot confirm exact location; the style is consistent with Andalusian architecture\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a white-washed building with multiple floors, featuring balconies with flower boxes (red/pink flowers), a black ornate street lamp in the foreground, a tall palm tree on the right side, potted plants, and what appears to be a red and white Vespa scooter on the right. There's also a small tree/shrub on the left. The setting looks Mediterranean, possibly Spanish.\n\nLet me rate according to the schema:\n\n- recognizability: 5 - Very clear what's shown\n- ambiguity: 1 - Single clear interpretation\n- natural_photo_typicality: 4 - Looks like a typical natural photograph, though the composition is quite staged/touristic\n- visual_clutter: 3 - Multiple elements but organized\n- object_centricity: 2 - No single dominant object; it's a scene\n- scene_centricity: 5 - Clearly a place/scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: ~5-6 (building, lamp, palm tree, scooter, plants, flower boxes)\n- estimated_distinct_object_categories: 5 (building, lamp, tree, vehicle, plants)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (no visible text)\n- contains_vehicle: true (scooter)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (building, lamp, scooter, palm tree)\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"architecture/street\"\n\n- short_caption: \"Mediterranean-style white building with balconies, palm tree, ornate lamp, and a red Vespa scooter\"\n- main_objects: [\"white building\", \"balconies with flowers\", \"street lamp\", \"palm tree\", \"Vespa scooter\", \"potted plants\"]\n- possible_interpretations: [\"Spanish/Mediterranean plaza\", \"tourist photo of European town\", \"street scene in southern Spain\"]\n- uncertainty_notes: \"Cannot confirm exact location; the style is consistent with Andalusian architecture\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 877,
+          "total_tokens": 2399,
+          "cost": 0.00148164,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00148164,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010524
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 554,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

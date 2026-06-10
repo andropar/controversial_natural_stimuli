@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_215",
+    "stim_key": "vicco_215",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 215,
+    "file_index": 214,
+    "image_name": "shared_4rep_vicco_215.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_215.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"entomology\",\n\n  \"short_caption\": \"A green katydid with long antennae resting on a metal bowl rim.\",\n  \"main_objects\": [\"katydid\", \"metal bowl\"],\n  \"possible_interpretations\": [\"katydid on metal bowl\", \"green grasshopper on cookware\", \"bush cricket indoors\"],\n  \"uncertainty_notes\": \"Exact species of the katydid cannot be determined from the image; background context is ambiguous but appears indoor.\",\n  \"quality_flags\": [\"shallow_depth_of_field_background_blur\"]\n}",
+      "response": {
+        "id": "gen-1780319635-qyZJ8RWoqhuw1jQDz8Xg",
+        "object": "chat.completion",
+        "created": 1780319635,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"entomology\",\n\n  \"short_caption\": \"A green katydid with long antennae resting on a metal bowl rim.\",\n  \"main_objects\": [\"katydid\", \"metal bowl\"],\n  \"possible_interpretations\": [\"katydid on metal bowl\", \"green grasshopper on cookware\", \"bush cricket indoors\"],\n  \"uncertainty_notes\": \"Exact species of the katydid cannot be determined from the image; background context is ambiguous but appears indoor.\",\n  \"quality_flags\": [\"shallow_depth_of_field_background_blur\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a green insect, specifically what appears to be a katydid or bush cricket, resting on the rim/edge of a metallic bowl or pot. The background is dark and out of focus, possibly a stovetop or dark surface. The insect is clearly visible with its long antennae, green body, and long legs.\n\nLet me annotate this according to the schema:\n\n- Recognizability: High - clearly an insect, specifically a katydid/bush cricket (4-5)\n- Ambiguity: Low - it's clearly an insect on a metal surface (2)\n- Natural photo typicality: It's a natural photo but taken in a domestic setting (4)\n- Visual clutter: Low - one main subject (2)\n- Object centricity: High - the insect is the clear central subject (4)\n- Scene centricity: Low - it's an object-focused image (2)\n- Caption confidence: High (4-5)\n\nObjects: katydid/grasshopper/bush cricket, metal bowl/pot\nContains animal: yes\nContains person: no\nContains text: no\nContains vehicle: no\nContains food: no\nIndoor: yes (looks like indoor kitchen setting)\nOutdoor: no\nArtificial: no\nOcclusion: no\nUnusual viewpoint: no\nMultiple main objects: no\n\nMain content type: animal\nImage style: natural_photo\nSemantic domain: nature/entomology\n\nLet me finalize this.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a green insect, specifically what appears to be a katydid or bush cricket, resting on the rim/edge of a metallic bowl or pot. The background is dark and out of focus, possibly a stovetop or dark surface. The insect is clearly visible with its long antennae, green body, and long legs.\n\nLet me annotate this according to the schema:\n\n- Recognizability: High - clearly an insect, specifically a katydid/bush cricket (4-5)\n- Ambiguity: Low - it's clearly an insect on a metal surface (2)\n- Natural photo typicality: It's a natural photo but taken in a domestic setting (4)\n- Visual clutter: Low - one main subject (2)\n- Object centricity: High - the insect is the clear central subject (4)\n- Scene centricity: Low - it's an object-focused image (2)\n- Caption confidence: High (4-5)\n\nObjects: katydid/grasshopper/bush cricket, metal bowl/pot\nContains animal: yes\nContains person: no\nContains text: no\nContains vehicle: no\nContains food: no\nIndoor: yes (looks like indoor kitchen setting)\nOutdoor: no\nArtificial: no\nOcclusion: no\nUnusual viewpoint: no\nMultiple main objects: no\n\nMain content type: animal\nImage style: natural_photo\nSemantic domain: nature/entomology\n\nLet me finalize this.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 637,
+          "total_tokens": 2159,
+          "cost": 0.00107076,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00107076,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0007644
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 322,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

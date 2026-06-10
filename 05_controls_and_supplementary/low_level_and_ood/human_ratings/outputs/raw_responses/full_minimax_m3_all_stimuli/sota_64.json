@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_64",
+    "stim_key": "sota_64",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 64,
+    "file_index": 64,
+    "image_name": "image_0064.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0064.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 3, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"person_face\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"fashion/lifestyle\", \"short_caption\": \"Smiling young man wearing a light blue t-shirt with soccer player graphics and the text 'AND IT CAME TO PASS'\", \"main_objects\": [\"man\", \"graphic t-shirt\", \"beanie hat\", \"soccer ball\"], \"possible_interpretations\": [\"lifestyle portrait of person wearing graphic tee\", \"product photo for soccer-themed shirt\", \"religious pun t-shirt advertisement\", \"casual portrait against siding wall\"], \"uncertainty_notes\": \"Setting (indoor vs outdoor) is ambiguous; wall could be garage door or exterior siding. Image may be a staged product shot rather than candid.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319163-OfmmbQfvzyNq8rUZL43f",
+        "object": "chat.completion",
+        "created": 1780319163,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 3, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"person_face\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"fashion/lifestyle\", \"short_caption\": \"Smiling young man wearing a light blue t-shirt with soccer player graphics and the text 'AND IT CAME TO PASS'\", \"main_objects\": [\"man\", \"graphic t-shirt\", \"beanie hat\", \"soccer ball\"], \"possible_interpretations\": [\"lifestyle portrait of person wearing graphic tee\", \"product photo for soccer-themed shirt\", \"religious pun t-shirt advertisement\", \"casual portrait against siding wall\"], \"uncertainty_notes\": \"Setting (indoor vs outdoor) is ambiguous; wall could be garage door or exterior siding. Image may be a staged product shot rather than candid.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a young man wearing a light blue t-shirt and a red/orange beanie/hat. He's smiling broadly, looking upward and to the side. The t-shirt has text that reads \"AND IT CAME TO PASS\" with silhouettes of two soccer/football players and a soccer ball below the text. The background is a white/light-colored slatted wall (possibly a garage door or siding).\n\nThis appears to be a product photo or lifestyle shot of someone wearing a graphic t-shirt.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - very clear what's shown\n- ambiguity: 1 - very straightforward image\n- natural_photo_typicality: 4 - looks like a natural photo, possibly staged\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 3 - the person is central but it's more of a portrait/lifestyle shot\n- scene_centricity: 2 - not really a scene, more of a person/portrait\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: true\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: false (looks outdoor against a wall)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: person_face\nimage_style: natural_photo (could be edited_photo since it's a product shot)\nsemantic_domain: fashion/lifestyle\nshort_caption: \"Smiling young man wearing a light blue graphic t-shirt with soccer players and the text 'AND IT CAME TO PASS'\"\nmain_objects: [\"man\", \"t-shirt\", \"beanie hat\", \"soccer ball graphic\"]\npossible_interpretations: [\"product photo of a t-shirt\", \"lifestyle portrait\", \"religious humor t-shirt advertisement\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a young man wearing a light blue t-shirt and a red/orange beanie/hat. He's smiling broadly, looking upward and to the side. The t-shirt has text that reads \"AND IT CAME TO PASS\" with silhouettes of two soccer/football players and a soccer ball below the text. The background is a white/light-colored slatted wall (possibly a garage door or siding).\n\nThis appears to be a product photo or lifestyle shot of someone wearing a graphic t-shirt.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - very clear what's shown\n- ambiguity: 1 - very straightforward image\n- natural_photo_typicality: 4 - looks like a natural photo, possibly staged\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 3 - the person is central but it's more of a portrait/lifestyle shot\n- scene_centricity: 2 - not really a scene, more of a person/portrait\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: true\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: false (looks outdoor against a wall)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: person_face\nimage_style: natural_photo (could be edited_photo since it's a product shot)\nsemantic_domain: fashion/lifestyle\nshort_caption: \"Smiling young man wearing a light blue graphic t-shirt with soccer players and the text 'AND IT CAME TO PASS'\"\nmain_objects: [\"man\", \"t-shirt\", \"beanie hat\", \"soccer ball graphic\"]\npossible_interpretations: [\"product photo of a t-shirt\", \"lifestyle portrait\", \"religious humor t-shirt advertisement\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 768,
+          "total_tokens": 2290,
+          "cost": 0.00122796,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00122796,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009216
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 471,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

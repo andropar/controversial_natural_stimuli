@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_176",
+    "stim_key": "vicco_176",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 176,
+    "file_index": 175,
+    "image_name": "shared_4rep_vicco_176.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_176.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban street\",\n\n  \"short_caption\": \"Nighttime street scene with a stop sign, pedestrian crossing sign, and a graffiti-covered bridge.\",\n  \"main_objects\": [\"stop sign\", \"pedestrian crossing sign\", \"bridge\", \"street\", \"street name sign\"],\n  \"possible_interpretations\": [\n    \"Empty urban street at night under a bridge\",\n    \"Roadside view showing traffic signage and underpass\",\n    \"Quiet neighborhood intersection near a railway or road bridge\"\n  ],\n  \"uncertainty_notes\": \"Street name is only partially legible. The overall darkness limits some visual detail recognition.\",\n  \"quality_flags\": [\"low_light\", \"high_contrast_lighting\"]\n}",
+      "response": {
+        "id": "gen-1780319595-v2JmPMEfdeM4vpXmakVJ",
+        "object": "chat.completion",
+        "created": 1780319595,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban street\",\n\n  \"short_caption\": \"Nighttime street scene with a stop sign, pedestrian crossing sign, and a graffiti-covered bridge.\",\n  \"main_objects\": [\"stop sign\", \"pedestrian crossing sign\", \"bridge\", \"street\", \"street name sign\"],\n  \"possible_interpretations\": [\n    \"Empty urban street at night under a bridge\",\n    \"Roadside view showing traffic signage and underpass\",\n    \"Quiet neighborhood intersection near a railway or road bridge\"\n  ],\n  \"uncertainty_notes\": \"Street name is only partially legible. The overall darkness limits some visual detail recognition.\",\n  \"quality_flags\": [\"low_light\", \"high_contrast_lighting\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a nighttime street scene with:\n- A dark sky/night setting\n- A road/street in the foreground\n- A bridge or overpass in the background with what appears to be graffiti on its supports\n- A stop sign on the right side\n- A pedestrian crossing sign (triangular, showing a walking person)\n- A street name sign that reads \"Heddernheimer...\" (partially visible)\n- Street lights illuminating the area\n- Vegetation/bushes on the right side\n- A paved area/sidewalk\n- The road has lane markings\n- There appears to be a 3.5m height limit sign on the bridge\n\nLet me rate this:\n\n- recognizability: 4 - The scene is clearly recognizable as a nighttime street with signs\n- ambiguity: 2 - It's clearly a street scene, not much ambiguity\n- natural_photo_typicality: 3 - It's a natural photo but taken at night which is less typical\n- visual_clutter: 3 - Multiple elements but not too cluttered\n- object_centricity: 2 - More of a scene than a single object\n- scene_centricity: 5 - Clearly a scene/place\n- caption_confidence: 4 - Can describe it well\n\n- estimated_salient_object_count: 3 (stop sign, pedestrian sign, bridge)\n- estimated_distinct_object_categories: 3-4 (signs, bridge, road, vegetation)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (street sign, stop sign)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (or true, since there are multiple signs)\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: street/urban\n\nshort_caption: \"Nighttime street scene with stop sign, pedestrian crossing sign, and a bridge with graffiti.\"\n\nLet me refine this.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a nighttime street scene with:\n- A dark sky/night setting\n- A road/street in the foreground\n- A bridge or overpass in the background with what appears to be graffiti on its supports\n- A stop sign on the right side\n- A pedestrian crossing sign (triangular, showing a walking person)\n- A street name sign that reads \"Heddernheimer...\" (partially visible)\n- Street lights illuminating the area\n- Vegetation/bushes on the right side\n- A paved area/sidewalk\n- The road has lane markings\n- There appears to be a 3.5m height limit sign on the bridge\n\nLet me rate this:\n\n- recognizability: 4 - The scene is clearly recognizable as a nighttime street with signs\n- ambiguity: 2 - It's clearly a street scene, not much ambiguity\n- natural_photo_typicality: 3 - It's a natural photo but taken at night which is less typical\n- visual_clutter: 3 - Multiple elements but not too cluttered\n- object_centricity: 2 - More of a scene than a single object\n- scene_centricity: 5 - Clearly a scene/place\n- caption_confidence: 4 - Can describe it well\n\n- estimated_salient_object_count: 3 (stop sign, pedestrian sign, bridge)\n- estimated_distinct_object_categories: 3-4 (signs, bridge, road, vegetation)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (street sign, stop sign)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (or true, since there are multiple signs)\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: street/urban\n\nshort_caption: \"Nighttime street scene with stop sign, pedestrian crossing sign, and a bridge with graffiti.\"\n\nLet me refine this.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 836,
+          "total_tokens": 2358,
+          "cost": 0.00130956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00130956,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010032
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 509,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

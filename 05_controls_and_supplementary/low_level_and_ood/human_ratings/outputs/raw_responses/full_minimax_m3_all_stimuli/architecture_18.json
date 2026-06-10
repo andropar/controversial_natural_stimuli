@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_18",
+    "stim_key": "architecture_18",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 18,
+    "file_index": 18,
+    "image_name": "image_0018.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0018.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 3, \"visual_clutter\": 2, \"object_centricity\": 5, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"fashion/wedding\", \"short_caption\": \"Elaborate white wedding gown with long embellished train displayed on a mannequin in a bridal showroom.\", \"main_objects\": [\"wedding dress\", \"mannequin\", \"bench\", \"curtain\"], \"possible_interpretations\": [\"Bridal boutique dress display\", \"Wedding dress catalog photo\", \"Designer gown showcase\"], \"uncertainty_notes\": \"Mannequin is not a real person; no text or labels visible to identify brand or specific style.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780318867-QoNQnix0Iu7nHmfQr8q4",
+        "object": "chat.completion",
+        "created": 1780318867,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 3, \"visual_clutter\": 2, \"object_centricity\": 5, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"fashion/wedding\", \"short_caption\": \"Elaborate white wedding gown with long embellished train displayed on a mannequin in a bridal showroom.\", \"main_objects\": [\"wedding dress\", \"mannequin\", \"bench\", \"curtain\"], \"possible_interpretations\": [\"Bridal boutique dress display\", \"Wedding dress catalog photo\", \"Designer gown showcase\"], \"uncertainty_notes\": \"Mannequin is not a real person; no text or labels visible to identify brand or specific style.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "The image shows a wedding dress displayed on a mannequin in what appears to be a bridal shop or showroom. The dress is white/ivory with an elaborate long train and detailed embroidery/embellishments. There's a bench visible on the left, curtains on the right, and the setting looks like an elegant indoor space. The image is taken from behind, showing the back of the dress and the full extent of the train spreading out on the floor.\n\nLet me annotate this carefully:\n\n- recognizability: 5 - very clear what this is\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 3 - looks like a photo but is staged/posed in a showroom\n- visual_clutter: 2 - mostly the dress, minimal other elements\n- object_centricity: 5 - the dress dominates\n- scene_centricity: 2 - it's more about the dress than the place\n- caption_confidence: 5 - very confident in caption\n\nestimated_salient_object_count: 1 (the dress)\nestimated_distinct_object_categories: 3 (dress, bench, curtain)\n\ncontains_person: false (mannequin, not a person)\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: true (viewpoint is from behind, showing the train)\ncontains_multiple_main_objects: false\n\ndominant_content_type: object\nimage_style: natural_photo\nsemantic_domain: fashion/wedding\n\nshort_caption: \"Elaborate white wedding gown with long train displayed on a mannequin in a bridal showroom.\"\n\nmain_objects: [\"wedding dress\", \"mannequin\", \"bench\", \"curtain\"]\n\npossible_interpretations: [\"Bridal showroom display\", \"Wedding dress photograph for catalog\", \"Boutique display\"]\n\nuncertainty_notes: \"Mannequin is not a real person; cannot determine brand or specific style.\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a wedding dress displayed on a mannequin in what appears to be a bridal shop or showroom. The dress is white/ivory with an elaborate long train and detailed embroidery/embellishments. There's a bench visible on the left, curtains on the right, and the setting looks like an elegant indoor space. The image is taken from behind, showing the back of the dress and the full extent of the train spreading out on the floor.\n\nLet me annotate this carefully:\n\n- recognizability: 5 - very clear what this is\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 3 - looks like a photo but is staged/posed in a showroom\n- visual_clutter: 2 - mostly the dress, minimal other elements\n- object_centricity: 5 - the dress dominates\n- scene_centricity: 2 - it's more about the dress than the place\n- caption_confidence: 5 - very confident in caption\n\nestimated_salient_object_count: 1 (the dress)\nestimated_distinct_object_categories: 3 (dress, bench, curtain)\n\ncontains_person: false (mannequin, not a person)\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: true (viewpoint is from behind, showing the train)\ncontains_multiple_main_objects: false\n\ndominant_content_type: object\nimage_style: natural_photo\nsemantic_domain: fashion/wedding\n\nshort_caption: \"Elaborate white wedding gown with long train displayed on a mannequin in a bridal showroom.\"\n\nmain_objects: [\"wedding dress\", \"mannequin\", \"bench\", \"curtain\"]\n\npossible_interpretations: [\"Bridal showroom display\", \"Wedding dress photograph for catalog\", \"Boutique display\"]\n\nuncertainty_notes: \"Mannequin is not a real person; cannot determine brand or specific style.\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 994,
+          "completion_tokens": 758,
+          "total_tokens": 1752,
+          "cost": 0.00105756,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00105756,
+            "upstream_inference_prompt_cost": 0.00014796,
+            "upstream_inference_completions_cost": 0.0009096
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 505,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

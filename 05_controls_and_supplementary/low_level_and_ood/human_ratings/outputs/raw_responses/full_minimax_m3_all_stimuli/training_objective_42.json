@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_42",
+    "stim_key": "training_objective_42",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 42,
+    "file_index": 42,
+    "image_name": "image_0042.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0042.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"industrial equipment\",\n\n  \"short_caption\": \"Beige industrial chiller or boiler unit with copper pipes and warning labels\",\n  \"main_objects\": [\"industrial unit\", \"copper pipes\", \"safety labels\", \"flexible tubing\", \"secondary equipment\"],\n  \"possible_interpretations\": [\n    \"Industrial chiller unit\",\n    \"HVAC equipment\",\n    \"Boiler or compressor\",\n    \"Mechanical room equipment\"\n  ],\n  \"uncertainty_notes\": \"Exact type of industrial equipment is uncertain; could be chiller, boiler, or air handler based on visible pipes\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319317-LAuwsy29MbEPOVklUO5K",
+        "object": "chat.completion",
+        "created": 1780319317,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"industrial equipment\",\n\n  \"short_caption\": \"Beige industrial chiller or boiler unit with copper pipes and warning labels\",\n  \"main_objects\": [\"industrial unit\", \"copper pipes\", \"safety labels\", \"flexible tubing\", \"secondary equipment\"],\n  \"possible_interpretations\": [\n    \"Industrial chiller unit\",\n    \"HVAC equipment\",\n    \"Boiler or compressor\",\n    \"Mechanical room equipment\"\n  ],\n  \"uncertainty_notes\": \"Exact type of industrial equipment is uncertain; could be chiller, boiler, or air handler based on visible pipes\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be an industrial piece of equipment - likely a chiller, boiler, or HVAC unit. It has:\n- A beige/cream colored metal cabinet/panel\n- Several warning/safety labels (NOTICE, AVISO, DANGER, PELIGRO)\n- Copper/brass colored pipes and valves protruding from the front\n- Some flexible tubing/wiring\n- The setting appears to be indoors (industrial/facility setting)\n- Another piece of equipment visible to the left\n\nLet me annotate this systematically:\n\n- Recognizability: 4 - The main content (industrial equipment) is fairly recognizable\n- Ambiguity: 2 - Pretty clear what it is (industrial machinery)\n- Natural photo typicality: 4 - Looks like a typical photo, though utilitarian\n- Visual clutter: 3 - There's the main panel, pipes, labels, and another equipment piece\n- Object centricity: 4 - The industrial unit dominates\n- Scene centricity: 3 - It's an indoor industrial setting but focused on the object\n- Caption confidence: 4 - Can be captioned confidently\n\nObject counts:\n- 1 main unit\n- Pipes/valves (part of the unit)\n- Labels\n- Another equipment piece on left\n\nContains text: Yes (DANGER, AVISO, NOTICE, PELIGRO labels)\nContains indoor scene: Yes\nNo person, face, animal, vehicle, food\n\nMain content: object (industrial equipment)\nImage style: natural_photo\nSemantic domain: industrial equipment / mechanical",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be an industrial piece of equipment - likely a chiller, boiler, or HVAC unit. It has:\n- A beige/cream colored metal cabinet/panel\n- Several warning/safety labels (NOTICE, AVISO, DANGER, PELIGRO)\n- Copper/brass colored pipes and valves protruding from the front\n- Some flexible tubing/wiring\n- The setting appears to be indoors (industrial/facility setting)\n- Another piece of equipment visible to the left\n\nLet me annotate this systematically:\n\n- Recognizability: 4 - The main content (industrial equipment) is fairly recognizable\n- Ambiguity: 2 - Pretty clear what it is (industrial machinery)\n- Natural photo typicality: 4 - Looks like a typical photo, though utilitarian\n- Visual clutter: 3 - There's the main panel, pipes, labels, and another equipment piece\n- Object centricity: 4 - The industrial unit dominates\n- Scene centricity: 3 - It's an indoor industrial setting but focused on the object\n- Caption confidence: 4 - Can be captioned confidently\n\nObject counts:\n- 1 main unit\n- Pipes/valves (part of the unit)\n- Labels\n- Another equipment piece on left\n\nContains text: Yes (DANGER, AVISO, NOTICE, PELIGRO labels)\nContains indoor scene: Yes\nNo person, face, animal, vehicle, food\n\nMain content: object (industrial equipment)\nImage style: natural_photo\nSemantic domain: industrial equipment / mechanical",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 673,
+          "total_tokens": 2195,
+          "cost": 0.00123684,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00123684,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008076
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 370,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

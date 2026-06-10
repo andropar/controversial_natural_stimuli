@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_63",
+    "stim_key": "architecture_63",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 63,
+    "file_index": 63,
+    "image_name": "image_0063.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0063.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_design_showroom\",\n  \"short_caption\": \"Modern design showroom with three wooden shelves displaying material samples behind a marble counter\",\n  \"main_objects\": [\"marble counter\", \"wooden display shelves\", \"material samples\", \"hanging plant\", \"wood ceiling panels\"],\n  \"possible_interpretations\": [\"design showroom\", \"architectural material display\", \"tile and stone retailer\", \"interior design studio\", \"kitchen showroom\"],\n  \"uncertainty_notes\": \"Specific purpose of the space (showroom vs. studio) is uncertain but the display arrangement strongly suggests a material or product showroom.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318919-dI5QBrvWbwp16wqZUgMW",
+        "object": "chat.completion",
+        "created": 1780318919,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_design_showroom\",\n  \"short_caption\": \"Modern design showroom with three wooden shelves displaying material samples behind a marble counter\",\n  \"main_objects\": [\"marble counter\", \"wooden display shelves\", \"material samples\", \"hanging plant\", \"wood ceiling panels\"],\n  \"possible_interpretations\": [\"design showroom\", \"architectural material display\", \"tile and stone retailer\", \"interior design studio\", \"kitchen showroom\"],\n  \"uncertainty_notes\": \"Specific purpose of the space (showroom vs. studio) is uncertain but the display arrangement strongly suggests a material or product showroom.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an interior space, likely a showroom or design studio. I can see:\n- A marble countertop in the foreground\n- Three wooden display shelves with black metal frames\n- Various material samples (tiles, stone, wood samples) on the shelves\n- A hanging plant (string of pearls plant) on the left\n- An industrial-style ceiling with wooden panels and exposed beams\n- White paneled walls\n- The overall aesthetic is modern, minimalist design\n\nLet me annotate based on the schema:\n\n- Recognizability: Clear interior design showroom, easily recognizable (4-5)\n- Ambiguity: Pretty clear what it is - a showroom (low ambiguity, 1-2)\n- Natural photo typicality: Looks like a real photo (4-5)\n- Visual clutter: Moderate clutter with multiple samples on shelves (3)\n- Object centricity: No single dominant object, more of a scene (2)\n- Scene centricity: Yes, it's primarily a scene/place (4-5)\n- Caption confidence: High confidence in describing it (4-5)\n\n- Salient object count: Many small objects (samples) but the shelves and counter are the main structures\n- Distinct categories: shelves, plant, samples, counter, ceiling panels\n\nContains: person (no), face (no), animal (no), text (no), vehicle (no), food (no), indoor (yes), outdoor (no), artificial content (no - it's a real photo), occlusion (no), unusual viewpoint (no), multiple main objects (somewhat)\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: interior/design",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an interior space, likely a showroom or design studio. I can see:\n- A marble countertop in the foreground\n- Three wooden display shelves with black metal frames\n- Various material samples (tiles, stone, wood samples) on the shelves\n- A hanging plant (string of pearls plant) on the left\n- An industrial-style ceiling with wooden panels and exposed beams\n- White paneled walls\n- The overall aesthetic is modern, minimalist design\n\nLet me annotate based on the schema:\n\n- Recognizability: Clear interior design showroom, easily recognizable (4-5)\n- Ambiguity: Pretty clear what it is - a showroom (low ambiguity, 1-2)\n- Natural photo typicality: Looks like a real photo (4-5)\n- Visual clutter: Moderate clutter with multiple samples on shelves (3)\n- Object centricity: No single dominant object, more of a scene (2)\n- Scene centricity: Yes, it's primarily a scene/place (4-5)\n- Caption confidence: High confidence in describing it (4-5)\n\n- Salient object count: Many small objects (samples) but the shelves and counter are the main structures\n- Distinct categories: shelves, plant, samples, counter, ceiling panels\n\nContains: person (no), face (no), animal (no), text (no), vehicle (no), food (no), indoor (yes), outdoor (no), artificial content (no - it's a real photo), occlusion (no), unusual viewpoint (no), multiple main objects (somewhat)\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: interior/design",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 701,
+          "total_tokens": 2223,
+          "cost": 0.00114756,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00114756,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008412
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 392,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

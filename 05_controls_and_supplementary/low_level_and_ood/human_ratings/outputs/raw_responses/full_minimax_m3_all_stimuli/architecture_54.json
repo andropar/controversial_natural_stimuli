@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_54",
+    "stim_key": "architecture_54",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 54,
+    "file_index": 54,
+    "image_name": "image_0054.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0054.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 10,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wine_production_storage\",\n\n  \"short_caption\": \"Stacked wooden wine barrels on metal racks in a cellar\",\n  \"main_objects\": [\"wooden barrels\", \"metal racks\"],\n  \"possible_interpretations\": [\n    \"wine aging barrels in a winery cellar\",\n    \"whisky or spirit barrels in a distillery\",\n    \"stacked storage barrels in a production facility\"\n  ],\n  \"uncertainty_notes\": \"The exact type of barrel (wine vs. spirit) cannot be determined with certainty, though markings and oak appearance suggest wine production.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318905-623MR14qibHAkBV9oHvT",
+        "object": "chat.completion",
+        "created": 1780318905,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 10,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wine_production_storage\",\n\n  \"short_caption\": \"Stacked wooden wine barrels on metal racks in a cellar\",\n  \"main_objects\": [\"wooden barrels\", \"metal racks\"],\n  \"possible_interpretations\": [\n    \"wine aging barrels in a winery cellar\",\n    \"whisky or spirit barrels in a distillery\",\n    \"stacked storage barrels in a production facility\"\n  ],\n  \"uncertainty_notes\": \"The exact type of barrel (wine vs. spirit) cannot be determined with certainty, though markings and oak appearance suggest wine production.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows multiple wooden barrels (likely wine barrels) stacked on metal racks. They appear to be oak barrels with metal bands, and some have text/markings stamped on them. The setting looks like a winery or wine cellar storage area.\n\nLet me annotate based on the schema:\n\n- recognizability: High - clearly wine barrels on racks, 5\n- ambiguity: Low - clearly identifiable as barrels, 1\n- natural_photo_typicality: Looks like a natural photograph, 4\n- visual_clutter: Multiple barrels and racks, somewhat busy, 3-4\n- object_centricity: Multiple barrels are the focus, no single dominant object, 2\n- scene_centricity: It's more of a storage scene, 4\n- caption_confidence: High confidence in caption, 4\n\nCounts:\n- estimated_salient_object_count: Many barrels visible, maybe 8-12\n- estimated_distinct_object_categories: barrels, racks - 2\n\nContent flags:\n- contains_text: yes (markings on barrels)\n- contains_indoor_scene: likely yes (wine cellar)\n- contains_occlusion_or_truncation: yes, barrels are cut off at edges\n- contains_multiple_main_objects: yes, many barrels\n\nDominant content: object (barrels) - though multiple\nImage style: natural_photo\nSemantic domain: wine/production/storage\n\nCaption: \"Stacked wooden wine barrels on metal racks in a cellar\"\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows multiple wooden barrels (likely wine barrels) stacked on metal racks. They appear to be oak barrels with metal bands, and some have text/markings stamped on them. The setting looks like a winery or wine cellar storage area.\n\nLet me annotate based on the schema:\n\n- recognizability: High - clearly wine barrels on racks, 5\n- ambiguity: Low - clearly identifiable as barrels, 1\n- natural_photo_typicality: Looks like a natural photograph, 4\n- visual_clutter: Multiple barrels and racks, somewhat busy, 3-4\n- object_centricity: Multiple barrels are the focus, no single dominant object, 2\n- scene_centricity: It's more of a storage scene, 4\n- caption_confidence: High confidence in caption, 4\n\nCounts:\n- estimated_salient_object_count: Many barrels visible, maybe 8-12\n- estimated_distinct_object_categories: barrels, racks - 2\n\nContent flags:\n- contains_text: yes (markings on barrels)\n- contains_indoor_scene: likely yes (wine cellar)\n- contains_occlusion_or_truncation: yes, barrels are cut off at edges\n- contains_multiple_main_objects: yes, many barrels\n\nDominant content: object (barrels) - though multiple\nImage style: natural_photo\nSemantic domain: wine/production/storage\n\nCaption: \"Stacked wooden wine barrels on metal racks in a cellar\"\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1363,
+          "completion_tokens": 663,
+          "total_tokens": 2026,
+          "cost": 0.00117714,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00117714,
+            "upstream_inference_prompt_cost": 0.00038154,
+            "upstream_inference_completions_cost": 0.0007956
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 352,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

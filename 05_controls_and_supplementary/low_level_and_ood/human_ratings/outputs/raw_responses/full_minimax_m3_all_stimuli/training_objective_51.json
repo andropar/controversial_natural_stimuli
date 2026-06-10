@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_51",
+    "stim_key": "training_objective_51",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 51,
+    "file_index": 51,
+    "image_name": "image_0051.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0051.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"clothing/apparel\",\n  \"short_caption\": \"Black Ol' Dirty Bastard graphic sweatshirt hanging on a hanger against a white brick wall.\",\n  \"main_objects\": [\"sweatshirt\", \"clothes hanger\", \"brick wall\"],\n  \"possible_interpretations\": [\"vintage hip-hop band merchandise sweatshirt\", \"graphic sweatshirt with Brooklyn Zu print\", \"product photo of band merchandise\"],\n  \"uncertainty_notes\": \"Faces in the graphic print are clearly visible but are printed imagery rather than live subjects.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319317-zwYIQUgOguOmFUC8sK1y",
+        "object": "chat.completion",
+        "created": 1780319317,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"clothing/apparel\",\n  \"short_caption\": \"Black Ol' Dirty Bastard graphic sweatshirt hanging on a hanger against a white brick wall.\",\n  \"main_objects\": [\"sweatshirt\", \"clothes hanger\", \"brick wall\"],\n  \"possible_interpretations\": [\"vintage hip-hop band merchandise sweatshirt\", \"graphic sweatshirt with Brooklyn Zu print\", \"product photo of band merchandise\"],\n  \"uncertainty_notes\": \"Faces in the graphic print are clearly visible but are printed imagery rather than live subjects.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a black sweatshirt hanging on a hanger against a white-painted brick wall. The sweatshirt has a graphic print featuring two people (appears to be from the hip-hop group Ol' Dirty Bastard/Brooklyn Zu). There's text on the print that reads \"OL' DIRTY BASTARD\" and \"BROOKLYN ZU\" with some colorful lettering.\n\nLet me annotate according to the schema:\n\n- recognizability: The sweatshirt with graphic is clearly visible - 5\n- ambiguity: Not very ambiguous, it's clearly a sweatshirt with a graphic - 1\n- natural_photo_typicality: Looks like a typical product/photo, somewhat natural - 4\n- visual_clutter: The graphic has multiple elements but the overall scene is not cluttered - 2\n- object_centricity: The sweatshirt is the clear central object - 5\n- scene_centricity: It's more object-focused than scene - 1\n- caption_confidence: Pretty confident about what's shown - 5\n\n- estimated_salient_object_count: 1 (the sweatshirt)\n- estimated_distinct_object_categories: 2 (sweatshirt, hanger)\n\n- contains_person: The graphic has printed images of people, but the main content isn't a person - the question is about the image content. The graphic depicts people, so technically yes, but they're printed on clothing. I'll say true since faces are visible in the image.\n- contains_face: Yes, faces are visible in the print\n- contains_animal: No\n- contains_text: Yes, \"OL' DIRTY BASTARD\" and \"BROOKLYN ZU\"\n- contains_vehicle: No\n- contains_food: No\n- contains_indoor_scene: Yes, the brick wall suggests indoor\n- contains_outdoor_scene: No\n- contains_artificial_or_rendered_content: The graphic is printed, which is artificial\n- contains_occlusion_or_truncation: No\n- contains_multiple_main_objects: No, one main sweatshirt\n\n- dominant_content_type: object\n- image_style: natural_photo\n- semantic_domain: clothing/apparel\n\n- short_caption: \"Black Ol' Dirty Bastard graphic sweatshirt hanging on a hanger\"\n- main_objects: [\"sweatshirt\", \"hanger\", \"brick wall\"]\n- possible_interpretations: [\"vintage hip-hop band merchandise sweatshirt\", \"graphic sweatshirt with Brooklyn Zu print\", \"product photo of band merchandise\"]\n- uncertainty_notes: None significant\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a black sweatshirt hanging on a hanger against a white-painted brick wall. The sweatshirt has a graphic print featuring two people (appears to be from the hip-hop group Ol' Dirty Bastard/Brooklyn Zu). There's text on the print that reads \"OL' DIRTY BASTARD\" and \"BROOKLYN ZU\" with some colorful lettering.\n\nLet me annotate according to the schema:\n\n- recognizability: The sweatshirt with graphic is clearly visible - 5\n- ambiguity: Not very ambiguous, it's clearly a sweatshirt with a graphic - 1\n- natural_photo_typicality: Looks like a typical product/photo, somewhat natural - 4\n- visual_clutter: The graphic has multiple elements but the overall scene is not cluttered - 2\n- object_centricity: The sweatshirt is the clear central object - 5\n- scene_centricity: It's more object-focused than scene - 1\n- caption_confidence: Pretty confident about what's shown - 5\n\n- estimated_salient_object_count: 1 (the sweatshirt)\n- estimated_distinct_object_categories: 2 (sweatshirt, hanger)\n\n- contains_person: The graphic has printed images of people, but the main content isn't a person - the question is about the image content. The graphic depicts people, so technically yes, but they're printed on clothing. I'll say true since faces are visible in the image.\n- contains_face: Yes, faces are visible in the print\n- contains_animal: No\n- contains_text: Yes, \"OL' DIRTY BASTARD\" and \"BROOKLYN ZU\"\n- contains_vehicle: No\n- contains_food: No\n- contains_indoor_scene: Yes, the brick wall suggests indoor\n- contains_outdoor_scene: No\n- contains_artificial_or_rendered_content: The graphic is printed, which is artificial\n- contains_occlusion_or_truncation: No\n- contains_multiple_main_objects: No, one main sweatshirt\n\n- dominant_content_type: object\n- image_style: natural_photo\n- semantic_domain: clothing/apparel\n\n- short_caption: \"Black Ol' Dirty Bastard graphic sweatshirt hanging on a hanger\"\n- main_objects: [\"sweatshirt\", \"hanger\", \"brick wall\"]\n- possible_interpretations: [\"vintage hip-hop band merchandise sweatshirt\", \"graphic sweatshirt with Brooklyn Zu print\", \"product photo of band merchandise\"]\n- uncertainty_notes: None significant\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 875,
+          "total_tokens": 2397,
+          "cost": 0.00147924,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00147924,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.00105
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 582,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

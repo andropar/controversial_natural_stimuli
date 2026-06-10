@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_47",
+    "stim_key": "vicco_47",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 47,
+    "file_index": 46,
+    "image_name": "shared_4rep_vicco_047.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_047.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 11,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior\",\n  \"short_caption\": \"Assorted candlesticks and vessels on a table by a window with a garden view.\",\n  \"main_objects\": [\"candelabra\", \"candlesticks\", \"glass vessels\", \"ceramic pot\", \"chair\"],\n  \"possible_interpretations\": [\"interior still life with candle holders\", \"antiques collection by a window\", \"display of metal and glass objects on wooden table\"],\n  \"uncertainty_notes\": \"Low uncertainty; object categories are clear though exact purpose of some items is ambiguous.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319443-DcePaTlcs0xCnAJdszKy",
+        "object": "chat.completion",
+        "created": 1780319443,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 11,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior\",\n  \"short_caption\": \"Assorted candlesticks and vessels on a table by a window with a garden view.\",\n  \"main_objects\": [\"candelabra\", \"candlesticks\", \"glass vessels\", \"ceramic pot\", \"chair\"],\n  \"possible_interpretations\": [\"interior still life with candle holders\", \"antiques collection by a window\", \"display of metal and glass objects on wooden table\"],\n  \"uncertainty_notes\": \"Low uncertainty; object categories are clear though exact purpose of some items is ambiguous.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a windowsill or table with various objects: candlesticks (a black wrought iron candelabra with multiple arms, several metal candle holders, candlesticks of various designs), glass vessels, a ceramic pot/vase, and what appears to be a rolled paper or candle. In the background, there's a window with a view of a green lawn and garden. In the foreground, there's a chair with a yellow/cream cushion.\n\nLet me annotate based on the schema:\n\n- recognizability: 4 - clearly an indoor scene with objects on a table near a window\n- ambiguity: 2 - not much ambiguity, it's a scene of candle holders on a table\n- natural_photo_typicality: 5 - looks like a typical natural photograph\n- visual_clutter: 3 - several objects but not too cluttered\n- object_centricity: 3 - objects are present but scene is also important\n- scene_centricity: 4 - the setting (window with view, table) is prominent\n- caption_confidence: 4 - fairly confident in a caption\n\n- estimated_salient_object_count: ~10-12 candle holders and vessels\n- estimated_distinct_object_categories: 3-4 (candlesticks, glass vessels, ceramic pot, window, chair)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: true (visible through window)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"mixed\" - objects and scene\n- image_style: \"natural_photo\"\n- semantic_domain: \"interior\" or \"domestic\"\n\n- short_caption: \"Various candlesticks and vessels arranged on a table by a window overlooking a garden.\"\n\n- main_objects: candlesticks, candelabra, glass vessels, ceramic pot, chair\n- possible_interpretations: interior display, collection of antiques, still life\n- uncertainty_notes: low uncertainty\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a windowsill or table with various objects: candlesticks (a black wrought iron candelabra with multiple arms, several metal candle holders, candlesticks of various designs), glass vessels, a ceramic pot/vase, and what appears to be a rolled paper or candle. In the background, there's a window with a view of a green lawn and garden. In the foreground, there's a chair with a yellow/cream cushion.\n\nLet me annotate based on the schema:\n\n- recognizability: 4 - clearly an indoor scene with objects on a table near a window\n- ambiguity: 2 - not much ambiguity, it's a scene of candle holders on a table\n- natural_photo_typicality: 5 - looks like a typical natural photograph\n- visual_clutter: 3 - several objects but not too cluttered\n- object_centricity: 3 - objects are present but scene is also important\n- scene_centricity: 4 - the setting (window with view, table) is prominent\n- caption_confidence: 4 - fairly confident in a caption\n\n- estimated_salient_object_count: ~10-12 candle holders and vessels\n- estimated_distinct_object_categories: 3-4 (candlesticks, glass vessels, ceramic pot, window, chair)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: true (visible through window)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"mixed\" - objects and scene\n- image_style: \"natural_photo\"\n- semantic_domain: \"interior\" or \"domestic\"\n\n- short_caption: \"Various candlesticks and vessels arranged on a table by a window overlooking a garden.\"\n\n- main_objects: candlesticks, candelabra, glass vessels, ceramic pot, chair\n- possible_interpretations: interior display, collection of antiques, still life\n- uncertainty_notes: low uncertainty\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 828,
+          "total_tokens": 2350,
+          "cost": 0.00129996,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129996,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009936
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 532,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

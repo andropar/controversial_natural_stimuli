@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_150",
+    "stim_key": "vicco_150",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 150,
+    "file_index": 149,
+    "image_name": "shared_4rep_vicco_150.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_150.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: short_caption must be <= 20 words"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 30,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_street\",\n  \"short_caption\": \"Amsterdam street with brick row houses, parked bicycles, and cars under overcast sky\",\n  \"main_objects\": [\"brick row houses\", \"bicycles\", \"parked cars\", \"bare tree\", \"street lamp\", \"traffic sign\", \"cobblestone pavement\"],\n  \"possible_interpretations\": [\"Amsterdam residential street scene\", \"Dutch urban neighborhood with traditional architecture\"],\n  \"uncertainty_notes\": \"Distant figure may be cyclist or pedestrian; specific neighborhood not identifiable\",\n  \"quality_flags\": [\"overcast_lighting\", \"low_color_contrast\"]\n}",
+      "response": {
+        "id": "gen-1780319590-2WFo2d3mCg1JA0QWdKMI",
+        "object": "chat.completion",
+        "created": 1780319590,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 30,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_street\",\n  \"short_caption\": \"Amsterdam street with brick row houses, parked bicycles, and cars under overcast sky\",\n  \"main_objects\": [\"brick row houses\", \"bicycles\", \"parked cars\", \"bare tree\", \"street lamp\", \"traffic sign\", \"cobblestone pavement\"],\n  \"possible_interpretations\": [\"Amsterdam residential street scene\", \"Dutch urban neighborhood with traditional architecture\"],\n  \"uncertainty_notes\": \"Distant figure may be cyclist or pedestrian; specific neighborhood not identifiable\",\n  \"quality_flags\": [\"overcast_lighting\", \"low_color_contrast\"]\n}",
+              "refusal": null,
+              "reasoning": "The user wants me to annotate this image according to the schema provided. Let me analyze the image carefully.\n\nThe image shows a typical Amsterdam street scene with:\n- Brick row houses on both sides with characteristic architecture\n- A street with parked cars (vans, hatchbacks) along the right side\n- Many bicycles parked on the left side\n- A bare tree in the middle distance\n- A street lamp\n- A \"do not enter\" sign (red circle with white horizontal bar)\n- A pedestrian/cyclist in the distance\n- Overcast, gray sky\n- Brick/cobblestone pavement\n\nThis is clearly an outdoor urban scene - looks like Amsterdam based on the architecture and abundance of bicycles.\n\nLet me rate the various aspects:\n- recognizability: 5 - very clearly recognizable as an Amsterdam street\n- ambiguity: 1 - very clear single interpretation\n- natural_photo_typicality: 5 - looks like a typical photograph\n- visual_clutter: 4 - many elements (bikes, cars, buildings, signs, tree)\n- object_centricity: 2 - no single object dominates\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 5 - easy to caption\n\nCounts:\n- Many bicycles (maybe 20+)\n- Several cars\n- Multiple buildings\n- 1 person visible (cyclist in distance)\n- 1 tree\n- Signs\n- Street lamp\n\nDistinct categories: bicycles, cars, buildings, person, tree, signs = ~6\n\nBoolean flags:\n- contains_person: true (distant cyclist)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (license plate, signs)\n- contains_vehicle: true (cars, bicycles)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (it's a scene)\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: urban_street\n\nShort caption: \"Amsterdam street with brick row houses, parked bicycles, and cars under overcast sky\"\n\nMain objects: brick buildings, bicycles, cars, tree, street lamp, traffic sign, cobblestone street\n\nPossible interpretations: Just one main interpretation - Amsterdam residential street\n\nUncertainty notes: Distant figure could be cyclist or pedestrian; specific location within Amsterdam unclear\n\nQuality flags: overcast lighting, low contrast",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The user wants me to annotate this image according to the schema provided. Let me analyze the image carefully.\n\nThe image shows a typical Amsterdam street scene with:\n- Brick row houses on both sides with characteristic architecture\n- A street with parked cars (vans, hatchbacks) along the right side\n- Many bicycles parked on the left side\n- A bare tree in the middle distance\n- A street lamp\n- A \"do not enter\" sign (red circle with white horizontal bar)\n- A pedestrian/cyclist in the distance\n- Overcast, gray sky\n- Brick/cobblestone pavement\n\nThis is clearly an outdoor urban scene - looks like Amsterdam based on the architecture and abundance of bicycles.\n\nLet me rate the various aspects:\n- recognizability: 5 - very clearly recognizable as an Amsterdam street\n- ambiguity: 1 - very clear single interpretation\n- natural_photo_typicality: 5 - looks like a typical photograph\n- visual_clutter: 4 - many elements (bikes, cars, buildings, signs, tree)\n- object_centricity: 2 - no single object dominates\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 5 - easy to caption\n\nCounts:\n- Many bicycles (maybe 20+)\n- Several cars\n- Multiple buildings\n- 1 person visible (cyclist in distance)\n- 1 tree\n- Signs\n- Street lamp\n\nDistinct categories: bicycles, cars, buildings, person, tree, signs = ~6\n\nBoolean flags:\n- contains_person: true (distant cyclist)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (license plate, signs)\n- contains_vehicle: true (cars, bicycles)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (it's a scene)\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: urban_street\n\nShort caption: \"Amsterdam street with brick row houses, parked bicycles, and cars under overcast sky\"\n\nMain objects: brick buildings, bicycles, cars, tree, street lamp, traffic sign, cobblestone street\n\nPossible interpretations: Just one main interpretation - Amsterdam residential street\n\nUncertainty notes: Distant figure could be cyclist or pedestrian; specific location within Amsterdam unclear\n\nQuality flags: overcast lighting, low contrast",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 895,
+          "total_tokens": 2433,
+          "cost": 0.00138516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00138516,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.001074
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 623,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_125",
+    "stim_key": "vicco_125",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 125,
+    "file_index": 124,
+    "image_name": "shared_4rep_vicco_125.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_125.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: Missing required fields: ['contains_unusual_viewpoint']"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"casual portrait photography\",\n  \"short_caption\": \"A smiling young girl sitting outdoors eating a snack, shown in an angled wooden framed photograph.\",\n  \"main_objects\": [\"girl\", \"snack/food\", \"wooden frame\", \"grass\", \"curb\"],\n  \"possible_interpretations\": [\n    \"A framed family snapshot of a child enjoying a treat\",\n    \"A vintage photograph of a girl eating outdoors\",\n    \"A candid photo capturing a childhood moment\"\n  ],\n  \"uncertainty_notes\": \"The image is a photograph of a framed photo shown at an angle. The food item the girl is holding is partially visible and not clearly identifiable. Another person is partially visible on the left edge.\",\n  \"quality_flags\": [\"image_of_image\", \"angled_viewpoint\", \"partial_subject_truncation\", \"slight_glare_on_frame\"]\n}",
+      "response": {
+        "id": "gen-1780319560-TGCZHZ9SxSH73TjdlEEG",
+        "object": "chat.completion",
+        "created": 1780319560,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"casual portrait photography\",\n  \"short_caption\": \"A smiling young girl sitting outdoors eating a snack, shown in an angled wooden framed photograph.\",\n  \"main_objects\": [\"girl\", \"snack/food\", \"wooden frame\", \"grass\", \"curb\"],\n  \"possible_interpretations\": [\n    \"A framed family snapshot of a child enjoying a treat\",\n    \"A vintage photograph of a girl eating outdoors\",\n    \"A candid photo capturing a childhood moment\"\n  ],\n  \"uncertainty_notes\": \"The image is a photograph of a framed photo shown at an angle. The food item the girl is holding is partially visible and not clearly identifiable. Another person is partially visible on the left edge.\",\n  \"quality_flags\": [\"image_of_image\", \"angled_viewpoint\", \"partial_subject_truncation\", \"slight_glare_on_frame\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a framed photograph. The photograph inside the frame depicts a young girl sitting on a curb or step outdoors, eating something (possibly a popsicle or ice cream). She has shoulder-length hair, is wearing a dark t-shirt and yellow pants, and is smiling. There's grass behind her, a road, and what appear to be yellow objects (possibly fire hydrants or markers) in the background. The frame is wooden, and the photo is being shown at an angle.\n\nLet me annotate this carefully:\n\n- The main content is a photograph of a child eating\n- There's a wooden frame around it\n- I can see part of another person on the left edge (arm/leg)\n- The image is a photograph of a photograph, shown at an angle\n\nLet me provide the annotations:\n\n- recognizability: 4 (the child eating is clearly recognizable, though the image is of a photo in a frame)\n- ambiguity: 2 (fairly clear what's happening)\n- natural_photo_typicality: 3 (it's a photo of a photo, slightly unusual)\n- visual_clutter: 2 (relatively simple scene)\n- object_centricity: 3 (the girl is the central focus)\n- scene_centricity: 3 (there's a clear outdoor scene)\n- caption_confidence: 4\n\nEstimated salient objects: girl, food/snack, frame, partially visible person\nDistinct object categories: 4-5\n\nContains person: true\nContains face: true\nContains animal: false\nContains text: false\nContains vehicle: false (possibly partial, but not really)\nContains food: true (she's eating)\nContains indoor scene: false\nContains outdoor scene: true\nContains artificial or rendered content: false (the frame is a real physical object)\nContains occlusion or truncation: true (partial person on left)\nContains unusual viewpoint: true (angled view of a framed photo)\nContains multiple main objects: false\n\nDominant content type: person_face (the girl is the focus)\nImage style: natural_photo\nSemantic domain: people / casual photography\n\nShort caption: A smiling young girl sitting outdoors eating a snack, shown in a wooden framed photograph at an angle.\n\nMain objects: girl, snack/food, wooden frame, grass, curb\n\nPossible interpretations:\n- A framed family photo\n- A snapshot of a child enjoying a treat\n- A vintage photograph (looks somewhat aged)\n\nUncertainty notes: The image is a photo of a framed photo, shown at an angle which may affect perception. The food item she's eating is not entirely clear.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a framed photograph. The photograph inside the frame depicts a young girl sitting on a curb or step outdoors, eating something (possibly a popsicle or ice cream). She has shoulder-length hair, is wearing a dark t-shirt and yellow pants, and is smiling. There's grass behind her, a road, and what appear to be yellow objects (possibly fire hydrants or markers) in the background. The frame is wooden, and the photo is being shown at an angle.\n\nLet me annotate this carefully:\n\n- The main content is a photograph of a child eating\n- There's a wooden frame around it\n- I can see part of another person on the left edge (arm/leg)\n- The image is a photograph of a photograph, shown at an angle\n\nLet me provide the annotations:\n\n- recognizability: 4 (the child eating is clearly recognizable, though the image is of a photo in a frame)\n- ambiguity: 2 (fairly clear what's happening)\n- natural_photo_typicality: 3 (it's a photo of a photo, slightly unusual)\n- visual_clutter: 2 (relatively simple scene)\n- object_centricity: 3 (the girl is the central focus)\n- scene_centricity: 3 (there's a clear outdoor scene)\n- caption_confidence: 4\n\nEstimated salient objects: girl, food/snack, frame, partially visible person\nDistinct object categories: 4-5\n\nContains person: true\nContains face: true\nContains animal: false\nContains text: false\nContains vehicle: false (possibly partial, but not really)\nContains food: true (she's eating)\nContains indoor scene: false\nContains outdoor scene: true\nContains artificial or rendered content: false (the frame is a real physical object)\nContains occlusion or truncation: true (partial person on left)\nContains unusual viewpoint: true (angled view of a framed photo)\nContains multiple main objects: false\n\nDominant content type: person_face (the girl is the focus)\nImage style: natural_photo\nSemantic domain: people / casual photography\n\nShort caption: A smiling young girl sitting outdoors eating a snack, shown in a wooden framed photograph at an angle.\n\nMain objects: girl, snack/food, wooden frame, grass, curb\n\nPossible interpretations:\n- A framed family photo\n- A snapshot of a child enjoying a treat\n- A vintage photograph (looks somewhat aged)\n\nUncertainty notes: The image is a photo of a framed photo, shown at an angle which may affect perception. The food item she's eating is not entirely clear.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 932,
+          "total_tokens": 2470,
+          "cost": 0.00142956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00142956,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.0011184
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 624,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

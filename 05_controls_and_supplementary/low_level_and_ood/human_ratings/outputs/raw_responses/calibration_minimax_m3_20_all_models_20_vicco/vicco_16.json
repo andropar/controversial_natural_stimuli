@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_16",
+    "stim_key": "vicco_16",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 16,
+    "file_index": 15,
+    "image_name": "shared_4rep_vicco_016.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_016.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"portrait / festival\",\n\n  \"short_caption\": \"Smiling man wearing sunglasses with a glittery pink beard at an outdoor event\",\n  \"main_objects\": [\"man\", \"aviator sunglasses\", \"glitter beard\", \"gray t-shirt\", \"green strap\"],\n  \"possible_interpretations\": [\n    \"Selfie of a man at a festival with a decorated glitter beard\",\n    \"Close-up portrait with a digital glitter beard filter applied\",\n    \"Man posing at an outdoor gathering or party\"\n  ],\n  \"uncertainty_notes\": \"The pink glitter on the beard may be a real cosmetic effect or a digital filter; it is difficult to determine with certainty.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318225-zZ0Xhk3irUlU0ykuw646",
+        "object": "chat.completion",
+        "created": 1780318225,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"portrait / festival\",\n\n  \"short_caption\": \"Smiling man wearing sunglasses with a glittery pink beard at an outdoor event\",\n  \"main_objects\": [\"man\", \"aviator sunglasses\", \"glitter beard\", \"gray t-shirt\", \"green strap\"],\n  \"possible_interpretations\": [\n    \"Selfie of a man at a festival with a decorated glitter beard\",\n    \"Close-up portrait with a digital glitter beard filter applied\",\n    \"Man posing at an outdoor gathering or party\"\n  ],\n  \"uncertainty_notes\": \"The pink glitter on the beard may be a real cosmetic effect or a digital filter; it is difficult to determine with certainty.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a close-up selfie of a man with:\n- Short brown hair\n- Aviator-style sunglasses\n- A wide smile showing teeth\n- His beard is decorated with pink/magenta glitter (this is clearly a festival/party context)\n- Wearing a gray t-shirt\n- A green strap visible (possibly a bag or lanyard)\n- Blue sky background\n- There appear to be some small figures/people in the very bottom left corner, suggesting an outdoor event/festival setting\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clearly a man with glittered beard\n- ambiguity: 1 - Very clear what's shown\n- natural_photo_typicality: 4 - Looks like a natural photo, though the glitter beard is somewhat unusual\n- visual_clutter: 2 - Mostly the face, simple background\n- object_centricity: 4 - The face/head is the clear central focus\n- scene_centricity: 2 - More person-focused than scene, though outdoor sky\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1 (the person)\n- estimated_distinct_object_categories: 2-3 (person, sunglasses, glitter)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (it's a real photo, though edited with digital glitter? Actually the glitter looks like it could be real or digital - hard to tell)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (close-up selfie is somewhat common)\n- contains_multiple_main_objects: false\n\ndominant_content_type: person_face\nimage_style: edited_photo (the glitter beard looks digitally added or heavily edited)\nsemantic_domain: portrait / festival / lifestyle\n\nLet me reconsider the image_style. The glitter on the beard could be real (festival face glitter is common) or could be a digital filter. Given the somewhat artificial look, I'll say \"edited_photo\" to be safe, though \"natural_photo\" is also plausible. Actually, looking more carefully, it does appear to be a filter effect - the glitter has that uniform, slightly artificial quality. I'll go with \"edited_photo\".\n\nPossible interpretations:\n- Man at a festival with glitter beard (festival-goer)\n- Man applying a glitter beard filter for fun\n- Selfie at outdoor event\n- Portrait with decorative beard\n\nMain objects: man, sunglasses, glitter beard, shirt, strap\n\nShort caption: \"Smiling man wearing sunglasses with a glittery pink beard at an outdoor event\"\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a close-up selfie of a man with:\n- Short brown hair\n- Aviator-style sunglasses\n- A wide smile showing teeth\n- His beard is decorated with pink/magenta glitter (this is clearly a festival/party context)\n- Wearing a gray t-shirt\n- A green strap visible (possibly a bag or lanyard)\n- Blue sky background\n- There appear to be some small figures/people in the very bottom left corner, suggesting an outdoor event/festival setting\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clearly a man with glittered beard\n- ambiguity: 1 - Very clear what's shown\n- natural_photo_typicality: 4 - Looks like a natural photo, though the glitter beard is somewhat unusual\n- visual_clutter: 2 - Mostly the face, simple background\n- object_centricity: 4 - The face/head is the clear central focus\n- scene_centricity: 2 - More person-focused than scene, though outdoor sky\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1 (the person)\n- estimated_distinct_object_categories: 2-3 (person, sunglasses, glitter)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (it's a real photo, though edited with digital glitter? Actually the glitter looks like it could be real or digital - hard to tell)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (close-up selfie is somewhat common)\n- contains_multiple_main_objects: false\n\ndominant_content_type: person_face\nimage_style: edited_photo (the glitter beard looks digitally added or heavily edited)\nsemantic_domain: portrait / festival / lifestyle\n\nLet me reconsider the image_style. The glitter on the beard could be real (festival face glitter is common) or could be a digital filter. Given the somewhat artificial look, I'll say \"edited_photo\" to be safe, though \"natural_photo\" is also plausible. Actually, looking more carefully, it does appear to be a filter effect - the glitter has that uniform, slightly artificial quality. I'll go with \"edited_photo\".\n\nPossible interpretations:\n- Man at a festival with glitter beard (festival-goer)\n- Man applying a glitter beard filter for fun\n- Selfie at outdoor event\n- Portrait with decorative beard\n\nMain objects: man, sunglasses, glitter beard, shirt, strap\n\nShort caption: \"Smiling man wearing sunglasses with a glittery pink beard at an outdoor event\"\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 969,
+          "total_tokens": 2491,
+          "cost": 0.00159204,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00159204,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0011628
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 683,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

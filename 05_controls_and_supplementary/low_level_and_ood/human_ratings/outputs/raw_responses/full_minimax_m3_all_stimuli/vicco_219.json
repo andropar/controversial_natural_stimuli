@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_219",
+    "stim_key": "vicco_219",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 219,
+    "file_index": 218,
+    "image_name": "shared_4rep_vicco_219.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_219.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sunset_waterfront\",\n  \"short_caption\": \"Two silhouetted people watch a sunset over a city waterfront\",\n  \"main_objects\": [\"people\", \"sun\", \"railing\", \"water\", \"city skyline\", \"port cranes\", \"foliage\"],\n  \"possible_interpretations\": [\"sunset over waterfront city\", \"couple watching sunset at harbor\", \"sunrise over port\", \"people viewing scenic waterfront\"],\n  \"uncertainty_notes\": \"Cannot determine if sunset or sunrise; faces not visible due to backlit silhouettes; specific city and time of day unknown\",\n  \"quality_flags\": [\"backlit_silhouettes\", \"low_light_foreground\", \"high_dynamic_range\"]\n}",
+      "response": {
+        "id": "gen-1780319640-uIkCusqwVzPWqoKHNzmI",
+        "object": "chat.completion",
+        "created": 1780319640,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sunset_waterfront\",\n  \"short_caption\": \"Two silhouetted people watch a sunset over a city waterfront\",\n  \"main_objects\": [\"people\", \"sun\", \"railing\", \"water\", \"city skyline\", \"port cranes\", \"foliage\"],\n  \"possible_interpretations\": [\"sunset over waterfront city\", \"couple watching sunset at harbor\", \"sunrise over port\", \"people viewing scenic waterfront\"],\n  \"uncertainty_notes\": \"Cannot determine if sunset or sunrise; faces not visible due to backlit silhouettes; specific city and time of day unknown\",\n  \"quality_flags\": [\"backlit_silhouettes\", \"low_light_foreground\", \"high_dynamic_range\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a sunset/sunrise scene over water. There's a bright sun low on the horizon, with an orange/red sky. Two silhouetted figures (people) are standing at a railing in the foreground, looking out at the water. On the right side, there appears to be some plant/foliage in the foreground. In the background, there are silhouettes of buildings/city skyline and what looks like cranes (possibly a port area). The water reflects the sun's light.\n\nLet me annotate:\n\n- recognizability: 5 - Very clearly a sunset/sunrise scene with people watching\n- ambiguity: 2 - Pretty clear interpretation, though could be sunset or sunrise\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 3 - Multiple elements (people, railing, water, sky, city, plants) but organized\n- object_centricity: 2 - The people are silhouetted and small, not the main focus\n- scene_centricity: 5 - Clearly a scene/place focused image\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 2 (the two people)\n- estimated_distinct_object_categories: 5+ (people, railing, water, sky, city, plants)\n\n- contains_person: true\n- contains_face: false (silhouettes)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: sunset/waterfront\n\n- short_caption: \"Two silhouetted people watch a sunset over a city waterfront\"\n- main_objects: [\"people\", \"sun\", \"railing\", \"water\", \"city skyline\", \"plants\"]\n- possible_interpretations: [\"sunset over waterfront city\", \"sunrise over harbor\", \"couple watching sunset\", \"people viewing scenic view\"]\n- uncertainty_notes: \"Cannot determine if sunset or sunrise; faces not visible due to silhouette; exact city unclear though appears to be a harbor/port area\"\n- quality_flags: [\"backlit_silhouettes\", \"low_light\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a sunset/sunrise scene over water. There's a bright sun low on the horizon, with an orange/red sky. Two silhouetted figures (people) are standing at a railing in the foreground, looking out at the water. On the right side, there appears to be some plant/foliage in the foreground. In the background, there are silhouettes of buildings/city skyline and what looks like cranes (possibly a port area). The water reflects the sun's light.\n\nLet me annotate:\n\n- recognizability: 5 - Very clearly a sunset/sunrise scene with people watching\n- ambiguity: 2 - Pretty clear interpretation, though could be sunset or sunrise\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 3 - Multiple elements (people, railing, water, sky, city, plants) but organized\n- object_centricity: 2 - The people are silhouetted and small, not the main focus\n- scene_centricity: 5 - Clearly a scene/place focused image\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 2 (the two people)\n- estimated_distinct_object_categories: 5+ (people, railing, water, sky, city, plants)\n\n- contains_person: true\n- contains_face: false (silhouettes)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: sunset/waterfront\n\n- short_caption: \"Two silhouetted people watch a sunset over a city waterfront\"\n- main_objects: [\"people\", \"sun\", \"railing\", \"water\", \"city skyline\", \"plants\"]\n- possible_interpretations: [\"sunset over waterfront city\", \"sunrise over harbor\", \"couple watching sunset\", \"people viewing scenic view\"]\n- uncertainty_notes: \"Cannot determine if sunset or sunrise; faces not visible due to silhouette; exact city unclear though appears to be a harbor/port area\"\n- quality_flags: [\"backlit_silhouettes\", \"low_light\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 892,
+          "total_tokens": 2414,
+          "cost": 0.00137676,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00137676,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010704
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 569,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

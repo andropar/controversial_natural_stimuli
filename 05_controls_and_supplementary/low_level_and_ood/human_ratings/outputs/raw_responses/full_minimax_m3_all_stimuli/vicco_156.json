@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_156",
+    "stim_key": "vicco_156",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 156,
+    "file_index": 155,
+    "image_name": "shared_4rep_vicco_156.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_156.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"traditional interior / cultural artifacts\",\n\n  \"short_caption\": \"Traditional interior with Orthodox icon, samovar, and metal cookware on white wall\",\n  \"main_objects\": [\"samovar\", \"metal pot\", \"Orthodox icon\", \"wooden tools\", \"animal fur\"],\n  \"possible_interpretations\": [\"Russian or Eastern European traditional home\", \"ethnographic museum exhibit\", \"rural household display\", \"cultural heritage showcase\", \"historic interior recreation\"],\n  \"uncertainty_notes\": \"Icon contains a depicted human face but no real person. The fur in upper right may be from an animal but no live animal is present. Text on icon is Cyrillic and not fully legible.\",\n  \"quality_flags\": [\"occluded_objects\", \"mixed_lighting\", \"partial_framing\"]\n}",
+      "response": {
+        "id": "gen-1780319570-Ra001DkkYAiLccmSuugx",
+        "object": "chat.completion",
+        "created": 1780319570,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"traditional interior / cultural artifacts\",\n\n  \"short_caption\": \"Traditional interior with Orthodox icon, samovar, and metal cookware on white wall\",\n  \"main_objects\": [\"samovar\", \"metal pot\", \"Orthodox icon\", \"wooden tools\", \"animal fur\"],\n  \"possible_interpretations\": [\"Russian or Eastern European traditional home\", \"ethnographic museum exhibit\", \"rural household display\", \"cultural heritage showcase\", \"historic interior recreation\"],\n  \"uncertainty_notes\": \"Icon contains a depicted human face but no real person. The fur in upper right may be from an animal but no live animal is present. Text on icon is Cyrillic and not fully legible.\",\n  \"quality_flags\": [\"occluded_objects\", \"mixed_lighting\", \"partial_framing\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an interior scene, likely a traditional Russian or Eastern European home. I can see:\n- A samovar (traditional Russian metal tea urn) on the left\n- Another metal pot/container on the right (looks like a metal bowl with a lid, possibly a cookware piece)\n- An Orthodox Christian icon (Christ Pantocrator) mounted on a white wall\n- What appears to be wooden tools or implements in the upper left (possibly old farming/household tools)\n- Some animal fur/hide in the upper right corner\n- A wooden surface/table in the foreground\n- The wall is white/cream colored with some texture\n\nThis looks like a museum display or a traditional rural home setting.\n\nLet me rate each dimension:\n\n- recognizability: 4 - The objects are clearly recognizable (samovar, icon, etc.)\n- ambiguity: 2 - The scene is fairly specific, showing traditional items\n- natural_photo_typicality: 4 - Looks like a natural photograph, though possibly museum display\n- visual_clutter: 3 - Several objects present but not overly cluttered\n- object_centricity: 3 - There are multiple objects, no single dominant one\n- scene_centricity: 4 - The image is mainly showing a place/setting\n- caption_confidence: 4 - Can caption it reasonably well\n\nEstimated salient objects: 4-5 (samovar, pot, icon, tools, fur)\nDistinct categories: 4-5\n\nContains person: false (the icon shows a person but it's an artistic representation)\nContains face: false (icon has a face depicted but not a real person)\nContains animal: false (fur might be from animal but not an animal itself)\nContains text: true (Cyrillic text on icon)\nContains vehicle: false\nContains food: false\nContains indoor scene: true\nContains outdoor scene: false\nContains artificial or rendered content: false\nContains occlusion or truncation: true (some objects are cut off at edges)\nContains unusual viewpoint: false\nContains multiple main objects: true\n\nDominant content type: scene or mixed\nImage style: natural_photo\nSemantic domain: traditional interior / cultural artifacts\n\nShort caption: \"Traditional interior with Orthodox icon, samovar, and metal cookware on white wall\"\n\nMain objects: samovar, metal pot, Orthodox icon, wooden tools, animal fur\nPossible interpretations: traditional rural home, museum exhibit, cultural heritage display, Russian household, ethnographic setting",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an interior scene, likely a traditional Russian or Eastern European home. I can see:\n- A samovar (traditional Russian metal tea urn) on the left\n- Another metal pot/container on the right (looks like a metal bowl with a lid, possibly a cookware piece)\n- An Orthodox Christian icon (Christ Pantocrator) mounted on a white wall\n- What appears to be wooden tools or implements in the upper left (possibly old farming/household tools)\n- Some animal fur/hide in the upper right corner\n- A wooden surface/table in the foreground\n- The wall is white/cream colored with some texture\n\nThis looks like a museum display or a traditional rural home setting.\n\nLet me rate each dimension:\n\n- recognizability: 4 - The objects are clearly recognizable (samovar, icon, etc.)\n- ambiguity: 2 - The scene is fairly specific, showing traditional items\n- natural_photo_typicality: 4 - Looks like a natural photograph, though possibly museum display\n- visual_clutter: 3 - Several objects present but not overly cluttered\n- object_centricity: 3 - There are multiple objects, no single dominant one\n- scene_centricity: 4 - The image is mainly showing a place/setting\n- caption_confidence: 4 - Can caption it reasonably well\n\nEstimated salient objects: 4-5 (samovar, pot, icon, tools, fur)\nDistinct categories: 4-5\n\nContains person: false (the icon shows a person but it's an artistic representation)\nContains face: false (icon has a face depicted but not a real person)\nContains animal: false (fur might be from animal but not an animal itself)\nContains text: true (Cyrillic text on icon)\nContains vehicle: false\nContains food: false\nContains indoor scene: true\nContains outdoor scene: false\nContains artificial or rendered content: false\nContains occlusion or truncation: true (some objects are cut off at edges)\nContains unusual viewpoint: false\nContains multiple main objects: true\n\nDominant content type: scene or mixed\nImage style: natural_photo\nSemantic domain: traditional interior / cultural artifacts\n\nShort caption: \"Traditional interior with Orthodox icon, samovar, and metal cookware on white wall\"\n\nMain objects: samovar, metal pot, Orthodox icon, wooden tools, animal fur\nPossible interpretations: traditional rural home, museum exhibit, cultural heritage display, Russian household, ethnographic setting",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 904,
+          "total_tokens": 2426,
+          "cost": 0.00139116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139116,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010848
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 622,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

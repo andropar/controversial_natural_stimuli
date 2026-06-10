@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_6",
+    "stim_key": "sota_6",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 6,
+    "file_index": 6,
+    "image_name": "image_0006.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0006.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: Missing required fields: ['contains_unusual_viewpoint']"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"library/education\",\n  \"short_caption\": \"Student in school uniform reaching up in a library among bookshelves of books\",\n  \"main_objects\": [\"person\", \"school uniform\", \"bookshelves\", \"books\"],\n  \"possible_interpretations\": [\"A student browsing in a school library\", \"A child reaching for a book on a high shelf\", \"A school portrait taken in the library\"],\n  \"uncertainty_notes\": \"Person's head/face is cropped at top; age and identity unclear. Some books are leaning/falling, suggesting possible motion or disarray.\",\n  \"quality_flags\": [\"head_cropped\", \"face_not_visible\"]\n}",
+      "response": {
+        "id": "gen-1780319343-pIYxWdXS9uTVGjbAf5n5",
+        "object": "chat.completion",
+        "created": 1780319343,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"library/education\",\n  \"short_caption\": \"Student in school uniform reaching up in a library among bookshelves of books\",\n  \"main_objects\": [\"person\", \"school uniform\", \"bookshelves\", \"books\"],\n  \"possible_interpretations\": [\"A student browsing in a school library\", \"A child reaching for a book on a high shelf\", \"A school portrait taken in the library\"],\n  \"uncertainty_notes\": \"Person's head/face is cropped at top; age and identity unclear. Some books are leaning/falling, suggesting possible motion or disarray.\",\n  \"quality_flags\": [\"head_cropped\", \"face_not_visible\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a person (appears to be a child or young person) in a school uniform - navy blue sweater, white collared shirt, blue tie, and grey skirt, with black shoes. The person is standing in front of bookshelves filled with books, likely in a library. The person's head/face is cut off at the top of the frame.\n\nKey observations:\n- Person visible (but face/head is cut off)\n- Person is wearing a school uniform\n- Background is bookshelves with many books\n- Books are categorized (I can see labels like \"TECHNOLOGY\", \"MANAGEMENT\", \"DICTIONARIES\", \"GEOGRAPHY\", etc.)\n- This appears to be a library setting\n- The person is reaching up with their arm raised\n\nLet me rate this:\n- recognizability: 4 - quite recognizable, clearly a person in a library\n- ambiguity: 1-2 - very clear what's happening, a person in library\n- natural_photo_typicality: 4 - looks like a typical photo\n- visual_clutter: 4 - lots of books in background, lots of detail\n- object_centricity: 2-3 - the person is somewhat central but the books are everywhere\n- scene_centricity: 4 - the library scene is prominent\n- caption_confidence: 4 - easy to caption\n\ncontains_person: true\ncontains_face: false (face is cut off)\ncontains_animal: false\ncontains_text: true (book titles, labels)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true (library)\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (head cut off)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false (one person, books as background)\n\ndominant_content_type: scene or person_face... since face is cut off, probably \"scene\" with person\nimage_style: natural_photo\nsemantic_domain: library/education\n\nLet me reconsider - the person is the main subject but the scene is the library. I'd say mixed but leaning toward scene since the books dominate the background.\n\nActually, the person is the central subject even though the face is cropped. Let me go with \"person_face\" since the person is the main focus, but face is cut off. Maybe \"mixed\" or \"person_face\".\n\nLet me go with \"person_face\" as the dominant since the person is centered.\n\nShort caption: \"Student in school uniform reaching for a book in a library\"\nMain objects: person, books, bookshelves, school uniform",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a person (appears to be a child or young person) in a school uniform - navy blue sweater, white collared shirt, blue tie, and grey skirt, with black shoes. The person is standing in front of bookshelves filled with books, likely in a library. The person's head/face is cut off at the top of the frame.\n\nKey observations:\n- Person visible (but face/head is cut off)\n- Person is wearing a school uniform\n- Background is bookshelves with many books\n- Books are categorized (I can see labels like \"TECHNOLOGY\", \"MANAGEMENT\", \"DICTIONARIES\", \"GEOGRAPHY\", etc.)\n- This appears to be a library setting\n- The person is reaching up with their arm raised\n\nLet me rate this:\n- recognizability: 4 - quite recognizable, clearly a person in a library\n- ambiguity: 1-2 - very clear what's happening, a person in library\n- natural_photo_typicality: 4 - looks like a typical photo\n- visual_clutter: 4 - lots of books in background, lots of detail\n- object_centricity: 2-3 - the person is somewhat central but the books are everywhere\n- scene_centricity: 4 - the library scene is prominent\n- caption_confidence: 4 - easy to caption\n\ncontains_person: true\ncontains_face: false (face is cut off)\ncontains_animal: false\ncontains_text: true (book titles, labels)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true (library)\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (head cut off)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false (one person, books as background)\n\ndominant_content_type: scene or person_face... since face is cut off, probably \"scene\" with person\nimage_style: natural_photo\nsemantic_domain: library/education\n\nLet me reconsider - the person is the main subject but the scene is the library. I'd say mixed but leaning toward scene since the books dominate the background.\n\nActually, the person is the central subject even though the face is cropped. Let me go with \"person_face\" since the person is the main focus, but face is cut off. Maybe \"mixed\" or \"person_face\".\n\nLet me go with \"person_face\" as the dominant since the person is centered.\n\nShort caption: \"Student in school uniform reaching for a book in a library\"\nMain objects: person, books, bookshelves, school uniform",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1379,
+          "completion_tokens": 918,
+          "total_tokens": 2297,
+          "cost": 0.00136506,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00136506,
+            "upstream_inference_prompt_cost": 0.00026346,
+            "upstream_inference_completions_cost": 0.0011016
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 620,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

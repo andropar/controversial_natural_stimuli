@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_21",
+    "stim_key": "all_models_21",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 21,
+    "file_index": 21,
+    "image_name": "image_0021.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0021.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\":4,\"ambiguity\":2,\"natural_photo_typicality\":4,\"visual_clutter\":3,\"object_centricity\":3,\"scene_centricity\":3,\"caption_confidence\":4,\"estimated_salient_object_count\":4,\"estimated_distinct_object_categories\":4,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":false,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":false,\"contains_outdoor_scene\":true,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":true,\"contains_multiple_main_objects\":true,\"dominant_content_type\":\"object\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"domestic_everyday_life\",\"short_caption\":\"Dark blue pants and white sheets hanging on an outdoor clothesline\",\"main_objects\":[\"pants\",\"sheets\",\"clothespins\",\"clothesline\",\"house\"],\"possible_interpretations\":[\"laundry drying outdoors on a clothesline\",\"backyard scene with hanging clothes\",\"domestic scene of hanging laundry to dry\",\"cobalt blue pants drying on a residential clothesline\"],\"uncertainty_notes\":\"Multiple pants are partially visible and some are truncated at frame edges; low upward angle emphasizes the clothesline against the sky\",\"quality_flags\":[]}",
+      "response": {
+        "id": "gen-1780318741-xMJWxbK55v060qNs2zrh",
+        "object": "chat.completion",
+        "created": 1780318741,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\":4,\"ambiguity\":2,\"natural_photo_typicality\":4,\"visual_clutter\":3,\"object_centricity\":3,\"scene_centricity\":3,\"caption_confidence\":4,\"estimated_salient_object_count\":4,\"estimated_distinct_object_categories\":4,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":false,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":false,\"contains_outdoor_scene\":true,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":true,\"contains_multiple_main_objects\":true,\"dominant_content_type\":\"object\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"domestic_everyday_life\",\"short_caption\":\"Dark blue pants and white sheets hanging on an outdoor clothesline\",\"main_objects\":[\"pants\",\"sheets\",\"clothespins\",\"clothesline\",\"house\"],\"possible_interpretations\":[\"laundry drying outdoors on a clothesline\",\"backyard scene with hanging clothes\",\"domestic scene of hanging laundry to dry\",\"cobalt blue pants drying on a residential clothesline\"],\"uncertainty_notes\":\"Multiple pants are partially visible and some are truncated at frame edges; low upward angle emphasizes the clothesline against the sky\",\"quality_flags\":[]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows dark blue/navy pants hanging on a clothesline with clothespins, with white sheets or fabric also hanging in the background. There's a house visible in the background, and what appears to be grass at the bottom. The sky is overcast/bright.\n\nLet me assess each dimension:\n\n- recognizability: 4 - clearly recognizable as laundry on a clothesline\n- ambiguity: 2 - fairly clear what's shown, though the composition is unusual\n- natural_photo_typicality: 4 - looks like a natural photograph\n- visual_clutter: 3 - multiple items (pants, sheets, house, sky, grass) but somewhat organized\n- object_centricity: 3 - the pants are the focus but there are multiple items\n- scene_centricity: 3 - it shows a scene of clotheslines/laundry area\n- caption_confidence: 4 - can be described concisely\n\nEstimates:\n- salient_object_count: 3 (multiple pants, sheets)\n- distinct_object_categories: 3 (pants, sheets, house, clothesline)\n\nBooleans:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (some pants are cut off at edges)\n- contains_unusual_viewpoint: true (low angle looking up at clothesline)\n- contains_multiple_main_objects: true (multiple pants)\n\ndominant_content_type: \"object\" (the pants are the main focus)\nimage_style: \"natural_photo\"\nsemantic_domain: \"domestic\" or \"everyday_life\"\n\nshort_caption: \"Dark blue pants and white sheets hanging on an outdoor clothesline\"\nmain_objects: [\"pants\", \"sheets\", \"clothespins\", \"clothesline\", \"house\"]\npossible_interpretations: [\"laundry drying outdoors\", \"clothes on a line in a backyard\", \"domestic scene of hanging laundry\"]\nuncertainty_notes: \"Multiple pants are visible, some partially out of frame\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows dark blue/navy pants hanging on a clothesline with clothespins, with white sheets or fabric also hanging in the background. There's a house visible in the background, and what appears to be grass at the bottom. The sky is overcast/bright.\n\nLet me assess each dimension:\n\n- recognizability: 4 - clearly recognizable as laundry on a clothesline\n- ambiguity: 2 - fairly clear what's shown, though the composition is unusual\n- natural_photo_typicality: 4 - looks like a natural photograph\n- visual_clutter: 3 - multiple items (pants, sheets, house, sky, grass) but somewhat organized\n- object_centricity: 3 - the pants are the focus but there are multiple items\n- scene_centricity: 3 - it shows a scene of clotheslines/laundry area\n- caption_confidence: 4 - can be described concisely\n\nEstimates:\n- salient_object_count: 3 (multiple pants, sheets)\n- distinct_object_categories: 3 (pants, sheets, house, clothesline)\n\nBooleans:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (some pants are cut off at edges)\n- contains_unusual_viewpoint: true (low angle looking up at clothesline)\n- contains_multiple_main_objects: true (multiple pants)\n\ndominant_content_type: \"object\" (the pants are the main focus)\nimage_style: \"natural_photo\"\nsemantic_domain: \"domestic\" or \"everyday_life\"\n\nshort_caption: \"Dark blue pants and white sheets hanging on an outdoor clothesline\"\nmain_objects: [\"pants\", \"sheets\", \"clothespins\", \"clothesline\", \"house\"]\npossible_interpretations: [\"laundry drying outdoors\", \"clothes on a line in a backyard\", \"domestic scene of hanging laundry\"]\nuncertainty_notes: \"Multiple pants are visible, some partially out of frame\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 759,
+          "total_tokens": 2281,
+          "cost": 0.00134004,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00134004,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009108
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 519,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

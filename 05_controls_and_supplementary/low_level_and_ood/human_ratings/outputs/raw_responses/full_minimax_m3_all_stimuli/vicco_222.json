@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_222",
+    "stim_key": "vicco_222",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 222,
+    "file_index": 221,
+    "image_name": "shared_4rep_vicco_222.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_222.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"beach/coastal\",\n\n  \"short_caption\": \"Sandy beach with wooden dune fences, calm water, and a blue sky with wispy clouds.\",\n  \"main_objects\": [\"sand fence\", \"beach\", \"water\", \"red flag\", \"seagull\"],\n  \"possible_interpretations\": [\"a quiet beach with protective dune fencing\", \"a coastal scene on an overcast but bright day\"],\n  \"uncertainty_notes\": \"Distant figures on the beach are too small to identify; the exact location is unclear but appears temperate coastal.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319645-7fHEa02r6ebYgcczBTwV",
+        "object": "chat.completion",
+        "created": 1780319645,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"beach/coastal\",\n\n  \"short_caption\": \"Sandy beach with wooden dune fences, calm water, and a blue sky with wispy clouds.\",\n  \"main_objects\": [\"sand fence\", \"beach\", \"water\", \"red flag\", \"seagull\"],\n  \"possible_interpretations\": [\"a quiet beach with protective dune fencing\", \"a coastal scene on an overcast but bright day\"],\n  \"uncertainty_notes\": \"Distant figures on the beach are too small to identify; the exact location is unclear but appears temperate coastal.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a beach scene with:\n- Sandy beach in the foreground\n- Wooden snow/sand fences (dune fences) running across the middle\n- Water/ocean in the middle ground\n- A distant shoreline visible across the water\n- Blue sky with wispy clouds\n- A red flag on the beach\n- A few seagulls on the sand\n- What appears to be a couple of small figures (people) in the distance\n- A bird (seagull) flying in the sky\n\nThis is clearly a beach/coastal scene. Let me rate the dimensions:\n\n- Recognizability: Very clear - it's obviously a beach scene. 5\n- Ambiguity: Low - very clear interpretation. 1\n- Natural_photo_typicality: Very typical natural photograph. 5\n- Visual_clutter: Low - mostly empty beach and sky. 1\n- Object_centricity: Low - it's a scene, not object-focused. 2\n- Scene_centricity: Very high - this is a scene. 5\n- Caption_confidence: Very confident. 5\n\nObject counts:\n- Salient objects: fences, flag, birds, distant people - maybe 3-4\n- Distinct categories: fences, flag, birds, people = 4\n\nContains:\n- Person: yes, tiny figures in distance\n- Face: no\n- Animal: yes (seagulls)\n- Text: no\n- Vehicle: no\n- Food: no\n- Indoor: no\n- Outdoor: yes\n- Artificial/rendered: no\n- Occlusion: no\n- Unusual viewpoint: no\n- Multiple main objects: no\n\nDominant: scene\nStyle: natural_photo\nDomain: beach/coastal\n\nCaption: Sandy beach with wooden dune fences, calm water, and blue sky with wispy clouds.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a beach scene with:\n- Sandy beach in the foreground\n- Wooden snow/sand fences (dune fences) running across the middle\n- Water/ocean in the middle ground\n- A distant shoreline visible across the water\n- Blue sky with wispy clouds\n- A red flag on the beach\n- A few seagulls on the sand\n- What appears to be a couple of small figures (people) in the distance\n- A bird (seagull) flying in the sky\n\nThis is clearly a beach/coastal scene. Let me rate the dimensions:\n\n- Recognizability: Very clear - it's obviously a beach scene. 5\n- Ambiguity: Low - very clear interpretation. 1\n- Natural_photo_typicality: Very typical natural photograph. 5\n- Visual_clutter: Low - mostly empty beach and sky. 1\n- Object_centricity: Low - it's a scene, not object-focused. 2\n- Scene_centricity: Very high - this is a scene. 5\n- Caption_confidence: Very confident. 5\n\nObject counts:\n- Salient objects: fences, flag, birds, distant people - maybe 3-4\n- Distinct categories: fences, flag, birds, people = 4\n\nContains:\n- Person: yes, tiny figures in distance\n- Face: no\n- Animal: yes (seagulls)\n- Text: no\n- Vehicle: no\n- Food: no\n- Indoor: no\n- Outdoor: yes\n- Artificial/rendered: no\n- Occlusion: no\n- Unusual viewpoint: no\n- Multiple main objects: no\n\nDominant: scene\nStyle: natural_photo\nDomain: beach/coastal\n\nCaption: Sandy beach with wooden dune fences, calm water, and blue sky with wispy clouds.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 740,
+          "total_tokens": 2262,
+          "cost": 0.00119436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00119436,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000888
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 392,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

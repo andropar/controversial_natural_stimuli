@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSTIMS Pair Labeling</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f4;
+      --ink: #17202a;
+      --muted: #68727f;
+      --line: #ccd3d8;
+      --panel: #ffffff;
+      --panel-alt: #eef2f5;
+      --blue: #1769aa;
+      --green: #28765a;
+      --orange: #b35c1e;
+      --red: #a83b42;
+      --focus: #0f6f8f;
+      --shadow: 0 8px 24px rgba(28, 35, 43, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    button,
+    select,
+    textarea {
+      font: inherit;
+      letter-spacing: 0;
+    }
+
+    .topbar {
+      display: grid;
+      grid-template-columns: minmax(180px, 1fr) auto auto auto auto;
+      gap: 12px;
+      align-items: center;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .brand strong {
+      font-size: 14px;
+      font-weight: 750;
+      line-height: 1.25;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 12px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .progress-wrap {
+      min-width: 180px;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .progress {
+      height: 8px;
+      background: #dfe5e7;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress > div {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--green), var(--blue));
+    }
+
+    .topbar select,
+    .topbar button,
+    .jump-input {
+      height: 34px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      border-radius: 6px;
+      padding: 0 10px;
+    }
+
+    .topbar button {
+      cursor: pointer;
+    }
+
+    .jump-input {
+      width: 90px;
+    }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: minmax(420px, 1.3fr) minmax(380px, 0.7fr);
+      min-height: calc(100vh - 56px);
+    }
+
+    .image-area {
+      padding: 18px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .pair-meta {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .pair-meta strong {
+      color: var(--ink);
+      font-size: 15px;
+    }
+
+    .images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: stretch;
+      min-height: 0;
+    }
+
+    .image-slot {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-rows: 1fr auto;
+      overflow: hidden;
+      min-width: 0;
+      min-height: 320px;
+    }
+
+    .image-frame {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        linear-gradient(45deg, #f2f4f5 25%, transparent 25%),
+        linear-gradient(-45deg, #f2f4f5 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #f2f4f5 75%),
+        linear-gradient(-45deg, transparent 75%, #f2f4f5 75%);
+      background-size: 22px 22px;
+      background-position: 0 0, 0 11px, 11px -11px, -11px 0;
+      padding: 18px;
+      min-height: 0;
+    }
+
+    .image-frame img {
+      max-width: 100%;
+      max-height: calc(100vh - 170px);
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      image-rendering: auto;
+    }
+
+    .image-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 8px 10px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      background: #fff;
+    }
+
+    .label-area {
+      border-left: 1px solid var(--line);
+      background: #fff;
+      padding: 16px;
+      overflow: auto;
+    }
+
+    .field {
+      border-bottom: 1px solid var(--line);
+      padding: 12px 0;
+    }
+
+    .field:first-child {
+      padding-top: 0;
+    }
+
+    .field-name {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .field-name span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .segments {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 6px;
+    }
+
+    .segments.dominant {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .segments.confidence {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .option {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      background: var(--panel-alt);
+      color: var(--ink);
+      border-radius: 6px;
+      padding: 6px 8px;
+      cursor: pointer;
+      text-align: center;
+      line-height: 1.15;
+      overflow-wrap: anywhere;
+    }
+
+    .option:hover {
+      border-color: var(--focus);
+      background: #e3eef2;
+    }
+
+    .option.active {
+      border-color: var(--blue);
+      background: #d7e8f5;
+      color: #0b4168;
+      font-weight: 750;
+    }
+
+    .option.unsure.active {
+      border-color: var(--orange);
+      background: #f6e5d7;
+      color: #74370c;
+    }
+
+    .option.low.active,
+    .option.different.active,
+    .option.unrelated.active,
+    .option.both_mismatch.active {
+      border-color: var(--red);
+      background: #f4dddd;
+      color: #79252b;
+    }
+
+    .option.high.active,
+    .option.same.active,
+    .option.both_match.active {
+      border-color: var(--green);
+      background: #d9ebe3;
+      color: #18583f;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 70px;
+      resize: vertical;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 9px 10px;
+      color: var(--ink);
+      background: #fff;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      padding-top: 14px;
+    }
+
+    .primary,
+    .secondary {
+      min-height: 38px;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+      cursor: pointer;
+    }
+
+    .primary {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+      font-weight: 750;
+    }
+
+    .secondary {
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .status {
+      min-height: 22px;
+      padding-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .status.error {
+      color: var(--red);
+    }
+
+    .status.saved {
+      color: var(--green);
+    }
+
+    @media (max-width: 980px) {
+      .topbar {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .workspace {
+        grid-template-columns: 1fr;
+      }
+
+      .label-area {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .image-frame img {
+        max-height: 44vh;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .topbar {
+        grid-template-columns: 1fr;
+      }
+
+      .images {
+        grid-template-columns: 1fr;
+      }
+
+      .workspace {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <strong>Pair Labeling</strong>
+      <span id="paths">Loading...</span>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-meta">
+        <span id="progressText">0 / 0 complete</span>
+        <span id="pairPosition">pair 0</span>
+      </div>
+      <div class="progress"><div id="progressBar"></div></div>
+    </div>
+    <select id="orderMode" title="Pair order">
+      <option value="sequential">sequential</option>
+      <option value="unfinished">unfinished first</option>
+      <option value="random">random</option>
+    </select>
+    <input id="jumpInput" class="jump-input" type="number" min="1" step="1" title="Jump to pair number">
+    <button id="jumpButton" title="Jump">Jump</button>
+  </header>
+
+  <main class="workspace">
+    <section class="image-area">
+      <div class="pair-meta">
+        <strong id="pairTitle">Pair</strong>
+        <span id="pairKey"></span>
+      </div>
+      <div class="images">
+        <figure class="image-slot">
+          <div class="image-frame"><img id="imgLeft" alt=""></div>
+          <figcaption class="image-caption">
+            <span id="leftName"></span>
+            <span id="leftIdx"></span>
+          </figcaption>
+        </figure>
+        <figure class="image-slot">
+          <div class="image-frame"><img id="imgRight" alt=""></div>
+          <figcaption class="image-caption">
+            <span id="rightName"></span>
+            <span id="rightIdx"></span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <aside class="label-area">
+      <div id="fields"></div>
+      <div class="field">
+        <div class="field-name">notes <span>optional</span></div>
+        <textarea id="notes"></textarea>
+      </div>
+      <div class="actions">
+        <button id="prevButton" class="secondary" title="Previous pair">Previous</button>
+        <button id="nextButton" class="secondary" title="Next pair">Next</button>
+        <button id="nextUnfinishedButton" class="secondary" title="Next unfinished pair">Next unfinished</button>
+        <button id="saveNextButton" class="primary" title="Save and go next">Save + next</button>
+      </div>
+      <div id="status" class="status"></div>
+    </aside>
+  </main>
+
+  <script>
+    const FIELD_TITLES = {
+      semantic_similarity: "semantic similarity",
+      visual_surface_similarity: "visual-surface similarity",
+      shape_layout_similarity: "shape/layout similarity",
+      scene_context_similarity: "scene/context similarity",
+      dominant_relation: "dominant relation",
+      confidence: "confidence"
+    };
+
+    const KEYMAP = {
+      q: ["semantic_similarity", "same"],
+      w: ["semantic_similarity", "related"],
+      e: ["semantic_similarity", "unrelated"],
+      r: ["semantic_similarity", "unsure"],
+      a: ["visual_surface_similarity", "high"],
+      s: ["visual_surface_similarity", "medium"],
+      d: ["visual_surface_similarity", "low"],
+      f: ["visual_surface_similarity", "unsure"],
+      z: ["shape_layout_similarity", "high"],
+      x: ["shape_layout_similarity", "medium"],
+      c: ["shape_layout_similarity", "low"],
+      v: ["shape_layout_similarity", "unsure"],
+      u: ["scene_context_similarity", "same"],
+      i: ["scene_context_similarity", "related"],
+      o: ["scene_context_similarity", "different"],
+      p: ["scene_context_similarity", "unsure"],
+      "1": ["dominant_relation", "semantic_match_visual_mismatch"],
+      "2": ["dominant_relation", "visual_match_semantic_mismatch"],
+      "3": ["dominant_relation", "both_match"],
+      "4": ["dominant_relation", "both_mismatch"],
+      "5": ["dominant_relation", "mixed_or_ambiguous"],
+      "6": ["dominant_relation", "unsure"],
+      j: ["confidence", "high"],
+      k: ["confidence", "medium"],
+      l: ["confidence", "low"]
+    };
+
+    const app = {
+      pairs: [],
+      labels: {},
+      schema: {},
+      shortcuts: {},
+      labeler: "default",
+      order: [],
+      cursor: 0,
+      saveTimer: null,
+      lastSavedKey: null
+    };
+
+    const els = {
+      paths: document.getElementById("paths"),
+      progressText: document.getElementById("progressText"),
+      pairPosition: document.getElementById("pairPosition"),
+      progressBar: document.getElementById("progressBar"),
+      orderMode: document.getElementById("orderMode"),
+      jumpInput: document.getElementById("jumpInput"),
+      jumpButton: document.getElementById("jumpButton"),
+      pairTitle: document.getElementById("pairTitle"),
+      pairKey: document.getElementById("pairKey"),
+      imgLeft: document.getElementById("imgLeft"),
+      imgRight: document.getElementById("imgRight"),
+      leftName: document.getElementById("leftName"),
+      rightName: document.getElementById("rightName"),
+      leftIdx: document.getElementById("leftIdx"),
+      rightIdx: document.getElementById("rightIdx"),
+      fields: document.getElementById("fields"),
+      notes: document.getElementById("notes"),
+      status: document.getElementById("status"),
+      prevButton: document.getElementById("prevButton"),
+      nextButton: document.getElementById("nextButton"),
+      nextUnfinishedButton: document.getElementById("nextUnfinishedButton"),
+      saveNextButton: document.getElementById("saveNextButton")
+    };
+
+    function keyFor(pair) {
+      return `${pair.img_i}-${pair.img_j}`;
+    }
+
+    function emptyLabel(pair) {
+      return {
+        img_i: pair.img_i,
+        img_j: pair.img_j,
+        image_i: pair.image_i,
+        image_j: pair.image_j,
+        semantic_similarity: "",
+        visual_surface_similarity: "",
+        shape_layout_similarity: "",
+        scene_context_similarity: "",
+        dominant_relation: "",
+        confidence: "",
+        notes: "",
+        labeler: app.labeler
+      };
+    }
+
+    function currentPair() {
+      return app.pairs[app.order[app.cursor]];
+    }
+
+    function currentLabel() {
+      const pair = currentPair();
+      return app.labels[keyFor(pair)] || emptyLabel(pair);
+    }
+
+    function isComplete(row) {
+      return Boolean(
+        row.semantic_similarity &&
+        row.visual_surface_similarity &&
+        row.shape_layout_similarity &&
+        row.scene_context_similarity &&
+        row.dominant_relation &&
+        row.confidence
+      );
+    }
+
+    function completedCount() {
+      const activeKeys = new Set(app.pairs.map(keyFor));
+      return Object.entries(app.labels)
+        .filter(([key, row]) => activeKeys.has(key) && isComplete(row))
+        .length;
+    }
+
+    function makeSequentialOrder() {
+      return app.pairs.map((_, idx) => idx);
+    }
+
+    function makeRandomOrder() {
+      const order = makeSequentialOrder();
+      let seed = 104729;
+      function rand() {
+        seed = (seed * 1664525 + 1013904223) >>> 0;
+        return seed / 4294967296;
+      }
+      for (let i = order.length - 1; i > 0; i--) {
+        const j = Math.floor(rand() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+      }
+      return order;
+    }
+
+    function rebuildOrder(keepPairKey = null) {
+      const mode = els.orderMode.value;
+      let order;
+      if (mode === "random") {
+        order = makeRandomOrder();
+      } else {
+        order = makeSequentialOrder();
+      }
+      if (mode === "unfinished") {
+        const unfinished = order.filter(idx => !isComplete(app.labels[keyFor(app.pairs[idx])] || {}));
+        const finished = order.filter(idx => isComplete(app.labels[keyFor(app.pairs[idx])] || {}));
+        order = [...unfinished, ...finished];
+      }
+      app.order = order;
+      if (keepPairKey) {
+        const nextCursor = app.order.findIndex(idx => keyFor(app.pairs[idx]) === keepPairKey);
+        app.cursor = nextCursor >= 0 ? nextCursor : 0;
+      } else {
+        const stored = Number(localStorage.getItem("pairLabelingCursor") || 0);
+        app.cursor = Math.min(Math.max(stored, 0), Math.max(app.order.length - 1, 0));
+      }
+    }
+
+    function imageSrc(filename) {
+      return `/images/${encodeURIComponent(filename)}`;
+    }
+
+    function optionClass(value) {
+      return `option ${value}`;
+    }
+
+    function renderFields() {
+      els.fields.innerHTML = "";
+      for (const [field, options] of Object.entries(app.schema)) {
+        const section = document.createElement("div");
+        section.className = "field";
+
+        const title = document.createElement("div");
+        title.className = "field-name";
+        title.textContent = FIELD_TITLES[field] || field;
+        const meta = document.createElement("span");
+        meta.textContent = field === "confidence" ? "required" : "";
+        title.appendChild(meta);
+        section.appendChild(title);
+
+        const buttons = document.createElement("div");
+        buttons.className = "segments";
+        if (field === "dominant_relation") buttons.classList.add("dominant");
+        if (field === "confidence") buttons.classList.add("confidence");
+
+        options.forEach((option, index) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = optionClass(option.value);
+          button.dataset.field = field;
+          button.dataset.value = option.value;
+          button.textContent = option.label;
+          const shortcut = (app.shortcuts[field] || [])[index];
+          if (shortcut) button.title = `Shortcut: ${shortcut}`;
+          button.addEventListener("click", () => setField(field, option.value));
+          buttons.appendChild(button);
+        });
+
+        section.appendChild(buttons);
+        els.fields.appendChild(section);
+      }
+    }
+
+    function render() {
+      if (!app.order.length) return;
+      const pair = currentPair();
+      const row = currentLabel();
+      const complete = completedCount();
+      const pct = app.pairs.length ? (100 * complete / app.pairs.length) : 0;
+
+      els.progressText.textContent = `${complete} / ${app.pairs.length} complete`;
+      els.pairPosition.textContent = `pair ${app.cursor + 1} / ${app.order.length}`;
+      els.progressBar.style.width = `${pct}%`;
+      els.jumpInput.max = String(app.order.length);
+      els.jumpInput.value = String(app.cursor + 1);
+
+      els.pairTitle.textContent = `Pair ${app.cursor + 1}`;
+      const group = pair.queue_group ? `${pair.queue_group}, anchor ${pair.anchor_img}` : "all pairs";
+      const mismatch = pair.mismatch_score ? `, mismatch ${Number(pair.mismatch_score).toFixed(2)}` : "";
+      els.pairKey.textContent = `img_${pair.img_i} - img_${pair.img_j} | ${group}${mismatch}`;
+      els.imgLeft.src = imageSrc(pair.image_i);
+      els.imgRight.src = imageSrc(pair.image_j);
+      els.imgLeft.alt = pair.image_i;
+      els.imgRight.alt = pair.image_j;
+      els.leftName.textContent = pair.image_i;
+      els.rightName.textContent = pair.image_j;
+      els.leftIdx.textContent = `idx ${pair.img_i}`;
+      els.rightIdx.textContent = `idx ${pair.img_j}`;
+      els.notes.value = row.notes || "";
+
+      document.querySelectorAll(".option").forEach(button => {
+        const active = row[button.dataset.field] === button.dataset.value;
+        button.classList.toggle("active", active);
+      });
+
+      localStorage.setItem("pairLabelingCursor", String(app.cursor));
+    }
+
+    function setStatus(text, kind = "") {
+      els.status.textContent = text;
+      els.status.className = `status ${kind}`;
+    }
+
+    function setField(field, value) {
+      const pair = currentPair();
+      const key = keyFor(pair);
+      const row = {...currentLabel(), [field]: value};
+      app.labels[key] = row;
+      render();
+      queueSave(row);
+    }
+
+    function queueSave(row) {
+      window.clearTimeout(app.saveTimer);
+      app.saveTimer = window.setTimeout(() => saveRow(row), 120);
+    }
+
+    async function saveRow(row) {
+      setStatus("Saving...");
+      try {
+        const response = await fetch("/api/label", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({...row, notes: els.notes.value, labeler: app.labeler})
+        });
+        if (!response.ok) {
+          throw new Error(await response.text());
+        }
+        const data = await response.json();
+        app.lastSavedKey = data.key;
+        const pair = currentPair();
+        const key = keyFor(pair);
+        if (data.key === key) {
+          app.labels[key] = {...app.labels[key], notes: els.notes.value};
+        }
+        setStatus(isComplete(app.labels[data.key]) ? "Saved complete row" : "Saved partial row", "saved");
+        render();
+      } catch (err) {
+        setStatus(`Save failed: ${err.message}`, "error");
+      }
+    }
+
+    function saveCurrent() {
+      const pair = currentPair();
+      const key = keyFor(pair);
+      const row = {...currentLabel(), notes: els.notes.value};
+      app.labels[key] = row;
+      return saveRow(row);
+    }
+
+    function go(delta) {
+      app.cursor = Math.min(Math.max(app.cursor + delta, 0), app.order.length - 1);
+      render();
+    }
+
+    function goNextUnfinished() {
+      const start = app.cursor + 1;
+      for (let offset = 0; offset < app.order.length; offset++) {
+        const idx = (start + offset) % app.order.length;
+        const pair = app.pairs[app.order[idx]];
+        if (!isComplete(app.labels[keyFor(pair)] || {})) {
+          app.cursor = idx;
+          render();
+          return;
+        }
+      }
+      setStatus("No unfinished pairs found", "saved");
+    }
+
+    function jumpTo(value) {
+      const next = Number(value) - 1;
+      if (!Number.isFinite(next)) return;
+      app.cursor = Math.min(Math.max(next, 0), app.order.length - 1);
+      render();
+    }
+
+    function handleKey(event) {
+      const target = event.target;
+      const tag = target && target.tagName ? target.tagName.toLowerCase() : "";
+      if (tag === "textarea" || tag === "input" || tag === "select") return;
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        go(1);
+        return;
+      }
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        go(-1);
+        return;
+      }
+      if (event.key === "Enter") {
+        event.preventDefault();
+        saveCurrent().then(() => go(1));
+        return;
+      }
+
+      const mapped = KEYMAP[event.key.toLowerCase()];
+      if (!mapped) return;
+      event.preventDefault();
+      setField(mapped[0], mapped[1]);
+    }
+
+    async function init() {
+      const response = await fetch("/api/state");
+      const state = await response.json();
+      app.pairs = state.pairs;
+      app.labels = state.labels || {};
+      app.schema = state.schema;
+      app.shortcuts = state.shortcuts;
+      app.labeler = state.labeler;
+      const queueText = state.using_all_pairs ? "all pairs" : state.queue_path;
+      els.paths.textContent = `${queueText} -> ${state.labels_path}`;
+      renderFields();
+      rebuildOrder();
+      render();
+    }
+
+    els.notes.addEventListener("input", () => {
+      const pair = currentPair();
+      const key = keyFor(pair);
+      app.labels[key] = {...currentLabel(), notes: els.notes.value};
+      queueSave(app.labels[key]);
+    });
+
+    els.prevButton.addEventListener("click", () => go(-1));
+    els.nextButton.addEventListener("click", () => go(1));
+    els.nextUnfinishedButton.addEventListener("click", goNextUnfinished);
+    els.saveNextButton.addEventListener("click", () => saveCurrent().then(() => go(1)));
+    els.jumpButton.addEventListener("click", () => jumpTo(els.jumpInput.value));
+    els.jumpInput.addEventListener("keydown", event => {
+      if (event.key === "Enter") jumpTo(els.jumpInput.value);
+    });
+    els.orderMode.addEventListener("change", () => {
+      const pair = currentPair();
+      rebuildOrder(pair ? keyFor(pair) : null);
+      render();
+    });
+    window.addEventListener("keydown", handleKey);
+
+    init().catch(err => {
+      setStatus(`Could not load app state: ${err.message}`, "error");
+    });
+  </script>
+</body>
+</html>

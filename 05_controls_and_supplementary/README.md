@@ -29,7 +29,7 @@ objective artifact.
 ## Contents Snapshot
 
 - Folder: `05_controls_and_supplementary`
-- Figures in this folder tree: 63
+- Figures in this folder tree: 58
 - Data/table-like files in this folder tree: 1535
 - Python scripts in this folder tree: 113
 
@@ -67,6 +67,4 @@ Use the tables below as a trace from rendered files back to the nearby code, sta
 | `05_controls_and_supplementary/selection_objective_validation/noise_model_validation/figures/png` | 1 | `05_controls_and_supplementary/selection_objective_validation/noise_model_validation/figures/png/README.md` |
 | `05_controls_and_supplementary/selection_objective_validation/objective_mc_validation/figures` | 1 | `05_controls_and_supplementary/selection_objective_validation/objective_mc_validation/figures/README.md` |
 | `05_controls_and_supplementary/selection_objective_validation/objective_mc_validation/figures/png` | 1 | `05_controls_and_supplementary/selection_objective_validation/objective_mc_validation/figures/png/README.md` |
-| `05_controls_and_supplementary/stimulus_and_pair_diagnostics/stimulus_characterization/figures` | 4 | `05_controls_and_supplementary/stimulus_and_pair_diagnostics/stimulus_characterization/figures/README.md` |
-| `05_controls_and_supplementary/stimulus_and_pair_diagnostics/stimulus_characterization/figures/png` | 1 | `05_controls_and_supplementary/stimulus_and_pair_diagnostics/stimulus_characterization/figures/png/README.md` |
 <!-- END AUTO-FIGURE-PROVENANCE -->

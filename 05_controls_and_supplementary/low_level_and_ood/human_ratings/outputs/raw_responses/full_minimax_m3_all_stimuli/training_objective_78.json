@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_78",
+    "stim_key": "training_objective_78",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 78,
+    "file_index": 78,
+    "image_name": "image_0078.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0078.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 3, \"scene_centricity\": 3, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 4, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"person_face\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"portrait\", \"short_caption\": \"Young person in black hat and leather jacket sitting on brick steps\", \"main_objects\": [\"person\", \"brick staircase\", \"wide-brimmed hat\", \"leather jacket\", \"sneakers\", \"door\"], \"possible_interpretations\": [\"fashion or style portrait\", \"casual posed photo on outdoor steps\", \"lifestyle photography\"], \"uncertainty_notes\": \"Pose appears slightly staged; gender and age of subject not entirely clear from features alone.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319364-QYsyYSvRyzJFHznTJOk1",
+        "object": "chat.completion",
+        "created": 1780319364,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 3, \"scene_centricity\": 3, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 4, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"person_face\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"portrait\", \"short_caption\": \"Young person in black hat and leather jacket sitting on brick steps\", \"main_objects\": [\"person\", \"brick staircase\", \"wide-brimmed hat\", \"leather jacket\", \"sneakers\", \"door\"], \"possible_interpretations\": [\"fashion or style portrait\", \"casual posed photo on outdoor steps\", \"lifestyle photography\"], \"uncertainty_notes\": \"Pose appears slightly staged; gender and age of subject not entirely clear from features alone.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a young person sitting on brick steps. They are wearing a black wide-brimmed hat, glasses, a black leather jacket, blue jeans, and black and white sneakers (Converse-style). They have dark hair and red lipstick. The setting appears to be outdoor brick steps with a door visible at the top of the stairs.\n\nLet me annotate this according to the schema:\n\n- recognizability: 5 - very clearly a person on steps\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 4 - looks like a typical natural photo, possibly slightly posed/styled\n- visual_clutter: 2 - relatively clean, just the person and steps\n- object_centricity: 3 - person is central but scene is also prominent\n- scene_centricity: 3 - the steps are a significant part of the image\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 1 (the person)\n- estimated_distinct_object_categories: 3 (person, stairs, door)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: person_face (or could be \"person\" - but face is visible)\n- image_style: natural_photo\n- semantic_domain: portrait/people\n\nshort_caption: \"Young person in black hat and leather jacket sitting on brick steps\"\nmain_objects: [\"person\", \"brick stairs\", \"hat\", \"leather jacket\", \"sneakers\"]\npossible_interpretations: [\"fashion portrait\", \"casual photo on steps\", \"lifestyle photography\"]\nuncertainty_notes: \"Person's gender not clearly identifiable, but otherwise unambiguous scene\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a young person sitting on brick steps. They are wearing a black wide-brimmed hat, glasses, a black leather jacket, blue jeans, and black and white sneakers (Converse-style). They have dark hair and red lipstick. The setting appears to be outdoor brick steps with a door visible at the top of the stairs.\n\nLet me annotate this according to the schema:\n\n- recognizability: 5 - very clearly a person on steps\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 4 - looks like a typical natural photo, possibly slightly posed/styled\n- visual_clutter: 2 - relatively clean, just the person and steps\n- object_centricity: 3 - person is central but scene is also prominent\n- scene_centricity: 3 - the steps are a significant part of the image\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 1 (the person)\n- estimated_distinct_object_categories: 3 (person, stairs, door)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: person_face (or could be \"person\" - but face is visible)\n- image_style: natural_photo\n- semantic_domain: portrait/people\n\nshort_caption: \"Young person in black hat and leather jacket sitting on brick steps\"\nmain_objects: [\"person\", \"brick stairs\", \"hat\", \"leather jacket\", \"sneakers\"]\npossible_interpretations: [\"fashion portrait\", \"casual photo on steps\", \"lifestyle photography\"]\nuncertainty_notes: \"Person's gender not clearly identifiable, but otherwise unambiguous scene\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 756,
+          "total_tokens": 2278,
+          "cost": 0.00121356,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00121356,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009072
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 494,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

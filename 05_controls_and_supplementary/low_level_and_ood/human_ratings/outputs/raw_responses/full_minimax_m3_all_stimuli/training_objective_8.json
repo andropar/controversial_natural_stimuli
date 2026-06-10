@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_8",
+    "stim_key": "training_objective_8",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 8,
+    "file_index": 8,
+    "image_name": "image_0008.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0008.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 2, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 4, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": true, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"crafts_decor\", \"short_caption\": \"Decorative teal plate with black-and-white photo of a smiling man holding a baby\", \"main_objects\": [\"plate\", \"man\", \"baby\", \"photograph\"], \"possible_interpretations\": [\"commemorative keepsake plate\", \"personalized photo gift\", \"handmade photo transfer craft\", \"decorative family memento\"], \"uncertainty_notes\": \"Context of the plate (commercial product, custom gift, or art piece) is unclear; the embedded photo is small but recognizable.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319212-JG3VCn0CkGyaq2bE9f8u",
+        "object": "chat.completion",
+        "created": 1780319212,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 2, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 4, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": true, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"crafts_decor\", \"short_caption\": \"Decorative teal plate with black-and-white photo of a smiling man holding a baby\", \"main_objects\": [\"plate\", \"man\", \"baby\", \"photograph\"], \"possible_interpretations\": [\"commemorative keepsake plate\", \"personalized photo gift\", \"handmade photo transfer craft\", \"decorative family memento\"], \"uncertainty_notes\": \"Context of the plate (commercial product, custom gift, or art piece) is unclear; the embedded photo is small but recognizable.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a circular plate or disc with a distressed, weathered teal/turquoise paint finish around the border. In the center, there's a black-and-white photograph of a man holding a baby. The man appears to be smiling, and the baby is also smiling. The background of the photo shows what appears to be trees (outdoor setting).\n\nThis is a mixed media piece - a decorated plate with a photo applied to it. It looks like a handcrafted decorative item or keepsake.\n\nLet me annotate according to the schema:\n\n- recognizability: 4 - The content is fairly clear (a photo of a man and baby on a decorated plate)\n- ambiguity: 2 - Pretty clear what it is\n- natural_photo_typicality: 2 - This isn't a typical natural photograph; it's a photo of a crafted object\n- visual_clutter: 3 - The painted border has some texture/pattern, but the center photo is clear\n- object_centricity: 3 - The plate is the central object, with the photo as the focal point\n- scene_centricity: 2 - It's more object-focused than scene-focused\n- caption_confidence: 4 - Easy to caption\n\n- estimated_salient_object_count: 2 (plate and the people in the photo)\n- estimated_distinct_object_categories: 3 (plate, man, baby)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (the photo within is outdoor)\n- contains_outdoor_scene: true (the embedded photo shows outdoor trees)\n- contains_artificial_or_rendered_content: true (it's a crafted plate)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (plate + photo with two people)\n\n- dominant_content_type: \"object\" (the plate is the main object)\n- image_style: \"natural_photo\" (it's a photo of a physical object)\n- semantic_domain: \"crafts\" or \"decor\"\n\n- short_caption: \"Decorated teal plate with black-and-white photo of a smiling man holding a baby\"\n- main_objects: [\"plate\", \"man\", \"baby\", \"photo\"]\n- possible_interpretations: [\"decorative keepsake plate\", \"commemorative photo gift\", \"handmade craft item\", \"photo transfer art on plate\", \"personalized plate with family photo\"]\n- uncertainty_notes: \"Difficult to determine exact context of the plate without more information\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a circular plate or disc with a distressed, weathered teal/turquoise paint finish around the border. In the center, there's a black-and-white photograph of a man holding a baby. The man appears to be smiling, and the baby is also smiling. The background of the photo shows what appears to be trees (outdoor setting).\n\nThis is a mixed media piece - a decorated plate with a photo applied to it. It looks like a handcrafted decorative item or keepsake.\n\nLet me annotate according to the schema:\n\n- recognizability: 4 - The content is fairly clear (a photo of a man and baby on a decorated plate)\n- ambiguity: 2 - Pretty clear what it is\n- natural_photo_typicality: 2 - This isn't a typical natural photograph; it's a photo of a crafted object\n- visual_clutter: 3 - The painted border has some texture/pattern, but the center photo is clear\n- object_centricity: 3 - The plate is the central object, with the photo as the focal point\n- scene_centricity: 2 - It's more object-focused than scene-focused\n- caption_confidence: 4 - Easy to caption\n\n- estimated_salient_object_count: 2 (plate and the people in the photo)\n- estimated_distinct_object_categories: 3 (plate, man, baby)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (the photo within is outdoor)\n- contains_outdoor_scene: true (the embedded photo shows outdoor trees)\n- contains_artificial_or_rendered_content: true (it's a crafted plate)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (plate + photo with two people)\n\n- dominant_content_type: \"object\" (the plate is the main object)\n- image_style: \"natural_photo\" (it's a photo of a physical object)\n- semantic_domain: \"crafts\" or \"decor\"\n\n- short_caption: \"Decorated teal plate with black-and-white photo of a smiling man holding a baby\"\n- main_objects: [\"plate\", \"man\", \"baby\", \"photo\"]\n- possible_interpretations: [\"decorative keepsake plate\", \"commemorative photo gift\", \"handmade craft item\", \"photo transfer art on plate\", \"personalized plate with family photo\"]\n- uncertainty_notes: \"Difficult to determine exact context of the plate without more information\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 880,
+          "total_tokens": 2194,
+          "cost": 0.00129996,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129996,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.001056
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 616,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

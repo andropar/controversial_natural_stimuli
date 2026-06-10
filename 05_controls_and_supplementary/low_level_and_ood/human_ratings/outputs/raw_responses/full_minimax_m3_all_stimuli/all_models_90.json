@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_90",
+    "stim_key": "all_models_90",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 90,
+    "file_index": 90,
+    "image_name": "image_0090.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0090.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: dominant_content_type has invalid value: 'person'"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"fashion/runway\",\n  \"short_caption\": \"A model walks down a fashion runway wearing a cream sleeveless dress and carrying a woven handbag.\",\n  \"main_objects\": [\"model\", \"dress\", \"woven handbag\"],\n  \"possible_interpretations\": [\"fashion runway show\", \"fashion editorial\", \"fashion advertisement\"],\n  \"uncertainty_notes\": \"Model's head is cropped out of frame; no facial features visible. Brand and season of fashion show are not identifiable.\",\n  \"quality_flags\": [\"head_cropped\", \"professional_event_photography\"]\n}",
+      "response": {
+        "id": "gen-1780318856-7W37GRnFm41UVXK2U75O",
+        "object": "chat.completion",
+        "created": 1780318856,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"fashion/runway\",\n  \"short_caption\": \"A model walks down a fashion runway wearing a cream sleeveless dress and carrying a woven handbag.\",\n  \"main_objects\": [\"model\", \"dress\", \"woven handbag\"],\n  \"possible_interpretations\": [\"fashion runway show\", \"fashion editorial\", \"fashion advertisement\"],\n  \"uncertainty_notes\": \"Model's head is cropped out of frame; no facial features visible. Brand and season of fashion show are not identifiable.\",\n  \"quality_flags\": [\"head_cropped\", \"professional_event_photography\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a fashion runway scene. A model is walking down a runway wearing a cream/ivory colored sleeveless dress. The model is holding a woven basket-style handbag with blue leather straps. The model's face is cut off at the top of the frame (head is not visible - we see from the neck down). On both sides of the runway, we can see the legs and feet of audience members seated watching the show.\n\nLet me assess each dimension:\n\n- Recognizability: High - clearly a fashion runway/model\n- Ambiguity: Low - this is clearly a fashion show\n- Natural photo typicality: It looks like a typical fashion show photo, though professionally shot. It looks natural enough.\n- Visual clutter: Moderate - the audience on the sides adds some clutter, but the model is clearly the focus\n- Object centricity: The model/dress is the central focus\n- Scene centricity: It's both - a scene (runway) with a central object (model)\n- Caption confidence: High - easy to describe\n\nFor booleans:\n- contains_person: Yes (model and audience)\n- contains_face: No (model's face is cut off)\n- contains_animal: No\n- contains_text: No\n- contains_vehicle: No\n- contains_food: No\n- contains_indoor_scene: Yes (indoor venue)\n- contains_outdoor_scene: No\n- contains_artificial_or_rendered_content: No\n- contains_occlusion_or_truncation: Yes (model's head is cut off)\n- contains_unusual_viewpoint: Somewhat - the head is cropped\n- contains_multiple_main_objects: No, one main model\n\nMain objects: model, dress, handbag, audience\nCaption: \"A model walks down a fashion runway wearing a cream dress and carrying a woven handbag\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a fashion runway scene. A model is walking down a runway wearing a cream/ivory colored sleeveless dress. The model is holding a woven basket-style handbag with blue leather straps. The model's face is cut off at the top of the frame (head is not visible - we see from the neck down). On both sides of the runway, we can see the legs and feet of audience members seated watching the show.\n\nLet me assess each dimension:\n\n- Recognizability: High - clearly a fashion runway/model\n- Ambiguity: Low - this is clearly a fashion show\n- Natural photo typicality: It looks like a typical fashion show photo, though professionally shot. It looks natural enough.\n- Visual clutter: Moderate - the audience on the sides adds some clutter, but the model is clearly the focus\n- Object centricity: The model/dress is the central focus\n- Scene centricity: It's both - a scene (runway) with a central object (model)\n- Caption confidence: High - easy to describe\n\nFor booleans:\n- contains_person: Yes (model and audience)\n- contains_face: No (model's face is cut off)\n- contains_animal: No\n- contains_text: No\n- contains_vehicle: No\n- contains_food: No\n- contains_indoor_scene: Yes (indoor venue)\n- contains_outdoor_scene: No\n- contains_artificial_or_rendered_content: No\n- contains_occlusion_or_truncation: Yes (model's head is cut off)\n- contains_unusual_viewpoint: Somewhat - the head is cropped\n- contains_multiple_main_objects: No, one main model\n\nMain objects: model, dress, handbag, audience\nCaption: \"A model walks down a fashion runway wearing a cream dress and carrying a woven handbag\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 735,
+          "total_tokens": 2273,
+          "cost": 0.00131604,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131604,
+            "upstream_inference_prompt_cost": 0.00043404,
+            "upstream_inference_completions_cost": 0.000882
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 430,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

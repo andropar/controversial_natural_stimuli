@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_79",
+    "stim_key": "all_models_79",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 79,
+    "file_index": 79,
+    "image_name": "image_0079.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0079.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"equestrian\",\n  \"short_caption\": \"A rider in equestrian attire mounted on a brown horse with sponsor banners in the background\",\n  \"main_objects\": [\"rider\", \"horse\", \"riding helmet\", \"equestrian jacket\", \"sponsor banner\"],\n  \"possible_interpretations\": [\n    \"Equestrian competition or show\",\n    \"Sponsored equestrian event\",\n    \"Horseback riding training session\",\n    \"Equestrian portrait photograph\"\n  ],\n  \"uncertainty_notes\": \"Image is heavily washed out and faded, significantly reducing contrast and detail. Background banner text is only partially legible.\",\n  \"quality_flags\": [\"heavily_faded\", \"low_contrast\", \"washed_out\", \"overexposed\"]\n}",
+      "response": {
+        "id": "gen-1780318821-OVpKZeYPnlUlQGJfaT2k",
+        "object": "chat.completion",
+        "created": 1780318821,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"equestrian\",\n  \"short_caption\": \"A rider in equestrian attire mounted on a brown horse with sponsor banners in the background\",\n  \"main_objects\": [\"rider\", \"horse\", \"riding helmet\", \"equestrian jacket\", \"sponsor banner\"],\n  \"possible_interpretations\": [\n    \"Equestrian competition or show\",\n    \"Sponsored equestrian event\",\n    \"Horseback riding training session\",\n    \"Equestrian portrait photograph\"\n  ],\n  \"uncertainty_notes\": \"Image is heavily washed out and faded, significantly reducing contrast and detail. Background banner text is only partially legible.\",\n  \"quality_flags\": [\"heavily_faded\", \"low_contrast\", \"washed_out\", \"overexposed\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a person on horseback, wearing equestrian attire (black helmet, dark jacket, light riding pants, boots). The horse appears to be a brown/bay color. There's a banner in the background with partial text visible (\"REAVES PERFORMANCE\" and \"JOHN B...\" and \"ENGLER MACH...\"). The image appears very washed out/faded, possibly heavily edited or with a strong white overlay.\n\nLet me annotate this carefully:\n\n- Recognizability: The main content is recognizable (person on horse in equestrian setting) despite the faded quality. 4\n- Ambiguity: It's clearly a person on a horse. Low ambiguity. 1\n- Natural photo typicality: It looks like a natural photo but heavily faded/washed out. 2\n- Visual clutter: There's the rider, horse, background banner, fence/railing. Moderate. 2-3\n- Object centricity: The rider and horse are the clear subjects. 4\n- Scene centricity: It's more about the subjects than the scene itself, but there is scene context. 2\n- Caption confidence: High, can caption easily. 4\n\nSalient objects: rider, horse, helmet, banner\nDistinct categories: 3 (person, horse, banner/text)\n\nContains person: yes\nContains face: yes (partially visible but face is there)\nContains animal: yes (horse)\nContains text: yes (banner text)\nContains vehicle: no\nContains food: no\nContains indoor scene: no (outdoor equestrian arena)\nContains outdoor scene: yes\nContains artificial or rendered content: no (but heavily edited/faded)\nContains occlusion or truncation: no\nContains unusual viewpoint: no\nContains multiple main objects: yes (rider and horse)\n\nDominant content type: mixed (person + animal)\nImage style: edited_photo (heavily faded/washed out)\nSemantic domain: equestrian\n\nShort caption: \"A rider in equestrian attire mounted on a brown horse with sponsor banners in background\"\n\nMain objects: [\"rider\", \"horse\", \"riding helmet\", \"equestrian jacket\", \"banner\"]\n\nPossible interpretations: \n- \"Equestrian competition or show\"\n- \"Horseback riding training session\"\n- \"Sponsored equestrian event\"\n\nUncertainty notes: Image is heavily washed out/faded, reducing detail visibility. Text on banner is partially visible.\n\nQuality flags: [\"heavily_faded\", \"low_contrast\", \"washed_out\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a person on horseback, wearing equestrian attire (black helmet, dark jacket, light riding pants, boots). The horse appears to be a brown/bay color. There's a banner in the background with partial text visible (\"REAVES PERFORMANCE\" and \"JOHN B...\" and \"ENGLER MACH...\"). The image appears very washed out/faded, possibly heavily edited or with a strong white overlay.\n\nLet me annotate this carefully:\n\n- Recognizability: The main content is recognizable (person on horse in equestrian setting) despite the faded quality. 4\n- Ambiguity: It's clearly a person on a horse. Low ambiguity. 1\n- Natural photo typicality: It looks like a natural photo but heavily faded/washed out. 2\n- Visual clutter: There's the rider, horse, background banner, fence/railing. Moderate. 2-3\n- Object centricity: The rider and horse are the clear subjects. 4\n- Scene centricity: It's more about the subjects than the scene itself, but there is scene context. 2\n- Caption confidence: High, can caption easily. 4\n\nSalient objects: rider, horse, helmet, banner\nDistinct categories: 3 (person, horse, banner/text)\n\nContains person: yes\nContains face: yes (partially visible but face is there)\nContains animal: yes (horse)\nContains text: yes (banner text)\nContains vehicle: no\nContains food: no\nContains indoor scene: no (outdoor equestrian arena)\nContains outdoor scene: yes\nContains artificial or rendered content: no (but heavily edited/faded)\nContains occlusion or truncation: no\nContains unusual viewpoint: no\nContains multiple main objects: yes (rider and horse)\n\nDominant content type: mixed (person + animal)\nImage style: edited_photo (heavily faded/washed out)\nSemantic domain: equestrian\n\nShort caption: \"A rider in equestrian attire mounted on a brown horse with sponsor banners in background\"\n\nMain objects: [\"rider\", \"horse\", \"riding helmet\", \"equestrian jacket\", \"banner\"]\n\nPossible interpretations: \n- \"Equestrian competition or show\"\n- \"Horseback riding training session\"\n- \"Sponsored equestrian event\"\n\nUncertainty notes: Image is heavily washed out/faded, reducing detail visibility. Text on banner is partially visible.\n\nQuality flags: [\"heavily_faded\", \"low_contrast\", \"washed_out\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1467,
+          "completion_tokens": 886,
+          "total_tokens": 2353,
+          "cost": 0.00147594,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00147594,
+            "upstream_inference_prompt_cost": 0.00041274,
+            "upstream_inference_completions_cost": 0.0010632
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 580,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

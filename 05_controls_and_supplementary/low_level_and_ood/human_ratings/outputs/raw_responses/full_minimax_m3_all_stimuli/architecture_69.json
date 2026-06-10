@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_69",
+    "stim_key": "architecture_69",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 69,
+    "file_index": 69,
+    "image_name": "image_0069.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0069.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior/kitchen\",\n  \"short_caption\": \"A bright kitchen with cream cabinets, granite countertops, tiled backsplash, and a sink under a window.\",\n  \"main_objects\": [\"cabinets\", \"granite countertop\", \"sink\", \"faucet\", \"window\", \"tile backsplash\", \"decorative glass jar\", \"potted herb plant\"],\n  \"possible_interpretations\": [\"kitchen interior\", \"home design or staging photo\", \"real estate listing photo\"],\n  \"uncertainty_notes\": \"Small items in the glass jar may be fruit but are not clearly identifiable.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318925-soHxpGvFPulEwVs0PxtK",
+        "object": "chat.completion",
+        "created": 1780318925,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior/kitchen\",\n  \"short_caption\": \"A bright kitchen with cream cabinets, granite countertops, tiled backsplash, and a sink under a window.\",\n  \"main_objects\": [\"cabinets\", \"granite countertop\", \"sink\", \"faucet\", \"window\", \"tile backsplash\", \"decorative glass jar\", \"potted herb plant\"],\n  \"possible_interpretations\": [\"kitchen interior\", \"home design or staging photo\", \"real estate listing photo\"],\n  \"uncertainty_notes\": \"Small items in the glass jar may be fruit but are not clearly identifiable.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a kitchen interior with cream/off-white cabinetry, granite countertops, a tiled backsplash, a sink with a faucet, a window above the sink, and some decorative items including a glass jar, a plant, and what appears to be a spice rack or similar item. It's clearly a kitchen scene photographed in a typical interior design/real estate style.\n\nLet me analyze the schema fields:\n\n- recognizability: 5 - Very clearly a kitchen\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 4 - Looks like a natural interior photo, though possibly staged\n- visual_clutter: 2 - Relatively clean, not many competing objects\n- object_centricity: 2 - It's more of a scene than centered on one object\n- scene_centricity: 5 - Clearly a scene/place (kitchen)\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: ~4-5 (cabinets, sink, faucet, window, decor items)\n- estimated_distinct_object_categories: ~5-6 (cabinets, sink, faucet, window, plant, jar)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false (there might be small fruit in the glass jar but unclear)\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"interior/kitchen\"\n\n- short_caption: \"A bright kitchen with cream cabinets, granite countertops, tiled backsplash, and a sink under a window\"\n- main_objects: [\"cabinets\", \"countertop\", \"sink\", \"faucet\", \"window\", \"tile backsplash\", \"decorative jar\", \"potted plant\"]\n- possible_interpretations: [\"kitchen interior\", \"home design photo\", \"real estate listing photo\"]\n- uncertainty_notes: \"\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a kitchen interior with cream/off-white cabinetry, granite countertops, a tiled backsplash, a sink with a faucet, a window above the sink, and some decorative items including a glass jar, a plant, and what appears to be a spice rack or similar item. It's clearly a kitchen scene photographed in a typical interior design/real estate style.\n\nLet me analyze the schema fields:\n\n- recognizability: 5 - Very clearly a kitchen\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 4 - Looks like a natural interior photo, though possibly staged\n- visual_clutter: 2 - Relatively clean, not many competing objects\n- object_centricity: 2 - It's more of a scene than centered on one object\n- scene_centricity: 5 - Clearly a scene/place (kitchen)\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: ~4-5 (cabinets, sink, faucet, window, decor items)\n- estimated_distinct_object_categories: ~5-6 (cabinets, sink, faucet, window, plant, jar)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false (there might be small fruit in the glass jar but unclear)\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"interior/kitchen\"\n\n- short_caption: \"A bright kitchen with cream cabinets, granite countertops, tiled backsplash, and a sink under a window\"\n- main_objects: [\"cabinets\", \"countertop\", \"sink\", \"faucet\", \"window\", \"tile backsplash\", \"decorative jar\", \"potted plant\"]\n- possible_interpretations: [\"kitchen interior\", \"home design photo\", \"real estate listing photo\"]\n- uncertainty_notes: \"\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 834,
+          "total_tokens": 2356,
+          "cost": 0.00143004,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00143004,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010008
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 505,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

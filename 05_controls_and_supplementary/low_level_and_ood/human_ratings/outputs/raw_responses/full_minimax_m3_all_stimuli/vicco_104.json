@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_104",
+    "stim_key": "vicco_104",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 104,
+    "file_index": 103,
+    "image_name": "shared_4rep_vicco_104.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_104.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"furniture\",\n\n  \"short_caption\": \"Beige fabric recliner chair in a furniture showroom with a price tag\",\n  \"main_objects\": [\"beige recliner chair\", \"black leather chair\", \"dark gray chair\", \"price tag\"],\n  \"possible_interpretations\": [\"furniture store display\", \"showroom product photo\", \"retail listing photo\"],\n  \"uncertainty_notes\": \"Price tag currency and exact amount partially legible; showroom context inferred from tag and surrounding chairs\",\n  \"quality_flags\": [\"partially_cropped_objects\", \"store_environment\", \"price_tag_visible\"]\n}",
+      "response": {
+        "id": "gen-1780319508-TrqQiVJnaSJ6lngZZ7Xp",
+        "object": "chat.completion",
+        "created": 1780319508,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"furniture\",\n\n  \"short_caption\": \"Beige fabric recliner chair in a furniture showroom with a price tag\",\n  \"main_objects\": [\"beige recliner chair\", \"black leather chair\", \"dark gray chair\", \"price tag\"],\n  \"possible_interpretations\": [\"furniture store display\", \"showroom product photo\", \"retail listing photo\"],\n  \"uncertainty_notes\": \"Price tag currency and exact amount partially legible; showroom context inferred from tag and surrounding chairs\",\n  \"quality_flags\": [\"partially_cropped_objects\", \"store_environment\", \"price_tag_visible\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a beige/taupe fabric recliner or armchair in what appears to be a furniture store, with two other chairs (one black leather on the left, one dark gray/brown on the right) flanking it. There's a price tag visible on the upper portion of the central chair showing what appears to be \"385,-\" (a European price format). The setting looks like a furniture showroom.\n\nLet me provide the annotations based on the schema.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a beige/taupe fabric recliner or armchair in what appears to be a furniture store, with two other chairs (one black leather on the left, one dark gray/brown on the right) flanking it. There's a price tag visible on the upper portion of the central chair showing what appears to be \"385,-\" (a European price format). The setting looks like a furniture showroom.\n\nLet me provide the annotations based on the schema.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 448,
+          "total_tokens": 1970,
+          "cost": 0.00084396,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00084396,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0005376
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 117,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

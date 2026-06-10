@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_34",
+    "stim_key": "vicco_34",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 34,
+    "file_index": 33,
+    "image_name": "shared_4rep_vicco_034.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_034.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food\",\n  \"short_caption\": \"A sliced chocolate birthday cake topped with colorful meringues, a lit candle, and a Happy Birthday chocolate plaque.\",\n  \"main_objects\": [\"chocolate cake\", \"birthday candle\", \"Happy Birthday chocolate plaque\", \"colored meringues\", \"glazed cherry\", \"decorative chocolate piece\", \"white sprinkles\"],\n  \"possible_interpretations\": [\"Birthday celebration chocolate cake\", \"Dessert for a birthday party\"],\n  \"uncertainty_notes\": \"Image is very clear and unambiguous; all elements are easily identifiable.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319421-2dsRiGzBlF2sGXQ1dd0R",
+        "object": "chat.completion",
+        "created": 1780319421,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food\",\n  \"short_caption\": \"A sliced chocolate birthday cake topped with colorful meringues, a lit candle, and a Happy Birthday chocolate plaque.\",\n  \"main_objects\": [\"chocolate cake\", \"birthday candle\", \"Happy Birthday chocolate plaque\", \"colored meringues\", \"glazed cherry\", \"decorative chocolate piece\", \"white sprinkles\"],\n  \"possible_interpretations\": [\"Birthday celebration chocolate cake\", \"Dessert for a birthday party\"],\n  \"uncertainty_notes\": \"Image is very clear and unambiguous; all elements are easily identifiable.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a chocolate birthday cake on a white plate. The cake is sliced into pieces. It has decorations on top including:\n- A \"Happy Birthday\" chocolate plaque\n- Colorful meringues/cream puffs in purple, yellow, green, and pink\n- A red cherry\n- A lit candle (white/purple)\n- A decorative chocolate piece with a swirl pattern\n- White sprinkles around the edge\n- Silver/white sprinkles\n\nLet me annotate this image according to the schema.\n\n- Recognizability: Very clear, it's obviously a chocolate birthday cake. 5\n- Ambiguity: Low, it's clearly a cake. 1\n- Natural photo typicality: Looks like a typical photograph. 4\n- Visual clutter: Moderate - many decorative elements but they all serve the cake. 3\n- Object centricity: Yes, the cake is clearly the central object. 5\n- Scene centricity: No, it's an object shot. 1\n- Caption confidence: High. 5\n\n- Estimated salient object count: 1 (the cake is the main subject, decorations are part of it)\n- Estimated distinct object categories: Maybe 4-5 (cake, candle, decorations, sprinkles, plate)\n\n- Contains person: false\n- Contains face: false\n- Contains animal: false\n- Contains text: true (\"Happy Birthday\")\n- Contains vehicle: false\n- Contains food: true (cake)\n- Contains indoor scene: false (just a plate on a surface)\n- Contains outdoor scene: false\n- Contains artificial or rendered content: false\n- Contains occlusion or truncation: false\n- Contains unusual viewpoint: false\n- Contains multiple main objects: false (the cake and its decorations are one composite object)\n\n- Dominant content type: food\n- Image style: natural_photo\n- Semantic domain: food\n\n- Short caption: \"A sliced chocolate birthday cake with colorful meringue decorations, a lit candle, and a Happy Birthday chocolate plaque.\"\n- Main objects: [\"chocolate cake\", \"candle\", \"Happy Birthday plaque\", \"meringues\", \"cherry\"]\n- Possible interpretations: [\"Birthday celebration cake\", \"Chocolate cake with decorations\"]\n- Uncertainty notes: None really, very clear image\n- Quality flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a chocolate birthday cake on a white plate. The cake is sliced into pieces. It has decorations on top including:\n- A \"Happy Birthday\" chocolate plaque\n- Colorful meringues/cream puffs in purple, yellow, green, and pink\n- A red cherry\n- A lit candle (white/purple)\n- A decorative chocolate piece with a swirl pattern\n- White sprinkles around the edge\n- Silver/white sprinkles\n\nLet me annotate this image according to the schema.\n\n- Recognizability: Very clear, it's obviously a chocolate birthday cake. 5\n- Ambiguity: Low, it's clearly a cake. 1\n- Natural photo typicality: Looks like a typical photograph. 4\n- Visual clutter: Moderate - many decorative elements but they all serve the cake. 3\n- Object centricity: Yes, the cake is clearly the central object. 5\n- Scene centricity: No, it's an object shot. 1\n- Caption confidence: High. 5\n\n- Estimated salient object count: 1 (the cake is the main subject, decorations are part of it)\n- Estimated distinct object categories: Maybe 4-5 (cake, candle, decorations, sprinkles, plate)\n\n- Contains person: false\n- Contains face: false\n- Contains animal: false\n- Contains text: true (\"Happy Birthday\")\n- Contains vehicle: false\n- Contains food: true (cake)\n- Contains indoor scene: false (just a plate on a surface)\n- Contains outdoor scene: false\n- Contains artificial or rendered content: false\n- Contains occlusion or truncation: false\n- Contains unusual viewpoint: false\n- Contains multiple main objects: false (the cake and its decorations are one composite object)\n\n- Dominant content type: food\n- Image style: natural_photo\n- Semantic domain: food\n\n- Short caption: \"A sliced chocolate birthday cake with colorful meringue decorations, a lit candle, and a Happy Birthday chocolate plaque.\"\n- Main objects: [\"chocolate cake\", \"candle\", \"Happy Birthday plaque\", \"meringues\", \"cherry\"]\n- Possible interpretations: [\"Birthday celebration cake\", \"Chocolate cake with decorations\"]\n- Uncertainty notes: None really, very clear image\n- Quality flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 818,
+          "total_tokens": 2340,
+          "cost": 0.00128796,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00128796,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009816
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 536,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

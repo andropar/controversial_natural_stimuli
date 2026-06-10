@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_50",
+    "stim_key": "architecture_50",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 50,
+    "file_index": 50,
+    "image_name": "image_0050.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0050.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_multiple_main_objects\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"art gallery\",\n  \"short_caption\": \"Art gallery interior with a waterfall painting, an exhibition sign, and an open portfolio binder.\",\n  \"main_objects\": [\"painting\", \"exhibition sign\", \"portfolio binder\", \"wall label\"],\n  \"possible_interpretations\": [\"art gallery exhibition\", \"art display\", \"museum interior\", \"art show with information binder\"],\n  \"uncertainty_notes\": \"Painting is partially cropped on the left edge; sign text is partially legible at this resolution.\",\n  \"quality_flags\": [\"partial_occlusion\", \"cropped_object\"]\n}",
+      "response": {
+        "id": "gen-1780318897-pQqv2jO4rayONQ6uoOww",
+        "object": "chat.completion",
+        "created": 1780318897,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_multiple_main_objects\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"art gallery\",\n  \"short_caption\": \"Art gallery interior with a waterfall painting, an exhibition sign, and an open portfolio binder.\",\n  \"main_objects\": [\"painting\", \"exhibition sign\", \"portfolio binder\", \"wall label\"],\n  \"possible_interpretations\": [\"art gallery exhibition\", \"art display\", \"museum interior\", \"art show with information binder\"],\n  \"uncertainty_notes\": \"Painting is partially cropped on the left edge; sign text is partially legible at this resolution.\",\n  \"quality_flags\": [\"partial_occlusion\", \"cropped_object\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows an art gallery interior with:\n- A wall with a painting on the left (appears to be a waterfall/landscape scene)\n- A black sign/poster on the right that reads \"SPRING VALLEY\" and \"Hannelore Low...\" with \"The Varied Faces of...\" and dates \"June 6 - August 6, 2019\"\n- An open binder/portfolio at the bottom right showing what appears to be newspaper or article clippings\n- A small label/tag below the painting\n- Plain walls (corner of a room visible)\n\nThis is clearly an indoor scene of an art gallery/exhibition space.\n\nLet me rate the dimensions:\n- recognizability: 4 - clearly recognizable as an art gallery display\n- ambiguity: 2 - not many interpretations; it's clearly a gallery\n- natural_photo_typicality: 4 - looks like a natural photo\n- visual_clutter: 2 - relatively simple scene with a few elements\n- object_centricity: 2 - no single dominant object; it's more of a scene\n- scene_centricity: 5 - this is clearly a place/scene (gallery)\n- caption_confidence: 4 - fairly confident in describing it\n\n- estimated_salient_object_count: 3 (painting, sign, binder)\n- estimated_distinct_object_categories: 3\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (the sign and binder)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false (the painting depicts outdoor but image is indoor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (painting is partially cut off on the left)\n- contains_multiple_main_objects: true\n- contains_unusual_viewpoint: false\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: art gallery\n\nshort_caption: \"Art gallery interior featuring a waterfall painting, exhibition sign, and an open portfolio binder.\"\n\nmain_objects: [\"painting\", \"exhibition sign\", \"portfolio binder\", \"wall label\"]\n\npossible_interpretations: [\"art gallery exhibition\", \"art display\", \"museum interior\", \"art show with information binder\"]\n\nuncertainty_notes: \"Painting is partially cropped on the left side; text on sign is partially legible.\"\n\nquality_flags: [\"partial_occlusion\", \"cropped_object\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows an art gallery interior with:\n- A wall with a painting on the left (appears to be a waterfall/landscape scene)\n- A black sign/poster on the right that reads \"SPRING VALLEY\" and \"Hannelore Low...\" with \"The Varied Faces of...\" and dates \"June 6 - August 6, 2019\"\n- An open binder/portfolio at the bottom right showing what appears to be newspaper or article clippings\n- A small label/tag below the painting\n- Plain walls (corner of a room visible)\n\nThis is clearly an indoor scene of an art gallery/exhibition space.\n\nLet me rate the dimensions:\n- recognizability: 4 - clearly recognizable as an art gallery display\n- ambiguity: 2 - not many interpretations; it's clearly a gallery\n- natural_photo_typicality: 4 - looks like a natural photo\n- visual_clutter: 2 - relatively simple scene with a few elements\n- object_centricity: 2 - no single dominant object; it's more of a scene\n- scene_centricity: 5 - this is clearly a place/scene (gallery)\n- caption_confidence: 4 - fairly confident in describing it\n\n- estimated_salient_object_count: 3 (painting, sign, binder)\n- estimated_distinct_object_categories: 3\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (the sign and binder)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false (the painting depicts outdoor but image is indoor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (painting is partially cut off on the left)\n- contains_multiple_main_objects: true\n- contains_unusual_viewpoint: false\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: art gallery\n\nshort_caption: \"Art gallery interior featuring a waterfall painting, exhibition sign, and an open portfolio binder.\"\n\nmain_objects: [\"painting\", \"exhibition sign\", \"portfolio binder\", \"wall label\"]\n\npossible_interpretations: [\"art gallery exhibition\", \"art display\", \"museum interior\", \"art show with information binder\"]\n\nuncertainty_notes: \"Painting is partially cropped on the left side; text on sign is partially legible.\"\n\nquality_flags: [\"partial_occlusion\", \"cropped_object\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1363,
+          "completion_tokens": 876,
+          "total_tokens": 2239,
+          "cost": 0.00130986,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00130986,
+            "upstream_inference_prompt_cost": 0.00025866,
+            "upstream_inference_completions_cost": 0.0010512
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 588,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_7",
+    "stim_key": "dataset_7",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 7,
+    "file_index": 7,
+    "image_name": "image_0007.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0007.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"home/bathroom\",\n\n  \"short_caption\": \"Glass bottle labeled Toilet filled with milk on a bathroom counter beside cotton balls and flowers.\",\n  \"main_objects\": [\"glass bottle with chalkboard label\", \"cotton balls in blue bowl\", \"baby's breath flowers in jar\", \"blue striped cloth\", \"piece of chalk\", \"metal soap dispenser\"],\n  \"possible_interpretations\": [\"styled bathroom counter photo\", \"blog photo about creative bathroom decor\", \"humorous labeling of milk as toilet cleaner\", \"product styling shot\", \"Pinterest-style home decor image\"],\n  \"uncertainty_notes\": \"Image is clearly a styled/staged photograph rather than a candid scene. The 'Toilet' label appears intentionally humorous or ironic.\",\n  \"quality_flags\": [\"top of bottle is cropped out\", \"soap dispenser partially cut off at bottom\", \"staged composition\"]\n}",
+      "response": {
+        "id": "gen-1780318968-7P3cFPjUCZmzGnnRPkYQ",
+        "object": "chat.completion",
+        "created": 1780318968,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"home/bathroom\",\n\n  \"short_caption\": \"Glass bottle labeled Toilet filled with milk on a bathroom counter beside cotton balls and flowers.\",\n  \"main_objects\": [\"glass bottle with chalkboard label\", \"cotton balls in blue bowl\", \"baby's breath flowers in jar\", \"blue striped cloth\", \"piece of chalk\", \"metal soap dispenser\"],\n  \"possible_interpretations\": [\"styled bathroom counter photo\", \"blog photo about creative bathroom decor\", \"humorous labeling of milk as toilet cleaner\", \"product styling shot\", \"Pinterest-style home decor image\"],\n  \"uncertainty_notes\": \"Image is clearly a styled/staged photograph rather than a candid scene. The 'Toilet' label appears intentionally humorous or ironic.\",\n  \"quality_flags\": [\"top of bottle is cropped out\", \"soap dispenser partially cut off at bottom\", \"staged composition\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- A clear glass bottle/jug containing a white liquid (likely milk) with a chalkboard label reading \"Toilet\"\n- A small blue bowl with white cotton balls\n- A glass jar/vase with white flowers (baby's breath) in the background\n- A blue and white striped cloth/towel\n- A piece of white chalk\n- A metal soap dispenser pump in the foreground (partially visible)\n- The setting appears to be a bathroom counter with a wooden surface\n\nThis appears to be a styled/staged photograph, likely for a blog or article about creative bathroom labeling. The image is well-lit and intentionally composed.\n\nLet me rate each dimension:\n\n- recognizability: 4 - The objects are clearly visible and recognizable\n- ambiguity: 2 - It's fairly clear what's shown, though the \"Toilet\" label is unusual/humorous\n- natural_photo_typicality: 3 - It's a styled photograph, not a candid shot, but it looks like a real photograph\n- visual_clutter: 3 - Multiple objects but not overly cluttered\n- object_centricity: 3 - The milk bottle is the main focus but there are other prominent objects\n- scene_centricity: 4 - It's clearly a scene/setting (bathroom counter arrangement)\n- caption_confidence: 4 - Easy to describe concisely\n\nEstimated objects: bottle, bowl with cotton balls, flowers in vase, chalk, cloth, soap dispenser\nCategories: 5-6\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: true (\"Toilet\")\nContains vehicle: false\nContains food: false (milk in a bottle, but it's being used as a bathroom item, not food)\nContains indoor scene: true\nContains outdoor scene: false\nContains artificial or rendered content: false\nContains occlusion or truncation: true (the soap dispenser is cut off, the bottle top is cut off)\nContains unusual viewpoint: false\nContains multiple main objects: true\n\nDominant content: scene (it's a styled scene)\nImage style: natural_photo (or possibly edited_photo since it's clearly styled)\nSemantic domain: home/bathroom\n\nLet me reconsider - this looks like a staged blog photo. It's natural in style but deliberately composed.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- A clear glass bottle/jug containing a white liquid (likely milk) with a chalkboard label reading \"Toilet\"\n- A small blue bowl with white cotton balls\n- A glass jar/vase with white flowers (baby's breath) in the background\n- A blue and white striped cloth/towel\n- A piece of white chalk\n- A metal soap dispenser pump in the foreground (partially visible)\n- The setting appears to be a bathroom counter with a wooden surface\n\nThis appears to be a styled/staged photograph, likely for a blog or article about creative bathroom labeling. The image is well-lit and intentionally composed.\n\nLet me rate each dimension:\n\n- recognizability: 4 - The objects are clearly visible and recognizable\n- ambiguity: 2 - It's fairly clear what's shown, though the \"Toilet\" label is unusual/humorous\n- natural_photo_typicality: 3 - It's a styled photograph, not a candid shot, but it looks like a real photograph\n- visual_clutter: 3 - Multiple objects but not overly cluttered\n- object_centricity: 3 - The milk bottle is the main focus but there are other prominent objects\n- scene_centricity: 4 - It's clearly a scene/setting (bathroom counter arrangement)\n- caption_confidence: 4 - Easy to describe concisely\n\nEstimated objects: bottle, bowl with cotton balls, flowers in vase, chalk, cloth, soap dispenser\nCategories: 5-6\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: true (\"Toilet\")\nContains vehicle: false\nContains food: false (milk in a bottle, but it's being used as a bathroom item, not food)\nContains indoor scene: true\nContains outdoor scene: false\nContains artificial or rendered content: false\nContains occlusion or truncation: true (the soap dispenser is cut off, the bottle top is cut off)\nContains unusual viewpoint: false\nContains multiple main objects: true\n\nDominant content: scene (it's a styled scene)\nImage style: natural_photo (or possibly edited_photo since it's clearly styled)\nSemantic domain: home/bathroom\n\nLet me reconsider - this looks like a staged blog photo. It's natural in style but deliberately composed.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1363,
+          "completion_tokens": 882,
+          "total_tokens": 2245,
+          "cost": 0.00143994,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00143994,
+            "upstream_inference_prompt_cost": 0.00038154,
+            "upstream_inference_completions_cost": 0.0010584
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 561,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

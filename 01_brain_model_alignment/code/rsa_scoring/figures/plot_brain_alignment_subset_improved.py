@@ -12,10 +12,10 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-_PAPER = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_PAPER.parents[1]))
-sys.path.insert(0, str(_PAPER / "figures"))
+STAGE = Path(__file__).resolve().parents[3]
+SHARE_ROOT = STAGE.parent
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -36,7 +36,7 @@ from plot_brain_alignment_subset import (
     load_full_scores, load_subset_scores, prepare_paired_data,
 )
 
-FIGURES_DIR = Path(__file__).resolve().parent
+FIGURES_DIR = STAGE / "figures" / "rsa_scores"
 
 
 def plot_comparison(df_full, df_subset, max_stim):
@@ -105,6 +105,7 @@ def main():
     df_full = load_full_scores()
     df_subset = load_subset_scores(20)
     fig = plot_comparison(df_full, df_subset, 20)
+    FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     for fmt in ("pdf", "png"):
         out = FIGURES_DIR / f"brain_alignment_subset_scatter_improved.{fmt}"
         fig.savefig(out, dpi=DPI)

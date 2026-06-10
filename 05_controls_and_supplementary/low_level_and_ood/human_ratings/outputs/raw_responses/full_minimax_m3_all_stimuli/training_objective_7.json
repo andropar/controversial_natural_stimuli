@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_7",
+    "stim_key": "training_objective_7",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 7,
+    "file_index": 7,
+    "image_name": "image_0007.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0007.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 3, \"ambiguity\": 4, \"natural_photo_typicality\": 2, \"visual_clutter\": 2, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 3, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 4, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"theater/performance\", \"short_caption\": \"Two partially visible people in front of a blue curtain, one aiming a compound bow at the other.\", \"main_objects\": [\"curtain\", \"compound bow\", \"person in tie\", \"person with red hair\"], \"possible_interpretations\": [\"theatrical performance\", \"staged comedy act\", \"promotional photo shoot\", \"performance art piece\", \"dramatic staged scene\"], \"uncertainty_notes\": \"Context unclear; subjects are heavily truncated. Could be theater, photography, or performance art. Left person appears to wear formal attire, creating an unusual juxtaposition with the bow.\", \"quality_flags\": [\"truncated_subjects\", \"unclear_context\", \"partial_framing\"]}",
+      "response": {
+        "id": "gen-1780319212-9LrABAGOe874TnfDXOge",
+        "object": "chat.completion",
+        "created": 1780319212,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 3, \"ambiguity\": 4, \"natural_photo_typicality\": 2, \"visual_clutter\": 2, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 3, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 4, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"theater/performance\", \"short_caption\": \"Two partially visible people in front of a blue curtain, one aiming a compound bow at the other.\", \"main_objects\": [\"curtain\", \"compound bow\", \"person in tie\", \"person with red hair\"], \"possible_interpretations\": [\"theatrical performance\", \"staged comedy act\", \"promotional photo shoot\", \"performance art piece\", \"dramatic staged scene\"], \"uncertainty_notes\": \"Context unclear; subjects are heavily truncated. Could be theater, photography, or performance art. Left person appears to wear formal attire, creating an unusual juxtaposition with the bow.\", \"quality_flags\": [\"truncated_subjects\", \"unclear_context\", \"partial_framing\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be a theatrical or performance scene with a dark blue curtain as the background. There are at least two people partially visible - on the left side, a person wearing a dark shirt and maroon/burgundy pants with what looks like a tie, extending their arm. On the right side, there's a person holding a blue compound bow, appearing to aim it toward the left person. There also seems to be a head with reddish/pink hair visible on the far right.\n\nThe scene has a dramatic, staged quality - the lighting and curtain suggest a performance or photo shoot context. The combination of someone in formal attire (with tie) and someone with a bow creates an unusual juxtaposition that suggests this could be a theatrical production, perhaps a comedy or absurdist performance piece.\n\nLet me rate each dimension:\n- recognizability: 3-4 - The content is somewhat clear but the context/meaning is ambiguous\n- ambiguity: 4 - Multiple interpretations possible (theater, photo shoot, performance art, etc.)\n- natural_photo_typicality: 2 - This looks staged/posed, not a typical natural photo\n- visual_clutter: 2 - The curtain is a simple background, though there are multiple elements\n- object_centricity: 2 - No single central object dominates\n- scene_centricity: 4 - It's more of a scene with a backdrop\n- caption_confidence: 3 - Hard to caption concisely without speculation\n\nMain objects: curtain, bow, person (partially visible), tie, person with bow\nPerson: yes\nFace: partially (the person on the right has a face partially visible)\nAnimal: no\nText: no\nVehicle: no\nFood: no\nIndoor: yes\nOutdoor: no\nArtificial/rendered: no, but staged\nOcclusion/truncation: yes, people are truncated\nUnusual viewpoint: somewhat\nMultiple main objects: yes\n\nDominant content: scene or mixed\nImage style: natural photo (though staged)\nSemantic domain: theater/performance\n\nShort caption: \"Two partially visible people on stage with a blue curtain, one aiming a compound bow at the other.\"\n\nPossible interpretations: theatrical performance, comedy act, photo shoot, performance art, staged dramatic scene\n\nUncertainty notes: The exact context is unclear - could be theater, comedy, or staged photography. The left person's full appearance and the right person's identity are not visible.\n\nQuality flags: partial subjects, truncated figures, ambiguous context",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be a theatrical or performance scene with a dark blue curtain as the background. There are at least two people partially visible - on the left side, a person wearing a dark shirt and maroon/burgundy pants with what looks like a tie, extending their arm. On the right side, there's a person holding a blue compound bow, appearing to aim it toward the left person. There also seems to be a head with reddish/pink hair visible on the far right.\n\nThe scene has a dramatic, staged quality - the lighting and curtain suggest a performance or photo shoot context. The combination of someone in formal attire (with tie) and someone with a bow creates an unusual juxtaposition that suggests this could be a theatrical production, perhaps a comedy or absurdist performance piece.\n\nLet me rate each dimension:\n- recognizability: 3-4 - The content is somewhat clear but the context/meaning is ambiguous\n- ambiguity: 4 - Multiple interpretations possible (theater, photo shoot, performance art, etc.)\n- natural_photo_typicality: 2 - This looks staged/posed, not a typical natural photo\n- visual_clutter: 2 - The curtain is a simple background, though there are multiple elements\n- object_centricity: 2 - No single central object dominates\n- scene_centricity: 4 - It's more of a scene with a backdrop\n- caption_confidence: 3 - Hard to caption concisely without speculation\n\nMain objects: curtain, bow, person (partially visible), tie, person with bow\nPerson: yes\nFace: partially (the person on the right has a face partially visible)\nAnimal: no\nText: no\nVehicle: no\nFood: no\nIndoor: yes\nOutdoor: no\nArtificial/rendered: no, but staged\nOcclusion/truncation: yes, people are truncated\nUnusual viewpoint: somewhat\nMultiple main objects: yes\n\nDominant content: scene or mixed\nImage style: natural photo (though staged)\nSemantic domain: theater/performance\n\nShort caption: \"Two partially visible people on stage with a blue curtain, one aiming a compound bow at the other.\"\n\nPossible interpretations: theatrical performance, comedy act, photo shoot, performance art, staged dramatic scene\n\nUncertainty notes: The exact context is unclear - could be theater, comedy, or staged photography. The left person's full appearance and the right person's identity are not visible.\n\nQuality flags: partial subjects, truncated figures, ambiguous context",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 868,
+          "total_tokens": 2390,
+          "cost": 0.00134796,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00134796,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010416
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 628,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_97",
+    "stim_key": "architecture_97",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 97,
+    "file_index": 97,
+    "image_name": "image_0097.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0097.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"skateboarding\",\n  \"short_caption\": \"A skateboarder in a black hoodie jumps a trick near a large textured concrete wall.\",\n  \"main_objects\": [\"skateboarder\", \"skateboard\", \"concrete wall\", \"textured panel\"],\n  \"possible_interpretations\": [\n    \"skateboarder performing a trick off a ledge\",\n    \"documentary shot of urban skate spot\",\n    \"artistic composition contrasting figure and wall texture\"\n  ],\n  \"uncertainty_notes\": \"Skater is small and partially occluded in the upper-left corner; the wall texture dominates the frame, making it unclear whether the subject is the person or the wall.\",\n  \"quality_flags\": [\"unusual_framing\", \"small_main_subject\", \"partial_occlusion\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318955-YqJ9NWh8upgdN8JYoHOK",
+        "object": "chat.completion",
+        "created": 1780318955,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"skateboarding\",\n  \"short_caption\": \"A skateboarder in a black hoodie jumps a trick near a large textured concrete wall.\",\n  \"main_objects\": [\"skateboarder\", \"skateboard\", \"concrete wall\", \"textured panel\"],\n  \"possible_interpretations\": [\n    \"skateboarder performing a trick off a ledge\",\n    \"documentary shot of urban skate spot\",\n    \"artistic composition contrasting figure and wall texture\"\n  ],\n  \"uncertainty_notes\": \"Skater is small and partially occluded in the upper-left corner; the wall texture dominates the frame, making it unclear whether the subject is the person or the wall.\",\n  \"quality_flags\": [\"unusual_framing\", \"small_main_subject\", \"partial_occlusion\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an outdoor scene with:\n- A skateboarder in the upper left corner wearing a black hoodie, crouched/jumping position\n- A skateboard mid-air below the person\n- A large concrete/stucco wall with a textured panel section\n- Concrete ground/sidewalk\n- A dirt/gravel area in the lower left\n- Some sparse vegetation in the bottom left\n\nThe composition is unusual - the skateboarder is small in the upper left while the textured wall dominates the right and center of the image. The wall has a distinctive vertical groove/striation texture.\n\nLet me rate the attributes:\n\n- recognizability: The main subject (skateboarder) is visible but small and in the corner. A typical viewer would recognize this as a skateboarding scene. 3-4\n- ambiguity: Multiple interpretations possible - could be about the wall, the skater, the action. 3\n- natural_photo_typicality: Looks like a natural photograph, possibly film. 4\n- visual_clutter: Moderate - mostly wall texture with a few elements. 2\n- object_centricity: The skater is the main object but small in frame. 2\n- scene_centricity: The wall/scene dominates more than the object. 4\n- caption_confidence: Pretty confident - skateboarding scene. 4\n\nEstimated salient object count: 2 (skater, skateboard)\nDistinct object categories: 3-4 (person, skateboard, wall, ground)\n\nContains person: yes\nContains face: yes (the skater's face is visible)\nContains animal: no\nContains text: no\nContains vehicle: no (skateboard isn't a vehicle)\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial content: no (it's a natural photo of artificial structures)\nContains occlusion: yes (person is partially behind wall edge)\nContains unusual viewpoint: somewhat (the framing is unusual, more wall than subject)\nContains multiple main objects: no, one main subject\n\nDominant content type: person (the skater is the action, but wall dominates visually) - I'd say \"mixed\" or \"scene\"\nImage style: natural_photo\nSemantic domain: skateboarding/urban\n\nCaption: \"A skateboarder performs a trick near a large textured concrete wall\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an outdoor scene with:\n- A skateboarder in the upper left corner wearing a black hoodie, crouched/jumping position\n- A skateboard mid-air below the person\n- A large concrete/stucco wall with a textured panel section\n- Concrete ground/sidewalk\n- A dirt/gravel area in the lower left\n- Some sparse vegetation in the bottom left\n\nThe composition is unusual - the skateboarder is small in the upper left while the textured wall dominates the right and center of the image. The wall has a distinctive vertical groove/striation texture.\n\nLet me rate the attributes:\n\n- recognizability: The main subject (skateboarder) is visible but small and in the corner. A typical viewer would recognize this as a skateboarding scene. 3-4\n- ambiguity: Multiple interpretations possible - could be about the wall, the skater, the action. 3\n- natural_photo_typicality: Looks like a natural photograph, possibly film. 4\n- visual_clutter: Moderate - mostly wall texture with a few elements. 2\n- object_centricity: The skater is the main object but small in frame. 2\n- scene_centricity: The wall/scene dominates more than the object. 4\n- caption_confidence: Pretty confident - skateboarding scene. 4\n\nEstimated salient object count: 2 (skater, skateboard)\nDistinct object categories: 3-4 (person, skateboard, wall, ground)\n\nContains person: yes\nContains face: yes (the skater's face is visible)\nContains animal: no\nContains text: no\nContains vehicle: no (skateboard isn't a vehicle)\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial content: no (it's a natural photo of artificial structures)\nContains occlusion: yes (person is partially behind wall edge)\nContains unusual viewpoint: somewhat (the framing is unusual, more wall than subject)\nContains multiple main objects: no, one main subject\n\nDominant content type: person (the skater is the action, but wall dominates visually) - I'd say \"mixed\" or \"scene\"\nImage style: natural_photo\nSemantic domain: skateboarding/urban\n\nCaption: \"A skateboarder performs a trick near a large textured concrete wall\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 876,
+          "total_tokens": 2290,
+          "cost": 0.00132516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00132516,
+            "upstream_inference_prompt_cost": 0.00027396,
+            "upstream_inference_completions_cost": 0.0010512
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 563,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

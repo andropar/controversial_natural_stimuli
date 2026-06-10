@@ -32,9 +32,10 @@ os.environ.setdefault("OMP_NUM_THREADS", "8")
 os.environ.setdefault("OPENBLAS_NUM_THREADS", "8")
 os.environ.setdefault("MKL_NUM_THREADS", "8")
 
-_PAPER = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_PAPER.parents[1]))
+STAGE = Path(__file__).resolve().parents[2]
+SHARE_ROOT = STAGE.parents[2]
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
 
 import numpy as np
 import pandas as pd
@@ -50,16 +51,21 @@ from cstims.evaluation.computation import (
 )
 
 
-VICCO_CACHE = _PAPER / "11_layer_sweep" / "cache" / "features"
+VICCO_CACHE = (
+    SHARE_ROOT
+    / "05_controls_and_supplementary"
+    / "model_scope_followups"
+    / "layer_sweep"
+    / "cache_or_heavy"
+    / "features"
+)
 
 EVAL_DIRS = {
-    ms: config.SELECTION_OUTPUT_ROOT / ms / "method-raw_plus_all_encodings"
-        / "20251222_175721" / "eval_pipeline"
+    ms: config.SELECTION_OUTPUT_ROOT / ms / "eval_pipeline"
     for ms in ["all_models", "sota", "training_objective", "architecture", "dataset"]
 }
 PAYLOAD_PATHS = {
-    ms: config.SELECTION_OUTPUT_ROOT / ms / "method-raw_plus_all_encodings"
-        / "20251222_175721" / "selected_stimuli_data.pkl"
+    ms: config.SELECTION_OUTPUT_ROOT / ms / "selected_stimuli_data.pkl"
     for ms in EVAL_DIRS
 }
 

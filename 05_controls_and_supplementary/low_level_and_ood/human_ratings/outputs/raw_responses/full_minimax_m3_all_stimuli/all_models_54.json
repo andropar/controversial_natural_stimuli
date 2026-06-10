@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_54",
+    "stim_key": "all_models_54",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 54,
+    "file_index": 54,
+    "image_name": "image_0054.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0054.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports equipment\",\n  \"short_caption\": \"Close-up of a black and red Van Enzl tennis racket against a dark background.\",\n  \"main_objects\": [\"tennis racket\"],\n  \"possible_interpretations\": [\"tennis racket product photo\", \"tennis racket on a dark surface\", \"sports equipment close-up\"],\n  \"uncertainty_notes\": \"Handle is partially cut off at the bottom; brand name VAN ENZL is clearly visible.\",\n  \"quality_flags\": [\"partial_truncation\"]\n}",
+      "response": {
+        "id": "gen-1780318793-KwKfkudhkhWwFTmqwRF4",
+        "object": "chat.completion",
+        "created": 1780318793,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports equipment\",\n  \"short_caption\": \"Close-up of a black and red Van Enzl tennis racket against a dark background.\",\n  \"main_objects\": [\"tennis racket\"],\n  \"possible_interpretations\": [\"tennis racket product photo\", \"tennis racket on a dark surface\", \"sports equipment close-up\"],\n  \"uncertainty_notes\": \"Handle is partially cut off at the bottom; brand name VAN ENZL is clearly visible.\",\n  \"quality_flags\": [\"partial_truncation\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a tennis racket (specifically appears to be a Van Enzl brand) photographed against a dark surface. The racket is the clear central object, shown from a close-up perspective showing the string bed, frame, and part of the handle. The brand name \"VAN ENZL\" is visible on the throat of the racket.\n\nLet me analyze the attributes:\n- Recognizability: Very clear, it's obviously a tennis racket - 5\n- Ambiguity: Very low, only one main interpretation - 1\n- Natural_photo_typicality: Looks like a real photograph, though somewhat staged - 4\n- Visual_clutter: Minimal, mostly the racket against a dark background - 1\n- Object_centricity: The racket dominates the image - 5\n- Scene_centricity: Not a scene, it's an object - 1\n- Caption_confidence: High confidence in captioning - 5\n\nSalient object count: 1 (the racket)\nDistinct object categories: 1 (tennis racket)\n\nContains: no person, no face, no animal, contains text (VAN ENZL), no vehicle, no food, no indoor/outdoor scene in the traditional sense, no artificial/rendered content, no occlusion, no unusual viewpoint (straight-on), no multiple main objects.\n\nDominant content type: object\nImage style: natural_photo\nSemantic domain: sports equipment\n\nCaption: A close-up of a black and red tennis racket with the brand name Van Enzl on a dark surface.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a tennis racket (specifically appears to be a Van Enzl brand) photographed against a dark surface. The racket is the clear central object, shown from a close-up perspective showing the string bed, frame, and part of the handle. The brand name \"VAN ENZL\" is visible on the throat of the racket.\n\nLet me analyze the attributes:\n- Recognizability: Very clear, it's obviously a tennis racket - 5\n- Ambiguity: Very low, only one main interpretation - 1\n- Natural_photo_typicality: Looks like a real photograph, though somewhat staged - 4\n- Visual_clutter: Minimal, mostly the racket against a dark background - 1\n- Object_centricity: The racket dominates the image - 5\n- Scene_centricity: Not a scene, it's an object - 1\n- Caption_confidence: High confidence in captioning - 5\n\nSalient object count: 1 (the racket)\nDistinct object categories: 1 (tennis racket)\n\nContains: no person, no face, no animal, contains text (VAN ENZL), no vehicle, no food, no indoor/outdoor scene in the traditional sense, no artificial/rendered content, no occlusion, no unusual viewpoint (straight-on), no multiple main objects.\n\nDominant content type: object\nImage style: natural_photo\nSemantic domain: sports equipment\n\nCaption: A close-up of a black and red tennis racket with the brand name Van Enzl on a dark surface.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1363,
+          "completion_tokens": 637,
+          "total_tokens": 2000,
+          "cost": 0.00114594,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00114594,
+            "upstream_inference_prompt_cost": 0.00038154,
+            "upstream_inference_completions_cost": 0.0007644
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 343,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

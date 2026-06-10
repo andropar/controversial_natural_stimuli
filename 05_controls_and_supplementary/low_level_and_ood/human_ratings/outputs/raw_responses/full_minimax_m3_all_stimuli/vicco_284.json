@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_284",
+    "stim_key": "vicco_284",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 284,
+    "file_index": 283,
+    "image_name": "shared_4rep_vicco_284.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_284.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"text_document\",\n  \"image_style\": \"screenshot_or_document\",\n  \"semantic_domain\": \"software_interface\",\n  \"short_caption\": \"Photo of MATLAB editor showing garbled or corrupted code text\",\n  \"main_objects\": [\"MATLAB editor window\", \"code text\", \"ribbon menu\", \"command window\"],\n  \"possible_interpretations\": [\"MATLAB editor with corrupted/garbled code\", \"screenshot of programming interface with encoding issues\", \"code mixed with non-Latin characters\"],\n  \"uncertainty_notes\": \"Text content is largely unreadable due to character encoding issues mixing Latin and non-Latin scripts; image appears to be a photograph of a monitor taken at a slight angle\",\n  \"quality_flags\": [\"photo_of_screen\", \"slight_motion_blur\", \"slight_keystone_distortion\", \"unreadable_text\"]\n}",
+      "response": {
+        "id": "gen-1780319718-veAcD3qVYoIhthF4zrXD",
+        "object": "chat.completion",
+        "created": 1780319718,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"text_document\",\n  \"image_style\": \"screenshot_or_document\",\n  \"semantic_domain\": \"software_interface\",\n  \"short_caption\": \"Photo of MATLAB editor showing garbled or corrupted code text\",\n  \"main_objects\": [\"MATLAB editor window\", \"code text\", \"ribbon menu\", \"command window\"],\n  \"possible_interpretations\": [\"MATLAB editor with corrupted/garbled code\", \"screenshot of programming interface with encoding issues\", \"code mixed with non-Latin characters\"],\n  \"uncertainty_notes\": \"Text content is largely unreadable due to character encoding issues mixing Latin and non-Latin scripts; image appears to be a photograph of a monitor taken at a slight angle\",\n  \"quality_flags\": [\"photo_of_screen\", \"slight_motion_blur\", \"slight_keystone_distortion\", \"unreadable_text\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a MATLAB editor window displaying what appears to be garbled/corrupted code - a mixture of MATLAB code, random characters, and what looks like Chinese or other non-Latin characters mixed in. The title bar mentions \"matlabbatch_firstlevel_localizers_final_fixed.m\" and there's a file path visible. The code contains jumbled text with various symbols and characters that don't form coherent programming syntax.\n\nLet me analyze this according to the schema:\n\n- This is a screenshot of a software interface (MATLAB editor)\n- It contains text/code (mostly garbled)\n- It's a screenshot/document type image\n- It appears to be a photo taken of a screen (not a direct screenshot, based on slight blur/angle)\n- The content is largely unreadable code/text\n\nLet me rate each:\n- recognizability: The main content (MATLAB editor with garbled code) is recognizable as a software interface, but the text itself is mostly unreadable. I'd say 3.\n- ambiguity: It's clearly a code editor with garbled text - relatively unambiguous in what it is, though what the text means is unclear. 2.\n- natural_photo_typicality: This looks like a photo of a screen, not a typical natural photo. 2.\n- visual_clutter: There's a lot of text but it's all similar format. 3-4.\n- object_centricity: No central object, it's a scene/interface. 2.\n- scene_centricity: This is more of a software scene/interface. 4.\n- caption_confidence: Can confidently caption as MATLAB editor with garbled code. 4.\n\nFor binary fields:\n- contains_text: yes\n- contains_person: no\n- contains_face: no\n- contains_animal: no\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: no (it's a screen)\n- contains_outdoor_scene: no\n- contains_artificial_or_rendered_content: yes (it's a software interface)\n- contains_occlusion_or_truncation: no\n- contains_unusual_viewpoint: slightly, taken at an angle\n- contains_multiple_main_objects: no\n\ndominant_content_type: text_document or screenshot_or_document\nimage_style: screenshot_or_document\nsemantic_domain: \"software_interface\" or \"code_editor\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a MATLAB editor window displaying what appears to be garbled/corrupted code - a mixture of MATLAB code, random characters, and what looks like Chinese or other non-Latin characters mixed in. The title bar mentions \"matlabbatch_firstlevel_localizers_final_fixed.m\" and there's a file path visible. The code contains jumbled text with various symbols and characters that don't form coherent programming syntax.\n\nLet me analyze this according to the schema:\n\n- This is a screenshot of a software interface (MATLAB editor)\n- It contains text/code (mostly garbled)\n- It's a screenshot/document type image\n- It appears to be a photo taken of a screen (not a direct screenshot, based on slight blur/angle)\n- The content is largely unreadable code/text\n\nLet me rate each:\n- recognizability: The main content (MATLAB editor with garbled code) is recognizable as a software interface, but the text itself is mostly unreadable. I'd say 3.\n- ambiguity: It's clearly a code editor with garbled text - relatively unambiguous in what it is, though what the text means is unclear. 2.\n- natural_photo_typicality: This looks like a photo of a screen, not a typical natural photo. 2.\n- visual_clutter: There's a lot of text but it's all similar format. 3-4.\n- object_centricity: No central object, it's a scene/interface. 2.\n- scene_centricity: This is more of a software scene/interface. 4.\n- caption_confidence: Can confidently caption as MATLAB editor with garbled code. 4.\n\nFor binary fields:\n- contains_text: yes\n- contains_person: no\n- contains_face: no\n- contains_animal: no\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: no (it's a screen)\n- contains_outdoor_scene: no\n- contains_artificial_or_rendered_content: yes (it's a software interface)\n- contains_occlusion_or_truncation: no\n- contains_unusual_viewpoint: slightly, taken at an angle\n- contains_multiple_main_objects: no\n\ndominant_content_type: text_document or screenshot_or_document\nimage_style: screenshot_or_document\nsemantic_domain: \"software_interface\" or \"code_editor\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 866,
+          "total_tokens": 2388,
+          "cost": 0.00146844,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00146844,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010392
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 541,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

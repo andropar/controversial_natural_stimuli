@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_285",
+    "stim_key": "vicco_285",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 285,
+    "file_index": 284,
+    "image_name": "shared_4rep_vicco_285.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_285.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"school/outdoor urban\",\n  \"short_caption\": \"A German school building with scaffolding, a lawn, and a no-entry sign for unauthorized persons.\",\n  \"main_objects\": [\"school building\", \"scaffolding\", \"no-entry sign\", \"trees\", \"street lamp\", \"grass lawn\"],\n  \"possible_interpretations\": [\n    \"School building undergoing maintenance or renovation\",\n    \"Side view of a German school grounds during off-hours\",\n    \"Restricted access to school property\",\n    \"School courtyard adjacent to a wooded area\"\n  ],\n  \"uncertainty_notes\": \"Sign text is partially cut off at the bottom; specific function of the building beyond school is unclear from the visible side.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319718-TMprSGwoVO3Wxt5Q5CNL",
+        "object": "chat.completion",
+        "created": 1780319718,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"school/outdoor urban\",\n  \"short_caption\": \"A German school building with scaffolding, a lawn, and a no-entry sign for unauthorized persons.\",\n  \"main_objects\": [\"school building\", \"scaffolding\", \"no-entry sign\", \"trees\", \"street lamp\", \"grass lawn\"],\n  \"possible_interpretations\": [\n    \"School building undergoing maintenance or renovation\",\n    \"Side view of a German school grounds during off-hours\",\n    \"Restricted access to school property\",\n    \"School courtyard adjacent to a wooded area\"\n  ],\n  \"uncertainty_notes\": \"Sign text is partially cut off at the bottom; specific function of the building beyond school is unclear from the visible side.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an outdoor scene with:\n- A school building on the left (multiple stories, with many windows)\n- A \"Schulgelände für Unbefugte Betreten Verboten\" sign (German: \"School grounds, entry prohibited for unauthorized persons\")\n- Scaffolding on part of the building\n- A grassy area/lawn\n- Trees and bushes on the right\n- A street lamp on the right\n- A blue sky with some clouds\n- A pathway\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - very clear what this is\n- ambiguity: 1 - very clear interpretation (school grounds)\n- natural_photo_typicality: 4 - looks like a typical photograph, slightly amateurish quality\n- visual_clutter: 3 - moderate amount of elements\n- object_centricity: 2 - no single central object, it's a scene\n- scene_centricity: 5 - this is clearly a scene/place\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: maybe 4-5 (building, sign, trees, grass area, lamp)\n- estimated_distinct_object_categories: 4 (building, sign, vegetation, lamp post)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (the sign has German text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (it's a scene with a building as the main element)\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: school/outdoor/urban\n\nShort caption: \"A school building with scaffolding alongside a grassy area and a German no-entry sign.\"\n\nPossible interpretations:\n- School grounds with maintenance\n- Construction work at a school\n- German school building\n- School during vacation/maintenance period\n\nLet me finalize the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an outdoor scene with:\n- A school building on the left (multiple stories, with many windows)\n- A \"Schulgelände für Unbefugte Betreten Verboten\" sign (German: \"School grounds, entry prohibited for unauthorized persons\")\n- Scaffolding on part of the building\n- A grassy area/lawn\n- Trees and bushes on the right\n- A street lamp on the right\n- A blue sky with some clouds\n- A pathway\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - very clear what this is\n- ambiguity: 1 - very clear interpretation (school grounds)\n- natural_photo_typicality: 4 - looks like a typical photograph, slightly amateurish quality\n- visual_clutter: 3 - moderate amount of elements\n- object_centricity: 2 - no single central object, it's a scene\n- scene_centricity: 5 - this is clearly a scene/place\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: maybe 4-5 (building, sign, trees, grass area, lamp)\n- estimated_distinct_object_categories: 4 (building, sign, vegetation, lamp post)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (the sign has German text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (it's a scene with a building as the main element)\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: school/outdoor/urban\n\nShort caption: \"A school building with scaffolding alongside a grassy area and a German no-entry sign.\"\n\nPossible interpretations:\n- School grounds with maintenance\n- Construction work at a school\n- German school building\n- School during vacation/maintenance period\n\nLet me finalize the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 836,
+          "total_tokens": 2358,
+          "cost": 0.00130956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00130956,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010032
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 515,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

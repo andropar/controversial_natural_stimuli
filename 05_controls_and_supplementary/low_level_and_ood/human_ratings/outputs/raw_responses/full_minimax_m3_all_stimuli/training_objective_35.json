@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_35",
+    "stim_key": "training_objective_35",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 35,
+    "file_index": 35,
+    "image_name": "image_0035.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0035.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"cycling/sports\",\n  \"short_caption\": \"A cyclist's photograph pasted in a ringed notebook with handwritten race results\",\n  \"main_objects\": [\"cyclist\", \"bicycle\", \"notebook\"],\n  \"possible_interpretations\": [\n    \"A personal cycling diary or scrapbook\",\n    \"A race results log with team photo\",\n    \"A cyclist's memorabilia collection\",\n    \"A training record with reference photos\"\n  ],\n  \"uncertainty_notes\": \"Handwritten text is in Dutch/Flemish and partially illegible; 'cyc' watermark suggests a cycling archive source. Cyclist's exact identity not discernible.\",\n  \"quality_flags\": [\"watermark\", \"shallow_depth_of_field\", \"mixed_lighting\"]\n}",
+      "response": {
+        "id": "gen-1780319316-opY827Z4nz6kk6JHXEAR",
+        "object": "chat.completion",
+        "created": 1780319316,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"cycling/sports\",\n  \"short_caption\": \"A cyclist's photograph pasted in a ringed notebook with handwritten race results\",\n  \"main_objects\": [\"cyclist\", \"bicycle\", \"notebook\"],\n  \"possible_interpretations\": [\n    \"A personal cycling diary or scrapbook\",\n    \"A race results log with team photo\",\n    \"A cyclist's memorabilia collection\",\n    \"A training record with reference photos\"\n  ],\n  \"uncertainty_notes\": \"Handwritten text is in Dutch/Flemish and partially illegible; 'cyc' watermark suggests a cycling archive source. Cyclist's exact identity not discernible.\",\n  \"quality_flags\": [\"watermark\", \"shallow_depth_of_field\", \"mixed_lighting\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a notebook with handwritten text in what appears to be Dutch or Flemish, listing cycling race results. There's a photograph placed in or on the notebook showing a young cyclist wearing a Belgian national team jersey (blue with black, yellow, and red bands - the Belgian national colors). The cyclist is wearing a helmet and sunglasses, and appears to be standing with a yellow bicycle. The notebook is in a binder (ring binder visible on the left).\n\nThe handwritten notes appear to document cycling race results - I can see names like \"Champion de Belgique\", \"Tabor\", \"Hasselt\", \"Diegem\", \"Zweveke\", \"Middelkerke\", \"Knesselare\", \"Rome\", \"Valkenburg\", \"Lille\", \"Etel-Mer\", \"Neerpelt\", \"Oostmalle\", \"Champion d'Europe à Mlada Boleslav\", \"Rixensart\", \"Champion du Monde 76 à Heerderheide\", \"Normandy\", \"Coupe du Monde\", \"Gd.Px. Mont-Tout du Condroz\", \"Champion d'Europe\", \"Champion de Belgique\".\n\nThere's a \"cyc\" watermark in the bottom right corner.\n\nLet me provide the annotations:\n\n- Recognizability: The main content is a cyclist, which is clearly recognizable. 5\n- Ambiguity: There's the notebook context and the cyclist photo. Some ambiguity about what's the main focus. 2\n- Natural photo typicality: The photo portion looks like a typical natural photograph of a cyclist. 4\n- Visual clutter: There's the notebook with text, the photo, binder rings - quite a lot going on. 4\n- Object centricity: The cyclist in the photo is a clear central object. 4\n- Scene centricity: It's more object-focused than scene-focused. 2\n- Caption confidence: Fairly high confidence. 4\n\n- Estimated salient object count: 2 (the cyclist, the bicycle)\n- Estimated distinct object categories: 3 (cyclist, bicycle, notebook)\n\n- Contains person: yes\n- Contains face: yes\n- Contains animal: no\n- Contains text: yes (handwritten notes and \"cyc\" watermark)\n- Contains vehicle: yes (bicycle)\n- Contains food: no\n- Contains indoor scene: no (outdoor context for cyclist, but it's a photo in a notebook)\n- Contains outdoor scene: yes (the cyclist photo shows outdoor)\n- Contains artificial or rendered content: no\n- Contains occlusion or truncation: no\n- Contains unusual viewpoint: no\n- Contains multiple main objects: no\n\n- Dominant content type: mixed (notebook + person)\n- Image style: natural_photo (mostly)\n- Semantic domain: cycling/sports\n\n- Short caption: A cyclist's photograph in a notebook with handwritten race results\n- Main objects: cyclist, bicycle, notebook\n- Possible interpretations: \n  1. A scrapbook page about cycling\n  2. A training diary with photos\n  3. A cycling race results notebook\n  4. A personal memorabilia collection\n- Uncertainty notes: The handwritten text is in Dutch/Flemish, hard to read all details. The \"cyc\" watermark suggests cycling-related source.\n- Quality flags: low_resolution, watermark",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a notebook with handwritten text in what appears to be Dutch or Flemish, listing cycling race results. There's a photograph placed in or on the notebook showing a young cyclist wearing a Belgian national team jersey (blue with black, yellow, and red bands - the Belgian national colors). The cyclist is wearing a helmet and sunglasses, and appears to be standing with a yellow bicycle. The notebook is in a binder (ring binder visible on the left).\n\nThe handwritten notes appear to document cycling race results - I can see names like \"Champion de Belgique\", \"Tabor\", \"Hasselt\", \"Diegem\", \"Zweveke\", \"Middelkerke\", \"Knesselare\", \"Rome\", \"Valkenburg\", \"Lille\", \"Etel-Mer\", \"Neerpelt\", \"Oostmalle\", \"Champion d'Europe à Mlada Boleslav\", \"Rixensart\", \"Champion du Monde 76 à Heerderheide\", \"Normandy\", \"Coupe du Monde\", \"Gd.Px. Mont-Tout du Condroz\", \"Champion d'Europe\", \"Champion de Belgique\".\n\nThere's a \"cyc\" watermark in the bottom right corner.\n\nLet me provide the annotations:\n\n- Recognizability: The main content is a cyclist, which is clearly recognizable. 5\n- Ambiguity: There's the notebook context and the cyclist photo. Some ambiguity about what's the main focus. 2\n- Natural photo typicality: The photo portion looks like a typical natural photograph of a cyclist. 4\n- Visual clutter: There's the notebook with text, the photo, binder rings - quite a lot going on. 4\n- Object centricity: The cyclist in the photo is a clear central object. 4\n- Scene centricity: It's more object-focused than scene-focused. 2\n- Caption confidence: Fairly high confidence. 4\n\n- Estimated salient object count: 2 (the cyclist, the bicycle)\n- Estimated distinct object categories: 3 (cyclist, bicycle, notebook)\n\n- Contains person: yes\n- Contains face: yes\n- Contains animal: no\n- Contains text: yes (handwritten notes and \"cyc\" watermark)\n- Contains vehicle: yes (bicycle)\n- Contains food: no\n- Contains indoor scene: no (outdoor context for cyclist, but it's a photo in a notebook)\n- Contains outdoor scene: yes (the cyclist photo shows outdoor)\n- Contains artificial or rendered content: no\n- Contains occlusion or truncation: no\n- Contains unusual viewpoint: no\n- Contains multiple main objects: no\n\n- Dominant content type: mixed (notebook + person)\n- Image style: natural_photo (mostly)\n- Semantic domain: cycling/sports\n\n- Short caption: A cyclist's photograph in a notebook with handwritten race results\n- Main objects: cyclist, bicycle, notebook\n- Possible interpretations: \n  1. A scrapbook page about cycling\n  2. A training diary with photos\n  3. A cycling race results notebook\n  4. A personal memorabilia collection\n- Uncertainty notes: The handwritten text is in Dutch/Flemish, hard to read all details. The \"cyc\" watermark suggests cycling-related source.\n- Quality flags: low_resolution, watermark",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 1059,
+          "total_tokens": 2581,
+          "cost": 0.00157716,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00157716,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0012708
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 751,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

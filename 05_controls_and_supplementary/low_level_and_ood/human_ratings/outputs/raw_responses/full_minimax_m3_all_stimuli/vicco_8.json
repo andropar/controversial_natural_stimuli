@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_8",
+    "stim_key": "vicco_8",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 8,
+    "file_index": 7,
+    "image_name": "shared_4rep_vicco_008.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_008.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 5, \"scene_centricity\": 1, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 1, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"grooming_tools\", \"short_caption\": \"Thinning shears resting on a textured dark blue fabric surface\", \"main_objects\": [\"thinning shears\", \"fabric surface\"], \"possible_interpretations\": [\"hair thinning shears\", \"barber scissors\", \"grooming tool\", \"textured fabric background\"], \"uncertainty_notes\": \"Background fabric could be a salon apron, chair cover, or similar material; context is not definitive.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319394-3siG5Nd0K1dS2Vagwove",
+        "object": "chat.completion",
+        "created": 1780319394,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 5, \"scene_centricity\": 1, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 1, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"grooming_tools\", \"short_caption\": \"Thinning shears resting on a textured dark blue fabric surface\", \"main_objects\": [\"thinning shears\", \"fabric surface\"], \"possible_interpretations\": [\"hair thinning shears\", \"barber scissors\", \"grooming tool\", \"textured fabric background\"], \"uncertainty_notes\": \"Background fabric could be a salon apron, chair cover, or similar material; context is not definitive.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "The image shows a pair of thinning shears (hair-cutting scissors with teeth on one blade) resting on a textured fabric surface. The shears are metallic/silver colored with two finger holes. The background is a dark blue/gray fabric with a mesh-like textured pattern, possibly a salon apron or chair material.\n\nLet me annotate this:\n\n- recognizability: 5 - clearly a pair of scissors/shears\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a typical photo, slightly casual\n- visual_clutter: 2 - relatively simple, one main object on a textured background\n- object_centricity: 5 - the shears dominate\n- scene_centricity: 1 - it's an object shot, not a scene\n- caption_confidence: 5 - easy to caption\n\nSalient objects: 1 (the shears)\nDistinct categories: 1\n\nNo people, faces, animals, text, vehicles, food\nIndoor/outdoor: could be either, likely indoor (salon)\nNot artificial/rendered\nNo occlusion or truncation\nNo unusual viewpoint\nSingle main object\n\nMain content: object\nStyle: natural_photo\nDomain: tools/grooming\n\nCaption: \"Thinning shears resting on a textured dark fabric surface\"\n\nPossible interpretations: thinning shears, hair cutting scissors, barber shears, grooming tool\n\nQuality flags: none significant",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a pair of thinning shears (hair-cutting scissors with teeth on one blade) resting on a textured fabric surface. The shears are metallic/silver colored with two finger holes. The background is a dark blue/gray fabric with a mesh-like textured pattern, possibly a salon apron or chair material.\n\nLet me annotate this:\n\n- recognizability: 5 - clearly a pair of scissors/shears\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a typical photo, slightly casual\n- visual_clutter: 2 - relatively simple, one main object on a textured background\n- object_centricity: 5 - the shears dominate\n- scene_centricity: 1 - it's an object shot, not a scene\n- caption_confidence: 5 - easy to caption\n\nSalient objects: 1 (the shears)\nDistinct categories: 1\n\nNo people, faces, animals, text, vehicles, food\nIndoor/outdoor: could be either, likely indoor (salon)\nNot artificial/rendered\nNo occlusion or truncation\nNo unusual viewpoint\nSingle main object\n\nMain content: object\nStyle: natural_photo\nDomain: tools/grooming\n\nCaption: \"Thinning shears resting on a textured dark fabric surface\"\n\nPossible interpretations: thinning shears, hair cutting scissors, barber shears, grooming tool\n\nQuality flags: none significant",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 598,
+          "total_tokens": 2120,
+          "cost": 0.00102396,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00102396,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0007176
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 334,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

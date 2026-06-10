@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_205",
+    "stim_key": "vicco_205",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 205,
+    "file_index": 204,
+    "image_name": "shared_4rep_vicco_205.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_205.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"cemetery\",\n  \"short_caption\": \"A blossoming cherry tree in a cemetery with numerous gravestones on green grass.\",\n  \"main_objects\": [\"flowering tree\", \"gravestones\", \"headstone\", \"grass\", \"cemetery\"],\n  \"possible_interpretations\": [\"cemetery\", \"graveyard\", \"memorial park\", \"churchyard burial ground\"],\n  \"uncertainty_notes\": \"Foreground gravestone reads 'SUMNER'; some background gravestones are partially obscured by distance and tree branches.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319627-JCcujF3ESsJ6S4DhkjD4",
+        "object": "chat.completion",
+        "created": 1780319627,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"cemetery\",\n  \"short_caption\": \"A blossoming cherry tree in a cemetery with numerous gravestones on green grass.\",\n  \"main_objects\": [\"flowering tree\", \"gravestones\", \"headstone\", \"grass\", \"cemetery\"],\n  \"possible_interpretations\": [\"cemetery\", \"graveyard\", \"memorial park\", \"churchyard burial ground\"],\n  \"uncertainty_notes\": \"Foreground gravestone reads 'SUMNER'; some background gravestones are partially obscured by distance and tree branches.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a cemetery with a large blossoming cherry tree (or similar flowering tree) in the center. There are many gravestones and headstones visible throughout the scene, with green grass covering the ground. In the background, there are some buildings visible through the trees. The prominent headstone in the foreground reads \"SUMNER\".\n\nLet me analyze each attribute:\n\n- recognizability: Very clear - it's clearly a cemetery with a flowering tree. 5\n- ambiguity: Low - there's a clear interpretation as a cemetery scene. 1\n- natural_photo_typicality: Looks like a typical natural photograph. 5\n- visual_clutter: Many gravestones, lots of detail throughout. 4\n- object_centricity: The tree is prominent but it's more of a scene. 2\n- scene_centricity: Yes, this is primarily a scene/place (cemetery). 5\n- caption_confidence: High confidence in a concise caption. 5\n\nCounts:\n- Estimated salient objects: many gravestones (20+), 1 large tree - but \"salient\" probably means the prominent ones. Maybe 5-10 prominent ones\n- Distinct categories: gravestones, tree, grass, buildings - 4\n\nContains: \n- No people visible\n- No faces\n- No animals\n- There's text on the foreground gravestone (SUMNER) - yes\n- No vehicles\n- No food\n- Outdoor scene - yes\n- No artificial content\n- No occlusion of main subjects\n- Standard viewpoint\n- Multiple main objects (tree and gravestones)\n\nDominant content: scene (cemetery)\nImage style: natural_photo\nSemantic domain: cemetery/graveyard\n\nCaption: A blossoming tree in a cemetery with many gravestones on green grass.\n\nMain objects: tree, gravestones, grass, headstone\n\nPossible interpretations: cemetery, graveyard, memorial park\n\nUncertainty: Some headstones may be partially obscured, but main content is clear.\n\nQuality flags: none significant",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a cemetery with a large blossoming cherry tree (or similar flowering tree) in the center. There are many gravestones and headstones visible throughout the scene, with green grass covering the ground. In the background, there are some buildings visible through the trees. The prominent headstone in the foreground reads \"SUMNER\".\n\nLet me analyze each attribute:\n\n- recognizability: Very clear - it's clearly a cemetery with a flowering tree. 5\n- ambiguity: Low - there's a clear interpretation as a cemetery scene. 1\n- natural_photo_typicality: Looks like a typical natural photograph. 5\n- visual_clutter: Many gravestones, lots of detail throughout. 4\n- object_centricity: The tree is prominent but it's more of a scene. 2\n- scene_centricity: Yes, this is primarily a scene/place (cemetery). 5\n- caption_confidence: High confidence in a concise caption. 5\n\nCounts:\n- Estimated salient objects: many gravestones (20+), 1 large tree - but \"salient\" probably means the prominent ones. Maybe 5-10 prominent ones\n- Distinct categories: gravestones, tree, grass, buildings - 4\n\nContains: \n- No people visible\n- No faces\n- No animals\n- There's text on the foreground gravestone (SUMNER) - yes\n- No vehicles\n- No food\n- Outdoor scene - yes\n- No artificial content\n- No occlusion of main subjects\n- Standard viewpoint\n- Multiple main objects (tree and gravestones)\n\nDominant content: scene (cemetery)\nImage style: natural_photo\nSemantic domain: cemetery/graveyard\n\nCaption: A blossoming tree in a cemetery with many gravestones on green grass.\n\nMain objects: tree, gravestones, grass, headstone\n\nPossible interpretations: cemetery, graveyard, memorial park\n\nUncertainty: Some headstones may be partially obscured, but main content is clear.\n\nQuality flags: none significant",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 771,
+          "total_tokens": 2293,
+          "cost": 0.00123156,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00123156,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009252
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 476,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

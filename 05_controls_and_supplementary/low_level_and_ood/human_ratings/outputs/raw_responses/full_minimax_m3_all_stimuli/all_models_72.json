@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_72",
+    "stim_key": "all_models_72",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 72,
+    "file_index": 72,
+    "image_name": "image_0072.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0072.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 12,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"entertainment/sci-fi\",\n  \"short_caption\": \"Rows of Star Wars Stormtroopers lined up in a blue-lit sci-fi corridor\",\n  \"main_objects\": [\"stormtroopers\", \"blaster rifles\", \"corridor\", \"light panels\"],\n  \"possible_interpretations\": [\"Star Wars film still\", \"theme park attraction scene\", \"CGI render of Stormtroopers\", \"costumed performers in formation\"],\n  \"uncertainty_notes\": \"Unclear whether the troopers are real costumed actors, animatronics, or fully CGI; the highly uniform repetition and lighting suggest a rendered or heavily edited image.\",\n  \"quality_flags\": [\"possible_cgi_or_render\", \"heavy_color_grading\"]\n}",
+      "response": {
+        "id": "gen-1780318812-Mh53fSWdRbBkIoqVMx9t",
+        "object": "chat.completion",
+        "created": 1780318812,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 12,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"entertainment/sci-fi\",\n  \"short_caption\": \"Rows of Star Wars Stormtroopers lined up in a blue-lit sci-fi corridor\",\n  \"main_objects\": [\"stormtroopers\", \"blaster rifles\", \"corridor\", \"light panels\"],\n  \"possible_interpretations\": [\"Star Wars film still\", \"theme park attraction scene\", \"CGI render of Stormtroopers\", \"costumed performers in formation\"],\n  \"uncertainty_notes\": \"Unclear whether the troopers are real costumed actors, animatronics, or fully CGI; the highly uniform repetition and lighting suggest a rendered or heavily edited image.\",\n  \"quality_flags\": [\"possible_cgi_or_render\", \"heavy_color_grading\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows rows of Stormtroopers from Star Wars lined up in a corridor/hallway with blue lighting. This appears to be from a Star Wars theme park or similar attraction, or a CGI/rendered scene. Let me analyze:\n\n- It's clearly Star Wars Stormtroopers in formation\n- Blue lighting, sci-fi corridor setting\n- The image could be a photo from a theme park, or a CGI render\n- Multiple troopers, but they form a pattern\n- Recognizable as Stormtroopers\n\nLet me rate:\n- recognizability: 5 - clearly Star Wars Stormtroopers\n- ambiguity: 1 - very clear what's shown\n- natural_photo_typicality: 2 - looks somewhat like a photo but has CGI/rendered qualities (theme park animatronics or CGI)\n- visual_clutter: 3 - many similar objects creating visual complexity\n- object_centricity: 3 - objects dominate but they're repetitive\n- scene_centricity: 4 - it's a scene/corridor with troopers\n- caption_confidence: 5\n\ncontains_person: false (they're armored figures, not real people)\ncontains_face: false (helmets only)\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: true (looks like CGI or animatronic)\ncontains_occlusion_or_truncation: true (troopers are truncated by frame)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true (many troopers)\n\ndominant_content_type: scene\nimage_style: looks like a render or edited photo\nsemantic_domain: entertainment/sci-fi\n\nLet me write the caption: \"Rows of Star Wars Stormtroopers lined up in a blue-lit corridor\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows rows of Stormtroopers from Star Wars lined up in a corridor/hallway with blue lighting. This appears to be from a Star Wars theme park or similar attraction, or a CGI/rendered scene. Let me analyze:\n\n- It's clearly Star Wars Stormtroopers in formation\n- Blue lighting, sci-fi corridor setting\n- The image could be a photo from a theme park, or a CGI render\n- Multiple troopers, but they form a pattern\n- Recognizable as Stormtroopers\n\nLet me rate:\n- recognizability: 5 - clearly Star Wars Stormtroopers\n- ambiguity: 1 - very clear what's shown\n- natural_photo_typicality: 2 - looks somewhat like a photo but has CGI/rendered qualities (theme park animatronics or CGI)\n- visual_clutter: 3 - many similar objects creating visual complexity\n- object_centricity: 3 - objects dominate but they're repetitive\n- scene_centricity: 4 - it's a scene/corridor with troopers\n- caption_confidence: 5\n\ncontains_person: false (they're armored figures, not real people)\ncontains_face: false (helmets only)\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: true (looks like CGI or animatronic)\ncontains_occlusion_or_truncation: true (troopers are truncated by frame)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true (many troopers)\n\ndominant_content_type: scene\nimage_style: looks like a render or edited photo\nsemantic_domain: entertainment/sci-fi\n\nLet me write the caption: \"Rows of Star Wars Stormtroopers lined up in a blue-lit corridor\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 761,
+          "total_tokens": 2175,
+          "cost": 0.00131004,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131004,
+            "upstream_inference_prompt_cost": 0.00039684,
+            "upstream_inference_completions_cost": 0.0009132
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 426,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

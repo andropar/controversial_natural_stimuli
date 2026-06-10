@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_152",
+    "stim_key": "vicco_152",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 152,
+    "file_index": 151,
+    "image_name": "shared_4rep_vicco_152.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_152.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\":4,\"ambiguity\":2,\"natural_photo_typicality\":3,\"visual_clutter\":4,\"object_centricity\":3,\"scene_centricity\":3,\"caption_confidence\":4,\"estimated_salient_object_count\":6,\"estimated_distinct_object_categories\":6,\"contains_person\":true,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":false,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":true,\"contains_outdoor_scene\":false,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":false,\"contains_multiple_main_objects\":true,\"dominant_content_type\":\"object\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"jewelry making\",\"short_caption\":\"A person uses dual torches to solder a pearl ring on a worn soldering block at a workshop bench.\",\"main_objects\":[\"pearl ring\",\"dual torches\",\"soldering block\",\"yellow-handled pliers\",\"tweezers\",\"storage container\"],\"possible_interpretations\":[\"jewelry soldering\",\"metalworking\",\"craft work\",\"repairs workshop activity\"],\"uncertainty_notes\":\"Exact process (soldering vs. annealing vs. melting) is inferred from context. Small jar contents are unclear.\",\"quality_flags\":[\"slightly cropped hand and torches\",\"mixed indoor lighting\"]}",
+      "response": {
+        "id": "gen-1780319566-KbfA2jOf1DEmg94bfmfN",
+        "object": "chat.completion",
+        "created": 1780319566,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\":4,\"ambiguity\":2,\"natural_photo_typicality\":3,\"visual_clutter\":4,\"object_centricity\":3,\"scene_centricity\":3,\"caption_confidence\":4,\"estimated_salient_object_count\":6,\"estimated_distinct_object_categories\":6,\"contains_person\":true,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":false,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":true,\"contains_outdoor_scene\":false,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":false,\"contains_multiple_main_objects\":true,\"dominant_content_type\":\"object\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"jewelry making\",\"short_caption\":\"A person uses dual torches to solder a pearl ring on a worn soldering block at a workshop bench.\",\"main_objects\":[\"pearl ring\",\"dual torches\",\"soldering block\",\"yellow-handled pliers\",\"tweezers\",\"storage container\"],\"possible_interpretations\":[\"jewelry soldering\",\"metalworking\",\"craft work\",\"repairs workshop activity\"],\"uncertainty_notes\":\"Exact process (soldering vs. annealing vs. melting) is inferred from context. Small jar contents are unclear.\",\"quality_flags\":[\"slightly cropped hand and torches\",\"mixed indoor lighting\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a jewelry-making or metalworking scene. I can see:\n- A person's hand holding what appears to be two torches (blowtorches) with visible flames\n- A soldering block (heat-resistant surface) that looks worn/used\n- A small ring with pearls/beads on it sitting on the soldering block\n- A pair of yellow-handled pliers on the left\n- Tweezers/forceps in the background\n- A small container/jar (possibly flux or solder)\n- A plastic storage container with compartments holding what looks like jewelry findings or metal pieces\n- A wooden workbench/table\n- In the background, there appears to be a chair and some other workshop items\n\nThe main action is someone using dual torches to heat/solder a pearl ring on a soldering block. This is clearly a jewelry making process.\n\nLet me rate the dimensions:\n- recognizability: 4 - The content is fairly clear, though some details are small\n- ambiguity: 2 - It's quite clear this is jewelry making/metalworking\n- natural_photo_typicality: 3 - It's a real photo but taken in a casual setting\n- visual_clutter: 4 - Many tools and objects present\n- object_centricity: 3 - The ring is central but the torches and hand are also prominent\n- scene_centricity: 3 - It's a workshop scene but focused on specific action\n- caption_confidence: 4 - Easy to describe what's happening\n\nBinary attributes:\n- contains_person: true (hand visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false (no readable text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (hand/torches partially cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (torches, ring, block, tools)\n\nDominant content: object (with scene context) - I'll say \"object\"\nImage style: natural_photo\nSemantic domain: jewelry making / crafts / metalwork\n\nMain objects: ring, pearl ring, torches, soldering block, pliers, tweezers, storage container\nEstimated salient objects: 5-7\nDistinct categories: 6-7 (ring, tools, torches, block, container, workbench)",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a jewelry-making or metalworking scene. I can see:\n- A person's hand holding what appears to be two torches (blowtorches) with visible flames\n- A soldering block (heat-resistant surface) that looks worn/used\n- A small ring with pearls/beads on it sitting on the soldering block\n- A pair of yellow-handled pliers on the left\n- Tweezers/forceps in the background\n- A small container/jar (possibly flux or solder)\n- A plastic storage container with compartments holding what looks like jewelry findings or metal pieces\n- A wooden workbench/table\n- In the background, there appears to be a chair and some other workshop items\n\nThe main action is someone using dual torches to heat/solder a pearl ring on a soldering block. This is clearly a jewelry making process.\n\nLet me rate the dimensions:\n- recognizability: 4 - The content is fairly clear, though some details are small\n- ambiguity: 2 - It's quite clear this is jewelry making/metalworking\n- natural_photo_typicality: 3 - It's a real photo but taken in a casual setting\n- visual_clutter: 4 - Many tools and objects present\n- object_centricity: 3 - The ring is central but the torches and hand are also prominent\n- scene_centricity: 3 - It's a workshop scene but focused on specific action\n- caption_confidence: 4 - Easy to describe what's happening\n\nBinary attributes:\n- contains_person: true (hand visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false (no readable text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (hand/torches partially cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (torches, ring, block, tools)\n\nDominant content: object (with scene context) - I'll say \"object\"\nImage style: natural_photo\nSemantic domain: jewelry making / crafts / metalwork\n\nMain objects: ring, pearl ring, torches, soldering block, pliers, tweezers, storage container\nEstimated salient objects: 5-7\nDistinct categories: 6-7 (ring, tools, torches, block, container, workbench)",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 812,
+          "total_tokens": 2334,
+          "cost": 0.00128076,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00128076,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009744
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 581,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

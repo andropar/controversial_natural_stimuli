@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_96",
+    "stim_key": "training_objective_96",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 96,
+    "file_index": 96,
+    "image_name": "image_0096.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0096.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_furniture\",\n  \"short_caption\": \"Gray futon sofa in a bright living room with curtains, a wall lamp, palm plant, and a rug.\",\n  \"main_objects\": [\"futon sofa\", \"wall lamp\", \"palm plant\", \"alarm clock\", \"potted fern\", \"magazine\", \"rug\"],\n  \"possible_interpretations\": [\"product photo of a futon sofa\", \"staged living room interior\", \"furniture catalog image\"],\n  \"uncertainty_notes\": \"Image appears to be a staged product/catalog photograph, but is a real photograph of an interior.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319383-uPHVi3nqW0hBXMbFFQkE",
+        "object": "chat.completion",
+        "created": 1780319383,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_furniture\",\n  \"short_caption\": \"Gray futon sofa in a bright living room with curtains, a wall lamp, palm plant, and a rug.\",\n  \"main_objects\": [\"futon sofa\", \"wall lamp\", \"palm plant\", \"alarm clock\", \"potted fern\", \"magazine\", \"rug\"],\n  \"possible_interpretations\": [\"product photo of a futon sofa\", \"staged living room interior\", \"furniture catalog image\"],\n  \"uncertainty_notes\": \"Image appears to be a staged product/catalog photograph, but is a real photograph of an interior.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a living room scene with a gray futon/sofa as the main object. There's a wall-mounted lamp on the left, sheer white curtains in the background, a palm plant on the right, a small potted fern, an alarm clock, and a magazine on the floor. The setting appears to be a staged interior photography shot, likely for furniture retail.\n\nLet me analyze the schema requirements:\n\n- recognizability: 5 - very clear what's shown\n- ambiguity: 1 - pretty unambiguous\n- natural_photo_typicality: 4 - looks like a real photo, though somewhat staged\n- visual_clutter: 2 - relatively clean with a few props\n- object_centricity: 4 - sofa dominates\n- scene_centricity: 3 - it's an interior scene but the sofa is the focus\n- caption_confidence: 5 - easy to caption\n\nEstimated salient object count: ~5 (sofa, lamp, plant, clock, small fern)\nDistinct categories: 4-5\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: true (magazine has text)\nContains vehicle: false\nContains food: false\nContains indoor scene: true\nContains outdoor scene: false (curtains suggest indoor, plant is indoor)\nContains artificial/rendered: false (looks like a real photo)\nContains occlusion/truncation: false\nContains unusual viewpoint: false\nContains multiple main objects: false (sofa is clearly main)\n\nDominant content: object (sofa)\nImage style: natural_photo (though could be product photography)\nSemantic domain: interior/furniture\n\nShort caption: \"Gray futon sofa in a bright living room with plants and a wall lamp.\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a living room scene with a gray futon/sofa as the main object. There's a wall-mounted lamp on the left, sheer white curtains in the background, a palm plant on the right, a small potted fern, an alarm clock, and a magazine on the floor. The setting appears to be a staged interior photography shot, likely for furniture retail.\n\nLet me analyze the schema requirements:\n\n- recognizability: 5 - very clear what's shown\n- ambiguity: 1 - pretty unambiguous\n- natural_photo_typicality: 4 - looks like a real photo, though somewhat staged\n- visual_clutter: 2 - relatively clean with a few props\n- object_centricity: 4 - sofa dominates\n- scene_centricity: 3 - it's an interior scene but the sofa is the focus\n- caption_confidence: 5 - easy to caption\n\nEstimated salient object count: ~5 (sofa, lamp, plant, clock, small fern)\nDistinct categories: 4-5\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: true (magazine has text)\nContains vehicle: false\nContains food: false\nContains indoor scene: true\nContains outdoor scene: false (curtains suggest indoor, plant is indoor)\nContains artificial/rendered: false (looks like a real photo)\nContains occlusion/truncation: false\nContains unusual viewpoint: false\nContains multiple main objects: false (sofa is clearly main)\n\nDominant content: object (sofa)\nImage style: natural_photo (though could be product photography)\nSemantic domain: interior/furniture\n\nShort caption: \"Gray futon sofa in a bright living room with plants and a wall lamp.\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 715,
+          "total_tokens": 2237,
+          "cost": 0.00116436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00116436,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000858
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 406,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_59",
+    "stim_key": "dataset_59",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 59,
+    "file_index": 59,
+    "image_name": "image_0059.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0059.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior architecture\",\n  \"short_caption\": \"Unfinished apartment interior with raw concrete ceiling and large windows overlooking city buildings\",\n  \"main_objects\": [\"concrete ceiling\", \"pendant light\", \"floor-to-ceiling windows\", \"wall-mounted fixture\", \"city view\"],\n  \"possible_interpretations\": [\n    \"Unfinished apartment under construction\",\n    \"Modern loft with intentionally exposed concrete ceiling\",\n    \"Real estate listing photo of bare unit\",\n    \"Industrial-style minimalist apartment interior\"\n  ],\n  \"uncertainty_notes\": \"Unclear whether raw concrete ceiling is intentional design or unfinished construction; exact purpose of small wall fixture unclear.\",\n  \"quality_flags\": [\"slightly_overexposed_through_windows\", \"no_clear_floor_visible\"]\n}",
+      "response": {
+        "id": "gen-1780319030-e1D7mZyD9ijMHDbyG5Vj",
+        "object": "chat.completion",
+        "created": 1780319030,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior architecture\",\n  \"short_caption\": \"Unfinished apartment interior with raw concrete ceiling and large windows overlooking city buildings\",\n  \"main_objects\": [\"concrete ceiling\", \"pendant light\", \"floor-to-ceiling windows\", \"wall-mounted fixture\", \"city view\"],\n  \"possible_interpretations\": [\n    \"Unfinished apartment under construction\",\n    \"Modern loft with intentionally exposed concrete ceiling\",\n    \"Real estate listing photo of bare unit\",\n    \"Industrial-style minimalist apartment interior\"\n  ],\n  \"uncertainty_notes\": \"Unclear whether raw concrete ceiling is intentional design or unfinished construction; exact purpose of small wall fixture unclear.\",\n  \"quality_flags\": [\"slightly_overexposed_through_windows\", \"no_clear_floor_visible\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an interior view of what appears to be an unfinished or under-construction room/apartment. I can see:\n- A concrete/cement ceiling with visible joints and staining\n- Large floor-to-ceiling windows showing a view of buildings/cityscape outside\n- A pendant light hanging from the ceiling\n- A small wall-mounted fixture (possibly a speaker or sensor) on the right\n- The walls appear to be painted white/light colored\n- The floor area shows what looks like a balcony or terrace area\n- The overall feel is of a modern apartment interior, possibly mid-renovation\n\nLet me annotate this:\n\n- Recognizability: 4 - clearly an interior space with windows\n- Ambiguity: 2 - fairly clear it's an interior room with view\n- Natural_photo_typicality: 4 - looks like a typical real estate or interior photo\n- Visual_clutter: 2 - relatively uncluttered, mostly empty space\n- Object_centricity: 1 - no clear central object, it's a scene\n- Scene_centricity: 5 - definitely a scene/place\n- Caption_confidence: 4 - can describe it well\n\nContent flags:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: true (view through windows)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\nEstimated salient objects: maybe 3 (pendant light, windows, wall fixture)\nDistinct categories: 3 (lighting, architectural elements, exterior view)\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: interior architecture / real estate\n\nShort caption: \"Unfinished apartment interior with large windows overlooking city buildings\"\n\nMain objects: concrete ceiling, pendant light, large windows, city view, wall-mounted fixture\n\nPossible interpretations:\n- Unfinished apartment/condo interior\n- Modern apartment with raw concrete ceiling\n- Real estate listing photo of under-construction unit\n- Loft-style apartment\n\nUncertainty notes: The level of completion is hard to determine exactly - could be intentionally industrial/minimalist or unfinished construction.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an interior view of what appears to be an unfinished or under-construction room/apartment. I can see:\n- A concrete/cement ceiling with visible joints and staining\n- Large floor-to-ceiling windows showing a view of buildings/cityscape outside\n- A pendant light hanging from the ceiling\n- A small wall-mounted fixture (possibly a speaker or sensor) on the right\n- The walls appear to be painted white/light colored\n- The floor area shows what looks like a balcony or terrace area\n- The overall feel is of a modern apartment interior, possibly mid-renovation\n\nLet me annotate this:\n\n- Recognizability: 4 - clearly an interior space with windows\n- Ambiguity: 2 - fairly clear it's an interior room with view\n- Natural_photo_typicality: 4 - looks like a typical real estate or interior photo\n- Visual_clutter: 2 - relatively uncluttered, mostly empty space\n- Object_centricity: 1 - no clear central object, it's a scene\n- Scene_centricity: 5 - definitely a scene/place\n- Caption_confidence: 4 - can describe it well\n\nContent flags:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: true (view through windows)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\nEstimated salient objects: maybe 3 (pendant light, windows, wall fixture)\nDistinct categories: 3 (lighting, architectural elements, exterior view)\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: interior architecture / real estate\n\nShort caption: \"Unfinished apartment interior with large windows overlooking city buildings\"\n\nMain objects: concrete ceiling, pendant light, large windows, city view, wall-mounted fixture\n\nPossible interpretations:\n- Unfinished apartment/condo interior\n- Modern apartment with raw concrete ceiling\n- Real estate listing photo of under-construction unit\n- Loft-style apartment\n\nUncertainty notes: The level of completion is hard to determine exactly - could be intentionally industrial/minimalist or unfinished construction.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 881,
+          "total_tokens": 2403,
+          "cost": 0.00148644,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00148644,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010572
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 603,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

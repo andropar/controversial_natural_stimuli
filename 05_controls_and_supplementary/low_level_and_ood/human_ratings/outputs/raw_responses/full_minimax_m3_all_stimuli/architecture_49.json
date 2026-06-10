@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_49",
+    "stim_key": "architecture_49",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 49,
+    "file_index": 49,
+    "image_name": "image_0049.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0049.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"home lighting product\",\n  \"short_caption\": \"Hand holding an LED lamp illuminating books on a wooden shelf with a decorative bicycle figurine.\",\n  \"main_objects\": [\"LED lamp\", \"books\", \"wooden bicycle figurine\", \"hand\", \"bookshelf\"],\n  \"possible_interpretations\": [\n    \"Product photo demonstrating a portable LED lamp\",\n    \"Home decor scene with reading light\",\n    \"Promotional image for a smart store lamp\"\n  ],\n  \"uncertainty_notes\": \"Image appears to be a commercial product photograph with a watermark logo, staged to showcase the lamp's lighting capability.\",\n  \"quality_flags\": [\"product_watermark\", \"staged_lighting\", \"hand_partially_visible\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318896-AueQMD2FEO8esx7CzgPN",
+        "object": "chat.completion",
+        "created": 1780318896,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"home lighting product\",\n  \"short_caption\": \"Hand holding an LED lamp illuminating books on a wooden shelf with a decorative bicycle figurine.\",\n  \"main_objects\": [\"LED lamp\", \"books\", \"wooden bicycle figurine\", \"hand\", \"bookshelf\"],\n  \"possible_interpretations\": [\n    \"Product photo demonstrating a portable LED lamp\",\n    \"Home decor scene with reading light\",\n    \"Promotional image for a smart store lamp\"\n  ],\n  \"uncertainty_notes\": \"Image appears to be a commercial product photograph with a watermark logo, staged to showcase the lamp's lighting capability.\",\n  \"quality_flags\": [\"product_watermark\", \"staged_lighting\", \"hand_partially_visible\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "The image shows a bookshelf with several books visible. There's a hand holding a black LED desk lamp that is turned on, illuminating part of the shelf. The books have various spines visible with titles like \"EMERGENCY USE OF DORMITORIES\", \"FAMILY MAN\", \"HOME\", \"INSURANCE\", \"Madame\", \"BARBERA BAREY\", \"FASHION\", etc. There's also a decorative white wooden bicycle figurine on the lower shelf. There's a watermark/logo in the top left corner that says \"SROLANH smart store\".\n\nLet me analyze this carefully:\n- It's a product photo showing a portable LED lamp being used to illuminate a bookshelf\n- The main subject appears to be the lamp itself (a portable/clip-on LED light)\n- There are multiple books and a decorative bicycle\n- Contains text (book titles and brand watermark)\n- It's an indoor scene\n- The lighting is dramatic with the lamp providing warm illumination\n- This looks like a commercial/promotional photo, possibly edited for marketing\n\nLet me rate:\n- recognizability: 4 - clearly shows a lamp illuminating books\n- ambiguity: 2 - fairly clear what it is (lamp in use)\n- natural_photo_typicality: 3 - looks like a product photo, somewhat staged\n- visual_clutter: 3 - multiple books, but arranged\n- object_centricity: 4 - the lamp is the focus\n- scene_centricity: 3 - it's in a bookshelf setting\n- caption_confidence: 4\n\ncontains_text: true (book titles, watermark)\ncontains_indoor_scene: true\ncontains_occlusion_or_truncation: true (hand is partially cut off, books are cropped)\n\ndominant_content_type: object (the lamp)\nimage_style: edited_photo (product/marketing photo)",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a bookshelf with several books visible. There's a hand holding a black LED desk lamp that is turned on, illuminating part of the shelf. The books have various spines visible with titles like \"EMERGENCY USE OF DORMITORIES\", \"FAMILY MAN\", \"HOME\", \"INSURANCE\", \"Madame\", \"BARBERA BAREY\", \"FASHION\", etc. There's also a decorative white wooden bicycle figurine on the lower shelf. There's a watermark/logo in the top left corner that says \"SROLANH smart store\".\n\nLet me analyze this carefully:\n- It's a product photo showing a portable LED lamp being used to illuminate a bookshelf\n- The main subject appears to be the lamp itself (a portable/clip-on LED light)\n- There are multiple books and a decorative bicycle\n- Contains text (book titles and brand watermark)\n- It's an indoor scene\n- The lighting is dramatic with the lamp providing warm illumination\n- This looks like a commercial/promotional photo, possibly edited for marketing\n\nLet me rate:\n- recognizability: 4 - clearly shows a lamp illuminating books\n- ambiguity: 2 - fairly clear what it is (lamp in use)\n- natural_photo_typicality: 3 - looks like a product photo, somewhat staged\n- visual_clutter: 3 - multiple books, but arranged\n- object_centricity: 4 - the lamp is the focus\n- scene_centricity: 3 - it's in a bookshelf setting\n- caption_confidence: 4\n\ncontains_text: true (book titles, watermark)\ncontains_indoor_scene: true\ncontains_occlusion_or_truncation: true (hand is partially cut off, books are cropped)\n\ndominant_content_type: object (the lamp)\nimage_style: edited_photo (product/marketing photo)",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 755,
+          "total_tokens": 2277,
+          "cost": 0.00133524,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00133524,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.000906
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 415,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

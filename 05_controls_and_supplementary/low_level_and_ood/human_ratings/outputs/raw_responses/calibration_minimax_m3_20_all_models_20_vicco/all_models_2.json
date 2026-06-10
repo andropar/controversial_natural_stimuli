@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_2",
+    "stim_key": "all_models_2",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 2,
+    "file_index": 2,
+    "image_name": "image_0002.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0002.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: Missing required fields: ['contains_unusual_viewpoint']"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion accessories\",\n  \"short_caption\": \"A woven rattan handbag with blue gingham lining held by a person in a polka dot dress.\",\n  \"main_objects\": [\"handbag\", \"dress\"],\n  \"possible_interpretations\": [\"fashion product photography\", \"lifestyle accessory shot\", \"e-commerce listing image\", \"editorial fashion photo\"],\n  \"uncertainty_notes\": \"Person is heavily cropped with no face visible; identity and full outfit cannot be determined.\",\n  \"quality_flags\": [\"cropped subject\", \"staged styling\"]\n}",
+      "response": {
+        "id": "gen-1780317794-bioDAv8ktph99PaO3CH9",
+        "object": "chat.completion",
+        "created": 1780317794,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion accessories\",\n  \"short_caption\": \"A woven rattan handbag with blue gingham lining held by a person in a polka dot dress.\",\n  \"main_objects\": [\"handbag\", \"dress\"],\n  \"possible_interpretations\": [\"fashion product photography\", \"lifestyle accessory shot\", \"e-commerce listing image\", \"editorial fashion photo\"],\n  \"uncertainty_notes\": \"Person is heavily cropped with no face visible; identity and full outfit cannot be determined.\",\n  \"quality_flags\": [\"cropped subject\", \"staged styling\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a person (partially visible - we can see the torso, arm, hand, and part of the skirt/dress) holding a woven rattan/wicker handbag. The bag is a basket-style bag with a structured woven design, and inside there appears to be a blue and white gingham/checkered fabric lining visible through the open weave. The person is wearing a cream/white dress with black polka dots. The background is a clean white interior setting with some subtle paneling/molding on the walls.\n\nThis looks like a product/fashion photography shot, likely for e-commerce or a fashion blog.\n\nLet me rate this on the schema:\n\n- recognizability: 5 - Very clear what's being shown\n- ambiguity: 1 - Very clear interpretation\n- natural_photo_typicality: 3 - It's a styled photo, somewhat typical of fashion photography but clearly staged\n- visual_clutter: 1 - Very clean, minimal background\n- object_centricity: 4 - The bag is the main focal point\n- scene_centricity: 1 - Not a scene, focused on object\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 2 (bag, person/dress)\n- estimated_distinct_object_categories: 2 (handbag, clothing)\n\n- contains_person: true (partially)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (indoor setting with wall panels)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person is cropped, no face visible)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the bag is the focus)\n- image_style: \"edited_photo\" (styled fashion photography)\n- semantic_domain: \"fashion\" or \"accessories\"\n\nShort caption: \"A woven rattan handbag with blue gingham lining held by a woman in a polka dot dress.\"\n\nMain objects: handbag, dress\nPossible interpretations: fashion product shot, lifestyle photo, bag advertisement\nUncertainty: person is cropped, no face visible\nQuality flags: cropped subject, no face visible",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a person (partially visible - we can see the torso, arm, hand, and part of the skirt/dress) holding a woven rattan/wicker handbag. The bag is a basket-style bag with a structured woven design, and inside there appears to be a blue and white gingham/checkered fabric lining visible through the open weave. The person is wearing a cream/white dress with black polka dots. The background is a clean white interior setting with some subtle paneling/molding on the walls.\n\nThis looks like a product/fashion photography shot, likely for e-commerce or a fashion blog.\n\nLet me rate this on the schema:\n\n- recognizability: 5 - Very clear what's being shown\n- ambiguity: 1 - Very clear interpretation\n- natural_photo_typicality: 3 - It's a styled photo, somewhat typical of fashion photography but clearly staged\n- visual_clutter: 1 - Very clean, minimal background\n- object_centricity: 4 - The bag is the main focal point\n- scene_centricity: 1 - Not a scene, focused on object\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 2 (bag, person/dress)\n- estimated_distinct_object_categories: 2 (handbag, clothing)\n\n- contains_person: true (partially)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (indoor setting with wall panels)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person is cropped, no face visible)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the bag is the focus)\n- image_style: \"edited_photo\" (styled fashion photography)\n- semantic_domain: \"fashion\" or \"accessories\"\n\nShort caption: \"A woven rattan handbag with blue gingham lining held by a woman in a polka dot dress.\"\n\nMain objects: handbag, dress\nPossible interpretations: fashion product shot, lifestyle photo, bag advertisement\nUncertainty: person is cropped, no face visible\nQuality flags: cropped subject, no face visible",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 847,
+          "total_tokens": 2385,
+          "cost": 0.00145044,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00145044,
+            "upstream_inference_prompt_cost": 0.00043404,
+            "upstream_inference_completions_cost": 0.0010164
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 560,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

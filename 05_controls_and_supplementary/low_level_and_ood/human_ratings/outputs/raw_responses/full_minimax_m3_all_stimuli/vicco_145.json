@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_145",
+    "stim_key": "vicco_145",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 145,
+    "file_index": 144,
+    "image_name": "shared_4rep_vicco_145.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_145.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"electronics\",\n  \"short_caption\": \"An LG computer monitor on a wooden desk with power and display cables on its base.\",\n  \"main_objects\": [\"LG monitor\", \"cables\", \"wooden desk\"],\n  \"possible_interpretations\": [\"computer monitor on a desk\", \"used monitor listed for sale\", \"office workspace equipment\"],\n  \"uncertainty_notes\": \"Monitor is powered off making screen content invisible; top edge of the monitor is slightly cropped.\",\n  \"quality_flags\": [\"top_of_monitor_truncated\", \"slight_glare_on_screen\"]\n}",
+      "response": {
+        "id": "gen-1780319554-YE8AWOVqChcxMJCHiBqf",
+        "object": "chat.completion",
+        "created": 1780319554,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"electronics\",\n  \"short_caption\": \"An LG computer monitor on a wooden desk with power and display cables on its base.\",\n  \"main_objects\": [\"LG monitor\", \"cables\", \"wooden desk\"],\n  \"possible_interpretations\": [\"computer monitor on a desk\", \"used monitor listed for sale\", \"office workspace equipment\"],\n  \"uncertainty_notes\": \"Monitor is powered off making screen content invisible; top edge of the monitor is slightly cropped.\",\n  \"quality_flags\": [\"top_of_monitor_truncated\", \"slight_glare_on_screen\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows an LG computer monitor (appears to be model L227WT based on the visible text) sitting on a wooden surface (likely a desk or table). The monitor is turned off, showing a black screen. There are cables (power and what appears to be a display cable) coiled on the base of the monitor. The background shows a textured white/light wall.\n\nLet me analyze the image according to the schema:\n\n- recognizability: 5 - Very clearly recognizable as a computer monitor\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 4 - Looks like a typical photograph, though perhaps slightly amateur\n- visual_clutter: 2 - Relatively simple scene with the monitor as main subject, some cables\n- object_centricity: 5 - The monitor clearly dominates the image\n- scene_centricity: 2 - It's more of an object shot than a scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1 (the monitor)\n- estimated_distinct_object_categories: 2 (monitor, cables)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (LG logo, \"TRON L227WT\" text, some menu text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (appears to be indoors)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (top of monitor is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"electronics\"\n\n- short_caption: \"An LG computer monitor sitting on a wooden desk with cables coiled on its base\"\n- main_objects: [\"LG monitor\", \"cables\", \"wooden desk\"]\n- possible_interpretations: [\"computer monitor on desk\", \"display screen for sale\", \"office equipment\"]\n- uncertainty_notes: \"Monitor is turned off, exact model visible but partially cut off\"\n- quality_flags: [\"top of monitor truncated\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows an LG computer monitor (appears to be model L227WT based on the visible text) sitting on a wooden surface (likely a desk or table). The monitor is turned off, showing a black screen. There are cables (power and what appears to be a display cable) coiled on the base of the monitor. The background shows a textured white/light wall.\n\nLet me analyze the image according to the schema:\n\n- recognizability: 5 - Very clearly recognizable as a computer monitor\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 4 - Looks like a typical photograph, though perhaps slightly amateur\n- visual_clutter: 2 - Relatively simple scene with the monitor as main subject, some cables\n- object_centricity: 5 - The monitor clearly dominates the image\n- scene_centricity: 2 - It's more of an object shot than a scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1 (the monitor)\n- estimated_distinct_object_categories: 2 (monitor, cables)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (LG logo, \"TRON L227WT\" text, some menu text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (appears to be indoors)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (top of monitor is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"electronics\"\n\n- short_caption: \"An LG computer monitor sitting on a wooden desk with cables coiled on its base\"\n- main_objects: [\"LG monitor\", \"cables\", \"wooden desk\"]\n- possible_interpretations: [\"computer monitor on desk\", \"display screen for sale\", \"office equipment\"]\n- uncertainty_notes: \"Monitor is turned off, exact model visible but partially cut off\"\n- quality_flags: [\"top of monitor truncated\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 811,
+          "total_tokens": 2333,
+          "cost": 0.00140244,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00140244,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009732
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 513,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

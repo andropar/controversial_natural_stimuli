@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_84",
+    "stim_key": "architecture_84",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 84,
+    "file_index": 84,
+    "image_name": "image_0084.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0084.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"clothing\",\n  \"short_caption\": \"Black dress pants hanging on wooden hangers in a hotel room\",\n  \"main_objects\": [\"black dress pants\", \"wooden hangers\", \"bed\", \"framed picture\"],\n  \"possible_interpretations\": [\"product photo of dress pants\", \"hotel room with prepared garment service\", \"wardrobe or closet display\"],\n  \"uncertainty_notes\": \"Image appears to be a staged product photograph; pants are cropped at the bottom of the frame.\",\n  \"quality_flags\": [\"staged_composition\", \"bottom_crop\"]\n}",
+      "response": {
+        "id": "gen-1780318943-kZB5KJSQjTWNlLVAA6g9",
+        "object": "chat.completion",
+        "created": 1780318943,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"clothing\",\n  \"short_caption\": \"Black dress pants hanging on wooden hangers in a hotel room\",\n  \"main_objects\": [\"black dress pants\", \"wooden hangers\", \"bed\", \"framed picture\"],\n  \"possible_interpretations\": [\"product photo of dress pants\", \"hotel room with prepared garment service\", \"wardrobe or closet display\"],\n  \"uncertainty_notes\": \"Image appears to be a staged product photograph; pants are cropped at the bottom of the frame.\",\n  \"quality_flags\": [\"staged_composition\", \"bottom_crop\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a pair of dark navy/black dress pants hanging on wooden hangers in what appears to be a hotel room. I can see:\n- Black dress pants/slacks hanging on wooden hangers with metal clips\n- A bed with white linens and pillows in the background\n- A wooden headboard or bed frame\n- A framed picture on the wall (appears to be a black and white image, possibly of trees)\n- A window showing what looks like a mountain/landscape view\n- A dark cushion or pillow on the right side\n\nThis looks like a product photo, possibly for clothing retail. The composition is clean and staged.\n\nLet me assess each dimension:\n\n- recognizability: The pants are clearly visible and recognizable. 5\n- ambiguity: Pretty clear what's shown - pants in a hotel room setting. 2\n- natural_photo_typicality: This looks like a staged product photo, somewhat natural but clearly composed. 3\n- visual_clutter: Relatively clean composition, not too cluttered. 2\n- object_centricity: The pants are the clear central object. 5\n- scene_centricity: It's more object-focused than scene-focused, though there's a room context. 2\n- caption_confidence: Easy to describe. 5\n\n- estimated_salient_object_count: 1 (the pants) or maybe 2 with hangers\n- estimated_distinct_object_categories: 3-4 (pants, hangers, bed, picture frame)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (hotel room)\n- contains_outdoor_scene: true (mountain view through window)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (pants are cut off at bottom)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: object\nimage_style: natural_photo (though staged, still looks like a real photo)\nsemantic_domain: clothing/fashion\n\nshort_caption: \"Black dress pants hanging on wooden hangers in a hotel room\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a pair of dark navy/black dress pants hanging on wooden hangers in what appears to be a hotel room. I can see:\n- Black dress pants/slacks hanging on wooden hangers with metal clips\n- A bed with white linens and pillows in the background\n- A wooden headboard or bed frame\n- A framed picture on the wall (appears to be a black and white image, possibly of trees)\n- A window showing what looks like a mountain/landscape view\n- A dark cushion or pillow on the right side\n\nThis looks like a product photo, possibly for clothing retail. The composition is clean and staged.\n\nLet me assess each dimension:\n\n- recognizability: The pants are clearly visible and recognizable. 5\n- ambiguity: Pretty clear what's shown - pants in a hotel room setting. 2\n- natural_photo_typicality: This looks like a staged product photo, somewhat natural but clearly composed. 3\n- visual_clutter: Relatively clean composition, not too cluttered. 2\n- object_centricity: The pants are the clear central object. 5\n- scene_centricity: It's more object-focused than scene-focused, though there's a room context. 2\n- caption_confidence: Easy to describe. 5\n\n- estimated_salient_object_count: 1 (the pants) or maybe 2 with hangers\n- estimated_distinct_object_categories: 3-4 (pants, hangers, bed, picture frame)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (hotel room)\n- contains_outdoor_scene: true (mountain view through window)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (pants are cut off at bottom)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: object\nimage_style: natural_photo (though staged, still looks like a real photo)\nsemantic_domain: clothing/fashion\n\nshort_caption: \"Black dress pants hanging on wooden hangers in a hotel room\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 821,
+          "total_tokens": 2343,
+          "cost": 0.00129156,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129156,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009852
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 531,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

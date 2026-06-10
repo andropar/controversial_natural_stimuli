@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_18",
+    "stim_key": "vicco_18",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 18,
+    "file_index": 17,
+    "image_name": "shared_4rep_vicco_018.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_018.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: Missing required fields: ['contains_unusual_viewpoint']"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"retail/clothing store\",\n  \"short_caption\": \"Shoppers browsing vintage clothing racks inside an industrial-style boutique with a staircase.\",\n  \"main_objects\": [\"clothing racks\", \"coats\", \"people\", \"staircase\", \"exposed brick wall\", \"industrial lighting\"],\n  \"possible_interpretations\": [\"vintage clothing pop-up shop\", \"thrift store interior\", \"boutique retail event\", \"warehouse-style clothing market\"],\n  \"uncertainty_notes\": \"Faces of some shoppers are only partially visible; exact nature of the store (vintage vs. thrift vs. boutique) is inferred from clothing style and setting.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318266-3DipRcQQcQSNzJMVfFHm",
+        "object": "chat.completion",
+        "created": 1780318266,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"retail/clothing store\",\n  \"short_caption\": \"Shoppers browsing vintage clothing racks inside an industrial-style boutique with a staircase.\",\n  \"main_objects\": [\"clothing racks\", \"coats\", \"people\", \"staircase\", \"exposed brick wall\", \"industrial lighting\"],\n  \"possible_interpretations\": [\"vintage clothing pop-up shop\", \"thrift store interior\", \"boutique retail event\", \"warehouse-style clothing market\"],\n  \"uncertainty_notes\": \"Faces of some shoppers are only partially visible; exact nature of the store (vintage vs. thrift vs. boutique) is inferred from clothing style and setting.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows an indoor scene that appears to be a vintage or thrift clothing store/pop-up shop. There are racks of clothing on both sides, several people browsing, a staircase in the background, exposed brick walls, industrial-style lighting, and concrete floors. It looks like a curated retail or market event.\n\nLet me analyze the features:\n- Recognizability: Clear scene, 5\n- Ambiguity: Low ambiguity, 1-2\n- Natural photo typicality: Looks like a natural photo, 5\n- Visual clutter: Moderate to high clutter with many clothing items, 4\n- Object centricity: Not a single central object, 2\n- Scene centricity: Yes, it's mainly a place/scene, 5\n- Caption confidence: High, 5\n\nPeople: Yes\nFaces: There appear to be some faces visible (person in background with cap, etc.) but faces are partial\nAnimals: No\nText: No clear text\nVehicles: No\nFood: No\nIndoor: Yes\nOutdoor: No\nArtificial/rendered: No\nOcclusion: Some occlusion of people behind racks\nUnusual viewpoint: No\nMultiple main objects: Yes, multiple racks and people\n\nSalient objects: ~5-7 (people, clothing racks, staircase)\nDistinct categories: ~4 (people, clothing, architecture/furniture, staircase)\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: retail/clothing/shopping\n\nLet me write the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows an indoor scene that appears to be a vintage or thrift clothing store/pop-up shop. There are racks of clothing on both sides, several people browsing, a staircase in the background, exposed brick walls, industrial-style lighting, and concrete floors. It looks like a curated retail or market event.\n\nLet me analyze the features:\n- Recognizability: Clear scene, 5\n- Ambiguity: Low ambiguity, 1-2\n- Natural photo typicality: Looks like a natural photo, 5\n- Visual clutter: Moderate to high clutter with many clothing items, 4\n- Object centricity: Not a single central object, 2\n- Scene centricity: Yes, it's mainly a place/scene, 5\n- Caption confidence: High, 5\n\nPeople: Yes\nFaces: There appear to be some faces visible (person in background with cap, etc.) but faces are partial\nAnimals: No\nText: No clear text\nVehicles: No\nFood: No\nIndoor: Yes\nOutdoor: No\nArtificial/rendered: No\nOcclusion: Some occlusion of people behind racks\nUnusual viewpoint: No\nMultiple main objects: Yes, multiple racks and people\n\nSalient objects: ~5-7 (people, clothing racks, staircase)\nDistinct categories: ~4 (people, clothing, architecture/furniture, staircase)\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: retail/clothing/shopping\n\nLet me write the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 676,
+          "total_tokens": 2214,
+          "cost": 0.00124524,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00124524,
+            "upstream_inference_prompt_cost": 0.00043404,
+            "upstream_inference_completions_cost": 0.0008112
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 342,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

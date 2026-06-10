@@ -1,0 +1,82 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_3",
+    "stim_key": "vicco_3",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 3,
+    "file_index": 2,
+    "image_name": "shared_4rep_vicco_003.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_003.jpg"
+  },
+  "model": "google/gemini-3.5-flash",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban\",\n  \"short_caption\": \"A white exterior wall of a building covered in colorful spray-painted graffiti tags.\",\n  \"main_objects\": [\n    \"wall\",\n    \"graffiti\",\n    \"windows\",\n    \"window grate\"\n  ],\n  \"possible_interpretations\": [\n    \"graffiti on a building wall\"\n  ],\n  \"uncertainty_notes\": \"The graffiti text is highly stylized and mostly illegible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780316672-fnMUdQ8SfMOiSTYsyBQE",
+        "object": "chat.completion",
+        "created": 1780316672,
+        "model": "google/gemini-3.5-flash-20260519",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban\",\n  \"short_caption\": \"A white exterior wall of a building covered in colorful spray-painted graffiti tags.\",\n  \"main_objects\": [\n    \"wall\",\n    \"graffiti\",\n    \"windows\",\n    \"window grate\"\n  ],\n  \"possible_interpretations\": [\n    \"graffiti on a building wall\"\n  ],\n  \"uncertainty_notes\": \"The graffiti text is highly stylized and mostly illegible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "**Analyzing Graffiti Complexity**\n\nI'm currently assessing the complexity of the graffiti present. My focus is on discerning individual tags versus more elaborate pieces, and I'm leaning towards a conservative rating to ensure accuracy.\n\n**Evaluating Visual Data**\n\nMy current focus is on quantifying visual clutter and object centricity within the provided image. I'm determining the overall recognizability and natural typicality of the scene, noting a low ambiguity but significant overlapping elements.\n\n**Classifying Scene Elements**\n\nI'm refining my classification of detected elements. Specifically, I've noted the presence of text via graffiti, and confirmed it's an outdoor scene with no people or animals. The image is a natural photo with multiple objects.\n\n**Confirming Scene Semantics**\n\nI've confirmed the scene's semantic domain as \"urban art / street scene\" and developed a concise caption. Key objects identified include a wall, graffiti tags, windows, and a basement window grate. I've also noted the illegible but clearly graffiti-style text.\n\n",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "**Analyzing Graffiti Complexity**\n\nI'm currently assessing the complexity of the graffiti present. My focus is on discerning individual tags versus more elaborate pieces, and I'm leaning towards a conservative rating to ensure accuracy.\n\n**Evaluating Visual Data**\n\nMy current focus is on quantifying visual clutter and object centricity within the provided image. I'm determining the overall recognizability and natural typicality of the scene, noting a low ambiguity but significant overlapping elements.\n\n**Classifying Scene Elements**\n\nI'm refining my classification of detected elements. Specifically, I've noted the presence of text via graffiti, and confirmed it's an outdoor scene with no people or animals. The image is a natural photo with multiple objects.\n\n**Confirming Scene Semantics**\n\nI've confirmed the scene's semantic domain as \"urban art / street scene\" and developed a concise caption. Key objects identified include a wall, graffiti tags, windows, and a basement window grate. I've also noted the illegible but clearly graffiti-style text.\n\n",
+                  "format": "google-gemini-v1",
+                  "index": 0
+                },
+                {
+                  "type": "reasoning.encrypted",
+                  "data": "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",
+                  "format": "google-gemini-v1",
+                  "index": 1
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1731,
+          "completion_tokens": 1557,
+          "total_tokens": 3288,
+          "cost": 0.0166095,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0166095,
+            "upstream_inference_prompt_cost": 0.0025965,
+            "upstream_inference_completions_cost": 0.014013
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 1179,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

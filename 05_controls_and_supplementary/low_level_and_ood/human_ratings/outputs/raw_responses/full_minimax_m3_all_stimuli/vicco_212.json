@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_212",
+    "stim_key": "vicco_212",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 212,
+    "file_index": 211,
+    "image_name": "shared_4rep_vicco_212.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_212.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"aerial urban nighttime\",\n  \"short_caption\": \"Aerial view from airplane window at night over a city with a river and wing visible.\",\n  \"main_objects\": [\"airplane wing\", \"city lights\", \"river\", \"water body\"],\n  \"possible_interpretations\": [\n    \"Aerial night view from airplane over a city near water\",\n    \"View through airplane window of urban landscape at night\",\n    \"Night flight over a coastal or riverside city\"\n  ],\n  \"uncertainty_notes\": \"The specific city cannot be identified; the bright spot on the wing may be a navigation light or lens flare/reflection.\",\n  \"quality_flags\": [\"low_light\", \"high_noise_possible\", \"motion_blur_minimal\"]\n}",
+      "response": {
+        "id": "gen-1780319634-p3V5b1BdHX81aOFH5ub6",
+        "object": "chat.completion",
+        "created": 1780319634,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"aerial urban nighttime\",\n  \"short_caption\": \"Aerial view from airplane window at night over a city with a river and wing visible.\",\n  \"main_objects\": [\"airplane wing\", \"city lights\", \"river\", \"water body\"],\n  \"possible_interpretations\": [\n    \"Aerial night view from airplane over a city near water\",\n    \"View through airplane window of urban landscape at night\",\n    \"Night flight over a coastal or riverside city\"\n  ],\n  \"uncertainty_notes\": \"The specific city cannot be identified; the bright spot on the wing may be a navigation light or lens flare/reflection.\",\n  \"quality_flags\": [\"low_light\", \"high_noise_possible\", \"motion_blur_minimal\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows an aerial nighttime view from an airplane window. I can see:\n- A portion of the airplane wing (dark silhouette) on the left side\n- A bright light on the wing (likely a navigation light or reflection)\n- A nighttime cityscape below with many lights\n- A body of water (appears to be a river or lake) cutting through the urban area\n- The dark sky above\n\nThis is a fairly recognizable scene - aerial view from airplane at night over a city. Let me annotate according to the schema.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows an aerial nighttime view from an airplane window. I can see:\n- A portion of the airplane wing (dark silhouette) on the left side\n- A bright light on the wing (likely a navigation light or reflection)\n- A nighttime cityscape below with many lights\n- A body of water (appears to be a river or lake) cutting through the urban area\n- The dark sky above\n\nThis is a fairly recognizable scene - aerial view from airplane at night over a city. Let me annotate according to the schema.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 494,
+          "total_tokens": 2016,
+          "cost": 0.00089916,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00089916,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0005928
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 136,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_114",
+    "stim_key": "vicco_114",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 114,
+    "file_index": 113,
+    "image_name": "shared_4rep_vicco_114.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_114.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"still life\",\n  \"short_caption\": \"Bouquet of white daisies and purple flowers in a ribbed glass vase on a wooden surface.\",\n  \"main_objects\": [\"white daisies\", \"purple flowers\", \"glass vase\", \"wooden table\", \"textured wall\"],\n  \"possible_interpretations\": [\n    \"A floral arrangement on a table\",\n    \"A still life of cut flowers\",\n    \"Decorative home flowers in a vase\"\n  ],\n  \"uncertainty_notes\": \"Image appears rotated 90 degrees; flower species are not definitively identifiable but resemble chrysanthemums/daisies and globe amaranth.\",\n  \"quality_flags\": [\"sideways_orientation\", \"partial_object_cutoff\", \"non_subject_in_frame\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319520-LlKOVtcx7UBaUJVUMSkR",
+        "object": "chat.completion",
+        "created": 1780319520,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"still life\",\n  \"short_caption\": \"Bouquet of white daisies and purple flowers in a ribbed glass vase on a wooden surface.\",\n  \"main_objects\": [\"white daisies\", \"purple flowers\", \"glass vase\", \"wooden table\", \"textured wall\"],\n  \"possible_interpretations\": [\n    \"A floral arrangement on a table\",\n    \"A still life of cut flowers\",\n    \"Decorative home flowers in a vase\"\n  ],\n  \"uncertainty_notes\": \"Image appears rotated 90 degrees; flower species are not definitively identifiable but resemble chrysanthemums/daisies and globe amaranth.\",\n  \"quality_flags\": [\"sideways_orientation\", \"partial_object_cutoff\", \"non_subject_in_frame\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a bouquet of flowers in a glass vase. The flowers appear to be white chrysanthemums or daisies, along with some purple/magenta flowers (possibly globe amaranth or similar) and some dried or darker flowers. The vase is sitting on what appears to be a wooden surface, and there's a textured white wall behind it. A small portion of what looks like a laptop or device screen is visible in the bottom right corner.\n\nThe image appears to be rotated 90 degrees (sideways) - the vase appears to be lying on its side, but actually looking more carefully, the image seems to be oriented sideways with the flowers pointing to the left.\n\nLet me assess each dimension:\n\n- recognizability: The flowers and vase are clearly recognizable. 5\n- ambiguity: Pretty clear what's shown. 1\n- natural_photo_typicality: Looks like a casual photo taken in a home. 4\n- visual_clutter: There are many flowers, leaves, plus background elements. Moderate to high clutter. 3\n- object_centricity: The flowers/vase is the central subject. 4\n- scene_centricity: It's more about the object than a scene. 2\n- caption_confidence: High confidence in caption. 5\n\nSalient objects: 1 bouquet, but contains many individual flowers. Maybe 2-3 categories (white daisies/chrysanthemums, purple flowers, vase)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (though there's a device screen, no readable text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (vase is partially out of frame, device in corner)\n- contains_unusual_viewpoint: true (image appears rotated/sideways)\n- contains_multiple_main_objects: false (one bouquet is the main subject)\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: still life / home decor\n\nCaption: \"A bouquet of white daisies and purple flowers in a glass vase on a wooden surface.\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a bouquet of flowers in a glass vase. The flowers appear to be white chrysanthemums or daisies, along with some purple/magenta flowers (possibly globe amaranth or similar) and some dried or darker flowers. The vase is sitting on what appears to be a wooden surface, and there's a textured white wall behind it. A small portion of what looks like a laptop or device screen is visible in the bottom right corner.\n\nThe image appears to be rotated 90 degrees (sideways) - the vase appears to be lying on its side, but actually looking more carefully, the image seems to be oriented sideways with the flowers pointing to the left.\n\nLet me assess each dimension:\n\n- recognizability: The flowers and vase are clearly recognizable. 5\n- ambiguity: Pretty clear what's shown. 1\n- natural_photo_typicality: Looks like a casual photo taken in a home. 4\n- visual_clutter: There are many flowers, leaves, plus background elements. Moderate to high clutter. 3\n- object_centricity: The flowers/vase is the central subject. 4\n- scene_centricity: It's more about the object than a scene. 2\n- caption_confidence: High confidence in caption. 5\n\nSalient objects: 1 bouquet, but contains many individual flowers. Maybe 2-3 categories (white daisies/chrysanthemums, purple flowers, vase)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (though there's a device screen, no readable text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (vase is partially out of frame, device in corner)\n- contains_unusual_viewpoint: true (image appears rotated/sideways)\n- contains_multiple_main_objects: false (one bouquet is the main subject)\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: still life / home decor\n\nCaption: \"A bouquet of white daisies and purple flowers in a glass vase on a wooden surface.\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 870,
+          "total_tokens": 2392,
+          "cost": 0.00135036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00135036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.001044
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 539,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

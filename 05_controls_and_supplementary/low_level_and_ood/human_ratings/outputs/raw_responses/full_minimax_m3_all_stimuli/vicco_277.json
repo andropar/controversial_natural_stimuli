@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_277",
+    "stim_key": "vicco_277",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 277,
+    "file_index": 276,
+    "image_name": "shared_4rep_vicco_277.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_277.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife/zoo\",\n  \"short_caption\": \"Rear view of an okapi with striped hindquarters standing near a wooden post in a zoo enclosure.\",\n  \"main_objects\": [\"okapi\", \"wooden post\", \"tree branches\", \"fallen leaves\"],\n  \"possible_interpretations\": [\"okapi at a zoo\", \"striped animal partially hidden by post\", \"zebra in enclosure\"],\n  \"uncertainty_notes\": \"Animal's body and head are largely obscured by the wooden post; species identification relies primarily on the distinctive striped legs characteristic of an okapi.\",\n  \"quality_flags\": [\"partial_occlusion\", \"unusual_framing\"]\n}",
+      "response": {
+        "id": "gen-1780319709-ODTWG594jeEwiiYzJ3sV",
+        "object": "chat.completion",
+        "created": 1780319709,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife/zoo\",\n  \"short_caption\": \"Rear view of an okapi with striped hindquarters standing near a wooden post in a zoo enclosure.\",\n  \"main_objects\": [\"okapi\", \"wooden post\", \"tree branches\", \"fallen leaves\"],\n  \"possible_interpretations\": [\"okapi at a zoo\", \"striped animal partially hidden by post\", \"zebra in enclosure\"],\n  \"uncertainty_notes\": \"Animal's body and head are largely obscured by the wooden post; species identification relies primarily on the distinctive striped legs characteristic of an okapi.\",\n  \"quality_flags\": [\"partial_occlusion\", \"unusual_framing\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be the rear portion of an animal with distinctive black and white striped legs - this is characteristic of an okapi. The animal is standing near a large wooden post/tree trunk, with a background of foliage, fallen leaves on the ground, and what appears to be a zoo enclosure setting. The animal's body is mostly obscured by the wooden post, but the striped hindquarters and legs are clearly visible.\n\nLet me annotate based on the schema:\n\n- recognizability: The animal (okapi) is somewhat recognizable but partially hidden. I'd say 3-4.\n- ambiguity: Could be interpreted as an okapi, zebra, or some other striped animal. The setting is clearly a zoo. I'd say 2-3.\n- natural_photo_typicality: Looks like a natural photograph, but in a zoo setting. 4.\n- visual_clutter: There's the animal, wooden post, branches, leaves, ground, background vegetation. Moderate clutter. 3.\n- object_centricity: The animal is the main subject but partially hidden. 3.\n- scene_centricity: The setting is somewhat important but the animal dominates. 2-3.\n- caption_confidence: I can describe what's visible with reasonable confidence. 4.\n\nEstimated salient objects: 1 (the okapi)\nDistinct categories: 1-2 (animal, wooden post)\n\nContains: animal (okapi), outdoor scene (zoo), no people, no text, no vehicles, no food, no face visible (animal's face is hidden), contains occlusion (animal partially hidden by post), unusual viewpoint (we see mostly the rear/legs).\n\nMain content: animal\nImage style: natural photo\nSemantic domain: wildlife/zoo\n\nCaption: \"Rear view of an okapi with striped legs standing near a wooden post in a zoo enclosure.\"\n\nLet me finalize my response.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be the rear portion of an animal with distinctive black and white striped legs - this is characteristic of an okapi. The animal is standing near a large wooden post/tree trunk, with a background of foliage, fallen leaves on the ground, and what appears to be a zoo enclosure setting. The animal's body is mostly obscured by the wooden post, but the striped hindquarters and legs are clearly visible.\n\nLet me annotate based on the schema:\n\n- recognizability: The animal (okapi) is somewhat recognizable but partially hidden. I'd say 3-4.\n- ambiguity: Could be interpreted as an okapi, zebra, or some other striped animal. The setting is clearly a zoo. I'd say 2-3.\n- natural_photo_typicality: Looks like a natural photograph, but in a zoo setting. 4.\n- visual_clutter: There's the animal, wooden post, branches, leaves, ground, background vegetation. Moderate clutter. 3.\n- object_centricity: The animal is the main subject but partially hidden. 3.\n- scene_centricity: The setting is somewhat important but the animal dominates. 2-3.\n- caption_confidence: I can describe what's visible with reasonable confidence. 4.\n\nEstimated salient objects: 1 (the okapi)\nDistinct categories: 1-2 (animal, wooden post)\n\nContains: animal (okapi), outdoor scene (zoo), no people, no text, no vehicles, no food, no face visible (animal's face is hidden), contains occlusion (animal partially hidden by post), unusual viewpoint (we see mostly the rear/legs).\n\nMain content: animal\nImage style: natural photo\nSemantic domain: wildlife/zoo\n\nCaption: \"Rear view of an okapi with striped legs standing near a wooden post in a zoo enclosure.\"\n\nLet me finalize my response.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 754,
+          "total_tokens": 2276,
+          "cost": 0.00121116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00121116,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009048
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 449,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

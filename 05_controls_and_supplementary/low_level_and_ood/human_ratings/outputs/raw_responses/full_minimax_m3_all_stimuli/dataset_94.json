@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_94",
+    "stim_key": "dataset_94",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 94,
+    "file_index": 94,
+    "image_name": "image_0094.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0094.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior\",\n  \"short_caption\": \"Potted green plant in woven basket against white brick wall on wooden floor\",\n  \"main_objects\": [\"potted plant\", \"woven basket planter\", \"brick wall\", \"wooden floor\"],\n  \"possible_interpretations\": [\"staged interior stock photo\", \"decorative room corner\", \"empty room with plant accent\", \"product display backdrop\"],\n  \"uncertainty_notes\": \"Watermarks from 123RF stock agency are visible; the plant species is not definitively identifiable (likely ficus).\",\n  \"quality_flags\": [\"stock_watermarks_visible\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319063-VDHKoIshowpaCG6bgHl6",
+        "object": "chat.completion",
+        "created": 1780319063,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior\",\n  \"short_caption\": \"Potted green plant in woven basket against white brick wall on wooden floor\",\n  \"main_objects\": [\"potted plant\", \"woven basket planter\", \"brick wall\", \"wooden floor\"],\n  \"possible_interpretations\": [\"staged interior stock photo\", \"decorative room corner\", \"empty room with plant accent\", \"product display backdrop\"],\n  \"uncertainty_notes\": \"Watermarks from 123RF stock agency are visible; the plant species is not definitively identifiable (likely ficus).\",\n  \"quality_flags\": [\"stock_watermarks_visible\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a white painted brick wall as the main background, with a wooden floor visible at the bottom. On the right side, there's a potted plant (appears to be a ficus or similar small tree) in a woven wicker/rattan basket-style planter. The image has watermarks from \"123RF\" stock photo service visible across it.\n\nLet me annotate based on the schema:\n\n- recognizability: The content is clear - it's a stock photo of a plant by a wall. 4-5\n- ambiguity: Low ambiguity - it's pretty clearly a plant in front of a wall. 1\n- natural_photo_typicality: It looks like a typical staged interior/natural photo. 4\n- visual_clutter: Low clutter - mostly empty wall, one plant. 2\n- object_centricity: The plant is on the side, not centered. The wall dominates. 2\n- scene_centricity: Yes, this is more of a scene/setting than an object focus. 4\n- caption_confidence: High confidence in describing it. 4\n\nObject counts:\n- Main salient objects: 1 (the plant)\n- Distinct categories: 2 (plant, wall/floor background)\n\nBooleans:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (watermarks)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (but watermarks)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\nDominant content: scene\nImage style: natural_photo (with watermarks, but underlying is natural photo)\nSemantic domain: interior\n\nCaption: \"Potted plant beside a white brick wall on wooden floor\"\n\nQuality flags: watermarks visible",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a white painted brick wall as the main background, with a wooden floor visible at the bottom. On the right side, there's a potted plant (appears to be a ficus or similar small tree) in a woven wicker/rattan basket-style planter. The image has watermarks from \"123RF\" stock photo service visible across it.\n\nLet me annotate based on the schema:\n\n- recognizability: The content is clear - it's a stock photo of a plant by a wall. 4-5\n- ambiguity: Low ambiguity - it's pretty clearly a plant in front of a wall. 1\n- natural_photo_typicality: It looks like a typical staged interior/natural photo. 4\n- visual_clutter: Low clutter - mostly empty wall, one plant. 2\n- object_centricity: The plant is on the side, not centered. The wall dominates. 2\n- scene_centricity: Yes, this is more of a scene/setting than an object focus. 4\n- caption_confidence: High confidence in describing it. 4\n\nObject counts:\n- Main salient objects: 1 (the plant)\n- Distinct categories: 2 (plant, wall/floor background)\n\nBooleans:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (watermarks)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (but watermarks)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\nDominant content: scene\nImage style: natural_photo (with watermarks, but underlying is natural photo)\nSemantic domain: interior\n\nCaption: \"Potted plant beside a white brick wall on wooden floor\"\n\nQuality flags: watermarks visible",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 776,
+          "total_tokens": 2298,
+          "cost": 0.00136044,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00136044,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009312
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 451,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_14",
+    "stim_key": "training_objective_14",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 14,
+    "file_index": 14,
+    "image_name": "image_0014.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0014.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wedding\",\n  \"short_caption\": \"A bride and groom in wedding attire holding hands, with the bride laughing joyfully.\",\n  \"main_objects\": [\"bride\", \"groom\", \"wedding bouquet\", \"wedding dress\", \"suit\"],\n  \"possible_interpretations\": [\"Wedding day photo of a happy couple\", \"Newlyweds posing for a portrait\", \"Couple celebrating at a wedding ceremony\"],\n  \"uncertainty_notes\": \"Both subjects have their heads partially cut off at the top edge of the frame; groom's head is fully truncated while bride's face is visible.\",\n  \"quality_flags\": [\"head_truncated\"]\n}",
+      "response": {
+        "id": "gen-1780319216-ZzhHCL5lyipAhjqslZc7",
+        "object": "chat.completion",
+        "created": 1780319216,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wedding\",\n  \"short_caption\": \"A bride and groom in wedding attire holding hands, with the bride laughing joyfully.\",\n  \"main_objects\": [\"bride\", \"groom\", \"wedding bouquet\", \"wedding dress\", \"suit\"],\n  \"possible_interpretations\": [\"Wedding day photo of a happy couple\", \"Newlyweds posing for a portrait\", \"Couple celebrating at a wedding ceremony\"],\n  \"uncertainty_notes\": \"Both subjects have their heads partially cut off at the top edge of the frame; groom's head is fully truncated while bride's face is visible.\",\n  \"quality_flags\": [\"head_truncated\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a bride and groom in wedding attire. The bride is wearing a white lace wedding dress and holding a bouquet with orange and green flowers. The groom is wearing a dark navy suit with a boutonniere. They appear to be holding hands and the groom seems to be stepping or jumping while the bride is laughing. The background is a gray corrugated metal wall/garage door. The ground has a yellow striped surface visible at the bottom.\n\nLet me annotate according to the schema:\n\n- Recognizability: 5 - Very clear what the main content is\n- Ambiguity: 1 - Very clear interpretation (wedding couple)\n- Natural photo typicality: 4 - Looks like a natural photograph, though it's a posed wedding photo\n- Visual clutter: 2 - Relatively simple composition with two people and a bouquet\n- Object-centricity: 3 - Two people, not a single central object\n- Scene-centricity: 2 - More focused on the people than the scene\n- Caption confidence: 5 - Easy to caption\n\n- Salient object count: 3 (bride, groom, bouquet)\n- Distinct object categories: 3 (person, person, flowers)\n\n- Contains person: true\n- Contains face: true (partial - bride's face visible, groom's head is cut off)\n- Contains animal: false\n- Contains text: false\n- Contains vehicle: false\n- Contains food: false\n- Contains indoor scene: false\n- Contains outdoor scene: true (or could be semi-outdoor)\n- Contains artificial or rendered content: false\n- Contains occlusion or truncation: true (heads are cut off at top)\n- Contains unusual viewpoint: false\n- Contains multiple main objects: true\n\nDominant content type: person_face or person - I'll go with \"person_face\" since the bride's face with laughing expression is prominent\nActually, since both people have their heads cut off (partially), it's more about the people overall. Let me go with \"person_face\" since the bride's face is a key element.\n\nImage style: natural_photo\nSemantic domain: wedding\n\nShort caption: A bride and groom in wedding attire holding hands, with the bride laughing joyfully.\n\nMain objects: bride, groom, wedding bouquet, wedding dress, suit\n\nPossible interpretations: \n1. Wedding day photo\n2. Couple celebrating at wedding\n3. Newlyweds posing for photo\n\nUncertainty notes: Both subjects have their heads partially cut off at the top of the frame.\n\nQuality flags: head truncated",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a bride and groom in wedding attire. The bride is wearing a white lace wedding dress and holding a bouquet with orange and green flowers. The groom is wearing a dark navy suit with a boutonniere. They appear to be holding hands and the groom seems to be stepping or jumping while the bride is laughing. The background is a gray corrugated metal wall/garage door. The ground has a yellow striped surface visible at the bottom.\n\nLet me annotate according to the schema:\n\n- Recognizability: 5 - Very clear what the main content is\n- Ambiguity: 1 - Very clear interpretation (wedding couple)\n- Natural photo typicality: 4 - Looks like a natural photograph, though it's a posed wedding photo\n- Visual clutter: 2 - Relatively simple composition with two people and a bouquet\n- Object-centricity: 3 - Two people, not a single central object\n- Scene-centricity: 2 - More focused on the people than the scene\n- Caption confidence: 5 - Easy to caption\n\n- Salient object count: 3 (bride, groom, bouquet)\n- Distinct object categories: 3 (person, person, flowers)\n\n- Contains person: true\n- Contains face: true (partial - bride's face visible, groom's head is cut off)\n- Contains animal: false\n- Contains text: false\n- Contains vehicle: false\n- Contains food: false\n- Contains indoor scene: false\n- Contains outdoor scene: true (or could be semi-outdoor)\n- Contains artificial or rendered content: false\n- Contains occlusion or truncation: true (heads are cut off at top)\n- Contains unusual viewpoint: false\n- Contains multiple main objects: true\n\nDominant content type: person_face or person - I'll go with \"person_face\" since the bride's face with laughing expression is prominent\nActually, since both people have their heads cut off (partially), it's more about the people overall. Let me go with \"person_face\" since the bride's face is a key element.\n\nImage style: natural_photo\nSemantic domain: wedding\n\nShort caption: A bride and groom in wedding attire holding hands, with the bride laughing joyfully.\n\nMain objects: bride, groom, wedding bouquet, wedding dress, suit\n\nPossible interpretations: \n1. Wedding day photo\n2. Couple celebrating at wedding\n3. Newlyweds posing for photo\n\nUncertainty notes: Both subjects have their heads partially cut off at the top of the frame.\n\nQuality flags: head truncated",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 889,
+          "total_tokens": 2411,
+          "cost": 0.00137316,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00137316,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010668
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 620,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

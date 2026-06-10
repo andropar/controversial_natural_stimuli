@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_75",
+    "stim_key": "architecture_75",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 75,
+    "file_index": 75,
+    "image_name": "image_0075.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0075.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"interior design\",\n\n  \"short_caption\": \"Glass and metal table lamp on a wooden cube beside a beige armchair\",\n  \"main_objects\": [\"table lamp\", \"wooden pedestal\", \"upholstered armchair\"],\n  \"possible_interpretations\": [\"Product photo for furniture retail\", \"Interior design catalog image\", \"Home decor editorial shot\"],\n  \"uncertainty_notes\": \"Staged composition with textured backdrop suggests professional product photography; chair is partially cropped at frame edge.\",\n  \"quality_flags\": [\"staged_composition\", \"product_photography\"]\n}",
+      "response": {
+        "id": "gen-1780318928-VmOwH0j04xNbzroMOo3Q",
+        "object": "chat.completion",
+        "created": 1780318928,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"interior design\",\n\n  \"short_caption\": \"Glass and metal table lamp on a wooden cube beside a beige armchair\",\n  \"main_objects\": [\"table lamp\", \"wooden pedestal\", \"upholstered armchair\"],\n  \"possible_interpretations\": [\"Product photo for furniture retail\", \"Interior design catalog image\", \"Home decor editorial shot\"],\n  \"uncertainty_notes\": \"Staged composition with textured backdrop suggests professional product photography; chair is partially cropped at frame edge.\",\n  \"quality_flags\": [\"staged_composition\", \"product_photography\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a table lamp sitting on what appears to be a dark wooden cube/pedestal. The lamp has a tall, clear glass/crystal column base with metal accents, and a beige/taupe fabric shade. To the right, there's part of a cream/beige upholstered armchair visible. The background is a textured gray wall that looks like it could be a painted backdrop or actual wall.\n\nThis appears to be a product/staged photograph, likely for interior design or furniture retail purposes.\n\nLet me assess each dimension:\n\n- recognizability: 5 - very clearly a lamp on a table\n- ambiguity: 1 - very straightforward, no ambiguity\n- natural_photo_typicality: 3 - it's a staged product photo, not a natural candid shot but looks like a professional photograph\n- visual_clutter: 2 - minimal elements, clean composition\n- object_centricity: 4 - the lamp is clearly the main subject\n- scene_centricity: 2 - it's a staged scene but focused on an object\n- caption_confidence: 5 - very easy to caption\n\n- estimated_salient_object_count: 3 (lamp, table/pedestal, chair)\n- estimated_distinct_object_categories: 3\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (appears to be indoor setting)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it's a real photo, just staged)\n- contains_occlusion_or_truncation: true (chair is partially cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (lamp is the main focus)\n\n- dominant_content_type: \"object\" (the lamp is clearly dominant)\n- image_style: \"edited_photo\" (professional product photography, staged)\n- semantic_domain: \"interior design\" or \"furniture\"\n\n- short_caption: \"Glass and metal table lamp on a wooden cube beside a beige armchair\"\n- main_objects: [\"table lamp\", \"wooden pedestal/table\", \"armchair\"]\n- possible_interpretations: [\"Product photo for retail\", \"Interior design showcase\", \"Home decor catalog image\"]\n- uncertainty_notes: \"Lighting and backdrop suggest staged product photography rather than a natural scene\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a table lamp sitting on what appears to be a dark wooden cube/pedestal. The lamp has a tall, clear glass/crystal column base with metal accents, and a beige/taupe fabric shade. To the right, there's part of a cream/beige upholstered armchair visible. The background is a textured gray wall that looks like it could be a painted backdrop or actual wall.\n\nThis appears to be a product/staged photograph, likely for interior design or furniture retail purposes.\n\nLet me assess each dimension:\n\n- recognizability: 5 - very clearly a lamp on a table\n- ambiguity: 1 - very straightforward, no ambiguity\n- natural_photo_typicality: 3 - it's a staged product photo, not a natural candid shot but looks like a professional photograph\n- visual_clutter: 2 - minimal elements, clean composition\n- object_centricity: 4 - the lamp is clearly the main subject\n- scene_centricity: 2 - it's a staged scene but focused on an object\n- caption_confidence: 5 - very easy to caption\n\n- estimated_salient_object_count: 3 (lamp, table/pedestal, chair)\n- estimated_distinct_object_categories: 3\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (appears to be indoor setting)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it's a real photo, just staged)\n- contains_occlusion_or_truncation: true (chair is partially cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (lamp is the main focus)\n\n- dominant_content_type: \"object\" (the lamp is clearly dominant)\n- image_style: \"edited_photo\" (professional product photography, staged)\n- semantic_domain: \"interior design\" or \"furniture\"\n\n- short_caption: \"Glass and metal table lamp on a wooden cube beside a beige armchair\"\n- main_objects: [\"table lamp\", \"wooden pedestal/table\", \"armchair\"]\n- possible_interpretations: [\"Product photo for retail\", \"Interior design showcase\", \"Home decor catalog image\"]\n- uncertainty_notes: \"Lighting and backdrop suggest staged product photography rather than a natural scene\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 852,
+          "total_tokens": 2374,
+          "cost": 0.00145164,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00145164,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010224
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 575,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

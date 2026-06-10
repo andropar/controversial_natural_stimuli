@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_93",
+    "stim_key": "dataset_93",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 93,
+    "file_index": 93,
+    "image_name": "image_0093.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0093.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"workspace\",\n  \"short_caption\": \"Laptop displaying video editing software on a wooden desk with a mug, plant, and notebook.\",\n  \"main_objects\": [\"laptop\", \"mug\", \"potted plant\", \"notebook\", \"pens\"],\n  \"possible_interpretations\": [\n    \"A workspace setup with a laptop on a desk\",\n    \"Someone editing a snow sports video at home\",\n    \"A product lifestyle photo of a laptop\",\n    \"A home office desk scene\"\n  ],\n  \"uncertainty_notes\": \"The person visible on the laptop screen is part of the displayed video, not present in the photographed scene.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319063-N6D88fErhP0iJt71YNKM",
+        "object": "chat.completion",
+        "created": 1780319063,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"workspace\",\n  \"short_caption\": \"Laptop displaying video editing software on a wooden desk with a mug, plant, and notebook.\",\n  \"main_objects\": [\"laptop\", \"mug\", \"potted plant\", \"notebook\", \"pens\"],\n  \"possible_interpretations\": [\n    \"A workspace setup with a laptop on a desk\",\n    \"Someone editing a snow sports video at home\",\n    \"A product lifestyle photo of a laptop\",\n    \"A home office desk scene\"\n  ],\n  \"uncertainty_notes\": \"The person visible on the laptop screen is part of the displayed video, not present in the photographed scene.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a laptop on a wooden desk. The laptop screen displays what appears to be a video editing software (looks like Microsoft Hyperlapse Pro) showing a snowy mountain scene with a person wearing ski/snowboard gear. On the desk, there's a white mug on the left, a small potted plant on the right, a notebook/papers with a pen, and what looks like a leather wallet or notebook. The background is a plain white/light wall.\n\nThis is an indoor scene with the laptop as the main object. It's a typical product/lifestyle photo style.\n\nLet me rate according to the schema:\n- recognizability: 5 - very clear what's shown\n- ambiguity: 1 - very clear, a laptop on a desk editing a video\n- natural_photo_typicality: 4 - looks like a typical natural photo, possibly slightly staged\n- visual_clutter: 2 - relatively clean, a few objects on desk\n- object_centricity: 4 - the laptop is the clear central object\n- scene_centricity: 3 - it's also showing a scene (workspace)\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 5 (laptop, mug, plant, notebook, pens)\n- estimated_distinct_object_categories: 5\n\n- contains_person: false (no person visible in the actual scene, only on screen)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (on laptop screen, notebook)\n- contains_vehicle: false\n- contains_food: false (mug but no food)\n- contains_indoor_scene: true\n- contains_outdoor_scene: false (the screen shows outdoor but the main photo is indoor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (laptop is the main one)\n\ndominant_content_type: object (laptop)\nimage_style: natural_photo\nsemantic_domain: workspace\n\nshort_caption: \"Laptop displaying video editing software on wooden desk with mug, plant, and notebook\"\n\nmain_objects: [\"laptop\", \"mug\", \"potted plant\", \"notebook\", \"pens\"]\n\npossible_interpretations: \n- \"A workspace setup with laptop\"\n- \"Someone editing a snowboarding video\"\n- \"A product photo of a laptop\"\n- \"A home office desk scene\"\n\nuncertainty_notes: \"The person on the screen is not a person in the scene; it's a video being edited.\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a laptop on a wooden desk. The laptop screen displays what appears to be a video editing software (looks like Microsoft Hyperlapse Pro) showing a snowy mountain scene with a person wearing ski/snowboard gear. On the desk, there's a white mug on the left, a small potted plant on the right, a notebook/papers with a pen, and what looks like a leather wallet or notebook. The background is a plain white/light wall.\n\nThis is an indoor scene with the laptop as the main object. It's a typical product/lifestyle photo style.\n\nLet me rate according to the schema:\n- recognizability: 5 - very clear what's shown\n- ambiguity: 1 - very clear, a laptop on a desk editing a video\n- natural_photo_typicality: 4 - looks like a typical natural photo, possibly slightly staged\n- visual_clutter: 2 - relatively clean, a few objects on desk\n- object_centricity: 4 - the laptop is the clear central object\n- scene_centricity: 3 - it's also showing a scene (workspace)\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 5 (laptop, mug, plant, notebook, pens)\n- estimated_distinct_object_categories: 5\n\n- contains_person: false (no person visible in the actual scene, only on screen)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (on laptop screen, notebook)\n- contains_vehicle: false\n- contains_food: false (mug but no food)\n- contains_indoor_scene: true\n- contains_outdoor_scene: false (the screen shows outdoor but the main photo is indoor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (laptop is the main one)\n\ndominant_content_type: object (laptop)\nimage_style: natural_photo\nsemantic_domain: workspace\n\nshort_caption: \"Laptop displaying video editing software on wooden desk with mug, plant, and notebook\"\n\nmain_objects: [\"laptop\", \"mug\", \"potted plant\", \"notebook\", \"pens\"]\n\npossible_interpretations: \n- \"A workspace setup with laptop\"\n- \"Someone editing a snowboarding video\"\n- \"A product photo of a laptop\"\n- \"A home office desk scene\"\n\nuncertainty_notes: \"The person on the screen is not a person in the scene; it's a video being edited.\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 918,
+          "total_tokens": 2332,
+          "cost": 0.00137556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00137556,
+            "upstream_inference_prompt_cost": 0.00027396,
+            "upstream_inference_completions_cost": 0.0011016
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 604,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

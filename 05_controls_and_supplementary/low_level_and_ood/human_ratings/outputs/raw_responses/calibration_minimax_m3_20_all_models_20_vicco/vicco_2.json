@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_2",
+    "stim_key": "vicco_2",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 2,
+    "file_index": 1,
+    "image_name": "shared_4rep_vicco_002.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_002.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 5, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"street/lifestyle/shopping\", \"short_caption\": \"Two people browse vintage clothes on a rack outside a shop with a neon 'Awoke Vintage' sign.\", \"main_objects\": [\"woman in tan coat\", \"woman in black jacket\", \"clothing rack\", \"neon sign\", \"smiley balloon\", \"green tote bag\"], \"possible_interpretations\": [\"customers shopping at a vintage clothing store\", \"friends browsing a street-side vintage boutique\", \"a pop-up vintage market stall\"], \"uncertainty_notes\": \"The person on the right is turned away with face not visible; the person on the left is seen in partial profile. Whether this is a permanent storefront or pop-up shop is not fully clear.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780318189-q0tRXVTsKQ01TmnPYF3e",
+        "object": "chat.completion",
+        "created": 1780318189,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 5, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"street/lifestyle/shopping\", \"short_caption\": \"Two people browse vintage clothes on a rack outside a shop with a neon 'Awoke Vintage' sign.\", \"main_objects\": [\"woman in tan coat\", \"woman in black jacket\", \"clothing rack\", \"neon sign\", \"smiley balloon\", \"green tote bag\"], \"possible_interpretations\": [\"customers shopping at a vintage clothing store\", \"friends browsing a street-side vintage boutique\", \"a pop-up vintage market stall\"], \"uncertainty_notes\": \"The person on the right is turned away with face not visible; the person on the left is seen in partial profile. Whether this is a permanent storefront or pop-up shop is not fully clear.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows two people standing outside what appears to be a vintage clothing shop. There's a neon sign that reads \"Awoke Vintage\" in pink/red neon. One person is wearing a black jacket and a headband, the other is wearing a tan/camel colored coat and has long brown hair, and is browsing through clothes on a rack. There's a yellow smiley face balloon (foil balloon) visible. The shop has a large window with various stickers and reflections of trees visible. There's a rack of colorful clothing (shirts, etc.) outside the shop. The ground appears to be a sidewalk with some fallen leaves.\n\nLet me assess each dimension:\n\n- recognizability: Very clear what's happening - people shopping at a vintage store. 5\n- ambiguity: Very low ambiguity, one clear scene. 1\n- natural_photo_typicality: Looks like a typical candid/street photograph. 4\n- visual_clutter: There's quite a lot going on - stickers, clothes rack, reflections, balloon, neon sign. 3-4\n- object_centricity: There's not really one central object, it's more of a scene. 2\n- scene_centricity: This is more of a scene/place than a single object. 4\n- caption_confidence: High confidence in a concise caption. 5\n\nestimated_salient_object_count: Maybe 3-4 main things (two people, clothing rack, neon sign)\nestimated_distinct_object_categories: Maybe 4-5 (people, clothes, neon sign, balloon, building/window)\n\ncontains_person: true\ncontains_face: The person on the left has their face partially visible (profile/side view). True, but faces are not the focus.\ncontains_animal: false\ncontains_text: true (neon \"Awoke Vintage\", \"OPEN\" sign visible)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false (it's outdoor/sidewalk)\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: Some truncation of the clothing rack\ncontains_unusual_viewpoint: false, normal viewpoint\ncontains_multiple_main_objects: true (two people, clothing rack)\n\ndominant_content_type: \"scene\" or \"mixed\" - I'll go with \"scene\" since it's a street scene with people\nimage_style: \"natural_photo\"\nsemantic_domain: \"street/lifestyle\" or \"shopping\"\n\nshort_caption: \"Two people browsing vintage clothes outside a shop with a neon 'Awoke Vintage' sign\"\n\nmain_objects: [\"woman in tan coat\", \"woman in black jacket\", \"clothing rack\", \"neon sign\", \"smiley balloon\", \"shopping bag\"]\n\npossible_interpretations: \n- People shopping for vintage clothes\n- Friends hanging out at a vintage market\n- Customers outside a boutique\n\nuncertainty_notes: Faces not clearly visible, the person on right is turned away. The exact nature of the location (pop-up vs permanent shop) is somewhat unclear but reads as a street-front vintage store.\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows two people standing outside what appears to be a vintage clothing shop. There's a neon sign that reads \"Awoke Vintage\" in pink/red neon. One person is wearing a black jacket and a headband, the other is wearing a tan/camel colored coat and has long brown hair, and is browsing through clothes on a rack. There's a yellow smiley face balloon (foil balloon) visible. The shop has a large window with various stickers and reflections of trees visible. There's a rack of colorful clothing (shirts, etc.) outside the shop. The ground appears to be a sidewalk with some fallen leaves.\n\nLet me assess each dimension:\n\n- recognizability: Very clear what's happening - people shopping at a vintage store. 5\n- ambiguity: Very low ambiguity, one clear scene. 1\n- natural_photo_typicality: Looks like a typical candid/street photograph. 4\n- visual_clutter: There's quite a lot going on - stickers, clothes rack, reflections, balloon, neon sign. 3-4\n- object_centricity: There's not really one central object, it's more of a scene. 2\n- scene_centricity: This is more of a scene/place than a single object. 4\n- caption_confidence: High confidence in a concise caption. 5\n\nestimated_salient_object_count: Maybe 3-4 main things (two people, clothing rack, neon sign)\nestimated_distinct_object_categories: Maybe 4-5 (people, clothes, neon sign, balloon, building/window)\n\ncontains_person: true\ncontains_face: The person on the left has their face partially visible (profile/side view). True, but faces are not the focus.\ncontains_animal: false\ncontains_text: true (neon \"Awoke Vintage\", \"OPEN\" sign visible)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false (it's outdoor/sidewalk)\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: Some truncation of the clothing rack\ncontains_unusual_viewpoint: false, normal viewpoint\ncontains_multiple_main_objects: true (two people, clothing rack)\n\ndominant_content_type: \"scene\" or \"mixed\" - I'll go with \"scene\" since it's a street scene with people\nimage_style: \"natural_photo\"\nsemantic_domain: \"street/lifestyle\" or \"shopping\"\n\nshort_caption: \"Two people browsing vintage clothes outside a shop with a neon 'Awoke Vintage' sign\"\n\nmain_objects: [\"woman in tan coat\", \"woman in black jacket\", \"clothing rack\", \"neon sign\", \"smiley balloon\", \"shopping bag\"]\n\npossible_interpretations: \n- People shopping for vintage clothes\n- Friends hanging out at a vintage market\n- Customers outside a boutique\n\nuncertainty_notes: Faces not clearly visible, the person on right is turned away. The exact nature of the location (pop-up vs permanent shop) is somewhat unclear but reads as a street-front vintage store.\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 1000,
+          "total_tokens": 2522,
+          "cost": 0.00162924,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00162924,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0012
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 729,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

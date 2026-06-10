@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_58",
+    "stim_key": "vicco_58",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 58,
+    "file_index": 57,
+    "image_name": "shared_4rep_vicco_058.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_058.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_wildlife\",\n  \"short_caption\": \"Great blue heron standing on a brick sidewalk holding a small item, with parked vehicles behind it.\",\n  \"main_objects\": [\"heron\", \"car\", \"brick pavement\", \"plant\"],\n  \"possible_interpretations\": [\n    \"urban wildlife sighting of a heron\",\n    \"heron foraging on a city sidewalk\",\n    \"large wading bird near parked vehicles\"\n  ],\n  \"uncertainty_notes\": \"The exact object held in the heron's beak is too small to identify; vehicle make/models not clearly identifiable beyond generic SUVs.\",\n  \"quality_flags\": [\"partially cropped vehicles\", \"small distant text on license plate\"]\n}",
+      "response": {
+        "id": "gen-1780319453-7uuhQ5N76D0MbNiiH03n",
+        "object": "chat.completion",
+        "created": 1780319453,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_wildlife\",\n  \"short_caption\": \"Great blue heron standing on a brick sidewalk holding a small item, with parked vehicles behind it.\",\n  \"main_objects\": [\"heron\", \"car\", \"brick pavement\", \"plant\"],\n  \"possible_interpretations\": [\n    \"urban wildlife sighting of a heron\",\n    \"heron foraging on a city sidewalk\",\n    \"large wading bird near parked vehicles\"\n  ],\n  \"uncertainty_notes\": \"The exact object held in the heron's beak is too small to identify; vehicle make/models not clearly identifiable beyond generic SUVs.\",\n  \"quality_flags\": [\"partially cropped vehicles\", \"small distant text on license plate\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a Great Blue Heron (or similar heron species) standing on a brick-paved sidewalk in what appears to be an urban area. The heron is holding what looks like a small piece of food or debris in its beak. In the background, there are two vehicles - a white SUV/truck on the left and a black SUV on the right. There's also some litter on the ground (a plastic bag, possibly bamboo poles/sticks), and some greenery in the lower left corner.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - Very clearly a heron in an urban setting\n- ambiguity: 1 - Very clear what's happening\n- natural_photo_typicality: 4 - Looks like a typical photo, though the scene itself (urban heron) is somewhat unusual\n- visual_clutter: 3 - Multiple elements (heron, cars, bricks, litter, plants) but organized\n- object_centricity: 4 - The heron is the clear central subject\n- scene_centricity: 3 - There's a clear setting (urban sidewalk) but the animal dominates\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 3 (heron, two cars)\n- estimated_distinct_object_categories: 4 (bird, vehicle, pavement, plant)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: true (heron)\n- contains_text: true (license plate visible)\n- contains_vehicle: true\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (cars are partially cropped)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (heron is the main subject, cars are background)\n\n- dominant_content_type: \"animal\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"urban_wildlife\"\n\n- short_caption: \"Great blue heron standing on a brick sidewalk holding food, with parked cars in the background\"\n- main_objects: [\"heron\", \"car\", \"brick pavement\", \"plant\"]\n- possible_interpretations: [\"urban wildlife sighting\", \"heron scavenging for food in city\", \"bird near parked vehicles on sidewalk\"]\n- uncertainty_notes: \"Heron species identification is fairly clear (appears to be Great Blue Heron based on size and coloration), exact item in beak is small and unclear\"\n- quality_flags: [\"partially cropped vehicles\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a Great Blue Heron (or similar heron species) standing on a brick-paved sidewalk in what appears to be an urban area. The heron is holding what looks like a small piece of food or debris in its beak. In the background, there are two vehicles - a white SUV/truck on the left and a black SUV on the right. There's also some litter on the ground (a plastic bag, possibly bamboo poles/sticks), and some greenery in the lower left corner.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - Very clearly a heron in an urban setting\n- ambiguity: 1 - Very clear what's happening\n- natural_photo_typicality: 4 - Looks like a typical photo, though the scene itself (urban heron) is somewhat unusual\n- visual_clutter: 3 - Multiple elements (heron, cars, bricks, litter, plants) but organized\n- object_centricity: 4 - The heron is the clear central subject\n- scene_centricity: 3 - There's a clear setting (urban sidewalk) but the animal dominates\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 3 (heron, two cars)\n- estimated_distinct_object_categories: 4 (bird, vehicle, pavement, plant)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: true (heron)\n- contains_text: true (license plate visible)\n- contains_vehicle: true\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (cars are partially cropped)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (heron is the main subject, cars are background)\n\n- dominant_content_type: \"animal\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"urban_wildlife\"\n\n- short_caption: \"Great blue heron standing on a brick sidewalk holding food, with parked cars in the background\"\n- main_objects: [\"heron\", \"car\", \"brick pavement\", \"plant\"]\n- possible_interpretations: [\"urban wildlife sighting\", \"heron scavenging for food in city\", \"bird near parked vehicles on sidewalk\"]\n- uncertainty_notes: \"Heron species identification is fairly clear (appears to be Great Blue Heron based on size and coloration), exact item in beak is small and unclear\"\n- quality_flags: [\"partially cropped vehicles\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 918,
+          "total_tokens": 2440,
+          "cost": 0.00140796,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00140796,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011016
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 600,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

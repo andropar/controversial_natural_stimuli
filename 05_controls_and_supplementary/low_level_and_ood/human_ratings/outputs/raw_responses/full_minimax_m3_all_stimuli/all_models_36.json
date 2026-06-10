@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_36",
+    "stim_key": "all_models_36",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 36,
+    "file_index": 36,
+    "image_name": "image_0036.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0036.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 3, \"ambiguity\": 3, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 3, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"indoor architecture\", \"short_caption\": \"Dark stairwell with metal railing beside a cream tiled wall marked with a small smiley face.\", \"main_objects\": [\"staircase\", \"metal railing\", \"tiled wall\", \"smiley face drawing\"], \"possible_interpretations\": [\"stairwell interior\", \"subway station entrance\", \"basement stairway\", \"building hallway\"], \"uncertainty_notes\": \"Left side is very dark; details in the stairwell and railing are difficult to discern.\", \"quality_flags\": [\"low_light\", \"dark_regions\", \"partial_subject\"]}",
+      "response": {
+        "id": "gen-1780318769-QaCIM0pJ162aFq3OZrBq",
+        "object": "chat.completion",
+        "created": 1780318769,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 3, \"ambiguity\": 3, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 3, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"indoor architecture\", \"short_caption\": \"Dark stairwell with metal railing beside a cream tiled wall marked with a small smiley face.\", \"main_objects\": [\"staircase\", \"metal railing\", \"tiled wall\", \"smiley face drawing\"], \"possible_interpretations\": [\"stairwell interior\", \"subway station entrance\", \"basement stairway\", \"building hallway\"], \"uncertainty_notes\": \"Left side is very dark; details in the stairwell and railing are difficult to discern.\", \"quality_flags\": [\"low_light\", \"dark_regions\", \"partial_subject\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be a split scene:\n- On the left side: a dark stairwell with a metal railing/banister, going down into darkness. The image is quite dark and hard to make out details.\n- On the right side: a light-colored (cream/beige tiled) wall with a small simple smiley face drawn on it (just two dots for eyes and a curved line for a mouth, very minimal).\n\nThe image is divided roughly in half between these two scenes, with the left being the stairs descending and the right being the tiled wall with the smiley.\n\nLet me rate the schema items:\n\n- recognizability: The content is fairly recognizable - stairs and a wall with a smiley. Maybe 3-4. The left side is quite dark. I'll say 3.\n- ambiguity: There's some ambiguity about what's in the dark area and the purpose. But generally the content is clear. Maybe 2.\n- natural_photo_typicality: This looks like a natural photograph. 4.\n- visual_clutter: Not much clutter - stairs and a plain wall. 2.\n- object_centricity: The smiley face is a small element on the wall; the stairs are also present. No single dominant object. 2.\n- scene_centricity: This is more of a scene - a stairwell interior. 4.\n- caption_confidence: I can caption it but it's a bit unusual. 3.\n\nEstimated salient object count: 2-3 (stairs, wall, smiley face)\nDistinct object categories: 3 (staircase, wall, drawing)\n\nContains person: no\nContains face: no (a drawn smiley is not a face)\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial or rendered content: no\nContains occlusion or truncation: the stairs go out of frame, and the left side is dark/unclear. Yes.\nContains unusual viewpoint: somewhat unusual - split between dark stairs and light wall. Maybe yes.\nContains multiple main objects: yes - the staircase and the wall with smiley\n\nDominant content type: scene (it's an indoor stairwell scene)\nImage style: natural_photo\nSemantic domain: indoor architecture / urban\n\nShort caption: \"A dark stairwell with metal railing next to a cream tiled wall with a small smiley face drawing.\"\n\nMain objects: stairwell, metal railing, tiled wall, smiley face drawing\nPossible interpretations: stairwell interior, hallway, basement stairs\nUncertainty notes: left side is very dark, hard to see details\n\nQuality flags: low_light, dark_regions",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be a split scene:\n- On the left side: a dark stairwell with a metal railing/banister, going down into darkness. The image is quite dark and hard to make out details.\n- On the right side: a light-colored (cream/beige tiled) wall with a small simple smiley face drawn on it (just two dots for eyes and a curved line for a mouth, very minimal).\n\nThe image is divided roughly in half between these two scenes, with the left being the stairs descending and the right being the tiled wall with the smiley.\n\nLet me rate the schema items:\n\n- recognizability: The content is fairly recognizable - stairs and a wall with a smiley. Maybe 3-4. The left side is quite dark. I'll say 3.\n- ambiguity: There's some ambiguity about what's in the dark area and the purpose. But generally the content is clear. Maybe 2.\n- natural_photo_typicality: This looks like a natural photograph. 4.\n- visual_clutter: Not much clutter - stairs and a plain wall. 2.\n- object_centricity: The smiley face is a small element on the wall; the stairs are also present. No single dominant object. 2.\n- scene_centricity: This is more of a scene - a stairwell interior. 4.\n- caption_confidence: I can caption it but it's a bit unusual. 3.\n\nEstimated salient object count: 2-3 (stairs, wall, smiley face)\nDistinct object categories: 3 (staircase, wall, drawing)\n\nContains person: no\nContains face: no (a drawn smiley is not a face)\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial or rendered content: no\nContains occlusion or truncation: the stairs go out of frame, and the left side is dark/unclear. Yes.\nContains unusual viewpoint: somewhat unusual - split between dark stairs and light wall. Maybe yes.\nContains multiple main objects: yes - the staircase and the wall with smiley\n\nDominant content type: scene (it's an indoor stairwell scene)\nImage style: natural_photo\nSemantic domain: indoor architecture / urban\n\nShort caption: \"A dark stairwell with metal railing next to a cream tiled wall with a small smiley face drawing.\"\n\nMain objects: stairwell, metal railing, tiled wall, smiley face drawing\nPossible interpretations: stairwell interior, hallway, basement stairs\nUncertainty notes: left side is very dark, hard to see details\n\nQuality flags: low_light, dark_regions",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 886,
+          "total_tokens": 2200,
+          "cost": 0.00143004,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00143004,
+            "upstream_inference_prompt_cost": 0.00036684,
+            "upstream_inference_completions_cost": 0.0010632
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 636,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_83",
+    "stim_key": "vicco_83",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 83,
+    "file_index": 82,
+    "image_name": "shared_4rep_vicco_083.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_083.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: short_caption must be <= 20 words"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"transportation_maritime\",\n  \"short_caption\": \"A man stands on the upper deck of a white ferry flying a Swiss flag on a lake with mountains.\",\n  \"main_objects\": [\"ferry boat\", \"Swiss flag\", \"man\", \"mountains\", \"lake water\"],\n  \"possible_interpretations\": [\"Swiss tour boat on a lake\", \"Lake Lucerne sightseeing ferry\", \"Swiss lake passenger ferry\"],\n  \"uncertainty_notes\": \"Person's face is too small to identify features; exact lake and location inferred from Swiss flag and alpine scenery.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319513-0YPS4Otg20HNKOMsb0xt",
+        "object": "chat.completion",
+        "created": 1780319513,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"transportation_maritime\",\n  \"short_caption\": \"A man stands on the upper deck of a white ferry flying a Swiss flag on a lake with mountains.\",\n  \"main_objects\": [\"ferry boat\", \"Swiss flag\", \"man\", \"mountains\", \"lake water\"],\n  \"possible_interpretations\": [\"Swiss tour boat on a lake\", \"Lake Lucerne sightseeing ferry\", \"Swiss lake passenger ferry\"],\n  \"uncertainty_notes\": \"Person's face is too small to identify features; exact lake and location inferred from Swiss flag and alpine scenery.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a boat/ferry on water with:\n- A Swiss flag (red with white cross) prominently displayed\n- A man standing on the upper deck wearing a cap\n- The boat appears to be a modern ferry or tour boat\n- Mountains visible in the background\n- Cloudy sky\n- Some buildings/shore visible on the left\n- Water (lake) in the foreground\n- The boat has a distinctive curved/overhanging upper deck structure\n\nLet me provide ratings:\n- recognizability: 4 - clearly a boat with Swiss flag\n- ambiguity: 1 - very clear what's shown\n- natural_photo_typicality: 5 - looks like a typical photo\n- visual_clutter: 3 - several elements but not overwhelming\n- object_centricity: 4 - boat is dominant\n- scene_centricity: 3 - both boat and scene\n- caption_confidence: 4 - can describe clearly\n\nCounts:\n- salient objects: boat, flag, person, mountains, buildings - maybe 3-4 main\n- distinct categories: boat, person, flag, mountain, building, water - around 4-5\n\nContains:\n- person: yes (man on top)\n- face: no (too small/distant)\n- animal: no\n- text: no\n- vehicle: yes (boat)\n- food: no\n- indoor: no\n- outdoor: yes\n- artificial: no\n- occlusion: no\n- unusual viewpoint: somewhat (low angle looking up at boat)\n- multiple main objects: somewhat (boat and person)\n\nDominant content: mixed (boat + scene)\nStyle: natural_photo\nDomain: transportation/maritime\n\nCaption: \"A man stands on the upper deck of a white ferry with a Swiss flag on a lake with mountains.\"\n\nMain objects: boat, Swiss flag, man, mountains, lake\n\nPossible interpretations: \n- A Swiss tour boat\n- A ferry crossing a Swiss lake\n- A sightseeing cruise\n\nUncertainty: Person's face not visible, exact location uncertain but appears to be Switzerland",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a boat/ferry on water with:\n- A Swiss flag (red with white cross) prominently displayed\n- A man standing on the upper deck wearing a cap\n- The boat appears to be a modern ferry or tour boat\n- Mountains visible in the background\n- Cloudy sky\n- Some buildings/shore visible on the left\n- Water (lake) in the foreground\n- The boat has a distinctive curved/overhanging upper deck structure\n\nLet me provide ratings:\n- recognizability: 4 - clearly a boat with Swiss flag\n- ambiguity: 1 - very clear what's shown\n- natural_photo_typicality: 5 - looks like a typical photo\n- visual_clutter: 3 - several elements but not overwhelming\n- object_centricity: 4 - boat is dominant\n- scene_centricity: 3 - both boat and scene\n- caption_confidence: 4 - can describe clearly\n\nCounts:\n- salient objects: boat, flag, person, mountains, buildings - maybe 3-4 main\n- distinct categories: boat, person, flag, mountain, building, water - around 4-5\n\nContains:\n- person: yes (man on top)\n- face: no (too small/distant)\n- animal: no\n- text: no\n- vehicle: yes (boat)\n- food: no\n- indoor: no\n- outdoor: yes\n- artificial: no\n- occlusion: no\n- unusual viewpoint: somewhat (low angle looking up at boat)\n- multiple main objects: somewhat (boat and person)\n\nDominant content: mixed (boat + scene)\nStyle: natural_photo\nDomain: transportation/maritime\n\nCaption: \"A man stands on the upper deck of a white ferry with a Swiss flag on a lake with mountains.\"\n\nMain objects: boat, Swiss flag, man, mountains, lake\n\nPossible interpretations: \n- A Swiss tour boat\n- A ferry crossing a Swiss lake\n- A sightseeing cruise\n\nUncertainty: Person's face not visible, exact location uncertain but appears to be Switzerland",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 786,
+          "total_tokens": 2324,
+          "cost": 0.00125436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00125436,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.0009432
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 472,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

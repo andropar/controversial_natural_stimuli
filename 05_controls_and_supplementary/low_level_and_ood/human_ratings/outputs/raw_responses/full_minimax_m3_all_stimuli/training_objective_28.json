@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_28",
+    "stim_key": "training_objective_28",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 28,
+    "file_index": 28,
+    "image_name": "image_0028.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0028.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor/people/forest\",\n\n  \"short_caption\": \"Two people examining a smartphone framed between large tree trunks in a forest.\",\n  \"main_objects\": [\"woman\", \"man\", \"tree trunks\", \"smartphone\"],\n  \"possible_interpretations\": [\n    \"couple checking a phone while hiking\",\n    \"people consulting a map or GPS in a forest\",\n    \"tourists looking at photos or directions between trees\"\n  ],\n  \"uncertainty_notes\": \"Faces are partially obscured by the framing trees; man's face is seen in profile and woman's face is partly turned away. The exact activity with the phone is not fully clear from the angle.\",\n  \"quality_flags\": [\"partial_occlusion_of_subjects\", \"narrow_natural_framing\"]\n}",
+      "response": {
+        "id": "gen-1780319317-48IGM3XaU9v8gN60s5aj",
+        "object": "chat.completion",
+        "created": 1780319317,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor/people/forest\",\n\n  \"short_caption\": \"Two people examining a smartphone framed between large tree trunks in a forest.\",\n  \"main_objects\": [\"woman\", \"man\", \"tree trunks\", \"smartphone\"],\n  \"possible_interpretations\": [\n    \"couple checking a phone while hiking\",\n    \"people consulting a map or GPS in a forest\",\n    \"tourists looking at photos or directions between trees\"\n  ],\n  \"uncertainty_notes\": \"Faces are partially obscured by the framing trees; man's face is seen in profile and woman's face is partly turned away. The exact activity with the phone is not fully clear from the angle.\",\n  \"quality_flags\": [\"partial_occlusion_of_subjects\", \"narrow_natural_framing\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows two people (appearing to be a woman and a man) standing between large tree trunks in what appears to be a forest. The woman has brown hair and is wearing a green/olive jacket, and the man is wearing a cap/hat and glasses. They appear to be looking at a phone that the woman is holding. The composition is framed by large tree trunks on both sides, creating a natural frame around the subjects.\n\nLet me assess the various attributes:\n\n- recognizability: The people and trees are clearly recognizable, though partially obscured. I'd say 4.\n- ambiguity: The scene is fairly clear - people in a forest. Low ambiguity, maybe 2.\n- natural_photo_typicality: Looks like a natural photo, though with some artistic framing. 4.\n- visual_clutter: The trees create some complexity but the main subjects are clear. 3.\n- object_centricity: The people are the central focus, framed by trees. 3.\n- scene_centricity: The forest setting is prominent due to the large trees. 4.\n- caption_confidence: I can describe this fairly confidently. 4.\n\nFor the boolean fields:\n- contains_person: true\n- contains_face: true (partially visible)\n- contains_animal: false\n- contains_text: false (no readable text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (faces partially obscured)\n- contains_unusual_viewpoint: true (the framing through trees is unusual)\n- contains_multiple_main_objects: true (two people)\n\ndominant_content_type: \"person_face\" or \"mixed\" - the people are the main focus but with strong environmental context\nimage_style: \"natural_photo\"\nsemantic_domain: \"outdoor/people/forest\"\n\nshort_caption: \"Two people examining a phone between large tree trunks in a forest.\"\n\nmain_objects: [\"woman\", \"man\", \"tree trunks\", \"smartphone\"]\npossible_interpretations: [\"people looking at phone in forest\", \"couple taking a break during hike\", \"people examining a map on phone\"]\n\nuncertainty_notes: \"Faces are partially visible/obscured by trees. The man's face is mostly in profile. Hard to determine exact context of what they're doing.\"\n\nquality_flags: [\"partial_occlusion_of_subjects\", \"narrow_framing\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows two people (appearing to be a woman and a man) standing between large tree trunks in what appears to be a forest. The woman has brown hair and is wearing a green/olive jacket, and the man is wearing a cap/hat and glasses. They appear to be looking at a phone that the woman is holding. The composition is framed by large tree trunks on both sides, creating a natural frame around the subjects.\n\nLet me assess the various attributes:\n\n- recognizability: The people and trees are clearly recognizable, though partially obscured. I'd say 4.\n- ambiguity: The scene is fairly clear - people in a forest. Low ambiguity, maybe 2.\n- natural_photo_typicality: Looks like a natural photo, though with some artistic framing. 4.\n- visual_clutter: The trees create some complexity but the main subjects are clear. 3.\n- object_centricity: The people are the central focus, framed by trees. 3.\n- scene_centricity: The forest setting is prominent due to the large trees. 4.\n- caption_confidence: I can describe this fairly confidently. 4.\n\nFor the boolean fields:\n- contains_person: true\n- contains_face: true (partially visible)\n- contains_animal: false\n- contains_text: false (no readable text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (faces partially obscured)\n- contains_unusual_viewpoint: true (the framing through trees is unusual)\n- contains_multiple_main_objects: true (two people)\n\ndominant_content_type: \"person_face\" or \"mixed\" - the people are the main focus but with strong environmental context\nimage_style: \"natural_photo\"\nsemantic_domain: \"outdoor/people/forest\"\n\nshort_caption: \"Two people examining a phone between large tree trunks in a forest.\"\n\nmain_objects: [\"woman\", \"man\", \"tree trunks\", \"smartphone\"]\npossible_interpretations: [\"people looking at phone in forest\", \"couple taking a break during hike\", \"people examining a map on phone\"]\n\nuncertainty_notes: \"Faces are partially visible/obscured by trees. The man's face is mostly in profile. Hard to determine exact context of what they're doing.\"\n\nquality_flags: [\"partial_occlusion_of_subjects\", \"narrow_framing\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 913,
+          "total_tokens": 2435,
+          "cost": 0.00119028,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1508,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00119028,
+            "upstream_inference_prompt_cost": 9.468e-05,
+            "upstream_inference_completions_cost": 0.0010956
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 602,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_1",
+    "stim_key": "architecture_1",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 1,
+    "file_index": 1,
+    "image_name": "image_0001.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0001.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_residential\",\n  \"short_caption\": \"Interior hallway with white double doors, glass-paneled door, mirrored walls, and tiled floor\",\n  \"main_objects\": [\"double door\", \"glass-paneled door\", \"ceiling light\", \"mirror\", \"tiled floor\"],\n  \"possible_interpretations\": [\"residential entryway or foyer\", \"real estate listing photo\", \"apartment hallway\", \"condo corridor with mirrored walls\"],\n  \"uncertainty_notes\": \"Numeric text '11044022' on the left appears to be a watermark or property listing identifier. Bathroom visible only in mirror reflection.\",\n  \"quality_flags\": [\"watermark_or_overlay_text\"]\n}",
+      "response": {
+        "id": "gen-1780318846-1wuYOvq5eI4N0FwjdIwq",
+        "object": "chat.completion",
+        "created": 1780318846,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_residential\",\n  \"short_caption\": \"Interior hallway with white double doors, glass-paneled door, mirrored walls, and tiled floor\",\n  \"main_objects\": [\"double door\", \"glass-paneled door\", \"ceiling light\", \"mirror\", \"tiled floor\"],\n  \"possible_interpretations\": [\"residential entryway or foyer\", \"real estate listing photo\", \"apartment hallway\", \"condo corridor with mirrored walls\"],\n  \"uncertainty_notes\": \"Numeric text '11044022' on the left appears to be a watermark or property listing identifier. Bathroom visible only in mirror reflection.\",\n  \"quality_flags\": [\"watermark_or_overlay_text\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an interior scene - appears to be a hallway or entryway of a home/apartment. I can see:\n- A tiled floor (light wood-grain or marble-look tiles)\n- A white double door in the center (closed) with a door handle\n- A glass-paneled door (French door style) on the right that appears to be slightly open\n- A ceiling light fixture\n- Mirrors on both sides (left and right walls appear to be mirrored, reflecting the space)\n- A reflection of what appears to be a bathroom with a toilet on the left side\n- Some kind of text/number \"11044022\" visible on the left side (possibly a watermark or listing number)\n- The overall space looks like a foyer or entrance area\n\nLet me annotate based on the schema:\n\n- recognizability: 4 - clearly an interior space, recognizable\n- ambiguity: 2 - pretty clear it's an entryway/hallway\n- natural_photo_typicality: 3 - looks like a real estate listing photo, somewhat staged but natural\n- visual_clutter: 2 - relatively clean, few objects\n- object_centricity: 2 - no single central object, more of a scene\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 4 - can describe it confidently\n\n- estimated_salient_object_count: 3 (door, glass door, ceiling light)\n- estimated_distinct_object_categories: 3 (doors, light fixture, floor tiles)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (the number 11044022)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"interior/residential\"\n\n- short_caption: \"Interior hallway with white doors, mirrored walls, and tiled floor\"\n- main_objects: [\"door\", \"light fixture\", \"mirror\", \"tiles\"]\n- possible_interpretations: [\"entryway of a home\", \"real estate listing photo\", \"apartment foyer\"]\n- uncertainty_notes: \"Text on left side appears to be a watermark/listing number\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an interior scene - appears to be a hallway or entryway of a home/apartment. I can see:\n- A tiled floor (light wood-grain or marble-look tiles)\n- A white double door in the center (closed) with a door handle\n- A glass-paneled door (French door style) on the right that appears to be slightly open\n- A ceiling light fixture\n- Mirrors on both sides (left and right walls appear to be mirrored, reflecting the space)\n- A reflection of what appears to be a bathroom with a toilet on the left side\n- Some kind of text/number \"11044022\" visible on the left side (possibly a watermark or listing number)\n- The overall space looks like a foyer or entrance area\n\nLet me annotate based on the schema:\n\n- recognizability: 4 - clearly an interior space, recognizable\n- ambiguity: 2 - pretty clear it's an entryway/hallway\n- natural_photo_typicality: 3 - looks like a real estate listing photo, somewhat staged but natural\n- visual_clutter: 2 - relatively clean, few objects\n- object_centricity: 2 - no single central object, more of a scene\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 4 - can describe it confidently\n\n- estimated_salient_object_count: 3 (door, glass door, ceiling light)\n- estimated_distinct_object_categories: 3 (doors, light fixture, floor tiles)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (the number 11044022)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"interior/residential\"\n\n- short_caption: \"Interior hallway with white doors, mirrored walls, and tiled floor\"\n- main_objects: [\"door\", \"light fixture\", \"mirror\", \"tiles\"]\n- possible_interpretations: [\"entryway of a home\", \"real estate listing photo\", \"apartment foyer\"]\n- uncertainty_notes: \"Text on left side appears to be a watermark/listing number\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 904,
+          "total_tokens": 2426,
+          "cost": 0.00151404,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00151404,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010848
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 581,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

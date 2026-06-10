@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_162",
+    "stim_key": "vicco_162",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 162,
+    "file_index": 161,
+    "image_name": "shared_4rep_vicco_162.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_162.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor hallway\",\n  \"short_caption\": \"Rotated view of an interior hallway with door, window, exit sign, and red bin\",\n  \"main_objects\": [\"door\", \"window\", \"emergency exit sign\", \"red bin\", \"light fixture\", \"wooden floor\"],\n  \"possible_interpretations\": [\"institutional hallway\", \"office corridor\", \"hospital passage\", \"school hallway\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees making orientation ambiguous; exact setting unclear but appears institutional.\",\n  \"quality_flags\": [\"rotated_orientation\", \"lens_flare\", \"low_contrast\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319575-RRCBGslTFuivIkHoOSfL",
+        "object": "chat.completion",
+        "created": 1780319575,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor hallway\",\n  \"short_caption\": \"Rotated view of an interior hallway with door, window, exit sign, and red bin\",\n  \"main_objects\": [\"door\", \"window\", \"emergency exit sign\", \"red bin\", \"light fixture\", \"wooden floor\"],\n  \"possible_interpretations\": [\"institutional hallway\", \"office corridor\", \"hospital passage\", \"school hallway\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees making orientation ambiguous; exact setting unclear but appears institutional.\",\n  \"quality_flags\": [\"rotated_orientation\", \"lens_flare\", \"low_contrast\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "The image appears to be rotated 90 degrees (sideways). It shows what looks like a hallway or corridor, possibly in a building with institutional or office-like characteristics. There's a door, some signage (possibly an emergency exit sign with a green arrow), wooden flooring visible on one side, and what appears to be a window or light source at the end. There's also a red object that could be a bin or container.\n\nLet me analyze the image carefully:\n- The image is rotated/oriented unusually - the ceiling appears to be on the side\n- It's an indoor scene showing a hallway/corridor\n- There's a door, a window/glass panel, emergency exit sign\n- Wooden floor on one side\n- A red object (possibly a trash bin or bucket)\n- The perspective is unusual due to rotation\n\nGiven the rotation, this is an unusual viewpoint. Let me rate accordingly.\n\nRecognizability: The content is recognizable as an indoor hallway/corridor despite rotation - 4\nAmbiguity: Not very ambiguous, it's clearly a hallway - 1\nNatural photo typicality: It looks like a real photo but rotated - 3 (the rotation makes it less typical)\nVisual clutter: Relatively uncluttered - 2\nObject centricity: Not object-centric, it's a scene - 2\nScene centricity: Yes, it's mainly a scene - 5\nCaption confidence: Fairly confident - 4\n\nSalient objects: door, window, exit sign, red bin, light fixture\nDistinct categories: ~4-5\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: yes (signs)\nContains vehicle: no\nContains food: no\nIndoor scene: yes\nOutdoor scene: no\nArtificial content: no\nOcclusion/truncation: no\nUnusual viewpoint: yes (rotated)\nMultiple main objects: no\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: indoor/hallway\n\nShort caption: \"Interior hallway with door, window, and emergency exit sign, viewed at unusual angle\"\n\nThe image is rotated 90 degrees which makes the viewpoint unusual.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image appears to be rotated 90 degrees (sideways). It shows what looks like a hallway or corridor, possibly in a building with institutional or office-like characteristics. There's a door, some signage (possibly an emergency exit sign with a green arrow), wooden flooring visible on one side, and what appears to be a window or light source at the end. There's also a red object that could be a bin or container.\n\nLet me analyze the image carefully:\n- The image is rotated/oriented unusually - the ceiling appears to be on the side\n- It's an indoor scene showing a hallway/corridor\n- There's a door, a window/glass panel, emergency exit sign\n- Wooden floor on one side\n- A red object (possibly a trash bin or bucket)\n- The perspective is unusual due to rotation\n\nGiven the rotation, this is an unusual viewpoint. Let me rate accordingly.\n\nRecognizability: The content is recognizable as an indoor hallway/corridor despite rotation - 4\nAmbiguity: Not very ambiguous, it's clearly a hallway - 1\nNatural photo typicality: It looks like a real photo but rotated - 3 (the rotation makes it less typical)\nVisual clutter: Relatively uncluttered - 2\nObject centricity: Not object-centric, it's a scene - 2\nScene centricity: Yes, it's mainly a scene - 5\nCaption confidence: Fairly confident - 4\n\nSalient objects: door, window, exit sign, red bin, light fixture\nDistinct categories: ~4-5\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: yes (signs)\nContains vehicle: no\nContains food: no\nIndoor scene: yes\nOutdoor scene: no\nArtificial content: no\nOcclusion/truncation: no\nUnusual viewpoint: yes (rotated)\nMultiple main objects: no\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: indoor/hallway\n\nShort caption: \"Interior hallway with door, window, and emergency exit sign, viewed at unusual angle\"\n\nThe image is rotated 90 degrees which makes the viewpoint unusual.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 801,
+          "total_tokens": 2323,
+          "cost": 0.00126756,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126756,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009612
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 508,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

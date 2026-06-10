@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_59",
+    "stim_key": "architecture_59",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 59,
+    "file_index": 59,
+    "image_name": "image_0059.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0059.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"storage_shelving\",\n  \"short_caption\": \"Blue Lustre Crystal box on a cluttered storage shelf with cardboard boxes and glassware\",\n  \"main_objects\": [\"blue product box\", \"cardboard boxes\", \"crystal glassware\", \"glass vase\", \"shelf\", \"plastic container\"],\n  \"possible_interpretations\": [\"thrift store storage area\", \"back room of a shop\", \"home storage shelf\", \"inventory/warehouse shelf\", \"garage or basement storage\"],\n  \"uncertainty_notes\": \"Context (retail vs. home vs. warehouse) is ambiguous; items are partially cut off at edges\",\n  \"quality_flags\": [\"cluttered\", \"partial objects at frame edges\", \"modest lighting\"]\n}",
+      "response": {
+        "id": "gen-1780318910-IjvBQrPT4LPYgCY9aIRI",
+        "object": "chat.completion",
+        "created": 1780318910,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"storage_shelving\",\n  \"short_caption\": \"Blue Lustre Crystal box on a cluttered storage shelf with cardboard boxes and glassware\",\n  \"main_objects\": [\"blue product box\", \"cardboard boxes\", \"crystal glassware\", \"glass vase\", \"shelf\", \"plastic container\"],\n  \"possible_interpretations\": [\"thrift store storage area\", \"back room of a shop\", \"home storage shelf\", \"inventory/warehouse shelf\", \"garage or basement storage\"],\n  \"uncertainty_notes\": \"Context (retail vs. home vs. warehouse) is ambiguous; items are partially cut off at edges\",\n  \"quality_flags\": [\"cluttered\", \"partial objects at frame edges\", \"modest lighting\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be a storage area or shelf with various items:\n- A blue box labeled \"LUSTRE CRYSTAL\" (Mikasa product, appears to be 6 crystal glasses)\n- Cardboard boxes on shelves above, with \"X4\" written on one\n- A glass vase/decanter on the right\n- A glass bowl or container\n- A white plastic container\n- Some kind of green/yellow item on the left (possibly a lamp or dish)\n- Metal shelving\n- The setting looks like a storage room, thrift store, or back room of a shop\n\nLet me rate this:\n\n- Recognizability: The items are recognizable - 4\n- Ambiguity: Somewhat ambiguous context (storage? shop? home?) - 3\n- Natural photo typicality: Looks like a regular snapshot - 4\n- Visual clutter: Quite cluttered with many items - 4\n- Object centricity: Multiple objects, no single dominant one - 2\n- Scene centricity: It's more about objects but in a scene context - 3\n- Caption confidence: Moderate - 3\n\nCounts:\n- Salient objects: multiple (boxes, glassware, containers) - around 5-6\n- Distinct categories: boxes, glassware, shelving, containers - about 4\n\nBooleans:\n- Person: no\n- Face: no\n- Animal: no\n- Text: yes (LUSTRE CRYSTAL, X4, numbers)\n- Vehicle: no\n- Food: no\n- Indoor: yes\n- Outdoor: no\n- Artificial/rendered: no\n- Occlusion/truncation: yes (items cut off by frame)\n- Unusual viewpoint: somewhat - low angle, close - mild\n- Multiple main objects: yes\n\nDominant content: object (collection of objects)\nImage style: natural_photo\nSemantic domain: storage/shelving/glassware\n\nShort caption: \"Blue Lustre Crystal box on a cluttered storage shelf with cardboard boxes and glassware\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be a storage area or shelf with various items:\n- A blue box labeled \"LUSTRE CRYSTAL\" (Mikasa product, appears to be 6 crystal glasses)\n- Cardboard boxes on shelves above, with \"X4\" written on one\n- A glass vase/decanter on the right\n- A glass bowl or container\n- A white plastic container\n- Some kind of green/yellow item on the left (possibly a lamp or dish)\n- Metal shelving\n- The setting looks like a storage room, thrift store, or back room of a shop\n\nLet me rate this:\n\n- Recognizability: The items are recognizable - 4\n- Ambiguity: Somewhat ambiguous context (storage? shop? home?) - 3\n- Natural photo typicality: Looks like a regular snapshot - 4\n- Visual clutter: Quite cluttered with many items - 4\n- Object centricity: Multiple objects, no single dominant one - 2\n- Scene centricity: It's more about objects but in a scene context - 3\n- Caption confidence: Moderate - 3\n\nCounts:\n- Salient objects: multiple (boxes, glassware, containers) - around 5-6\n- Distinct categories: boxes, glassware, shelving, containers - about 4\n\nBooleans:\n- Person: no\n- Face: no\n- Animal: no\n- Text: yes (LUSTRE CRYSTAL, X4, numbers)\n- Vehicle: no\n- Food: no\n- Indoor: yes\n- Outdoor: no\n- Artificial/rendered: no\n- Occlusion/truncation: yes (items cut off by frame)\n- Unusual viewpoint: somewhat - low angle, close - mild\n- Multiple main objects: yes\n\nDominant content: object (collection of objects)\nImage style: natural_photo\nSemantic domain: storage/shelving/glassware\n\nShort caption: \"Blue Lustre Crystal box on a cluttered storage shelf with cardboard boxes and glassware\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1027,
+          "completion_tokens": 805,
+          "total_tokens": 1832,
+          "cost": 0.00112386,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00112386,
+            "upstream_inference_prompt_cost": 0.00015786,
+            "upstream_inference_completions_cost": 0.000966
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 442,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

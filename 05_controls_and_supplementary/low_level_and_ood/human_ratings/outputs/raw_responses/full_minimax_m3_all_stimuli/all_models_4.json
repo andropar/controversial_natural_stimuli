@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_4",
+    "stim_key": "all_models_4",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 4,
+    "file_index": 4,
+    "image_name": "image_0004.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0004.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 5, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"mountain landscape\", \"short_caption\": \"Hiker pointing toward a snow-capped mountain peak in a vast forested mountain range\", \"main_objects\": [\"hiker\", \"snow-capped mountain peak\", \"forested mountain slopes\"], \"possible_interpretations\": [\"trekking viewpoint in the Himalayas\", \"scenic mountain overlook with a hiker\", \"hiking trip photo pointing at distant summit\"], \"uncertainty_notes\": \"Person is partially visible at the edge and pointing, but their face is small and in profile; exact location is not identifiable.\", \"quality_flags\": [\"person partially cropped at left edge\"]}",
+      "response": {
+        "id": "gen-1780318741-1ZBclnHLUBpLjXE5snY3",
+        "object": "chat.completion",
+        "created": 1780318741,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 5, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"mountain landscape\", \"short_caption\": \"Hiker pointing toward a snow-capped mountain peak in a vast forested mountain range\", \"main_objects\": [\"hiker\", \"snow-capped mountain peak\", \"forested mountain slopes\"], \"possible_interpretations\": [\"trekking viewpoint in the Himalayas\", \"scenic mountain overlook with a hiker\", \"hiking trip photo pointing at distant summit\"], \"uncertainty_notes\": \"Person is partially visible at the edge and pointing, but their face is small and in profile; exact location is not identifiable.\", \"quality_flags\": [\"person partially cropped at left edge\"]}",
+              "refusal": null,
+              "reasoning": "The image shows a mountain landscape with a snow-capped peak in the background, forested mountain slopes, and a person in the lower left corner wearing a blue cap and green/teal clothing, pointing toward the mountains. The person appears to be a hiker on a rocky outcrop or trail.\n\nLet me analyze each dimension:\n- Recognizability: 5 - clearly a mountain landscape with a hiker\n- Ambiguity: 1 - very clear scene\n- Natural photo typicality: 5 - looks like a typical natural photograph\n- Visual clutter: 3 - mountains have many ridges, but the scene is fairly open\n- Object centricity: 2 - the scene dominates, person is small in corner\n- Scene centricity: 5 - this is a landscape/scene image\n- Caption confidence: 5 - easy to caption\n\nObjects: 1 main person, mountain scene\nCategories: person, mountain, trees, sky\n\nContains person: yes\nContains face: face is visible but small and turned away/pointing\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nIndoor: no\nOutdoor: yes\nArtificial/rendered: no\nOcclusion: no\nUnusual viewpoint: no, fairly standard\nMultiple main objects: no, scene + one small person\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: nature/landscape/mountain\n\nCaption: \"Hiker pointing at snow-capped mountain peak in a vast forested mountain range\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a mountain landscape with a snow-capped peak in the background, forested mountain slopes, and a person in the lower left corner wearing a blue cap and green/teal clothing, pointing toward the mountains. The person appears to be a hiker on a rocky outcrop or trail.\n\nLet me analyze each dimension:\n- Recognizability: 5 - clearly a mountain landscape with a hiker\n- Ambiguity: 1 - very clear scene\n- Natural photo typicality: 5 - looks like a typical natural photograph\n- Visual clutter: 3 - mountains have many ridges, but the scene is fairly open\n- Object centricity: 2 - the scene dominates, person is small in corner\n- Scene centricity: 5 - this is a landscape/scene image\n- Caption confidence: 5 - easy to caption\n\nObjects: 1 main person, mountain scene\nCategories: person, mountain, trees, sky\n\nContains person: yes\nContains face: face is visible but small and turned away/pointing\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nIndoor: no\nOutdoor: yes\nArtificial/rendered: no\nOcclusion: no\nUnusual viewpoint: no, fairly standard\nMultiple main objects: no, scene + one small person\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: nature/landscape/mountain\n\nCaption: \"Hiker pointing at snow-capped mountain peak in a vast forested mountain range\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1467,
+          "completion_tokens": 644,
+          "total_tokens": 2111,
+          "cost": 0.00118554,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00118554,
+            "upstream_inference_prompt_cost": 0.00041274,
+            "upstream_inference_completions_cost": 0.0007728
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 353,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

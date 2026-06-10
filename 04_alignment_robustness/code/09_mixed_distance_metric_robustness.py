@@ -7,9 +7,9 @@ through the existing evaluation encodings and then scoring predicted-voxel
 RDMs with either correlation or cosine distance.
 
 Outputs:
-  experiments/cstim_paper/03_statistics/data/mixed_distance_metric_robustness.csv
-  experiments/cstim_paper/03_statistics/data/mixed_distance_metric_rank_summary.csv
-  experiments/cstim_paper/03_statistics/figures/mixed_distance_metric_robustness.{pdf,png}
+  04_alignment_robustness/results/mixed_distance_metric_robustness.csv
+  04_alignment_robustness/results/mixed_distance_metric_rank_summary.csv
+  04_alignment_robustness/figures/supplementary/mixed_distance_metric_robustness.{pdf,png}
 """
 
 from __future__ import annotations
@@ -23,9 +23,9 @@ import pandas as pd
 from scipy.stats import spearmanr
 from tqdm import tqdm
 
-_PAPER = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_PAPER.parents[1]))
+STAGE = Path(__file__).resolve().parents[1]
+SHARE_ROOT = STAGE.parent
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
 
 import config  # noqa: E402
 from utils import bootstrap_sample_indices, compute_rdm_correlation, compute_rsa_score, load_encoding_model  # noqa: E402
@@ -136,7 +136,7 @@ def build_rank_summary(df: pd.DataFrame) -> pd.DataFrame:
 def plot_summary(df: pd.DataFrame, rank_df: pd.DataFrame) -> None:
     import matplotlib.pyplot as plt
 
-    fig_dir = _PAPER / "03_statistics" / "figures"
+    fig_dir = STAGE / "figures" / "supplementary"
     fig_dir.mkdir(parents=True, exist_ok=True)
 
     fig, axes = plt.subplots(1, 2, figsize=(9.0, 3.8))
@@ -189,7 +189,7 @@ def main() -> None:
     parser.add_argument("--max-models", type=int, default=None)
     args = parser.parse_args()
 
-    data_dir = _PAPER / "03_statistics" / "results"
+    data_dir = STAGE / "results"
     data_dir.mkdir(parents=True, exist_ok=True)
     rows = []
 

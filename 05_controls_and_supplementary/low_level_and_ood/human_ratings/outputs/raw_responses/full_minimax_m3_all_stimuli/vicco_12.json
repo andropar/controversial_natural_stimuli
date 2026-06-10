@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_12",
+    "stim_key": "vicco_12",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 12,
+    "file_index": 11,
+    "image_name": "shared_4rep_vicco_012.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_012.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food\",\n  \"short_caption\": \"Top-down view of a gourmet burger on a white plate with arugula under blue lighting\",\n  \"main_objects\": [\"burger\", \"plate\", \"arugula\", \"glass\", \"brioche bun\"],\n  \"possible_interpretations\": [\n    \"a gourmet burger served at a restaurant with atmospheric blue lighting\",\n    \"a casual dining meal photographed from above\",\n    \"a stylized food photograph with color gel lighting\"\n  ],\n  \"uncertainty_notes\": \"Strong blue/purple color cast from lighting makes natural food colors difficult to assess; text/logo on bun top is partially legible\",\n  \"quality_flags\": [\"unusual_color_cast\", \"truncated_objects_at_edges\", \"overhead_viewpoint\"]\n}",
+      "response": {
+        "id": "gen-1780319395-1ecY2kK2KPHCzxba0OhA",
+        "object": "chat.completion",
+        "created": 1780319395,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food\",\n  \"short_caption\": \"Top-down view of a gourmet burger on a white plate with arugula under blue lighting\",\n  \"main_objects\": [\"burger\", \"plate\", \"arugula\", \"glass\", \"brioche bun\"],\n  \"possible_interpretations\": [\n    \"a gourmet burger served at a restaurant with atmospheric blue lighting\",\n    \"a casual dining meal photographed from above\",\n    \"a stylized food photograph with color gel lighting\"\n  ],\n  \"uncertainty_notes\": \"Strong blue/purple color cast from lighting makes natural food colors difficult to assess; text/logo on bun top is partially legible\",\n  \"quality_flags\": [\"unusual_color_cast\", \"truncated_objects_at_edges\", \"overhead_viewpoint\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a top-down view of a burger on a white plate, with some arugula/greens on the side. The image has a strong blue/purple lighting tint which gives it an unusual color cast. There's also a glass visible at the top and what appears to be someone's hand/clothing at the bottom left. The burger appears to be a gourmet-style burger with what looks like brioche bun, meat patty, and possibly some toppings.\n\nLet me analyze the schema requirements:\n\n- recognizability: The burger is recognizable despite the blue lighting, so 4\n- ambiguity: Not many interpretations - it's a burger on a plate, so 2\n- natural_photo_typicality: It has unusual blue lighting, so 3\n- visual_clutter: The burger dominates but there's some background elements, so 3\n- object_centricity: Yes, the burger is the clear central object, so 4\n- scene_centricity: It's more object-focused than scene, so 2\n- caption_confidence: Pretty confident, so 4\n\n- estimated_salient_object_count: 1 (the burger is main, with some supporting elements)\n- estimated_distinct_object_categories: 3-4 (burger, plate, glass, greens)\n\n- contains_person: false (no person visible, just maybe clothing/hand at edge)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (there's text/logo on the bun top)\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: true (appears to be indoors at a restaurant)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the glass and person at edges are truncated)\n- contains_unusual_viewpoint: true (top-down view, and unusual blue lighting)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"food\"\n- image_style: \"natural_photo\" (though with unusual lighting)\n- semantic_domain: \"food\"\n\n- short_caption: \"A gourmet burger on a white plate with arugula, viewed from above under blue lighting\"\n- main_objects: [\"burger\", \"plate\", \"arugula\", \"glass\"]\n- possible_interpretations: [\"a gourmet burger meal at a restaurant\", \"a food photography shot with stylized lighting\", \"a casual dining experience with atmospheric lighting\"]\n- uncertainty_notes: \"Strong blue/purple lighting makes colors hard to assess naturally\"\n- quality_flags: [\"unusual_color_cast\", \"truncated_objects_at_edges\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a top-down view of a burger on a white plate, with some arugula/greens on the side. The image has a strong blue/purple lighting tint which gives it an unusual color cast. There's also a glass visible at the top and what appears to be someone's hand/clothing at the bottom left. The burger appears to be a gourmet-style burger with what looks like brioche bun, meat patty, and possibly some toppings.\n\nLet me analyze the schema requirements:\n\n- recognizability: The burger is recognizable despite the blue lighting, so 4\n- ambiguity: Not many interpretations - it's a burger on a plate, so 2\n- natural_photo_typicality: It has unusual blue lighting, so 3\n- visual_clutter: The burger dominates but there's some background elements, so 3\n- object_centricity: Yes, the burger is the clear central object, so 4\n- scene_centricity: It's more object-focused than scene, so 2\n- caption_confidence: Pretty confident, so 4\n\n- estimated_salient_object_count: 1 (the burger is main, with some supporting elements)\n- estimated_distinct_object_categories: 3-4 (burger, plate, glass, greens)\n\n- contains_person: false (no person visible, just maybe clothing/hand at edge)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (there's text/logo on the bun top)\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: true (appears to be indoors at a restaurant)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the glass and person at edges are truncated)\n- contains_unusual_viewpoint: true (top-down view, and unusual blue lighting)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"food\"\n- image_style: \"natural_photo\" (though with unusual lighting)\n- semantic_domain: \"food\"\n\n- short_caption: \"A gourmet burger on a white plate with arugula, viewed from above under blue lighting\"\n- main_objects: [\"burger\", \"plate\", \"arugula\", \"glass\"]\n- possible_interpretations: [\"a gourmet burger meal at a restaurant\", \"a food photography shot with stylized lighting\", \"a casual dining experience with atmospheric lighting\"]\n- uncertainty_notes: \"Strong blue/purple lighting makes colors hard to assess naturally\"\n- quality_flags: [\"unusual_color_cast\", \"truncated_objects_at_edges\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 923,
+          "total_tokens": 2445,
+          "cost": 0.00141396,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00141396,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011076
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 602,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

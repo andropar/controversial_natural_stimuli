@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_29",
+    "stim_key": "vicco_29",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 29,
+    "file_index": 28,
+    "image_name": "shared_4rep_vicco_029.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_029.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"tools\",\n  \"short_caption\": \"A Spyderco folding pocket knife with black G-10 handle resting on a marble surface.\",\n  \"main_objects\": [\"folding knife\", \"blade\", \"pocket clip\"],\n  \"possible_interpretations\": [\n    \"A Spyderco brand folding pocket knife\",\n    \"An everyday carry (EDC) knife\",\n    \"A product photo of a folding knife for sale\"\n  ],\n  \"uncertainty_notes\": \"The specific Spyderco model is not clearly identifiable from the image alone. The small spider logo on the blade and clip are visible but no model name text is readable.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319418-QfVn5iEA9UDTAQblbbuZ",
+        "object": "chat.completion",
+        "created": 1780319418,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"tools\",\n  \"short_caption\": \"A Spyderco folding pocket knife with black G-10 handle resting on a marble surface.\",\n  \"main_objects\": [\"folding knife\", \"blade\", \"pocket clip\"],\n  \"possible_interpretations\": [\n    \"A Spyderco brand folding pocket knife\",\n    \"An everyday carry (EDC) knife\",\n    \"A product photo of a folding knife for sale\"\n  ],\n  \"uncertainty_notes\": \"The specific Spyderco model is not clearly identifiable from the image alone. The small spider logo on the blade and clip are visible but no model name text is readable.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a folding pocket knife on a light-colored surface (appears to be a marble or stone-like surface). The knife has:\n- A stainless steel blade with what appears to be a Spyderco logo (spider symbol)\n- A round hole in the blade for one-handed opening\n- A black textured handle (G-10 material)\n- A metal pocket clip\n- Multiple screws visible on the handle\n\nThis is clearly a Spyderco brand folding knife, likely one of their popular models (looks like it could be a Tenacious, Persistence, or similar model based on the G-10 handle design).\n\nLet me now rate the various attributes:\n\n- recognizability: 5 - Very clearly a knife, easily recognizable\n- ambiguity: 1 - Almost no ambiguity, this is clearly a folding pocket knife\n- natural_photo_typicality: 4 - Looks like a typical product photo, though somewhat staged\n- visual_clutter: 1-2 - Very simple composition, just the knife on a plain surface\n- object_centricity: 5 - The knife is the clear central object\n- scene_centricity: 1 - Not really a scene, just an object on a surface\n- caption_confidence: 5 - Very confident in a concise caption\n\nObject counts:\n- estimated_salient_object_count: 1 (the knife)\n- estimated_distinct_object_categories: 1\n\nContains:\n- contains_person: false\n- contains_face: false\n- contains_animal: false (there's a spider logo but it's a brand mark, not an animal)\n- contains_text: false (there's a small logo but no readable text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (it's an object on a surface, unclear if indoor)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: \"object\"\nimage_style: \"natural_photo\" (it's a real photo, possibly slightly edited for product display)\nsemantic_domain: \"tools\" or \"cutlery\" or \"everyday_objects\"\n\nshort_caption: \"A Spyderco folding pocket knife with black G-10 handle on a marble surface.\"\nmain_objects: [\"folding knife\", \"pocket clip\", \"blade\"]\n\npossible_interpretations: \n- \"A Spyderco brand folding knife\"\n- \"A pocket knife displayed for sale\"\n- \"An everyday carry (EDC) knife\"\n\nuncertainty_notes: \"Small brand logo visible but no readable text. The exact model of the knife is hard to determine without clearer markings.\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a folding pocket knife on a light-colored surface (appears to be a marble or stone-like surface). The knife has:\n- A stainless steel blade with what appears to be a Spyderco logo (spider symbol)\n- A round hole in the blade for one-handed opening\n- A black textured handle (G-10 material)\n- A metal pocket clip\n- Multiple screws visible on the handle\n\nThis is clearly a Spyderco brand folding knife, likely one of their popular models (looks like it could be a Tenacious, Persistence, or similar model based on the G-10 handle design).\n\nLet me now rate the various attributes:\n\n- recognizability: 5 - Very clearly a knife, easily recognizable\n- ambiguity: 1 - Almost no ambiguity, this is clearly a folding pocket knife\n- natural_photo_typicality: 4 - Looks like a typical product photo, though somewhat staged\n- visual_clutter: 1-2 - Very simple composition, just the knife on a plain surface\n- object_centricity: 5 - The knife is the clear central object\n- scene_centricity: 1 - Not really a scene, just an object on a surface\n- caption_confidence: 5 - Very confident in a concise caption\n\nObject counts:\n- estimated_salient_object_count: 1 (the knife)\n- estimated_distinct_object_categories: 1\n\nContains:\n- contains_person: false\n- contains_face: false\n- contains_animal: false (there's a spider logo but it's a brand mark, not an animal)\n- contains_text: false (there's a small logo but no readable text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (it's an object on a surface, unclear if indoor)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: \"object\"\nimage_style: \"natural_photo\" (it's a real photo, possibly slightly edited for product display)\nsemantic_domain: \"tools\" or \"cutlery\" or \"everyday_objects\"\n\nshort_caption: \"A Spyderco folding pocket knife with black G-10 handle on a marble surface.\"\nmain_objects: [\"folding knife\", \"pocket clip\", \"blade\"]\n\npossible_interpretations: \n- \"A Spyderco brand folding knife\"\n- \"A pocket knife displayed for sale\"\n- \"An everyday carry (EDC) knife\"\n\nuncertainty_notes: \"Small brand logo visible but no readable text. The exact model of the knife is hard to determine without clearer markings.\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 947,
+          "total_tokens": 2469,
+          "cost": 0.00144276,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00144276,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011364
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 647,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

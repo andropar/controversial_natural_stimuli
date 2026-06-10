@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_57",
+    "stim_key": "architecture_57",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 57,
+    "file_index": 57,
+    "image_name": "image_0057.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0057.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"residential architecture\",\n  \"short_caption\": \"White residential garage door with arched windows and decorative hardware\",\n  \"main_objects\": [\"garage door\", \"roof shingles\"],\n  \"possible_interpretations\": [\"garage door exterior of a house\", \"carriage-style garage door\", \"residential home exterior detail\"],\n  \"uncertainty_notes\": \"Image is clear and unambiguous; only minor uncertainty is exact house style.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318907-qpIs48sXo5hO7lknPQXH",
+        "object": "chat.completion",
+        "created": 1780318907,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"residential architecture\",\n  \"short_caption\": \"White residential garage door with arched windows and decorative hardware\",\n  \"main_objects\": [\"garage door\", \"roof shingles\"],\n  \"possible_interpretations\": [\"garage door exterior of a house\", \"carriage-style garage door\", \"residential home exterior detail\"],\n  \"uncertainty_notes\": \"Image is clear and unambiguous; only minor uncertainty is exact house style.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a white garage door with decorative windows at the top, decorative hardware (handles and hinges), and the roof of the house above it. The image is a straightforward architectural/structural photo of a residential garage door.\n\nLet me go through the schema:\n\n- Recognizability: Very clear, it's a garage door. 5\n- Ambiguity: Very low, one clear interpretation. 1\n- Natural_photo_typicality: Looks like a typical photograph. 4\n- Visual_clutter: Low, clean composition. 2\n- Object_centricity: The garage door is the clear central subject. 4\n- Scene_centricity: It's more of an object/structure than a scene. 2\n- Caption_confidence: High, easy to caption. 5\n\n- Salient object count: 1 (the garage door)\n- Distinct categories: 1 (garage door), maybe 2 if you count the roof/building\n- Person: no\n- Face: no\n- Animal: no\n- Text: no\n- Vehicle: no\n- Food: no\n- Indoor: no\n- Outdoor: yes\n- Artificial: no (it's a real photo of a real structure)\n- Occlusion/truncation: no\n- Unusual viewpoint: no\n- Multiple main objects: no\n\nDominant content: object (garage door)\nImage style: natural_photo\nSemantic domain: residential architecture / garage door\n\nShort caption: \"White residential garage door with decorative windows and hardware.\"\nMain objects: [\"garage door\", \"roof\"]\nPossible interpretations: just the main one\nQuality flags: none major, maybe well-lit, symmetric",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a white garage door with decorative windows at the top, decorative hardware (handles and hinges), and the roof of the house above it. The image is a straightforward architectural/structural photo of a residential garage door.\n\nLet me go through the schema:\n\n- Recognizability: Very clear, it's a garage door. 5\n- Ambiguity: Very low, one clear interpretation. 1\n- Natural_photo_typicality: Looks like a typical photograph. 4\n- Visual_clutter: Low, clean composition. 2\n- Object_centricity: The garage door is the clear central subject. 4\n- Scene_centricity: It's more of an object/structure than a scene. 2\n- Caption_confidence: High, easy to caption. 5\n\n- Salient object count: 1 (the garage door)\n- Distinct categories: 1 (garage door), maybe 2 if you count the roof/building\n- Person: no\n- Face: no\n- Animal: no\n- Text: no\n- Vehicle: no\n- Food: no\n- Indoor: no\n- Outdoor: yes\n- Artificial: no (it's a real photo of a real structure)\n- Occlusion/truncation: no\n- Unusual viewpoint: no\n- Multiple main objects: no\n\nDominant content: object (garage door)\nImage style: natural_photo\nSemantic domain: residential architecture / garage door\n\nShort caption: \"White residential garage door with decorative windows and hardware.\"\nMain objects: [\"garage door\", \"roof\"]\nPossible interpretations: just the main one\nQuality flags: none major, maybe well-lit, symmetric",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 674,
+          "total_tokens": 1988,
+          "cost": 0.00105276,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00105276,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.0008088
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 377,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

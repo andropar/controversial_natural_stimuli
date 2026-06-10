@@ -9,9 +9,9 @@ Layout (2 rows):
          [D] Top 4 pairs — brain more similar than models predict (negative residual)
 
 Requires (run first):
-  01_subject_consistency.py  → data/subject_consistency.csv, data/subject_residuals.npz
-  00c_compute_vicco_residuals.py → data/vicco_consistency.csv
-  00_nc_comparison.py        → data/nc_comparison.csv
+  01_subject_consistency.py  -> results/subject_consistency.csv, results/subject_residuals.npz
+  00c_compute_vicco_residuals.py -> results/vicco_consistency.csv
+  00_nc_comparison.py        -> results/nc_comparison.csv
 
 Usage:
     python figures/plot_combined.py
@@ -25,12 +25,21 @@ import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 from PIL import Image
 
-_PAPER = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(_PAPER / "figures"))
+STAGE = Path(__file__).resolve().parents[2]
+SHARE_ROOT = STAGE.parents[2]
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
 
-DATA_DIR = Path(__file__).resolve().parents[1] / "results"
-IMAGE_DIR = _PAPER / "00_selection_evaluation/data/all_models/images"
-FIG_DIR = Path(__file__).resolve().parent
+DATA_DIR = STAGE / "results"
+IMAGE_DIR = (
+    SHARE_ROOT
+    / "00_stimulus_selection"
+    / "decision_checks"
+    / "selection_evaluation"
+    / "results"
+    / "all_models"
+    / "images"
+)
+FIG_DIR = STAGE / "figures"
 SUBJECTS_CSTIM = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]
 
 try:
@@ -230,6 +239,7 @@ def main():
     panel_pairs(axes_pos, pairs, direction="positive", n_pairs=N_PAIRS)
     panel_pairs(axes_neg, pairs, direction="negative", n_pairs=N_PAIRS)
 
+    FIG_DIR.mkdir(parents=True, exist_ok=True)
     fig.savefig(FIG_DIR / "combined.pdf", bbox_inches="tight")
     fig.savefig(FIG_DIR / "combined.png", dpi=DPI, bbox_inches="tight")
     plt.close(fig)

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_27",
+    "stim_key": "architecture_27",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 27,
+    "file_index": 27,
+    "image_name": "image_0027.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0027.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior hallway\",\n  \"short_caption\": \"Empty residential hallway with white walls and hardwood floor\",\n  \"main_objects\": [\"hallway\", \"door\", \"hardwood floor\"],\n  \"possible_interpretations\": [\"interior hallway of a home\", \"corridor in a residential building\", \"passageway in an apartment\"],\n  \"uncertainty_notes\": \"Image is slightly soft/blurry; no distinguishing features to confirm specific residential vs. commercial setting\",\n  \"quality_flags\": [\"soft_focus\", \"low_contrast\", \"partial_foreground_occlusion\"]\n}",
+      "response": {
+        "id": "gen-1780318877-dVQOn1CazioVgAV9SlAS",
+        "object": "chat.completion",
+        "created": 1780318877,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior hallway\",\n  \"short_caption\": \"Empty residential hallway with white walls and hardwood floor\",\n  \"main_objects\": [\"hallway\", \"door\", \"hardwood floor\"],\n  \"possible_interpretations\": [\"interior hallway of a home\", \"corridor in a residential building\", \"passageway in an apartment\"],\n  \"uncertainty_notes\": \"Image is slightly soft/blurry; no distinguishing features to confirm specific residential vs. commercial setting\",\n  \"quality_flags\": [\"soft_focus\", \"low_contrast\", \"partial_foreground_occlusion\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows an interior hallway with white walls, a hardwood floor, and doors on either side. There's a wall in the foreground on the right that partially occludes the view. The image appears to be a natural photo of an empty residential hallway. Let me annotate this carefully.\n\n- It's clearly a hallway/corridor interior scene\n- No people, animals, text, vehicles, food visible\n- Indoor scene\n- Looks like a typical natural photo, though slightly blurry/low quality\n- Scene-centric rather than object-centric\n- Low clutter (empty hallway)\n- No occlusion of main subjects really, but the foreground wall does partially block the view\n- The viewpoint is somewhat unusual (looking through a doorway into a hallway)",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows an interior hallway with white walls, a hardwood floor, and doors on either side. There's a wall in the foreground on the right that partially occludes the view. The image appears to be a natural photo of an empty residential hallway. Let me annotate this carefully.\n\n- It's clearly a hallway/corridor interior scene\n- No people, animals, text, vehicles, food visible\n- Indoor scene\n- Looks like a typical natural photo, though slightly blurry/low quality\n- Scene-centric rather than object-centric\n- Low clutter (empty hallway)\n- No occlusion of main subjects really, but the foreground wall does partially block the view\n- The viewpoint is somewhat unusual (looking through a doorway into a hallway)",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 491,
+          "total_tokens": 1905,
+          "cost": 0.00098604,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098604,
+            "upstream_inference_prompt_cost": 0.00039684,
+            "upstream_inference_completions_cost": 0.0005892
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 186,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

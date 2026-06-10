@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_8",
+    "stim_key": "all_models_8",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 8,
+    "file_index": 8,
+    "image_name": "image_0008.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0008.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"lifestyle/wardrobe\",\n  \"short_caption\": \"Woman browsing hanging clothes in closet with 'ANGE dressing' text overlay\",\n  \"main_objects\": [\"woman\", \"closet\", \"clothing on hangers\", \"text overlay\", \"inset photo\"],\n  \"possible_interpretations\": [\"wardrobe organization video thumbnail\", \"closet tour vlog\", \"fashion/lifestyle content\", \"dressing room scene\", \"clothing haul thumbnail\"],\n  \"uncertainty_notes\": \"Text is partially cut off on the left edge; the woman's face is turned away and not visible; inset image suggests this is a video thumbnail\",\n  \"quality_flags\": [\"text_overlay\", \"inset_image\", \"partial_text_truncation\", \"video_thumbnail_style\"]\n}",
+      "response": {
+        "id": "gen-1780318741-vDWXJmCALvLaq0J98nRX",
+        "object": "chat.completion",
+        "created": 1780318741,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"lifestyle/wardrobe\",\n  \"short_caption\": \"Woman browsing hanging clothes in closet with 'ANGE dressing' text overlay\",\n  \"main_objects\": [\"woman\", \"closet\", \"clothing on hangers\", \"text overlay\", \"inset photo\"],\n  \"possible_interpretations\": [\"wardrobe organization video thumbnail\", \"closet tour vlog\", \"fashion/lifestyle content\", \"dressing room scene\", \"clothing haul thumbnail\"],\n  \"uncertainty_notes\": \"Text is partially cut off on the left edge; the woman's face is turned away and not visible; inset image suggests this is a video thumbnail\",\n  \"quality_flags\": [\"text_overlay\", \"inset_image\", \"partial_text_truncation\", \"video_thumbnail_style\"]\n}",
+              "refusal": null,
+              "reasoning": "The user wants me to annotate this image following a specific schema. Let me analyze the image carefully.\n\nThe image shows:\n- A person (woman) with long brown hair wearing a light-colored long-sleeved top/dress\n- She is standing in front of a closet/wardrobe\n- She is looking through clothes on hangers\n- There's a small inset image in the top left showing more clothes on hangers\n- There are text overlays: \"ANGE\" and \"dressing\" - appears to be a YouTube thumbnail or similar\n- The closet has shelves with folded clothes and hanging clothes\n- The text \"ANGE dressing\" suggests this is a \"closet/wardrobe organization\" or \"dressing\" video thumbnail\n\nLet me rate each dimension:\n\n- recognizability: 4 - clearly shows a woman at a closet\n- ambiguity: 2 - it's pretty clear what's happening\n- natural_photo_typicality: 2 - it's a photo but with text overlays and an inset, looks like a thumbnail\n- visual_clutter: 4 - lots of clothes, text overlays, inset image\n- object_centricity: 2 - the woman and closet are the main subjects\n- scene_centricity: 3 - it's a scene (closet) with a person\n- caption_confidence: 4 - can describe it well\n\nEstimated counts:\n- salient_object_count: ~3-4 (woman, closet, clothes, inset)\n- distinct_object_categories: ~3-4 (person, furniture, clothing, graphic)\n\nContains:\n- person: true\n- face: false (turned away, not visible)\n- animal: false\n- text: true (\"ANGE\", \"dressing\")\n- vehicle: false\n- food: false\n- indoor_scene: true\n- outdoor_scene: false\n- artificial_or_rendered_content: true (text overlay, inset image)\n- occlusion_or_truncation: false\n- unusual_viewpoint: false\n- multiple_main_objects: false\n\ndominant_content_type: mixed (person + scene + text)\nimage_style: edited_photo (text overlay)\nsemantic_domain: lifestyle/wardrobe\n\nShort caption: \"Woman organizing clothes in closet with text overlay 'ANGE dressing'\"\n\nMain objects: woman, closet, clothes, text overlay\n\nPossible interpretations:\n- Wardrobe organization video thumbnail\n- Fashion/closet vlog\n- Dressing room scene\n\nUncertainty notes: Text partially cut off, inset image adds complexity\nQuality flags: text overlay, inset image, partial text",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The user wants me to annotate this image following a specific schema. Let me analyze the image carefully.\n\nThe image shows:\n- A person (woman) with long brown hair wearing a light-colored long-sleeved top/dress\n- She is standing in front of a closet/wardrobe\n- She is looking through clothes on hangers\n- There's a small inset image in the top left showing more clothes on hangers\n- There are text overlays: \"ANGE\" and \"dressing\" - appears to be a YouTube thumbnail or similar\n- The closet has shelves with folded clothes and hanging clothes\n- The text \"ANGE dressing\" suggests this is a \"closet/wardrobe organization\" or \"dressing\" video thumbnail\n\nLet me rate each dimension:\n\n- recognizability: 4 - clearly shows a woman at a closet\n- ambiguity: 2 - it's pretty clear what's happening\n- natural_photo_typicality: 2 - it's a photo but with text overlays and an inset, looks like a thumbnail\n- visual_clutter: 4 - lots of clothes, text overlays, inset image\n- object_centricity: 2 - the woman and closet are the main subjects\n- scene_centricity: 3 - it's a scene (closet) with a person\n- caption_confidence: 4 - can describe it well\n\nEstimated counts:\n- salient_object_count: ~3-4 (woman, closet, clothes, inset)\n- distinct_object_categories: ~3-4 (person, furniture, clothing, graphic)\n\nContains:\n- person: true\n- face: false (turned away, not visible)\n- animal: false\n- text: true (\"ANGE\", \"dressing\")\n- vehicle: false\n- food: false\n- indoor_scene: true\n- outdoor_scene: false\n- artificial_or_rendered_content: true (text overlay, inset image)\n- occlusion_or_truncation: false\n- unusual_viewpoint: false\n- multiple_main_objects: false\n\ndominant_content_type: mixed (person + scene + text)\nimage_style: edited_photo (text overlay)\nsemantic_domain: lifestyle/wardrobe\n\nShort caption: \"Woman organizing clothes in closet with text overlay 'ANGE dressing'\"\n\nMain objects: woman, closet, clothes, text overlay\n\nPossible interpretations:\n- Wardrobe organization video thumbnail\n- Fashion/closet vlog\n- Dressing room scene\n\nUncertainty notes: Text partially cut off, inset image adds complexity\nQuality flags: text overlay, inset image, partial text",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 906,
+          "total_tokens": 2320,
+          "cost": 0.00148404,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00148404,
+            "upstream_inference_prompt_cost": 0.00039684,
+            "upstream_inference_completions_cost": 0.0010872
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 576,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

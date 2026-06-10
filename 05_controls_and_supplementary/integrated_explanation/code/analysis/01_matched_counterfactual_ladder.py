@@ -22,10 +22,11 @@ import numpy as np
 import pandas as pd
 
 
-PAPER = Path(__file__).resolve().parents[2]
-DATA = PAPER / "18_explain_alignment_effect" / "results"
-FIGURES = PAPER / "18_explain_alignment_effect" / "figures"
-SOURCE = PAPER / "03_statistics" / "results" / "primary_endpoint_summary.csv"
+STAGE = Path(__file__).resolve().parents[2]
+SHARE_ROOT = STAGE.parents[1]
+DATA = STAGE / "results"
+FIGURES = STAGE / "figures"
+SOURCE = SHARE_ROOT / "03_alignment_inference" / "results" / "primary_endpoint_summary.csv"
 
 DATA.mkdir(parents=True, exist_ok=True)
 FIGURES.mkdir(parents=True, exist_ok=True)

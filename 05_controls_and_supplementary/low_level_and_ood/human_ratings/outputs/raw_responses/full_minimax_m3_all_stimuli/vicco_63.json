@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_63",
+    "stim_key": "vicco_63",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 63,
+    "file_index": 62,
+    "image_name": "shared_4rep_vicco_063.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_063.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature/ground/insect\",\n  \"short_caption\": \"A patterned moth resting on a stone pavement with scattered yellow autumn leaves.\",\n  \"main_objects\": [\"moth\", \"yellow leaves\", \"stone pavement\", \"moss\"],\n  \"possible_interpretations\": [\"moth resting on paved ground\", \"autumn scene with fallen leaves and insect on cobblestones\", \"closeup of stone walkway with leaf litter and moth\"],\n  \"uncertainty_notes\": \"Moth species not identifiable from pattern; subject is small relative to frame, but clearly the focal point.\",\n  \"quality_flags\": [\"small_subject\", \"camouflaged_subject\"]\n}",
+      "response": {
+        "id": "gen-1780319463-Z1BsYK1MQbfttWcE4hq9",
+        "object": "chat.completion",
+        "created": 1780319463,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature/ground/insect\",\n  \"short_caption\": \"A patterned moth resting on a stone pavement with scattered yellow autumn leaves.\",\n  \"main_objects\": [\"moth\", \"yellow leaves\", \"stone pavement\", \"moss\"],\n  \"possible_interpretations\": [\"moth resting on paved ground\", \"autumn scene with fallen leaves and insect on cobblestones\", \"closeup of stone walkway with leaf litter and moth\"],\n  \"uncertainty_notes\": \"Moth species not identifiable from pattern; subject is small relative to frame, but clearly the focal point.\",\n  \"quality_flags\": [\"small_subject\", \"camouflaged_subject\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a stone/brick pavement with several yellow autumn leaves scattered on it, and what appears to be a moth (or some insect) resting on the stones in the center. The pavement consists of rectangular gray/pink stone blocks with moss growing in the cracks between them. There are about 4-5 yellow leaves visible, and the central object appears to be a moth with patterned wings.\n\nLet me annotate this:\n\n- Recognizability: The image is clear, showing a moth on a stone pavement with leaves. The main subject (moth) is recognizable but somewhat camouflaged. I'd say 4.\n- Ambiguity: There's really one main interpretation - moth on stone pavement. 1-2.\n- Natural photo typicality: Looks like a natural photograph. 5.\n- Visual clutter: Moderate - the stone pattern, leaves, cracks with moss, and moth create some visual complexity. 3.\n- Object centricity: The moth is a small object in a large field of stone, so not very object-centric. 2.\n- Scene centricity: It's more of a ground-level scene/setting. 3-4.\n- Caption confidence: 4, fairly confident.\n\nSalient object count: 1 main (moth), plus leaves\nDistinct categories: moth/insect, leaves, stone pavement - 3\n\nContains person: false\nContains face: false\nContains animal: true (moth/insect)\nContains text: false\nContains vehicle: false\nContains food: false\nIndoor: false\nOutdoor: true\nArtificial/rendered: false\nOcclusion: false\nUnusual viewpoint: false (top-down view of ground, common)\nMultiple main objects: false (one main subject)\n\nDominant content type: mixed or animal? The moth is small and the stones dominate visually. I'd say \"mixed\" or \"animal\" depending on how we weight. Since the moth is small but clearly the focal point, I'll say \"animal\" or \"mixed\". Given the stones dominate the frame, maybe \"scene\" or \"mixed\". Let me go with \"mixed\" since there's a clear subject (moth) and a clear background (pavement).\n\nActually, looking again, the stones are the dominant visual element. I'll say \"scene\" or \"mixed\". Let me go with \"animal\" since the moth seems to be the intended subject.\n\nImage style: natural_photo\nSemantic domain: nature/ground/insect\n\nShort caption: \"A patterned moth resting on a stone pavement with scattered yellow leaves\"\n\nMain objects: moth, leaves, stone pavement, moss\nPossible interpretations: moth on pavement, dead leaf camouflaged as moth (no, it's clearly a moth), autumn scene on pathway\nUncertainty notes: moth species hard to identify, possibly well-camouflaged\nQuality flags: maybe \"small subject\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a stone/brick pavement with several yellow autumn leaves scattered on it, and what appears to be a moth (or some insect) resting on the stones in the center. The pavement consists of rectangular gray/pink stone blocks with moss growing in the cracks between them. There are about 4-5 yellow leaves visible, and the central object appears to be a moth with patterned wings.\n\nLet me annotate this:\n\n- Recognizability: The image is clear, showing a moth on a stone pavement with leaves. The main subject (moth) is recognizable but somewhat camouflaged. I'd say 4.\n- Ambiguity: There's really one main interpretation - moth on stone pavement. 1-2.\n- Natural photo typicality: Looks like a natural photograph. 5.\n- Visual clutter: Moderate - the stone pattern, leaves, cracks with moss, and moth create some visual complexity. 3.\n- Object centricity: The moth is a small object in a large field of stone, so not very object-centric. 2.\n- Scene centricity: It's more of a ground-level scene/setting. 3-4.\n- Caption confidence: 4, fairly confident.\n\nSalient object count: 1 main (moth), plus leaves\nDistinct categories: moth/insect, leaves, stone pavement - 3\n\nContains person: false\nContains face: false\nContains animal: true (moth/insect)\nContains text: false\nContains vehicle: false\nContains food: false\nIndoor: false\nOutdoor: true\nArtificial/rendered: false\nOcclusion: false\nUnusual viewpoint: false (top-down view of ground, common)\nMultiple main objects: false (one main subject)\n\nDominant content type: mixed or animal? The moth is small and the stones dominate visually. I'd say \"mixed\" or \"animal\" depending on how we weight. Since the moth is small but clearly the focal point, I'll say \"animal\" or \"mixed\". Given the stones dominate the frame, maybe \"scene\" or \"mixed\". Let me go with \"mixed\" since there's a clear subject (moth) and a clear background (pavement).\n\nActually, looking again, the stones are the dominant visual element. I'll say \"scene\" or \"mixed\". Let me go with \"animal\" since the moth seems to be the intended subject.\n\nImage style: natural_photo\nSemantic domain: nature/ground/insect\n\nShort caption: \"A patterned moth resting on a stone pavement with scattered yellow leaves\"\n\nMain objects: moth, leaves, stone pavement, moss\nPossible interpretations: moth on pavement, dead leaf camouflaged as moth (no, it's clearly a moth), autumn scene on pathway\nUncertainty notes: moth species hard to identify, possibly well-camouflaged\nQuality flags: maybe \"small subject\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 950,
+          "total_tokens": 2472,
+          "cost": 0.00144636,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00144636,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.00114
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 667,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

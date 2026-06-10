@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_166",
+    "stim_key": "vicco_166",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 166,
+    "file_index": 165,
+    "image_name": "shared_4rep_vicco_166.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_166.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: Missing required fields: ['contains_unusual_viewpoint']"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 4,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"objects\",\n  \"short_caption\": \"Green wooden crate with broken-glass warning symbol and garbled orange Cyrillic-style text\",\n  \"main_objects\": [\"wooden crate\", \"warning symbol\", \"text label\"],\n  \"possible_interpretations\": [\n    \"shipping or storage crate with fragile warning\",\n    \"abandoned industrial container with defaced labeling\",\n    \"AI-generated or manipulated image with nonsensical text\",\n    \"wooden box in a rustic shed or barn\"\n  ],\n  \"uncertainty_notes\": \"The orange text appears to be garbled or nonsensical pseudo-Cyrillic and is not legible as real words. The setting (concrete floor, wooden wall) suggests an indoor or semi-covered industrial/storage area, but the exact context is unclear.\",\n  \"quality_flags\": [\"text_garbled_or_nonsensical\", \"possible_ai_generated_text\", \"low_lighting\"]\n}",
+      "response": {
+        "id": "gen-1780319604-aNZhggcp5WIliOA8lNQw",
+        "object": "chat.completion",
+        "created": 1780319604,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 4,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"objects\",\n  \"short_caption\": \"Green wooden crate with broken-glass warning symbol and garbled orange Cyrillic-style text\",\n  \"main_objects\": [\"wooden crate\", \"warning symbol\", \"text label\"],\n  \"possible_interpretations\": [\n    \"shipping or storage crate with fragile warning\",\n    \"abandoned industrial container with defaced labeling\",\n    \"AI-generated or manipulated image with nonsensical text\",\n    \"wooden box in a rustic shed or barn\"\n  ],\n  \"uncertainty_notes\": \"The orange text appears to be garbled or nonsensical pseudo-Cyrillic and is not legible as real words. The setting (concrete floor, wooden wall) suggests an indoor or semi-covered industrial/storage area, but the exact context is unclear.\",\n  \"quality_flags\": [\"text_garbled_or_nonsensical\", \"possible_ai_generated_text\", \"low_lighting\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a green wooden box or crate with orange text in what appears to be a transliterated/garbled Cyrillic-like text reading \"форзижт цербрежлиж!\" along with a broken glass symbol (a drinking glass with shards, typically a warning for fragile contents). The box appears to be in a rustic, possibly abandoned or industrial setting with wooden walls and a concrete floor.\n\nLet me analyze:\n- Recognizability: The box is clearly visible, but the text is nonsense/garbled. The meaning is ambiguous. I'd rate 3.\n- Ambiguity: The text is garbled/nonsensical, making the meaning unclear. High ambiguity. 4.\n- Natural photo typicality: Looks like a real photo, casual snapshot. 4.\n- Visual clutter: Not many competing objects, mostly the box. 2.\n- Object centricity: The box dominates the image. 4.\n- Scene centricity: It's an object in a setting, not really a scene. 2.\n- Caption confidence: I can describe what I see but the text meaning is unclear. 3.\n\nSalient objects: 1 main (the box)\nDistinct categories: 1-2 (box, text/symbol)\nContains person: false\nContains face: false\nContains animal: false\nContains text: true\nContains vehicle: false\nContains food: false\nContains indoor scene: could be, it looks like an indoor/covered area\nContains outdoor scene: could be - the floor looks concrete\nContains artificial/rendered: false\nContains occlusion: no\nUnusual viewpoint: no\nMultiple main objects: false\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: objects\n\nThe text appears to be garbled/nonsensical Cyrillic-style text. It might be a hallucination or AI-generated artifact. \"форзижт\" and \"цербрежлиж\" don't appear to be real Russian words.\n\nLet me construct the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a green wooden box or crate with orange text in what appears to be a transliterated/garbled Cyrillic-like text reading \"форзижт цербрежлиж!\" along with a broken glass symbol (a drinking glass with shards, typically a warning for fragile contents). The box appears to be in a rustic, possibly abandoned or industrial setting with wooden walls and a concrete floor.\n\nLet me analyze:\n- Recognizability: The box is clearly visible, but the text is nonsense/garbled. The meaning is ambiguous. I'd rate 3.\n- Ambiguity: The text is garbled/nonsensical, making the meaning unclear. High ambiguity. 4.\n- Natural photo typicality: Looks like a real photo, casual snapshot. 4.\n- Visual clutter: Not many competing objects, mostly the box. 2.\n- Object centricity: The box dominates the image. 4.\n- Scene centricity: It's an object in a setting, not really a scene. 2.\n- Caption confidence: I can describe what I see but the text meaning is unclear. 3.\n\nSalient objects: 1 main (the box)\nDistinct categories: 1-2 (box, text/symbol)\nContains person: false\nContains face: false\nContains animal: false\nContains text: true\nContains vehicle: false\nContains food: false\nContains indoor scene: could be, it looks like an indoor/covered area\nContains outdoor scene: could be - the floor looks concrete\nContains artificial/rendered: false\nContains occlusion: no\nUnusual viewpoint: no\nMultiple main objects: false\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: objects\n\nThe text appears to be garbled/nonsensical Cyrillic-style text. It might be a hallucination or AI-generated artifact. \"форзижт\" and \"цербрежлиж\" don't appear to be real Russian words.\n\nLet me construct the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 823,
+          "total_tokens": 2361,
+          "cost": 0.00129876,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129876,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.0009876
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 474,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

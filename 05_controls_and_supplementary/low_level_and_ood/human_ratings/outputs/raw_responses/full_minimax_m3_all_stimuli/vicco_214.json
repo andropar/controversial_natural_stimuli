@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_214",
+    "stim_key": "vicco_214",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 214,
+    "file_index": 213,
+    "image_name": "shared_4rep_vicco_214.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_214.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"halloween_autumn\",\n  \"short_caption\": \"Carved jack-o'-lanterns lined up on a stone wall with trees and a yellow car in the background.\",\n  \"main_objects\": [\"carved pumpkins\", \"stone wall\", \"trees\", \"yellow car\", \"lamp post\"],\n  \"possible_interpretations\": [\n    \"Halloween pumpkin display in a park\",\n    \"Autumn decoration along a road or walkway\",\n    \"Public art installation of jack-o'-lanterns\"\n  ],\n  \"uncertainty_notes\": \"Car shows motion blur suggesting it was moving; exact location is unclear though likely a park or scenic overlook.\",\n  \"quality_flags\": [\"motion blur on vehicle\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319634-s2MjpIC3QrqT71APHJw1",
+        "object": "chat.completion",
+        "created": 1780319634,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"halloween_autumn\",\n  \"short_caption\": \"Carved jack-o'-lanterns lined up on a stone wall with trees and a yellow car in the background.\",\n  \"main_objects\": [\"carved pumpkins\", \"stone wall\", \"trees\", \"yellow car\", \"lamp post\"],\n  \"possible_interpretations\": [\n    \"Halloween pumpkin display in a park\",\n    \"Autumn decoration along a road or walkway\",\n    \"Public art installation of jack-o'-lanterns\"\n  ],\n  \"uncertainty_notes\": \"Car shows motion blur suggesting it was moving; exact location is unclear though likely a park or scenic overlook.\",\n  \"quality_flags\": [\"motion blur on vehicle\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a row of carved pumpkins (jack-o'-lanterns) sitting on top of a stone wall. There are about 5 pumpkins of varying sizes, each carved with different expressions. Behind the wall, I can see trees, a yellow taxi/car that appears slightly blurred (motion blur), and a clear blue sky. There's also a lamp post on the left side. The foreground has fallen leaves on the ground, and there are shadows from trees on the wall.\n\nThis appears to be an outdoor scene, likely in a park or public area, with autumn/fall setting given the pumpkins and fallen leaves.\n\nLet me rate the various aspects:\n- Recognizability: Clear, easily recognizable - 5\n- Ambiguity: Low, one main subject (pumpkins on wall) - 2\n- Natural photo typicality: Yes, looks like a typical photo - 5\n- Visual clutter: Moderate - trees, pumpkins, car, lamp post - 3\n- Object centricity: Pumpkins are the main subject but spread out - 3\n- Scene centricity: Also shows a scene (outdoor park-like) - 3\n- Caption confidence: High - 5\n\nSalient objects: ~5 pumpkins\nDistinct categories: pumpkins, wall, trees, car, lamp post - about 5\n\nNo people, faces, animals, text, food (well, pumpkins are decorative here), vehicles (yes there's a car)\nIndoor: no\nOutdoor: yes\nArtificial: no (well, carved pumpkins are modified)\nOcclusion: not really\nUnusual viewpoint: no\nMultiple main objects: the pumpkins form a group\n\nDominant content: mixed (object + scene)\nImage style: natural_photo\nSemantic domain: halloween/autumn\n\nShort caption: Carved pumpkins displayed on a stone wall with trees and a yellow car in the background.\n\nMain objects: pumpkins, stone wall, trees, car, lamp post\n\nPossible interpretations:\n- Halloween display\n- Autumn decoration\n- Park decoration\n\nUncertainty notes: The car appears slightly blurred, suggesting motion\n\nQuality flags: motion blur on car",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a row of carved pumpkins (jack-o'-lanterns) sitting on top of a stone wall. There are about 5 pumpkins of varying sizes, each carved with different expressions. Behind the wall, I can see trees, a yellow taxi/car that appears slightly blurred (motion blur), and a clear blue sky. There's also a lamp post on the left side. The foreground has fallen leaves on the ground, and there are shadows from trees on the wall.\n\nThis appears to be an outdoor scene, likely in a park or public area, with autumn/fall setting given the pumpkins and fallen leaves.\n\nLet me rate the various aspects:\n- Recognizability: Clear, easily recognizable - 5\n- Ambiguity: Low, one main subject (pumpkins on wall) - 2\n- Natural photo typicality: Yes, looks like a typical photo - 5\n- Visual clutter: Moderate - trees, pumpkins, car, lamp post - 3\n- Object centricity: Pumpkins are the main subject but spread out - 3\n- Scene centricity: Also shows a scene (outdoor park-like) - 3\n- Caption confidence: High - 5\n\nSalient objects: ~5 pumpkins\nDistinct categories: pumpkins, wall, trees, car, lamp post - about 5\n\nNo people, faces, animals, text, food (well, pumpkins are decorative here), vehicles (yes there's a car)\nIndoor: no\nOutdoor: yes\nArtificial: no (well, carved pumpkins are modified)\nOcclusion: not really\nUnusual viewpoint: no\nMultiple main objects: the pumpkins form a group\n\nDominant content: mixed (object + scene)\nImage style: natural_photo\nSemantic domain: halloween/autumn\n\nShort caption: Carved pumpkins displayed on a stone wall with trees and a yellow car in the background.\n\nMain objects: pumpkins, stone wall, trees, car, lamp post\n\nPossible interpretations:\n- Halloween display\n- Autumn decoration\n- Park decoration\n\nUncertainty notes: The car appears slightly blurred, suggesting motion\n\nQuality flags: motion blur on car",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 828,
+          "total_tokens": 2350,
+          "cost": 0.00129996,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129996,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009936
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 499,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

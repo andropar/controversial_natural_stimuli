@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_266",
+    "stim_key": "vicco_266",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 266,
+    "file_index": 265,
+    "image_name": "shared_4rep_vicco_266.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_266.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature/waterfall\",\n  \"short_caption\": \"A waterfall cascading into a turquoise pool surrounded by lush tropical vegetation, with people on rocky ledge above.\",\n  \"main_objects\": [\"waterfall\", \"pool\", \"trees\", \"rocks\", \"people\"],\n  \"possible_interpretations\": [\"tropical waterfall in rainforest\", \"natural swimming hole\", \"hiking or tourist destination\", \"cliff jumping spot\"],\n  \"uncertainty_notes\": \"People on the rocks are very small; exact number and activity unclear. Specific geographic location not identifiable.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319695-YAfSMCefwVYLbBo1p77h",
+        "object": "chat.completion",
+        "created": 1780319695,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature/waterfall\",\n  \"short_caption\": \"A waterfall cascading into a turquoise pool surrounded by lush tropical vegetation, with people on rocky ledge above.\",\n  \"main_objects\": [\"waterfall\", \"pool\", \"trees\", \"rocks\", \"people\"],\n  \"possible_interpretations\": [\"tropical waterfall in rainforest\", \"natural swimming hole\", \"hiking or tourist destination\", \"cliff jumping spot\"],\n  \"uncertainty_notes\": \"People on the rocks are very small; exact number and activity unclear. Specific geographic location not identifiable.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a natural outdoor scene with:\n- A waterfall cascading down rocks into a pool of turquoise/green water\n- Lush green vegetation/trees surrounding the scene\n- A rocky cliff/outcrop on the left side\n- Some people (small figures) visible on the rocks above, appearing to be on some kind of platform or jumping spot\n- Blue sky with some clouds visible at the top\n- The water pool in the foreground\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clear what this is (a waterfall in a tropical setting)\n- ambiguity: 1 - Very clear interpretation, it's a waterfall scene\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 3 - There are many elements (trees, rocks, water, people) but the scene is fairly organized\n- object_centricity: 2 - No single dominant object, it's more of a scene\n- scene_centricity: 5 - Clearly a scene/place\n- caption_confidence: 5 - Easy to caption\n\nObject counts:\n- Salient objects: Maybe 3-4 (waterfall, pool, vegetation, people)\n- Distinct categories: 4-5 (water, rocks, trees, people, sky)\n\nContent flags:\n- contains_person: true (small figures visible on the rocks)\n- contains_face: false (too small to see faces)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (it's a scene, not multiple objects)\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: nature/waterfall\n\nShort caption: \"A waterfall cascading into a turquoise pool surrounded by lush tropical vegetation, with people on rocks above.\"\n\nMain objects: [\"waterfall\", \"pool\", \"trees\", \"rocks\", \"people\"]\n\nPossible interpretations: [\"waterfall in tropical forest\", \"natural swimming hole\", \"tourist destination\"]\n\nUncertainty notes: People are very small in the image, hard to determine exact number or activity.\n\nQuality flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a natural outdoor scene with:\n- A waterfall cascading down rocks into a pool of turquoise/green water\n- Lush green vegetation/trees surrounding the scene\n- A rocky cliff/outcrop on the left side\n- Some people (small figures) visible on the rocks above, appearing to be on some kind of platform or jumping spot\n- Blue sky with some clouds visible at the top\n- The water pool in the foreground\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clear what this is (a waterfall in a tropical setting)\n- ambiguity: 1 - Very clear interpretation, it's a waterfall scene\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 3 - There are many elements (trees, rocks, water, people) but the scene is fairly organized\n- object_centricity: 2 - No single dominant object, it's more of a scene\n- scene_centricity: 5 - Clearly a scene/place\n- caption_confidence: 5 - Easy to caption\n\nObject counts:\n- Salient objects: Maybe 3-4 (waterfall, pool, vegetation, people)\n- Distinct categories: 4-5 (water, rocks, trees, people, sky)\n\nContent flags:\n- contains_person: true (small figures visible on the rocks)\n- contains_face: false (too small to see faces)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (it's a scene, not multiple objects)\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: nature/waterfall\n\nShort caption: \"A waterfall cascading into a turquoise pool surrounded by lush tropical vegetation, with people on rocks above.\"\n\nMain objects: [\"waterfall\", \"pool\", \"trees\", \"rocks\", \"people\"]\n\nPossible interpretations: [\"waterfall in tropical forest\", \"natural swimming hole\", \"tourist destination\"]\n\nUncertainty notes: People are very small in the image, hard to determine exact number or activity.\n\nQuality flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 844,
+          "total_tokens": 2366,
+          "cost": 0.00131916,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131916,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010128
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 565,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_77",
+    "stim_key": "dataset_77",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 77,
+    "file_index": 77,
+    "image_name": "image_0077.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0077.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: short_caption must be <= 20 words"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wedding\",\n  \"short_caption\": \"Three-tiered wedding cake with succulents and flowers on a wooden base, with 'HAPPILY EVER AFTER' sign\",\n  \"main_objects\": [\"wedding cake\", \"succulents\", \"pink flowers\", \"wooden crate\", \"marquee letters\", \"chalkboard sign\", \"round table\"],\n  \"possible_interpretations\": [\"wedding reception cake display\", \"engagement party dessert table\", \"anniversary celebration setup\"],\n  \"uncertainty_notes\": \"Background figures appear as indistinct silhouettes; top of marquee letters is cropped.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319065-w8GiVE04qX7sWFBrUhCP",
+        "object": "chat.completion",
+        "created": 1780319065,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wedding\",\n  \"short_caption\": \"Three-tiered wedding cake with succulents and flowers on a wooden base, with 'HAPPILY EVER AFTER' sign\",\n  \"main_objects\": [\"wedding cake\", \"succulents\", \"pink flowers\", \"wooden crate\", \"marquee letters\", \"chalkboard sign\", \"round table\"],\n  \"possible_interpretations\": [\"wedding reception cake display\", \"engagement party dessert table\", \"anniversary celebration setup\"],\n  \"uncertainty_notes\": \"Background figures appear as indistinct silhouettes; top of marquee letters is cropped.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The user wants me to annotate this image according to the provided schema. Let me analyze the image carefully.\n\nThe image shows a multi-tiered wedding cake (appears to be 3 tiers) decorated with succulents and pink/white flowers. The cake sits on a wooden crate-like base with two small chalkboard hearts with letters. The cake is on a round table with a white tablecloth, and there's a chalkboard sign that reads \"HAPPILY EVER AFTER\". In the background, there are illuminated marquee letters spelling \"LOVE\" (partially visible) and what appears to be a DJ setup or stage area with pink lighting. There's also a bunting/garland at the top of the image.\n\nLet me provide the ratings:\n\n- recognizability: 5 - Very clearly a wedding cake\n- ambiguity: 1 - Very clear what this is\n- natural_photo_typicality: 4 - Looks like a typical wedding photography shot\n- visual_clutter: 3 - Several elements but the cake is clearly the focus\n- object_centricity: 5 - The cake dominates\n- scene_centricity: 2 - It's more object-focused than scene-focused\n- caption_confidence: 5 - Very confident in caption\n\n- estimated_salient_object_count: 1 (the cake is the main subject)\n- estimated_distinct_object_categories: 5 (cake, table, letters, lights, decorations)\n\n- contains_person: false (silhouette in background but not a person focus)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (\"LOVE\", \"HAPPILY EVER AFTER\", letters on hearts)\n- contains_vehicle: false\n- contains_food: true (cake is food)\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"wedding/celebration\"\n\n- short_caption: \"Three-tiered wedding cake decorated with succulents and flowers on a wooden base\"\n- main_objects: [\"wedding cake\", \"succulents\", \"flowers\", \"wooden crate\", \"marquee letters\", \"chalkboard sign\"]\n- possible_interpretations: [\"wedding reception cake display\", \"engagement party cake\", \"anniversary celebration cake\"]\n- uncertainty_notes: \"Background figures are unclear silhouettes\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The user wants me to annotate this image according to the provided schema. Let me analyze the image carefully.\n\nThe image shows a multi-tiered wedding cake (appears to be 3 tiers) decorated with succulents and pink/white flowers. The cake sits on a wooden crate-like base with two small chalkboard hearts with letters. The cake is on a round table with a white tablecloth, and there's a chalkboard sign that reads \"HAPPILY EVER AFTER\". In the background, there are illuminated marquee letters spelling \"LOVE\" (partially visible) and what appears to be a DJ setup or stage area with pink lighting. There's also a bunting/garland at the top of the image.\n\nLet me provide the ratings:\n\n- recognizability: 5 - Very clearly a wedding cake\n- ambiguity: 1 - Very clear what this is\n- natural_photo_typicality: 4 - Looks like a typical wedding photography shot\n- visual_clutter: 3 - Several elements but the cake is clearly the focus\n- object_centricity: 5 - The cake dominates\n- scene_centricity: 2 - It's more object-focused than scene-focused\n- caption_confidence: 5 - Very confident in caption\n\n- estimated_salient_object_count: 1 (the cake is the main subject)\n- estimated_distinct_object_categories: 5 (cake, table, letters, lights, decorations)\n\n- contains_person: false (silhouette in background but not a person focus)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (\"LOVE\", \"HAPPILY EVER AFTER\", letters on hearts)\n- contains_vehicle: false\n- contains_food: true (cake is food)\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"wedding/celebration\"\n\n- short_caption: \"Three-tiered wedding cake decorated with succulents and flowers on a wooden base\"\n- main_objects: [\"wedding cake\", \"succulents\", \"flowers\", \"wooden crate\", \"marquee letters\", \"chalkboard sign\"]\n- possible_interpretations: [\"wedding reception cake display\", \"engagement party cake\", \"anniversary celebration cake\"]\n- uncertainty_notes: \"Background figures are unclear silhouettes\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 890,
+          "total_tokens": 2428,
+          "cost": 0.00137916,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00137916,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.001068
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 583,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

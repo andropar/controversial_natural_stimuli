@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_0",
+    "stim_key": "architecture_0",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 0,
+    "file_index": 0,
+    "image_name": "image_0000.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0000.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"hifi audio equipment\",\n\n  \"short_caption\": \"Hi-fi audio setup with wooden speakers, tube amplifier, and DAC on a table against curtains.\",\n  \"main_objects\": [\"wooden speakers\", \"tube headphone amplifier\", \"DAC\", \"digital audio player\", \"reed diffuser\"],\n  \"possible_interpretations\": [\"a home hi-fi audio system display\", \"a product showcase of audiophile equipment\", \"a personal listening station\"],\n  \"uncertainty_notes\": \"Left speaker is partially truncated; small display text on audio units is not clearly legible; exact brand and model of components are not identifiable.\",\n  \"quality_flags\": [\"partial_object_truncation\", \"low_text_legibility\"]\n}",
+      "response": {
+        "id": "gen-1780318845-grv99fqA2pEeKpCQSOvX",
+        "object": "chat.completion",
+        "created": 1780318845,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"hifi audio equipment\",\n\n  \"short_caption\": \"Hi-fi audio setup with wooden speakers, tube amplifier, and DAC on a table against curtains.\",\n  \"main_objects\": [\"wooden speakers\", \"tube headphone amplifier\", \"DAC\", \"digital audio player\", \"reed diffuser\"],\n  \"possible_interpretations\": [\"a home hi-fi audio system display\", \"a product showcase of audiophile equipment\", \"a personal listening station\"],\n  \"uncertainty_notes\": \"Left speaker is partially truncated; small display text on audio units is not clearly legible; exact brand and model of components are not identifiable.\",\n  \"quality_flags\": [\"partial_object_truncation\", \"low_text_legibility\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a hi-fi audio setup on a wooden table or shelf against a dark curtain background. I can see:\n- Two large wooden speakers (one on the left partially visible, one on the right prominently shown)\n- Several audio components in the middle: what appears to be a headphone amplifier with vacuum tubes, a DAC/amplifier unit, and a small digital display unit\n- A reed diffuser bottle on the left\n- Dark grey curtains as the backdrop\n- A wooden surface (table/shelf)\n- Some cables visible underneath\n\nLet me annotate this carefully.\n\nThe image is a clearly recognizable audio/hi-fi setup. It's a natural photo with typical photographic qualities. There's a moderate amount of objects but they're arranged neatly. The scene is the main content, though there are multiple main objects (speakers, audio equipment).\n\nLet me think about the ratings:\n- recognizability: 5 - very clearly a hi-fi audio setup\n- ambiguity: 1 - one clear interpretation\n- natural_photo_typicality: 5 - looks like a typical natural photograph\n- visual_clutter: 2 - relatively clean, organized arrangement\n- object_centricity: 3 - multiple objects but no single dominant one, though speakers are large\n- scene_centricity: 4 - it's more of a scene/setup than a single object\n- caption_confidence: 5 - easy to caption\n\nFor the categorical items:\n- contains_text: there's a small display screen on one of the units, possibly text\n- contains_indoor_scene: yes\n- contains_artificial_or_rendered_content: no\n- contains_multiple_main_objects: yes\n- estimated_salient_object_count: about 5-6 items\n- estimated_distinct_object_categories: speakers, audio amplifiers, DAC, diffuser, table, curtain - maybe 5\n\nmain_objects: speakers, headphone amplifier, DAC, digital player, reed diffuser\n\nsemantic domain: hi-fi audio equipment\n\nshort_caption: \"Hi-fi audio setup with wooden speakers and tube amplifier on a wooden table against curtains\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a hi-fi audio setup on a wooden table or shelf against a dark curtain background. I can see:\n- Two large wooden speakers (one on the left partially visible, one on the right prominently shown)\n- Several audio components in the middle: what appears to be a headphone amplifier with vacuum tubes, a DAC/amplifier unit, and a small digital display unit\n- A reed diffuser bottle on the left\n- Dark grey curtains as the backdrop\n- A wooden surface (table/shelf)\n- Some cables visible underneath\n\nLet me annotate this carefully.\n\nThe image is a clearly recognizable audio/hi-fi setup. It's a natural photo with typical photographic qualities. There's a moderate amount of objects but they're arranged neatly. The scene is the main content, though there are multiple main objects (speakers, audio equipment).\n\nLet me think about the ratings:\n- recognizability: 5 - very clearly a hi-fi audio setup\n- ambiguity: 1 - one clear interpretation\n- natural_photo_typicality: 5 - looks like a typical natural photograph\n- visual_clutter: 2 - relatively clean, organized arrangement\n- object_centricity: 3 - multiple objects but no single dominant one, though speakers are large\n- scene_centricity: 4 - it's more of a scene/setup than a single object\n- caption_confidence: 5 - easy to caption\n\nFor the categorical items:\n- contains_text: there's a small display screen on one of the units, possibly text\n- contains_indoor_scene: yes\n- contains_artificial_or_rendered_content: no\n- contains_multiple_main_objects: yes\n- estimated_salient_object_count: about 5-6 items\n- estimated_distinct_object_categories: speakers, audio amplifiers, DAC, diffuser, table, curtain - maybe 5\n\nmain_objects: speakers, headphone amplifier, DAC, digital player, reed diffuser\n\nsemantic domain: hi-fi audio equipment\n\nshort_caption: \"Hi-fi audio setup with wooden speakers and tube amplifier on a wooden table against curtains\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1363,
+          "completion_tokens": 792,
+          "total_tokens": 2155,
+          "cost": 0.00133194,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00133194,
+            "upstream_inference_prompt_cost": 0.00038154,
+            "upstream_inference_completions_cost": 0.0009504
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 502,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_18",
+    "stim_key": "all_models_18",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 18,
+    "file_index": 18,
+    "image_name": "image_0018.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0018.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature/outdoor/garden\",\n\n  \"short_caption\": \"Cylindrical bird feeder hanging from a metal hook during a snowstorm with bare trees behind.\",\n  \"main_objects\": [\"bird feeder\", \"metal hook\", \"bare trees\", \"building corner\"],\n  \"possible_interpretations\": [\"bird feeder in winter snowstorm\", \"wildlife feeding station\", \"snowy garden scene\"],\n  \"uncertainty_notes\": \"Falling snow reduces contrast and sharpness but the main subject is clearly identifiable.\",\n  \"quality_flags\": [\"snowy weather\", \"reduced contrast\", \"slight motion blur from precipitation\"]\n}",
+      "response": {
+        "id": "gen-1780318166-0ZJ7FJ8ksEaLbkEu9rPu",
+        "object": "chat.completion",
+        "created": 1780318166,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature/outdoor/garden\",\n\n  \"short_caption\": \"Cylindrical bird feeder hanging from a metal hook during a snowstorm with bare trees behind.\",\n  \"main_objects\": [\"bird feeder\", \"metal hook\", \"bare trees\", \"building corner\"],\n  \"possible_interpretations\": [\"bird feeder in winter snowstorm\", \"wildlife feeding station\", \"snowy garden scene\"],\n  \"uncertainty_notes\": \"Falling snow reduces contrast and sharpness but the main subject is clearly identifiable.\",\n  \"quality_flags\": [\"snowy weather\", \"reduced contrast\", \"slight motion blur from precipitation\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a bird feeder hanging from a metal hook/bracket during what appears to be a snowstorm. The feeder is cylindrical, has green tops and bottoms, and is partially filled with what looks like birdseed. There's snow accumulating on top of the feeder. The background shows bare trees with some remaining yellow/brown leaves, and snow is falling. In the bottom right corner, there appears to be part of a building or shed with snow on it.\n\nLet me annotate this according to the schema:\n\n- Recognizability: The main content (bird feeder) is clearly visible. 4\n- Ambiguity: Pretty clear what it is. 1\n- Natural photo typicality: Yes, looks like a natural photograph. 5\n- Visual clutter: There's the feeder, trees, snow, the hook, building corner - moderate. 3\n- Object centricity: The bird feeder is the central object. 4\n- Scene centricity: It has both an object focus and scene context. 2\n- Caption confidence: High, I can describe it. 5\n\n- Estimated salient object count: 1 (the bird feeder)\n- Estimated distinct object categories: 3 (feeder, trees, building)\n\n- Contains person: false\n- Contains face: false\n- Contains animal: false (no birds visible)\n- Contains text: false\n- Contains vehicle: false\n- Contains food: false (birdseed but not human food)\n- Contains indoor scene: false\n- Contains outdoor scene: true\n- Contains artificial or rendered content: false\n- Contains occlusion or truncation: true (the building is partially cut off, hook extends out)\n- Contains unusual viewpoint: false\n- Contains multiple main objects: false\n\n- Dominant content type: object\n- Image style: natural_photo\n- Semantic domain: nature/outdoor/garden\n\nShort caption: \"A cylindrical bird feeder hanging from a metal hook during a snowstorm with bare trees in the background.\"\n\nMain objects: bird feeder, metal hook, trees, building\n\nPossible interpretations: bird feeder, snowstorm scene, winter garden, wildlife feeding station\n\nUncertainty notes: The weather is harsh, making details slightly hard to see, but the main content is clear.\n\nQuality flags: snow affecting visibility, low contrast due to weather",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a bird feeder hanging from a metal hook/bracket during what appears to be a snowstorm. The feeder is cylindrical, has green tops and bottoms, and is partially filled with what looks like birdseed. There's snow accumulating on top of the feeder. The background shows bare trees with some remaining yellow/brown leaves, and snow is falling. In the bottom right corner, there appears to be part of a building or shed with snow on it.\n\nLet me annotate this according to the schema:\n\n- Recognizability: The main content (bird feeder) is clearly visible. 4\n- Ambiguity: Pretty clear what it is. 1\n- Natural photo typicality: Yes, looks like a natural photograph. 5\n- Visual clutter: There's the feeder, trees, snow, the hook, building corner - moderate. 3\n- Object centricity: The bird feeder is the central object. 4\n- Scene centricity: It has both an object focus and scene context. 2\n- Caption confidence: High, I can describe it. 5\n\n- Estimated salient object count: 1 (the bird feeder)\n- Estimated distinct object categories: 3 (feeder, trees, building)\n\n- Contains person: false\n- Contains face: false\n- Contains animal: false (no birds visible)\n- Contains text: false\n- Contains vehicle: false\n- Contains food: false (birdseed but not human food)\n- Contains indoor scene: false\n- Contains outdoor scene: true\n- Contains artificial or rendered content: false\n- Contains occlusion or truncation: true (the building is partially cut off, hook extends out)\n- Contains unusual viewpoint: false\n- Contains multiple main objects: false\n\n- Dominant content type: object\n- Image style: natural_photo\n- Semantic domain: nature/outdoor/garden\n\nShort caption: \"A cylindrical bird feeder hanging from a metal hook during a snowstorm with bare trees in the background.\"\n\nMain objects: bird feeder, metal hook, trees, building\n\nPossible interpretations: bird feeder, snowstorm scene, winter garden, wildlife feeding station\n\nUncertainty notes: The weather is harsh, making details slightly hard to see, but the main content is clear.\n\nQuality flags: snow affecting visibility, low contrast due to weather",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 828,
+          "total_tokens": 2350,
+          "cost": 0.00142284,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00142284,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009936
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 568,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

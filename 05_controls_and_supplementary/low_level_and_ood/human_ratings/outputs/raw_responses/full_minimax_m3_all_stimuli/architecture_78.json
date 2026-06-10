@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_78",
+    "stim_key": "architecture_78",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 78,
+    "file_index": 78,
+    "image_name": "image_0078.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0078.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"kitchen interior home\",\n  \"short_caption\": \"A spacious kitchen with wooden cabinets, granite-topped island, stainless steel appliances, and pendant lighting.\",\n  \"main_objects\": [\"refrigerator\", \"microwave\", \"wall oven\", \"pendant lights\", \"kitchen island\", \"wooden cabinets\", \"sink\", \"window\"],\n  \"possible_interpretations\": [\"Residential kitchen interior\", \"Newly built or staged home kitchen\"],\n  \"uncertainty_notes\": \"Slight warm color cast may indicate real-estate style processing, but image otherwise looks like a natural photograph.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318929-kbbJM049FLwWXFDFwWGe",
+        "object": "chat.completion",
+        "created": 1780318929,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"kitchen interior home\",\n  \"short_caption\": \"A spacious kitchen with wooden cabinets, granite-topped island, stainless steel appliances, and pendant lighting.\",\n  \"main_objects\": [\"refrigerator\", \"microwave\", \"wall oven\", \"pendant lights\", \"kitchen island\", \"wooden cabinets\", \"sink\", \"window\"],\n  \"possible_interpretations\": [\"Residential kitchen interior\", \"Newly built or staged home kitchen\"],\n  \"uncertainty_notes\": \"Slight warm color cast may indicate real-estate style processing, but image otherwise looks like a natural photograph.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a kitchen interior with:\n- Wooden cabinets (light brown/tan)\n- Granite countertops on an island\n- Stainless steel refrigerator on the left\n- Microwave and oven on the right\n- Pendant lights hanging from the ceiling\n- A window with greenery visible outside\n- Tile backsplash\n- Tiled floor\n- Sink area\n\nThis is clearly an indoor scene - a kitchen. Let me rate it according to the schema.\n\n- Recognizability: Very clear, it's obviously a kitchen. 5\n- Ambiguity: Low ambiguity, only one clear interpretation. 1\n- Natural photo typicality: Looks like a natural photo (possibly slightly enhanced for real estate, but appears natural). 4\n- Visual clutter: Moderate - many objects but organized. 3\n- Object centricity: Not really object-centric, it's a scene. 1\n- Scene centricity: Yes, this is clearly a scene/place. 5\n- Caption confidence: High, easy to caption. 5\n\n- Salient object count: Many objects - cabinets, island, fridge, microwave, oven, lights, sink. Maybe 7-8.\n- Distinct object categories: refrigerator, microwave, oven, sink, cabinets, pendant lights, countertops, backsplash, window - around 6-8\n\nContains: no person, no face, no animal, no text, no vehicle, no food, indoor scene yes, outdoor scene no (window shows outdoor but main is indoor), artificial/rendered - no, occlusion/truncation - no, unusual viewpoint - no, multiple main objects - yes in a sense\n\nDominant content: scene\nImage style: natural_photo (possibly slightly edited for real estate, but appears natural)\nSemantic domain: kitchen/interior/home\n\nShort caption: \"A spacious kitchen with wooden cabinets, granite island, stainless steel appliances, and pendant lighting.\"\n\nMain objects: refrigerator, microwave, oven, pendant lights, kitchen island, cabinets, sink, window\n\nPossible interpretations: A residential kitchen interior\n\nLet me finalize the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a kitchen interior with:\n- Wooden cabinets (light brown/tan)\n- Granite countertops on an island\n- Stainless steel refrigerator on the left\n- Microwave and oven on the right\n- Pendant lights hanging from the ceiling\n- A window with greenery visible outside\n- Tile backsplash\n- Tiled floor\n- Sink area\n\nThis is clearly an indoor scene - a kitchen. Let me rate it according to the schema.\n\n- Recognizability: Very clear, it's obviously a kitchen. 5\n- Ambiguity: Low ambiguity, only one clear interpretation. 1\n- Natural photo typicality: Looks like a natural photo (possibly slightly enhanced for real estate, but appears natural). 4\n- Visual clutter: Moderate - many objects but organized. 3\n- Object centricity: Not really object-centric, it's a scene. 1\n- Scene centricity: Yes, this is clearly a scene/place. 5\n- Caption confidence: High, easy to caption. 5\n\n- Salient object count: Many objects - cabinets, island, fridge, microwave, oven, lights, sink. Maybe 7-8.\n- Distinct object categories: refrigerator, microwave, oven, sink, cabinets, pendant lights, countertops, backsplash, window - around 6-8\n\nContains: no person, no face, no animal, no text, no vehicle, no food, indoor scene yes, outdoor scene no (window shows outdoor but main is indoor), artificial/rendered - no, occlusion/truncation - no, unusual viewpoint - no, multiple main objects - yes in a sense\n\nDominant content: scene\nImage style: natural_photo (possibly slightly edited for real estate, but appears natural)\nSemantic domain: kitchen/interior/home\n\nShort caption: \"A spacious kitchen with wooden cabinets, granite island, stainless steel appliances, and pendant lighting.\"\n\nMain objects: refrigerator, microwave, oven, pendant lights, kitchen island, cabinets, sink, window\n\nPossible interpretations: A residential kitchen interior\n\nLet me finalize the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 782,
+          "total_tokens": 2304,
+          "cost": 0.00136764,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00136764,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009384
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 498,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

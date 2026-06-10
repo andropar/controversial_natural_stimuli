@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_270",
+    "stim_key": "vicco_270",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 270,
+    "file_index": 269,
+    "image_name": "shared_4rep_vicco_270.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_270.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"transportation/urban/subway\",\n  \"short_caption\": \"New York City subway train stopped at an underground station platform with a passenger nearby.\",\n  \"main_objects\": [\"subway train\", \"passenger\", \"station platform\", \"tactile warning strip\"],\n  \"possible_interpretations\": [\n    \"NYC subway train at underground station\",\n    \"commuter waiting to board subway\",\n    \"subway train in service at platform\"\n  ],\n  \"uncertainty_notes\": \"Foreground person is seen from behind and partially truncated; face not visible. Another partially visible person in the background is small and unclear.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319700-kYi26XfvgC9bVx8kQnQh",
+        "object": "chat.completion",
+        "created": 1780319700,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"transportation/urban/subway\",\n  \"short_caption\": \"New York City subway train stopped at an underground station platform with a passenger nearby.\",\n  \"main_objects\": [\"subway train\", \"passenger\", \"station platform\", \"tactile warning strip\"],\n  \"possible_interpretations\": [\n    \"NYC subway train at underground station\",\n    \"commuter waiting to board subway\",\n    \"subway train in service at platform\"\n  ],\n  \"uncertainty_notes\": \"Foreground person is seen from behind and partially truncated; face not visible. Another partially visible person in the background is small and unclear.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a New York City Subway train at a station platform. I can see:\n- Silver/metallic subway cars with the MTA \"New York City Subway\" logo\n- Car numbers \"9451\" and \"9452\" visible on the train\n- The train doors are visible\n- A subway platform with tiled floor and an orange/red tactile warning strip\n- A person on the right side wearing a dark jacket (partially visible, back to camera)\n- Another person partially visible in the background\n- The setting is clearly an underground subway station\n- Lighting is artificial/indoor\n\nLet me rate each attribute:\n\n- recognizability: 5 - Very clear what's happening\n- ambiguity: 1 - Very clear interpretation\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 2 - Not too cluttered, focused on train and platform\n- object_centricity: 3 - The train is the main object but takes up significant space\n- scene_centricity: 4 - This is more of a scene (subway station) than a single object\n- caption_confidence: 5 - Very confident in captioning\n\nSalient objects: subway train, person, platform\nDistinct categories: 3 (train, person, platform/tiles)\n\nContains: person (partially), text (numbers and logo), vehicle (train), indoor scene, no face visible (person is facing away), no animal, no food, no outdoor scene\n\nThe person on the right - I can see them but their face isn't visible. There's another person in the background.\n\nNo occlusion of main subjects really, the person on the right is partially out of frame (truncation).\n\nMultiple main objects? The train and person are both prominent, but the train dominates. I'd say no.\n\nDominant content: scene (subway station)\nImage style: natural_photo\nSemantic domain: transportation/urban/subway\n\nShort caption: \"New York City subway train at an underground station platform with a person standing nearby.\"\n\nMain objects: subway train, person, platform tiles\nPossible interpretations: NYC subway train at platform, commuter waiting for train\nUncertainty: face not visible on person, exact context unclear\nQuality flags: none major",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a New York City Subway train at a station platform. I can see:\n- Silver/metallic subway cars with the MTA \"New York City Subway\" logo\n- Car numbers \"9451\" and \"9452\" visible on the train\n- The train doors are visible\n- A subway platform with tiled floor and an orange/red tactile warning strip\n- A person on the right side wearing a dark jacket (partially visible, back to camera)\n- Another person partially visible in the background\n- The setting is clearly an underground subway station\n- Lighting is artificial/indoor\n\nLet me rate each attribute:\n\n- recognizability: 5 - Very clear what's happening\n- ambiguity: 1 - Very clear interpretation\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 2 - Not too cluttered, focused on train and platform\n- object_centricity: 3 - The train is the main object but takes up significant space\n- scene_centricity: 4 - This is more of a scene (subway station) than a single object\n- caption_confidence: 5 - Very confident in captioning\n\nSalient objects: subway train, person, platform\nDistinct categories: 3 (train, person, platform/tiles)\n\nContains: person (partially), text (numbers and logo), vehicle (train), indoor scene, no face visible (person is facing away), no animal, no food, no outdoor scene\n\nThe person on the right - I can see them but their face isn't visible. There's another person in the background.\n\nNo occlusion of main subjects really, the person on the right is partially out of frame (truncation).\n\nMultiple main objects? The train and person are both prominent, but the train dominates. I'd say no.\n\nDominant content: scene (subway station)\nImage style: natural_photo\nSemantic domain: transportation/urban/subway\n\nShort caption: \"New York City subway train at an underground station platform with a person standing nearby.\"\n\nMain objects: subway train, person, platform tiles\nPossible interpretations: NYC subway train at platform, commuter waiting for train\nUncertainty: face not visible on person, exact context unclear\nQuality flags: none major",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 831,
+          "total_tokens": 2353,
+          "cost": 0.00142644,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00142644,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009972
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 558,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_195",
+    "stim_key": "vicco_195",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 195,
+    "file_index": 194,
+    "image_name": "shared_4rep_vicco_195.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_195.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"leisure\",\n  \"short_caption\": \"A hand holding an open book while sitting on a sandy beach\",\n  \"main_objects\": [\"book\", \"hand\", \"beach\", \"ocean\"],\n  \"possible_interpretations\": [\"reading a book on the beach\", \"vacation leisure reading\", \"first-person POV of reading outdoors\", \"photographing a book being read\"],\n  \"uncertainty_notes\": \"The book text is legible enough to identify it as Pascal's Pensees, but the reader's body and the top/bottom of the book are cropped by the frame.\",\n  \"quality_flags\": [\"shallow depth of field\", \"framed crop of book and reader\"]\n}",
+      "response": {
+        "id": "gen-1780319613-zDZ4syCSgbgY8JHf3k0S",
+        "object": "chat.completion",
+        "created": 1780319613,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"leisure\",\n  \"short_caption\": \"A hand holding an open book while sitting on a sandy beach\",\n  \"main_objects\": [\"book\", \"hand\", \"beach\", \"ocean\"],\n  \"possible_interpretations\": [\"reading a book on the beach\", \"vacation leisure reading\", \"first-person POV of reading outdoors\", \"photographing a book being read\"],\n  \"uncertainty_notes\": \"The book text is legible enough to identify it as Pascal's Pensees, but the reader's body and the top/bottom of the book are cropped by the frame.\",\n  \"quality_flags\": [\"shallow depth of field\", \"framed crop of book and reader\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a hand holding an open book (appears to be a paperback novel) while sitting on a beach. I can see the pages of a book with text, a thumb/finger holding it, and in the background there's a beach scene with ocean/sea and cloudy sky. I can also see what appears to be a person's leg/knee in jeans.\n\nThe book title visible is \"PASCAL\" - this appears to be a collection of Pascal's Pensées (numbered aphorisms visible: 36, 37, 39, 40, 41, 42, 43, 44).\n\nLet me annotate based on the schema:\n\n- recognizability: 4 - Clear scene of reading a book on a beach\n- ambiguity: 2 - Pretty clear what's happening\n- natural_photo_typicality: 4 - Looks like a natural photo\n- visual_clutter: 3 - Some elements (book, hand, beach, sky, leg)\n- object_centricity: 3 - The book is a clear object but context is important\n- scene_centricity: 3 - Beach scene is visible in background\n- caption_confidence: 4 - Can describe well\n\n- estimated_salient_object_count: 3 (book, hand, leg/foot)\n- estimated_distinct_object_categories: 3 (book, hand/person parts, beach scenery)\n\n- contains_person: true (hand, leg)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (book text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true (beach)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (book is cut off at top/bottom)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (book is main, others are secondary)\n\n- dominant_content_type: \"object\" (the book)\n- image_style: \"natural_photo\"\n- semantic_domain: \"leisure\"\n\n- short_caption: \"A hand holding an open book while relaxing on a sandy beach\"\n- main_objects: [\"book\", \"hand\", \"beach\", \"ocean\"]\n- possible_interpretations: [\"reading on beach\", \"vacation/leisure reading\", \"first-person POV reading\", \"photographing a book being read\"]\n- uncertainty_notes: \"The book text is in focus but the beach background is slightly soft; part of the book and reader are cut off by the frame.\"\n- quality_flags: [\"partial occlusion\", \"shallow depth of field\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a hand holding an open book (appears to be a paperback novel) while sitting on a beach. I can see the pages of a book with text, a thumb/finger holding it, and in the background there's a beach scene with ocean/sea and cloudy sky. I can also see what appears to be a person's leg/knee in jeans.\n\nThe book title visible is \"PASCAL\" - this appears to be a collection of Pascal's Pensées (numbered aphorisms visible: 36, 37, 39, 40, 41, 42, 43, 44).\n\nLet me annotate based on the schema:\n\n- recognizability: 4 - Clear scene of reading a book on a beach\n- ambiguity: 2 - Pretty clear what's happening\n- natural_photo_typicality: 4 - Looks like a natural photo\n- visual_clutter: 3 - Some elements (book, hand, beach, sky, leg)\n- object_centricity: 3 - The book is a clear object but context is important\n- scene_centricity: 3 - Beach scene is visible in background\n- caption_confidence: 4 - Can describe well\n\n- estimated_salient_object_count: 3 (book, hand, leg/foot)\n- estimated_distinct_object_categories: 3 (book, hand/person parts, beach scenery)\n\n- contains_person: true (hand, leg)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (book text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true (beach)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (book is cut off at top/bottom)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (book is main, others are secondary)\n\n- dominant_content_type: \"object\" (the book)\n- image_style: \"natural_photo\"\n- semantic_domain: \"leisure\"\n\n- short_caption: \"A hand holding an open book while relaxing on a sandy beach\"\n- main_objects: [\"book\", \"hand\", \"beach\", \"ocean\"]\n- possible_interpretations: [\"reading on beach\", \"vacation/leisure reading\", \"first-person POV reading\", \"photographing a book being read\"]\n- uncertainty_notes: \"The book text is in focus but the beach background is slightly soft; part of the book and reader are cut off by the frame.\"\n- quality_flags: [\"partial occlusion\", \"shallow depth of field\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 930,
+          "total_tokens": 2452,
+          "cost": 0.00142236,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00142236,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.001116
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 571,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

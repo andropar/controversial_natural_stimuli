@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_260",
+    "stim_key": "vicco_260",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 260,
+    "file_index": 259,
+    "image_name": "shared_4rep_vicco_260.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_260.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 5, \"visual_clutter\": 4, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 4, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"outdoor ground\", \"short_caption\": \"Blue tarp partially covering a pile of gravel and stones outdoors near vegetation\", \"main_objects\": [\"blue tarp\", \"gravel\", \"stones\", \"metal pipe\", \"vegetation\"], \"possible_interpretations\": [\"blue tarp covering a gravel pile outdoors\", \"construction or landscaping site\", \"discarded tarp and rubble on the ground\"], \"uncertainty_notes\": \"Tarp condition and purpose (covering vs. discarded) is unclear; some blue pieces appear separated from the main tarp.\", \"quality_flags\": [\"partially_out_of_frame_tarp\", \"low_contrast_blue_on_gray\"]}",
+      "response": {
+        "id": "gen-1780319686-TGaAvVE6v0nYJaRUKyA5",
+        "object": "chat.completion",
+        "created": 1780319686,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 5, \"visual_clutter\": 4, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 4, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"outdoor ground\", \"short_caption\": \"Blue tarp partially covering a pile of gravel and stones outdoors near vegetation\", \"main_objects\": [\"blue tarp\", \"gravel\", \"stones\", \"metal pipe\", \"vegetation\"], \"possible_interpretations\": [\"blue tarp covering a gravel pile outdoors\", \"construction or landscaping site\", \"discarded tarp and rubble on the ground\"], \"uncertainty_notes\": \"Tarp condition and purpose (covering vs. discarded) is unclear; some blue pieces appear separated from the main tarp.\", \"quality_flags\": [\"partially_out_of_frame_tarp\", \"low_contrast_blue_on_gray\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an outdoor scene with:\n- A blue tarp or cover partially covering gravel/rocks\n- Gravel and small stones scattered on the ground\n- A metal pipe or post visible in the upper right\n- Some green vegetation/plants in the upper left\n- Some brown leaves/debris\n- The blue material appears torn or displaced\n\nLet me assess each dimension:\n\n- recognizability: The content is fairly clear - it's a blue tarp/cover on gravel ground. Moderate recognizability, maybe 4.\n- ambiguity: Not very ambiguous, it's clearly a tarp on ground. Maybe 2.\n- natural_photo_typicality: Looks like a natural/unedited photograph. 5.\n- visual_clutter: There are many small stones, leaves, pieces of tarp - quite cluttered. 4.\n- object_centricity: No single dominant object, more of a scene. 2.\n- scene_centricity: It's primarily a scene/outdoor location. 4.\n- caption_confidence: Fairly confident about what's shown. 4.\n\nMain objects: tarp, gravel, stones, pipe/post, vegetation\nEstimated salient object count: 3-4 (tarp, pipe, gravel pile, vegetation)\nEstimated distinct object categories: 4\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (tarp is partially out of frame)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: outdoor/ground\n\nshort_caption: \"Blue tarp partially covering a pile of gravel and stones outdoors\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an outdoor scene with:\n- A blue tarp or cover partially covering gravel/rocks\n- Gravel and small stones scattered on the ground\n- A metal pipe or post visible in the upper right\n- Some green vegetation/plants in the upper left\n- Some brown leaves/debris\n- The blue material appears torn or displaced\n\nLet me assess each dimension:\n\n- recognizability: The content is fairly clear - it's a blue tarp/cover on gravel ground. Moderate recognizability, maybe 4.\n- ambiguity: Not very ambiguous, it's clearly a tarp on ground. Maybe 2.\n- natural_photo_typicality: Looks like a natural/unedited photograph. 5.\n- visual_clutter: There are many small stones, leaves, pieces of tarp - quite cluttered. 4.\n- object_centricity: No single dominant object, more of a scene. 2.\n- scene_centricity: It's primarily a scene/outdoor location. 4.\n- caption_confidence: Fairly confident about what's shown. 4.\n\nMain objects: tarp, gravel, stones, pipe/post, vegetation\nEstimated salient object count: 3-4 (tarp, pipe, gravel pile, vegetation)\nEstimated distinct object categories: 4\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (tarp is partially out of frame)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: outdoor/ground\n\nshort_caption: \"Blue tarp partially covering a pile of gravel and stones outdoors\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 738,
+          "total_tokens": 2260,
+          "cost": 0.00119196,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00119196,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008856
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 449,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

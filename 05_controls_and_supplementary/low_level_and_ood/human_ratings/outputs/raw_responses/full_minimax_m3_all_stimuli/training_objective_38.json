@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_38",
+    "stim_key": "training_objective_38",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 38,
+    "file_index": 38,
+    "image_name": "image_0038.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0038.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"animals\",\n  \"short_caption\": \"A black fluffy puppy resting on a light wooden log with hay in the background.\",\n  \"main_objects\": [\"black puppy\", \"wooden log\", \"hay\"],\n  \"possible_interpretations\": [\"A black Newfoundland-type puppy lying on a log\", \"A black fluffy puppy resting outdoors near straw\"],\n  \"uncertainty_notes\": \"Exact breed is uncertain; face belongs to an animal, not a human.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319316-4mrHXNoC9mQx8tKv3DsT",
+        "object": "chat.completion",
+        "created": 1780319316,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"animals\",\n  \"short_caption\": \"A black fluffy puppy resting on a light wooden log with hay in the background.\",\n  \"main_objects\": [\"black puppy\", \"wooden log\", \"hay\"],\n  \"possible_interpretations\": [\"A black Newfoundland-type puppy lying on a log\", \"A black fluffy puppy resting outdoors near straw\"],\n  \"uncertainty_notes\": \"Exact breed is uncertain; face belongs to an animal, not a human.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a black, fluffy puppy (looks like a Newfoundland or similar breed) lying on a light-colored log or piece of wood. In the background, there appears to be hay or straw and a dark wooden surface (possibly a fence or wall).\n\nLet me provide annotations:\n\n- Recognizability: 5 - Very clearly a puppy\n- Ambiguity: 1 - Very clear what it is\n- Natural_photo_typicality: 5 - Looks like a typical natural photo\n- Visual_clutter: 2 - Mostly the puppy with some background\n- Object_centricity: 4 - The puppy dominates\n- Scene_centricity: 2 - It's more about the puppy than the scene\n- Caption_confidence: 5 - Very confident\n\nSalient objects: 1 (the puppy)\nDistinct categories: 1 (dog)\n\nContains person: false\nContains face: false (puppy face, but not a human face)\nContains animal: true\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor scene: false (appears outdoor)\nContains outdoor scene: true\nContains artificial/rendered: false\nContains occlusion: false\nContains unusual viewpoint: false\nContains multiple main objects: false\n\nDominant content: animal\nImage style: natural_photo\nSemantic domain: animals\n\nShort caption: \"A black fluffy puppy lying on a wooden log with hay in the background.\"\n\nMain objects: [\"black puppy\", \"wooden log\", \"hay/straw\"]\n\nPossible interpretations: [\"A black Newfoundland puppy resting\", \"A black fluffy puppy on a log\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a black, fluffy puppy (looks like a Newfoundland or similar breed) lying on a light-colored log or piece of wood. In the background, there appears to be hay or straw and a dark wooden surface (possibly a fence or wall).\n\nLet me provide annotations:\n\n- Recognizability: 5 - Very clearly a puppy\n- Ambiguity: 1 - Very clear what it is\n- Natural_photo_typicality: 5 - Looks like a typical natural photo\n- Visual_clutter: 2 - Mostly the puppy with some background\n- Object_centricity: 4 - The puppy dominates\n- Scene_centricity: 2 - It's more about the puppy than the scene\n- Caption_confidence: 5 - Very confident\n\nSalient objects: 1 (the puppy)\nDistinct categories: 1 (dog)\n\nContains person: false\nContains face: false (puppy face, but not a human face)\nContains animal: true\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor scene: false (appears outdoor)\nContains outdoor scene: true\nContains artificial/rendered: false\nContains occlusion: false\nContains unusual viewpoint: false\nContains multiple main objects: false\n\nDominant content: animal\nImage style: natural_photo\nSemantic domain: animals\n\nShort caption: \"A black fluffy puppy lying on a wooden log with hay in the background.\"\n\nMain objects: [\"black puppy\", \"wooden log\", \"hay/straw\"]\n\nPossible interpretations: [\"A black Newfoundland puppy resting\", \"A black fluffy puppy on a log\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 661,
+          "total_tokens": 2183,
+          "cost": 0.00109956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00109956,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0007932
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 386,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

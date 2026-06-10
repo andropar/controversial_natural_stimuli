@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_109",
+    "stim_key": "vicco_109",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 109,
+    "file_index": 108,
+    "image_name": "shared_4rep_vicco_109.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_109.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 30,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"retail\",\n  \"short_caption\": \"Colorful yarn balls organized on wooden store shelves with a price tag\",\n  \"main_objects\": [\"yarn balls\", \"wooden shelves\", \"price tag\"],\n  \"possible_interpretations\": [\"yarn store display\", \"knitting supplies retail shelf\", \"craft store organization\", \"wool shop inventory\"],\n  \"uncertainty_notes\": \"Exact number of yarn balls is approximate; some are partially cut off at edges\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319515-rQG6wgDSYBPGJrzVLZZj",
+        "object": "chat.completion",
+        "created": 1780319515,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 30,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"retail\",\n  \"short_caption\": \"Colorful yarn balls organized on wooden store shelves with a price tag\",\n  \"main_objects\": [\"yarn balls\", \"wooden shelves\", \"price tag\"],\n  \"possible_interpretations\": [\"yarn store display\", \"knitting supplies retail shelf\", \"craft store organization\", \"wool shop inventory\"],\n  \"uncertainty_notes\": \"Exact number of yarn balls is approximate; some are partially cut off at edges\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows wooden shelves filled with various colored balls/skeins of yarn. The yarns are organized in cubby-like compartments, and they come in many colors including purple, blue, teal, green, gray, brown, black, white, and orange/rust. There's a price tag visible that says \"PURO VEGAN 90m 6,95€ 5,50€\" suggesting this is a yarn store display.\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - very clearly yarn on shelves\n- ambiguity: 1 - unambiguous, clearly yarn display\n- natural_photo_typicality: 4 - looks like a typical photograph, though it's a store interior\n- visual_clutter: 3 - many items but organized in a grid\n- object_centricity: 3 - no single dominant object, but the yarn balls are the focus\n- scene_centricity: 3 - it's a scene of a store display\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: many yarn balls, maybe 30+ visible\n- estimated_distinct_object_categories: 1 (yarn) but in many colors\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (price tag)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: object (or scene)\nimage_style: natural_photo\nsemantic_domain: \"retail\" or \"crafts\"\n\nLet me decide on dominant_content_type - the image is primarily about the yarn objects displayed, but it's also showing a retail display scene. I'll go with \"object\" since the yarn balls dominate.\n\nActually, thinking more carefully - it's a display of objects, so \"object\" works. But it's also showing a scene/setting. I'll go with \"object\" as the yarn balls are the focus.\n\nshort_caption: \"Colorful yarn balls organized on wooden store shelves\"\nmain_objects: [\"yarn balls\", \"wooden shelves\", \"price tag\"]\npossible_interpretations: [\"yarn store display\", \"craft store shelves\", \"knitting supplies display\"]\nuncertainty_notes: \"Some yarn balls are partially visible at the edges\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows wooden shelves filled with various colored balls/skeins of yarn. The yarns are organized in cubby-like compartments, and they come in many colors including purple, blue, teal, green, gray, brown, black, white, and orange/rust. There's a price tag visible that says \"PURO VEGAN 90m 6,95€ 5,50€\" suggesting this is a yarn store display.\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - very clearly yarn on shelves\n- ambiguity: 1 - unambiguous, clearly yarn display\n- natural_photo_typicality: 4 - looks like a typical photograph, though it's a store interior\n- visual_clutter: 3 - many items but organized in a grid\n- object_centricity: 3 - no single dominant object, but the yarn balls are the focus\n- scene_centricity: 3 - it's a scene of a store display\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: many yarn balls, maybe 30+ visible\n- estimated_distinct_object_categories: 1 (yarn) but in many colors\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (price tag)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: object (or scene)\nimage_style: natural_photo\nsemantic_domain: \"retail\" or \"crafts\"\n\nLet me decide on dominant_content_type - the image is primarily about the yarn objects displayed, but it's also showing a retail display scene. I'll go with \"object\" since the yarn balls dominate.\n\nActually, thinking more carefully - it's a display of objects, so \"object\" works. But it's also showing a scene/setting. I'll go with \"object\" as the yarn balls are the focus.\n\nshort_caption: \"Colorful yarn balls organized on wooden store shelves\"\nmain_objects: [\"yarn balls\", \"wooden shelves\", \"price tag\"]\npossible_interpretations: [\"yarn store display\", \"craft store shelves\", \"knitting supplies display\"]\nuncertainty_notes: \"Some yarn balls are partially visible at the edges\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 862,
+          "total_tokens": 2384,
+          "cost": 0.00134076,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00134076,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010344
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 581,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

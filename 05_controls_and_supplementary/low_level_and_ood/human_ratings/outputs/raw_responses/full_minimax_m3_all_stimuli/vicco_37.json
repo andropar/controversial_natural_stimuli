@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_37",
+    "stim_key": "vicco_37",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 37,
+    "file_index": 36,
+    "image_name": "shared_4rep_vicco_037.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_037.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: short_caption must be <= 20 words"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 2, \"object_centricity\": 4, \"scene_centricity\": 3, \"caption_confidence\": 5, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": true, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"mixed\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"underwater marine life\", \"short_caption\": \"Scuba diver examining a large barrel sponge on a coral reef\", \"main_objects\": [\"scuba diver\", \"barrel sponge\", \"butterflyfish\", \"coral reef\"], \"possible_interpretations\": [\"scuba diver examining a barrel sponge\", \"underwater nature photography\", \"recreational scuba dive on a reef\", \"marine life observation\"], \"uncertainty_notes\": \"Small fish species on the right is uncertain; visibility somewhat limited by blue water\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319456-EYOqGXwttBbEgQmEKfSj",
+        "object": "chat.completion",
+        "created": 1780319456,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 2, \"object_centricity\": 4, \"scene_centricity\": 3, \"caption_confidence\": 5, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 3, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": true, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"mixed\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"underwater marine life\", \"short_caption\": \"Scuba diver examining a large barrel sponge on a coral reef\", \"main_objects\": [\"scuba diver\", \"barrel sponge\", \"butterflyfish\", \"coral reef\"], \"possible_interpretations\": [\"scuba diver examining a barrel sponge\", \"underwater nature photography\", \"recreational scuba dive on a reef\", \"marine life observation\"], \"uncertainty_notes\": \"Small fish species on the right is uncertain; visibility somewhat limited by blue water\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "The user wants me to annotate the image with structured JSON. Let me analyze the image carefully.\n\nThe image shows:\n- A scuba diver underwater\n- A large barrel sponge (looks like a giant barrel sponge) in the foreground\n- Blue ocean water\n- A small fish (looks like a butterflyfish) on the right\n- Coral reef elements in the background\n- The diver is wearing a mask and BCD/regulator\n- Bubbles rising from the diver\n\nLet me rate this:\n\n- recognizability: 4 - clearly recognizable as a scuba diver with a barrel sponge\n- ambiguity: 1 - very clear what's happening\n- natural_photo_typicality: 5 - looks like a typical underwater nature photograph\n- visual_clutter: 2 - relatively clean, main subject is clear\n- object_centricity: 4 - the sponge dominates, with diver behind\n- scene_centricity: 3 - it's a scene but with clear objects\n- caption_confidence: 5 - very confident in caption\n\nCounts:\n- estimated_salient_object_count: 3 (diver, barrel sponge, small fish)\n- estimated_distinct_object_categories: 3\n\nBooleans:\n- contains_person: true (diver)\n- contains_face: true (diver's face visible behind mask)\n- contains_animal: true (fish)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: false (underwater, neither)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (diver and sponge)\n\ndominant_content_type: \"mixed\" - has person and object/animal\nimage_style: \"natural_photo\"\nsemantic_domain: \"underwater marine life\"\n\nshort_caption: \"Scuba diver exploring a large barrel sponge on a coral reef\"\nmain_objects: [\"scuba diver\", \"barrel sponge\", \"butterflyfish\", \"coral reef\"]\npossible_interpretations: [\"scuba diver examining barrel sponge\", \"underwater photography session\", \"marine biology dive\", \"recreational diving\"]\nuncertainty_notes: \"underwater visibility is slightly limited; fish species uncertain\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The user wants me to annotate the image with structured JSON. Let me analyze the image carefully.\n\nThe image shows:\n- A scuba diver underwater\n- A large barrel sponge (looks like a giant barrel sponge) in the foreground\n- Blue ocean water\n- A small fish (looks like a butterflyfish) on the right\n- Coral reef elements in the background\n- The diver is wearing a mask and BCD/regulator\n- Bubbles rising from the diver\n\nLet me rate this:\n\n- recognizability: 4 - clearly recognizable as a scuba diver with a barrel sponge\n- ambiguity: 1 - very clear what's happening\n- natural_photo_typicality: 5 - looks like a typical underwater nature photograph\n- visual_clutter: 2 - relatively clean, main subject is clear\n- object_centricity: 4 - the sponge dominates, with diver behind\n- scene_centricity: 3 - it's a scene but with clear objects\n- caption_confidence: 5 - very confident in caption\n\nCounts:\n- estimated_salient_object_count: 3 (diver, barrel sponge, small fish)\n- estimated_distinct_object_categories: 3\n\nBooleans:\n- contains_person: true (diver)\n- contains_face: true (diver's face visible behind mask)\n- contains_animal: true (fish)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: false (underwater, neither)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (diver and sponge)\n\ndominant_content_type: \"mixed\" - has person and object/animal\nimage_style: \"natural_photo\"\nsemantic_domain: \"underwater marine life\"\n\nshort_caption: \"Scuba diver exploring a large barrel sponge on a coral reef\"\nmain_objects: [\"scuba diver\", \"barrel sponge\", \"butterflyfish\", \"coral reef\"]\npossible_interpretations: [\"scuba diver examining barrel sponge\", \"underwater photography session\", \"marine biology dive\", \"recreational diving\"]\nuncertainty_notes: \"underwater visibility is slightly limited; fish species uncertain\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 807,
+          "total_tokens": 2345,
+          "cost": 0.00127956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00127956,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.0009684
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 540,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -6,9 +6,9 @@ Shows that the first ~20 greedy-selected stimuli produce similar brain
 alignment patterns to the full 100-stimulus set.
 
 Inputs:
-    data/subset_scores_K20.csv       (subset scores)
-    data/{subject}/crsa_scores.csv   (full scores, fRSA)
-    data/{subject}/wrsa_transfer_scores.csv  (full scores, mRSA)
+    03_alignment_inference/results/subset_scores_K20.csv       (subset scores)
+    01_brain_model_alignment/results/rsa_scores/{subject}/crsa_scores.csv   (full scores, fRSA)
+    01_brain_model_alignment/results/rsa_scores/{subject}/wrsa_transfer_scores.csv  (full scores, mRSA)
 
 Outputs:
     figures/brain_alignment_subset.pdf/png
@@ -21,10 +21,10 @@ import argparse
 import sys
 from pathlib import Path
 
-_PAPER = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_PAPER.parents[1]))  # project root
-sys.path.insert(0, str(_PAPER / "figures"))  # for style.py
+STAGE = Path(__file__).resolve().parents[3]
+SHARE_ROOT = STAGE.parent
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
 import config
 
 import numpy as np
@@ -37,7 +37,7 @@ MODEL_DISPLAY_NAMES = config.MODEL_DISPLAY_NAMES
 SUBJECTS = config.SUBJECTS
 STATS_DATA_DIR = config.STATS_DATA_DIR
 RSA_DATA_DIR = config.RSA_DATA_DIR
-FIGURES_DIR = Path(__file__).resolve().parent
+FIGURES_DIR = STAGE / "figures" / "rsa_scores"
 
 from style import apply_style, FONT, DPI, W_DOUBLE
 

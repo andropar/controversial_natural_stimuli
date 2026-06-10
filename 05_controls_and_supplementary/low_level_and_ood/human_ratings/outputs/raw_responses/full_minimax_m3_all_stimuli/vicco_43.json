@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_43",
+    "stim_key": "vicco_43",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 43,
+    "file_index": 42,
+    "image_name": "shared_4rep_vicco_043.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_043.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"travel_packing\",\n  \"short_caption\": \"Open red suitcase filled with folded clothing, jeans resting beside it on a floor\",\n  \"main_objects\": [\"red suitcase\", \"folded clothes\", \"denim jeans\"],\n  \"possible_interpretations\": [\"someone packing for a trip\", \"returning from a trip and unpacking\", \"organizing wardrobe items\"],\n  \"uncertainty_notes\": \"Some clothing patterns and items are partially obscured by the suitcase lid and other garments\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319439-abtL0l20wJtezogD37VB",
+        "object": "chat.completion",
+        "created": 1780319439,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"travel_packing\",\n  \"short_caption\": \"Open red suitcase filled with folded clothing, jeans resting beside it on a floor\",\n  \"main_objects\": [\"red suitcase\", \"folded clothes\", \"denim jeans\"],\n  \"possible_interpretations\": [\"someone packing for a trip\", \"returning from a trip and unpacking\", \"organizing wardrobe items\"],\n  \"uncertainty_notes\": \"Some clothing patterns and items are partially obscured by the suitcase lid and other garments\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an open red suitcase filled with various clothing items. I can see:\n- A red/maroon hard-shell suitcase that is open\n- Inside the suitcase, there are folded clothes: a red top/shirt, a white shirt with small dark pattern (possibly polka dots), a floral patterned garment, a black and white speckled item, and white/cream colored clothing\n- To the left, there's a pair of dark denim jeans\n- The setting appears to be indoors on a wooden/tiled floor\n- The suitcase has a mesh zippered compartment on the lid\n\nLet me assess each dimension:\n\n- recognizability: Very clear - it's obviously a suitcase with clothes being packed. 5\n- ambiguity: Not ambiguous at all - clearly a packing scene. 1\n- natural_photo_typicality: Looks like a typical natural photograph. 5\n- visual_clutter: Multiple clothing items and a suitcase, moderate clutter. 3\n- object_centricity: The suitcase dominates the image. 4\n- scene_centricity: More object-focused than scene-focused. 2\n- caption_confidence: Very confident in captioning. 5\n\n- estimated_salient_object_count: 1 main (suitcase) with clothes inside\n- estimated_distinct_object_categories: 2-3 (suitcase, clothing, jeans)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (slightly overhead but typical)\n- contains_multiple_main_objects: false\n\ndominant_content_type: object\nimage_style: natural_photo\nsemantic_domain: travel/packing\n\nshort_caption: \"Open red suitcase filled with folded clothes, with jeans beside it\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an open red suitcase filled with various clothing items. I can see:\n- A red/maroon hard-shell suitcase that is open\n- Inside the suitcase, there are folded clothes: a red top/shirt, a white shirt with small dark pattern (possibly polka dots), a floral patterned garment, a black and white speckled item, and white/cream colored clothing\n- To the left, there's a pair of dark denim jeans\n- The setting appears to be indoors on a wooden/tiled floor\n- The suitcase has a mesh zippered compartment on the lid\n\nLet me assess each dimension:\n\n- recognizability: Very clear - it's obviously a suitcase with clothes being packed. 5\n- ambiguity: Not ambiguous at all - clearly a packing scene. 1\n- natural_photo_typicality: Looks like a typical natural photograph. 5\n- visual_clutter: Multiple clothing items and a suitcase, moderate clutter. 3\n- object_centricity: The suitcase dominates the image. 4\n- scene_centricity: More object-focused than scene-focused. 2\n- caption_confidence: Very confident in captioning. 5\n\n- estimated_salient_object_count: 1 main (suitcase) with clothes inside\n- estimated_distinct_object_categories: 2-3 (suitcase, clothing, jeans)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (slightly overhead but typical)\n- contains_multiple_main_objects: false\n\ndominant_content_type: object\nimage_style: natural_photo\nsemantic_domain: travel/packing\n\nshort_caption: \"Open red suitcase filled with folded clothes, with jeans beside it\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 761,
+          "total_tokens": 2283,
+          "cost": 0.00134244,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00134244,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009132
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 477,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

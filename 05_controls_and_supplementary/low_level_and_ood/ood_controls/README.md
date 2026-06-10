@@ -8,11 +8,11 @@ from `01_compute_pca_loglik.py`.
 ## Pipeline
 
 ```
-01_compute_pca_loglik.py                       -> data/pca_loglik.csv
-02_baseline_subsampling.py                     -> data/baseline_subsampling{,_summary}.csv          (OOD-matched bootstraps)
-02c_low_level_deterministic_subsets.py         -> data/wrsa_low_level_subsets{,_summary,_comparison}.csv  (deterministic high/low/matched vicco subsets — proper low-level test)
-04_disagreement_vs_ood.py                      -> data/disagreement_vs_ood_{pairs,images,summary}.csv
-05_quantify_dissociation.py                    -> data/dissociation_summary.csv                     (effect sizes + paired Δwrsa CIs)
+01_compute_pca_loglik.py                       -> results/pca_loglik.csv
+02_baseline_subsampling.py                     -> results/baseline_subsampling{,_summary}.csv          (OOD-matched bootstraps)
+02c_low_level_deterministic_subsets.py         -> results/wrsa_low_level_subsets{,_summary,_comparison}.csv  (deterministic high/low/matched vicco subsets — proper low-level test)
+04_disagreement_vs_ood.py                      -> results/disagreement_vs_ood_{pairs,images,summary}.csv
+05_quantify_dissociation.py                    -> results/dissociation_summary.csv                     (effect sizes + paired delta-wRSA CIs)
 
 figures/plot_loglik_distributions_improved.py
 figures/plot_ood_vs_alignment_improved.py
@@ -308,16 +308,16 @@ without — robust. For `training_objective`, +0.27 (with) vs +0.30 (without)
 
 | File | Source | Notes |
 |------|--------|-------|
-| `data/pca_loglik.csv` | 01 | per-stimulus loglik (feature + pred space) |
-| `data/baseline_subsampling.csv` | 02 | per (subj × set × model × bootstrap) OOD + wRSA |
-| `data/baseline_subsampling_summary.csv` | 02 | per-cell match quality, drop, gap_sd |
-| `data/wrsa_low_level_subsets.csv` | 02c | per (subj × model × subset) wRSA on deterministic vicco subsets |
-| `data/wrsa_low_level_subsets_summary.csv` | 02c | per-subset mean wRSA + mean low-level |
-| `data/wrsa_low_level_subsets_comparison.csv` | 02c | cstim vs matched-/top-vicco subset drops |
-| `data/disagreement_vs_ood_pairs.csv` | 04 | per (set × variant × pair × ref_for_set) |
-| `data/disagreement_vs_ood_images.csv` | 04 | per (set × variant × image), incl. residual |
-| `data/disagreement_vs_ood_summary.csv` | 04 | per (set × variant) Spearman + residual |
-| `data/dissociation_summary.csv` | 05 | per-axis Cohen's d (cstim vs baseline) and per-set Δwrsa with subject-cluster bootstrap CIs |
+| `results/pca_loglik.csv` | 01 | per-stimulus loglik (feature + pred space) |
+| `results/baseline_subsampling.csv` | 02 | per (subj x set x model x bootstrap) OOD + wRSA |
+| `results/baseline_subsampling_summary.csv` | 02 | per-cell match quality, drop, gap_sd |
+| `results/wrsa_low_level_subsets.csv` | 02c | per (subj x model x subset) wRSA on deterministic vicco subsets |
+| `results/wrsa_low_level_subsets_summary.csv` | 02c | per-subset mean wRSA + mean low-level |
+| `results/wrsa_low_level_subsets_comparison.csv` | 02c | cstim vs matched-/top-vicco subset drops |
+| `results/disagreement_vs_ood_pairs.csv` | 04 | per (set x variant x pair x ref_for_set) |
+| `results/disagreement_vs_ood_images.csv` | 04 | per (set x variant x image), incl. residual |
+| `results/disagreement_vs_ood_summary.csv` | 04 | per (set x variant) Spearman + residual |
+| `results/dissociation_summary.csv` | 05 | per-axis Cohen's d (cstim vs baseline) and per-set delta-wRSA with subject-cluster bootstrap CIs |
 
 ## Headline finding
 

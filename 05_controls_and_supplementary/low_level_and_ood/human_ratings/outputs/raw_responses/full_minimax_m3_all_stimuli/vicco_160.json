@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_160",
+    "stim_key": "vicco_160",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 160,
+    "file_index": 159,
+    "image_name": "shared_4rep_vicco_160.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_160.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_transit\",\n  \"short_caption\": \"Subway station with 'SO TIRED.' sign and partial heads of people below\",\n  \"main_objects\": [\"sign\", \"subway tiles\", \"pipes\", \"ceiling beam\", \"people\"],\n  \"possible_interpretations\": [\"underground subway station\", \"subway platform\", \"transit station interior\", \"NYC subway tile wall\"],\n  \"uncertainty_notes\": \"Faces are partially cut off and motion-blurred; exact transit system not identifiable beyond tile style suggesting NYC subway\",\n  \"quality_flags\": [\"low_light\", \"partial_occlusion\", \"motion_blur\"]\n}",
+      "response": {
+        "id": "gen-1780319572-eGjfZvgZT8ISrJ5ManMr",
+        "object": "chat.completion",
+        "created": 1780319572,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_transit\",\n  \"short_caption\": \"Subway station with 'SO TIRED.' sign and partial heads of people below\",\n  \"main_objects\": [\"sign\", \"subway tiles\", \"pipes\", \"ceiling beam\", \"people\"],\n  \"possible_interpretations\": [\"underground subway station\", \"subway platform\", \"transit station interior\", \"NYC subway tile wall\"],\n  \"uncertainty_notes\": \"Faces are partially cut off and motion-blurred; exact transit system not identifiable beyond tile style suggesting NYC subway\",\n  \"quality_flags\": [\"low_light\", \"partial_occlusion\", \"motion_blur\"]\n}",
+              "refusal": null,
+              "reasoning": "The user wants me to annotate this image. Let me analyze what I see:\n\n- The image shows an indoor scene, likely a subway or underground station\n- There's a sign that reads \"SO TIRED.\" mounted on a beam\n- White subway tiles are visible\n- There are black pipes running along the wall\n- At the bottom of the image, partial views of two people's heads/faces are visible\n- The ceiling is concrete\n- The viewpoint is looking up\n\nLet me fill in the schema:\n\n- recognizability: 4 - the content is fairly clear, though the main interesting element (the sign) is contextual\n- ambiguity: 2 - the scene is pretty clearly an underground station with a sign\n- natural_photo_typicality: 4 - looks like a typical photo\n- visual_clutter: 3 - there are several elements but it's not too cluttered\n- object_centricity: 3 - the sign is somewhat central but the scene elements compete\n- scene_centricity: 4 - it's more of a place/scene than a single object\n- caption_confidence: 4 - fairly confident about what's in the image\n\n- estimated_salient_object_count: 3 (sign, people, pipes/tiles scene)\n- estimated_distinct_object_categories: 4 (sign, tiles, pipes, people)\n\n- contains_person: true\n- contains_face: true (partial faces visible)\n- contains_animal: false\n- contains_text: true (\"SO TIRED.\")\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (people are truncated at bottom)\n- contains_unusual_viewpoint: true (looking up angle)\n- contains_multiple_main_objects: false (the sign is main, people are partial)\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"urban/subway\"\n\n- short_caption: \"Subway station sign reading 'SO TIRED.' with partial views of people below\"\n- main_objects: [\"sign\", \"subway tiles\", \"pipes\", \"ceiling beam\", \"people\"]\n- possible_interpretations: [\"underground subway station\", \"subway platform\", \"transit station interior\"]\n- uncertainty_notes: \"Faces are partially visible and blurred; exact location of the subway station unknown\"\n- quality_flags: [\"low_light\", \"partial_occlusion\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The user wants me to annotate this image. Let me analyze what I see:\n\n- The image shows an indoor scene, likely a subway or underground station\n- There's a sign that reads \"SO TIRED.\" mounted on a beam\n- White subway tiles are visible\n- There are black pipes running along the wall\n- At the bottom of the image, partial views of two people's heads/faces are visible\n- The ceiling is concrete\n- The viewpoint is looking up\n\nLet me fill in the schema:\n\n- recognizability: 4 - the content is fairly clear, though the main interesting element (the sign) is contextual\n- ambiguity: 2 - the scene is pretty clearly an underground station with a sign\n- natural_photo_typicality: 4 - looks like a typical photo\n- visual_clutter: 3 - there are several elements but it's not too cluttered\n- object_centricity: 3 - the sign is somewhat central but the scene elements compete\n- scene_centricity: 4 - it's more of a place/scene than a single object\n- caption_confidence: 4 - fairly confident about what's in the image\n\n- estimated_salient_object_count: 3 (sign, people, pipes/tiles scene)\n- estimated_distinct_object_categories: 4 (sign, tiles, pipes, people)\n\n- contains_person: true\n- contains_face: true (partial faces visible)\n- contains_animal: false\n- contains_text: true (\"SO TIRED.\")\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (people are truncated at bottom)\n- contains_unusual_viewpoint: true (looking up angle)\n- contains_multiple_main_objects: false (the sign is main, people are partial)\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"urban/subway\"\n\n- short_caption: \"Subway station sign reading 'SO TIRED.' with partial views of people below\"\n- main_objects: [\"sign\", \"subway tiles\", \"pipes\", \"ceiling beam\", \"people\"]\n- possible_interpretations: [\"underground subway station\", \"subway platform\", \"transit station interior\"]\n- uncertainty_notes: \"Faces are partially visible and blurred; exact location of the subway station unknown\"\n- quality_flags: [\"low_light\", \"partial_occlusion\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 892,
+          "total_tokens": 2414,
+          "cost": 0.00137676,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00137676,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010704
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 579,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

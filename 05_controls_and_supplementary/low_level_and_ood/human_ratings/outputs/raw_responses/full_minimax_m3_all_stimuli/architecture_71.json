@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_71",
+    "stim_key": "architecture_71",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 71,
+    "file_index": 71,
+    "image_name": "image_0071.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0071.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 5, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 5, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"edited_photo\", \"semantic_domain\": \"interior_game_room\", \"short_caption\": \"Indoor lounge with pool table, ping pong table, and sectional sofa by large windows\", \"main_objects\": [\"pool table\", \"ping pong table\", \"sectional sofa\", \"ottoman\", \"curtains\", \"rug\"], \"possible_interpretations\": [\"hotel or resort game room\", \"luxury residential game room\", \"residential lounge area\", \"amenities space in a condo building\"], \"uncertainty_notes\": \"MLS watermark suggests this is a real estate listing photo; pool visible through windows may be indoor or outdoor\", \"quality_flags\": [\"watermark_present\"]}",
+      "response": {
+        "id": "gen-1780318925-zetVOen9p0Aac4HXIQb8",
+        "object": "chat.completion",
+        "created": 1780318925,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 5, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 5, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"edited_photo\", \"semantic_domain\": \"interior_game_room\", \"short_caption\": \"Indoor lounge with pool table, ping pong table, and sectional sofa by large windows\", \"main_objects\": [\"pool table\", \"ping pong table\", \"sectional sofa\", \"ottoman\", \"curtains\", \"rug\"], \"possible_interpretations\": [\"hotel or resort game room\", \"luxury residential game room\", \"residential lounge area\", \"amenities space in a condo building\"], \"uncertainty_notes\": \"MLS watermark suggests this is a real estate listing photo; pool visible through windows may be indoor or outdoor\", \"quality_flags\": [\"watermark_present\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an indoor scene - appears to be a hotel or resort lounge/game room. I can see:\n- A pool/billiard table on the left\n- A ping pong/table tennis table in the middle-left\n- A sectional sofa with ottoman on the right\n- Large windows with sheer curtains\n- Tiled floor with a patterned rug\n- Recessed ceiling lights\n- Wood paneled ceiling\n- What appears to be a pool visible through the windows\n- There's a watermark \"Miami MLS 2023\" visible\n\nLet me rate according to the schema:\n\n- recognizability: 5 - very clearly recognizable as a game room/lounge\n- ambiguity: 1 - very clear what this is\n- natural_photo_typicality: 4 - looks like a typical real estate/photograph, but has a watermark\n- visual_clutter: 3 - several objects but organized\n- object_centricity: 2 - no single dominant object\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 5\n\nSalient objects: pool table, ping pong table, sectional sofa, ottoman, rug, curtains, windows\nDistinct categories: maybe 5-6\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: true (watermark)\nContains vehicle: false\nContains food: false\nContains indoor scene: true\nContains outdoor scene: false (though windows show outdoor)\nContains artificial_or_rendered_content: false\nContains occlusion_or_truncation: false\nContains unusual_viewpoint: false\nContains multiple_main_objects: true\n\nDominant content: scene\nImage style: natural_photo (though it's a real estate photo with watermark)\nSemantic domain: \"interior\" or \"lounge\" or \"game_room\"\n\nCaption: \"Indoor game room with pool table, ping pong table, and sectional sofa near large windows\"\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an indoor scene - appears to be a hotel or resort lounge/game room. I can see:\n- A pool/billiard table on the left\n- A ping pong/table tennis table in the middle-left\n- A sectional sofa with ottoman on the right\n- Large windows with sheer curtains\n- Tiled floor with a patterned rug\n- Recessed ceiling lights\n- Wood paneled ceiling\n- What appears to be a pool visible through the windows\n- There's a watermark \"Miami MLS 2023\" visible\n\nLet me rate according to the schema:\n\n- recognizability: 5 - very clearly recognizable as a game room/lounge\n- ambiguity: 1 - very clear what this is\n- natural_photo_typicality: 4 - looks like a typical real estate/photograph, but has a watermark\n- visual_clutter: 3 - several objects but organized\n- object_centricity: 2 - no single dominant object\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 5\n\nSalient objects: pool table, ping pong table, sectional sofa, ottoman, rug, curtains, windows\nDistinct categories: maybe 5-6\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: true (watermark)\nContains vehicle: false\nContains food: false\nContains indoor scene: true\nContains outdoor scene: false (though windows show outdoor)\nContains artificial_or_rendered_content: false\nContains occlusion_or_truncation: false\nContains unusual_viewpoint: false\nContains multiple_main_objects: true\n\nDominant content: scene\nImage style: natural_photo (though it's a real estate photo with watermark)\nSemantic domain: \"interior\" or \"lounge\" or \"game_room\"\n\nCaption: \"Indoor game room with pool table, ping pong table, and sectional sofa near large windows\"\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 741,
+          "total_tokens": 2263,
+          "cost": 0.00131844,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131844,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008892
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 459,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

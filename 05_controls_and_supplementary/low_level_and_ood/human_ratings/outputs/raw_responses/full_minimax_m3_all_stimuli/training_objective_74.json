@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_74",
+    "stim_key": "training_objective_74",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 74,
+    "file_index": 74,
+    "image_name": "image_0074.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0074.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"entertainment\",\n  \"short_caption\": \"A man on stage with a ventriloquist dummy, holding a phone near a microphone.\",\n  \"main_objects\": [\"man\", \"ventriloquist dummy\", \"microphone\", \"smartphone\"],\n  \"possible_interpretations\": [\n    \"Ventriloquist performing on stage while checking his phone\",\n    \"Comedian or entertainer mid-performance with a baby dummy\",\n    \"Behind-the-scenes or rehearsal moment captured on a screen\"\n  ],\n  \"uncertainty_notes\": \"Image appears to be a photograph of a screen or projection, reducing clarity. The man may be the actual performer or another person on stage; context is unclear.\",\n  \"quality_flags\": [\"low_resolution\", \"screen_capture_artifact\", \"dark_scene\", \"slight_blur\"]\n}",
+      "response": {
+        "id": "gen-1780319357-Kk13KOHCL2h97RM05T1q",
+        "object": "chat.completion",
+        "created": 1780319357,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"entertainment\",\n  \"short_caption\": \"A man on stage with a ventriloquist dummy, holding a phone near a microphone.\",\n  \"main_objects\": [\"man\", \"ventriloquist dummy\", \"microphone\", \"smartphone\"],\n  \"possible_interpretations\": [\n    \"Ventriloquist performing on stage while checking his phone\",\n    \"Comedian or entertainer mid-performance with a baby dummy\",\n    \"Behind-the-scenes or rehearsal moment captured on a screen\"\n  ],\n  \"uncertainty_notes\": \"Image appears to be a photograph of a screen or projection, reducing clarity. The man may be the actual performer or another person on stage; context is unclear.\",\n  \"quality_flags\": [\"low_resolution\", \"screen_capture_artifact\", \"dark_scene\", \"slight_blur\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows what appears to be a photograph of a screen or projection displaying a man and a ventriloquist dummy. The man is wearing a dark shirt and holding what looks like a phone, while the dummy is a classic-looking baby/child ventriloquist figure in a diaper with a small tuft of hair. The setting appears to be a stage or performance context based on the dark background and microphone visible.\n\nLet me analyze the image properties:\n- The image itself appears to be a photo taken of a screen/projection, so it has some characteristics of a secondary capture\n- Main content: a man and a ventriloquist dummy\n- The man is holding a phone and there's a microphone\n- The lighting is dark, suggesting a stage setting\n- The image is somewhat low quality/blurry as it's a capture of a screen\n\nLet me provide the annotations:\n\n- recognizability: 3-4 (the content is recognizable but the image is a bit blurry/low quality as it's a screen capture)\n- ambiguity: 2 (it's fairly clear what's happening - a man with a ventriloquist dummy on stage)\n- natural_photo_typicality: 2 (this is a photo of a screen, not a typical natural photo)\n- visual_clutter: 2 (relatively clean composition with two main subjects)\n- object_centricity: 3 (the dummy is a clear object, but the man is also a main subject)\n- scene_centricity: 2 (there's a dark stage-like background but it's not the focus)\n- caption_confidence: 4 (fairly confident in describing the scene)\n\nObjects: man, ventriloquist dummy, microphone, phone\n- contains_person: true\n- contains_face: true (man)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (stage)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (though the dummy is artificial)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (man and dummy)\n\nDominant content: mixed (person and object)\nImage style: this is a photo of a screen/projection, so it's a natural photo but of an artificial context\nSemantic domain: entertainment/performance\n\nLet me reconsider - the dummy is technically an object, not a person, so this could be \"object\" or \"person\" dominant. The man seems to be looking at his phone, somewhat distracted. The dummy is prominently featured. I'd say mixed or person with object.\n\nImage style: natural_photo (it's a photo, even though it captures a screen)\nActually, it's a natural photo that happens to show a screen. The style is still natural_photo.\n\nLet me finalize:",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows what appears to be a photograph of a screen or projection displaying a man and a ventriloquist dummy. The man is wearing a dark shirt and holding what looks like a phone, while the dummy is a classic-looking baby/child ventriloquist figure in a diaper with a small tuft of hair. The setting appears to be a stage or performance context based on the dark background and microphone visible.\n\nLet me analyze the image properties:\n- The image itself appears to be a photo taken of a screen/projection, so it has some characteristics of a secondary capture\n- Main content: a man and a ventriloquist dummy\n- The man is holding a phone and there's a microphone\n- The lighting is dark, suggesting a stage setting\n- The image is somewhat low quality/blurry as it's a capture of a screen\n\nLet me provide the annotations:\n\n- recognizability: 3-4 (the content is recognizable but the image is a bit blurry/low quality as it's a screen capture)\n- ambiguity: 2 (it's fairly clear what's happening - a man with a ventriloquist dummy on stage)\n- natural_photo_typicality: 2 (this is a photo of a screen, not a typical natural photo)\n- visual_clutter: 2 (relatively clean composition with two main subjects)\n- object_centricity: 3 (the dummy is a clear object, but the man is also a main subject)\n- scene_centricity: 2 (there's a dark stage-like background but it's not the focus)\n- caption_confidence: 4 (fairly confident in describing the scene)\n\nObjects: man, ventriloquist dummy, microphone, phone\n- contains_person: true\n- contains_face: true (man)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (stage)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (though the dummy is artificial)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (man and dummy)\n\nDominant content: mixed (person and object)\nImage style: this is a photo of a screen/projection, so it's a natural photo but of an artificial context\nSemantic domain: entertainment/performance\n\nLet me reconsider - the dummy is technically an object, not a person, so this could be \"object\" or \"person\" dominant. The man seems to be looking at his phone, somewhat distracted. The dummy is prominently featured. I'd say mixed or person with object.\n\nImage style: natural_photo (it's a photo, even though it captures a screen)\nActually, it's a natural photo that happens to show a screen. The style is still natural_photo.\n\nLet me finalize:",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 995,
+          "total_tokens": 2517,
+          "cost": 0.00162324,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00162324,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.001194
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 675,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

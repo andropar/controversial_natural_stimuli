@@ -13,9 +13,9 @@ Then:
   - Save per-subject residual vectors + consistency metrics
 
 Outputs:
-    data/subject_residuals.npz     - per-subject residual vectors (4950,)
-    data/subject_consistency.csv   - pairwise residual correlations
-    data/consistent_top_pairs.csv  - top pairs with high residual across ALL subjects
+    results/subject_residuals.npz     - per-subject residual vectors (4950,)
+    results/subject_consistency.csv   - pairwise residual correlations
+    results/consistent_top_pairs.csv  - top pairs with high residual across ALL subjects
     figures/subject_consistency.pdf/png
 
 Usage:
@@ -32,6 +32,7 @@ from sklearn.linear_model import RidgeCV
 import matplotlib.pyplot as plt
 
 _PAPER = Path(__file__).resolve().parents[1]
+SHARE_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))
 sys.path.insert(0, str(_PAPER / "figures"))
@@ -39,7 +40,16 @@ import config
 
 SUBJECTS = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]
 RDM_DIR = Path("/home/jroth/rsa_based_selection/experiments/archive/simulationdiffs_to_braindiffs/data")
-MANIFEST_PATH = _PAPER / "00_selection_evaluation/data/all_models/images/image_manifest.csv"
+MANIFEST_PATH = (
+    SHARE_ROOT
+    / "00_stimulus_selection"
+    / "decision_checks"
+    / "selection_evaluation"
+    / "results"
+    / "all_models"
+    / "images"
+    / "image_manifest.csv"
+)
 
 DATA_DIR = Path(__file__).resolve().parent / "results"
 FIG_DIR = Path(__file__).resolve().parent / "figures"
@@ -116,7 +126,7 @@ def main():
 
     consistency_df = pd.DataFrame(consistency_rows)
     consistency_df.to_csv(DATA_DIR / "subject_consistency.csv", index=False)
-    print("Saved: data/subject_consistency.csv")
+    print("Saved: results/subject_consistency.csv")
 
     # -------------------------------------------------------------------------
     # 2. Top pairs with consistently high residual across ALL subjects

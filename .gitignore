@@ -22,9 +22,11 @@ external_data/*
 *.npy
 
 # Raw or derived brain response arrays that are not result tables
-01_brain_model_alignment/inputs/brain_data_cache/
-05_controls_and_supplementary/full_data_rerun/data/brain_data_cache/
-05_controls_and_supplementary/full_data_rerun/data/deepvision_unique_cache/
+01_brain_model_alignment/cache_or_heavy/brain_data_cache/
+05_controls_and_supplementary/full_data_rerun/data/
+05_controls_and_supplementary/model_scope_followups/layer_sweep/data/
+05_controls_and_supplementary/full_data_rerun/results/brain_data_cache/
+05_controls_and_supplementary/full_data_rerun/results/deepvision_unique_cache/
 **/voxel_sets/
 **/image_sets/
 **/voxel_betas*
@@ -39,9 +41,20 @@ external_data/*
 00_stimulus_selection/**/images/*.png
 00_stimulus_selection/**/images/*.webp
 00_stimulus_selection/**/images/selected_images_fullres.pdf
-00_stimulus_selection/selected_stimuli/**/validated_images/*.jpg
-00_stimulus_selection/selected_stimuli/**/validated_images/*.jpeg
-00_stimulus_selection/selected_stimuli/**/validated_images/*.png
-00_stimulus_selection/selected_stimuli/**/validated_images/*.webp
+00_stimulus_selection/results/selected_stimuli/**/validated_images/*.jpg
+00_stimulus_selection/results/selected_stimuli/**/validated_images/*.jpeg
+00_stimulus_selection/results/selected_stimuli/**/validated_images/*.png
+00_stimulus_selection/results/selected_stimuli/**/validated_images/*.webp
 05_controls_and_supplementary/stimulus_and_pair_diagnostics/stimulus_characterization/figures/*.pdf
 05_controls_and_supplementary/stimulus_and_pair_diagnostics/stimulus_characterization/figures/png/*.png
+05_controls_and_supplementary/low_level_and_ood/human_ratings/openrouter_api_key.txt
+
+# Heavy generated analysis intermediates; regenerate or keep on cluster/storage.
+05_controls_and_supplementary/model_scope_followups/layer_sweep/results/mrsa_dense_all_eval_layer_scores.csv
+05_controls_and_supplementary/model_scope_followups/layer_sweep/results/wrsa_dense_layer_sweep.csv
+05_controls_and_supplementary/model_scope_followups/layer_sweep/results/wrsa_dense_shared_layer_sweep.csv
+05_controls_and_supplementary/model_scope_followups/layer_sweep/results/stream_parts/
+05_controls_and_supplementary/model_scope_followups/layer_sweep_aggregated_layers/results/mrsa_dense_all_eval_layer_scores.csv
+05_controls_and_supplementary/model_scope_followups/layer_sweep_aggregated_layers/results/wrsa_dense_layer_sweep.csv
+05_controls_and_supplementary/model_scope_followups/layer_sweep_aggregated_layers/results/wrsa_dense_shared_layer_sweep.csv
+05_controls_and_supplementary/model_scope_followups/layer_sweep_aggregated_layers/results/stream_parts/

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_231",
+    "stim_key": "vicco_231",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 231,
+    "file_index": 230,
+    "image_name": "shared_4rep_vicco_231.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_231.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"construction\",\n\n  \"short_caption\": \"A Volvo wheeled excavator at an outdoor construction site with workers and a truck, surrounded by autumn trees.\",\n  \"main_objects\": [\"Volvo wheeled excavator\", \"flatbed truck\", \"construction workers\", \"concrete blocks\", \"autumn trees\"],\n  \"possible_interpretations\": [\"active construction site\", \"building foundation work\", \"public works or infrastructure project\"],\n  \"uncertainty_notes\": \"Workers' faces are too small to confirm; specific nature of construction not fully visible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319654-R6N3hWajIIGboCcG5AyY",
+        "object": "chat.completion",
+        "created": 1780319654,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"construction\",\n\n  \"short_caption\": \"A Volvo wheeled excavator at an outdoor construction site with workers and a truck, surrounded by autumn trees.\",\n  \"main_objects\": [\"Volvo wheeled excavator\", \"flatbed truck\", \"construction workers\", \"concrete blocks\", \"autumn trees\"],\n  \"possible_interpretations\": [\"active construction site\", \"building foundation work\", \"public works or infrastructure project\"],\n  \"uncertainty_notes\": \"Workers' faces are too small to confirm; specific nature of construction not fully visible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a construction site with a Volvo excavator/wheeled excavator in the foreground. There are workers, a truck, construction materials, and autumn trees in the background. Let me analyze the various aspects:\n\n- Recognizability: Clear construction site scene, easy to identify. 5\n- Ambiguity: Pretty clear what's happening, not many alternative interpretations. 1\n- Natural photo typicality: Looks like a typical photograph, no obvious editing. 5\n- Visual clutter: Multiple objects - excavator, truck, workers, materials, trees, fence, building. 4\n- Object centricity: The excavator dominates the image. 4\n- Scene centricity: This is more of a scene/place than a single object. 3\n- Caption confidence: High confidence in describing the scene. 5\n\nSalient objects: excavator, truck, workers, construction materials, trees\nObject categories: excavator, truck, person, trees, construction materials\n\nContains person: yes\nContains face: no (faces are too small/distant)\nContains animal: no\nContains text: yes (Volvo labels)\nContains vehicle: yes (excavator, truck)\nContains food: no\nContains indoor: no\nContains outdoor: yes\nContains artificial/rendered: no\nContains occlusion: the excavator arm extends out of frame\nContains unusual viewpoint: no\nContains multiple main objects: yes (excavator and truck)\n\nDominant content: scene\nImage style: natural photo\nSemantic domain: construction\n\nCaption: \"A Volvo wheeled excavator at an outdoor construction site with workers and a truck, surrounded by autumn trees.\"\n\nMain objects: Volvo excavator, construction truck, workers, concrete blocks, trees\n\nPossible interpretations: construction site, road work, building foundation work\n\nUncertainty: Workers' faces not clearly visible, exact nature of construction unclear\nQuality flags: none significant",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a construction site with a Volvo excavator/wheeled excavator in the foreground. There are workers, a truck, construction materials, and autumn trees in the background. Let me analyze the various aspects:\n\n- Recognizability: Clear construction site scene, easy to identify. 5\n- Ambiguity: Pretty clear what's happening, not many alternative interpretations. 1\n- Natural photo typicality: Looks like a typical photograph, no obvious editing. 5\n- Visual clutter: Multiple objects - excavator, truck, workers, materials, trees, fence, building. 4\n- Object centricity: The excavator dominates the image. 4\n- Scene centricity: This is more of a scene/place than a single object. 3\n- Caption confidence: High confidence in describing the scene. 5\n\nSalient objects: excavator, truck, workers, construction materials, trees\nObject categories: excavator, truck, person, trees, construction materials\n\nContains person: yes\nContains face: no (faces are too small/distant)\nContains animal: no\nContains text: yes (Volvo labels)\nContains vehicle: yes (excavator, truck)\nContains food: no\nContains indoor: no\nContains outdoor: yes\nContains artificial/rendered: no\nContains occlusion: the excavator arm extends out of frame\nContains unusual viewpoint: no\nContains multiple main objects: yes (excavator and truck)\n\nDominant content: scene\nImage style: natural photo\nSemantic domain: construction\n\nCaption: \"A Volvo wheeled excavator at an outdoor construction site with workers and a truck, surrounded by autumn trees.\"\n\nMain objects: Volvo excavator, construction truck, workers, concrete blocks, trees\n\nPossible interpretations: construction site, road work, building foundation work\n\nUncertainty: Workers' faces not clearly visible, exact nature of construction unclear\nQuality flags: none significant",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 733,
+          "total_tokens": 2255,
+          "cost": 0.00118596,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00118596,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008796
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 479,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

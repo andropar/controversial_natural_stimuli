@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_69",
+    "stim_key": "vicco_69",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 69,
+    "file_index": 68,
+    "image_name": "shared_4rep_vicco_069.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_069.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"pets/domestic\",\n  \"short_caption\": \"Black and white cat reaching its paw up against a wall beside a guitar neck.\",\n  \"main_objects\": [\"cat\", \"guitar\"],\n  \"possible_interpretations\": [\n    \"cat stretching or reaching up on a wall\",\n    \"cat playing near a guitar leaning against the wall\",\n    \"casual home snapshot of a pet with a musical instrument\"\n  ],\n  \"uncertainty_notes\": \"Cat's face is not visible; exact intent of the paw-reaching behavior is unclear. Guitar is partially visible at the bottom edge.\",\n  \"quality_flags\": [\"partially_truncated_subject\", \"unusual_angle\"]\n}",
+      "response": {
+        "id": "gen-1780319469-VtMAOQUpsCtkzYzQZzBg",
+        "object": "chat.completion",
+        "created": 1780319469,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"pets/domestic\",\n  \"short_caption\": \"Black and white cat reaching its paw up against a wall beside a guitar neck.\",\n  \"main_objects\": [\"cat\", \"guitar\"],\n  \"possible_interpretations\": [\n    \"cat stretching or reaching up on a wall\",\n    \"cat playing near a guitar leaning against the wall\",\n    \"casual home snapshot of a pet with a musical instrument\"\n  ],\n  \"uncertainty_notes\": \"Cat's face is not visible; exact intent of the paw-reaching behavior is unclear. Guitar is partially visible at the bottom edge.\",\n  \"quality_flags\": [\"partially_truncated_subject\", \"unusual_angle\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a black and white (tuxedo) cat from behind/side, with its paw extended upward on a beige textured wall. There's also a guitar neck visible at the bottom of the image, and what appears to be a door frame on the left. The cat appears to be reaching up against the wall.\n\nLet me analyze this systematically:\n\n- Recognizability: The cat and guitar are clearly visible. The cat's face is not shown though. Maybe 4.\n- Ambiguity: There are a few interpretations - cat reaching up on wall, cat next to guitar, etc. Moderate, maybe 2-3.\n- Natural photo typicality: Looks like a casual home photo, typical. 4.\n- Visual clutter: Relatively simple, just cat, wall, guitar, door. Maybe 2.\n- Object centricity: The cat is the dominant subject. 4.\n- Scene centricity: It's more of an object/animal shot than a scene. 2.\n- Caption confidence: I can describe it confidently. 4.\n\n- Salient objects: cat, guitar - 2\n- Distinct categories: cat, guitar, wall, door frame - 2-3\n- contains_person: false\n- contains_face: false\n- contains_animal: true (cat)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (cat is partially cut off)\n- contains_unusual_viewpoint: true (the angle is a bit unusual, cat from behind/side with paw up)\n- contains_multiple_main_objects: could be true (cat and guitar) but guitar is secondary\n\nDominant content type: animal\nImage style: natural_photo\nSemantic domain: pets/domestic\n\nShort caption: Black and white cat reaching its paw up against a wall next to a guitar.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a black and white (tuxedo) cat from behind/side, with its paw extended upward on a beige textured wall. There's also a guitar neck visible at the bottom of the image, and what appears to be a door frame on the left. The cat appears to be reaching up against the wall.\n\nLet me analyze this systematically:\n\n- Recognizability: The cat and guitar are clearly visible. The cat's face is not shown though. Maybe 4.\n- Ambiguity: There are a few interpretations - cat reaching up on wall, cat next to guitar, etc. Moderate, maybe 2-3.\n- Natural photo typicality: Looks like a casual home photo, typical. 4.\n- Visual clutter: Relatively simple, just cat, wall, guitar, door. Maybe 2.\n- Object centricity: The cat is the dominant subject. 4.\n- Scene centricity: It's more of an object/animal shot than a scene. 2.\n- Caption confidence: I can describe it confidently. 4.\n\n- Salient objects: cat, guitar - 2\n- Distinct categories: cat, guitar, wall, door frame - 2-3\n- contains_person: false\n- contains_face: false\n- contains_animal: true (cat)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (cat is partially cut off)\n- contains_unusual_viewpoint: true (the angle is a bit unusual, cat from behind/side with paw up)\n- contains_multiple_main_objects: could be true (cat and guitar) but guitar is secondary\n\nDominant content type: animal\nImage style: natural_photo\nSemantic domain: pets/domestic\n\nShort caption: Black and white cat reaching its paw up against a wall next to a guitar.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 781,
+          "total_tokens": 2303,
+          "cost": 0.00124356,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00124356,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009372
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 440,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

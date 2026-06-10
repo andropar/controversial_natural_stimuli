@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_240",
+    "stim_key": "vicco_240",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 240,
+    "file_index": 239,
+    "image_name": "shared_4rep_vicco_240.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_240.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"kitchen\",\n  \"short_caption\": \"Cream-colored cat sitting on a kitchen floor near a cardboard box and baking tray.\",\n  \"main_objects\": [\"cat\", \"cardboard box\", \"pink clothing\", \"baking sheet\", \"dough\", \"pet food bowl\"],\n  \"possible_interpretations\": [\n    \"A cat in a home kitchen near baking in progress\",\n    \"A cat sitting by a box of clothing in a kitchen\",\n    \"A domestic scene with a pet waiting near a baking tray\"\n  ],\n  \"uncertainty_notes\": \"The flat item on parchment is unclear: could be raw dough, flatbread, cracker, or tortilla.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319664-pGUnsgxmYDmulDTpiyVn",
+        "object": "chat.completion",
+        "created": 1780319664,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"kitchen\",\n  \"short_caption\": \"Cream-colored cat sitting on a kitchen floor near a cardboard box and baking tray.\",\n  \"main_objects\": [\"cat\", \"cardboard box\", \"pink clothing\", \"baking sheet\", \"dough\", \"pet food bowl\"],\n  \"possible_interpretations\": [\n    \"A cat in a home kitchen near baking in progress\",\n    \"A cat sitting by a box of clothing in a kitchen\",\n    \"A domestic scene with a pet waiting near a baking tray\"\n  ],\n  \"uncertainty_notes\": \"The flat item on parchment is unclear: could be raw dough, flatbread, cracker, or tortilla.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a kitchen scene with:\n- A cream/white colored cat sitting on a tiled floor\n- An open cardboard box with pink fabric/clothing inside\n- A baking sheet with parchment paper and what appears to be a piece of dough or flatbread\n- White cabinets on the left\n- A radiator/vent at the top\n- A pink food bowl\n- A can that says \"CAT\" \n- A dark towel/cloth\n- Tiled floor\n\nLet me rate each dimension:\n\n- recognizability: 4 - very clear what's happening\n- ambiguity: 2 - pretty clear scene, a cat in a kitchen with baking activities\n- natural_photo_typicality: 4 - looks like a typical casual home photo\n- visual_clutter: 4 - many competing objects (cat, box, baking sheet, food, bowl, etc.)\n- object_centricity: 3 - no single dominant object, the cat and baking sheet are both prominent\n- scene_centricity: 4 - it's clearly a kitchen scene\n- caption_confidence: 4 - can describe well\n\n- estimated_salient_object_count: 5-6\n- estimated_distinct_object_categories: 5-6 (cat, box, clothing, baking tray, dough, bowl)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: true (cat)\n- contains_text: true (\"CAT\" on can)\n- contains_vehicle: false\n- contains_food: true (dough/flatbread)\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (high angle looking down)\n- contains_multiple_main_objects: true (cat and baking tray)\n\n- dominant_content_type: \"mixed\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"kitchen\"\n\nshort_caption: \"Cream-colored cat sitting near a kitchen with a baking tray and cardboard box.\"\n\nmain_objects: [\"cat\", \"cardboard box\", \"pink clothing\", \"baking sheet\", \"dough\", \"food bowl\"]\n\npossible_interpretations: \n- \"A cat in a kitchen waiting for food\"\n- \"A home kitchen with a cat and baking in progress\"\n- \"A cat sitting by a box with clothing\"\n\nuncertainty_notes: \"The dough item is unclear - could be flatbread, cracker, or raw dough\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a kitchen scene with:\n- A cream/white colored cat sitting on a tiled floor\n- An open cardboard box with pink fabric/clothing inside\n- A baking sheet with parchment paper and what appears to be a piece of dough or flatbread\n- White cabinets on the left\n- A radiator/vent at the top\n- A pink food bowl\n- A can that says \"CAT\" \n- A dark towel/cloth\n- Tiled floor\n\nLet me rate each dimension:\n\n- recognizability: 4 - very clear what's happening\n- ambiguity: 2 - pretty clear scene, a cat in a kitchen with baking activities\n- natural_photo_typicality: 4 - looks like a typical casual home photo\n- visual_clutter: 4 - many competing objects (cat, box, baking sheet, food, bowl, etc.)\n- object_centricity: 3 - no single dominant object, the cat and baking sheet are both prominent\n- scene_centricity: 4 - it's clearly a kitchen scene\n- caption_confidence: 4 - can describe well\n\n- estimated_salient_object_count: 5-6\n- estimated_distinct_object_categories: 5-6 (cat, box, clothing, baking tray, dough, bowl)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: true (cat)\n- contains_text: true (\"CAT\" on can)\n- contains_vehicle: false\n- contains_food: true (dough/flatbread)\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (high angle looking down)\n- contains_multiple_main_objects: true (cat and baking tray)\n\n- dominant_content_type: \"mixed\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"kitchen\"\n\nshort_caption: \"Cream-colored cat sitting near a kitchen with a baking tray and cardboard box.\"\n\nmain_objects: [\"cat\", \"cardboard box\", \"pink clothing\", \"baking sheet\", \"dough\", \"food bowl\"]\n\npossible_interpretations: \n- \"A cat in a kitchen waiting for food\"\n- \"A home kitchen with a cat and baking in progress\"\n- \"A cat sitting by a box with clothing\"\n\nuncertainty_notes: \"The dough item is unclear - could be flatbread, cracker, or raw dough\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 900,
+          "total_tokens": 2422,
+          "cost": 0.00138636,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00138636,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.00108
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 558,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

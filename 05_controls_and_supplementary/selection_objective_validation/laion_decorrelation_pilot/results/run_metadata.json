@@ -1,0 +1,46 @@
+{
+  "data_dir": "/data/home_roth/_stachelschwein/rsa_based_selection/data/LAION_natural_sample",
+  "encoding_root": "/data/home_roth/cstims_share/01_brain_model_alignment/results/encoding_models/shared_subject_encoding_models/encoding_20251222_141301",
+  "model_configs": {
+    "dinov2_vitl14": {
+      "source": "deepjuice",
+      "layer": "blocks.19.norm2",
+      "aggregation": "cls",
+      "encoding_layer_dir": "layerblocks_19_norm2",
+      "source_feature_file": "features/dinov2_vitl14_layer-1.npy"
+    },
+    "slip_vit_l_slip": {
+      "source": "deepjuice",
+      "layer": "fc_norm",
+      "aggregation": "cls",
+      "encoding_layer_dir": "layerfc_norm",
+      "source_feature_file": "features/slip_vit_l_slip_layer-1.npy"
+    }
+  },
+  "subjects": [
+    "sub-01",
+    "sub-03",
+    "sub-05",
+    "sub-06",
+    "sub-07"
+  ],
+  "config": {
+    "data_dir": "/data/home_roth/_stachelschwein/rsa_based_selection/data/LAION_natural_sample",
+    "encoding_root": "/data/home_roth/cstims_share/01_brain_model_alignment/results/encoding_models/shared_subject_encoding_models/encoding_20251222_141301",
+    "target_size": 50,
+    "init_size": 3,
+    "seed": 42,
+    "batch_size": 10000,
+    "extract_batch_size": 32,
+    "force_extract": false,
+    "metric": "cosine",
+    "corr_type": "correlation",
+    "noise_ceiling_target": 0.46,
+    "noise_calib_n": 1000,
+    "noise_calib_repeats": 32,
+    "eval_noise_samples": 1000,
+    "device": "cuda",
+    "output_dir": "/data/home_roth/cstims_share/05_controls_and_supplementary/selection_objective_validation/laion_decorrelation_pilot"
+  },
+  "device": "cuda"
+}

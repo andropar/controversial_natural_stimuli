@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_259",
+    "stim_key": "vicco_259",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 259,
+    "file_index": 258,
+    "image_name": "shared_4rep_vicco_259.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_259.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 10,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"toys/play/children\",\n  \"short_caption\": \"Child playing with wooden building blocks on a green rug\",\n  \"main_objects\": [\"wooden blocks\", \"colored panels\", \"fringe rug\", \"child\"],\n  \"possible_interpretations\": [\"child playing with wooden blocks\", \"educational play activity\", \"stacking or building blocks\", \"Montessori-style toy play\"],\n  \"uncertainty_notes\": \"Person's head and face are cropped out; cannot determine age or identity. Exact number of blocks is approximate.\",\n  \"quality_flags\": [\"cropped subject\", \"no face visible\", \"uneven composition\"]\n}",
+      "response": {
+        "id": "gen-1780319686-1ogBQ8e6ew7mN9zSyhIh",
+        "object": "chat.completion",
+        "created": 1780319686,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 10,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"toys/play/children\",\n  \"short_caption\": \"Child playing with wooden building blocks on a green rug\",\n  \"main_objects\": [\"wooden blocks\", \"colored panels\", \"fringe rug\", \"child\"],\n  \"possible_interpretations\": [\"child playing with wooden blocks\", \"educational play activity\", \"stacking or building blocks\", \"Montessori-style toy play\"],\n  \"uncertainty_notes\": \"Person's head and face are cropped out; cannot determine age or identity. Exact number of blocks is approximate.\",\n  \"quality_flags\": [\"cropped subject\", \"no face visible\", \"uneven composition\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a child (or person, only their lower body/torso is visible) sitting on a wooden floor, playing with wooden building blocks. The blocks have colored translucent panels (red, yellow, blue, etc.) and are arranged on a light green/yellow fringed rug. The person is wearing a white and gray striped shirt and light gray sweatpants.\n\nLet me annotate this carefully:\n\n- recognizability: Clear scene, easily recognizable as child playing with wooden blocks. 5\n- ambiguity: Pretty unambiguous, just one clear interpretation. 1\n- natural_photo_typicality: Looks like a typical casual photograph. 4\n- visual_clutter: Multiple blocks but not too cluttered. 3\n- object_centricity: The blocks are central but the scene is also about the activity. 3\n- scene_centricity: It's an indoor scene with a person and objects. 3\n- caption_confidence: High confidence in a concise caption. 5\n\n- estimated_salient_object_count: ~10-12 blocks, but they're the main content. Maybe 1 group of blocks.\n- estimated_distinct_object_categories: 2 (wooden blocks, rug/floor) or 3 with person\n\n- contains_person: true (partial body visible)\n- contains_face: false (no face visible)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person's face/head is cut off)\n- contains_unusual_viewpoint: false (typical top-down view)\n- contains_multiple_main_objects: true (multiple blocks)\n\n- dominant_content_type: mixed (objects and person)\n- image_style: natural_photo\n- semantic_domain: toys/play/children\n\n- short_caption: \"Child playing with wooden building blocks on a green rug\"\n- main_objects: [\"wooden blocks\", \"colored panels\", \"rug\", \"child\"]\n- possible_interpretations: [\"child playing with wooden blocks\", \"educational toy play\", \"child building with blocks\"]\n- uncertainty_notes: \"Person's face and head are not visible; cannot determine age with certainty\"\n- quality_flags: [\"partial person visible\", \"cropped subject\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a child (or person, only their lower body/torso is visible) sitting on a wooden floor, playing with wooden building blocks. The blocks have colored translucent panels (red, yellow, blue, etc.) and are arranged on a light green/yellow fringed rug. The person is wearing a white and gray striped shirt and light gray sweatpants.\n\nLet me annotate this carefully:\n\n- recognizability: Clear scene, easily recognizable as child playing with wooden blocks. 5\n- ambiguity: Pretty unambiguous, just one clear interpretation. 1\n- natural_photo_typicality: Looks like a typical casual photograph. 4\n- visual_clutter: Multiple blocks but not too cluttered. 3\n- object_centricity: The blocks are central but the scene is also about the activity. 3\n- scene_centricity: It's an indoor scene with a person and objects. 3\n- caption_confidence: High confidence in a concise caption. 5\n\n- estimated_salient_object_count: ~10-12 blocks, but they're the main content. Maybe 1 group of blocks.\n- estimated_distinct_object_categories: 2 (wooden blocks, rug/floor) or 3 with person\n\n- contains_person: true (partial body visible)\n- contains_face: false (no face visible)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person's face/head is cut off)\n- contains_unusual_viewpoint: false (typical top-down view)\n- contains_multiple_main_objects: true (multiple blocks)\n\n- dominant_content_type: mixed (objects and person)\n- image_style: natural_photo\n- semantic_domain: toys/play/children\n\n- short_caption: \"Child playing with wooden building blocks on a green rug\"\n- main_objects: [\"wooden blocks\", \"colored panels\", \"rug\", \"child\"]\n- possible_interpretations: [\"child playing with wooden blocks\", \"educational toy play\", \"child building with blocks\"]\n- uncertainty_notes: \"Person's face and head are not visible; cannot determine age with certainty\"\n- quality_flags: [\"partial person visible\", \"cropped subject\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 853,
+          "total_tokens": 2375,
+          "cost": 0.00132996,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00132996,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010236
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 554,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

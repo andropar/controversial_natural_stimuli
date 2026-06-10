@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_35",
+    "stim_key": "sota_35",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 35,
+    "file_index": 35,
+    "image_name": "image_0035.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0035.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor/portrait\",\n  \"short_caption\": \"A partially visible person in a dark suit at the edge of a grassy field under an overcast sky.\",\n  \"main_objects\": [\"person\", \"grass field\", \"white fabric\"],\n  \"possible_interpretations\": [\n    \"Wedding or bridal photography session\",\n    \"Fashion editorial shoot\",\n    \"Portrait in a field\",\n    \"Couple photo with partner out of frame\",\n    \"Artistic composition emphasizing the landscape\"\n  ],\n  \"uncertainty_notes\": \"The person is heavily truncated at the right edge with no visible face, and the white fabric's connection to the figure is ambiguous. The full context of the scene is unclear.\",\n  \"quality_flags\": [\"heavy cropping\", \"subject partially out of frame\", \"low contrast overcast lighting\"]\n}",
+      "response": {
+        "id": "gen-1780319116-3PSp659h2acnwwqZ9UbW",
+        "object": "chat.completion",
+        "created": 1780319116,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor/portrait\",\n  \"short_caption\": \"A partially visible person in a dark suit at the edge of a grassy field under an overcast sky.\",\n  \"main_objects\": [\"person\", \"grass field\", \"white fabric\"],\n  \"possible_interpretations\": [\n    \"Wedding or bridal photography session\",\n    \"Fashion editorial shoot\",\n    \"Portrait in a field\",\n    \"Couple photo with partner out of frame\",\n    \"Artistic composition emphasizing the landscape\"\n  ],\n  \"uncertainty_notes\": \"The person is heavily truncated at the right edge with no visible face, and the white fabric's connection to the figure is ambiguous. The full context of the scene is unclear.\",\n  \"quality_flags\": [\"heavy cropping\", \"subject partially out of frame\", \"low contrast overcast lighting\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a large grassy field with what appears to be a person in a suit and white dress/garment on the right edge, but mostly cut off - only a partial view of the person is visible. The field has visible tracks or patterns in the grass. The sky is overcast/white. The horizon line shows some distant small trees or features.\n\nKey observations:\n- Dominant content: a grassy field/scene\n- A person is partially visible on the right edge (appears to be a man in a dark suit)\n- There's something white hanging from or near the person (possibly a dress or fabric)\n- Most of the frame is the grass field with linear patterns\n- The person is heavily cropped/truncated on the right\n- The composition is unusual with the subject pushed to the edge\n\nLet me rate the dimensions:\n- recognizability: 3 - The main content is recognizable (field with person) but the person is heavily cropped\n- ambiguity: 3 - Could be a wedding photo, portrait session, fashion shoot, etc.\n- natural_photo_typicality: 4 - Looks like a natural photograph\n- visual_clutter: 2 - Mostly simple grass field, some patterns\n- object_centricity: 2 - No clear central object dominates\n- scene_centricity: 5 - It's mainly a scene (grassy field)\n- caption_confidence: 3 - Can describe the scene but the purpose is unclear\n\nEstimated objects: 1 partial person, maybe 1-2 objects total visible\nDistinct categories: 1 (person)\n\nContains:\n- person: true (partial)\n- face: false (not visible)\n- animal: false\n- text: false\n- vehicle: false\n- food: false\n- indoor: false\n- outdoor: true\n- artificial/rendered: false\n- occlusion/truncation: true (person is heavily truncated)\n- unusual viewpoint: false\n- multiple main objects: false\n\nDominant content type: scene (with person as accent)\nImage style: natural_photo (or possibly edited_photo - could be a wedding photo)\nSemantic domain: outdoor/nature/portrait\n\nShort caption: \"A partially visible person in a suit standing at the edge of a grassy field under overcast sky.\"\n\nMain objects: person, grass field, white fabric/dress\n\nPossible interpretations:\n- Wedding photography shoot\n- Fashion editorial\n- Portrait session\n- Bridal photo\n\nUncertainty: The person's face and most of their body are cut off, making it hard to determine context.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a large grassy field with what appears to be a person in a suit and white dress/garment on the right edge, but mostly cut off - only a partial view of the person is visible. The field has visible tracks or patterns in the grass. The sky is overcast/white. The horizon line shows some distant small trees or features.\n\nKey observations:\n- Dominant content: a grassy field/scene\n- A person is partially visible on the right edge (appears to be a man in a dark suit)\n- There's something white hanging from or near the person (possibly a dress or fabric)\n- Most of the frame is the grass field with linear patterns\n- The person is heavily cropped/truncated on the right\n- The composition is unusual with the subject pushed to the edge\n\nLet me rate the dimensions:\n- recognizability: 3 - The main content is recognizable (field with person) but the person is heavily cropped\n- ambiguity: 3 - Could be a wedding photo, portrait session, fashion shoot, etc.\n- natural_photo_typicality: 4 - Looks like a natural photograph\n- visual_clutter: 2 - Mostly simple grass field, some patterns\n- object_centricity: 2 - No clear central object dominates\n- scene_centricity: 5 - It's mainly a scene (grassy field)\n- caption_confidence: 3 - Can describe the scene but the purpose is unclear\n\nEstimated objects: 1 partial person, maybe 1-2 objects total visible\nDistinct categories: 1 (person)\n\nContains:\n- person: true (partial)\n- face: false (not visible)\n- animal: false\n- text: false\n- vehicle: false\n- food: false\n- indoor: false\n- outdoor: true\n- artificial/rendered: false\n- occlusion/truncation: true (person is heavily truncated)\n- unusual viewpoint: false\n- multiple main objects: false\n\nDominant content type: scene (with person as accent)\nImage style: natural_photo (or possibly edited_photo - could be a wedding photo)\nSemantic domain: outdoor/nature/portrait\n\nShort caption: \"A partially visible person in a suit standing at the edge of a grassy field under overcast sky.\"\n\nMain objects: person, grass field, white fabric/dress\n\nPossible interpretations:\n- Wedding photography shoot\n- Fashion editorial\n- Portrait session\n- Bridal photo\n\nUncertainty: The person's face and most of their body are cut off, making it hard to determine context.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1467,
+          "completion_tokens": 925,
+          "total_tokens": 2392,
+          "cost": 0.00139986,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139986,
+            "upstream_inference_prompt_cost": 0.00028986,
+            "upstream_inference_completions_cost": 0.00111
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 612,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

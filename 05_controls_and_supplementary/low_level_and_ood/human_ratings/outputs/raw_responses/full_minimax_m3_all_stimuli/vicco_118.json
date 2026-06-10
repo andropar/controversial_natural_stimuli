@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_118",
+    "stim_key": "vicco_118",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 118,
+    "file_index": 117,
+    "image_name": "shared_4rep_vicco_118.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_118.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 10,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"jewelry\",\n\n  \"short_caption\": \"An assortment of silver jewelry including rings, necklaces, bracelets, and pendants on a dark surface.\",\n  \"main_objects\": [\"silver rings\", \"hoop earrings\", \"chain necklaces\", \"beaded bracelet\", \"pendants\", \"charms\"],\n  \"possible_interpretations\": [\n    \"a collection of silver jewelry laid out for display or inventory\",\n    \"a flat-lay photograph of personal jewelry accessories\",\n    \"jewelry pieces arranged for sale or photography\",\n    \"an assortment of costume or fine silver jewelry\"\n  ],\n  \"uncertainty_notes\": \"Some pendant charms are small and difficult to identify precisely; one appears to have a turquoise-colored stone and another a small shell.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319524-S1Wo6uUvDeb28yFVTpIF",
+        "object": "chat.completion",
+        "created": 1780319524,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 10,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"jewelry\",\n\n  \"short_caption\": \"An assortment of silver jewelry including rings, necklaces, bracelets, and pendants on a dark surface.\",\n  \"main_objects\": [\"silver rings\", \"hoop earrings\", \"chain necklaces\", \"beaded bracelet\", \"pendants\", \"charms\"],\n  \"possible_interpretations\": [\n    \"a collection of silver jewelry laid out for display or inventory\",\n    \"a flat-lay photograph of personal jewelry accessories\",\n    \"jewelry pieces arranged for sale or photography\",\n    \"an assortment of costume or fine silver jewelry\"\n  ],\n  \"uncertainty_notes\": \"Some pendant charms are small and difficult to identify precisely; one appears to have a turquoise-colored stone and another a small shell.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a collection of silver jewelry pieces arranged on a dark gray/black surface. I can see:\n- Multiple silver rings (hoop earrings, thin bands)\n- Several necklaces/pendants with chains\n- A bracelet with beads\n- Various pendants/charms (including what appears to be a small turquoise/blue stone, a shell, a heart, a circular charm, a flower, and a small cylinder/bead)\n\nLet me provide the structured annotations:\n\n- Recognizability: Clear, easily identifiable as jewelry - 5\n- Ambiguity: Low ambiguity, clearly jewelry - 1\n- Natural photo typicality: Looks like a typical product/lifestyle photo - 4\n- Visual clutter: Multiple items but spread out - 3\n- Object centricity: Objects are the main focus - 5\n- Scene centricity: Not really a scene, just objects on a surface - 1\n- Caption confidence: High confidence - 5\n\n- Salient object count: Many (~8-10 distinct items)\n- Distinct object categories: 3-4 (rings, earrings, necklaces, bracelets)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (it's a flat surface, not really a scene)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (real objects)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (top-down typical view)\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"jewelry\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a collection of silver jewelry pieces arranged on a dark gray/black surface. I can see:\n- Multiple silver rings (hoop earrings, thin bands)\n- Several necklaces/pendants with chains\n- A bracelet with beads\n- Various pendants/charms (including what appears to be a small turquoise/blue stone, a shell, a heart, a circular charm, a flower, and a small cylinder/bead)\n\nLet me provide the structured annotations:\n\n- Recognizability: Clear, easily identifiable as jewelry - 5\n- Ambiguity: Low ambiguity, clearly jewelry - 1\n- Natural photo typicality: Looks like a typical product/lifestyle photo - 4\n- Visual clutter: Multiple items but spread out - 3\n- Object centricity: Objects are the main focus - 5\n- Scene centricity: Not really a scene, just objects on a surface - 1\n- Caption confidence: High confidence - 5\n\n- Salient object count: Many (~8-10 distinct items)\n- Distinct object categories: 3-4 (rings, earrings, necklaces, bracelets)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (it's a flat surface, not really a scene)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (real objects)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (top-down typical view)\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"jewelry\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 768,
+          "total_tokens": 2290,
+          "cost": 0.00122796,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00122796,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009216
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 413,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

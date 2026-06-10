@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_78",
+    "stim_key": "vicco_78",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 78,
+    "file_index": 77,
+    "image_name": "shared_4rep_vicco_078.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_078.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"book/literature\",\n  \"short_caption\": \"Hand holding a Russian positive psychology book with tiger-woman cover art in a bookstore.\",\n  \"main_objects\": [\"book\", \"hand\", \"bookshelves\"],\n  \"possible_interpretations\": [\"Russian self-help book on relationships\", \"psychology book in a bookstore\", \"bookstore browsing photo\"],\n  \"uncertainty_notes\": \"Hand is partially visible; faces and tiger are cover illustrations, not real subjects.\",\n  \"quality_flags\": []\n}\n```",
+      "response": {
+        "id": "gen-1780319479-RAEbFNH5zZRSKeQmOJ44",
+        "object": "chat.completion",
+        "created": 1780319479,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"book/literature\",\n  \"short_caption\": \"Hand holding a Russian positive psychology book with tiger-woman cover art in a bookstore.\",\n  \"main_objects\": [\"book\", \"hand\", \"bookshelves\"],\n  \"possible_interpretations\": [\"Russian self-help book on relationships\", \"psychology book in a bookstore\", \"bookstore browsing photo\"],\n  \"uncertainty_notes\": \"Hand is partially visible; faces and tiger are cover illustrations, not real subjects.\",\n  \"quality_flags\": []\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a book being held up, with the cover clearly visible. The book is in Russian, titled \"Как удержать любимого мужчину\" by Ольга Арнольд, published under the \"Позитивная психология\" (Positive Psychology) series. The cover features an artistic illustration of a woman's face merged with a tiger's face, with a small figure of a man, and birds flying. In the background, there are bookshelves with other books.\n\nLet me provide the annotations:\n\n- Recognizability: The main content (a book with cover) is very clear - 5\n- Ambiguity: Low ambiguity - the image clearly shows a book - 1\n- Natural photo typicality: It's a casual photo of a book, looks like a natural photo - 4\n- Visual clutter: There are bookshelves in background and the book cover itself has multiple elements - 3\n- Object centricity: The book is the central object - 5\n- Scene centricity: Not primarily a scene - 1\n- Caption confidence: High - clearly a book - 5\n\nEstimated salient objects: 1 (the book) - maybe 2 if counting hand\nDistinct object categories: 2 (book, hand)\nContains person: Yes, partially (hand) and illustrations on cover\nContains face: Yes, on the book cover\nContains animal: Yes, tiger illustration on cover\nContains text: Yes, Russian text on cover\nContains vehicle: No\nContains food: No\nContains indoor scene: Yes, bookstore/library setting\nContains outdoor scene: No\nContains artificial/rendered content: Yes (the cover illustration)\nContains occlusion: Yes, hand partially visible\nContains unusual viewpoint: Slight angle but not unusual\nContains multiple main objects: No, one main book\n\nDominant content type: object (the book)\nImage style: natural_photo\nSemantic domain: book/literature\n\nCaption: \"A hand holding a Russian psychology book with tiger-woman cover illustration in a bookstore.\"\n\nMain objects: book, hand\nPossible interpretations: Russian self-help book, psychology book, bookstore photograph\nUncertainty notes: minor - need to assess whether hand counts as a person\nQuality flags: none major",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a book being held up, with the cover clearly visible. The book is in Russian, titled \"Как удержать любимого мужчину\" by Ольга Арнольд, published under the \"Позитивная психология\" (Positive Psychology) series. The cover features an artistic illustration of a woman's face merged with a tiger's face, with a small figure of a man, and birds flying. In the background, there are bookshelves with other books.\n\nLet me provide the annotations:\n\n- Recognizability: The main content (a book with cover) is very clear - 5\n- Ambiguity: Low ambiguity - the image clearly shows a book - 1\n- Natural photo typicality: It's a casual photo of a book, looks like a natural photo - 4\n- Visual clutter: There are bookshelves in background and the book cover itself has multiple elements - 3\n- Object centricity: The book is the central object - 5\n- Scene centricity: Not primarily a scene - 1\n- Caption confidence: High - clearly a book - 5\n\nEstimated salient objects: 1 (the book) - maybe 2 if counting hand\nDistinct object categories: 2 (book, hand)\nContains person: Yes, partially (hand) and illustrations on cover\nContains face: Yes, on the book cover\nContains animal: Yes, tiger illustration on cover\nContains text: Yes, Russian text on cover\nContains vehicle: No\nContains food: No\nContains indoor scene: Yes, bookstore/library setting\nContains outdoor scene: No\nContains artificial/rendered content: Yes (the cover illustration)\nContains occlusion: Yes, hand partially visible\nContains unusual viewpoint: Slight angle but not unusual\nContains multiple main objects: No, one main book\n\nDominant content type: object (the book)\nImage style: natural_photo\nSemantic domain: book/literature\n\nCaption: \"A hand holding a Russian psychology book with tiger-woman cover illustration in a bookstore.\"\n\nMain objects: book, hand\nPossible interpretations: Russian self-help book, psychology book, bookstore photograph\nUncertainty notes: minor - need to assess whether hand counts as a person\nQuality flags: none major",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 802,
+          "total_tokens": 2324,
+          "cost": 0.00126876,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126876,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009624
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 584,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

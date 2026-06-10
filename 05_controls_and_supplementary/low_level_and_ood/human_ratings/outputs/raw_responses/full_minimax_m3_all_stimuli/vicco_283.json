@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_283",
+    "stim_key": "vicco_283",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 283,
+    "file_index": 282,
+    "image_name": "shared_4rep_vicco_283.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_283.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 20,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"books\",\n\n  \"short_caption\": \"Books by Octavia E. Butler displayed on a bookstore shelf.\",\n  \"main_objects\": [\"books\", \"bookshelf\"],\n  \"possible_interpretations\": [\"A bookstore display of Octavia E. Butler books\", \"A personal bookshelf with Butler's works\", \"A library collection of Butler's novels\"],\n  \"uncertainty_notes\": \"Top shelf contents are partially cut off and some titles are hard to read clearly.\",\n  \"quality_flags\": [\"partial_occlusion\", \"cropped_top\", \"mild_perspective_distortion\"]\n}",
+      "response": {
+        "id": "gen-1780319717-KrUZQPLFexFSgTzJbnUz",
+        "object": "chat.completion",
+        "created": 1780319717,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 20,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"books\",\n\n  \"short_caption\": \"Books by Octavia E. Butler displayed on a bookstore shelf.\",\n  \"main_objects\": [\"books\", \"bookshelf\"],\n  \"possible_interpretations\": [\"A bookstore display of Octavia E. Butler books\", \"A personal bookshelf with Butler's works\", \"A library collection of Butler's novels\"],\n  \"uncertainty_notes\": \"Top shelf contents are partially cut off and some titles are hard to read clearly.\",\n  \"quality_flags\": [\"partial_occlusion\", \"cropped_top\", \"mild_perspective_distortion\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a bookshelf with books by Octavia E. Butler, prominently displayed. There are multiple books visible with their spines showing, including \"Kindred,\" \"Parable of the Sower,\" \"Parable of the Talents,\" \"Wild Seed,\" \"Patternmaster,\" \"Dawn,\" and others. This appears to be in a bookstore, given the \"New Release\" tag visible on one book.\n\nLet me annotate this carefully:\n\n- recognizability: High - books on a shelf are very recognizable (5)\n- ambiguity: Low - it's clearly a bookshelf with books (1-2)\n- natural_photo_typicality: This looks like a natural photo, possibly a casual phone photo (4)\n- visual_clutter: Many books visible, somewhat cluttered (3-4)\n- object_centricity: The books are the main focus, but it's a collection (3-4)\n- scene_centricity: It's more about objects (books) than a scene, though it's a bookstore setting (3)\n- caption_confidence: High, can describe easily (5)\n\nObjects: Many books, bookshelf\nContains text: Yes (book titles)\nContains artificial/rendered: No\nIndoor scene: Yes\nOutdoor scene: No",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a bookshelf with books by Octavia E. Butler, prominently displayed. There are multiple books visible with their spines showing, including \"Kindred,\" \"Parable of the Sower,\" \"Parable of the Talents,\" \"Wild Seed,\" \"Patternmaster,\" \"Dawn,\" and others. This appears to be in a bookstore, given the \"New Release\" tag visible on one book.\n\nLet me annotate this carefully:\n\n- recognizability: High - books on a shelf are very recognizable (5)\n- ambiguity: Low - it's clearly a bookshelf with books (1-2)\n- natural_photo_typicality: This looks like a natural photo, possibly a casual phone photo (4)\n- visual_clutter: Many books visible, somewhat cluttered (3-4)\n- object_centricity: The books are the main focus, but it's a collection (3-4)\n- scene_centricity: It's more about objects (books) than a scene, though it's a bookstore setting (3)\n- caption_confidence: High, can describe easily (5)\n\nObjects: Many books, bookshelf\nContains text: Yes (book titles)\nContains artificial/rendered: No\nIndoor scene: Yes\nOutdoor scene: No",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 599,
+          "total_tokens": 2121,
+          "cost": 0.00102516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00102516,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0007188
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 272,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

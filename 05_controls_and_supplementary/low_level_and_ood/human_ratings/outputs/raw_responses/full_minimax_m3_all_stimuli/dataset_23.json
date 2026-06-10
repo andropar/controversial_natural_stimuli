@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_23",
+    "stim_key": "dataset_23",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 23,
+    "file_index": 23,
+    "image_name": "image_0023.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0023.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture\",\n  \"short_caption\": \"Tall white church bell tower with green dome and clock faces under cloudy sky.\",\n  \"main_objects\": [\"church tower\", \"clock\", \"dome\", \"tiled roof\"],\n  \"possible_interpretations\": [\"European church bell tower\", \"cathedral spire\", \"town clock tower\", \"historic religious building\"],\n  \"uncertainty_notes\": \"Exact location and denomination of the church cannot be determined from visual features alone; the base is cut off at the bottom edge.\",\n  \"quality_flags\": [\"mild_truncation_at_bottom\", \"upward_viewing_angle\"]\n}",
+      "response": {
+        "id": "gen-1780318985-pgz0ZOADR4fCntTwbYiI",
+        "object": "chat.completion",
+        "created": 1780318985,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture\",\n  \"short_caption\": \"Tall white church bell tower with green dome and clock faces under cloudy sky.\",\n  \"main_objects\": [\"church tower\", \"clock\", \"dome\", \"tiled roof\"],\n  \"possible_interpretations\": [\"European church bell tower\", \"cathedral spire\", \"town clock tower\", \"historic religious building\"],\n  \"uncertainty_notes\": \"Exact location and denomination of the church cannot be determined from visual features alone; the base is cut off at the bottom edge.\",\n  \"quality_flags\": [\"mild_truncation_at_bottom\", \"upward_viewing_angle\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a tall church tower with:\n- A green/teal copper dome at the top\n- An ornate lantern structure with columns\n- White walls with stone/gray trim\n- Two visible clock faces (gold on dark background)\n- Arched windows\n- Below the tower is a building with a red/orange tiled roof\n- The sky is cloudy/overcast\n\nThis appears to be a church bell tower, likely European architecture. The image is taken from a low angle looking up.\n\nLet me rate each aspect:\n- recognizability: 5 - Very clearly a church/cathedral tower\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 5 - Looks like a typical photograph\n- visual_clutter: 2 - Relatively clean with one main subject\n- object_centricity: 3 - The tower dominates but is also part of a scene\n- scene_centricity: 4 - It's an architectural scene/outdoor scene\n- caption_confidence: 5 - Easy to caption\n\nNo person, face, animal, text, vehicle, food visible.\nIt's an outdoor scene.\nNo artificial/rendered content.\nThe base of the tower is partially cut off (slight truncation at bottom).\n\nLet me finalize my annotations.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a tall church tower with:\n- A green/teal copper dome at the top\n- An ornate lantern structure with columns\n- White walls with stone/gray trim\n- Two visible clock faces (gold on dark background)\n- Arched windows\n- Below the tower is a building with a red/orange tiled roof\n- The sky is cloudy/overcast\n\nThis appears to be a church bell tower, likely European architecture. The image is taken from a low angle looking up.\n\nLet me rate each aspect:\n- recognizability: 5 - Very clearly a church/cathedral tower\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 5 - Looks like a typical photograph\n- visual_clutter: 2 - Relatively clean with one main subject\n- object_centricity: 3 - The tower dominates but is also part of a scene\n- scene_centricity: 4 - It's an architectural scene/outdoor scene\n- caption_confidence: 5 - Easy to caption\n\nNo person, face, animal, text, vehicle, food visible.\nIt's an outdoor scene.\nNo artificial/rendered content.\nThe base of the tower is partially cut off (slight truncation at bottom).\n\nLet me finalize my annotations.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 628,
+          "total_tokens": 2150,
+          "cost": 0.00118284,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00118284,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0007536
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 301,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

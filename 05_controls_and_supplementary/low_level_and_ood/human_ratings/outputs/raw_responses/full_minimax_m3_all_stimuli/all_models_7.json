@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_7",
+    "stim_key": "all_models_7",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 7,
+    "file_index": 7,
+    "image_name": "image_0007.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0007.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"event_presentation\",\n  \"short_caption\": \"A presenter gestures beside a large display showing Google Chrome logos across multiple device screens.\",\n  \"main_objects\": [\"Google Chrome logo\", \"tablet\", \"smartphone\", \"laptop screen\", \"presenter\", \"glasses\", \"mobile phone\"],\n  \"possible_interpretations\": [\"Google Chrome product launch event\", \"tech presentation or keynote\", \"promotional display for Chrome browser\"],\n  \"uncertainty_notes\": \"Presenter is heavily cropped; only side of face visible. Exact event context unknown.\",\n  \"quality_flags\": [\"person_truncated\", \"shallow_dof_background_blur\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318741-mLLPC6I9HfTzXKfs7vKE",
+        "object": "chat.completion",
+        "created": 1780318741,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"event_presentation\",\n  \"short_caption\": \"A presenter gestures beside a large display showing Google Chrome logos across multiple device screens.\",\n  \"main_objects\": [\"Google Chrome logo\", \"tablet\", \"smartphone\", \"laptop screen\", \"presenter\", \"glasses\", \"mobile phone\"],\n  \"possible_interpretations\": [\"Google Chrome product launch event\", \"tech presentation or keynote\", \"promotional display for Chrome browser\"],\n  \"uncertainty_notes\": \"Presenter is heavily cropped; only side of face visible. Exact event context unknown.\",\n  \"quality_flags\": [\"person_truncated\", \"shallow_dof_background_blur\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see:\n\n1. A large display or backdrop showing the Google Chrome browser logo/interface with multiple device screens showing the Chrome icon - on what appears to be a tablet, a smartphone, a laptop, and other devices\n2. On the right side, there's a person (partially visible) - I can see glasses, a hand, and part of their body. They appear to be holding a small device (phone) and gesturing\n3. The background is dark/black, suggesting a stage or presentation setting\n4. The Chrome icon is prominently displayed in the center-left area\n\nThis looks like a product launch or presentation event, likely for Google Chrome.\n\nLet me provide structured annotations:\n\n- Recognizability: The image clearly shows Chrome logos and a person presenting, very recognizable = 5\n- Ambiguity: Not many interpretations, clearly a presentation/launch event = 1\n- Natural_photo_typicality: Looks like a natural photo of an event = 4\n- Visual_clutter: Multiple device screens but organized, moderate clutter = 3\n- Object_centricity: The Chrome logos are central but the person is also prominent = 3\n- Scene_centricity: It's more of a scene/event setting = 4\n- Caption_confidence: High confidence in caption = 5\n\nFor booleans:\n- contains_person: yes\n- contains_face: partially visible (side of face with glasses)\n- contains_animal: no\n- contains_text: no visible text\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: yes (presentation stage)\n- contains_outdoor_scene: no\n- contains_artificial_or_rendered_content: the logos/screens are artificial but it's a photo of them\n- contains_occlusion_or_truncation: the person is truncated\n- contains_unusual_viewpoint: somewhat unusual angle\n- contains_multiple_main_objects: yes (Chrome display and presenter)",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see:\n\n1. A large display or backdrop showing the Google Chrome browser logo/interface with multiple device screens showing the Chrome icon - on what appears to be a tablet, a smartphone, a laptop, and other devices\n2. On the right side, there's a person (partially visible) - I can see glasses, a hand, and part of their body. They appear to be holding a small device (phone) and gesturing\n3. The background is dark/black, suggesting a stage or presentation setting\n4. The Chrome icon is prominently displayed in the center-left area\n\nThis looks like a product launch or presentation event, likely for Google Chrome.\n\nLet me provide structured annotations:\n\n- Recognizability: The image clearly shows Chrome logos and a person presenting, very recognizable = 5\n- Ambiguity: Not many interpretations, clearly a presentation/launch event = 1\n- Natural_photo_typicality: Looks like a natural photo of an event = 4\n- Visual_clutter: Multiple device screens but organized, moderate clutter = 3\n- Object_centricity: The Chrome logos are central but the person is also prominent = 3\n- Scene_centricity: It's more of a scene/event setting = 4\n- Caption_confidence: High confidence in caption = 5\n\nFor booleans:\n- contains_person: yes\n- contains_face: partially visible (side of face with glasses)\n- contains_animal: no\n- contains_text: no visible text\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: yes (presentation stage)\n- contains_outdoor_scene: no\n- contains_artificial_or_rendered_content: the logos/screens are artificial but it's a photo of them\n- contains_occlusion_or_truncation: the person is truncated\n- contains_unusual_viewpoint: somewhat unusual angle\n- contains_multiple_main_objects: yes (Chrome display and presenter)",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 771,
+          "total_tokens": 2293,
+          "cost": 0.00101988,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1508,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00101988,
+            "upstream_inference_prompt_cost": 9.468e-05,
+            "upstream_inference_completions_cost": 0.0009252
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 471,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

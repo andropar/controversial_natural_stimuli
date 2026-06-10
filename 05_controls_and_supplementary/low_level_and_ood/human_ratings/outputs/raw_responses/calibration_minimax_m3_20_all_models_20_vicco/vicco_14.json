@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_14",
+    "stim_key": "vicco_14",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 14,
+    "file_index": 13,
+    "image_name": "shared_4rep_vicco_014.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_014.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 1, \"object_centricity\": 5, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 1, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"clothing\", \"short_caption\": \"A pair of dark brown leather gloves with knitted cuffs on a wooden floor.\", \"main_objects\": [\"leather gloves\", \"knitted cuffs\"], \"possible_interpretations\": [\"a pair of men's leather dress gloves\", \"a pair of women's leather winter gloves\", \"a pair of work gloves\"], \"uncertainty_notes\": \"Glove style and intended wearer are somewhat ambiguous but the object class is clear.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780318222-z0heEtJuHvOfXUOBaC52",
+        "object": "chat.completion",
+        "created": 1780318222,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 1, \"object_centricity\": 5, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 1, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"clothing\", \"short_caption\": \"A pair of dark brown leather gloves with knitted cuffs on a wooden floor.\", \"main_objects\": [\"leather gloves\", \"knitted cuffs\"], \"possible_interpretations\": [\"a pair of men's leather dress gloves\", \"a pair of women's leather winter gloves\", \"a pair of work gloves\"], \"uncertainty_notes\": \"Glove style and intended wearer are somewhat ambiguous but the object class is clear.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "The image shows a pair of dark brown leather gloves with knitted cuffs laid on a wooden floor. Let me analyze this carefully for the schema.\n\n- Recognizability: The main content (gloves) is very clearly recognizable. 5\n- Ambiguity: Low ambiguity - it's clearly a pair of gloves. 1\n- Natural photo typicality: Looks like a typical natural photograph, perhaps taken for sale/listing purposes. 4\n- Visual clutter: Minimal clutter, just gloves on a wooden floor. 1\n- Object centricity: The gloves are the clear central subject. 5\n- Scene centricity: It's more object-focused than scene-focused, though there's a floor background. 2\n- Caption confidence: High confidence in a concise caption. 5\n\nSalient objects: 2 gloves\nDistinct categories: 1 (gloves)\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: yes (wooden floor)\nContains outdoor scene: no\nContains artificial or rendered content: no\nContains occlusion or truncation: no\nContains unusual viewpoint: no\nContains multiple main objects: technically yes (pair of gloves), but they're a single object category. I'll say no since they're one object type.\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: clothing/accessories\n\nCaption: A pair of dark brown leather gloves with knitted cuffs on a wooden floor.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a pair of dark brown leather gloves with knitted cuffs laid on a wooden floor. Let me analyze this carefully for the schema.\n\n- Recognizability: The main content (gloves) is very clearly recognizable. 5\n- Ambiguity: Low ambiguity - it's clearly a pair of gloves. 1\n- Natural photo typicality: Looks like a typical natural photograph, perhaps taken for sale/listing purposes. 4\n- Visual clutter: Minimal clutter, just gloves on a wooden floor. 1\n- Object centricity: The gloves are the clear central subject. 5\n- Scene centricity: It's more object-focused than scene-focused, though there's a floor background. 2\n- Caption confidence: High confidence in a concise caption. 5\n\nSalient objects: 2 gloves\nDistinct categories: 1 (gloves)\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: yes (wooden floor)\nContains outdoor scene: no\nContains artificial or rendered content: no\nContains occlusion or truncation: no\nContains unusual viewpoint: no\nContains multiple main objects: technically yes (pair of gloves), but they're a single object category. I'll say no since they're one object type.\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: clothing/accessories\n\nCaption: A pair of dark brown leather gloves with knitted cuffs on a wooden floor.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 606,
+          "total_tokens": 2128,
+          "cost": 0.00103356,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00103356,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0007272
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 365,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

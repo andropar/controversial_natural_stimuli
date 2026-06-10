@@ -7,6 +7,12 @@ not about the final brain-alignment inference.
 - `objective_mc_validation/`: Monte Carlo checks of the selection objective.
 - `noise_model_validation/`: checks that the objective's noise model is
   calibrated enough for the selection claims that depend on it.
+- `laion_decorrelation_pilot/`: two-model LAION pilot comparing noisy raw-track
+  selection against a pure clean-decorrelation baseline.
+- `laion_decorrelation_laion11/`: same LAION comparison using the 11 full-sample
+  model feature spaces that are compatible with the mixed-RSA encoding models;
+  this control found only small differences between noise-aware selection and
+  pure decorrelation.
 
 <!-- BEGIN AUTO-FIGURE-PROVENANCE -->
 ## Contents Snapshot

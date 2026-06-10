@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_275",
+    "stim_key": "vicco_275",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 275,
+    "file_index": 274,
+    "image_name": "shared_4rep_vicco_275.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_275.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 3, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 4, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 2, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"text_document\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"document/text\", \"short_caption\": \"A hand holding a paper with handwritten Russian text in decorative script\", \"main_objects\": [\"paper\", \"hand\", \"handwritten text\"], \"possible_interpretations\": [\"handwritten poem or verse\", \"personal note or letter\", \"calligraphy practice\", \"song lyrics\"], \"uncertainty_notes\": \"Handwriting is stylized and partially illegible; full content cannot be reliably deciphered\", \"quality_flags\": [\"difficult_to_read_text\", \"low_contrast\", \"tilted_perspective\"]}",
+      "response": {
+        "id": "gen-1780319706-1Ifqiz9RMFL750xd2BcM",
+        "object": "chat.completion",
+        "created": 1780319706,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 3, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 4, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 2, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"text_document\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"document/text\", \"short_caption\": \"A hand holding a paper with handwritten Russian text in decorative script\", \"main_objects\": [\"paper\", \"hand\", \"handwritten text\"], \"possible_interpretations\": [\"handwritten poem or verse\", \"personal note or letter\", \"calligraphy practice\", \"song lyrics\"], \"uncertainty_notes\": \"Handwriting is stylized and partially illegible; full content cannot be reliably deciphered\", \"quality_flags\": [\"difficult_to_read_text\", \"low_contrast\", \"tilted_perspective\"]}",
+              "refusal": null,
+              "reasoning": "The image shows a handwritten note on a piece of paper being held by a hand. The text appears to be in Russian, written in a stylized/decorative script. There are some decorative elements at the top (asterisks/stars). The handwriting is artistic and somewhat difficult to read. The paper has a white/cream color and the hand holding it has dark nail polish. The background appears to be an indoor scene with a beige/neutral colored wall or surface.\n\nLet me analyze the image for the schema:\n\n- recognizability: The content is a handwritten note in Russian with decorative script - moderately recognizable as text/poem but the handwriting is hard to read. Maybe 3.\n- ambiguity: The image clearly shows a handwritten document, low ambiguity. 2.\n- natural_photo_typicality: This looks like a natural photo of a hand holding a paper. 4.\n- visual_clutter: The text takes up most of the image, but there's not much competing detail. 2.\n- object_centricity: The paper/note is the central object. 4.\n- scene_centricity: Not really a scene, it's more of an object. 2.\n- caption_confidence: Pretty confident I can describe what's shown. 4.\n\n- estimated_salient_object_count: 2 (hand, paper/note)\n- estimated_distinct_object_categories: 2 (hand, paper)\n\n- contains_person: true (hand visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (handwritten text in Russian)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (background appears indoor)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (paper is cut off at edges)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: text_document\n- image_style: natural_photo\n- semantic_domain: document/text\n\n- short_caption: A hand holding a piece of paper with handwritten Russian text\n- main_objects: paper, hand, handwritten text\n- possible_interpretations: handwritten poem, handwritten note, personal letter\n- uncertainty_notes: Handwriting is stylized and difficult to fully decipher\n- quality_flags: difficult_to_read_text",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a handwritten note on a piece of paper being held by a hand. The text appears to be in Russian, written in a stylized/decorative script. There are some decorative elements at the top (asterisks/stars). The handwriting is artistic and somewhat difficult to read. The paper has a white/cream color and the hand holding it has dark nail polish. The background appears to be an indoor scene with a beige/neutral colored wall or surface.\n\nLet me analyze the image for the schema:\n\n- recognizability: The content is a handwritten note in Russian with decorative script - moderately recognizable as text/poem but the handwriting is hard to read. Maybe 3.\n- ambiguity: The image clearly shows a handwritten document, low ambiguity. 2.\n- natural_photo_typicality: This looks like a natural photo of a hand holding a paper. 4.\n- visual_clutter: The text takes up most of the image, but there's not much competing detail. 2.\n- object_centricity: The paper/note is the central object. 4.\n- scene_centricity: Not really a scene, it's more of an object. 2.\n- caption_confidence: Pretty confident I can describe what's shown. 4.\n\n- estimated_salient_object_count: 2 (hand, paper/note)\n- estimated_distinct_object_categories: 2 (hand, paper)\n\n- contains_person: true (hand visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: true (handwritten text in Russian)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (background appears indoor)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (paper is cut off at edges)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: text_document\n- image_style: natural_photo\n- semantic_domain: document/text\n\n- short_caption: A hand holding a piece of paper with handwritten Russian text\n- main_objects: paper, hand, handwritten text\n- possible_interpretations: handwritten poem, handwritten note, personal letter\n- uncertainty_notes: Handwriting is stylized and difficult to fully decipher\n- quality_flags: difficult_to_read_text",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 807,
+          "total_tokens": 2329,
+          "cost": 0.00139764,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139764,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009684
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 562,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

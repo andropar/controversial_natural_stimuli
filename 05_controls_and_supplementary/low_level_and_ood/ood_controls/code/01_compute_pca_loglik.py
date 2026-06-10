@@ -21,7 +21,7 @@ a stimulus can be OOD in feature space but produce a normal-range prediction
 if the OOD feature dimensions have near-zero encoding weights. Prediction-space
 OOD is more directly relevant to brain alignment quality.
 
-Output: data/pca_loglik.csv
+Output: results/pca_loglik.csv
   Columns: model, subject, stimulus_group, stimulus_idx,
            loglik_feature_raw, loglik_pred_raw,
            loglik_feature_z, loglik_pred_z,
@@ -37,9 +37,9 @@ import argparse
 import sys
 from pathlib import Path
 
-_PAPER = Path(__file__).resolve().parents[1]  # experiments/cstim_paper/
-sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_PAPER.parents[1]))    # project root for cstims
+STAGE = Path(__file__).resolve().parents[1]
+SHARE_ROOT = STAGE.parents[2]
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
 
 import numpy as np
 import pandas as pd

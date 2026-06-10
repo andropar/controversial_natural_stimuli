@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_56",
+    "stim_key": "architecture_56",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 56,
+    "file_index": 56,
+    "image_name": "image_0056.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0056.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 6,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"bathroom\",\n\n  \"short_caption\": \"A staged bathroom interior with a freestanding white bathtub, pedestal sink, and blue-and-white checkered tile floor.\",\n  \"main_objects\": [\"bathtub\", \"pedestal sink\", \"mirror\", \"shelving unit\", \"toilet\", \"bath mat\", \"towels\"],\n  \"possible_interpretations\": [\n    \"A styled interior design catalog photograph of a bathroom\",\n    \"A real home bathroom photographed for a magazine\",\n    \"A showroom or model bathroom display\"\n  ],\n  \"uncertainty_notes\": \"The image appears professionally staged, suggesting a commercial or editorial photo, but the exact source is not verifiable from the image alone.\",\n  \"quality_flags\": [\"staged_scene\", \"high_lighting_quality\", \"possible_catalog_image\"]\n}",
+      "response": {
+        "id": "gen-1780318906-zdgjeiHRlax4HeO3vkNC",
+        "object": "chat.completion",
+        "created": 1780318906,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 6,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"bathroom\",\n\n  \"short_caption\": \"A staged bathroom interior with a freestanding white bathtub, pedestal sink, and blue-and-white checkered tile floor.\",\n  \"main_objects\": [\"bathtub\", \"pedestal sink\", \"mirror\", \"shelving unit\", \"toilet\", \"bath mat\", \"towels\"],\n  \"possible_interpretations\": [\n    \"A styled interior design catalog photograph of a bathroom\",\n    \"A real home bathroom photographed for a magazine\",\n    \"A showroom or model bathroom display\"\n  ],\n  \"uncertainty_notes\": \"The image appears professionally staged, suggesting a commercial or editorial photo, but the exact source is not verifiable from the image alone.\",\n  \"quality_flags\": [\"staged_scene\", \"high_lighting_quality\", \"possible_catalog_image\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a bathroom interior with:\n- Light blue walls with white wainscoting/paneling\n- A white freestanding bathtub (prominent, center-right)\n- A pedestal sink with a round mirror above it\n- A white shelving unit with folded towels\n- A toilet on the left side\n- Checkered blue and white tile floor\n- A patterned bath mat\n- A window with blinds on the right\n- Towels, a robe hanging\n- Toiletries on the shelves\n- A yellow sponge on the tub\n\nThis appears to be a styled/staged bathroom, likely from a catalog or interior design photo. It looks somewhat like a stock photo with possibly enhanced lighting and styling.\n\nLet me rate the attributes:\n\n- recognizability: 5 - Very clear, easy to recognize as a bathroom\n- ambiguity: 1 - Very unambiguous, clearly a bathroom\n- natural_photo_typicality: 3 - It looks like a photo but is clearly staged/styled, typical of catalog photography\n- visual_clutter: 3 - Several objects but organized, not overly cluttered\n- object_centricity: 2 - No single object dominates; it's more of a scene\n- scene_centricity: 5 - Clearly a scene/place (bathroom)\n- caption_confidence: 5 - Very confident in a caption\n\n- estimated_salient_object_count: 4-5 (bathtub, sink, toilet, shelving, mirror)\n- estimated_distinct_object_categories: 5-6\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it appears to be a real photo, though staged)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\" (or possibly \"edited_photo\" given the staging)\n- semantic_domain: \"indoor\" or \"bathroom\"\n\nThe image looks like a professional/staged photograph - possibly a catalog image. It has the polish of a commercial photo but is still a real photograph.\n\nLet me finalize:",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a bathroom interior with:\n- Light blue walls with white wainscoting/paneling\n- A white freestanding bathtub (prominent, center-right)\n- A pedestal sink with a round mirror above it\n- A white shelving unit with folded towels\n- A toilet on the left side\n- Checkered blue and white tile floor\n- A patterned bath mat\n- A window with blinds on the right\n- Towels, a robe hanging\n- Toiletries on the shelves\n- A yellow sponge on the tub\n\nThis appears to be a styled/staged bathroom, likely from a catalog or interior design photo. It looks somewhat like a stock photo with possibly enhanced lighting and styling.\n\nLet me rate the attributes:\n\n- recognizability: 5 - Very clear, easy to recognize as a bathroom\n- ambiguity: 1 - Very unambiguous, clearly a bathroom\n- natural_photo_typicality: 3 - It looks like a photo but is clearly staged/styled, typical of catalog photography\n- visual_clutter: 3 - Several objects but organized, not overly cluttered\n- object_centricity: 2 - No single object dominates; it's more of a scene\n- scene_centricity: 5 - Clearly a scene/place (bathroom)\n- caption_confidence: 5 - Very confident in a caption\n\n- estimated_salient_object_count: 4-5 (bathtub, sink, toilet, shelving, mirror)\n- estimated_distinct_object_categories: 5-6\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it appears to be a real photo, though staged)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\" (or possibly \"edited_photo\" given the staging)\n- semantic_domain: \"indoor\" or \"bathroom\"\n\nThe image looks like a professional/staged photograph - possibly a catalog image. It has the polish of a commercial photo but is still a real photograph.\n\nLet me finalize:",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 898,
+          "total_tokens": 2420,
+          "cost": 0.00138396,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00138396,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010776
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 552,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

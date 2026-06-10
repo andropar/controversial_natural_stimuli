@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_57",
+    "stim_key": "sota_57",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 57,
+    "file_index": 57,
+    "image_name": "image_0057.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0057.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"nature/forest\",\n  \"short_caption\": \"A young child holding a basket stands alone in a misty forest, looking upward.\",\n  \"main_objects\": [\"child\", \"basket\", \"trees\", \"leaf-covered ground\"],\n  \"possible_interpretations\": [\"child foraging in misty woods\", \"fairy-tale styled portrait of child with basket\", \"lost child searching in forest\", \"artistic fine-art photograph of child in fog\", \"autumn mushroom or berry gathering\"],\n  \"uncertainty_notes\": \"Likely a styled/art-directed fine art photograph rather than a candid natural scene; basket contents and childs intent are unclear.\",\n  \"quality_flags\": [\"misty\", \"low_contrast\", \"artistic_staging\", \"cinematic_color_grading\"]\n}",
+      "response": {
+        "id": "gen-1780319150-Ui79xe63MxK7zHczdNDX",
+        "object": "chat.completion",
+        "created": 1780319150,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"nature/forest\",\n  \"short_caption\": \"A young child holding a basket stands alone in a misty forest, looking upward.\",\n  \"main_objects\": [\"child\", \"basket\", \"trees\", \"leaf-covered ground\"],\n  \"possible_interpretations\": [\"child foraging in misty woods\", \"fairy-tale styled portrait of child with basket\", \"lost child searching in forest\", \"artistic fine-art photograph of child in fog\", \"autumn mushroom or berry gathering\"],\n  \"uncertainty_notes\": \"Likely a styled/art-directed fine art photograph rather than a candid natural scene; basket contents and childs intent are unclear.\",\n  \"quality_flags\": [\"misty\", \"low_contrast\", \"artistic_staging\", \"cinematic_color_grading\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a young child standing in a misty forest. The child is wearing a tan/beige jacket, light pants, and dark boots, and is holding a basket. The child is looking upward. The forest has tall, thin trees with fog/mist between them, creating an atmospheric, somewhat melancholic mood. The ground is covered with leaves and small branches.\n\nThis appears to be a staged/artistic photograph, possibly a fine art portrait, but it looks like a natural photograph in style. The composition is cinematic.\n\nLet me rate the various attributes:\n\n- recognizability: 5 - Very clear what's happening\n- ambiguity: 2 - Has some interpretive ambiguity (why is the child alone? what is in the basket?) but main content is clear\n- natural_photo_typicality: 3 - It looks like a natural photo but is quite artistic/staged\n- visual_clutter: 2 - The forest is relatively simple, not much clutter\n- object_centricity: 2 - The child is a clear subject, but the scene is also prominent\n- scene_centricity: 4 - Strongly a scene (forest)\n- caption_confidence: 4 - Can describe well\n\nEstimated objects: 1 main salient object (the child), with trees as background\nDistinct categories: 2-3 (person, basket, trees)\n\nContains person: true\nContains face: true (partially visible, looking up)\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false (basket might contain food but not visible)\nContains indoor scene: false\nContains outdoor scene: true\nContains artificial/rendered: false (looks like a natural photo, though could be edited)\nContains occlusion/truncation: false\nContains unusual viewpoint: false\nContains multiple main objects: false\n\nDominant content: scene (with person as subject)\nImage style: edited_photo (it's clearly artistic/staged with post-processing)\nSemantic domain: nature/forest\n\nShort caption: \"A young child holding a basket stands alone in a misty forest, gazing upward.\"\n\nMain objects: child, basket, trees\nPossible interpretations: \n- Child lost in forest\n- Child gathering mushrooms/berries\n- Artistic/staged portrait\n- Fairy tale scene\n\nQuality flags: low_contrast, misty, artistic_staging",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a young child standing in a misty forest. The child is wearing a tan/beige jacket, light pants, and dark boots, and is holding a basket. The child is looking upward. The forest has tall, thin trees with fog/mist between them, creating an atmospheric, somewhat melancholic mood. The ground is covered with leaves and small branches.\n\nThis appears to be a staged/artistic photograph, possibly a fine art portrait, but it looks like a natural photograph in style. The composition is cinematic.\n\nLet me rate the various attributes:\n\n- recognizability: 5 - Very clear what's happening\n- ambiguity: 2 - Has some interpretive ambiguity (why is the child alone? what is in the basket?) but main content is clear\n- natural_photo_typicality: 3 - It looks like a natural photo but is quite artistic/staged\n- visual_clutter: 2 - The forest is relatively simple, not much clutter\n- object_centricity: 2 - The child is a clear subject, but the scene is also prominent\n- scene_centricity: 4 - Strongly a scene (forest)\n- caption_confidence: 4 - Can describe well\n\nEstimated objects: 1 main salient object (the child), with trees as background\nDistinct categories: 2-3 (person, basket, trees)\n\nContains person: true\nContains face: true (partially visible, looking up)\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false (basket might contain food but not visible)\nContains indoor scene: false\nContains outdoor scene: true\nContains artificial/rendered: false (looks like a natural photo, though could be edited)\nContains occlusion/truncation: false\nContains unusual viewpoint: false\nContains multiple main objects: false\n\nDominant content: scene (with person as subject)\nImage style: edited_photo (it's clearly artistic/staged with post-processing)\nSemantic domain: nature/forest\n\nShort caption: \"A young child holding a basket stands alone in a misty forest, gazing upward.\"\n\nMain objects: child, basket, trees\nPossible interpretations: \n- Child lost in forest\n- Child gathering mushrooms/berries\n- Artistic/staged portrait\n- Fairy tale scene\n\nQuality flags: low_contrast, misty, artistic_staging",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 874,
+          "total_tokens": 2396,
+          "cost": 0.00135516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00135516,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010488
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 577,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

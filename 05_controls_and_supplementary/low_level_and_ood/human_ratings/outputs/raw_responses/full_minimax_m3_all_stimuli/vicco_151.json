@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_151",
+    "stim_key": "vicco_151",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 151,
+    "file_index": 150,
+    "image_name": "shared_4rep_vicco_151.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_151.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor_objects_activity\",\n  \"short_caption\": \"Person standing on grass holding a rusty scythe blade and a rope-tied concrete block.\",\n  \"main_objects\": [\"person\", \"rusty scythe blade\", \"concrete block\", \"rope\", \"denim jeans\", \"athletic shoes\", \"grass\"],\n  \"possible_interpretations\": [\"displaying old farm tool and weight\", \"carrying improvised objects outdoors\", \"showing found or salvaged items\", \"demonstrating historical agricultural equipment\", \"posing with rustic objects\"],\n  \"uncertainty_notes\": \"Head and face are cropped out; the exact purpose or context of holding these specific objects is not clear from the image alone.\",\n  \"quality_flags\": [\"head_cropped\", \"no_face_visible\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319565-TEgznu5t8TEY1fXrzKeP",
+        "object": "chat.completion",
+        "created": 1780319565,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor_objects_activity\",\n  \"short_caption\": \"Person standing on grass holding a rusty scythe blade and a rope-tied concrete block.\",\n  \"main_objects\": [\"person\", \"rusty scythe blade\", \"concrete block\", \"rope\", \"denim jeans\", \"athletic shoes\", \"grass\"],\n  \"possible_interpretations\": [\"displaying old farm tool and weight\", \"carrying improvised objects outdoors\", \"showing found or salvaged items\", \"demonstrating historical agricultural equipment\", \"posing with rustic objects\"],\n  \"uncertainty_notes\": \"Head and face are cropped out; the exact purpose or context of holding these specific objects is not clear from the image alone.\",\n  \"quality_flags\": [\"head_cropped\", \"no_face_visible\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see:\n- A person standing on grass, visible from the torso down\n- They're wearing a dark jacket, dark jeans rolled up at the cuffs, and black/pink athletic shoes\n- In their right hand (left side of image) they're holding what appears to be a rusty metal tool - looks like an old scythe blade or a large knife/blade\n- In their left hand (right side of image) they're holding a block of concrete or stone tied with blue and white rope\n- The setting is outdoors on green grass\n- The image shows the person from about chest down, no face visible\n\nLet me rate based on the schema:\n\n- Recognizability: 4 - the main content is clear (person holding objects on grass)\n- Ambiguity: 2 - fairly clear what's shown, though the tool's exact purpose is unclear\n- Natural_photo_typicality: 4 - looks like a typical natural photo\n- Visual_clutter: 2 - relatively simple composition\n- Object_centricity: 3 - person is central but there are multiple objects\n- Scene_centricity: 2 - the focus is on person/objects, not the scene\n- Caption_confidence: 4 - can describe this clearly\n\nFor booleans:\n- contains_person: true\n- contains_face: false (face not visible)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (head is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (blade, concrete block, person)\n\nDominant content: person (showing body/legs holding items)\nImage style: natural_photo\nSemantic domain: outdoor, activity/tool\n\nMain objects: person, scythe blade/tool, concrete block, rope, jeans, shoes, grass\n\nPossible interpretations: person displaying old tool, person carrying materials, person holding improvised weapon, display of found objects\n\nThe tool looks like an old scythe blade - rusty, long, with a wooden or metal handle attachment area visible at the top.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see:\n- A person standing on grass, visible from the torso down\n- They're wearing a dark jacket, dark jeans rolled up at the cuffs, and black/pink athletic shoes\n- In their right hand (left side of image) they're holding what appears to be a rusty metal tool - looks like an old scythe blade or a large knife/blade\n- In their left hand (right side of image) they're holding a block of concrete or stone tied with blue and white rope\n- The setting is outdoors on green grass\n- The image shows the person from about chest down, no face visible\n\nLet me rate based on the schema:\n\n- Recognizability: 4 - the main content is clear (person holding objects on grass)\n- Ambiguity: 2 - fairly clear what's shown, though the tool's exact purpose is unclear\n- Natural_photo_typicality: 4 - looks like a typical natural photo\n- Visual_clutter: 2 - relatively simple composition\n- Object_centricity: 3 - person is central but there are multiple objects\n- Scene_centricity: 2 - the focus is on person/objects, not the scene\n- Caption_confidence: 4 - can describe this clearly\n\nFor booleans:\n- contains_person: true\n- contains_face: false (face not visible)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (head is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (blade, concrete block, person)\n\nDominant content: person (showing body/legs holding items)\nImage style: natural_photo\nSemantic domain: outdoor, activity/tool\n\nMain objects: person, scythe blade/tool, concrete block, rope, jeans, shoes, grass\n\nPossible interpretations: person displaying old tool, person carrying materials, person holding improvised weapon, display of found objects\n\nThe tool looks like an old scythe blade - rusty, long, with a wooden or metal handle attachment area visible at the top.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 868,
+          "total_tokens": 2390,
+          "cost": 0.00134796,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00134796,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010416
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 538,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

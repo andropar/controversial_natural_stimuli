@@ -1,0 +1,110 @@
+{
+  "data_dir": "/data/home_roth/_stachelschwein/rsa_based_selection/data/LAION_natural_sample",
+  "encoding_root": "/data/home_roth/cstims_share/01_brain_model_alignment/results/encoding_models/shared_subject_encoding_models/encoding_20251222_141301",
+  "model_configs": {
+    "dinov2_vitl14": {
+      "source": "deepjuice",
+      "layer": "blocks.19.norm2",
+      "aggregation": "cls",
+      "encoding_layer_dir": "layerblocks_19_norm2",
+      "source_feature_file": "features/dinov2_vitl14_layer-1.npy"
+    },
+    "openclip_vit_so400m_14_siglip_webli": {
+      "source": "deepjuice",
+      "layer": "trunk.fc_norm",
+      "aggregation": "cls",
+      "encoding_layer_dir": "layertrunk_fc_norm",
+      "source_feature_file": "features/openclip_vit_so400m_14_siglip_webli_layer-2.npy"
+    },
+    "robustness_imagenet_l2_eps3": {
+      "source": "deepjuice",
+      "layer": "model.avgpool",
+      "aggregation": "flatten",
+      "encoding_layer_dir": "layermodel_avgpool",
+      "source_feature_file": "features/robustness_imagenet_l2_eps3_layer-2.npy"
+    },
+    "slip_vit_l_simclr": {
+      "source": "deepjuice",
+      "layer": "fc_norm",
+      "aggregation": "cls",
+      "encoding_layer_dir": "layerfc_norm",
+      "source_feature_file": "features/slip_vit_l_simclr_layer-1.npy"
+    },
+    "slip_vit_l_slip": {
+      "source": "deepjuice",
+      "layer": "fc_norm",
+      "aggregation": "cls",
+      "encoding_layer_dir": "layerfc_norm",
+      "source_feature_file": "features/slip_vit_l_slip_layer-1.npy"
+    },
+    "timm_vit_large_patch14_clip_quickgelu_224_openai": {
+      "source": "deepjuice",
+      "layer": "fc_norm",
+      "aggregation": "cls",
+      "encoding_layer_dir": "layerfc_norm",
+      "source_feature_file": "features/timm_vit_large_patch14_clip_quickgelu_224_openai_layer-2.npy"
+    },
+    "torchvision_alexnet_imagenet1k_v1": {
+      "source": "deepjuice",
+      "layer": "classifier.5",
+      "aggregation": "flatten",
+      "encoding_layer_dir": "layerclassifier_5",
+      "source_feature_file": "features/torchvision_alexnet_imagenet1k_v1_layer-2.npy"
+    },
+    "torchvision_resnet50_imagenet1k_v1": {
+      "source": "deepjuice",
+      "layer": "flatten",
+      "aggregation": "flatten",
+      "encoding_layer_dir": "layerflatten",
+      "source_feature_file": "features/torchvision_resnet50_imagenet1k_v1_layer-2.npy"
+    },
+    "vicreg_resnet50": {
+      "source": "deepjuice",
+      "layer": "flatten",
+      "aggregation": "flatten",
+      "encoding_layer_dir": "layerflatten",
+      "source_feature_file": "features/vicreg_resnet50_layer-1.npy"
+    },
+    "vissl_resnet50_mocov2": {
+      "source": "deepjuice",
+      "layer": "flatten",
+      "aggregation": "flatten",
+      "encoding_layer_dir": "layerflatten",
+      "source_feature_file": "features/vissl_resnet50_mocov2_layer-1.npy"
+    },
+    "vissl_resnet50_supervised": {
+      "source": "deepjuice",
+      "layer": "flatten",
+      "aggregation": "flatten",
+      "encoding_layer_dir": "layerflatten",
+      "source_feature_file": "features/vissl_resnet50_supervised_layer-1.npy"
+    }
+  },
+  "subjects": [
+    "sub-01",
+    "sub-03",
+    "sub-05",
+    "sub-06",
+    "sub-07"
+  ],
+  "config": {
+    "data_dir": "/data/home_roth/_stachelschwein/rsa_based_selection/data/LAION_natural_sample",
+    "encoding_root": "/data/home_roth/cstims_share/01_brain_model_alignment/results/encoding_models/shared_subject_encoding_models/encoding_20251222_141301",
+    "model_set": "laion11",
+    "target_size": 50,
+    "init_size": 3,
+    "seed": 42,
+    "batch_size": 10000,
+    "extract_batch_size": 256,
+    "force_extract": false,
+    "metric": "cosine",
+    "corr_type": "correlation",
+    "noise_ceiling_target": 0.46,
+    "noise_calib_n": 1000,
+    "noise_calib_repeats": 32,
+    "eval_noise_samples": 1000,
+    "device": "cuda",
+    "output_dir": "05_controls_and_supplementary/selection_objective_validation/laion_decorrelation_laion11"
+  },
+  "device": "cuda"
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_12",
+    "stim_key": "all_models_12",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 12,
+    "file_index": 12,
+    "image_name": "image_0012.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0012.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home decor / interior\",\n  \"short_caption\": \"Wooden dresser with white pumpkins beside an upholstered chair in a styled room.\",\n  \"main_objects\": [\"dresser\", \"decorative pumpkins\", \"upholstered chair\", \"throw blanket\", \"wooden floor\"],\n  \"possible_interpretations\": [\n    \"bedroom dresser with fall decor\",\n    \"living room sideboard with pumpkins\",\n    \"staged interior design photo\",\n    \"furniture retail or catalog image\"\n  ],\n  \"uncertainty_notes\": \"Dresser and chair are partially out of frame; room type (bedroom vs living room) is not fully clear. Image appears styled for decor purposes.\",\n  \"quality_flags\": [\"staged_composition\", \"partial_occlusion\", \"angled_perspective\"]\n}",
+      "response": {
+        "id": "gen-1780318057-JVl33fmofnbU9oEnMQUA",
+        "object": "chat.completion",
+        "created": 1780318057,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home decor / interior\",\n  \"short_caption\": \"Wooden dresser with white pumpkins beside an upholstered chair in a styled room.\",\n  \"main_objects\": [\"dresser\", \"decorative pumpkins\", \"upholstered chair\", \"throw blanket\", \"wooden floor\"],\n  \"possible_interpretations\": [\n    \"bedroom dresser with fall decor\",\n    \"living room sideboard with pumpkins\",\n    \"staged interior design photo\",\n    \"furniture retail or catalog image\"\n  ],\n  \"uncertainty_notes\": \"Dresser and chair are partially out of frame; room type (bedroom vs living room) is not fully clear. Image appears styled for decor purposes.\",\n  \"quality_flags\": [\"staged_composition\", \"partial_occlusion\", \"angled_perspective\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- A wooden dresser/chest of drawers with dark navy/black top and wood-grain drawer fronts\n- Round metal knobs on the drawers\n- White decorative pumpkins (autumn/fall decor) on top of the dresser\n- What appears to be a beige/cream colored upholstered chair or sofa to the left\n- A white/cream blanket or throw on the right side\n- Wood flooring visible at the bottom left\n- The setting appears to be a bedroom or living space\n\nThis looks like an interior design/staging photo, likely for furniture or home decor purposes. The composition is angled, showing the dresser from a perspective view.\n\nLet me rate the various attributes:\n- Recognizability: High - clearly a dresser with decor\n- Ambiguity: Low - clearly furniture/home decor\n- Natural photo typicality: Moderate to high - looks like a real photo but possibly staged\n- Visual clutter: Low to moderate - a few items but not cluttered\n- Object centricity: Moderate - the dresser is the main object\n- Scene centricity: Moderate - it's a room scene\n- Caption confidence: High\n\nMain objects: dresser, pumpkins, chair/sofa, blanket\n\nContains: no person, no face, no animal, no text, no vehicle, no food, indoor scene, no outdoor, no artificial content per se, some occlusion of objects\n\nStyle: natural photo (possibly styled/staged)\nDomain: home decor / interior\n\nLet me construct the JSON response.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- A wooden dresser/chest of drawers with dark navy/black top and wood-grain drawer fronts\n- Round metal knobs on the drawers\n- White decorative pumpkins (autumn/fall decor) on top of the dresser\n- What appears to be a beige/cream colored upholstered chair or sofa to the left\n- A white/cream blanket or throw on the right side\n- Wood flooring visible at the bottom left\n- The setting appears to be a bedroom or living space\n\nThis looks like an interior design/staging photo, likely for furniture or home decor purposes. The composition is angled, showing the dresser from a perspective view.\n\nLet me rate the various attributes:\n- Recognizability: High - clearly a dresser with decor\n- Ambiguity: Low - clearly furniture/home decor\n- Natural photo typicality: Moderate to high - looks like a real photo but possibly staged\n- Visual clutter: Low to moderate - a few items but not cluttered\n- Object centricity: Moderate - the dresser is the main object\n- Scene centricity: Moderate - it's a room scene\n- Caption confidence: High\n\nMain objects: dresser, pumpkins, chair/sofa, blanket\n\nContains: no person, no face, no animal, no text, no vehicle, no food, indoor scene, no outdoor, no artificial content per se, some occlusion of objects\n\nStyle: natural photo (possibly styled/staged)\nDomain: home decor / interior\n\nLet me construct the JSON response.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1363,
+          "completion_tokens": 710,
+          "total_tokens": 2073,
+          "cost": 0.00123354,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00123354,
+            "upstream_inference_prompt_cost": 0.00038154,
+            "upstream_inference_completions_cost": 0.000852
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 373,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

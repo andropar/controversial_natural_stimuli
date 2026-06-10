@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_4",
+    "stim_key": "vicco_4",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 4,
+    "file_index": 3,
+    "image_name": "shared_4rep_vicco_004.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_004.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 18,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"dining/leftovers\",\n  \"short_caption\": \"A metal serving cart covered with empty wine glasses, cups, and plates with pasta sauce remnants.\",\n  \"main_objects\": [\"serving cart\", \"wine glasses\", \"plates\", \"coffee cup\", \"pasta remnants\", \"spoons\"],\n  \"possible_interpretations\": [\"post-meal dining cart awaiting clearing\", \"restaurant bus cart with dirty dishes\", \"buffet leftovers\", \"dinner party aftermath\", \"kitchen utility cart with used tableware\"],\n  \"uncertainty_notes\": \"Exact food type on plates is hard to identify; some cups could be espresso or small bowls.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319390-yXMG2r2DiUMFa8QVygRf",
+        "object": "chat.completion",
+        "created": 1780319390,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 18,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"dining/leftovers\",\n  \"short_caption\": \"A metal serving cart covered with empty wine glasses, cups, and plates with pasta sauce remnants.\",\n  \"main_objects\": [\"serving cart\", \"wine glasses\", \"plates\", \"coffee cup\", \"pasta remnants\", \"spoons\"],\n  \"possible_interpretations\": [\"post-meal dining cart awaiting clearing\", \"restaurant bus cart with dirty dishes\", \"buffet leftovers\", \"dinner party aftermath\", \"kitchen utility cart with used tableware\"],\n  \"uncertainty_notes\": \"Exact food type on plates is hard to identify; some cups could be espresso or small bowls.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a metal/stainless steel serving cart or trolley with:\n- Multiple empty wine glasses (many of them)\n- Several plates with food remnants (appears to be pasta dishes with red sauce)\n- A cup with what looks like coffee (dark liquid)\n- Two small white cups with what appears to be espresso or similar\n- Spoons visible on plates\n- The cart is on a gray floor\n- Background shows a red wall/door and gray cabinetry\n- This looks like a post-meal scene in a restaurant or home setting\n\nLet me rate the dimensions:\n\n- recognizability: 4 - The content is quite clear, a serving cart with dirty dishes\n- ambiguity: 2 - Pretty clear what's happening\n- natural_photo_typicality: 4 - Looks like a natural photo\n- visual_clutter: 4 - Many objects (glasses, plates, cups)\n- object_centricity: 4 - The cart with items is the clear focus\n- scene_centricity: 2 - More about the objects than the place\n- caption_confidence: 4 - Easy to describe\n\nCounts:\n- salient objects: many glasses (maybe 10-15), 3 plates, 3 cups\n- distinct categories: glasses, plates, cups, food remnants, cart, floor\n\nContains:\n- person: no\n- face: no\n- animal: no\n- text: no\n- vehicle: no (cart/trolley, but not really a vehicle)\n- food: yes (pasta with sauce remnants)\n- indoor scene: yes\n- outdoor: no\n- artificial/rendered: no\n- occlusion: maybe (items behind other items)\n- unusual viewpoint: slightly, looking down at angle\n- multiple main objects: yes (many glasses and plates)\n\nDominant content type: mixed (multiple objects - cart with dishes)\nImage style: natural_photo\nSemantic domain: post-meal/leftovers/dining\n\nShort caption: \"A metal serving cart covered with empty wine glasses and plates with food remnants.\"\n\nMain objects: serving cart, wine glasses, plates, cups, pasta remnants\n\nPossible interpretations:\n1. Post-meal dining cart\n2. Dirty dishes to be cleared\n3. Restaurant cleanup\n4. Buffet leftovers\n5. Party aftermath\n\nUncertainty notes: The exact food on plates is somewhat ambiguous (pasta with red sauce likely)\n\nQuality flags: None major",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a metal/stainless steel serving cart or trolley with:\n- Multiple empty wine glasses (many of them)\n- Several plates with food remnants (appears to be pasta dishes with red sauce)\n- A cup with what looks like coffee (dark liquid)\n- Two small white cups with what appears to be espresso or similar\n- Spoons visible on plates\n- The cart is on a gray floor\n- Background shows a red wall/door and gray cabinetry\n- This looks like a post-meal scene in a restaurant or home setting\n\nLet me rate the dimensions:\n\n- recognizability: 4 - The content is quite clear, a serving cart with dirty dishes\n- ambiguity: 2 - Pretty clear what's happening\n- natural_photo_typicality: 4 - Looks like a natural photo\n- visual_clutter: 4 - Many objects (glasses, plates, cups)\n- object_centricity: 4 - The cart with items is the clear focus\n- scene_centricity: 2 - More about the objects than the place\n- caption_confidence: 4 - Easy to describe\n\nCounts:\n- salient objects: many glasses (maybe 10-15), 3 plates, 3 cups\n- distinct categories: glasses, plates, cups, food remnants, cart, floor\n\nContains:\n- person: no\n- face: no\n- animal: no\n- text: no\n- vehicle: no (cart/trolley, but not really a vehicle)\n- food: yes (pasta with sauce remnants)\n- indoor scene: yes\n- outdoor: no\n- artificial/rendered: no\n- occlusion: maybe (items behind other items)\n- unusual viewpoint: slightly, looking down at angle\n- multiple main objects: yes (many glasses and plates)\n\nDominant content type: mixed (multiple objects - cart with dishes)\nImage style: natural_photo\nSemantic domain: post-meal/leftovers/dining\n\nShort caption: \"A metal serving cart covered with empty wine glasses and plates with food remnants.\"\n\nMain objects: serving cart, wine glasses, plates, cups, pasta remnants\n\nPossible interpretations:\n1. Post-meal dining cart\n2. Dirty dishes to be cleared\n3. Restaurant cleanup\n4. Buffet leftovers\n5. Party aftermath\n\nUncertainty notes: The exact food on plates is somewhat ambiguous (pasta with red sauce likely)\n\nQuality flags: None major",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 873,
+          "total_tokens": 2395,
+          "cost": 0.00135396,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00135396,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010476
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 561,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

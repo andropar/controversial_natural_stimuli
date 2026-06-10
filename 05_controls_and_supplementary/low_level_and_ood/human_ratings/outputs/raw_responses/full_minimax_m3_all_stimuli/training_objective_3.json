@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_3",
+    "stim_key": "training_objective_3",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 3,
+    "file_index": 3,
+    "image_name": "image_0003.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0003.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"music instrument maintenance\",\n  \"short_caption\": \"A bald man in a red vest tunes a grand piano with a tool.\",\n  \"main_objects\": [\"older man\", \"grand piano\", \"tuning tool\", \"fingerless gloves\"],\n  \"possible_interpretations\": [\"piano tuner working on a grand piano\", \"pianist inspecting piano internals\", \"technician adjusting piano hammers\"],\n  \"uncertainty_notes\": \"The man's face is shown in profile, partially obscured by his posture; his specific role (tuner vs. pianist) is not fully certain.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319206-ejwfdM3C3xvERdLlXeCz",
+        "object": "chat.completion",
+        "created": 1780319206,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"music instrument maintenance\",\n  \"short_caption\": \"A bald man in a red vest tunes a grand piano with a tool.\",\n  \"main_objects\": [\"older man\", \"grand piano\", \"tuning tool\", \"fingerless gloves\"],\n  \"possible_interpretations\": [\"piano tuner working on a grand piano\", \"pianist inspecting piano internals\", \"technician adjusting piano hammers\"],\n  \"uncertainty_notes\": \"The man's face is shown in profile, partially obscured by his posture; his specific role (tuner vs. pianist) is not fully certain.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an older bald man wearing glasses, a red vest/bowtie, and a white shirt, leaning over a grand piano. He appears to be tuning or working on the piano's internal mechanism with a tool. He's wearing black fingerless gloves. The setting looks like an indoor space with some plants and artwork in the background.\n\nLet me rate the various attributes:\n\n- Recognizability: Very clear - it's obvious what's happening. 5\n- Ambiguity: Low - it's clearly a piano tuning scene. 1\n- Natural photo typicality: Looks like a natural photo, possibly slightly edited/moody lighting. 4\n- Visual clutter: Moderate - the piano interior has many details, but the main focus is clear. 3\n- Object-centricity: The man and piano are both prominent. 3\n- Scene-centricity: It's more about the action/person than a scene. 2\n- Caption confidence: High - easy to describe. 5\n\nMain objects: man, grand piano, tuning tool\nContains: person, no face fully visible (he's looking down/sideways), no animal, no text, no vehicle, no food, indoor scene\nThe face is partially visible but not fully - I'll say contains_face is true since a face is visible even if not directly at camera.\n\nDominant content: mixed (person + object)\nImage style: natural_photo\nSemantic domain: music/maintenance\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an older bald man wearing glasses, a red vest/bowtie, and a white shirt, leaning over a grand piano. He appears to be tuning or working on the piano's internal mechanism with a tool. He's wearing black fingerless gloves. The setting looks like an indoor space with some plants and artwork in the background.\n\nLet me rate the various attributes:\n\n- Recognizability: Very clear - it's obvious what's happening. 5\n- Ambiguity: Low - it's clearly a piano tuning scene. 1\n- Natural photo typicality: Looks like a natural photo, possibly slightly edited/moody lighting. 4\n- Visual clutter: Moderate - the piano interior has many details, but the main focus is clear. 3\n- Object-centricity: The man and piano are both prominent. 3\n- Scene-centricity: It's more about the action/person than a scene. 2\n- Caption confidence: High - easy to describe. 5\n\nMain objects: man, grand piano, tuning tool\nContains: person, no face fully visible (he's looking down/sideways), no animal, no text, no vehicle, no food, indoor scene\nThe face is partially visible but not fully - I'll say contains_face is true since a face is visible even if not directly at camera.\n\nDominant content: mixed (person + object)\nImage style: natural_photo\nSemantic domain: music/maintenance\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 657,
+          "total_tokens": 1971,
+          "cost": 0.00115524,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00115524,
+            "upstream_inference_prompt_cost": 0.00036684,
+            "upstream_inference_completions_cost": 0.0007884
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 347,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

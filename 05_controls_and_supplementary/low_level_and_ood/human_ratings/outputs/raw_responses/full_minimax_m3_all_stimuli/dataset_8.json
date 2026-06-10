@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_8",
+    "stim_key": "dataset_8",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 8,
+    "file_index": 8,
+    "image_name": "image_0008.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0008.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"still_life\",\n  \"short_caption\": \"Four glass goblets on draped white fabric, one containing red wine, with small red peppercorns nearby.\",\n  \"main_objects\": [\"wine glasses\", \"red wine\", \"white fabric\", \"red peppercorns\"],\n  \"possible_interpretations\": [\"still life photograph of glassware\", \"wine tasting arrangement\", \"product photography of goblets\", \"table setting display\", \"artistic still life composition\"],\n  \"uncertainty_notes\": \"The small red items in the lower right could be peppercorns, berries, or pomegranate seeds; not entirely certain.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318972-xMX8qOU8K2iqE2r7Pp3D",
+        "object": "chat.completion",
+        "created": 1780318972,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"still_life\",\n  \"short_caption\": \"Four glass goblets on draped white fabric, one containing red wine, with small red peppercorns nearby.\",\n  \"main_objects\": [\"wine glasses\", \"red wine\", \"white fabric\", \"red peppercorns\"],\n  \"possible_interpretations\": [\"still life photograph of glassware\", \"wine tasting arrangement\", \"product photography of goblets\", \"table setting display\", \"artistic still life composition\"],\n  \"uncertainty_notes\": \"The small red items in the lower right could be peppercorns, berries, or pomegranate seeds; not entirely certain.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows four glass goblets/wine glasses on a white/light-colored fabric surface (tablecloth). Three of the glasses appear empty or nearly empty, while one in the back has what appears to be red wine. There's also a cluster of what looks like red peppercorns or small red berries/peppercorns in the lower right corner.\n\nThe setting appears to be a still life composition, possibly a product photography or artistic photo. The background is a neutral, soft grayish-beige tone.\n\nLet me rate the attributes:\n\n- recognizability: 5 - Very clearly recognizable as glass goblets on fabric\n- ambiguity: 1 - Very clear what we're looking at\n- natural_photo_typicality: 4 - Looks like a typical still life photograph, though somewhat styled\n- visual_clutter: 1 - Very clean, minimal composition\n- object_centricity: 4 - The glasses are the clear focus\n- scene_centricity: 2 - Not really a scene, more object-focused\n- caption_confidence: 5 - Very confident in a simple caption\n\nObjects: 4 glasses, 1 with wine, peppercorns, fabric\nSalient objects: ~4-5 (4 glasses + peppercorns cluster)\nDistinct categories: ~3 (glasses, wine/peppercorns, fabric)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false (wine and peppercorns are drink/condiment, not really food)\n- contains_indoor_scene: true (appears indoor setting)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (multiple glasses)\n\nDominant content type: object\nImage style: natural_photo (possibly edited/styled, but looks like natural photo)\nSemantic domain: still_life or food_drink\n\nShort caption: \"Four glass goblets on white fabric, one with red wine, peppercorns nearby\"\n\nPossible interpretations: glassware display, wine tasting setup, still life photography, table setting\n\nUncertainty: The exact nature of the red items in lower right - could be peppercorns, berries, or pomegranate seeds",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows four glass goblets/wine glasses on a white/light-colored fabric surface (tablecloth). Three of the glasses appear empty or nearly empty, while one in the back has what appears to be red wine. There's also a cluster of what looks like red peppercorns or small red berries/peppercorns in the lower right corner.\n\nThe setting appears to be a still life composition, possibly a product photography or artistic photo. The background is a neutral, soft grayish-beige tone.\n\nLet me rate the attributes:\n\n- recognizability: 5 - Very clearly recognizable as glass goblets on fabric\n- ambiguity: 1 - Very clear what we're looking at\n- natural_photo_typicality: 4 - Looks like a typical still life photograph, though somewhat styled\n- visual_clutter: 1 - Very clean, minimal composition\n- object_centricity: 4 - The glasses are the clear focus\n- scene_centricity: 2 - Not really a scene, more object-focused\n- caption_confidence: 5 - Very confident in a simple caption\n\nObjects: 4 glasses, 1 with wine, peppercorns, fabric\nSalient objects: ~4-5 (4 glasses + peppercorns cluster)\nDistinct categories: ~3 (glasses, wine/peppercorns, fabric)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false (wine and peppercorns are drink/condiment, not really food)\n- contains_indoor_scene: true (appears indoor setting)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (multiple glasses)\n\nDominant content type: object\nImage style: natural_photo (possibly edited/styled, but looks like natural photo)\nSemantic domain: still_life or food_drink\n\nShort caption: \"Four glass goblets on white fabric, one with red wine, peppercorns nearby\"\n\nPossible interpretations: glassware display, wine tasting setup, still life photography, table setting\n\nUncertainty: The exact nature of the red items in lower right - could be peppercorns, berries, or pomegranate seeds",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 861,
+          "total_tokens": 2383,
+          "cost": 0.00133956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00133956,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010332
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 563,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

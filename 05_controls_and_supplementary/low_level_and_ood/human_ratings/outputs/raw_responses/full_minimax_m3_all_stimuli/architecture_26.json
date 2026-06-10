@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_26",
+    "stim_key": "architecture_26",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 26,
+    "file_index": 26,
+    "image_name": "image_0026.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0026.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"retail/indoor\",\n  \"short_caption\": \"Two table lamps on a console beneath a Safavieh Home Furnishings wall sign\",\n  \"main_objects\": [\"table lamp\", \"wall sign\", \"console table\"],\n  \"possible_interpretations\": [\"furniture showroom display\", \"retail store interior\", \"home decor store signage\"],\n  \"uncertainty_notes\": \"Right lamp is partially cut off at the frame edge; setting is clearly indoor but exact store type not certain beyond the brand name.\",\n  \"quality_flags\": [\"partial occlusion at right edge\", \"glare/reflection on right lampshade\"]\n}",
+      "response": {
+        "id": "gen-1780318874-Y1p1TSrjdvTp7RkRWiTH",
+        "object": "chat.completion",
+        "created": 1780318874,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"retail/indoor\",\n  \"short_caption\": \"Two table lamps on a console beneath a Safavieh Home Furnishings wall sign\",\n  \"main_objects\": [\"table lamp\", \"wall sign\", \"console table\"],\n  \"possible_interpretations\": [\"furniture showroom display\", \"retail store interior\", \"home decor store signage\"],\n  \"uncertainty_notes\": \"Right lamp is partially cut off at the frame edge; setting is clearly indoor but exact store type not certain beyond the brand name.\",\n  \"quality_flags\": [\"partial occlusion at right edge\", \"glare/reflection on right lampshade\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a Safavieh Home Furnishings display/store sign with two table lamps on a console table. There's a large wall sign that says \"SAFAVIEH HOME FURNISHINGS\" in dimensional lettering. Two table lamps with white/cream shades are visible on what appears to be a glass-topped console table. The setting appears to be inside a furniture showroom or store.\n\nLet me annotate this:\n\n- recognizability: 5 - very clear what's shown\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 4 - looks like a typical photo\n- visual_clutter: 2 - relatively clean, few competing elements\n- object_centricity: 3 - the lamps and sign are prominent\n- scene_centricity: 3 - it's also a place/scene\n- caption_confidence: 5 - very confident in caption\n- estimated_salient_object_count: 3 (sign, lamp1, lamp2, table)\n- estimated_distinct_object_categories: 3 (sign, lamp, table)\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (lamp on right is cut off)\n- contains_multiple_main_objects: true (two lamps, sign)\n- dominant_content_type: mixed\n- image_style: natural_photo\n- semantic_domain: retail/indoor\n- short_caption: Two table lamps on a console beneath a Safavieh Home Furnishings wall sign\n- main_objects: table lamp, wall sign, console table\n- possible_interpretations: furniture showroom, retail display, home decor store\n- quality_flags: slight glare on right lamp, right lamp partially cut off",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a Safavieh Home Furnishings display/store sign with two table lamps on a console table. There's a large wall sign that says \"SAFAVIEH HOME FURNISHINGS\" in dimensional lettering. Two table lamps with white/cream shades are visible on what appears to be a glass-topped console table. The setting appears to be inside a furniture showroom or store.\n\nLet me annotate this:\n\n- recognizability: 5 - very clear what's shown\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 4 - looks like a typical photo\n- visual_clutter: 2 - relatively clean, few competing elements\n- object_centricity: 3 - the lamps and sign are prominent\n- scene_centricity: 3 - it's also a place/scene\n- caption_confidence: 5 - very confident in caption\n- estimated_salient_object_count: 3 (sign, lamp1, lamp2, table)\n- estimated_distinct_object_categories: 3 (sign, lamp, table)\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (lamp on right is cut off)\n- contains_multiple_main_objects: true (two lamps, sign)\n- dominant_content_type: mixed\n- image_style: natural_photo\n- semantic_domain: retail/indoor\n- short_caption: Two table lamps on a console beneath a Safavieh Home Furnishings wall sign\n- main_objects: table lamp, wall sign, console table\n- possible_interpretations: furniture showroom, retail display, home decor store\n- quality_flags: slight glare on right lamp, right lamp partially cut off",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 767,
+          "total_tokens": 2289,
+          "cost": 0.00122676,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00122676,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009204
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 437,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

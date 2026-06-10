@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_80",
+    "stim_key": "architecture_80",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 80,
+    "file_index": 80,
+    "image_name": "image_0080.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0080.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"aviation/industrial\",\n  \"short_caption\": \"Large solar-powered drone with wide wingspan mounted on blue stands inside an industrial workshop.\",\n  \"main_objects\": [\"drone\", \"support stands\", \"workbenches\", \"shelving\", \"railing\"],\n  \"possible_interpretations\": [\n    \"A large UAV or drone in a manufacturing/testing facility\",\n    \"A solar-powered aircraft prototype in a workshop\",\n    \"An aerospace engineering project on display\"\n  ],\n  \"uncertainty_notes\": \"Exact type of aircraft unclear; could be military drone, solar UAV, or experimental aircraft.\",\n  \"quality_flags\": []\n}\n```",
+      "response": {
+        "id": "gen-1780318932-1eWZYscBxs6FQHwkeYSC",
+        "object": "chat.completion",
+        "created": 1780318932,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"aviation/industrial\",\n  \"short_caption\": \"Large solar-powered drone with wide wingspan mounted on blue stands inside an industrial workshop.\",\n  \"main_objects\": [\"drone\", \"support stands\", \"workbenches\", \"shelving\", \"railing\"],\n  \"possible_interpretations\": [\n    \"A large UAV or drone in a manufacturing/testing facility\",\n    \"A solar-powered aircraft prototype in a workshop\",\n    \"An aerospace engineering project on display\"\n  ],\n  \"uncertainty_notes\": \"Exact type of aircraft unclear; could be military drone, solar UAV, or experimental aircraft.\",\n  \"quality_flags\": []\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see:\n\n1. A large hangar or warehouse-like industrial space\n2. The main subject is a large aircraft - it appears to be a drone or UAV with a very wide wingspan, mounted on blue support stands\n3. The aircraft has a dark gray/black surface (possibly solar panels or composite material) on its wings\n4. The wings are very long and span across the foreground\n5. There are blue metal support structures/scaffolding holding the aircraft\n6. In the background: workshop tools, workbenches, shelving units with materials, a blue door, industrial lighting\n7. The floor is concrete with yellow safety markings\n8. There's a blue railing in the foreground\n9. Industrial ceiling with exposed beams and lights\n10. Safety barriers and chain-link fencing around the aircraft\n\nThis appears to be a manufacturing or testing facility for a large solar-powered drone/UAV. The aircraft has a distinctive V-shaped or wide-wing configuration.\n\nLet me provide the annotations:\n\n- recognizability: 4 - clearly recognizable as an aircraft/drone in a workshop\n- ambiguity: 2 - fairly clear what it is\n- natural_photo_typicality: 4 - looks like a natural photograph\n- visual_clutter: 3 - moderate clutter with various workshop items\n- object_centricity: 3 - the aircraft is central but it's a scene\n- scene_centricity: 4 - it's clearly a scene/workshop environment\n- caption_confidence: 4\n\n- estimated_salient_object_count: 1 (the aircraft)\n- estimated_distinct_object_categories: 3-4 (aircraft, workshop equipment, building)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (maybe some signs but not clearly readable)\n- contains_vehicle: true (the aircraft/UAV)\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (the aircraft is shown fully)\n- contains_unusual_viewpoint: false (slightly elevated but not unusual)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" or \"scene\" - I'd say scene since the workshop context is important\n- image_style: \"natural_photo\"\n- semantic_domain: \"industrial/aviation\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see:\n\n1. A large hangar or warehouse-like industrial space\n2. The main subject is a large aircraft - it appears to be a drone or UAV with a very wide wingspan, mounted on blue support stands\n3. The aircraft has a dark gray/black surface (possibly solar panels or composite material) on its wings\n4. The wings are very long and span across the foreground\n5. There are blue metal support structures/scaffolding holding the aircraft\n6. In the background: workshop tools, workbenches, shelving units with materials, a blue door, industrial lighting\n7. The floor is concrete with yellow safety markings\n8. There's a blue railing in the foreground\n9. Industrial ceiling with exposed beams and lights\n10. Safety barriers and chain-link fencing around the aircraft\n\nThis appears to be a manufacturing or testing facility for a large solar-powered drone/UAV. The aircraft has a distinctive V-shaped or wide-wing configuration.\n\nLet me provide the annotations:\n\n- recognizability: 4 - clearly recognizable as an aircraft/drone in a workshop\n- ambiguity: 2 - fairly clear what it is\n- natural_photo_typicality: 4 - looks like a natural photograph\n- visual_clutter: 3 - moderate clutter with various workshop items\n- object_centricity: 3 - the aircraft is central but it's a scene\n- scene_centricity: 4 - it's clearly a scene/workshop environment\n- caption_confidence: 4\n\n- estimated_salient_object_count: 1 (the aircraft)\n- estimated_distinct_object_categories: 3-4 (aircraft, workshop equipment, building)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (maybe some signs but not clearly readable)\n- contains_vehicle: true (the aircraft/UAV)\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (the aircraft is shown fully)\n- contains_unusual_viewpoint: false (slightly elevated but not unusual)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" or \"scene\" - I'd say scene since the workshop context is important\n- image_style: \"natural_photo\"\n- semantic_domain: \"industrial/aviation\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 872,
+          "total_tokens": 2394,
+          "cost": 0.00147564,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00147564,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010464
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 586,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

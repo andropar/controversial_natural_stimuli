@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_44",
+    "stim_key": "training_objective_44",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 44,
+    "file_index": 44,
+    "image_name": "image_0044.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0044.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fitness/lifestyle\",\n  \"short_caption\": \"Smiling woman exercising on a Bowflex treadmill in a modern living room\",\n  \"main_objects\": [\"woman\", \"treadmill\", \"painting\", \"blue glass decor\"],\n  \"possible_interpretations\": [\n    \"Woman working out on a treadmill at home\",\n    \"Fitness product promotional photo\",\n    \"Lifestyle imagery for home exercise equipment\"\n  ],\n  \"uncertainty_notes\": \"Image appears staged or promotional; person is partially cropped on left; lighting suggests professional or edited photo.\",\n  \"quality_flags\": [\"partial_truncation\", \"likely_promotional\", \"subject_offset\"]\n}",
+      "response": {
+        "id": "gen-1780319316-f1ciOTbIjcPazxQwDcLY",
+        "object": "chat.completion",
+        "created": 1780319316,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fitness/lifestyle\",\n  \"short_caption\": \"Smiling woman exercising on a Bowflex treadmill in a modern living room\",\n  \"main_objects\": [\"woman\", \"treadmill\", \"painting\", \"blue glass decor\"],\n  \"possible_interpretations\": [\n    \"Woman working out on a treadmill at home\",\n    \"Fitness product promotional photo\",\n    \"Lifestyle imagery for home exercise equipment\"\n  ],\n  \"uncertainty_notes\": \"Image appears staged or promotional; person is partially cropped on left; lighting suggests professional or edited photo.\",\n  \"quality_flags\": [\"partial_truncation\", \"likely_promotional\", \"subject_offset\"]\n}",
+              "refusal": null,
+              "reasoning": "The user wants me to annotate an image according to a specific schema. Let me carefully analyze what I see in the image.\n\nThe image shows:\n- A woman in athletic wear (sports bra and shorts) on the left side, partially visible\n- A Bowflex treadmill in the center/foreground\n- A painting on the wall in the background (appears to be a landscape)\n- A concrete/stone shelf or mantel with two blue glass decorative items\n- An indoor setting\n\nLet me rate according to the schema:\n\n- recognizability: 4 - clearly recognizable as a woman on a treadmill indoors\n- ambiguity: 1 - pretty clear what's happening\n- natural_photo_typicality: 3 - looks like a somewhat staged/edited photo, possibly a product/lifestyle shot\n- visual_clutter: 3 - several elements but not overwhelming\n- object_centricity: 3 - the treadmill is central but the woman also draws attention\n- scene_centricity: 4 - it's clearly an indoor scene\n- caption_confidence: 4 - fairly confident in a caption\n\nCounts:\n- estimated_salient_object_count: 4 (woman, treadmill, painting, decorative items)\n- estimated_distinct_object_categories: 4 (person, exercise equipment, artwork, decor)\n\nContains:\n- person: true\n- face: true (partially visible)\n- animal: false\n- text: true (BOWFLEX on the treadmill)\n- vehicle: false\n- food: false\n- indoor: true\n- outdoor: false\n- artificial: false (it's a photo)\n- occlusion: true (person is truncated)\n- unusual viewpoint: false\n- multiple main objects: true (woman and treadmill)\n\nDominant content type: mixed (person and object)\nImage style: edited_photo (looks like a promotional/lifestyle shot)\nSemantic domain: fitness/lifestyle\n\nCaption: \"Smiling woman exercising on a Bowflex treadmill in a modern living room\"\n\nPossible interpretations:\n- Woman working out on a treadmill\n- Fitness/lifestyle promotional photo\n- Home exercise setup\n\nUncertainty notes: The image appears to be a promotional or lifestyle photo, with somewhat professional lighting. The woman is partially cropped on the left side.\n\nQuality flags: partial occlusion, promotional/staged appearance",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The user wants me to annotate an image according to a specific schema. Let me carefully analyze what I see in the image.\n\nThe image shows:\n- A woman in athletic wear (sports bra and shorts) on the left side, partially visible\n- A Bowflex treadmill in the center/foreground\n- A painting on the wall in the background (appears to be a landscape)\n- A concrete/stone shelf or mantel with two blue glass decorative items\n- An indoor setting\n\nLet me rate according to the schema:\n\n- recognizability: 4 - clearly recognizable as a woman on a treadmill indoors\n- ambiguity: 1 - pretty clear what's happening\n- natural_photo_typicality: 3 - looks like a somewhat staged/edited photo, possibly a product/lifestyle shot\n- visual_clutter: 3 - several elements but not overwhelming\n- object_centricity: 3 - the treadmill is central but the woman also draws attention\n- scene_centricity: 4 - it's clearly an indoor scene\n- caption_confidence: 4 - fairly confident in a caption\n\nCounts:\n- estimated_salient_object_count: 4 (woman, treadmill, painting, decorative items)\n- estimated_distinct_object_categories: 4 (person, exercise equipment, artwork, decor)\n\nContains:\n- person: true\n- face: true (partially visible)\n- animal: false\n- text: true (BOWFLEX on the treadmill)\n- vehicle: false\n- food: false\n- indoor: true\n- outdoor: false\n- artificial: false (it's a photo)\n- occlusion: true (person is truncated)\n- unusual viewpoint: false\n- multiple main objects: true (woman and treadmill)\n\nDominant content type: mixed (person and object)\nImage style: edited_photo (looks like a promotional/lifestyle shot)\nSemantic domain: fitness/lifestyle\n\nCaption: \"Smiling woman exercising on a Bowflex treadmill in a modern living room\"\n\nPossible interpretations:\n- Woman working out on a treadmill\n- Fitness/lifestyle promotional photo\n- Home exercise setup\n\nUncertainty notes: The image appears to be a promotional or lifestyle photo, with somewhat professional lighting. The woman is partially cropped on the left side.\n\nQuality flags: partial occlusion, promotional/staged appearance",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1027,
+          "completion_tokens": 830,
+          "total_tokens": 1857,
+          "cost": 0.00115386,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00115386,
+            "upstream_inference_prompt_cost": 0.00015786,
+            "upstream_inference_completions_cost": 0.000996
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 553,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

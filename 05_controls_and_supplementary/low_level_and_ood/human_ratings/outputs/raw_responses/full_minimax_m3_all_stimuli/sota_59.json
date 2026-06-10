@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_59",
+    "stim_key": "sota_59",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 59,
+    "file_index": 59,
+    "image_name": "image_0059.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0059.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"holiday/indoor\",\n  \"short_caption\": \"Partially visible person near a decorated Christmas tree indoors\",\n  \"main_objects\": [\"person (partial)\", \"Christmas tree\", \"patterned cushion\", \"fringed scarf\", \"blue ribbon\"],\n  \"possible_interpretations\": [\n    \"person decorating a Christmas tree\",\n    \"casual indoor holiday moment\",\n    \"candid photo with accidental framing\",\n    \"person holding or arranging items near tree\"\n  ],\n  \"uncertainty_notes\": \"Person's face is heavily cropped; only glasses and hair edge visible, making role and action ambiguous. Composition is unusual and may be unintentional.\",\n  \"quality_flags\": [\"heavy_cropping\", \"unusual_framing\", \"partial_subject\"]\n}",
+      "response": {
+        "id": "gen-1780319153-Oo2Isdk4kMU3C0nGee4B",
+        "object": "chat.completion",
+        "created": 1780319153,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"holiday/indoor\",\n  \"short_caption\": \"Partially visible person near a decorated Christmas tree indoors\",\n  \"main_objects\": [\"person (partial)\", \"Christmas tree\", \"patterned cushion\", \"fringed scarf\", \"blue ribbon\"],\n  \"possible_interpretations\": [\n    \"person decorating a Christmas tree\",\n    \"casual indoor holiday moment\",\n    \"candid photo with accidental framing\",\n    \"person holding or arranging items near tree\"\n  ],\n  \"uncertainty_notes\": \"Person's face is heavily cropped; only glasses and hair edge visible, making role and action ambiguous. Composition is unusual and may be unintentional.\",\n  \"quality_flags\": [\"heavy_cropping\", \"unusual_framing\", \"partial_subject\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nI can see:\n- Part of a person's face on the left edge (just glasses and some hair visible, heavily cropped)\n- A patterned fabric/cushion in the foreground (maroon/purple with small dot pattern)\n- A fringed brown scarf or shawl\n- Christmas tree branches (evergreen) on the right\n- A blue ribbon tied to the tree\n- A red ribbon/ornament\n- A dark interior background, possibly with a staircase railing\n- Some outdoor light visible through what appears to be a doorway or window\n\nThe image is unusual in composition - very cropped, with the person's face mostly cut off. It appears to be a candid moment of someone near a Christmas tree, perhaps in a home setting.\n\nLet me rate this:\n- recognizability: 3 - The content is somewhat clear but the composition is unusual with heavy cropping\n- ambiguity: 3 - Could be interpreted as someone decorating a tree, or a casual holiday moment\n- natural_photo_typicality: 4 - Looks like a natural candid photograph\n- visual_clutter: 3 - Several elements but not extremely busy\n- object_centricity: 2 - No single clear central object\n- scene_centricity: 3 - More of a scene/context shot than object-focused\n- caption_confidence: 3 - Hard to caption concisely due to composition\n\n- contains_person: true (partial, glasses visible)\n- contains_face: true (partially, just edge of face/glasses)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false (some outdoor light visible but mostly indoor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person is truncated)\n- contains_unusual_viewpoint: true (unusual framing)\n- contains_multiple_main_objects: true\n\ndominant_content_type: mixed (person + tree + fabric)\nimage_style: natural_photo\nsemantic_domain: holiday/indoor\n\nLet me finalize the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nI can see:\n- Part of a person's face on the left edge (just glasses and some hair visible, heavily cropped)\n- A patterned fabric/cushion in the foreground (maroon/purple with small dot pattern)\n- A fringed brown scarf or shawl\n- Christmas tree branches (evergreen) on the right\n- A blue ribbon tied to the tree\n- A red ribbon/ornament\n- A dark interior background, possibly with a staircase railing\n- Some outdoor light visible through what appears to be a doorway or window\n\nThe image is unusual in composition - very cropped, with the person's face mostly cut off. It appears to be a candid moment of someone near a Christmas tree, perhaps in a home setting.\n\nLet me rate this:\n- recognizability: 3 - The content is somewhat clear but the composition is unusual with heavy cropping\n- ambiguity: 3 - Could be interpreted as someone decorating a tree, or a casual holiday moment\n- natural_photo_typicality: 4 - Looks like a natural candid photograph\n- visual_clutter: 3 - Several elements but not extremely busy\n- object_centricity: 2 - No single clear central object\n- scene_centricity: 3 - More of a scene/context shot than object-focused\n- caption_confidence: 3 - Hard to caption concisely due to composition\n\n- contains_person: true (partial, glasses visible)\n- contains_face: true (partially, just edge of face/glasses)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false (some outdoor light visible but mostly indoor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (person is truncated)\n- contains_unusual_viewpoint: true (unusual framing)\n- contains_multiple_main_objects: true\n\ndominant_content_type: mixed (person + tree + fabric)\nimage_style: natural_photo\nsemantic_domain: holiday/indoor\n\nLet me finalize the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 829,
+          "total_tokens": 2351,
+          "cost": 0.00130116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00130116,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009948
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 509,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_87",
+    "stim_key": "dataset_87",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 87,
+    "file_index": 87,
+    "image_name": "image_0087.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0087.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"street_art\",\n\n  \"short_caption\": \"Large mural portrait of a Black person with curly hair on a brick wall beside a barred window.\",\n  \"main_objects\": [\"mural portrait\", \"barred window\", \"brick wall\", \"abstract painted section\"],\n  \"possible_interpretations\": [\"street art mural\", \"urban portrait painting\", \"wall art installation\", \"decorated building facade\"],\n  \"uncertainty_notes\": \"Unclear whether the abstract colorful section to the right is part of the same artwork or a separate piece.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319059-gilKHbsIWwDw4uY5exyl",
+        "object": "chat.completion",
+        "created": 1780319059,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"street_art\",\n\n  \"short_caption\": \"Large mural portrait of a Black person with curly hair on a brick wall beside a barred window.\",\n  \"main_objects\": [\"mural portrait\", \"barred window\", \"brick wall\", \"abstract painted section\"],\n  \"possible_interpretations\": [\"street art mural\", \"urban portrait painting\", \"wall art installation\", \"decorated building facade\"],\n  \"uncertainty_notes\": \"Unclear whether the abstract colorful section to the right is part of the same artwork or a separate piece.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a brick wall with a large mural/street art painting of a Black person's face/portrait. The figure has curly hair and is shown in profile/three-quarter view. There's a real window with bars on the wall that is integrated into or overlaps with the mural. To the right of the figure, there appears to be additional abstract/artistic elements with green, pink, and white colors. The brick wall itself is reddish-brown.\n\nLet me annotate:\n\n- recognizability: The mural and subject are clearly recognizable. 5\n- ambiguity: The image has a clear subject (the mural portrait), though the right side has abstract elements. Maybe 2.\n- natural_photo_typicality: This is a photograph of street art on a wall. It's a natural photo of an artificial/artistic surface. 4.\n- visual_clutter: There's the mural, the window, abstract elements, brick texture. Moderate to high clutter. 3.\n- object_centricity: The central portrait is clearly the dominant element. 4.\n- scene_centricity: It's more object-centric (the mural) than a scene. 2.\n- caption_confidence: High confidence in describing this. 5.\n\nSalient objects: the mural portrait, the window, brick wall. 3 main elements.\nDistinct object categories: mural/art, window, wall. 3.\n\nContains person: Yes (depicted in mural)\nContains face: Yes\nContains animal: No\nContains text: No\nContains vehicle: No\nContains food: No\nContains indoor: No (it's outdoor wall)\nContains outdoor: Yes\nContains artificial or rendered: Yes (mural/street art)\nContains occlusion/truncation: The window partially blocks the mural\nContains unusual viewpoint: No, fairly straightforward\nContains multiple main objects: Yes - the portrait and the abstract section could be considered multiple\n\nDominant content type: object (the mural is the main subject) or scene. I'll go with \"object\" since the portrait dominates.\nImage style: edited_photo (it's a photo but features heavy street art/illustration)\nSemantic domain: street_art\n\nShort caption: Large mural portrait of a Black person with curly hair painted on a brick wall beside a barred window.\n\nMain objects: mural portrait, barred window, brick wall, abstract painting section\n\nPossible interpretations: street art mural, portrait painting, urban art installation\n\nUncertainty: Whether the abstract section to the right is part of the same artwork or a separate piece.\n\nQuality flags: none significant",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a brick wall with a large mural/street art painting of a Black person's face/portrait. The figure has curly hair and is shown in profile/three-quarter view. There's a real window with bars on the wall that is integrated into or overlaps with the mural. To the right of the figure, there appears to be additional abstract/artistic elements with green, pink, and white colors. The brick wall itself is reddish-brown.\n\nLet me annotate:\n\n- recognizability: The mural and subject are clearly recognizable. 5\n- ambiguity: The image has a clear subject (the mural portrait), though the right side has abstract elements. Maybe 2.\n- natural_photo_typicality: This is a photograph of street art on a wall. It's a natural photo of an artificial/artistic surface. 4.\n- visual_clutter: There's the mural, the window, abstract elements, brick texture. Moderate to high clutter. 3.\n- object_centricity: The central portrait is clearly the dominant element. 4.\n- scene_centricity: It's more object-centric (the mural) than a scene. 2.\n- caption_confidence: High confidence in describing this. 5.\n\nSalient objects: the mural portrait, the window, brick wall. 3 main elements.\nDistinct object categories: mural/art, window, wall. 3.\n\nContains person: Yes (depicted in mural)\nContains face: Yes\nContains animal: No\nContains text: No\nContains vehicle: No\nContains food: No\nContains indoor: No (it's outdoor wall)\nContains outdoor: Yes\nContains artificial or rendered: Yes (mural/street art)\nContains occlusion/truncation: The window partially blocks the mural\nContains unusual viewpoint: No, fairly straightforward\nContains multiple main objects: Yes - the portrait and the abstract section could be considered multiple\n\nDominant content type: object (the mural is the main subject) or scene. I'll go with \"object\" since the portrait dominates.\nImage style: edited_photo (it's a photo but features heavy street art/illustration)\nSemantic domain: street_art\n\nShort caption: Large mural portrait of a Black person with curly hair painted on a brick wall beside a barred window.\n\nMain objects: mural portrait, barred window, brick wall, abstract painting section\n\nPossible interpretations: street art mural, portrait painting, urban art installation\n\nUncertainty: Whether the abstract section to the right is part of the same artwork or a separate piece.\n\nQuality flags: none significant",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1363,
+          "completion_tokens": 863,
+          "total_tokens": 2226,
+          "cost": 0.00129426,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129426,
+            "upstream_inference_prompt_cost": 0.00025866,
+            "upstream_inference_completions_cost": 0.0010356
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 636,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

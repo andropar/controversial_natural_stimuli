@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_31",
+    "stim_key": "architecture_31",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 31,
+    "file_index": 31,
+    "image_name": "image_0031.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0031.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"salon_interior\",\n  \"short_caption\": \"Empty modern hair salon interior with dark styling chairs, a wall mirror, and light wood flooring.\",\n  \"main_objects\": [\"styling chairs\", \"wall mirror\", \"hair washing basin\", \"ceiling air conditioner\", \"wooden slat wall panel\"],\n  \"possible_interpretations\": [\"hair salon\", \"beauty salon\", \"barbershop\", \"spa interior\"],\n  \"uncertainty_notes\": \"No signage is visible to confirm the type of establishment. The basin area in the back is partially obscured and could be a hair wash station or a separate sink.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318882-h8JStI6gOcqZRFme4KKm",
+        "object": "chat.completion",
+        "created": 1780318882,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"salon_interior\",\n  \"short_caption\": \"Empty modern hair salon interior with dark styling chairs, a wall mirror, and light wood flooring.\",\n  \"main_objects\": [\"styling chairs\", \"wall mirror\", \"hair washing basin\", \"ceiling air conditioner\", \"wooden slat wall panel\"],\n  \"possible_interpretations\": [\"hair salon\", \"beauty salon\", \"barbershop\", \"spa interior\"],\n  \"uncertainty_notes\": \"No signage is visible to confirm the type of establishment. The basin area in the back is partially obscured and could be a hair wash station or a separate sink.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an interior of what appears to be a hair salon or beauty salon. I can see:\n- Multiple styling chairs (dark brown/black) with hydraulic bases\n- A large mirror on the left wall\n- Light wood/laminate flooring\n- White walls with an olive/sage green accent wall\n- Ceiling-mounted air conditioning unit\n- Recessed ceiling lights\n- What appears to be a hair washing station area in the back\n- Wooden slatted decorative wall feature\n- The space looks clean, modern, and well-lit\n- There are no people visible in the image\n\nLet me assess each dimension:\n\n- recognizability: 5 - Very clearly a salon interior\n- ambiguity: 1 - Very clear what this is\n- natural_photo_typicality: 5 - Looks like a standard interior photograph\n- visual_clutter: 2 - Relatively clean, organized space\n- object_centricity: 2 - The chairs are objects but the scene is the main subject\n- scene_centricity: 5 - Primarily a place/scene\n- caption_confidence: 5 - Easy to caption\n\nEstimated salient objects: 3-4 chairs\nDistinct object categories: chairs, mirror, sink/basin (in back), AC unit\n\nNo people, faces, animals, text, vehicles, or food visible.\nIt's an indoor scene.\nNo artificial/rendered content.\nNo occlusion/truncation issues.\nNo unusual viewpoint - standard interior photo.\nNo multiple main objects in a complex sense - it's a scene.\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: salon_interior / beauty_salon / commercial_interior\n\nShort caption: \"Empty modern hair salon interior with styling chairs, mirror, and wood flooring.\"\n\nMain objects: styling chairs, mirror, hair washing sink, air conditioner, wooden wall slats\n\nPossible interpretations: hair salon, beauty salon, barbershop\n\nUncertainty notes: The sink area is somewhat unclear, could be a washbasin. No signage visible to confirm type of salon.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an interior of what appears to be a hair salon or beauty salon. I can see:\n- Multiple styling chairs (dark brown/black) with hydraulic bases\n- A large mirror on the left wall\n- Light wood/laminate flooring\n- White walls with an olive/sage green accent wall\n- Ceiling-mounted air conditioning unit\n- Recessed ceiling lights\n- What appears to be a hair washing station area in the back\n- Wooden slatted decorative wall feature\n- The space looks clean, modern, and well-lit\n- There are no people visible in the image\n\nLet me assess each dimension:\n\n- recognizability: 5 - Very clearly a salon interior\n- ambiguity: 1 - Very clear what this is\n- natural_photo_typicality: 5 - Looks like a standard interior photograph\n- visual_clutter: 2 - Relatively clean, organized space\n- object_centricity: 2 - The chairs are objects but the scene is the main subject\n- scene_centricity: 5 - Primarily a place/scene\n- caption_confidence: 5 - Easy to caption\n\nEstimated salient objects: 3-4 chairs\nDistinct object categories: chairs, mirror, sink/basin (in back), AC unit\n\nNo people, faces, animals, text, vehicles, or food visible.\nIt's an indoor scene.\nNo artificial/rendered content.\nNo occlusion/truncation issues.\nNo unusual viewpoint - standard interior photo.\nNo multiple main objects in a complex sense - it's a scene.\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: salon_interior / beauty_salon / commercial_interior\n\nShort caption: \"Empty modern hair salon interior with styling chairs, mirror, and wood flooring.\"\n\nMain objects: styling chairs, mirror, hair washing sink, air conditioner, wooden wall slats\n\nPossible interpretations: hair salon, beauty salon, barbershop\n\nUncertainty notes: The sink area is somewhat unclear, could be a washbasin. No signage visible to confirm type of salon.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 793,
+          "total_tokens": 2315,
+          "cost": 0.00138084,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00138084,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009516
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 499,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

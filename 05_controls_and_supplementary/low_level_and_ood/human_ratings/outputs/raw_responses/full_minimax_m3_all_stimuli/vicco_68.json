@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_68",
+    "stim_key": "vicco_68",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 68,
+    "file_index": 67,
+    "image_name": "shared_4rep_vicco_068.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_068.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"animals/pets\",\n  \"short_caption\": \"An orange tabby and a black cat resting on grass outdoors in a garden\",\n  \"main_objects\": [\"orange cat\", \"black cat\", \"grass\", \"bushes\"],\n  \"possible_interpretations\": [\n    \"Two pet cats relaxing in a backyard garden\",\n    \"Outdoor cats lounging in grass near shrubs\"\n  ],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; a faint third cat-like shape appears in the upper left but is unclear. Background structure is partially obscured.\",\n  \"quality_flags\": [\"image_rotated_90_degrees\", \"background_partially_occluded\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319468-ShXekx8I0OD82HSVgA9x",
+        "object": "chat.completion",
+        "created": 1780319468,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"animals/pets\",\n  \"short_caption\": \"An orange tabby and a black cat resting on grass outdoors in a garden\",\n  \"main_objects\": [\"orange cat\", \"black cat\", \"grass\", \"bushes\"],\n  \"possible_interpretations\": [\n    \"Two pet cats relaxing in a backyard garden\",\n    \"Outdoor cats lounging in grass near shrubs\"\n  ],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; a faint third cat-like shape appears in the upper left but is unclear. Background structure is partially obscured.\",\n  \"quality_flags\": [\"image_rotated_90_degrees\", \"background_partially_occluded\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows two cats on grass - one orange/ginger cat curled up and one black cat lying down. The image appears to be rotated 90 degrees (sideways). There's also what appears to be another cat in the upper portion of the image, possibly white/grey. The setting is outdoors in a grassy area with some bushes/shrubs visible.\n\nLet me assess each dimension:\n\n- Recognizability: Clear, easily recognizable as cats in grass. 5\n- Ambiguity: Not ambiguous, clearly cats. 1\n- Natural photo typicality: Looks like a typical casual photo. 4\n- Visual clutter: Moderate - cats, grass, bushes, possible structure. 3\n- Object-centricity: The cats are the main subjects. 4\n- Scene-centricity: It's both - cats in a garden/outdoor setting. Could be 2-3\n- Caption confidence: High, can easily caption. 5\n\n- Estimated salient object count: 2-3 cats\n- Distinct object categories: cats, grass, bushes\n\n- Contains person: false\n- Contains face: false (cats don't show faces clearly)\n- Contains animal: true (cats)\n- Contains text: false\n- Contains vehicle: false\n- Contains food: false\n- Contains indoor scene: false\n- Contains outdoor scene: true\n- Contains artificial/rendered content: false\n- Contains occlusion/truncation: possibly\n- Contains unusual viewpoint: image is rotated 90 degrees - unusual orientation\n- Contains multiple main objects: true (two main cats)\n\nDominant content: animal\nImage style: natural_photo\nSemantic domain: animals/pets\n\nShort caption: \"Two cats, one orange and one black, resting on grass outdoors\"\n\nThe image is rotated 90 degrees (sideways orientation). This is a quality flag.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows two cats on grass - one orange/ginger cat curled up and one black cat lying down. The image appears to be rotated 90 degrees (sideways). There's also what appears to be another cat in the upper portion of the image, possibly white/grey. The setting is outdoors in a grassy area with some bushes/shrubs visible.\n\nLet me assess each dimension:\n\n- Recognizability: Clear, easily recognizable as cats in grass. 5\n- Ambiguity: Not ambiguous, clearly cats. 1\n- Natural photo typicality: Looks like a typical casual photo. 4\n- Visual clutter: Moderate - cats, grass, bushes, possible structure. 3\n- Object-centricity: The cats are the main subjects. 4\n- Scene-centricity: It's both - cats in a garden/outdoor setting. Could be 2-3\n- Caption confidence: High, can easily caption. 5\n\n- Estimated salient object count: 2-3 cats\n- Distinct object categories: cats, grass, bushes\n\n- Contains person: false\n- Contains face: false (cats don't show faces clearly)\n- Contains animal: true (cats)\n- Contains text: false\n- Contains vehicle: false\n- Contains food: false\n- Contains indoor scene: false\n- Contains outdoor scene: true\n- Contains artificial/rendered content: false\n- Contains occlusion/truncation: possibly\n- Contains unusual viewpoint: image is rotated 90 degrees - unusual orientation\n- Contains multiple main objects: true (two main cats)\n\nDominant content: animal\nImage style: natural_photo\nSemantic domain: animals/pets\n\nShort caption: \"Two cats, one orange and one black, resting on grass outdoors\"\n\nThe image is rotated 90 degrees (sideways orientation). This is a quality flag.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 751,
+          "total_tokens": 2273,
+          "cost": 0.00120756,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00120756,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009012
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 436,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

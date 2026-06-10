@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_58",
+    "stim_key": "training_objective_58",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 58,
+    "file_index": 58,
+    "image_name": "image_0058.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0058.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"beach safety and aviation\",\n  \"short_caption\": \"Collage showing a Qantas 747 jet, a lifeguard with megaphone on a beach, and a surf rescue board\",\n  \"main_objects\": [\"Qantas airplane\", \"lifeguard\", \"megaphone\", \"surf rescue board\", \"beach chair\", \"warning flag\"],\n  \"possible_interpretations\": [\"Australian surf lifesaving and Qantas sponsorship theme\", \"beach safety promotional montage\", \"travel and rescue feature composite\", \"news collage about aviation and beach patrol\", \"general Australian coastal/travel imagery\"],\n  \"uncertainty_notes\": \"Image is a composite of three distinct photographs; each panel is individually clear but the combined meaning is interpretive\",\n  \"quality_flags\": [\"composite_collage\", \"multiple_scenes\", \"contains_brand_text\", \"uneven_resolution\"]\n}",
+      "response": {
+        "id": "gen-1780319340-D7jW8gvsz0HVOVUSjX5j",
+        "object": "chat.completion",
+        "created": 1780319340,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"beach safety and aviation\",\n  \"short_caption\": \"Collage showing a Qantas 747 jet, a lifeguard with megaphone on a beach, and a surf rescue board\",\n  \"main_objects\": [\"Qantas airplane\", \"lifeguard\", \"megaphone\", \"surf rescue board\", \"beach chair\", \"warning flag\"],\n  \"possible_interpretations\": [\"Australian surf lifesaving and Qantas sponsorship theme\", \"beach safety promotional montage\", \"travel and rescue feature composite\", \"news collage about aviation and beach patrol\", \"general Australian coastal/travel imagery\"],\n  \"uncertainty_notes\": \"Image is a composite of three distinct photographs; each panel is individually clear but the combined meaning is interpretive\",\n  \"quality_flags\": [\"composite_collage\", \"multiple_scenes\", \"contains_brand_text\", \"uneven_resolution\"]\n}",
+              "refusal": null,
+              "reasoning": "The image is a collage/composite of three separate photographs:\n\n1. Left panel: A beach scene with sand, ocean, a red/yellow flag, a plastic chair, and a yellow surf rescue board on the sand. People can be seen in the distance.\n\n2. Top center panel (inset): A Qantas Boeing 747 airplane taking off, with the iconic red tail featuring the white kangaroo logo.\n\n3. Right panel: A lifeguard in a yellow and red uniform (with \"SURF RESCUE DHL\" text visible) holding a megaphone, standing in the surf with waves and people in the background.\n\nThis is clearly a composite/collage image, not a single natural photograph. The style is \"edited_photo\" or could be considered a montage. It contains text (Qantas, Surf Rescue DHL). It contains people, vehicles (airplane), outdoor scenes.\n\nLet me annotate carefully:\n\n- recognizability: 4 - content is clear\n- ambiguity: 3 - it's a collage of beach/aviation/rescue themes, somewhat ambiguous as a unified image\n- natural_photo_typicality: 2 - it's a composite/collage, not a typical natural photo\n- visual_clutter: 4 - many competing elements across panels\n- object_centricity: 2 - multiple scenes, not one central object\n- scene_centricity: 4 - multiple scenes shown\n- caption_confidence: 3 - can be described but it's a collage\n\n- estimated_salient_object_count: 5 (airplane, lifeguard, megaphone, rescue board, flag)\n- estimated_distinct_object_categories: ~6-7\n\n- contains_person: true (lifeguard, distant people)\n- contains_face: true (distant people visible, lifeguard from behind)\n- contains_animal: false\n- contains_text: true (Qantas, Surf Rescue DHL)\n- contains_vehicle: true (airplane)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: true (it's a composite/collage)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"mixed\"\n- image_style: \"edited_photo\"\n- semantic_domain: \"beach safety/rescue/aviation\"\n\nshort_caption: \"Collage of a Qantas jet, a lifeguard with megaphone at a beach, and surf rescue board\"\nmain_objects: [\"Qantas airplane\", \"lifeguard\", \"megaphone\", \"surf rescue board\", \"beach\", \"flag\"]\npossible_interpretations: [\"Australian surf rescue/aviation theme\", \"beach safety promotional collage\", \"travel and tourism montage\", \"Qantas surf lifesaving partnership\", \"composite news/feature image\"]\nuncertainty_notes: \"Image is a composite of three photos; individual panels are clear but unified meaning is interpretive\"\nquality_flags: [\"composite_collage\", \"multiple_scenes\", \"contains_text\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image is a collage/composite of three separate photographs:\n\n1. Left panel: A beach scene with sand, ocean, a red/yellow flag, a plastic chair, and a yellow surf rescue board on the sand. People can be seen in the distance.\n\n2. Top center panel (inset): A Qantas Boeing 747 airplane taking off, with the iconic red tail featuring the white kangaroo logo.\n\n3. Right panel: A lifeguard in a yellow and red uniform (with \"SURF RESCUE DHL\" text visible) holding a megaphone, standing in the surf with waves and people in the background.\n\nThis is clearly a composite/collage image, not a single natural photograph. The style is \"edited_photo\" or could be considered a montage. It contains text (Qantas, Surf Rescue DHL). It contains people, vehicles (airplane), outdoor scenes.\n\nLet me annotate carefully:\n\n- recognizability: 4 - content is clear\n- ambiguity: 3 - it's a collage of beach/aviation/rescue themes, somewhat ambiguous as a unified image\n- natural_photo_typicality: 2 - it's a composite/collage, not a typical natural photo\n- visual_clutter: 4 - many competing elements across panels\n- object_centricity: 2 - multiple scenes, not one central object\n- scene_centricity: 4 - multiple scenes shown\n- caption_confidence: 3 - can be described but it's a collage\n\n- estimated_salient_object_count: 5 (airplane, lifeguard, megaphone, rescue board, flag)\n- estimated_distinct_object_categories: ~6-7\n\n- contains_person: true (lifeguard, distant people)\n- contains_face: true (distant people visible, lifeguard from behind)\n- contains_animal: false\n- contains_text: true (Qantas, Surf Rescue DHL)\n- contains_vehicle: true (airplane)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: true (it's a composite/collage)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"mixed\"\n- image_style: \"edited_photo\"\n- semantic_domain: \"beach safety/rescue/aviation\"\n\nshort_caption: \"Collage of a Qantas jet, a lifeguard with megaphone at a beach, and surf rescue board\"\nmain_objects: [\"Qantas airplane\", \"lifeguard\", \"megaphone\", \"surf rescue board\", \"beach\", \"flag\"]\npossible_interpretations: [\"Australian surf rescue/aviation theme\", \"beach safety promotional collage\", \"travel and tourism montage\", \"Qantas surf lifesaving partnership\", \"composite news/feature image\"]\nuncertainty_notes: \"Image is a composite of three photos; individual panels are clear but unified meaning is interpretive\"\nquality_flags: [\"composite_collage\", \"multiple_scenes\", \"contains_text\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1179,
+          "completion_tokens": 1053,
+          "total_tokens": 2232,
+          "cost": 0.00146706,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00146706,
+            "upstream_inference_prompt_cost": 0.00020346,
+            "upstream_inference_completions_cost": 0.0012636
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 690,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

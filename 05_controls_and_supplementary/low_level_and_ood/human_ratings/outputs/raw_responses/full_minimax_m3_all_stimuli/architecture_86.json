@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_86",
+    "stim_key": "architecture_86",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 86,
+    "file_index": 86,
+    "image_name": "image_0086.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0086.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 4, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"architecture\", \"short_caption\": \"Two intersecting gable roof peaks of a house with dark shingles against a blue sky\", \"main_objects\": [\"roof gables\", \"asphalt shingles\", \"vinyl siding\", \"sky\"], \"possible_interpretations\": [\"residential house roofline\", \"multi-gable architecture detail\", \"upper portion of suburban home\"], \"uncertainty_notes\": \"Lower edge of roofs is cut off; specific house type unclear but appears to be a typical suburban multi-gable home\", \"quality_flags\": [\"bottom_truncation\", \"low_angle_viewpoint\"]}",
+      "response": {
+        "id": "gen-1780318945-Vp9jLpOjpsf2syPRBIUS",
+        "object": "chat.completion",
+        "created": 1780318945,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 4, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"architecture\", \"short_caption\": \"Two intersecting gable roof peaks of a house with dark shingles against a blue sky\", \"main_objects\": [\"roof gables\", \"asphalt shingles\", \"vinyl siding\", \"sky\"], \"possible_interpretations\": [\"residential house roofline\", \"multi-gable architecture detail\", \"upper portion of suburban home\"], \"uncertainty_notes\": \"Lower edge of roofs is cut off; specific house type unclear but appears to be a typical suburban multi-gable home\", \"quality_flags\": [\"bottom_truncation\", \"low_angle_viewpoint\"]}",
+              "refusal": null,
+              "reasoning": "The image shows a close-up view of residential rooftops with multiple gable peaks, asphalt shingles, and siding on the gable ends. The sky is visible in the background. There are two main roof gable structures visible with their peaks forming triangular shapes against a blue sky with some clouds. The composition focuses on the architectural details of the roofing.\n\nLet me analyze each aspect:\n\n- Recognizability: Clear architectural features, easily recognizable as house roofs/gables. 4-5\n- Ambiguity: Pretty clear what it is - house roofs. Low ambiguity. 1-2\n- Natural photo typicality: Looks like a typical photograph. 4-5\n- Visual clutter: Multiple roof lines but organized, not too cluttered. 2-3\n- Object-centricity: It's more of a scene/architectural detail than a single object. 2\n- Scene-centricity: This is a scene/architectural view. 4-5\n- Caption confidence: High confidence in caption. 4-5\n\nEstimated salient object count: 2-3 gable peaks\nDistinct object categories: roofs, gables, shingles, sky, siding - maybe 3-4\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial or rendered content: no\nContains occlusion or truncation: somewhat - the roofs are cut off at the bottom\nContains unusual viewpoint: the low angle is somewhat unusual, looking up at roof peaks\nContains multiple main objects: the two gable structures could be considered multiple main objects\n\nDominant content type: scene (architectural)\nImage style: natural_photo\nSemantic domain: architecture/residential\n\nShort caption: \"Two intersecting gable roof peaks of a house against a blue sky\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a close-up view of residential rooftops with multiple gable peaks, asphalt shingles, and siding on the gable ends. The sky is visible in the background. There are two main roof gable structures visible with their peaks forming triangular shapes against a blue sky with some clouds. The composition focuses on the architectural details of the roofing.\n\nLet me analyze each aspect:\n\n- Recognizability: Clear architectural features, easily recognizable as house roofs/gables. 4-5\n- Ambiguity: Pretty clear what it is - house roofs. Low ambiguity. 1-2\n- Natural photo typicality: Looks like a typical photograph. 4-5\n- Visual clutter: Multiple roof lines but organized, not too cluttered. 2-3\n- Object-centricity: It's more of a scene/architectural detail than a single object. 2\n- Scene-centricity: This is a scene/architectural view. 4-5\n- Caption confidence: High confidence in caption. 4-5\n\nEstimated salient object count: 2-3 gable peaks\nDistinct object categories: roofs, gables, shingles, sky, siding - maybe 3-4\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial or rendered content: no\nContains occlusion or truncation: somewhat - the roofs are cut off at the bottom\nContains unusual viewpoint: the low angle is somewhat unusual, looking up at roof peaks\nContains multiple main objects: the two gable structures could be considered multiple main objects\n\nDominant content type: scene (architectural)\nImage style: natural_photo\nSemantic domain: architecture/residential\n\nShort caption: \"Two intersecting gable roof peaks of a house against a blue sky\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 708,
+          "total_tokens": 2230,
+          "cost": 0.00127884,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00127884,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008496
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 452,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

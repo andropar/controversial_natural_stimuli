@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_95",
+    "stim_key": "all_models_95",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 95,
+    "file_index": 95,
+    "image_name": "image_0095.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0095.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"clothing/retail\",\n  \"short_caption\": \"Black t-shirt with white lightning bolt design hanging on a wooden hanger in a closet or shop.\",\n  \"main_objects\": [\"t-shirt\", \"wooden hanger\", \"water bottles\", \"folded clothes\", \"framed picture\", \"driftwood\", \"clothing rack\"],\n  \"possible_interpretations\": [\"Retail clothing display\", \"Personal closet showcasing a new shirt\", \"Vintage or boutique shop product photo\", \"Online marketplace listing photo\"],\n  \"uncertainty_notes\": \"Ambiguous whether this is a home closet or a small retail/boutique setting; small text on shirt label not clearly legible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318841-o9RQJ7YyiW7Fk90vlYnt",
+        "object": "chat.completion",
+        "created": 1780318841,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 7,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"clothing/retail\",\n  \"short_caption\": \"Black t-shirt with white lightning bolt design hanging on a wooden hanger in a closet or shop.\",\n  \"main_objects\": [\"t-shirt\", \"wooden hanger\", \"water bottles\", \"folded clothes\", \"framed picture\", \"driftwood\", \"clothing rack\"],\n  \"possible_interpretations\": [\"Retail clothing display\", \"Personal closet showcasing a new shirt\", \"Vintage or boutique shop product photo\", \"Online marketplace listing photo\"],\n  \"uncertainty_notes\": \"Ambiguous whether this is a home closet or a small retail/boutique setting; small text on shirt label not clearly legible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a black t-shirt with a small white lightning bolt or arrow design on it, hanging on a wooden hanger. The t-shirt is displayed in what appears to be a closet or small retail/clothing space. In the background, I can see:\n- Folded clothes on shelves\n- Water bottles/thermos containers (one appears to be a \"Corkcicle\" brand)\n- More clothing items on hangers below\n- A piece of driftwood or natural wood decoration on the upper left\n- A framed picture/painting on the right wall\n- Various other clothing items\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - Very clearly a t-shirt on display\n- ambiguity: 1 - Very clear what's being shown\n- natural_photo_typicality: 4 - Looks like a typical product photo in a retail/home setting\n- visual_clutter: 3 - There are many items but the t-shirt is clearly the focus\n- object_centricity: 5 - The t-shirt is clearly the central object\n- scene_centricity: 2 - It's primarily about the object, though there's a scene context\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1 (the t-shirt is the main subject)\n- estimated_distinct_object_categories: 6-7 (t-shirt, hanger, water bottles, folded clothes, framed art, driftwood, other clothing)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (there might be a small label on the shirt but not really visible text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"clothing/retail\"\n\n- short_caption: \"Black t-shirt with white lightning bolt design hanging in a closet\"\n- main_objects: [\"t-shirt\", \"hanger\", \"water bottles\", \"folded clothes\", \"framed picture\"]\n- possible_interpretations: [\"Retail display of t-shirt\", \"Personal closet showing new t-shirt purchase\", \"Vintage/clothing store display\"]\n- uncertainty_notes: \"Setting could be a home closet or small retail shop - difficult to determine definitively\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a black t-shirt with a small white lightning bolt or arrow design on it, hanging on a wooden hanger. The t-shirt is displayed in what appears to be a closet or small retail/clothing space. In the background, I can see:\n- Folded clothes on shelves\n- Water bottles/thermos containers (one appears to be a \"Corkcicle\" brand)\n- More clothing items on hangers below\n- A piece of driftwood or natural wood decoration on the upper left\n- A framed picture/painting on the right wall\n- Various other clothing items\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - Very clearly a t-shirt on display\n- ambiguity: 1 - Very clear what's being shown\n- natural_photo_typicality: 4 - Looks like a typical product photo in a retail/home setting\n- visual_clutter: 3 - There are many items but the t-shirt is clearly the focus\n- object_centricity: 5 - The t-shirt is clearly the central object\n- scene_centricity: 2 - It's primarily about the object, though there's a scene context\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1 (the t-shirt is the main subject)\n- estimated_distinct_object_categories: 6-7 (t-shirt, hanger, water bottles, folded clothes, framed art, driftwood, other clothing)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (there might be a small label on the shirt but not really visible text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"clothing/retail\"\n\n- short_caption: \"Black t-shirt with white lightning bolt design hanging in a closet\"\n- main_objects: [\"t-shirt\", \"hanger\", \"water bottles\", \"folded clothes\", \"framed picture\"]\n- possible_interpretations: [\"Retail display of t-shirt\", \"Personal closet showing new t-shirt purchase\", \"Vintage/clothing store display\"]\n- uncertainty_notes: \"Setting could be a home closet or small retail shop - difficult to determine definitively\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 918,
+          "total_tokens": 2440,
+          "cost": 0.00153084,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00153084,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0011016
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 603,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

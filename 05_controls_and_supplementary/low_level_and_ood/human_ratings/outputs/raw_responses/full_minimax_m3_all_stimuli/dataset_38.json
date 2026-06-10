@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_38",
+    "stim_key": "dataset_38",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 38,
+    "file_index": 38,
+    "image_name": "image_0038.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0038.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"furniture\",\n  \"short_caption\": \"Tall white wooden bookshelf against a textured gradient wall\",\n  \"main_objects\": [\"bookshelf\", \"shelving unit\"],\n  \"possible_interpretations\": [\"empty wooden bookshelf\", \"DIY plywood shelf\", \"narrow storage shelving\"],\n  \"uncertainty_notes\": \"Top of the shelf is cut off by the image frame\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319008-2sWXSSDEqDzTn2rl2Vb2",
+        "object": "chat.completion",
+        "created": 1780319008,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"furniture\",\n  \"short_caption\": \"Tall white wooden bookshelf against a textured gradient wall\",\n  \"main_objects\": [\"bookshelf\", \"shelving unit\"],\n  \"possible_interpretations\": [\"empty wooden bookshelf\", \"DIY plywood shelf\", \"narrow storage shelving\"],\n  \"uncertainty_notes\": \"Top of the shelf is cut off by the image frame\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a tall, narrow white wooden shelving unit with about 5-6 shelves against a textured wall that has a gradient from yellowish at the top to greenish at the bottom. The floor appears to be concrete. The shelving unit appears to be handmade or a DIY piece, made of plywood.\n\nLet me annotate this:\n\n- recognizability: 4 - The shelving unit is clearly recognizable\n- ambiguity: 1 - Very clear what's shown\n- natural_photo_typicality: 3 - Looks like a casual photo, not professional\n- visual_clutter: 1 - Very simple, minimal scene\n- object_centricity: 4 - The shelf is the central object\n- scene_centricity: 3 - Could be seen as both object and scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1\n- estimated_distinct_object_categories: 1\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (appears to be indoors with a wall and floor)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (the shelf top is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"furniture\"\n\n- short_caption: \"Tall white wooden bookshelf against a textured wall\"\n- main_objects: [\"bookshelf\", \"shelving unit\"]\n- possible_interpretations: [\"empty wooden shelf against wall\", \"DIY plywood bookshelf\", \"storage shelf unit\"]\n- uncertainty_notes: \"Top of shelf is cut off by frame\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a tall, narrow white wooden shelving unit with about 5-6 shelves against a textured wall that has a gradient from yellowish at the top to greenish at the bottom. The floor appears to be concrete. The shelving unit appears to be handmade or a DIY piece, made of plywood.\n\nLet me annotate this:\n\n- recognizability: 4 - The shelving unit is clearly recognizable\n- ambiguity: 1 - Very clear what's shown\n- natural_photo_typicality: 3 - Looks like a casual photo, not professional\n- visual_clutter: 1 - Very simple, minimal scene\n- object_centricity: 4 - The shelf is the central object\n- scene_centricity: 3 - Could be seen as both object and scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1\n- estimated_distinct_object_categories: 1\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (appears to be indoors with a wall and floor)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (the shelf top is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"furniture\"\n\n- short_caption: \"Tall white wooden bookshelf against a textured wall\"\n- main_objects: [\"bookshelf\", \"shelving unit\"]\n- possible_interpretations: [\"empty wooden shelf against wall\", \"DIY plywood bookshelf\", \"storage shelf unit\"]\n- uncertainty_notes: \"Top of shelf is cut off by frame\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 713,
+          "total_tokens": 2235,
+          "cost": 0.00116196,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00116196,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008556
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 435,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_31",
+    "stim_key": "dataset_31",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 31,
+    "file_index": 31,
+    "image_name": "image_0031.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0031.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"emergency_services\",\n\n  \"short_caption\": \"A white and green UK ambulance van in motion on a road\",\n  \"main_objects\": [\"ambulance\", \"van\", \"building\"],\n  \"possible_interpretations\": [\"Ambulance responding to an emergency\", \"Panning shot of a moving ambulance\", \"UK emergency services vehicle\"],\n  \"uncertainty_notes\": \"Driver may be partially visible through the windshield but cannot be clearly identified. Motion blur suggests panning technique.\",\n  \"quality_flags\": [\"motion_blur\", \"right_edge_truncation\"]\n}",
+      "response": {
+        "id": "gen-1780318998-2lamCwn4eeEpoWl57fXZ",
+        "object": "chat.completion",
+        "created": 1780318998,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"emergency_services\",\n\n  \"short_caption\": \"A white and green UK ambulance van in motion on a road\",\n  \"main_objects\": [\"ambulance\", \"van\", \"building\"],\n  \"possible_interpretations\": [\"Ambulance responding to an emergency\", \"Panning shot of a moving ambulance\", \"UK emergency services vehicle\"],\n  \"uncertainty_notes\": \"Driver may be partially visible through the windshield but cannot be clearly identified. Motion blur suggests panning technique.\",\n  \"quality_flags\": [\"motion_blur\", \"right_edge_truncation\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a white Mercedes-Benz ambulance van in motion (there's motion blur on the wheels and background). It has distinctive green and orange/red Battenburg markings typical of UK emergency services. The text \"Ambulance\" is clearly visible on the side, and \"Emergency Paramedics\" text is also visible. The vehicle is on a road with a large building/hangar in the background and some trees visible.\n\nLet me assess each dimension:\n\n- Recognizability: Very clear - an ambulance vehicle is easily recognizable. 5\n- Ambiguity: Very low ambiguity - it's clearly an ambulance. 1\n- Natural photo typicality: Looks like a natural photo, though with some motion blur suggesting action/panning shot. 4\n- Visual clutter: Moderate - main subject is clear but there's some background context. 2\n- Object centricity: Yes, the ambulance dominates the frame. 5\n- Scene centricity: It's more about the vehicle than the scene. 2\n- Caption confidence: High - easy to caption. 5\n\nSalient objects: 1 (the ambulance)\nDistinct categories: 1 (vehicle/ambulance)\n\nContains:\n- Person: no clearly visible person (driver might be there but not clear)\n- Face: no\n- Animal: no\n- Text: yes (\"Ambulance\", \"Emergency Paramedics\", partial license plate)\n- Vehicle: yes\n- Food: no\n- Indoor scene: no\n- Outdoor scene: yes\n- Artificial or rendered: no\n- Occlusion or truncation: the right side is somewhat truncated\n- Unusual viewpoint: no, fairly standard\n- Multiple main objects: no, one main object\n\nDominant content: object (ambulance)\nImage style: natural_photo\nSemantic domain: emergency_services or vehicles\n\nShort caption: \"A white and green ambulance van with motion blur driving on a road\"\nMain objects: [\"ambulance\", \"van\"]\nPossible interpretations: [\"Ambulance responding to emergency\", \"Ambulance in motion/panning shot\", \"UK emergency vehicle\"]\n\nUncertainty notes: Driver may be partially visible through windshield but not clearly identifiable. Motion blur indicates vehicle is moving.\n\nQuality flags: [\"motion_blur\", \"right_edge_truncation\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a white Mercedes-Benz ambulance van in motion (there's motion blur on the wheels and background). It has distinctive green and orange/red Battenburg markings typical of UK emergency services. The text \"Ambulance\" is clearly visible on the side, and \"Emergency Paramedics\" text is also visible. The vehicle is on a road with a large building/hangar in the background and some trees visible.\n\nLet me assess each dimension:\n\n- Recognizability: Very clear - an ambulance vehicle is easily recognizable. 5\n- Ambiguity: Very low ambiguity - it's clearly an ambulance. 1\n- Natural photo typicality: Looks like a natural photo, though with some motion blur suggesting action/panning shot. 4\n- Visual clutter: Moderate - main subject is clear but there's some background context. 2\n- Object centricity: Yes, the ambulance dominates the frame. 5\n- Scene centricity: It's more about the vehicle than the scene. 2\n- Caption confidence: High - easy to caption. 5\n\nSalient objects: 1 (the ambulance)\nDistinct categories: 1 (vehicle/ambulance)\n\nContains:\n- Person: no clearly visible person (driver might be there but not clear)\n- Face: no\n- Animal: no\n- Text: yes (\"Ambulance\", \"Emergency Paramedics\", partial license plate)\n- Vehicle: yes\n- Food: no\n- Indoor scene: no\n- Outdoor scene: yes\n- Artificial or rendered: no\n- Occlusion or truncation: the right side is somewhat truncated\n- Unusual viewpoint: no, fairly standard\n- Multiple main objects: no, one main object\n\nDominant content: object (ambulance)\nImage style: natural_photo\nSemantic domain: emergency_services or vehicles\n\nShort caption: \"A white and green ambulance van with motion blur driving on a road\"\nMain objects: [\"ambulance\", \"van\"]\nPossible interpretations: [\"Ambulance responding to emergency\", \"Ambulance in motion/panning shot\", \"UK emergency vehicle\"]\n\nUncertainty notes: Driver may be partially visible through windshield but not clearly identifiable. Motion blur indicates vehicle is moving.\n\nQuality flags: [\"motion_blur\", \"right_edge_truncation\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 812,
+          "total_tokens": 2334,
+          "cost": 0.00128076,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00128076,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009744
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 547,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

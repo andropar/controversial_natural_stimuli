@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_41",
+    "stim_key": "vicco_41",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 41,
+    "file_index": 40,
+    "image_name": "shared_4rep_vicco_041.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_041.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food\",\n  \"short_caption\": \"Hands holding a paper tray of french fries topped with mayonnaise outdoors\",\n  \"main_objects\": [\"french fries\", \"paper tray\", \"mayonnaise\", \"hands\", \"smartwatch\"],\n  \"possible_interpretations\": [\n    \"Two people sharing fries with mayo\",\n    \"A person picking up a fry to dip\",\n    \"Outdoor casual snack\",\n    \"Aioli or sour cream on fries\"\n  ],\n  \"uncertainty_notes\": \"White condiment could be mayonnaise, aioli, or sour cream; exact setting is unclear but a sliver of grass suggests outdoors\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319438-EAx0u6gmVCurmUegfh4N",
+        "object": "chat.completion",
+        "created": 1780319438,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food\",\n  \"short_caption\": \"Hands holding a paper tray of french fries topped with mayonnaise outdoors\",\n  \"main_objects\": [\"french fries\", \"paper tray\", \"mayonnaise\", \"hands\", \"smartwatch\"],\n  \"possible_interpretations\": [\n    \"Two people sharing fries with mayo\",\n    \"A person picking up a fry to dip\",\n    \"Outdoor casual snack\",\n    \"Aioli or sour cream on fries\"\n  ],\n  \"uncertainty_notes\": \"White condiment could be mayonnaise, aioli, or sour cream; exact setting is unclear but a sliver of grass suggests outdoors\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully:\n\n1. The image shows a paper tray/container of french fries being held by two hands\n2. There's a dollop of mayonnaise (or similar white sauce) on top of the fries\n3. One hand is reaching down, possibly picking up a fry\n4. The other hand is holding the tray from below\n5. The person holding is wearing a black watch/fitness tracker on their wrist\n6. The background appears to be a brown paper surface, possibly a table\n7. There's a hint of grass at the bottom, suggesting outdoor setting\n8. The lighting appears to be natural sunlight\n\nLet me rate according to the schema:\n\n- recognizability: 5 - Very clearly recognizable as french fries with mayo\n- ambiguity: 1 - Very clear, single interpretation\n- natural_photo_typicality: 5 - Looks like a typical smartphone photo\n- visual_clutter: 2 - Mainly fries, hands, and a tray, fairly simple composition\n- object_centricity: 4 - The fries are the main subject\n- scene_centricity: 2 - More about the food object than the scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 3 (fries, hands, tray)\n- estimated_distinct_object_categories: 3 (fries, hands, mayo/sauce)\n\n- contains_person: true (hands visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: false\n- contains_outdoor_scene: true (hint of grass suggests outdoor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (fries are clearly the main)\n\n- dominant_content_type: \"food\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"food\"\n\n- short_caption: \"Hands holding a paper tray of french fries topped with a dollop of mayonnaise outdoors\"\n- main_objects: [\"french fries\", \"paper tray\", \"mayonnaise\", \"hands\"]\n- possible_interpretations: [\"hand holding fries with mayo to share\", \"person picking up a fry\", \"outdoor snack time\"]\n- uncertainty_notes: \"The white sauce could be mayonnaise, aioli, or sour cream; setting is likely outdoor casual dining\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully:\n\n1. The image shows a paper tray/container of french fries being held by two hands\n2. There's a dollop of mayonnaise (or similar white sauce) on top of the fries\n3. One hand is reaching down, possibly picking up a fry\n4. The other hand is holding the tray from below\n5. The person holding is wearing a black watch/fitness tracker on their wrist\n6. The background appears to be a brown paper surface, possibly a table\n7. There's a hint of grass at the bottom, suggesting outdoor setting\n8. The lighting appears to be natural sunlight\n\nLet me rate according to the schema:\n\n- recognizability: 5 - Very clearly recognizable as french fries with mayo\n- ambiguity: 1 - Very clear, single interpretation\n- natural_photo_typicality: 5 - Looks like a typical smartphone photo\n- visual_clutter: 2 - Mainly fries, hands, and a tray, fairly simple composition\n- object_centricity: 4 - The fries are the main subject\n- scene_centricity: 2 - More about the food object than the scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 3 (fries, hands, tray)\n- estimated_distinct_object_categories: 3 (fries, hands, mayo/sauce)\n\n- contains_person: true (hands visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: false\n- contains_outdoor_scene: true (hint of grass suggests outdoor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (fries are clearly the main)\n\n- dominant_content_type: \"food\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"food\"\n\n- short_caption: \"Hands holding a paper tray of french fries topped with a dollop of mayonnaise outdoors\"\n- main_objects: [\"french fries\", \"paper tray\", \"mayonnaise\", \"hands\"]\n- possible_interpretations: [\"hand holding fries with mayo to share\", \"person picking up a fry\", \"outdoor snack time\"]\n- uncertainty_notes: \"The white sauce could be mayonnaise, aioli, or sour cream; setting is likely outdoor casual dining\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 884,
+          "total_tokens": 2406,
+          "cost": 0.00136716,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00136716,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010608
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 573,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

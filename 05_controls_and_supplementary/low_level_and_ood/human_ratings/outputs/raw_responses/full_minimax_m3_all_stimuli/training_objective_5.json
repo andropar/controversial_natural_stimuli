@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_5",
+    "stim_key": "training_objective_5",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 5,
+    "file_index": 5,
+    "image_name": "image_0005.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0005.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports\",\n  \"short_caption\": \"Volleyball player in white jersey setting the ball over the net against an opponent in green.\",\n  \"main_objects\": [\"volleyball player in white jersey\", \"volleyball player in green jersey\", \"volleyball\", \"net\"],\n  \"possible_interpretations\": [\"volleyball match action shot\", \"high school or college volleyball game\", \"setter delivering the ball\", \"block attempt at the net\"],\n  \"uncertainty_notes\": \"Exact role (setter vs. blocker) of the player in white is unclear; partial spectator visible in background; team name truncated on net banner.\",\n  \"quality_flags\": [\"minor_motion_blur_on_hair\"]\n}",
+      "response": {
+        "id": "gen-1780319210-hSYcwFGyTZn6B2LdWfDa",
+        "object": "chat.completion",
+        "created": 1780319210,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports\",\n  \"short_caption\": \"Volleyball player in white jersey setting the ball over the net against an opponent in green.\",\n  \"main_objects\": [\"volleyball player in white jersey\", \"volleyball player in green jersey\", \"volleyball\", \"net\"],\n  \"possible_interpretations\": [\"volleyball match action shot\", \"high school or college volleyball game\", \"setter delivering the ball\", \"block attempt at the net\"],\n  \"uncertainty_notes\": \"Exact role (setter vs. blocker) of the player in white is unclear; partial spectator visible in background; team name truncated on net banner.\",\n  \"quality_flags\": [\"minor_motion_blur_on_hair\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a volleyball match in progress. There are two main players visible:\n1. A player in a white jersey with number 8, who appears to be jumping to set or block the ball\n2. A player in a green jersey with number 9, whose hair is flying, appearing to have just hit or spiked the ball\n3. A volleyball is visible in the upper right, near the hands of the player in white\n4. The net is in the middle with \"YAVAPAI ROUG...\" text visible (likely \"Roughriders\")\n5. There's a partial view of another person in the lower right\n6. The background shows a gym wall with green and white colors\n\nLet me rate this according to the schema:\n\n- Recognizability: Very clear what's happening - volleyball match, 5\n- Ambiguity: Low ambiguity, clearly a volleyball game, 1-2\n- Natural photo typicality: This looks like a typical sports photograph, 5\n- Visual clutter: Moderate - net, players, ball, background, 3\n- Object centricity: The players and ball are central, 4\n- Scene centricity: It's a sports scene, but action-focused, 3\n- Caption confidence: High confidence, 5\n\nContains: persons (yes), faces (yes - one face visible), text (yes - YAVAPAI, numbers), no animal, no vehicle, no food, indoor scene (yes - gym), no artificial content, possible motion blur on hair, unusual viewpoint somewhat (looking up at jumper), multiple main objects (yes - two players and ball)\n\nMain objects: volleyball player (setter/blocker), volleyball player (hitter), volleyball, net\n\nSemantic domain: sports/volleyball",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a volleyball match in progress. There are two main players visible:\n1. A player in a white jersey with number 8, who appears to be jumping to set or block the ball\n2. A player in a green jersey with number 9, whose hair is flying, appearing to have just hit or spiked the ball\n3. A volleyball is visible in the upper right, near the hands of the player in white\n4. The net is in the middle with \"YAVAPAI ROUG...\" text visible (likely \"Roughriders\")\n5. There's a partial view of another person in the lower right\n6. The background shows a gym wall with green and white colors\n\nLet me rate this according to the schema:\n\n- Recognizability: Very clear what's happening - volleyball match, 5\n- Ambiguity: Low ambiguity, clearly a volleyball game, 1-2\n- Natural photo typicality: This looks like a typical sports photograph, 5\n- Visual clutter: Moderate - net, players, ball, background, 3\n- Object centricity: The players and ball are central, 4\n- Scene centricity: It's a sports scene, but action-focused, 3\n- Caption confidence: High confidence, 5\n\nContains: persons (yes), faces (yes - one face visible), text (yes - YAVAPAI, numbers), no animal, no vehicle, no food, indoor scene (yes - gym), no artificial content, possible motion blur on hair, unusual viewpoint somewhat (looking up at jumper), multiple main objects (yes - two players and ball)\n\nMain objects: volleyball player (setter/blocker), volleyball player (hitter), volleyball, net\n\nSemantic domain: sports/volleyball",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 738,
+          "total_tokens": 2260,
+          "cost": 0.00119196,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00119196,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008856
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 401,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

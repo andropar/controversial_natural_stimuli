@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_64",
+    "stim_key": "all_models_64",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 64,
+    "file_index": 64,
+    "image_name": "image_0064.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0064.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature/flora\",\n\n  \"short_caption\": \"Pink magnolia blossoms in bloom with a blurred building in the background.\",\n  \"main_objects\": [\"magnolia flowers\", \"branches\", \"building\"],\n  \"possible_interpretations\": [\n    \"spring magnolia blossoms in bloom\",\n    \"pink flowering tree in front of a house\",\n    \"cherry blossoms with a blurred urban backdrop\",\n    \"ornamental tree near residential building\"\n  ],\n  \"uncertainty_notes\": \"The exact species of the pink flowering tree (likely magnolia based on petal shape) and the precise type of building in the background are uncertain due to heavy background blur.\",\n  \"quality_flags\": [\"shallow depth of field\", \"background heavily blurred\"]\n}",
+      "response": {
+        "id": "gen-1780318800-B88VTt6fYYGnhA7DQ0Yu",
+        "object": "chat.completion",
+        "created": 1780318800,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature/flora\",\n\n  \"short_caption\": \"Pink magnolia blossoms in bloom with a blurred building in the background.\",\n  \"main_objects\": [\"magnolia flowers\", \"branches\", \"building\"],\n  \"possible_interpretations\": [\n    \"spring magnolia blossoms in bloom\",\n    \"pink flowering tree in front of a house\",\n    \"cherry blossoms with a blurred urban backdrop\",\n    \"ornamental tree near residential building\"\n  ],\n  \"uncertainty_notes\": \"The exact species of the pink flowering tree (likely magnolia based on petal shape) and the precise type of building in the background are uncertain due to heavy background blur.\",\n  \"quality_flags\": [\"shallow depth of field\", \"background heavily blurred\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see:\n- Pink magnolia blossoms in the foreground, in sharp focus\n- Branches with the flowers extending across the frame\n- In the background, there's a blurred building/structure with a dark roof, possibly a house with a steep roof\n- The background is significantly out of focus (bokeh effect)\n- The overall scene appears to be outdoors\n- The lighting is soft, possibly overcast day\n- The composition is somewhat busy with many branches and flowers\n\nLet me annotate this systematically:\n\nRecognizability: The main content (magnolia blossoms) is clearly recognizable. 4-5.\nAmbiguity: The image clearly shows magnolia flowers with a blurred building behind. Low ambiguity. 1-2.\nNatural_photo_typicality: Looks like a natural photograph with shallow depth of field. 5.\nVisual_clutter: Many branches and flowers create a busy foreground, but the bokeh helps. 3-4.\nObject_centricity: The magnolia flowers/branches dominate. 4.\nScene_centricity: The background shows a building but it's heavily blurred. The scene aspect is present but secondary. 2-3.\nCaption_confidence: I can describe this confidently. 5.\n\nEstimated salient objects: branches with flowers, building in background\nEstimated distinct categories: flowers, building, branches = 2-3\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor: no\nContains outdoor: yes\nContains artificial/rendered: no\nContains occlusion/truncation: the flowers occlude the building\nContains unusual viewpoint: no\nContains multiple main objects: somewhat - flowers and building\n\nDominant content type: object (flowers/branches are the main focus)\nImage style: natural_photo\nSemantic domain: nature/flora\n\nShort caption: \"Pink magnolia blossoms in full bloom with a blurred building in the background.\"\n\nMain objects: magnolia flowers, branches, building\n\nPossible interpretations: \n- Spring magnolia blossoms\n- Cherry blossoms (though these look more like magnolias)\n- Flowering tree in urban setting\n\nUncertainty: The exact flower type (magnolia vs cherry blossom vs other pink flowering tree) and exact building type are uncertain.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see:\n- Pink magnolia blossoms in the foreground, in sharp focus\n- Branches with the flowers extending across the frame\n- In the background, there's a blurred building/structure with a dark roof, possibly a house with a steep roof\n- The background is significantly out of focus (bokeh effect)\n- The overall scene appears to be outdoors\n- The lighting is soft, possibly overcast day\n- The composition is somewhat busy with many branches and flowers\n\nLet me annotate this systematically:\n\nRecognizability: The main content (magnolia blossoms) is clearly recognizable. 4-5.\nAmbiguity: The image clearly shows magnolia flowers with a blurred building behind. Low ambiguity. 1-2.\nNatural_photo_typicality: Looks like a natural photograph with shallow depth of field. 5.\nVisual_clutter: Many branches and flowers create a busy foreground, but the bokeh helps. 3-4.\nObject_centricity: The magnolia flowers/branches dominate. 4.\nScene_centricity: The background shows a building but it's heavily blurred. The scene aspect is present but secondary. 2-3.\nCaption_confidence: I can describe this confidently. 5.\n\nEstimated salient objects: branches with flowers, building in background\nEstimated distinct categories: flowers, building, branches = 2-3\n\nContains person: no\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor: no\nContains outdoor: yes\nContains artificial/rendered: no\nContains occlusion/truncation: the flowers occlude the building\nContains unusual viewpoint: no\nContains multiple main objects: somewhat - flowers and building\n\nDominant content type: object (flowers/branches are the main focus)\nImage style: natural_photo\nSemantic domain: nature/flora\n\nShort caption: \"Pink magnolia blossoms in full bloom with a blurred building in the background.\"\n\nMain objects: magnolia flowers, branches, building\n\nPossible interpretations: \n- Spring magnolia blossoms\n- Cherry blossoms (though these look more like magnolias)\n- Flowering tree in urban setting\n\nUncertainty: The exact flower type (magnolia vs cherry blossom vs other pink flowering tree) and exact building type are uncertain.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 855,
+          "total_tokens": 2377,
+          "cost": 0.00145524,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00145524,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.001026
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 583,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

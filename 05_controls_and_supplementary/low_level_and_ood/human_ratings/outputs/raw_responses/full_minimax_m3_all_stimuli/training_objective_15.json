@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_15",
+    "stim_key": "training_objective_15",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 15,
+    "file_index": 15,
+    "image_name": "image_0015.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0015.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 12,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"crafts/gallery\",\n  \"short_caption\": \"A woman holding a woven basket in a gallery surrounded by displayed baskets\",\n  \"main_objects\": [\"woman\", \"woven basket\", \"displayed baskets\", \"framed photograph\", \"pedestals\", \"basket wall hanging\"],\n  \"possible_interpretations\": [\"an artisan showcasing her work\", \"a gallery owner posing with crafts\", \"a shopkeeper presenting baskets for sale\", \"a craftsperson with her collection\", \"a curated exhibition portrait\"],\n  \"uncertainty_notes\": \"Exact context unclear; could be gallery, shop, or studio. Identity and role of the woman unknown.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319216-3LlYMYPbUTUrEFyZoyFj",
+        "object": "chat.completion",
+        "created": 1780319216,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 12,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"crafts/gallery\",\n  \"short_caption\": \"A woman holding a woven basket in a gallery surrounded by displayed baskets\",\n  \"main_objects\": [\"woman\", \"woven basket\", \"displayed baskets\", \"framed photograph\", \"pedestals\", \"basket wall hanging\"],\n  \"possible_interpretations\": [\"an artisan showcasing her work\", \"a gallery owner posing with crafts\", \"a shopkeeper presenting baskets for sale\", \"a craftsperson with her collection\", \"a curated exhibition portrait\"],\n  \"uncertainty_notes\": \"Exact context unclear; could be gallery, shop, or studio. Identity and role of the woman unknown.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a woman (appears to be a Black woman with gray/dark hair) standing in what looks like a gallery or shop. She is holding a woven basket in her hands. Around her are multiple woven baskets of various shapes and sizes displayed on dark surfaces. Behind her on the wall, there's a framed picture/photograph of a basket. The walls are dark blue/navy.\n\nLet me annotate this systematically:\n\n- Recognizability: The image is clear, content is easily recognizable. 5\n- Ambiguity: Multiple interpretations possible - it could be an artist with her work, a shop owner, a craftsperson showcasing baskets. 3\n- Natural photo typicality: Looks like a posed photograph in a gallery setting. 4\n- Visual clutter: There are many baskets, framed art, surfaces. 4\n- Object centricity: The woman is central but surrounded by many objects. 3\n- Scene centricity: The setting (gallery/shop) is important but person and baskets dominate. 3\n- Caption confidence: High - \"A woman holding a woven basket in a gallery surrounded by baskets\" 5\n\nSalient objects: woman, multiple baskets, framed picture\nDistinct categories: person, basket, picture frame, furniture/surfaces ~ 4-5\n\nContains person: yes\nContains face: yes\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial or rendered content: no\nContains occlusion or truncation: no\nContains unusual viewpoint: no\nContains multiple main objects: yes (baskets are numerous)\n\nDominant content: person (with objects around)\nImage style: natural_photo\nSemantic domain: crafts/art/gallery\n\nShort caption: \"A woman holding a woven basket in a gallery with multiple displayed baskets\"\n\nMain objects: woman, woven baskets, framed photograph, display surfaces\n\nPossible interpretations: \n- An artisan/artist showcasing her work\n- A gallery owner\n- A shopkeeper\n- A craftsperson\n- A person posing with her basket collection\n\nUncertainty notes: The exact context (gallery vs shop vs studio) is unclear without more context\nQuality flags: none significant",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a woman (appears to be a Black woman with gray/dark hair) standing in what looks like a gallery or shop. She is holding a woven basket in her hands. Around her are multiple woven baskets of various shapes and sizes displayed on dark surfaces. Behind her on the wall, there's a framed picture/photograph of a basket. The walls are dark blue/navy.\n\nLet me annotate this systematically:\n\n- Recognizability: The image is clear, content is easily recognizable. 5\n- Ambiguity: Multiple interpretations possible - it could be an artist with her work, a shop owner, a craftsperson showcasing baskets. 3\n- Natural photo typicality: Looks like a posed photograph in a gallery setting. 4\n- Visual clutter: There are many baskets, framed art, surfaces. 4\n- Object centricity: The woman is central but surrounded by many objects. 3\n- Scene centricity: The setting (gallery/shop) is important but person and baskets dominate. 3\n- Caption confidence: High - \"A woman holding a woven basket in a gallery surrounded by baskets\" 5\n\nSalient objects: woman, multiple baskets, framed picture\nDistinct categories: person, basket, picture frame, furniture/surfaces ~ 4-5\n\nContains person: yes\nContains face: yes\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial or rendered content: no\nContains occlusion or truncation: no\nContains unusual viewpoint: no\nContains multiple main objects: yes (baskets are numerous)\n\nDominant content: person (with objects around)\nImage style: natural_photo\nSemantic domain: crafts/art/gallery\n\nShort caption: \"A woman holding a woven basket in a gallery with multiple displayed baskets\"\n\nMain objects: woman, woven baskets, framed photograph, display surfaces\n\nPossible interpretations: \n- An artisan/artist showcasing her work\n- A gallery owner\n- A shopkeeper\n- A craftsperson\n- A person posing with her basket collection\n\nUncertainty notes: The exact context (gallery vs shop vs studio) is unclear without more context\nQuality flags: none significant",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 834,
+          "total_tokens": 2356,
+          "cost": 0.00130716,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00130716,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010008
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 564,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_163",
+    "stim_key": "vicco_163",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 163,
+    "file_index": 162,
+    "image_name": "shared_4rep_vicco_163.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_163.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 4, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": true, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"nature/agriculture\", \"short_caption\": \"Jackfruits hanging from a leafy tree in an outdoor setting\", \"main_objects\": [\"jackfruits\", \"tree\", \"leaves\", \"grass\"], \"possible_interpretations\": [\"A jackfruit tree in a farm or orchard\", \"A tropical fruit tree with ripening fruits\", \"An agricultural or garden scene\"], \"uncertainty_notes\": \"One jackfruit appears damaged or partially opened, exposing inner texture. Background vegetation is somewhat indistinct.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319576-5YoRAyIZS0eVWCMuWR72",
+        "object": "chat.completion",
+        "created": 1780319576,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 4, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": true, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"nature/agriculture\", \"short_caption\": \"Jackfruits hanging from a leafy tree in an outdoor setting\", \"main_objects\": [\"jackfruits\", \"tree\", \"leaves\", \"grass\"], \"possible_interpretations\": [\"A jackfruit tree in a farm or orchard\", \"A tropical fruit tree with ripening fruits\", \"An agricultural or garden scene\"], \"uncertainty_notes\": \"One jackfruit appears damaged or partially opened, exposing inner texture. Background vegetation is somewhat indistinct.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a jackfruit tree with several jackfruits hanging from its branches. There are at least 3-4 visible jackfruits on the tree, which is the main subject. The tree has lush green leaves, and there's grass and other vegetation in the background, suggesting an outdoor setting, possibly a farm or orchard.\n\nLet me assess each dimension:\n\n- recognizability: The main content (jackfruit tree with fruits) is clearly recognizable. I'd say 5.\n- ambiguity: The image is fairly unambiguous - it's clearly a jackfruit tree. Maybe 1.\n- natural_photo_typicality: This looks like a typical natural photograph. 5.\n- visual_clutter: There are many leaves, branches, fruits, and background vegetation. Moderate to high clutter. 3-4.\n- object_centricity: The jackfruits are the main objects, but they share focus with the tree. 3.\n- scene_centricity: The image shows a place/scene (an orchard or farm). 3-4.\n- caption_confidence: A caption like \"jackfruits hanging on a tree\" would be confident. 5.\n\nCounts:\n- salient objects: 3-4 jackfruits, plus the tree itself. Let me say 4.\n- distinct categories: tree, fruits, grass, background vegetation. Maybe 2-3.\n\nBooleans:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: yes, jackfruit is food (though still on tree)\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: parts of the tree and fruits are partially hidden by leaves, but nothing severe. Maybe false or true. I'll say false.\n- contains_unusual_viewpoint: no, fairly normal viewpoint. false.\n- contains_multiple_main_objects: there are multiple jackfruits, but they're all the same type. I'd say true since there are several fruits.\n\nDominant content: scene (the tree in its environment) or object (the jackfruits). I'll go with \"scene\" since the tree itself is the main subject and the fruits are part of it.\n\nImage style: natural_photo\n\nSemantic domain: nature/plants/agriculture\n\nShort caption: \"Jackfruits hanging from a leafy tree in an outdoor setting\"\n\nMain objects: jackfruits, tree, leaves, grass\n\nPossible interpretations:\n- A jackfruit tree in a farm or orchard\n- A tropical fruit tree with ripening fruits\n- An agricultural/garden scene\n\nUncertainty notes: One of the jackfruits appears damaged/opened, which is a detail worth noting. The background vegetation is somewhat indistinct.\n\nQuality flags: none major",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a jackfruit tree with several jackfruits hanging from its branches. There are at least 3-4 visible jackfruits on the tree, which is the main subject. The tree has lush green leaves, and there's grass and other vegetation in the background, suggesting an outdoor setting, possibly a farm or orchard.\n\nLet me assess each dimension:\n\n- recognizability: The main content (jackfruit tree with fruits) is clearly recognizable. I'd say 5.\n- ambiguity: The image is fairly unambiguous - it's clearly a jackfruit tree. Maybe 1.\n- natural_photo_typicality: This looks like a typical natural photograph. 5.\n- visual_clutter: There are many leaves, branches, fruits, and background vegetation. Moderate to high clutter. 3-4.\n- object_centricity: The jackfruits are the main objects, but they share focus with the tree. 3.\n- scene_centricity: The image shows a place/scene (an orchard or farm). 3-4.\n- caption_confidence: A caption like \"jackfruits hanging on a tree\" would be confident. 5.\n\nCounts:\n- salient objects: 3-4 jackfruits, plus the tree itself. Let me say 4.\n- distinct categories: tree, fruits, grass, background vegetation. Maybe 2-3.\n\nBooleans:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: yes, jackfruit is food (though still on tree)\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: parts of the tree and fruits are partially hidden by leaves, but nothing severe. Maybe false or true. I'll say false.\n- contains_unusual_viewpoint: no, fairly normal viewpoint. false.\n- contains_multiple_main_objects: there are multiple jackfruits, but they're all the same type. I'd say true since there are several fruits.\n\nDominant content: scene (the tree in its environment) or object (the jackfruits). I'll go with \"scene\" since the tree itself is the main subject and the fruits are part of it.\n\nImage style: natural_photo\n\nSemantic domain: nature/plants/agriculture\n\nShort caption: \"Jackfruits hanging from a leafy tree in an outdoor setting\"\n\nMain objects: jackfruits, tree, leaves, grass\n\nPossible interpretations:\n- A jackfruit tree in a farm or orchard\n- A tropical fruit tree with ripening fruits\n- An agricultural/garden scene\n\nUncertainty notes: One of the jackfruits appears damaged/opened, which is a detail worth noting. The background vegetation is somewhat indistinct.\n\nQuality flags: none major",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 910,
+          "total_tokens": 2432,
+          "cost": 0.00152124,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00152124,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.001092
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 674,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

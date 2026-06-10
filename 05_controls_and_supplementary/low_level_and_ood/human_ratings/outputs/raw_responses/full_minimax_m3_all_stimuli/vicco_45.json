@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_45",
+    "stim_key": "vicco_45",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 45,
+    "file_index": 44,
+    "image_name": "shared_4rep_vicco_045.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_045.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food\",\n  \"short_caption\": \"A hand holding a cluster of fresh blackberries over a concrete surface.\",\n  \"main_objects\": [\"hand\", \"blackberries\"],\n  \"possible_interpretations\": [\n    \"hand holding freshly picked blackberries\",\n    \"someone showing foraged wild blackberries\",\n    \"a handful of blackberries resting in an open palm\"\n  ],\n  \"uncertainty_notes\": \"Berries are clearly blackberries; count and ripeness vary slightly but the content is unambiguous.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319443-AQwBq9c9nYcOdxMktQUo",
+        "object": "chat.completion",
+        "created": 1780319443,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food\",\n  \"short_caption\": \"A hand holding a cluster of fresh blackberries over a concrete surface.\",\n  \"main_objects\": [\"hand\", \"blackberries\"],\n  \"possible_interpretations\": [\n    \"hand holding freshly picked blackberries\",\n    \"someone showing foraged wild blackberries\",\n    \"a handful of blackberries resting in an open palm\"\n  ],\n  \"uncertainty_notes\": \"Berries are clearly blackberries; count and ripeness vary slightly but the content is unambiguous.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a human hand holding a cluster of blackberries. The hand is open with the palm up, and the blackberries are resting in the palm. The background appears to be a concrete or asphalt surface with a line visible. The lighting suggests it's outdoors in sunlight.\n\nLet me annotate this carefully:\n\n- Main content: A hand holding several blackberries\n- Recognizability: Very clear - 5\n- Ambiguity: Low - 1 (one clear interpretation)\n- Natural photo typicality: Yes, looks like a natural photo - 5\n- Visual clutter: Low - 2 (hand, berries, and ground)\n- Object centricity: The blackberries are the central focus - 4\n- Scene centricity: Not really a scene - 1\n- Caption confidence: High - 5\n\n- Salient object count: ~1 cluster of blackberries, 1 hand\n- Distinct object categories: 2 (hand, blackberries)\n- Contains person: partial (hand only)\n- Contains face: false\n- Contains animal: false\n- Contains text: false\n- Contains vehicle: false\n- Contains food: true (blackberries)\n- Contains indoor scene: false\n- Contains outdoor scene: true (concrete/asphalt ground)\n- Contains artificial content: false\n- Contains occlusion: true (fingers occlude berries)\n- Contains unusual viewpoint: false\n- Contains multiple main objects: false (berries are one cluster)\n\n- Dominant content type: object (or food)\n- Image style: natural_photo\n- Semantic domain: food\n- Short caption: \"A hand holding a handful of fresh blackberries outdoors.\"\n- Main objects: hand, blackberries\n- Possible interpretations: \"hand holding blackberries\", \"freshly picked blackberries in palm\"\n- Uncertainty: low\n- Quality flags: none major",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a human hand holding a cluster of blackberries. The hand is open with the palm up, and the blackberries are resting in the palm. The background appears to be a concrete or asphalt surface with a line visible. The lighting suggests it's outdoors in sunlight.\n\nLet me annotate this carefully:\n\n- Main content: A hand holding several blackberries\n- Recognizability: Very clear - 5\n- Ambiguity: Low - 1 (one clear interpretation)\n- Natural photo typicality: Yes, looks like a natural photo - 5\n- Visual clutter: Low - 2 (hand, berries, and ground)\n- Object centricity: The blackberries are the central focus - 4\n- Scene centricity: Not really a scene - 1\n- Caption confidence: High - 5\n\n- Salient object count: ~1 cluster of blackberries, 1 hand\n- Distinct object categories: 2 (hand, blackberries)\n- Contains person: partial (hand only)\n- Contains face: false\n- Contains animal: false\n- Contains text: false\n- Contains vehicle: false\n- Contains food: true (blackberries)\n- Contains indoor scene: false\n- Contains outdoor scene: true (concrete/asphalt ground)\n- Contains artificial content: false\n- Contains occlusion: true (fingers occlude berries)\n- Contains unusual viewpoint: false\n- Contains multiple main objects: false (berries are one cluster)\n\n- Dominant content type: object (or food)\n- Image style: natural_photo\n- Semantic domain: food\n- Short caption: \"A hand holding a handful of fresh blackberries outdoors.\"\n- Main objects: hand, blackberries\n- Possible interpretations: \"hand holding blackberries\", \"freshly picked blackberries in palm\"\n- Uncertainty: low\n- Quality flags: none major",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 715,
+          "total_tokens": 2237,
+          "cost": 0.00116436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00116436,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000858
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 430,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

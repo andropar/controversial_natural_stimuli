@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_55",
+    "stim_key": "sota_55",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 55,
+    "file_index": 55,
+    "image_name": "image_0055.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0055.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture\",\n  \"short_caption\": \"A white-domed government building seen past green trees and a large blurred dark silhouette.\",\n  \"main_objects\": [\"domed building\", \"blurred silhouette\", \"trees\", \"smaller dome\"],\n  \"possible_interpretations\": [\n    \"Indian government building such as the Supreme Court of India\",\n    \"Architectural photo with a person standing close to the camera\",\n    \"Dominoed civic building photographed past a foreground statue or person\"\n  ],\n  \"uncertainty_notes\": \"The dark blurred shape in the right foreground could be a person's head/shoulder or a statue; cannot be determined from the image alone.\",\n  \"quality_flags\": [\"foreground occlusion\", \"large out-of-focus element\", \"hazy sky\"]\n}",
+      "response": {
+        "id": "gen-1780319146-DvqUq2i4MaZDv4pbsl8j",
+        "object": "chat.completion",
+        "created": 1780319146,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture\",\n  \"short_caption\": \"A white-domed government building seen past green trees and a large blurred dark silhouette.\",\n  \"main_objects\": [\"domed building\", \"blurred silhouette\", \"trees\", \"smaller dome\"],\n  \"possible_interpretations\": [\n    \"Indian government building such as the Supreme Court of India\",\n    \"Architectural photo with a person standing close to the camera\",\n    \"Dominoed civic building photographed past a foreground statue or person\"\n  ],\n  \"uncertainty_notes\": \"The dark blurred shape in the right foreground could be a person's head/shoulder or a statue; cannot be determined from the image alone.\",\n  \"quality_flags\": [\"foreground occlusion\", \"large out-of-focus element\", \"hazy sky\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a large building with a prominent white dome and red/sandstone colored base. The architectural style appears to be Indian, possibly resembling the Supreme Court of India or a similar government building. There's a smaller dome visible to the right. The building has white columns/pillars and reddish-brown walls. In the foreground on the right, there's a large dark blurred silhouette of what appears to be a person or figure (possibly a statue or person close to the camera, out of focus). There are green trees in the foreground. The sky is hazy/light blue.\n\nLet me annotate:\n\n- recognizability: The building is clearly recognizable as a domed government/institutional building, likely Indian architecture. 4\n- ambiguity: The blurred figure could be a person or statue, but the building is clear. 2\n- natural_photo_typicality: Looks like a typical photograph, though the blurred foreground element is unusual. 4\n- visual_clutter: Moderate - trees, building, sky, blurred figure. 3\n- object_centricity: The dome/building is the clear central object. 4\n- scene_centricity: It's more of an architectural object focus than a scene. 3\n- caption_confidence: 4\n\n- estimated_salient_object_count: 2-3 (building, blurred figure, trees)\n- estimated_distinct_object_categories: 3 (building, tree, figure)\n\n- contains_person: possibly (the blurred figure)\n- contains_face: no\n- contains_animal: no\n- contains_text: no\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: no\n- contains_outdoor_scene: yes\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: yes (the blurred figure partially occludes the view)\n- contains_multiple_main_objects: yes (building and blurred figure)\n\n- dominant_content_type: \"object\" (the dome building is dominant)\n- image_style: \"natural_photo\"\n- semantic_domain: \"architecture\" or \"government_building\"\n\nshort_caption: \"A large white-domed government building viewed past a blurred foreground silhouette and green trees.\"\n\nmain_objects: [\"domed building\", \"blurred silhouette\", \"trees\"]\n\npossible_interpretations: [\"Indian government building (e.g., Supreme Court of India)\", \"Domed institutional building with a foreground obstruction\", \"Architectural photo with person or statue in foreground\"]\n\nuncertainty_notes: \"The dark blurred shape in the foreground could be a person's head/shoulder or a statue - hard to determine.\"\nquality_flags: [\"foreground occlusion\", \"out of focus element\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a large building with a prominent white dome and red/sandstone colored base. The architectural style appears to be Indian, possibly resembling the Supreme Court of India or a similar government building. There's a smaller dome visible to the right. The building has white columns/pillars and reddish-brown walls. In the foreground on the right, there's a large dark blurred silhouette of what appears to be a person or figure (possibly a statue or person close to the camera, out of focus). There are green trees in the foreground. The sky is hazy/light blue.\n\nLet me annotate:\n\n- recognizability: The building is clearly recognizable as a domed government/institutional building, likely Indian architecture. 4\n- ambiguity: The blurred figure could be a person or statue, but the building is clear. 2\n- natural_photo_typicality: Looks like a typical photograph, though the blurred foreground element is unusual. 4\n- visual_clutter: Moderate - trees, building, sky, blurred figure. 3\n- object_centricity: The dome/building is the clear central object. 4\n- scene_centricity: It's more of an architectural object focus than a scene. 3\n- caption_confidence: 4\n\n- estimated_salient_object_count: 2-3 (building, blurred figure, trees)\n- estimated_distinct_object_categories: 3 (building, tree, figure)\n\n- contains_person: possibly (the blurred figure)\n- contains_face: no\n- contains_animal: no\n- contains_text: no\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: no\n- contains_outdoor_scene: yes\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: yes (the blurred figure partially occludes the view)\n- contains_multiple_main_objects: yes (building and blurred figure)\n\n- dominant_content_type: \"object\" (the dome building is dominant)\n- image_style: \"natural_photo\"\n- semantic_domain: \"architecture\" or \"government_building\"\n\nshort_caption: \"A large white-domed government building viewed past a blurred foreground silhouette and green trees.\"\n\nmain_objects: [\"domed building\", \"blurred silhouette\", \"trees\"]\n\npossible_interpretations: [\"Indian government building (e.g., Supreme Court of India)\", \"Domed institutional building with a foreground obstruction\", \"Architectural photo with person or statue in foreground\"]\n\nuncertainty_notes: \"The dark blurred shape in the foreground could be a person's head/shoulder or a statue - hard to determine.\"\nquality_flags: [\"foreground occlusion\", \"out of focus element\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 943,
+          "total_tokens": 2465,
+          "cost": 0.00156084,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00156084,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0011316
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 658,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

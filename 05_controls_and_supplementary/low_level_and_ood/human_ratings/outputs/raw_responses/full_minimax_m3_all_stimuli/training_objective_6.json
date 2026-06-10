@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_6",
+    "stim_key": "training_objective_6",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 6,
+    "file_index": 6,
+    "image_name": "image_0006.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0006.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 2,\n  \"ambiguity\": 4,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 2,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"outdoor_path\",\n  \"short_caption\": \"Distorted view of a muddy path with a motorcyclist in the foreground\",\n  \"main_objects\": [\"motorcycle\", \"helmet\", \"muddy path\", \"vegetation\"],\n  \"possible_interpretations\": [\"motorcyclist riding on a rough trail\", \"person on bike in rural area\", \"warped artistic photo of a path\", \"weathered/aged photo of countryside road\"],\n  \"uncertainty_notes\": \"Heavy distortion makes object identification difficult; the helmet and motorcycle shape in the lower left are inferred rather than clearly visible\",\n  \"quality_flags\": [\"heavy_distortion\", \"low_clarity\", \"possible_motion_blur\", \"artistic_filter\"]\n}",
+      "response": {
+        "id": "gen-1780319210-gkvfNriy484HwsvSEjjB",
+        "object": "chat.completion",
+        "created": 1780319210,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 2,\n  \"ambiguity\": 4,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 2,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"outdoor_path\",\n  \"short_caption\": \"Distorted view of a muddy path with a motorcyclist in the foreground\",\n  \"main_objects\": [\"motorcycle\", \"helmet\", \"muddy path\", \"vegetation\"],\n  \"possible_interpretations\": [\"motorcyclist riding on a rough trail\", \"person on bike in rural area\", \"warped artistic photo of a path\", \"weathered/aged photo of countryside road\"],\n  \"uncertainty_notes\": \"Heavy distortion makes object identification difficult; the helmet and motorcycle shape in the lower left are inferred rather than clearly visible\",\n  \"quality_flags\": [\"heavy_distortion\", \"low_clarity\", \"possible_motion_blur\", \"artistic_filter\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image appears to be a low-quality, somewhat distorted or motion-blurred photograph showing what looks like a muddy or rocky path/road with vegetation on both sides. There seems to be a dark shape in the lower left that could be a person on a motorcycle (I can see what looks like a helmet and possibly a rearview mirror). The image has a heavy distortion effect, possibly artistic or due to motion/weather.\n\nLet me think about the annotations:\n\n- Recognizability: The content is hard to make out due to distortion - maybe 2-3\n- Ambiguity: Multiple interpretations possible due to distortion - 3-4\n- Natural photo typicality: It looks like a natural photo but heavily distorted - 2-3\n- Visual clutter: There's a lot going on with the terrain - 3\n- Object centricity: There's a central dark shape (possibly motorcycle/person) - 3\n- Scene centricity: It's more of a scene/landscape - 4\n- Caption confidence: Low due to distortion - 2\n\nThe image seems to show:\n- A muddy/rocky path\n- Vegetation (grass/bushes) on both sides\n- What appears to be a motorcycle rider (helmet visible) in the lower left\n- Heavy distortion/blur effects\n\nContains person: Yes (the rider)\nContains face: No (face is not clearly visible)\nContains animal: No\nContains text: No\nContains vehicle: Yes (motorcycle)\nContains food: No\nContains outdoor scene: Yes\nContains artificial content: The image has heavy distortion that might be artificial\n\nLet me construct the JSON response.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image appears to be a low-quality, somewhat distorted or motion-blurred photograph showing what looks like a muddy or rocky path/road with vegetation on both sides. There seems to be a dark shape in the lower left that could be a person on a motorcycle (I can see what looks like a helmet and possibly a rearview mirror). The image has a heavy distortion effect, possibly artistic or due to motion/weather.\n\nLet me think about the annotations:\n\n- Recognizability: The content is hard to make out due to distortion - maybe 2-3\n- Ambiguity: Multiple interpretations possible due to distortion - 3-4\n- Natural photo typicality: It looks like a natural photo but heavily distorted - 2-3\n- Visual clutter: There's a lot going on with the terrain - 3\n- Object centricity: There's a central dark shape (possibly motorcycle/person) - 3\n- Scene centricity: It's more of a scene/landscape - 4\n- Caption confidence: Low due to distortion - 2\n\nThe image seems to show:\n- A muddy/rocky path\n- Vegetation (grass/bushes) on both sides\n- What appears to be a motorcycle rider (helmet visible) in the lower left\n- Heavy distortion/blur effects\n\nContains person: Yes (the rider)\nContains face: No (face is not clearly visible)\nContains animal: No\nContains text: No\nContains vehicle: Yes (motorcycle)\nContains food: No\nContains outdoor scene: Yes\nContains artificial content: The image has heavy distortion that might be artificial\n\nLet me construct the JSON response.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 722,
+          "total_tokens": 2244,
+          "cost": 0.00117276,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00117276,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008664
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 395,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

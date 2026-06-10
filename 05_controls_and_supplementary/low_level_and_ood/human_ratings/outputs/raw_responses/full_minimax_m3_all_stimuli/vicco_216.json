@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_216",
+    "stim_key": "vicco_216",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 216,
+    "file_index": 215,
+    "image_name": "shared_4rep_vicco_216.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_216.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife\",\n  \"short_caption\": \"Two alligators resting on a reddish rocky surface\",\n  \"main_objects\": [\"alligator\", \"alligator\", \"rock ground\"],\n  \"possible_interpretations\": [\"Two alligators basking in the sun\", \"Alligators at a wildlife park\", \"Alligators resting near water on rocks\"],\n  \"uncertainty_notes\": \"Cannot definitively distinguish alligators from crocodiles from this angle; setting could be a zoo, wildlife park, or natural habitat\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319637-3dw8KUpBoeV1nVZjkKPs",
+        "object": "chat.completion",
+        "created": 1780319637,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife\",\n  \"short_caption\": \"Two alligators resting on a reddish rocky surface\",\n  \"main_objects\": [\"alligator\", \"alligator\", \"rock ground\"],\n  \"possible_interpretations\": [\"Two alligators basking in the sun\", \"Alligators at a wildlife park\", \"Alligators resting near water on rocks\"],\n  \"uncertainty_notes\": \"Cannot definitively distinguish alligators from crocodiles from this angle; setting could be a zoo, wildlife park, or natural habitat\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see two alligators or crocodiles lying on what appears to be a reddish-brown rocky or dirt surface. The reptiles are dark in color with visible scaly skin texture, and their bodies are arranged with one in the upper left and one in the lower portion of the image, overlapping each other.\n\nLet me go through the schema:\n\n- recognizability: 5 - Very clearly recognizable as alligators/crocodiles\n- ambiguity: 1 - Very clear what's shown\n- natural_photo_typicality: 4 - Looks like a natural photo, though possibly zoo/setting\n- visual_clutter: 2 - Mostly the two animals on a simple background\n- object_centricity: 5 - The animals are the clear main subjects\n- scene_centricity: 2 - The focus is on the animals, not the environment\n- caption_confidence: 5 - Very confident in a concise caption\n\n- estimated_salient_object_count: 2 (two alligators)\n- estimated_distinct_object_categories: 1 (alligators/crocodiles)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: true\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (parts of the alligators extend beyond the frame)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"animal\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"wildlife\"\n\n- short_caption: \"Two alligators resting on a reddish rocky surface\"\n- main_objects: [\"alligator\", \"alligator\", \"rock surface\"]\n- possible_interpretations: [\"Two alligators at a zoo\", \"Wild alligators basking\", \"Alligators on a rocky ground\"]\n- uncertainty_notes: \"Difficult to tell if they are alligators vs crocodiles without seeing the teeth clearly; could be in a zoo or wild setting\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see two alligators or crocodiles lying on what appears to be a reddish-brown rocky or dirt surface. The reptiles are dark in color with visible scaly skin texture, and their bodies are arranged with one in the upper left and one in the lower portion of the image, overlapping each other.\n\nLet me go through the schema:\n\n- recognizability: 5 - Very clearly recognizable as alligators/crocodiles\n- ambiguity: 1 - Very clear what's shown\n- natural_photo_typicality: 4 - Looks like a natural photo, though possibly zoo/setting\n- visual_clutter: 2 - Mostly the two animals on a simple background\n- object_centricity: 5 - The animals are the clear main subjects\n- scene_centricity: 2 - The focus is on the animals, not the environment\n- caption_confidence: 5 - Very confident in a concise caption\n\n- estimated_salient_object_count: 2 (two alligators)\n- estimated_distinct_object_categories: 1 (alligators/crocodiles)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: true\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (parts of the alligators extend beyond the frame)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"animal\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"wildlife\"\n\n- short_caption: \"Two alligators resting on a reddish rocky surface\"\n- main_objects: [\"alligator\", \"alligator\", \"rock surface\"]\n- possible_interpretations: [\"Two alligators at a zoo\", \"Wild alligators basking\", \"Alligators on a rocky ground\"]\n- uncertainty_notes: \"Difficult to tell if they are alligators vs crocodiles without seeing the teeth clearly; could be in a zoo or wild setting\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 808,
+          "total_tokens": 2330,
+          "cost": 0.00127596,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00127596,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009696
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 498,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_77",
+    "stim_key": "architecture_77",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 77,
+    "file_index": 77,
+    "image_name": "image_0077.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0077.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"gym/fitness\",\n\n  \"short_caption\": \"A weight bench in a gym with rows of dumbbells on racks\",\n  \"main_objects\": [\"weight bench\", \"dumbbells\", \"dumbbell rack\", \"rubber gym floor\"],\n  \"possible_interpretations\": [\"gym interior with free weights\", \"fitness center equipment area\", \"weightlifting training area\"],\n  \"uncertainty_notes\": \"Image is slightly grainy and appears to be an older photograph, but content is unambiguous.\",\n  \"quality_flags\": [\"slightly_grainy\", \"slightly_low_resolution\"]\n}",
+      "response": {
+        "id": "gen-1780318929-F66A7FEPYkp0i6KeADB0",
+        "object": "chat.completion",
+        "created": 1780318929,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"gym/fitness\",\n\n  \"short_caption\": \"A weight bench in a gym with rows of dumbbells on racks\",\n  \"main_objects\": [\"weight bench\", \"dumbbells\", \"dumbbell rack\", \"rubber gym floor\"],\n  \"possible_interpretations\": [\"gym interior with free weights\", \"fitness center equipment area\", \"weightlifting training area\"],\n  \"uncertainty_notes\": \"Image is slightly grainy and appears to be an older photograph, but content is unambiguous.\",\n  \"quality_flags\": [\"slightly_grainy\", \"slightly_low_resolution\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a gym or fitness center with:\n- A weight bench in the foreground (center)\n- Multiple rows of dumbbells on racks in the background\n- Rubber gym flooring\n- Other weight equipment visible\n- Indoor setting\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - clearly a gym with dumbbells and bench\n- ambiguity: 1 - very clear what's shown\n- natural_photo_typicality: 4 - looks like a typical photo, though slightly dated\n- visual_clutter: 3 - many dumbbells and equipment but organized\n- object_centricity: 3 - the bench is prominent but there's a lot going on\n- scene_centricity: 4 - it's a gym scene\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 2 (bench and dumbbell rack are main)\n- estimated_distinct_object_categories: 3 (bench, dumbbells, gym equipment)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (bench and dumbbell rack)\n\n- dominant_content_type: \"scene\" or \"object\" - leaning toward \"scene\" since it's a gym\n- image_style: \"natural_photo\"\n- semantic_domain: \"gym/fitness\"\n\nShort caption: \"A weight bench in a gym with rows of dumbbells on racks\"\nMain objects: [\"weight bench\", \"dumbbells\", \"dumbbell rack\", \"gym floor\"]\nPossible interpretations: [\"gym interior\", \"fitness center equipment\"]\nUncertainty notes: \"slightly grainy image quality, but content is clear\"\nQuality flags: [\"slightly grainy\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a gym or fitness center with:\n- A weight bench in the foreground (center)\n- Multiple rows of dumbbells on racks in the background\n- Rubber gym flooring\n- Other weight equipment visible\n- Indoor setting\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - clearly a gym with dumbbells and bench\n- ambiguity: 1 - very clear what's shown\n- natural_photo_typicality: 4 - looks like a typical photo, though slightly dated\n- visual_clutter: 3 - many dumbbells and equipment but organized\n- object_centricity: 3 - the bench is prominent but there's a lot going on\n- scene_centricity: 4 - it's a gym scene\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 2 (bench and dumbbell rack are main)\n- estimated_distinct_object_categories: 3 (bench, dumbbells, gym equipment)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (bench and dumbbell rack)\n\n- dominant_content_type: \"scene\" or \"object\" - leaning toward \"scene\" since it's a gym\n- image_style: \"natural_photo\"\n- semantic_domain: \"gym/fitness\"\n\nShort caption: \"A weight bench in a gym with rows of dumbbells on racks\"\nMain objects: [\"weight bench\", \"dumbbells\", \"dumbbell rack\", \"gym floor\"]\nPossible interpretations: [\"gym interior\", \"fitness center equipment\"]\nUncertainty notes: \"slightly grainy image quality, but content is clear\"\nQuality flags: [\"slightly grainy\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1222,
+          "completion_tokens": 785,
+          "total_tokens": 2007,
+          "cost": 0.00115836,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00115836,
+            "upstream_inference_prompt_cost": 0.00021636,
+            "upstream_inference_completions_cost": 0.000942
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 466,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_82",
+    "stim_key": "training_objective_82",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 82,
+    "file_index": 82,
+    "image_name": "image_0082.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0082.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 1,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"toys_collectibles\",\n  \"short_caption\": \"A display of Star Wars female action figures with an R2-D2 droid figure on a white table.\",\n  \"main_objects\": [\"Princess Leia action figure\", \"R2-D2 figure\", \"female warrior action figure\", \"lightsaber accessory\", \"display stand\"],\n  \"possible_interpretations\": [\"Star Wars toy display\", \"convention or store collectible exhibit\", \"collector hobby showcase\", \"action figure photo shoot\"],\n  \"uncertainty_notes\": \"Figures are dolls/toys, not real people; specific character identification beyond Leia and R2-D2 is uncertain. Slight haze/soft focus in image.\",\n  \"quality_flags\": [\"slight_blur\", \"indoor_lighting_glare\", \"subjects_are_toys_not_real\"]\n}",
+      "response": {
+        "id": "gen-1780319367-KuHUoq3gJcqOqWp2swwc",
+        "object": "chat.completion",
+        "created": 1780319367,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 1,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"toys_collectibles\",\n  \"short_caption\": \"A display of Star Wars female action figures with an R2-D2 droid figure on a white table.\",\n  \"main_objects\": [\"Princess Leia action figure\", \"R2-D2 figure\", \"female warrior action figure\", \"lightsaber accessory\", \"display stand\"],\n  \"possible_interpretations\": [\"Star Wars toy display\", \"convention or store collectible exhibit\", \"collector hobby showcase\", \"action figure photo shoot\"],\n  \"uncertainty_notes\": \"Figures are dolls/toys, not real people; specific character identification beyond Leia and R2-D2 is uncertain. Slight haze/soft focus in image.\",\n  \"quality_flags\": [\"slight_blur\", \"indoor_lighting_glare\", \"subjects_are_toys_not_real\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a display of Star Wars action figures, specifically featuring female characters (appears to be Princess Leia variants, possibly from The Force Awakens, along with R2-D2). The figures are arranged on what appears to be a display table at a convention or store. Let me analyze this carefully.\n\nThe image is a photograph of toys/figures, not a typical natural photograph. The figures are posed in a group arrangement. The main content is clearly collectible action figures from the Star Wars franchise.\n\nLet me rate each dimension:\n\n- recognizability: 4 - The figures are clearly recognizable as Star Wars characters\n- ambiguity: 1 - Very clear what's shown\n- natural_photo_typicality: 1 - This is a photo of toys, not a natural scene\n- visual_clutter: 3 - Multiple figures and accessories but not too cluttered\n- object_centricity: 4 - The figures are the clear focus\n- scene_centricity: 2 - More about objects than a scene\n- caption_confidence: 5 - Easy to caption\n\nThe image style is a natural photo of toys/figures, but the content is artificial/rendered in the sense that the subjects are toys depicting fictional characters. I should consider this carefully.\n\nLet me determine the flags:\n- contains_person: false (these are dolls/figures, not real people)\n- contains_face: false (figure faces but not real)\n- contains_animal: false\n- contains_text: false (no readable text)\n- contains_vehicle: false (R2-D2 is a droid/robot figure)\n- contains_food: false\n- contains_indoor_scene: true (appears to be indoors)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (these are manufactured toys)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (multiple figures)\n\nThe dominant content type: object (collectible figures)\nImage style: natural_photo (it's a real photograph of toys)\nSemantic domain: toys/collectibles/star_wars\n\nMain objects: star wars action figures, R2-D2 figure, display table\nPossible interpretations: Star Wars toy display, action figure collection, convention display, collectibles exhibit",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a display of Star Wars action figures, specifically featuring female characters (appears to be Princess Leia variants, possibly from The Force Awakens, along with R2-D2). The figures are arranged on what appears to be a display table at a convention or store. Let me analyze this carefully.\n\nThe image is a photograph of toys/figures, not a typical natural photograph. The figures are posed in a group arrangement. The main content is clearly collectible action figures from the Star Wars franchise.\n\nLet me rate each dimension:\n\n- recognizability: 4 - The figures are clearly recognizable as Star Wars characters\n- ambiguity: 1 - Very clear what's shown\n- natural_photo_typicality: 1 - This is a photo of toys, not a natural scene\n- visual_clutter: 3 - Multiple figures and accessories but not too cluttered\n- object_centricity: 4 - The figures are the clear focus\n- scene_centricity: 2 - More about objects than a scene\n- caption_confidence: 5 - Easy to caption\n\nThe image style is a natural photo of toys/figures, but the content is artificial/rendered in the sense that the subjects are toys depicting fictional characters. I should consider this carefully.\n\nLet me determine the flags:\n- contains_person: false (these are dolls/figures, not real people)\n- contains_face: false (figure faces but not real)\n- contains_animal: false\n- contains_text: false (no readable text)\n- contains_vehicle: false (R2-D2 is a droid/robot figure)\n- contains_food: false\n- contains_indoor_scene: true (appears to be indoors)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (these are manufactured toys)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (multiple figures)\n\nThe dominant content type: object (collectible figures)\nImage style: natural_photo (it's a real photograph of toys)\nSemantic domain: toys/collectibles/star_wars\n\nMain objects: star wars action figures, R2-D2 figure, display table\nPossible interpretations: Star Wars toy display, action figure collection, convention display, collectibles exhibit",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 872,
+          "total_tokens": 2394,
+          "cost": 0.00147564,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00147564,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010464
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 557,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

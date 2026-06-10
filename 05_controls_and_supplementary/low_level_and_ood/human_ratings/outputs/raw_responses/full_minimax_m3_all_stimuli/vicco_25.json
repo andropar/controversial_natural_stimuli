@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_25",
+    "stim_key": "vicco_25",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 25,
+    "file_index": 24,
+    "image_name": "shared_4rep_vicco_025.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_025.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 10,\n  \"estimated_distinct_object_categories\": 8,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"bathroom/personal_care\",\n  \"short_caption\": \"A bathroom shelf with toiletries, toothbrush, toothpaste, hairbrush, and pink flower petals above a sink.\",\n  \"main_objects\": [\"electric toothbrush\", \"toothpaste tube\", \"hairbrush\", \"scissors\", \"grooming jars\", \"towels\", \"mirror\", \"sink\", \"faucet\", \"flower petals\", \"lamp\"],\n  \"possible_interpretations\": [\n    \"A typical home bathroom with personal grooming products on a tiled shelf\",\n    \"A bathroom counter with styled decorative flower petals\",\n    \"A small bathroom showing daily-use toiletries and a sink area\"\n  ],\n  \"uncertainty_notes\": \"Some product labels are partially visible or too small to read; the mirror reflection shows towels but exact details are unclear.\",\n  \"quality_flags\": [\"cluttered_shelf\", \"slightly_dark_lighting\", \"partial_reflection\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319413-g9FEDQAniLlbBIG2pgVl",
+        "object": "chat.completion",
+        "created": 1780319413,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 10,\n  \"estimated_distinct_object_categories\": 8,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"bathroom/personal_care\",\n  \"short_caption\": \"A bathroom shelf with toiletries, toothbrush, toothpaste, hairbrush, and pink flower petals above a sink.\",\n  \"main_objects\": [\"electric toothbrush\", \"toothpaste tube\", \"hairbrush\", \"scissors\", \"grooming jars\", \"towels\", \"mirror\", \"sink\", \"faucet\", \"flower petals\", \"lamp\"],\n  \"possible_interpretations\": [\n    \"A typical home bathroom with personal grooming products on a tiled shelf\",\n    \"A bathroom counter with styled decorative flower petals\",\n    \"A small bathroom showing daily-use toiletries and a sink area\"\n  ],\n  \"uncertainty_notes\": \"Some product labels are partially visible or too small to read; the mirror reflection shows towels but exact details are unclear.\",\n  \"quality_flags\": [\"cluttered_shelf\", \"slightly_dark_lighting\", \"partial_reflection\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully and provide structured annotations.\n\nThe image shows a bathroom scene with:\n- A mirror reflecting towels\n- A white tiled shelf/counter with various toiletries\n- An electric toothbrush on the left\n- A tube of toothpaste (Colgate)\n- A small jar with what appears to be oil or honey\n- A wooden container\n- A hairbrush\n- Various grooming tools (scissors, combs) in a holder\n- Some pink flower petals scattered on the counter\n- A small decorative item that might be a soap or lip balm\n- Below: a sink with faucet, a decorative plate/coaster with blue pattern\n- Reed diffuser sticks in a container\n- A lamp on the left side\n- White tiles throughout\n- A towel rack on the right\n\nThis is clearly a typical natural photograph of a bathroom scene with many personal care items on a tiled shelf/counter above a sink.\n\nLet me rate:\n- recognizability: 5 - clearly a bathroom with toiletries\n- ambiguity: 1 - very clear what we're looking at\n- natural_photo_typicality: 5 - looks like a real natural photo\n- visual_clutter: 4 - many items on the shelf\n- object_centricity: 2 - it's more of a scene with multiple objects\n- scene_centricity: 4 - clearly a bathroom scene\n- caption_confidence: 5 - easy to caption\n\nEstimated salient objects: many - toothbrush, toothpaste, hairbrush, jars, etc. maybe 8-10\nDistinct categories: toothbrush, toothpaste, hairbrush, scissors, combs, jars, towels, sink, faucet, mirror, lamp, flowers\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: true (Colgate, labels on products)\nContains vehicle: false\nContains food: false\nContains indoor scene: true\nContains outdoor scene: false\nContains artificial or rendered content: false\nContains occlusion or truncation: false (maybe mirror reflection is partial)\nContains unusual viewpoint: false\nContains multiple main objects: true\n\nDominant content type: mixed (scene with multiple objects)\nImage style: natural_photo\nSemantic domain: bathroom/personal care\n\nShort caption: A bathroom shelf with toiletries, toothbrush, toothpaste, hairbrush, and scattered pink flower petals above a sink.\n\nMain objects: toothbrush, toothpaste, hairbrush, mirror, sink, faucet, towels, jars, scissors, flower petals\n\nPossible interpretations:\n1. A typical home bathroom counter\n2. A bathroom with personal grooming products\n3. A styled bathroom shelf with decorative petals\n\nUncertainty: Some products are not clearly labeled, reflection in mirror shows towels\n\nQuality flags: slightly cluttered, mirror reflection",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully and provide structured annotations.\n\nThe image shows a bathroom scene with:\n- A mirror reflecting towels\n- A white tiled shelf/counter with various toiletries\n- An electric toothbrush on the left\n- A tube of toothpaste (Colgate)\n- A small jar with what appears to be oil or honey\n- A wooden container\n- A hairbrush\n- Various grooming tools (scissors, combs) in a holder\n- Some pink flower petals scattered on the counter\n- A small decorative item that might be a soap or lip balm\n- Below: a sink with faucet, a decorative plate/coaster with blue pattern\n- Reed diffuser sticks in a container\n- A lamp on the left side\n- White tiles throughout\n- A towel rack on the right\n\nThis is clearly a typical natural photograph of a bathroom scene with many personal care items on a tiled shelf/counter above a sink.\n\nLet me rate:\n- recognizability: 5 - clearly a bathroom with toiletries\n- ambiguity: 1 - very clear what we're looking at\n- natural_photo_typicality: 5 - looks like a real natural photo\n- visual_clutter: 4 - many items on the shelf\n- object_centricity: 2 - it's more of a scene with multiple objects\n- scene_centricity: 4 - clearly a bathroom scene\n- caption_confidence: 5 - easy to caption\n\nEstimated salient objects: many - toothbrush, toothpaste, hairbrush, jars, etc. maybe 8-10\nDistinct categories: toothbrush, toothpaste, hairbrush, scissors, combs, jars, towels, sink, faucet, mirror, lamp, flowers\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: true (Colgate, labels on products)\nContains vehicle: false\nContains food: false\nContains indoor scene: true\nContains outdoor scene: false\nContains artificial or rendered content: false\nContains occlusion or truncation: false (maybe mirror reflection is partial)\nContains unusual viewpoint: false\nContains multiple main objects: true\n\nDominant content type: mixed (scene with multiple objects)\nImage style: natural_photo\nSemantic domain: bathroom/personal care\n\nShort caption: A bathroom shelf with toiletries, toothbrush, toothpaste, hairbrush, and scattered pink flower petals above a sink.\n\nMain objects: toothbrush, toothpaste, hairbrush, mirror, sink, faucet, towels, jars, scissors, flower petals\n\nPossible interpretations:\n1. A typical home bathroom counter\n2. A bathroom with personal grooming products\n3. A styled bathroom shelf with decorative petals\n\nUncertainty: Some products are not clearly labeled, reflection in mirror shows towels\n\nQuality flags: slightly cluttered, mirror reflection",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 986,
+          "total_tokens": 2508,
+          "cost": 0.00161244,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00161244,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0011832
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 679,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

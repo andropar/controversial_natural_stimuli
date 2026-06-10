@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_51",
+    "stim_key": "dataset_51",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 51,
+    "file_index": 51,
+    "image_name": "image_0051.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0051.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"garden\",\n  \"short_caption\": \"Pink muhly grass in a garden with brick pathway and blue flowers\",\n  \"main_objects\": [\"ornamental grass\", \"brick pathway\", \"blue flowers\", \"large green leaves\"],\n  \"possible_interpretations\": [\"ornamental grass garden bed\", \"landscaped garden pathway\", \"botanical garden display\"],\n  \"uncertainty_notes\": \"Exact species of grass and blue flowers uncertain, but garden context is clear\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319018-q1ABkTwWw0yr6JjXAHco",
+        "object": "chat.completion",
+        "created": 1780319018,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"garden\",\n  \"short_caption\": \"Pink muhly grass in a garden with brick pathway and blue flowers\",\n  \"main_objects\": [\"ornamental grass\", \"brick pathway\", \"blue flowers\", \"large green leaves\"],\n  \"possible_interpretations\": [\"ornamental grass garden bed\", \"landscaped garden pathway\", \"botanical garden display\"],\n  \"uncertainty_notes\": \"Exact species of grass and blue flowers uncertain, but garden context is clear\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a garden scene with a prominent clump of pink/purple ornamental grass (likely Muhlenbergia capillaris, commonly known as pink muhly grass) in the center. There's a brick pathway in the foreground, green foliage in the background, and some blue flowers (possibly blue-eyed grass or similar) on the right side. There's also what appears to be a large-leafed plant (possibly elephant ears) in the upper right.\n\nLet me analyze this for the schema:\n\n- Recognizability: High - clearly a garden scene with ornamental grass\n- Ambiguity: Low - it's clearly a garden\n- Natural photo typicality: High - looks like a typical photograph of a garden\n- Visual clutter: Moderate - multiple plants but one dominant subject\n- Object centricity: Moderate-high - the grass clump is central\n- Scene centricity: High - it's a garden scene\n- Caption confidence: High\n\nMain objects: ornamental grass, brick pathway, blue flowers, large green leaves\nContains: outdoor scene, plants\nNo people, animals, vehicles, text, food\n\nDominant content: scene or object - the grass is quite dominant but it's a scene\nImage style: natural photo\nSemantic domain: garden/outdoor/nature",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a garden scene with a prominent clump of pink/purple ornamental grass (likely Muhlenbergia capillaris, commonly known as pink muhly grass) in the center. There's a brick pathway in the foreground, green foliage in the background, and some blue flowers (possibly blue-eyed grass or similar) on the right side. There's also what appears to be a large-leafed plant (possibly elephant ears) in the upper right.\n\nLet me analyze this for the schema:\n\n- Recognizability: High - clearly a garden scene with ornamental grass\n- Ambiguity: Low - it's clearly a garden\n- Natural photo typicality: High - looks like a typical photograph of a garden\n- Visual clutter: Moderate - multiple plants but one dominant subject\n- Object centricity: Moderate-high - the grass clump is central\n- Scene centricity: High - it's a garden scene\n- Caption confidence: High\n\nMain objects: ornamental grass, brick pathway, blue flowers, large green leaves\nContains: outdoor scene, plants\nNo people, animals, vehicles, text, food\n\nDominant content: scene or object - the grass is quite dominant but it's a scene\nImage style: natural photo\nSemantic domain: garden/outdoor/nature",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 583,
+          "total_tokens": 2105,
+          "cost": 0.00100596,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00100596,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0006996
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 304,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

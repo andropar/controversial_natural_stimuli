@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_61",
+    "stim_key": "dataset_61",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 61,
+    "file_index": 61,
+    "image_name": "image_0061.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0061.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"cityscape/architecture/travel\",\n  \"short_caption\": \"Woman photographing the Petronas Twin Towers at dusk in Kuala Lumpur\",\n  \"main_objects\": [\"woman\", \"smartphone\", \"Petronas Twin Towers\", \"skyscrapers\", \"hat\"],\n  \"possible_interpretations\": [\"tourist photographing an iconic landmark\", \"travel photography of Kuala Lumpur skyline\", \"cityscape at twilight with foreground subject\"],\n  \"uncertainty_notes\": \"Exact text on building signs is small and only partially legible; precise identification of surrounding buildings is uncertain beyond the main twin towers.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319034-QSCauw9KqIvHxsBZXg90",
+        "object": "chat.completion",
+        "created": 1780319034,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"cityscape/architecture/travel\",\n  \"short_caption\": \"Woman photographing the Petronas Twin Towers at dusk in Kuala Lumpur\",\n  \"main_objects\": [\"woman\", \"smartphone\", \"Petronas Twin Towers\", \"skyscrapers\", \"hat\"],\n  \"possible_interpretations\": [\"tourist photographing an iconic landmark\", \"travel photography of Kuala Lumpur skyline\", \"cityscape at twilight with foreground subject\"],\n  \"uncertainty_notes\": \"Exact text on building signs is small and only partially legible; precise identification of surrounding buildings is uncertain beyond the main twin towers.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a woman in a turquoise/teal shirt and a beige/tan hat (looks like a Panama hat) taking a photo with her smartphone of the Petronas Twin Towers in Kuala Lumpur, Malaysia. The photo is taken from a low angle, looking up at the towers. The sky is a gradient of blue, suggesting either dawn or dusk. There are other buildings visible around the towers, and what appears to be a shopping mall at the base (with some signs visible like \"Iskandar\" and what looks like other text).\n\nLet me provide the annotations:\n\n- Recognizability: Very high - clearly recognizable as the Petronas Towers\n- Ambiguity: Low - the content is very clear\n- Natural photo typicality: High - looks like a typical travel photograph\n- Visual clutter: Moderate - multiple buildings, signs, but the towers dominate\n- Object centricity: Low-moderate - the towers are the main subject but it's also a scene\n- Scene centricity: High - this is clearly a cityscape/scene\n- Caption confidence: High - easy to caption\n\nSalient objects: woman, smartphone, twin towers, surrounding buildings\nDistinct categories: person, building, electronic device\n\nContains person: yes\nContains face: yes (side profile of woman's face)\nContains animal: no\nContains text: yes (some signs visible)\nContains vehicle: no\nContains food: no\nContains indoor: no\nContains outdoor: yes\nContains artificial/rendered: no\nContains occlusion: no\nContains unusual viewpoint: yes (low angle, looking up)\nContains multiple main objects: no (towers are the main focus, woman is a secondary element)\n\nDominant content: scene (cityscape with landmarks)\nImage style: natural_photo\nSemantic domain: cityscape/architecture/travel\n\nShort caption: \"Woman photographing the Petronas Twin Towers at dusk in Kuala Lumpur\"\n\nMain objects: woman, smartphone, Petronas Twin Towers, skyscrapers, hat\n\nPossible interpretations: \n1. Tourist photographing iconic landmark\n2. Travel photography\n3. City skyline at twilight\n\nUncertainty: None significant - very clear image",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a woman in a turquoise/teal shirt and a beige/tan hat (looks like a Panama hat) taking a photo with her smartphone of the Petronas Twin Towers in Kuala Lumpur, Malaysia. The photo is taken from a low angle, looking up at the towers. The sky is a gradient of blue, suggesting either dawn or dusk. There are other buildings visible around the towers, and what appears to be a shopping mall at the base (with some signs visible like \"Iskandar\" and what looks like other text).\n\nLet me provide the annotations:\n\n- Recognizability: Very high - clearly recognizable as the Petronas Towers\n- Ambiguity: Low - the content is very clear\n- Natural photo typicality: High - looks like a typical travel photograph\n- Visual clutter: Moderate - multiple buildings, signs, but the towers dominate\n- Object centricity: Low-moderate - the towers are the main subject but it's also a scene\n- Scene centricity: High - this is clearly a cityscape/scene\n- Caption confidence: High - easy to caption\n\nSalient objects: woman, smartphone, twin towers, surrounding buildings\nDistinct categories: person, building, electronic device\n\nContains person: yes\nContains face: yes (side profile of woman's face)\nContains animal: no\nContains text: yes (some signs visible)\nContains vehicle: no\nContains food: no\nContains indoor: no\nContains outdoor: yes\nContains artificial/rendered: no\nContains occlusion: no\nContains unusual viewpoint: yes (low angle, looking up)\nContains multiple main objects: no (towers are the main focus, woman is a secondary element)\n\nDominant content: scene (cityscape with landmarks)\nImage style: natural_photo\nSemantic domain: cityscape/architecture/travel\n\nShort caption: \"Woman photographing the Petronas Twin Towers at dusk in Kuala Lumpur\"\n\nMain objects: woman, smartphone, Petronas Twin Towers, skyscrapers, hat\n\nPossible interpretations: \n1. Tourist photographing iconic landmark\n2. Travel photography\n3. City skyline at twilight\n\nUncertainty: None significant - very clear image",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 797,
+          "total_tokens": 2319,
+          "cost": 0.00138564,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00138564,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009564
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 541,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

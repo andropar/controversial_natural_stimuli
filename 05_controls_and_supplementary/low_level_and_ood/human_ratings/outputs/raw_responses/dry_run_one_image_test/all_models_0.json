@@ -1,0 +1,82 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_0",
+    "stim_key": "all_models_0",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 0,
+    "file_index": 0,
+    "image_name": "image_0000.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0000.png"
+  },
+  "model": "google/gemini-3.5-flash",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wedding\",\n  \"short_caption\": \"A bride and groom walking down the stone steps of a grand building with large columns.\",\n  \"main_objects\": [\n    \"bride\",\n    \"groom\",\n    \"wedding dress\",\n    \"suit\",\n    \"stone steps\",\n    \"columns\"\n  ],\n  \"possible_interpretations\": [\n    \"a wedding couple leaving a courthouse\",\n    \"a wedding couple posing for photos outside a grand building\"\n  ],\n  \"uncertainty_notes\": \"The text in the bottom right is a photographer's watermark.\",\n  \"quality_flags\": [\n    \"has_watermark\"\n  ]\n}",
+      "response": {
+        "id": "gen-1780316599-nYvbnT2YC5TYr7Vey0TQ",
+        "object": "chat.completion",
+        "created": 1780316599,
+        "model": "google/gemini-3.5-flash-20260519",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wedding\",\n  \"short_caption\": \"A bride and groom walking down the stone steps of a grand building with large columns.\",\n  \"main_objects\": [\n    \"bride\",\n    \"groom\",\n    \"wedding dress\",\n    \"suit\",\n    \"stone steps\",\n    \"columns\"\n  ],\n  \"possible_interpretations\": [\n    \"a wedding couple leaving a courthouse\",\n    \"a wedding couple posing for photos outside a grand building\"\n  ],\n  \"uncertainty_notes\": \"The text in the bottom right is a photographer's watermark.\",\n  \"quality_flags\": [\n    \"has_watermark\"\n  ]\n}",
+              "refusal": null,
+              "reasoning": "**Processing Image and Schema**\n\nI'm currently focused on mapping the visual elements of the newlywed couple in the image to the provided JSON schema, ensuring accurate representation of their attire and the setting's architectural details. This involves a detailed analysis of the scene for key descriptors.\n\n**Analyzing Image Characteristics**\n\nI've been evaluating the image's core attributes. The scene is highly recognizable and typical for a wedding, with minimal ambiguity and clutter. While the couple is central, the grand architecture significantly defines the scene. I've also noted the presence of people, faces, and text, specifically a watermark.\n\n**Classifying Scene Attributes**\n\nI'm now confirming scene characteristics. It's an outdoor setting, no vehicles or food. There's a definite truncation of architectural elements and the frame's edge. The primary content is indeed the couple, making \"person_face\" the most fitting dominant type, despite the grand architecture.\n\n",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "**Processing Image and Schema**\n\nI'm currently focused on mapping the visual elements of the newlywed couple in the image to the provided JSON schema, ensuring accurate representation of their attire and the setting's architectural details. This involves a detailed analysis of the scene for key descriptors.\n\n**Analyzing Image Characteristics**\n\nI've been evaluating the image's core attributes. The scene is highly recognizable and typical for a wedding, with minimal ambiguity and clutter. While the couple is central, the grand architecture significantly defines the scene. I've also noted the presence of people, faces, and text, specifically a watermark.\n\n**Classifying Scene Attributes**\n\nI'm now confirming scene characteristics. It's an outdoor setting, no vehicles or food. There's a definite truncation of architectural elements and the frame's edge. The primary content is indeed the couple, making \"person_face\" the most fitting dominant type, despite the grand architecture.\n\n",
+                  "format": "google-gemini-v1",
+                  "index": 0
+                },
+                {
+                  "type": "reasoning.encrypted",
+                  "data": "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",
+                  "format": "google-gemini-v1",
+                  "index": 1
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1731,
+          "completion_tokens": 1233,
+          "total_tokens": 2964,
+          "cost": 0.0136935,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0136935,
+            "upstream_inference_prompt_cost": 0.0025965,
+            "upstream_inference_completions_cost": 0.011097
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 814,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_274",
+    "stim_key": "vicco_274",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 274,
+    "file_index": 273,
+    "image_name": "shared_4rep_vicco_274.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_274.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"pet care\",\n  \"short_caption\": \"A cat resting inside a red-lit pet carrier with a hand reaching nearby.\",\n  \"main_objects\": [\"pet carrier\", \"cat\", \"human hand\", \"red light\"],\n  \"possible_interpretations\": [\n    \"A cat being transported in an illuminated pet carrier\",\n    \"A pet sleeping in a carrier at a veterinary clinic\",\n    \"A close-up view inside a glowing pet bag with a feline\",\n    \"A pet in a heated or lit carrier being attended to by a person\"\n  ],\n  \"uncertainty_notes\": \"Strong red lighting obscures fur color and details; unclear whether one or two animals are present; purpose of the hand and red light is not fully discernible; the setting could be indoor transport or a care facility.\",\n  \"quality_flags\": [\"unusual_lighting\", \"close_crop\", \"partial_occlusion\", \"low_color_accuracy\"]\n}",
+      "response": {
+        "id": "gen-1780319704-vf7SuiH2IRbJhSPXlBpT",
+        "object": "chat.completion",
+        "created": 1780319704,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"pet care\",\n  \"short_caption\": \"A cat resting inside a red-lit pet carrier with a hand reaching nearby.\",\n  \"main_objects\": [\"pet carrier\", \"cat\", \"human hand\", \"red light\"],\n  \"possible_interpretations\": [\n    \"A cat being transported in an illuminated pet carrier\",\n    \"A pet sleeping in a carrier at a veterinary clinic\",\n    \"A close-up view inside a glowing pet bag with a feline\",\n    \"A pet in a heated or lit carrier being attended to by a person\"\n  ],\n  \"uncertainty_notes\": \"Strong red lighting obscures fur color and details; unclear whether one or two animals are present; purpose of the hand and red light is not fully discernible; the setting could be indoor transport or a care facility.\",\n  \"quality_flags\": [\"unusual_lighting\", \"close_crop\", \"partial_occlusion\", \"low_color_accuracy\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows what appears to be a pet carrier or pet bag with a cat (or possibly two small animals - one looks like a tabby/calico cat and the other might be another cat or small pet) inside. The interior is illuminated with red light. There's also a person's hand visible on the right side. The carrier appears to be green/teal on the outside.\n\nLet me analyze:\n\n- Recognizability: The main content is somewhat clear - a pet in a carrier, but the red lighting and close-up angle make it a bit harder to identify immediately. Maybe 3-4.\n- Ambiguity: There's some ambiguity - is it one cat or two? What kind of pet exactly? 3.\n- Natural_photo_typicality: It looks like a natural photo but with unusual red lighting. 3.\n- Visual_clutter: There are several elements - the carrier, the pet(s), the hand, the red light. Moderate clutter. 3.\n- Object_centricity: The pet in the carrier is the central focus. 4.\n- Scene_centricity: It's more object-focused than scene-focused. 2.\n- Caption_confidence: Moderate - I can describe it but the unusual lighting and close crop make it a bit uncertain. 3.\n\nSalient object count: The pet carrier with animal(s) - maybe 1-2 main objects.\nDistinct categories: carrier, cat/animal, hand, light = about 3-4\n\nContains person: yes (hand visible)\nContains face: no\nContains animal: yes (cat)\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: likely yes (appears to be inside)\nContains outdoor scene: no\nContains artificial or rendered content: no\nContains occlusion or truncation: yes (cropped close, hand cut off)\nContains unusual viewpoint: somewhat (close-up inside view, red lighting)\nContains multiple main objects: possibly (cat and maybe second animal, plus hand)\n\nDominant content type: animal\nImage style: natural_photo (though with unusual lighting)\nSemantic domain: pet/animal care\n\nShort caption: A cat resting inside an illuminated pet carrier with a hand visible nearby.\n\nMain objects: pet carrier, cat, hand, red light\n\nPossible interpretations: \n- A cat being transported in a carrier\n- A pet carrier with a sleeping cat\n- A veterinary or pet care setting\n\nUncertainty notes: The red lighting obscures details; unclear if there are one or two animals; the hand's purpose is unclear.\n\nQuality flags: unusual_lighting, close_crop, partial_occlusion",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows what appears to be a pet carrier or pet bag with a cat (or possibly two small animals - one looks like a tabby/calico cat and the other might be another cat or small pet) inside. The interior is illuminated with red light. There's also a person's hand visible on the right side. The carrier appears to be green/teal on the outside.\n\nLet me analyze:\n\n- Recognizability: The main content is somewhat clear - a pet in a carrier, but the red lighting and close-up angle make it a bit harder to identify immediately. Maybe 3-4.\n- Ambiguity: There's some ambiguity - is it one cat or two? What kind of pet exactly? 3.\n- Natural_photo_typicality: It looks like a natural photo but with unusual red lighting. 3.\n- Visual_clutter: There are several elements - the carrier, the pet(s), the hand, the red light. Moderate clutter. 3.\n- Object_centricity: The pet in the carrier is the central focus. 4.\n- Scene_centricity: It's more object-focused than scene-focused. 2.\n- Caption_confidence: Moderate - I can describe it but the unusual lighting and close crop make it a bit uncertain. 3.\n\nSalient object count: The pet carrier with animal(s) - maybe 1-2 main objects.\nDistinct categories: carrier, cat/animal, hand, light = about 3-4\n\nContains person: yes (hand visible)\nContains face: no\nContains animal: yes (cat)\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: likely yes (appears to be inside)\nContains outdoor scene: no\nContains artificial or rendered content: no\nContains occlusion or truncation: yes (cropped close, hand cut off)\nContains unusual viewpoint: somewhat (close-up inside view, red lighting)\nContains multiple main objects: possibly (cat and maybe second animal, plus hand)\n\nDominant content type: animal\nImage style: natural_photo (though with unusual lighting)\nSemantic domain: pet/animal care\n\nShort caption: A cat resting inside an illuminated pet carrier with a hand visible nearby.\n\nMain objects: pet carrier, cat, hand, red light\n\nPossible interpretations: \n- A cat being transported in a carrier\n- A pet carrier with a sleeping cat\n- A veterinary or pet care setting\n\nUncertainty notes: The red lighting obscures details; unclear if there are one or two animals; the hand's purpose is unclear.\n\nQuality flags: unusual_lighting, close_crop, partial_occlusion",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 951,
+          "total_tokens": 2473,
+          "cost": 0.00144756,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00144756,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011412
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 613,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

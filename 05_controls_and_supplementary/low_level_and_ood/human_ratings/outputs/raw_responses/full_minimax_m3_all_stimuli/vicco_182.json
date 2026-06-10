@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_182",
+    "stim_key": "vicco_182",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 182,
+    "file_index": 181,
+    "image_name": "shared_4rep_vicco_182.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_182.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_park\",\n  \"short_caption\": \"A park fountain spraying water near a graffiti-marked wooden barrier and trees\",\n  \"main_objects\": [\"fountain\", \"water spray\", \"trees\", \"wooden barrier\", \"graffiti\"],\n  \"possible_interpretations\": [\n    \"Fountain in urban park with graffiti barrier\",\n    \"Decorative water feature in plaza\",\n    \"Public art installation with water element\",\n    \"Park scene with fountain obscured by spray\"\n  ],\n  \"uncertainty_notes\": \"Image appears rotated 90 degrees; a small red figure in the background is ambiguous and may be a person or object; exact nature of the wooden structure is unclear due to angle and lighting\",\n  \"quality_flags\": [\"rotated_orientation\", \"backlit_water_spray\", \"partially_obscured_subject\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319599-LXg7cx3Q5RzJHNTeAWWJ",
+        "object": "chat.completion",
+        "created": 1780319599,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_park\",\n  \"short_caption\": \"A park fountain spraying water near a graffiti-marked wooden barrier and trees\",\n  \"main_objects\": [\"fountain\", \"water spray\", \"trees\", \"wooden barrier\", \"graffiti\"],\n  \"possible_interpretations\": [\n    \"Fountain in urban park with graffiti barrier\",\n    \"Decorative water feature in plaza\",\n    \"Public art installation with water element\",\n    \"Park scene with fountain obscured by spray\"\n  ],\n  \"uncertainty_notes\": \"Image appears rotated 90 degrees; a small red figure in the background is ambiguous and may be a person or object; exact nature of the wooden structure is unclear due to angle and lighting\",\n  \"quality_flags\": [\"rotated_orientation\", \"backlit_water_spray\", \"partially_obscured_subject\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. The image appears to be rotated 90 degrees (sideways). It shows what appears to be a fountain spraying water, with trees in the background, and what looks like a wooden structure or barrier with graffiti on it. The image has a somewhat artistic/atmospheric quality due to the water spray catching the light.\n\nLet me annotate this:\n\n- Recognizability: The main content (fountain) is somewhat recognizable but the rotation makes it less immediate. I'd say 3-4.\n- Ambiguity: Some ambiguity due to rotation and artistic composition. 2-3.\n- Natural photo typicality: Looks like a natural photo, 4.\n- Visual clutter: Moderate - fountain, trees, graffiti structure. 3.\n- Object-centricity: The fountain is somewhat central but not dominant due to composition. 2-3.\n- Scene-centricity: It's more of a scene. 4.\n- Caption confidence: Moderate - fountain scene is identifiable. 3-4.\n\nContent:\n- Fountain with water spray\n- Trees\n- Wooden barrier/structure with graffiti\n- Possibly a person in the background (red shape)\n\nThe image is rotated 90 degrees which is unusual. This counts as an unusual viewpoint/orientation.\n\nLet me check for:\n- Person: possibly a figure in red in background - hard to tell, maybe a person\n- Face: no clear face\n- Animal: no\n- Text: yes, graffiti text visible\n- Vehicle: no\n- Food: no\n- Indoor: no\n- Outdoor: yes\n- Artificial: no\n- Occlusion: somewhat\n- Unusual viewpoint: yes (rotated)\n- Multiple main objects: fountain and structure\n\nMain objects: fountain, trees, wooden barrier\nDominant content: scene (fountain in park setting)",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. The image appears to be rotated 90 degrees (sideways). It shows what appears to be a fountain spraying water, with trees in the background, and what looks like a wooden structure or barrier with graffiti on it. The image has a somewhat artistic/atmospheric quality due to the water spray catching the light.\n\nLet me annotate this:\n\n- Recognizability: The main content (fountain) is somewhat recognizable but the rotation makes it less immediate. I'd say 3-4.\n- Ambiguity: Some ambiguity due to rotation and artistic composition. 2-3.\n- Natural photo typicality: Looks like a natural photo, 4.\n- Visual clutter: Moderate - fountain, trees, graffiti structure. 3.\n- Object-centricity: The fountain is somewhat central but not dominant due to composition. 2-3.\n- Scene-centricity: It's more of a scene. 4.\n- Caption confidence: Moderate - fountain scene is identifiable. 3-4.\n\nContent:\n- Fountain with water spray\n- Trees\n- Wooden barrier/structure with graffiti\n- Possibly a person in the background (red shape)\n\nThe image is rotated 90 degrees which is unusual. This counts as an unusual viewpoint/orientation.\n\nLet me check for:\n- Person: possibly a figure in red in background - hard to tell, maybe a person\n- Face: no clear face\n- Animal: no\n- Text: yes, graffiti text visible\n- Vehicle: no\n- Food: no\n- Indoor: no\n- Outdoor: yes\n- Artificial: no\n- Occlusion: somewhat\n- Unusual viewpoint: yes (rotated)\n- Multiple main objects: fountain and structure\n\nMain objects: fountain, trees, wooden barrier\nDominant content: scene (fountain in park setting)",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 776,
+          "total_tokens": 2298,
+          "cost": 0.00123756,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00123756,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009312
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 424,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

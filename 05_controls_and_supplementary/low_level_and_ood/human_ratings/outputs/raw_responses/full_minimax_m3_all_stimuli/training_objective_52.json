@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_52",
+    "stim_key": "training_objective_52",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 52,
+    "file_index": 52,
+    "image_name": "image_0052.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0052.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"celebration_patriotic\",\n\n  \"short_caption\": \"Silhouettes of a woman and a child on shoulders waving American flags at sunset.\",\n  \"main_objects\": [\"woman\", \"child\", \"american_flag\", \"flag_x2\", \"sunset_sky\"],\n  \"possible_interpretations\": [\n    \"Family celebrating American holiday with flags at sunset\",\n    \"Patriotic Independence Day or Memorial Day photo\",\n    \"Mother and child with flags during outdoor event\"\n  ],\n  \"uncertainty_notes\": \"Faces are backlit and not visible; exact ages and number of people somewhat inferable but not fully certain.\",\n  \"quality_flags\": [\"heavy_backlight_silhouette\", \"low_detail_subjects\"]\n}",
+      "response": {
+        "id": "gen-1780319336-AsP0Rak2MWoQde0C7rFK",
+        "object": "chat.completion",
+        "created": 1780319336,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"celebration_patriotic\",\n\n  \"short_caption\": \"Silhouettes of a woman and a child on shoulders waving American flags at sunset.\",\n  \"main_objects\": [\"woman\", \"child\", \"american_flag\", \"flag_x2\", \"sunset_sky\"],\n  \"possible_interpretations\": [\n    \"Family celebrating American holiday with flags at sunset\",\n    \"Patriotic Independence Day or Memorial Day photo\",\n    \"Mother and child with flags during outdoor event\"\n  ],\n  \"uncertainty_notes\": \"Faces are backlit and not visible; exact ages and number of people somewhat inferable but not fully certain.\",\n  \"quality_flags\": [\"heavy_backlight_silhouette\", \"low_detail_subjects\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows silhouettes of people against a sunset sky, with American flags. There appears to be a person on the left waving a flag, and a larger figure (possibly a parent) on the right with a child on their shoulders also holding a flag. The scene is backlit by the setting sun, creating strong silhouettes.\n\nLet me analyze this carefully:\n\n- Recognizability: Very clear - silhouettes of people with American flags at sunset\n- Ambiguity: Low - the content is quite clear\n- Natural photo typicality: Looks like a typical photograph, possibly slightly stylized\n- Visual clutter: Low - clean composition with sky and silhouettes\n- Object centricity: Medium - figures are prominent\n- Scene centricity: High - it's a scene with sky/sunset\n- Caption confidence: High\n\nMain objects: people, American flags\nContains: people, faces (silhouettes, no clear faces visible), outdoor scene\nThe faces are silhouetted so no clear faces visible.\nNo text, no vehicles, no food, no animals.\nIt's outdoors.\nNot artificial/rendered.\nThe flags are partially blocking faces.\n\nLet me construct the JSON response.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows silhouettes of people against a sunset sky, with American flags. There appears to be a person on the left waving a flag, and a larger figure (possibly a parent) on the right with a child on their shoulders also holding a flag. The scene is backlit by the setting sun, creating strong silhouettes.\n\nLet me analyze this carefully:\n\n- Recognizability: Very clear - silhouettes of people with American flags at sunset\n- Ambiguity: Low - the content is quite clear\n- Natural photo typicality: Looks like a typical photograph, possibly slightly stylized\n- Visual clutter: Low - clean composition with sky and silhouettes\n- Object centricity: Medium - figures are prominent\n- Scene centricity: High - it's a scene with sky/sunset\n- Caption confidence: High\n\nMain objects: people, American flags\nContains: people, faces (silhouettes, no clear faces visible), outdoor scene\nThe faces are silhouetted so no clear faces visible.\nNo text, no vehicles, no food, no animals.\nIt's outdoors.\nNot artificial/rendered.\nThe flags are partially blocking faces.\n\nLet me construct the JSON response.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1222,
+          "completion_tokens": 609,
+          "total_tokens": 1831,
+          "cost": 0.00094716,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00094716,
+            "upstream_inference_prompt_cost": 0.00021636,
+            "upstream_inference_completions_cost": 0.0007308
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 289,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_97",
+    "stim_key": "vicco_97",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 97,
+    "file_index": 96,
+    "image_name": "shared_4rep_vicco_097.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_097.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban street / night market\",\n  \"short_caption\": \"A woman in a blue dress on a busy nighttime tourist street with shops, signs, and parked motorcycles.\",\n  \"main_objects\": [\"woman in blue dress\", \"parked motorcycles\", \"illuminated shop signs\", \"pharmacy\", \"currency exchange sign\", \"street vendor stall\", \"cars\", \"pedestrians\"],\n  \"possible_interpretations\": [\"tourist street market at night\", \"Southeast Asian nightlife district\", \"currency exchange shopping area\"],\n  \"uncertainty_notes\": \"Woman's face is not visible (turned away); exact location unclear but signs suggest a Middle Eastern tourist area in Southeast Asia.\",\n  \"quality_flags\": [\"low_light_noise\", \"mixed_color_temperature\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319499-jR42tA21Q61IrRiXloNC",
+        "object": "chat.completion",
+        "created": 1780319499,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban street / night market\",\n  \"short_caption\": \"A woman in a blue dress on a busy nighttime tourist street with shops, signs, and parked motorcycles.\",\n  \"main_objects\": [\"woman in blue dress\", \"parked motorcycles\", \"illuminated shop signs\", \"pharmacy\", \"currency exchange sign\", \"street vendor stall\", \"cars\", \"pedestrians\"],\n  \"possible_interpretations\": [\"tourist street market at night\", \"Southeast Asian nightlife district\", \"currency exchange shopping area\"],\n  \"uncertainty_notes\": \"Woman's face is not visible (turned away); exact location unclear but signs suggest a Middle Eastern tourist area in Southeast Asia.\",\n  \"quality_flags\": [\"low_light_noise\", \"mixed_color_temperature\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a nighttime street scene, likely in a tourist area (possibly Thailand based on the signs - \"PHARMACY\" sign, \"EXCHANGE\" sign, Arabic text at top suggesting a Middle Eastern tourist area like Phuket). There's a woman in a blue dress with a white purse standing on the sidewalk, looking at what appears to be a street food vendor or market stall. There are many parked motorcycles/scooters on the right side. The street has various shops with illuminated signs. There are other pedestrians visible in the background.\n\nLet me assess each dimension:\n\n- Recognizability: High - this is clearly a nighttime street market scene\n- Ambiguity: Low - one main interpretation as a tourist street market\n- Natural_photo_typicality: High - looks like a typical snapshot\n- Visual_clutter: High - many signs, people, motorcycles, shops\n- Object_centricity: Low-moderate - the woman is somewhat central but it's really a scene\n- Scene_centricity: High - this is clearly a place/scene\n- Caption_confidence: High\n\nContent analysis:\n- contains_person: yes\n- contains_face: the woman is facing away, so no clear face. There may be other people but hard to tell if faces are visible\n- contains_animal: no\n- contains_text: yes (Arabic text, PHARMACY, EXCHANGE, daily)\n- contains_vehicle: yes (motorcycles, cars)\n- contains_food: possibly (vendor stalls might be food)\n- contains_indoor_scene: no\n- contains_outdoor_scene: yes\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: somewhat\n- contains_multiple_main_objects: somewhat\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: street/urban/tourism\n\nCaption: \"A woman in a blue dress stands on a busy nighttime tourist street lined with shops and parked motorcycles.\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a nighttime street scene, likely in a tourist area (possibly Thailand based on the signs - \"PHARMACY\" sign, \"EXCHANGE\" sign, Arabic text at top suggesting a Middle Eastern tourist area like Phuket). There's a woman in a blue dress with a white purse standing on the sidewalk, looking at what appears to be a street food vendor or market stall. There are many parked motorcycles/scooters on the right side. The street has various shops with illuminated signs. There are other pedestrians visible in the background.\n\nLet me assess each dimension:\n\n- Recognizability: High - this is clearly a nighttime street market scene\n- Ambiguity: Low - one main interpretation as a tourist street market\n- Natural_photo_typicality: High - looks like a typical snapshot\n- Visual_clutter: High - many signs, people, motorcycles, shops\n- Object_centricity: Low-moderate - the woman is somewhat central but it's really a scene\n- Scene_centricity: High - this is clearly a place/scene\n- Caption_confidence: High\n\nContent analysis:\n- contains_person: yes\n- contains_face: the woman is facing away, so no clear face. There may be other people but hard to tell if faces are visible\n- contains_animal: no\n- contains_text: yes (Arabic text, PHARMACY, EXCHANGE, daily)\n- contains_vehicle: yes (motorcycles, cars)\n- contains_food: possibly (vendor stalls might be food)\n- contains_indoor_scene: no\n- contains_outdoor_scene: yes\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: somewhat\n- contains_multiple_main_objects: somewhat\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: street/urban/tourism\n\nCaption: \"A woman in a blue dress stands on a busy nighttime tourist street lined with shops and parked motorcycles.\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 798,
+          "total_tokens": 2320,
+          "cost": 0.00126396,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126396,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009576
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 473,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

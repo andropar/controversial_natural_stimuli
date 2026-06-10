@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_76",
+    "stim_key": "sota_76",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 76,
+    "file_index": 76,
+    "image_name": "image_0076.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0076.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"fashion\",\n  \"short_caption\": \"Woman in striped suit with fur mittens in fashion editorial photograph.\",\n  \"main_objects\": [\"woman\", \"striped suit\", \"fur mittens\", \"turtleneck sweater\"],\n  \"possible_interpretations\": [\"Fashion editorial portrait\", \"Winter clothing advertisement\", \"Stylized fashion campaign\"],\n  \"uncertainty_notes\": \"Face is truncated at top of frame; lower body and shoes are cut off. Unclear if background is indoor or outdoor studio setting.\",\n  \"quality_flags\": [\"face_truncated\", \"editorial_styling\", \"unusual_framing\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319174-K7EVuZt2Hpme2PEQwbIn",
+        "object": "chat.completion",
+        "created": 1780319174,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"fashion\",\n  \"short_caption\": \"Woman in striped suit with fur mittens in fashion editorial photograph.\",\n  \"main_objects\": [\"woman\", \"striped suit\", \"fur mittens\", \"turtleneck sweater\"],\n  \"possible_interpretations\": [\"Fashion editorial portrait\", \"Winter clothing advertisement\", \"Stylized fashion campaign\"],\n  \"uncertainty_notes\": \"Face is truncated at top of frame; lower body and shoes are cut off. Unclear if background is indoor or outdoor studio setting.\",\n  \"quality_flags\": [\"face_truncated\", \"editorial_styling\", \"unusual_framing\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a woman in a fashion editorial style photo. She's wearing a striped suit (black and white pinstripes), a yellow turtleneck underneath, and has furry brown mittens/gloves. Her face is partially visible at the top of the frame, and she has long brown hair. The background is a plain gray/concrete wall. The framing is unusual - the top of her head is cut off and the focus is on the clothing/outfit.\n\nThis appears to be a fashion editorial photograph. The composition is focused on the outfit rather than the face.\n\nLet me annotate:\n\n- Recognizability: The main content is a woman in fashion attire - clearly recognizable. 4\n- Ambiguity: The image is fairly clear in its content. 2\n- Natural photo typicality: It's a professional fashion photograph, but still a natural photo. 3 (it's a styled/editorial photo)\n- Visual clutter: There's a lot going on with patterns (stripes, fur texture, the graphic tee visible), but the background is simple. 3\n- Object centricity: The \"object\" here is the person/outfit - person_face or person. 4\n- Scene centricity: Not really a scene. 2\n- Caption confidence: 4\n\nContains person: yes\nContains face: yes (partial face visible)\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor: possibly (gray wall could be indoor or outdoor)\nContains outdoor: unclear\nContains artificial/rendered: no\nContains occlusion/truncation: yes (face is cut off at top, head/hat truncated)\nContains unusual viewpoint: somewhat - the framing is unusual, cropping the top of the head\nContains multiple main objects: no, one main subject\n\nDominant content: person_face (though face is partially cropped)\nImage style: natural_photo (editorial fashion photography)\nSemantic domain: fashion\n\nMain objects: woman, striped suit, fur mittens, turtleneck\n\nCaption: \"Woman in striped suit with fur mittens in fashion editorial\"\n\nQuality flags: face truncated, editorial styling",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a woman in a fashion editorial style photo. She's wearing a striped suit (black and white pinstripes), a yellow turtleneck underneath, and has furry brown mittens/gloves. Her face is partially visible at the top of the frame, and she has long brown hair. The background is a plain gray/concrete wall. The framing is unusual - the top of her head is cut off and the focus is on the clothing/outfit.\n\nThis appears to be a fashion editorial photograph. The composition is focused on the outfit rather than the face.\n\nLet me annotate:\n\n- Recognizability: The main content is a woman in fashion attire - clearly recognizable. 4\n- Ambiguity: The image is fairly clear in its content. 2\n- Natural photo typicality: It's a professional fashion photograph, but still a natural photo. 3 (it's a styled/editorial photo)\n- Visual clutter: There's a lot going on with patterns (stripes, fur texture, the graphic tee visible), but the background is simple. 3\n- Object centricity: The \"object\" here is the person/outfit - person_face or person. 4\n- Scene centricity: Not really a scene. 2\n- Caption confidence: 4\n\nContains person: yes\nContains face: yes (partial face visible)\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor: possibly (gray wall could be indoor or outdoor)\nContains outdoor: unclear\nContains artificial/rendered: no\nContains occlusion/truncation: yes (face is cut off at top, head/hat truncated)\nContains unusual viewpoint: somewhat - the framing is unusual, cropping the top of the head\nContains multiple main objects: no, one main subject\n\nDominant content: person_face (though face is partially cropped)\nImage style: natural_photo (editorial fashion photography)\nSemantic domain: fashion\n\nMain objects: woman, striped suit, fur mittens, turtleneck\n\nCaption: \"Woman in striped suit with fur mittens in fashion editorial\"\n\nQuality flags: face truncated, editorial styling",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 803,
+          "total_tokens": 2325,
+          "cost": 0.00126996,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126996,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009636
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 521,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_276",
+    "stim_key": "vicco_276",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 276,
+    "file_index": 275,
+    "image_name": "shared_4rep_vicco_276.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_276.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_night_street\",\n  \"short_caption\": \"A flatbed truck loaded with scrap metal and debris parked on a street at night near residential buildings.\",\n  \"main_objects\": [\"flatbed truck\", \"scrap metal and debris\", \"apartment buildings\", \"parked cars\", \"street lamp\", \"vegetation\"],\n  \"possible_interpretations\": [\"construction or cleanup crew truck parked at night\", \"scrap collector vehicle in residential neighborhood\", \"moving or junk removal truck on a city street\"],\n  \"uncertainty_notes\": \"Nighttime lighting makes fine details in the cargo and background hard to resolve; specific identity of debris items unclear.\",\n  \"quality_flags\": [\"low_light\", \"some_motion_or_focus_softness\", \"high_contrast_scene\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319707-slmmBujZHD3h7NVIMvPV",
+        "object": "chat.completion",
+        "created": 1780319707,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_night_street\",\n  \"short_caption\": \"A flatbed truck loaded with scrap metal and debris parked on a street at night near residential buildings.\",\n  \"main_objects\": [\"flatbed truck\", \"scrap metal and debris\", \"apartment buildings\", \"parked cars\", \"street lamp\", \"vegetation\"],\n  \"possible_interpretations\": [\"construction or cleanup crew truck parked at night\", \"scrap collector vehicle in residential neighborhood\", \"moving or junk removal truck on a city street\"],\n  \"uncertainty_notes\": \"Nighttime lighting makes fine details in the cargo and background hard to resolve; specific identity of debris items unclear.\",\n  \"quality_flags\": [\"low_light\", \"some_motion_or_focus_softness\", \"high_contrast_scene\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a nighttime scene with:\n- A flatbed truck (white/light colored) loaded with what appears to be scrap metal, debris, and various objects in the back\n- The truck is parked on a street\n- In the background, there are apartment buildings/residential structures\n- Street lights are visible\n- There appears to be vegetation/bushes on the right side\n- Other cars are parked nearby\n- The sky is dark (nighttime)\n- The scene appears to be in a residential urban area\n\nLet me rate this on the schema:\n\n- recognizability: 4 - The main content (truck with cargo, urban night scene) is clearly recognizable\n- ambiguity: 2 - It's pretty clear what we're seeing\n- natural_photo_typicality: 4 - Looks like a typical photograph, though nighttime\n- visual_clutter: 4 - Lots of competing elements (truck, cargo, buildings, cars, vegetation)\n- object_centricity: 3 - The truck is a dominant object but it's a scene too\n- scene_centricity: 4 - This is more of a scene than just an object\n- caption_confidence: 4 - Easy to caption\n\nEstimated counts:\n- Salient objects: maybe 2-3 (truck, cars, buildings)\n- Distinct categories: 3-4 (truck, vehicles, buildings, vegetation)\n\nContains:\n- person: no clear person visible\n- face: no\n- animal: no\n- text: no\n- vehicle: yes (truck, possibly cars)\n- food: no\n- indoor: no\n- outdoor: yes\n- artificial: no\n- occlusion: the cargo somewhat occludes things\n- unusual viewpoint: no\n- multiple main objects: yes (truck, buildings, other vehicles)\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: urban_night_scene or street\n\nCaption: \"A flatbed truck loaded with scrap metal and debris parked on a street at night near residential buildings.\"\n\nLet me finalize my response.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a nighttime scene with:\n- A flatbed truck (white/light colored) loaded with what appears to be scrap metal, debris, and various objects in the back\n- The truck is parked on a street\n- In the background, there are apartment buildings/residential structures\n- Street lights are visible\n- There appears to be vegetation/bushes on the right side\n- Other cars are parked nearby\n- The sky is dark (nighttime)\n- The scene appears to be in a residential urban area\n\nLet me rate this on the schema:\n\n- recognizability: 4 - The main content (truck with cargo, urban night scene) is clearly recognizable\n- ambiguity: 2 - It's pretty clear what we're seeing\n- natural_photo_typicality: 4 - Looks like a typical photograph, though nighttime\n- visual_clutter: 4 - Lots of competing elements (truck, cargo, buildings, cars, vegetation)\n- object_centricity: 3 - The truck is a dominant object but it's a scene too\n- scene_centricity: 4 - This is more of a scene than just an object\n- caption_confidence: 4 - Easy to caption\n\nEstimated counts:\n- Salient objects: maybe 2-3 (truck, cars, buildings)\n- Distinct categories: 3-4 (truck, vehicles, buildings, vegetation)\n\nContains:\n- person: no clear person visible\n- face: no\n- animal: no\n- text: no\n- vehicle: yes (truck, possibly cars)\n- food: no\n- indoor: no\n- outdoor: yes\n- artificial: no\n- occlusion: the cargo somewhat occludes things\n- unusual viewpoint: no\n- multiple main objects: yes (truck, buildings, other vehicles)\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: urban_night_scene or street\n\nCaption: \"A flatbed truck loaded with scrap metal and debris parked on a street at night near residential buildings.\"\n\nLet me finalize my response.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 826,
+          "total_tokens": 2348,
+          "cost": 0.00129756,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129756,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009912
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 474,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

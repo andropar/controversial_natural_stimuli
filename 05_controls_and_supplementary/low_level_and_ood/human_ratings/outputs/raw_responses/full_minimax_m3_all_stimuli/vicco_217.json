@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_217",
+    "stim_key": "vicco_217",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 217,
+    "file_index": 216,
+    "image_name": "shared_4rep_vicco_217.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_217.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor_event_concert\",\n  \"short_caption\": \"Orchestra and choir performing in a grand cathedral beneath a crucifix\",\n  \"main_objects\": [\"cathedral interior\", \"crucifix\", \"orchestra\", \"choir\", \"audience\", \"conductor\", \"stone arches\", \"stained glass windows\"],\n  \"possible_interpretations\": [\"Classical music concert in a cathedral\", \"Sacred music performance\", \"Choir and orchestral recital in a church\", \"Evening concert at a religious venue\"],\n  \"uncertainty_notes\": \"Some faces in the audience are partially obscured; exact instruments are hard to identify at distance\",\n  \"quality_flags\": [\"low_light_areas\", \"back_of_heads_in_foreground\", \"complex_composition\"]\n}",
+      "response": {
+        "id": "gen-1780319638-K72viqlrC1SfXYRawTn0",
+        "object": "chat.completion",
+        "created": 1780319638,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor_event_concert\",\n  \"short_caption\": \"Orchestra and choir performing in a grand cathedral beneath a crucifix\",\n  \"main_objects\": [\"cathedral interior\", \"crucifix\", \"orchestra\", \"choir\", \"audience\", \"conductor\", \"stone arches\", \"stained glass windows\"],\n  \"possible_interpretations\": [\"Classical music concert in a cathedral\", \"Sacred music performance\", \"Choir and orchestral recital in a church\", \"Evening concert at a religious venue\"],\n  \"uncertainty_notes\": \"Some faces in the audience are partially obscured; exact instruments are hard to identify at distance\",\n  \"quality_flags\": [\"low_light_areas\", \"back_of_heads_in_foreground\", \"complex_composition\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a concert or performance taking place inside what appears to be a large church or cathedral with Gothic architecture. I can see:\n\n- Vaulted stone arches and ceiling\n- A large crucifix/cross with a figure of Christ on the wall\n- An orchestra/choir performing - I can see musicians with instruments including what appears to be a conductor, string players, and possibly a choir\n- An audience seated in the foreground watching the performance\n- Stained glass windows on the right\n- Hanging light fixtures\n- Stone columns and architectural details\n- A balcony on the left\n\nLet me provide the annotations based on the schema.\n\nThe image is clearly a scene (concert in a church), with multiple people, contains text potentially (sheet music), indoor scene, has architectural features as main subject.\n\n- Recognizability: 5 - Very clear what this is\n- Ambiguity: 1 - Very clear, one main interpretation\n- Natural_photo_typicality: 4 - Looks like a typical natural photograph\n- Visual_clutter: 4 - Many competing elements (architecture, people, instruments, lights)\n- Object_centricity: 2 - Not dominated by a single object\n- Scene_centricity: 5 - Clearly a scene (place/event)\n- Caption_confidence: 5 - Very confident in caption\n\n- contains_person: true\n- contains_face: true (I can see some faces in the audience and performers)\n- contains_animal: false\n- contains_text: false (sheet music may have text but not readable)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (people in foreground are partially visible from behind)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (conductor, orchestra, audience, church architecture)\n\ndominant_content_type: \"scene\" or \"mixed\" - it's a scene with people\nimage_style: \"natural_photo\"\nsemantic_domain: \"indoor_event\" or \"concert_venue\"\n\nshort_caption: \"Orchestra and choir performing in a grand cathedral with a crucifix on the wall\"\n\nmain_objects: [\"cathedral interior\", \"crucifix\", \"orchestra\", \"choir\", \"audience\", \"conductor\", \"stone arches\"]\n\npossible_interpretations: [\"Classical music concert in a cathedral\", \"Sacred music performance\", \"Choir recital in a church\", \"Orchestral concert at a religious venue\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a concert or performance taking place inside what appears to be a large church or cathedral with Gothic architecture. I can see:\n\n- Vaulted stone arches and ceiling\n- A large crucifix/cross with a figure of Christ on the wall\n- An orchestra/choir performing - I can see musicians with instruments including what appears to be a conductor, string players, and possibly a choir\n- An audience seated in the foreground watching the performance\n- Stained glass windows on the right\n- Hanging light fixtures\n- Stone columns and architectural details\n- A balcony on the left\n\nLet me provide the annotations based on the schema.\n\nThe image is clearly a scene (concert in a church), with multiple people, contains text potentially (sheet music), indoor scene, has architectural features as main subject.\n\n- Recognizability: 5 - Very clear what this is\n- Ambiguity: 1 - Very clear, one main interpretation\n- Natural_photo_typicality: 4 - Looks like a typical natural photograph\n- Visual_clutter: 4 - Many competing elements (architecture, people, instruments, lights)\n- Object_centricity: 2 - Not dominated by a single object\n- Scene_centricity: 5 - Clearly a scene (place/event)\n- Caption_confidence: 5 - Very confident in caption\n\n- contains_person: true\n- contains_face: true (I can see some faces in the audience and performers)\n- contains_animal: false\n- contains_text: false (sheet music may have text but not readable)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (people in foreground are partially visible from behind)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (conductor, orchestra, audience, church architecture)\n\ndominant_content_type: \"scene\" or \"mixed\" - it's a scene with people\nimage_style: \"natural_photo\"\nsemantic_domain: \"indoor_event\" or \"concert_venue\"\n\nshort_caption: \"Orchestra and choir performing in a grand cathedral with a crucifix on the wall\"\n\nmain_objects: [\"cathedral interior\", \"crucifix\", \"orchestra\", \"choir\", \"audience\", \"conductor\", \"stone arches\"]\n\npossible_interpretations: [\"Classical music concert in a cathedral\", \"Sacred music performance\", \"Choir recital in a church\", \"Orchestral concert at a religious venue\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 930,
+          "total_tokens": 2452,
+          "cost": 0.00154524,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00154524,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.001116
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 628,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_291",
+    "stim_key": "vicco_291",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 291,
+    "file_index": 290,
+    "image_name": "shared_4rep_vicco_291.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_291.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"zoo_wildlife\",\n  \"short_caption\": \"Orangutans among wooden logs and ropes in a zoo enclosure with rock walls.\",\n  \"main_objects\": [\"orangutans\", \"wooden logs\", \"ropes\", \"rock wall\"],\n  \"possible_interpretations\": [\"orangutans in a zoo enclosure\", \"orangutans in a wildlife sanctuary\", \"orangutans in a rehabilitation center\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees, requiring mental reorientation. Exact number of orangutans is difficult to determine due to overlapping bodies and wooden structures.\",\n  \"quality_flags\": [\"rotated_image\"]\n}",
+      "response": {
+        "id": "gen-1780319726-sHR0zPLsuuEMNxNaNUab",
+        "object": "chat.completion",
+        "created": 1780319726,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"zoo_wildlife\",\n  \"short_caption\": \"Orangutans among wooden logs and ropes in a zoo enclosure with rock walls.\",\n  \"main_objects\": [\"orangutans\", \"wooden logs\", \"ropes\", \"rock wall\"],\n  \"possible_interpretations\": [\"orangutans in a zoo enclosure\", \"orangutans in a wildlife sanctuary\", \"orangutans in a rehabilitation center\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees, requiring mental reorientation. Exact number of orangutans is difficult to determine due to overlapping bodies and wooden structures.\",\n  \"quality_flags\": [\"rotated_image\"]\n}",
+              "refusal": null,
+              "reasoning": "The image is rotated 90 degrees (sideways). It shows orangutans in what appears to be a zoo enclosure with wooden logs, ropes, and rock walls. There are at least 2-3 orangutans visible. The image is taken from above or at an angle, showing the orangutans in their enclosure.\n\nLet me analyze:\n- Main subjects: Orangutans (animals)\n- Setting: Zoo enclosure with wood structures and rock walls\n- Image orientation: Rotated 90 degrees\n- Contains: Animals (orangutans), ropes, logs, rock wall, some grass\n\nLet me rate each:\n\n- recognizability: 4 - The main content (orangutans in enclosure) is fairly recognizable despite rotation\n- ambiguity: 2 - It's clearly an orangutan enclosure\n- natural_photo_typicality: 3 - It's a real photo but of a zoo setting, not natural habitat\n- visual_clutter: 4 - Many wooden logs, ropes, and structures competing\n- object_centricity: 2 - Not a single object focus, more of a scene\n- scene_centricity: 4 - This is a scene/environment showing an enclosure\n- caption_confidence: 4 - Can confidently describe as orangutans in a zoo enclosure\n\nEstimates:\n- salient_object_count: 2-3 orangutans\n- distinct_object_categories: ~3 (orangutans, wooden structures, rock wall)\n\nBooleans:\n- contains_person: false\n- contains_face: true (orangutan faces)\n- contains_animal: true (orangutans)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (it's a real photo, though enclosure is artificial)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (rotated 90 degrees, taken from above)\n- contains_multiple_main_objects: true (multiple orangutans)\n\nDominant content type: animal\nImage style: natural_photo\nSemantic domain: zoo/wildlife\n\nShort caption: Orangutans climbing on wooden logs in a zoo enclosure with rock walls.\nMain objects: orangutans, wooden logs, ropes, rock wall\nPossible interpretations: orangutans in zoo, orangutans in wildlife sanctuary, orangutans in natural habitat\nUncertainty notes: Image is rotated 90 degrees, making orientation assessment difficult\nQuality flags: rotated_image",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image is rotated 90 degrees (sideways). It shows orangutans in what appears to be a zoo enclosure with wooden logs, ropes, and rock walls. There are at least 2-3 orangutans visible. The image is taken from above or at an angle, showing the orangutans in their enclosure.\n\nLet me analyze:\n- Main subjects: Orangutans (animals)\n- Setting: Zoo enclosure with wood structures and rock walls\n- Image orientation: Rotated 90 degrees\n- Contains: Animals (orangutans), ropes, logs, rock wall, some grass\n\nLet me rate each:\n\n- recognizability: 4 - The main content (orangutans in enclosure) is fairly recognizable despite rotation\n- ambiguity: 2 - It's clearly an orangutan enclosure\n- natural_photo_typicality: 3 - It's a real photo but of a zoo setting, not natural habitat\n- visual_clutter: 4 - Many wooden logs, ropes, and structures competing\n- object_centricity: 2 - Not a single object focus, more of a scene\n- scene_centricity: 4 - This is a scene/environment showing an enclosure\n- caption_confidence: 4 - Can confidently describe as orangutans in a zoo enclosure\n\nEstimates:\n- salient_object_count: 2-3 orangutans\n- distinct_object_categories: ~3 (orangutans, wooden structures, rock wall)\n\nBooleans:\n- contains_person: false\n- contains_face: true (orangutan faces)\n- contains_animal: true (orangutans)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (it's a real photo, though enclosure is artificial)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (rotated 90 degrees, taken from above)\n- contains_multiple_main_objects: true (multiple orangutans)\n\nDominant content type: animal\nImage style: natural_photo\nSemantic domain: zoo/wildlife\n\nShort caption: Orangutans climbing on wooden logs in a zoo enclosure with rock walls.\nMain objects: orangutans, wooden logs, ropes, rock wall\nPossible interpretations: orangutans in zoo, orangutans in wildlife sanctuary, orangutans in natural habitat\nUncertainty notes: Image is rotated 90 degrees, making orientation assessment difficult\nQuality flags: rotated_image",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 891,
+          "total_tokens": 2413,
+          "cost": 0.00137556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00137556,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010692
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 577,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

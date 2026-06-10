@@ -9,15 +9,15 @@ substantial mass near 0.4 by chance, so the qualitative claim "ranks are largely
 needs to be read against a chance distribution. This script:
 
 1. Reads per-subject baseline + controversial scores from
-   experiments/cstim_paper/02_rsa_scores/data/sub-XX/{crsa,wrsa_transfer}_scores.csv
+   01_brain_model_alignment/results/rsa_scores/sub-XX/{crsa,wrsa_transfer}_scores.csv
 2. For each (model_set, method) computes the observed mean-across-subjects rho_b<->c
 3. Generates 10_000 random re-orderings of M models and computes the null Spearman rho
 4. Outputs rank_null.csv  with observed rho, null distribution percentiles, and p-value
 5. Plots rank_null.pdf / rank_null.png with one panel per model set, two metrics overlaid
 
 Outputs:
-  experiments/cstim_paper/03_statistics/data/rank_null.csv
-  experiments/cstim_paper/03_statistics/figures/rank_null.{pdf,png}
+  03_alignment_inference/results/rank_null.csv
+  03_alignment_inference/figures/supplementary/rank_null.{pdf,png}
 """
 
 import sys

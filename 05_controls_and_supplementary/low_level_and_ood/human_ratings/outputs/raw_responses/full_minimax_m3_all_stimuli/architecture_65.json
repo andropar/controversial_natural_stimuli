@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_65",
+    "stim_key": "architecture_65",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 65,
+    "file_index": 65,
+    "image_name": "image_0065.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0065.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 4, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"home decor\", \"short_caption\": \"White decorative vases and a bowl on mirrored display shelves.\", \"main_objects\": [\"white vase\", \"decorative bowl\", \"small beads or stones\", \"mirrored shelves\"], \"possible_interpretations\": [\"interior decor display\", \"still life photograph\", \"product photography for home goods\", \"furniture showroom\"], \"uncertainty_notes\": \"Items inside the bowl are ambiguous — could be flowers, beads, or decorative stones.\", \"quality_flags\": [\"reflective surfaces\", \"professional interior styling\"]}",
+      "response": {
+        "id": "gen-1780318920-tepiL24faFepzsssY6L5",
+        "object": "chat.completion",
+        "created": 1780318920,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 4, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"home decor\", \"short_caption\": \"White decorative vases and a bowl on mirrored display shelves.\", \"main_objects\": [\"white vase\", \"decorative bowl\", \"small beads or stones\", \"mirrored shelves\"], \"possible_interpretations\": [\"interior decor display\", \"still life photograph\", \"product photography for home goods\", \"furniture showroom\"], \"uncertainty_notes\": \"Items inside the bowl are ambiguous — could be flowers, beads, or decorative stones.\", \"quality_flags\": [\"reflective surfaces\", \"professional interior styling\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a mirrored shelving unit or display case with multiple shelves. On the shelves, there are several decorative items:\n- Top left shelf: Two white vases, one with a long narrow neck and another with a similar elongated shape\n- Top right shelf: A white bowl with what appears to be white decorative items (possibly flowers or decorative stones/beads) and a lacy doily\n- Bottom right shelf: A white vase with a wider body and narrow neck\n- There are also some glass items visible through the mirrored reflections\n\nThe image has a clean, elegant, decorative aesthetic. It looks like interior decor photography.\n\nLet me rate each dimension:\n\n- recognizability: The content is clearly visible - decorative vases on mirrored shelves. 4\n- ambiguity: The image is fairly clear in its content. 2\n- natural_photo_typicality: This looks like a professional interior/still life photograph. 4\n- visual_clutter: The image is fairly minimal and clean. 2\n- object_centricity: The vases are the main focus. 4\n- scene_centricity: It could be considered a scene (interior decor display). 3\n- caption_confidence: Pretty confident about what's in the image. 4\n\nCounts:\n- Estimated salient object count: 4 (the vases and bowl with contents)\n- Distinct object categories: 3 (vases, bowl, decorative items)\n\nContains flags:\n- person: false\n- face: false\n- animal: false\n- text: false\n- vehicle: false\n- food: false\n- indoor_scene: true\n- outdoor_scene: false\n- artificial_or_rendered_content: false\n- occlusion_or_truncation: false (though some items are reflected)\n- unusual_viewpoint: false\n- multiple_main_objects: true (multiple vases)\n\nDominant content type: object (vases)\nImage style: natural_photo (still life interior photography)\nSemantic domain: home decor / interior design\n\nShort caption: \"White decorative vases and a bowl displayed on mirrored shelves.\"\n\nMain objects: [\"white vase\", \"decorative bowl\", \"beads or stones\", \"mirrored shelves\"]\n\nPossible interpretations: \n- Interior home decor display\n- Still life photograph\n- Product photography for home goods\n- Showroom display\n\nUncertainty notes: The items in the bowl are hard to identify - could be flowers, beads, or stones.\n\nQuality flags: [\"reflective surfaces\", \"professional styling\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a mirrored shelving unit or display case with multiple shelves. On the shelves, there are several decorative items:\n- Top left shelf: Two white vases, one with a long narrow neck and another with a similar elongated shape\n- Top right shelf: A white bowl with what appears to be white decorative items (possibly flowers or decorative stones/beads) and a lacy doily\n- Bottom right shelf: A white vase with a wider body and narrow neck\n- There are also some glass items visible through the mirrored reflections\n\nThe image has a clean, elegant, decorative aesthetic. It looks like interior decor photography.\n\nLet me rate each dimension:\n\n- recognizability: The content is clearly visible - decorative vases on mirrored shelves. 4\n- ambiguity: The image is fairly clear in its content. 2\n- natural_photo_typicality: This looks like a professional interior/still life photograph. 4\n- visual_clutter: The image is fairly minimal and clean. 2\n- object_centricity: The vases are the main focus. 4\n- scene_centricity: It could be considered a scene (interior decor display). 3\n- caption_confidence: Pretty confident about what's in the image. 4\n\nCounts:\n- Estimated salient object count: 4 (the vases and bowl with contents)\n- Distinct object categories: 3 (vases, bowl, decorative items)\n\nContains flags:\n- person: false\n- face: false\n- animal: false\n- text: false\n- vehicle: false\n- food: false\n- indoor_scene: true\n- outdoor_scene: false\n- artificial_or_rendered_content: false\n- occlusion_or_truncation: false (though some items are reflected)\n- unusual_viewpoint: false\n- multiple_main_objects: true (multiple vases)\n\nDominant content type: object (vases)\nImage style: natural_photo (still life interior photography)\nSemantic domain: home decor / interior design\n\nShort caption: \"White decorative vases and a bowl displayed on mirrored shelves.\"\n\nMain objects: [\"white vase\", \"decorative bowl\", \"beads or stones\", \"mirrored shelves\"]\n\nPossible interpretations: \n- Interior home decor display\n- Still life photograph\n- Product photography for home goods\n- Showroom display\n\nUncertainty notes: The items in the bowl are hard to identify - could be flowers, beads, or stones.\n\nQuality flags: [\"reflective surfaces\", \"professional styling\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1027,
+          "completion_tokens": 830,
+          "total_tokens": 1857,
+          "cost": 0.00127674,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00127674,
+            "upstream_inference_prompt_cost": 0.00028074,
+            "upstream_inference_completions_cost": 0.000996
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 612,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

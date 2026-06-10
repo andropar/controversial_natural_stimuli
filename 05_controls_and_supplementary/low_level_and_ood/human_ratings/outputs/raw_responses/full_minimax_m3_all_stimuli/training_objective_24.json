@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_24",
+    "stim_key": "training_objective_24",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 24,
+    "file_index": 24,
+    "image_name": "image_0024.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0024.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"zoo_wildlife\",\n  \"short_caption\": \"Three children in matching pink uniforms stand beside a group of king penguins at a zoo.\",\n  \"main_objects\": [\"king penguins\", \"children in matching pink uniforms and caps\", \"chain-link fence\"],\n  \"possible_interpretations\": [\"School or group visit to a penguin exhibit at a zoo\", \"Vintage photograph of children meeting king penguins\", \"Children posing with penguins at a wildlife park\"],\n  \"uncertainty_notes\": \"Image may be a colorized vintage photograph; monogram letters on jackets are not fully legible; exact location and date unknown.\",\n  \"quality_flags\": [\"possible_colorized_vintage_photo\", \"monogram_text_partially_legible\"]\n}",
+      "response": {
+        "id": "gen-1780319234-fDWQ9yunRcz9NrTqNALs",
+        "object": "chat.completion",
+        "created": 1780319234,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"zoo_wildlife\",\n  \"short_caption\": \"Three children in matching pink uniforms stand beside a group of king penguins at a zoo.\",\n  \"main_objects\": [\"king penguins\", \"children in matching pink uniforms and caps\", \"chain-link fence\"],\n  \"possible_interpretations\": [\"School or group visit to a penguin exhibit at a zoo\", \"Vintage photograph of children meeting king penguins\", \"Children posing with penguins at a wildlife park\"],\n  \"uncertainty_notes\": \"Image may be a colorized vintage photograph; monogram letters on jackets are not fully legible; exact location and date unknown.\",\n  \"quality_flags\": [\"possible_colorized_vintage_photo\", \"monogram_text_partially_legible\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows three children in matching pink/salmon colored jackets and caps (with \"KR\" monogram) standing with a group of king penguins. The image appears to be a vintage/older photograph, likely from a zoo, given the matching uniforms and the chain-link fence visible in the background. The setting looks like a sunny day outdoors.\n\nLet me annotate based on the schema:\n\n- recognizability: Very clear what's happening - 5\n- ambiguity: Very clear what's happening, single interpretation - 1\n- natural_photo_typicality: Looks like a natural photograph, though possibly colorized vintage photo - 4\n- visual_clutter: Multiple objects (penguins and children) but not overly cluttered - 3\n- object_centricity: There's a group of main subjects (penguins and children) - 3\n- scene_centricity: The scene aspect (zoo enclosure) is present but the subjects dominate - 3\n- caption_confidence: High - 5\n\nEstimated salient objects: 3 children + about 5 penguins = 8\nDistinct categories: 2 (penguins, children in uniform)\n\nContains person: true\nContains face: true\nContains animal: true (penguins)\nContains text: false (monograms on jackets, but minimal)\nContains vehicle: false\nContains food: false\nContains indoor scene: false\nContains outdoor scene: true\nContains artificial or rendered: false\nContains occlusion: maybe some\nContains unusual viewpoint: no, fairly normal\nContains multiple main objects: true\n\nDominant content: mixed (people and animals)\nImage style: natural_photo (possibly colorized vintage)\nSemantic domain: zoo/wildlife\n\nShort caption: Three children in matching pink uniforms stand alongside a group of king penguins at a zoo.\n\nMain objects: king penguins, children in pink uniforms\n\nPossible interpretations: Children at zoo visiting penguins, School group at zoo penguin exhibit, Vintage photo of zoo visit\n\nUncertainty: Image may be colorized vintage photograph; monogram letters on jackets not fully clear",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows three children in matching pink/salmon colored jackets and caps (with \"KR\" monogram) standing with a group of king penguins. The image appears to be a vintage/older photograph, likely from a zoo, given the matching uniforms and the chain-link fence visible in the background. The setting looks like a sunny day outdoors.\n\nLet me annotate based on the schema:\n\n- recognizability: Very clear what's happening - 5\n- ambiguity: Very clear what's happening, single interpretation - 1\n- natural_photo_typicality: Looks like a natural photograph, though possibly colorized vintage photo - 4\n- visual_clutter: Multiple objects (penguins and children) but not overly cluttered - 3\n- object_centricity: There's a group of main subjects (penguins and children) - 3\n- scene_centricity: The scene aspect (zoo enclosure) is present but the subjects dominate - 3\n- caption_confidence: High - 5\n\nEstimated salient objects: 3 children + about 5 penguins = 8\nDistinct categories: 2 (penguins, children in uniform)\n\nContains person: true\nContains face: true\nContains animal: true (penguins)\nContains text: false (monograms on jackets, but minimal)\nContains vehicle: false\nContains food: false\nContains indoor scene: false\nContains outdoor scene: true\nContains artificial or rendered: false\nContains occlusion: maybe some\nContains unusual viewpoint: no, fairly normal\nContains multiple main objects: true\n\nDominant content: mixed (people and animals)\nImage style: natural_photo (possibly colorized vintage)\nSemantic domain: zoo/wildlife\n\nShort caption: Three children in matching pink uniforms stand alongside a group of king penguins at a zoo.\n\nMain objects: king penguins, children in pink uniforms\n\nPossible interpretations: Children at zoo visiting penguins, School group at zoo penguin exhibit, Vintage photo of zoo visit\n\nUncertainty: Image may be colorized vintage photograph; monogram letters on jackets not fully clear",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 799,
+          "total_tokens": 2321,
+          "cost": 0.00126516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126516,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009588
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 517,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

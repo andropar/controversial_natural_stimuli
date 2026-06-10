@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_30",
+    "stim_key": "all_models_30",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 30,
+    "file_index": 30,
+    "image_name": "image_0030.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0030.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"household\",\n  \"short_caption\": \"Worried woman looking through washing machine door holding a detergent tablet\",\n  \"main_objects\": [\"woman\", \"washing machine door\", \"detergent tablet\", \"hand\"],\n  \"possible_interpretations\": [\n    \"Woman discovers a detergent tablet left inside the machine\",\n    \"Person realizes she forgot to add detergent to the wash\",\n    \"Someone finds an item left in clothing pocket before washing\",\n    \"Mother checking on laundry routine\"\n  ],\n  \"uncertainty_notes\": \"Staged stock-style photograph; narrative intent is somewhat ambiguous but clearly depicts a moment of realization related to laundry\",\n  \"quality_flags\": [\"staged_composition\", \"unusual_viewpoint\", \"stock_photo_style\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318765-EgmVEto6wTxz8cen7qqD",
+        "object": "chat.completion",
+        "created": 1780318765,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"household\",\n  \"short_caption\": \"Worried woman looking through washing machine door holding a detergent tablet\",\n  \"main_objects\": [\"woman\", \"washing machine door\", \"detergent tablet\", \"hand\"],\n  \"possible_interpretations\": [\n    \"Woman discovers a detergent tablet left inside the machine\",\n    \"Person realizes she forgot to add detergent to the wash\",\n    \"Someone finds an item left in clothing pocket before washing\",\n    \"Mother checking on laundry routine\"\n  ],\n  \"uncertainty_notes\": \"Staged stock-style photograph; narrative intent is somewhat ambiguous but clearly depicts a moment of realization related to laundry\",\n  \"quality_flags\": [\"staged_composition\", \"unusual_viewpoint\", \"stock_photo_style\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a woman looking through the circular door/window of what appears to be a washing machine or dryer. She has a concerned or anxious expression, with her hand near her mouth/nose. She's wearing a light blue sweater. She's holding out a round tablet (like a dishwasher or washing machine tablet) in her palm toward the viewer. The setting appears to be inside the drum of the machine, looking out at her.\n\nThis is a staged/composed photograph - likely a stock photo showing someone discovering a forgotten item in the washing machine.\n\nLet me assess each dimension:\n\n- recognizability: 5 - Very clear what's happening\n- ambiguity: 2 - Could be a couple interpretations (finding something left in pocket, forgot to add detergent, etc.)\n- natural_photo_typicality: 3 - It's a real photo but clearly staged/composed\n- visual_clutter: 2 - Relatively simple composition\n- object_centricity: 3 - The tablet and the machine are prominent\n- scene_centricity: 2 - It's more about the action/object\n- caption_confidence: 4 - Pretty clear caption possible\n\nSalient objects: woman, washing machine door, tablet in hand - about 2-3\nDistinct categories: person, appliance, detergent tablet - 3\n\nContains person: yes\nContains face: yes\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no (tablet is a cleaning product, not food)\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial or rendered content: no (it's a real photo, just staged)\nContains occlusion or truncation: no\nContains unusual viewpoint: yes (shot from inside the machine looking out)\nContains multiple main objects: yes (woman and tablet, washing machine)\n\nDominant content: person_face\nImage style: edited_photo (stock photo, staged)\nSemantic domain: household/domestic\n\nShort caption: \"Woman looking worried through washing machine door holding detergent tablet\"\n\nMain objects: woman, washing machine, detergent tablet, hand\n\nPossible interpretations:\n- Discovered a tablet left in the machine\n- Realized she forgot to add detergent\n- Found an item left in a pocket\n- About to add detergent to the machine\n\nUncertainty notes: The exact narrative is somewhat ambiguous - it's a staged stock photo showing a moment of realization about laundry\n\nQuality flags: staged_composition, unusual_viewpoint, stock_photo_style",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a woman looking through the circular door/window of what appears to be a washing machine or dryer. She has a concerned or anxious expression, with her hand near her mouth/nose. She's wearing a light blue sweater. She's holding out a round tablet (like a dishwasher or washing machine tablet) in her palm toward the viewer. The setting appears to be inside the drum of the machine, looking out at her.\n\nThis is a staged/composed photograph - likely a stock photo showing someone discovering a forgotten item in the washing machine.\n\nLet me assess each dimension:\n\n- recognizability: 5 - Very clear what's happening\n- ambiguity: 2 - Could be a couple interpretations (finding something left in pocket, forgot to add detergent, etc.)\n- natural_photo_typicality: 3 - It's a real photo but clearly staged/composed\n- visual_clutter: 2 - Relatively simple composition\n- object_centricity: 3 - The tablet and the machine are prominent\n- scene_centricity: 2 - It's more about the action/object\n- caption_confidence: 4 - Pretty clear caption possible\n\nSalient objects: woman, washing machine door, tablet in hand - about 2-3\nDistinct categories: person, appliance, detergent tablet - 3\n\nContains person: yes\nContains face: yes\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no (tablet is a cleaning product, not food)\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial or rendered content: no (it's a real photo, just staged)\nContains occlusion or truncation: no\nContains unusual viewpoint: yes (shot from inside the machine looking out)\nContains multiple main objects: yes (woman and tablet, washing machine)\n\nDominant content: person_face\nImage style: edited_photo (stock photo, staged)\nSemantic domain: household/domestic\n\nShort caption: \"Woman looking worried through washing machine door holding detergent tablet\"\n\nMain objects: woman, washing machine, detergent tablet, hand\n\nPossible interpretations:\n- Discovered a tablet left in the machine\n- Realized she forgot to add detergent\n- Found an item left in a pocket\n- About to add detergent to the machine\n\nUncertainty notes: The exact narrative is somewhat ambiguous - it's a staged stock photo showing a moment of realization about laundry\n\nQuality flags: staged_composition, unusual_viewpoint, stock_photo_style",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 894,
+          "total_tokens": 2416,
+          "cost": 0.00150204,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00150204,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010728
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 627,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

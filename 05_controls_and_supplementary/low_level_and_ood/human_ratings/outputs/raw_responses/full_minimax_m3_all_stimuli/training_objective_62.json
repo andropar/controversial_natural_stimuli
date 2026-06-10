@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_62",
+    "stim_key": "training_objective_62",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 62,
+    "file_index": 62,
+    "image_name": "image_0062.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0062.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"theater_performance\",\n  \"short_caption\": \"Child in green hat touches a large green crocodile puppet on a stage with dark blue curtain.\",\n  \"main_objects\": [\"crocodile puppet\", \"child in green\", \"stage curtain\", \"person in costume\"],\n  \"possible_interpretations\": [\"theater performance\", \"school play\", \"children's puppet show\", \"costume event\"],\n  \"uncertainty_notes\": \"Exact context of performance unclear; person inside the crocodile costume only partially visible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319341-0mDnL3wQI2e6JxfKEBTs",
+        "object": "chat.completion",
+        "created": 1780319341,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"theater_performance\",\n  \"short_caption\": \"Child in green hat touches a large green crocodile puppet on a stage with dark blue curtain.\",\n  \"main_objects\": [\"crocodile puppet\", \"child in green\", \"stage curtain\", \"person in costume\"],\n  \"possible_interpretations\": [\"theater performance\", \"school play\", \"children's puppet show\", \"costume event\"],\n  \"uncertainty_notes\": \"Exact context of performance unclear; person inside the crocodile costume only partially visible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a child wearing a green t-shirt and what appears to be a green hat (possibly Peter Pan style or similar), interacting with a large green crocodile or alligator puppet/mascot. The crocodile has a yellow eye, white teeth, and a pink/red mouth interior. There's another person partially visible inside the crocodile costume on the left side. The background is a dark blue curtain, suggesting a stage or theater setting.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - Very clear what's happening\n- ambiguity: 1 - Very clear scene\n- natural_photo_typicality: 4 - Looks like a typical photo, though of an unusual scene\n- visual_clutter: 2 - Simple background, two main subjects\n- object_centricity: 3 - The crocodile puppet is dominant but there's also a person\n- scene_centricity: 3 - Could be considered a scene (stage performance)\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 3 (crocodile puppet, child, person in costume)\n- estimated_distinct_object_categories: 3 (puppet/mascot, child person, adult person)\n\n- contains_person: true\n- contains_face: true (the child's face is visible)\n- contains_animal: false (it's a puppet representing an animal, but no real animal)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (stage with curtain)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (the puppet is artificial)\n- contains_occlusion_or_truncation: true (the person in the costume is partially visible)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"mixed\" or \"person_face\" - actually it's a mix of person and puppet. The puppet is very prominent. I'll say \"mixed\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"theater\" or \"performance\" or \"children\"\n\nshort_caption: \"Child in green hat and shirt touches a large green crocodile puppet on stage\"\nmain_objects: [\"crocodile puppet\", \"child\", \"stage curtain\"]\npossible_interpretations: [\"theater performance\", \"school play\", \"children's event\", \"puppet show\"]\n\nuncertainty_notes: \"Cannot determine exact context of performance\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a child wearing a green t-shirt and what appears to be a green hat (possibly Peter Pan style or similar), interacting with a large green crocodile or alligator puppet/mascot. The crocodile has a yellow eye, white teeth, and a pink/red mouth interior. There's another person partially visible inside the crocodile costume on the left side. The background is a dark blue curtain, suggesting a stage or theater setting.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - Very clear what's happening\n- ambiguity: 1 - Very clear scene\n- natural_photo_typicality: 4 - Looks like a typical photo, though of an unusual scene\n- visual_clutter: 2 - Simple background, two main subjects\n- object_centricity: 3 - The crocodile puppet is dominant but there's also a person\n- scene_centricity: 3 - Could be considered a scene (stage performance)\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 3 (crocodile puppet, child, person in costume)\n- estimated_distinct_object_categories: 3 (puppet/mascot, child person, adult person)\n\n- contains_person: true\n- contains_face: true (the child's face is visible)\n- contains_animal: false (it's a puppet representing an animal, but no real animal)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (stage with curtain)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (the puppet is artificial)\n- contains_occlusion_or_truncation: true (the person in the costume is partially visible)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"mixed\" or \"person_face\" - actually it's a mix of person and puppet. The puppet is very prominent. I'll say \"mixed\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"theater\" or \"performance\" or \"children\"\n\nshort_caption: \"Child in green hat and shirt touches a large green crocodile puppet on stage\"\nmain_objects: [\"crocodile puppet\", \"child\", \"stage curtain\"]\npossible_interpretations: [\"theater performance\", \"school play\", \"children's event\", \"puppet show\"]\n\nuncertainty_notes: \"Cannot determine exact context of performance\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 862,
+          "total_tokens": 2384,
+          "cost": 0.00134076,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00134076,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010344
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 590,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_60",
+    "stim_key": "training_objective_60",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 60,
+    "file_index": 60,
+    "image_name": "image_0060.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0060.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion clothing apparel\",\n  \"short_caption\": \"Gray diamond-patterned sweater on wooden hanger against dark wood background\",\n  \"main_objects\": [\"sweater\", \"wooden hanger\", \"pendant necklace\", \"white shirt collar\"],\n  \"possible_interpretations\": [\"product photo for online retail\", \"fashion editorial display\", \"clothing catalog image\", \"style or outfit showcase\"],\n  \"uncertainty_notes\": \"Image has heavy vignetting and dramatic stylized lighting typical of product photography; the necklace/pendant draped on the sweater may be a styling prop. Hard to determine exact fabric type from image.\",\n  \"quality_flags\": [\"heavy_vignetting\", \"stylized_lighting\", \"product_photography_style\"]\n}",
+      "response": {
+        "id": "gen-1780319340-HNzuPxsWG7hjuFolAHtL",
+        "object": "chat.completion",
+        "created": 1780319340,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion clothing apparel\",\n  \"short_caption\": \"Gray diamond-patterned sweater on wooden hanger against dark wood background\",\n  \"main_objects\": [\"sweater\", \"wooden hanger\", \"pendant necklace\", \"white shirt collar\"],\n  \"possible_interpretations\": [\"product photo for online retail\", \"fashion editorial display\", \"clothing catalog image\", \"style or outfit showcase\"],\n  \"uncertainty_notes\": \"Image has heavy vignetting and dramatic stylized lighting typical of product photography; the necklace/pendant draped on the sweater may be a styling prop. Hard to determine exact fabric type from image.\",\n  \"quality_flags\": [\"heavy_vignetting\", \"stylized_lighting\", \"product_photography_style\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a gray sweater with a diamond/geometric pattern (black diamond shapes) hanging on a wooden hanger against a dark wooden plank background. There's a white collared shirt visible underneath at the neckline. The sweater also has what appears to be a necklace or pendant hanging from it.\n\nLet me assess each attribute:\n\n- Recognizability: Very clear - it's clearly a sweater/clothing item. 5\n- Ambiguity: Very low ambiguity - it's clearly a sweater. 1\n- Natural photo typicality: It looks like a product photo, which is a type of natural/real photo but staged. The lighting and setup look quite natural. I'd say 4.\n- Visual clutter: Relatively clean composition, single subject with simple background. 2\n- Object centricity: The sweater is the clear central object. 5\n- Scene centricity: Not a scene per se, it's an object display. 1\n- Caption confidence: Very high - easy to caption. 5\n\nSalient objects: sweater, hanger, shirt collar, pendant\n- estimated_salient_object_count: 3 (sweater, hanger, pendant/shirt)\n- estimated_distinct_object_categories: 3 (sweater, hanger, necklace/pendant)\n\nContains:\n- person: false\n- face: false\n- animal: false\n- text: false\n- vehicle: false\n- food: false\n- indoor scene: arguably (product photo setting)\n- outdoor scene: false\n- artificial/rendered: could be - the product photography is styled but appears to be a real photo\n- occlusion: false\n- unusual viewpoint: false\n- multiple main objects: false (one main object - the sweater)\n\nDominant content: object (the sweater)\nImage style: Looks like a natural photo, possibly edited for product display. I'd say \"natural_photo\" or \"edited_photo\". The dark vignetting suggests some editing. Let me go with \"edited_photo\".\n\nSemantic domain: clothing/apparel/fashion\n\nShort caption: \"Gray patterned sweater on wooden hanger against dark wood background\"\n\nMain objects: sweater, hanger, pendant, shirt collar\n\nPossible interpretations: This could be a product photo for an online store, a fashion display, or a clothing item for sale. The styling suggests product photography.\n\nUncertainty notes: The image has heavy vignetting and dramatic lighting typical of product photography. Hard to tell if it's a real photo or slightly edited.\n\nQuality flags: heavy vignetting, stylized lighting",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a gray sweater with a diamond/geometric pattern (black diamond shapes) hanging on a wooden hanger against a dark wooden plank background. There's a white collared shirt visible underneath at the neckline. The sweater also has what appears to be a necklace or pendant hanging from it.\n\nLet me assess each attribute:\n\n- Recognizability: Very clear - it's clearly a sweater/clothing item. 5\n- Ambiguity: Very low ambiguity - it's clearly a sweater. 1\n- Natural photo typicality: It looks like a product photo, which is a type of natural/real photo but staged. The lighting and setup look quite natural. I'd say 4.\n- Visual clutter: Relatively clean composition, single subject with simple background. 2\n- Object centricity: The sweater is the clear central object. 5\n- Scene centricity: Not a scene per se, it's an object display. 1\n- Caption confidence: Very high - easy to caption. 5\n\nSalient objects: sweater, hanger, shirt collar, pendant\n- estimated_salient_object_count: 3 (sweater, hanger, pendant/shirt)\n- estimated_distinct_object_categories: 3 (sweater, hanger, necklace/pendant)\n\nContains:\n- person: false\n- face: false\n- animal: false\n- text: false\n- vehicle: false\n- food: false\n- indoor scene: arguably (product photo setting)\n- outdoor scene: false\n- artificial/rendered: could be - the product photography is styled but appears to be a real photo\n- occlusion: false\n- unusual viewpoint: false\n- multiple main objects: false (one main object - the sweater)\n\nDominant content: object (the sweater)\nImage style: Looks like a natural photo, possibly edited for product display. I'd say \"natural_photo\" or \"edited_photo\". The dark vignetting suggests some editing. Let me go with \"edited_photo\".\n\nSemantic domain: clothing/apparel/fashion\n\nShort caption: \"Gray patterned sweater on wooden hanger against dark wood background\"\n\nMain objects: sweater, hanger, pendant, shirt collar\n\nPossible interpretations: This could be a product photo for an online store, a fashion display, or a clothing item for sale. The styling suggests product photography.\n\nUncertainty notes: The image has heavy vignetting and dramatic lighting typical of product photography. Hard to tell if it's a real photo or slightly edited.\n\nQuality flags: heavy vignetting, stylized lighting",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 899,
+          "total_tokens": 2421,
+          "cost": 0.00138516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00138516,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010788
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 614,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_9",
+    "stim_key": "sota_9",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 9,
+    "file_index": 9,
+    "image_name": "image_0009.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0009.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife\",\n  \"short_caption\": \"Two marmots standing upright and wrestling on a road near a green guardrail.\",\n  \"main_objects\": [\"marmot\", \"marmot\", \"guardrail\", \"road\"],\n  \"possible_interpretations\": [\"Two marmots fighting\", \"Marmots playing or wrestling\", \"Marmots greeting each other\"],\n  \"uncertainty_notes\": \"Exact species (marmot vs groundhog vs prairie dog) is uncertain; image quality is modest.\",\n  \"quality_flags\": [\"low_resolution\", \"grainy\", \"blurred_edges\", \"portrait_crop\"]\n}",
+      "response": {
+        "id": "gen-1780319087-apqfy4f2zidlLXJsAHyo",
+        "object": "chat.completion",
+        "created": 1780319087,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife\",\n  \"short_caption\": \"Two marmots standing upright and wrestling on a road near a green guardrail.\",\n  \"main_objects\": [\"marmot\", \"marmot\", \"guardrail\", \"road\"],\n  \"possible_interpretations\": [\"Two marmots fighting\", \"Marmots playing or wrestling\", \"Marmots greeting each other\"],\n  \"uncertainty_notes\": \"Exact species (marmot vs groundhog vs prairie dog) is uncertain; image quality is modest.\",\n  \"quality_flags\": [\"low_resolution\", \"grainy\", \"blurred_edges\", \"portrait_crop\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows two marmots (or similar rodents) standing upright on what appears to be a road or paved area. They appear to be fighting or wrestling with each other. There's a green metal guardrail/barrier in the background, and white road markings are visible on the asphalt.\n\nThe image is in portrait orientation and appears to be a casual photograph, possibly from a phone. The quality is somewhat grainy/low resolution. There are blurred sides suggesting it might be a cropped or formatted image for social media.\n\nLet me annotate:\n\n- recognizability: 4 - The subjects are clearly recognizable as marmots fighting\n- ambiguity: 1 - Very clear what's happening\n- natural_photo_typicality: 3 - It's a real photo but not a typical professional photo, more of a candid shot\n- visual_clutter: 2 - Relatively simple scene with road, guardrail, and two animals\n- object_centricity: 4 - The two marmots are clearly the central focus\n- scene_centricity: 2 - The setting is secondary to the animals\n- caption_confidence: 4 - Easy to describe\n\nObjects: 2 marmots, road, guardrail\nAnimals: yes\nText: no\nPersons: no\nVehicles: no (though road is visible)\nFood: no\nIndoor: no\nOutdoor: yes\n\nThe dominant content is the animals. The image style is natural photo, though it looks like a casual smartphone capture.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows two marmots (or similar rodents) standing upright on what appears to be a road or paved area. They appear to be fighting or wrestling with each other. There's a green metal guardrail/barrier in the background, and white road markings are visible on the asphalt.\n\nThe image is in portrait orientation and appears to be a casual photograph, possibly from a phone. The quality is somewhat grainy/low resolution. There are blurred sides suggesting it might be a cropped or formatted image for social media.\n\nLet me annotate:\n\n- recognizability: 4 - The subjects are clearly recognizable as marmots fighting\n- ambiguity: 1 - Very clear what's happening\n- natural_photo_typicality: 3 - It's a real photo but not a typical professional photo, more of a candid shot\n- visual_clutter: 2 - Relatively simple scene with road, guardrail, and two animals\n- object_centricity: 4 - The two marmots are clearly the central focus\n- scene_centricity: 2 - The setting is secondary to the animals\n- caption_confidence: 4 - Easy to describe\n\nObjects: 2 marmots, road, guardrail\nAnimals: yes\nText: no\nPersons: no\nVehicles: no (though road is visible)\nFood: no\nIndoor: no\nOutdoor: yes\n\nThe dominant content is the animals. The image style is natural photo, though it looks like a casual smartphone capture.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 666,
+          "total_tokens": 2080,
+          "cost": 0.00119604,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00119604,
+            "upstream_inference_prompt_cost": 0.00039684,
+            "upstream_inference_completions_cost": 0.0007992
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 353,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

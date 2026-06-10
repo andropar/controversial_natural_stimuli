@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_61",
+    "stim_key": "training_objective_61",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 61,
+    "file_index": 61,
+    "image_name": "image_0061.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0061.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"office/workplace\",\n\n  \"short_caption\": \"A smiling woman in a teal sweater works on a laptop at a business center desk.\",\n  \"main_objects\": [\"woman\", \"laptop\", \"office chair\", \"framed painting\", \"granite desk\"],\n  \"possible_interpretations\": [\"hotel business center\", \"small office workspace\", \"internet kiosk area\"],\n  \"uncertainty_notes\": \"Exact location context (hotel vs. office) is ambiguous; on-screen text is only partially legible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319340-FXkVyj7vXvaGi8mJOMBr",
+        "object": "chat.completion",
+        "created": 1780319340,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"office/workplace\",\n\n  \"short_caption\": \"A smiling woman in a teal sweater works on a laptop at a business center desk.\",\n  \"main_objects\": [\"woman\", \"laptop\", \"office chair\", \"framed painting\", \"granite desk\"],\n  \"possible_interpretations\": [\"hotel business center\", \"small office workspace\", \"internet kiosk area\"],\n  \"uncertainty_notes\": \"Exact location context (hotel vs. office) is ambiguous; on-screen text is only partially legible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a woman sitting in an office chair, working at a computer. She's wearing a teal/green sweater and jeans, and is smiling while looking at a laptop monitor. The laptop appears to display a website with a mountain landscape wallpaper. \n\nThe setting appears to be a hotel business center or office area with:\n- Tan/beige walls\n- A framed landscape painting on the wall\n- A granite/marble countertop desk\n- An empty orange/red office chair next to her\n- A computer monitor behind her\n- A small wall-mounted device (possibly a thermostat or control panel) on the right\n- Tiled floor\n\nLet me annotate this:\n\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - single clear interpretation\n- natural_photo_typicality: 4 - looks like a typical photo\n- visual_clutter: 2 - relatively clean scene\n- object_centricity: 2 - there's a person but it's more of a scene\n- scene_centricity: 4 - mostly a place/scene with the person\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 4 (woman, laptop, chair, painting)\n- estimated_distinct_object_categories: 5 (person, computer, chair, picture, desk)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: true (some text on screen)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"person_face\" or \"scene\" - I'd say \"person_face\" since the person is prominent\n- image_style: \"natural_photo\"\n- semantic_domain: \"office/workplace\"\n\nshort_caption: \"A woman in a teal sweater working on a laptop at a business center desk\"\nmain_objects: [\"woman\", \"laptop\", \"office chair\", \"framed painting\", \"desk\"]\npossible_interpretations: [\"business center\", \"hotel work area\", \"small office\"]\nuncertainty_notes: \"exact location unclear (hotel vs. office), screen content partially visible\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a woman sitting in an office chair, working at a computer. She's wearing a teal/green sweater and jeans, and is smiling while looking at a laptop monitor. The laptop appears to display a website with a mountain landscape wallpaper. \n\nThe setting appears to be a hotel business center or office area with:\n- Tan/beige walls\n- A framed landscape painting on the wall\n- A granite/marble countertop desk\n- An empty orange/red office chair next to her\n- A computer monitor behind her\n- A small wall-mounted device (possibly a thermostat or control panel) on the right\n- Tiled floor\n\nLet me annotate this:\n\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - single clear interpretation\n- natural_photo_typicality: 4 - looks like a typical photo\n- visual_clutter: 2 - relatively clean scene\n- object_centricity: 2 - there's a person but it's more of a scene\n- scene_centricity: 4 - mostly a place/scene with the person\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 4 (woman, laptop, chair, painting)\n- estimated_distinct_object_categories: 5 (person, computer, chair, picture, desk)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: true (some text on screen)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"person_face\" or \"scene\" - I'd say \"person_face\" since the person is prominent\n- image_style: \"natural_photo\"\n- semantic_domain: \"office/workplace\"\n\nshort_caption: \"A woman in a teal sweater working on a laptop at a business center desk\"\nmain_objects: [\"woman\", \"laptop\", \"office chair\", \"framed painting\", \"desk\"]\npossible_interpretations: [\"business center\", \"hotel work area\", \"small office\"]\nuncertainty_notes: \"exact location unclear (hotel vs. office), screen content partially visible\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 845,
+          "total_tokens": 2367,
+          "cost": 0.00132036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00132036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.001014
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 557,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

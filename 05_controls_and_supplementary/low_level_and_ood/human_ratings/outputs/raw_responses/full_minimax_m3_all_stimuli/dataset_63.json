@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_63",
+    "stim_key": "dataset_63",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 63,
+    "file_index": 63,
+    "image_name": "image_0063.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0063.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_lighting\",\n  \"short_caption\": \"Red industrial desk lamp and black mesh lamp on white table with a design magazine.\",\n  \"main_objects\": [\"red desk lamp\", \"black table lamp\", \"design magazine\"],\n  \"possible_interpretations\": [\n    \"A showroom display of designer lamps\",\n    \"A home office desk with decorative lighting\",\n    \"Product photography for a lighting catalog\",\n    \"An interior design magazine editorial spread\",\n    \"A bedside table with reading lamps\"\n  ],\n  \"uncertainty_notes\": \"The exact context (showroom, home, or studio) is somewhat ambiguous, but the objects themselves are clearly identifiable.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319036-8rorpLSBIQeZGqZhiyoh",
+        "object": "chat.completion",
+        "created": 1780319036,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_lighting\",\n  \"short_caption\": \"Red industrial desk lamp and black mesh lamp on white table with a design magazine.\",\n  \"main_objects\": [\"red desk lamp\", \"black table lamp\", \"design magazine\"],\n  \"possible_interpretations\": [\n    \"A showroom display of designer lamps\",\n    \"A home office desk with decorative lighting\",\n    \"Product photography for a lighting catalog\",\n    \"An interior design magazine editorial spread\",\n    \"A bedside table with reading lamps\"\n  ],\n  \"uncertainty_notes\": \"The exact context (showroom, home, or studio) is somewhat ambiguous, but the objects themselves are clearly identifiable.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- A red desk lamp (industrial/modern style with metal arm) on the right side, which is lit and prominent\n- A smaller black table lamp with a mesh/patterned shade on the left\n- A magazine or catalog on the table with \"Designer JOURNEY\" and \"LAMP LUMINAIRE LIGHTING DESIGN\" text visible, and \"DIAN\" text on the page\n- The setting appears to be on a white surface/table, likely in a showroom or display setting\n- Warm yellowish lighting throughout\n\nLet me rate each:\n\n- recognizability: 4 - clearly shows lamps and a magazine, easily recognizable\n- ambiguity: 2 - pretty clear what's shown\n- natural_photo_typicality: 4 - looks like a natural photograph\n- visual_clutter: 3 - multiple items but not overly cluttered\n- object_centricity: 4 - the red lamp is clearly the dominant object\n- scene_centricity: 2 - mostly object-focused, but it's a small scene\n- caption_confidence: 4 - easy to describe\n\n- estimated_salient_object_count: 3 (red lamp, black lamp, magazine)\n- estimated_distinct_object_categories: 3 (lamp, lamp, magazine)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (JOURNEY, LAMP, DIAN, etc.)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"object\" (the red lamp dominates)\n- image_style: \"natural_photo\"\n- semantic_domain: \"interior_lighting\" or \"home_decor\"\n\nshort_caption: \"Red industrial desk lamp and black mesh lamp on a white table with a design magazine.\"\n\nmain_objects: [\"red desk lamp\", \"black table lamp\", \"design magazine\"]\n\npossible_interpretations: \n- \"A showroom display of designer lamps\"\n- \"A home office desk with decorative lighting\"\n- \"A product photography setup for lighting design\"\n- \"An interior design magazine spread\"\n- \"A bedside table with reading lamps\"\n\nuncertainty_notes: \"The exact context (showroom, home, or studio) is somewhat ambiguous but the objects are clearly identifiable.\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- A red desk lamp (industrial/modern style with metal arm) on the right side, which is lit and prominent\n- A smaller black table lamp with a mesh/patterned shade on the left\n- A magazine or catalog on the table with \"Designer JOURNEY\" and \"LAMP LUMINAIRE LIGHTING DESIGN\" text visible, and \"DIAN\" text on the page\n- The setting appears to be on a white surface/table, likely in a showroom or display setting\n- Warm yellowish lighting throughout\n\nLet me rate each:\n\n- recognizability: 4 - clearly shows lamps and a magazine, easily recognizable\n- ambiguity: 2 - pretty clear what's shown\n- natural_photo_typicality: 4 - looks like a natural photograph\n- visual_clutter: 3 - multiple items but not overly cluttered\n- object_centricity: 4 - the red lamp is clearly the dominant object\n- scene_centricity: 2 - mostly object-focused, but it's a small scene\n- caption_confidence: 4 - easy to describe\n\n- estimated_salient_object_count: 3 (red lamp, black lamp, magazine)\n- estimated_distinct_object_categories: 3 (lamp, lamp, magazine)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (JOURNEY, LAMP, DIAN, etc.)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"object\" (the red lamp dominates)\n- image_style: \"natural_photo\"\n- semantic_domain: \"interior_lighting\" or \"home_decor\"\n\nshort_caption: \"Red industrial desk lamp and black mesh lamp on a white table with a design magazine.\"\n\nmain_objects: [\"red desk lamp\", \"black table lamp\", \"design magazine\"]\n\npossible_interpretations: \n- \"A showroom display of designer lamps\"\n- \"A home office desk with decorative lighting\"\n- \"A product photography setup for lighting design\"\n- \"An interior design magazine spread\"\n- \"A bedside table with reading lamps\"\n\nuncertainty_notes: \"The exact context (showroom, home, or studio) is somewhat ambiguous but the objects are clearly identifiable.\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1363,
+          "completion_tokens": 904,
+          "total_tokens": 2267,
+          "cost": 0.00134346,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00134346,
+            "upstream_inference_prompt_cost": 0.00025866,
+            "upstream_inference_completions_cost": 0.0010848
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 591,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

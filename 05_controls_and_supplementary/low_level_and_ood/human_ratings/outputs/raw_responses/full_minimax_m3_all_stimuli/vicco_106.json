@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_106",
+    "stim_key": "vicco_106",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 106,
+    "file_index": 105,
+    "image_name": "shared_4rep_vicco_106.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_106.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 6, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"person_face\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"outdoor_leisure\", \"short_caption\": \"Person in dark clothing kneeling on a yellow playground horse rider while looking through binoculars in a park.\", \"main_objects\": [\"person\", \"binoculars\", \"playground horse spring rider\", \"bench\", \"play structure\", \"trees\"], \"possible_interpretations\": [\"Person playing at a park\", \"Person using binoculars to observe something at a distance\", \"Candid photo at a public playground\"], \"uncertainty_notes\": \"Face is largely obscured by hands and binoculars, making facial features non-visible.\", \"quality_flags\": [\"face_occluded\", \"back_view\"]}",
+      "response": {
+        "id": "gen-1780319511-kimmDc749jNOhmtenIJ2",
+        "object": "chat.completion",
+        "created": 1780319511,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 6, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"person_face\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"outdoor_leisure\", \"short_caption\": \"Person in dark clothing kneeling on a yellow playground horse rider while looking through binoculars in a park.\", \"main_objects\": [\"person\", \"binoculars\", \"playground horse spring rider\", \"bench\", \"play structure\", \"trees\"], \"possible_interpretations\": [\"Person playing at a park\", \"Person using binoculars to observe something at a distance\", \"Candid photo at a public playground\"], \"uncertainty_notes\": \"Face is largely obscured by hands and binoculars, making facial features non-visible.\", \"quality_flags\": [\"face_occluded\", \"back_view\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a person kneeling on grass in what appears to be a park. They are wearing dark clothing (black jacket and pants) and white sneakers. They are holding binoculars up to their face/eyes, and they appear to be kneeling on or behind a yellow/orange playground spring rider (a horse-shaped playground toy). In the background, I can see trees, a bench, what looks like a play structure with a red and blue roof, and a sign post.\n\nLet me rate each dimension:\n\n- recognizability: The content is quite recognizable - a person on playground equipment with binoculars. 4\n- ambiguity: Not many interpretations - it's a clear scene. 1\n- natural_photo_typicality: Looks like a typical casual photograph. 4\n- visual_clutter: There are several elements (person, horse toy, bench, trees, play structure) but not too cluttered. 3\n- object_centricity: There's a clear central subject (person on horse toy). 4\n- scene_centricity: It's both a person-centric and scene-centric image. 3\n- caption_confidence: Pretty confident I can describe this. 4\n\nSalient objects: person, horse spring rider, binoculars, bench, play structure, trees\nDistinct categories: 5-6 (person, playground equipment, optical equipment, furniture, building, vegetation)\n\ncontains_person: true\ncontains_face: face is partially obscured by binoculars/hands - hard to tell. Let's say true but obscured\ncontains_animal: false (horse is a toy)\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: face is occluded by hands/binoculars, true\ncontains_unusual_viewpoint: somewhat unusual - person kneeling facing away/down. Not really. false\ncontains_multiple_main_objects: could be argued, person and horse toy are both main. true\n\ndominant_content_type: person_face (though face is mostly hidden, person is the main subject)\nActually, let me reconsider - the person is the main subject, so \"person\" might be better. But the face is mostly hidden. I'll go with \"person_face\" since the person dominates.\n\nimage_style: natural_photo\nsemantic_domain: outdoor_leisure\n\nshort_caption: Person in dark clothing kneeling on a yellow playground horse rider while looking through binoculars in a park.\nmain_objects: person, binoculars, playground horse rider, bench, play structure, trees\npossible_interpretations: \n- Person playing at a park\n- Person using binoculars to observe something\n- Candid photo at a playground\n\nuncertainty_notes: Face is mostly hidden by hands and binoculars\nquality_flags: face_occluded, back_view",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a person kneeling on grass in what appears to be a park. They are wearing dark clothing (black jacket and pants) and white sneakers. They are holding binoculars up to their face/eyes, and they appear to be kneeling on or behind a yellow/orange playground spring rider (a horse-shaped playground toy). In the background, I can see trees, a bench, what looks like a play structure with a red and blue roof, and a sign post.\n\nLet me rate each dimension:\n\n- recognizability: The content is quite recognizable - a person on playground equipment with binoculars. 4\n- ambiguity: Not many interpretations - it's a clear scene. 1\n- natural_photo_typicality: Looks like a typical casual photograph. 4\n- visual_clutter: There are several elements (person, horse toy, bench, trees, play structure) but not too cluttered. 3\n- object_centricity: There's a clear central subject (person on horse toy). 4\n- scene_centricity: It's both a person-centric and scene-centric image. 3\n- caption_confidence: Pretty confident I can describe this. 4\n\nSalient objects: person, horse spring rider, binoculars, bench, play structure, trees\nDistinct categories: 5-6 (person, playground equipment, optical equipment, furniture, building, vegetation)\n\ncontains_person: true\ncontains_face: face is partially obscured by binoculars/hands - hard to tell. Let's say true but obscured\ncontains_animal: false (horse is a toy)\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: face is occluded by hands/binoculars, true\ncontains_unusual_viewpoint: somewhat unusual - person kneeling facing away/down. Not really. false\ncontains_multiple_main_objects: could be argued, person and horse toy are both main. true\n\ndominant_content_type: person_face (though face is mostly hidden, person is the main subject)\nActually, let me reconsider - the person is the main subject, so \"person\" might be better. But the face is mostly hidden. I'll go with \"person_face\" since the person dominates.\n\nimage_style: natural_photo\nsemantic_domain: outdoor_leisure\n\nshort_caption: Person in dark clothing kneeling on a yellow playground horse rider while looking through binoculars in a park.\nmain_objects: person, binoculars, playground horse rider, bench, play structure, trees\npossible_interpretations: \n- Person playing at a park\n- Person using binoculars to observe something\n- Candid photo at a playground\n\nuncertainty_notes: Face is mostly hidden by hands and binoculars\nquality_flags: face_occluded, back_view",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 924,
+          "total_tokens": 2446,
+          "cost": 0.00141516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00141516,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011088
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 700,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

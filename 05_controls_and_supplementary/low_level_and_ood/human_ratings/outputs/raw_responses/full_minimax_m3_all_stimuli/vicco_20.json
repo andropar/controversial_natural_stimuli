@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_20",
+    "stim_key": "vicco_20",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 20,
+    "file_index": 19,
+    "image_name": "shared_4rep_vicco_020.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_020.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 5,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 6,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"transportation_storage\",\n\n  \"short_caption\": \"Open car trunk packed with boxes, tools, bags, and storage containers\",\n  \"main_objects\": [\"cardboard box\", \"blue toolbox\", \"black trash bag\", \"plastic storage bin\", \"red-handled tool\", \"labeled packaging\"],\n  \"possible_interpretations\": [\"moving or transporting items\", \"garage or storage cleanup\", \"hauling belongings\", \"delivering goods\", \"temporary storage\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees sideways; specific tool brands and small item details are hard to identify due to clutter.\",\n  \"quality_flags\": [\"sideways_orientation\", \"high_clutter\", \"partial_occlusion\"]\n}",
+      "response": {
+        "id": "gen-1780319409-mwlLRShTScMvDvSidSdC",
+        "object": "chat.completion",
+        "created": 1780319409,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 5,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 6,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"transportation_storage\",\n\n  \"short_caption\": \"Open car trunk packed with boxes, tools, bags, and storage containers\",\n  \"main_objects\": [\"cardboard box\", \"blue toolbox\", \"black trash bag\", \"plastic storage bin\", \"red-handled tool\", \"labeled packaging\"],\n  \"possible_interpretations\": [\"moving or transporting items\", \"garage or storage cleanup\", \"hauling belongings\", \"delivering goods\", \"temporary storage\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees sideways; specific tool brands and small item details are hard to identify due to clutter.\",\n  \"quality_flags\": [\"sideways_orientation\", \"high_clutter\", \"partial_occlusion\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows the open trunk/hatchback of a car filled with various items. I can see:\n- A large cardboard box (the dominant object)\n- A black garbage bag\n- A blue plastic container/toolbox\n- A red and black tool (possibly a tool with red handles)\n- Some packaging/boxes labeled \"8\" (appears to be Bostitch or similar)\n- A green and white box labeled \"FEINTOOL\"\n- A clear plastic storage container\n- Various other items packed into the trunk\n\nThe image is rotated/sideways. The trunk is filled with what appears to be items being moved or stored.\n\nLet me annotate this:\n\n- recognizability: 4 - clearly a car trunk full of items\n- ambiguity: 2 - pretty clear what's shown, though specific items vary\n- natural_photo_typicality: 4 - looks like a natural photo\n- visual_clutter: 5 - very cluttered with many items\n- object_centricity: 2 - no single central object, it's about the collection\n- scene_centricity: 4 - it's a scene (car trunk interior)\n- caption_confidence: 4 - can describe well\n\nEstimated salient object count: many items, maybe 8-10\nDistinct categories: 6-7 (boxes, tools, bags, containers, etc.)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: true (labels on boxes)\ncontains_vehicle: true (car/trunk)\ncontains_food: false\ncontains_indoor_scene: false (but enclosed space)\ncontains_outdoor_scene: true (some greenery visible at edges)\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (items are partially occluded by other items)\ncontains_unusual_viewpoint: true (rotated/sideways orientation)\ncontains_multiple_main_objects: true\n\ndominant_content_type: \"object\" or \"scene\" - I'll go with \"scene\" since it's about the trunk interior\nimage_style: \"natural_photo\"\nsemantic_domain: \"transportation/storage\" or \"everyday life\"\n\nshort_caption: \"Open car trunk filled with boxes, tools, and storage containers\"\nmain_objects: [\"cardboard box\", \"car trunk\", \"blue toolbox\", \"garbage bag\", \"plastic container\", \"tools\"]\n\nActually, the dominant content is really the packed items in the trunk. Let me think about whether this is object-centric or scene-centric. It's the trunk (a space/scene) filled with objects. I'd say scene-centric since the trunk is the setting.\n\nLet me reconsider dominant_content_type: \"scene\" seems right as it's the interior of a car trunk.\n\npossible_interpretations: \"moving day\", \"storage\", \"transporting items\", \"selling items\", \"garage cleanup\"\n\nquality_flags: [\"sideways orientation\", \"cluttered composition\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows the open trunk/hatchback of a car filled with various items. I can see:\n- A large cardboard box (the dominant object)\n- A black garbage bag\n- A blue plastic container/toolbox\n- A red and black tool (possibly a tool with red handles)\n- Some packaging/boxes labeled \"8\" (appears to be Bostitch or similar)\n- A green and white box labeled \"FEINTOOL\"\n- A clear plastic storage container\n- Various other items packed into the trunk\n\nThe image is rotated/sideways. The trunk is filled with what appears to be items being moved or stored.\n\nLet me annotate this:\n\n- recognizability: 4 - clearly a car trunk full of items\n- ambiguity: 2 - pretty clear what's shown, though specific items vary\n- natural_photo_typicality: 4 - looks like a natural photo\n- visual_clutter: 5 - very cluttered with many items\n- object_centricity: 2 - no single central object, it's about the collection\n- scene_centricity: 4 - it's a scene (car trunk interior)\n- caption_confidence: 4 - can describe well\n\nEstimated salient object count: many items, maybe 8-10\nDistinct categories: 6-7 (boxes, tools, bags, containers, etc.)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: true (labels on boxes)\ncontains_vehicle: true (car/trunk)\ncontains_food: false\ncontains_indoor_scene: false (but enclosed space)\ncontains_outdoor_scene: true (some greenery visible at edges)\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (items are partially occluded by other items)\ncontains_unusual_viewpoint: true (rotated/sideways orientation)\ncontains_multiple_main_objects: true\n\ndominant_content_type: \"object\" or \"scene\" - I'll go with \"scene\" since it's about the trunk interior\nimage_style: \"natural_photo\"\nsemantic_domain: \"transportation/storage\" or \"everyday life\"\n\nshort_caption: \"Open car trunk filled with boxes, tools, and storage containers\"\nmain_objects: [\"cardboard box\", \"car trunk\", \"blue toolbox\", \"garbage bag\", \"plastic container\", \"tools\"]\n\nActually, the dominant content is really the packed items in the trunk. Let me think about whether this is object-centric or scene-centric. It's the trunk (a space/scene) filled with objects. I'd say scene-centric since the trunk is the setting.\n\nLet me reconsider dominant_content_type: \"scene\" seems right as it's the interior of a car trunk.\n\npossible_interpretations: \"moving day\", \"storage\", \"transporting items\", \"selling items\", \"garage cleanup\"\n\nquality_flags: [\"sideways orientation\", \"cluttered composition\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 972,
+          "total_tokens": 2494,
+          "cost": 0.00147276,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00147276,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011664
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 668,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

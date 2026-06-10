@@ -110,7 +110,7 @@ come from scripts `13` and `14` plus the figure scripts above.
 
 ## Layer-Selection Notes
 
-- `paper_layer`: the exact layer from `data/resources/model_list.csv` used in
+- `paper_layer`: the exact layer from `00_stimulus_selection/resources/model_list.csv` used in
   the main paper pipeline.
 - `best_on_shared`: per subject and model, the dense layer with the best mRSA
   on held-out DeepVision shared images.

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_58",
+    "stim_key": "all_models_58",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 58,
+    "file_index": 58,
+    "image_name": "image_0058.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0058.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nursery interior\",\n\n  \"short_caption\": \"Nursery with white crib, pink and gray bedding, white armchair, and patterned wallpaper\",\n  \"main_objects\": [\"crib\", \"armchair\", \"throw pillow\", \"shag rug\", \"wallpaper\", \"bedding\"],\n  \"possible_interpretations\": [\"nursery room interior\", \"crib product photography\", \"interior design showcase\", \"baby room decor\"],\n  \"uncertainty_notes\": \"Small watermark 'STONE LAMB' visible on pillow; chair and crib right side are cropped. Image appears to be styled product/lifestyle photography.\",\n  \"quality_flags\": [\"truncation at frame edges\", \"watermark present\", \"stylized composition\"]\n}",
+      "response": {
+        "id": "gen-1780318793-EpzE2Ppym0VP3CbUdrzW",
+        "object": "chat.completion",
+        "created": 1780318793,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nursery interior\",\n\n  \"short_caption\": \"Nursery with white crib, pink and gray bedding, white armchair, and patterned wallpaper\",\n  \"main_objects\": [\"crib\", \"armchair\", \"throw pillow\", \"shag rug\", \"wallpaper\", \"bedding\"],\n  \"possible_interpretations\": [\"nursery room interior\", \"crib product photography\", \"interior design showcase\", \"baby room decor\"],\n  \"uncertainty_notes\": \"Small watermark 'STONE LAMB' visible on pillow; chair and crib right side are cropped. Image appears to be styled product/lifestyle photography.\",\n  \"quality_flags\": [\"truncation at frame edges\", \"watermark present\", \"stylized composition\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a nursery scene with:\n- A white wooden crib with vertical slats, decorated with pink bows/ribbons\n- Bedding inside the crib with gray and white geometric pattern (quatrefoil/lattice design)\n- A pink and white striped skirt on the crib\n- A white upholstered armchair on the left with a gray and white diamond-patterned throw pillow\n- A fluffy white shag rug on the floor\n- Wallpaper in the background with a pink and white abstract/organic pattern\n- A small watermark visible on the chair pillow that appears to say \"STONE LAMB\"\n\nThis looks like a styled nursery photograph, likely for interior design or product photography purposes.\n\nLet me rate the various aspects:\n\n- recognizability: 5 - Very clearly a nursery scene\n- ambiguity: 1 - Very clear what we're looking at\n- natural_photo_typicality: 4 - Looks like a styled natural photo (product/lifestyle photography)\n- visual_clutter: 2 - Relatively clean composition with clear elements\n- object_centricity: 3 - The crib is central but it's also a scene\n- scene_centricity: 4 - It's a nursery scene/room\n- caption_confidence: 5 - Easy to caption\n\nCounts:\n- salient object count: ~2-3 (crib, chair, pillow, rug)\n- distinct object categories: 3-4 (crib, chair, pillow, rug)\n\nContains:\n- person: false\n- face: false\n- animal: false\n- text: true (small watermark \"STONE LAMB\")\n- vehicle: false\n- food: false\n- indoor scene: true\n- outdoor scene: false\n- artificial/rendered: false (looks like real photo)\n- occlusion/truncation: true (chair is partially cut off, crib right side cut off)\n- unusual viewpoint: false\n- multiple main objects: true (crib and chair)\n\nDominant content: scene (nursery)\nImage style: natural_photo (styled but real)\nSemantic domain: nursery/interior/bedroom\n\nCaption: \"Nursery with white crib, pink and gray bedding, white armchair, and patterned wallpaper\"\n\nPossible interpretations:\n- Nursery room interior\n- Baby crib product display\n- Interior design photo\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a nursery scene with:\n- A white wooden crib with vertical slats, decorated with pink bows/ribbons\n- Bedding inside the crib with gray and white geometric pattern (quatrefoil/lattice design)\n- A pink and white striped skirt on the crib\n- A white upholstered armchair on the left with a gray and white diamond-patterned throw pillow\n- A fluffy white shag rug on the floor\n- Wallpaper in the background with a pink and white abstract/organic pattern\n- A small watermark visible on the chair pillow that appears to say \"STONE LAMB\"\n\nThis looks like a styled nursery photograph, likely for interior design or product photography purposes.\n\nLet me rate the various aspects:\n\n- recognizability: 5 - Very clearly a nursery scene\n- ambiguity: 1 - Very clear what we're looking at\n- natural_photo_typicality: 4 - Looks like a styled natural photo (product/lifestyle photography)\n- visual_clutter: 2 - Relatively clean composition with clear elements\n- object_centricity: 3 - The crib is central but it's also a scene\n- scene_centricity: 4 - It's a nursery scene/room\n- caption_confidence: 5 - Easy to caption\n\nCounts:\n- salient object count: ~2-3 (crib, chair, pillow, rug)\n- distinct object categories: 3-4 (crib, chair, pillow, rug)\n\nContains:\n- person: false\n- face: false\n- animal: false\n- text: true (small watermark \"STONE LAMB\")\n- vehicle: false\n- food: false\n- indoor scene: true\n- outdoor scene: false\n- artificial/rendered: false (looks like real photo)\n- occlusion/truncation: true (chair is partially cut off, crib right side cut off)\n- unusual viewpoint: false\n- multiple main objects: true (crib and chair)\n\nDominant content: scene (nursery)\nImage style: natural_photo (styled but real)\nSemantic domain: nursery/interior/bedroom\n\nCaption: \"Nursery with white crib, pink and gray bedding, white armchair, and patterned wallpaper\"\n\nPossible interpretations:\n- Nursery room interior\n- Baby crib product display\n- Interior design photo\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 860,
+          "total_tokens": 2382,
+          "cost": 0.00146124,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00146124,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.001032
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 541,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_132",
+    "stim_key": "vicco_132",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 132,
+    "file_index": 131,
+    "image_name": "shared_4rep_vicco_132.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_132.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"consumer_electronics_accessory\",\n  \"short_caption\": \"Green tablet or e-reader sleeve with black elastic bands forming an X pattern\",\n  \"main_objects\": [\"green padded sleeve\", \"black elastic bands\"],\n  \"possible_interpretations\": [\"tablet sleeve\", \"e-reader case\", \"notebook cover\", \"small tablet pouch\"],\n  \"uncertainty_notes\": \"Exact device size and intended use are not certain; the interior device is not visible.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319544-eFb8Gn5lQa9TYsuXHLxj",
+        "object": "chat.completion",
+        "created": 1780319544,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"consumer_electronics_accessory\",\n  \"short_caption\": \"Green tablet or e-reader sleeve with black elastic bands forming an X pattern\",\n  \"main_objects\": [\"green padded sleeve\", \"black elastic bands\"],\n  \"possible_interpretations\": [\"tablet sleeve\", \"e-reader case\", \"notebook cover\", \"small tablet pouch\"],\n  \"uncertainty_notes\": \"Exact device size and intended use are not certain; the interior device is not visible.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a green tablet sleeve or e-reader case with black elastic bands. It appears to be a soft, possibly neoprene or leather-like material in bright green with two black elastic straps crossing in an X pattern to hold something (like a tablet or e-reader) inside. It's photographed against a white/light background.\n\nLet me annotate this carefully:\n\n- recognizability: 5 - very clear what's shown\n- ambiguity: 1 - only one obvious interpretation\n- natural_photo_typicality: 3 - it's a photo but staged/product-style on white background\n- visual_clutter: 1 - very clean, minimal\n- object_centricity: 5 - clear central object\n- scene_centricity: 1 - not a scene\n- caption_confidence: 5 - very confident\n\n- salient_object_count: 1\n- distinct_object_categories: 1 (the case/sleeve)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: \"object\"\nimage_style: \"natural_photo\" (it's a product photo but still a natural photo)\nsemantic_domain: \"consumer_electronics_accessory\" or \"accessory\"\n\nshort_caption: \"Green tablet or e-reader sleeve with black elastic straps in an X pattern\"\nmain_objects: [\"green tablet sleeve\", \"black elastic bands\"]\npossible_interpretations: [\"tablet sleeve\", \"e-reader case\", \"notebook cover\", \"small tablet case\"]\nuncertainty_notes: \"Exact device size is unclear; could fit a tablet, e-reader, or small notebook\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a green tablet sleeve or e-reader case with black elastic bands. It appears to be a soft, possibly neoprene or leather-like material in bright green with two black elastic straps crossing in an X pattern to hold something (like a tablet or e-reader) inside. It's photographed against a white/light background.\n\nLet me annotate this carefully:\n\n- recognizability: 5 - very clear what's shown\n- ambiguity: 1 - only one obvious interpretation\n- natural_photo_typicality: 3 - it's a photo but staged/product-style on white background\n- visual_clutter: 1 - very clean, minimal\n- object_centricity: 5 - clear central object\n- scene_centricity: 1 - not a scene\n- caption_confidence: 5 - very confident\n\n- salient_object_count: 1\n- distinct_object_categories: 1 (the case/sleeve)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: \"object\"\nimage_style: \"natural_photo\" (it's a product photo but still a natural photo)\nsemantic_domain: \"consumer_electronics_accessory\" or \"accessory\"\n\nshort_caption: \"Green tablet or e-reader sleeve with black elastic straps in an X pattern\"\nmain_objects: [\"green tablet sleeve\", \"black elastic bands\"]\npossible_interpretations: [\"tablet sleeve\", \"e-reader case\", \"notebook cover\", \"small tablet case\"]\nuncertainty_notes: \"Exact device size is unclear; could fit a tablet, e-reader, or small notebook\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 737,
+          "total_tokens": 2259,
+          "cost": 0.00119076,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00119076,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008844
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 455,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

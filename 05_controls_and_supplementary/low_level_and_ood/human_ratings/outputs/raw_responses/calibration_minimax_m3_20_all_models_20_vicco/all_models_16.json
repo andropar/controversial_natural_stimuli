@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_16",
+    "stim_key": "all_models_16",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 16,
+    "file_index": 16,
+    "image_name": "image_0016.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0016.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion/footwear\",\n\n  \"short_caption\": \"Close-up of a high-top sneaker with a cityscape print, worn by a person indoors\",\n  \"main_objects\": [\"high-top sneaker\", \"cityscape design\", \"ankle in dark pants\"],\n  \"possible_interpretations\": [\"a Converse Chuck Taylor sneaker with a custom cityscape print\", \"a fashion product shot of a sneaker\", \"a casual personal photo of footwear\"],\n  \"uncertainty_notes\": \"Image is black and white; exact brand and pattern details partially obscured by close framing and angle.\",\n  \"quality_flags\": [\"black_and_white\", \"close_up\", \"shallow_depth_of_field\", \"partial_object_visible\"]\n}",
+      "response": {
+        "id": "gen-1780318166-dFPTavhSOdaOHdpJBlJY",
+        "object": "chat.completion",
+        "created": 1780318166,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion/footwear\",\n\n  \"short_caption\": \"Close-up of a high-top sneaker with a cityscape print, worn by a person indoors\",\n  \"main_objects\": [\"high-top sneaker\", \"cityscape design\", \"ankle in dark pants\"],\n  \"possible_interpretations\": [\"a Converse Chuck Taylor sneaker with a custom cityscape print\", \"a fashion product shot of a sneaker\", \"a casual personal photo of footwear\"],\n  \"uncertainty_notes\": \"Image is black and white; exact brand and pattern details partially obscured by close framing and angle.\",\n  \"quality_flags\": [\"black_and_white\", \"close_up\", \"shallow_depth_of_field\", \"partial_object_visible\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a close-up of a high-top sneaker (looks like a Converse Chuck Taylor) with a cityscape/skyscraper design printed on the side. The image is in black and white. The shoe is being worn (a leg/ankle in dark pants is visible at the top). The background appears to be an indoor setting with what looks like a wall with some decoration (possibly a star shape) and a small object on a surface to the right.\n\nLet me analyze:\n- Main subject: A sneaker with city skyline design\n- It's a close-up, focused on the shoe\n- Black and white photo, appears to be natural photography\n- Indoor setting (wall, possibly furniture visible)\n- Contains a person (leg visible) but no face\n- Contains text? No clear text visible\n- The shoe is the dominant object\n\nLet me rate:\n- recognizability: 4 (clearly a sneaker/shoe)\n- ambiguity: 2 (pretty clear what's shown)\n- natural_photo_typicality: 4 (looks like a natural photo, though B&W)\n- visual_clutter: 2 (mostly focused on the shoe, some background)\n- object_centricity: 4 (shoe dominates)\n- scene_centricity: 2 (it's an indoor scene but the shoe dominates)\n- caption_confidence: 4 (clear what's shown)\n\nEstimated objects: 1 main (shoe), maybe 2-3 distinct categories\n- contains_person: true (leg visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (shoe is cut off)\n- contains_unusual_viewpoint: true (close-up, low angle)\n- contains_multiple_main_objects: false\n\ndominant_content_type: object\nimage_style: edited_photo (it's B&W but appears to be a natural photo, could be natural_photo with B&W treatment)\nsemantic_domain: fashion/footwear\n\nActually for image_style, the B&W treatment could be considered an edit. I'll go with edited_photo.\n\nLet me reconsider natural_photo_typicality - a B&W photo of a shoe is somewhat typical for artistic photography. I'll say 4.\n\nShort caption: \"Close-up of a high-top sneaker with cityscape design worn indoors\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a close-up of a high-top sneaker (looks like a Converse Chuck Taylor) with a cityscape/skyscraper design printed on the side. The image is in black and white. The shoe is being worn (a leg/ankle in dark pants is visible at the top). The background appears to be an indoor setting with what looks like a wall with some decoration (possibly a star shape) and a small object on a surface to the right.\n\nLet me analyze:\n- Main subject: A sneaker with city skyline design\n- It's a close-up, focused on the shoe\n- Black and white photo, appears to be natural photography\n- Indoor setting (wall, possibly furniture visible)\n- Contains a person (leg visible) but no face\n- Contains text? No clear text visible\n- The shoe is the dominant object\n\nLet me rate:\n- recognizability: 4 (clearly a sneaker/shoe)\n- ambiguity: 2 (pretty clear what's shown)\n- natural_photo_typicality: 4 (looks like a natural photo, though B&W)\n- visual_clutter: 2 (mostly focused on the shoe, some background)\n- object_centricity: 4 (shoe dominates)\n- scene_centricity: 2 (it's an indoor scene but the shoe dominates)\n- caption_confidence: 4 (clear what's shown)\n\nEstimated objects: 1 main (shoe), maybe 2-3 distinct categories\n- contains_person: true (leg visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (shoe is cut off)\n- contains_unusual_viewpoint: true (close-up, low angle)\n- contains_multiple_main_objects: false\n\ndominant_content_type: object\nimage_style: edited_photo (it's B&W but appears to be a natural photo, could be natural_photo with B&W treatment)\nsemantic_domain: fashion/footwear\n\nActually for image_style, the B&W treatment could be considered an edit. I'll go with edited_photo.\n\nLet me reconsider natural_photo_typicality - a B&W photo of a shoe is somewhat typical for artistic photography. I'll say 4.\n\nShort caption: \"Close-up of a high-top sneaker with cityscape design worn indoors\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 904,
+          "total_tokens": 2426,
+          "cost": 0.00139116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139116,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010848
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 563,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

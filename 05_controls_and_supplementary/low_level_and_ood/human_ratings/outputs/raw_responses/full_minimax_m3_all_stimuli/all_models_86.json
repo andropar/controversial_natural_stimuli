@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_86",
+    "stim_key": "all_models_86",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 86,
+    "file_index": 86,
+    "image_name": "image_0086.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0086.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"clothing_textile\",\n  \"short_caption\": \"Blue checkered saree with red and gold border hanging on a golden wire hanger against a concrete wall.\",\n  \"main_objects\": [\"saree\", \"hanger\", \"concrete wall\"],\n  \"possible_interpretations\": [\"traditional Indian saree on display\", \"product catalog photo of a saree\", \"saree hung for photography or sale\"],\n  \"uncertainty_notes\": \"The Tuf watermark suggests this is a product or catalog photograph. Exact fabric type and saree style (e.g., region of origin) are not certain from the image alone.\",\n  \"quality_flags\": [\"watermark\"]\n}",
+      "response": {
+        "id": "gen-1780318829-ESgmZodtp6yk7jby88R0",
+        "object": "chat.completion",
+        "created": 1780318829,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"clothing_textile\",\n  \"short_caption\": \"Blue checkered saree with red and gold border hanging on a golden wire hanger against a concrete wall.\",\n  \"main_objects\": [\"saree\", \"hanger\", \"concrete wall\"],\n  \"possible_interpretations\": [\"traditional Indian saree on display\", \"product catalog photo of a saree\", \"saree hung for photography or sale\"],\n  \"uncertainty_notes\": \"The Tuf watermark suggests this is a product or catalog photograph. Exact fabric type and saree style (e.g., region of origin) are not certain from the image alone.\",\n  \"quality_flags\": [\"watermark\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a folded piece of fabric, appearing to be a traditional Indian saree, hanging from a golden wire hanger against a plain concrete/cement wall. The saree has a blue checkered/plaid pattern on the main body with a red and gold decorative border (pallu). There's a watermark/logo \"Tuf\" in the bottom right corner.\n\nLet me provide annotations based on what I can see:\n\n- Recognizability: The main content is clearly a saree on a hanger. Very recognizable. 5\n- Ambiguity: Low ambiguity - it's clearly a saree/fabric. 1\n- Natural photo typicality: Looks like a natural product photograph. 4\n- Visual clutter: Fairly simple composition. 2\n- Object centricity: The saree is the central object. 5\n- Scene centricity: Not really a scene, it's an object shot. 1\n- Caption confidence: High confidence in describing it. 5\n\n- Salient objects: 1 main object (saree), hanger is secondary\n- Distinct object categories: 2 (saree/fabric, hanger)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (Tuf watermark)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (wall background, indoor setting)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (the saree is folded but not really truncated)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: object\n- image_style: natural_photo (though it looks like a product photo, it's still a natural photo)\n- semantic_domain: clothing/textile\n\nShort caption: \"Blue checkered saree with red and gold border hanging on a golden hanger against a concrete wall.\"\n\nMain objects: saree, hanger, wall\n\nPossible interpretations: It's clearly a saree. Could be product photo or display.\n\nUncertainty notes: The watermark suggests this is a product/catalog image.\n\nQuality flags: watermark",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a folded piece of fabric, appearing to be a traditional Indian saree, hanging from a golden wire hanger against a plain concrete/cement wall. The saree has a blue checkered/plaid pattern on the main body with a red and gold decorative border (pallu). There's a watermark/logo \"Tuf\" in the bottom right corner.\n\nLet me provide annotations based on what I can see:\n\n- Recognizability: The main content is clearly a saree on a hanger. Very recognizable. 5\n- Ambiguity: Low ambiguity - it's clearly a saree/fabric. 1\n- Natural photo typicality: Looks like a natural product photograph. 4\n- Visual clutter: Fairly simple composition. 2\n- Object centricity: The saree is the central object. 5\n- Scene centricity: Not really a scene, it's an object shot. 1\n- Caption confidence: High confidence in describing it. 5\n\n- Salient objects: 1 main object (saree), hanger is secondary\n- Distinct object categories: 2 (saree/fabric, hanger)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (Tuf watermark)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (wall background, indoor setting)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false (the saree is folded but not really truncated)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: object\n- image_style: natural_photo (though it looks like a product photo, it's still a natural photo)\n- semantic_domain: clothing/textile\n\nShort caption: \"Blue checkered saree with red and gold border hanging on a golden hanger against a concrete wall.\"\n\nMain objects: saree, hanger, wall\n\nPossible interpretations: It's clearly a saree. Could be product photo or display.\n\nUncertainty notes: The watermark suggests this is a product/catalog image.\n\nQuality flags: watermark",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 828,
+          "total_tokens": 2350,
+          "cost": 0.00129996,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129996,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009936
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 516,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

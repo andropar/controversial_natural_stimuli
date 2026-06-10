@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_254",
+    "stim_key": "vicco_254",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 254,
+    "file_index": 253,
+    "image_name": "shared_4rep_vicco_254.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_254.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture_outdoor\",\n  \"short_caption\": \"Stone church or chapel exterior with pink flowers in a landscaped garden\",\n  \"main_objects\": [\"stone building\", \"stone steps\", \"pink flowers\", \"hedges\", \"trees\"],\n  \"possible_interpretations\": [\"Church or chapel exterior with garden\", \"Historic stone building in a landscaped setting\", \"Old European village chapel scene\", \"Stone heritage building with flower beds\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; exact function of the building (church vs. chapel vs. other stone structure) not fully certain from the visible exterior features alone.\",\n  \"quality_flags\": [\"rotated_orientation\"]\n}",
+      "response": {
+        "id": "gen-1780319679-xXrg6PC57yWVHj2qnntU",
+        "object": "chat.completion",
+        "created": 1780319679,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture_outdoor\",\n  \"short_caption\": \"Stone church or chapel exterior with pink flowers in a landscaped garden\",\n  \"main_objects\": [\"stone building\", \"stone steps\", \"pink flowers\", \"hedges\", \"trees\"],\n  \"possible_interpretations\": [\"Church or chapel exterior with garden\", \"Historic stone building in a landscaped setting\", \"Old European village chapel scene\", \"Stone heritage building with flower beds\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; exact function of the building (church vs. chapel vs. other stone structure) not fully certain from the visible exterior features alone.\",\n  \"quality_flags\": [\"rotated_orientation\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. The image appears to be rotated 90 degrees (sideways). It shows a stone building, likely a church or chapel, with a pointed gable, stone walls, and a Gothic-style window. There are stone steps, greenery, hedges, pink/purple flowers, and trees in the background. The sky is cloudy.\n\nLet me annotate according to the schema:\n\n- recognizability: 4 - clearly a stone building with garden\n- ambiguity: 2 - pretty clear what's depicted\n- natural_photo_typicality: 4 - looks like a typical photograph\n- visual_clutter: 3 - multiple elements but not overwhelming\n- object_centricity: 3 - building is prominent but scene-like\n- scene_centricity: 4 - it's more of a place/scene with building and garden\n- caption_confidence: 4\n\n- estimated_salient_object_count: 3 (building, flowers, steps)\n- estimated_distinct_object_categories: 4-5 (building, flowers, steps, trees, sky)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (rotated orientation)\n- contains_multiple_main_objects: true (building and garden)\n\n- dominant_content_type: \"scene\" or \"object\" - the building is central but it's part of a scene. I'll go with \"scene\" since the garden and overall setting is prominent.\n- image_style: \"natural_photo\"\n- semantic_domain: \"architecture\" or \"outdoor scene\"\n\n- short_caption: \"Stone church or chapel with pink flowers in a landscaped garden\"\n- main_objects: [\"stone building\", \"pink flowers\", \"stone steps\", \"hedges\", \"trees\"]\n- possible_interpretations: [\"Church/chapel exterior\", \"Historic stone building with garden\", \"Landscaped garden with stone structure\", \"Old European village scene\"]\n- uncertainty_notes: \"Image is rotated 90 degrees; exact building type (church vs. other stone structure) not fully certain from exterior view\"\n- quality_flags: [\"rotated_orientation\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. The image appears to be rotated 90 degrees (sideways). It shows a stone building, likely a church or chapel, with a pointed gable, stone walls, and a Gothic-style window. There are stone steps, greenery, hedges, pink/purple flowers, and trees in the background. The sky is cloudy.\n\nLet me annotate according to the schema:\n\n- recognizability: 4 - clearly a stone building with garden\n- ambiguity: 2 - pretty clear what's depicted\n- natural_photo_typicality: 4 - looks like a typical photograph\n- visual_clutter: 3 - multiple elements but not overwhelming\n- object_centricity: 3 - building is prominent but scene-like\n- scene_centricity: 4 - it's more of a place/scene with building and garden\n- caption_confidence: 4\n\n- estimated_salient_object_count: 3 (building, flowers, steps)\n- estimated_distinct_object_categories: 4-5 (building, flowers, steps, trees, sky)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (rotated orientation)\n- contains_multiple_main_objects: true (building and garden)\n\n- dominant_content_type: \"scene\" or \"object\" - the building is central but it's part of a scene. I'll go with \"scene\" since the garden and overall setting is prominent.\n- image_style: \"natural_photo\"\n- semantic_domain: \"architecture\" or \"outdoor scene\"\n\n- short_caption: \"Stone church or chapel with pink flowers in a landscaped garden\"\n- main_objects: [\"stone building\", \"pink flowers\", \"stone steps\", \"hedges\", \"trees\"]\n- possible_interpretations: [\"Church/chapel exterior\", \"Historic stone building with garden\", \"Landscaped garden with stone structure\", \"Old European village scene\"]\n- uncertainty_notes: \"Image is rotated 90 degrees; exact building type (church vs. other stone structure) not fully certain from exterior view\"\n- quality_flags: [\"rotated_orientation\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 866,
+          "total_tokens": 2388,
+          "cost": 0.00134556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00134556,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010392
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 550,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

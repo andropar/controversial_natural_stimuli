@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_96",
+    "stim_key": "sota_96",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 96,
+    "file_index": 96,
+    "image_name": "image_0096.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0096.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"beauty/portrait\",\n  \"short_caption\": \"Close-up of long wavy balayage hair being styled by a hand, likely in a salon.\",\n  \"main_objects\": [\"long wavy hair\", \"hand\", \"balayage highlights\"],\n  \"possible_interpretations\": [\"salon hair styling photo\", \"hairstyle portfolio shot\", \"before/after hair color showcase\", \"hair product advertisement\", \"personal hairstyle selfie\"],\n  \"uncertainty_notes\": \"Background is blurred; exact setting (salon vs. studio) is uncertain. Face is not visible, only hair and a hand.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319196-VSswoXGOqm0L8OY0ANPp",
+        "object": "chat.completion",
+        "created": 1780319196,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"beauty/portrait\",\n  \"short_caption\": \"Close-up of long wavy balayage hair being styled by a hand, likely in a salon.\",\n  \"main_objects\": [\"long wavy hair\", \"hand\", \"balayage highlights\"],\n  \"possible_interpretations\": [\"salon hair styling photo\", \"hairstyle portfolio shot\", \"before/after hair color showcase\", \"hair product advertisement\", \"personal hairstyle selfie\"],\n  \"uncertainty_notes\": \"Background is blurred; exact setting (salon vs. studio) is uncertain. Face is not visible, only hair and a hand.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a close-up view of long, wavy hair with a balayage coloring technique - dark brown/black roots transitioning to lighter brown/blonde highlights at the ends. A hand (appears to be a stylist's hand) is visible touching/arranging the hair on the right side. The background appears to be slightly blurred, possibly a salon setting.\n\nLet me annotate this systematically:\n\n- Recognizability: High - clearly shows hair, likely in a salon context\n- Ambiguity: Low - pretty clear what it is\n- Natural photo typicality: High - looks like a natural photo\n- Visual clutter: Low to medium - mostly the hair dominates\n- Object centricity: High - the hair is the main subject\n- Scene centricity: Low - it's a closeup, not really a scene\n- Caption confidence: High\n\nMain objects: hair, hand\nContains person: yes (partially - hand visible, hair implies person)\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: possibly (salon-like background)\nContains outdoor scene: no\nContains artificial/rendered: no\nContains occlusion: no\nContains unusual viewpoint: somewhat close-up but not unusual\nContains multiple main objects: hair and hand, but hair is dominant\n\nDominant content: closeup_detail (hair closeup)\nImage style: natural_photo\nSemantic domain: beauty/hair/portrait",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a close-up view of long, wavy hair with a balayage coloring technique - dark brown/black roots transitioning to lighter brown/blonde highlights at the ends. A hand (appears to be a stylist's hand) is visible touching/arranging the hair on the right side. The background appears to be slightly blurred, possibly a salon setting.\n\nLet me annotate this systematically:\n\n- Recognizability: High - clearly shows hair, likely in a salon context\n- Ambiguity: Low - pretty clear what it is\n- Natural photo typicality: High - looks like a natural photo\n- Visual clutter: Low to medium - mostly the hair dominates\n- Object centricity: High - the hair is the main subject\n- Scene centricity: Low - it's a closeup, not really a scene\n- Caption confidence: High\n\nMain objects: hair, hand\nContains person: yes (partially - hand visible, hair implies person)\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: possibly (salon-like background)\nContains outdoor scene: no\nContains artificial/rendered: no\nContains occlusion: no\nContains unusual viewpoint: somewhat close-up but not unusual\nContains multiple main objects: hair and hand, but hair is dominant\n\nDominant content: closeup_detail (hair closeup)\nImage style: natural_photo\nSemantic domain: beauty/hair/portrait",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 669,
+          "total_tokens": 1983,
+          "cost": 0.00104676,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00104676,
+            "upstream_inference_prompt_cost": 0.00024396,
+            "upstream_inference_completions_cost": 0.0008028
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 367,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

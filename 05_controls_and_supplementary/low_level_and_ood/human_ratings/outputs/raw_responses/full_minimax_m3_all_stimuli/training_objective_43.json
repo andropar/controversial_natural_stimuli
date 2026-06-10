@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_43",
+    "stim_key": "training_objective_43",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 43,
+    "file_index": 43,
+    "image_name": "image_0043.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0043.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wedding\",\n  \"short_caption\": \"Couple embracing inside a mossy cave, framed by blurred foreground rocks\",\n  \"main_objects\": [\"bride in white dress\", \"man in light shirt\", \"moss-covered rocks\"],\n  \"possible_interpretations\": [\"wedding or elopement portrait\", \"engagement photo session\", \"romantic couple portrait\"],\n  \"uncertainty_notes\": \"Extreme foreground bokeh makes the main subjects small in frame and somewhat soft; relationship/context of the couple is inferred from attire and pose\",\n  \"quality_flags\": [\"shallow_depth_of_field\", \"heavy_foreground_bokeh\", \"professional_composition\"]\n}",
+      "response": {
+        "id": "gen-1780319317-pYewltac9OStH1AdgezH",
+        "object": "chat.completion",
+        "created": 1780319317,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wedding\",\n  \"short_caption\": \"Couple embracing inside a mossy cave, framed by blurred foreground rocks\",\n  \"main_objects\": [\"bride in white dress\", \"man in light shirt\", \"moss-covered rocks\"],\n  \"possible_interpretations\": [\"wedding or elopement portrait\", \"engagement photo session\", \"romantic couple portrait\"],\n  \"uncertainty_notes\": \"Extreme foreground bokeh makes the main subjects small in frame and somewhat soft; relationship/context of the couple is inferred from attire and pose\",\n  \"quality_flags\": [\"shallow_depth_of_field\", \"heavy_foreground_bokeh\", \"professional_composition\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a wedding/elopement scene. There's a couple - a woman in a white/cream dress and a man in a light shirt and dark pants - standing in what appears to be a rocky, moss-covered cave or alcove. The foreground is dominated by very blurred, out-of-focus rocks/moss textures, while the couple in the background is in sharper focus. The composition uses the blurred foreground as a framing element.\n\nLet me annotate this:\n\n- recognizability: 4 - The content is recognizable as a couple in a cave-like setting, but the heavy foreground blur makes it less immediately clear\n- ambiguity: 2 - Pretty clear what's happening, though the blur adds some ambiguity\n- natural_photo_typicality: 4 - Looks like a professional natural photo, though with artistic bokeh\n- visual_clutter: 3 - Lots of texture in foreground and background, but the blur reduces effective clutter\n- object_centricity: 2 - The couple is the focus but small in frame, with much foreground blur\n- scene_centricity: 4 - This is more of a scene/place (cave) with people in it\n- caption_confidence: 4 - Can caption confidently\n\n- estimated_salient_object_count: 2 (the couple, though the rock textures are very prominent)\n- estimated_distinct_object_categories: 3 (people, rocks, plants/moss)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (unusual perspective with extreme foreground blur)\n- contains_multiple_main_objects: true (the couple)\n\n- dominant_content_type: \"scene\" - it's more of a scene with people\n- image_style: \"natural_photo\" - edited/professional but still natural photo\n- semantic_domain: \"wedding\" or \"portrait\"\n\n- short_caption: \"Couple embracing in a mossy cave, framed by blurred foreground rocks\"\n- main_objects: [\"woman in white dress\", \"man in shirt\", \"mossy rocks\"]\n- possible_interpretations: [\"wedding portrait\", \"elopement photo\", \"couple's engagement session\"]\n- uncertainty_notes: \"Heavy foreground blur reduces clarity of main subjects\"\n- quality_flags: [\"shallow_depth_of_field\", \"bokeh_foreground\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a wedding/elopement scene. There's a couple - a woman in a white/cream dress and a man in a light shirt and dark pants - standing in what appears to be a rocky, moss-covered cave or alcove. The foreground is dominated by very blurred, out-of-focus rocks/moss textures, while the couple in the background is in sharper focus. The composition uses the blurred foreground as a framing element.\n\nLet me annotate this:\n\n- recognizability: 4 - The content is recognizable as a couple in a cave-like setting, but the heavy foreground blur makes it less immediately clear\n- ambiguity: 2 - Pretty clear what's happening, though the blur adds some ambiguity\n- natural_photo_typicality: 4 - Looks like a professional natural photo, though with artistic bokeh\n- visual_clutter: 3 - Lots of texture in foreground and background, but the blur reduces effective clutter\n- object_centricity: 2 - The couple is the focus but small in frame, with much foreground blur\n- scene_centricity: 4 - This is more of a scene/place (cave) with people in it\n- caption_confidence: 4 - Can caption confidently\n\n- estimated_salient_object_count: 2 (the couple, though the rock textures are very prominent)\n- estimated_distinct_object_categories: 3 (people, rocks, plants/moss)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (unusual perspective with extreme foreground blur)\n- contains_multiple_main_objects: true (the couple)\n\n- dominant_content_type: \"scene\" - it's more of a scene with people\n- image_style: \"natural_photo\" - edited/professional but still natural photo\n- semantic_domain: \"wedding\" or \"portrait\"\n\n- short_caption: \"Couple embracing in a mossy cave, framed by blurred foreground rocks\"\n- main_objects: [\"woman in white dress\", \"man in shirt\", \"mossy rocks\"]\n- possible_interpretations: [\"wedding portrait\", \"elopement photo\", \"couple's engagement session\"]\n- uncertainty_notes: \"Heavy foreground blur reduces clarity of main subjects\"\n- quality_flags: [\"shallow_depth_of_field\", \"bokeh_foreground\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 911,
+          "total_tokens": 2433,
+          "cost": 0.00118788,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1508,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00118788,
+            "upstream_inference_prompt_cost": 9.468e-05,
+            "upstream_inference_completions_cost": 0.0010932
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 610,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

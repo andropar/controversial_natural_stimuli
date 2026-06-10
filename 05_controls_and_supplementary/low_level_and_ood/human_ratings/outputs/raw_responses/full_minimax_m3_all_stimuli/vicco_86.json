@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_86",
+    "stim_key": "vicco_86",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 86,
+    "file_index": 85,
+    "image_name": "shared_4rep_vicco_086.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_086.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\":4,\"ambiguity\":2,\"natural_photo_typicality\":2,\"visual_clutter\":4,\"object_centricity\":3,\"scene_centricity\":2,\"caption_confidence\":4,\"estimated_salient_object_count\":3,\"estimated_distinct_object_categories\":4,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":true,\"contains_vehicle\":true,\"contains_food\":false,\"contains_indoor_scene\":false,\"contains_outdoor_scene\":true,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":false,\"contains_multiple_main_objects\":false,\"dominant_content_type\":\"object\",\"image_style\":\"edited_photo\",\"semantic_domain\":\"industrial_machinery\",\"short_caption\":\"Close-up of heavy industrial machinery with hydraulic hoses and a KB20 label.\",\"main_objects\":[\"hydraulic hoses\",\"diamond-plate metal panel\",\"industrial machine\",\"drill rig components\"],\"possible_interpretations\":[\"drilling rig\",\"construction equipment\",\"mining machine\",\"excavator component\",\"rail maintenance vehicle\"],\"uncertainty_notes\":\"Heavy HDR-like processing alters tones; exact machine type unclear but clearly heavy industrial equipment with hoses, metal panels, and 'KB20' label.\",\"quality_flags\":[\"hdr_or_heavy_post_processing\",\"dark_background\",\"truncated_view\"]}",
+      "response": {
+        "id": "gen-1780319489-m2SZamVEHJWkrJk7rMBz",
+        "object": "chat.completion",
+        "created": 1780319489,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\":4,\"ambiguity\":2,\"natural_photo_typicality\":2,\"visual_clutter\":4,\"object_centricity\":3,\"scene_centricity\":2,\"caption_confidence\":4,\"estimated_salient_object_count\":3,\"estimated_distinct_object_categories\":4,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":true,\"contains_vehicle\":true,\"contains_food\":false,\"contains_indoor_scene\":false,\"contains_outdoor_scene\":true,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":false,\"contains_multiple_main_objects\":false,\"dominant_content_type\":\"object\",\"image_style\":\"edited_photo\",\"semantic_domain\":\"industrial_machinery\",\"short_caption\":\"Close-up of heavy industrial machinery with hydraulic hoses and a KB20 label.\",\"main_objects\":[\"hydraulic hoses\",\"diamond-plate metal panel\",\"industrial machine\",\"drill rig components\"],\"possible_interpretations\":[\"drilling rig\",\"construction equipment\",\"mining machine\",\"excavator component\",\"rail maintenance vehicle\"],\"uncertainty_notes\":\"Heavy HDR-like processing alters tones; exact machine type unclear but clearly heavy industrial equipment with hoses, metal panels, and 'KB20' label.\",\"quality_flags\":[\"hdr_or_heavy_post_processing\",\"dark_background\",\"truncated_view\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be a piece of industrial/heavy machinery - likely a drilling rig, excavator, or similar equipment. I can see:\n- Hydraulic hoses and cables\n- Metal diamond-plate panels\n- A label \"KB20\" visible on the equipment\n- Blue painted metal components\n- The background shows dark trees and sky (outdoor setting, possibly dusk or with HDR processing)\n- Lots of mechanical parts, pipes, hoses\n\nThe image has a somewhat HDR-processed or edited look - very high contrast with deep shadows and bright highlights on the metal surfaces.\n\nLet me rate each aspect:\n\n- recognizability: 4 - The machinery is clearly visible but the specific type might be hard to identify precisely\n- ambiguity: 2 - It's clearly heavy industrial equipment\n- natural_photo_typicality: 2 - It looks heavily edited/HDR processed\n- visual_clutter: 4 - Many competing elements (hoses, panels, mechanical parts)\n- object_centricity: 3 - The machine is central but the frame is filled with details\n- scene_centricity: 2 - It's more about the object than the scene\n- caption_confidence: 4 - Can describe it as industrial equipment\n\n- contains_text: true (KB20 label)\n- contains_vehicle: true (likely a vehicle/equipment)\n- contains_outdoor_scene: true\n- contains_occlusion_or_truncation: true (the machine extends beyond frame)\n- contains_unusual_viewpoint: maybe - it's a close-up of machinery\n\ndominant_content_type: object\nimage_style: edited_photo (HDR-like processing)\nsemantic_domain: industrial/machinery\n\nshort_caption: Close-up of heavy industrial machinery with hydraulic hoses and KB20 label\n\nmain_objects: drilling rig, hydraulic hoses, metal panel, machinery\n\nuncertainty_notes: Heavy HDR processing makes it hard to assess typicality; specific machine type unclear",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be a piece of industrial/heavy machinery - likely a drilling rig, excavator, or similar equipment. I can see:\n- Hydraulic hoses and cables\n- Metal diamond-plate panels\n- A label \"KB20\" visible on the equipment\n- Blue painted metal components\n- The background shows dark trees and sky (outdoor setting, possibly dusk or with HDR processing)\n- Lots of mechanical parts, pipes, hoses\n\nThe image has a somewhat HDR-processed or edited look - very high contrast with deep shadows and bright highlights on the metal surfaces.\n\nLet me rate each aspect:\n\n- recognizability: 4 - The machinery is clearly visible but the specific type might be hard to identify precisely\n- ambiguity: 2 - It's clearly heavy industrial equipment\n- natural_photo_typicality: 2 - It looks heavily edited/HDR processed\n- visual_clutter: 4 - Many competing elements (hoses, panels, mechanical parts)\n- object_centricity: 3 - The machine is central but the frame is filled with details\n- scene_centricity: 2 - It's more about the object than the scene\n- caption_confidence: 4 - Can describe it as industrial equipment\n\n- contains_text: true (KB20 label)\n- contains_vehicle: true (likely a vehicle/equipment)\n- contains_outdoor_scene: true\n- contains_occlusion_or_truncation: true (the machine extends beyond frame)\n- contains_unusual_viewpoint: maybe - it's a close-up of machinery\n\ndominant_content_type: object\nimage_style: edited_photo (HDR-like processing)\nsemantic_domain: industrial/machinery\n\nshort_caption: Close-up of heavy industrial machinery with hydraulic hoses and KB20 label\n\nmain_objects: drilling rig, hydraulic hoses, metal panel, machinery\n\nuncertainty_notes: Heavy HDR processing makes it hard to assess typicality; specific machine type unclear",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 687,
+          "total_tokens": 2209,
+          "cost": 0.00113076,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00113076,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008244
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 478,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

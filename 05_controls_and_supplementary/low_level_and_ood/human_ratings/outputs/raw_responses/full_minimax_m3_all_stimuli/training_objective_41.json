@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_41",
+    "stim_key": "training_objective_41",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 41,
+    "file_index": 41,
+    "image_name": "image_0041.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0041.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\":5,\"ambiguity\":1,\"natural_photo_typicality\":4,\"visual_clutter\":3,\"object_centricity\":4,\"scene_centricity\":3,\"caption_confidence\":5,\"estimated_salient_object_count\":3,\"estimated_distinct_object_categories\":3,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":true,\"contains_text\":true,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":false,\"contains_outdoor_scene\":true,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":false,\"contains_unusual_viewpoint\":false,\"contains_multiple_main_objects\":true,\"dominant_content_type\":\"animal\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"nature/wildlife\",\"short_caption\":\"Two baby birds with open beaks sitting in a twig nest among green leaves.\",\"main_objects\":[\"baby birds\",\"nest\",\"leaves\",\"branches\"],\"possible_interpretations\":[\"baby birds in nest waiting to be fed\",\"newly hatched chicks calling for parents\",\"fledglings in early nestling stage\"],\"uncertainty_notes\":\"Exact bird species not identifiable; two chicks clearly visible with open mouths.\",\"quality_flags\":[\"watermark present\"]}",
+      "response": {
+        "id": "gen-1780319317-4LTu0rPT0F41LDTxmiV6",
+        "object": "chat.completion",
+        "created": 1780319317,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\":5,\"ambiguity\":1,\"natural_photo_typicality\":4,\"visual_clutter\":3,\"object_centricity\":4,\"scene_centricity\":3,\"caption_confidence\":5,\"estimated_salient_object_count\":3,\"estimated_distinct_object_categories\":3,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":true,\"contains_text\":true,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":false,\"contains_outdoor_scene\":true,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":false,\"contains_unusual_viewpoint\":false,\"contains_multiple_main_objects\":true,\"dominant_content_type\":\"animal\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"nature/wildlife\",\"short_caption\":\"Two baby birds with open beaks sitting in a twig nest among green leaves.\",\"main_objects\":[\"baby birds\",\"nest\",\"leaves\",\"branches\"],\"possible_interpretations\":[\"baby birds in nest waiting to be fed\",\"newly hatched chicks calling for parents\",\"fledglings in early nestling stage\"],\"uncertainty_notes\":\"Exact bird species not identifiable; two chicks clearly visible with open mouths.\",\"quality_flags\":[\"watermark present\"]}",
+              "refusal": null,
+              "reasoning": "The image shows baby birds in a nest. They appear to be hatchlings or very young birds with their mouths open, likely waiting to be fed. The nest is made of twigs, grass, and other plant material, and is situated among branches with green leaves. There's a watermark \"yayimages\" on the image.\n\nLet me annotate this carefully:\n\n- Recognizability: The content is clearly recognizable - baby birds in a nest. I'd rate this 5.\n- Ambiguity: Low ambiguity - it's clearly baby birds in a nest. Rating: 1.\n- Natural photo typicality: It looks like a typical nature photograph. Rating: 4 (has a watermark but otherwise natural).\n- Visual clutter: There are leaves, branches, nest material, and the birds. Rating: 3.\n- Object-centricity: The baby birds are the central focus. Rating: 4.\n- Scene-centricity: It's somewhat scene-like (a nest in nature) but focused on the birds. Rating: 3.\n- Caption confidence: High confidence in describing the content. Rating: 5.\n\nSalient objects: The baby birds (2 visible), the nest. Count: 2-3 birds, distinct categories: birds, nest, leaves/branches.\n\nContains: animals (yes), no person/face, no text (watermark only), no vehicle, no food, outdoor scene, no artificial content, no occlusion, no unusual viewpoint, multiple main objects (the chicks).\n\nWait - \"contains_text\" - there's a watermark \"yayimages\". I'll note this but it's a watermark, not really content text. I'll set it to false since the watermark is not part of the actual image content.\n\nActually, watermarks are typically overlaid text. I'll set contains_text to true since there is visible text in the image.\n\nHmm, let me think. The watermark is overlay text. It is text in the image. I'll mark it as true but note it in quality_flags.\n\nMain objects: baby birds, nest, leaves, branches\nPossible interpretations: baby birds in nest being fed, hatchlings waiting for parents, fledglings in early stage\n\nQuality flags: watermark, low resolution/compression artifacts possibly",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows baby birds in a nest. They appear to be hatchlings or very young birds with their mouths open, likely waiting to be fed. The nest is made of twigs, grass, and other plant material, and is situated among branches with green leaves. There's a watermark \"yayimages\" on the image.\n\nLet me annotate this carefully:\n\n- Recognizability: The content is clearly recognizable - baby birds in a nest. I'd rate this 5.\n- Ambiguity: Low ambiguity - it's clearly baby birds in a nest. Rating: 1.\n- Natural photo typicality: It looks like a typical nature photograph. Rating: 4 (has a watermark but otherwise natural).\n- Visual clutter: There are leaves, branches, nest material, and the birds. Rating: 3.\n- Object-centricity: The baby birds are the central focus. Rating: 4.\n- Scene-centricity: It's somewhat scene-like (a nest in nature) but focused on the birds. Rating: 3.\n- Caption confidence: High confidence in describing the content. Rating: 5.\n\nSalient objects: The baby birds (2 visible), the nest. Count: 2-3 birds, distinct categories: birds, nest, leaves/branches.\n\nContains: animals (yes), no person/face, no text (watermark only), no vehicle, no food, outdoor scene, no artificial content, no occlusion, no unusual viewpoint, multiple main objects (the chicks).\n\nWait - \"contains_text\" - there's a watermark \"yayimages\". I'll note this but it's a watermark, not really content text. I'll set it to false since the watermark is not part of the actual image content.\n\nActually, watermarks are typically overlaid text. I'll set contains_text to true since there is visible text in the image.\n\nHmm, let me think. The watermark is overlay text. It is text in the image. I'll mark it as true but note it in quality_flags.\n\nMain objects: baby birds, nest, leaves, branches\nPossible interpretations: baby birds in nest being fed, hatchlings waiting for parents, fledglings in early stage\n\nQuality flags: watermark, low resolution/compression artifacts possibly",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 710,
+          "total_tokens": 2232,
+          "cost": 0.00094668,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1508,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00094668,
+            "upstream_inference_prompt_cost": 9.468e-05,
+            "upstream_inference_completions_cost": 0.000852
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 511,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_14",
+    "stim_key": "vicco_14",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 14,
+    "file_index": 13,
+    "image_name": "shared_4rep_vicco_014.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_014.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"clothing_accessories\",\n  \"short_caption\": \"A pair of dark brown leather gloves with knitted cuffs on a wooden floor.\",\n  \"main_objects\": [\"leather gloves\", \"wooden floor\"],\n  \"possible_interpretations\": [\"leather winter gloves\", \"fashion gloves\", \"motorcycle gloves\", \"work gloves\"],\n  \"uncertainty_notes\": \"The specific type or purpose of the gloves is not entirely clear; they could be fashion, work, or motorcycle gloves.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319397-EaLhvR62J6K4mbuT5bki",
+        "object": "chat.completion",
+        "created": 1780319397,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"clothing_accessories\",\n  \"short_caption\": \"A pair of dark brown leather gloves with knitted cuffs on a wooden floor.\",\n  \"main_objects\": [\"leather gloves\", \"wooden floor\"],\n  \"possible_interpretations\": [\"leather winter gloves\", \"fashion gloves\", \"motorcycle gloves\", \"work gloves\"],\n  \"uncertainty_notes\": \"The specific type or purpose of the gloves is not entirely clear; they could be fashion, work, or motorcycle gloves.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a pair of dark brown leather gloves with knitted cuffs lying on a wooden floor. Let me analyze this carefully for the annotation schema.\n\n- Recognizability: Very clear, easily identifiable as gloves. 5\n- Ambiguity: Low ambiguity, clearly gloves. 1\n- Natural photo typicality: Looks like a typical photograph. 5\n- Visual clutter: Minimal, just gloves on wood. 1\n- Object centricity: The gloves are the central focus. 5\n- Scene centricity: Not really a scene, it's an object on a surface. 1\n- Caption confidence: High, easy to caption. 5\n\nSalient objects: 2 (two gloves, but they're a pair - could count as 1 or 2)\nDistinct categories: 1 (gloves)\n\nNo people, faces, animals, text, vehicles, food visible.\nIndoor scene (wooden floor).\nNot artificial/rendered.\nNo occlusion really, but the left glove is partially folded over.\nViewpoint is top-down, fairly standard.\nMultiple main objects - it's a pair, so arguably yes.\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: clothing/accessories\n\nShort caption: \"A pair of dark brown leather gloves with knitted cuffs on a wooden floor.\"\n\nMain objects: leather gloves, wooden floor\nPossible interpretations: leather gloves, winter gloves, motorcycle gloves, work gloves\n\nUncertainty: The type of gloves is somewhat ambiguous - could be fashion, work, or motorcycle gloves.\nQuality flags: none really.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a pair of dark brown leather gloves with knitted cuffs lying on a wooden floor. Let me analyze this carefully for the annotation schema.\n\n- Recognizability: Very clear, easily identifiable as gloves. 5\n- Ambiguity: Low ambiguity, clearly gloves. 1\n- Natural photo typicality: Looks like a typical photograph. 5\n- Visual clutter: Minimal, just gloves on wood. 1\n- Object centricity: The gloves are the central focus. 5\n- Scene centricity: Not really a scene, it's an object on a surface. 1\n- Caption confidence: High, easy to caption. 5\n\nSalient objects: 2 (two gloves, but they're a pair - could count as 1 or 2)\nDistinct categories: 1 (gloves)\n\nNo people, faces, animals, text, vehicles, food visible.\nIndoor scene (wooden floor).\nNot artificial/rendered.\nNo occlusion really, but the left glove is partially folded over.\nViewpoint is top-down, fairly standard.\nMultiple main objects - it's a pair, so arguably yes.\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: clothing/accessories\n\nShort caption: \"A pair of dark brown leather gloves with knitted cuffs on a wooden floor.\"\n\nMain objects: leather gloves, wooden floor\nPossible interpretations: leather gloves, winter gloves, motorcycle gloves, work gloves\n\nUncertainty: The type of gloves is somewhat ambiguous - could be fashion, work, or motorcycle gloves.\nQuality flags: none really.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 653,
+          "total_tokens": 2175,
+          "cost": 0.00108996,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00108996,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0007836
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 367,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

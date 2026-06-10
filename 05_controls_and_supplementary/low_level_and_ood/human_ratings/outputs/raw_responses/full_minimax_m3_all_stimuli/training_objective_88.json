@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_88",
+    "stim_key": "training_objective_88",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 88,
+    "file_index": 88,
+    "image_name": "image_0088.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0088.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 2,\n  \"ambiguity\": 4,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 2,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"portrait_interaction\",\n  \"short_caption\": \"Two people in close physical contact in an outdoor setting, heavily distorted image\",\n  \"main_objects\": [\"person in light garment\", \"person in dark clothing\", \"hands\", \"foliage background\"],\n  \"possible_interpretations\": [\"two people embracing\", \"one person helping or grabbing another\", \"a candid moment of physical contact\", \"a struggle or dance\", \"a greeting or farewell\"],\n  \"uncertainty_notes\": \"Image is heavily blurred with strong chromatic color fringing (red/green), faces are cut off at top, exact nature of interaction between figures is unclear\",\n  \"quality_flags\": [\"severe_blur\", \"chromatic_aberration\", \"color_distortion\", \"truncated_subject\", \"low_clarity\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319370-gtazR9Zk010AV7fccDPP",
+        "object": "chat.completion",
+        "created": 1780319370,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 2,\n  \"ambiguity\": 4,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 2,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"portrait_interaction\",\n  \"short_caption\": \"Two people in close physical contact in an outdoor setting, heavily distorted image\",\n  \"main_objects\": [\"person in light garment\", \"person in dark clothing\", \"hands\", \"foliage background\"],\n  \"possible_interpretations\": [\"two people embracing\", \"one person helping or grabbing another\", \"a candid moment of physical contact\", \"a struggle or dance\", \"a greeting or farewell\"],\n  \"uncertainty_notes\": \"Image is heavily blurred with strong chromatic color fringing (red/green), faces are cut off at top, exact nature of interaction between figures is unclear\",\n  \"quality_flags\": [\"severe_blur\", \"chromatic_aberration\", \"color_distortion\", \"truncated_subject\", \"low_clarity\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see what appears to be a scene with people - there's someone in a light yellow/cream colored garment (possibly a dress or robe) and another person in darker clothing next to them. The image is quite blurry and has a greenish tint with significant color distortion (chromatic aberration-like effect with red/green color fringing). The background appears to be foliage/outdoor setting with green tones.\n\nThe image quality is poor - it's very blurry, has color distortion, and it's hard to make out details. There seem to be at least 2 people, possibly embracing or close together. There are hands visible.\n\nLet me assess:\n- recognizability: Low due to blur and color distortion (2)\n- ambiguity: High - hard to tell exactly what's happening (4)\n- natural_photo_typicality: It's a photo but heavily distorted (2)\n- visual_clutter: Moderate - the image is busy with the figures and background (3)\n- object_centricity: There's a main focus on the people (4)\n- scene_centricity: It's more about the people than the scene (2)\n- caption_confidence: Low due to image quality (2)\n\nObjects visible: people, clothing, hands, possibly foliage\nContains person: yes\nContains face: possibly but not clearly visible\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nIndoor: no\nOutdoor: yes (foliage visible)\nArtificial/rendered: no but heavily edited/distorted\nOcclusion/truncation: yes, heads appear cut off\nUnusual viewpoint: no\nMultiple main objects: yes (two people)",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see what appears to be a scene with people - there's someone in a light yellow/cream colored garment (possibly a dress or robe) and another person in darker clothing next to them. The image is quite blurry and has a greenish tint with significant color distortion (chromatic aberration-like effect with red/green color fringing). The background appears to be foliage/outdoor setting with green tones.\n\nThe image quality is poor - it's very blurry, has color distortion, and it's hard to make out details. There seem to be at least 2 people, possibly embracing or close together. There are hands visible.\n\nLet me assess:\n- recognizability: Low due to blur and color distortion (2)\n- ambiguity: High - hard to tell exactly what's happening (4)\n- natural_photo_typicality: It's a photo but heavily distorted (2)\n- visual_clutter: Moderate - the image is busy with the figures and background (3)\n- object_centricity: There's a main focus on the people (4)\n- scene_centricity: It's more about the people than the scene (2)\n- caption_confidence: Low due to image quality (2)\n\nObjects visible: people, clothing, hands, possibly foliage\nContains person: yes\nContains face: possibly but not clearly visible\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nIndoor: no\nOutdoor: yes (foliage visible)\nArtificial/rendered: no but heavily edited/distorted\nOcclusion/truncation: yes, heads appear cut off\nUnusual viewpoint: no\nMultiple main objects: yes (two people)",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1027,
+          "completion_tokens": 739,
+          "total_tokens": 1766,
+          "cost": 0.00104466,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00104466,
+            "upstream_inference_prompt_cost": 0.00015786,
+            "upstream_inference_completions_cost": 0.0008868
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 400,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

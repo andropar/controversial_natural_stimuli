@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_31",
+    "stim_key": "vicco_31",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 31,
+    "file_index": 30,
+    "image_name": "shared_4rep_vicco_031.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_031.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food and drink\",\n\n  \"short_caption\": \"A layered purple and amber cocktail garnished with fresh mint leaves in a tall glass\",\n  \"main_objects\": [\"cocktail glass\", \"mint leaves\", \"straw\", \"wooden table\"],\n  \"possible_interpretations\": [\"butterfly pea flower cocktail\", \"color-changing mixed drink\", \"layered mocktail with mint\", \"purple and yellow iced beverage\"],\n  \"uncertainty_notes\": \"Background person is only partially visible; exact type of cocktail is uncertain but layering is clearly visible\",\n  \"quality_flags\": [\"shallow_depth_of_field\", \"background_person_partially_visible\"]\n}",
+      "response": {
+        "id": "gen-1780319418-7k0kGuWdu6YZzNhXfV34",
+        "object": "chat.completion",
+        "created": 1780319418,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food and drink\",\n\n  \"short_caption\": \"A layered purple and amber cocktail garnished with fresh mint leaves in a tall glass\",\n  \"main_objects\": [\"cocktail glass\", \"mint leaves\", \"straw\", \"wooden table\"],\n  \"possible_interpretations\": [\"butterfly pea flower cocktail\", \"color-changing mixed drink\", \"layered mocktail with mint\", \"purple and yellow iced beverage\"],\n  \"uncertainty_notes\": \"Background person is only partially visible; exact type of cocktail is uncertain but layering is clearly visible\",\n  \"quality_flags\": [\"shallow_depth_of_field\", \"background_person_partially_visible\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a tall glass with a layered drink - purple/blue at the top transitioning to yellow/amber at the bottom, garnished with fresh mint leaves and containing a straw. The glass sits on a wooden slatted table. In the background, there appear to be people (you can see arms/torsos) and what looks like a floral pattern on clothing.\n\nLet me analyze this carefully:\n\n- The main subject is a cocktail/beverage in a glass with mint garnish\n- The drink appears to be a layered cocktail (possibly a butterfly pea flower cocktail or similar color-changing drink)\n- There's a person partially visible in the background\n- The setting appears to be a restaurant or bar with a wooden table\n\nRatings:\n- recognizability: 5 - very clearly a drink/cocktail\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 5 - looks like a typical photo\n- visual_clutter: 2 - mostly the drink dominates, some background\n- object_centricity: 5 - the glass is the clear central object\n- scene_centricity: 2 - mostly object-focused\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 1 (the drink)\n- estimated_distinct_object_categories: 3 (glass, mint garnish, straw, table, person)\n\n- contains_person: true (partially visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false (it's a drink, but arguably food category)\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the person is partially visible/truncated)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"food\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"food and drink\"\n\n- short_caption: \"A layered purple and yellow cocktail garnished with fresh mint leaves in a tall glass\"\n- main_objects: [\"cocktail glass\", \"mint leaves\", \"straw\", \"wooden table\"]\n- possible_interpretations: [\"butterfly pea flower lemonade\", \"color-changing cocktail\", \"layered mixed drink\", \"mocktail with mint garnish\"]\n- uncertainty_notes: \"Background person is partially visible; specific cocktail type is uncertain\"\n- quality_flags: [\"shallow_depth_of_field\", \"partial_occlusion\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a tall glass with a layered drink - purple/blue at the top transitioning to yellow/amber at the bottom, garnished with fresh mint leaves and containing a straw. The glass sits on a wooden slatted table. In the background, there appear to be people (you can see arms/torsos) and what looks like a floral pattern on clothing.\n\nLet me analyze this carefully:\n\n- The main subject is a cocktail/beverage in a glass with mint garnish\n- The drink appears to be a layered cocktail (possibly a butterfly pea flower cocktail or similar color-changing drink)\n- There's a person partially visible in the background\n- The setting appears to be a restaurant or bar with a wooden table\n\nRatings:\n- recognizability: 5 - very clearly a drink/cocktail\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 5 - looks like a typical photo\n- visual_clutter: 2 - mostly the drink dominates, some background\n- object_centricity: 5 - the glass is the clear central object\n- scene_centricity: 2 - mostly object-focused\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 1 (the drink)\n- estimated_distinct_object_categories: 3 (glass, mint garnish, straw, table, person)\n\n- contains_person: true (partially visible)\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false (it's a drink, but arguably food category)\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the person is partially visible/truncated)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"food\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"food and drink\"\n\n- short_caption: \"A layered purple and yellow cocktail garnished with fresh mint leaves in a tall glass\"\n- main_objects: [\"cocktail glass\", \"mint leaves\", \"straw\", \"wooden table\"]\n- possible_interpretations: [\"butterfly pea flower lemonade\", \"color-changing cocktail\", \"layered mixed drink\", \"mocktail with mint garnish\"]\n- uncertainty_notes: \"Background person is partially visible; specific cocktail type is uncertain\"\n- quality_flags: [\"shallow_depth_of_field\", \"partial_occlusion\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 888,
+          "total_tokens": 2410,
+          "cost": 0.00137196,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00137196,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010656
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 589,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_0",
+    "stim_key": "dataset_0",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 0,
+    "file_index": 0,
+    "image_name": "image_0000.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0000.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"product showcase\",\n  \"short_caption\": \"Clear resin electric guitar beside a bottle of TotalBoat casting epoxy outdoors\",\n  \"main_objects\": [\"electric guitar\", \"epoxy bottle\"],\n  \"possible_interpretations\": [\n    \"Product advertisement showing epoxy with finished clear resin guitar\",\n    \"DIY tutorial showcasing a handmade clear epoxy guitar project\",\n    \"Before/after display of casting epoxy and its application result\"\n  ],\n  \"uncertainty_notes\": \"The image appears to be a staged product showcase rather than a candid photo. The guitar is partially cropped on the right side. The relationship between the epoxy bottle and the guitar (the guitar is presumably made from the product) is the key visual concept.\",\n  \"quality_flags\": [\"staged_composition\", \"partial_cropping\", \"product_label_visible\"]\n}",
+      "response": {
+        "id": "gen-1780318958-pNTZeFqSOmgn7AaoUzWl",
+        "object": "chat.completion",
+        "created": 1780318958,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"product showcase\",\n  \"short_caption\": \"Clear resin electric guitar beside a bottle of TotalBoat casting epoxy outdoors\",\n  \"main_objects\": [\"electric guitar\", \"epoxy bottle\"],\n  \"possible_interpretations\": [\n    \"Product advertisement showing epoxy with finished clear resin guitar\",\n    \"DIY tutorial showcasing a handmade clear epoxy guitar project\",\n    \"Before/after display of casting epoxy and its application result\"\n  ],\n  \"uncertainty_notes\": \"The image appears to be a staged product showcase rather than a candid photo. The guitar is partially cropped on the right side. The relationship between the epoxy bottle and the guitar (the guitar is presumably made from the product) is the key visual concept.\",\n  \"quality_flags\": [\"staged_composition\", \"partial_cropping\", \"product_label_visible\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see:\n- A clear/transparent electric guitar body (looks like a Les Paul style) with visible pickups, strings, bridge, and control knobs\n- A bottle/jug of \"TOTALBOAT THICKSET CLEAR CASTING EPOXY\" - this is a resin product\n- The background shows an outdoor scene with a cloudy sky and what appears to be a field/meadow\n- The guitar appears to be made of clear epoxy resin, hence the product placement\n\nThe image looks like a promotional or product showcase image showing the result of using the epoxy (a clear resin guitar) alongside the product used to make it.\n\nLet me rate this:\n\n- recognizability: 4 - The main content (clear resin guitar and epoxy bottle) is clearly recognizable\n- ambiguity: 2 - Fairly clear what it is, though the relationship between items adds some interpretation\n- natural_photo_typicality: 3 - It's a photo but staged for product display\n- visual_clutter: 3 - Two main objects plus background\n- object_centricity: 4 - The guitar dominates the image\n- scene_centricity: 2 - More object-focused than scene-focused, though there's a background\n- caption_confidence: 4 - Can describe it well\n\n- estimated_salient_object_count: 2 (guitar and epoxy bottle)\n- estimated_distinct_object_categories: 2 (musical instrument, product/container)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (product label)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (it's a real photo, though staged)\n- contains_occlusion_or_truncation: true (guitar is partially cut off on the right)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (guitar and bottle)\n\n- dominant_content_type: \"object\" (the guitar is the main focus)\n- image_style: \"natural_photo\" (appears to be a real photograph, possibly with some editing)\n- semantic_domain: \"product showcase\" or \"crafts/diy\"\n\nShort caption: \"Clear resin electric guitar next to a bottle of TotalBoat casting epoxy outdoors\"\n\nMain objects: [\"electric guitar\", \"epoxy bottle\"]\n\nPossible interpretations: \n- \"Product advertisement for TotalBoat epoxy showing a clear resin guitar\"\n- \"DIY project showcase of a handmade clear epoxy guitar\"\n- \"Comparison of epoxy product with finished project\"\n\nUncertainty notes: The image appears to be a product showcase or tutorial image rather than a typical natural scene. The guitar body and epoxy bottle are both main subjects.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see:\n- A clear/transparent electric guitar body (looks like a Les Paul style) with visible pickups, strings, bridge, and control knobs\n- A bottle/jug of \"TOTALBOAT THICKSET CLEAR CASTING EPOXY\" - this is a resin product\n- The background shows an outdoor scene with a cloudy sky and what appears to be a field/meadow\n- The guitar appears to be made of clear epoxy resin, hence the product placement\n\nThe image looks like a promotional or product showcase image showing the result of using the epoxy (a clear resin guitar) alongside the product used to make it.\n\nLet me rate this:\n\n- recognizability: 4 - The main content (clear resin guitar and epoxy bottle) is clearly recognizable\n- ambiguity: 2 - Fairly clear what it is, though the relationship between items adds some interpretation\n- natural_photo_typicality: 3 - It's a photo but staged for product display\n- visual_clutter: 3 - Two main objects plus background\n- object_centricity: 4 - The guitar dominates the image\n- scene_centricity: 2 - More object-focused than scene-focused, though there's a background\n- caption_confidence: 4 - Can describe it well\n\n- estimated_salient_object_count: 2 (guitar and epoxy bottle)\n- estimated_distinct_object_categories: 2 (musical instrument, product/container)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (product label)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (it's a real photo, though staged)\n- contains_occlusion_or_truncation: true (guitar is partially cut off on the right)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (guitar and bottle)\n\n- dominant_content_type: \"object\" (the guitar is the main focus)\n- image_style: \"natural_photo\" (appears to be a real photograph, possibly with some editing)\n- semantic_domain: \"product showcase\" or \"crafts/diy\"\n\nShort caption: \"Clear resin electric guitar next to a bottle of TotalBoat casting epoxy outdoors\"\n\nMain objects: [\"electric guitar\", \"epoxy bottle\"]\n\nPossible interpretations: \n- \"Product advertisement for TotalBoat epoxy showing a clear resin guitar\"\n- \"DIY project showcase of a handmade clear epoxy guitar\"\n- \"Comparison of epoxy product with finished project\"\n\nUncertainty notes: The image appears to be a product showcase or tutorial image rather than a typical natural scene. The guitar body and epoxy bottle are both main subjects.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 972,
+          "total_tokens": 2386,
+          "cost": 0.00156324,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00156324,
+            "upstream_inference_prompt_cost": 0.00039684,
+            "upstream_inference_completions_cost": 0.0011664
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 670,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

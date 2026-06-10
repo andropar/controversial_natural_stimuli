@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_196",
+    "stim_key": "vicco_196",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 196,
+    "file_index": 195,
+    "image_name": "shared_4rep_vicco_196.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_196.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 2, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": true, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"animal\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"pets\", \"short_caption\": \"Small dark fluffy dog in a green harness on a leash, looking up on gravel ground.\", \"main_objects\": [\"dog\", \"leash\", \"harness\"], \"possible_interpretations\": [\"a pet dog on a walk\", \"a Brussels Griffon or similar small breed\", \"a dog waiting for its owner\"], \"uncertainty_notes\": \"Exact breed is uncertain; could be a Brussels Griffon, Affenpinscher, or similar small terrier-type breed.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319616-z36OuaPpmEFnz6Igqv3L",
+        "object": "chat.completion",
+        "created": 1780319616,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 2, \"object_centricity\": 4, \"scene_centricity\": 2, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": true, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"animal\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"pets\", \"short_caption\": \"Small dark fluffy dog in a green harness on a leash, looking up on gravel ground.\", \"main_objects\": [\"dog\", \"leash\", \"harness\"], \"possible_interpretations\": [\"a pet dog on a walk\", \"a Brussels Griffon or similar small breed\", \"a dog waiting for its owner\"], \"uncertainty_notes\": \"Exact breed is uncertain; could be a Brussels Griffon, Affenpinscher, or similar small terrier-type breed.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "The image shows a small, dark-colored, fluffy dog (looks like a Brussels Griffon or similar breed) standing on a gravel/rocky surface. The dog is wearing a green harness with a black leash attached. The dog is looking up at the camera. The background is gravel/rocks with some sparse grass.\n\nLet me annotate this carefully:\n\n- recognizability: 5 - very clearly a dog\n- ambiguity: 1 - clearly a single dog\n- natural_photo_typicality: 5 - looks like a typical natural photograph\n- visual_clutter: 2 - mainly the dog and gravel ground, relatively simple\n- object_centricity: 4 - the dog is the clear central subject\n- scene_centricity: 2 - it's more about the dog than the place\n- caption_confidence: 5 - very easy to caption\n\n- estimated_salient_object_count: 1 (the dog)\n- estimated_distinct_object_categories: 2 (dog, leash/harness)\n\n- contains_person: false\n- contains_face: false (animal face, not human)\n- contains_animal: true\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (slightly high angle but not unusual)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"animal\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"pets\"\n\n- short_caption: \"Small dark fluffy dog wearing a green harness and leash, looking up on gravel\"\n- main_objects: [\"dog\", \"leash\", \"harness\"]\n- possible_interpretations: [\"a pet dog on a walk\", \"a Brussels Griffon or similar breed\"]\n- uncertainty_notes: \"Breed identification uncertain, could be a Brussels Griffon or similar small terrier-type breed\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a small, dark-colored, fluffy dog (looks like a Brussels Griffon or similar breed) standing on a gravel/rocky surface. The dog is wearing a green harness with a black leash attached. The dog is looking up at the camera. The background is gravel/rocks with some sparse grass.\n\nLet me annotate this carefully:\n\n- recognizability: 5 - very clearly a dog\n- ambiguity: 1 - clearly a single dog\n- natural_photo_typicality: 5 - looks like a typical natural photograph\n- visual_clutter: 2 - mainly the dog and gravel ground, relatively simple\n- object_centricity: 4 - the dog is the clear central subject\n- scene_centricity: 2 - it's more about the dog than the place\n- caption_confidence: 5 - very easy to caption\n\n- estimated_salient_object_count: 1 (the dog)\n- estimated_distinct_object_categories: 2 (dog, leash/harness)\n\n- contains_person: false\n- contains_face: false (animal face, not human)\n- contains_animal: true\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (slightly high angle but not unusual)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"animal\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"pets\"\n\n- short_caption: \"Small dark fluffy dog wearing a green harness and leash, looking up on gravel\"\n- main_objects: [\"dog\", \"leash\", \"harness\"]\n- possible_interpretations: [\"a pet dog on a walk\", \"a Brussels Griffon or similar breed\"]\n- uncertainty_notes: \"Breed identification uncertain, could be a Brussels Griffon or similar small terrier-type breed\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 741,
+          "total_tokens": 2263,
+          "cost": 0.00119556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00119556,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008892
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 461,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_290",
+    "stim_key": "vicco_290",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 290,
+    "file_index": 289,
+    "image_name": "shared_4rep_vicco_290.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_290.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: No valid JSON object found in model response"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"travel_aviation\",\n  \"short_caption\": \"Passengers boarding a Ryanair airplane on the tarmac under a sky with contrails.\",\n  \"main_objects\": [\"Ryanair airplane\", \"passengers\", \"backpacks\", \"sky with contrails\"],\n  \"possible_interpretations\": [\"Passengers boarding a Ryanair flight\", \"Travelers walking toward a parked airplane at an airport\"],\n  \"uncertainty_notes\": \"Faces of the people are not visible; the plane's full extent is cut off by the frame.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319749-ttxWweswDguviLNCDYX6",
+        "object": "chat.completion",
+        "created": 1780319749,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"travel_aviation\",\n  \"short_caption\": \"Passengers boarding a Ryanair airplane on the tarmac under a sky with contrails.\",\n  \"main_objects\": [\"Ryanair airplane\", \"passengers\", \"backpacks\", \"sky with contrails\"],\n  \"possible_interpretations\": [\"Passengers boarding a Ryanair flight\", \"Travelers walking toward a parked airplane at an airport\"],\n  \"uncertainty_notes\": \"Faces of the people are not visible; the plane's full extent is cut off by the frame.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- A Ryanair airplane (clearly visible by the \"RYANAIR\" text and the blue/yellow color scheme)\n- Three people in the foreground (viewed from behind) - they appear to be passengers boarding the plane\n- A blue sky with contrails/clouds in the background\n- The plane takes up a large portion of the image\n- The perspective is from below, looking up at the plane\n\nLet me annotate this:\n\n- Recognizability: Very clear - it's a Ryanair plane with passengers. 5\n- Ambiguity: Low - one clear interpretation. 1\n- Natural photo typicality: Looks like a typical candid photo. 4\n- Visual clutter: Moderate - plane, sky, 3 people, windows, text. 3\n- Object-centricity: The plane is dominant but the people are also prominent. 3\n- Scene-centricity: It's a scene at an airport/tarmac. 4\n- Caption confidence: High - clear scene. 5\n\nObjects:\n- Ryanair airplane\n- 3 passengers/people\n- Sky with contrails\n- Backpacks\n\nContains:\n- Person: yes\n- Face: no (faces are not visible, only backs of heads)\n- Animal: no\n- Text: yes (RYANAIR)\n- Vehicle: yes (airplane)\n- Food: no\n- Indoor: no\n- Outdoor: yes\n- Artificial/rendered: no\n- Occlusion/truncation: yes (people partially shown, plane extends out of frame)\n- Unusual viewpoint: somewhat, the angle is from below looking up\n- Multiple main objects: somewhat - the plane and the people\n\nMain content: mixed (plane and people)\nImage style: natural_photo\nSemantic domain: travel/aviation\n\nShort caption: \"Passengers boarding a Ryanair airplane on the tarmac under a sky with contrails.\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- A Ryanair airplane (clearly visible by the \"RYANAIR\" text and the blue/yellow color scheme)\n- Three people in the foreground (viewed from behind) - they appear to be passengers boarding the plane\n- A blue sky with contrails/clouds in the background\n- The plane takes up a large portion of the image\n- The perspective is from below, looking up at the plane\n\nLet me annotate this:\n\n- Recognizability: Very clear - it's a Ryanair plane with passengers. 5\n- Ambiguity: Low - one clear interpretation. 1\n- Natural photo typicality: Looks like a typical candid photo. 4\n- Visual clutter: Moderate - plane, sky, 3 people, windows, text. 3\n- Object-centricity: The plane is dominant but the people are also prominent. 3\n- Scene-centricity: It's a scene at an airport/tarmac. 4\n- Caption confidence: High - clear scene. 5\n\nObjects:\n- Ryanair airplane\n- 3 passengers/people\n- Sky with contrails\n- Backpacks\n\nContains:\n- Person: yes\n- Face: no (faces are not visible, only backs of heads)\n- Animal: no\n- Text: yes (RYANAIR)\n- Vehicle: yes (airplane)\n- Food: no\n- Indoor: no\n- Outdoor: yes\n- Artificial/rendered: no\n- Occlusion/truncation: yes (people partially shown, plane extends out of frame)\n- Unusual viewpoint: somewhat, the angle is from below looking up\n- Multiple main objects: somewhat - the plane and the people\n\nMain content: mixed (plane and people)\nImage style: natural_photo\nSemantic domain: travel/aviation\n\nShort caption: \"Passengers boarding a Ryanair airplane on the tarmac under a sky with contrails.\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 742,
+          "total_tokens": 2280,
+          "cost": 0.00120156,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00120156,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.0008904
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 424,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

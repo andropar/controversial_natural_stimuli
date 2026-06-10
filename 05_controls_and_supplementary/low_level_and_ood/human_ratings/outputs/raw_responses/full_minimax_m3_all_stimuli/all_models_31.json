@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_31",
+    "stim_key": "all_models_31",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 31,
+    "file_index": 31,
+    "image_name": "image_0031.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0031.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion_clothing\",\n  \"short_caption\": \"Woman modeling a turquoise embroidered traditional South Asian kurta outfit indoors\",\n  \"main_objects\": [\"embroidered kurta\", \"woman\", \"dupatta fabric\", \"earrings\"],\n  \"possible_interpretations\": [\n    \"Product photo for traditional South Asian clothing\",\n    \"Fashion catalog image of a salwar kameez\",\n    \"E-commerce listing for embroidered kurta set\"\n  ],\n  \"uncertainty_notes\": \"Face is cropped at the nose; exact garment type (anarkali vs. straight cut) is hard to confirm. Background appears to be a studio set with decorative paneling.\",\n  \"quality_flags\": [\"face_cropped\", \"studio_lighting\", \"commercial_product_photo\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318765-TC4V8MWlFpsChYcLKxBR",
+        "object": "chat.completion",
+        "created": 1780318765,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion_clothing\",\n  \"short_caption\": \"Woman modeling a turquoise embroidered traditional South Asian kurta outfit indoors\",\n  \"main_objects\": [\"embroidered kurta\", \"woman\", \"dupatta fabric\", \"earrings\"],\n  \"possible_interpretations\": [\n    \"Product photo for traditional South Asian clothing\",\n    \"Fashion catalog image of a salwar kameez\",\n    \"E-commerce listing for embroidered kurta set\"\n  ],\n  \"uncertainty_notes\": \"Face is cropped at the nose; exact garment type (anarkali vs. straight cut) is hard to confirm. Background appears to be a studio set with decorative paneling.\",\n  \"quality_flags\": [\"face_cropped\", \"studio_lighting\", \"commercial_product_photo\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a person (appears to be a woman based on visible features like long hair, earrings, and clothing style) wearing a turquoise/teal colored traditional South Asian outfit (looks like a salwar kameez or kurta with churidar/trousers). The outfit has intricate embroidery or lace patterns. The face is partially cut off - we can only see the lower part including the chin, lips (with lipstick), and long dark hair. The background shows an ornate cream/beige wall with decorative architectural details. There's also what appears to be matching fabric (possibly a dupatta/scarf) draped on what looks like a small table or stool in the bottom right corner.\n\nLet me provide the structured annotations:\n\n- Recognizability: High - clearly shows a person in traditional clothing\n- Ambiguity: Low - one clear interpretation\n- Natural photo typicality: This looks like a commercial product photo, somewhat staged\n- Visual clutter: Moderate - the embroidered patterns add detail\n- Object centricity: The clothing is the main focus\n- Scene centricity: Not really a scene\n- Contains person: Yes\n- Contains face: Partially (chin, lips visible but eyes/nose cut off)\n- Contains text: No\n- Contains animal: No\n- Contains vehicle: No\n- Contains food: No\n- Contains indoor scene: Yes (architectural background suggests indoor)\n- Contains outdoor scene: No\n- Contains artificial/rendered: No, but it's a product photo\n- Contains occlusion/truncation: Yes (face is cropped)\n- Multiple main objects: Could say the person and the draped fabric\n\nLet me format this properly.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a person (appears to be a woman based on visible features like long hair, earrings, and clothing style) wearing a turquoise/teal colored traditional South Asian outfit (looks like a salwar kameez or kurta with churidar/trousers). The outfit has intricate embroidery or lace patterns. The face is partially cut off - we can only see the lower part including the chin, lips (with lipstick), and long dark hair. The background shows an ornate cream/beige wall with decorative architectural details. There's also what appears to be matching fabric (possibly a dupatta/scarf) draped on what looks like a small table or stool in the bottom right corner.\n\nLet me provide the structured annotations:\n\n- Recognizability: High - clearly shows a person in traditional clothing\n- Ambiguity: Low - one clear interpretation\n- Natural photo typicality: This looks like a commercial product photo, somewhat staged\n- Visual clutter: Moderate - the embroidered patterns add detail\n- Object centricity: The clothing is the main focus\n- Scene centricity: Not really a scene\n- Contains person: Yes\n- Contains face: Partially (chin, lips visible but eyes/nose cut off)\n- Contains text: No\n- Contains animal: No\n- Contains vehicle: No\n- Contains food: No\n- Contains indoor scene: Yes (architectural background suggests indoor)\n- Contains outdoor scene: No\n- Contains artificial/rendered: No, but it's a product photo\n- Contains occlusion/truncation: Yes (face is cropped)\n- Multiple main objects: Could say the person and the draped fabric\n\nLet me format this properly.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 735,
+          "total_tokens": 2257,
+          "cost": 0.00118836,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00118836,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000882
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 418,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_9",
+    "stim_key": "all_models_9",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 9,
+    "file_index": 9,
+    "image_name": "image_0009.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0009.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"clothing/textile\",\n  \"short_caption\": \"Close-up of a white lace top with colorful floral embroidery worn by a person\",\n  \"main_objects\": [\"lace garment\", \"floral embroidery\", \"arm\"],\n  \"possible_interpretations\": [\"white lace blouse with floral embroidery\", \"dress with lace overlay\", \"lace top with floral fabric underneath\"],\n  \"uncertainty_notes\": \"Background is out of focus making indoor/outdoor context unclear; exact garment type and whether floral pattern is separate garment or part of same piece is hard to tell.\",\n  \"quality_flags\": [\"close-up crop\", \"shallow depth of field\", \"face/head not visible\"]\n}",
+      "response": {
+        "id": "gen-1780318741-QEMpMLnKeCayDvid42DF",
+        "object": "chat.completion",
+        "created": 1780318741,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"clothing/textile\",\n  \"short_caption\": \"Close-up of a white lace top with colorful floral embroidery worn by a person\",\n  \"main_objects\": [\"lace garment\", \"floral embroidery\", \"arm\"],\n  \"possible_interpretations\": [\"white lace blouse with floral embroidery\", \"dress with lace overlay\", \"lace top with floral fabric underneath\"],\n  \"uncertainty_notes\": \"Background is out of focus making indoor/outdoor context unclear; exact garment type and whether floral pattern is separate garment or part of same piece is hard to tell.\",\n  \"quality_flags\": [\"close-up crop\", \"shallow depth of field\", \"face/head not visible\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a close-up of a person wearing a white lace top with colorful floral embroidery. The lace has intricate patterns with flower motifs, and underneath there appears to be a solid white or light-colored garment. The bottom portion of the visible garment has vibrant floral patterns in red, yellow, green, and other colors, likely part of a dress or skirt underneath or the lower part of the garment itself.\n\nLet me annotate this:\n\n- Recognizability: The image is clearly showing lace fabric with floral patterns. It's recognizable. 4\n- Ambiguity: Not much ambiguity - it's clearly a piece of clothing/fabric. 1-2\n- Natural photo typicality: Looks like a typical photograph. 4\n- Visual clutter: There's a lot of intricate detail in the lace, but it's organized. 3\n- Object centricity: Focus is on the garment. 3\n- Scene centricity: This is more of an object/texture shot than a scene. 2\n- Caption confidence: Pretty clear what it is. 4\n\nSalient object count: 1 (the garment)\nDistinct categories: 1-2 (lace garment, floral fabric)\n\nContains person: Yes (we can see arm/hand and body shape)\nContains face: No\nContains animal: No\nContains text: No\nContains vehicle: No\nContains food: No\nContains indoor scene: Unclear - might be in a shop\nContains outdoor scene: Unclear\nContains artificial content: No\nContains occlusion: No\nContains unusual viewpoint: Close-up is somewhat unusual\nContains multiple main objects: No\n\nDominant content: closeup_detail (textile close-up)\nImage style: natural_photo\nSemantic domain: clothing/textile/fashion\n\nShort caption: \"Close-up of a white lace top with colorful floral embroidery worn by a person\"\n\nMain objects: [\"lace garment\", \"floral embroidery\", \"person\"]\n\nQuality flags: [\"close-up crop\", \"blurry background\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a close-up of a person wearing a white lace top with colorful floral embroidery. The lace has intricate patterns with flower motifs, and underneath there appears to be a solid white or light-colored garment. The bottom portion of the visible garment has vibrant floral patterns in red, yellow, green, and other colors, likely part of a dress or skirt underneath or the lower part of the garment itself.\n\nLet me annotate this:\n\n- Recognizability: The image is clearly showing lace fabric with floral patterns. It's recognizable. 4\n- Ambiguity: Not much ambiguity - it's clearly a piece of clothing/fabric. 1-2\n- Natural photo typicality: Looks like a typical photograph. 4\n- Visual clutter: There's a lot of intricate detail in the lace, but it's organized. 3\n- Object centricity: Focus is on the garment. 3\n- Scene centricity: This is more of an object/texture shot than a scene. 2\n- Caption confidence: Pretty clear what it is. 4\n\nSalient object count: 1 (the garment)\nDistinct categories: 1-2 (lace garment, floral fabric)\n\nContains person: Yes (we can see arm/hand and body shape)\nContains face: No\nContains animal: No\nContains text: No\nContains vehicle: No\nContains food: No\nContains indoor scene: Unclear - might be in a shop\nContains outdoor scene: Unclear\nContains artificial content: No\nContains occlusion: No\nContains unusual viewpoint: Close-up is somewhat unusual\nContains multiple main objects: No\n\nDominant content: closeup_detail (textile close-up)\nImage style: natural_photo\nSemantic domain: clothing/textile/fashion\n\nShort caption: \"Close-up of a white lace top with colorful floral embroidery worn by a person\"\n\nMain objects: [\"lace garment\", \"floral embroidery\", \"person\"]\n\nQuality flags: [\"close-up crop\", \"blurry background\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 772,
+          "total_tokens": 2294,
+          "cost": 0.00135564,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00135564,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009264
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 468,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

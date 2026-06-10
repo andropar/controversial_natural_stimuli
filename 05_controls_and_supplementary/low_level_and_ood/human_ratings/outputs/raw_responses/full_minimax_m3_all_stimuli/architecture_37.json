@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_37",
+    "stim_key": "architecture_37",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 37,
+    "file_index": 37,
+    "image_name": "image_0037.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0037.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"bathroom/kitchen fixtures\",\n\n  \"short_caption\": \"Close-up of chrome faucets with water splashing from spouts\",\n  \"main_objects\": [\"faucet\", \"water droplets\", \"sink basin\"],\n  \"possible_interpretations\": [\"bathroom faucets\", \"kitchen sink with running water\", \"water conservation advertisement\", \"modern plumbing fixture showcase\", \"abstract water photography\"],\n  \"uncertainty_notes\": \"Unclear whether bathroom or kitchen setting; specific faucet style is ambiguous\",\n  \"quality_flags\": [\"shallow depth of field\", \"stylized color grading\", \"heavy bokeh in background\", \"close-up framing crops context\"]\n}",
+      "response": {
+        "id": "gen-1780318884-Kd2SIrGPoPBmBdzzkFNF",
+        "object": "chat.completion",
+        "created": 1780318884,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"bathroom/kitchen fixtures\",\n\n  \"short_caption\": \"Close-up of chrome faucets with water splashing from spouts\",\n  \"main_objects\": [\"faucet\", \"water droplets\", \"sink basin\"],\n  \"possible_interpretations\": [\"bathroom faucets\", \"kitchen sink with running water\", \"water conservation advertisement\", \"modern plumbing fixture showcase\", \"abstract water photography\"],\n  \"uncertainty_notes\": \"Unclear whether bathroom or kitchen setting; specific faucet style is ambiguous\",\n  \"quality_flags\": [\"shallow depth of field\", \"stylized color grading\", \"heavy bokeh in background\", \"close-up framing crops context\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a close-up of chrome bathroom or kitchen faucets with water flowing/splashing from them. The image has a shallow depth of field with bokeh in the background. It looks like a natural photograph with a cool blue/gray color grading. The main focus is on the water droplets and chrome fixtures. This appears to be a stylized, possibly edited photograph - very common in advertising/stock photography for water/plumbing themes.\n\nLet me analyze:\n- Recognizability: Clear that it's faucets with water - 4\n- Ambiguity: Pretty clear what it is - low ambiguity - 2\n- Natural_photo_typicality: Looks like a natural photo but heavily stylized - 3\n- Visual_clutter: There's the faucet, water droplets, background blur - moderate - 3\n- Object_centricity: The faucet is the central object - 4\n- Scene_centricity: It's a close-up of objects, not really a scene - 2\n- Caption_confidence: Confident - 4\n\nSalient objects: faucets, water, sink/basin - 2-3 distinct categories\nCategories: faucet, water, sink\n\nNo people, faces, animals, text, vehicles, food visible.\nIndoor scene - looks like a bathroom or kitchen.\nNot artificial/rendered - it's a photo.\nSome occlusion/truncation due to close framing.\nMultiple main objects? Multiple faucets visible but they're the same type.\n\nDominant content: closeup_detail\nImage style: edited_photo (stylized color grading)\nSemantic domain: bathroom/kitchen fixtures\n\nCaption: \"Close-up of chrome faucets with water splashing\"\nPossible interpretations: bathroom faucets, kitchen sink, water conservation ad",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a close-up of chrome bathroom or kitchen faucets with water flowing/splashing from them. The image has a shallow depth of field with bokeh in the background. It looks like a natural photograph with a cool blue/gray color grading. The main focus is on the water droplets and chrome fixtures. This appears to be a stylized, possibly edited photograph - very common in advertising/stock photography for water/plumbing themes.\n\nLet me analyze:\n- Recognizability: Clear that it's faucets with water - 4\n- Ambiguity: Pretty clear what it is - low ambiguity - 2\n- Natural_photo_typicality: Looks like a natural photo but heavily stylized - 3\n- Visual_clutter: There's the faucet, water droplets, background blur - moderate - 3\n- Object_centricity: The faucet is the central object - 4\n- Scene_centricity: It's a close-up of objects, not really a scene - 2\n- Caption_confidence: Confident - 4\n\nSalient objects: faucets, water, sink/basin - 2-3 distinct categories\nCategories: faucet, water, sink\n\nNo people, faces, animals, text, vehicles, food visible.\nIndoor scene - looks like a bathroom or kitchen.\nNot artificial/rendered - it's a photo.\nSome occlusion/truncation due to close framing.\nMultiple main objects? Multiple faucets visible but they're the same type.\n\nDominant content: closeup_detail\nImage style: edited_photo (stylized color grading)\nSemantic domain: bathroom/kitchen fixtures\n\nCaption: \"Close-up of chrome faucets with water splashing\"\nPossible interpretations: bathroom faucets, kitchen sink, water conservation ad",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 718,
+          "total_tokens": 2032,
+          "cost": 0.00122844,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00122844,
+            "upstream_inference_prompt_cost": 0.00036684,
+            "upstream_inference_completions_cost": 0.0008616
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 404,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_11",
+    "stim_key": "all_models_11",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 11,
+    "file_index": 11,
+    "image_name": "image_0011.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0011.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"portrait_lifestyle\",\n  \"short_caption\": \"Wind-blown brown hair strands with a blurred outdoor cityscape in the background\",\n  \"main_objects\": [\"hair\", \"person (partial face)\", \"blurred landscape\"],\n  \"possible_interpretations\": [\"fashion/lifestyle portrait\", \"hair product advertisement\", \"artistic wind-blown hair shot\", \"candid outdoor moment\"],\n  \"uncertainty_notes\": \"Only a tiny sliver of the face (nose/cheek) is visible; identity, gender, and full pose cannot be determined. Background scene is too blurred to identify specific landmarks or features.\",\n  \"quality_flags\": [\"heavy_background_blur\", \"subject_truncation\", \"low_subject_visibility\"]\n}",
+      "response": {
+        "id": "gen-1780318741-LMs3u7wwYzSS2wy0uaqz",
+        "object": "chat.completion",
+        "created": 1780318741,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"portrait_lifestyle\",\n  \"short_caption\": \"Wind-blown brown hair strands with a blurred outdoor cityscape in the background\",\n  \"main_objects\": [\"hair\", \"person (partial face)\", \"blurred landscape\"],\n  \"possible_interpretations\": [\"fashion/lifestyle portrait\", \"hair product advertisement\", \"artistic wind-blown hair shot\", \"candid outdoor moment\"],\n  \"uncertainty_notes\": \"Only a tiny sliver of the face (nose/cheek) is visible; identity, gender, and full pose cannot be determined. Background scene is too blurred to identify specific landmarks or features.\",\n  \"quality_flags\": [\"heavy_background_blur\", \"subject_truncation\", \"low_subject_visibility\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be flowing/blowing hair in the foreground, with some hair strands visible. In the lower left, there's a small portion of what looks like a person's face (nose/cheek area) visible. The background is heavily blurred but appears to show an outdoor scene, possibly a cityscape or landscape with warm golden tones suggesting sunset or warm lighting.\n\nLet me annotate based on the schema:\n\n- recognizability: The main content (hair blowing in wind) is fairly recognizable, though the face is mostly obscured. I'd say 3-4.\n- ambiguity: Could be interpreted as an artistic portrait, hair advertisement, lifestyle photo, etc. Moderate ambiguity. 3.\n- natural_photo_typicality: Looks like a typical natural photograph with shallow depth of field. 4.\n- visual_clutter: The image is relatively simple - mainly hair strands and a blurred background. 2.\n- object_centricity: The hair is the main subject dominating the frame. 4.\n- scene_centricity: There's a background scene but it's heavily blurred and secondary. 2.\n- caption_confidence: Reasonably confident about what's shown. 3.\n\nCounts:\n- salient_object_count: 1 (the hair/head)\n- distinct_object_categories: 2 (person, hair/outdoor scene background)\n\nContains:\n- person: yes (partial face visible)\n- face: partially yes (nose visible)\n- animal: no\n- text: no\n- vehicle: no\n- food: no\n- indoor_scene: no\n- outdoor_scene: yes (blurred background)\n- artificial_or_rendered: no\n- occlusion_or_truncation: yes (face is mostly cut off)\n- unusual_viewpoint: somewhat (extreme close-up of hair)\n- multiple_main_objects: no\n\nDominant content: This is tricky - it's a close-up detail of hair with a person partially visible. I'd say \"closeup_detail\" or \"person_face\" - but since the face is mostly hidden, \"closeup_detail\" seems appropriate.\n\nImage style: natural_photo\n\nSemantic domain: portrait or lifestyle\n\nShort caption: \"Wind-blown brown hair strands with a blurred outdoor cityscape background\"\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be flowing/blowing hair in the foreground, with some hair strands visible. In the lower left, there's a small portion of what looks like a person's face (nose/cheek area) visible. The background is heavily blurred but appears to show an outdoor scene, possibly a cityscape or landscape with warm golden tones suggesting sunset or warm lighting.\n\nLet me annotate based on the schema:\n\n- recognizability: The main content (hair blowing in wind) is fairly recognizable, though the face is mostly obscured. I'd say 3-4.\n- ambiguity: Could be interpreted as an artistic portrait, hair advertisement, lifestyle photo, etc. Moderate ambiguity. 3.\n- natural_photo_typicality: Looks like a typical natural photograph with shallow depth of field. 4.\n- visual_clutter: The image is relatively simple - mainly hair strands and a blurred background. 2.\n- object_centricity: The hair is the main subject dominating the frame. 4.\n- scene_centricity: There's a background scene but it's heavily blurred and secondary. 2.\n- caption_confidence: Reasonably confident about what's shown. 3.\n\nCounts:\n- salient_object_count: 1 (the hair/head)\n- distinct_object_categories: 2 (person, hair/outdoor scene background)\n\nContains:\n- person: yes (partial face visible)\n- face: partially yes (nose visible)\n- animal: no\n- text: no\n- vehicle: no\n- food: no\n- indoor_scene: no\n- outdoor_scene: yes (blurred background)\n- artificial_or_rendered: no\n- occlusion_or_truncation: yes (face is mostly cut off)\n- unusual_viewpoint: somewhat (extreme close-up of hair)\n- multiple_main_objects: no\n\nDominant content: This is tricky - it's a close-up detail of hair with a person partially visible. I'd say \"closeup_detail\" or \"person_face\" - but since the face is mostly hidden, \"closeup_detail\" seems appropriate.\n\nImage style: natural_photo\n\nSemantic domain: portrait or lifestyle\n\nShort caption: \"Wind-blown brown hair strands with a blurred outdoor cityscape background\"\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 840,
+          "total_tokens": 2154,
+          "cost": 0.0010902,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1300,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0010902,
+            "upstream_inference_prompt_cost": 8.22e-05,
+            "upstream_inference_completions_cost": 0.001008
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 536,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

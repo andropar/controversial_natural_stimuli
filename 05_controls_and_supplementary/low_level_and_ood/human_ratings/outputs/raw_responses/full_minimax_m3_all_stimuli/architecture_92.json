@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_92",
+    "stim_key": "architecture_92",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 92,
+    "file_index": 92,
+    "image_name": "image_0092.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0092.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor furniture\",\n  \"short_caption\": \"Ornate wrought-iron patio bistro set with small potted cactus on a sunny stone patio.\",\n  \"main_objects\": [\"round wrought-iron table\", \"two wrought-iron chairs\", \"potted cactus\", \"hedge\"],\n  \"possible_interpretations\": [\"outdoor bistro dining set\", \"garden patio furniture display\", \"cafe seating arrangement\"],\n  \"uncertainty_notes\": \"Cactus species is unclear due to small size; chairs are partially visible at edges.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318950-ZTjJjyoXLy4o6EvMGvGm",
+        "object": "chat.completion",
+        "created": 1780318950,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor furniture\",\n  \"short_caption\": \"Ornate wrought-iron patio bistro set with small potted cactus on a sunny stone patio.\",\n  \"main_objects\": [\"round wrought-iron table\", \"two wrought-iron chairs\", \"potted cactus\", \"hedge\"],\n  \"possible_interpretations\": [\"outdoor bistro dining set\", \"garden patio furniture display\", \"cafe seating arrangement\"],\n  \"uncertainty_notes\": \"Cactus species is unclear due to small size; chairs are partially visible at edges.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an outdoor patio setting with:\n- A small round wrought-iron/cast-iron table with an ornate lattice/web pattern design\n- A small terracotta/red square pot containing what appears to be a small cactus (white/green spiky)\n- Two matching wrought-iron chairs flanking the table\n- A concrete/stone patio surface\n- A green hedge/shrub in the background\n- Strong sunlight creating dramatic shadow patterns on the ground\n\nLet me rate the dimensions:\n- recognizability: 5 - very clear what's shown\n- ambiguity: 1 - clearly a patio furniture set\n- natural_photo_typicality: 5 - looks like a typical photograph\n- visual_clutter: 3 - some patterns but organized\n- object_centricity: 4 - the table with cactus is central\n- scene_centricity: 4 - it's also a scene/setting\n\nOther fields:\n- contains_plant: yes (cactus)\n- contains_outdoor_scene: yes\n- estimated_salient_object_count: 4 (table, 2 chairs, pot with cactus)\n- estimated_distinct_object_categories: 3 (furniture, plant, hedge)\n\nLet me construct the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an outdoor patio setting with:\n- A small round wrought-iron/cast-iron table with an ornate lattice/web pattern design\n- A small terracotta/red square pot containing what appears to be a small cactus (white/green spiky)\n- Two matching wrought-iron chairs flanking the table\n- A concrete/stone patio surface\n- A green hedge/shrub in the background\n- Strong sunlight creating dramatic shadow patterns on the ground\n\nLet me rate the dimensions:\n- recognizability: 5 - very clear what's shown\n- ambiguity: 1 - clearly a patio furniture set\n- natural_photo_typicality: 5 - looks like a typical photograph\n- visual_clutter: 3 - some patterns but organized\n- object_centricity: 4 - the table with cactus is central\n- scene_centricity: 4 - it's also a scene/setting\n\nOther fields:\n- contains_plant: yes (cactus)\n- contains_outdoor_scene: yes\n- estimated_salient_object_count: 4 (table, 2 chairs, pot with cactus)\n- estimated_distinct_object_categories: 3 (furniture, plant, hedge)\n\nLet me construct the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 594,
+          "total_tokens": 2008,
+          "cost": 0.00098676,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00098676,
+            "upstream_inference_prompt_cost": 0.00027396,
+            "upstream_inference_completions_cost": 0.0007128
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 282,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

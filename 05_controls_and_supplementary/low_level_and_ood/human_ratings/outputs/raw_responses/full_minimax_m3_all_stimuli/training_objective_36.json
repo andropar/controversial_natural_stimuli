@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_36",
+    "stim_key": "training_objective_36",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 36,
+    "file_index": 36,
+    "image_name": "image_0036.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0036.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"everyday_life\",\n  \"short_caption\": \"Person standing by an open foot-pedal trash can on grass\",\n  \"main_objects\": [\"trash can\", \"jeans\", \"shoes\", \"grass\"],\n  \"possible_interpretations\": [\n    \"person about to dispose of trash\",\n    \"demonstrating a foot-pedal trash can\",\n    \"person just opened the trash can lid\"\n  ],\n  \"uncertainty_notes\": \"Person's upper body and face are not visible; action/context inferred from foot position near pedal\",\n  \"quality_flags\": [\"person_truncated\", \"action_ambiguous\"]\n}",
+      "response": {
+        "id": "gen-1780319317-nmmSwrKChkp197grqHLg",
+        "object": "chat.completion",
+        "created": 1780319317,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"everyday_life\",\n  \"short_caption\": \"Person standing by an open foot-pedal trash can on grass\",\n  \"main_objects\": [\"trash can\", \"jeans\", \"shoes\", \"grass\"],\n  \"possible_interpretations\": [\n    \"person about to dispose of trash\",\n    \"demonstrating a foot-pedal trash can\",\n    \"person just opened the trash can lid\"\n  ],\n  \"uncertainty_notes\": \"Person's upper body and face are not visible; action/context inferred from foot position near pedal\",\n  \"quality_flags\": [\"person_truncated\", \"action_ambiguous\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nI can see:\n- A person wearing blue jeans and black shoes, visible from the waist down (partial view, no face)\n- A black trash can with an open lid and a white/clear plastic liner\n- Grass/lawn as the background (outdoor scene)\n- The person appears to be standing near the trash can, possibly operating it with a foot pedal\n\nThe image shows a person (lower body only) using a foot-pedal trash can on grass.\n\nLet me rate according to the schema:\n- recognizability: 4 - clearly shows a trash can and person's lower body\n- ambiguity: 2 - fairly clear what's happening\n- natural_photo_typicality: 4 - looks like a natural photograph\n- visual_clutter: 2 - relatively simple scene with grass background, person, and trash can\n- object_centricity: 3 - there's a clear object (trash can) but person is also prominent\n- scene_centricity: 2 - it's more about the object/action than a scene\n- caption_confidence: 4 - easy to describe\n\nSalient objects: trash can, person (legs), shoes\nDistinct categories: 3 (trash can, clothing/shoes, grass)\n\nContains person: yes (partially)\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial or rendered content: no\nContains occlusion or truncation: yes (person is truncated)\nContains unusual viewpoint: no (somewhat high angle but not unusual)\nContains multiple main objects: no (trash can is dominant)\n\nDominant content type: object (trash can)\nImage style: natural_photo\nSemantic domain: everyday_life or outdoor_activity\n\nShort caption: \"Person using a foot-pedal trash can on grass\"\nMain objects: trash can, jeans, shoes, grass\nPossible interpretations: person about to throw something away, demonstrating trash can\nUncertainty notes: person's upper body not visible\nQuality flags: truncation",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nI can see:\n- A person wearing blue jeans and black shoes, visible from the waist down (partial view, no face)\n- A black trash can with an open lid and a white/clear plastic liner\n- Grass/lawn as the background (outdoor scene)\n- The person appears to be standing near the trash can, possibly operating it with a foot pedal\n\nThe image shows a person (lower body only) using a foot-pedal trash can on grass.\n\nLet me rate according to the schema:\n- recognizability: 4 - clearly shows a trash can and person's lower body\n- ambiguity: 2 - fairly clear what's happening\n- natural_photo_typicality: 4 - looks like a natural photograph\n- visual_clutter: 2 - relatively simple scene with grass background, person, and trash can\n- object_centricity: 3 - there's a clear object (trash can) but person is also prominent\n- scene_centricity: 2 - it's more about the object/action than a scene\n- caption_confidence: 4 - easy to describe\n\nSalient objects: trash can, person (legs), shoes\nDistinct categories: 3 (trash can, clothing/shoes, grass)\n\nContains person: yes (partially)\nContains face: no\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial or rendered content: no\nContains occlusion or truncation: yes (person is truncated)\nContains unusual viewpoint: no (somewhat high angle but not unusual)\nContains multiple main objects: no (trash can is dominant)\n\nDominant content type: object (trash can)\nImage style: natural_photo\nSemantic domain: everyday_life or outdoor_activity\n\nShort caption: \"Person using a foot-pedal trash can on grass\"\nMain objects: trash can, jeans, shoes, grass\nPossible interpretations: person about to throw something away, demonstrating trash can\nUncertainty notes: person's upper body not visible\nQuality flags: truncation",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 795,
+          "total_tokens": 2317,
+          "cost": 0.00138324,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00138324,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.000954
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 501,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

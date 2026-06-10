@@ -31,13 +31,13 @@ The analysis also writes aggregate rows for the full visual mask and `hlvis`.
 
 ## Outputs
 
-- `data/visual_parcel_mixed_rsa.csv`: long-form model x ROI x stimulus scores.
-- `data/visual_parcel_endpoint_summary.csv`: subject x model-set x ROI endpoints,
+- `results/visual_parcel_mixed_rsa.csv`: long-form model x ROI x stimulus scores.
+- `results/visual_parcel_endpoint_summary.csv`: subject x model-set x ROI endpoints,
   including controversial-baseline delta, relative delta, and model-spread ratio.
-- `data/visual_parcel_metadata.csv`: subject-specific ROI voxel counts and atlas
+- `results/visual_parcel_metadata.csv`: subject-specific ROI voxel counts and atlas
   assignment diagnostics.
-- `data/visual_group_summary.csv`: plotted group/aggregate means and +/-1.96 SEM.
-- `data/visual_group_comparisons.csv`: paired endpoint tests against early visual
+- `results/visual_group_summary.csv`: plotted group/aggregate means and +/-1.96 SEM.
+- `results/visual_group_comparisons.csv`: paired endpoint tests against early visual
   and high-level visual references. Holm correction is applied within each
   metric x reference family.
 - `figures/visual_parcel_roi_summary.pdf` and `.png`: main visual ROI figure.
@@ -92,7 +92,7 @@ environment currently has a Matplotlib/NumPy binary compatibility mismatch.
 
 ## Legacy Summary
 
-`01_build_roi_summary.py` creates `data/roi_results.csv` from available ROI
+`01_build_roi_summary.py` creates `results/roi_results.csv` from available ROI
 outputs. The original CSTIMS brain-data cache exposed `visual_mask` and
 `hlvis_mask` but not local parcel-level masks. The full visual-cortex analysis
 above now uses the subject-level HCP-MMP atlas under the DeepVision derivatives

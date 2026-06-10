@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_30",
+    "stim_key": "vicco_30",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 30,
+    "file_index": 29,
+    "image_name": "shared_4rep_vicco_030.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_030.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food\",\n  \"short_caption\": \"Two bananas, two Greek yogurt cups, and two nectarines arranged on a dark countertop.\",\n  \"main_objects\": [\"banana\", \"yogurt container\", \"nectarine\", \"dark countertop\"],\n  \"possible_interpretations\": [\n    \"Food items laid out on a kitchen counter\",\n    \"Breakfast ingredients or snack items\",\n    \"Casual still life of purchased groceries\"\n  ],\n  \"uncertainty_notes\": \"The red fruits could be nectarines or small apples; identification is uncertain from the top-down angle. A partial leg/foot in dark clothing is visible at the right edge.\",\n  \"quality_flags\": [\"truncated person at edge\", \"overhead viewpoint\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319418-L0CNKk0JoHlrAbwmuZ9R",
+        "object": "chat.completion",
+        "created": 1780319418,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food\",\n  \"short_caption\": \"Two bananas, two Greek yogurt cups, and two nectarines arranged on a dark countertop.\",\n  \"main_objects\": [\"banana\", \"yogurt container\", \"nectarine\", \"dark countertop\"],\n  \"possible_interpretations\": [\n    \"Food items laid out on a kitchen counter\",\n    \"Breakfast ingredients or snack items\",\n    \"Casual still life of purchased groceries\"\n  ],\n  \"uncertainty_notes\": \"The red fruits could be nectarines or small apples; identification is uncertain from the top-down angle. A partial leg/foot in dark clothing is visible at the right edge.\",\n  \"quality_flags\": [\"truncated person at edge\", \"overhead viewpoint\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a dark gray/slate countertop or tray with several food items arranged on it:\n- A banana (top, curved)\n- A red fruit (looks like a nectarine or apple, at the very top)\n- A yogurt container (Mevgal brand, Greek style yogurt - \"Griechischer Sahnejoghurt\")\n- A gray bar/divider across the middle\n- Another red fruit (nectarine) at the bottom\n- Another banana at the bottom\n- Another yogurt container at the bottom\n\nSo there are 2 bananas, 2 yogurts, and 2 stone fruits (nectarines or similar).\n\nThere's a partial view of what appears to be a person's leg/foot in black clothing on the right edge.\n\nThe image appears to be taken from above (top-down view) of food items on a counter.\n\nLet me rate the dimensions:\n- Recognizability: 5 - Very clear what's shown\n- Ambiguity: 1 - Very clear what's shown, minimal ambiguity\n- Natural photo typicality: 4 - Looks like a natural photo, though possibly casual\n- Visual clutter: 2 - Relatively clean, just a few items\n- Object centricity: 3 - Multiple objects but no single dominant one\n- Scene centricity: 3 - Could be a food display\n- Caption confidence: 5 - Easy to caption\n\nEstimated salient objects: 6 (2 bananas, 2 yogurts, 2 fruits) - but the fruits could count as 1 category\nDistinct categories: 3 (bananas, yogurt, stone fruits)\n\ncontains_person: false (only partial leg/foot, not really a person shown)\ncontains_face: false\ncontains_animal: false\ncontains_text: true (text on yogurt containers)\ncontains_vehicle: false\ncontains_food: true\ncontains_indoor_scene: true (countertop)\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (truncation of person on edge)\ncontains_unusual_viewpoint: true (top-down overhead view, somewhat unusual)\ncontains_multiple_main_objects: true\n\nDominant content type: object (or food)\nImage style: natural_photo\nSemantic domain: food\n\nShort caption: \"Two bananas, two yogurts, and two nectarines arranged on a dark countertop\"\n\nMain objects: [\"banana\", \"yogurt container\", \"nectarine\", \"countertop\"]\n\nPossible interpretations: \n- Food items on a counter\n- Ingredients for a meal/breakfast\n- A still life of food\n\nUncertainty: The red fruits could be nectarines or apples. Hard to tell from this angle.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a dark gray/slate countertop or tray with several food items arranged on it:\n- A banana (top, curved)\n- A red fruit (looks like a nectarine or apple, at the very top)\n- A yogurt container (Mevgal brand, Greek style yogurt - \"Griechischer Sahnejoghurt\")\n- A gray bar/divider across the middle\n- Another red fruit (nectarine) at the bottom\n- Another banana at the bottom\n- Another yogurt container at the bottom\n\nSo there are 2 bananas, 2 yogurts, and 2 stone fruits (nectarines or similar).\n\nThere's a partial view of what appears to be a person's leg/foot in black clothing on the right edge.\n\nThe image appears to be taken from above (top-down view) of food items on a counter.\n\nLet me rate the dimensions:\n- Recognizability: 5 - Very clear what's shown\n- Ambiguity: 1 - Very clear what's shown, minimal ambiguity\n- Natural photo typicality: 4 - Looks like a natural photo, though possibly casual\n- Visual clutter: 2 - Relatively clean, just a few items\n- Object centricity: 3 - Multiple objects but no single dominant one\n- Scene centricity: 3 - Could be a food display\n- Caption confidence: 5 - Easy to caption\n\nEstimated salient objects: 6 (2 bananas, 2 yogurts, 2 fruits) - but the fruits could count as 1 category\nDistinct categories: 3 (bananas, yogurt, stone fruits)\n\ncontains_person: false (only partial leg/foot, not really a person shown)\ncontains_face: false\ncontains_animal: false\ncontains_text: true (text on yogurt containers)\ncontains_vehicle: false\ncontains_food: true\ncontains_indoor_scene: true (countertop)\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (truncation of person on edge)\ncontains_unusual_viewpoint: true (top-down overhead view, somewhat unusual)\ncontains_multiple_main_objects: true\n\nDominant content type: object (or food)\nImage style: natural_photo\nSemantic domain: food\n\nShort caption: \"Two bananas, two yogurts, and two nectarines arranged on a dark countertop\"\n\nMain objects: [\"banana\", \"yogurt container\", \"nectarine\", \"countertop\"]\n\nPossible interpretations: \n- Food items on a counter\n- Ingredients for a meal/breakfast\n- A still life of food\n\nUncertainty: The red fruits could be nectarines or apples. Hard to tell from this angle.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 949,
+          "total_tokens": 2471,
+          "cost": 0.00156804,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00156804,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0011388
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 616,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

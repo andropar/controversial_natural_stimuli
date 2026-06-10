@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_144",
+    "stim_key": "vicco_144",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 144,
+    "file_index": 143,
+    "image_name": "shared_4rep_vicco_144.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_144.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"flag\",\n  \"short_caption\": \"A tricolor flag with yellow, blue, and red stripes waving on a tall metal flagpole against a clear blue sky.\",\n  \"main_objects\": [\"flag\", \"flagpole\", \"halyard rope\"],\n  \"possible_interpretations\": [\"Romanian national flag on a flagpole\", \"A generic tricolor flag at an outdoor event\", \"A civic or institutional flag displayed outdoors\"],\n  \"uncertainty_notes\": \"Exact flag identity is uncertain due to the viewing angle; the red stripe appears slightly pinkish, possibly due to lighting or fabric quality.\",\n  \"quality_flags\": [\"low_angle_view\", \"minimal_background\"]\n}",
+      "response": {
+        "id": "gen-1780319551-Q0SHKX3MCEEx5eaVdyKE",
+        "object": "chat.completion",
+        "created": 1780319551,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"flag\",\n  \"short_caption\": \"A tricolor flag with yellow, blue, and red stripes waving on a tall metal flagpole against a clear blue sky.\",\n  \"main_objects\": [\"flag\", \"flagpole\", \"halyard rope\"],\n  \"possible_interpretations\": [\"Romanian national flag on a flagpole\", \"A generic tricolor flag at an outdoor event\", \"A civic or institutional flag displayed outdoors\"],\n  \"uncertainty_notes\": \"Exact flag identity is uncertain due to the viewing angle; the red stripe appears slightly pinkish, possibly due to lighting or fabric quality.\",\n  \"quality_flags\": [\"low_angle_view\", \"minimal_background\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a flag on a flagpole against a blue sky. The flag appears to have yellow/gold, blue, and red/pink horizontal stripes - this could be the Romanian flag or a similar tricolor. There's also what appears to be a halyard or rope hanging down from the flagpole.\n\nLet me annotate according to the schema:\n\n- Recognizability: Clear flag on a flagpole against blue sky. Very recognizable. 5\n- Ambiguity: Low ambiguity - it's clearly a flag on a pole. 1\n- Natural photo typicality: Looks like a natural photograph. 5\n- Visual clutter: Very minimal - just flag, pole, and sky. 1\n- Object centricity: The flag is the main subject. 4\n- Scene centricity: It's outdoors with sky as backdrop but the flag dominates. 2\n- Caption confidence: High confidence - flag on flagpole. 5\n\n- Salient object count: 2 (flag and flagpole)\n- Distinct object categories: 2 (flag, flagpole)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (no visible text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true (sky/outdoor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (low angle but not unusual)\n- contains_multiple_main_objects: false\n\nDominant content type: object (the flag)\nImage style: natural_photo\nSemantic domain: flag or outdoor\n\nThe flag colors look like yellow, blue, and red/pink - possibly Romanian flag (which is blue, yellow, red) or could be something else. Hard to tell exactly which flag.\n\nShort caption: \"A colorful tricolor flag waving on a tall flagpole against a blue sky.\"\n\nMain objects: flag, flagpole, halyard rope\n\nPossible interpretations: The flag could be Romanian, Chadian, or another tricolor - uncertain identification.\n\nThe flag appears to be a tricolor. Given yellow, blue, and pink/red colors visible, it could be the Romanian flag (which is blue, yellow, red) but viewed from an angle.\n\nUncertainty notes: The exact country of the flag is uncertain; colors may appear pinkish due to lighting.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a flag on a flagpole against a blue sky. The flag appears to have yellow/gold, blue, and red/pink horizontal stripes - this could be the Romanian flag or a similar tricolor. There's also what appears to be a halyard or rope hanging down from the flagpole.\n\nLet me annotate according to the schema:\n\n- Recognizability: Clear flag on a flagpole against blue sky. Very recognizable. 5\n- Ambiguity: Low ambiguity - it's clearly a flag on a pole. 1\n- Natural photo typicality: Looks like a natural photograph. 5\n- Visual clutter: Very minimal - just flag, pole, and sky. 1\n- Object centricity: The flag is the main subject. 4\n- Scene centricity: It's outdoors with sky as backdrop but the flag dominates. 2\n- Caption confidence: High confidence - flag on flagpole. 5\n\n- Salient object count: 2 (flag and flagpole)\n- Distinct object categories: 2 (flag, flagpole)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (no visible text)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true (sky/outdoor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (low angle but not unusual)\n- contains_multiple_main_objects: false\n\nDominant content type: object (the flag)\nImage style: natural_photo\nSemantic domain: flag or outdoor\n\nThe flag colors look like yellow, blue, and red/pink - possibly Romanian flag (which is blue, yellow, red) or could be something else. Hard to tell exactly which flag.\n\nShort caption: \"A colorful tricolor flag waving on a tall flagpole against a blue sky.\"\n\nMain objects: flag, flagpole, halyard rope\n\nPossible interpretations: The flag could be Romanian, Chadian, or another tricolor - uncertain identification.\n\nThe flag appears to be a tricolor. Given yellow, blue, and pink/red colors visible, it could be the Romanian flag (which is blue, yellow, red) but viewed from an angle.\n\nUncertainty notes: The exact country of the flag is uncertain; colors may appear pinkish due to lighting.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 878,
+          "total_tokens": 2400,
+          "cost": 0.00135996,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00135996,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010536
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 568,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

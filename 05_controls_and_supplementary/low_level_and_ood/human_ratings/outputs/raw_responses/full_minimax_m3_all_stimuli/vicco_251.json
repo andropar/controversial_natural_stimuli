@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_251",
+    "stim_key": "vicco_251",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 251,
+    "file_index": 250,
+    "image_name": "shared_4rep_vicco_251.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_251.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 9,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"underwater marine reef\",\n  \"short_caption\": \"Cluster of green tube anemones on a rocky reef with surrounding soft corals\",\n  \"main_objects\": [\"tube anemones\", \"rocky substrate\", \"soft coral\"],\n  \"possible_interpretations\": [\n    \"underwater reef with tube anemones\",\n    \"marine invertebrate colony on rocks\",\n    \"tropical coral reef habitat scene\"\n  ],\n  \"uncertainty_notes\": \"Anemone species identification uncertain; exact coral species not identifiable from this view.\",\n  \"quality_flags\": [\"underwater_color_cast\", \"slight_particulate_turbidity\"]\n}",
+      "response": {
+        "id": "gen-1780319676-F2bA8ZP9RNJJM3oh3K6p",
+        "object": "chat.completion",
+        "created": 1780319676,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 9,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"underwater marine reef\",\n  \"short_caption\": \"Cluster of green tube anemones on a rocky reef with surrounding soft corals\",\n  \"main_objects\": [\"tube anemones\", \"rocky substrate\", \"soft coral\"],\n  \"possible_interpretations\": [\n    \"underwater reef with tube anemones\",\n    \"marine invertebrate colony on rocks\",\n    \"tropical coral reef habitat scene\"\n  ],\n  \"uncertainty_notes\": \"Anemone species identification uncertain; exact coral species not identifiable from this view.\",\n  \"quality_flags\": [\"underwater_color_cast\", \"slight_particulate_turbidity\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows an underwater scene with multiple sea anemones (likely green/yellow tube anemones or similar species) attached to rocks. There are also some coral structures visible, including what appears to be soft coral or anemone tentacles in the lower right. The dominant features are the cluster of green anemones with radiating tentacles on rocky substrate.\n\nLet me analyze each attribute:\n\n- recognizability: The main content (anemones) is clearly recognizable. 4-5\n- ambiguity: Pretty clear what it is, low ambiguity. 2\n- natural_photo_typicality: This is a natural underwater photo. 4\n- visual_clutter: Multiple anemones, rocks, corals - moderate to high clutter. 3-4\n- object_centricity: There are many similar anemones, not one dominant object. 2-3\n- scene_centricity: It's more of a scene/habitat view. 3-4\n- caption_confidence: High confidence in caption. 4\n\nSalient objects: I count maybe 8-10 anemones\nDistinct categories: anemones, rocks, corals - maybe 3\n\nNo people, faces, animals (well, anemones are animals but typically \"animal\" implies vertebrates), no text, no vehicles, no food, no indoor, this is an outdoor scene (underwater).\n\nThe anemones are animals technically, but in common usage \"animal\" usually means non-human animals/vertebrates. I'll mark contains_animal as true since anemones are animals, but it's borderline.\n\nWait, let me reconsider - anemones are cnidarians/animals. I'll set it to true.\n\nLet me finalize:\n- multiple main objects: yes, many anemones\n- unusual viewpoint: standard underwater photo, not really unusual\n- occlusion: some overlap but not severe\n\nDominant content: mixed (multiple anemones in a scene)\nImage style: natural_photo\nSemantic domain: underwater/marine/coral_reef\n\nCaption: \"Cluster of green tube anemones on rocky reef with surrounding corals\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows an underwater scene with multiple sea anemones (likely green/yellow tube anemones or similar species) attached to rocks. There are also some coral structures visible, including what appears to be soft coral or anemone tentacles in the lower right. The dominant features are the cluster of green anemones with radiating tentacles on rocky substrate.\n\nLet me analyze each attribute:\n\n- recognizability: The main content (anemones) is clearly recognizable. 4-5\n- ambiguity: Pretty clear what it is, low ambiguity. 2\n- natural_photo_typicality: This is a natural underwater photo. 4\n- visual_clutter: Multiple anemones, rocks, corals - moderate to high clutter. 3-4\n- object_centricity: There are many similar anemones, not one dominant object. 2-3\n- scene_centricity: It's more of a scene/habitat view. 3-4\n- caption_confidence: High confidence in caption. 4\n\nSalient objects: I count maybe 8-10 anemones\nDistinct categories: anemones, rocks, corals - maybe 3\n\nNo people, faces, animals (well, anemones are animals but typically \"animal\" implies vertebrates), no text, no vehicles, no food, no indoor, this is an outdoor scene (underwater).\n\nThe anemones are animals technically, but in common usage \"animal\" usually means non-human animals/vertebrates. I'll mark contains_animal as true since anemones are animals, but it's borderline.\n\nWait, let me reconsider - anemones are cnidarians/animals. I'll set it to true.\n\nLet me finalize:\n- multiple main objects: yes, many anemones\n- unusual viewpoint: standard underwater photo, not really unusual\n- occlusion: some overlap but not severe\n\nDominant content: mixed (multiple anemones in a scene)\nImage style: natural_photo\nSemantic domain: underwater/marine/coral_reef\n\nCaption: \"Cluster of green tube anemones on rocky reef with surrounding corals\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 797,
+          "total_tokens": 2319,
+          "cost": 0.00126276,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126276,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009564
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 475,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

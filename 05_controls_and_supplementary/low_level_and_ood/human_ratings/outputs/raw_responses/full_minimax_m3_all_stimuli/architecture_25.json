@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_25",
+    "stim_key": "architecture_25",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 25,
+    "file_index": 25,
+    "image_name": "image_0025.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0025.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"illustration_or_render\",\n  \"semantic_domain\": \"bathroom interior\",\n  \"short_caption\": \"Modern bathroom featuring a glass-enclosed shower, vanity, and towel rack\",\n  \"main_objects\": [\"shower\", \"vanity\", \"towels\", \"towel rack\", \"window with curtains\", \"bath mat\", \"bench\"],\n  \"possible_interpretations\": [\"A contemporary residential bathroom\", \"A bathroom showroom or design render\", \"A staged interior design photo\"],\n  \"uncertainty_notes\": \"Image appears to be a 3D render or digital illustration rather than a natural photograph; exact text on towels not legible.\",\n  \"quality_flags\": [\"rendered_content\"]\n}",
+      "response": {
+        "id": "gen-1780318874-CyswqwmtG0PGNLALNdNE",
+        "object": "chat.completion",
+        "created": 1780318874,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"illustration_or_render\",\n  \"semantic_domain\": \"bathroom interior\",\n  \"short_caption\": \"Modern bathroom featuring a glass-enclosed shower, vanity, and towel rack\",\n  \"main_objects\": [\"shower\", \"vanity\", \"towels\", \"towel rack\", \"window with curtains\", \"bath mat\", \"bench\"],\n  \"possible_interpretations\": [\"A contemporary residential bathroom\", \"A bathroom showroom or design render\", \"A staged interior design photo\"],\n  \"uncertainty_notes\": \"Image appears to be a 3D render or digital illustration rather than a natural photograph; exact text on towels not legible.\",\n  \"quality_flags\": [\"rendered_content\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a bathroom scene with a glass-enclosed shower as the central feature. There's a vanity with drawers on the left, towels hanging on a rack, a window with curtains on the right, a bath mat on the floor, and what appears to be a bench/ottoman with a towel. The shower has a built-in niche with decorative items. This looks like a rendered/illustrated image rather than a natural photograph - it has the appearance of a 3D render or digital illustration of a bathroom.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - very clearly a bathroom with shower\n- ambiguity: 1 - very clear what this is\n- natural_photo_typicality: 2 - looks rendered/illustrated, not a typical natural photo\n- visual_clutter: 2 - relatively clean, not many competing elements\n- object_centricity: 4 - shower is the central object\n- scene_centricity: 5 - this is a scene/place (bathroom)\n- caption_confidence: 5 - very confident in a caption\n\n- estimated_salient_object_count: 5-6 (shower, vanity, towels, window, bench, mat)\n- estimated_distinct_object_categories: 5-6\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (towels may have text but hard to read)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true - appears rendered\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false - shower is the main object\n\ndominant_content_type: scene\nimage_style: illustration_or_render\nsemantic_domain: bathroom/interior\n\nshort_caption: \"Modern bathroom with glass-enclosed shower and vanity\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a bathroom scene with a glass-enclosed shower as the central feature. There's a vanity with drawers on the left, towels hanging on a rack, a window with curtains on the right, a bath mat on the floor, and what appears to be a bench/ottoman with a towel. The shower has a built-in niche with decorative items. This looks like a rendered/illustrated image rather than a natural photograph - it has the appearance of a 3D render or digital illustration of a bathroom.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - very clearly a bathroom with shower\n- ambiguity: 1 - very clear what this is\n- natural_photo_typicality: 2 - looks rendered/illustrated, not a typical natural photo\n- visual_clutter: 2 - relatively clean, not many competing elements\n- object_centricity: 4 - shower is the central object\n- scene_centricity: 5 - this is a scene/place (bathroom)\n- caption_confidence: 5 - very confident in a caption\n\n- estimated_salient_object_count: 5-6 (shower, vanity, towels, window, bench, mat)\n- estimated_distinct_object_categories: 5-6\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (towels may have text but hard to read)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true - appears rendered\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false - shower is the main object\n\ndominant_content_type: scene\nimage_style: illustration_or_render\nsemantic_domain: bathroom/interior\n\nshort_caption: \"Modern bathroom with glass-enclosed shower and vanity\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 774,
+          "total_tokens": 2296,
+          "cost": 0.00123516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00123516,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009288
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 451,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

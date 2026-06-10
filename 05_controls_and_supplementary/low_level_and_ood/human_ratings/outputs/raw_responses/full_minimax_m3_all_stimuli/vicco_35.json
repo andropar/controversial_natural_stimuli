@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_35",
+    "stim_key": "vicco_35",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 35,
+    "file_index": 34,
+    "image_name": "shared_4rep_vicco_035.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_035.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food\",\n\n  \"short_caption\": \"A plate of chocolate cereal puffs and bread beside a carton of semi-skimmed milk.\",\n  \"main_objects\": [\"chocolate cereal puffs\", \"slice of bread\", \"milk carton\", \"decorative plate\"],\n  \"possible_interpretations\": [\"breakfast meal\", \"child's breakfast\", \"casual home dining\", \"Dutch household breakfast\"],\n  \"uncertainty_notes\": \"Specific cereal brand or type cannot be determined; lighting suggests indoor daylight.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319424-LJ3x8zIof8YZ6d6X0csc",
+        "object": "chat.completion",
+        "created": 1780319424,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"food\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"food\",\n\n  \"short_caption\": \"A plate of chocolate cereal puffs and bread beside a carton of semi-skimmed milk.\",\n  \"main_objects\": [\"chocolate cereal puffs\", \"slice of bread\", \"milk carton\", \"decorative plate\"],\n  \"possible_interpretations\": [\"breakfast meal\", \"child's breakfast\", \"casual home dining\", \"Dutch household breakfast\"],\n  \"uncertainty_notes\": \"Specific cereal brand or type cannot be determined; lighting suggests indoor daylight.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- A plate with what appears to be chocolate cereal (small round brown puffs) and a piece of bread\n- A carton of \"Biologisch Plus Halfvolle melk\" (organic semi-skimmed milk, 0.5 liter) - Dutch text\n- The plate has a decorative floral pattern with red tulips and blue leaves\n- The setting appears to be on a gray countertop/table\n- There's a shadow visible in the lower right\n- Lighting seems natural/daylight\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - Very clearly recognizable as a breakfast scene\n- ambiguity: 1 - Clear what's shown (breakfast with cereal and milk)\n- natural_photo_typicality: 5 - Looks like a typical natural photo\n- visual_clutter: 2 - Relatively few items, plate and milk carton\n- object_centricity: 3 - Mixed, but the plate/cereal is the main focus\n- scene_centricity: 3 - It's more of an object arrangement than a scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 4 (plate with bread, cereal, milk carton, decorative plate)\n- estimated_distinct_object_categories: 4 (cereal, bread, milk, plate)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (on milk carton)\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: true (kitchen)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (plate edge is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (cereal/bread and milk)\n\n- dominant_content_type: \"food\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"food\"\n\nshort_caption: \"A plate of chocolate cereal and bread with a carton of semi-skimmed milk\"\n\nmain_objects: [\"chocolate cereal\", \"bread slice\", \"milk carton\", \"decorative plate\"]\n\npossible_interpretations: [\"breakfast preparation\", \"kids breakfast meal\", \"casual home meal\"]\n\nuncertainty_notes: \"The cereal type is hard to identify precisely - could be chocolate-flavored puffed cereal\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- A plate with what appears to be chocolate cereal (small round brown puffs) and a piece of bread\n- A carton of \"Biologisch Plus Halfvolle melk\" (organic semi-skimmed milk, 0.5 liter) - Dutch text\n- The plate has a decorative floral pattern with red tulips and blue leaves\n- The setting appears to be on a gray countertop/table\n- There's a shadow visible in the lower right\n- Lighting seems natural/daylight\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - Very clearly recognizable as a breakfast scene\n- ambiguity: 1 - Clear what's shown (breakfast with cereal and milk)\n- natural_photo_typicality: 5 - Looks like a typical natural photo\n- visual_clutter: 2 - Relatively few items, plate and milk carton\n- object_centricity: 3 - Mixed, but the plate/cereal is the main focus\n- scene_centricity: 3 - It's more of an object arrangement than a scene\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 4 (plate with bread, cereal, milk carton, decorative plate)\n- estimated_distinct_object_categories: 4 (cereal, bread, milk, plate)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (on milk carton)\n- contains_vehicle: false\n- contains_food: true\n- contains_indoor_scene: true (kitchen)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (plate edge is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (cereal/bread and milk)\n\n- dominant_content_type: \"food\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"food\"\n\nshort_caption: \"A plate of chocolate cereal and bread with a carton of semi-skimmed milk\"\n\nmain_objects: [\"chocolate cereal\", \"bread slice\", \"milk carton\", \"decorative plate\"]\n\npossible_interpretations: [\"breakfast preparation\", \"kids breakfast meal\", \"casual home meal\"]\n\nuncertainty_notes: \"The cereal type is hard to identify precisely - could be chocolate-flavored puffed cereal\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 849,
+          "total_tokens": 2371,
+          "cost": 0.00132516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00132516,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010188
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 552,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

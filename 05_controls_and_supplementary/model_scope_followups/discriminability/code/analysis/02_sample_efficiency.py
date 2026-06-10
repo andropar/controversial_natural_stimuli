@@ -15,10 +15,10 @@ Plots:
     rank_stability vs n (mean Spearman with full ranking)
 
 Output:
-    data/sample_efficiency.csv
+    results/sample_efficiency.csv
     figures/sample_efficiency.{pdf,png}
 
-Uses paper-layer features from 11_layer_sweep/cache/features and existing
+Uses paper-layer features from the layer-sweep cache and existing
 per-(subject, model) paper-layer encoding models.
 """
 
@@ -34,12 +34,12 @@ from statsmodels.stats.multitest import multipletests
 from tqdm import tqdm
 from joblib import Parallel, delayed
 
-PROJECT = Path(__file__).resolve().parents[4]
-PAPER = PROJECT / "experiments" / "cstim_paper"
-LAYER_SWEEP = PAPER / "11_layer_sweep"
-sys.path.insert(0, str(PAPER))
-sys.path.insert(0, str(PROJECT))
+STAGE = Path(__file__).resolve().parents[2]
+SHARE_ROOT = STAGE.parents[2]
+LAYER_SWEEP = STAGE.parent / "layer_sweep"
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
 sys.path.insert(0, str(LAYER_SWEEP))
+sys.path.insert(0, str(LAYER_SWEEP / "code"))
 
 from config import MODEL_SETS, get_brain_input_dir  # noqa
 from utils import load_encoding_model, predict_voxel_responses  # noqa
@@ -48,7 +48,7 @@ from layers_config import MAIN_LAYER  # noqa
 DATA_DIR = Path(__file__).resolve().parents[1] / "results"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-CACHE_FEAT = LAYER_SWEEP / "cache" / "features"
+CACHE_FEAT = LAYER_SWEEP / "cache_or_heavy" / "features"
 SUBJECTS = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]
 MODELS = MODEL_SETS["all_models"]   # 20 paper models
 N_SIZES = [10, 20, 40, 60, 80, 100]

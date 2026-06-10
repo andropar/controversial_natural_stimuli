@@ -1,0 +1,86 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_27",
+    "stim_key": "vicco_27",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 27,
+    "file_index": 26,
+    "image_name": "shared_4rep_vicco_027.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_027.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: short_caption must be <= 20 words"
+    },
+    {
+      "attempt": 2,
+      "ok": false,
+      "error": "ValidationError: short_caption must be <= 20 words"
+    },
+    {
+      "attempt": 3,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"cafe interior\",\n  \"short_caption\": \"Small café corner with round table, three wooden chairs, coffee sign, framed prints, and chalkboard menu on pink walls.\",\n  \"main_objects\": [\"round table\", \"wooden chair\", \"coffee wall sign\", \"chalkboard menu\", \"framed prints\", \"cushioned seat\"],\n  \"possible_interpretations\": [\"café or tea room interior\", \"cozy dining nook\", \"bistro seating area\", \"cottage-style restaurant corner\"],\n  \"uncertainty_notes\": \"Jacket on left edge is partially cropped; exact items on chalkboard are hard to read fully; small tabletop print content unclear.\",\n  \"quality_flags\": [\"slight_edge_crop\", \"low_light_lower_area\"]\n}",
+      "response": {
+        "id": "gen-1780319476-4M9Ns28HWNjQw9JUVqCa",
+        "object": "chat.completion",
+        "created": 1780319476,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"cafe interior\",\n  \"short_caption\": \"Small café corner with round table, three wooden chairs, coffee sign, framed prints, and chalkboard menu on pink walls.\",\n  \"main_objects\": [\"round table\", \"wooden chair\", \"coffee wall sign\", \"chalkboard menu\", \"framed prints\", \"cushioned seat\"],\n  \"possible_interpretations\": [\"café or tea room interior\", \"cozy dining nook\", \"bistro seating area\", \"cottage-style restaurant corner\"],\n  \"uncertainty_notes\": \"Jacket on left edge is partially cropped; exact items on chalkboard are hard to read fully; small tabletop print content unclear.\",\n  \"quality_flags\": [\"slight_edge_crop\", \"low_light_lower_area\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a small café or tea room setting with:\n- A small round table with a white tablecloth\n- Three wooden chairs around the table with cushioned seats\n- Pink/lavender upper walls and light green/gray wainscoting on the lower walls\n- Two framed botanical/landscape prints on the wall\n- A \"coffee\" sign/decal on the wall with a coffee cup illustration\n- A chalkboard menu on the right wall listing \"Today's Specials\" with various baked goods\n- A wooden floor\n- What appears to be a coat or jacket hanging on the left side\n- A small framed picture/print on the table\n\nLet me rate this:\n\n- recognizability: 4 - clearly a café setting\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a typical photo\n- visual_clutter: 2 - relatively simple scene\n- object_centricity: 2 - it's a scene, not object-focused\n- scene_centricity: 4 - definitely a scene/place\n- caption_confidence: 4 - can describe it well\n\nMain objects: table, chairs, coffee sign, framed pictures, chalkboard menu\nEstimated salient object count: ~6-7\nDistinct categories: table, chair, wall art, sign, menu board\n\nContains: no person/face/animal/vehicle/food directly visible\nContains text: yes (chalkboard, coffee sign, small print on table)\nIndoor: yes\nOutdoor: no\nArtificial/rendered: no\nOcclusion: slight (chair partially cuts frame on left, jacket partially visible)\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: cafe/interior\n\nShort caption: \"Small café corner with table, wooden chairs, coffee sign, and chalkboard menu on pink walls\"\n\nQuality flags: nothing major",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a small café or tea room setting with:\n- A small round table with a white tablecloth\n- Three wooden chairs around the table with cushioned seats\n- Pink/lavender upper walls and light green/gray wainscoting on the lower walls\n- Two framed botanical/landscape prints on the wall\n- A \"coffee\" sign/decal on the wall with a coffee cup illustration\n- A chalkboard menu on the right wall listing \"Today's Specials\" with various baked goods\n- A wooden floor\n- What appears to be a coat or jacket hanging on the left side\n- A small framed picture/print on the table\n\nLet me rate this:\n\n- recognizability: 4 - clearly a café setting\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a typical photo\n- visual_clutter: 2 - relatively simple scene\n- object_centricity: 2 - it's a scene, not object-focused\n- scene_centricity: 4 - definitely a scene/place\n- caption_confidence: 4 - can describe it well\n\nMain objects: table, chairs, coffee sign, framed pictures, chalkboard menu\nEstimated salient object count: ~6-7\nDistinct categories: table, chair, wall art, sign, menu board\n\nContains: no person/face/animal/vehicle/food directly visible\nContains text: yes (chalkboard, coffee sign, small print on table)\nIndoor: yes\nOutdoor: no\nArtificial/rendered: no\nOcclusion: slight (chair partially cuts frame on left, jacket partially visible)\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: cafe/interior\n\nShort caption: \"Small café corner with table, wooden chairs, coffee sign, and chalkboard menu on pink walls\"\n\nQuality flags: nothing major",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 785,
+          "total_tokens": 2323,
+          "cost": 0.00125316,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00125316,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.000942
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 442,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

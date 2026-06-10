@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_197",
+    "stim_key": "vicco_197",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 197,
+    "file_index": 196,
+    "image_name": "shared_4rep_vicco_197.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_197.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 3, \"natural_photo_typicality\": 3, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": true, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": true, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"sculpture/park\", \"short_caption\": \"Bronze sculpture of two figures in a park with grass and trees\", \"main_objects\": [\"bronze sculpture\", \"two human figures\", \"lamppost\", \"birds\"], \"possible_interpretations\": [\"dancing or embracing figures\", \"falling or contorted figures\", \"abstract art representation of human interaction\", \"mother and child or lovers\"], \"uncertainty_notes\": \"Image is rotated 90 degrees; sculpture is abstract/stylized making exact interpretation uncertain; birds are small and hard to identify precisely.\", \"quality_flags\": [\"image_rotated_90_degrees\", \"rotated_orientation\"]}",
+      "response": {
+        "id": "gen-1780319617-pKTBSh6JFMicJ77hNJTF",
+        "object": "chat.completion",
+        "created": 1780319617,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 3, \"natural_photo_typicality\": 3, \"visual_clutter\": 3, \"object_centricity\": 4, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 3, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": true, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": true, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"sculpture/park\", \"short_caption\": \"Bronze sculpture of two figures in a park with grass and trees\", \"main_objects\": [\"bronze sculpture\", \"two human figures\", \"lamppost\", \"birds\"], \"possible_interpretations\": [\"dancing or embracing figures\", \"falling or contorted figures\", \"abstract art representation of human interaction\", \"mother and child or lovers\"], \"uncertainty_notes\": \"Image is rotated 90 degrees; sculpture is abstract/stylized making exact interpretation uncertain; birds are small and hard to identify precisely.\", \"quality_flags\": [\"image_rotated_90_degrees\", \"rotated_orientation\"]}",
+              "refusal": null,
+              "reasoning": "The image shows a bronze or metal sculpture in what appears to be a park setting. The image is rotated 90 degrees (sideways). The sculpture depicts two figures - it looks like it could be an abstract or stylized representation of people, possibly dancing or interacting. The setting includes green grass, trees, a pathway, and what appears to be a lamppost with red banners. There are also some birds visible on the grass.\n\nLet me analyze:\n- Main subject: a metal sculpture of two human-like figures\n- Setting: outdoor park with grass, trees, pathway\n- Contains: sculpture (not a real person), outdoor scene, grass, trees, birds\n- Image is rotated sideways\n- The sculpture appears to be an abstract artistic piece showing two figures\n\nLet me rate this carefully:\n- recognizability: 4 - the sculpture is clear, though the image rotation makes it harder\n- ambiguity: 3 - could be interpreted as different things (dancing figures, falling figures, etc.)\n- natural_photo_typicality: 3 - it's a real photo but of an artificial sculpture in a park\n- visual_clutter: 3 - multiple elements but main focus is the sculpture\n- object_centricity: 4 - the sculpture dominates\n- scene_centricity: 3 - it's in a park scene\n- caption_confidence: 4\n\nThe image is rotated which is a quality flag. The sculpture is the main object - it's not a real person but represents human figures.\n\nLet me think about the boolean fields:\n- contains_person: false (it's a sculpture, not a real person)\n- contains_face: false (sculpture has stylized features but not real face)\n- contains_animal: true (birds visible)\n- contains_text: false (no readable text, just red banners)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: true (the sculpture is artificial, though it's a photo of a real sculpture)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (image is rotated 90 degrees)\n- contains_multiple_main_objects: false (one main sculpture)\n\nWait, the image is rotated, which is an unusual viewpoint. But the actual scene itself is a normal park scene. I'll mark unusual_viewpoint as true due to the rotation.\n\nActually, \"unusual_viewpoint\" typically refers to the camera angle, not image rotation. But the rotation is a quality issue. Let me think - rotation makes it unusual from the viewer's perspective. I'll note it as a quality flag.\n\nLet me reconsider - the sculpture does have faces visible (even if stylized/abstract). But they're not real faces. I'll say contains_face: false since these are sculptures.\n\ndominant_content_type: \"object\" (the sculpture is the main focus)\nimage_style: \"natural_photo\"\nsemantic_domain: \"sculpture/park\"\n\nshort_caption: \"Bronze sculpture of two figures in a park with grass and trees\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a bronze or metal sculpture in what appears to be a park setting. The image is rotated 90 degrees (sideways). The sculpture depicts two figures - it looks like it could be an abstract or stylized representation of people, possibly dancing or interacting. The setting includes green grass, trees, a pathway, and what appears to be a lamppost with red banners. There are also some birds visible on the grass.\n\nLet me analyze:\n- Main subject: a metal sculpture of two human-like figures\n- Setting: outdoor park with grass, trees, pathway\n- Contains: sculpture (not a real person), outdoor scene, grass, trees, birds\n- Image is rotated sideways\n- The sculpture appears to be an abstract artistic piece showing two figures\n\nLet me rate this carefully:\n- recognizability: 4 - the sculpture is clear, though the image rotation makes it harder\n- ambiguity: 3 - could be interpreted as different things (dancing figures, falling figures, etc.)\n- natural_photo_typicality: 3 - it's a real photo but of an artificial sculpture in a park\n- visual_clutter: 3 - multiple elements but main focus is the sculpture\n- object_centricity: 4 - the sculpture dominates\n- scene_centricity: 3 - it's in a park scene\n- caption_confidence: 4\n\nThe image is rotated which is a quality flag. The sculpture is the main object - it's not a real person but represents human figures.\n\nLet me think about the boolean fields:\n- contains_person: false (it's a sculpture, not a real person)\n- contains_face: false (sculpture has stylized features but not real face)\n- contains_animal: true (birds visible)\n- contains_text: false (no readable text, just red banners)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: true (the sculpture is artificial, though it's a photo of a real sculpture)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (image is rotated 90 degrees)\n- contains_multiple_main_objects: false (one main sculpture)\n\nWait, the image is rotated, which is an unusual viewpoint. But the actual scene itself is a normal park scene. I'll mark unusual_viewpoint as true due to the rotation.\n\nActually, \"unusual_viewpoint\" typically refers to the camera angle, not image rotation. But the rotation is a quality issue. Let me think - rotation makes it unusual from the viewer's perspective. I'll note it as a quality flag.\n\nLet me reconsider - the sculpture does have faces visible (even if stylized/abstract). But they're not real faces. I'll say contains_face: false since these are sculptures.\n\ndominant_content_type: \"object\" (the sculpture is the main focus)\nimage_style: \"natural_photo\"\nsemantic_domain: \"sculpture/park\"\n\nshort_caption: \"Bronze sculpture of two figures in a park with grass and trees\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 973,
+          "total_tokens": 2495,
+          "cost": 0.00147396,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00147396,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011676
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 740,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

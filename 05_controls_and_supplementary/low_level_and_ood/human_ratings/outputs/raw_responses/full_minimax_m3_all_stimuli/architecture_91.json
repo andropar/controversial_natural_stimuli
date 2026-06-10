@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_91",
+    "stim_key": "architecture_91",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 91,
+    "file_index": 91,
+    "image_name": "image_0091.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0091.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"kitchen/household\",\n  \"short_caption\": \"Stainless steel double-basin kitchen sink with chrome faucet against a dark wall\",\n  \"main_objects\": [\"sink\", \"faucet\", \"handles\", \"drains\"],\n  \"possible_interpretations\": [\"a double-basin kitchen sink with a tall gooseneck faucet\"],\n  \"uncertainty_notes\": \"Image is unambiguous; faucet handle color coding (red/blue) suggests hot/cold but is not text.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318949-uaViNqecIKTRhWYrv5si",
+        "object": "chat.completion",
+        "created": 1780318949,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"kitchen/household\",\n  \"short_caption\": \"Stainless steel double-basin kitchen sink with chrome faucet against a dark wall\",\n  \"main_objects\": [\"sink\", \"faucet\", \"handles\", \"drains\"],\n  \"possible_interpretations\": [\"a double-basin kitchen sink with a tall gooseneck faucet\"],\n  \"uncertainty_notes\": \"Image is unambiguous; faucet handle color coding (red/blue) suggests hot/cold but is not text.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a stainless steel double-basin kitchen sink with a chrome faucet. The faucet has two handles - one with a red indicator (likely hot water) and one with a blue indicator (likely cold water). The background is a dark gray/black surface. The image is taken at a slight angle, looking down at the sink.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - very clearly a kitchen sink\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a typical natural photograph, though could be slightly staged\n- visual_clutter: 2 - relatively simple, just a sink and faucet\n- object_centricity: 4 - the sink/faucet is the clear main subject\n- scene_centricity: 2 - it's an object-focused image, not really a scene\n- caption_confidence: 5 - very confident in a caption\n\nSalient objects: faucet, sink basins (2), handles (2) - maybe 3-4 salient objects\nDistinct categories: faucet, sink = 2\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor scene: true (kitchen sink)\nContains outdoor scene: false\nContains artificial or rendered content: false\nContains occlusion or truncation: false (maybe slight truncation but mostly complete)\nContains unusual viewpoint: false - slightly angled but normal\nContains multiple main objects: false - one main object (the sink unit)\n\nDominant content type: object\nImage style: natural_photo\nSemantic domain: kitchen/household\n\nShort caption: \"Stainless steel double-basin kitchen sink with chrome faucet against dark wall\"\n\nMain objects: sink, faucet, handles, drain\n\nPossible interpretations: It's clearly a kitchen sink - only one interpretation really\n\nUncertainty notes: minor; clean simple image\n\nQuality flags: none significant",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a stainless steel double-basin kitchen sink with a chrome faucet. The faucet has two handles - one with a red indicator (likely hot water) and one with a blue indicator (likely cold water). The background is a dark gray/black surface. The image is taken at a slight angle, looking down at the sink.\n\nLet me annotate according to the schema:\n\n- recognizability: 5 - very clearly a kitchen sink\n- ambiguity: 1 - very clear what it is\n- natural_photo_typicality: 4 - looks like a typical natural photograph, though could be slightly staged\n- visual_clutter: 2 - relatively simple, just a sink and faucet\n- object_centricity: 4 - the sink/faucet is the clear main subject\n- scene_centricity: 2 - it's an object-focused image, not really a scene\n- caption_confidence: 5 - very confident in a caption\n\nSalient objects: faucet, sink basins (2), handles (2) - maybe 3-4 salient objects\nDistinct categories: faucet, sink = 2\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor scene: true (kitchen sink)\nContains outdoor scene: false\nContains artificial or rendered content: false\nContains occlusion or truncation: false (maybe slight truncation but mostly complete)\nContains unusual viewpoint: false - slightly angled but normal\nContains multiple main objects: false - one main object (the sink unit)\n\nDominant content type: object\nImage style: natural_photo\nSemantic domain: kitchen/household\n\nShort caption: \"Stainless steel double-basin kitchen sink with chrome faucet against dark wall\"\n\nMain objects: sink, faucet, handles, drain\n\nPossible interpretations: It's clearly a kitchen sink - only one interpretation really\n\nUncertainty notes: minor; clean simple image\n\nQuality flags: none significant",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 740,
+          "total_tokens": 2262,
+          "cost": 0.00119436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00119436,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000888
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 482,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

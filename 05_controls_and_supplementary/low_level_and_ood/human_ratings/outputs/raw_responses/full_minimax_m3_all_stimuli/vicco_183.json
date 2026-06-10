@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_183",
+    "stim_key": "vicco_183",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 183,
+    "file_index": 182,
+    "image_name": "shared_4rep_vicco_183.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_183.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 4, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 4, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": true, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"rural_outdoor\", \"short_caption\": \"A person rides a horse along a path through a field at sunset beside a silhouetted bare tree.\", \"main_objects\": [\"tree\", \"horse\", \"rider\", \"sun\"], \"possible_interpretations\": [\"A horseback rider crossing a rural field at sunset\", \"An evening trail ride in the countryside\", \"A silhouetted bare tree and rider against a low sun\"], \"uncertainty_notes\": \"Tree species is not identifiable; time of day could be sunrise or sunset. Rider's features are obscured by backlighting.\", \"quality_flags\": [\"lens_flare\", \"backlit_subjects\", \"silhouette_lighting\"]}",
+      "response": {
+        "id": "gen-1780319603-jayqFUyCXWcHTAUAVtvl",
+        "object": "chat.completion",
+        "created": 1780319603,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 4, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 4, \"contains_person\": true, \"contains_face\": false, \"contains_animal\": true, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"rural_outdoor\", \"short_caption\": \"A person rides a horse along a path through a field at sunset beside a silhouetted bare tree.\", \"main_objects\": [\"tree\", \"horse\", \"rider\", \"sun\"], \"possible_interpretations\": [\"A horseback rider crossing a rural field at sunset\", \"An evening trail ride in the countryside\", \"A silhouetted bare tree and rider against a low sun\"], \"uncertainty_notes\": \"Tree species is not identifiable; time of day could be sunrise or sunset. Rider's features are obscured by backlighting.\", \"quality_flags\": [\"lens_flare\", \"backlit_subjects\", \"silhouette_lighting\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- A large bare tree (likely an apple tree or similar fruit tree) on the left side, silhouetted against the sky\n- A person riding a horse on a path/trail going away from the camera\n- A sunset or sunrise with the sun low on the horizon\n- Open grassland/field\n- Some smaller trees in the background\n- Power lines visible\n- A clear sky with a slight lens flare from the sun\n\nLet me rate each attribute:\n\n- recognizability: 4 - The scene is quite recognizable as a person on horseback at sunset in a rural field\n- ambiguity: 2 - Clear scene, not many interpretations\n- natural_photo_typicality: 4 - Looks like a typical natural photograph, though with some lens flare\n- visual_clutter: 2 - Relatively uncluttered, main elements are the tree, person on horse, and sunset\n- object_centricity: 2 - Not really one central object, it's more of a scene\n- scene_centricity: 5 - Definitely a scene, the atmosphere and setting dominate\n- caption_confidence: 4 - Can confidently caption this\n\nCounts:\n- estimated_salient_object_count: 4 (tree, person, horse, sun)\n- estimated_distinct_object_categories: 4 (tree, person, horse, sun)\n\nBooleans:\n- contains_person: true\n- contains_face: false (person is seen from behind)\n- contains_animal: true (horse)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (tree, person on horse)\n\ndominant_content_type: \"scene\" - it's a scene with multiple elements\nimage_style: \"natural_photo\"\nsemantic_domain: \"outdoor\" or \"rural\"\n\nshort_caption: \"A person rides a horse along a path through a field at sunset, with a large bare tree silhouetted against the sky.\"\n\nmain_objects: [\"tree\", \"horse\", \"rider\", \"sun\"]\n\npossible_interpretations: \n- \"A rider on horseback at sunset in a rural field\"\n- \"An evening horseback ride in the countryside\"\n- \"A silhouetted tree at sunset with a passing rider\"\n\nuncertainty_notes: \"The tree species is not certain but appears to be a fruit tree (apple or similar). Time of day (sunset vs sunrise) is uncertain.\"\n\nquality_flags: [\"lens_flare\", \"backlit_subject\", \"low_contrast_on_main_subjects\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- A large bare tree (likely an apple tree or similar fruit tree) on the left side, silhouetted against the sky\n- A person riding a horse on a path/trail going away from the camera\n- A sunset or sunrise with the sun low on the horizon\n- Open grassland/field\n- Some smaller trees in the background\n- Power lines visible\n- A clear sky with a slight lens flare from the sun\n\nLet me rate each attribute:\n\n- recognizability: 4 - The scene is quite recognizable as a person on horseback at sunset in a rural field\n- ambiguity: 2 - Clear scene, not many interpretations\n- natural_photo_typicality: 4 - Looks like a typical natural photograph, though with some lens flare\n- visual_clutter: 2 - Relatively uncluttered, main elements are the tree, person on horse, and sunset\n- object_centricity: 2 - Not really one central object, it's more of a scene\n- scene_centricity: 5 - Definitely a scene, the atmosphere and setting dominate\n- caption_confidence: 4 - Can confidently caption this\n\nCounts:\n- estimated_salient_object_count: 4 (tree, person, horse, sun)\n- estimated_distinct_object_categories: 4 (tree, person, horse, sun)\n\nBooleans:\n- contains_person: true\n- contains_face: false (person is seen from behind)\n- contains_animal: true (horse)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (tree, person on horse)\n\ndominant_content_type: \"scene\" - it's a scene with multiple elements\nimage_style: \"natural_photo\"\nsemantic_domain: \"outdoor\" or \"rural\"\n\nshort_caption: \"A person rides a horse along a path through a field at sunset, with a large bare tree silhouetted against the sky.\"\n\nmain_objects: [\"tree\", \"horse\", \"rider\", \"sun\"]\n\npossible_interpretations: \n- \"A rider on horseback at sunset in a rural field\"\n- \"An evening horseback ride in the countryside\"\n- \"A silhouetted tree at sunset with a passing rider\"\n\nuncertainty_notes: \"The tree species is not certain but appears to be a fruit tree (apple or similar). Time of day (sunset vs sunrise) is uncertain.\"\n\nquality_flags: [\"lens_flare\", \"backlit_subject\", \"low_contrast_on_main_subjects\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 923,
+          "total_tokens": 2445,
+          "cost": 0.00141396,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00141396,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011076
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 629,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

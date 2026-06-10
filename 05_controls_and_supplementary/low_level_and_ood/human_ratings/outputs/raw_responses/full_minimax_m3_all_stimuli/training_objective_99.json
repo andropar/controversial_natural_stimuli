@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_99",
+    "stim_key": "training_objective_99",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 99,
+    "file_index": 99,
+    "image_name": "image_0099.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0099.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor plants\",\n  \"short_caption\": \"Variegated green and white houseplant leaves beside a brick wall\",\n  \"main_objects\": [\"houseplant\", \"variegated leaves\", \"brick wall\"],\n  \"possible_interpretations\": [\"dieffenbachia houseplant\", \"variegated tropical houseplant\", \"indoor potted plant\", \"spotted dumb cane\", \"aglaonema-like foliage plant\"],\n  \"uncertainty_notes\": \"Exact plant species is uncertain; could be Dieffenbachia, Aglaonema, or another variegated tropical houseplant.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319388-iVqLUXp8wPmT43qlFBrB",
+        "object": "chat.completion",
+        "created": 1780319389,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor plants\",\n  \"short_caption\": \"Variegated green and white houseplant leaves beside a brick wall\",\n  \"main_objects\": [\"houseplant\", \"variegated leaves\", \"brick wall\"],\n  \"possible_interpretations\": [\"dieffenbachia houseplant\", \"variegated tropical houseplant\", \"indoor potted plant\", \"spotted dumb cane\", \"aglaonema-like foliage plant\"],\n  \"uncertainty_notes\": \"Exact plant species is uncertain; could be Dieffenbachia, Aglaonema, or another variegated tropical houseplant.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a houseplant with variegated leaves - green and white/cream colored leaves. The plant appears to be a Dieffenbachia (Dumb Cane) or similar tropical houseplant. It's positioned near what looks like a brick wall or pillar and a beige/cream colored wall. The image is a close-up of the foliage.\n\nLet me analyze the attributes:\n- recognizability: The plant is clearly visible and recognizable as a houseplant. 4\n- ambiguity: Low ambiguity - it's clearly a plant. 1\n- natural_photo_typicality: Looks like a typical photograph. 4\n- visual_clutter: Several leaves but not overly cluttered. 3\n- object_centricity: The plant dominates. 5\n- scene_centricity: More object-focused than scene. 1\n- caption_confidence: High confidence for a simple caption. 4\n\n- salient_object_count: 1 (the plant) or many leaves... I'll say 1 main object (the plant)\n- distinct_object_categories: 2 (plant, wall/brick background)\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (appears indoor)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (leaves overlap, plant extends out of frame)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: object (plant)\n- image_style: natural_photo\n- semantic_domain: plants or indoor\n\nshort_caption: \"Variegated green and white houseplant leaves near a brick wall\"\n\nmain_objects: [\"houseplant\", \"leaves\", \"brick wall\"]\n\npossible_interpretations: [\"dieffenbachia plant\", \"variegated houseplant\", \"indoor potted plant\", \"tropical foliage plant\"]\n\nuncertainty_notes: Plant species identification is uncertain; could be Dieffenbachia or similar variegated houseplant.\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a houseplant with variegated leaves - green and white/cream colored leaves. The plant appears to be a Dieffenbachia (Dumb Cane) or similar tropical houseplant. It's positioned near what looks like a brick wall or pillar and a beige/cream colored wall. The image is a close-up of the foliage.\n\nLet me analyze the attributes:\n- recognizability: The plant is clearly visible and recognizable as a houseplant. 4\n- ambiguity: Low ambiguity - it's clearly a plant. 1\n- natural_photo_typicality: Looks like a typical photograph. 4\n- visual_clutter: Several leaves but not overly cluttered. 3\n- object_centricity: The plant dominates. 5\n- scene_centricity: More object-focused than scene. 1\n- caption_confidence: High confidence for a simple caption. 4\n\n- salient_object_count: 1 (the plant) or many leaves... I'll say 1 main object (the plant)\n- distinct_object_categories: 2 (plant, wall/brick background)\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (appears indoor)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (leaves overlap, plant extends out of frame)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: object (plant)\n- image_style: natural_photo\n- semantic_domain: plants or indoor\n\nshort_caption: \"Variegated green and white houseplant leaves near a brick wall\"\n\nmain_objects: [\"houseplant\", \"leaves\", \"brick wall\"]\n\npossible_interpretations: [\"dieffenbachia plant\", \"variegated houseplant\", \"indoor potted plant\", \"tropical foliage plant\"]\n\nuncertainty_notes: Plant species identification is uncertain; could be Dieffenbachia or similar variegated houseplant.\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 809,
+          "total_tokens": 2331,
+          "cost": 0.00140004,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00140004,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009708
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 493,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_232",
+    "stim_key": "vicco_232",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 232,
+    "file_index": 231,
+    "image_name": "shared_4rep_vicco_232.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_232.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture\",\n  \"short_caption\": \"Half-timbered building facade with red wooden beams and flower-decorated windows\",\n  \"main_objects\": [\"building\", \"windows\", \"flower boxes\", \"timber beams\"],\n  \"possible_interpretations\": [\"half-timbered building facade\", \"traditional European architecture\", \"decorated townhouse windows\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees clockwise; a small sign is visible on the right side but text is not clearly legible.\",\n  \"quality_flags\": [\"rotated_orientation\"]\n}",
+      "response": {
+        "id": "gen-1780319655-TLXKKPvhg9pz1nxCZLht",
+        "object": "chat.completion",
+        "created": 1780319655,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture\",\n  \"short_caption\": \"Half-timbered building facade with red wooden beams and flower-decorated windows\",\n  \"main_objects\": [\"building\", \"windows\", \"flower boxes\", \"timber beams\"],\n  \"possible_interpretations\": [\"half-timbered building facade\", \"traditional European architecture\", \"decorated townhouse windows\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees clockwise; a small sign is visible on the right side but text is not clearly legible.\",\n  \"quality_flags\": [\"rotated_orientation\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a half-timbered building (Fachwerk style) with red/brown wooden beams and white plaster panels. The image appears to be rotated 90 degrees - the building is oriented sideways. There are multiple windows and window boxes with flowers (pink, white, and green) hanging from them. The sky is visible in the upper left area.\n\nLet me annotate based on the schema:\n\n- Recognizability: The image is clearly recognizable as a half-timbered building, even though it's rotated. 4\n- Ambiguity: Low ambiguity - it's clearly a building facade. 1\n- Natural photo typicality: Looks like a typical photo, though rotated. 4\n- Visual clutter: Multiple windows, beams, flowers - moderate clutter. 3\n- Object centricity: It's more scene-centric than object-centric. 2\n- Scene centricity: Definitely a scene/place. 5\n- Caption confidence: High confidence in caption. 5\n\nSalient objects: windows, flowers, beams, building\nDistinct categories: building, flowers, windows (could be 2-3)\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: there might be a small sign but unclear\nContains vehicle: false\nContains food: false\nContains indoor scene: false (outdoor)\nContains outdoor scene: true\nContains artificial or rendered content: false\nContains occlusion or truncation: true (part of building cut off at edges)\nContains unusual viewpoint: true (rotated 90 degrees, looking up)\nContains multiple main objects: false (it's one building)\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: architecture\n\nShort caption: \"Half-timbered building with red wooden beams and flower-decorated windows\"\n\nMain objects: building, windows, flowers, timber beams\n\nPossible interpretations: half-timbered building facade, traditional European architecture, decorated windows\n\nUncertainty notes: Image is rotated 90 degrees; small text/sign visible but not clearly readable.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a half-timbered building (Fachwerk style) with red/brown wooden beams and white plaster panels. The image appears to be rotated 90 degrees - the building is oriented sideways. There are multiple windows and window boxes with flowers (pink, white, and green) hanging from them. The sky is visible in the upper left area.\n\nLet me annotate based on the schema:\n\n- Recognizability: The image is clearly recognizable as a half-timbered building, even though it's rotated. 4\n- Ambiguity: Low ambiguity - it's clearly a building facade. 1\n- Natural photo typicality: Looks like a typical photo, though rotated. 4\n- Visual clutter: Multiple windows, beams, flowers - moderate clutter. 3\n- Object centricity: It's more scene-centric than object-centric. 2\n- Scene centricity: Definitely a scene/place. 5\n- Caption confidence: High confidence in caption. 5\n\nSalient objects: windows, flowers, beams, building\nDistinct categories: building, flowers, windows (could be 2-3)\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: there might be a small sign but unclear\nContains vehicle: false\nContains food: false\nContains indoor scene: false (outdoor)\nContains outdoor scene: true\nContains artificial or rendered content: false\nContains occlusion or truncation: true (part of building cut off at edges)\nContains unusual viewpoint: true (rotated 90 degrees, looking up)\nContains multiple main objects: false (it's one building)\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: architecture\n\nShort caption: \"Half-timbered building with red wooden beams and flower-decorated windows\"\n\nMain objects: building, windows, flowers, timber beams\n\nPossible interpretations: half-timbered building facade, traditional European architecture, decorated windows\n\nUncertainty notes: Image is rotated 90 degrees; small text/sign visible but not clearly readable.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 765,
+          "total_tokens": 2287,
+          "cost": 0.00122436,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00122436,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000918
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 515,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

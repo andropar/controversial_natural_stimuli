@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_244",
+    "stim_key": "vicco_244",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 244,
+    "file_index": 243,
+    "image_name": "shared_4rep_vicco_244.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_244.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"camping_outdoor_night\",\n\n  \"short_caption\": \"People sitting around a campfire at night roasting marshmallows on sticks.\",\n  \"main_objects\": [\"campfire\", \"people\", \"sticks\", \"marshmallows\", \"grass\"],\n  \"possible_interpretations\": [\"campfire gathering\", \"outdoor camping scene\", \"nighttime social gathering with fire\"],\n  \"uncertainty_notes\": \"Persons are only partially visible (torsos, arms, legs); faces are not shown. Exact number of people is unclear but at least two or three are present.\",\n  \"quality_flags\": [\"low_light\", \"partial_occlusion_of_people\", \"no_visible_faces\"]\n}",
+      "response": {
+        "id": "gen-1780319670-sWC1Y8qJ1Q4vAyKILxUd",
+        "object": "chat.completion",
+        "created": 1780319670,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"camping_outdoor_night\",\n\n  \"short_caption\": \"People sitting around a campfire at night roasting marshmallows on sticks.\",\n  \"main_objects\": [\"campfire\", \"people\", \"sticks\", \"marshmallows\", \"grass\"],\n  \"possible_interpretations\": [\"campfire gathering\", \"outdoor camping scene\", \"nighttime social gathering with fire\"],\n  \"uncertainty_notes\": \"Persons are only partially visible (torsos, arms, legs); faces are not shown. Exact number of people is unclear but at least two or three are present.\",\n  \"quality_flags\": [\"low_light\", \"partial_occlusion_of_people\", \"no_visible_faces\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a campfire at night with people sitting around it. Someone is holding a stick with a marshmallow over the fire. There are at least 2-3 people visible (partial views - arms, legs, torsos). The scene is outdoors at night, with grass and dark surroundings. Let me analyze each attribute carefully.\n\n- recognizability: High - clearly a campfire scene with people\n- ambiguity: Low - very clear what this is\n- natural_photo_typicality: High - looks like a natural photograph\n- visual_clutter: Moderate - fire, grass, people, sticks\n- object_centricity: The fire is central but it's more of a scene\n- scene_centricity: High - this is a scene/setting\n- caption_confidence: High\n\nThe fire is the central focus. People are around it roasting marshmallows.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a campfire at night with people sitting around it. Someone is holding a stick with a marshmallow over the fire. There are at least 2-3 people visible (partial views - arms, legs, torsos). The scene is outdoors at night, with grass and dark surroundings. Let me analyze each attribute carefully.\n\n- recognizability: High - clearly a campfire scene with people\n- ambiguity: Low - very clear what this is\n- natural_photo_typicality: High - looks like a natural photograph\n- visual_clutter: Moderate - fire, grass, people, sticks\n- object_centricity: The fire is central but it's more of a scene\n- scene_centricity: High - this is a scene/setting\n- caption_confidence: High\n\nThe fire is the central focus. People are around it roasting marshmallows.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 547,
+          "total_tokens": 2069,
+          "cost": 0.00096276,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00096276,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0006564
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 198,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

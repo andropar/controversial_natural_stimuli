@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_253",
+    "stim_key": "vicco_253",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 253,
+    "file_index": 252,
+    "image_name": "shared_4rep_vicco_253.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_253.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"religious_sculpture\",\n  \"short_caption\": \"Stone statue of seated Ganesha deity outdoors among autumn trees.\",\n  \"main_objects\": [\"Ganesha statue\", \"trees\", \"brick base\"],\n  \"possible_interpretations\": [\"Hindu religious statue of Ganesha\", \"garden sculpture\", \"temple ornament\", \"carved stone deity figure\"],\n  \"uncertainty_notes\": \"\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319679-ghFi5Ii93LC4F1Gz3ZJJ",
+        "object": "chat.completion",
+        "created": 1780319679,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"religious_sculpture\",\n  \"short_caption\": \"Stone statue of seated Ganesha deity outdoors among autumn trees.\",\n  \"main_objects\": [\"Ganesha statue\", \"trees\", \"brick base\"],\n  \"possible_interpretations\": [\"Hindu religious statue of Ganesha\", \"garden sculpture\", \"temple ornament\", \"carved stone deity figure\"],\n  \"uncertainty_notes\": \"\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a stone statue of Ganesha (the Hindu elephant-headed deity) seated in a meditative pose. The statue appears to be made of weathered stone, with detailed carvings including jewelry, an elaborate headdress, and the characteristic elephant trunk. The statue is set against a backdrop of trees with autumn foliage (yellow/green leaves) and vines. The statue sits on a brick or stone base.\n\nLet me annotate this according to the schema:\n\n- recognizability: The Ganesha statue is clearly recognizable as a Hindu deity statue. 5\n- ambiguity: There's one clear main subject. 1\n- natural_photo_typicality: It looks like a typical outdoor photograph. 5\n- visual_clutter: There's a lot of background foliage and branches. 3\n- object_centricity: The statue dominates the image. 5\n- scene_centricity: It's more object-centric than scene-centric. 2\n- caption_confidence: High confidence in a caption. 5\n\n- estimated_salient_object_count: 1 (the statue)\n- estimated_distinct_object_categories: 2 (statue, vegetation)\n\n- contains_person: false (statue of deity, not a person)\n- contains_face: false (deity face, but not human)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the statue)\n- image_style: \"natural_photo\"\n- semantic_domain: \"religious_art\" or \"sculpture\"\n\n- short_caption: \"Stone statue of seated Ganesha deity outdoors among autumn trees.\"\n- main_objects: [\"Ganesha statue\", \"trees\", \"brick base\"]\n- possible_interpretations: [\"Hindu religious statue\", \"garden sculpture\", \"temple ornament\"]\n- uncertainty_notes: \"\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a stone statue of Ganesha (the Hindu elephant-headed deity) seated in a meditative pose. The statue appears to be made of weathered stone, with detailed carvings including jewelry, an elaborate headdress, and the characteristic elephant trunk. The statue is set against a backdrop of trees with autumn foliage (yellow/green leaves) and vines. The statue sits on a brick or stone base.\n\nLet me annotate this according to the schema:\n\n- recognizability: The Ganesha statue is clearly recognizable as a Hindu deity statue. 5\n- ambiguity: There's one clear main subject. 1\n- natural_photo_typicality: It looks like a typical outdoor photograph. 5\n- visual_clutter: There's a lot of background foliage and branches. 3\n- object_centricity: The statue dominates the image. 5\n- scene_centricity: It's more object-centric than scene-centric. 2\n- caption_confidence: High confidence in a caption. 5\n\n- estimated_salient_object_count: 1 (the statue)\n- estimated_distinct_object_categories: 2 (statue, vegetation)\n\n- contains_person: false (statue of deity, not a person)\n- contains_face: false (deity face, but not human)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the statue)\n- image_style: \"natural_photo\"\n- semantic_domain: \"religious_art\" or \"sculpture\"\n\n- short_caption: \"Stone statue of seated Ganesha deity outdoors among autumn trees.\"\n- main_objects: [\"Ganesha statue\", \"trees\", \"brick base\"]\n- possible_interpretations: [\"Hindu religious statue\", \"garden sculpture\", \"temple ornament\"]\n- uncertainty_notes: \"\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 766,
+          "total_tokens": 2288,
+          "cost": 0.00122556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00122556,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009192
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 501,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

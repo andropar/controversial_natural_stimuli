@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_28",
+    "stim_key": "architecture_28",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 28,
+    "file_index": 28,
+    "image_name": "image_0028.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0028.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior architecture\",\n  \"short_caption\": \"Wood-paneled room with a black fireplace, flanked by bookshelves and a framed portrait above.\",\n  \"main_objects\": [\"fireplace\", \"wood paneling\", \"bookshelves\", \"framed portrait\", \"books\"],\n  \"possible_interpretations\": [\"A traditional study or library interior\", \"A formal living room with a decorative fireplace\", \"A wood-paneled parlor with built-in bookshelves\"],\n  \"uncertainty_notes\": \"Framed portrait content is somewhat indistinct; fireplace insert type (electric/gas) is unclear.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318877-rJFsW94fsLaNKSXGTxAo",
+        "object": "chat.completion",
+        "created": 1780318877,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior architecture\",\n  \"short_caption\": \"Wood-paneled room with a black fireplace, flanked by bookshelves and a framed portrait above.\",\n  \"main_objects\": [\"fireplace\", \"wood paneling\", \"bookshelves\", \"framed portrait\", \"books\"],\n  \"possible_interpretations\": [\"A traditional study or library interior\", \"A formal living room with a decorative fireplace\", \"A wood-paneled parlor with built-in bookshelves\"],\n  \"uncertainty_notes\": \"Framed portrait content is somewhat indistinct; fireplace insert type (electric/gas) is unclear.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows an interior scene with a fireplace surrounded by ornate wooden paneling. There's a framed picture/portrait above the fireplace, and bookshelves on both sides filled with books. The fireplace has a black surround with what appears to be an electric or gas insert.\n\nLet me analyze this carefully:\n\n- Recognizability: Very clear - typical interior/room scene\n- Ambiguity: Low - it's clearly an interior room with fireplace\n- Natural photo typicality: High - looks like a real photograph\n- Visual clutter: Moderate - many details (books, panels, decorations) but organized\n- Object-centricity: Low - it's a scene, no single dominant object\n- Scene-centricity: High - clearly a room/place\n\n- Contains person: No (only in the framed picture)\n- Contains face: No (only in the framed picture)\n- Contains animal: No\n- Contains text: Yes (book spines)\n- Contains vehicle: No\n- Contains food: No\n- Contains indoor scene: Yes\n- Contains outdoor scene: No\n- Contains artificial/rendered content: No\n- Contains occlusion/truncation: No\n- Contains unusual viewpoint: No\n- Contains multiple main objects: No\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: interior/architecture/furniture\n\nMain objects: fireplace, wooden paneling, bookshelves, framed picture, books\nCaption: \"Wood-paneled room with a black fireplace, flanked by bookshelves and a framed portrait above.\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows an interior scene with a fireplace surrounded by ornate wooden paneling. There's a framed picture/portrait above the fireplace, and bookshelves on both sides filled with books. The fireplace has a black surround with what appears to be an electric or gas insert.\n\nLet me analyze this carefully:\n\n- Recognizability: Very clear - typical interior/room scene\n- Ambiguity: Low - it's clearly an interior room with fireplace\n- Natural photo typicality: High - looks like a real photograph\n- Visual clutter: Moderate - many details (books, panels, decorations) but organized\n- Object-centricity: Low - it's a scene, no single dominant object\n- Scene-centricity: High - clearly a room/place\n\n- Contains person: No (only in the framed picture)\n- Contains face: No (only in the framed picture)\n- Contains animal: No\n- Contains text: Yes (book spines)\n- Contains vehicle: No\n- Contains food: No\n- Contains indoor scene: Yes\n- Contains outdoor scene: No\n- Contains artificial/rendered content: No\n- Contains occlusion/truncation: No\n- Contains unusual viewpoint: No\n- Contains multiple main objects: No\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: interior/architecture/furniture\n\nMain objects: fireplace, wooden paneling, bookshelves, framed picture, books\nCaption: \"Wood-paneled room with a black fireplace, flanked by bookshelves and a framed portrait above.\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 664,
+          "total_tokens": 1978,
+          "cost": 0.00116364,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00116364,
+            "upstream_inference_prompt_cost": 0.00036684,
+            "upstream_inference_completions_cost": 0.0007968
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 371,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

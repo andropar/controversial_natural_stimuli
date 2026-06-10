@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_12",
+    "stim_key": "dataset_12",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 12,
+    "file_index": 12,
+    "image_name": "image_0012.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0012.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: No valid JSON object found in model response"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 12,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"waterfront\",\n  \"short_caption\": \"Waterfront houses along a calm bay with trees and a small boat.\",\n  \"main_objects\": [\"houses\", \"trees\", \"water\", \"boat\", \"dock\", \"buoys\"],\n  \"possible_interpretations\": [\"waterfront village\", \"coastal harbor\", \"lakeside homes\", \"bayfront town\"],\n  \"uncertainty_notes\": \"Signage on the waterfront building is too distant to read; specific location unclear but style suggests Pacific Northwest.\",\n  \"quality_flags\": [\"slight_haze\", \"distant_subjects\"]\n}",
+      "response": {
+        "id": "gen-1780319002-qep6tp1zfUg6PUYovBZO",
+        "object": "chat.completion",
+        "created": 1780319002,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 12,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"waterfront\",\n  \"short_caption\": \"Waterfront houses along a calm bay with trees and a small boat.\",\n  \"main_objects\": [\"houses\", \"trees\", \"water\", \"boat\", \"dock\", \"buoys\"],\n  \"possible_interpretations\": [\"waterfront village\", \"coastal harbor\", \"lakeside homes\", \"bayfront town\"],\n  \"uncertainty_notes\": \"Signage on the waterfront building is too distant to read; specific location unclear but style suggests Pacific Northwest.\",\n  \"quality_flags\": [\"slight_haze\", \"distant_subjects\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a waterfront scene with houses along a shoreline, trees, a small boat with a person, and calm water in the foreground. It appears to be a coastal town or small harbor village, possibly in the Pacific Northwest given the evergreen trees and house style.\n\nLet me provide the annotations:\n\n- Recognizability: 5 - clearly recognizable as a waterfront/houses scene\n- Ambiguity: 2 - fairly clear what's shown\n- Natural_photo_typicality: 5 - looks like a typical natural photograph\n- Visual_clutter: 3 - moderate, multiple houses and trees\n- Object_centricity: 2 - no single dominant object\n- Scene_centricity: 5 - clearly a scene/place\n- Caption_confidence: 4 - fairly confident in a caption\n\n- estimated_salient_object_count: many houses, hard to count exactly. Maybe 10-15\n- estimated_distinct_object_categories: houses, trees, water, boat, buoys - maybe 5\n\n- contains_person: yes, in the boat\n- contains_face: no, too far\n- contains_animal: no\n- contains_text: possibly, on the dock area but unclear\n- contains_vehicle: boat\n- contains_food: no\n- contains_indoor_scene: no\n- contains_outdoor_scene: yes\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: no\n- contains_unusual_viewpoint: no\n- contains_multiple_main_objects: yes (multiple houses)\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: waterfront\n\n- short_caption: \"Waterfront houses along a calm bay with a small boat\"\n- main_objects: houses, trees, water, boat, dock\n- possible_interpretations: waterfront village, harbor, lakeside homes, coastal town\n- uncertainty_notes: Text on building partially visible but not readable\n- quality_flags: slightly hazy atmosphere",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a waterfront scene with houses along a shoreline, trees, a small boat with a person, and calm water in the foreground. It appears to be a coastal town or small harbor village, possibly in the Pacific Northwest given the evergreen trees and house style.\n\nLet me provide the annotations:\n\n- Recognizability: 5 - clearly recognizable as a waterfront/houses scene\n- Ambiguity: 2 - fairly clear what's shown\n- Natural_photo_typicality: 5 - looks like a typical natural photograph\n- Visual_clutter: 3 - moderate, multiple houses and trees\n- Object_centricity: 2 - no single dominant object\n- Scene_centricity: 5 - clearly a scene/place\n- Caption_confidence: 4 - fairly confident in a caption\n\n- estimated_salient_object_count: many houses, hard to count exactly. Maybe 10-15\n- estimated_distinct_object_categories: houses, trees, water, boat, buoys - maybe 5\n\n- contains_person: yes, in the boat\n- contains_face: no, too far\n- contains_animal: no\n- contains_text: possibly, on the dock area but unclear\n- contains_vehicle: boat\n- contains_food: no\n- contains_indoor_scene: no\n- contains_outdoor_scene: yes\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: no\n- contains_unusual_viewpoint: no\n- contains_multiple_main_objects: yes (multiple houses)\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: waterfront\n\n- short_caption: \"Waterfront houses along a calm bay with a small boat\"\n- main_objects: houses, trees, water, boat, dock\n- possible_interpretations: waterfront village, harbor, lakeside homes, coastal town\n- uncertainty_notes: Text on building partially visible but not readable\n- quality_flags: slightly hazy atmosphere",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 768,
+          "total_tokens": 2306,
+          "cost": 0.00135564,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00135564,
+            "upstream_inference_prompt_cost": 0.00043404,
+            "upstream_inference_completions_cost": 0.0009216
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 464,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

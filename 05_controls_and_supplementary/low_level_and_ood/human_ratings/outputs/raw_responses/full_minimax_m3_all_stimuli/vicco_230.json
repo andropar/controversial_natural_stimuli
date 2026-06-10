@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_230",
+    "stim_key": "vicco_230",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 230,
+    "file_index": 229,
+    "image_name": "shared_4rep_vicco_230.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_230.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 3, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 4, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"indoor interior\", \"short_caption\": \"Low-angle view of an indoor room with sneakers, chair, and wooden floor\", \"main_objects\": [\"sneakers\", \"chair\", \"jacket\", \"wooden cabinet\", \"wooden floor\"], \"possible_interpretations\": [\"living room interior\", \"casual indoor snapshot\", \"bedroom or entryway\", \"cozy home scene with fairy lights\"], \"uncertainty_notes\": \"Low camera angle emphasizes floor; lighting is somewhat dim with mixed indoor sources; specific room function is unclear\", \"quality_flags\": [\"unusual_low_angle\", \"slight_motion_blur\", \"low_light_areas\", \"partially_truncated_objects\"]}",
+      "response": {
+        "id": "gen-1780319654-YU1pYggzFV24UfHEZCZF",
+        "object": "chat.completion",
+        "created": 1780319654,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 3, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 4, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"indoor interior\", \"short_caption\": \"Low-angle view of an indoor room with sneakers, chair, and wooden floor\", \"main_objects\": [\"sneakers\", \"chair\", \"jacket\", \"wooden cabinet\", \"wooden floor\"], \"possible_interpretations\": [\"living room interior\", \"casual indoor snapshot\", \"bedroom or entryway\", \"cozy home scene with fairy lights\"], \"uncertainty_notes\": \"Low camera angle emphasizes floor; lighting is somewhat dim with mixed indoor sources; specific room function is unclear\", \"quality_flags\": [\"unusual_low_angle\", \"slight_motion_blur\", \"low_light_areas\", \"partially_truncated_objects\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a low-angle shot of what appears to be a living room or interior space. I can see:\n- A polished wooden floor in the foreground (dominant element)\n- A pair of gray Converse-style sneakers with white laces in the lower left\n- A dark jacket or coat draped over what might be furniture\n- A pink/beige cushioned chair or sofa\n- A brown cushion on the floor\n- Wooden cabinet/dresser with multiple drawers in the background\n- A window with white curtains\n- Some blue string lights or fairy lights\n- A small figurine or object on the windowsill\n- White walls/door frame on the right\n\nThe perspective is very low to the ground, looking up. The wooden floor takes up most of the lower half of the image.\n\nLet me rate each dimension:\n- recognizability: The scene is recognizable as an indoor living space, but the unusual low angle makes it less clear. 3-4\n- ambiguity: Multiple interpretations possible (could be living room, could be entryway, etc.) - moderate. 3\n- natural_photo_typicality: Looks like a casual snapshot, somewhat typical. 3-4\n- visual_clutter: Several objects present but not extremely cluttered. 3\n- object_centricity: The sneakers are prominent but the floor dominates. 2-3\n- scene_centricity: It's clearly a room/scene. 4\n- caption_confidence: Fairly confident about the general scene. 3-4\n\nEstimated counts:\n- salient objects: sneakers, chair, cabinet, jacket, cushion - about 5\n- distinct categories: footwear, furniture, clothing, floor - about 4-5\n\nContains:\n- person: not really, just shoes (no person visible)\n- face: no\n- animal: no\n- text: no visible text\n- vehicle: no\n- food: no\n- indoor_scene: yes\n- outdoor_scene: no\n- artificial_or_rendered: no, looks like a photo\n- occlusion_or_truncation: yes, the jacket/clothing is cut off\n- unusual_viewpoint: yes, very low angle\n- multiple_main_objects: somewhat, the sneakers and chair both are prominent\n\nDominant content: scene (it's primarily a room)\nImage style: natural_photo\nSemantic domain: interior/indoor\n\nShort caption: \"Low-angle view of an indoor room with sneakers, a chair, and wooden floor\"\n\nMain objects: sneakers, chair, jacket, wooden cabinet, wooden floor\n\nPossible interpretations: living room, bedroom, entryway, casual indoor space\n\nQuality flags: unusual low angle, motion blur or low-light conditions in some areas",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a low-angle shot of what appears to be a living room or interior space. I can see:\n- A polished wooden floor in the foreground (dominant element)\n- A pair of gray Converse-style sneakers with white laces in the lower left\n- A dark jacket or coat draped over what might be furniture\n- A pink/beige cushioned chair or sofa\n- A brown cushion on the floor\n- Wooden cabinet/dresser with multiple drawers in the background\n- A window with white curtains\n- Some blue string lights or fairy lights\n- A small figurine or object on the windowsill\n- White walls/door frame on the right\n\nThe perspective is very low to the ground, looking up. The wooden floor takes up most of the lower half of the image.\n\nLet me rate each dimension:\n- recognizability: The scene is recognizable as an indoor living space, but the unusual low angle makes it less clear. 3-4\n- ambiguity: Multiple interpretations possible (could be living room, could be entryway, etc.) - moderate. 3\n- natural_photo_typicality: Looks like a casual snapshot, somewhat typical. 3-4\n- visual_clutter: Several objects present but not extremely cluttered. 3\n- object_centricity: The sneakers are prominent but the floor dominates. 2-3\n- scene_centricity: It's clearly a room/scene. 4\n- caption_confidence: Fairly confident about the general scene. 3-4\n\nEstimated counts:\n- salient objects: sneakers, chair, cabinet, jacket, cushion - about 5\n- distinct categories: footwear, furniture, clothing, floor - about 4-5\n\nContains:\n- person: not really, just shoes (no person visible)\n- face: no\n- animal: no\n- text: no visible text\n- vehicle: no\n- food: no\n- indoor_scene: yes\n- outdoor_scene: no\n- artificial_or_rendered: no, looks like a photo\n- occlusion_or_truncation: yes, the jacket/clothing is cut off\n- unusual_viewpoint: yes, very low angle\n- multiple_main_objects: somewhat, the sneakers and chair both are prominent\n\nDominant content: scene (it's primarily a room)\nImage style: natural_photo\nSemantic domain: interior/indoor\n\nShort caption: \"Low-angle view of an indoor room with sneakers, a chair, and wooden floor\"\n\nMain objects: sneakers, chair, jacket, wooden cabinet, wooden floor\n\nPossible interpretations: living room, bedroom, entryway, casual indoor space\n\nQuality flags: unusual low angle, motion blur or low-light conditions in some areas",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 909,
+          "total_tokens": 2431,
+          "cost": 0.00139716,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139716,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010908
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 630,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -7,7 +7,7 @@ Loads the per-subject residuals (from 01_subject_consistency.py) and shows:
   - Per-subject residual values shown for each pair
   - Coloring by sign consistency (how much subjects agree)
 
-Requires: data/subject_residuals.npz, data/consistent_top_pairs.csv
+Requires: results/subject_residuals.npz, results/consistent_top_pairs.csv
 Run 01_subject_consistency.py first.
 
 Outputs:
@@ -29,12 +29,21 @@ import matplotlib.gridspec as gridspec
 from PIL import Image
 
 _PAPER = Path(__file__).resolve().parents[1]
+SHARE_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))
 sys.path.insert(0, str(_PAPER / "figures"))
 import config
 
-IMAGE_DIR = _PAPER / "00_selection_evaluation/data/all_models/images"
+IMAGE_DIR = (
+    SHARE_ROOT
+    / "00_stimulus_selection"
+    / "decision_checks"
+    / "selection_evaluation"
+    / "results"
+    / "all_models"
+    / "images"
+)
 DATA_DIR = Path(__file__).resolve().parent / "results"
 FIG_DIR = Path(__file__).resolve().parent / "figures"
 SUBJECTS = ["sub-01", "sub-03", "sub-05"]

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_40",
+    "stim_key": "architecture_40",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 40,
+    "file_index": 40,
+    "image_name": "image_0040.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0040.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 1, \"object_centricity\": 5, \"scene_centricity\": 1, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 2, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"interior_lighting\", \"short_caption\": \"Pendant chandelier with multiple illuminated bulbs hanging from a ceiling\", \"main_objects\": [\"chandelier\", \"light bulbs\", \"ceiling mount\", \"twisted cord\"], \"possible_interpretations\": [\"chandelier\", \"pendant light fixture\", \"ceiling light\", \"vintage Edison bulb lighting\", \"decorative hanging lamp\"], \"uncertainty_notes\": \"The bottom portion of the bulbs is truncated by the image frame. Viewpoint is from below looking up, which is standard for ceiling fixtures but slightly unusual overall.\", \"quality_flags\": [\"bottom_truncation\"]}",
+      "response": {
+        "id": "gen-1780318889-VPzjxS8tGwTVOE0JQd2l",
+        "object": "chat.completion",
+        "created": 1780318889,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 1, \"object_centricity\": 5, \"scene_centricity\": 1, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 2, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"interior_lighting\", \"short_caption\": \"Pendant chandelier with multiple illuminated bulbs hanging from a ceiling\", \"main_objects\": [\"chandelier\", \"light bulbs\", \"ceiling mount\", \"twisted cord\"], \"possible_interpretations\": [\"chandelier\", \"pendant light fixture\", \"ceiling light\", \"vintage Edison bulb lighting\", \"decorative hanging lamp\"], \"uncertainty_notes\": \"The bottom portion of the bulbs is truncated by the image frame. Viewpoint is from below looking up, which is standard for ceiling fixtures but slightly unusual overall.\", \"quality_flags\": [\"bottom_truncation\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a chandelier or pendant light fixture hanging from a ceiling. It has multiple light bulbs (appears to be about 5-6 visible) suspended by twisted black cords/cables from a ceiling mount. The background is a plain off-white/cream colored wall and ceiling. The bulbs are illuminated, creating a warm glow.\n\nLet me annotate according to the schema:\n\n- recognizability: The main content is clearly a chandelier/pendant light - 5\n- ambiguity: Very clear what it is - 1\n- natural_photo_typicality: Looks like a typical photograph - 4\n- visual_clutter: Pretty minimal, mostly plain wall - 1\n- object_centricity: The chandelier is the clear central subject - 5\n- scene_centricity: Not really a scene, more focused on object - 1\n- caption_confidence: High confidence - 5\n\nEstimated objects: 1 main chandelier fixture with multiple bulbs\nDistinct categories: 1 (lighting fixture)\n\nContains: no person, no face, no animal, no text, no vehicle, no food, indoor scene (ceiling and wall visible), no outdoor, no artificial/rendered content, no unusual viewpoint (shot from below looking up is somewhat standard for this type of photo), no multiple main objects, no occlusion/truncation... wait, the bulbs at the bottom are partially cut off.\n\nActually the bottom bulbs are cut off by the frame, so there is some truncation.\n\nViewpoint: looking up at ceiling, slightly unusual but not extremely so.\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: interior/lighting\n\nShort caption: \"Pendant chandelier with multiple illuminated bulbs hanging from ceiling\"\nMain objects: [\"chandelier\", \"light bulbs\", \"ceiling\", \"cord\"]\nPossible interpretations: [\"Chandelier\", \"Pendant light fixture\", \"Ceiling light\", \"Decorative lighting\"]\nUncertainty notes: The bottom portion of the bulbs is truncated by the image frame.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a chandelier or pendant light fixture hanging from a ceiling. It has multiple light bulbs (appears to be about 5-6 visible) suspended by twisted black cords/cables from a ceiling mount. The background is a plain off-white/cream colored wall and ceiling. The bulbs are illuminated, creating a warm glow.\n\nLet me annotate according to the schema:\n\n- recognizability: The main content is clearly a chandelier/pendant light - 5\n- ambiguity: Very clear what it is - 1\n- natural_photo_typicality: Looks like a typical photograph - 4\n- visual_clutter: Pretty minimal, mostly plain wall - 1\n- object_centricity: The chandelier is the clear central subject - 5\n- scene_centricity: Not really a scene, more focused on object - 1\n- caption_confidence: High confidence - 5\n\nEstimated objects: 1 main chandelier fixture with multiple bulbs\nDistinct categories: 1 (lighting fixture)\n\nContains: no person, no face, no animal, no text, no vehicle, no food, indoor scene (ceiling and wall visible), no outdoor, no artificial/rendered content, no unusual viewpoint (shot from below looking up is somewhat standard for this type of photo), no multiple main objects, no occlusion/truncation... wait, the bulbs at the bottom are partially cut off.\n\nActually the bottom bulbs are cut off by the frame, so there is some truncation.\n\nViewpoint: looking up at ceiling, slightly unusual but not extremely so.\n\nDominant content: object\nImage style: natural_photo\nSemantic domain: interior/lighting\n\nShort caption: \"Pendant chandelier with multiple illuminated bulbs hanging from ceiling\"\nMain objects: [\"chandelier\", \"light bulbs\", \"ceiling\", \"cord\"]\nPossible interpretations: [\"Chandelier\", \"Pendant light fixture\", \"Ceiling light\", \"Decorative lighting\"]\nUncertainty notes: The bottom portion of the bulbs is truncated by the image frame.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 750,
+          "total_tokens": 2272,
+          "cost": 0.00120636,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00120636,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 490,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

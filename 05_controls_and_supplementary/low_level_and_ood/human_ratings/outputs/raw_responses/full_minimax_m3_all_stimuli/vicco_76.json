@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_76",
+    "stim_key": "vicco_76",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 76,
+    "file_index": 75,
+    "image_name": "shared_4rep_vicco_076.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_076.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"religious art\",\n  \"short_caption\": \"Three dark sculptural busts displayed in a church beneath a German inscription and stained glass window.\",\n  \"main_objects\": [\"sculptural busts\", \"German wall inscription\", \"stained glass window\", \"stone floor\"],\n  \"possible_interpretations\": [\n    \"Memorial or religious art installation in a church\",\n    \"Classical bust replicas with dark artistic coating\",\n    \"Modern art installation referencing classical sculpture\",\n    \"Weathered or damaged historical-style sculptures\"\n  ],\n  \"uncertainty_notes\": \"The purpose and identity of the modified busts is unclear; the dark coating material (tar, paint, or patina) cannot be determined visually.\",\n  \"quality_flags\": []\n}\n```",
+      "response": {
+        "id": "gen-1780319475-3KGSCOPSCmjpfB5fvWzS",
+        "object": "chat.completion",
+        "created": 1780319475,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"religious art\",\n  \"short_caption\": \"Three dark sculptural busts displayed in a church beneath a German inscription and stained glass window.\",\n  \"main_objects\": [\"sculptural busts\", \"German wall inscription\", \"stained glass window\", \"stone floor\"],\n  \"possible_interpretations\": [\n    \"Memorial or religious art installation in a church\",\n    \"Classical bust replicas with dark artistic coating\",\n    \"Modern art installation referencing classical sculpture\",\n    \"Weathered or damaged historical-style sculptures\"\n  ],\n  \"uncertainty_notes\": \"The purpose and identity of the modified busts is unclear; the dark coating material (tar, paint, or patina) cannot be determined visually.\",\n  \"quality_flags\": []\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows three large dark-colored sculptural busts/heads displayed on a stone floor in what appears to be a church or religious building. Behind them is a wall with a German inscription (text that includes \"UND GOTT WIRD ABWISCHEN ALLE TRÄNEN VON IHREN AUGEN\" which is a biblical reference to Revelation 21). Above is a stained glass window.\n\nThe three heads appear to be large-scale replicas or artistic representations of classical busts, possibly related to the \"Büste\" (bust) sculptures that are part of a memorial. They look weathered or covered with a dark material (possibly tar or black paint) which gives them a distressed appearance.\n\nLet me annotate according to the schema:\n\n- recognizability: 4 - The content is fairly clear, though the artistic/modified nature makes interpretation slightly less certain\n- ambiguity: 2 - Pretty clear what we're looking at\n- natural_photo_typicality: 4 - Looks like a natural photograph\n- visual_clutter: 3 - Some competing elements (3 heads, text, window, floor)\n- object_centricity: 4 - The three heads are the main focus\n- scene_centricity: 3 - The setting (church interior) is also important\n- caption_confidence: 4 - Can describe this confidently\n\n- estimated_salient_object_count: 3 (three heads)\n- estimated_distinct_object_categories: 2-3 (heads, wall inscription, stained glass)\n\n- contains_person: false (they are sculptural busts, not real people)\n- contains_face: true (the busts have faces)\n- contains_animal: false\n- contains_text: true (German inscription)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (church interior)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (three heads)\n\n- dominant_content_type: object (the three busts are dominant)\n- image_style: natural_photo\n- semantic_domain: \"religious art\" or \"church interior\"\n\nShort caption: \"Three dark sculptural busts displayed in a church with German inscription and stained glass window.\"\n\nMain objects: \"sculptural busts\", \"inscription\", \"stained glass window\", \"stone floor\"\n\nPossible interpretations:\n1. Memorial or religious art installation in a church\n2. Classical bust replicas with artistic modification\n3. Modern art installation with classical themes\n4. Damaged or weathered ancient-style sculptures\n\nUncertainty notes: The exact purpose/context of the modified busts is unclear without more information. The dark coating could be tar, paint, or another material.\n\nQuality flags: none particularly notable",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows three large dark-colored sculptural busts/heads displayed on a stone floor in what appears to be a church or religious building. Behind them is a wall with a German inscription (text that includes \"UND GOTT WIRD ABWISCHEN ALLE TRÄNEN VON IHREN AUGEN\" which is a biblical reference to Revelation 21). Above is a stained glass window.\n\nThe three heads appear to be large-scale replicas or artistic representations of classical busts, possibly related to the \"Büste\" (bust) sculptures that are part of a memorial. They look weathered or covered with a dark material (possibly tar or black paint) which gives them a distressed appearance.\n\nLet me annotate according to the schema:\n\n- recognizability: 4 - The content is fairly clear, though the artistic/modified nature makes interpretation slightly less certain\n- ambiguity: 2 - Pretty clear what we're looking at\n- natural_photo_typicality: 4 - Looks like a natural photograph\n- visual_clutter: 3 - Some competing elements (3 heads, text, window, floor)\n- object_centricity: 4 - The three heads are the main focus\n- scene_centricity: 3 - The setting (church interior) is also important\n- caption_confidence: 4 - Can describe this confidently\n\n- estimated_salient_object_count: 3 (three heads)\n- estimated_distinct_object_categories: 2-3 (heads, wall inscription, stained glass)\n\n- contains_person: false (they are sculptural busts, not real people)\n- contains_face: true (the busts have faces)\n- contains_animal: false\n- contains_text: true (German inscription)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true (church interior)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (three heads)\n\n- dominant_content_type: object (the three busts are dominant)\n- image_style: natural_photo\n- semantic_domain: \"religious art\" or \"church interior\"\n\nShort caption: \"Three dark sculptural busts displayed in a church with German inscription and stained glass window.\"\n\nMain objects: \"sculptural busts\", \"inscription\", \"stained glass window\", \"stone floor\"\n\nPossible interpretations:\n1. Memorial or religious art installation in a church\n2. Classical bust replicas with artistic modification\n3. Modern art installation with classical themes\n4. Damaged or weathered ancient-style sculptures\n\nUncertainty notes: The exact purpose/context of the modified busts is unclear without more information. The dark coating could be tar, paint, or another material.\n\nQuality flags: none particularly notable",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 980,
+          "total_tokens": 2502,
+          "cost": 0.00148236,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00148236,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.001176
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 704,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

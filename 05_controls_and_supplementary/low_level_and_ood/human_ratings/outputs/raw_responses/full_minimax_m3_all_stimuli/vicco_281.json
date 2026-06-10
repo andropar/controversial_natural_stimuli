@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_281",
+    "stim_key": "vicco_281",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 281,
+    "file_index": 280,
+    "image_name": "shared_4rep_vicco_281.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_281.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"unboxing_or_packing\",\n  \"short_caption\": \"Hand opening a box containing reflective packaging material and bubble wrap on a wooden floor\",\n  \"main_objects\": [\"cardboard box\", \"reflective mylar sheet\", \"bubble wrap\", \"hand\", \"wooden floor\"],\n  \"possible_interpretations\": [\"unboxing a new item\", \"packing materials for shipping\", \"opening a mirror or glass package\", \"preparing artwork for transport\", \"storage container with protective wrapping\"],\n  \"uncertainty_notes\": \"The exact contents of the box are unclear due to occlusion by the bubble wrap and reflective material; the object at top left is partially visible and unidentifiable.\",\n  \"quality_flags\": [\"partial_occlusion\", \"unusual_closeup_viewpoint\", \"truncated_hand\", \"low_context\"]\n}",
+      "response": {
+        "id": "gen-1780319716-5VxbB4Auno4MQu6QEXes",
+        "object": "chat.completion",
+        "created": 1780319716,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"unboxing_or_packing\",\n  \"short_caption\": \"Hand opening a box containing reflective packaging material and bubble wrap on a wooden floor\",\n  \"main_objects\": [\"cardboard box\", \"reflective mylar sheet\", \"bubble wrap\", \"hand\", \"wooden floor\"],\n  \"possible_interpretations\": [\"unboxing a new item\", \"packing materials for shipping\", \"opening a mirror or glass package\", \"preparing artwork for transport\", \"storage container with protective wrapping\"],\n  \"uncertainty_notes\": \"The exact contents of the box are unclear due to occlusion by the bubble wrap and reflective material; the object at top left is partially visible and unidentifiable.\",\n  \"quality_flags\": [\"partial_occlusion\", \"unusual_closeup_viewpoint\", \"truncated_hand\", \"low_context\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see what appears to be a box or container with a reflective/crinkled surface (possibly mylar or foil) and a piece of bubble wrap or foam. There's a hand visible on the right side, and the box is sitting on a wooden floor. There also appears to be some kind of object at the top left that could be wrapped in paper or fabric.\n\nLet me provide the structured annotations:",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see what appears to be a box or container with a reflective/crinkled surface (possibly mylar or foil) and a piece of bubble wrap or foam. There's a hand visible on the right side, and the box is sitting on a wooden floor. There also appears to be some kind of object at the top left that could be wrapped in paper or fabric.\n\nLet me provide the structured annotations:",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 485,
+          "total_tokens": 2007,
+          "cost": 0.00088836,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00088836,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000582
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 105,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

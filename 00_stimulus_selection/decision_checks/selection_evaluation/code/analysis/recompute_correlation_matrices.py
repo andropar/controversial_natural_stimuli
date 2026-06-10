@@ -22,23 +22,22 @@ from scipy import stats
 from tqdm import tqdm
 
 # Paths
-PROJECT_ROOT = Path(__file__).resolve().parents[4]  # rsa_based_selection/
-PAPER_ROOT = Path(__file__).resolve().parents[2]     # cstim_paper/
-sys.path.insert(0, str(PROJECT_ROOT))
-sys.path.insert(0, str(PAPER_ROOT))
+STAGE = Path(__file__).resolve().parents[2]
+SHARE_ROOT = STAGE.parents[2]
+sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
+sys.path.insert(0, str(SHARE_ROOT))
 
 from config import UNIQUE_ENCODING_DIRS, MODEL_LIST_CSV
 from cstims.encoding.linear import load_encoding_params_by_encoding, encode_batch_for_all_encodings
 
-SELECTION_ROOT = PROJECT_ROOT / "outputs" / "final_cstims_v2_full"
-TIMESTAMP = "20251222_175721"
+SELECTION_ROOT = SHARE_ROOT / "00_stimulus_selection" / "results" / "selected_stimuli"
 MODEL_SETS = ["all_models", "architecture", "dataset", "sota", "training_objective"]
 ENCODING_NAMES = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]
 
 
 def load_payload(model_set: str) -> dict:
-    path = (SELECTION_ROOT / model_set / "method-raw_plus_all_encodings"
-            / TIMESTAMP / "selected_stimuli_data.pkl")
+    path = SELECTION_ROOT / model_set / "selected_stimuli_data.pkl"
     print(f"Loading payload: {path}")
     with open(path, "rb") as f:
         return pickle.load(f)
@@ -162,7 +161,7 @@ def main():
         print(f"\n{'='*60}")
         print(f"Model set: {ms}")
         print(f"{'='*60}")
-        output_dir = PAPER_ROOT / "00_selection_evaluation" / "results" / f"{ms}_unique"
+        output_dir = STAGE / "results" / f"{ms}_unique"
         output_dir.mkdir(parents=True, exist_ok=True)
         process_model_set(ms, device, output_dir)
 

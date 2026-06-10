@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_63",
+    "stim_key": "training_objective_63",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 63,
+    "file_index": 63,
+    "image_name": "image_0063.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0063.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\":5,\"ambiguity\":1,\"natural_photo_typicality\":3,\"visual_clutter\":2,\"object_centricity\":4,\"scene_centricity\":3,\"caption_confidence\":5,\"estimated_salient_object_count\":3,\"estimated_distinct_object_categories\":4,\"contains_person\":true,\"contains_face\":true,\"contains_animal\":false,\"contains_text\":true,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":false,\"contains_outdoor_scene\":true,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":false,\"contains_unusual_viewpoint\":false,\"contains_multiple_main_objects\":false,\"dominant_content_type\":\"person_face\",\"image_style\":\"edited_photo\",\"semantic_domain\":\"portrait\",\"short_caption\":\"Smiling toddler in pink tutu sits on white rocking chair with teddy bear in sunlit forest\",\"main_objects\":[\"toddler\",\"rocking chair\",\"teddy bear\",\"headband\",\"tutu skirt\"],\"possible_interpretations\":[\"first birthday photoshoot\",\"professional child portrait\",\"milestone portrait session\",\"themed baby photo session\",\"outdoor family portrait\"],\"uncertainty_notes\":\"Image is clearly a styled portrait; sun flare and shallow depth of field indicate professional photography.\",\"quality_flags\":[\"staged_scene\",\"backlit\",\"shallow_depth_of_field\",\"professional_portrait\"]}",
+      "response": {
+        "id": "gen-1780319342-lCDOU7dAnX20Unhlaji2",
+        "object": "chat.completion",
+        "created": 1780319342,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\":5,\"ambiguity\":1,\"natural_photo_typicality\":3,\"visual_clutter\":2,\"object_centricity\":4,\"scene_centricity\":3,\"caption_confidence\":5,\"estimated_salient_object_count\":3,\"estimated_distinct_object_categories\":4,\"contains_person\":true,\"contains_face\":true,\"contains_animal\":false,\"contains_text\":true,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":false,\"contains_outdoor_scene\":true,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":false,\"contains_unusual_viewpoint\":false,\"contains_multiple_main_objects\":false,\"dominant_content_type\":\"person_face\",\"image_style\":\"edited_photo\",\"semantic_domain\":\"portrait\",\"short_caption\":\"Smiling toddler in pink tutu sits on white rocking chair with teddy bear in sunlit forest\",\"main_objects\":[\"toddler\",\"rocking chair\",\"teddy bear\",\"headband\",\"tutu skirt\"],\"possible_interpretations\":[\"first birthday photoshoot\",\"professional child portrait\",\"milestone portrait session\",\"themed baby photo session\",\"outdoor family portrait\"],\"uncertainty_notes\":\"Image is clearly a styled portrait; sun flare and shallow depth of field indicate professional photography.\",\"quality_flags\":[\"staged_scene\",\"backlit\",\"shallow_depth_of_field\",\"professional_portrait\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a young child (likely a toddler) sitting on a small white wooden rocking chair outdoors in what appears to be a wooded area. The child is wearing:\n- A white t-shirt with \"One\" written in gold\n- A pink tutu/ruffle skirt\n- A pink headband with a large bow\n- Gold/tan shoes\n\nThere's a white teddy bear sitting on the ground in front of the chair. The setting appears to be a forest or wooded area with trees, dried leaves on the ground, and sunlight filtering through. This looks like a professional first birthday photoshoot.\n\nLet me rate the dimensions:\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - very clear interpretation (baby's first birthday photo)\n- natural_photo_typicality: 3 - it's a real photo but heavily styled/staged\n- visual_clutter: 2 - relatively clean composition\n- object_centricity: 3 - the baby is central but it's also a scene\n- scene_centricity: 3 - the outdoor setting is prominent\n- caption_confidence: 5 - easy to caption\n\nSalient objects: baby, rocking chair, teddy bear, headband\nObject categories: 3-4 (person, chair, teddy bear, clothing)\n\nContains: person, face, outdoor scene\n- contains_text: \"One\" on shirt\n- No animals (teddy bear is stuffed, not real animal)\n- No vehicles, food\n\nDominant content type: person_face (it's a portrait-style shot of a child)\nImage style: edited_photo (professional photo with soft lighting, possibly some editing)\nSemantic domain: portrait photography / birthday\n\nCaption: \"Smiling toddler in pink tutu sits on a white rocking chair holding a teddy bear in a sunlit forest\"\n\nPossible interpretations: \n1. First birthday photoshoot\n2. Professional portrait\n3. Milestone photo session\n\nQuality flags: staged photoshoot, backlit, shallow depth of field",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a young child (likely a toddler) sitting on a small white wooden rocking chair outdoors in what appears to be a wooded area. The child is wearing:\n- A white t-shirt with \"One\" written in gold\n- A pink tutu/ruffle skirt\n- A pink headband with a large bow\n- Gold/tan shoes\n\nThere's a white teddy bear sitting on the ground in front of the chair. The setting appears to be a forest or wooded area with trees, dried leaves on the ground, and sunlight filtering through. This looks like a professional first birthday photoshoot.\n\nLet me rate the dimensions:\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - very clear interpretation (baby's first birthday photo)\n- natural_photo_typicality: 3 - it's a real photo but heavily styled/staged\n- visual_clutter: 2 - relatively clean composition\n- object_centricity: 3 - the baby is central but it's also a scene\n- scene_centricity: 3 - the outdoor setting is prominent\n- caption_confidence: 5 - easy to caption\n\nSalient objects: baby, rocking chair, teddy bear, headband\nObject categories: 3-4 (person, chair, teddy bear, clothing)\n\nContains: person, face, outdoor scene\n- contains_text: \"One\" on shirt\n- No animals (teddy bear is stuffed, not real animal)\n- No vehicles, food\n\nDominant content type: person_face (it's a portrait-style shot of a child)\nImage style: edited_photo (professional photo with soft lighting, possibly some editing)\nSemantic domain: portrait photography / birthday\n\nCaption: \"Smiling toddler in pink tutu sits on a white rocking chair holding a teddy bear in a sunlit forest\"\n\nPossible interpretations: \n1. First birthday photoshoot\n2. Professional portrait\n3. Milestone photo session\n\nQuality flags: staged photoshoot, backlit, shallow depth of field",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 713,
+          "total_tokens": 2235,
+          "cost": 0.00116196,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00116196,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008556
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 476,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

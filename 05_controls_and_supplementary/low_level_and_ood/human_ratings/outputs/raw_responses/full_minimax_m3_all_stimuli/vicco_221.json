@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_221",
+    "stim_key": "vicco_221",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 221,
+    "file_index": 220,
+    "image_name": "shared_4rep_vicco_221.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_221.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 4, \"estimated_salient_object_count\": 6, \"estimated_distinct_object_categories\": 6, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"outdoor garden\", \"short_caption\": \"Garden with patio furniture, red house, flowers and trees at sunset (image rotated 90 degrees)\", \"main_objects\": [\"patio chairs\", \"table\", \"red house\", \"flowers\", \"trees\", \"lawn\"], \"possible_interpretations\": [\"backyard garden at dusk\", \"rural cottage garden\", \"summer evening garden\", \"countryside homestead\"], \"uncertainty_notes\": \"Image is rotated 90 degrees; orientation may affect interpretation. Building could be a cottage, cabin, or shed.\", \"quality_flags\": [\"rotated_orientation\"]}",
+      "response": {
+        "id": "gen-1780319643-0d9mTkULAxTu561PKj1a",
+        "object": "chat.completion",
+        "created": 1780319643,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 5, \"caption_confidence\": 4, \"estimated_salient_object_count\": 6, \"estimated_distinct_object_categories\": 6, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"outdoor garden\", \"short_caption\": \"Garden with patio furniture, red house, flowers and trees at sunset (image rotated 90 degrees)\", \"main_objects\": [\"patio chairs\", \"table\", \"red house\", \"flowers\", \"trees\", \"lawn\"], \"possible_interpretations\": [\"backyard garden at dusk\", \"rural cottage garden\", \"summer evening garden\", \"countryside homestead\"], \"uncertainty_notes\": \"Image is rotated 90 degrees; orientation may affect interpretation. Building could be a cottage, cabin, or shed.\", \"quality_flags\": [\"rotated_orientation\"]}",
+              "refusal": null,
+              "reasoning": "The image appears to be rotated 90 degrees (sideways). Let me analyze it as if it were properly oriented, or note this as a quality flag.\n\nThe image shows an outdoor garden scene with:\n- A lawn/grass area\n- Outdoor furniture (chairs, a table)\n- A red building/cabin/house in the background\n- Trees and vegetation\n- Flowers (yellow, red)\n- A garden setting, possibly at sunset based on the warm light\n\nThe image is rotated 90 degrees clockwise (or counterclockwise) - it should be viewed with the sky at the top. The horizon line runs vertically in the current orientation.\n\nLet me annotate based on what's visible:\n\n- Recognizability: 4 - clearly a garden/outdoor scene with furniture and a red building\n- Ambiguity: 2 - fairly clear what it shows\n- Natural photo typicality: 4 - looks like a natural photo, though rotated\n- Visual clutter: 3 - moderate amount of objects and vegetation\n- Object centricity: 2 - scene dominates\n- Scene centricity: 5 - clearly a place/scene\n- Caption confidence: 4 - can confidently caption\n\n- Salient objects: furniture set (chairs, table), red building/house, flowers, trees\n- Distinct categories: maybe 5-6 (chairs, table, building, flowers, trees, grass)\n\n- Person: no\n- Face: no\n- Animal: no\n- Text: no\n- Vehicle: no\n- Food: no\n- Indoor: no\n- Outdoor: yes\n- Artificial/rendered: no\n- Occlusion/truncation: some, image is rotated (truncated view)\n- Unusual viewpoint: yes - rotated orientation\n- Multiple main objects: somewhat - furniture and building both prominent\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: garden/outdoor\n\nShort caption: \"Garden scene with outdoor furniture, red house, and flowers at sunset\" (image rotated)\n\nQuality flags: rotated_orientation",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image appears to be rotated 90 degrees (sideways). Let me analyze it as if it were properly oriented, or note this as a quality flag.\n\nThe image shows an outdoor garden scene with:\n- A lawn/grass area\n- Outdoor furniture (chairs, a table)\n- A red building/cabin/house in the background\n- Trees and vegetation\n- Flowers (yellow, red)\n- A garden setting, possibly at sunset based on the warm light\n\nThe image is rotated 90 degrees clockwise (or counterclockwise) - it should be viewed with the sky at the top. The horizon line runs vertically in the current orientation.\n\nLet me annotate based on what's visible:\n\n- Recognizability: 4 - clearly a garden/outdoor scene with furniture and a red building\n- Ambiguity: 2 - fairly clear what it shows\n- Natural photo typicality: 4 - looks like a natural photo, though rotated\n- Visual clutter: 3 - moderate amount of objects and vegetation\n- Object centricity: 2 - scene dominates\n- Scene centricity: 5 - clearly a place/scene\n- Caption confidence: 4 - can confidently caption\n\n- Salient objects: furniture set (chairs, table), red building/house, flowers, trees\n- Distinct categories: maybe 5-6 (chairs, table, building, flowers, trees, grass)\n\n- Person: no\n- Face: no\n- Animal: no\n- Text: no\n- Vehicle: no\n- Food: no\n- Indoor: no\n- Outdoor: yes\n- Artificial/rendered: no\n- Occlusion/truncation: some, image is rotated (truncated view)\n- Unusual viewpoint: yes - rotated orientation\n- Multiple main objects: somewhat - furniture and building both prominent\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: garden/outdoor\n\nShort caption: \"Garden scene with outdoor furniture, red house, and flowers at sunset\" (image rotated)\n\nQuality flags: rotated_orientation",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 745,
+          "total_tokens": 2267,
+          "cost": 0.00120036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00120036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000894
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 465,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

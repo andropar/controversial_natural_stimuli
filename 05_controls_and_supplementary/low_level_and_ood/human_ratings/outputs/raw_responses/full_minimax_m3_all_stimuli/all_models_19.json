@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_19",
+    "stim_key": "all_models_19",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 19,
+    "file_index": 19,
+    "image_name": "image_0019.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0019.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 4,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 2,\n\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": null,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"retail_interior\",\n\n  \"short_caption\": \"Blurred interior of a brightly lit retail store with clothing displays and figures\",\n  \"main_objects\": [\"clothing rack\", \"display table\", \"ceiling lights\", \"person silhouettes\"],\n  \"possible_interpretations\": [\"clothing boutique interior\", \"art gallery space\", \"high-end retail store\", \"department store aisle\", \"designer fashion shop\"],\n  \"uncertainty_notes\": \"Image is heavily out of focus, making specific object and person identification unreliable; only general scene context is discernible\",\n  \"quality_flags\": [\"heavy_blur\", \"out_of_focus\", \"loss_of_detail\"]\n}",
+      "response": {
+        "id": "gen-1780318741-ioukQ3Gubm2stFMq60eO",
+        "object": "chat.completion",
+        "created": 1780318741,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 4,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 2,\n\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": null,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"retail_interior\",\n\n  \"short_caption\": \"Blurred interior of a brightly lit retail store with clothing displays and figures\",\n  \"main_objects\": [\"clothing rack\", \"display table\", \"ceiling lights\", \"person silhouettes\"],\n  \"possible_interpretations\": [\"clothing boutique interior\", \"art gallery space\", \"high-end retail store\", \"department store aisle\", \"designer fashion shop\"],\n  \"uncertainty_notes\": \"Image is heavily out of focus, making specific object and person identification unreliable; only general scene context is discernible\",\n  \"quality_flags\": [\"heavy_blur\", \"out_of_focus\", \"loss_of_detail\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. The image appears to be heavily blurred/out of focus, showing what looks like an indoor retail or shopping environment. I can see:\n\n- A bright, well-lit interior space\n- Ceiling lights visible at the top\n- What appears to be clothing displays (orange/red garments on the right)\n- Some figures that might be people in the middle/left area\n- Display tables or counters\n- A long walkway/perspective down the center\n\nThe image is very blurry, making detailed recognition difficult. Let me provide conservative ratings:\n\n- Recognizability: The main content (retail/shopping interior) is somewhat recognizable but very blurry - maybe 3\n- Ambiguity: Due to the blur, there are multiple possible interpretations (could be gallery, shop, boutique) - 3-4\n- Natural photo typicality: Looks like a natural photo, though heavily blurred - 4\n- Visual clutter: Despite the blur, there's a lot going on - 3\n- Object centricity: No single dominant object - 2\n- Scene centricity: This is clearly a scene/place - 4\n- Caption confidence: Hard to be confident due to blur - 2\n\nLet me estimate objects and categories more carefully.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. The image appears to be heavily blurred/out of focus, showing what looks like an indoor retail or shopping environment. I can see:\n\n- A bright, well-lit interior space\n- Ceiling lights visible at the top\n- What appears to be clothing displays (orange/red garments on the right)\n- Some figures that might be people in the middle/left area\n- Display tables or counters\n- A long walkway/perspective down the center\n\nThe image is very blurry, making detailed recognition difficult. Let me provide conservative ratings:\n\n- Recognizability: The main content (retail/shopping interior) is somewhat recognizable but very blurry - maybe 3\n- Ambiguity: Due to the blur, there are multiple possible interpretations (could be gallery, shop, boutique) - 3-4\n- Natural photo typicality: Looks like a natural photo, though heavily blurred - 4\n- Visual clutter: Despite the blur, there's a lot going on - 3\n- Object centricity: No single dominant object - 2\n- Scene centricity: This is clearly a scene/place - 4\n- Caption confidence: Hard to be confident due to blur - 2\n\nLet me estimate objects and categories more carefully.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 619,
+          "total_tokens": 2141,
+          "cost": 0.00117204,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00117204,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0007428
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 301,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

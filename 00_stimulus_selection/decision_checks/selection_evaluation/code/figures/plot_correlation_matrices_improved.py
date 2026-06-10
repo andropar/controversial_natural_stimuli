@@ -150,7 +150,7 @@ def _resolve_csv(model_set: str, eval_dir: Path, baseline: str = "vicco") -> tup
     """Pick the appropriate CSV for the requested random baseline.
 
     baseline = "eval_pipeline" → current paper eval data in
-                                  00_selection_evaluation/data/*_unique_boot
+                                  selection_evaluation/results/*_unique_boot
                                   (random = 10k LAION pool averaged across
                                   random 100-stim subsets)
     baseline = "vicco"         → correlation_matrices_with_random_noised.csv

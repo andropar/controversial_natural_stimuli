@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_16",
+    "stim_key": "dataset_16",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 16,
+    "file_index": 16,
+    "image_name": "image_0016.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0016.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior architecture\",\n  \"short_caption\": \"Black geometric metal screen partition in an office lobby.\",\n  \"main_objects\": [\"decorative metal screen\", \"glass walls\", \"ceiling lights\"],\n  \"possible_interpretations\": [\"decorative office partition\", \"architectural screen divider\", \"laser-cut metal art panel\", \"lobby room divider\"],\n  \"uncertainty_notes\": \"Pattern resembles text or barcodes but is purely geometric; the function of the screen is decorative rather than informational.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318978-1IYptV8fGizM3dpzGwFb",
+        "object": "chat.completion",
+        "created": 1780318978,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior architecture\",\n  \"short_caption\": \"Black geometric metal screen partition in an office lobby.\",\n  \"main_objects\": [\"decorative metal screen\", \"glass walls\", \"ceiling lights\"],\n  \"possible_interpretations\": [\"decorative office partition\", \"architectural screen divider\", \"laser-cut metal art panel\", \"lobby room divider\"],\n  \"uncertainty_notes\": \"Pattern resembles text or barcodes but is purely geometric; the function of the screen is decorative rather than informational.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a decorative black metal screen or partition with geometric cut-out patterns. It appears to be in an indoor setting, possibly an office or commercial space, with glass walls visible on either side and ceiling lights reflected in the glass. The pattern consists of various geometric shapes including triangles, rectangles, and parallel lines arranged in a grid-like fashion.\n\nLet me analyze this carefully:\n\n- Main content: A decorative black metal partition/screen with geometric cutout patterns\n- Setting: Indoor space (office or commercial building) with glass walls\n- The screen dominates the image\n- It's symmetrical with a central design\n\nFor ratings:\n- Recognizability: 4 - clearly a decorative screen/partition\n- Ambiguity: 2 - pretty clear what it is\n- Natural photo typicality: 3 - it's a photo of a man-made object in a real setting\n- Visual clutter: 3 - geometric pattern has many elements but organized\n- Object-centricity: 4 - the screen is the clear central object\n- Scene-centricity: 3 - there's some scene context but the object dominates\n- Caption confidence: 4\n\nEstimated counts:\n- Salient object count: 1 (the screen)\n- Distinct object categories: 2-3 (screen, glass walls, ceiling)\n\nContains:\n- Person: false\n- Face: false\n- Animal: false\n- Text: false (though the pattern might look like text/barcodes, it's not actual text)\n- Vehicle: false\n- Food: false\n- Indoor scene: true\n- Outdoor scene: false\n- Artificial/rendered: false (it's a real photo)\n- Occlusion/truncation: false\n- Unusual viewpoint: false\n- Multiple main objects: false\n\nDominant content type: object (the screen)\nImage style: natural_photo\nSemantic domain: architecture/interior design\n\nLet me format this properly.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a decorative black metal screen or partition with geometric cut-out patterns. It appears to be in an indoor setting, possibly an office or commercial space, with glass walls visible on either side and ceiling lights reflected in the glass. The pattern consists of various geometric shapes including triangles, rectangles, and parallel lines arranged in a grid-like fashion.\n\nLet me analyze this carefully:\n\n- Main content: A decorative black metal partition/screen with geometric cutout patterns\n- Setting: Indoor space (office or commercial building) with glass walls\n- The screen dominates the image\n- It's symmetrical with a central design\n\nFor ratings:\n- Recognizability: 4 - clearly a decorative screen/partition\n- Ambiguity: 2 - pretty clear what it is\n- Natural photo typicality: 3 - it's a photo of a man-made object in a real setting\n- Visual clutter: 3 - geometric pattern has many elements but organized\n- Object-centricity: 4 - the screen is the clear central object\n- Scene-centricity: 3 - there's some scene context but the object dominates\n- Caption confidence: 4\n\nEstimated counts:\n- Salient object count: 1 (the screen)\n- Distinct object categories: 2-3 (screen, glass walls, ceiling)\n\nContains:\n- Person: false\n- Face: false\n- Animal: false\n- Text: false (though the pattern might look like text/barcodes, it's not actual text)\n- Vehicle: false\n- Food: false\n- Indoor scene: true\n- Outdoor scene: false\n- Artificial/rendered: false (it's a real photo)\n- Occlusion/truncation: false\n- Unusual viewpoint: false\n- Multiple main objects: false\n\nDominant content type: object (the screen)\nImage style: natural_photo\nSemantic domain: architecture/interior design\n\nLet me format this properly.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 724,
+          "total_tokens": 2246,
+          "cost": 0.00129804,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129804,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008688
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 460,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

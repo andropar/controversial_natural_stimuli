@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_122",
+    "stim_key": "vicco_122",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 122,
+    "file_index": 121,
+    "image_name": "shared_4rep_vicco_122.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_122.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"living_room\",\n  \"short_caption\": \"Gray fabric sofa placed against a wall in a room with wooden floor and window.\",\n  \"main_objects\": [\"gray sofa\", \"window\", \"plant\"],\n  \"possible_interpretations\": [\"living room with couch against wall\", \"interior furniture photo\", \"couch beside a window\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; camera orientation is unusual. The couch dominates but extends beyond the frame.\",\n  \"quality_flags\": [\"rotated_90_degrees\", \"unusual_orientation\", \"partial_truncation\"]\n}",
+      "response": {
+        "id": "gen-1780319526-2tgaokQ3OsmD9Cvc9HYT",
+        "object": "chat.completion",
+        "created": 1780319526,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"living_room\",\n  \"short_caption\": \"Gray fabric sofa placed against a wall in a room with wooden floor and window.\",\n  \"main_objects\": [\"gray sofa\", \"window\", \"plant\"],\n  \"possible_interpretations\": [\"living room with couch against wall\", \"interior furniture photo\", \"couch beside a window\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; camera orientation is unusual. The couch dominates but extends beyond the frame.\",\n  \"quality_flags\": [\"rotated_90_degrees\", \"unusual_orientation\", \"partial_truncation\"]\n}",
+              "refusal": null,
+              "reasoning": "The image appears to be rotated 90 degrees (sideways). It shows a gray sofa/couch against a wall, with a wooden floor, a white wall, and a window with what appears to be a plant or flowers on the windowsill. The image is taken indoors.\n\nLet me analyze:\n- Recognizability: The main content (a gray sofa in a room) is recognizable, though the rotation is odd. I'd say 4.\n- Ambiguity: Low ambiguity - it's clearly a couch in a room. 1-2.\n- Natural photo typicality: Looks like a natural photo, though rotated. 3-4.\n- Visual clutter: Not much clutter - just a couch, wall, floor, window. 1-2.\n- Object centricity: The couch is the main subject, but it also shows the room. Mixed. Object 3, scene 3.\n- Caption confidence: Pretty confident. 4.\n\nThe image is rotated 90 degrees which is unusual. Contains indoor scene. No people, animals, vehicles, food, text. Contains artificial content? No, it's a natural photo of furniture. Occlusion/truncation? The couch is partially cut off. Unusual viewpoint? Yes, the image is rotated/sideways.\n\nMain objects: gray sofa, window, plant\nDominant content type: object (the couch dominates)\nImage style: natural_photo\nSemantic domain: living_room or interior",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image appears to be rotated 90 degrees (sideways). It shows a gray sofa/couch against a wall, with a wooden floor, a white wall, and a window with what appears to be a plant or flowers on the windowsill. The image is taken indoors.\n\nLet me analyze:\n- Recognizability: The main content (a gray sofa in a room) is recognizable, though the rotation is odd. I'd say 4.\n- Ambiguity: Low ambiguity - it's clearly a couch in a room. 1-2.\n- Natural photo typicality: Looks like a natural photo, though rotated. 3-4.\n- Visual clutter: Not much clutter - just a couch, wall, floor, window. 1-2.\n- Object centricity: The couch is the main subject, but it also shows the room. Mixed. Object 3, scene 3.\n- Caption confidence: Pretty confident. 4.\n\nThe image is rotated 90 degrees which is unusual. Contains indoor scene. No people, animals, vehicles, food, text. Contains artificial content? No, it's a natural photo of furniture. Occlusion/truncation? The couch is partially cut off. Unusual viewpoint? Yes, the image is rotated/sideways.\n\nMain objects: gray sofa, window, plant\nDominant content type: object (the couch dominates)\nImage style: natural_photo\nSemantic domain: living_room or interior",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 642,
+          "total_tokens": 2164,
+          "cost": 0.00107676,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00107676,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0007704
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 309,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

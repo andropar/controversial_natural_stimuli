@@ -90,13 +90,16 @@ class _RidgeGCVFast(_RidgeGCV):
                 "negative or null value instead."
             )
 
-        X, y, X_offset, y_offset, X_scale = _preprocess_data(
+        preprocessed = _preprocess_data(
             X,
             y,
             fit_intercept=self.fit_intercept,
             copy=self.copy_X,
             sample_weight=sample_weight,
         )
+        # sklearn >= 1.7 returns sample_weight_sqrt as a sixth value; older
+        # versions returned only the first five values.
+        X, y, X_offset, y_offset, X_scale = preprocessed[:5]
 
         gcv_mode = _check_gcv_mode(X, self.gcv_mode)
 

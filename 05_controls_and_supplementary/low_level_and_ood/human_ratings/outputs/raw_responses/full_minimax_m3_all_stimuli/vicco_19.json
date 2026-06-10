@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_19",
+    "stim_key": "vicco_19",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 19,
+    "file_index": 18,
+    "image_name": "shared_4rep_vicco_019.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_019.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor_domestic\",\n  \"short_caption\": \"Wooden chair with a blue plastic bag, white garment, and dark clothing on the seat, books on a shelf behind.\",\n  \"main_objects\": [\"wooden chair\", \"blue plastic bag\", \"white garment\", \"dark clothing\", \"bookshelf\", \"books\"],\n  \"possible_interpretations\": [\"thrift store display\", \"someone's home with laundry\", \"staged photo of items on chair\", \"retail shop photo\", \"casual phone snapshot\"],\n  \"uncertainty_notes\": \"Context is ambiguous; could be a retail or domestic setting. The exact nature of the white and dark items is unclear.\",\n  \"quality_flags\": [\"slight_motion_blur\", \"casual_framing\", \"partial_occlusion\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319407-6FZV48UoXZ1EKfnkKwmg",
+        "object": "chat.completion",
+        "created": 1780319407,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor_domestic\",\n  \"short_caption\": \"Wooden chair with a blue plastic bag, white garment, and dark clothing on the seat, books on a shelf behind.\",\n  \"main_objects\": [\"wooden chair\", \"blue plastic bag\", \"white garment\", \"dark clothing\", \"bookshelf\", \"books\"],\n  \"possible_interpretations\": [\"thrift store display\", \"someone's home with laundry\", \"staged photo of items on chair\", \"retail shop photo\", \"casual phone snapshot\"],\n  \"uncertainty_notes\": \"Context is ambiguous; could be a retail or domestic setting. The exact nature of the white and dark items is unclear.\",\n  \"quality_flags\": [\"slight_motion_blur\", \"casual_framing\", \"partial_occlusion\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a chair (appears to be a dark wood or wood-finished chair) with what looks like a blue plastic bag or blue plastic-covered item draped over it, along with what appears to be white clothing/garment and dark clothing (possibly pants or fabric) on the seat. In the background, I can see what appears to be a bookshelf with various books, and there's some kind of storage or shelving unit to the left. There also appears to be a price tag in the upper left corner.\n\nThis looks like it could be a retail/thrift store setting or someone's home. The composition is unusual - the chair is the main subject but it has clothing/plastic items on it.\n\nLet me assess each dimension:\n\n- recognizability: The main content is a chair with items on it. Reasonably clear. 4\n- ambiguity: There are multiple interpretations - could be a thrift store, someone's home, etc. 3\n- natural_photo_typicality: This looks like a natural phone photo, somewhat casual. 4\n- visual_clutter: There are several elements - chair, books, shelving, clothing items, price tag. Moderate clutter. 3\n- object_centricity: The chair is the dominant object. 4\n- scene_centricity: There's scene context (background with books, shelves) but the chair dominates. 3\n- caption_confidence: I can describe it fairly well. 4\n\nEstimated salient objects: chair, books, clothing items, plastic bag, shelving - about 4-5\nDistinct categories: chair, books, clothing, plastic bag, shelving - about 5\n\nContains: \n- person: no visible person\n- face: no\n- animal: no\n- text: yes (book titles visible, price tag)\n- vehicle: no\n- food: no\n- indoor: yes\n- outdoor: no\n- artificial/rendered: no\n- occlusion: the chair is partially obscured by items\n- unusual viewpoint: the angle is a bit unusual (looking down at chair)\n- multiple main objects: somewhat, the chair and the items on it\n\nDominant content: object (chair with items)\nImage style: natural_photo\nSemantic domain: home/domestic or retail\n\nShort caption: \"A wooden chair with blue plastic bag, white garment, and dark clothing on it, with bookshelf background.\"\n\nLet me refine my answers.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a chair (appears to be a dark wood or wood-finished chair) with what looks like a blue plastic bag or blue plastic-covered item draped over it, along with what appears to be white clothing/garment and dark clothing (possibly pants or fabric) on the seat. In the background, I can see what appears to be a bookshelf with various books, and there's some kind of storage or shelving unit to the left. There also appears to be a price tag in the upper left corner.\n\nThis looks like it could be a retail/thrift store setting or someone's home. The composition is unusual - the chair is the main subject but it has clothing/plastic items on it.\n\nLet me assess each dimension:\n\n- recognizability: The main content is a chair with items on it. Reasonably clear. 4\n- ambiguity: There are multiple interpretations - could be a thrift store, someone's home, etc. 3\n- natural_photo_typicality: This looks like a natural phone photo, somewhat casual. 4\n- visual_clutter: There are several elements - chair, books, shelving, clothing items, price tag. Moderate clutter. 3\n- object_centricity: The chair is the dominant object. 4\n- scene_centricity: There's scene context (background with books, shelves) but the chair dominates. 3\n- caption_confidence: I can describe it fairly well. 4\n\nEstimated salient objects: chair, books, clothing items, plastic bag, shelving - about 4-5\nDistinct categories: chair, books, clothing, plastic bag, shelving - about 5\n\nContains: \n- person: no visible person\n- face: no\n- animal: no\n- text: yes (book titles visible, price tag)\n- vehicle: no\n- food: no\n- indoor: yes\n- outdoor: no\n- artificial/rendered: no\n- occlusion: the chair is partially obscured by items\n- unusual viewpoint: the angle is a bit unusual (looking down at chair)\n- multiple main objects: somewhat, the chair and the items on it\n\nDominant content: object (chair with items)\nImage style: natural_photo\nSemantic domain: home/domestic or retail\n\nShort caption: \"A wooden chair with blue plastic bag, white garment, and dark clothing on it, with bookshelf background.\"\n\nLet me refine my answers.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 897,
+          "total_tokens": 2419,
+          "cost": 0.00150564,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00150564,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010764
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 564,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

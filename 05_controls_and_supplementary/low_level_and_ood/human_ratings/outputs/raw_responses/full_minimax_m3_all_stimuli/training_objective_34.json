@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_34",
+    "stim_key": "training_objective_34",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 34,
+    "file_index": 34,
+    "image_name": "image_0034.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0034.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"portrait\",\n  \"short_caption\": \"A young schoolgirl in a checkered uniform leans against a wall, gazing into the distance.\",\n  \"main_objects\": [\"schoolgirl\", \"school uniform\", \"wall\", \"corridor\"],\n  \"possible_interpretations\": [\n    \"a child waiting alone in a school corridor\",\n    \"a candid school portrait\",\n    \"a student taking a quiet moment outdoors\"\n  ],\n  \"uncertainty_notes\": \"Indoor vs outdoor corridor setting is slightly ambiguous due to the heavy background blur; exact age of the child is uncertain.\",\n  \"quality_flags\": [\"shallow_depth_of_field\", \"subject_cropped_at_bottom_edge\", \"negative_space_dominant\"]\n}",
+      "response": {
+        "id": "gen-1780319318-ljtzQupEkkvMqUSmN7lB",
+        "object": "chat.completion",
+        "created": 1780319318,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"portrait\",\n  \"short_caption\": \"A young schoolgirl in a checkered uniform leans against a wall, gazing into the distance.\",\n  \"main_objects\": [\"schoolgirl\", \"school uniform\", \"wall\", \"corridor\"],\n  \"possible_interpretations\": [\n    \"a child waiting alone in a school corridor\",\n    \"a candid school portrait\",\n    \"a student taking a quiet moment outdoors\"\n  ],\n  \"uncertainty_notes\": \"Indoor vs outdoor corridor setting is slightly ambiguous due to the heavy background blur; exact age of the child is uncertain.\",\n  \"quality_flags\": [\"shallow_depth_of_field\", \"subject_cropped_at_bottom_edge\", \"negative_space_dominant\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a young girl in a school uniform (checkered blue and white dress with a red tie/bow) leaning against a wall, looking to the side. The background is heavily blurred showing what appears to be a corridor or hallway. The composition is portrait-style with the girl positioned on the right side of the frame.\n\nLet me analyze the schema fields:\n\n- recognizability: 5 - very clear what we're seeing\n- ambiguity: 1 - the interpretation is quite clear\n- natural_photo_typicality: 5 - looks like a natural photograph with shallow depth of field\n- visual_clutter: 2 - mostly clean, blurred background\n- object_centricity: 3 - there's a clear subject but she occupies only part of the frame\n- scene_centricity: 3 - there's a sense of place (corridor) but the person dominates\n- caption_confidence: 5 - easy to describe\n\n- estimated_salient_object_count: 1 (the girl)\n- estimated_distinct_object_categories: 2 (person, wall/building)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: possibly (corridor) or outdoor - looks like an outdoor corridor/veranda\n- contains_outdoor_scene: true (appears to be outdoor corridor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (girl is partially cropped at the bottom)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: person_face\n- image_style: natural_photo\n- semantic_domain: portrait\n\n- short_caption: \"A young schoolgirl in a checkered uniform leans against a wall, looking into the distance.\"\n- main_objects: [\"schoolgirl\", \"school uniform\", \"wall\"]\n- possible_interpretations: [\"a child waiting in a school corridor\", \"a portrait of a schoolchild\", \"a candid moment at school\"]\n- uncertainty_notes: \"The setting (indoor vs outdoor corridor) is slightly ambiguous due to the blur.\"\n- quality_flags: [\"shallow_depth_of_field\", \"subject_cropped_at_bottom\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a young girl in a school uniform (checkered blue and white dress with a red tie/bow) leaning against a wall, looking to the side. The background is heavily blurred showing what appears to be a corridor or hallway. The composition is portrait-style with the girl positioned on the right side of the frame.\n\nLet me analyze the schema fields:\n\n- recognizability: 5 - very clear what we're seeing\n- ambiguity: 1 - the interpretation is quite clear\n- natural_photo_typicality: 5 - looks like a natural photograph with shallow depth of field\n- visual_clutter: 2 - mostly clean, blurred background\n- object_centricity: 3 - there's a clear subject but she occupies only part of the frame\n- scene_centricity: 3 - there's a sense of place (corridor) but the person dominates\n- caption_confidence: 5 - easy to describe\n\n- estimated_salient_object_count: 1 (the girl)\n- estimated_distinct_object_categories: 2 (person, wall/building)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: possibly (corridor) or outdoor - looks like an outdoor corridor/veranda\n- contains_outdoor_scene: true (appears to be outdoor corridor)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (girl is partially cropped at the bottom)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: person_face\n- image_style: natural_photo\n- semantic_domain: portrait\n\n- short_caption: \"A young schoolgirl in a checkered uniform leans against a wall, looking into the distance.\"\n- main_objects: [\"schoolgirl\", \"school uniform\", \"wall\"]\n- possible_interpretations: [\"a child waiting in a school corridor\", \"a portrait of a schoolchild\", \"a candid moment at school\"]\n- uncertainty_notes: \"The setting (indoor vs outdoor corridor) is slightly ambiguous due to the blur.\"\n- quality_flags: [\"shallow_depth_of_field\", \"subject_cropped_at_bottom\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 850,
+          "total_tokens": 2164,
+          "cost": 0.0011022,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1300,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0011022,
+            "upstream_inference_prompt_cost": 8.22e-05,
+            "upstream_inference_completions_cost": 0.00102
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 532,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

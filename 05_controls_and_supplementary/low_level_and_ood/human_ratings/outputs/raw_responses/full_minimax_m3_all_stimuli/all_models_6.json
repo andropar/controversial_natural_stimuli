@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_6",
+    "stim_key": "all_models_6",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 6,
+    "file_index": 6,
+    "image_name": "image_0006.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0006.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: Missing required fields: ['contains_unusual_viewpoint']"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports_swimming\",\n  \"short_caption\": \"A swimmer in a dark cap and goggles mid-stroke in a competition pool, water splashing around them.\",\n  \"main_objects\": [\"swimmer\", \"swim cap\", \"goggles\", \"pool water\", \"lane dividers\", \"background signage\"],\n  \"possible_interpretations\": [\n    \"competitive swimmer during a race\",\n    \"training session in an indoor pool\",\n    \"championship event with sponsorship banners visible\"\n  ],\n  \"uncertainty_notes\": \"Background text is partially obscured; exact stroke and competition level not fully determinable.\",\n  \"quality_flags\": [\"partial_face_occlusion_by_water\"]\n}",
+      "response": {
+        "id": "gen-1780318769-mP24KVDqscMmgYuhx6Np",
+        "object": "chat.completion",
+        "created": 1780318769,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sports_swimming\",\n  \"short_caption\": \"A swimmer in a dark cap and goggles mid-stroke in a competition pool, water splashing around them.\",\n  \"main_objects\": [\"swimmer\", \"swim cap\", \"goggles\", \"pool water\", \"lane dividers\", \"background signage\"],\n  \"possible_interpretations\": [\n    \"competitive swimmer during a race\",\n    \"training session in an indoor pool\",\n    \"championship event with sponsorship banners visible\"\n  ],\n  \"uncertainty_notes\": \"Background text is partially obscured; exact stroke and competition level not fully determinable.\",\n  \"quality_flags\": [\"partial_face_occlusion_by_water\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a swimmer in a pool, captured mid-stroke (likely backstroke or freestyle based on the cap and goggles). The swimmer is wearing a dark swim cap and goggles, with water splashing dramatically around them. In the background, I can see banners/signs that read something like \"...SEPHAS RIES\" and \"AUS 20...\" which suggests this is a competitive swimming event, possibly an Australian championship or similar. There are red lane dividers visible in the foreground. The scene is clearly a competitive swimming event.\n\nLet me now provide the structured annotations:\n\n- recognizability: High - it's clearly a swimmer in a pool\n- ambiguity: Low - clear interpretation\n- natural_photo_typicality: High - looks like a typical sports photograph\n- visual_clutter: Moderate to high - water splash, background elements\n- object_centricity: High - the swimmer is the clear central subject\n- scene_centricity: Moderate - it's also a scene (pool, competition)\n- caption_confidence: High\n\n- estimated_salient_object_count: 1 (the swimmer is the main subject)\n- estimated_distinct_object_categories: 3-4 (swimmer, pool, lane dividers, background signage)\n\n- contains_person: true\n- contains_face: true (partially visible)\n- contains_animal: false\n- contains_text: true (background signage)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (this looks like an indoor pool, actually - let me check... the lighting and background suggest indoor)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (water splashes occlude parts of the swimmer)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\nWait, looking more carefully at the background - there's a TV monitor visible at the top, and the lighting suggests this is an indoor competitive swimming venue.\n\n- dominant_content_type: person_face (it's a person as the main subject)\n- image_style: natural_photo\n- semantic_domain: sports/swimming\n\nLet me finalize the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a swimmer in a pool, captured mid-stroke (likely backstroke or freestyle based on the cap and goggles). The swimmer is wearing a dark swim cap and goggles, with water splashing dramatically around them. In the background, I can see banners/signs that read something like \"...SEPHAS RIES\" and \"AUS 20...\" which suggests this is a competitive swimming event, possibly an Australian championship or similar. There are red lane dividers visible in the foreground. The scene is clearly a competitive swimming event.\n\nLet me now provide the structured annotations:\n\n- recognizability: High - it's clearly a swimmer in a pool\n- ambiguity: Low - clear interpretation\n- natural_photo_typicality: High - looks like a typical sports photograph\n- visual_clutter: Moderate to high - water splash, background elements\n- object_centricity: High - the swimmer is the clear central subject\n- scene_centricity: Moderate - it's also a scene (pool, competition)\n- caption_confidence: High\n\n- estimated_salient_object_count: 1 (the swimmer is the main subject)\n- estimated_distinct_object_categories: 3-4 (swimmer, pool, lane dividers, background signage)\n\n- contains_person: true\n- contains_face: true (partially visible)\n- contains_animal: false\n- contains_text: true (background signage)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (this looks like an indoor pool, actually - let me check... the lighting and background suggest indoor)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (water splashes occlude parts of the swimmer)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\nWait, looking more carefully at the background - there's a TV monitor visible at the top, and the lighting suggests this is an indoor competitive swimming venue.\n\n- dominant_content_type: person_face (it's a person as the main subject)\n- image_style: natural_photo\n- semantic_domain: sports/swimming\n\nLet me finalize the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1430,
+          "completion_tokens": 827,
+          "total_tokens": 2257,
+          "cost": 0.00139404,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139404,
+            "upstream_inference_prompt_cost": 0.00040164,
+            "upstream_inference_completions_cost": 0.0009924
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 547,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

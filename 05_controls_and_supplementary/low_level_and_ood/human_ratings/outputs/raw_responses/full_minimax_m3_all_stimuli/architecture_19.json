@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_19",
+    "stim_key": "architecture_19",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 19,
+    "file_index": 19,
+    "image_name": "image_0019.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0019.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 7,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_design_kitchen\",\n\n  \"short_caption\": \"Modern dark kitchen with marble island, black bar stools, and place settings\",\n  \"main_objects\": [\"kitchen island\", \"bar stools\", \"cabinets\", \"plates\", \"wine glasses\", \"flower vases\", \"range hood\", \"pendant lights\"],\n  \"possible_interpretations\": [\"luxury modern kitchen\", \"home interior design photo\", \"open-concept kitchen with seating\", \"staged real estate kitchen photo\"],\n  \"uncertainty_notes\": \"Image appears to be a staged interior or real-estate style photograph; standard room only.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318870-wCT64WQyttDAW1COShMh",
+        "object": "chat.completion",
+        "created": 1780318870,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 7,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_design_kitchen\",\n\n  \"short_caption\": \"Modern dark kitchen with marble island, black bar stools, and place settings\",\n  \"main_objects\": [\"kitchen island\", \"bar stools\", \"cabinets\", \"plates\", \"wine glasses\", \"flower vases\", \"range hood\", \"pendant lights\"],\n  \"possible_interpretations\": [\"luxury modern kitchen\", \"home interior design photo\", \"open-concept kitchen with seating\", \"staged real estate kitchen photo\"],\n  \"uncertainty_notes\": \"Image appears to be a staged interior or real-estate style photograph; standard room only.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The user wants me to annotate this image of a kitchen. Let me analyze it carefully.\n\nThe image shows a modern kitchen with:\n- Dark/black cabinetry\n- Marble or stone countertops on a large island\n- Black bar stools/chairs at the island\n- A backsplash with tile/mosaic pattern\n- Stainless steel appliances (range hood visible)\n- Wood plank flooring\n- Place settings with white plates, wine glasses on the island\n- Yellow flowers in vases as decoration\n- Pendant lighting above\n- Glass-front cabinets\n\nLet me assess each attribute:\n\n- recognizability: 5 - very clearly a kitchen\n- ambiguity: 1 - clearly a kitchen scene\n- natural_photo_typicality: 4 - looks like a typical interior design/real estate photo\n- visual_clutter: 3 - moderate, organized but lots of elements\n- object_centricity: 2 - no single central object\n- scene_centricity: 5 - it's clearly a scene/place (kitchen)\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: many objects - around 6-8 (island, stools, cabinets, plates, glasses, flowers, appliances)\n- estimated_distinct_object_categories: ~6-7 (cabinets, stools, island, plates, glassware, flowers, appliances)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (looks like a real photo)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (island, stools, cabinets all prominent)\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: interior_design or kitchen\n\nshort_caption: \"Modern dark kitchen with marble island, black bar stools, and place settings\"\n\nmain_objects: kitchen island, bar stools, cabinets, plates, wine glasses, flowers, pendant lights, range hood\n\npossible_interpretations: \n- \"modern kitchen\"\n- \"luxury home kitchen\"\n- \"interior design showcase\"\n\nuncertainty_notes: None significant\nquality_flags: none\n\nLet me finalize the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The user wants me to annotate this image of a kitchen. Let me analyze it carefully.\n\nThe image shows a modern kitchen with:\n- Dark/black cabinetry\n- Marble or stone countertops on a large island\n- Black bar stools/chairs at the island\n- A backsplash with tile/mosaic pattern\n- Stainless steel appliances (range hood visible)\n- Wood plank flooring\n- Place settings with white plates, wine glasses on the island\n- Yellow flowers in vases as decoration\n- Pendant lighting above\n- Glass-front cabinets\n\nLet me assess each attribute:\n\n- recognizability: 5 - very clearly a kitchen\n- ambiguity: 1 - clearly a kitchen scene\n- natural_photo_typicality: 4 - looks like a typical interior design/real estate photo\n- visual_clutter: 3 - moderate, organized but lots of elements\n- object_centricity: 2 - no single central object\n- scene_centricity: 5 - it's clearly a scene/place (kitchen)\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: many objects - around 6-8 (island, stools, cabinets, plates, glasses, flowers, appliances)\n- estimated_distinct_object_categories: ~6-7 (cabinets, stools, island, plates, glassware, flowers, appliances)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (looks like a real photo)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (island, stools, cabinets all prominent)\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: interior_design or kitchen\n\nshort_caption: \"Modern dark kitchen with marble island, black bar stools, and place settings\"\n\nmain_objects: kitchen island, bar stools, cabinets, plates, wine glasses, flowers, pendant lights, range hood\n\npossible_interpretations: \n- \"modern kitchen\"\n- \"luxury home kitchen\"\n- \"interior design showcase\"\n\nuncertainty_notes: None significant\nquality_flags: none\n\nLet me finalize the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 863,
+          "total_tokens": 2385,
+          "cost": 0.00134196,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00134196,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010356
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 566,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

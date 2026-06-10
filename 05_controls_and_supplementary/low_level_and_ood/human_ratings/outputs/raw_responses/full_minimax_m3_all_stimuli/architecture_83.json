@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_83",
+    "stim_key": "architecture_83",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 83,
+    "file_index": 83,
+    "image_name": "image_0083.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0083.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nursery/bedroom interior\",\n  \"short_caption\": \"White crib with pink chevron bedding in a bright nursery with a white armchair.\",\n  \"main_objects\": [\"crib\", \"armchair\", \"pillow\", \"crib skirt\", \"chevron-patterned mattress\"],\n  \"possible_interpretations\": [\n    \"Nursery room interior\",\n    \"Baby's bedroom\",\n    \"Showroom display of nursery furniture\"\n  ],\n  \"uncertainty_notes\": \"Slight soft-focus and styling suggest possibly a professionally photographed or lightly edited nursery scene; otherwise unambiguous.\",\n  \"quality_flags\": [\"soft_focus_background\"]\n}",
+      "response": {
+        "id": "gen-1780318938-D79z350IxNVoKX2PJtM7",
+        "object": "chat.completion",
+        "created": 1780318938,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nursery/bedroom interior\",\n  \"short_caption\": \"White crib with pink chevron bedding in a bright nursery with a white armchair.\",\n  \"main_objects\": [\"crib\", \"armchair\", \"pillow\", \"crib skirt\", \"chevron-patterned mattress\"],\n  \"possible_interpretations\": [\n    \"Nursery room interior\",\n    \"Baby's bedroom\",\n    \"Showroom display of nursery furniture\"\n  ],\n  \"uncertainty_notes\": \"Slight soft-focus and styling suggest possibly a professionally photographed or lightly edited nursery scene; otherwise unambiguous.\",\n  \"quality_flags\": [\"soft_focus_background\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see:\n- A white crib with vertical slats dominating the right side of the image\n- A pink mattress/bedding with a colorful chevron (zigzag) pattern visible through the slats\n- A pink crib skirt\n- A white upholstered armchair with a pink pillow in the background (slightly out of focus)\n- A light-colored wooden floor\n- White/light walls\n- The setting appears to be a nursery\n\nLet me annotate this according to the schema:\n\n- Recognizability: High - clearly a nursery scene with crib and chair (5)\n- Ambiguity: Low - clear what the scene is (2)\n- Natural photo typicality: Yes, looks like a typical interior photo, though it has a soft, slightly editorial quality (4)\n- Visual clutter: Low - minimal elements, clean composition (2)\n- Object centricity: The crib is the main object, taking up most of the right side (4)\n- Scene centricity: It's also a scene (nursery) (4)\n- Caption confidence: High - easy to describe (5)\n\nSalient objects: crib, armchair, pillow, bedding - about 2-3 main objects\nDistinct categories: crib, chair, pillow/bedding - 3-4\n\nNo people, faces, animals, text, vehicles, food visible.\nIndoor scene: yes\nOutdoor: no\nArtificial/rendered: no\nOcclusion: the crib slats partially occlude the bedding\nUnusual viewpoint: not really\nMultiple main objects: the crib and chair could be considered multiple, but crib dominates\n\nDominant content type: scene (it's a nursery room)\nImage style: natural_photo (though could be slightly edited/styled)\nSemantic domain: nursery/bedroom/interior\n\nLet me finalize my annotations.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see:\n- A white crib with vertical slats dominating the right side of the image\n- A pink mattress/bedding with a colorful chevron (zigzag) pattern visible through the slats\n- A pink crib skirt\n- A white upholstered armchair with a pink pillow in the background (slightly out of focus)\n- A light-colored wooden floor\n- White/light walls\n- The setting appears to be a nursery\n\nLet me annotate this according to the schema:\n\n- Recognizability: High - clearly a nursery scene with crib and chair (5)\n- Ambiguity: Low - clear what the scene is (2)\n- Natural photo typicality: Yes, looks like a typical interior photo, though it has a soft, slightly editorial quality (4)\n- Visual clutter: Low - minimal elements, clean composition (2)\n- Object centricity: The crib is the main object, taking up most of the right side (4)\n- Scene centricity: It's also a scene (nursery) (4)\n- Caption confidence: High - easy to describe (5)\n\nSalient objects: crib, armchair, pillow, bedding - about 2-3 main objects\nDistinct categories: crib, chair, pillow/bedding - 3-4\n\nNo people, faces, animals, text, vehicles, food visible.\nIndoor scene: yes\nOutdoor: no\nArtificial/rendered: no\nOcclusion: the crib slats partially occlude the bedding\nUnusual viewpoint: not really\nMultiple main objects: the crib and chair could be considered multiple, but crib dominates\n\nDominant content type: scene (it's a nursery room)\nImage style: natural_photo (though could be slightly edited/styled)\nSemantic domain: nursery/bedroom/interior\n\nLet me finalize my annotations.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 736,
+          "total_tokens": 2258,
+          "cost": 0.00118956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00118956,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008832
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 419,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

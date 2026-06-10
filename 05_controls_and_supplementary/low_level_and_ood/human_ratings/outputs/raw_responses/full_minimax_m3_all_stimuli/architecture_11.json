@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_11",
+    "stim_key": "architecture_11",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 11,
+    "file_index": 11,
+    "image_name": "image_0011.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0011.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"bathroom_interior\",\n  \"short_caption\": \"Modern bathroom vanity with white vessel sink, mosaic tile backsplash, and mirror flanked by sconces.\",\n  \"main_objects\": [\"vessel sink\", \"mirror\", \"vanity cabinet\", \"wall sconces\", \"mosaic tile backsplash\", \"flowers\", \"faucet\"],\n  \"possible_interpretations\": [\"residential bathroom\", \"hotel powder room\", \"real estate listing photo\", \"interior design showcase\"],\n  \"uncertainty_notes\": \"Possible mild HDR processing or interior real-estate photography enhancement, but appears to be a natural photo.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318858-yjJmiCsvrO64j7lebQ2L",
+        "object": "chat.completion",
+        "created": 1780318858,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"bathroom_interior\",\n  \"short_caption\": \"Modern bathroom vanity with white vessel sink, mosaic tile backsplash, and mirror flanked by sconces.\",\n  \"main_objects\": [\"vessel sink\", \"mirror\", \"vanity cabinet\", \"wall sconces\", \"mosaic tile backsplash\", \"flowers\", \"faucet\"],\n  \"possible_interpretations\": [\"residential bathroom\", \"hotel powder room\", \"real estate listing photo\", \"interior design showcase\"],\n  \"uncertainty_notes\": \"Possible mild HDR processing or interior real-estate photography enhancement, but appears to be a natural photo.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a bathroom vanity area. I can see:\n- A white rectangular vessel sink sitting on a marble countertop\n- A dark wood vanity cabinet below\n- A large rectangular mirror on the wall\n- A glass mosaic tile backsplash with various earth tones (browns, tans, grays)\n- Two wall sconce light fixtures on either side of the mirror\n- A small vase with pink flowers on the counter\n- A faucet\n- A reflection in the mirror showing what appears to be a chandelier\n- The right side shows a plain wall\n- An electrical outlet visible on the left wall\n\nThis is a clearly recognizable bathroom scene. Let me rate each dimension:\n\n- recognizability: 5 - Very clearly a bathroom vanity\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 4 - Looks like a real photo, possibly a real estate or interior design photo\n- visual_clutter: 2 - Relatively clean, few competing elements\n- object_centricity: 3 - The sink is central but it's a scene\n- scene_centricity: 5 - This is primarily a scene/location\n- caption_confidence: 5 - Easy to caption\n\nEstimated salient object count: ~4-5 (sink, mirror, lights, flowers, faucet)\nEstimated distinct object categories: 4-5\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor scene: true\nContains outdoor scene: false\nContains artificial or rendered content: false\nContains occlusion or truncation: false\nContains unusual viewpoint: false\nContains multiple main objects: false (the sink is the main focal point)\n\nDominant content type: scene (it's a bathroom scene, though the sink is prominent)\nImage style: natural_photo\nSemantic domain: bathroom/indoor\n\nShort caption: \"Modern bathroom vanity with white vessel sink and mosaic tile backsplash\"\n\nMain objects: sink, mirror, vanity, lights, flowers, faucet\n\nPossible interpretations: bathroom vanity, powder room, hotel bathroom, residential bathroom\n\nUncertainty notes: The lighting could be slightly edited but appears natural\nQuality flags: none significant",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a bathroom vanity area. I can see:\n- A white rectangular vessel sink sitting on a marble countertop\n- A dark wood vanity cabinet below\n- A large rectangular mirror on the wall\n- A glass mosaic tile backsplash with various earth tones (browns, tans, grays)\n- Two wall sconce light fixtures on either side of the mirror\n- A small vase with pink flowers on the counter\n- A faucet\n- A reflection in the mirror showing what appears to be a chandelier\n- The right side shows a plain wall\n- An electrical outlet visible on the left wall\n\nThis is a clearly recognizable bathroom scene. Let me rate each dimension:\n\n- recognizability: 5 - Very clearly a bathroom vanity\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 4 - Looks like a real photo, possibly a real estate or interior design photo\n- visual_clutter: 2 - Relatively clean, few competing elements\n- object_centricity: 3 - The sink is central but it's a scene\n- scene_centricity: 5 - This is primarily a scene/location\n- caption_confidence: 5 - Easy to caption\n\nEstimated salient object count: ~4-5 (sink, mirror, lights, flowers, faucet)\nEstimated distinct object categories: 4-5\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor scene: true\nContains outdoor scene: false\nContains artificial or rendered content: false\nContains occlusion or truncation: false\nContains unusual viewpoint: false\nContains multiple main objects: false (the sink is the main focal point)\n\nDominant content type: scene (it's a bathroom scene, though the sink is prominent)\nImage style: natural_photo\nSemantic domain: bathroom/indoor\n\nShort caption: \"Modern bathroom vanity with white vessel sink and mosaic tile backsplash\"\n\nMain objects: sink, mirror, vanity, lights, flowers, faucet\n\nPossible interpretations: bathroom vanity, powder room, hotel bathroom, residential bathroom\n\nUncertainty notes: The lighting could be slightly edited but appears natural\nQuality flags: none significant",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 831,
+          "total_tokens": 2353,
+          "cost": 0.00130356,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00130356,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009972
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 561,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

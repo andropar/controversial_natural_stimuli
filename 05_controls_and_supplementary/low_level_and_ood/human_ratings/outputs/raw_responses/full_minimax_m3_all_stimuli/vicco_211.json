@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_211",
+    "stim_key": "vicco_211",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 211,
+    "file_index": 210,
+    "image_name": "shared_4rep_vicco_211.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_211.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sculpture_landmark\",\n  \"short_caption\": \"Bronze sculpture of stacked animals beside a brick building in a town square\",\n  \"main_objects\": [\"bronze animal sculpture\", \"donkey\", \"dog\", \"cat\", \"rooster\", \"brick building\", \"cobblestone square\", \"pedestrians\"],\n  \"possible_interpretations\": [\"Bremen Town Musicians statue\", \"Bronze animal group sculpture on a town hall\", \"Tourist landmark in a European town square\"],\n  \"uncertainty_notes\": \"Top of the sculpture is cut off; specific identity (Bremen Town Musicians) is likely but not certain. The depicted animals are sculpted, not real.\",\n  \"quality_flags\": [\"top_truncation\", \"low_angle_viewpoint\", \"distant_small_figures\"]\n}",
+      "response": {
+        "id": "gen-1780319633-1dut7t0sVRSTjr3zZ7yi",
+        "object": "chat.completion",
+        "created": 1780319633,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"sculpture_landmark\",\n  \"short_caption\": \"Bronze sculpture of stacked animals beside a brick building in a town square\",\n  \"main_objects\": [\"bronze animal sculpture\", \"donkey\", \"dog\", \"cat\", \"rooster\", \"brick building\", \"cobblestone square\", \"pedestrians\"],\n  \"possible_interpretations\": [\"Bremen Town Musicians statue\", \"Bronze animal group sculpture on a town hall\", \"Tourist landmark in a European town square\"],\n  \"uncertainty_notes\": \"Top of the sculpture is cut off; specific identity (Bremen Town Musicians) is likely but not certain. The depicted animals are sculpted, not real.\",\n  \"quality_flags\": [\"top_truncation\", \"low_angle_viewpoint\", \"distant_small_figures\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows the Bremen Town Musicians statue - a famous bronze sculpture depicting a donkey, dog, cat, and rooster stacked on top of each other. This is a well-known German fairy tale character group. The sculpture is mounted on what appears to be a building (likely the Bremen Town Hall) with a red brick facade. In the background, there's a cobblestone square, some buildings, trees, a blue-covered building (possibly under renovation), and two people walking in the distance (appears to be an adult and child with a pink backpack).\n\nThe viewpoint is looking up at the sculpture from a low angle, which is somewhat unusual. The sculpture is partially cut off at the top.\n\nLet me rate the dimensions:\n\n- recognizability: 4 - The Bremen Town Musicians is recognizable, though the top is cut off\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 4 - Looks like a typical travel photo\n- visual_clutter: 3 - Multiple elements (sculpture, buildings, people, trees, cobblestones)\n- object_centricity: 4 - The sculpture is clearly the main subject\n- scene_centricity: 3 - There's a scene (town square) but the sculpture dominates\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1 (the sculpture as a whole, or 4 animals)\n- estimated_distinct_object_categories: maybe 4-5 (sculpture, building, people, trees, building under renovation)\n\n- contains_person: true (two people in background)\n- contains_face: false (too small/distant)\n- contains_animal: false (these are statues, not real animals - but the sculpture depicts animals)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (top of sculpture is cut off)\n- contains_unusual_viewpoint: true (low angle looking up)\n- contains_multiple_main_objects: false (the animals are part of one sculpture)\n\n- dominant_content_type: object (the sculpture)\n- image_style: natural_photo\n- semantic_domain: \"sculpture\" or \"urban_landmark\"\n\n- short_caption: \"Bronze sculpture of stacked animals (Bremen Town Musicians) on a brick building\"\n- main_objects: [\"bronze sculpture\", \"donkey\", \"dog\", \"cat\", \"rooster\", \"brick building\", \"people\"]\n- possible_interpretations: [\"Bremen Town Musicians statue\", \"Bronze animal sculpture on building\", \"Tourist landmark in town square\"]\n\nFor animal - the sculpture depicts animals but they are not real animals. I'll set this to false since the schema asks about actual animals.\n\nFor estimated_salient_object_count - I'll say 1 (the sculpture as a unit) or count the animals. Let me say 1 for the main salient object group, or maybe 4 for the individual animals.\n\nLet me go with:\n- salient_object_count: 4 (the four animals in the sculpture)\n- distinct_object_categories: 5 (sculpture, building, people, trees, background building)",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows the Bremen Town Musicians statue - a famous bronze sculpture depicting a donkey, dog, cat, and rooster stacked on top of each other. This is a well-known German fairy tale character group. The sculpture is mounted on what appears to be a building (likely the Bremen Town Hall) with a red brick facade. In the background, there's a cobblestone square, some buildings, trees, a blue-covered building (possibly under renovation), and two people walking in the distance (appears to be an adult and child with a pink backpack).\n\nThe viewpoint is looking up at the sculpture from a low angle, which is somewhat unusual. The sculpture is partially cut off at the top.\n\nLet me rate the dimensions:\n\n- recognizability: 4 - The Bremen Town Musicians is recognizable, though the top is cut off\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 4 - Looks like a typical travel photo\n- visual_clutter: 3 - Multiple elements (sculpture, buildings, people, trees, cobblestones)\n- object_centricity: 4 - The sculpture is clearly the main subject\n- scene_centricity: 3 - There's a scene (town square) but the sculpture dominates\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1 (the sculpture as a whole, or 4 animals)\n- estimated_distinct_object_categories: maybe 4-5 (sculpture, building, people, trees, building under renovation)\n\n- contains_person: true (two people in background)\n- contains_face: false (too small/distant)\n- contains_animal: false (these are statues, not real animals - but the sculpture depicts animals)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (top of sculpture is cut off)\n- contains_unusual_viewpoint: true (low angle looking up)\n- contains_multiple_main_objects: false (the animals are part of one sculpture)\n\n- dominant_content_type: object (the sculpture)\n- image_style: natural_photo\n- semantic_domain: \"sculpture\" or \"urban_landmark\"\n\n- short_caption: \"Bronze sculpture of stacked animals (Bremen Town Musicians) on a brick building\"\n- main_objects: [\"bronze sculpture\", \"donkey\", \"dog\", \"cat\", \"rooster\", \"brick building\", \"people\"]\n- possible_interpretations: [\"Bremen Town Musicians statue\", \"Bronze animal sculpture on building\", \"Tourist landmark in town square\"]\n\nFor animal - the sculpture depicts animals but they are not real animals. I'll set this to false since the schema asks about actual animals.\n\nFor estimated_salient_object_count - I'll say 1 (the sculpture as a unit) or count the animals. Let me say 1 for the main salient object group, or maybe 4 for the individual animals.\n\nLet me go with:\n- salient_object_count: 4 (the four animals in the sculpture)\n- distinct_object_categories: 5 (sculpture, building, people, trees, background building)",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 1093,
+          "total_tokens": 2615,
+          "cost": 0.00161796,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00161796,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0013116
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 775,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

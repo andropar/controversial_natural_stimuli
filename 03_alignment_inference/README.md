@@ -13,9 +13,9 @@ inference figures are in `figures/`.
 
 ## How To Read This Stage
 
-Use `data/primary_endpoint_summary.csv`,
-`data/effect_sizes_brain_alignment.csv`, and
-`data/permutation_test_results.csv` for the headline statistical readout. The
+Use `results/primary_endpoint_summary.csv`,
+`results/effect_sizes_brain_alignment.csv`, and
+`results/permutation_test_results.csv` for the headline statistical readout. The
 remaining tables break the same question down by spread statistics, bootstrap
 uncertainty, model family, rank-null analyses, and selected subsets.
 

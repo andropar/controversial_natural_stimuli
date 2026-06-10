@@ -1,0 +1,28 @@
+{
+  "weights": [
+    0.0,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "analysis_dim": 512,
+  "selection_csv": "/data/home_roth/cstims_share/05_controls_and_supplementary/model_scope_followups/layer_sweep/results/mrsa_dense_layer_selection_transfer.csv",
+  "local_feature_dir": "/data/home_roth/cstims_share/05_controls_and_supplementary/cstim_encoding_cv/cache_or_heavy/selected_layer_features/features",
+  "local_dv_feature_dir": "/data/home_roth/cstims_share/05_controls_and_supplementary/cstim_encoding_cv/cache_or_heavy/selected_layer_features/dv_features",
+  "source_feature_dir": "/data/home_roth/_stachelschwein/rsa_based_selection/experiments/cstim_paper/11_layer_sweep/cache/features",
+  "source_dv_feature_dir": "/data/home_roth/_stachelschwein/rsa_based_selection/experiments/cstim_paper/11_layer_sweep/cache/dv_features",
+  "source_encoding_dir": "/data/home_roth/_stachelschwein/rsa_based_selection/experiments/cstim_paper/11_layer_sweep/cache/encodings",
+  "fallback_alpha": 33598.18359375,
+  "fallback_alpha_rule": "median of available per-selection dense-sweep median alphas",
+  "n_cache_ready_selections": 100,
+  "n_total_selections_considered": 100,
+  "score_membership_only": true,
+  "cstim_eval_target": "cstim_loso",
+  "baseline_eval_target": "vicco",
+  "baseline_prediction_scheme": "same_cstim_weighted_refit_vicco_held_out",
+  "python": "/data/home_roth/miniforge3/bin/python",
+  "created": "2026-06-07 23:45:27"
+}

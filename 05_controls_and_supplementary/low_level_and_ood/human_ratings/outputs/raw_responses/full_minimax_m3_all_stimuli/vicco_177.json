@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_177",
+    "stim_key": "vicco_177",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 177,
+    "file_index": 176,
+    "image_name": "shared_4rep_vicco_177.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_177.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 35,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature_outdoor_night\",\n  \"short_caption\": \"Field of sunflowers illuminated at night with a full moon and transmission tower in the distance.\",\n  \"main_objects\": [\"sunflowers\", \"transmission tower\", \"moon\", \"treeline\"],\n  \"possible_interpretations\": [\n    \"sunflower field photographed at night with artificial illumination\",\n    \"flashlit sunflowers under full moon near a radio tower\",\n    \"long-exposure night scene of farmland with cell tower\"\n  ],\n  \"uncertainty_notes\": \"The strong, selective illumination on the sunflower heads suggests artificial lighting (flash or LED) rather than moonlight alone; tower type (power line vs. cell/radio) is uncertain.\",\n  \"quality_flags\": [\"artificial_foreground_lighting\", \"low_light\", \"slight_noise_in_sky\"]\n}",
+      "response": {
+        "id": "gen-1780319595-rdg2ambC7uYCwDff5hRs",
+        "object": "chat.completion",
+        "created": 1780319595,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 35,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature_outdoor_night\",\n  \"short_caption\": \"Field of sunflowers illuminated at night with a full moon and transmission tower in the distance.\",\n  \"main_objects\": [\"sunflowers\", \"transmission tower\", \"moon\", \"treeline\"],\n  \"possible_interpretations\": [\n    \"sunflower field photographed at night with artificial illumination\",\n    \"flashlit sunflowers under full moon near a radio tower\",\n    \"long-exposure night scene of farmland with cell tower\"\n  ],\n  \"uncertainty_notes\": \"The strong, selective illumination on the sunflower heads suggests artificial lighting (flash or LED) rather than moonlight alone; tower type (power line vs. cell/radio) is uncertain.\",\n  \"quality_flags\": [\"artificial_foreground_lighting\", \"low_light\", \"slight_noise_in_sky\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a nighttime scene of a field of sunflowers under a dark sky with a full moon visible. There's also a tall electrical/communication tower (transmission tower or radio tower) visible on the right side. The sunflowers appear to be illuminated, possibly by artificial light, and they're mostly facing away or drooping. The field extends to a dark treeline on the horizon.\n\nLet me assess each dimension:\n\n- recognizability: The image is clearly recognizable as sunflowers in a field at night with a moon and a tower. 4-5.\n- ambiguity: Low ambiguity, the content is clear. 1-2.\n- natural_photo_typicality: This looks like a real photograph, but the illumination on the sunflowers seems artificial (flashlight or LED). It's a somewhat unusual photo but still natural-looking. 3-4.\n- visual_clutter: There are many sunflowers, but they form a coherent field. The tower adds another element. Moderate clutter. 3.\n- object_centricity: There's no single central object - it's more of a scene with many flowers. 2.\n- scene_centricity: Yes, this is primarily a scene (field, sky, tower). 4.\n- caption_confidence: High confidence in a caption. 4-5.\n\nEstimated counts:\n- salient objects: Many sunflowers (~30+ visible heads), plus the tower, plus the moon\n- distinct categories: sunflowers, tower, moon, sky, trees = ~5\n\nFlags:\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_animal: false\n- contains_person: false\n- contains_face: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_artificial_or_rendered_content: false (it's a real photo, though lit artificially)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: somewhat unusual (low angle, night, artificial light on flowers) - could be true\n- contains_multiple_main_objects: true (sunflowers + tower + moon)\n\nDominant content: scene (outdoor field at night)\nImage style: natural_photo (or possibly edited_photo due to artificial lighting, but looks natural)\nSemantic domain: nature/outdoor/night\n\nShort caption: \"Field of sunflowers illuminated at night with a full moon and transmission tower.\"\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a nighttime scene of a field of sunflowers under a dark sky with a full moon visible. There's also a tall electrical/communication tower (transmission tower or radio tower) visible on the right side. The sunflowers appear to be illuminated, possibly by artificial light, and they're mostly facing away or drooping. The field extends to a dark treeline on the horizon.\n\nLet me assess each dimension:\n\n- recognizability: The image is clearly recognizable as sunflowers in a field at night with a moon and a tower. 4-5.\n- ambiguity: Low ambiguity, the content is clear. 1-2.\n- natural_photo_typicality: This looks like a real photograph, but the illumination on the sunflowers seems artificial (flashlight or LED). It's a somewhat unusual photo but still natural-looking. 3-4.\n- visual_clutter: There are many sunflowers, but they form a coherent field. The tower adds another element. Moderate clutter. 3.\n- object_centricity: There's no single central object - it's more of a scene with many flowers. 2.\n- scene_centricity: Yes, this is primarily a scene (field, sky, tower). 4.\n- caption_confidence: High confidence in a caption. 4-5.\n\nEstimated counts:\n- salient objects: Many sunflowers (~30+ visible heads), plus the tower, plus the moon\n- distinct categories: sunflowers, tower, moon, sky, trees = ~5\n\nFlags:\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_animal: false\n- contains_person: false\n- contains_face: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_artificial_or_rendered_content: false (it's a real photo, though lit artificially)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: somewhat unusual (low angle, night, artificial light on flowers) - could be true\n- contains_multiple_main_objects: true (sunflowers + tower + moon)\n\nDominant content: scene (outdoor field at night)\nImage style: natural_photo (or possibly edited_photo due to artificial lighting, but looks natural)\nSemantic domain: nature/outdoor/night\n\nShort caption: \"Field of sunflowers illuminated at night with a full moon and transmission tower.\"\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 907,
+          "total_tokens": 2429,
+          "cost": 0.00151764,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00151764,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010884
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 577,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

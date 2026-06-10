@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_23",
+    "stim_key": "all_models_23",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 23,
+    "file_index": 23,
+    "image_name": "image_0023.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0023.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"product_lifestyle\",\n\n  \"short_caption\": \"Person sitting in a grassy field holding a navy and yellow Michigan GoBlue tote bag.\",\n  \"main_objects\": [\"person\", \"tote bag\", \"grass\", \"trees\"],\n  \"possible_interpretations\": [\n    \"Product photo for Michigan-themed merchandise\",\n    \"Lifestyle image showcasing college spirit tote bag\",\n    \"Casual outdoor scene with branded bag\"\n  ],\n  \"uncertainty_notes\": \"Face is cropped at top of frame; image may be professionally styled for product marketing but appears natural.\",\n  \"quality_flags\": [\"face truncated\", \"possible product photography\"]\n}",
+      "response": {
+        "id": "gen-1780318741-neKIGBHzRZNkauZgn1MF",
+        "object": "chat.completion",
+        "created": 1780318741,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"product_lifestyle\",\n\n  \"short_caption\": \"Person sitting in a grassy field holding a navy and yellow Michigan GoBlue tote bag.\",\n  \"main_objects\": [\"person\", \"tote bag\", \"grass\", \"trees\"],\n  \"possible_interpretations\": [\n    \"Product photo for Michigan-themed merchandise\",\n    \"Lifestyle image showcasing college spirit tote bag\",\n    \"Casual outdoor scene with branded bag\"\n  ],\n  \"uncertainty_notes\": \"Face is cropped at top of frame; image may be professionally styled for product marketing but appears natural.\",\n  \"quality_flags\": [\"face truncated\", \"possible product photography\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a person sitting in a grassy field. The person is wearing a gray t-shirt and blue jeans. They have dark hair and are wearing several bracelets on their wrist. Their face is cut off at the top of the frame. They are holding/carrying a tote bag that has a Michigan design - it features navy blue and yellow/maize colors with the word \"MICHIGAN\" in white text, and \"#GOBLUE\" text. The design has a halftone dot pattern effect.\n\nThe background shows green trees and a partly cloudy sky, indicating an outdoor scene.\n\nLet me assess each dimension:\n\n- Recognizability: Very clear what's in the image - 5\n- Ambiguity: Pretty unambiguous, it's a product/lifestyle photo of a Michigan tote bag - 1-2\n- Natural photo typicality: Looks like a natural photograph, perhaps with some product styling - 4\n- Visual clutter: Moderate - person, bag, grass, trees, sky - 2-3\n- Object centricity: The tote bag is prominent but the person is also prominent - 3\n- Scene centricity: It's more object-focused (the bag) but has scene elements - 2\n- Caption confidence: High - 5\n\n- Salient object count: 2-3 (person, bag, grass)\n- Distinct object categories: 3 (person, bag, environment)\n\n- contains_person: yes\n- contains_face: face is cut off, so technically no visible face\n- contains_animal: no\n- contains_text: yes (\"MICHIGAN\", \"#GOBLUE\")\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: no\n- contains_outdoor_scene: yes\n- contains_artificial_or_rendered_content: no, natural photo\n- contains_occlusion_or_truncation: yes, face is cut off\n- contains_unusual_viewpoint: no\n- contains_multiple_main_objects: yes (person and bag)\n\n- dominant_content_type: object (the bag is the focus, with a person)\n- image_style: natural_photo (possibly edited/promotional)\n- semantic_domain: product/lifestyle\n\nShort caption: \"Person sitting in a grassy field holding a Michigan #GoBlue tote bag.\"\n\nMain objects: person, tote bag, grass, trees\n\nPossible interpretations: \n- Product photo for Michigan-themed tote bag\n- Lifestyle/outdoor scene with branded merchandise\n- College merchandise advertisement\n\nUncertainty notes: Face is cropped out; hard to tell if this is a professional product photo or casual snapshot.\n\nQuality flags: face truncated, possible product photography",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a person sitting in a grassy field. The person is wearing a gray t-shirt and blue jeans. They have dark hair and are wearing several bracelets on their wrist. Their face is cut off at the top of the frame. They are holding/carrying a tote bag that has a Michigan design - it features navy blue and yellow/maize colors with the word \"MICHIGAN\" in white text, and \"#GOBLUE\" text. The design has a halftone dot pattern effect.\n\nThe background shows green trees and a partly cloudy sky, indicating an outdoor scene.\n\nLet me assess each dimension:\n\n- Recognizability: Very clear what's in the image - 5\n- Ambiguity: Pretty unambiguous, it's a product/lifestyle photo of a Michigan tote bag - 1-2\n- Natural photo typicality: Looks like a natural photograph, perhaps with some product styling - 4\n- Visual clutter: Moderate - person, bag, grass, trees, sky - 2-3\n- Object centricity: The tote bag is prominent but the person is also prominent - 3\n- Scene centricity: It's more object-focused (the bag) but has scene elements - 2\n- Caption confidence: High - 5\n\n- Salient object count: 2-3 (person, bag, grass)\n- Distinct object categories: 3 (person, bag, environment)\n\n- contains_person: yes\n- contains_face: face is cut off, so technically no visible face\n- contains_animal: no\n- contains_text: yes (\"MICHIGAN\", \"#GOBLUE\")\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: no\n- contains_outdoor_scene: yes\n- contains_artificial_or_rendered_content: no, natural photo\n- contains_occlusion_or_truncation: yes, face is cut off\n- contains_unusual_viewpoint: no\n- contains_multiple_main_objects: yes (person and bag)\n\n- dominant_content_type: object (the bag is the focus, with a person)\n- image_style: natural_photo (possibly edited/promotional)\n- semantic_domain: product/lifestyle\n\nShort caption: \"Person sitting in a grassy field holding a Michigan #GoBlue tote bag.\"\n\nMain objects: person, tote bag, grass, trees\n\nPossible interpretations: \n- Product photo for Michigan-themed tote bag\n- Lifestyle/outdoor scene with branded merchandise\n- College merchandise advertisement\n\nUncertainty notes: Face is cropped out; hard to tell if this is a professional product photo or casual snapshot.\n\nQuality flags: face truncated, possible product photography",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 909,
+          "total_tokens": 2431,
+          "cost": 0.00152004,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00152004,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010908
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 614,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

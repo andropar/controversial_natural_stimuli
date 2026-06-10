@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_67",
+    "stim_key": "all_models_67",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 67,
+    "file_index": 67,
+    "image_name": "image_0067.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0067.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"animal_shelter\",\n\n  \"short_caption\": \"Stacked pet carriers with dogs inside a shelter, person in scrubs drinking\",\n  \"main_objects\": [\"pet carrier\", \"dog\", \"person\", \"cup\"],\n  \"possible_interpretations\": [\"animal shelter intake\", \"veterinary clinic\", \"dog rescue operation\", \"boarding facility\"],\n  \"uncertainty_notes\": \"Exact number of dogs uncertain due to carrier bars; person partially cropped at right edge.\",\n  \"quality_flags\": [\"partial framing of person\", \"animals partially obscured by cage doors\"]\n}",
+      "response": {
+        "id": "gen-1780318808-S3bCHvTY7vINENdtvFp5",
+        "object": "chat.completion",
+        "created": 1780318808,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"animal_shelter\",\n\n  \"short_caption\": \"Stacked pet carriers with dogs inside a shelter, person in scrubs drinking\",\n  \"main_objects\": [\"pet carrier\", \"dog\", \"person\", \"cup\"],\n  \"possible_interpretations\": [\"animal shelter intake\", \"veterinary clinic\", \"dog rescue operation\", \"boarding facility\"],\n  \"uncertainty_notes\": \"Exact number of dogs uncertain due to carrier bars; person partially cropped at right edge.\",\n  \"quality_flags\": [\"partial framing of person\", \"animals partially obscured by cage doors\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows stacked pet carriers (plastic animal transport crates) in what appears to be an animal shelter or veterinary clinic indoor setting. Inside the carriers, I can see animals - they look like dogs, including what appears to be a white/cream colored dog (possibly a puppy) in the center carrier, and other dogs in other carriers. On the right side, there's a person wearing light blue medical scrubs/gown, drinking from a cup.\n\nLet me annotate according to the schema:\n\n- recognizability: The content is clear - pet carriers with animals. I'd rate 4.\n- ambiguity: There's a clear main content. I'd rate 2.\n- natural_photo_typicality: This looks like a typical photograph. I'd rate 4.\n- visual_clutter: There are multiple carriers stacked, which creates some clutter. I'd rate 3-4.\n- object_centricity: The carriers dominate the image. I'd rate 4.\n- scene_centricity: It's more object-focused, but shows a setting. I'd rate 3.\n- caption_confidence: I'm fairly confident about the content. I'd rate 4.\n\n- estimated_salient_object_count: Multiple carriers, animals, person. Maybe 4-5 salient things.\n- estimated_distinct_object_categories: carriers, dogs, person, cup - about 4.\n\n- contains_person: yes\n- contains_face: the person's face is visible but partially obscured by cup - I'll say yes\n- contains_animal: yes, dogs\n- contains_text: I don't see clear text\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: yes\n- contains_outdoor_scene: no\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: person is partially visible, some carriers are cut off - yes\n- contains_unusual_viewpoint: no, fairly typical\n- contains_multiple_main_objects: yes, multiple carriers and animals\n\ndominant_content_type: object (or mixed)\nimage_style: natural_photo\nsemantic_domain: animal_shelter\n\nshort_caption: \"Stacked pet carriers with dogs inside at an animal shelter, person in scrubs drinking\"\n\nmain_objects: [\"pet carrier\", \"dog\", \"person\", \"cup\"]\n\npossible_interpretations: [\"animal shelter intake\", \"veterinary clinic\", \"dog rescue operation\"]\n\nquality_flags: [\"person partially out of frame\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows stacked pet carriers (plastic animal transport crates) in what appears to be an animal shelter or veterinary clinic indoor setting. Inside the carriers, I can see animals - they look like dogs, including what appears to be a white/cream colored dog (possibly a puppy) in the center carrier, and other dogs in other carriers. On the right side, there's a person wearing light blue medical scrubs/gown, drinking from a cup.\n\nLet me annotate according to the schema:\n\n- recognizability: The content is clear - pet carriers with animals. I'd rate 4.\n- ambiguity: There's a clear main content. I'd rate 2.\n- natural_photo_typicality: This looks like a typical photograph. I'd rate 4.\n- visual_clutter: There are multiple carriers stacked, which creates some clutter. I'd rate 3-4.\n- object_centricity: The carriers dominate the image. I'd rate 4.\n- scene_centricity: It's more object-focused, but shows a setting. I'd rate 3.\n- caption_confidence: I'm fairly confident about the content. I'd rate 4.\n\n- estimated_salient_object_count: Multiple carriers, animals, person. Maybe 4-5 salient things.\n- estimated_distinct_object_categories: carriers, dogs, person, cup - about 4.\n\n- contains_person: yes\n- contains_face: the person's face is visible but partially obscured by cup - I'll say yes\n- contains_animal: yes, dogs\n- contains_text: I don't see clear text\n- contains_vehicle: no\n- contains_food: no\n- contains_indoor_scene: yes\n- contains_outdoor_scene: no\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: person is partially visible, some carriers are cut off - yes\n- contains_unusual_viewpoint: no, fairly typical\n- contains_multiple_main_objects: yes, multiple carriers and animals\n\ndominant_content_type: object (or mixed)\nimage_style: natural_photo\nsemantic_domain: animal_shelter\n\nshort_caption: \"Stacked pet carriers with dogs inside at an animal shelter, person in scrubs drinking\"\n\nmain_objects: [\"pet carrier\", \"dog\", \"person\", \"cup\"]\n\npossible_interpretations: [\"animal shelter intake\", \"veterinary clinic\", \"dog rescue operation\"]\n\nquality_flags: [\"person partially out of frame\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 847,
+          "total_tokens": 2369,
+          "cost": 0.00144564,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00144564,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010164
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 575,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_189",
+    "stim_key": "vicco_189",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 189,
+    "file_index": 188,
+    "image_name": "shared_4rep_vicco_189.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_189.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"animal\",\n  \"short_caption\": \"A camel standing on a dirt path with trees and a wooden fence in the background.\",\n  \"main_objects\": [\"camel\", \"dirt path\", \"trees\", \"wooden fence\"],\n  \"possible_interpretations\": [\"A camel in a zoo enclosure\", \"A camel on a rural path\", \"A Bactrian camel outdoors\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; viewer must mentally reorient. Exact species (Bactrian vs. dromedary) is hard to determine from the angle.\",\n  \"quality_flags\": [\"rotated_orientation\"]\n}",
+      "response": {
+        "id": "gen-1780319607-utLHjGeVICLD7k5GHzyx",
+        "object": "chat.completion",
+        "created": 1780319607,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"animal\",\n  \"short_caption\": \"A camel standing on a dirt path with trees and a wooden fence in the background.\",\n  \"main_objects\": [\"camel\", \"dirt path\", \"trees\", \"wooden fence\"],\n  \"possible_interpretations\": [\"A camel in a zoo enclosure\", \"A camel on a rural path\", \"A Bactrian camel outdoors\"],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; viewer must mentally reorient. Exact species (Bactrian vs. dromedary) is hard to determine from the angle.\",\n  \"quality_flags\": [\"rotated_orientation\"]\n}",
+              "refusal": null,
+              "reasoning": "The image is rotated 90 degrees - it shows a camel (appears to be a Bactrian camel based on the body shape) on a dirt path with trees and a fence in the background. The image is sideways. Let me analyze it carefully.\n\nThe main subject is a camel standing on a sandy/dirt path. There's vegetation (trees) on one side and what appears to be a wooden fence structure. The image is oriented incorrectly (rotated 90 degrees clockwise, so the camel's head is on the left side of the image when viewed normally).\n\nLet me rate:\n- recognizability: 5 - clearly a camel\n- ambiguity: 1 - very clear what's shown\n- natural_photo_typicality: 4 - looks like a real photo of a camel in a zoo/enclosure\n- visual_clutter: 2 - main subject is clear, background is relatively simple\n- object_centricity: 4 - camel dominates\n- scene_centricity: 2 - it's an animal-focused image, not a scene\n- caption_confidence: 4 - easy to caption\n\ncontains_person: false\ncontains_face: false (camel face, not human)\ncontains_animal: true (camel)\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: true (rotated orientation)\ncontains_multiple_main_objects: false\n\ndominant_content_type: animal\nimage_style: natural_photo\nsemantic_domain: animal\n\nshort_caption: A camel standing on a dirt path with trees and a wooden fence in the background.\nmain_objects: camel, dirt path, trees, wooden fence\n\nQuality flags: rotated_orientation",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image is rotated 90 degrees - it shows a camel (appears to be a Bactrian camel based on the body shape) on a dirt path with trees and a fence in the background. The image is sideways. Let me analyze it carefully.\n\nThe main subject is a camel standing on a sandy/dirt path. There's vegetation (trees) on one side and what appears to be a wooden fence structure. The image is oriented incorrectly (rotated 90 degrees clockwise, so the camel's head is on the left side of the image when viewed normally).\n\nLet me rate:\n- recognizability: 5 - clearly a camel\n- ambiguity: 1 - very clear what's shown\n- natural_photo_typicality: 4 - looks like a real photo of a camel in a zoo/enclosure\n- visual_clutter: 2 - main subject is clear, background is relatively simple\n- object_centricity: 4 - camel dominates\n- scene_centricity: 2 - it's an animal-focused image, not a scene\n- caption_confidence: 4 - easy to caption\n\ncontains_person: false\ncontains_face: false (camel face, not human)\ncontains_animal: true (camel)\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false\ncontains_outdoor_scene: true\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: true (rotated orientation)\ncontains_multiple_main_objects: false\n\ndominant_content_type: animal\nimage_style: natural_photo\nsemantic_domain: animal\n\nshort_caption: A camel standing on a dirt path with trees and a wooden fence in the background.\nmain_objects: camel, dirt path, trees, wooden fence\n\nQuality flags: rotated_orientation",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 739,
+          "total_tokens": 2261,
+          "cost": 0.00119316,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00119316,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008868
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 420,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

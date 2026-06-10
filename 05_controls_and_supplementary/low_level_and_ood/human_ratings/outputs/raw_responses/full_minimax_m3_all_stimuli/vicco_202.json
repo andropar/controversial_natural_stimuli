@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_202",
+    "stim_key": "vicco_202",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 202,
+    "file_index": 201,
+    "image_name": "shared_4rep_vicco_202.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_202.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture_evening\",\n  \"short_caption\": \"Illuminated house window with trees and a moon at twilight\",\n  \"main_objects\": [\"house\", \"window\", \"trees\", \"moon\"],\n  \"possible_interpretations\": [\n    \"House exterior at dusk with lit window\",\n    \"Residential building seen from garden at twilight\",\n    \"Evening scene of a home with full moon\"\n  ],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; orientation must be corrected to interpret properly. Composition details may differ in upright view.\",\n  \"quality_flags\": [\"rotated_orientation\", \"low_light\", \"moon_glare_left_edge\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319623-Q4RhITSbU8qRoyuEoGZK",
+        "object": "chat.completion",
+        "created": 1780319623,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture_evening\",\n  \"short_caption\": \"Illuminated house window with trees and a moon at twilight\",\n  \"main_objects\": [\"house\", \"window\", \"trees\", \"moon\"],\n  \"possible_interpretations\": [\n    \"House exterior at dusk with lit window\",\n    \"Residential building seen from garden at twilight\",\n    \"Evening scene of a home with full moon\"\n  ],\n  \"uncertainty_notes\": \"Image is rotated 90 degrees; orientation must be corrected to interpret properly. Composition details may differ in upright view.\",\n  \"quality_flags\": [\"rotated_orientation\", \"low_light\", \"moon_glare_left_edge\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "The image is rotated 90 degrees (sideways). It shows a building/house at dusk or night with a lit window, some trees/foliage in the foreground, and what appears to be a chimney or rooftop structure at the top (which would be the side in the correct orientation). The sky is a blue twilight color with what looks like a moon visible on the left side.\n\nLet me annotate this carefully:\n\n- Recognizability: The image is rotated, making it harder to immediately recognize, but the content is clearly a building with a lit window. I'd say 3-4.\n- Ambiguity: Not many interpretations - it's clearly a building at twilight. Low ambiguity, 2.\n- Natural photo typicality: Looks like a typical natural photo, though rotated. 4.\n- Visual clutter: There's a building, window, trees, sky, moon. Moderate clutter. 3.\n- Object centricity: The lit window is a focal point, but the scene is more dominant. 2-3.\n- Scene centricity: It's primarily a scene/place. 4.\n- Caption confidence: Reasonably confident despite the rotation. 3-4.\n\nThe image is rotated 90 degrees clockwise (or needs to be rotated counter-clockwise to be upright). This is a quality flag.\n\nContains: trees, building, window, moon, sky\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (exterior shot)\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (image is rotated/truncated view)\n- contains_unusual_viewpoint: true (rotated 90 degrees)\n- contains_multiple_main_objects: false\n\nMain objects: building, window, trees, moon\nDominant content: scene\nImage style: natural_photo\nSemantic domain: architecture/evening\n\nShort caption: \"Illuminated house window with trees and a moon at twilight\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image is rotated 90 degrees (sideways). It shows a building/house at dusk or night with a lit window, some trees/foliage in the foreground, and what appears to be a chimney or rooftop structure at the top (which would be the side in the correct orientation). The sky is a blue twilight color with what looks like a moon visible on the left side.\n\nLet me annotate this carefully:\n\n- Recognizability: The image is rotated, making it harder to immediately recognize, but the content is clearly a building with a lit window. I'd say 3-4.\n- Ambiguity: Not many interpretations - it's clearly a building at twilight. Low ambiguity, 2.\n- Natural photo typicality: Looks like a typical natural photo, though rotated. 4.\n- Visual clutter: There's a building, window, trees, sky, moon. Moderate clutter. 3.\n- Object centricity: The lit window is a focal point, but the scene is more dominant. 2-3.\n- Scene centricity: It's primarily a scene/place. 4.\n- Caption confidence: Reasonably confident despite the rotation. 3-4.\n\nThe image is rotated 90 degrees clockwise (or needs to be rotated counter-clockwise to be upright). This is a quality flag.\n\nContains: trees, building, window, moon, sky\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (exterior shot)\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (image is rotated/truncated view)\n- contains_unusual_viewpoint: true (rotated 90 degrees)\n- contains_multiple_main_objects: false\n\nMain objects: building, window, trees, moon\nDominant content: scene\nImage style: natural_photo\nSemantic domain: architecture/evening\n\nShort caption: \"Illuminated house window with trees and a moon at twilight\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 805,
+          "total_tokens": 2327,
+          "cost": 0.00139524,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139524,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.000966
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 485,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_38",
+    "stim_key": "vicco_38",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 38,
+    "file_index": 37,
+    "image_name": "shared_4rep_vicco_038.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_038.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"art\",\n  \"short_caption\": \"Watercolor bird paintings including cardinal, blue jays, and a yellow warbler displayed on fabric.\",\n  \"main_objects\": [\"cardinal watercolor\", \"blue jay watercolors\", \"warbler watercolor\", \"small flying bird watercolor\", \"reddish fabric\", \"gray wallet\"],\n  \"possible_interpretations\": [\"watercolor bird paintings\", \"artist's bird art display\", \"bird illustration collection\", \"artwork laid out for viewing\"],\n  \"uncertainty_notes\": \"Text on backing cards is only partially legible; exact species identifications are approximate based on visual features.\",\n  \"quality_flags\": [\"partial_text_legibility\", \"overlapping_objects\"]\n}",
+      "response": {
+        "id": "gen-1780319431-7KTvc9zl5tTaTdTnDReO",
+        "object": "chat.completion",
+        "created": 1780319431,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"art\",\n  \"short_caption\": \"Watercolor bird paintings including cardinal, blue jays, and a yellow warbler displayed on fabric.\",\n  \"main_objects\": [\"cardinal watercolor\", \"blue jay watercolors\", \"warbler watercolor\", \"small flying bird watercolor\", \"reddish fabric\", \"gray wallet\"],\n  \"possible_interpretations\": [\"watercolor bird paintings\", \"artist's bird art display\", \"bird illustration collection\", \"artwork laid out for viewing\"],\n  \"uncertainty_notes\": \"Text on backing cards is only partially legible; exact species identifications are approximate based on visual features.\",\n  \"quality_flags\": [\"partial_text_legibility\", \"overlapping_objects\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows several watercolor paintings of birds arranged on what appears to be a surface with some fabric/textile visible. Let me analyze:\n\n- There are 5 watercolor bird paintings visible\n- Birds include: a cardinal (red), a yellow warbler/goldfinch on a branch, a small bird in flight, and two blue jays\n- The paintings are on paper/cards laid out on what looks like a table with a reddish/orange fabric\n- There's a gray wallet/case visible at the bottom\n- Some text is partially visible on cards\n\nThis is a photograph of artwork, not a natural photo. The content is about the bird paintings themselves.\n\nLet me rate:\n- recognizability: 4 - clearly shows bird paintings\n- ambiguity: 2 - fairly clear what's depicted\n- natural_photo_typicality: 3 - it's a photo of real objects (artwork) so somewhat natural\n- visual_clutter: 4 - multiple paintings, background fabric, multiple birds\n- object_centricity: 2 - no single dominant object\n- scene_centricity: 3 - more of a still life arrangement\n- caption_confidence: 4\n\nestimated_salient_object_count: 5 (the bird paintings)\nestimated_distinct_object_categories: 2 (bird paintings, fabric background)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: true (bird paintings)\ncontains_text: true (partial text on cards)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true (appears to be indoors)\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: true (watercolor paintings)\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true\n\ndominant_content_type: \"mixed\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"art\"\n\nshort_caption: \"Watercolor paintings of various birds including a cardinal, blue jays, and a warbler displayed on fabric.\"\n\nmain_objects: [\"cardinal painting\", \"blue jay paintings\", \"warbler painting\", \"small bird painting\", \"fabric\", \"wallet\"]\n\npossible_interpretations: [\"watercolor bird paintings\", \"artwork display\", \"bird art collection\", \"artist's paintings\"]\n\nuncertainty_notes: \"Some text on cards is only partially visible; exact bird species identification is approximate.\"\n\nquality_flags: [\"partial_text_visibility\", \"overlapping_objects\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows several watercolor paintings of birds arranged on what appears to be a surface with some fabric/textile visible. Let me analyze:\n\n- There are 5 watercolor bird paintings visible\n- Birds include: a cardinal (red), a yellow warbler/goldfinch on a branch, a small bird in flight, and two blue jays\n- The paintings are on paper/cards laid out on what looks like a table with a reddish/orange fabric\n- There's a gray wallet/case visible at the bottom\n- Some text is partially visible on cards\n\nThis is a photograph of artwork, not a natural photo. The content is about the bird paintings themselves.\n\nLet me rate:\n- recognizability: 4 - clearly shows bird paintings\n- ambiguity: 2 - fairly clear what's depicted\n- natural_photo_typicality: 3 - it's a photo of real objects (artwork) so somewhat natural\n- visual_clutter: 4 - multiple paintings, background fabric, multiple birds\n- object_centricity: 2 - no single dominant object\n- scene_centricity: 3 - more of a still life arrangement\n- caption_confidence: 4\n\nestimated_salient_object_count: 5 (the bird paintings)\nestimated_distinct_object_categories: 2 (bird paintings, fabric background)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: true (bird paintings)\ncontains_text: true (partial text on cards)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true (appears to be indoors)\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: true (watercolor paintings)\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true\n\ndominant_content_type: \"mixed\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"art\"\n\nshort_caption: \"Watercolor paintings of various birds including a cardinal, blue jays, and a warbler displayed on fabric.\"\n\nmain_objects: [\"cardinal painting\", \"blue jay paintings\", \"warbler painting\", \"small bird painting\", \"fabric\", \"wallet\"]\n\npossible_interpretations: [\"watercolor bird paintings\", \"artwork display\", \"bird art collection\", \"artist's paintings\"]\n\nuncertainty_notes: \"Some text on cards is only partially visible; exact bird species identification is approximate.\"\n\nquality_flags: [\"partial_text_visibility\", \"overlapping_objects\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 882,
+          "total_tokens": 2404,
+          "cost": 0.00136476,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00136476,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010584
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 592,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

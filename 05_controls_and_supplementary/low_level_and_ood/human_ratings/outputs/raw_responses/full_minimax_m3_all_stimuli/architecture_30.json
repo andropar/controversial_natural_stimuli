@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_30",
+    "stim_key": "architecture_30",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 30,
+    "file_index": 30,
+    "image_name": "image_0030.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0030.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"tv_studio\",\n  \"short_caption\": \"Television studio set with large display screens, video call grid, and modern furniture\",\n  \"main_objects\": [\"large display screen\", \"video conference grid\", \"sideboard\", \"round coffee table\", \"area rug\", \"flower arrangement\", \"TEAMBOX banner\", \"studio lights\"],\n  \"possible_interpretations\": [\"TV talk show set\", \"video podcast studio\", \"virtual interview studio\", \"media production set\"],\n  \"uncertainty_notes\": \"Individual video call participants are too small to identify; exact show or program cannot be determined from visual content alone.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318881-DvhyzjEIolTme6Ssf6oL",
+        "object": "chat.completion",
+        "created": 1780318881,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"tv_studio\",\n  \"short_caption\": \"Television studio set with large display screens, video call grid, and modern furniture\",\n  \"main_objects\": [\"large display screen\", \"video conference grid\", \"sideboard\", \"round coffee table\", \"area rug\", \"flower arrangement\", \"TEAMBOX banner\", \"studio lights\"],\n  \"possible_interpretations\": [\"TV talk show set\", \"video podcast studio\", \"virtual interview studio\", \"media production set\"],\n  \"uncertainty_notes\": \"Individual video call participants are too small to identify; exact show or program cannot be determined from visual content alone.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a TV studio set. There's a large screen displaying a person (woman with braids, wearing a white sweatshirt and choker), another screen showing multiple video call participants (looks like a video conference grid), a \"TEAMBOX\" branded banner, furniture including a sideboard/console with flowers, a round coffee table with flowers, a rug, and studio lighting visible at the top. This appears to be a talk show or interview set.\n\nLet me annotate this carefully:\n\n- recognizability: 5 - clearly a TV studio set\n- ambiguity: 2 - pretty clear it's a TV studio\n- natural_photo_typicality: 2 - it's a real photo but of a manufactured studio set\n- visual_clutter: 3 - multiple elements but organized\n- object_centricity: 2 - more of a scene\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 4\n\n- estimated_salient_object_count: 5 (large screen, small screen, sideboard, table, rug, plants)\n- estimated_distinct_object_categories: 6\n\n- contains_person: true (on screens)\n- contains_face: true (on screens)\n- contains_animal: false\n- contains_text: true (TEAMBOX banner)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it's a real studio)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"studio_interior\" or \"tv_studio\"\n\n- short_caption: \"Television studio set with large screens, video call grid, and modern furniture\"\n- main_objects: [\"large screen\", \"video conference screen\", \"sideboard\", \"coffee table\", \"rug\", \"flowers\", \"TEAMBOX banner\"]\n- possible_interpretations: [\"TV talk show set\", \"video podcast studio\", \"virtual interview studio\", \"media production set\"]\n- uncertainty_notes: \"Some participants on video grid are hard to identify individually\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a TV studio set. There's a large screen displaying a person (woman with braids, wearing a white sweatshirt and choker), another screen showing multiple video call participants (looks like a video conference grid), a \"TEAMBOX\" branded banner, furniture including a sideboard/console with flowers, a round coffee table with flowers, a rug, and studio lighting visible at the top. This appears to be a talk show or interview set.\n\nLet me annotate this carefully:\n\n- recognizability: 5 - clearly a TV studio set\n- ambiguity: 2 - pretty clear it's a TV studio\n- natural_photo_typicality: 2 - it's a real photo but of a manufactured studio set\n- visual_clutter: 3 - multiple elements but organized\n- object_centricity: 2 - more of a scene\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 4\n\n- estimated_salient_object_count: 5 (large screen, small screen, sideboard, table, rug, plants)\n- estimated_distinct_object_categories: 6\n\n- contains_person: true (on screens)\n- contains_face: true (on screens)\n- contains_animal: false\n- contains_text: true (TEAMBOX banner)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it's a real studio)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\n- dominant_content_type: \"scene\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"studio_interior\" or \"tv_studio\"\n\n- short_caption: \"Television studio set with large screens, video call grid, and modern furniture\"\n- main_objects: [\"large screen\", \"video conference screen\", \"sideboard\", \"coffee table\", \"rug\", \"flowers\", \"TEAMBOX banner\"]\n- possible_interpretations: [\"TV talk show set\", \"video podcast studio\", \"virtual interview studio\", \"media production set\"]\n- uncertainty_notes: \"Some participants on video grid are hard to identify individually\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 838,
+          "total_tokens": 2360,
+          "cost": 0.00143484,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00143484,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010056
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 519,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

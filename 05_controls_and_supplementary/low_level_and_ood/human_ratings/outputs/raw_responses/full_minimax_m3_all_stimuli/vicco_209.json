@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_209",
+    "stim_key": "vicco_209",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 209,
+    "file_index": 208,
+    "image_name": "shared_4rep_vicco_209.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_209.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture_urban\",\n\n  \"short_caption\": \"Low-angle view of a modern glass skyscraper beside a historic stone tower with gothic turrets against blue sky.\",\n  \"main_objects\": [\"skyscraper\", \"historic tower\", \"turrets\", \"spires\", \"windows\"],\n  \"possible_interpretations\": [\"skyscraper with attached heritage tower\", \"office building in city center\", \"historic and modern architecture contrast\", \"urban high-rise view looking up\"],\n  \"uncertainty_notes\": \"Image appears rotated 90 degrees; specific location and building identity not determinable from view alone.\",\n  \"quality_flags\": [\"rotated_orientation\", \"upward_tilted_viewpoint\"]\n}",
+      "response": {
+        "id": "gen-1780319631-9hzG2QWrx2OtteiWJUJj",
+        "object": "chat.completion",
+        "created": 1780319631,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture_urban\",\n\n  \"short_caption\": \"Low-angle view of a modern glass skyscraper beside a historic stone tower with gothic turrets against blue sky.\",\n  \"main_objects\": [\"skyscraper\", \"historic tower\", \"turrets\", \"spires\", \"windows\"],\n  \"possible_interpretations\": [\"skyscraper with attached heritage tower\", \"office building in city center\", \"historic and modern architecture contrast\", \"urban high-rise view looking up\"],\n  \"uncertainty_notes\": \"Image appears rotated 90 degrees; specific location and building identity not determinable from view alone.\",\n  \"quality_flags\": [\"rotated_orientation\", \"upward_tilted_viewpoint\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a low-angle view of a tall building with a distinctive castle-like or gothic tower/spire structure at the top. The image is rotated 90 degrees (sideways orientation). There's a modern glass skyscraper visible alongside what appears to be an older stone tower with turrets and small windows, all set against a blue sky with some clouds.\n\nLet me analyze:\n- recognizability: The main content is clear - a tall building complex with a distinctive tower. 5\n- ambiguity: Low ambiguity, clearly a building. 1\n- natural_photo_typicality: Yes, looks like a typical natural photograph. 4\n- visual_clutter: Moderate - building details, windows, sky. 3\n- object_centricity: The building dominates but it's more of a scene. 3\n- scene_centricity: It's mainly a place/scene with a building. 4\n- caption_confidence: High confidence. 4\n\n- estimated_salient_object_count: 2 (the modern tower and the older castle-like tower)\n- estimated_distinct_object_categories: 2 (skyscraper, historic tower)\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (low angle, sideways rotated)\n- contains_multiple_main_objects: true\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: architecture/urban\n\nThe image is rotated 90 degrees - I should note this in quality flags. The building appears to be a skyscraper with an attached historic tower with gothic features (turrets, spires, small windows).",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a low-angle view of a tall building with a distinctive castle-like or gothic tower/spire structure at the top. The image is rotated 90 degrees (sideways orientation). There's a modern glass skyscraper visible alongside what appears to be an older stone tower with turrets and small windows, all set against a blue sky with some clouds.\n\nLet me analyze:\n- recognizability: The main content is clear - a tall building complex with a distinctive tower. 5\n- ambiguity: Low ambiguity, clearly a building. 1\n- natural_photo_typicality: Yes, looks like a typical natural photograph. 4\n- visual_clutter: Moderate - building details, windows, sky. 3\n- object_centricity: The building dominates but it's more of a scene. 3\n- scene_centricity: It's mainly a place/scene with a building. 4\n- caption_confidence: High confidence. 4\n\n- estimated_salient_object_count: 2 (the modern tower and the older castle-like tower)\n- estimated_distinct_object_categories: 2 (skyscraper, historic tower)\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: true (low angle, sideways rotated)\n- contains_multiple_main_objects: true\n\n- dominant_content_type: scene\n- image_style: natural_photo\n- semantic_domain: architecture/urban\n\nThe image is rotated 90 degrees - I should note this in quality flags. The building appears to be a skyscraper with an attached historic tower with gothic features (turrets, spires, small windows).",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 771,
+          "total_tokens": 2293,
+          "cost": 0.00123156,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00123156,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009252
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 446,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_292",
+    "stim_key": "vicco_292",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 292,
+    "file_index": 291,
+    "image_name": "shared_4rep_vicco_292.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_292.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_utility\",\n  \"short_caption\": \"Close-up of a German glass recycling container with disposal instructions, half-timbered house in background.\",\n  \"main_objects\": [\"glass recycling container\", \"half-timbered building\", \"bare trees\"],\n  \"possible_interpretations\": [\"Public glass recycling bin in a German town\", \"Municipal waste disposal container\", \"Recycling infrastructure in a European village\"],\n  \"uncertainty_notes\": \"Image is clear and unambiguous; subject is well-defined.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319728-96ZgCwGOvj4RDgCTsD0G",
+        "object": "chat.completion",
+        "created": 1780319728,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"urban_utility\",\n  \"short_caption\": \"Close-up of a German glass recycling container with disposal instructions, half-timbered house in background.\",\n  \"main_objects\": [\"glass recycling container\", \"half-timbered building\", \"bare trees\"],\n  \"possible_interpretations\": [\"Public glass recycling bin in a German town\", \"Municipal waste disposal container\", \"Recycling infrastructure in a European village\"],\n  \"uncertainty_notes\": \"Image is clear and unambiguous; subject is well-defined.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a close-up of a metal recycling/glass waste container (Altglas container in German). It has:\n- A silver/galvanized metal body\n- A green section on the left\n- A black oval sign with German text: \"Bitte nehmen Sie Rücksicht auf Ihre Mitbürger! Werfen Sie das Altglas nur von 7.00 bis 20.00 Uhr ein. An Sonn- und Feiertagen verboten!\" (Translation: \"Please be considerate of your fellow citizens! Only dispose of old glass from 7:00 to 20:00. Forbidden on Sundays and holidays!\")\n- The number \"0432\" stamped on the top\n- An oval opening for depositing glass\n- Another similar container visible in the background with \"0280\" and a \"STOP\" sign partially visible\n- A half-timbered building (Fachwerkhaus) in the background, typical of German architecture\n- Bare trees suggesting winter/early spring\n- Overcast sky\n\nLet me provide the annotations:\n\n- recognizability: 5 - Very clear, easily recognizable as a glass recycling container\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 3 - Some competing elements (containers, building, trees) but focused on main subject\n- object_centricity: 4 - The container is the clear central object\n- scene_centricity: 2 - Mostly object-focused with some scene context\n- caption_confidence: 5 - Very confident in a caption\n\n- estimated_salient_object_count: 2 (main container + background container)\n- estimated_distinct_object_categories: 3 (containers, building, trees)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the main container is cropped)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"urban_utility\"\n\nshort_caption: \"A close-up of a metal glass recycling container with German instructions, with a half-timbered house in the background.\"\n\nmain_objects: [\"glass recycling container\", \"half-timbered building\", \"trees\"]\n\npossible_interpretations: [\"A public glass recycling bin in a German town\", \"A waste disposal container in a European village\", \"A close-up of municipal recycling infrastructure\"]\n\nuncertainty_notes: \"None significant - image is clear and unambiguous.\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a close-up of a metal recycling/glass waste container (Altglas container in German). It has:\n- A silver/galvanized metal body\n- A green section on the left\n- A black oval sign with German text: \"Bitte nehmen Sie Rücksicht auf Ihre Mitbürger! Werfen Sie das Altglas nur von 7.00 bis 20.00 Uhr ein. An Sonn- und Feiertagen verboten!\" (Translation: \"Please be considerate of your fellow citizens! Only dispose of old glass from 7:00 to 20:00. Forbidden on Sundays and holidays!\")\n- The number \"0432\" stamped on the top\n- An oval opening for depositing glass\n- Another similar container visible in the background with \"0280\" and a \"STOP\" sign partially visible\n- A half-timbered building (Fachwerkhaus) in the background, typical of German architecture\n- Bare trees suggesting winter/early spring\n- Overcast sky\n\nLet me provide the annotations:\n\n- recognizability: 5 - Very clear, easily recognizable as a glass recycling container\n- ambiguity: 1 - Very clear what it is\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 3 - Some competing elements (containers, building, trees) but focused on main subject\n- object_centricity: 4 - The container is the clear central object\n- scene_centricity: 2 - Mostly object-focused with some scene context\n- caption_confidence: 5 - Very confident in a caption\n\n- estimated_salient_object_count: 2 (main container + background container)\n- estimated_distinct_object_categories: 3 (containers, building, trees)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (the main container is cropped)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"urban_utility\"\n\nshort_caption: \"A close-up of a metal glass recycling container with German instructions, with a half-timbered house in the background.\"\n\nmain_objects: [\"glass recycling container\", \"half-timbered building\", \"trees\"]\n\npossible_interpretations: [\"A public glass recycling bin in a German town\", \"A waste disposal container in a European village\", \"A close-up of municipal recycling infrastructure\"]\n\nuncertainty_notes: \"None significant - image is clear and unambiguous.\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 939,
+          "total_tokens": 2461,
+          "cost": 0.00143316,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00143316,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011268
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 673,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

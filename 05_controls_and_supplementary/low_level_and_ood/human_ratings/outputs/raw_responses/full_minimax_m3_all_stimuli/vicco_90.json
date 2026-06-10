@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_90",
+    "stim_key": "vicco_90",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 90,
+    "file_index": 89,
+    "image_name": "shared_4rep_vicco_090.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_090.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 3, \"visual_clutter\": 3, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": true, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"animal\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"wildlife\", \"short_caption\": \"A tiger resting inside a rock den beneath wooden logs\", \"main_objects\": [\"tiger\", \"wooden logs\", \"rock den\", \"grass\"], \"possible_interpretations\": [\"tiger sleeping in a zoo enclosure\", \"tiger resting in a natural den\"], \"uncertainty_notes\": \"Uncertain whether the den is a natural or zoo-built structure; the wooden logs suggest a constructed enclosure.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319493-TfdbFNyGdCtB24rRuCpu",
+        "object": "chat.completion",
+        "created": 1780319493,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 3, \"visual_clutter\": 3, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 1, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": true, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"animal\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"wildlife\", \"short_caption\": \"A tiger resting inside a rock den beneath wooden logs\", \"main_objects\": [\"tiger\", \"wooden logs\", \"rock den\", \"grass\"], \"possible_interpretations\": [\"tiger sleeping in a zoo enclosure\", \"tiger resting in a natural den\"], \"uncertainty_notes\": \"Uncertain whether the den is a natural or zoo-built structure; the wooden logs suggest a constructed enclosure.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I see a tiger lying down inside what appears to be a cave or den-like structure made of rocks/earth, with wooden logs forming a roof structure above. The tiger is resting on wood chips/leaves. There's grass in the foreground and some greenery/vegetation around.\n\nKey observations:\n- A tiger (large orange and black striped cat) is the main subject\n- It's lying down/sleeping\n- The setting appears to be a zoo enclosure (artificial den with wooden logs)\n- There's grass, rocks, and wooden structures visible\n- No people visible\n- The tiger's face is partially visible\n\nLet me rate according to the schema:\n\n- recognizability: 5 - Very clearly a tiger\n- ambiguity: 1 - Very clear, only one main interpretation\n- natural_photo_typicality: 3 - It's a real photo but in a zoo setting, not a wild natural scene\n- visual_clutter: 3 - Multiple elements (logs, rocks, grass, den, tiger) but not overly cluttered\n- object_centricity: 3 - The tiger is the main subject but it shares attention with the den environment\n- scene_centricity: 4 - This is more about the scene/setting than just the object\n- caption_confidence: 5 - Very confident in a concise caption\n\nEstimates:\n- salient_object_count: 1 (the tiger)\n- distinct_object_categories: 3-4 (tiger, logs, rocks/den, grass)\n\nBooleans:\n- contains_person: false\n- contains_face: false (partially visible but not a clear face)\n- contains_animal: true\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (outdoor)\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (natural photo, though zoo enclosure)\n- contains_occlusion_or_truncation: true (tiger partially in den)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\nDominant content: animal\nImage style: natural_photo\nSemantic domain: wildlife/zoo\n\nCaption: \"A tiger resting inside a den-like enclosure with wooden logs and rocks\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I see a tiger lying down inside what appears to be a cave or den-like structure made of rocks/earth, with wooden logs forming a roof structure above. The tiger is resting on wood chips/leaves. There's grass in the foreground and some greenery/vegetation around.\n\nKey observations:\n- A tiger (large orange and black striped cat) is the main subject\n- It's lying down/sleeping\n- The setting appears to be a zoo enclosure (artificial den with wooden logs)\n- There's grass, rocks, and wooden structures visible\n- No people visible\n- The tiger's face is partially visible\n\nLet me rate according to the schema:\n\n- recognizability: 5 - Very clearly a tiger\n- ambiguity: 1 - Very clear, only one main interpretation\n- natural_photo_typicality: 3 - It's a real photo but in a zoo setting, not a wild natural scene\n- visual_clutter: 3 - Multiple elements (logs, rocks, grass, den, tiger) but not overly cluttered\n- object_centricity: 3 - The tiger is the main subject but it shares attention with the den environment\n- scene_centricity: 4 - This is more about the scene/setting than just the object\n- caption_confidence: 5 - Very confident in a concise caption\n\nEstimates:\n- salient_object_count: 1 (the tiger)\n- distinct_object_categories: 3-4 (tiger, logs, rocks/den, grass)\n\nBooleans:\n- contains_person: false\n- contains_face: false (partially visible but not a clear face)\n- contains_animal: true\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (outdoor)\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (natural photo, though zoo enclosure)\n- contains_occlusion_or_truncation: true (tiger partially in den)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\nDominant content: animal\nImage style: natural_photo\nSemantic domain: wildlife/zoo\n\nCaption: \"A tiger resting inside a den-like enclosure with wooden logs and rocks\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 775,
+          "total_tokens": 2297,
+          "cost": 0.00123636,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00123636,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.00093
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 523,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

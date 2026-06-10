@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_124",
+    "stim_key": "vicco_124",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 124,
+    "file_index": 123,
+    "image_name": "shared_4rep_vicco_124.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_124.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"board_game_product\",\n\n  \"short_caption\": \"Scotland Yard board game box resting on a wooden table\",\n  \"main_objects\": [\"board game box\", \"wooden table\", \"illustrated detective\", \"illustrated red double-decker bus\", \"illustrated black taxi\"],\n  \"possible_interpretations\": [\n    \"Product photo of Scotland Yard board game\",\n    \"Snapshot of a board game at home\",\n    \"Promotional image of the Ravensburger game\"\n  ],\n  \"uncertainty_notes\": \"The illustrated scene on the box depicts outdoor London imagery, but the overall photo is taken indoors on a wooden surface.\",\n  \"quality_flags\": [\"slight_glare_on_box\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319530-ESv3dDzs4SuZe4y1KFAv",
+        "object": "chat.completion",
+        "created": 1780319530,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"board_game_product\",\n\n  \"short_caption\": \"Scotland Yard board game box resting on a wooden table\",\n  \"main_objects\": [\"board game box\", \"wooden table\", \"illustrated detective\", \"illustrated red double-decker bus\", \"illustrated black taxi\"],\n  \"possible_interpretations\": [\n    \"Product photo of Scotland Yard board game\",\n    \"Snapshot of a board game at home\",\n    \"Promotional image of the Ravensburger game\"\n  ],\n  \"uncertainty_notes\": \"The illustrated scene on the box depicts outdoor London imagery, but the overall photo is taken indoors on a wooden surface.\",\n  \"quality_flags\": [\"slight_glare_on_box\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a board game box for \"Scotland Yard\" by Ravensburger, sitting on a wooden surface. The box cover features:\n\n1. The \"Scotland Yard\" title prominently displayed\n2. An illustrated detective character with a brown hat and sunglasses\n3. A red double-decker bus (London icon)\n4. A black taxi cab\n5. A map of London in the background\n6. A question mark icon\n7. Ravensburger logo\n\nLet me annotate according to the schema:\n\n- recognizability: High - clearly a board game box, easily recognizable. 5\n- ambiguity: Low - it's clearly a Scotland Yard board game. 1\n- natural_photo_typicality: This is a photo of a real object (the box) on a wooden table, so it is a natural photo of an object. 4\n- visual_clutter: Moderate - several illustrated elements on the box. 3\n- object_centricity: Yes, the box is the central object. 5\n- scene_centricity: No, it's object-focused. 1\n- caption_confidence: High - I can describe this confidently. 5\n\nEstimated salient objects: 1 (the box) but with multiple elements on the cover\nDistinct categories: board game box, illustration, wooden surface\n\nContains person: There's an illustrated person on the box\nContains face: Yes, illustrated face\nContains animal: No\nContains text: Yes, \"Scotland Yard\", \"Ravensburger\"\nContains vehicle: Yes, illustrated bus and taxi\nContains food: No\nContains indoor scene: The photo is taken indoors (on a table), but the box illustration is more of a city scene. I'll say it's somewhat indoor.\nContains outdoor scene: The illustration on the box shows a London city scene\nContains artificial or rendered content: Yes, the box art is illustrated\nContains occlusion or truncation: No\nContains unusual viewpoint: Slightly angled, but not unusual\nContains multiple main objects: The box is the main object, but it contains multiple illustrated elements\n\nDominant content type: object (it's a photo of a box)\nImage style: natural_photo (it's a photo of a real box)\nSemantic domain: board game / product\n\nShort caption: \"Scotland Yard board game box on a wooden table\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a board game box for \"Scotland Yard\" by Ravensburger, sitting on a wooden surface. The box cover features:\n\n1. The \"Scotland Yard\" title prominently displayed\n2. An illustrated detective character with a brown hat and sunglasses\n3. A red double-decker bus (London icon)\n4. A black taxi cab\n5. A map of London in the background\n6. A question mark icon\n7. Ravensburger logo\n\nLet me annotate according to the schema:\n\n- recognizability: High - clearly a board game box, easily recognizable. 5\n- ambiguity: Low - it's clearly a Scotland Yard board game. 1\n- natural_photo_typicality: This is a photo of a real object (the box) on a wooden table, so it is a natural photo of an object. 4\n- visual_clutter: Moderate - several illustrated elements on the box. 3\n- object_centricity: Yes, the box is the central object. 5\n- scene_centricity: No, it's object-focused. 1\n- caption_confidence: High - I can describe this confidently. 5\n\nEstimated salient objects: 1 (the box) but with multiple elements on the cover\nDistinct categories: board game box, illustration, wooden surface\n\nContains person: There's an illustrated person on the box\nContains face: Yes, illustrated face\nContains animal: No\nContains text: Yes, \"Scotland Yard\", \"Ravensburger\"\nContains vehicle: Yes, illustrated bus and taxi\nContains food: No\nContains indoor scene: The photo is taken indoors (on a table), but the box illustration is more of a city scene. I'll say it's somewhat indoor.\nContains outdoor scene: The illustration on the box shows a London city scene\nContains artificial or rendered content: Yes, the box art is illustrated\nContains occlusion or truncation: No\nContains unusual viewpoint: Slightly angled, but not unusual\nContains multiple main objects: The box is the main object, but it contains multiple illustrated elements\n\nDominant content type: object (it's a photo of a box)\nImage style: natural_photo (it's a photo of a real box)\nSemantic domain: board game / product\n\nShort caption: \"Scotland Yard board game box on a wooden table\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 850,
+          "total_tokens": 2372,
+          "cost": 0.00144924,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00144924,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.00102
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 546,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

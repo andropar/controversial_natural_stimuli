@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_60",
+    "stim_key": "architecture_60",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 60,
+    "file_index": 60,
+    "image_name": "image_0060.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0060.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 4, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"bathroom_interior\", \"short_caption\": \"Beige tiled shower with mosaic accent strip and small decorative figurine on bench\", \"main_objects\": [\"showerhead\", \"mosaic tile strip\", \"shower control valve\", \"decorative figurine\", \"wooden bench\", \"towel\"], \"possible_interpretations\": [\"bathroom shower\", \"showroom or staged interior\", \"spa shower area\"], \"uncertainty_notes\": \"Figurine is small and its exact subject is hard to identify; showerhead partially cut off at top edge\", \"quality_flags\": [\"showerhead_truncated\"]}",
+      "response": {
+        "id": "gen-1780318911-1L8FBSBZsYqf1d20yEnc",
+        "object": "chat.completion",
+        "created": 1780318911,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 4, \"visual_clutter\": 2, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 4, \"estimated_salient_object_count\": 4, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"bathroom_interior\", \"short_caption\": \"Beige tiled shower with mosaic accent strip and small decorative figurine on bench\", \"main_objects\": [\"showerhead\", \"mosaic tile strip\", \"shower control valve\", \"decorative figurine\", \"wooden bench\", \"towel\"], \"possible_interpretations\": [\"bathroom shower\", \"showroom or staged interior\", \"spa shower area\"], \"uncertainty_notes\": \"Figurine is small and its exact subject is hard to identify; showerhead partially cut off at top edge\", \"quality_flags\": [\"showerhead_truncated\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a bathroom/shower area with:\n- Tan/beige large tiles on the walls\n- A vertical strip of decorative mosaic tiles in the center (with a showerhead at the top)\n- A square shower control/valve in the middle of the mosaic strip\n- A small figurine (looks like a small statue, possibly a foo dog or cherub) on a towel on a wooden bench/stool in the bottom right\n- The overall scene is an indoor bathroom with shower\n\nLet me rate according to the schema:\n\n- recognizability: 4 - it's clearly a shower/bathroom scene\n- ambiguity: 2 - quite clear what it is\n- natural_photo_typicality: 4 - looks like a natural photograph, though possibly a staged/showroom photo\n- visual_clutter: 2 - relatively clean, mostly tiles\n- object_centricity: 2 - it's more of a scene than a single central object\n- scene_centricity: 4 - it's primarily a bathroom scene\n- caption_confidence: 4 - fairly confident about a caption\n\nEstimated salient objects: 3 (showerhead, shower valve, figurine)\nDistinct object categories: 3-4 (tiles, shower fixtures, figurine, bench)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false (figurine might be animal-like, but not a real animal)\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: \"scene\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"bathroom\"\n\nshort_caption: \"Beige tiled shower with mosaic accent strip and decorative figurine on bench\"\n\nmain_objects: [\"showerhead\", \"mosaic tile strip\", \"shower control valve\", \"decorative figurine\", \"wooden bench\", \"towel\"]\n\npossible_interpretations: [\"bathroom shower\", \"showroom display\", \"spa interior\"]\n\nuncertainty_notes: \"Figurine is small and its exact subject is hard to identify; showerhead partially cut off at top\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a bathroom/shower area with:\n- Tan/beige large tiles on the walls\n- A vertical strip of decorative mosaic tiles in the center (with a showerhead at the top)\n- A square shower control/valve in the middle of the mosaic strip\n- A small figurine (looks like a small statue, possibly a foo dog or cherub) on a towel on a wooden bench/stool in the bottom right\n- The overall scene is an indoor bathroom with shower\n\nLet me rate according to the schema:\n\n- recognizability: 4 - it's clearly a shower/bathroom scene\n- ambiguity: 2 - quite clear what it is\n- natural_photo_typicality: 4 - looks like a natural photograph, though possibly a staged/showroom photo\n- visual_clutter: 2 - relatively clean, mostly tiles\n- object_centricity: 2 - it's more of a scene than a single central object\n- scene_centricity: 4 - it's primarily a bathroom scene\n- caption_confidence: 4 - fairly confident about a caption\n\nEstimated salient objects: 3 (showerhead, shower valve, figurine)\nDistinct object categories: 3-4 (tiles, shower fixtures, figurine, bench)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false (figurine might be animal-like, but not a real animal)\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: \"scene\"\nimage_style: \"natural_photo\"\nsemantic_domain: \"bathroom\"\n\nshort_caption: \"Beige tiled shower with mosaic accent strip and decorative figurine on bench\"\n\nmain_objects: [\"showerhead\", \"mosaic tile strip\", \"shower control valve\", \"decorative figurine\", \"wooden bench\", \"towel\"]\n\npossible_interpretations: [\"bathroom shower\", \"showroom display\", \"spa interior\"]\n\nuncertainty_notes: \"Figurine is small and its exact subject is hard to identify; showerhead partially cut off at top\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 824,
+          "total_tokens": 2346,
+          "cost": 0.00129516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129516,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009888
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 542,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

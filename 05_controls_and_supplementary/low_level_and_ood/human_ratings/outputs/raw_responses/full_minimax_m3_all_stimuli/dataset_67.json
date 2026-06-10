@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_67",
+    "stim_key": "dataset_67",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 67,
+    "file_index": 67,
+    "image_name": "image_0067.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0067.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 3, \"ambiguity\": 4, \"natural_photo_typicality\": 4, \"visual_clutter\": 1, \"object_centricity\": 1, \"scene_centricity\": 1, \"caption_confidence\": 3, \"estimated_salient_object_count\": 0, \"estimated_distinct_object_categories\": 1, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"texture_pattern\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"wood_surface\", \"short_caption\": \"Close-up of vertical wooden slats alternating between painted white and natural light wood tones.\", \"main_objects\": [\"wooden slats\", \"painted boards\", \"wood grain\"], \"possible_interpretations\": [\"painted wood paneling\", \"wooden fence with alternating finishes\", \"decorative wall slats\", \"stripped wooden surface\", \"veneer or laminate pattern\"], \"uncertainty_notes\": \"Exact context and use of the wooden surface is unclear; could be indoor paneling, outdoor fence, furniture, or abstract pattern.\", \"quality_flags\": [\"cropped\", \"minimal_context\", \"abstract_pattern\"]}",
+      "response": {
+        "id": "gen-1780319038-Qt2HWlNFechDiRnBjpSU",
+        "object": "chat.completion",
+        "created": 1780319038,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 3, \"ambiguity\": 4, \"natural_photo_typicality\": 4, \"visual_clutter\": 1, \"object_centricity\": 1, \"scene_centricity\": 1, \"caption_confidence\": 3, \"estimated_salient_object_count\": 0, \"estimated_distinct_object_categories\": 1, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"texture_pattern\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"wood_surface\", \"short_caption\": \"Close-up of vertical wooden slats alternating between painted white and natural light wood tones.\", \"main_objects\": [\"wooden slats\", \"painted boards\", \"wood grain\"], \"possible_interpretations\": [\"painted wood paneling\", \"wooden fence with alternating finishes\", \"decorative wall slats\", \"stripped wooden surface\", \"veneer or laminate pattern\"], \"uncertainty_notes\": \"Exact context and use of the wooden surface is unclear; could be indoor paneling, outdoor fence, furniture, or abstract pattern.\", \"quality_flags\": [\"cropped\", \"minimal_context\", \"abstract_pattern\"]}",
+              "refusal": null,
+              "reasoning": "The image shows a close-up of vertical stripes - alternating white and tan/beige wooden or painted wooden stripes. It looks like a wooden surface, possibly a wall paneling, fence, or similar wooden structure with alternating colored slats. The texture is clearly visible with wood grain patterns. It's a very simple, abstract-looking image with just vertical stripes.\n\nLet me annotate this:\n- Recognizability: It's recognizable as a striped pattern, but the exact context is unclear. Maybe 3.\n- Ambiguity: High ambiguity - could be many things (wood paneling, fabric, fence, wallpaper). Maybe 4.\n- Natural photo typicality: Looks like a photo of a real surface, so 4.\n- Visual clutter: Low clutter - very simple pattern. 1.\n- Object centricity: No clear central object. 1.\n- Scene centricity: Not really a scene, more of a pattern/closeup. 2.\n- Caption confidence: Moderate - hard to caption precisely. 3.\n\nSalient object count: 0 or just striped pattern\nDistinct object categories: 1 (wooden surface)\n\nNo people, animals, faces, text, vehicles, food\nCould be indoor or outdoor - unclear\nNot artificial/rendered - looks like real photo\nNo occlusion\nNo unusual viewpoint\nNo multiple main objects\n\nDominant content: texture_pattern or closeup_detail\nImage style: natural_photo\nSemantic domain: wood surface or stripes\n\nCaption: \"Vertical wooden slats alternating white and natural wood tones\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a close-up of vertical stripes - alternating white and tan/beige wooden or painted wooden stripes. It looks like a wooden surface, possibly a wall paneling, fence, or similar wooden structure with alternating colored slats. The texture is clearly visible with wood grain patterns. It's a very simple, abstract-looking image with just vertical stripes.\n\nLet me annotate this:\n- Recognizability: It's recognizable as a striped pattern, but the exact context is unclear. Maybe 3.\n- Ambiguity: High ambiguity - could be many things (wood paneling, fabric, fence, wallpaper). Maybe 4.\n- Natural photo typicality: Looks like a photo of a real surface, so 4.\n- Visual clutter: Low clutter - very simple pattern. 1.\n- Object centricity: No clear central object. 1.\n- Scene centricity: Not really a scene, more of a pattern/closeup. 2.\n- Caption confidence: Moderate - hard to caption precisely. 3.\n\nSalient object count: 0 or just striped pattern\nDistinct object categories: 1 (wooden surface)\n\nNo people, animals, faces, text, vehicles, food\nCould be indoor or outdoor - unclear\nNot artificial/rendered - looks like real photo\nNo occlusion\nNo unusual viewpoint\nNo multiple main objects\n\nDominant content: texture_pattern or closeup_detail\nImage style: natural_photo\nSemantic domain: wood surface or stripes\n\nCaption: \"Vertical wooden slats alternating white and natural wood tones\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 649,
+          "total_tokens": 2171,
+          "cost": 0.00120804,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00120804,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0007788
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 367,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

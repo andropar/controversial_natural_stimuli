@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_92",
+    "stim_key": "sota_92",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 92,
+    "file_index": 92,
+    "image_name": "image_0092.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0092.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion\",\n  \"short_caption\": \"Woman modeling a dark green one-shoulder formal chiffon dress in a studio.\",\n  \"main_objects\": [\"woman\", \"green one-shoulder dress\", \"studio backdrop\"],\n  \"possible_interpretations\": [\n    \"Product photo of an evening gown for an online dress retailer\",\n    \"Fashion catalog image showcasing dress design\"\n  ],\n  \"uncertainty_notes\": \"Face is cropped at the upper half; only lips and chin visible. Heavy repeating watermark 'Dresses100.com' across the image indicates commercial product use.\",\n  \"quality_flags\": [\"watermark_overlay\", \"face_truncation\", \"studio_commercial_photo\"]\n}",
+      "response": {
+        "id": "gen-1780319192-llREGo5qat58foAbI9eR",
+        "object": "chat.completion",
+        "created": 1780319192,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion\",\n  \"short_caption\": \"Woman modeling a dark green one-shoulder formal chiffon dress in a studio.\",\n  \"main_objects\": [\"woman\", \"green one-shoulder dress\", \"studio backdrop\"],\n  \"possible_interpretations\": [\n    \"Product photo of an evening gown for an online dress retailer\",\n    \"Fashion catalog image showcasing dress design\"\n  ],\n  \"uncertainty_notes\": \"Face is cropped at the upper half; only lips and chin visible. Heavy repeating watermark 'Dresses100.com' across the image indicates commercial product use.\",\n  \"quality_flags\": [\"watermark_overlay\", \"face_truncation\", \"studio_commercial_photo\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a woman wearing a dark green one-shoulder formal dress. Her face is partially cropped (only the lower part visible - lips, chin). The background is a minimalist white/light gray studio setup with a circular element. The image has watermarks \"Dresses100.com\" across it, indicating it's a product photo from a website.\n\nLet me annotate according to the schema:\n\n- Recognizability: High - clearly a woman in a green dress\n- Ambiguity: Low - clear single subject\n- Natural photo typicality: This is a studio product photo, not a typical natural photo. Has watermarks.\n- Visual clutter: Low - clean studio background\n- Object centricity: Medium-high - the dress is the main focus\n- Scene centricity: Low - not a scene-focused image\n- Caption confidence: High\n\nThe face is truncated (only lower half visible), so contains_face might be debatable but the lower face is visible. The face is partially cut off at the top.\n\nWatermarks are present, which is a quality flag.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a woman wearing a dark green one-shoulder formal dress. Her face is partially cropped (only the lower part visible - lips, chin). The background is a minimalist white/light gray studio setup with a circular element. The image has watermarks \"Dresses100.com\" across it, indicating it's a product photo from a website.\n\nLet me annotate according to the schema:\n\n- Recognizability: High - clearly a woman in a green dress\n- Ambiguity: Low - clear single subject\n- Natural photo typicality: This is a studio product photo, not a typical natural photo. Has watermarks.\n- Visual clutter: Low - clean studio background\n- Object centricity: Medium-high - the dress is the main focus\n- Scene centricity: Low - not a scene-focused image\n- Caption confidence: High\n\nThe face is truncated (only lower half visible), so contains_face might be debatable but the lower face is visible. The face is partially cut off at the top.\n\nWatermarks are present, which is a quality flag.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 590,
+          "total_tokens": 2112,
+          "cost": 0.00113724,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00113724,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.000708
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 266,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

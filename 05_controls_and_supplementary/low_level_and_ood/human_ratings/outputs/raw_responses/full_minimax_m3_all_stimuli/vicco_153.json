@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_153",
+    "stim_key": "vicco_153",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 153,
+    "file_index": 152,
+    "image_name": "shared_4rep_vicco_153.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_153.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nighttime_residential\",\n  \"short_caption\": \"A person looks out from a lit window of a house under a starry night sky.\",\n  \"main_objects\": [\"house\", \"window\", \"person\", \"stars\", \"trees\"],\n  \"possible_interpretations\": [\"a child peering out a cabin window at night\", \"a cozy illuminated window in a dark house\", \"a person framed in a glowing window under stars\"],\n  \"uncertainty_notes\": \"Face details are small and backlit; exact identity or age of the person in the window is uncertain.\",\n  \"quality_flags\": [\"low_light\", \"high_contrast\", \"dark_shadow_regions\"]\n}",
+      "response": {
+        "id": "gen-1780319566-DSS8gkOK8sKeLyVnAYHo",
+        "object": "chat.completion",
+        "created": 1780319566,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nighttime_residential\",\n  \"short_caption\": \"A person looks out from a lit window of a house under a starry night sky.\",\n  \"main_objects\": [\"house\", \"window\", \"person\", \"stars\", \"trees\"],\n  \"possible_interpretations\": [\"a child peering out a cabin window at night\", \"a cozy illuminated window in a dark house\", \"a person framed in a glowing window under stars\"],\n  \"uncertainty_notes\": \"Face details are small and backlit; exact identity or age of the person in the window is uncertain.\",\n  \"quality_flags\": [\"low_light\", \"high_contrast\", \"dark_shadow_regions\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a nighttime scene with a house/cabin on the right side. The house has a lit window where I can see what appears to be a person (possibly a child) illuminated by warm light. The sky is dark and filled with stars. There's a silhouette of trees and a triangular roof of a building. The overall scene is very dark with the main light source being the window.\n\nLet me annotate this:\n\n- Recognizability: The image is fairly recognizable as a nighttime house scene with a lit window. Maybe 4.\n- Ambiguity: There's some ambiguity - could be a cabin, house, etc. Low ambiguity. 2.\n- Natural photo typicality: Looks like a typical natural photograph. 4.\n- Visual clutter: Relatively simple composition. 2.\n- Object centricity: There's a central illuminated window with a person. 3.\n- Scene centricity: This is more of a scene/setting. 4.\n- Caption confidence: Pretty confident. 4.\n\nSalient objects: the house, the window, the person inside, stars, trees\n- Person inside window - I can see a face/person illuminated\n- Face visible: yes, in the window\n- Person: yes\n- Animal: no\n- Text: no\n- Vehicle: no\n- Food: no\n- Indoor scene: partially (the window shows an interior)\n- Outdoor scene: yes (night sky, house exterior)\n- Artificial content: no\n- Occlusion: no\n- Unusual viewpoint: no\n- Multiple main objects: no (primarily the house/window)\n\nMain objects: house, window, person, stars, trees\nPossible interpretations: a person looking out a lit window at night, a cozy cabin scene, someone illuminated in a house window at night\n\nQuality flags: low light, dark areas, motion possible",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a nighttime scene with a house/cabin on the right side. The house has a lit window where I can see what appears to be a person (possibly a child) illuminated by warm light. The sky is dark and filled with stars. There's a silhouette of trees and a triangular roof of a building. The overall scene is very dark with the main light source being the window.\n\nLet me annotate this:\n\n- Recognizability: The image is fairly recognizable as a nighttime house scene with a lit window. Maybe 4.\n- Ambiguity: There's some ambiguity - could be a cabin, house, etc. Low ambiguity. 2.\n- Natural photo typicality: Looks like a typical natural photograph. 4.\n- Visual clutter: Relatively simple composition. 2.\n- Object centricity: There's a central illuminated window with a person. 3.\n- Scene centricity: This is more of a scene/setting. 4.\n- Caption confidence: Pretty confident. 4.\n\nSalient objects: the house, the window, the person inside, stars, trees\n- Person inside window - I can see a face/person illuminated\n- Face visible: yes, in the window\n- Person: yes\n- Animal: no\n- Text: no\n- Vehicle: no\n- Food: no\n- Indoor scene: partially (the window shows an interior)\n- Outdoor scene: yes (night sky, house exterior)\n- Artificial content: no\n- Occlusion: no\n- Unusual viewpoint: no\n- Multiple main objects: no (primarily the house/window)\n\nMain objects: house, window, person, stars, trees\nPossible interpretations: a person looking out a lit window at night, a cozy cabin scene, someone illuminated in a house window at night\n\nQuality flags: low light, dark areas, motion possible",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 749,
+          "total_tokens": 2271,
+          "cost": 0.00120516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00120516,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008988
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 431,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

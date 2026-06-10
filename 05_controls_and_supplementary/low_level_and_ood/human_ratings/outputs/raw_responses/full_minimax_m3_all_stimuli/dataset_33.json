@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_33",
+    "stim_key": "dataset_33",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 33,
+    "file_index": 33,
+    "image_name": "image_0033.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0033.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor_floor\",\n  \"short_caption\": \"Textured beige carpet with partial views of table and furniture legs at edges\",\n  \"main_objects\": [\"carpet\", \"table leg\", \"glass table edge\", \"upholstered furniture\"],\n  \"possible_interpretations\": [\"view of a carpeted room from above\", \"close-up of a textured floor\", \"furniture leg detail in a living space\", \"store display with merchandise edge\"],\n  \"uncertainty_notes\": \"Furniture at top is truncated and partially identifiable; main content is floor texture with limited scene context\",\n  \"quality_flags\": [\"unusual_viewpoint\", \"heavy_truncation\", \"low_semantic_content\"]\n}\n```",
+      "response": {
+        "id": "gen-1780319000-BWbvAqd1ef7tN6O5Rf3d",
+        "object": "chat.completion",
+        "created": 1780319000,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"indoor_floor\",\n  \"short_caption\": \"Textured beige carpet with partial views of table and furniture legs at edges\",\n  \"main_objects\": [\"carpet\", \"table leg\", \"glass table edge\", \"upholstered furniture\"],\n  \"possible_interpretations\": [\"view of a carpeted room from above\", \"close-up of a textured floor\", \"furniture leg detail in a living space\", \"store display with merchandise edge\"],\n  \"uncertainty_notes\": \"Furniture at top is truncated and partially identifiable; main content is floor texture with limited scene context\",\n  \"quality_flags\": [\"unusual_viewpoint\", \"heavy_truncation\", \"low_semantic_content\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be a textured carpet or rug floor (tan/beige color) with portions of furniture visible at the edges - I can see what looks like a glass table on the left (with reflections), a dark table/chair leg in the upper portion, and what appears to be furniture with teal/green upholstery and wooden legs at the top. The main view is of the carpeted floor.\n\nLet me provide annotations based on what I can see:\n\n- The dominant content is the carpet/floor texture\n- There are partial views of furniture (table, chair, possibly a sofa)\n- It's taken from an unusual downward angle\n- It's clearly an indoor scene\n- No people, faces, animals, text, vehicles, or food visible\n- The image has significant occlusion/truncation of the furniture at edges\n\nLet me rate:\n- recognizability: 3 - The main content (carpet/floor) is recognizable but the scene context is limited\n- ambiguity: 3 - Could be interpreted as floor/furniture or as an abstract texture\n- natural_photo_typicality: 4 - Looks like a typical photo\n- visual_clutter: 2 - Mostly uniform carpet, few competing elements\n- object_centricity: 1 - No clear central object, dominated by floor\n- scene_centricity: 3 - It is a scene (indoor) but dominated by floor\n- caption_confidence: 3 - Can caption \"carpet with furniture edges\" but limited\n\nThe image is dominated by a textured carpet/floor pattern with partial furniture at the edges. The viewpoint is unusual (looking down at the floor).",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be a textured carpet or rug floor (tan/beige color) with portions of furniture visible at the edges - I can see what looks like a glass table on the left (with reflections), a dark table/chair leg in the upper portion, and what appears to be furniture with teal/green upholstery and wooden legs at the top. The main view is of the carpeted floor.\n\nLet me provide annotations based on what I can see:\n\n- The dominant content is the carpet/floor texture\n- There are partial views of furniture (table, chair, possibly a sofa)\n- It's taken from an unusual downward angle\n- It's clearly an indoor scene\n- No people, faces, animals, text, vehicles, or food visible\n- The image has significant occlusion/truncation of the furniture at edges\n\nLet me rate:\n- recognizability: 3 - The main content (carpet/floor) is recognizable but the scene context is limited\n- ambiguity: 3 - Could be interpreted as floor/furniture or as an abstract texture\n- natural_photo_typicality: 4 - Looks like a typical photo\n- visual_clutter: 2 - Mostly uniform carpet, few competing elements\n- object_centricity: 1 - No clear central object, dominated by floor\n- scene_centricity: 3 - It is a scene (indoor) but dominated by floor\n- caption_confidence: 3 - Can caption \"carpet with furniture edges\" but limited\n\nThe image is dominated by a textured carpet/floor pattern with partial furniture at the edges. The viewpoint is unusual (looking down at the floor).",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 722,
+          "total_tokens": 2244,
+          "cost": 0.00117276,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00117276,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008664
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 392,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

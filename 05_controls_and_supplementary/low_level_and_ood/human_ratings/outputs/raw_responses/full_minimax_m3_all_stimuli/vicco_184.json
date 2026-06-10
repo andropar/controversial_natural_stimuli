@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_184",
+    "stim_key": "vicco_184",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 184,
+    "file_index": 183,
+    "image_name": "shared_4rep_vicco_184.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_184.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"games/recreation\",\n\n  \"short_caption\": \"Two people playing a triangular card game called Duell on a red table.\",\n  \"main_objects\": [\"triangular cards\", \"hands\", \"red table\", \"card pyramid\"],\n  \"possible_interpretations\": [\n    \"card game in progress\",\n    \"players building or modifying a card structure\",\n    \"tabletop game with triangular cards\"\n  ],\n  \"uncertainty_notes\": \"Card faces are partially obscured by hands; some text partially visible (Duell). Setting appears to be a restaurant or pub based on background.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319604-B1QJwzo9lMM30nVHW3mr",
+        "object": "chat.completion",
+        "created": 1780319604,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"games/recreation\",\n\n  \"short_caption\": \"Two people playing a triangular card game called Duell on a red table.\",\n  \"main_objects\": [\"triangular cards\", \"hands\", \"red table\", \"card pyramid\"],\n  \"possible_interpretations\": [\n    \"card game in progress\",\n    \"players building or modifying a card structure\",\n    \"tabletop game with triangular cards\"\n  ],\n  \"uncertainty_notes\": \"Card faces are partially obscured by hands; some text partially visible (Duell). Setting appears to be a restaurant or pub based on background.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a card game in progress. There are triangular prism-shaped cards arranged in a pyramid/structure on a red table surface. The cards appear to be from a game called \"Duell\" (visible on some cards). Two hands are visible - one wearing a white/cream sweater reaching down to place or move a card, and another hand on the right side reaching toward the structure.\n\nThe cards have colorful artwork with what appears to be cartoon-style illustrations, including yellow swirls and various designs. The setting appears to be indoors, possibly a restaurant or pub based on the visible window with what looks like brick exterior and some chairs/tables in the background.\n\nLet me annotate this:\n\n- recognizability: 4 - fairly clear what's happening (card game)\n- ambiguity: 2 - pretty clear interpretation (card game being played)\n- natural_photo_typicality: 4 - looks like a casual photo someone took\n- visual_clutter: 3 - several cards but focused on the structure\n- object_centricity: 4 - the card structure is the central focus\n- scene_centricity: 2 - more object-focused but some scene context\n- caption_confidence: 4 - confident in describing the scene\n\nContains:\n- person: yes (hands visible, but no face)\n- face: no\n- animal: no (maybe cartoon animals on cards but not real)\n- text: yes (Duell text visible)\n- vehicle: no\n- food: no\n- indoor scene: yes\n- outdoor scene: partially visible through window but main is indoor\n- artificial/rendered: no\n- occlusion: yes (hands occlude parts)\n- unusual viewpoint: somewhat unusual - top-down at angle\n- multiple main objects: the card structure\n\nMain objects: cards, hands, table\nSemantic domain: games/recreation\nStyle: natural_photo",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a card game in progress. There are triangular prism-shaped cards arranged in a pyramid/structure on a red table surface. The cards appear to be from a game called \"Duell\" (visible on some cards). Two hands are visible - one wearing a white/cream sweater reaching down to place or move a card, and another hand on the right side reaching toward the structure.\n\nThe cards have colorful artwork with what appears to be cartoon-style illustrations, including yellow swirls and various designs. The setting appears to be indoors, possibly a restaurant or pub based on the visible window with what looks like brick exterior and some chairs/tables in the background.\n\nLet me annotate this:\n\n- recognizability: 4 - fairly clear what's happening (card game)\n- ambiguity: 2 - pretty clear interpretation (card game being played)\n- natural_photo_typicality: 4 - looks like a casual photo someone took\n- visual_clutter: 3 - several cards but focused on the structure\n- object_centricity: 4 - the card structure is the central focus\n- scene_centricity: 2 - more object-focused but some scene context\n- caption_confidence: 4 - confident in describing the scene\n\nContains:\n- person: yes (hands visible, but no face)\n- face: no\n- animal: no (maybe cartoon animals on cards but not real)\n- text: yes (Duell text visible)\n- vehicle: no\n- food: no\n- indoor scene: yes\n- outdoor scene: partially visible through window but main is indoor\n- artificial/rendered: no\n- occlusion: yes (hands occlude parts)\n- unusual viewpoint: somewhat unusual - top-down at angle\n- multiple main objects: the card structure\n\nMain objects: cards, hands, table\nSemantic domain: games/recreation\nStyle: natural_photo",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 741,
+          "total_tokens": 2263,
+          "cost": 0.00119556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00119556,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008892
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 456,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

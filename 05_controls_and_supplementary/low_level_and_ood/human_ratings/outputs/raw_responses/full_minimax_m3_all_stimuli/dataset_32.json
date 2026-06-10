@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_32",
+    "stim_key": "dataset_32",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 32,
+    "file_index": 32,
+    "image_name": "image_0032.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0032.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"furniture\",\n  \"short_caption\": \"Navy blue patterned sectional sofa in a minimalist living room with framed beach artwork.\",\n  \"main_objects\": [\"sectional sofa\", \"braided rug\", \"framed triptych artwork\", \"table lamp\", \"side table\"],\n  \"possible_interpretations\": [\"product photo of a sectional sofa\", \"interior showroom display\", \"staged living room scene\", \"furniture catalog image\"],\n  \"uncertainty_notes\": \"Image appears to be a product or showroom photograph with carefully staged lighting and minimal decor, rather than a naturally lived-in space.\",\n  \"quality_flags\": []\n}\n```",
+      "response": {
+        "id": "gen-1780318998-3k6cHfV9giOPaMiFAsaF",
+        "object": "chat.completion",
+        "created": 1780318998,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"furniture\",\n  \"short_caption\": \"Navy blue patterned sectional sofa in a minimalist living room with framed beach artwork.\",\n  \"main_objects\": [\"sectional sofa\", \"braided rug\", \"framed triptych artwork\", \"table lamp\", \"side table\"],\n  \"possible_interpretations\": [\"product photo of a sectional sofa\", \"interior showroom display\", \"staged living room scene\", \"furniture catalog image\"],\n  \"uncertainty_notes\": \"Image appears to be a product or showroom photograph with carefully staged lighting and minimal decor, rather than a naturally lived-in space.\",\n  \"quality_flags\": []\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a living room scene with:\n- A large navy blue/dark blue sectional sofa with a damask/floral pattern\n- The sofa has a chaise lounge extension on the right side\n- A brown/tan braided or woven rug in front of the sofa\n- Three framed artworks on the wall behind the sofa (appearing to be a triptych of beach/landscape scenes with birds)\n- A white table lamp on a small side table to the right\n- A partial view of another small table on the left\n- Light gray/white walls\n- Light colored wood or laminate flooring\n- White ceiling with molding\n\nLet me rate the dimensions:\n\n- recognizability: 5 - very clearly a living room with sectional sofa\n- ambiguity: 1 - very clear what it is, a furniture/showroom photo\n- natural_photo_typicality: 3 - looks somewhat staged like a product photo or showroom\n- visual_clutter: 2 - relatively clean, not much clutter\n- object_centricity: 4 - the sofa dominates\n- scene_centricity: 4 - it's clearly a room/scene\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 3-4 (sofa, rug, artwork, lamp)\n- estimated_distinct_object_categories: 4\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false (just birds in artwork)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it's a photo, though could be a showroom)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (one main object - the sofa)\n\ndominant_content_type: \"object\" (the sofa is dominant, though it's in a scene)\nActually, this could be \"scene\" since it's showing a room. Let me go with \"scene\" since the sofa is the focal point of a room setting.\n\nActually, looking more carefully, the sofa is the clear main subject. But it's in a room context. I'll go with \"object\" since the sofa dominates and is the product being shown.\n\nimage_style: \"natural_photo\" - appears to be a real photograph, possibly product/showroom\nsemantic_domain: \"furniture\" or \"interior_design\" or \"home\"\n\nshort_caption: \"Navy blue patterned sectional sofa in a minimalist living room with beach artwork.\"\n\nmain_objects: [\"sectional sofa\", \"braided rug\", \"framed artwork\", \"table lamp\", \"side table\"]\n\npossible_interpretations: [\"product photo of a sectional sofa\", \"interior design showroom\", \"living room decoration\"]\n\nuncertainty_notes: \"Image may be a product/showroom photo with staged setting\"\n\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a living room scene with:\n- A large navy blue/dark blue sectional sofa with a damask/floral pattern\n- The sofa has a chaise lounge extension on the right side\n- A brown/tan braided or woven rug in front of the sofa\n- Three framed artworks on the wall behind the sofa (appearing to be a triptych of beach/landscape scenes with birds)\n- A white table lamp on a small side table to the right\n- A partial view of another small table on the left\n- Light gray/white walls\n- Light colored wood or laminate flooring\n- White ceiling with molding\n\nLet me rate the dimensions:\n\n- recognizability: 5 - very clearly a living room with sectional sofa\n- ambiguity: 1 - very clear what it is, a furniture/showroom photo\n- natural_photo_typicality: 3 - looks somewhat staged like a product photo or showroom\n- visual_clutter: 2 - relatively clean, not much clutter\n- object_centricity: 4 - the sofa dominates\n- scene_centricity: 4 - it's clearly a room/scene\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 3-4 (sofa, rug, artwork, lamp)\n- estimated_distinct_object_categories: 4\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false (just birds in artwork)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it's a photo, though could be a showroom)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (one main object - the sofa)\n\ndominant_content_type: \"object\" (the sofa is dominant, though it's in a scene)\nActually, this could be \"scene\" since it's showing a room. Let me go with \"scene\" since the sofa is the focal point of a room setting.\n\nActually, looking more carefully, the sofa is the clear main subject. But it's in a room context. I'll go with \"object\" since the sofa dominates and is the product being shown.\n\nimage_style: \"natural_photo\" - appears to be a real photograph, possibly product/showroom\nsemantic_domain: \"furniture\" or \"interior_design\" or \"home\"\n\nshort_caption: \"Navy blue patterned sectional sofa in a minimalist living room with beach artwork.\"\n\nmain_objects: [\"sectional sofa\", \"braided rug\", \"framed artwork\", \"table lamp\", \"side table\"]\n\npossible_interpretations: [\"product photo of a sectional sofa\", \"interior design showroom\", \"living room decoration\"]\n\nuncertainty_notes: \"Image may be a product/showroom photo with staged setting\"\n\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 986,
+          "total_tokens": 2508,
+          "cost": 0.00161244,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00161244,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0011832
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 685,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

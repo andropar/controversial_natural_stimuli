@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_49",
+    "stim_key": "sota_49",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 49,
+    "file_index": 49,
+    "image_name": "image_0049.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0049.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"fashion\",\n\n  \"short_caption\": \"Woman in off-shoulder striped top and jeans holding a cream crossbody bag against a brick wall.\",\n  \"main_objects\": [\"off-shoulder striped top\", \"cream crossbody handbag\", \"dark jeans\", \"tassel earrings\", \"brick wall\"],\n  \"possible_interpretations\": [\"fashion blog outfit photo\", \"clothing product showcase\", \"outfit of the day post\", \"lifestyle photography\"],\n  \"uncertainty_notes\": \"Face is cropped out of frame; only lower portion of head and torso visible.\",\n  \"quality_flags\": [\"face_truncated\"]\n}",
+      "response": {
+        "id": "gen-1780319137-D5B7HqsCmut8zzHfWdkS",
+        "object": "chat.completion",
+        "created": 1780319137,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"fashion\",\n\n  \"short_caption\": \"Woman in off-shoulder striped top and jeans holding a cream crossbody bag against a brick wall.\",\n  \"main_objects\": [\"off-shoulder striped top\", \"cream crossbody handbag\", \"dark jeans\", \"tassel earrings\", \"brick wall\"],\n  \"possible_interpretations\": [\"fashion blog outfit photo\", \"clothing product showcase\", \"outfit of the day post\", \"lifestyle photography\"],\n  \"uncertainty_notes\": \"Face is cropped out of frame; only lower portion of head and torso visible.\",\n  \"quality_flags\": [\"face_truncated\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a person (likely a woman based on the clothing and accessories) standing in front of a brick wall. The face is cropped out of the frame. She's wearing:\n- A blue and white striped off-shoulder top with floral/eyelet patterns and tie details\n- Dark blue/navy jeans\n- A small cream/light pink crossbody handbag\n- Pink tassel earrings (visible at the top of frame)\n- A ring on her finger\n- Has a thin strap bag across her body\n\nThe background is a multi-colored brick wall (red, brown, white, gray bricks) and there appear to be some stones/rocks at the bottom.\n\nLet me annotate:\n\n- Recognizability: The image is clearly recognizable - it's a fashion/outfit photo. 5\n- Ambiguity: Low ambiguity - it's clearly a fashion photo. 1\n- Natural_photo_typicality: This looks like a typical natural photograph, possibly fashion/blog style. 4\n- Visual_clutter: Moderate clutter with the brick wall pattern but main subject is clear. 2-3\n- Object_centricity: The person/clothing is the central focus. 4\n- Scene_centricity: The brick wall is a backdrop but the person dominates. 2\n- Caption_confidence: High confidence in caption. 5\n\n- Salient objects: The handbag, the top, the jeans, the person - maybe 3-4\n- Distinct categories: clothing items, handbag, person, wall - 3-4\n\n- Contains person: yes\n- Contains face: face is cropped out, so technically no\n- Contains animal: no\n- Contains text: no\n- Contains vehicle: no\n- Contains food: no\n- Contains indoor scene: no (outdoor brick wall)\n- Contains outdoor scene: yes (exterior brick wall)\n- Contains artificial or rendered content: no\n- Contains occlusion or truncation: yes (face is cropped/truncated)\n- Contains unusual viewpoint: no\n- Contains multiple main objects: no (single person is main)\n\n- Dominant content type: person_face (or just person - but face is cropped, so maybe \"object\" since it's about the outfit)\n- Actually, since the face is cropped, this is more about fashion/clothing. The dominant content is the person/outfit.\n- Image style: natural_photo\n- Semantic domain: fashion\n\n- Short caption: \"Woman in off-shoulder striped top and jeans holding a cream crossbody bag against brick wall\"\n- Main objects: off-shoulder top, handbag, jeans, earrings, ring\n- Possible interpretations: fashion blog photo, clothing advertisement, outfit of the day post\n- Uncertainty notes: face is cropped out\n- Quality flags: face truncated/cropped\n\nLet me finalize the values.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a person (likely a woman based on the clothing and accessories) standing in front of a brick wall. The face is cropped out of the frame. She's wearing:\n- A blue and white striped off-shoulder top with floral/eyelet patterns and tie details\n- Dark blue/navy jeans\n- A small cream/light pink crossbody handbag\n- Pink tassel earrings (visible at the top of frame)\n- A ring on her finger\n- Has a thin strap bag across her body\n\nThe background is a multi-colored brick wall (red, brown, white, gray bricks) and there appear to be some stones/rocks at the bottom.\n\nLet me annotate:\n\n- Recognizability: The image is clearly recognizable - it's a fashion/outfit photo. 5\n- Ambiguity: Low ambiguity - it's clearly a fashion photo. 1\n- Natural_photo_typicality: This looks like a typical natural photograph, possibly fashion/blog style. 4\n- Visual_clutter: Moderate clutter with the brick wall pattern but main subject is clear. 2-3\n- Object_centricity: The person/clothing is the central focus. 4\n- Scene_centricity: The brick wall is a backdrop but the person dominates. 2\n- Caption_confidence: High confidence in caption. 5\n\n- Salient objects: The handbag, the top, the jeans, the person - maybe 3-4\n- Distinct categories: clothing items, handbag, person, wall - 3-4\n\n- Contains person: yes\n- Contains face: face is cropped out, so technically no\n- Contains animal: no\n- Contains text: no\n- Contains vehicle: no\n- Contains food: no\n- Contains indoor scene: no (outdoor brick wall)\n- Contains outdoor scene: yes (exterior brick wall)\n- Contains artificial or rendered content: no\n- Contains occlusion or truncation: yes (face is cropped/truncated)\n- Contains unusual viewpoint: no\n- Contains multiple main objects: no (single person is main)\n\n- Dominant content type: person_face (or just person - but face is cropped, so maybe \"object\" since it's about the outfit)\n- Actually, since the face is cropped, this is more about fashion/clothing. The dominant content is the person/outfit.\n- Image style: natural_photo\n- Semantic domain: fashion\n\n- Short caption: \"Woman in off-shoulder striped top and jeans holding a cream crossbody bag against brick wall\"\n- Main objects: off-shoulder top, handbag, jeans, earrings, ring\n- Possible interpretations: fashion blog photo, clothing advertisement, outfit of the day post\n- Uncertainty notes: face is cropped out\n- Quality flags: face truncated/cropped\n\nLet me finalize the values.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1467,
+          "completion_tokens": 947,
+          "total_tokens": 2414,
+          "cost": 0.00154914,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00154914,
+            "upstream_inference_prompt_cost": 0.00041274,
+            "upstream_inference_completions_cost": 0.0011364
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 654,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

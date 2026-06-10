@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_238",
+    "stim_key": "vicco_238",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 238,
+    "file_index": 237,
+    "image_name": "shared_4rep_vicco_238.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_238.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 5, \"visual_clutter\": 4, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 5, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": true, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"mixed\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"street/coffee_shop\", \"short_caption\": \"A customer stands at an outdoor coffee shop counter while a fluffy white dog stands on its hind legs reaching up toward the barista.\", \"main_objects\": [\"fluffy white dog\", \"customer in gray turtleneck\", \"barista in cap\", \"counter\", \"sticker-covered wall\", \"bistro table and chair\", \"metal trash can\"], \"possible_interpretations\": [\"customer and dog at a coffee shop window\", \"barista greeting a regular with their pet\", \"candid street scene at a trendy urban cafe\"], \"uncertainty_notes\": \"Dog breed is unclear (likely a doodle/poodle mix). Exact location not identifiable despite NYC-related stickers on the wall. Barista's full face and the customer profile are visible.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319878-FUU7z6u9PSqZ8krOcgWA",
+        "object": "chat.completion",
+        "created": 1780319878,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 5, \"visual_clutter\": 4, \"object_centricity\": 3, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 5, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": true, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"mixed\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"street/coffee_shop\", \"short_caption\": \"A customer stands at an outdoor coffee shop counter while a fluffy white dog stands on its hind legs reaching up toward the barista.\", \"main_objects\": [\"fluffy white dog\", \"customer in gray turtleneck\", \"barista in cap\", \"counter\", \"sticker-covered wall\", \"bistro table and chair\", \"metal trash can\"], \"possible_interpretations\": [\"customer and dog at a coffee shop window\", \"barista greeting a regular with their pet\", \"candid street scene at a trendy urban cafe\"], \"uncertainty_notes\": \"Dog breed is unclear (likely a doodle/poodle mix). Exact location not identifiable despite NYC-related stickers on the wall. Barista's full face and the customer profile are visible.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a scene outside what appears to be a coffee shop or bar. There's a person in a gray turtleneck sweater standing at a counter, with a white/cream colored fluffy dog standing on its hind legs with front paws on the counter, appearing to interact with a person behind the counter (who appears to be a barista wearing a cap). The wall behind the counter is covered in numerous stickers, which is very common for trendy coffee shops, especially in places like Brooklyn, NYC (I can see a \"NY\" sticker). There's a metal trash can, a small bistro table with chairs, and some bottles/equipment on the counter. The scene appears to be outdoors on a sidewalk, with warm sunlight creating long shadows.\n\nLet me rate each dimension:\n\n- recognizability: The scene is quite clear - it's a coffee shop with a person and a dog. I'd rate this 4-5. Let's say 4.\n- ambiguity: There's one main interpretation - coffee shop scene with person and dog. Low ambiguity, maybe 2.\n- natural_photo_typicality: This looks like a natural photograph, very candid street photography style. 5.\n- visual_clutter: Lots of stickers on the wall, multiple objects, but they're organized. Maybe 4.\n- object_centricity: The dog and person are central, but it's more of a scene. Maybe 3.\n- scene_centricity: This is clearly a scene/place - a coffee shop exterior. 4.\n- caption_confidence: Very confident in a concise caption. 5.\n\nObject counts:\n- salient objects: dog, person in gray, barista, table, chairs, trash can, counter = around 5-6\n- distinct categories: person, dog, furniture, trash can, building features = 5\n\nBoolean fields:\n- contains_person: yes (two people)\n- contains_face: yes (the barista's face is visible, possibly the customer's too)\n- contains_animal: yes (dog)\n- contains_text: yes (stickers with text, \"NY\" visible)\n- contains_vehicle: no\n- contains_food: no (though coffee shop, not visible)\n- contains_indoor_scene: partially, but the main view is outdoor\n- contains_outdoor_scene: yes\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: not really\n- contains_unusual_viewpoint: no\n- contains_multiple_main_objects: yes (person, dog, barista are all prominent)\n\ndominant_content_type: mixed (person + animal + scene)\nimage_style: natural_photo\nsemantic_domain: street/coffee_shop\n\nshort_caption: \"A man stands at an outdoor coffee shop counter while a fluffy white dog stands on its hind legs reaching up, as the barista looks on.\"\n\nmain_objects: dog, person, barista, counter, table, chair, trash can, sticker-covered wall\n\npossible_interpretations:\n- coffee shop with customer and dog\n- barista serving a regular customer with their dog\n- street scene at a trendy cafe\n\nuncertainty_notes: The dog is a poodle or doodle type, breed unclear. Exact location unknown but sticker-covered walls suggest urban/trendy area.\n\nquality_flags: none significant",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a scene outside what appears to be a coffee shop or bar. There's a person in a gray turtleneck sweater standing at a counter, with a white/cream colored fluffy dog standing on its hind legs with front paws on the counter, appearing to interact with a person behind the counter (who appears to be a barista wearing a cap). The wall behind the counter is covered in numerous stickers, which is very common for trendy coffee shops, especially in places like Brooklyn, NYC (I can see a \"NY\" sticker). There's a metal trash can, a small bistro table with chairs, and some bottles/equipment on the counter. The scene appears to be outdoors on a sidewalk, with warm sunlight creating long shadows.\n\nLet me rate each dimension:\n\n- recognizability: The scene is quite clear - it's a coffee shop with a person and a dog. I'd rate this 4-5. Let's say 4.\n- ambiguity: There's one main interpretation - coffee shop scene with person and dog. Low ambiguity, maybe 2.\n- natural_photo_typicality: This looks like a natural photograph, very candid street photography style. 5.\n- visual_clutter: Lots of stickers on the wall, multiple objects, but they're organized. Maybe 4.\n- object_centricity: The dog and person are central, but it's more of a scene. Maybe 3.\n- scene_centricity: This is clearly a scene/place - a coffee shop exterior. 4.\n- caption_confidence: Very confident in a concise caption. 5.\n\nObject counts:\n- salient objects: dog, person in gray, barista, table, chairs, trash can, counter = around 5-6\n- distinct categories: person, dog, furniture, trash can, building features = 5\n\nBoolean fields:\n- contains_person: yes (two people)\n- contains_face: yes (the barista's face is visible, possibly the customer's too)\n- contains_animal: yes (dog)\n- contains_text: yes (stickers with text, \"NY\" visible)\n- contains_vehicle: no\n- contains_food: no (though coffee shop, not visible)\n- contains_indoor_scene: partially, but the main view is outdoor\n- contains_outdoor_scene: yes\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: not really\n- contains_unusual_viewpoint: no\n- contains_multiple_main_objects: yes (person, dog, barista are all prominent)\n\ndominant_content_type: mixed (person + animal + scene)\nimage_style: natural_photo\nsemantic_domain: street/coffee_shop\n\nshort_caption: \"A man stands at an outdoor coffee shop counter while a fluffy white dog stands on its hind legs reaching up, as the barista looks on.\"\n\nmain_objects: dog, person, barista, counter, table, chair, trash can, sticker-covered wall\n\npossible_interpretations:\n- coffee shop with customer and dog\n- barista serving a regular customer with their dog\n- street scene at a trendy cafe\n\nuncertainty_notes: The dog is a poodle or doodle type, breed unclear. Exact location unknown but sticker-covered walls suggest urban/trendy area.\n\nquality_flags: none significant",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 1052,
+          "total_tokens": 2574,
+          "cost": 0.00135708,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1508,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00135708,
+            "upstream_inference_prompt_cost": 9.468e-05,
+            "upstream_inference_completions_cost": 0.0012624
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 765,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

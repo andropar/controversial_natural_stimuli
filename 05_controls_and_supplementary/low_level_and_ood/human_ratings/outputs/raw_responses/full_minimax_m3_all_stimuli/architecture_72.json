@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_72",
+    "stim_key": "architecture_72",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 72,
+    "file_index": 72,
+    "image_name": "image_0072.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0072.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\":4,\"ambiguity\":2,\"natural_photo_typicality\":3,\"visual_clutter\":4,\"object_centricity\":3,\"scene_centricity\":3,\"caption_confidence\":4,\"estimated_salient_object_count\":2,\"estimated_distinct_object_categories\":3,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":true,\"contains_text\":false,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":true,\"contains_outdoor_scene\":false,\"contains_artificial_or_rendered_content\":true,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":true,\"contains_multiple_main_objects\":false,\"dominant_content_type\":\"object\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"model_craft\",\"short_caption\":\"Handmade wooden stick model house with a black cat beside the staircase\",\"main_objects\":[\"wooden stick model house\",\"staircase\",\"black cat\",\"plastic bottles\"],\"possible_interpretations\":[\"Handmade miniature house model from wooden sticks\",\"Large-scale architectural model\",\"Children's craft project structure\",\"Life-sized wooden frame building under construction\"],\"uncertainty_notes\":\"Scale of the structure is ambiguous; could be a small tabletop model or a larger constructed frame. Purpose unclear.\",\"quality_flags\":[\"overhead_tilted_viewpoint\",\"complex_repetitive_patterns\",\"background_clutter\",\"partially_cropped_subject\"]}",
+      "response": {
+        "id": "gen-1780318926-kf1Bq7d2su4l7sSx4zMM",
+        "object": "chat.completion",
+        "created": 1780318926,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\":4,\"ambiguity\":2,\"natural_photo_typicality\":3,\"visual_clutter\":4,\"object_centricity\":3,\"scene_centricity\":3,\"caption_confidence\":4,\"estimated_salient_object_count\":2,\"estimated_distinct_object_categories\":3,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":true,\"contains_text\":false,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":true,\"contains_outdoor_scene\":false,\"contains_artificial_or_rendered_content\":true,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":true,\"contains_multiple_main_objects\":false,\"dominant_content_type\":\"object\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"model_craft\",\"short_caption\":\"Handmade wooden stick model house with a black cat beside the staircase\",\"main_objects\":[\"wooden stick model house\",\"staircase\",\"black cat\",\"plastic bottles\"],\"possible_interpretations\":[\"Handmade miniature house model from wooden sticks\",\"Large-scale architectural model\",\"Children's craft project structure\",\"Life-sized wooden frame building under construction\"],\"uncertainty_notes\":\"Scale of the structure is ambiguous; could be a small tabletop model or a larger constructed frame. Purpose unclear.\",\"quality_flags\":[\"overhead_tilted_viewpoint\",\"complex_repetitive_patterns\",\"background_clutter\",\"partially_cropped_subject\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be a detailed model or miniature house/building structure made from wooden sticks (possibly popsicle sticks or similar). It's an elaborate construction with multiple rooms, walls, windows, doors, and even a staircase. There's also what appears to be a black cat sitting on or near the staircase.\n\nThe structure looks like an indoor model/craft project. I can see:\n- Multiple rooms/walls made of light wood sticks\n- Window frames and door frames\n- A staircase on the right side\n- A black cat near the bottom right\n- Some plastic bottles and other items in the background\n- What appears to be a green item at the top\n\nLet me rate this according to the schema:\n\n- recognizability: 4 - The model house is clearly recognizable\n- ambiguity: 2 - It's clearly a model house construction\n- natural_photo_typicality: 3 - It's a real photo but of an unusual subject (a model)\n- visual_clutter: 4 - Lots of wooden sticks and structural elements\n- object_centricity: 3 - The model house is the central object but it's complex\n- scene_centricity: 3 - Could be seen as either object or scene\n- caption_confidence: 4\n\n- estimated_salient_object_count: 2 (model house, cat)\n- estimated_distinct_object_categories: 3 (model house, cat, background items)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: true (cat)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (it's a handmade model)\n- contains_occlusion_or_truncation: true (some elements are cut off)\n- contains_unusual_viewpoint: true (overhead angle)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the model house)\n- image_style: \"natural_photo\"\n- semantic_domain: \"model/craft\" or \"house\"\n\nshort_caption: \"Handmade wooden stick model house with a black cat on the staircase\"\n\nmain_objects: [\"model house\", \"wooden sticks\", \"staircase\", \"black cat\"]\n\npossible_interpretations: [\"Handmade model house from wooden sticks\", \"Architectural model\", \"Children's craft project\", \"Miniature dollhouse construction\"]\n\nuncertainty_notes: \"Scale of the model is unclear - could be small miniature or life-sized detailed structure. Exact purpose unclear.\"\n\nquality_flags: [\"overhead angle\", \"complex structure\", \"mixed lighting\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be a detailed model or miniature house/building structure made from wooden sticks (possibly popsicle sticks or similar). It's an elaborate construction with multiple rooms, walls, windows, doors, and even a staircase. There's also what appears to be a black cat sitting on or near the staircase.\n\nThe structure looks like an indoor model/craft project. I can see:\n- Multiple rooms/walls made of light wood sticks\n- Window frames and door frames\n- A staircase on the right side\n- A black cat near the bottom right\n- Some plastic bottles and other items in the background\n- What appears to be a green item at the top\n\nLet me rate this according to the schema:\n\n- recognizability: 4 - The model house is clearly recognizable\n- ambiguity: 2 - It's clearly a model house construction\n- natural_photo_typicality: 3 - It's a real photo but of an unusual subject (a model)\n- visual_clutter: 4 - Lots of wooden sticks and structural elements\n- object_centricity: 3 - The model house is the central object but it's complex\n- scene_centricity: 3 - Could be seen as either object or scene\n- caption_confidence: 4\n\n- estimated_salient_object_count: 2 (model house, cat)\n- estimated_distinct_object_categories: 3 (model house, cat, background items)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: true (cat)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: true (it's a handmade model)\n- contains_occlusion_or_truncation: true (some elements are cut off)\n- contains_unusual_viewpoint: true (overhead angle)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the model house)\n- image_style: \"natural_photo\"\n- semantic_domain: \"model/craft\" or \"house\"\n\nshort_caption: \"Handmade wooden stick model house with a black cat on the staircase\"\n\nmain_objects: [\"model house\", \"wooden sticks\", \"staircase\", \"black cat\"]\n\npossible_interpretations: [\"Handmade model house from wooden sticks\", \"Architectural model\", \"Children's craft project\", \"Miniature dollhouse construction\"]\n\nuncertainty_notes: \"Scale of the model is unclear - could be small miniature or life-sized detailed structure. Exact purpose unclear.\"\n\nquality_flags: [\"overhead angle\", \"complex structure\", \"mixed lighting\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1414,
+          "completion_tokens": 856,
+          "total_tokens": 2270,
+          "cost": 0.00130116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00130116,
+            "upstream_inference_prompt_cost": 0.00027396,
+            "upstream_inference_completions_cost": 0.0010272
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 640,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

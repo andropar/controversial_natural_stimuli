@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_14",
+    "stim_key": "all_models_14",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 14,
+    "file_index": 14,
+    "image_name": "image_0014.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0014.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"text_document\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"event signage\",\n\n  \"short_caption\": \"VeganMoi Summer Festival banner with peace sign hand, building and trees behind\",\n  \"main_objects\": [\"banner\", \"text\", \"hand\", \"skyscraper\", \"palm trees\"],\n  \"possible_interpretations\": [\"vegan summer festival banner\", \"promotional event sign with reflection\", \"outdoor festival advertisement\"],\n  \"uncertainty_notes\": \"Text is truncated on the right ('VEGANMO' likely 'VEGANMOI' or similar). Building and trees seen through translucent banner material.\",\n  \"quality_flags\": [\"text_truncated\", \"partial_hand_visible\", \"translucent_overlay\"]\n}",
+      "response": {
+        "id": "gen-1780318166-LWu1DQ1d53pmOwlZgJRi",
+        "object": "chat.completion",
+        "created": 1780318166,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"text_document\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"event signage\",\n\n  \"short_caption\": \"VeganMoi Summer Festival banner with peace sign hand, building and trees behind\",\n  \"main_objects\": [\"banner\", \"text\", \"hand\", \"skyscraper\", \"palm trees\"],\n  \"possible_interpretations\": [\"vegan summer festival banner\", \"promotional event sign with reflection\", \"outdoor festival advertisement\"],\n  \"uncertainty_notes\": \"Text is truncated on the right ('VEGANMO' likely 'VEGANMOI' or similar). Building and trees seen through translucent banner material.\",\n  \"quality_flags\": [\"text_truncated\", \"partial_hand_visible\", \"translucent_overlay\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a banner or sign for \"VEGANMO SUMMER FES\" (VeganMoi Summer Festival or similar). There's a green \"V\" logo on the left, and the text appears to be cut off on the right side. The banner has a light blue background with sunburst rays. Behind/through the banner, I can see what appears to be a tall building (skyscraper) and some palm trees reflected or visible through the translucent material. There's also a hand visible on the left making a peace/V sign.\n\nLet me annotate this according to the schema:\n\n- Recognizability: The text is partially cut off but recognizable as a vegan festival banner. 3-4\n- Ambiguity: Low - it's clearly a festival banner. 2\n- Natural photo typicality: It's a photo of a banner, somewhat typical. 3\n- Visual clutter: Moderate - banner, text, building, trees, hand. 3\n- Object centricity: The banner is central. 3\n- Scene centricity: It's more of an object (banner) than a scene. 2\n- Caption confidence: High - I can describe what's visible. 4\n\nSalient objects: banner, hand, building reflection\nDistinct categories: ~4 (banner/sign, person/hand, building, trees)\n\nContains person: yes (hand)\nContains face: no\nContains animal: no\nContains text: yes (\"VEGANMO SUMMER FES\")\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes (building/trees visible)\nContains artificial content: yes (the banner is artificial/designed)\nContains occlusion/truncation: yes (text is cut off, hand is partially cut)\nContains unusual viewpoint: no\nContains multiple main objects: somewhat - banner is main\n\nDominant content: text_document (it's a banner/sign with text)\nImage style: natural_photo (photo of a physical banner)\nSemantic domain: event/festival\n\nCaption: \"Banner for VeganMoi Summer Festival with peace sign hand, building visible behind\"\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a banner or sign for \"VEGANMO SUMMER FES\" (VeganMoi Summer Festival or similar). There's a green \"V\" logo on the left, and the text appears to be cut off on the right side. The banner has a light blue background with sunburst rays. Behind/through the banner, I can see what appears to be a tall building (skyscraper) and some palm trees reflected or visible through the translucent material. There's also a hand visible on the left making a peace/V sign.\n\nLet me annotate this according to the schema:\n\n- Recognizability: The text is partially cut off but recognizable as a vegan festival banner. 3-4\n- Ambiguity: Low - it's clearly a festival banner. 2\n- Natural photo typicality: It's a photo of a banner, somewhat typical. 3\n- Visual clutter: Moderate - banner, text, building, trees, hand. 3\n- Object centricity: The banner is central. 3\n- Scene centricity: It's more of an object (banner) than a scene. 2\n- Caption confidence: High - I can describe what's visible. 4\n\nSalient objects: banner, hand, building reflection\nDistinct categories: ~4 (banner/sign, person/hand, building, trees)\n\nContains person: yes (hand)\nContains face: no\nContains animal: no\nContains text: yes (\"VEGANMO SUMMER FES\")\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes (building/trees visible)\nContains artificial content: yes (the banner is artificial/designed)\nContains occlusion/truncation: yes (text is cut off, hand is partially cut)\nContains unusual viewpoint: no\nContains multiple main objects: somewhat - banner is main\n\nDominant content: text_document (it's a banner/sign with text)\nImage style: natural_photo (photo of a physical banner)\nSemantic domain: event/festival\n\nCaption: \"Banner for VeganMoi Summer Festival with peace sign hand, building visible behind\"\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1267,
+          "completion_tokens": 813,
+          "total_tokens": 2080,
+          "cost": 0.00132834,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00132834,
+            "upstream_inference_prompt_cost": 0.00035274,
+            "upstream_inference_completions_cost": 0.0009756
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 495,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_18",
+    "stim_key": "all_models_18",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 18,
+    "file_index": 18,
+    "image_name": "image_0018.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0018.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\":4,\"ambiguity\":1,\"natural_photo_typicality\":5,\"visual_clutter\":3,\"object_centricity\":3,\"scene_centricity\":4,\"caption_confidence\":4,\"estimated_salient_object_count\":3,\"estimated_distinct_object_categories\":3,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":false,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":false,\"contains_outdoor_scene\":true,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":false,\"contains_unusual_viewpoint\":false,\"contains_multiple_main_objects\":true,\"dominant_content_type\":\"object\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"outdoor_nature\",\"short_caption\":\"A cylindrical bird feeder hangs from a hook during snowfall with trees in the background.\",\"main_objects\":[\"bird feeder\",\"metal hook\",\"trees\",\"wooden structure\"],\"possible_interpretations\":[\"A bird feeder during a snowstorm\",\"A winter backyard scene with bird feeding station\",\"An outdoor garden in snowy weather\"],\"uncertainty_notes\":\"Weather conditions may be active snowfall or recent snow; bird species/type of feeder design could vary. No birds are currently visible.\",\"quality_flags\":[\"low contrast due to snow\"]}",
+      "response": {
+        "id": "gen-1780318741-0V2BD1oVX0NiH24HmIqt",
+        "object": "chat.completion",
+        "created": 1780318741,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\":4,\"ambiguity\":1,\"natural_photo_typicality\":5,\"visual_clutter\":3,\"object_centricity\":3,\"scene_centricity\":4,\"caption_confidence\":4,\"estimated_salient_object_count\":3,\"estimated_distinct_object_categories\":3,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":false,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":false,\"contains_outdoor_scene\":true,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":false,\"contains_unusual_viewpoint\":false,\"contains_multiple_main_objects\":true,\"dominant_content_type\":\"object\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"outdoor_nature\",\"short_caption\":\"A cylindrical bird feeder hangs from a hook during snowfall with trees in the background.\",\"main_objects\":[\"bird feeder\",\"metal hook\",\"trees\",\"wooden structure\"],\"possible_interpretations\":[\"A bird feeder during a snowstorm\",\"A winter backyard scene with bird feeding station\",\"An outdoor garden in snowy weather\"],\"uncertainty_notes\":\"Weather conditions may be active snowfall or recent snow; bird species/type of feeder design could vary. No birds are currently visible.\",\"quality_flags\":[\"low contrast due to snow\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a bird feeder hanging from a metal hook/bracket in a snowy outdoor setting. The bird feeder is cylindrical, mostly clear/white with green caps on top and bottom, and contains bird seed. The background shows trees (appearing to be coniferous or possibly deciduous with some yellow/brown leaves remaining) with snow falling or on the branches. The scene appears to be during a snowstorm or snowfall. There's also what appears to be a wooden structure (possibly a birdhouse or feeder stand) in the lower right corner.\n\nLet me rate the various aspects:\n\n- recognizability: The main content (bird feeder in snow) is fairly clear, maybe 4\n- ambiguity: Pretty straightforward scene, low ambiguity, 1\n- natural_photo_typicality: Looks like a typical natural photograph, 5\n- visual_clutter: Many branches and details, moderate to high clutter, 3-4\n- object_centricity: The bird feeder is the central object, 4\n- scene_centricity: The scene (snowy outdoor) is also prominent, 3-4\n- caption_confidence: Pretty confident about what's shown, 4\n\nFor the boolean fields:\n- contains_person: false\n- contains_face: false\n- contains_animal: false (no birds visible)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: contains bird seed, so maybe true, but it's bird food not human food. I'll say false since it's bird food.\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (feeder, trees, wooden structure)\n\nMain objects: bird feeder, trees, hook/bracket, wooden structure\n\nShort caption: \"A cylindrical bird feeder hanging from a hook during a snowy day\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a bird feeder hanging from a metal hook/bracket in a snowy outdoor setting. The bird feeder is cylindrical, mostly clear/white with green caps on top and bottom, and contains bird seed. The background shows trees (appearing to be coniferous or possibly deciduous with some yellow/brown leaves remaining) with snow falling or on the branches. The scene appears to be during a snowstorm or snowfall. There's also what appears to be a wooden structure (possibly a birdhouse or feeder stand) in the lower right corner.\n\nLet me rate the various aspects:\n\n- recognizability: The main content (bird feeder in snow) is fairly clear, maybe 4\n- ambiguity: Pretty straightforward scene, low ambiguity, 1\n- natural_photo_typicality: Looks like a typical natural photograph, 5\n- visual_clutter: Many branches and details, moderate to high clutter, 3-4\n- object_centricity: The bird feeder is the central object, 4\n- scene_centricity: The scene (snowy outdoor) is also prominent, 3-4\n- caption_confidence: Pretty confident about what's shown, 4\n\nFor the boolean fields:\n- contains_person: false\n- contains_face: false\n- contains_animal: false (no birds visible)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: contains bird seed, so maybe true, but it's bird food not human food. I'll say false since it's bird food.\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (feeder, trees, wooden structure)\n\nMain objects: bird feeder, trees, hook/bracket, wooden structure\n\nShort caption: \"A cylindrical bird feeder hanging from a hook during a snowy day\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 689,
+          "total_tokens": 2211,
+          "cost": 0.00125604,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00125604,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0008268
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 469,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

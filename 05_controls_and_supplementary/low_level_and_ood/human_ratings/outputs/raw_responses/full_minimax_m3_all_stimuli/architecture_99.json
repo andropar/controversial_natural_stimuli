@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_99",
+    "stim_key": "architecture_99",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 99,
+    "file_index": 99,
+    "image_name": "image_0099.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0099.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture_exterior\",\n  \"short_caption\": \"Exterior stone staircase with metal railing leading to a house entrance, bordered by a conifer and leafy shrubs.\",\n  \"main_objects\": [\"staircase\", \"metal railing\", \"potted conifer\", \"leafy shrub\", \"building facade\", \"window flower boxes\"],\n  \"possible_interpretations\": [\"residential building exterior\", \"garden entrance with steps\", \"villa or holiday home facade\"],\n  \"uncertainty_notes\": \"Image carries a faint 123RF stock-photo watermark; lighting appears bright with possible mild overexposure on the white wall.\",\n  \"quality_flags\": [\"stock_watermark\", \"bright_lighting\"]\n}",
+      "response": {
+        "id": "gen-1780318956-hbETtbSpliOMTivL7rGp",
+        "object": "chat.completion",
+        "created": 1780318956,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture_exterior\",\n  \"short_caption\": \"Exterior stone staircase with metal railing leading to a house entrance, bordered by a conifer and leafy shrubs.\",\n  \"main_objects\": [\"staircase\", \"metal railing\", \"potted conifer\", \"leafy shrub\", \"building facade\", \"window flower boxes\"],\n  \"possible_interpretations\": [\"residential building exterior\", \"garden entrance with steps\", \"villa or holiday home facade\"],\n  \"uncertainty_notes\": \"Image carries a faint 123RF stock-photo watermark; lighting appears bright with possible mild overexposure on the white wall.\",\n  \"quality_flags\": [\"stock_watermark\", \"bright_lighting\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows an exterior view of a building with:\n- A staircase/steps leading up to an entrance\n- A metal railing along the stairs\n- A potted plant (looks like a conifer/cypress) on a landing\n- Large green leafy plants/bushes on the right side\n- Windows with flower boxes containing pink/red flowers\n- A light-colored building facade (white/cream)\n- Stone-clad lower wall section\n- The image has a watermark \"123RF\" indicating it's a stock photo\n\nLet me assess each dimension:\n\n- Recognizability: Clear scene, easily recognizable. 4-5\n- Ambiguity: Low ambiguity, clearly a building exterior with stairs. 1\n- Natural photo typicality: Looks like a natural photo, stock photo watermark but otherwise natural. 4\n- Visual clutter: Moderate - several elements (stairs, railing, plants, windows, flowers). 3\n- Object centricity: No single central object, more of a scene. 2\n- Scene centricity: Yes, this is primarily a place/scene. 5\n- Caption confidence: High, easy to caption. 5\n\nObject counts:\n- Salient objects: stairs, railing, potted conifer, large bush, building, windows, flowers\n- Distinct categories: stairs/architecture, plants, building features - about 3-4\n\nContains flags:\n- No person, face, animal, text (watermark is on image but small), vehicle, food\n- Indoor: no (exterior)\n- Outdoor: yes\n- Artificial: no (except watermark which is meta)\n- Occlusion: no\n- Unusual viewpoint: no, fairly standard\n- Multiple main objects: somewhat, the stairs and plants are both prominent\n\nDominant content: scene\nImage style: natural_photo (stock photo)\nSemantic domain: architecture/exterior\n\nShort caption: \"Exterior staircase with metal railing leading to a building entrance, surrounded by green plants and flowering window boxes.\"\n\nMain objects: stairs, railing, potted conifer, large bush, building facade, windows, flowers\n\nPossible interpretations: building entrance, garden staircase, residential exterior\n\nUncertainty: watermark visible, stock photo nature\n\nQuality flags: stock_watermark, well_lit",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows an exterior view of a building with:\n- A staircase/steps leading up to an entrance\n- A metal railing along the stairs\n- A potted plant (looks like a conifer/cypress) on a landing\n- Large green leafy plants/bushes on the right side\n- Windows with flower boxes containing pink/red flowers\n- A light-colored building facade (white/cream)\n- Stone-clad lower wall section\n- The image has a watermark \"123RF\" indicating it's a stock photo\n\nLet me assess each dimension:\n\n- Recognizability: Clear scene, easily recognizable. 4-5\n- Ambiguity: Low ambiguity, clearly a building exterior with stairs. 1\n- Natural photo typicality: Looks like a natural photo, stock photo watermark but otherwise natural. 4\n- Visual clutter: Moderate - several elements (stairs, railing, plants, windows, flowers). 3\n- Object centricity: No single central object, more of a scene. 2\n- Scene centricity: Yes, this is primarily a place/scene. 5\n- Caption confidence: High, easy to caption. 5\n\nObject counts:\n- Salient objects: stairs, railing, potted conifer, large bush, building, windows, flowers\n- Distinct categories: stairs/architecture, plants, building features - about 3-4\n\nContains flags:\n- No person, face, animal, text (watermark is on image but small), vehicle, food\n- Indoor: no (exterior)\n- Outdoor: yes\n- Artificial: no (except watermark which is meta)\n- Occlusion: no\n- Unusual viewpoint: no, fairly standard\n- Multiple main objects: somewhat, the stairs and plants are both prominent\n\nDominant content: scene\nImage style: natural_photo (stock photo)\nSemantic domain: architecture/exterior\n\nShort caption: \"Exterior staircase with metal railing leading to a building entrance, surrounded by green plants and flowering window boxes.\"\n\nMain objects: stairs, railing, potted conifer, large bush, building facade, windows, flowers\n\nPossible interpretations: building entrance, garden staircase, residential exterior\n\nUncertainty: watermark visible, stock photo nature\n\nQuality flags: stock_watermark, well_lit",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 842,
+          "total_tokens": 2364,
+          "cost": 0.00131676,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00131676,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010104
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 543,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

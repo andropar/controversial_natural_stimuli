@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_14",
+    "stim_key": "all_models_14",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 14,
+    "file_index": 14,
+    "image_name": "image_0014.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0014.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"text_document\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"event_promotion\",\n  \"short_caption\": \"A Veganmania Summer Fest banner with peace sign and palm tree reflections on glass.\",\n  \"main_objects\": [\"banner\", \"peace sign hand\", \"text logo\"],\n  \"possible_interpretations\": [\"festival advertisement banner\", \"event poster photographed through window\", \"vegan community event promotion\"],\n  \"uncertainty_notes\": \"Reflection of palm trees and buildings suggests the photo was taken through glass; the hand and person are partially cropped.\",\n  \"quality_flags\": [\"partial occlusion\", \"glass reflection overlay\", \"text partially cut off\"]\n}",
+      "response": {
+        "id": "gen-1780318741-rCnWTl7ZmToelETyJlDM",
+        "object": "chat.completion",
+        "created": 1780318741,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"text_document\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"event_promotion\",\n  \"short_caption\": \"A Veganmania Summer Fest banner with peace sign and palm tree reflections on glass.\",\n  \"main_objects\": [\"banner\", \"peace sign hand\", \"text logo\"],\n  \"possible_interpretations\": [\"festival advertisement banner\", \"event poster photographed through window\", \"vegan community event promotion\"],\n  \"uncertainty_notes\": \"Reflection of palm trees and buildings suggests the photo was taken through glass; the hand and person are partially cropped.\",\n  \"quality_flags\": [\"partial occlusion\", \"glass reflection overlay\", \"text partially cut off\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a banner/poster for \"Veganmania Summer Fest\" with a peace sign hand on the left side. There's a reflection of palm trees and buildings on what appears to be a glass surface, possibly a window. The background is blue with a sunburst pattern.\n\nLet me analyze:\n- It's a photo of a banner/poster with text\n- Contains text \"veganmania\" and \"SUMMER FES\"\n- Contains a person (partial - just a hand making peace sign)\n- Outdoor scene implied by palm tree reflection\n- The image has reflections suggesting it was taken through glass\n\nLet me rate according to the schema.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a banner/poster for \"Veganmania Summer Fest\" with a peace sign hand on the left side. There's a reflection of palm trees and buildings on what appears to be a glass surface, possibly a window. The background is blue with a sunburst pattern.\n\nLet me analyze:\n- It's a photo of a banner/poster with text\n- Contains text \"veganmania\" and \"SUMMER FES\"\n- Contains a person (partial - just a hand making peace sign)\n- Outdoor scene implied by palm tree reflection\n- The image has reflections suggesting it was taken through glass\n\nLet me rate according to the schema.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1267,
+          "completion_tokens": 479,
+          "total_tokens": 1746,
+          "cost": 0.00065418,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1253,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00065418,
+            "upstream_inference_prompt_cost": 7.938e-05,
+            "upstream_inference_completions_cost": 0.0005748
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 151,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_53",
+    "stim_key": "training_objective_53",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 53,
+    "file_index": 53,
+    "image_name": "image_0053.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0053.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"fashion_apparel\",\n  \"short_caption\": \"Person wearing a dark gray graphic t-shirt against a red brick wall\",\n  \"main_objects\": [\"t-shirt\", \"person\", \"brick wall\"],\n  \"possible_interpretations\": [\"product photo of graphic t-shirt\", \"apparel modeling photo\", \"clothing advertisement\", \"casual portrait of person in printed shirt\"],\n  \"uncertainty_notes\": \"Face and head are cropped out; stylized text/graphic on shirt is not clearly legible, appears to be decorative script\",\n  \"quality_flags\": [\"truncated_subject\", \"face_not_visible\", \"staged_product_photo\"]\n}",
+      "response": {
+        "id": "gen-1780319337-2ve6b9QEtRRyzezgKnCg",
+        "object": "chat.completion",
+        "created": 1780319337,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"fashion_apparel\",\n  \"short_caption\": \"Person wearing a dark gray graphic t-shirt against a red brick wall\",\n  \"main_objects\": [\"t-shirt\", \"person\", \"brick wall\"],\n  \"possible_interpretations\": [\"product photo of graphic t-shirt\", \"apparel modeling photo\", \"clothing advertisement\", \"casual portrait of person in printed shirt\"],\n  \"uncertainty_notes\": \"Face and head are cropped out; stylized text/graphic on shirt is not clearly legible, appears to be decorative script\",\n  \"quality_flags\": [\"truncated_subject\", \"face_not_visible\", \"staged_product_photo\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a person wearing a dark gray/charcoal t-shirt with white graphic text and design on the chest. The person is shown from the neck down to the upper thighs/waist area. The background is a red brick wall. The t-shirt has a design that appears to read something like \"ciycie\" or similar stylized text with decorative elements.\n\nKey observations:\n- Person visible (head cut off, so face not visible)\n- Dark gray t-shirt with white graphic/text design\n- Red brick wall background\n- The text on the shirt is in what appears to be Arabic or stylized script\n- It's a product-style photo, likely for selling the t-shirt\n\nLet me rate the dimensions:\n- recognizability: 4 - clearly shows a person wearing a graphic t-shirt\n- ambiguity: 2 - pretty clear what's shown\n- natural_photo_typicality: 3 - looks like a product photo, somewhat staged but still natural\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 3 - the t-shirt is the main focus\n- scene_centricity: 2 - more about the object (shirt) than the scene\n- caption_confidence: 4 - easy to caption\n\nCounts:\n- estimated_salient_object_count: 2 (person, t-shirt with design)\n- estimated_distinct_object_categories: 2 (person, clothing)\n\nFlags:\n- contains_person: true (torso visible)\n- contains_face: false (face is cut off)\n- contains_animal: false\n- contains_text: true (graphic text on shirt)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: false (brick wall could be either, looks like a product photo backdrop)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (head/face is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\nDominant content type: object (the t-shirt)\nImage style: natural_photo (though could be edited/posed for product)\nSemantic domain: fashion/apparel\n\nShort caption: \"Person wearing a dark gray graphic t-shirt against a brick wall\"\nMain objects: [\"t-shirt\", \"person\", \"brick wall\"]\nPossible interpretations: [\"product photo of t-shirt\", \"person modeling clothing\", \"apparel advertisement\"]\nUncertainty notes: \"Face is not visible; text on shirt is stylized/unclear in script\"\nQuality flags: [\"face_not_visible\", \"truncated_subject\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a person wearing a dark gray/charcoal t-shirt with white graphic text and design on the chest. The person is shown from the neck down to the upper thighs/waist area. The background is a red brick wall. The t-shirt has a design that appears to read something like \"ciycie\" or similar stylized text with decorative elements.\n\nKey observations:\n- Person visible (head cut off, so face not visible)\n- Dark gray t-shirt with white graphic/text design\n- Red brick wall background\n- The text on the shirt is in what appears to be Arabic or stylized script\n- It's a product-style photo, likely for selling the t-shirt\n\nLet me rate the dimensions:\n- recognizability: 4 - clearly shows a person wearing a graphic t-shirt\n- ambiguity: 2 - pretty clear what's shown\n- natural_photo_typicality: 3 - looks like a product photo, somewhat staged but still natural\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 3 - the t-shirt is the main focus\n- scene_centricity: 2 - more about the object (shirt) than the scene\n- caption_confidence: 4 - easy to caption\n\nCounts:\n- estimated_salient_object_count: 2 (person, t-shirt with design)\n- estimated_distinct_object_categories: 2 (person, clothing)\n\nFlags:\n- contains_person: true (torso visible)\n- contains_face: false (face is cut off)\n- contains_animal: false\n- contains_text: true (graphic text on shirt)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: false (brick wall could be either, looks like a product photo backdrop)\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (head/face is cut off)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\nDominant content type: object (the t-shirt)\nImage style: natural_photo (though could be edited/posed for product)\nSemantic domain: fashion/apparel\n\nShort caption: \"Person wearing a dark gray graphic t-shirt against a brick wall\"\nMain objects: [\"t-shirt\", \"person\", \"brick wall\"]\nPossible interpretations: [\"product photo of t-shirt\", \"person modeling clothing\", \"apparel advertisement\"]\nUncertainty notes: \"Face is not visible; text on shirt is stylized/unclear in script\"\nQuality flags: [\"face_not_visible\", \"truncated_subject\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 907,
+          "total_tokens": 2429,
+          "cost": 0.00139476,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139476,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010884
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 613,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

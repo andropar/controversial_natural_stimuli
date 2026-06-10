@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_113",
+    "stim_key": "vicco_113",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 113,
+    "file_index": 112,
+    "image_name": "shared_4rep_vicco_113.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_113.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 0,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture/interior\",\n  \"short_caption\": \"Empty modern corridor with colored LED lights along dark paneled walls\",\n  \"main_objects\": [\"corridor\", \"LED lights\", \"walls\", \"ceiling lighting\"],\n  \"possible_interpretations\": [\"modern art gallery hallway\", \"museum exhibition corridor\", \"contemporary office corridor\", \"architectural installation space\", \"unfinished or under-construction corridor\"],\n  \"uncertainty_notes\": \"Exact purpose of the space is unclear; the colored LEDs and dark panels suggest a designed or installation-like interior.\",\n  \"quality_flags\": [\"low_light\", \"dark_shadow_areas\"]\n}",
+      "response": {
+        "id": "gen-1780319520-1tNHVfl48wt7nitUAViM",
+        "object": "chat.completion",
+        "created": 1780319520,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 0,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture/interior\",\n  \"short_caption\": \"Empty modern corridor with colored LED lights along dark paneled walls\",\n  \"main_objects\": [\"corridor\", \"LED lights\", \"walls\", \"ceiling lighting\"],\n  \"possible_interpretations\": [\"modern art gallery hallway\", \"museum exhibition corridor\", \"contemporary office corridor\", \"architectural installation space\", \"unfinished or under-construction corridor\"],\n  \"uncertainty_notes\": \"Exact purpose of the space is unclear; the colored LEDs and dark panels suggest a designed or installation-like interior.\",\n  \"quality_flags\": [\"low_light\", \"dark_shadow_areas\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a long, empty corridor or hallway with dark walls on the left (appearing to have panels or doors) and a lighter wall on the right. The floor is light-colored/white. There are colored LED lights (blue, green, and white) embedded in or along the walls/ceiling, creating a modern, almost futuristic atmosphere. The ceiling has linear lighting strips. The space appears to be indoor, possibly a museum, gallery, or modern architectural space.\n\nLet me analyze each attribute:\n\n- Recognizability: The image clearly shows an empty hallway/corridor. 5\n- Ambiguity: While it's clearly a corridor, the exact purpose (museum, office, art installation) is somewhat ambiguous. 2-3\n- Natural photo typicality: It looks like a real photograph, though the LED lighting gives it an artistic quality. 4\n- Visual clutter: Very minimal clutter, mostly empty space. 1-2\n- Object centricity: No central object, it's a scene. 1\n- Scene centricity: Very much a scene/place. 5\n- Caption confidence: Easy to caption as a hallway/corridor. 5\n\n- Salient objects: No distinct objects, just the corridor structure\n- Object categories: 1 (the corridor itself)\n\n- Contains person: No\n- Contains face: No\n- Contains animal: No\n- Contains text: No\n- Contains vehicle: No\n- Contains food: No\n- Contains indoor scene: Yes\n- Contains outdoor scene: No\n- Contains artificial/rendered content: Could be a real photo, doesn't appear rendered. No.\n- Contains occlusion/truncation: No\n- Contains unusual viewpoint: The low angle and linear perspective are somewhat distinctive but not highly unusual. 2\n- Contains multiple main objects: No\n\n- Dominant content: scene\n- Image style: natural_photo\n- Semantic domain: architecture/interior\n\nShort caption: \"Empty modern corridor with colored LED lights along dark walls\"\n\nPossible interpretations: modern art gallery, museum hallway, office corridor, exhibition space, architectural space\n\nUncertainty notes: exact purpose of the space is unclear\n\nQuality flags: low light, possibly slight underexposure in dark areas",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a long, empty corridor or hallway with dark walls on the left (appearing to have panels or doors) and a lighter wall on the right. The floor is light-colored/white. There are colored LED lights (blue, green, and white) embedded in or along the walls/ceiling, creating a modern, almost futuristic atmosphere. The ceiling has linear lighting strips. The space appears to be indoor, possibly a museum, gallery, or modern architectural space.\n\nLet me analyze each attribute:\n\n- Recognizability: The image clearly shows an empty hallway/corridor. 5\n- Ambiguity: While it's clearly a corridor, the exact purpose (museum, office, art installation) is somewhat ambiguous. 2-3\n- Natural photo typicality: It looks like a real photograph, though the LED lighting gives it an artistic quality. 4\n- Visual clutter: Very minimal clutter, mostly empty space. 1-2\n- Object centricity: No central object, it's a scene. 1\n- Scene centricity: Very much a scene/place. 5\n- Caption confidence: Easy to caption as a hallway/corridor. 5\n\n- Salient objects: No distinct objects, just the corridor structure\n- Object categories: 1 (the corridor itself)\n\n- Contains person: No\n- Contains face: No\n- Contains animal: No\n- Contains text: No\n- Contains vehicle: No\n- Contains food: No\n- Contains indoor scene: Yes\n- Contains outdoor scene: No\n- Contains artificial/rendered content: Could be a real photo, doesn't appear rendered. No.\n- Contains occlusion/truncation: No\n- Contains unusual viewpoint: The low angle and linear perspective are somewhat distinctive but not highly unusual. 2\n- Contains multiple main objects: No\n\n- Dominant content: scene\n- Image style: natural_photo\n- Semantic domain: architecture/interior\n\nShort caption: \"Empty modern corridor with colored LED lights along dark walls\"\n\nPossible interpretations: modern art gallery, museum hallway, office corridor, exhibition space, architectural space\n\nUncertainty notes: exact purpose of the space is unclear\n\nQuality flags: low light, possibly slight underexposure in dark areas",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 814,
+          "total_tokens": 2336,
+          "cost": 0.00128316,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00128316,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009768
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 538,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

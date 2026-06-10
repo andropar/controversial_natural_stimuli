@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_64",
+    "stim_key": "dataset_64",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 64,
+    "file_index": 64,
+    "image_name": "image_0064.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0064.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture/interior\",\n  \"short_caption\": \"Modern floating wooden staircase viewed from below in a minimalist interior\",\n  \"main_objects\": [\"wooden staircase\", \"glass railing\", \"wooden steps\"],\n  \"possible_interpretations\": [\"a modern floating staircase\", \"cantilevered wooden stairs\", \"architectural interior detail\"],\n  \"uncertainty_notes\": \"Minimal ambiguity; a clear architectural photograph.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319036-WBObI4MFP4FZAWncDgW6",
+        "object": "chat.completion",
+        "created": 1780319036,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"architecture/interior\",\n  \"short_caption\": \"Modern floating wooden staircase viewed from below in a minimalist interior\",\n  \"main_objects\": [\"wooden staircase\", \"glass railing\", \"wooden steps\"],\n  \"possible_interpretations\": [\"a modern floating staircase\", \"cantilevered wooden stairs\", \"architectural interior detail\"],\n  \"uncertainty_notes\": \"Minimal ambiguity; a clear architectural photograph.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a modern wooden staircase, likely a floating or cantilevered design, with thick wooden steps that appear to project from a wall. The steps are made of rich, dark wood with visible grain. There's a glass panel/railing on the right side, and the setting appears to be an indoor space with white walls. Through a window or opening on the right, there seems to be a stone wall visible outside.\n\nLet me annotate this:\n\n- Recognizability: Clear, a wooden staircase is easily recognizable. 5\n- Ambiguity: Low, clearly a staircase. 1\n- Natural_photo_typicality: This looks like a natural photograph of architecture. 5\n- Visual_clutter: Minimal, fairly clean composition. 2\n- Object_centricity: The staircase is the main subject. 4\n- Scene_centricity: It's also showing a scene/space. 3\n- Caption_confidence: High, easy to caption. 5\n\n- Salient object count: 1 main object (staircase)\n- Distinct categories: 1 (staircase), maybe 2 if counting the window/wall\n\n- Person: no\n- Face: no\n- Animal: no\n- Text: no\n- Vehicle: no\n- Food: no\n- Indoor: yes\n- Outdoor: no (though there's a glimpse outside)\n- Artificial/rendered: no\n- Occlusion/truncation: no\n- Unusual viewpoint: somewhat, low angle looking up at stairs. Maybe yes.\n- Multiple main objects: no\n\n- Dominant content type: object (staircase)\n- Image style: natural_photo\n- Semantic domain: architecture/interior design\n\nCaption: \"Modern wooden floating staircase in minimalist interior\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a modern wooden staircase, likely a floating or cantilevered design, with thick wooden steps that appear to project from a wall. The steps are made of rich, dark wood with visible grain. There's a glass panel/railing on the right side, and the setting appears to be an indoor space with white walls. Through a window or opening on the right, there seems to be a stone wall visible outside.\n\nLet me annotate this:\n\n- Recognizability: Clear, a wooden staircase is easily recognizable. 5\n- Ambiguity: Low, clearly a staircase. 1\n- Natural_photo_typicality: This looks like a natural photograph of architecture. 5\n- Visual_clutter: Minimal, fairly clean composition. 2\n- Object_centricity: The staircase is the main subject. 4\n- Scene_centricity: It's also showing a scene/space. 3\n- Caption_confidence: High, easy to caption. 5\n\n- Salient object count: 1 main object (staircase)\n- Distinct categories: 1 (staircase), maybe 2 if counting the window/wall\n\n- Person: no\n- Face: no\n- Animal: no\n- Text: no\n- Vehicle: no\n- Food: no\n- Indoor: yes\n- Outdoor: no (though there's a glimpse outside)\n- Artificial/rendered: no\n- Occlusion/truncation: no\n- Unusual viewpoint: somewhat, low angle looking up at stairs. Maybe yes.\n- Multiple main objects: no\n\n- Dominant content type: object (staircase)\n- Image style: natural_photo\n- Semantic domain: architecture/interior design\n\nCaption: \"Modern wooden floating staircase in minimalist interior\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 680,
+          "total_tokens": 2202,
+          "cost": 0.00124524,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00124524,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.000816
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 386,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

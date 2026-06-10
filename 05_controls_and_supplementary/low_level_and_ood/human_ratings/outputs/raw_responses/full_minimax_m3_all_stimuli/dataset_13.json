@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_13",
+    "stim_key": "dataset_13",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 13,
+    "file_index": 13,
+    "image_name": "image_0013.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0013.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wedding/lifestyle\",\n  \"short_caption\": \"A white wedding dress hangs on a white door within a red brick archway, with a black dog in front.\",\n  \"main_objects\": [\"wedding dress\", \"wooden hanger\", \"white door\", \"red brick arch\", \"black dog\", \"wall lantern\", \"decorative monogram\"],\n  \"possible_interpretations\": [\"wedding preparation photo at a home or venue\", \"staged bridal portrait\", \"lifestyle photography of a wedding day\", \"real estate or venue photograph featuring a dress\"],\n  \"uncertainty_notes\": \"Small monogram/letter at the top of the arch is not fully legible; dog's owner is unseen.\",\n  \"quality_flags\": [\"dog partially truncated at bottom of frame\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318977-wo3nbenk95nkIrKlifWT",
+        "object": "chat.completion",
+        "created": 1780318977,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wedding/lifestyle\",\n  \"short_caption\": \"A white wedding dress hangs on a white door within a red brick archway, with a black dog in front.\",\n  \"main_objects\": [\"wedding dress\", \"wooden hanger\", \"white door\", \"red brick arch\", \"black dog\", \"wall lantern\", \"decorative monogram\"],\n  \"possible_interpretations\": [\"wedding preparation photo at a home or venue\", \"staged bridal portrait\", \"lifestyle photography of a wedding day\", \"real estate or venue photograph featuring a dress\"],\n  \"uncertainty_notes\": \"Small monogram/letter at the top of the arch is not fully legible; dog's owner is unseen.\",\n  \"quality_flags\": [\"dog partially truncated at bottom of frame\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- A white wedding dress hanging on a wooden hanger from what appears to be a white door or window\n- The door is set within a red brick archway\n- There's a black dog (appears to be a Labrador) standing in front, with an orange collar\n- A black lantern/light fixture on the right side of the brick arch\n- A small decorative element at the top of the arch (looks like a monogram or letter)\n- Green trim/woodwork along the roof line\n- Stone/brick walls\n\nLet me rate the attributes:\n\n- recognizability: 5 - Very clear, easily recognized as a wedding dress and dog\n- ambiguity: 1 - Very clear what's happening\n- natural_photo_typicality: 5 - Looks like a typical photograph\n- visual_clutter: 3 - Multiple elements (dress, dog, door, brick, lantern) but organized\n- object_centricity: 3 - The dress is central but the dog and architecture are also prominent\n- scene_centricity: 4 - The setting/architecture is quite prominent\n- caption_confidence: 5 - Very confident about captioning\n\nObjects: wedding dress, dog, door, brick arch, lantern, hanger\nAnimal: yes (dog)\nPerson: no\nFace: no\nText: possibly (small monogram/letter at top)\nVehicle: no\nFood: no\nIndoor/outdoor: outdoor\nArtificial: no\nOcclusion: the dog is partially cut off at the bottom\n\nDominant content: object (the dress) or mixed\nStyle: natural_photo\nSemantic domain: wedding, lifestyle, architecture\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- A white wedding dress hanging on a wooden hanger from what appears to be a white door or window\n- The door is set within a red brick archway\n- There's a black dog (appears to be a Labrador) standing in front, with an orange collar\n- A black lantern/light fixture on the right side of the brick arch\n- A small decorative element at the top of the arch (looks like a monogram or letter)\n- Green trim/woodwork along the roof line\n- Stone/brick walls\n\nLet me rate the attributes:\n\n- recognizability: 5 - Very clear, easily recognized as a wedding dress and dog\n- ambiguity: 1 - Very clear what's happening\n- natural_photo_typicality: 5 - Looks like a typical photograph\n- visual_clutter: 3 - Multiple elements (dress, dog, door, brick, lantern) but organized\n- object_centricity: 3 - The dress is central but the dog and architecture are also prominent\n- scene_centricity: 4 - The setting/architecture is quite prominent\n- caption_confidence: 5 - Very confident about captioning\n\nObjects: wedding dress, dog, door, brick arch, lantern, hanger\nAnimal: yes (dog)\nPerson: no\nFace: no\nText: possibly (small monogram/letter at top)\nVehicle: no\nFood: no\nIndoor/outdoor: outdoor\nArtificial: no\nOcclusion: the dog is partially cut off at the bottom\n\nDominant content: object (the dress) or mixed\nStyle: natural_photo\nSemantic domain: wedding, lifestyle, architecture\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 744,
+          "total_tokens": 2058,
+          "cost": 0.00125964,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00125964,
+            "upstream_inference_prompt_cost": 0.00036684,
+            "upstream_inference_completions_cost": 0.0008928
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 385,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

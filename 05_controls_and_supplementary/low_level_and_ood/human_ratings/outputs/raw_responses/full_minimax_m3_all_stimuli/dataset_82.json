@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_82",
+    "stim_key": "dataset_82",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 82,
+    "file_index": 82,
+    "image_name": "image_0082.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0082.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: Unexpected message content type: NoneType"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife\",\n  \"short_caption\": \"Spotted pardalote perched on a slender branch among narrow green leaves\",\n  \"main_objects\": [\"spotted pardalote\", \"branch\", \"narrow leaves\"],\n  \"possible_interpretations\": [\"Spotted pardalote on branch\", \"Small passerine bird in shrub\", \"Wildlife photograph of an Australian native bird\"],\n  \"uncertainty_notes\": \"Species identification as Spotted Pardalote is probable based on plumage but not definitive without expert verification\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319176-z1j6AXRxiDjMP4bstayQ",
+        "object": "chat.completion",
+        "created": 1780319176,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"animal\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wildlife\",\n  \"short_caption\": \"Spotted pardalote perched on a slender branch among narrow green leaves\",\n  \"main_objects\": [\"spotted pardalote\", \"branch\", \"narrow leaves\"],\n  \"possible_interpretations\": [\"Spotted pardalote on branch\", \"Small passerine bird in shrub\", \"Wildlife photograph of an Australian native bird\"],\n  \"uncertainty_notes\": \"Species identification as Spotted Pardalote is probable based on plumage but not definitive without expert verification\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a small bird, likely a Spotted Pardalote (a species native to Australia), perched on a thin branch with green narrow leaves. The bird has distinctive markings: a black and white spotted/spangled head pattern, a yellow throat and undertail, and an orange/rust colored belly. It's clearly the main subject of the image.\n\nLet me analyze the schema fields:\n\n- recognizability: 5 - The bird is clearly visible and recognizable\n- ambiguity: 1 - Very clear what the image shows\n- natural_photo_typicality: 5 - Looks like a typical wildlife/bird photograph\n- visual_clutter: 2 - Some branches and leaves but the bird stands out clearly\n- object_centricity: 5 - The bird is the clear central object\n- scene_centricity: 1 - Not primarily a scene\n- caption_confidence: 5 - Easy to caption confidently\n\n- estimated_salient_object_count: 1 (the bird)\n- estimated_distinct_object_categories: 2 (bird, plant/branch)\n\n- contains_person: false\n- contains_face: false (bird face, not human)\n- contains_animal: true (bird)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"animal\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"wildlife\" or \"bird\"\n\n- short_caption: \"Spotted pardalote perched on a slender branch with green leaves\"\n- main_objects: [\"spotted pardalote\", \"branch\", \"leaves\"]\n- possible_interpretations: [\"Spotted pardalote on branch\", \"Small bird in shrub\"]\n- uncertainty_notes: \"Specific species identification (Spotted Pardalote) is probable but not 100% certain without expert knowledge\"\n- quality_flags: []\n\nLet me format this as valid JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a small bird, likely a Spotted Pardalote (a species native to Australia), perched on a thin branch with green narrow leaves. The bird has distinctive markings: a black and white spotted/spangled head pattern, a yellow throat and undertail, and an orange/rust colored belly. It's clearly the main subject of the image.\n\nLet me analyze the schema fields:\n\n- recognizability: 5 - The bird is clearly visible and recognizable\n- ambiguity: 1 - Very clear what the image shows\n- natural_photo_typicality: 5 - Looks like a typical wildlife/bird photograph\n- visual_clutter: 2 - Some branches and leaves but the bird stands out clearly\n- object_centricity: 5 - The bird is the clear central object\n- scene_centricity: 1 - Not primarily a scene\n- caption_confidence: 5 - Easy to caption confidently\n\n- estimated_salient_object_count: 1 (the bird)\n- estimated_distinct_object_categories: 2 (bird, plant/branch)\n\n- contains_person: false\n- contains_face: false (bird face, not human)\n- contains_animal: true (bird)\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"animal\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"wildlife\" or \"bird\"\n\n- short_caption: \"Spotted pardalote perched on a slender branch with green leaves\"\n- main_objects: [\"spotted pardalote\", \"branch\", \"leaves\"]\n- possible_interpretations: [\"Spotted pardalote on branch\", \"Small bird in shrub\"]\n- uncertainty_notes: \"Specific species identification (Spotted Pardalote) is probable but not 100% certain without expert knowledge\"\n- quality_flags: []\n\nLet me format this as valid JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1538,
+          "completion_tokens": 791,
+          "total_tokens": 2329,
+          "cost": 0.00126036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126036,
+            "upstream_inference_prompt_cost": 0.00031116,
+            "upstream_inference_completions_cost": 0.0009492
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 489,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

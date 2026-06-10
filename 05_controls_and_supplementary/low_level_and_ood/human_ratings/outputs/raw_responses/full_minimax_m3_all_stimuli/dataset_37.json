@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_37",
+    "stim_key": "dataset_37",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 37,
+    "file_index": 37,
+    "image_name": "image_0037.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0037.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"archaeology/excavation\",\n  \"short_caption\": \"Aerial view of an excavation site with tents, tarps, and dirt squares enclosed by orange safety fencing on grass.\",\n  \"main_objects\": [\"orange safety fence\", \"purple canopy\", \"white tent structures\", \"black tarps\", \"excavation squares\", \"people\", \"metal poles\"],\n  \"possible_interpretations\": [\"archaeological dig site\", \"field research station\", \"outdoor construction setup\", \"event or exhibition area\", \"camping or work camp\"],\n  \"uncertainty_notes\": \"The exact activity is not labeled, but the gridded dirt squares and tented workstations strongly suggest an archaeological excavation. Faces are too small to discern from this altitude.\",\n  \"quality_flags\": [\"aerial_view\", \"small_subject_scale\"]\n}",
+      "response": {
+        "id": "gen-1780319002-1rjZRRyEpDJ9aze1Xpmz",
+        "object": "chat.completion",
+        "created": 1780319002,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 8,\n  \"estimated_distinct_object_categories\": 6,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"archaeology/excavation\",\n  \"short_caption\": \"Aerial view of an excavation site with tents, tarps, and dirt squares enclosed by orange safety fencing on grass.\",\n  \"main_objects\": [\"orange safety fence\", \"purple canopy\", \"white tent structures\", \"black tarps\", \"excavation squares\", \"people\", \"metal poles\"],\n  \"possible_interpretations\": [\"archaeological dig site\", \"field research station\", \"outdoor construction setup\", \"event or exhibition area\", \"camping or work camp\"],\n  \"uncertainty_notes\": \"The exact activity is not labeled, but the gridded dirt squares and tented workstations strongly suggest an archaeological excavation. Faces are too small to discern from this altitude.\",\n  \"quality_flags\": [\"aerial_view\", \"small_subject_scale\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows an aerial/overhead view of what appears to be an archaeological dig site or similar work area on a grassy field.\n\nKey elements I can see:\n- A rectangular area enclosed by orange safety fencing\n- A purple canopy/tent in the upper right\n- White covered structures (possibly excavation units or tents)\n- Exposed earth/dirt areas forming a grid pattern (looks like archaeological excavation squares - 6 squares visible)\n- Several people working in the area\n- Black tarps on the ground\n- Some metal poles or equipment\n- The area is set in a grassy field with some trees/brush at the top\n\nThis looks like an archaeological excavation site viewed from above (drone photography).\n\nLet me rate according to the schema:\n\n- recognizability: 4 - The content is reasonably clear - it shows a fenced work area with structures and people\n- ambiguity: 2 - It's fairly clear this is some kind of work site/excavation\n- natural_photo_typicality: 4 - This is a real photograph from a drone\n- visual_clutter: 4 - There are many elements (tents, tarps, people, fence, excavation squares)\n- object_centricity: 2 - It's more of a scene than a single object\n- scene_centricity: 5 - This is clearly a scene/place\n- caption_confidence: 4 - I can reasonably caption this\n\nSalient objects: tents/canopies, people, tarps, excavation squares, fence\nDistinct categories: tents, people, tarps, ground/excavation, fence\n\nContains person: yes (several visible)\nContains face: no (too small from this view)\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial or rendered content: no\nContains occlusion: no\nContains unusual viewpoint: yes (aerial/drone view)\nContains multiple main objects: yes (multiple structures)\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: archaeology/excavation\n\nShort caption: \"Aerial view of an archaeological excavation site with tents, tarps, and work area enclosed by orange safety fencing.\"\n\nMain objects: orange safety fence, purple canopy, white tents, black tarps, excavation squares, people\n\nPossible interpretations: archaeological dig, construction site, outdoor event setup, field research station, camping event\n\nUncertainty notes: The exact purpose of the site could be archaeological or some other work, but the grid pattern of dirt squares strongly suggests excavation.\n\nQuality flags: aerial_view",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows an aerial/overhead view of what appears to be an archaeological dig site or similar work area on a grassy field.\n\nKey elements I can see:\n- A rectangular area enclosed by orange safety fencing\n- A purple canopy/tent in the upper right\n- White covered structures (possibly excavation units or tents)\n- Exposed earth/dirt areas forming a grid pattern (looks like archaeological excavation squares - 6 squares visible)\n- Several people working in the area\n- Black tarps on the ground\n- Some metal poles or equipment\n- The area is set in a grassy field with some trees/brush at the top\n\nThis looks like an archaeological excavation site viewed from above (drone photography).\n\nLet me rate according to the schema:\n\n- recognizability: 4 - The content is reasonably clear - it shows a fenced work area with structures and people\n- ambiguity: 2 - It's fairly clear this is some kind of work site/excavation\n- natural_photo_typicality: 4 - This is a real photograph from a drone\n- visual_clutter: 4 - There are many elements (tents, tarps, people, fence, excavation squares)\n- object_centricity: 2 - It's more of a scene than a single object\n- scene_centricity: 5 - This is clearly a scene/place\n- caption_confidence: 4 - I can reasonably caption this\n\nSalient objects: tents/canopies, people, tarps, excavation squares, fence\nDistinct categories: tents, people, tarps, ground/excavation, fence\n\nContains person: yes (several visible)\nContains face: no (too small from this view)\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: no\nContains outdoor scene: yes\nContains artificial or rendered content: no\nContains occlusion: no\nContains unusual viewpoint: yes (aerial/drone view)\nContains multiple main objects: yes (multiple structures)\n\nDominant content: scene\nImage style: natural_photo\nSemantic domain: archaeology/excavation\n\nShort caption: \"Aerial view of an archaeological excavation site with tents, tarps, and work area enclosed by orange safety fencing.\"\n\nMain objects: orange safety fence, purple canopy, white tents, black tarps, excavation squares, people\n\nPossible interpretations: archaeological dig, construction site, outdoor event setup, field research station, camping event\n\nUncertainty notes: The exact purpose of the site could be archaeological or some other work, but the grid pattern of dirt squares strongly suggests excavation.\n\nQuality flags: aerial_view",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 944,
+          "total_tokens": 2466,
+          "cost": 0.00143916,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00143916,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011328
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 657,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -9,9 +9,9 @@ import numpy as np
 import pandas as pd
 
 
-PAPER = Path(__file__).resolve().parents[2]
-DATA = PAPER / "18_explain_alignment_effect" / "results"
-FIGURES = PAPER / "18_explain_alignment_effect" / "figures"
+STAGE = Path(__file__).resolve().parents[2]
+DATA = STAGE / "results"
+FIGURES = STAGE / "figures"
 FIGURES.mkdir(parents=True, exist_ok=True)
 
 MODEL_SET_ORDER = ["all_models", "architecture", "dataset", "sota", "training_objective"]

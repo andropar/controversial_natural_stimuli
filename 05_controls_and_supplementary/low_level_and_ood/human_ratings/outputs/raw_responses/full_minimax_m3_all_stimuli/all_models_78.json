@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_78",
+    "stim_key": "all_models_78",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 78,
+    "file_index": 78,
+    "image_name": "image_0078.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0078.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"automotive\",\n  \"short_caption\": \"White luxury car with a driver and a man in a dark suit standing beside it.\",\n  \"main_objects\": [\"luxury car\", \"man in dark suit\", \"driver\"],\n  \"possible_interpretations\": [\"valet service scene\", \"car dealership\", \"promotional photo shoot\", \"private event arrival\", \"executive chauffeur pickup\"],\n  \"uncertainty_notes\": \"Person in suit is heavily cropped, only the back of head and torso visible; driver inside is barely discernible through window.\",\n  \"quality_flags\": [\"heavy right-side cropping of person\", \"tight framing limits full context\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318820-3F4aow238zQ2mPHY4IDQ",
+        "object": "chat.completion",
+        "created": 1780318820,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"automotive\",\n  \"short_caption\": \"White luxury car with a driver and a man in a dark suit standing beside it.\",\n  \"main_objects\": [\"luxury car\", \"man in dark suit\", \"driver\"],\n  \"possible_interpretations\": [\"valet service scene\", \"car dealership\", \"promotional photo shoot\", \"private event arrival\", \"executive chauffeur pickup\"],\n  \"uncertainty_notes\": \"Person in suit is heavily cropped, only the back of head and torso visible; driver inside is barely discernible through window.\",\n  \"quality_flags\": [\"heavy right-side cropping of person\", \"tight framing limits full context\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a side view of a white luxury car (appears to be a Rolls-Royce based on the styling, badge, and wheel design) with a person in a dark suit standing next to it. There's a driver visible inside the car. The setting appears to be near a building with a white/light colored wall in the background. The ground appears to be paved with bricks or pavers.\n\nLet me go through the schema:\n\n- recognizability: Clear - I can identify a luxury car and a person in a suit. 4-5\n- ambiguity: Low - it's clearly a car with a person next to it. 1-2\n- natural_photo_typicality: Looks like a natural photo. 4\n- visual_clutter: Relatively clean composition. 2\n- object_centricity: The car dominates. 4\n- scene_centricity: Not really a scene-focused image. 2\n- caption_confidence: High confidence. 4-5\n\nCounts:\n- Main objects: 1 car, 2 people (driver, person outside)\n- Distinct categories: car, person, building = 3\n\nContains:\n- person: yes\n- face: no (person outside has back of head visible, driver face not clear)\n- animal: no\n- text: no\n- vehicle: yes\n- food: no\n- indoor: no\n- outdoor: yes\n- artificial/rendered: no\n- occlusion/truncation: yes (the person is cut off, the car is also partially cut off)\n- unusual viewpoint: no\n- multiple main objects: yes (car and person)\n\nDominant content: object (car is the main focus)\nImage style: natural_photo\nSemantic domain: automotive/transportation\n\nCaption: White luxury car with a driver and a man in a dark suit standing beside it.\n\nMain objects: luxury car, man in suit, driver\n\nPossible interpretations: valet scene, dealership, photo shoot, car show, private event\n\nQuality flags: partial occlusion of person, cropped framing",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a side view of a white luxury car (appears to be a Rolls-Royce based on the styling, badge, and wheel design) with a person in a dark suit standing next to it. There's a driver visible inside the car. The setting appears to be near a building with a white/light colored wall in the background. The ground appears to be paved with bricks or pavers.\n\nLet me go through the schema:\n\n- recognizability: Clear - I can identify a luxury car and a person in a suit. 4-5\n- ambiguity: Low - it's clearly a car with a person next to it. 1-2\n- natural_photo_typicality: Looks like a natural photo. 4\n- visual_clutter: Relatively clean composition. 2\n- object_centricity: The car dominates. 4\n- scene_centricity: Not really a scene-focused image. 2\n- caption_confidence: High confidence. 4-5\n\nCounts:\n- Main objects: 1 car, 2 people (driver, person outside)\n- Distinct categories: car, person, building = 3\n\nContains:\n- person: yes\n- face: no (person outside has back of head visible, driver face not clear)\n- animal: no\n- text: no\n- vehicle: yes\n- food: no\n- indoor: no\n- outdoor: yes\n- artificial/rendered: no\n- occlusion/truncation: yes (the person is cut off, the car is also partially cut off)\n- unusual viewpoint: no\n- multiple main objects: yes (car and person)\n\nDominant content: object (car is the main focus)\nImage style: natural_photo\nSemantic domain: automotive/transportation\n\nCaption: White luxury car with a driver and a man in a dark suit standing beside it.\n\nMain objects: luxury car, man in suit, driver\n\nPossible interpretations: valet scene, dealership, photo shoot, car show, private event\n\nQuality flags: partial occlusion of person, cropped framing",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1027,
+          "completion_tokens": 794,
+          "total_tokens": 1821,
+          "cost": 0.00123354,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00123354,
+            "upstream_inference_prompt_cost": 0.00028074,
+            "upstream_inference_completions_cost": 0.0009528
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 460,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_80",
+    "stim_key": "dataset_80",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 80,
+    "file_index": 80,
+    "image_name": "image_0080.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0080.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_decor\",\n  \"short_caption\": \"Metallic leaf-shaped sculpture on dark surface against tropical leaf patterned wallpaper\",\n  \"main_objects\": [\"decorative sculpture\", \"patterned wallpaper\", \"dark surface\"],\n  \"possible_interpretations\": [\"interior decor product photo\", \"home design showcase\", \"lifestyle decoration image\"],\n  \"uncertainty_notes\": \"Exact purpose or context of the sculpture unclear; could be catalog or editorial image.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319052-tmjntzOBWXBPbhsW6mKX",
+        "object": "chat.completion",
+        "created": 1780319052,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior_decor\",\n  \"short_caption\": \"Metallic leaf-shaped sculpture on dark surface against tropical leaf patterned wallpaper\",\n  \"main_objects\": [\"decorative sculpture\", \"patterned wallpaper\", \"dark surface\"],\n  \"possible_interpretations\": [\"interior decor product photo\", \"home design showcase\", \"lifestyle decoration image\"],\n  \"uncertainty_notes\": \"Exact purpose or context of the sculpture unclear; could be catalog or editorial image.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an interior scene with:\n- A decorative metallic sculpture/object on the right side that appears to be a leaf or teardrop-shaped cutout design on a base\n- Wallpaper with palm/tropical leaf pattern in silver/grey tones\n- A dark surface (table or floor) at the bottom\n- The overall scene is an interior decoration display\n\nLet me rate each dimension:\n\n- recognizability: The content is clear - it's an interior with decorative sculpture and patterned wallpaper. 4\n- ambiguity: Limited interpretations - it's clearly an interior decoration scene. 2\n- natural_photo_typicality: Looks like a typical interior product/lifestyle photograph. 4\n- visual_clutter: The wallpaper pattern is busy but the composition is fairly clean. 3\n- object_centricity: The sculpture is prominent on the right, but the wallpaper pattern is also dominant. Could go either way - it's somewhat mixed. 3\n- scene_centricity: It's a scene/interior view, but with a prominent object. 3\n\nBooleans:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it looks like a natural photo)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (one main object - the sculpture)\n\nMain objects: decorative sculpture, wallpaper, table\nDistinct categories: 2-3 (sculpture, wallpaper pattern, surface)\n\nDominant content: mixed or scene - I'd say scene with object. Let me go with \"scene\" since it's clearly an interior scene, though the sculpture is prominent. Actually, given the prominent sculpture, \"mixed\" might be best. Or \"object\" since the sculpture stands out. Let me go with \"scene\" as the wallpaper and setting dominate visually.\n\nImage style: natural_photo\nSemantic domain: interior_decor\n\nShort caption: \"Metallic leaf-shaped sculpture on dark surface against tropical leaf patterned wallpaper\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an interior scene with:\n- A decorative metallic sculpture/object on the right side that appears to be a leaf or teardrop-shaped cutout design on a base\n- Wallpaper with palm/tropical leaf pattern in silver/grey tones\n- A dark surface (table or floor) at the bottom\n- The overall scene is an interior decoration display\n\nLet me rate each dimension:\n\n- recognizability: The content is clear - it's an interior with decorative sculpture and patterned wallpaper. 4\n- ambiguity: Limited interpretations - it's clearly an interior decoration scene. 2\n- natural_photo_typicality: Looks like a typical interior product/lifestyle photograph. 4\n- visual_clutter: The wallpaper pattern is busy but the composition is fairly clean. 3\n- object_centricity: The sculpture is prominent on the right, but the wallpaper pattern is also dominant. Could go either way - it's somewhat mixed. 3\n- scene_centricity: It's a scene/interior view, but with a prominent object. 3\n\nBooleans:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it looks like a natural photo)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false (one main object - the sculpture)\n\nMain objects: decorative sculpture, wallpaper, table\nDistinct categories: 2-3 (sculpture, wallpaper pattern, surface)\n\nDominant content: mixed or scene - I'd say scene with object. Let me go with \"scene\" since it's clearly an interior scene, though the sculpture is prominent. Actually, given the prominent sculpture, \"mixed\" might be best. Or \"object\" since the sculpture stands out. Let me go with \"scene\" as the wallpaper and setting dominate visually.\n\nImage style: natural_photo\nSemantic domain: interior_decor\n\nShort caption: \"Metallic leaf-shaped sculpture on dark surface against tropical leaf patterned wallpaper\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 795,
+          "total_tokens": 2317,
+          "cost": 0.00126036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000954
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 550,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

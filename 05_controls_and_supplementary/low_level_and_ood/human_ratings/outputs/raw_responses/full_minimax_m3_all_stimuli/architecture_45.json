@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_45",
+    "stim_key": "architecture_45",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 45,
+    "file_index": 45,
+    "image_name": "image_0045.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0045.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 3, \"caption_confidence\": 5, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 5, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"person_face\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"childcare\", \"short_caption\": \"Young child playing with wooden blocks on a colorful cartoon blanket on a balcony\", \"main_objects\": [\"toddler\", \"wooden blocks\", \"patterned blanket\", \"balcony railing\", \"paper bag\"], \"possible_interpretations\": [\"A toddler playing alone on a residential balcony\", \"A child playing with blocks in a sunroom or enclosed porch\", \"A child at a daycare outdoor play area\"], \"uncertainty_notes\": \"The exact nature of the enclosed space is ambiguous; it could be a balcony, sunroom, or enclosed porch. Background details are partially obscured by mesh screening.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780318894-TmdwvqGCoHI1wcG1z808",
+        "object": "chat.completion",
+        "created": 1780318894,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 4, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 3, \"caption_confidence\": 5, \"estimated_salient_object_count\": 3, \"estimated_distinct_object_categories\": 5, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": false, \"dominant_content_type\": \"person_face\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"childcare\", \"short_caption\": \"Young child playing with wooden blocks on a colorful cartoon blanket on a balcony\", \"main_objects\": [\"toddler\", \"wooden blocks\", \"patterned blanket\", \"balcony railing\", \"paper bag\"], \"possible_interpretations\": [\"A toddler playing alone on a residential balcony\", \"A child playing with blocks in a sunroom or enclosed porch\", \"A child at a daycare outdoor play area\"], \"uncertainty_notes\": \"The exact nature of the enclosed space is ambiguous; it could be a balcony, sunroom, or enclosed porch. Background details are partially obscured by mesh screening.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a young child (toddler) with blonde hair, wearing a denim overall dress over a white long-sleeved shirt and striped leggings (red/pink and white stripes), sitting on a colorful patterned blanket/mat with cartoon characters (looks like teddy bears). The child is playing with wooden blocks on what appears to be a balcony or enclosed outdoor area. There's a mesh/glass safety barrier around the balcony. In the background, there are buildings visible through the mesh, and a tree. There's also a paper bag and some other items nearby.\n\nLet me rate the various aspects:\n\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 4 - looks like a natural photo\n- visual_clutter: 3 - moderate clutter with the background buildings and various objects\n- object_centricity: 2 - the child is the focus but it's more of a scene\n- scene_centricity: 3 - it's a scene with the child as main subject\n- caption_confidence: 5 - very confident\n\nestimated_salient_object_count: 3 (child, blocks, blanket)\nestimated_distinct_object_categories: 4-5 (person, toy blocks, blanket, building/balcony)\n\ncontains_person: true\ncontains_face: true\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false (it's a balcony, semi-outdoor)\ncontains_outdoor_scene: true (balcony with outdoor view)\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: person_face (or person since it's full body)\nActually, looking more carefully, it shows the child from a distance, not just face. Let me go with \"person\" or perhaps \"mixed\" since the child and the setting both matter.\n\nI'll go with \"person_face\" since the face is prominent and a key element.\n\nActually, looking at the schema options, \"person_face\" seems specific to face closeups. Since the whole child is shown, maybe just dominant_content_type: \"mixed\" or \"scene\". Let me think... The child is clearly the main subject, so I'll say \"person\" but that's not in the list. The closest options are \"person_face\" or \"object\" or \"scene\". Since the image is dominated by the person in a scene, I'd say \"person_face\" is the closest, though it's not quite right since we see the whole child.\n\nLet me go with \"person_face\" as the child is the clear focal point.\n\nimage_style: natural_photo\nsemantic_domain: \"childcare\" or \"family\" or \"playground\"\n\nshort_caption: \"Young child playing with wooden blocks on a colorful blanket on a balcony\"\nmain_objects: [\"child\", \"wooden blocks\", \"patterned blanket\", \"balcony railing\", \"paper bag\"]\npossible_interpretations: [\"A toddler playing alone on a balcony\", \"A child playing with blocks indoors near a window\", \"A daycare or home setting with a child playing\"]\nuncertainty_notes: \"The setting could be a balcony or a sunroom; difficult to tell exact context\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a young child (toddler) with blonde hair, wearing a denim overall dress over a white long-sleeved shirt and striped leggings (red/pink and white stripes), sitting on a colorful patterned blanket/mat with cartoon characters (looks like teddy bears). The child is playing with wooden blocks on what appears to be a balcony or enclosed outdoor area. There's a mesh/glass safety barrier around the balcony. In the background, there are buildings visible through the mesh, and a tree. There's also a paper bag and some other items nearby.\n\nLet me rate the various aspects:\n\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - very clear interpretation\n- natural_photo_typicality: 4 - looks like a natural photo\n- visual_clutter: 3 - moderate clutter with the background buildings and various objects\n- object_centricity: 2 - the child is the focus but it's more of a scene\n- scene_centricity: 3 - it's a scene with the child as main subject\n- caption_confidence: 5 - very confident\n\nestimated_salient_object_count: 3 (child, blocks, blanket)\nestimated_distinct_object_categories: 4-5 (person, toy blocks, blanket, building/balcony)\n\ncontains_person: true\ncontains_face: true\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: false (it's a balcony, semi-outdoor)\ncontains_outdoor_scene: true (balcony with outdoor view)\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: false\n\ndominant_content_type: person_face (or person since it's full body)\nActually, looking more carefully, it shows the child from a distance, not just face. Let me go with \"person\" or perhaps \"mixed\" since the child and the setting both matter.\n\nI'll go with \"person_face\" since the face is prominent and a key element.\n\nActually, looking at the schema options, \"person_face\" seems specific to face closeups. Since the whole child is shown, maybe just dominant_content_type: \"mixed\" or \"scene\". Let me think... The child is clearly the main subject, so I'll say \"person\" but that's not in the list. The closest options are \"person_face\" or \"object\" or \"scene\". Since the image is dominated by the person in a scene, I'd say \"person_face\" is the closest, though it's not quite right since we see the whole child.\n\nLet me go with \"person_face\" as the child is the clear focal point.\n\nimage_style: natural_photo\nsemantic_domain: \"childcare\" or \"family\" or \"playground\"\n\nshort_caption: \"Young child playing with wooden blocks on a colorful blanket on a balcony\"\nmain_objects: [\"child\", \"wooden blocks\", \"patterned blanket\", \"balcony railing\", \"paper bag\"]\npossible_interpretations: [\"A toddler playing alone on a balcony\", \"A child playing with blocks indoors near a window\", \"A daycare or home setting with a child playing\"]\nuncertainty_notes: \"The setting could be a balcony or a sunroom; difficult to tell exact context\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 1048,
+          "total_tokens": 2570,
+          "cost": 0.00156396,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00156396,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0012576
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 795,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

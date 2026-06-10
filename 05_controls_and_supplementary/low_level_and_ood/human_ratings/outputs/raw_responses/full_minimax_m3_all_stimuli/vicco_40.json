@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_40",
+    "stim_key": "vicco_40",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 40,
+    "file_index": 39,
+    "image_name": "shared_4rep_vicco_040.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_040.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior/hotel\",\n  \"short_caption\": \"Person standing by bay window overlooking the sea in an elegant hotel bedroom.\",\n  \"main_objects\": [\"person\", \"armchairs\", \"bed\", \"round table\", \"chandelier\", \"bay window\", \"curtains\"],\n  \"possible_interpretations\": [\"hotel room with sea view\", \"someone contemplating the ocean\", \"vacation accommodation\", \"upscale bedroom interior\"],\n  \"uncertainty_notes\": \"The room's specific context (hotel vs. private residence) is not definitively identifiable from visual cues alone.\",\n  \"quality_flags\": [\"bed truncated at frame edge\", \"person shown from behind\"]\n}",
+      "response": {
+        "id": "gen-1780319435-C8HYm2sSOsoEDnFj80b7",
+        "object": "chat.completion",
+        "created": 1780319435,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior/hotel\",\n  \"short_caption\": \"Person standing by bay window overlooking the sea in an elegant hotel bedroom.\",\n  \"main_objects\": [\"person\", \"armchairs\", \"bed\", \"round table\", \"chandelier\", \"bay window\", \"curtains\"],\n  \"possible_interpretations\": [\"hotel room with sea view\", \"someone contemplating the ocean\", \"vacation accommodation\", \"upscale bedroom interior\"],\n  \"uncertainty_notes\": \"The room's specific context (hotel vs. private residence) is not definitively identifiable from visual cues alone.\",\n  \"quality_flags\": [\"bed truncated at frame edge\", \"person shown from behind\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an interior of what appears to be a hotel room or bedroom. There's a person standing with their back to the camera, looking out a large bay window at what appears to be a sea/ocean view. The room has:\n- Large windows with curtains\n- Two armchairs\n- A small round table\n- A large bed (partially visible)\n- A pendant light fixture\n- Carpeted floor\n- The person has short blonde/grey hair and is wearing a striped shirt\n\nLet me assess each dimension:\n\n- recognizability: Very clear, easy to recognize as a hotel room with a person looking out a window. 5\n- ambiguity: Quite low ambiguity, the scene is clear. 1\n- natural_photo_typicality: Looks like a typical natural photograph, possibly somewhat staged. 4\n- visual_clutter: Moderate clutter with furniture and decor. 3\n- object_centricity: There's a person but they're part of a larger scene, not a focused object. 2\n- scene_centricity: This is primarily a scene/place. 5\n- caption_confidence: High, easy to describe. 5\n\nSalient objects: person, chairs, bed, table, chandelier, curtains, window\nDistinct categories: person, furniture (chairs, table, bed, ottoman), lighting, window, curtain\n\ncontains_person: true\ncontains_face: false (back of head)\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: true (visible through window)\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (bed is truncated)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true (person, furniture, etc.)\n\ndominant_content_type: scene (or could be mixed)\nimage_style: natural_photo\nsemantic_domain: hotel/interior/bedroom\n\nShort caption: \"Person standing by bay window overlooking the sea in a hotel bedroom.\"\n\nPossible interpretations: \n- hotel room with sea view\n- someone contemplating the view\n- vacation setting\n\nLet me finalize the JSON.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an interior of what appears to be a hotel room or bedroom. There's a person standing with their back to the camera, looking out a large bay window at what appears to be a sea/ocean view. The room has:\n- Large windows with curtains\n- Two armchairs\n- A small round table\n- A large bed (partially visible)\n- A pendant light fixture\n- Carpeted floor\n- The person has short blonde/grey hair and is wearing a striped shirt\n\nLet me assess each dimension:\n\n- recognizability: Very clear, easy to recognize as a hotel room with a person looking out a window. 5\n- ambiguity: Quite low ambiguity, the scene is clear. 1\n- natural_photo_typicality: Looks like a typical natural photograph, possibly somewhat staged. 4\n- visual_clutter: Moderate clutter with furniture and decor. 3\n- object_centricity: There's a person but they're part of a larger scene, not a focused object. 2\n- scene_centricity: This is primarily a scene/place. 5\n- caption_confidence: High, easy to describe. 5\n\nSalient objects: person, chairs, bed, table, chandelier, curtains, window\nDistinct categories: person, furniture (chairs, table, bed, ottoman), lighting, window, curtain\n\ncontains_person: true\ncontains_face: false (back of head)\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: true (visible through window)\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (bed is truncated)\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true (person, furniture, etc.)\n\ndominant_content_type: scene (or could be mixed)\nimage_style: natural_photo\nsemantic_domain: hotel/interior/bedroom\n\nShort caption: \"Person standing by bay window overlooking the sea in a hotel bedroom.\"\n\nPossible interpretations: \n- hotel room with sea view\n- someone contemplating the view\n- vacation setting\n\nLet me finalize the JSON.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 826,
+          "total_tokens": 2348,
+          "cost": 0.00129756,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00129756,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009912
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 527,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

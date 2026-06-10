@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_79",
+    "stim_key": "sota_79",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 79,
+    "file_index": 79,
+    "image_name": "image_0079.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0079.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 2, \"visual_clutter\": 2, \"object_centricity\": 5, \"scene_centricity\": 1, \"caption_confidence\": 5, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 2, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"home decor / product\", \"short_caption\": \"Rattan magazine rack holding a Hamptons magazine against a white background\", \"main_objects\": [\"rattan magazine rack\", \"Hamptons magazine\"], \"possible_interpretations\": [\"product photo for retail listing\", \"home decor editorial shot\", \"lifestyle product photograph\"], \"uncertainty_notes\": \"The person visible is a printed image on the magazine cover, not a person present in the photographed scene. Background appears to be a plain white wall or seamless backdrop.\", \"quality_flags\": [\"slight soft focus\", \"text partially occluded by rack slats\"]}",
+      "response": {
+        "id": "gen-1780319180-IeiPureZsxetL7BjtyR1",
+        "object": "chat.completion",
+        "created": 1780319180,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 2, \"visual_clutter\": 2, \"object_centricity\": 5, \"scene_centricity\": 1, \"caption_confidence\": 5, \"estimated_salient_object_count\": 2, \"estimated_distinct_object_categories\": 2, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": true, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"object\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"home decor / product\", \"short_caption\": \"Rattan magazine rack holding a Hamptons magazine against a white background\", \"main_objects\": [\"rattan magazine rack\", \"Hamptons magazine\"], \"possible_interpretations\": [\"product photo for retail listing\", \"home decor editorial shot\", \"lifestyle product photograph\"], \"uncertainty_notes\": \"The person visible is a printed image on the magazine cover, not a person present in the photographed scene. Background appears to be a plain white wall or seamless backdrop.\", \"quality_flags\": [\"slight soft focus\", \"text partially occluded by rack slats\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a rattan/wicker magazine rack with a magazine inside. The magazine appears to be \"Hamptons\" magazine, and there's a woman on the cover. The magazine rack is made of curved bamboo/rattan with a distinctive herringbone pattern in the center. The background is white/light colored.\n\nLet me annotate according to the schema:\n\n- Recognizability: Very clear what we're looking at - a magazine rack with magazine. 5\n- Ambiguity: Not ambiguous at all, clear subject. 1\n- Natural photo typicality: Looks like a product photo, not a natural scene. 2-3\n- Visual clutter: Quite simple, mostly the rack and magazine. 1-2\n- Object centricity: The magazine rack is the clear central object. 5\n- Scene centricity: Not really a scene, more of an object display. 1\n- Caption confidence: High, easy to caption. 5\n\nSalient object count: 2 (rack, magazine)\nDistinct categories: 2 (furniture, magazine/print)\n\nContains person: The magazine cover shows a person, but it's a printed image, not a real person. I'll say false for the actual scene, but the cover does contain a face image. Let me be conservative - the actual image scene doesn't contain a real person, but there's a face depicted on the magazine cover. I'll set contains_face to true since there is a visible face on the magazine.\n\nActually, let me reconsider. The contains_person and contains_face likely refer to the image content overall. The magazine cover does show a woman's face, so contains_face could be true. contains_person - the cover has a person depicted. I'll mark both as true.\n\nWait, for neuroscience stimulus analysis, I think we should be conservative and treat the magazine cover content as content of the image. So contains_face = true, contains_person = true (depicted on magazine cover).\n\nContains text: Yes, \"HAMPTONS\" \"Arts\" etc. are visible text. True\nContains vehicle: No\nContains food: No\nContains indoor scene: Yes, this looks like an indoor product shot. True\nContains outdoor scene: No\nContains artificial/rendered: No, it's a photo\nContains occlusion: Yes, the magazine is partially occluded by the rack. True\nContains unusual viewpoint: No, fairly standard. False\nContains multiple main objects: Two main objects (rack and magazine). True\n\nDominant content: object (magazine rack)\nImage style: natural_photo (product photo but still a photo)\nSemantic domain: furniture/home decor or product\n\nShort caption: \"Rattan magazine rack holding Hamptons magazine against white background\"\n\nMain objects: \"rattan magazine rack\", \"Hamptons magazine\"\n\nPossible interpretations: \n- Product photo for sale\n- Home decor display\n- Editorial/lifestyle photography\n\nUncertainty notes: The woman on the magazine cover is printed, not a real person in the scene.\n\nQuality flags: [\"low image quality - slight blur\", \"text on magazine partially obscured\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a rattan/wicker magazine rack with a magazine inside. The magazine appears to be \"Hamptons\" magazine, and there's a woman on the cover. The magazine rack is made of curved bamboo/rattan with a distinctive herringbone pattern in the center. The background is white/light colored.\n\nLet me annotate according to the schema:\n\n- Recognizability: Very clear what we're looking at - a magazine rack with magazine. 5\n- Ambiguity: Not ambiguous at all, clear subject. 1\n- Natural photo typicality: Looks like a product photo, not a natural scene. 2-3\n- Visual clutter: Quite simple, mostly the rack and magazine. 1-2\n- Object centricity: The magazine rack is the clear central object. 5\n- Scene centricity: Not really a scene, more of an object display. 1\n- Caption confidence: High, easy to caption. 5\n\nSalient object count: 2 (rack, magazine)\nDistinct categories: 2 (furniture, magazine/print)\n\nContains person: The magazine cover shows a person, but it's a printed image, not a real person. I'll say false for the actual scene, but the cover does contain a face image. Let me be conservative - the actual image scene doesn't contain a real person, but there's a face depicted on the magazine cover. I'll set contains_face to true since there is a visible face on the magazine.\n\nActually, let me reconsider. The contains_person and contains_face likely refer to the image content overall. The magazine cover does show a woman's face, so contains_face could be true. contains_person - the cover has a person depicted. I'll mark both as true.\n\nWait, for neuroscience stimulus analysis, I think we should be conservative and treat the magazine cover content as content of the image. So contains_face = true, contains_person = true (depicted on magazine cover).\n\nContains text: Yes, \"HAMPTONS\" \"Arts\" etc. are visible text. True\nContains vehicle: No\nContains food: No\nContains indoor scene: Yes, this looks like an indoor product shot. True\nContains outdoor scene: No\nContains artificial/rendered: No, it's a photo\nContains occlusion: Yes, the magazine is partially occluded by the rack. True\nContains unusual viewpoint: No, fairly standard. False\nContains multiple main objects: Two main objects (rack and magazine). True\n\nDominant content: object (magazine rack)\nImage style: natural_photo (product photo but still a photo)\nSemantic domain: furniture/home decor or product\n\nShort caption: \"Rattan magazine rack holding Hamptons magazine against white background\"\n\nMain objects: \"rattan magazine rack\", \"Hamptons magazine\"\n\nPossible interpretations: \n- Product photo for sale\n- Home decor display\n- Editorial/lifestyle photography\n\nUncertainty notes: The woman on the magazine cover is printed, not a real person in the scene.\n\nQuality flags: [\"low image quality - slight blur\", \"text on magazine partially obscured\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 961,
+          "total_tokens": 2483,
+          "cost": 0.00145956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00145956,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011532
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 752,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

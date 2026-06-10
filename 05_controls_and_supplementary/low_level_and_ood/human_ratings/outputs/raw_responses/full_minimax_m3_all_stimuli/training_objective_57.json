@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_57",
+    "stim_key": "training_objective_57",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 57,
+    "file_index": 57,
+    "image_name": "image_0057.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0057.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion portrait\",\n  \"short_caption\": \"Woman in red cutout dress reclining in arched adobe window\",\n  \"main_objects\": [\"woman\", \"red dress\", \"arched alcove\", \"mud-brick wall\"],\n  \"possible_interpretations\": [\n    \"Fashion editorial photograph in North African or Middle Eastern setting\",\n    \"Artistic portrait with traditional adobe architecture backdrop\"\n  ],\n  \"uncertainty_notes\": \"Image appears to be a staged fashion or artistic photograph rather than a candid natural photo.\",\n  \"quality_flags\": [\"posed_subject\", \"stylized_composition\", \"warm_color_cast\"]\n}",
+      "response": {
+        "id": "gen-1780319340-wMepcOxyf91gr4aA9Utr",
+        "object": "chat.completion",
+        "created": 1780319340,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"fashion portrait\",\n  \"short_caption\": \"Woman in red cutout dress reclining in arched adobe window\",\n  \"main_objects\": [\"woman\", \"red dress\", \"arched alcove\", \"mud-brick wall\"],\n  \"possible_interpretations\": [\n    \"Fashion editorial photograph in North African or Middle Eastern setting\",\n    \"Artistic portrait with traditional adobe architecture backdrop\"\n  ],\n  \"uncertainty_notes\": \"Image appears to be a staged fashion or artistic photograph rather than a candid natural photo.\",\n  \"quality_flags\": [\"posed_subject\", \"stylized_composition\", \"warm_color_cast\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a woman wearing a red dress/cutout outfit posing in an arched alcove or window of what appears to be an adobe or mud-brick building. The architecture has a Middle Eastern or North African appearance. The woman is reclining, and there's a small dark window/opening above the arch. The setting looks like it could be in a place like Tunisia, Morocco, or similar desert architecture.\n\nLet me assess the various dimensions:\n\n- Recognizability: Clear scene, easily identifiable - 5\n- Ambiguity: Low ambiguity, clear interpretation - 1\n- Natural photo typicality: This looks like a posed fashion/art photo, somewhat staged but appears natural - 3\n- Visual clutter: Relatively clean composition - 2\n- Object-centricity: The woman is the main subject - 4\n- Scene-centricity: The architectural setting is also prominent - 3\n- Caption confidence: High - 5\n\nSalient objects: woman, arch, dress, building - about 2-3 main\nDistinct categories: person, building/architecture - 2\n\ncontains_person: yes\ncontains_face: yes (her face is visible)\ncontains_animal: no\ncontains_text: no\ncontains_vehicle: no\ncontains_food: no\ncontains_indoor_scene: no (outdoor architectural)\ncontains_outdoor_scene: yes\ncontains_artificial_or_rendered_content: no\ncontains_occlusion_or_truncation: no\ncontains_unusual_viewpoint: somewhat - the framing is artistic\ncontains_multiple_main_objects: no - mainly one person\n\ndominant_content_type: person (the woman dominates)\nimage_style: edited_photo - looks like fashion photography\nsemantic_domain: fashion/portrait\n\nShort caption: \"Woman in red dress posing in arched adobe window\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a woman wearing a red dress/cutout outfit posing in an arched alcove or window of what appears to be an adobe or mud-brick building. The architecture has a Middle Eastern or North African appearance. The woman is reclining, and there's a small dark window/opening above the arch. The setting looks like it could be in a place like Tunisia, Morocco, or similar desert architecture.\n\nLet me assess the various dimensions:\n\n- Recognizability: Clear scene, easily identifiable - 5\n- Ambiguity: Low ambiguity, clear interpretation - 1\n- Natural photo typicality: This looks like a posed fashion/art photo, somewhat staged but appears natural - 3\n- Visual clutter: Relatively clean composition - 2\n- Object-centricity: The woman is the main subject - 4\n- Scene-centricity: The architectural setting is also prominent - 3\n- Caption confidence: High - 5\n\nSalient objects: woman, arch, dress, building - about 2-3 main\nDistinct categories: person, building/architecture - 2\n\ncontains_person: yes\ncontains_face: yes (her face is visible)\ncontains_animal: no\ncontains_text: no\ncontains_vehicle: no\ncontains_food: no\ncontains_indoor_scene: no (outdoor architectural)\ncontains_outdoor_scene: yes\ncontains_artificial_or_rendered_content: no\ncontains_occlusion_or_truncation: no\ncontains_unusual_viewpoint: somewhat - the framing is artistic\ncontains_multiple_main_objects: no - mainly one person\n\ndominant_content_type: person (the woman dominates)\nimage_style: edited_photo - looks like fashion photography\nsemantic_domain: fashion/portrait\n\nShort caption: \"Woman in red dress posing in arched adobe window\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 733,
+          "total_tokens": 2255,
+          "cost": 0.00118596,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00118596,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008796
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 438,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

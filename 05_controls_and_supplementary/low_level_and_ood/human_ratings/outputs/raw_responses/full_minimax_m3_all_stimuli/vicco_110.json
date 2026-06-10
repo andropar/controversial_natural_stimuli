@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_110",
+    "stim_key": "vicco_110",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 110,
+    "file_index": 109,
+    "image_name": "shared_4rep_vicco_110.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_110.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 10, \"estimated_distinct_object_categories\": 4, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"beach\", \"short_caption\": \"Group of men standing on a sandy beach with ocean waves breaking behind them.\", \"main_objects\": [\"men\", \"beach\", \"ocean waves\", \"bags\", \"sand\"], \"possible_interpretations\": [\"Group of friends socializing at the beach\", \"Beach gathering of men\", \"Men watching the surf\"], \"uncertainty_notes\": \"Text on shirt partially visible (Calvin Klein), no clear facial detail on all individuals.\", \"quality_flags\": []}",
+      "response": {
+        "id": "gen-1780319518-NNInto9Jvkll6qRoUtHr",
+        "object": "chat.completion",
+        "created": 1780319518,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 5, \"ambiguity\": 1, \"natural_photo_typicality\": 5, \"visual_clutter\": 3, \"object_centricity\": 2, \"scene_centricity\": 4, \"caption_confidence\": 5, \"estimated_salient_object_count\": 10, \"estimated_distinct_object_categories\": 4, \"contains_person\": true, \"contains_face\": true, \"contains_animal\": false, \"contains_text\": true, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": true, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": false, \"contains_unusual_viewpoint\": false, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"scene\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"beach\", \"short_caption\": \"Group of men standing on a sandy beach with ocean waves breaking behind them.\", \"main_objects\": [\"men\", \"beach\", \"ocean waves\", \"bags\", \"sand\"], \"possible_interpretations\": [\"Group of friends socializing at the beach\", \"Beach gathering of men\", \"Men watching the surf\"], \"uncertainty_notes\": \"Text on shirt partially visible (Calvin Klein), no clear facial detail on all individuals.\", \"quality_flags\": []}",
+              "refusal": null,
+              "reasoning": "The image shows a group of men standing on a sandy beach with waves in the background. Let me analyze this carefully.\n\nThe scene contains approximately 10 men standing in a group on the beach, with ocean waves behind them. There's some items on the sand (looks like bags, clothing, possibly drinks). The men are dressed in beach attire - swim trunks, tank tops, t-shirts. Some are shirtless.\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clear what's happening, men on a beach\n- ambiguity: 1 - Very clear interpretation, not ambiguous\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 3 - Several people and some items, but not overly cluttered\n- object_centricity: 1 - Not object-centric, it's a scene\n- scene_centricity: 5 - Mainly a beach scene\n- caption_confidence: 5 - Very confident in captioning\n\n- estimated_salient_object_count: ~10 people\n- estimated_distinct_object_categories: people, waves, sand, bags/items\n\n- contains_person: true\n- contains_face: true (some faces visible)\n- contains_animal: false\n- contains_text: true (Calvin Klein logo on a shirt visible)\n- contains_vehicle: false\n- contains_food: possibly (drinks visible)\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (multiple people)\n\ndominant_content_type: scene (or person? It's mainly a group of people in a beach setting - I'd say \"person\" or \"scene\". The scene context is very strong with the ocean, so I'll go with \"scene\" but it could be \"mixed\")\n\nActually, looking again, the people are the main content of the image with the beach as setting. But the question is what's dominant. I'd say this is more of a scene with people, or mixed. Let me go with \"mixed\" since both people and scene are prominent.\n\nActually, I think \"scene\" is most appropriate as the beach/ocean is a major part and the people are in a group together.\n\nimage_style: natural_photo\nsemantic_domain: beach\n\nshort_caption: \"Group of men standing on a sandy beach with ocean waves in the background\"\n\nmain_objects: [\"men\", \"beach\", \"waves\", \"bags\", \"sand\"]\n\npossible_interpretations: [\"Group of friends at the beach\", \"Beach gathering\", \"Men socializing at the ocean\"]\n\nuncertainty_notes: \"Calvin Klein text on shirt is small\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a group of men standing on a sandy beach with waves in the background. Let me analyze this carefully.\n\nThe scene contains approximately 10 men standing in a group on the beach, with ocean waves behind them. There's some items on the sand (looks like bags, clothing, possibly drinks). The men are dressed in beach attire - swim trunks, tank tops, t-shirts. Some are shirtless.\n\nLet me rate each dimension:\n\n- recognizability: 5 - Very clear what's happening, men on a beach\n- ambiguity: 1 - Very clear interpretation, not ambiguous\n- natural_photo_typicality: 5 - Looks like a typical natural photograph\n- visual_clutter: 3 - Several people and some items, but not overly cluttered\n- object_centricity: 1 - Not object-centric, it's a scene\n- scene_centricity: 5 - Mainly a beach scene\n- caption_confidence: 5 - Very confident in captioning\n\n- estimated_salient_object_count: ~10 people\n- estimated_distinct_object_categories: people, waves, sand, bags/items\n\n- contains_person: true\n- contains_face: true (some faces visible)\n- contains_animal: false\n- contains_text: true (Calvin Klein logo on a shirt visible)\n- contains_vehicle: false\n- contains_food: possibly (drinks visible)\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true (multiple people)\n\ndominant_content_type: scene (or person? It's mainly a group of people in a beach setting - I'd say \"person\" or \"scene\". The scene context is very strong with the ocean, so I'll go with \"scene\" but it could be \"mixed\")\n\nActually, looking again, the people are the main content of the image with the beach as setting. But the question is what's dominant. I'd say this is more of a scene with people, or mixed. Let me go with \"mixed\" since both people and scene are prominent.\n\nActually, I think \"scene\" is most appropriate as the beach/ocean is a major part and the people are in a group together.\n\nimage_style: natural_photo\nsemantic_domain: beach\n\nshort_caption: \"Group of men standing on a sandy beach with ocean waves in the background\"\n\nmain_objects: [\"men\", \"beach\", \"waves\", \"bags\", \"sand\"]\n\npossible_interpretations: [\"Group of friends at the beach\", \"Beach gathering\", \"Men socializing at the ocean\"]\n\nuncertainty_notes: \"Calvin Klein text on shirt is small\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 878,
+          "total_tokens": 2400,
+          "cost": 0.00135996,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00135996,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0010536
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 636,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

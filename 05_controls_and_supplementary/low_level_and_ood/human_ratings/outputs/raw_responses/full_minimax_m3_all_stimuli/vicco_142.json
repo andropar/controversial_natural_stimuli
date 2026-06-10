@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_142",
+    "stim_key": "vicco_142",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 142,
+    "file_index": 141,
+    "image_name": "shared_4rep_vicco_142.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_142.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior/office\",\n  \"short_caption\": \"Empty meeting or classroom with ornate ceiling, tables, chairs, and a projector on a stand.\",\n  \"main_objects\": [\"tables\", \"chairs\", \"projector\", \"laptop\", \"wooden door\", \"ceiling molding\", \"bag\"],\n  \"possible_interpretations\": [\"empty classroom\", \"meeting room\", \"conference room\", \"lecture hall\", \"office space\"],\n  \"uncertainty_notes\": \"The specific function of the room is unclear due to the lack of contextual cues such as people, boards, or signage. It could be a classroom, meeting room, or office.\",\n  \"quality_flags\": [\"mostly empty scene\", \"low contrast lighting\", \"no clear focal subject\"]\n}",
+      "response": {
+        "id": "gen-1780319549-OdrXmdhNTXZWyKhnoW0e",
+        "object": "chat.completion",
+        "created": 1780319549,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior/office\",\n  \"short_caption\": \"Empty meeting or classroom with ornate ceiling, tables, chairs, and a projector on a stand.\",\n  \"main_objects\": [\"tables\", \"chairs\", \"projector\", \"laptop\", \"wooden door\", \"ceiling molding\", \"bag\"],\n  \"possible_interpretations\": [\"empty classroom\", \"meeting room\", \"conference room\", \"lecture hall\", \"office space\"],\n  \"uncertainty_notes\": \"The specific function of the room is unclear due to the lack of contextual cues such as people, boards, or signage. It could be a classroom, meeting room, or office.\",\n  \"quality_flags\": [\"mostly empty scene\", \"low contrast lighting\", \"no clear focal subject\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an indoor room, likely a classroom, meeting room, or office space. I can see:\n- An ornate decorative ceiling with classical/baroque moldings\n- White walls\n- A wooden parquet floor\n- Several tables/desks arranged in the room\n- Office chairs\n- A projector on a stand (white device on a mobile stand)\n- What appears to be a laptop on a table in the foreground\n- A bag on one of the tables\n- A wooden door on the right side\n- Electrical outlets on the wall\n- A small wall-mounted object (possibly a sensor or camera) high on the wall\n- The room appears mostly empty\n\nLet me rate this image:\n\n- recognizability: 4 - clearly an indoor room/space\n- ambiguity: 2 - it's clearly a room with tables, though its exact purpose could vary\n- natural_photo_typicality: 5 - looks like a typical photograph\n- visual_clutter: 2 - relatively empty room, few objects\n- object_centricity: 1 - no single dominant object\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 4 - can describe it well\n\nEstimated salient object count: ~5-7 (tables, chairs, projector, laptop, bag, door)\nDistinct object categories: ~4-5 (table, chair, projector, laptop, door)\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor scene: true\nContains outdoor scene: false\nContains artificial or rendered content: false\nContains occlusion or truncation: false\nContains unusual viewpoint: false\nContains multiple main objects: true (multiple tables)\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: interior/office/classroom\n\nShort caption: \"Empty classroom or meeting room with ornate ceiling, tables, chairs, and a projector.\"\n\nMain objects: tables, chairs, projector, laptop, door, ceiling molding\nPossible interpretations: empty classroom, meeting room, conference room, lecture hall\nUncertainty notes: The exact function of the room is unclear, could be a classroom, meeting room, or office\nQuality flags: mostly empty room, unclear specific purpose",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an indoor room, likely a classroom, meeting room, or office space. I can see:\n- An ornate decorative ceiling with classical/baroque moldings\n- White walls\n- A wooden parquet floor\n- Several tables/desks arranged in the room\n- Office chairs\n- A projector on a stand (white device on a mobile stand)\n- What appears to be a laptop on a table in the foreground\n- A bag on one of the tables\n- A wooden door on the right side\n- Electrical outlets on the wall\n- A small wall-mounted object (possibly a sensor or camera) high on the wall\n- The room appears mostly empty\n\nLet me rate this image:\n\n- recognizability: 4 - clearly an indoor room/space\n- ambiguity: 2 - it's clearly a room with tables, though its exact purpose could vary\n- natural_photo_typicality: 5 - looks like a typical photograph\n- visual_clutter: 2 - relatively empty room, few objects\n- object_centricity: 1 - no single dominant object\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 4 - can describe it well\n\nEstimated salient object count: ~5-7 (tables, chairs, projector, laptop, bag, door)\nDistinct object categories: ~4-5 (table, chair, projector, laptop, door)\n\nContains person: false\nContains face: false\nContains animal: false\nContains text: false\nContains vehicle: false\nContains food: false\nContains indoor scene: true\nContains outdoor scene: false\nContains artificial or rendered content: false\nContains occlusion or truncation: false\nContains unusual viewpoint: false\nContains multiple main objects: true (multiple tables)\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: interior/office/classroom\n\nShort caption: \"Empty classroom or meeting room with ornate ceiling, tables, chairs, and a projector.\"\n\nMain objects: tables, chairs, projector, laptop, door, ceiling molding\nPossible interpretations: empty classroom, meeting room, conference room, lecture hall\nUncertainty notes: The exact function of the room is unclear, could be a classroom, meeting room, or office\nQuality flags: mostly empty room, unclear specific purpose",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 862,
+          "total_tokens": 2384,
+          "cost": 0.00146364,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00146364,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0010344
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 564,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

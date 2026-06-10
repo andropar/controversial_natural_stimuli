@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_241",
+    "stim_key": "vicco_241",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 241,
+    "file_index": 240,
+    "image_name": "shared_4rep_vicco_241.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_241.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"retail_holiday_decorations\",\n  \"short_caption\": \"Christmas gnome figurine with red knitted hat on a store shelf among packaged holiday decorations.\",\n  \"main_objects\": [\"gnome figurine\", \"pumpkin ornaments\", \"packaged decorations\", \"wire store shelf\"],\n  \"possible_interpretations\": [\"retail store holiday display\", \"store shelf with Christmas figurines\", \"boxed holiday ornaments on display rack\"],\n  \"uncertainty_notes\": \"Slight overhead angle and reflective packaging make exact details of surrounding items hard to discern.\",\n  \"quality_flags\": [\"cluttered composition\", \"partial occlusions\", \"some motion blur on packaging edges\"]\n}",
+      "response": {
+        "id": "gen-1780319666-VxWWvMc4rEAsnRgYknUR",
+        "object": "chat.completion",
+        "created": 1780319666,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"retail_holiday_decorations\",\n  \"short_caption\": \"Christmas gnome figurine with red knitted hat on a store shelf among packaged holiday decorations.\",\n  \"main_objects\": [\"gnome figurine\", \"pumpkin ornaments\", \"packaged decorations\", \"wire store shelf\"],\n  \"possible_interpretations\": [\"retail store holiday display\", \"store shelf with Christmas figurines\", \"boxed holiday ornaments on display rack\"],\n  \"uncertainty_notes\": \"Slight overhead angle and reflective packaging make exact details of surrounding items hard to discern.\",\n  \"quality_flags\": [\"cluttered composition\", \"partial occlusions\", \"some motion blur on packaging edges\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see what appears to be a retail store display with various Christmas/holiday themed figurines in plastic packaging. There's a gnome-like figure in the center with a red knitted hat, a green base, and appears to be holding or sitting with a bird. Around it are other similar figurines in clear plastic boxes, including what look like pumpkin/orange figures on the left and other small decorative items. The setting appears to be a store shelf with wire racks.\n\nLet me provide the annotations based on what I can see:\n\n- recognizability: The main subject is recognizable as a holiday figurine, though cluttered. I'd say 4.\n- ambiguity: Multiple items but the main subject is a gnome figurine. Low ambiguity. 2.\n- natural_photo_typicality: Looks like a typical phone photo taken in a store. 4.\n- visual_clutter: Quite cluttered with many packaged items. 4.\n- object_centricity: There are multiple objects competing, but the gnome is somewhat central. 3.\n- scene_centricity: It's more of a store display than a scene per se. 2.\n- caption_confidence: I can describe this with reasonable confidence. 4.\n\nObjects: gnome figurine, pumpkin ornaments, packaged decorations, store shelf\nCategories: figurines, ornaments, packaging, store shelving\n\nContains person: no\nContains face: no\nContains animal: the gnome has bird-like figures, but they're figurines\nContains text: yes, there's \"HOME\" visible on packaging\nContains vehicle: no\nContains food: no\nContains indoor scene: yes (store)\nContains outdoor scene: no\nContains artificial or rendered content: yes (these are figurines)\nContains occlusion or truncation: yes (some items are cut off at edges)\nContains unusual viewpoint: somewhat overhead angle\nContains multiple main objects: yes\n\nDominant content type: object\nImage style: natural_photo\nSemantic domain: retail/holiday decorations\n\nShort caption: Holiday gnome figurine with red hat on a store shelf among other packaged Christmas decorations.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see what appears to be a retail store display with various Christmas/holiday themed figurines in plastic packaging. There's a gnome-like figure in the center with a red knitted hat, a green base, and appears to be holding or sitting with a bird. Around it are other similar figurines in clear plastic boxes, including what look like pumpkin/orange figures on the left and other small decorative items. The setting appears to be a store shelf with wire racks.\n\nLet me provide the annotations based on what I can see:\n\n- recognizability: The main subject is recognizable as a holiday figurine, though cluttered. I'd say 4.\n- ambiguity: Multiple items but the main subject is a gnome figurine. Low ambiguity. 2.\n- natural_photo_typicality: Looks like a typical phone photo taken in a store. 4.\n- visual_clutter: Quite cluttered with many packaged items. 4.\n- object_centricity: There are multiple objects competing, but the gnome is somewhat central. 3.\n- scene_centricity: It's more of a store display than a scene per se. 2.\n- caption_confidence: I can describe this with reasonable confidence. 4.\n\nObjects: gnome figurine, pumpkin ornaments, packaged decorations, store shelf\nCategories: figurines, ornaments, packaging, store shelving\n\nContains person: no\nContains face: no\nContains animal: the gnome has bird-like figures, but they're figurines\nContains text: yes, there's \"HOME\" visible on packaging\nContains vehicle: no\nContains food: no\nContains indoor scene: yes (store)\nContains outdoor scene: no\nContains artificial or rendered content: yes (these are figurines)\nContains occlusion or truncation: yes (some items are cut off at edges)\nContains unusual viewpoint: somewhat overhead angle\nContains multiple main objects: yes\n\nDominant content type: object\nImage style: natural_photo\nSemantic domain: retail/holiday decorations\n\nShort caption: Holiday gnome figurine with red hat on a store shelf among other packaged Christmas decorations.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 793,
+          "total_tokens": 2315,
+          "cost": 0.00125796,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00125796,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009516
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 521,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

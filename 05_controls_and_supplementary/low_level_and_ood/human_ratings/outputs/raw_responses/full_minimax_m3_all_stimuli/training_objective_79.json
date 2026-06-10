@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_79",
+    "stim_key": "training_objective_79",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 79,
+    "file_index": 79,
+    "image_name": "image_0079.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0079.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home_improvement\",\n  \"short_caption\": \"Older man applying floor coating with a long-handled paint roller indoors.\",\n  \"main_objects\": [\"man\", \"paint roller\", \"bucket\", \"knee pads\", \"concrete floor\"],\n  \"possible_interpretations\": [\"Man painting a concrete floor\", \"Man applying epoxy or sealant to a garage floor\", \"Man renovating an indoor space\"],\n  \"uncertainty_notes\": \"The exact type of coating being applied is unclear; could be paint, epoxy, or sealant. The setting appears to be a garage or basement.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319365-H4S3UM3XsTfYDzzXN4Wq",
+        "object": "chat.completion",
+        "created": 1780319366,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 5,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home_improvement\",\n  \"short_caption\": \"Older man applying floor coating with a long-handled paint roller indoors.\",\n  \"main_objects\": [\"man\", \"paint roller\", \"bucket\", \"knee pads\", \"concrete floor\"],\n  \"possible_interpretations\": [\"Man painting a concrete floor\", \"Man applying epoxy or sealant to a garage floor\", \"Man renovating an indoor space\"],\n  \"uncertainty_notes\": \"The exact type of coating being applied is unclear; could be paint, epoxy, or sealant. The setting appears to be a garage or basement.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows an older man with white hair and glasses, wearing a blue short-sleeved shirt and jeans with knee pads. He is using a long-handled paint roller to apply some kind of coating (possibly epoxy or sealant) to a concrete floor in what appears to be an indoor space. There's a white bucket next to him, and some steps visible in the background. The floor has a patchy appearance where he's been working.\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - very clear single interpretation\n- natural_photo_typicality: 4 - looks like a natural photo, possibly slightly staged\n- visual_clutter: 2 - relatively simple scene\n- object_centricity: 3 - the man is the focus but it's also a scene\n- scene_centricity: 3 - it's an indoor scene with activity\n- caption_confidence: 5 - easy to caption\n\nSalient objects: man, paint roller, bucket, knee pads - about 4-5\nDistinct categories: person, tool, container, clothing = 4\n\nContains person: true\nContains face: true (his face is visible)\nContains animal: false\nContains text: false (maybe some labels but not really visible text)\nContains vehicle: false\nContains food: false\nContains indoor scene: true\nContains outdoor scene: false\nContains artificial or rendered: false\nContains occlusion or truncation: false (maybe slight cropping)\nContains unusual viewpoint: false\nContains multiple main objects: false - one main subject (the man)\n\nDominant content: person (but doing an activity) - I'd say \"person\" or \"object\" - the person is the main subject\nImage style: natural_photo\nSemantic domain: home improvement / painting\n\nShort caption: \"Man applying floor coating with a paint roller indoors\"\n\nMain objects: man, paint roller, bucket, knee pads, jeans, blue shirt\n\nPossible interpretations: man painting/sealing a concrete floor\n\nQuality flags: none significant",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows an older man with white hair and glasses, wearing a blue short-sleeved shirt and jeans with knee pads. He is using a long-handled paint roller to apply some kind of coating (possibly epoxy or sealant) to a concrete floor in what appears to be an indoor space. There's a white bucket next to him, and some steps visible in the background. The floor has a patchy appearance where he's been working.\n\nLet me annotate based on the schema:\n\n- recognizability: 5 - very clear what's happening\n- ambiguity: 1 - very clear single interpretation\n- natural_photo_typicality: 4 - looks like a natural photo, possibly slightly staged\n- visual_clutter: 2 - relatively simple scene\n- object_centricity: 3 - the man is the focus but it's also a scene\n- scene_centricity: 3 - it's an indoor scene with activity\n- caption_confidence: 5 - easy to caption\n\nSalient objects: man, paint roller, bucket, knee pads - about 4-5\nDistinct categories: person, tool, container, clothing = 4\n\nContains person: true\nContains face: true (his face is visible)\nContains animal: false\nContains text: false (maybe some labels but not really visible text)\nContains vehicle: false\nContains food: false\nContains indoor scene: true\nContains outdoor scene: false\nContains artificial or rendered: false\nContains occlusion or truncation: false (maybe slight cropping)\nContains unusual viewpoint: false\nContains multiple main objects: false - one main subject (the man)\n\nDominant content: person (but doing an activity) - I'd say \"person\" or \"object\" - the person is the main subject\nImage style: natural_photo\nSemantic domain: home improvement / painting\n\nShort caption: \"Man applying floor coating with a paint roller indoors\"\n\nMain objects: man, paint roller, bucket, knee pads, jeans, blue shirt\n\nPossible interpretations: man painting/sealing a concrete floor\n\nQuality flags: none significant",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1267,
+          "completion_tokens": 781,
+          "total_tokens": 2048,
+          "cost": 0.00116706,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00116706,
+            "upstream_inference_prompt_cost": 0.00022986,
+            "upstream_inference_completions_cost": 0.0009372
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 507,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

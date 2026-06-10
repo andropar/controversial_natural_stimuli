@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_127",
+    "stim_key": "vicco_127",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 127,
+    "file_index": 126,
+    "image_name": "shared_4rep_vicco_127.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_127.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"transportation/urban\",\n  \"short_caption\": \"Person holding phone on a ferry with city skyline visible through window\",\n  \"main_objects\": [\"person in maroon jacket\", \"smartphone\", \"ferry interior\", \"city skyline\", \"water\"],\n  \"possible_interpretations\": [\"ferry passenger taking a photo\", \"tourist on a sightseeing cruise\", \"commuter using phone on water transit\", \"reflection creates layered portrait effect\"],\n  \"uncertainty_notes\": \"Heavy glass reflections make facial features and exact details of the main subject hard to resolve; exact boat type is unclear\",\n  \"quality_flags\": [\"heavy window reflections\", \"layered composition\", \"partial subject visibility\", \"overexposed sky\"]\n}",
+      "response": {
+        "id": "gen-1780319538-AlV0RuKE51oQgRyoB6nL",
+        "object": "chat.completion",
+        "created": 1780319538,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"transportation/urban\",\n  \"short_caption\": \"Person holding phone on a ferry with city skyline visible through window\",\n  \"main_objects\": [\"person in maroon jacket\", \"smartphone\", \"ferry interior\", \"city skyline\", \"water\"],\n  \"possible_interpretations\": [\"ferry passenger taking a photo\", \"tourist on a sightseeing cruise\", \"commuter using phone on water transit\", \"reflection creates layered portrait effect\"],\n  \"uncertainty_notes\": \"Heavy glass reflections make facial features and exact details of the main subject hard to resolve; exact boat type is unclear\",\n  \"quality_flags\": [\"heavy window reflections\", \"layered composition\", \"partial subject visibility\", \"overexposed sky\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a scene that appears to be taken inside a boat or ferry, with a person visible through or reflected in a window. The person is wearing a maroon/dark red jacket and appears to be holding a phone or device. Through the window, I can see a cityscape with tall buildings across a body of water, suggesting an urban waterfront view. There are other people visible in the scene as well, likely also passengers on the boat/ferry.\n\nThe image has a complex, layered quality due to reflections and the glass window separating the photographer from the scene outside. There are multiple visual elements competing for attention.\n\nLet me provide the annotations:\n\n- recognizability: The content is reasonably clear - a person on what appears to be a ferry/boat with a city view. 4\n- ambiguity: Multiple layers (reflections, person, cityscape) make it somewhat ambiguous. 3\n- natural_photo_typicality: Looks like a natural photo, though with interesting reflection effects. 4\n- visual_clutter: Quite cluttered with reflections, person, cityscape, and other passengers. 4\n- object_centricity: The person/figure is somewhat central but competing with the cityscape. 3\n- scene_centricity: The scene (boat interior with city view) is prominent. 4\n- caption_confidence: Can describe the scene fairly well. 4\n\n- estimated_salient_object_count: 3-4 (person, cityscape, boat interior)\n- estimated_distinct_object_categories: 3-4\n\n- contains_person: yes\n- contains_face: yes (partially visible)\n- contains_animal: no\n- contains_text: maybe (some signage)\n- contains_vehicle: the boat itself\n- contains_food: no\n- contains_indoor_scene: yes (boat interior)\n- contains_outdoor_scene: yes (cityscape visible)\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: yes (reflections cause partial visibility)\n- contains_unusual_viewpoint: somewhat (shooting through glass with reflections)\n- contains_multiple_main_objects: yes\n\n- dominant_content_type: mixed (person and scene)\n- image_style: natural_photo\n- semantic_domain: transportation/urban\n\n- short_caption: \"Person holding phone on a ferry with city skyline visible through window\"\n- main_objects: [\"person\", \"phone\", \"boat interior\", \"cityscape\", \"water\"]\n- possible_interpretations: [\"ferry passenger taking a photo\", \"person using phone on water transport\", \"tourist on sightseeing cruise\"]\n- uncertainty_notes: \"Heavy reflections make it hard to determine exact details of the main person\"\n- quality_flags: [\"heavy reflections\", \"layered composition\", \"partial visibility through glass\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a scene that appears to be taken inside a boat or ferry, with a person visible through or reflected in a window. The person is wearing a maroon/dark red jacket and appears to be holding a phone or device. Through the window, I can see a cityscape with tall buildings across a body of water, suggesting an urban waterfront view. There are other people visible in the scene as well, likely also passengers on the boat/ferry.\n\nThe image has a complex, layered quality due to reflections and the glass window separating the photographer from the scene outside. There are multiple visual elements competing for attention.\n\nLet me provide the annotations:\n\n- recognizability: The content is reasonably clear - a person on what appears to be a ferry/boat with a city view. 4\n- ambiguity: Multiple layers (reflections, person, cityscape) make it somewhat ambiguous. 3\n- natural_photo_typicality: Looks like a natural photo, though with interesting reflection effects. 4\n- visual_clutter: Quite cluttered with reflections, person, cityscape, and other passengers. 4\n- object_centricity: The person/figure is somewhat central but competing with the cityscape. 3\n- scene_centricity: The scene (boat interior with city view) is prominent. 4\n- caption_confidence: Can describe the scene fairly well. 4\n\n- estimated_salient_object_count: 3-4 (person, cityscape, boat interior)\n- estimated_distinct_object_categories: 3-4\n\n- contains_person: yes\n- contains_face: yes (partially visible)\n- contains_animal: no\n- contains_text: maybe (some signage)\n- contains_vehicle: the boat itself\n- contains_food: no\n- contains_indoor_scene: yes (boat interior)\n- contains_outdoor_scene: yes (cityscape visible)\n- contains_artificial_or_rendered_content: no\n- contains_occlusion_or_truncation: yes (reflections cause partial visibility)\n- contains_unusual_viewpoint: somewhat (shooting through glass with reflections)\n- contains_multiple_main_objects: yes\n\n- dominant_content_type: mixed (person and scene)\n- image_style: natural_photo\n- semantic_domain: transportation/urban\n\n- short_caption: \"Person holding phone on a ferry with city skyline visible through window\"\n- main_objects: [\"person\", \"phone\", \"boat interior\", \"cityscape\", \"water\"]\n- possible_interpretations: [\"ferry passenger taking a photo\", \"person using phone on water transport\", \"tourist on sightseeing cruise\"]\n- uncertainty_notes: \"Heavy reflections make it hard to determine exact details of the main person\"\n- quality_flags: [\"heavy reflections\", \"layered composition\", \"partial visibility through glass\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 961,
+          "total_tokens": 2483,
+          "cost": 0.00158244,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00158244,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0011532
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 681,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

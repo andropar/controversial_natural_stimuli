@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_47",
+    "stim_key": "training_objective_47",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 47,
+    "file_index": 47,
+    "image_name": "image_0047.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0047.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"performance_art\",\n\n  \"short_caption\": \"A man smiling while performing with colorful LED light trails in long-exposure photography.\",\n  \"main_objects\": [\"man\", \"LED light trails\", \"cord\"],\n  \"possible_interpretations\": [\n    \"A performer doing an LED poi/light show\",\n    \"A long-exposure photo of light spinning performance\",\n    \"A flow artist demonstrating colorful light props\"\n  ],\n  \"uncertainty_notes\": \"The light trails are clearly a long-exposure capture of moving light props, likely LED poi or similar flow art equipment. The exact type of light tool is not definitively identifiable.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319317-H852J598R7YiJRRpyhZt",
+        "object": "chat.completion",
+        "created": 1780319317,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"performance_art\",\n\n  \"short_caption\": \"A man smiling while performing with colorful LED light trails in long-exposure photography.\",\n  \"main_objects\": [\"man\", \"LED light trails\", \"cord\"],\n  \"possible_interpretations\": [\n    \"A performer doing an LED poi/light show\",\n    \"A long-exposure photo of light spinning performance\",\n    \"A flow artist demonstrating colorful light props\"\n  ],\n  \"uncertainty_notes\": \"The light trails are clearly a long-exposure capture of moving light props, likely LED poi or similar flow art equipment. The exact type of light tool is not definitively identifiable.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows a man standing in what appears to be a dimly lit indoor setting, possibly a stage or performance area. He is holding what looks like a rope or cord, and there are colorful light trails (purple, blue, green) forming circular and arc patterns around him. The light trails are long-exposure photography effects, suggesting he's performing with LED or light-up props (like flow arts/poi).\n\nLet me analyze:\n- Main subject: A smiling man in a gray long-sleeve shirt and jeans\n- He appears to be performing a light/LED show (poi spinning or similar flow art)\n- The colorful light trails suggest long-exposure photography\n- The background is dark/dim\n- There's some structure visible behind him (possibly bleachers or seating)\n\nRecognizability: High - clear person and activity visible (4-5)\nAmbiguity: Low - clearly a light show performance (1-2)\nNatural photo typicality: Moderate - long exposure but still a real photograph (3-4)\nVisual clutter: Moderate - the light trails add visual complexity (3)\nObject centricity: The person is the main subject (4)\nScene centricity: Some scene element but person dominates (2-3)\nCaption confidence: High (4-5)\n\nContains person: yes\nContains face: yes\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: yes (appears indoor)\nContains outdoor scene: no\nContains artificial/rendered: no, it's a photo\nContains occlusion: no\nContains unusual viewpoint: no\nContains multiple main objects: no (one person)\n\nDominant content: person\nImage style: natural_photo (long exposure)\nSemantic domain: performance/light art",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a man standing in what appears to be a dimly lit indoor setting, possibly a stage or performance area. He is holding what looks like a rope or cord, and there are colorful light trails (purple, blue, green) forming circular and arc patterns around him. The light trails are long-exposure photography effects, suggesting he's performing with LED or light-up props (like flow arts/poi).\n\nLet me analyze:\n- Main subject: A smiling man in a gray long-sleeve shirt and jeans\n- He appears to be performing a light/LED show (poi spinning or similar flow art)\n- The colorful light trails suggest long-exposure photography\n- The background is dark/dim\n- There's some structure visible behind him (possibly bleachers or seating)\n\nRecognizability: High - clear person and activity visible (4-5)\nAmbiguity: Low - clearly a light show performance (1-2)\nNatural photo typicality: Moderate - long exposure but still a real photograph (3-4)\nVisual clutter: Moderate - the light trails add visual complexity (3)\nObject centricity: The person is the main subject (4)\nScene centricity: Some scene element but person dominates (2-3)\nCaption confidence: High (4-5)\n\nContains person: yes\nContains face: yes\nContains animal: no\nContains text: no\nContains vehicle: no\nContains food: no\nContains indoor scene: yes (appears indoor)\nContains outdoor scene: no\nContains artificial/rendered: no, it's a photo\nContains occlusion: no\nContains unusual viewpoint: no\nContains multiple main objects: no (one person)\n\nDominant content: person\nImage style: natural_photo (long exposure)\nSemantic domain: performance/light art",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 723,
+          "total_tokens": 2245,
+          "cost": 0.00096228,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1508,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00096228,
+            "upstream_inference_prompt_cost": 9.468e-05,
+            "upstream_inference_completions_cost": 0.0008676
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 426,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

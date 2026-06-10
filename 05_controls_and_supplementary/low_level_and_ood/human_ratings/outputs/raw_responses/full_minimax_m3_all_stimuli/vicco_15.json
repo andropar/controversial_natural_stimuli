@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_15",
+    "stim_key": "vicco_15",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 15,
+    "file_index": 14,
+    "image_name": "shared_4rep_vicco_015.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_015.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\":4,\"ambiguity\":2,\"natural_photo_typicality\":4,\"visual_clutter\":4,\"object_centricity\":2,\"scene_centricity\":4,\"caption_confidence\":4,\"estimated_salient_object_count\":7,\"estimated_distinct_object_categories\":6,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":true,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":true,\"contains_outdoor_scene\":false,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":true,\"contains_multiple_main_objects\":true,\"dominant_content_type\":\"mixed\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"indoor storage\",\"short_caption\":\"Storage shelf above closet with bags, KanJam game box, volleyball, and sports gear\",\"main_objects\":[\"backpack\",\"KanJam Pro box\",\"volleyball\",\"drawstring bag\",\"folded towels\",\"cardboard box\",\"baseball glove\"],\"possible_interpretations\":[\"bedroom storage shelf\",\"closet overhead storage\",\"sports equipment storage\",\"miscellaneous household storage\",\"organized clutter on shelf\"],\"uncertainty_notes\":\"Some items are partially obscured; specific brand of green bag unclear; low angle makes some object identification approximate\",\"quality_flags\":[\"low angle perspective\",\"cluttered composition\",\"partially occluded items\",\"dim lighting\"]}",
+      "response": {
+        "id": "gen-1780319398-aqP6gxQeFs5irKNunIop",
+        "object": "chat.completion",
+        "created": 1780319398,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\":4,\"ambiguity\":2,\"natural_photo_typicality\":4,\"visual_clutter\":4,\"object_centricity\":2,\"scene_centricity\":4,\"caption_confidence\":4,\"estimated_salient_object_count\":7,\"estimated_distinct_object_categories\":6,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":true,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":true,\"contains_outdoor_scene\":false,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":true,\"contains_unusual_viewpoint\":true,\"contains_multiple_main_objects\":true,\"dominant_content_type\":\"mixed\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"indoor storage\",\"short_caption\":\"Storage shelf above closet with bags, KanJam game box, volleyball, and sports gear\",\"main_objects\":[\"backpack\",\"KanJam Pro box\",\"volleyball\",\"drawstring bag\",\"folded towels\",\"cardboard box\",\"baseball glove\"],\"possible_interpretations\":[\"bedroom storage shelf\",\"closet overhead storage\",\"sports equipment storage\",\"miscellaneous household storage\",\"organized clutter on shelf\"],\"uncertainty_notes\":\"Some items are partially obscured; specific brand of green bag unclear; low angle makes some object identification approximate\",\"quality_flags\":[\"low angle perspective\",\"cluttered composition\",\"partially occluded items\",\"dim lighting\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a storage shelf above a closet in what appears to be a bedroom or hallway. On the shelf, I can see:\n- Various bags and luggage\n- A KanJam Pro box (disc throwing game)\n- A volleyball\n- Folded towels or blankets\n- A cardboard box\n- A drawstring bag (green, possibly Therma)\n- Other miscellaneous items\n- A baseball glove\n\nBelow the shelf are two doors, suggesting a closet. The ceiling has a recessed light. The image is taken from a low angle looking up at the shelf.\n\nThis is clearly an indoor scene with stored items. Let me rate according to the schema:\n\n- recognizability: 4 - clearly recognizable as a storage shelf with various items\n- ambiguity: 2 - it's fairly clear what's depicted\n- natural_photo_typicality: 4 - looks like a typical amateur photo\n- visual_clutter: 4 - many items packed together\n- object_centricity: 2 - no single dominant object, it's a collection\n- scene_centricity: 4 - it's mainly a scene/location\n- caption_confidence: 4 - fairly confident in describing it\n\nSalient objects: many items, maybe 5-8 distinct things\nDistinct categories: luggage, game box, sports ball, towels, bag, box, etc. - maybe 6-7\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: true (KanJam Pro, Therma brand text)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (some items partially visible)\ncontains_unusual_viewpoint: true (low angle looking up)\ncontains_multiple_main_objects: true\n\ndominant_content_type: mixed (various objects)\nimage_style: natural_photo\nsemantic_domain: indoor storage\n\nshort_caption: \"Storage shelf above closet door with bags, KanJam game box, and volleyball\"\n\nmain_objects: backpack, KanJam Pro box, volleyball, drawstring bag, folded towels, cardboard box, baseball glove\n\npossible_interpretations: storage shelf, closet organization, bedroom storage, garage items, sports equipment storage\n\nuncertainty_notes: some items partially obscured, exact contents uncertain\n\nquality_flags: low angle perspective, cluttered composition, partially visible items",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a storage shelf above a closet in what appears to be a bedroom or hallway. On the shelf, I can see:\n- Various bags and luggage\n- A KanJam Pro box (disc throwing game)\n- A volleyball\n- Folded towels or blankets\n- A cardboard box\n- A drawstring bag (green, possibly Therma)\n- Other miscellaneous items\n- A baseball glove\n\nBelow the shelf are two doors, suggesting a closet. The ceiling has a recessed light. The image is taken from a low angle looking up at the shelf.\n\nThis is clearly an indoor scene with stored items. Let me rate according to the schema:\n\n- recognizability: 4 - clearly recognizable as a storage shelf with various items\n- ambiguity: 2 - it's fairly clear what's depicted\n- natural_photo_typicality: 4 - looks like a typical amateur photo\n- visual_clutter: 4 - many items packed together\n- object_centricity: 2 - no single dominant object, it's a collection\n- scene_centricity: 4 - it's mainly a scene/location\n- caption_confidence: 4 - fairly confident in describing it\n\nSalient objects: many items, maybe 5-8 distinct things\nDistinct categories: luggage, game box, sports ball, towels, bag, box, etc. - maybe 6-7\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: true (KanJam Pro, Therma brand text)\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: true (some items partially visible)\ncontains_unusual_viewpoint: true (low angle looking up)\ncontains_multiple_main_objects: true\n\ndominant_content_type: mixed (various objects)\nimage_style: natural_photo\nsemantic_domain: indoor storage\n\nshort_caption: \"Storage shelf above closet door with bags, KanJam game box, and volleyball\"\n\nmain_objects: backpack, KanJam Pro box, volleyball, drawstring bag, folded towels, cardboard box, baseball glove\n\npossible_interpretations: storage shelf, closet organization, bedroom storage, garage items, sports equipment storage\n\nuncertainty_notes: some items partially obscured, exact contents uncertain\n\nquality_flags: low angle perspective, cluttered composition, partially visible items",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 804,
+          "total_tokens": 2326,
+          "cost": 0.00139404,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00139404,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009648
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 593,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_6",
+    "stim_key": "dataset_6",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 6,
+    "file_index": 6,
+    "image_name": "image_0006.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0006.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 7,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior/home_office\",\n\n  \"short_caption\": \"Home office workspace with yellow botanical leaf wallpaper, wooden desk, white chair, books and supplies.\",\n  \"main_objects\": [\"desk\", \"chair\", \"books\", \"pencil holder\", \"camera\", \"file organizer\", \"picture frame\", \"wallpaper\"],\n  \"possible_interpretations\": [\"home office workspace\", \"interior design photo\", \"styled home decor scene\", \"product/lifestyle photography\"],\n  \"uncertainty_notes\": \"Chair is partially cut off at bottom; wooden frame on right could be a mirror or empty frame.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780318967-rr3VN3I8S0lCFMD2YoNX",
+        "object": "chat.completion",
+        "created": 1780318967,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 7,\n  \"estimated_distinct_object_categories\": 7,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior/home_office\",\n\n  \"short_caption\": \"Home office workspace with yellow botanical leaf wallpaper, wooden desk, white chair, books and supplies.\",\n  \"main_objects\": [\"desk\", \"chair\", \"books\", \"pencil holder\", \"camera\", \"file organizer\", \"picture frame\", \"wallpaper\"],\n  \"possible_interpretations\": [\"home office workspace\", \"interior design photo\", \"styled home decor scene\", \"product/lifestyle photography\"],\n  \"uncertainty_notes\": \"Chair is partially cut off at bottom; wooden frame on right could be a mirror or empty frame.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a home office or workspace setup. There's:\n- Yellow wallpaper with a botanical/leaf pattern (appears to be a repeating pattern of hanging leaves/vines)\n- A wooden desk\n- A white chair (modern style, visible at the bottom)\n- A stack of blue books on the left\n- A wire mesh pencil holder with pencils\n- A small vintage-style camera\n- Colorful pens/markers\n- A wire document/file holder with papers\n- A wooden frame (possibly a mirror or empty frame) on the right\n\nThis looks like a styled interior photograph, likely from a home decor magazine or catalog.\n\nLet me rate each dimension:\n\n- recognizability: 4 - The content is clearly recognizable as a home office/workspace\n- ambiguity: 2 - Pretty clear what we're looking at\n- natural_photo_typicality: 3 - It's a photograph but very styled/professional, not a typical casual photo\n- visual_clutter: 3 - Several objects but well-organized\n- object_centricity: 2 - No single dominant object; it's more of a scene\n- scene_centricity: 4 - This is clearly a scene/setting\n- caption_confidence: 4 - Easy to caption\n\nCounts:\n- salient objects: maybe 6-7 (desk, chair, books, pencil holder, camera, file holder, frame)\n- distinct categories: about 6-7\n\nBooleans:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (text is visible on papers but not prominently)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it's a real photo)\n- contains_occlusion_or_truncation: false (chair is partially cut off but that's framing)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: scene\nimage_style: natural_photo (or maybe edited_photo given the styled nature)\nsemantic_domain: interior/home_office\n\nshort_caption: \"Home office workspace with yellow botanical wallpaper, wooden desk, white chair, and office supplies.\"\n\nmain_objects: desk, chair, books, pencil holder, camera, file organizer, picture frame, wallpaper\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a home office or workspace setup. There's:\n- Yellow wallpaper with a botanical/leaf pattern (appears to be a repeating pattern of hanging leaves/vines)\n- A wooden desk\n- A white chair (modern style, visible at the bottom)\n- A stack of blue books on the left\n- A wire mesh pencil holder with pencils\n- A small vintage-style camera\n- Colorful pens/markers\n- A wire document/file holder with papers\n- A wooden frame (possibly a mirror or empty frame) on the right\n\nThis looks like a styled interior photograph, likely from a home decor magazine or catalog.\n\nLet me rate each dimension:\n\n- recognizability: 4 - The content is clearly recognizable as a home office/workspace\n- ambiguity: 2 - Pretty clear what we're looking at\n- natural_photo_typicality: 3 - It's a photograph but very styled/professional, not a typical casual photo\n- visual_clutter: 3 - Several objects but well-organized\n- object_centricity: 2 - No single dominant object; it's more of a scene\n- scene_centricity: 4 - This is clearly a scene/setting\n- caption_confidence: 4 - Easy to caption\n\nCounts:\n- salient objects: maybe 6-7 (desk, chair, books, pencil holder, camera, file holder, frame)\n- distinct categories: about 6-7\n\nBooleans:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false (text is visible on papers but not prominently)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it's a real photo)\n- contains_occlusion_or_truncation: false (chair is partially cut off but that's framing)\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: true\n\ndominant_content_type: scene\nimage_style: natural_photo (or maybe edited_photo given the styled nature)\nsemantic_domain: interior/home_office\n\nshort_caption: \"Home office workspace with yellow botanical wallpaper, wooden desk, white chair, and office supplies.\"\n\nmain_objects: desk, chair, books, pencil holder, camera, file organizer, picture frame, wallpaper\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1467,
+          "completion_tokens": 861,
+          "total_tokens": 2328,
+          "cost": 0.00144594,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00144594,
+            "upstream_inference_prompt_cost": 0.00041274,
+            "upstream_inference_completions_cost": 0.0010332
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 570,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

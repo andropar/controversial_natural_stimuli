@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_133",
+    "stim_key": "vicco_133",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 133,
+    "file_index": 132,
+    "image_name": "shared_4rep_vicco_133.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_133.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"selfie\",\n\n  \"short_caption\": \"Blonde woman taking a selfie with a smartphone, wearing a striped shirt and heart pendant\",\n  \"main_objects\": [\"woman\", \"smartphone\", \"necklace\", \"striped shirt\"],\n  \"possible_interpretations\": [\"mirror selfie in a bathroom\", \"front-facing camera selfie\", \"casual indoor portrait\"],\n  \"uncertainty_notes\": \"Cannot definitively tell if mirror selfie or front-facing camera; some glare visible on hair\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319545-W888Q6IswtD2zJY6HYd7",
+        "object": "chat.completion",
+        "created": 1780319545,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n\n  \"contains_person\": true,\n  \"contains_face\": true,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"person_face\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"selfie\",\n\n  \"short_caption\": \"Blonde woman taking a selfie with a smartphone, wearing a striped shirt and heart pendant\",\n  \"main_objects\": [\"woman\", \"smartphone\", \"necklace\", \"striped shirt\"],\n  \"possible_interpretations\": [\"mirror selfie in a bathroom\", \"front-facing camera selfie\", \"casual indoor portrait\"],\n  \"uncertainty_notes\": \"Cannot definitively tell if mirror selfie or front-facing camera; some glare visible on hair\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It's a selfie of a person with long blonde hair, wearing a striped (black and white) top, with a heart pendant necklace. They're holding a smartphone (appears to be an iPhone with a case that has a pop socket/MagSafe ring). The setting appears to be indoors, likely a bathroom based on the tiled wall in the background. The person is taking a mirror selfie or front-facing camera selfie.\n\nLet me go through the schema:\n\n- recognizability: 5 - very clear, easily recognizable\n- ambiguity: 1 - single clear interpretation\n- natural_photo_typicality: 5 - looks like a typical selfie\n- visual_clutter: 2 - relatively simple, main subject dominates\n- object_centricity: 3 - it's a person so it could be person_face\n- scene_centricity: 2 - not really a scene, person-focused\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 3 (person, phone, necklace)\n- estimated_distinct_object_categories: 3 (person, phone, jewelry)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: true (there might be some text on the phone case)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"person_face\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"selfie\"\n\n- short_caption: \"Blonde woman taking a mirror selfie with a smartphone, wearing a striped shirt and heart necklace\"\n- main_objects: [\"woman\", \"smartphone\", \"necklace\"]\n- possible_interpretations: [\"selfie in a bathroom\", \"mirror selfie\", \"front-facing camera selfie\"]\n- uncertainty_notes: \"Unclear if it's a mirror selfie or front-facing camera; some glare on hair\"\n- quality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It's a selfie of a person with long blonde hair, wearing a striped (black and white) top, with a heart pendant necklace. They're holding a smartphone (appears to be an iPhone with a case that has a pop socket/MagSafe ring). The setting appears to be indoors, likely a bathroom based on the tiled wall in the background. The person is taking a mirror selfie or front-facing camera selfie.\n\nLet me go through the schema:\n\n- recognizability: 5 - very clear, easily recognizable\n- ambiguity: 1 - single clear interpretation\n- natural_photo_typicality: 5 - looks like a typical selfie\n- visual_clutter: 2 - relatively simple, main subject dominates\n- object_centricity: 3 - it's a person so it could be person_face\n- scene_centricity: 2 - not really a scene, person-focused\n- caption_confidence: 5 - easy to caption\n\n- estimated_salient_object_count: 3 (person, phone, necklace)\n- estimated_distinct_object_categories: 3 (person, phone, jewelry)\n\n- contains_person: true\n- contains_face: true\n- contains_animal: false\n- contains_text: true (there might be some text on the phone case)\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"person_face\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"selfie\"\n\n- short_caption: \"Blonde woman taking a mirror selfie with a smartphone, wearing a striped shirt and heart necklace\"\n- main_objects: [\"woman\", \"smartphone\", \"necklace\"]\n- possible_interpretations: [\"selfie in a bathroom\", \"mirror selfie\", \"front-facing camera selfie\"]\n- uncertainty_notes: \"Unclear if it's a mirror selfie or front-facing camera; some glare on hair\"\n- quality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 788,
+          "total_tokens": 2310,
+          "cost": 0.00125196,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00125196,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009456
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 498,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

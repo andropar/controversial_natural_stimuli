@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_44",
+    "stim_key": "architecture_44",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 44,
+    "file_index": 44,
+    "image_name": "image_0044.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0044.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home mobility equipment\",\n\n  \"short_caption\": \"A stairlift chair mounted on a carpeted indoor staircase with a framed painting nearby\",\n  \"main_objects\": [\"stairlift\", \"staircase\", \"framed painting\", \"potted plant\"],\n  \"possible_interpretations\": [\"stairlift on indoor stairs\", \"mobility assistance device\", \"stair-climbing chair\", \"home accessibility equipment\"],\n  \"uncertainty_notes\": \"Image is taken at a notably tilted/rotated angle; stairlift is partially truncated at the top of the frame\",\n  \"quality_flags\": [\"tilted_composition\", \"partial_truncation\"]\n}",
+      "response": {
+        "id": "gen-1780318894-OnClgaNboyjICKq1EW5p",
+        "object": "chat.completion",
+        "created": 1780318894,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home mobility equipment\",\n\n  \"short_caption\": \"A stairlift chair mounted on a carpeted indoor staircase with a framed painting nearby\",\n  \"main_objects\": [\"stairlift\", \"staircase\", \"framed painting\", \"potted plant\"],\n  \"possible_interpretations\": [\"stairlift on indoor stairs\", \"mobility assistance device\", \"stair-climbing chair\", \"home accessibility equipment\"],\n  \"uncertainty_notes\": \"Image is taken at a notably tilted/rotated angle; stairlift is partially truncated at the top of the frame\",\n  \"quality_flags\": [\"tilted_composition\", \"partial_truncation\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a stairlift (or stair lift chair) installed on a staircase. The device has a seat, footrest, and armrests, and it runs along a rail mounted to the stairs. The image is taken from a low angle, looking up the stairs. There's a framed painting on the wall to the left, a plant, and what appears to be a bookshelf or storage area. The image is taken at an unusual tilted angle.\n\nLet me go through each annotation:\n\n- recognizability: The main subject (stairlift) is clearly visible and recognizable. 5\n- ambiguity: The main subject is clear - it's a stairlift on stairs. Low ambiguity. 1\n- natural_photo_typicality: It looks like a typical photograph, though the angle is unusual. 4\n- visual_clutter: There's the stairlift, painting, plant, shelves, walls, stairs - moderate clutter. 3\n- object_centricity: The stairlift is the clear central object dominating the image. 5\n- scene_centricity: It's more object-focused than scene-focused. 2\n- caption_confidence: High confidence in describing this. 5\n\n- estimated_salient_object_count: 1 main (stairlift) + 2-3 secondary (painting, plant, shelves)\n- estimated_distinct_object_categories: 3-4 (stairlift, painting, plant, shelves/furniture)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false (stairlift is equipment, not really a vehicle)\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (stairlift is partially cut off at top)\n- contains_unusual_viewpoint: true (tilted/unusual angle)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"home equipment\" or \"mobility equipment\"\n\n- short_caption: \"A stairlift chair installed on indoor carpeted stairs\"\n- main_objects: [\"stairlift\", \"staircase\", \"framed painting\", \"potted plant\"]\n- possible_interpretations: [\"stairlift on stairs\", \"mobility assistance device\", \"stair climbing chair\"]\n- uncertainty_notes: \"Unusual tilted camera angle; the image appears slightly rotated\"\n- quality_flags: [\"tilted_angle\", \"unusual_composition\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a stairlift (or stair lift chair) installed on a staircase. The device has a seat, footrest, and armrests, and it runs along a rail mounted to the stairs. The image is taken from a low angle, looking up the stairs. There's a framed painting on the wall to the left, a plant, and what appears to be a bookshelf or storage area. The image is taken at an unusual tilted angle.\n\nLet me go through each annotation:\n\n- recognizability: The main subject (stairlift) is clearly visible and recognizable. 5\n- ambiguity: The main subject is clear - it's a stairlift on stairs. Low ambiguity. 1\n- natural_photo_typicality: It looks like a typical photograph, though the angle is unusual. 4\n- visual_clutter: There's the stairlift, painting, plant, shelves, walls, stairs - moderate clutter. 3\n- object_centricity: The stairlift is the clear central object dominating the image. 5\n- scene_centricity: It's more object-focused than scene-focused. 2\n- caption_confidence: High confidence in describing this. 5\n\n- estimated_salient_object_count: 1 main (stairlift) + 2-3 secondary (painting, plant, shelves)\n- estimated_distinct_object_categories: 3-4 (stairlift, painting, plant, shelves/furniture)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false (stairlift is equipment, not really a vehicle)\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: true (stairlift is partially cut off at top)\n- contains_unusual_viewpoint: true (tilted/unusual angle)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"home equipment\" or \"mobility equipment\"\n\n- short_caption: \"A stairlift chair installed on indoor carpeted stairs\"\n- main_objects: [\"stairlift\", \"staircase\", \"framed painting\", \"potted plant\"]\n- possible_interpretations: [\"stairlift on stairs\", \"mobility assistance device\", \"stair climbing chair\"]\n- uncertainty_notes: \"Unusual tilted camera angle; the image appears slightly rotated\"\n- quality_flags: [\"tilted_angle\", \"unusual_composition\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 920,
+          "total_tokens": 2442,
+          "cost": 0.00141036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00141036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.001104
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 591,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

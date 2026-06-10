@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_9",
+    "stim_key": "dataset_9",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 9,
+    "file_index": 9,
+    "image_name": "image_0009.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0009.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior\",\n\n  \"short_caption\": \"Sheer white curtains covering a multi-pane window with bright light filtering through\",\n  \"main_objects\": [\"window\", \"sheer curtains\", \"window panes\"],\n  \"possible_interpretations\": [\n    \"interior window with sheer curtains and daylight\",\n    \"closeup of white curtain fabric with window light\",\n    \"minimalist architectural detail of a window\"\n  ],\n  \"uncertainty_notes\": \"Image is very high-key; the outside view is overexposed and unrecognizable. Composition is minimal with little contextual detail.\",\n  \"quality_flags\": [\"high_key_overexposure\", \"minimal_content\"]\n}",
+      "response": {
+        "id": "gen-1780318974-WiToCKFyCXjBSXlYBllM",
+        "object": "chat.completion",
+        "created": 1780318974,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior\",\n\n  \"short_caption\": \"Sheer white curtains covering a multi-pane window with bright light filtering through\",\n  \"main_objects\": [\"window\", \"sheer curtains\", \"window panes\"],\n  \"possible_interpretations\": [\n    \"interior window with sheer curtains and daylight\",\n    \"closeup of white curtain fabric with window light\",\n    \"minimalist architectural detail of a window\"\n  ],\n  \"uncertainty_notes\": \"Image is very high-key; the outside view is overexposed and unrecognizable. Composition is minimal with little contextual detail.\",\n  \"quality_flags\": [\"high_key_overexposure\", \"minimal_content\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a window with sheer white curtains. Light is coming through, creating a soft, bright scene. The window has multiple panes (appears to be a multi-pane window with grid pattern). The curtains are translucent/sheer fabric. The overall composition is minimal and bright.\n\nLet me analyze each dimension:\n\n- recognizability: The content is clear - window with curtains. 4-5\n- ambiguity: Pretty clear what it is, not many interpretations. 2\n- natural_photo_typicality: Looks like a typical photograph, though very bright/high-key. 4\n- visual_clutter: Very minimal, clean composition. 1-2\n- object_centricity: There's a window with curtains as the main object. 3\n- scene_centricity: This is more of a scene/view. 3-4\n- caption_confidence: High confidence in a simple caption. 4\n\nMain content: window, sheer white curtains, light\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: partially - we see light from outside\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: could be \"object\" (window) or \"scene\" - I'll go with object\nimage_style: natural_photo\nsemantic_domain: interior/home\n\nshort_caption: \"Sheer white curtains covering a multi-pane window with bright light streaming through\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a window with sheer white curtains. Light is coming through, creating a soft, bright scene. The window has multiple panes (appears to be a multi-pane window with grid pattern). The curtains are translucent/sheer fabric. The overall composition is minimal and bright.\n\nLet me analyze each dimension:\n\n- recognizability: The content is clear - window with curtains. 4-5\n- ambiguity: Pretty clear what it is, not many interpretations. 2\n- natural_photo_typicality: Looks like a typical photograph, though very bright/high-key. 4\n- visual_clutter: Very minimal, clean composition. 1-2\n- object_centricity: There's a window with curtains as the main object. 3\n- scene_centricity: This is more of a scene/view. 3-4\n- caption_confidence: High confidence in a simple caption. 4\n\nMain content: window, sheer white curtains, light\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: true\n- contains_outdoor_scene: partially - we see light from outside\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\ndominant_content_type: could be \"object\" (window) or \"scene\" - I'll go with object\nimage_style: natural_photo\nsemantic_domain: interior/home\n\nshort_caption: \"Sheer white curtains covering a multi-pane window with bright light streaming through\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 720,
+          "total_tokens": 2242,
+          "cost": 0.00117036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00117036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000864
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 395,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

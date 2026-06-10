@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_54",
+    "stim_key": "dataset_54",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 54,
+    "file_index": 54,
+    "image_name": "image_0054.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0054.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"vehicle\",\n  \"short_caption\": \"Black and red FELT full-suspension electric mountain bike displayed against a plain wall.\",\n  \"main_objects\": [\"mountain bike\", \"FELT e-bike\"],\n  \"possible_interpretations\": [\"FELT electric mountain bike product photo\", \"full-suspension e-MTB on display\", \"high-end off-road e-bike showcase\"],\n  \"uncertainty_notes\": \"Staged product-style photo; integrated battery suggests e-bike but exact model not identifiable beyond FELT branding.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319024-VHQQEh9qjI7Rl1jOfBsW",
+        "object": "chat.completion",
+        "created": 1780319024,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 1,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 1,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"vehicle\",\n  \"short_caption\": \"Black and red FELT full-suspension electric mountain bike displayed against a plain wall.\",\n  \"main_objects\": [\"mountain bike\", \"FELT e-bike\"],\n  \"possible_interpretations\": [\"FELT electric mountain bike product photo\", \"full-suspension e-MTB on display\", \"high-end off-road e-bike showcase\"],\n  \"uncertainty_notes\": \"Staged product-style photo; integrated battery suggests e-bike but exact model not identifiable beyond FELT branding.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a black and red full-suspension electric mountain bike (e-bike) against a plain white/light gray background. The bike has \"FELT\" branding on the frame, \"MAXXIS\" branding on the tires, and appears to be a product photo. It's standing on a concrete or smooth floor.\n\nLet me assess each dimension:\n\n- recognizability: 5 - Very clearly a mountain bike, easily recognizable\n- ambiguity: 1 - Very clear what it is, minimal ambiguity\n- natural_photo_typicality: 3 - It's a photo but looks like a product/display photo, not a natural scene\n- visual_clutter: 1 - Clean, minimal background, single object\n- object_centricity: 5 - The bike dominates the image completely\n- scene_centricity: 1 - Not a scene, it's an object-focused image\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1\n- estimated_distinct_object_categories: 1 (bicycle)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (FELT, MAXXIS branding)\n- contains_vehicle: true (bicycle)\n- contains_food: false\n- contains_indoor_scene: true (looks like indoor display)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (slight angle but normal)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\" (it's a real photo, though staged)\n- semantic_domain: \"vehicle\" or \"sports\"\n\nshort_caption: \"Black and red full-suspension electric mountain bike displayed against a white wall\"\nmain_objects: [\"mountain bike\", \"FELT e-bike\"]\npossible_interpretations: [\"electric mountain bike product photo\", \"FELT brand e-MTB\", \"full-suspension e-bike display\"]\nuncertainty_notes: \"The exact model and whether it's e-bike (battery visible) - yes, there appears to be a battery integrated into the downtube\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a black and red full-suspension electric mountain bike (e-bike) against a plain white/light gray background. The bike has \"FELT\" branding on the frame, \"MAXXIS\" branding on the tires, and appears to be a product photo. It's standing on a concrete or smooth floor.\n\nLet me assess each dimension:\n\n- recognizability: 5 - Very clearly a mountain bike, easily recognizable\n- ambiguity: 1 - Very clear what it is, minimal ambiguity\n- natural_photo_typicality: 3 - It's a photo but looks like a product/display photo, not a natural scene\n- visual_clutter: 1 - Clean, minimal background, single object\n- object_centricity: 5 - The bike dominates the image completely\n- scene_centricity: 1 - Not a scene, it's an object-focused image\n- caption_confidence: 5 - Easy to caption\n\n- estimated_salient_object_count: 1\n- estimated_distinct_object_categories: 1 (bicycle)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: true (FELT, MAXXIS branding)\n- contains_vehicle: true (bicycle)\n- contains_food: false\n- contains_indoor_scene: true (looks like indoor display)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (slight angle but normal)\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\" (it's a real photo, though staged)\n- semantic_domain: \"vehicle\" or \"sports\"\n\nshort_caption: \"Black and red full-suspension electric mountain bike displayed against a white wall\"\nmain_objects: [\"mountain bike\", \"FELT e-bike\"]\npossible_interpretations: [\"electric mountain bike product photo\", \"FELT brand e-MTB\", \"full-suspension e-bike display\"]\nuncertainty_notes: \"The exact model and whether it's e-bike (battery visible) - yes, there appears to be a battery integrated into the downtube\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 833,
+          "total_tokens": 2355,
+          "cost": 0.00142884,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00142884,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009996
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 515,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

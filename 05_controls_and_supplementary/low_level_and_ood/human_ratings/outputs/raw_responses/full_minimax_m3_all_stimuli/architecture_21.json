@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_21",
+    "stim_key": "architecture_21",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 21,
+    "file_index": 21,
+    "image_name": "image_0021.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0021.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\":5,\"ambiguity\":1,\"natural_photo_typicality\":4,\"visual_clutter\":2,\"object_centricity\":3,\"scene_centricity\":4,\"caption_confidence\":5,\"estimated_salient_object_count\":25,\"estimated_distinct_object_categories\":3,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":false,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":true,\"contains_outdoor_scene\":false,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":false,\"contains_unusual_viewpoint\":false,\"contains_multiple_main_objects\":false,\"dominant_content_type\":\"scene\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"interior/auditorium\",\"short_caption\":\"Rows of empty blue tiered seats in an auditorium or theater.\",\"main_objects\":[\"blue upholstered seats\",\"carpeted steps\",\"wooden wall paneling\"],\"possible_interpretations\":[\"theater or auditorium seating\",\"lecture hall\",\"cinema interior\",\"conference venue\",\"concert hall\"],\"uncertainty_notes\":\"Exact venue type cannot be determined from the empty seats alone, but it is clearly a tiered indoor seating area.\",\"quality_flags\":[]}",
+      "response": {
+        "id": "gen-1780318871-Yn81ZBWD3u447EIaHTxY",
+        "object": "chat.completion",
+        "created": 1780318871,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\":5,\"ambiguity\":1,\"natural_photo_typicality\":4,\"visual_clutter\":2,\"object_centricity\":3,\"scene_centricity\":4,\"caption_confidence\":5,\"estimated_salient_object_count\":25,\"estimated_distinct_object_categories\":3,\"contains_person\":false,\"contains_face\":false,\"contains_animal\":false,\"contains_text\":false,\"contains_vehicle\":false,\"contains_food\":false,\"contains_indoor_scene\":true,\"contains_outdoor_scene\":false,\"contains_artificial_or_rendered_content\":false,\"contains_occlusion_or_truncation\":false,\"contains_unusual_viewpoint\":false,\"contains_multiple_main_objects\":false,\"dominant_content_type\":\"scene\",\"image_style\":\"natural_photo\",\"semantic_domain\":\"interior/auditorium\",\"short_caption\":\"Rows of empty blue tiered seats in an auditorium or theater.\",\"main_objects\":[\"blue upholstered seats\",\"carpeted steps\",\"wooden wall paneling\"],\"possible_interpretations\":[\"theater or auditorium seating\",\"lecture hall\",\"cinema interior\",\"conference venue\",\"concert hall\"],\"uncertainty_notes\":\"Exact venue type cannot be determined from the empty seats alone, but it is clearly a tiered indoor seating area.\",\"quality_flags\":[]}",
+              "refusal": null,
+              "reasoning": "The image shows rows of blue auditorium/theater seats arranged in a stepped configuration. The seats are empty, and the view is from a slightly elevated angle looking across the rows. There appears to be wooden paneling on the left side (possibly a wall) and carpeted steps/aisles between rows. This is a typical indoor venue seating area, likely a lecture hall, theater, or auditorium.\n\nLet me analyze each dimension:\n\n- recognizability: Very clear, easy to identify as auditorium/theater seating. 5\n- ambiguity: Not much ambiguity - clearly rows of seats in a venue. 1\n- natural_photo_typicality: Looks like a typical photograph, though it could be slightly edited. Looks natural. 4\n- visual_clutter: Repetitive pattern of seats, not too cluttered but many similar elements. 2-3\n- object_centricity: The seats are the main subject, repeated many times. Could be 3-4.\n- scene_centricity: This is more of a scene/place than a single object. 4\n- caption_confidence: High confidence in a concise caption. 5\n\nEstimated salient object count: Many seats, but as a category it's just seats. Maybe 20-30 visible seats. I'll say ~25.\nDistinct object categories: 2 (seats, steps/aisle)\n\nContains: no person, no face, no animal, no text, no vehicle, no food, indoor scene, no outdoor, no artificial/rendered, no occlusion, no unusual viewpoint, multiple main objects (seats).\n\nWait - the image is quite repetitive. The \"main object\" could be considered the collection of seats. Contains multiple main objects? They're all the same type. I'll say false since they're all seats.\n\nDominant content type: scene (it's showing a place/venue)\nImage style: natural_photo\nSemantic domain: auditorium/interior/venue\n\nShort caption: \"Rows of empty blue seats in an auditorium or theater.\"\nMain objects: [\"blue seats\", \"auditorium steps\", \"wooden wall paneling\"]\nPossible interpretations: [\"theater seating\", \"lecture hall seats\", \"cinema seats\", \"conference room seating\", \"concert hall seats\"]\nUncertainty notes: Exact venue type unclear but clearly tiered seating area.\nQuality flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows rows of blue auditorium/theater seats arranged in a stepped configuration. The seats are empty, and the view is from a slightly elevated angle looking across the rows. There appears to be wooden paneling on the left side (possibly a wall) and carpeted steps/aisles between rows. This is a typical indoor venue seating area, likely a lecture hall, theater, or auditorium.\n\nLet me analyze each dimension:\n\n- recognizability: Very clear, easy to identify as auditorium/theater seating. 5\n- ambiguity: Not much ambiguity - clearly rows of seats in a venue. 1\n- natural_photo_typicality: Looks like a typical photograph, though it could be slightly edited. Looks natural. 4\n- visual_clutter: Repetitive pattern of seats, not too cluttered but many similar elements. 2-3\n- object_centricity: The seats are the main subject, repeated many times. Could be 3-4.\n- scene_centricity: This is more of a scene/place than a single object. 4\n- caption_confidence: High confidence in a concise caption. 5\n\nEstimated salient object count: Many seats, but as a category it's just seats. Maybe 20-30 visible seats. I'll say ~25.\nDistinct object categories: 2 (seats, steps/aisle)\n\nContains: no person, no face, no animal, no text, no vehicle, no food, indoor scene, no outdoor, no artificial/rendered, no occlusion, no unusual viewpoint, multiple main objects (seats).\n\nWait - the image is quite repetitive. The \"main object\" could be considered the collection of seats. Contains multiple main objects? They're all the same type. I'll say false since they're all seats.\n\nDominant content type: scene (it's showing a place/venue)\nImage style: natural_photo\nSemantic domain: auditorium/interior/venue\n\nShort caption: \"Rows of empty blue seats in an auditorium or theater.\"\nMain objects: [\"blue seats\", \"auditorium steps\", \"wooden wall paneling\"]\nPossible interpretations: [\"theater seating\", \"lecture hall seats\", \"cinema seats\", \"conference room seating\", \"concert hall seats\"]\nUncertainty notes: Exact venue type unclear but clearly tiered seating area.\nQuality flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1267,
+          "completion_tokens": 742,
+          "total_tokens": 2009,
+          "cost": 0.00124314,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00124314,
+            "upstream_inference_prompt_cost": 0.00035274,
+            "upstream_inference_completions_cost": 0.0008904
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 538,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

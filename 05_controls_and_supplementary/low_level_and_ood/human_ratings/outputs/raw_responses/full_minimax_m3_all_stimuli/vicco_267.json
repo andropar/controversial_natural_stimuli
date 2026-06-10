@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_267",
+    "stim_key": "vicco_267",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 267,
+    "file_index": 266,
+    "image_name": "shared_4rep_vicco_267.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_267.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"concert/performance\",\n  \"short_caption\": \"Silhouetted performer on stage with blue lights and smoke holding a banner.\",\n  \"main_objects\": [\"person\", \"banner\", \"stage lights\", \"smoke\"],\n  \"possible_interpretations\": [\"concert performance\", \"theatrical show\", \"political rally\", \"DJ set\", \"live music event\"],\n  \"uncertainty_notes\": \"Face is obscured by silhouette; banner symbol and exact context (concert vs. rally) unclear due to low detail and heavy smoke.\",\n  \"quality_flags\": [\"low_light\", \"backlit_silhouette\", \"smoke_obstruction\", \"motion_blur_minor\"]\n}",
+      "response": {
+        "id": "gen-1780319696-mZpBBaFzGs3feX6hWB3k",
+        "object": "chat.completion",
+        "created": 1780319696,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"person\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"concert/performance\",\n  \"short_caption\": \"Silhouetted performer on stage with blue lights and smoke holding a banner.\",\n  \"main_objects\": [\"person\", \"banner\", \"stage lights\", \"smoke\"],\n  \"possible_interpretations\": [\"concert performance\", \"theatrical show\", \"political rally\", \"DJ set\", \"live music event\"],\n  \"uncertainty_notes\": \"Face is obscured by silhouette; banner symbol and exact context (concert vs. rally) unclear due to low detail and heavy smoke.\",\n  \"quality_flags\": [\"low_light\", \"backlit_silhouette\", \"smoke_obstruction\", \"motion_blur_minor\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. I can see a person on what appears to be a stage, silhouetted against blue lighting with smoke/fog effects. The person seems to be holding something - possibly a flag or banner on a pole. There's heavy blue stage lighting and smoke creating a dramatic atmosphere. The scene looks like a concert or performance venue.\n\nLet me work through the schema:\n\n- recognizability: It's somewhat recognizable as a stage performance scene, but details are obscured by smoke and lighting. I'd say 3.\n- ambiguity: Multiple interpretations possible - could be concert, theatrical performance, political rally, etc. Maybe 3.\n- natural_photo_typicality: This is a natural photo but with dramatic stage lighting. 3-4.\n- visual_clutter: There's smoke, lights, person, banner - moderate clutter. 3.\n- object_centricity: The person is the main subject but is silhouetted. 3.\n- scene_centricity: The scene (stage with lighting) is prominent. 4.\n- caption_confidence: Reasonably confident about a general caption. 3.\n\n- contains_person: Yes, clearly a person visible\n- contains_face: Face is obscured in silhouette, hard to tell\n- contains_animal: No\n- contains_text: There appears to be a symbol on the banner but no clear text\n- contains_vehicle: No\n- contains_food: No\n- contains_indoor_scene: Yes, appears indoor\n- contains_outdoor_scene: No\n- contains_artificial_or_rendered_content: No, it's a real photo\n- contains_occlusion_or_truncation: Yes, the person is partially silhouetted\n- contains_unusual_viewpoint: No, fairly standard angle\n- contains_multiple_main_objects: No, one main subject\n\ndominant_content_type: person (silhouetted)\nimage_style: natural_photo\nsemantic_domain: concert/performance\n\nShort caption: \"Silhouetted performer on stage with blue lights and smoke holding a banner.\"\n\nMain objects: person, banner, stage lights, smoke\n\nQuality flags: low_light, smoke_obstruction, backlit_silhouette",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. I can see a person on what appears to be a stage, silhouetted against blue lighting with smoke/fog effects. The person seems to be holding something - possibly a flag or banner on a pole. There's heavy blue stage lighting and smoke creating a dramatic atmosphere. The scene looks like a concert or performance venue.\n\nLet me work through the schema:\n\n- recognizability: It's somewhat recognizable as a stage performance scene, but details are obscured by smoke and lighting. I'd say 3.\n- ambiguity: Multiple interpretations possible - could be concert, theatrical performance, political rally, etc. Maybe 3.\n- natural_photo_typicality: This is a natural photo but with dramatic stage lighting. 3-4.\n- visual_clutter: There's smoke, lights, person, banner - moderate clutter. 3.\n- object_centricity: The person is the main subject but is silhouetted. 3.\n- scene_centricity: The scene (stage with lighting) is prominent. 4.\n- caption_confidence: Reasonably confident about a general caption. 3.\n\n- contains_person: Yes, clearly a person visible\n- contains_face: Face is obscured in silhouette, hard to tell\n- contains_animal: No\n- contains_text: There appears to be a symbol on the banner but no clear text\n- contains_vehicle: No\n- contains_food: No\n- contains_indoor_scene: Yes, appears indoor\n- contains_outdoor_scene: No\n- contains_artificial_or_rendered_content: No, it's a real photo\n- contains_occlusion_or_truncation: Yes, the person is partially silhouetted\n- contains_unusual_viewpoint: No, fairly standard angle\n- contains_multiple_main_objects: No, one main subject\n\ndominant_content_type: person (silhouetted)\nimage_style: natural_photo\nsemantic_domain: concert/performance\n\nShort caption: \"Silhouetted performer on stage with blue lights and smoke holding a banner.\"\n\nMain objects: person, banner, stage lights, smoke\n\nQuality flags: low_light, smoke_obstruction, backlit_silhouette",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 809,
+          "total_tokens": 2331,
+          "cost": 0.00127716,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00127716,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009708
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 508,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

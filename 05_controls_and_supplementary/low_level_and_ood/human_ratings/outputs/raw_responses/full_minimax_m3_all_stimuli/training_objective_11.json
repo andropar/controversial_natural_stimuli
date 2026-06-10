@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_11",
+    "stim_key": "training_objective_11",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 11,
+    "file_index": 11,
+    "image_name": "image_0011.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0011.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 5,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"craft workshop\",\n  \"short_caption\": \"Hands working with cut clay shapes on a craft table\",\n  \"main_objects\": [\"clay pieces\", \"star cutter\", \"plastic cup\", \"cardboard box\", \"blue painted shapes\"],\n  \"possible_interpretations\": [\n    \"ceramics or pottery workshop\",\n    \"art class with clay crafting\",\n    \"handmade tile or ornament production\",\n    \"cooking or baking preparation\",\n    \"school craft activity\"\n  ],\n  \"uncertainty_notes\": \"Image is partially blurred and hands obscure key details; exact activity (art vs. food) is unclear.\",\n  \"quality_flags\": [\"motion_blur\", \"partial_occlusion\", \"cluttered_background\", \"low_contrast\"]\n}",
+      "response": {
+        "id": "gen-1780319213-55KEynqNgRP64c5RYavy",
+        "object": "chat.completion",
+        "created": 1780319213,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 5,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 3,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 5,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"craft workshop\",\n  \"short_caption\": \"Hands working with cut clay shapes on a craft table\",\n  \"main_objects\": [\"clay pieces\", \"star cutter\", \"plastic cup\", \"cardboard box\", \"blue painted shapes\"],\n  \"possible_interpretations\": [\n    \"ceramics or pottery workshop\",\n    \"art class with clay crafting\",\n    \"handmade tile or ornament production\",\n    \"cooking or baking preparation\",\n    \"school craft activity\"\n  ],\n  \"uncertainty_notes\": \"Image is partially blurred and hands obscure key details; exact activity (art vs. food) is unclear.\",\n  \"quality_flags\": [\"motion_blur\", \"partial_occlusion\", \"cluttered_background\", \"low_contrast\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be a craft/art studio or workshop. I can see:\n- Hands (partially visible, blurred) working with clay or dough\n- Cut-out shapes (appears to be clay pieces) arranged in patterns on cloth\n- A star-shaped cookie cutter or stamp\n- Blue painted or dyed pieces in the background\n- A plastic container/cup on the right\n- A cardboard box in the upper left\n- White cloth/canvas material underneath the clay pieces\n- A green/teal string or wire\n\nThis looks like a ceramics or craft workshop where someone is making decorative pieces, possibly tiles or ornaments.\n\nLet me rate:\n- Recognizability: Moderate - you can tell it's a craft workspace but it's somewhat cluttered and partially obscured by hands\n- Ambiguity: Low-moderate - fairly clear it's a craft workshop\n- Natural photo typicality: It looks like a candid photo, so reasonable\n- Visual clutter: High - many items\n- Object centricity: Low - no single clear object\n- Scene centricity: High - it's a workspace scene\n- Caption confidence: Moderate\n\nLet me fill in the schema.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be a craft/art studio or workshop. I can see:\n- Hands (partially visible, blurred) working with clay or dough\n- Cut-out shapes (appears to be clay pieces) arranged in patterns on cloth\n- A star-shaped cookie cutter or stamp\n- Blue painted or dyed pieces in the background\n- A plastic container/cup on the right\n- A cardboard box in the upper left\n- White cloth/canvas material underneath the clay pieces\n- A green/teal string or wire\n\nThis looks like a ceramics or craft workshop where someone is making decorative pieces, possibly tiles or ornaments.\n\nLet me rate:\n- Recognizability: Moderate - you can tell it's a craft workspace but it's somewhat cluttered and partially obscured by hands\n- Ambiguity: Low-moderate - fairly clear it's a craft workshop\n- Natural photo typicality: It looks like a candid photo, so reasonable\n- Visual clutter: High - many items\n- Object centricity: Low - no single clear object\n- Scene centricity: High - it's a workspace scene\n- Caption confidence: Moderate\n\nLet me fill in the schema.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 622,
+          "total_tokens": 2144,
+          "cost": 0.00117564,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00117564,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0007464
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 290,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

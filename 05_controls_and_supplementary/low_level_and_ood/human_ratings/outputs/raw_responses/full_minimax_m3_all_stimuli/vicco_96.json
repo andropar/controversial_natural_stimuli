@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_96",
+    "stim_key": "vicco_96",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 96,
+    "file_index": 95,
+    "image_name": "shared_4rep_vicco_096.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_096.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nighttime harbor\",\n  \"short_caption\": \"Nighttime harbor with moored boats, illuminated bridge, and city lights along distant hills.\",\n  \"main_objects\": [\"boats\", \"pier\", \"bridge\", \"city lights\", \"water\"],\n  \"possible_interpretations\": [\n    \"Lake or harbor at night\",\n    \"Coastal town seen from waterfront\",\n    \"Reservoir with marina and distant town\"\n  ],\n  \"uncertainty_notes\": \"Low light limits fine detail; exact location and number of boats are not fully discernible.\",\n  \"quality_flags\": [\"low_light\", \"high_contrast\", \"some_motion_blur_possible\"]\n}",
+      "response": {
+        "id": "gen-1780319498-8VNi4G2bgUntDsKPyO2F",
+        "object": "chat.completion",
+        "created": 1780319498,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": true,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nighttime harbor\",\n  \"short_caption\": \"Nighttime harbor with moored boats, illuminated bridge, and city lights along distant hills.\",\n  \"main_objects\": [\"boats\", \"pier\", \"bridge\", \"city lights\", \"water\"],\n  \"possible_interpretations\": [\n    \"Lake or harbor at night\",\n    \"Coastal town seen from waterfront\",\n    \"Reservoir with marina and distant town\"\n  ],\n  \"uncertainty_notes\": \"Low light limits fine detail; exact location and number of boats are not fully discernible.\",\n  \"quality_flags\": [\"low_light\", \"high_contrast\", \"some_motion_blur_possible\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a nighttime scene of a harbor or lake with boats moored, a pier/bridge structure with lights, and a town/city with lights in the background against hills/mountains. The sky is dark. There's a covered boat in the foreground and other boats in the distance. This appears to be an outdoor scene at night.\n\nLet me analyze the attributes:\n- Recognizability: The scene is recognizable as a nighttime harbor with boats, 4\n- Ambiguity: Relatively low, it's clearly a harbor scene at night, 2\n- Natural photo typicality: Looks like a natural photograph, 4\n- Visual clutter: Moderate - multiple boats, lights, structures, 3\n- Object centricity: Not really one object dominating, it's a scene, 2\n- Scene centricity: Yes, this is mainly a place/scene, 4\n- Caption confidence: High, can describe it well, 4\n\n- Salient object count: Several boats, maybe 5-7\n- Distinct object categories: boats, pier/bridge, buildings/lights, water, sky/hills\n\n- Contains person: No\n- Contains face: No\n- Contains animal: No\n- Contains text: No\n- Contains vehicle: Boats could count as vehicles\n- Contains food: No\n- Contains indoor scene: No\n- Contains outdoor scene: Yes\n- Contains artificial or rendered content: No\n- Contains occlusion or truncation: Some boats partially visible\n- Contains unusual viewpoint: No\n- Contains multiple main objects: Multiple boats\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: harbor/nighttime/lakeside\n\nShort caption: Nighttime harbor with moored boats, lit bridge, and city lights in distance.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a nighttime scene of a harbor or lake with boats moored, a pier/bridge structure with lights, and a town/city with lights in the background against hills/mountains. The sky is dark. There's a covered boat in the foreground and other boats in the distance. This appears to be an outdoor scene at night.\n\nLet me analyze the attributes:\n- Recognizability: The scene is recognizable as a nighttime harbor with boats, 4\n- Ambiguity: Relatively low, it's clearly a harbor scene at night, 2\n- Natural photo typicality: Looks like a natural photograph, 4\n- Visual clutter: Moderate - multiple boats, lights, structures, 3\n- Object centricity: Not really one object dominating, it's a scene, 2\n- Scene centricity: Yes, this is mainly a place/scene, 4\n- Caption confidence: High, can describe it well, 4\n\n- Salient object count: Several boats, maybe 5-7\n- Distinct object categories: boats, pier/bridge, buildings/lights, water, sky/hills\n\n- Contains person: No\n- Contains face: No\n- Contains animal: No\n- Contains text: No\n- Contains vehicle: Boats could count as vehicles\n- Contains food: No\n- Contains indoor scene: No\n- Contains outdoor scene: Yes\n- Contains artificial or rendered content: No\n- Contains occlusion or truncation: Some boats partially visible\n- Contains unusual viewpoint: No\n- Contains multiple main objects: Multiple boats\n\nDominant content type: scene\nImage style: natural_photo\nSemantic domain: harbor/nighttime/lakeside\n\nShort caption: Nighttime harbor with moored boats, lit bridge, and city lights in distance.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 728,
+          "total_tokens": 2250,
+          "cost": 0.00117996,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00117996,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0008736
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 409,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_93",
+    "stim_key": "vicco_93",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 93,
+    "file_index": 92,
+    "image_name": "shared_4rep_vicco_093.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_093.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 1,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wood_surface\",\n\n  \"short_caption\": \"Close-up of a scratched wooden table with tally marks, doodles, a heart, and the date 11.23 carved into it.\",\n  \"main_objects\": [\"wooden surface\", \"scratches\", \"tally marks\", \"doodles\", \"carved date\", \"heart shape\", \"letters\"],\n  \"possible_interpretations\": [\n    \"a well-used wooden table top\",\n    \"a wooden desk with graffiti\",\n    \"a wooden bench with vandalism\",\n    \"a wooden cutting board or panel with markings\"\n  ],\n  \"uncertainty_notes\": \"The exact context (table, desk, bench, or other wooden object) is ambiguous; the markings are partially worn and difficult to fully read.\",\n  \"quality_flags\": [\"close-up of texture\", \"unclear spatial context\"]\n}",
+      "response": {
+        "id": "gen-1780319495-jj5DNxwJTJ9pdhFk5Pmm",
+        "object": "chat.completion",
+        "created": 1780319495,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": null,\n  \"estimated_distinct_object_categories\": 1,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"closeup_detail\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wood_surface\",\n\n  \"short_caption\": \"Close-up of a scratched wooden table with tally marks, doodles, a heart, and the date 11.23 carved into it.\",\n  \"main_objects\": [\"wooden surface\", \"scratches\", \"tally marks\", \"doodles\", \"carved date\", \"heart shape\", \"letters\"],\n  \"possible_interpretations\": [\n    \"a well-used wooden table top\",\n    \"a wooden desk with graffiti\",\n    \"a wooden bench with vandalism\",\n    \"a wooden cutting board or panel with markings\"\n  ],\n  \"uncertainty_notes\": \"The exact context (table, desk, bench, or other wooden object) is ambiguous; the markings are partially worn and difficult to fully read.\",\n  \"quality_flags\": [\"close-up of texture\", \"unclear spatial context\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a wooden surface, likely a table, with various scratches, carvings, and markings on it. I can see:\n- A date \"11.23\" carved or written on it\n- Various tally marks (lines grouped together)\n- Some scribbled drawings/doodles\n- A heart shape\n- Letters like \"SHA\" or similar\n- Various other random marks and scratches\n- The wood has a warm orange/brown color with visible grain\n\nThis is a close-up of a wooden surface with graffiti/markings. Let me annotate according to the schema.\n\n- Recognizability: 4 - Clearly a wooden surface with markings\n- Ambiguity: 3 - Could be interpreted as table, desk, or other wooden surface\n- Natural photo typicality: 4 - Looks like a typical natural photo\n- Visual clutter: 4 - Many different marks and carvings\n- Object centricity: 2 - No single central object\n- Scene centricity: 2 - It's a closeup of a surface, not really a scene\n- Caption confidence: 3 - Could describe as scratched wooden surface\n\n- Salient objects: many marks, but it's really about the surface\n- Distinct categories: markings/scratches (1)\n\n- Contains person: false\n- Contains face: false\n- Contains animal: false\n- Contains text: true (date, letters)\n- Contains vehicle: false\n- Contains food: false\n- Contains indoor scene: true (likely indoor)\n- Contains outdoor scene: false\n- Contains artificial content: true (the carvings are human-made)\n- Contains occlusion/truncation: false\n- Contains unusual viewpoint: false\n- Contains multiple main objects: false\n\nDominant content type: texture_pattern or closeup_detail\nImage style: natural_photo\nSemantic domain: wood_surface/surface\n\nShort caption: \"Close-up of a wooden table surface with various scratches, carvings, tally marks, doodles, and a date.\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a wooden surface, likely a table, with various scratches, carvings, and markings on it. I can see:\n- A date \"11.23\" carved or written on it\n- Various tally marks (lines grouped together)\n- Some scribbled drawings/doodles\n- A heart shape\n- Letters like \"SHA\" or similar\n- Various other random marks and scratches\n- The wood has a warm orange/brown color with visible grain\n\nThis is a close-up of a wooden surface with graffiti/markings. Let me annotate according to the schema.\n\n- Recognizability: 4 - Clearly a wooden surface with markings\n- Ambiguity: 3 - Could be interpreted as table, desk, or other wooden surface\n- Natural photo typicality: 4 - Looks like a typical natural photo\n- Visual clutter: 4 - Many different marks and carvings\n- Object centricity: 2 - No single central object\n- Scene centricity: 2 - It's a closeup of a surface, not really a scene\n- Caption confidence: 3 - Could describe as scratched wooden surface\n\n- Salient objects: many marks, but it's really about the surface\n- Distinct categories: markings/scratches (1)\n\n- Contains person: false\n- Contains face: false\n- Contains animal: false\n- Contains text: true (date, letters)\n- Contains vehicle: false\n- Contains food: false\n- Contains indoor scene: true (likely indoor)\n- Contains outdoor scene: false\n- Contains artificial content: true (the carvings are human-made)\n- Contains occlusion/truncation: false\n- Contains unusual viewpoint: false\n- Contains multiple main objects: false\n\nDominant content type: texture_pattern or closeup_detail\nImage style: natural_photo\nSemantic domain: wood_surface/surface\n\nShort caption: \"Close-up of a wooden table surface with various scratches, carvings, tally marks, doodles, and a date.\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 810,
+          "total_tokens": 2332,
+          "cost": 0.00127836,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00127836,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000972
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 471,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

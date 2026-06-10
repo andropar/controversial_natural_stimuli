@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_71",
+    "stim_key": "training_objective_71",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 71,
+    "file_index": 71,
+    "image_name": "image_0071.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0071.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior/home\",\n  \"short_caption\": \"Wooden peg hooks on green patterned wallpaper holding a blue apron and small basket.\",\n  \"main_objects\": [\"wooden peg hooks\", \"apron\", \"crocheted basket\", \"wooden utensils\", \"patterned wallpaper\"],\n  \"possible_interpretations\": [\"Entryway coat hooks with hanging garment\", \"Kitchen wall with utensil storage\", \"Bathroom wall hooks\", \"Boutique or cafe interior decor\"],\n  \"uncertainty_notes\": \"Room type is uncertain; the patterned wallpaper and white planks could be in a kitchen, hallway, or bathroom.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319347-BfcZzFSJVFhBpzx6NJ25",
+        "object": "chat.completion",
+        "created": 1780319347,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 4,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"interior/home\",\n  \"short_caption\": \"Wooden peg hooks on green patterned wallpaper holding a blue apron and small basket.\",\n  \"main_objects\": [\"wooden peg hooks\", \"apron\", \"crocheted basket\", \"wooden utensils\", \"patterned wallpaper\"],\n  \"possible_interpretations\": [\"Entryway coat hooks with hanging garment\", \"Kitchen wall with utensil storage\", \"Bathroom wall hooks\", \"Boutique or cafe interior decor\"],\n  \"uncertainty_notes\": \"Room type is uncertain; the patterned wallpaper and white planks could be in a kitchen, hallway, or bathroom.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "The image shows an interior wall with a green and white patterned wallpaper (looks like a hand-painted dash or grasscloth pattern). There are wooden peg hooks mounted on the wall, with a blue/grey linen apron or garment hanging from one and a small crocheted/knitted basket with wooden utensils hanging from another. The left side shows white painted wood plank wall or ceiling.\n\nLet me analyze the schema fields:\n\n- recognizability: 4 - clearly recognizable as a coat/peg wall with items\n- ambiguity: 2 - fairly clear what it is\n- natural_photo_typicality: 4 - looks like a typical home/lifestyle photo\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 3 - there are objects but the wall/pattern is also prominent\n- scene_centricity: 4 - this is a scene/interior shot\n- caption_confidence: 4 - can describe it confidently\n\nestimated_salient_object_count: 3-4 (peg hooks, basket with utensils, garment)\nestimated_distinct_object_categories: 3 (hooks/pegs, garment/apron, basket with utensils, wall pattern)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: interior/home\n\nshort_caption: \"Wooden peg hooks on green and white patterned wallpaper with a hanging apron and small basket.\"\n\nmain_objects: [\"wooden peg hooks\", \"apron\", \"small basket\", \"wooden utensils\", \"patterned wallpaper\"]\n\npossible_interpretations: [\"Entryway with coat hooks\", \"Kitchen wall with utensil storage\", \"Bathroom towel hooks\"]\n\nuncertainty_notes: \"Patterned wallpaper and white planks could be in various rooms\"\nquality_flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows an interior wall with a green and white patterned wallpaper (looks like a hand-painted dash or grasscloth pattern). There are wooden peg hooks mounted on the wall, with a blue/grey linen apron or garment hanging from one and a small crocheted/knitted basket with wooden utensils hanging from another. The left side shows white painted wood plank wall or ceiling.\n\nLet me analyze the schema fields:\n\n- recognizability: 4 - clearly recognizable as a coat/peg wall with items\n- ambiguity: 2 - fairly clear what it is\n- natural_photo_typicality: 4 - looks like a typical home/lifestyle photo\n- visual_clutter: 2 - relatively simple composition\n- object_centricity: 3 - there are objects but the wall/pattern is also prominent\n- scene_centricity: 4 - this is a scene/interior shot\n- caption_confidence: 4 - can describe it confidently\n\nestimated_salient_object_count: 3-4 (peg hooks, basket with utensils, garment)\nestimated_distinct_object_categories: 3 (hooks/pegs, garment/apron, basket with utensils, wall pattern)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: false\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: interior/home\n\nshort_caption: \"Wooden peg hooks on green and white patterned wallpaper with a hanging apron and small basket.\"\n\nmain_objects: [\"wooden peg hooks\", \"apron\", \"small basket\", \"wooden utensils\", \"patterned wallpaper\"]\n\npossible_interpretations: [\"Entryway with coat hooks\", \"Kitchen wall with utensil storage\", \"Bathroom towel hooks\"]\n\nuncertainty_notes: \"Patterned wallpaper and white planks could be in various rooms\"\nquality_flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1467,
+          "completion_tokens": 802,
+          "total_tokens": 2269,
+          "cost": 0.00125226,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00125226,
+            "upstream_inference_prompt_cost": 0.00028986,
+            "upstream_inference_completions_cost": 0.0009624
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 505,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

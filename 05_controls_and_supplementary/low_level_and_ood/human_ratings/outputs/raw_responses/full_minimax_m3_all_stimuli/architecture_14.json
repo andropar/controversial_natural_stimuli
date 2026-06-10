@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_14",
+    "stim_key": "architecture_14",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 14,
+    "file_index": 14,
+    "image_name": "image_0014.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0014.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"home_interior\",\n\n  \"short_caption\": \"Dining room with wooden table, chairs, chandelier, and floral centerpiece overlooking adjacent living area.\",\n  \"main_objects\": [\"dining table\", \"wooden chairs\", \"chandelier\", \"floral centerpiece\", \"living room couch\", \"decorative shelf\"],\n  \"possible_interpretations\": [\"home interior dining area\", \"interior design portfolio photo\", \"staged home listing photo\"],\n  \"uncertainty_notes\": \"Watermark 'Kylie M. Interiors E-Design' overlays the image, indicating it is a branded or portfolio photograph.\",\n  \"quality_flags\": [\"watermark_overlay\"]\n}",
+      "response": {
+        "id": "gen-1780318860-xA5xZVeLtYvhZ2bG6q0z",
+        "object": "chat.completion",
+        "created": 1780318860,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 6,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"edited_photo\",\n  \"semantic_domain\": \"home_interior\",\n\n  \"short_caption\": \"Dining room with wooden table, chairs, chandelier, and floral centerpiece overlooking adjacent living area.\",\n  \"main_objects\": [\"dining table\", \"wooden chairs\", \"chandelier\", \"floral centerpiece\", \"living room couch\", \"decorative shelf\"],\n  \"possible_interpretations\": [\"home interior dining area\", \"interior design portfolio photo\", \"staged home listing photo\"],\n  \"uncertainty_notes\": \"Watermark 'Kylie M. Interiors E-Design' overlays the image, indicating it is a branded or portfolio photograph.\",\n  \"quality_flags\": [\"watermark_overlay\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows an interior dining room scene with a wooden dining table, chairs, a chandelier hanging from the ceiling, a wooden centerpiece with flowers, and a view into an adjacent living room with a couch and armchairs. There's also a shelf with decorative items visible on the right. The image has a watermark \"Kylie M. Interiors E-Design\" at the bottom, suggesting this is from an interior design portfolio/blog.\n\nLet me annotate this carefully:\n\n- Recognizability: High - clearly a dining room interior (5)\n- Ambiguity: Low - it's clearly a dining room (1-2)\n- Natural_photo_typicality: Looks like a natural photo of a home, though has watermark (3-4)\n- Visual_clutter: Moderate - multiple objects but organized (3)\n- Object_centricity: No single central object - it's a scene (2)\n- Scene_centricity: Very much a scene (5)\n- Caption_confidence: High (5)\n\n- Salient objects: dining table, chairs, chandelier, centerpiece, shelf items\n- Distinct categories: furniture, lighting, decor items (5-6)\n- Contains person: no\n- Contains face: no\n- Contains animal: no\n- Contains text: yes (watermark)\n- Contains vehicle: no\n- Contains food: no\n- Indoor: yes\n- Outdoor: no\n- Artificial: no (but has watermark text overlay)\n- Occlusion: no\n- Unusual viewpoint: no\n- Multiple main objects: no, it's a scene\n\nDominant content: scene\nImage style: edited_photo (has watermark, but otherwise natural)\nSemantic domain: home_interior\n\nCaption: \"Dining room with wooden table, chairs, chandelier, and floral centerpiece overlooking adjacent living area.\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows an interior dining room scene with a wooden dining table, chairs, a chandelier hanging from the ceiling, a wooden centerpiece with flowers, and a view into an adjacent living room with a couch and armchairs. There's also a shelf with decorative items visible on the right. The image has a watermark \"Kylie M. Interiors E-Design\" at the bottom, suggesting this is from an interior design portfolio/blog.\n\nLet me annotate this carefully:\n\n- Recognizability: High - clearly a dining room interior (5)\n- Ambiguity: Low - it's clearly a dining room (1-2)\n- Natural_photo_typicality: Looks like a natural photo of a home, though has watermark (3-4)\n- Visual_clutter: Moderate - multiple objects but organized (3)\n- Object_centricity: No single central object - it's a scene (2)\n- Scene_centricity: Very much a scene (5)\n- Caption_confidence: High (5)\n\n- Salient objects: dining table, chairs, chandelier, centerpiece, shelf items\n- Distinct categories: furniture, lighting, decor items (5-6)\n- Contains person: no\n- Contains face: no\n- Contains animal: no\n- Contains text: yes (watermark)\n- Contains vehicle: no\n- Contains food: no\n- Indoor: yes\n- Outdoor: no\n- Artificial: no (but has watermark text overlay)\n- Occlusion: no\n- Unusual viewpoint: no\n- Multiple main objects: no, it's a scene\n\nDominant content: scene\nImage style: edited_photo (has watermark, but otherwise natural)\nSemantic domain: home_interior\n\nCaption: \"Dining room with wooden table, chairs, chandelier, and floral centerpiece overlooking adjacent living area.\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1179,
+          "completion_tokens": 733,
+          "total_tokens": 1912,
+          "cost": 0.00120594,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00120594,
+            "upstream_inference_prompt_cost": 0.00032634,
+            "upstream_inference_completions_cost": 0.0008796
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 409,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

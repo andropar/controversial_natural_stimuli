@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_33",
+    "stim_key": "architecture_33",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 33,
+    "file_index": 33,
+    "image_name": "image_0033.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0033.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wedding_event\",\n  \"short_caption\": \"Aerial view of a bride standing at an outdoor wedding ceremony setup with white chairs.\",\n  \"main_objects\": [\"bride\", \"wedding dress\", \"white chairs\", \"potted plants\", \"stone pavement\", \"stone balustrade\"],\n  \"possible_interpretations\": [\n    \"wedding ceremony about to begin\",\n    \"fashion or bridal photoshoot\",\n    \"architectural courtyard scene\",\n    \"staged editorial photograph\"\n  ],\n  \"uncertainty_notes\": \"Face not visible due to overhead angle; cannot confirm if groom or guests are present; petals suggest ceremony but no guests are seated.\",\n  \"quality_flags\": [\"unusual_viewpoint\", \"overhead_aerial\"]\n}",
+      "response": {
+        "id": "gen-1780318883-K8gsunLavzPpdwJPQCA7",
+        "object": "chat.completion",
+        "created": 1780318883,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 4,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"wedding_event\",\n  \"short_caption\": \"Aerial view of a bride standing at an outdoor wedding ceremony setup with white chairs.\",\n  \"main_objects\": [\"bride\", \"wedding dress\", \"white chairs\", \"potted plants\", \"stone pavement\", \"stone balustrade\"],\n  \"possible_interpretations\": [\n    \"wedding ceremony about to begin\",\n    \"fashion or bridal photoshoot\",\n    \"architectural courtyard scene\",\n    \"staged editorial photograph\"\n  ],\n  \"uncertainty_notes\": \"Face not visible due to overhead angle; cannot confirm if groom or guests are present; petals suggest ceremony but no guests are seated.\",\n  \"quality_flags\": [\"unusual_viewpoint\", \"overhead_aerial\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It's an aerial/overhead view of what appears to be a wedding ceremony setup. I can see:\n\n- A bride in a white wedding dress with a long train/lace pattern\n- The bride appears to be standing with arms crossed\n- There are rows of white chairs arranged for a ceremony\n- The setting appears to be on stone/concrete pavement, possibly in a courtyard or plaza\n- There are some architectural elements on the left side (arched columns/balustrade)\n- Two green plants/bushes on the right side\n- Petals or flowers scattered along the aisle\n- This looks like it could be at a historic building, possibly Italian given the architecture\n\nLet me provide the annotations:\n\n- Recognizability: 4 - clearly recognizable as a wedding ceremony from above\n- Ambiguity: 2 - fairly clear interpretation\n- Natural photo typicality: 4 - looks like a typical aerial photograph, though from an unusual angle\n- Visual clutter: 2 - relatively simple composition\n- Object centrality: 2 - the bride is somewhat central but the scene is the main subject\n- Scene centrality: 5 - it's primarily a scene/place\n- Caption confidence: 4 - can describe confidently\n\n- Salient object count: 1 (the bride) but there are also chairs\n- Distinct object categories: ~3 (person, chairs, plants)\n\n- Contains person: true\n- Contains face: false (face not clearly visible from this angle)\n- Contains animal: false\n- Contains text: false\n- Contains vehicle: false\n- Contains food: false\n- Contains indoor scene: false\n- Contains outdoor scene: true\n- Contains artificial or rendered content: false\n- Contains occlusion or truncation: false\n- Contains unusual viewpoint: true (aerial overhead)\n- Contains multiple main objects: false\n\n- Dominant content type: scene\n- Image style: natural_photo\n- Semantic domain: wedding/event\n\n- Short caption: \"Aerial view of a bride in a wedding dress standing at a ceremony venue with white chairs.\"\n- Main objects: bride, wedding dress, chairs, plants, stone pavement\n- Possible interpretations: wedding ceremony, fashion photoshoot, architectural feature\n- Uncertainty: face not visible, hard to tell if ceremony is in progress or setup\n- Quality flags: unusual_viewpoint, overhead_aerial",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It's an aerial/overhead view of what appears to be a wedding ceremony setup. I can see:\n\n- A bride in a white wedding dress with a long train/lace pattern\n- The bride appears to be standing with arms crossed\n- There are rows of white chairs arranged for a ceremony\n- The setting appears to be on stone/concrete pavement, possibly in a courtyard or plaza\n- There are some architectural elements on the left side (arched columns/balustrade)\n- Two green plants/bushes on the right side\n- Petals or flowers scattered along the aisle\n- This looks like it could be at a historic building, possibly Italian given the architecture\n\nLet me provide the annotations:\n\n- Recognizability: 4 - clearly recognizable as a wedding ceremony from above\n- Ambiguity: 2 - fairly clear interpretation\n- Natural photo typicality: 4 - looks like a typical aerial photograph, though from an unusual angle\n- Visual clutter: 2 - relatively simple composition\n- Object centrality: 2 - the bride is somewhat central but the scene is the main subject\n- Scene centrality: 5 - it's primarily a scene/place\n- Caption confidence: 4 - can describe confidently\n\n- Salient object count: 1 (the bride) but there are also chairs\n- Distinct object categories: ~3 (person, chairs, plants)\n\n- Contains person: true\n- Contains face: false (face not clearly visible from this angle)\n- Contains animal: false\n- Contains text: false\n- Contains vehicle: false\n- Contains food: false\n- Contains indoor scene: false\n- Contains outdoor scene: true\n- Contains artificial or rendered content: false\n- Contains occlusion or truncation: false\n- Contains unusual viewpoint: true (aerial overhead)\n- Contains multiple main objects: false\n\n- Dominant content type: scene\n- Image style: natural_photo\n- Semantic domain: wedding/event\n\n- Short caption: \"Aerial view of a bride in a wedding dress standing at a ceremony venue with white chairs.\"\n- Main objects: bride, wedding dress, chairs, plants, stone pavement\n- Possible interpretations: wedding ceremony, fashion photoshoot, architectural feature\n- Uncertainty: face not visible, hard to tell if ceremony is in progress or setup\n- Quality flags: unusual_viewpoint, overhead_aerial",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1467,
+          "completion_tokens": 870,
+          "total_tokens": 2337,
+          "cost": 0.00145674,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00145674,
+            "upstream_inference_prompt_cost": 0.00041274,
+            "upstream_inference_completions_cost": 0.001044
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 587,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

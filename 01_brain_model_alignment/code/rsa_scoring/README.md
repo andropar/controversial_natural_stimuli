@@ -28,7 +28,7 @@ tables and write rendered figures under `../../figures/rsa_scores/`.
 Inputs:
 
 - Brain caches from `../brain_data_preparation/`, accessed through the stage
-  path helpers as `resources/` or copied heavy cache locations.
+  path helpers as copied heavy cache locations.
 - Cstim and Vicco image payloads from the external HDF5/image root documented in
   `../../../external_data/README.md`.
 - Model metadata from `../../../00_stimulus_selection/resources/`.

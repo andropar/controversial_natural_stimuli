@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_12",
+    "stim_key": "architecture_12",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 12,
+    "file_index": 12,
+    "image_name": "image_0012.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0012.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 30,\n  \"estimated_distinct_object_categories\": 12,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"kitchen_pantry\",\n  \"short_caption\": \"Organized walk-in pantry with wire shelves stocked with food, jars, and kitchen supplies.\",\n  \"main_objects\": [\"wire shelving\", \"food cans\", \"water bottles\", \"slow cooker\", \"wire baskets\", \"cereal boxes\", \"jars\", \"teapot\", \"cookbooks\"],\n  \"possible_interpretations\": [\"home pantry\", \"stock photo of organized pantry\", \"kitchen storage room\", \"pantry advertisement\"],\n  \"uncertainty_notes\": \"Image appears staged or styled as a stock/advertisement photo due to very neat organization and lighting.\",\n  \"quality_flags\": [\"appears_staged_or_styled\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318858-r8MzQp269FmqKA3Qh8V4",
+        "object": "chat.completion",
+        "created": 1780318858,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 3,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 1,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 30,\n  \"estimated_distinct_object_categories\": 12,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": true,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"kitchen_pantry\",\n  \"short_caption\": \"Organized walk-in pantry with wire shelves stocked with food, jars, and kitchen supplies.\",\n  \"main_objects\": [\"wire shelving\", \"food cans\", \"water bottles\", \"slow cooker\", \"wire baskets\", \"cereal boxes\", \"jars\", \"teapot\", \"cookbooks\"],\n  \"possible_interpretations\": [\"home pantry\", \"stock photo of organized pantry\", \"kitchen storage room\", \"pantry advertisement\"],\n  \"uncertainty_notes\": \"Image appears staged or styled as a stock/advertisement photo due to very neat organization and lighting.\",\n  \"quality_flags\": [\"appears_staged_or_styled\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully. It shows a well-organized pantry with wire shelving units. The pantry contains various food items, containers, and kitchen supplies organized on multiple shelves. I can see:\n\n- Multiple shelves with jars, cans, boxes of food\n- Wire baskets/drawers on the sides with produce\n- A slow cooker/crockpot in the middle\n- Water bottles\n- Various canned goods\n- Cereal boxes\n- Cookbooks\n- A teapot/kettle\n- Storage containers\n- The setting appears to be indoor, built into a wall with blue walls around it\n\nThis is clearly a pantry scene - an indoor kitchen storage area. It's very organized and well-stocked. The image looks like a professional or stock photo due to the careful organization and lighting.\n\nLet me rate the dimensions:\n- recognizability: 5 - very clearly a pantry\n- ambiguity: 1 - very clear what this is\n- natural_photo_typicality: 3 - looks somewhat staged/organized like a stock photo\n- visual_clutter: 4 - many items but organized\n- object_centricity: 1 - no single dominant object, it's a scene\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 5 - easy to caption\n\nEstimated counts:\n- Many objects visible\n- Many distinct categories\n\nContains: no person, no face, no animal, some text (labels), no vehicle, contains food, indoor scene, no outdoor, possibly artificial/staged content, no occlusion really, no unusual viewpoint, multiple main objects.\n\nDominant content type: scene\nImage style: natural_photo (though it looks staged)\nSemantic domain: kitchen/pantry\n\nLet me finalize.",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully. It shows a well-organized pantry with wire shelving units. The pantry contains various food items, containers, and kitchen supplies organized on multiple shelves. I can see:\n\n- Multiple shelves with jars, cans, boxes of food\n- Wire baskets/drawers on the sides with produce\n- A slow cooker/crockpot in the middle\n- Water bottles\n- Various canned goods\n- Cereal boxes\n- Cookbooks\n- A teapot/kettle\n- Storage containers\n- The setting appears to be indoor, built into a wall with blue walls around it\n\nThis is clearly a pantry scene - an indoor kitchen storage area. It's very organized and well-stocked. The image looks like a professional or stock photo due to the careful organization and lighting.\n\nLet me rate the dimensions:\n- recognizability: 5 - very clearly a pantry\n- ambiguity: 1 - very clear what this is\n- natural_photo_typicality: 3 - looks somewhat staged/organized like a stock photo\n- visual_clutter: 4 - many items but organized\n- object_centricity: 1 - no single dominant object, it's a scene\n- scene_centricity: 5 - clearly a scene/place\n- caption_confidence: 5 - easy to caption\n\nEstimated counts:\n- Many objects visible\n- Many distinct categories\n\nContains: no person, no face, no animal, some text (labels), no vehicle, contains food, indoor scene, no outdoor, possibly artificial/staged content, no occlusion really, no unusual viewpoint, multiple main objects.\n\nDominant content type: scene\nImage style: natural_photo (though it looks staged)\nSemantic domain: kitchen/pantry\n\nLet me finalize.",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1314,
+          "completion_tokens": 730,
+          "total_tokens": 2044,
+          "cost": 0.00124284,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00124284,
+            "upstream_inference_prompt_cost": 0.00036684,
+            "upstream_inference_completions_cost": 0.000876
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 414,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

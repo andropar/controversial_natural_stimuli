@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_62",
+    "stim_key": "dataset_62",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 62,
+    "file_index": 62,
+    "image_name": "image_0062.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0062.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor_lighting\",\n  \"short_caption\": \"Modern dark gray angular wall light mounted on a red brick wall, with variegated plant nearby at dusk.\",\n  \"main_objects\": [\"wall light fixture\", \"brick wall\", \"variegated plant leaves\"],\n  \"possible_interpretations\": [\"outdoor wall sconce lit at evening\", \"architectural lighting on brick exterior\", \"product photo of exterior wall lamp\"],\n  \"uncertainty_notes\": \"Setting appears to be outdoor evening but exact context (residential vs commercial, product shot vs candid) is somewhat ambiguous.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319035-jVCDZBBg5fcOZrUidbTN",
+        "object": "chat.completion",
+        "created": 1780319035,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 2,\n  \"estimated_distinct_object_categories\": 2,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor_lighting\",\n  \"short_caption\": \"Modern dark gray angular wall light mounted on a red brick wall, with variegated plant nearby at dusk.\",\n  \"main_objects\": [\"wall light fixture\", \"brick wall\", \"variegated plant leaves\"],\n  \"possible_interpretations\": [\"outdoor wall sconce lit at evening\", \"architectural lighting on brick exterior\", \"product photo of exterior wall lamp\"],\n  \"uncertainty_notes\": \"Setting appears to be outdoor evening but exact context (residential vs commercial, product shot vs candid) is somewhat ambiguous.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a modern, angular outdoor wall light fixture mounted on a red brick wall. The light is dark gray/charcoal colored with a geometric, origami-like design. Below the light, there's a warm glow illuminating the brick. To the right, there are some green and white variegated plant leaves visible. The scene appears to be at dusk or evening given the warm lighting.\n\nLet me annotate according to the schema:\n\n- recognizability: 4 - The image clearly shows a wall light fixture on a brick wall\n- ambiguity: 1 - Very clear what's shown\n- natural_photo_typicality: 4 - Looks like a typical product/lifestyle photograph\n- visual_clutter: 2 - Relatively simple composition\n- object_centricity: 4 - The light fixture is the clear central focus\n- scene_centricity: 3 - It's a scene showing a fixture in its environment\n- caption_confidence: 4 - Easy to describe\n\n- estimated_salient_object_count: 2 (light fixture, plant)\n- estimated_distinct_object_categories: 2 (wall light, plant)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (outdoor)\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (appears to be a real photo)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the wall light is the main subject)\n- image_style: \"natural_photo\"\n- semantic_domain: \"lighting\" or \"outdoor_fixtures\"\n\nShort caption: \"Modern dark gray wall light fixture mounted on a red brick wall at night.\"\n\nMain objects: [\"wall light\", \"brick wall\", \"plant leaves\"]\n\nPossible interpretations: [\"wall light on brick wall\", \"outdoor lighting fixture\", \"evening scene with light fixture\"]\n\nUncertainty notes: \"Some uncertainty about whether this is a product shot or candid scene\"\n\nQuality flags: []",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a modern, angular outdoor wall light fixture mounted on a red brick wall. The light is dark gray/charcoal colored with a geometric, origami-like design. Below the light, there's a warm glow illuminating the brick. To the right, there are some green and white variegated plant leaves visible. The scene appears to be at dusk or evening given the warm lighting.\n\nLet me annotate according to the schema:\n\n- recognizability: 4 - The image clearly shows a wall light fixture on a brick wall\n- ambiguity: 1 - Very clear what's shown\n- natural_photo_typicality: 4 - Looks like a typical product/lifestyle photograph\n- visual_clutter: 2 - Relatively simple composition\n- object_centricity: 4 - The light fixture is the clear central focus\n- scene_centricity: 3 - It's a scene showing a fixture in its environment\n- caption_confidence: 4 - Easy to describe\n\n- estimated_salient_object_count: 2 (light fixture, plant)\n- estimated_distinct_object_categories: 2 (wall light, plant)\n\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (outdoor)\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false (appears to be a real photo)\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false\n- contains_multiple_main_objects: false\n\n- dominant_content_type: \"object\" (the wall light is the main subject)\n- image_style: \"natural_photo\"\n- semantic_domain: \"lighting\" or \"outdoor_fixtures\"\n\nShort caption: \"Modern dark gray wall light fixture mounted on a red brick wall at night.\"\n\nMain objects: [\"wall light\", \"brick wall\", \"plant leaves\"]\n\nPossible interpretations: [\"wall light on brick wall\", \"outdoor lighting fixture\", \"evening scene with light fixture\"]\n\nUncertainty notes: \"Some uncertainty about whether this is a product shot or candid scene\"\n\nQuality flags: []",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 817,
+          "total_tokens": 2339,
+          "cost": 0.00140964,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 114,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00140964,
+            "upstream_inference_prompt_cost": 0.00042924,
+            "upstream_inference_completions_cost": 0.0009804
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 526,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

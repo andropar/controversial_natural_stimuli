@@ -1,0 +1,81 @@
+{
+  "stimulus": {
+    "stimulus_id": "sota_5",
+    "stim_key": "sota_5",
+    "condition": "sota",
+    "physical_folder": "sota",
+    "stim_idx": 5,
+    "file_index": 5,
+    "image_name": "image_0005.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/sota/image_0005.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": false,
+      "error": "ValidationError: No valid JSON object found in model response"
+    },
+    {
+      "attempt": 2,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 10,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature/forest\",\n  \"short_caption\": \"Bare trees and dried vegetation in a late-season wooded area with a partially visible person on the left edge.\",\n  \"main_objects\": [\"trees\", \"branches\", \"dried leaves\", \"person (partial)\"],\n  \"possible_interpretations\": [\n    \"Late fall or winter forest scene\",\n    \"A hiker or photographer walking through the woods\",\n    \"Burned or storm-damaged woodland\",\n    \"Dormant deciduous forest in early spring\"\n  ],\n  \"uncertainty_notes\": \"A person is partially cut off on the left edge; it's unclear if intentional framing or accidental. Some trees appear damaged or dead, but cause is not certain.\",\n  \"quality_flags\": [\"partial subject at left edge\", \"dense overlapping branches\"]\n}",
+      "response": {
+        "id": "gen-1780319105-NBH9YsID7ex2Ozxr5pmT",
+        "object": "chat.completion",
+        "created": 1780319105,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 5,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 2,\n  \"scene_centricity\": 5,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 10,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"nature/forest\",\n  \"short_caption\": \"Bare trees and dried vegetation in a late-season wooded area with a partially visible person on the left edge.\",\n  \"main_objects\": [\"trees\", \"branches\", \"dried leaves\", \"person (partial)\"],\n  \"possible_interpretations\": [\n    \"Late fall or winter forest scene\",\n    \"A hiker or photographer walking through the woods\",\n    \"Burned or storm-damaged woodland\",\n    \"Dormant deciduous forest in early spring\"\n  ],\n  \"uncertainty_notes\": \"A person is partially cut off on the left edge; it's unclear if intentional framing or accidental. Some trees appear damaged or dead, but cause is not certain.\",\n  \"quality_flags\": [\"partial subject at left edge\", \"dense overlapping branches\"]\n}",
+              "refusal": null,
+              "reasoning": "The image shows a wooded outdoor scene with bare and dead-looking trees, likely in late fall or winter. The trees have brown/orange leaves and the ground is covered in dried vegetation. On the left side of the image, there appears to be a person partially visible - I can see what looks like a black object (possibly a phone or camera) and an orange/yellow jacket, plus what might be blonde hair.\n\nLet me annotate this carefully:\n\n- recognizability: The scene is recognizable as a wooded area in late fall/winter. 4\n- ambiguity: The scene is fairly clear, though the partial person on the left adds some ambiguity. 2\n- natural_photo_typicality: Looks like a typical natural photograph. 5\n- visual_clutter: Quite a lot of branches and trees. 4\n- object_centricity: No single central object, it's more of a scene. 2\n- scene_centricity: Strongly scene-focused. 5\n- caption_confidence: I'm fairly confident I can caption this. 4\n\nEstimated salient object count: Many trees, hard to count - let's say around 10+ distinct tree trunks\nDistinct object categories: trees, person (partially), dried leaves/ground vegetation - maybe 3-4\n\ncontains_person: Yes, partially visible on left\ncontains_face: Possibly - I see what might be blonde hair, but no clear face\ncontains_animal: No\ncontains_text: No\ncontains_vehicle: No\ncontains_food: No\ncontains_indoor_scene: No\ncontains_outdoor_scene: Yes\ncontains_artificial_or_rendered_content: No\ncontains_occlusion_or_truncation: Yes - person is truncated on the left edge\ncontains_unusual_viewpoint: No\ncontains_multiple_main_objects: No, it's mainly a scene\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: nature/forest\n\nshort_caption: Bare trees and dried vegetation in a wooded area with a partially visible person on the left\n\nmain_objects: trees, branches, dried leaves, person (partial)\n\npossible_interpretations:\n- Late fall or winter forest scene\n- A hiker or photographer in the woods\n- Burned or damaged forest area\n\nuncertainty_notes: The partial person on the left makes it unclear if this is a candid photo or accident. Some trees may be dead/damaged.\n\nquality_flags: partial subject on left edge, possible motion or focus issues",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a wooded outdoor scene with bare and dead-looking trees, likely in late fall or winter. The trees have brown/orange leaves and the ground is covered in dried vegetation. On the left side of the image, there appears to be a person partially visible - I can see what looks like a black object (possibly a phone or camera) and an orange/yellow jacket, plus what might be blonde hair.\n\nLet me annotate this carefully:\n\n- recognizability: The scene is recognizable as a wooded area in late fall/winter. 4\n- ambiguity: The scene is fairly clear, though the partial person on the left adds some ambiguity. 2\n- natural_photo_typicality: Looks like a typical natural photograph. 5\n- visual_clutter: Quite a lot of branches and trees. 4\n- object_centricity: No single central object, it's more of a scene. 2\n- scene_centricity: Strongly scene-focused. 5\n- caption_confidence: I'm fairly confident I can caption this. 4\n\nEstimated salient object count: Many trees, hard to count - let's say around 10+ distinct tree trunks\nDistinct object categories: trees, person (partially), dried leaves/ground vegetation - maybe 3-4\n\ncontains_person: Yes, partially visible on left\ncontains_face: Possibly - I see what might be blonde hair, but no clear face\ncontains_animal: No\ncontains_text: No\ncontains_vehicle: No\ncontains_food: No\ncontains_indoor_scene: No\ncontains_outdoor_scene: Yes\ncontains_artificial_or_rendered_content: No\ncontains_occlusion_or_truncation: Yes - person is truncated on the left edge\ncontains_unusual_viewpoint: No\ncontains_multiple_main_objects: No, it's mainly a scene\n\ndominant_content_type: scene\nimage_style: natural_photo\nsemantic_domain: nature/forest\n\nshort_caption: Bare trees and dried vegetation in a wooded area with a partially visible person on the left\n\nmain_objects: trees, branches, dried leaves, person (partial)\n\npossible_interpretations:\n- Late fall or winter forest scene\n- A hiker or photographer in the woods\n- Burned or damaged forest area\n\nuncertainty_notes: The partial person on the left makes it unclear if this is a candid photo or accident. Some trees may be dead/damaged.\n\nquality_flags: partial subject on left edge, possible motion or focus issues",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1430,
+          "completion_tokens": 902,
+          "total_tokens": 2332,
+          "cost": 0.00136116,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00136116,
+            "upstream_inference_prompt_cost": 0.00027876,
+            "upstream_inference_completions_cost": 0.0010824
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 583,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

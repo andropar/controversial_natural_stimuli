@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "vicco_143",
+    "stim_key": "vicco_143",
+    "condition": "vicco",
+    "physical_folder": "shared_vicco",
+    "stim_idx": 143,
+    "file_index": 142,
+    "image_name": "shared_4rep_vicco_143.jpg",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/shared_vicco/shared_4rep_vicco_143.jpg"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor_garden\",\n  \"short_caption\": \"Red wheelbarrow resting on grass in a garden.\",\n  \"main_objects\": [\"wheelbarrow\", \"metal fence\", \"pavement\", \"stones\"],\n  \"possible_interpretations\": [\"a wheelbarrow in a garden or yard\", \"garden tool on a lawn\"],\n  \"uncertainty_notes\": \"None significant; the main object and setting are clear.\",\n  \"quality_flags\": []\n}",
+      "response": {
+        "id": "gen-1780319551-RVz2bdPfDVdMW33zffmP",
+        "object": "chat.completion",
+        "created": 1780319551,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 5,\n  \"scene_centricity\": 1,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"outdoor_garden\",\n  \"short_caption\": \"Red wheelbarrow resting on grass in a garden.\",\n  \"main_objects\": [\"wheelbarrow\", \"metal fence\", \"pavement\", \"stones\"],\n  \"possible_interpretations\": [\"a wheelbarrow in a garden or yard\", \"garden tool on a lawn\"],\n  \"uncertainty_notes\": \"None significant; the main object and setting are clear.\",\n  \"quality_flags\": []\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a red/maroon wheelbarrow sitting on grass. The wheelbarrow is the clear central object - it has a single wheel, metal body (appears rusty/worn), and handles extending to the right. The background shows grass, a paved area (top left), what appears to be a fence or trellis with plants, and some stone elements.\n\nLet me rate each dimension:\n\n- recognizability: 5 - The wheelbarrow is very clearly recognizable\n- ambiguity: 1 - Very clear, single interpretation\n- natural_photo_typicality: 4 - Looks like a typical natural photo, though slightly amateurish\n- visual_clutter: 3 - Some background elements but the main subject is clear\n- object_centricity: 5 - The wheelbarrow dominates the image\n- scene_centricity: 1 - This is object-focused, not a scene\n- caption_confidence: 5 - Very confident in a simple caption\n\nOther attributes:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false (wheelbarrow is a tool, not a vehicle in the traditional sense, but could be argued... I'll say false)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (slight angle but not unusual)\n- contains_multiple_main_objects: false\n\n- estimated_salient_object_count: 1\n- estimated_distinct_object_categories: 2-3 (wheelbarrow, fence/plants, stone)\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"outdoor\" or \"gardening\"\n\nCaption: \"Red wheelbarrow on grass in garden\"\n\nMain objects: [\"wheelbarrow\", \"fence\", \"pavement\"]\n\nPossible interpretations: just one main interpretation - a wheelbarrow in a garden\n\nUncertainty notes: none significant\n\nQuality flags: none major",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a red/maroon wheelbarrow sitting on grass. The wheelbarrow is the clear central object - it has a single wheel, metal body (appears rusty/worn), and handles extending to the right. The background shows grass, a paved area (top left), what appears to be a fence or trellis with plants, and some stone elements.\n\nLet me rate each dimension:\n\n- recognizability: 5 - The wheelbarrow is very clearly recognizable\n- ambiguity: 1 - Very clear, single interpretation\n- natural_photo_typicality: 4 - Looks like a typical natural photo, though slightly amateurish\n- visual_clutter: 3 - Some background elements but the main subject is clear\n- object_centricity: 5 - The wheelbarrow dominates the image\n- scene_centricity: 1 - This is object-focused, not a scene\n- caption_confidence: 5 - Very confident in a simple caption\n\nOther attributes:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false (wheelbarrow is a tool, not a vehicle in the traditional sense, but could be argued... I'll say false)\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: false (slight angle but not unusual)\n- contains_multiple_main_objects: false\n\n- estimated_salient_object_count: 1\n- estimated_distinct_object_categories: 2-3 (wheelbarrow, fence/plants, stone)\n\n- dominant_content_type: \"object\"\n- image_style: \"natural_photo\"\n- semantic_domain: \"outdoor\" or \"gardening\"\n\nCaption: \"Red wheelbarrow on grass in garden\"\n\nMain objects: [\"wheelbarrow\", \"fence\", \"pavement\"]\n\nPossible interpretations: just one main interpretation - a wheelbarrow in a garden\n\nUncertainty notes: none significant\n\nQuality flags: none major",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 777,
+          "total_tokens": 2299,
+          "cost": 0.00123876,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00123876,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0009324
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 499,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

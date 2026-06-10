@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "all_models_55",
+    "stim_key": "all_models_55",
+    "condition": "all_models",
+    "physical_folder": "all_models",
+    "stim_idx": 55,
+    "file_index": 55,
+    "image_name": "image_0055.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/all_models/image_0055.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 2, \"visual_clutter\": 2, \"object_centricity\": 2, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"mixed\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"beauty/cosmetics\", \"short_caption\": \"Flat-lay of beauty products on white marble hexagonal tiles\", \"main_objects\": [\"makeup brush\", \"false eyelashes\", \"pink blush compact\", \"cosmetic jar with bow\", \"pink sponge\"], \"possible_interpretations\": [\"beauty product flat-lay\", \"cosmetics product photography\", \"makeup application surface\", \"styled beauty blog image\", \"spa or vanity setting\"], \"uncertainty_notes\": \"Overhead flat-lay style is staged and not a candid natural photo; objects at edges are truncated. Exact identity of some items (jar contents, pink item) is uncertain.\", \"quality_flags\": [\"staged_composition\", \"overhead_perspective\", \"edge_truncation\", \"high_negative_space\"]}",
+      "response": {
+        "id": "gen-1780318793-XIFG0vwBeugl4i0OiuLq",
+        "object": "chat.completion",
+        "created": 1780318793,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"recognizability\": 4, \"ambiguity\": 2, \"natural_photo_typicality\": 2, \"visual_clutter\": 2, \"object_centricity\": 2, \"scene_centricity\": 3, \"caption_confidence\": 4, \"estimated_salient_object_count\": 5, \"estimated_distinct_object_categories\": 4, \"contains_person\": false, \"contains_face\": false, \"contains_animal\": false, \"contains_text\": false, \"contains_vehicle\": false, \"contains_food\": false, \"contains_indoor_scene\": false, \"contains_outdoor_scene\": false, \"contains_artificial_or_rendered_content\": false, \"contains_occlusion_or_truncation\": true, \"contains_unusual_viewpoint\": true, \"contains_multiple_main_objects\": true, \"dominant_content_type\": \"mixed\", \"image_style\": \"natural_photo\", \"semantic_domain\": \"beauty/cosmetics\", \"short_caption\": \"Flat-lay of beauty products on white marble hexagonal tiles\", \"main_objects\": [\"makeup brush\", \"false eyelashes\", \"pink blush compact\", \"cosmetic jar with bow\", \"pink sponge\"], \"possible_interpretations\": [\"beauty product flat-lay\", \"cosmetics product photography\", \"makeup application surface\", \"styled beauty blog image\", \"spa or vanity setting\"], \"uncertainty_notes\": \"Overhead flat-lay style is staged and not a candid natural photo; objects at edges are truncated. Exact identity of some items (jar contents, pink item) is uncertain.\", \"quality_flags\": [\"staged_composition\", \"overhead_perspective\", \"edge_truncation\", \"high_negative_space\"]}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a flat-lay composition on a white marble hexagonal tile surface. I can see:\n- White/grey marble hexagonal tiles covering most of the image\n- A makeup brush in the top right corner (pink handle with white bristles)\n- A pink/rose colored cosmetic item (possibly a sponge or compact) on the right edge\n- False eyelashes in the middle-right area\n- A pink compact (possibly blush) at the bottom center\n- A white container/jar with a brown bow at the bottom right (possibly a candle or cosmetic)\n\nThis is a styled flat-lay photograph, likely for beauty/cosmetic content. It's taken from above (overhead view) which is a common style for product photography.\n\nLet me rate the dimensions:\n- recognizability: 4 - The items are recognizable as cosmetic/beauty products on marble tiles\n- ambiguity: 2 - Pretty clear it's a beauty product flat-lay on marble\n- natural_photo_typicality: 2 - This is a styled/staged flat-lay, not a typical natural photo. It's professional product photography\n- visual_clutter: 3 - Some items present but mostly negative space (marble)\n- object_centricity: 2 - No single dominant object; it's more of a scene/arrangement\n- scene_centricity: 3 - The marble surface dominates, with objects arranged around edges\n- caption_confidence: 4 - Pretty clear what's shown\n\nFor the booleans:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (it's a surface, not really a scene)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it's a real photo, though styled)\n- contains_occlusion_or_truncation: true (objects are cut off at edges)\n- contains_unusual_viewpoint: true (overhead flat-lay is somewhat unusual)\n- contains_multiple_main_objects: true\n\nDominant content: scene or mixed - the marble surface is the main element with objects. I'd say \"scene\" or \"mixed\". Since there's a clear surface and multiple items, \"mixed\" seems right, or maybe \"scene\" since the marble dominates.\n\nActually, looking more carefully, this is really a styled flat-lay product photo. The dominant content could be \"scene\" with the marble as the scene/background, or \"object\" if we consider the cosmetics as the main content. I'll go with \"mixed\" since there are both a clear scene (marble) and objects (cosmetics).\n\nImage style: natural_photo (it's a real photo, just styled)\nSemantic domain: beauty/cosmetics\n\nShort caption: \"Flat-lay of cosmetic products on white marble hexagonal tiles\" (10 words)\n\nMain objects: makeup brush, false eyelashes, pink compact, jar with bow, pink cosmetic item\n\nPossible interpretations:\n- Beauty/cosmetic product flat-lay\n- Makeup application scene\n- Beauty blog/product photography\n\nQuality flags: staged composition, overhead perspective",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a flat-lay composition on a white marble hexagonal tile surface. I can see:\n- White/grey marble hexagonal tiles covering most of the image\n- A makeup brush in the top right corner (pink handle with white bristles)\n- A pink/rose colored cosmetic item (possibly a sponge or compact) on the right edge\n- False eyelashes in the middle-right area\n- A pink compact (possibly blush) at the bottom center\n- A white container/jar with a brown bow at the bottom right (possibly a candle or cosmetic)\n\nThis is a styled flat-lay photograph, likely for beauty/cosmetic content. It's taken from above (overhead view) which is a common style for product photography.\n\nLet me rate the dimensions:\n- recognizability: 4 - The items are recognizable as cosmetic/beauty products on marble tiles\n- ambiguity: 2 - Pretty clear it's a beauty product flat-lay on marble\n- natural_photo_typicality: 2 - This is a styled/staged flat-lay, not a typical natural photo. It's professional product photography\n- visual_clutter: 3 - Some items present but mostly negative space (marble)\n- object_centricity: 2 - No single dominant object; it's more of a scene/arrangement\n- scene_centricity: 3 - The marble surface dominates, with objects arranged around edges\n- caption_confidence: 4 - Pretty clear what's shown\n\nFor the booleans:\n- contains_person: false\n- contains_face: false\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false (it's a surface, not really a scene)\n- contains_outdoor_scene: false\n- contains_artificial_or_rendered_content: false (it's a real photo, though styled)\n- contains_occlusion_or_truncation: true (objects are cut off at edges)\n- contains_unusual_viewpoint: true (overhead flat-lay is somewhat unusual)\n- contains_multiple_main_objects: true\n\nDominant content: scene or mixed - the marble surface is the main element with objects. I'd say \"scene\" or \"mixed\". Since there's a clear surface and multiple items, \"mixed\" seems right, or maybe \"scene\" since the marble dominates.\n\nActually, looking more carefully, this is really a styled flat-lay product photo. The dominant content could be \"scene\" with the marble as the scene/background, or \"object\" if we consider the cosmetics as the main content. I'll go with \"mixed\" since there are both a clear scene (marble) and objects (cosmetics).\n\nImage style: natural_photo (it's a real photo, just styled)\nSemantic domain: beauty/cosmetics\n\nShort caption: \"Flat-lay of cosmetic products on white marble hexagonal tiles\" (10 words)\n\nMain objects: makeup brush, false eyelashes, pink compact, jar with bow, pink cosmetic item\n\nPossible interpretations:\n- Beauty/cosmetic product flat-lay\n- Makeup application scene\n- Beauty blog/product photography\n\nQuality flags: staged composition, overhead perspective",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 1025,
+          "total_tokens": 2547,
+          "cost": 0.00153636,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00153636,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.00123
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 757,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

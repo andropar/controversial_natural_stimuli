@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "architecture_89",
+    "stim_key": "architecture_89",
+    "condition": "architecture",
+    "physical_folder": "dataset",
+    "stim_idx": 89,
+    "file_index": 89,
+    "image_name": "image_0089.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/dataset/image_0089.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"illustration_or_render\",\n  \"semantic_domain\": \"interior home fixture\",\n  \"short_caption\": \"Modern five-blade ceiling fan with integrated light mounted on a white ceiling.\",\n  \"main_objects\": [\"ceiling fan\", \"light fixture\", \"table lamp\", \"dark cabinet\"],\n  \"possible_interpretations\": [\n    \"Product photo of a modern ceiling fan\",\n    \"3D render of a contemporary living room interior\",\n    \"Marketing image showcasing home lighting fixtures\"\n  ],\n  \"uncertainty_notes\": \"Image may be a 3D render rather than a real photograph due to its very clean, even lighting and idealized composition; difficult to confirm without source.\",\n  \"quality_flags\": [\"possible_render\", \"product_photo_style\", \"truncated_objects\"]\n}\n```",
+      "response": {
+        "id": "gen-1780318949-DSevq95oKWa9dgE4otRa",
+        "object": "chat.completion",
+        "created": 1780318949,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"recognizability\": 5,\n  \"ambiguity\": 1,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 5,\n  \"estimated_salient_object_count\": 3,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"illustration_or_render\",\n  \"semantic_domain\": \"interior home fixture\",\n  \"short_caption\": \"Modern five-blade ceiling fan with integrated light mounted on a white ceiling.\",\n  \"main_objects\": [\"ceiling fan\", \"light fixture\", \"table lamp\", \"dark cabinet\"],\n  \"possible_interpretations\": [\n    \"Product photo of a modern ceiling fan\",\n    \"3D render of a contemporary living room interior\",\n    \"Marketing image showcasing home lighting fixtures\"\n  ],\n  \"uncertainty_notes\": \"Image may be a 3D render rather than a real photograph due to its very clean, even lighting and idealized composition; difficult to confirm without source.\",\n  \"quality_flags\": [\"possible_render\", \"product_photo_style\", \"truncated_objects\"]\n}\n```",
+              "refusal": null,
+              "reasoning": "The image shows a modern ceiling fan with five dark blades and a brushed nickel/chrome finish, mounted on a light-colored ceiling. The fan has an integrated light fixture (frosted glass dome) that is illuminated. Below and to the right, there's a dark cabinet or shelving unit, and to the left, there appears to be a window or mirror with a table lamp visible. The setting is clearly an indoor room.\n\nLet me analyze each attribute:\n\n- recognizability: Very clear - ceiling fan is unmistakable. 5\n- ambiguity: Low ambiguity - clear object. 1\n- natural_photo_typicality: This looks like a product photo/render, very clean and staged. Could be a product shot. 2-3\n- visual_clutter: Relatively clean, few competing elements. 2\n- object_centricity: The ceiling fan dominates the image. 4\n- scene_centricity: It's more object-focused than scene. 2\n- caption_confidence: High confidence. 5\n\nSalient objects: ceiling fan, lamp, cabinet\nDistinct categories: 3 (fan, lamp, furniture)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false (though there might be a window showing outside, it's still indoor)\ncontains_artificial_or_rendered_content: The image looks like it could be a 3D render or product photo. Yes, likely.\ncontains_occlusion_or_truncation: The cabinet is truncated. True.\ncontains_unusual_viewpoint: The upward angle is somewhat typical for ceiling fan photos. Slightly unusual but not extreme. False or maybe true.\ncontains_multiple_main_objects: The fan is clearly the main object. False.\n\ndominant_content_type: object\nimage_style: Looks like it could be a render/product photo. Let me say \"natural_photo\" since it looks photographic, though it has product-photo qualities. Actually, the very clean look suggests render. I'll say \"edited_photo\" or \"illustration_or_render\". The lighting and textures look somewhat rendered. I'll go with \"illustration_or_render\".\n\nActually, looking more carefully, this could be a real product photo. The lighting is very clean and even. I'll lean toward \"natural_photo\" with edited look, or \"edited_photo\". Let me say \"natural_photo\" since the materials look realistic.\n\nsemantic_domain: interior, home, furniture\nshort_caption: \"Modern ceiling fan with light fixture mounted on a white ceiling in a room.\"",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The image shows a modern ceiling fan with five dark blades and a brushed nickel/chrome finish, mounted on a light-colored ceiling. The fan has an integrated light fixture (frosted glass dome) that is illuminated. Below and to the right, there's a dark cabinet or shelving unit, and to the left, there appears to be a window or mirror with a table lamp visible. The setting is clearly an indoor room.\n\nLet me analyze each attribute:\n\n- recognizability: Very clear - ceiling fan is unmistakable. 5\n- ambiguity: Low ambiguity - clear object. 1\n- natural_photo_typicality: This looks like a product photo/render, very clean and staged. Could be a product shot. 2-3\n- visual_clutter: Relatively clean, few competing elements. 2\n- object_centricity: The ceiling fan dominates the image. 4\n- scene_centricity: It's more object-focused than scene. 2\n- caption_confidence: High confidence. 5\n\nSalient objects: ceiling fan, lamp, cabinet\nDistinct categories: 3 (fan, lamp, furniture)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: false\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true\ncontains_outdoor_scene: false (though there might be a window showing outside, it's still indoor)\ncontains_artificial_or_rendered_content: The image looks like it could be a 3D render or product photo. Yes, likely.\ncontains_occlusion_or_truncation: The cabinet is truncated. True.\ncontains_unusual_viewpoint: The upward angle is somewhat typical for ceiling fan photos. Slightly unusual but not extreme. False or maybe true.\ncontains_multiple_main_objects: The fan is clearly the main object. False.\n\ndominant_content_type: object\nimage_style: Looks like it could be a render/product photo. Let me say \"natural_photo\" since it looks photographic, though it has product-photo qualities. Actually, the very clean look suggests render. I'll say \"edited_photo\" or \"illustration_or_render\". The lighting and textures look somewhat rendered. I'll go with \"illustration_or_render\".\n\nActually, looking more carefully, this could be a real product photo. The lighting is very clean and even. I'll lean toward \"natural_photo\" with edited look, or \"edited_photo\". Let me say \"natural_photo\" since the materials look realistic.\n\nsemantic_domain: interior, home, furniture\nshort_caption: \"Modern ceiling fan with light fixture mounted on a white ceiling in a room.\"",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 924,
+          "total_tokens": 2446,
+          "cost": 0.00141516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00141516,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011088
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 623,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

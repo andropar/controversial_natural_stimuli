@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "training_objective_84",
+    "stim_key": "training_objective_84",
+    "condition": "training_objective",
+    "physical_folder": "training_objective",
+    "stim_idx": 84,
+    "file_index": 84,
+    "image_name": "image_0084.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/training_objective/image_0084.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"shadow photography / outdoor self-portrait\",\n  \"short_caption\": \"Shadow of a person holding a camera cast on dirt ground in a wooded area\",\n  \"main_objects\": [\"person shadow\", \"camera\", \"trees\", \"dirt ground\", \"fallen leaves\"],\n  \"possible_interpretations\": [\n    \"photographer's self-portrait via shadow\",\n    \"artistic shadow photography of a person with camera\",\n    \"long-shadow outdoor scene at low sun angle\"\n  ],\n  \"uncertainty_notes\": \"The shadow's exact features (face, clothing) are indistinct; identity of the person cannot be determined. Film/vintage aesthetic may suggest edited grading.\",\n  \"quality_flags\": [\"vintage film aesthetic\", \"high contrast lighting\", \"self-referential composition\"]\n}",
+      "response": {
+        "id": "gen-1780319368-vePj9xPgmlP2fvIph0TC",
+        "object": "chat.completion",
+        "created": 1780319368,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 3,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 1,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": false,\n  \"contains_outdoor_scene\": true,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": true,\n  \"contains_multiple_main_objects\": false,\n  \"dominant_content_type\": \"scene\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"shadow photography / outdoor self-portrait\",\n  \"short_caption\": \"Shadow of a person holding a camera cast on dirt ground in a wooded area\",\n  \"main_objects\": [\"person shadow\", \"camera\", \"trees\", \"dirt ground\", \"fallen leaves\"],\n  \"possible_interpretations\": [\n    \"photographer's self-portrait via shadow\",\n    \"artistic shadow photography of a person with camera\",\n    \"long-shadow outdoor scene at low sun angle\"\n  ],\n  \"uncertainty_notes\": \"The shadow's exact features (face, clothing) are indistinct; identity of the person cannot be determined. Film/vintage aesthetic may suggest edited grading.\",\n  \"quality_flags\": [\"vintage film aesthetic\", \"high contrast lighting\", \"self-referential composition\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows a shadow of a person (likely the photographer) cast on a dirt ground/clearing. The shadow shows a person holding what appears to be a camera up to their face, suggesting a self-portrait through the shadow. The setting appears to be outdoors in a wooded or forested area with trees visible in the background. The ground is dirt with scattered leaves, twigs, and debris. The lighting suggests it's taken during the day with strong directional sunlight creating the prominent shadow.\n\nLet me go through the schema:\n\n- recognizability: The shadow and the scene are recognizable. 4\n- ambiguity: It's fairly clear what it is - a shadow of a person. 2\n- natural_photo_typicality: It looks like a natural photograph, though somewhat artistic. 4\n- visual_clutter: There are leaves, twigs, dirt, trees - moderate clutter. 3\n- object_centricity: The shadow is the central subject. 4\n- scene_centricity: It also shows a scene/outdoor environment. 3\n- caption_confidence: 4 - I can describe it confidently\n\n- estimated_salient_object_count: 1 (the shadow/person)\n- estimated_distinct_object_categories: 2-3 (shadow, trees, ground)\n\n- contains_person: true (as a shadow)\n- contains_face: false (no face visible, just shadow)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: somewhat - photographing a shadow is a creative/unusual viewpoint\n- contains_multiple_main_objects: false\n\n- dominant_content_type: person_face? No, it's a shadow. Maybe \"mixed\" or \"scene\". The shadow is the main subject but it's a creative/artistic photo. I'd say \"scene\" since it's primarily the ground/environment with a shadow.\n\nActually, thinking more carefully - the dominant content is the shadow of a person, which is artistic. I might categorize as \"scene\" since it's a forest ground scene with a shadow as the main feature.\n\n- image_style: natural_photo (though it has a vintage/film quality)\n- semantic_domain: shadow photography / self-portrait / outdoor\n\nShort caption: \"Shadow of a person holding a camera on dirt ground in a wooded area\"\nMain objects: shadow, person, camera, trees, dirt ground\nPossible interpretations: photographer's self-portrait shadow, artistic shadow photography\nUncertainty notes: The shadow could be of any person; cannot see facial features\nQuality flags: vintage/film aesthetic, high contrast, artistic",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows a shadow of a person (likely the photographer) cast on a dirt ground/clearing. The shadow shows a person holding what appears to be a camera up to their face, suggesting a self-portrait through the shadow. The setting appears to be outdoors in a wooded or forested area with trees visible in the background. The ground is dirt with scattered leaves, twigs, and debris. The lighting suggests it's taken during the day with strong directional sunlight creating the prominent shadow.\n\nLet me go through the schema:\n\n- recognizability: The shadow and the scene are recognizable. 4\n- ambiguity: It's fairly clear what it is - a shadow of a person. 2\n- natural_photo_typicality: It looks like a natural photograph, though somewhat artistic. 4\n- visual_clutter: There are leaves, twigs, dirt, trees - moderate clutter. 3\n- object_centricity: The shadow is the central subject. 4\n- scene_centricity: It also shows a scene/outdoor environment. 3\n- caption_confidence: 4 - I can describe it confidently\n\n- estimated_salient_object_count: 1 (the shadow/person)\n- estimated_distinct_object_categories: 2-3 (shadow, trees, ground)\n\n- contains_person: true (as a shadow)\n- contains_face: false (no face visible, just shadow)\n- contains_animal: false\n- contains_text: false\n- contains_vehicle: false\n- contains_food: false\n- contains_indoor_scene: false\n- contains_outdoor_scene: true\n- contains_artificial_or_rendered_content: false\n- contains_occlusion_or_truncation: false\n- contains_unusual_viewpoint: somewhat - photographing a shadow is a creative/unusual viewpoint\n- contains_multiple_main_objects: false\n\n- dominant_content_type: person_face? No, it's a shadow. Maybe \"mixed\" or \"scene\". The shadow is the main subject but it's a creative/artistic photo. I'd say \"scene\" since it's primarily the ground/environment with a shadow.\n\nActually, thinking more carefully - the dominant content is the shadow of a person, which is artistic. I might categorize as \"scene\" since it's a forest ground scene with a shadow as the main feature.\n\n- image_style: natural_photo (though it has a vintage/film quality)\n- semantic_domain: shadow photography / self-portrait / outdoor\n\nShort caption: \"Shadow of a person holding a camera on dirt ground in a wooded area\"\nMain objects: shadow, person, camera, trees, dirt ground\nPossible interpretations: photographer's self-portrait shadow, artistic shadow photography\nUncertainty notes: The shadow could be of any person; cannot see facial features\nQuality flags: vintage/film aesthetic, high contrast, artistic",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 972,
+          "total_tokens": 2494,
+          "cost": 0.00147276,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00147276,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.0011664
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 678,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

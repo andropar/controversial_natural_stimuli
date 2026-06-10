@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_21",
+    "stim_key": "dataset_21",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 21,
+    "file_index": 21,
+    "image_name": "image_0021.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0021.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home decor\",\n\n  \"short_caption\": \"Gray stuffed husky on white side table beside vase of white flowers against pink sequined curtain backdrop.\",\n  \"main_objects\": [\"stuffed husky plush\", \"white side table\", \"white vase\", \"white flowers\", \"sequined curtain\"],\n  \"possible_interpretations\": [\n    \"Staged product photo for home decor\",\n    \"Interior styling showcase\",\n    \"Photography studio setup with decorative props\",\n    \"Display arrangement for retail listing\"\n  ],\n  \"uncertainty_notes\": \"Flower species is unclear; plush animal could be a husky or wolf breed.\",\n  \"quality_flags\": [\"staged_composition\", \"artificial_setup\", \"decorative_backdrop\"]\n}",
+      "response": {
+        "id": "gen-1780318984-Ct2zS3cc5zJ8I5ELHdxN",
+        "object": "chat.completion",
+        "created": 1780318984,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 4,\n  \"ambiguity\": 2,\n  \"natural_photo_typicality\": 2,\n  \"visual_clutter\": 2,\n  \"object_centricity\": 3,\n  \"scene_centricity\": 3,\n  \"caption_confidence\": 4,\n\n  \"estimated_salient_object_count\": 4,\n  \"estimated_distinct_object_categories\": 4,\n\n  \"contains_person\": false,\n  \"contains_face\": false,\n  \"contains_animal\": true,\n  \"contains_text\": false,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": true,\n  \"contains_occlusion_or_truncation\": false,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n\n  \"dominant_content_type\": \"mixed\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"home decor\",\n\n  \"short_caption\": \"Gray stuffed husky on white side table beside vase of white flowers against pink sequined curtain backdrop.\",\n  \"main_objects\": [\"stuffed husky plush\", \"white side table\", \"white vase\", \"white flowers\", \"sequined curtain\"],\n  \"possible_interpretations\": [\n    \"Staged product photo for home decor\",\n    \"Interior styling showcase\",\n    \"Photography studio setup with decorative props\",\n    \"Display arrangement for retail listing\"\n  ],\n  \"uncertainty_notes\": \"Flower species is unclear; plush animal could be a husky or wolf breed.\",\n  \"quality_flags\": [\"staged_composition\", \"artificial_setup\", \"decorative_backdrop\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows:\n- A pink/rose gold sequined curtain as the background\n- A white side table on the right\n- A gray and white stuffed husky/wolf plush toy sitting on the table\n- A white vase with decorative patterns on the left\n- White flowers (appears to be artificial cherry blossoms or similar) in the vase\n\nThis appears to be a staged product photo or interior decor shot, not a natural photograph. It's quite artificial in setup.\n\nLet me rate each dimension:\n\n- recognizability: 4 - clear what's shown (plush toy, vase, flowers, table, curtain)\n- ambiguity: 2 - fairly clear what the main subjects are\n- natural_photo_typicality: 1-2 - this is clearly a staged product/decor photo with artificial elements\n- visual_clutter: 2 - relatively simple composition with a few main items\n- object_centricity: 3 - there are objects but it's also a scene setup\n- scene_centricity: 3 - it's a scene with multiple decorative elements\n- caption_confidence: 4 - can easily caption this\n\nestimated_salient_object_count: 4 (vase, flowers, table, plush toy)\nestimated_distinct_object_categories: 4 (vase, flowers, table, stuffed animal)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: true (stuffed animal)\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true (indoor setup with curtain backdrop)\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: true (stuffed animal, artificial flowers, sequined backdrop)\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true (vase with flowers, table, plush toy)\n\ndominant_content_type: \"mixed\" - has objects and scene elements\nimage_style: \"natural_photo\" - though staged, it's a photograph\nsemantic_domain: \"home decor\" or \"interior\"\n\nshort_caption: \"Gray stuffed husky on white table beside vase of white flowers against pink sequined curtain.\"\n\nmain_objects: [\"stuffed husky\", \"white vase\", \"white flowers\", \"side table\", \"sequined curtain\"]\n\npossible_interpretations:\n- \"Product photo for home decor items\"\n- \"Interior design showcase\"\n- \"Photography studio setup\"\n- \"Display arrangement for sale\"\n\nuncertainty_notes: \"The exact type of flowers is uncertain; the plush animal could be a husky, wolf, or similar breed.\"\n\nquality_flags: [\"staged_composition\", \"artificial_setup\"]",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows:\n- A pink/rose gold sequined curtain as the background\n- A white side table on the right\n- A gray and white stuffed husky/wolf plush toy sitting on the table\n- A white vase with decorative patterns on the left\n- White flowers (appears to be artificial cherry blossoms or similar) in the vase\n\nThis appears to be a staged product photo or interior decor shot, not a natural photograph. It's quite artificial in setup.\n\nLet me rate each dimension:\n\n- recognizability: 4 - clear what's shown (plush toy, vase, flowers, table, curtain)\n- ambiguity: 2 - fairly clear what the main subjects are\n- natural_photo_typicality: 1-2 - this is clearly a staged product/decor photo with artificial elements\n- visual_clutter: 2 - relatively simple composition with a few main items\n- object_centricity: 3 - there are objects but it's also a scene setup\n- scene_centricity: 3 - it's a scene with multiple decorative elements\n- caption_confidence: 4 - can easily caption this\n\nestimated_salient_object_count: 4 (vase, flowers, table, plush toy)\nestimated_distinct_object_categories: 4 (vase, flowers, table, stuffed animal)\n\ncontains_person: false\ncontains_face: false\ncontains_animal: true (stuffed animal)\ncontains_text: false\ncontains_vehicle: false\ncontains_food: false\ncontains_indoor_scene: true (indoor setup with curtain backdrop)\ncontains_outdoor_scene: false\ncontains_artificial_or_rendered_content: true (stuffed animal, artificial flowers, sequined backdrop)\ncontains_occlusion_or_truncation: false\ncontains_unusual_viewpoint: false\ncontains_multiple_main_objects: true (vase with flowers, table, plush toy)\n\ndominant_content_type: \"mixed\" - has objects and scene elements\nimage_style: \"natural_photo\" - though staged, it's a photograph\nsemantic_domain: \"home decor\" or \"interior\"\n\nshort_caption: \"Gray stuffed husky on white table beside vase of white flowers against pink sequined curtain.\"\n\nmain_objects: [\"stuffed husky\", \"white vase\", \"white flowers\", \"side table\", \"sequined curtain\"]\n\npossible_interpretations:\n- \"Product photo for home decor items\"\n- \"Interior design showcase\"\n- \"Photography studio setup\"\n- \"Display arrangement for sale\"\n\nuncertainty_notes: \"The exact type of flowers is uncertain; the plush animal could be a husky, wolf, or similar breed.\"\n\nquality_flags: [\"staged_composition\", \"artificial_setup\"]",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 935,
+          "total_tokens": 2457,
+          "cost": 0.00142836,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00142836,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.001122
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 634,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

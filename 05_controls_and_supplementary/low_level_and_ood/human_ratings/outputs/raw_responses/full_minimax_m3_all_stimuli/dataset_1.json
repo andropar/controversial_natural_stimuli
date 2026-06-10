@@ -1,0 +1,76 @@
+{
+  "stimulus": {
+    "stimulus_id": "dataset_1",
+    "stim_key": "dataset_1",
+    "condition": "dataset",
+    "physical_folder": "architecture",
+    "stim_idx": 1,
+    "file_index": 1,
+    "image_name": "image_0001.png",
+    "image_path": "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files/architecture/image_0001.png"
+  },
+  "model": "minimax/minimax-m3",
+  "prompt_version": "vlm_annotation_audit_v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "used_response_format": true,
+      "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"trade show or product exhibition\",\n  \"short_caption\": \"Metallic mounting brackets displayed on an illuminated table at a trade show with people in background\",\n  \"main_objects\": [\"metallic brackets\", \"display table\", \"people\", \"product labels\"],\n  \"possible_interpretations\": [\"product display at trade show\", \"technical equipment exhibition\", \"industrial showcase\", \"optics or camera mount display\", \"manufacturing components demo\"],\n  \"uncertainty_notes\": \"Exact function of brackets unclear; no faces visible; partial text labels not fully legible\",\n  \"quality_flags\": [\"partial_text\", \"truncated_people\", \"moderate_resolution\"]\n}",
+      "response": {
+        "id": "gen-1780318959-Z6SAb13Txcbd5kOfK13s",
+        "object": "chat.completion",
+        "created": 1780318959,
+        "model": "minimax/minimax-m3-20260531",
+        "provider": "Minimax",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"recognizability\": 3,\n  \"ambiguity\": 3,\n  \"natural_photo_typicality\": 4,\n  \"visual_clutter\": 4,\n  \"object_centricity\": 4,\n  \"scene_centricity\": 2,\n  \"caption_confidence\": 4,\n  \"estimated_salient_object_count\": 6,\n  \"estimated_distinct_object_categories\": 3,\n  \"contains_person\": true,\n  \"contains_face\": false,\n  \"contains_animal\": false,\n  \"contains_text\": true,\n  \"contains_vehicle\": false,\n  \"contains_food\": false,\n  \"contains_indoor_scene\": true,\n  \"contains_outdoor_scene\": false,\n  \"contains_artificial_or_rendered_content\": false,\n  \"contains_occlusion_or_truncation\": true,\n  \"contains_unusual_viewpoint\": false,\n  \"contains_multiple_main_objects\": true,\n  \"dominant_content_type\": \"object\",\n  \"image_style\": \"natural_photo\",\n  \"semantic_domain\": \"trade show or product exhibition\",\n  \"short_caption\": \"Metallic mounting brackets displayed on an illuminated table at a trade show with people in background\",\n  \"main_objects\": [\"metallic brackets\", \"display table\", \"people\", \"product labels\"],\n  \"possible_interpretations\": [\"product display at trade show\", \"technical equipment exhibition\", \"industrial showcase\", \"optics or camera mount display\", \"manufacturing components demo\"],\n  \"uncertainty_notes\": \"Exact function of brackets unclear; no faces visible; partial text labels not fully legible\",\n  \"quality_flags\": [\"partial_text\", \"truncated_people\", \"moderate_resolution\"]\n}",
+              "refusal": null,
+              "reasoning": "Let me analyze this image carefully.\n\nThe image shows what appears to be a display at a trade show or exhibition. There are several metallic mounting brackets or mechanical fixtures on a white illuminated display table. In the background, there are people standing around - I can see torsos and parts of people but not full faces clearly. The setting looks like an indoor exhibition or trade show booth.\n\nLet me annotate based on the schema:\n\n- recognizability: The mechanical parts and display are recognizable, but the overall purpose/context might not be. I'd say 3.\n- ambiguity: Multiple possible interpretations - could be a product display, trade show, technical exhibition. I'd say 3.\n- natural_photo_typicality: It looks like a natural photograph, slightly amateur quality. 4.\n- visual_clutter: Multiple metallic objects, people, display table - moderately cluttered. 3-4.\n- object_centricity: The metallic brackets are the central focus. 4.\n- scene_centricity: It's more about the objects than a scene. 2.\n- caption_confidence: I can describe what's visible with reasonable confidence. 4.\n\nSalient objects: multiple metallic brackets/fixtures, people in background\nObject categories: brackets, people, display table\n\nContains person: yes (torsos visible)\nContains face: no (no clear faces visible)\nContains animal: no\nContains text: yes (some text visible on labels, \"ak\" visible)\nContains vehicle: no\nContains food: no\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial or rendered content: no\nContains occlusion or truncation: yes (people are cut off)\nContains unusual viewpoint: no\nContains multiple main objects: yes\n\nDominant content: object (the metallic brackets)\nImage style: natural_photo\nSemantic domain: trade show/exhibition/product display\n\nShort caption: \"Metallic mounting brackets displayed on illuminated table at a trade show with people in background\"\n\nMain objects: mounting brackets, display table, people\nPossible interpretations: trade show display, product exhibition, technical equipment showcase\nUncertainty: exact purpose of brackets unclear, faces not visible",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "Let me analyze this image carefully.\n\nThe image shows what appears to be a display at a trade show or exhibition. There are several metallic mounting brackets or mechanical fixtures on a white illuminated display table. In the background, there are people standing around - I can see torsos and parts of people but not full faces clearly. The setting looks like an indoor exhibition or trade show booth.\n\nLet me annotate based on the schema:\n\n- recognizability: The mechanical parts and display are recognizable, but the overall purpose/context might not be. I'd say 3.\n- ambiguity: Multiple possible interpretations - could be a product display, trade show, technical exhibition. I'd say 3.\n- natural_photo_typicality: It looks like a natural photograph, slightly amateur quality. 4.\n- visual_clutter: Multiple metallic objects, people, display table - moderately cluttered. 3-4.\n- object_centricity: The metallic brackets are the central focus. 4.\n- scene_centricity: It's more about the objects than a scene. 2.\n- caption_confidence: I can describe what's visible with reasonable confidence. 4.\n\nSalient objects: multiple metallic brackets/fixtures, people in background\nObject categories: brackets, people, display table\n\nContains person: yes (torsos visible)\nContains face: no (no clear faces visible)\nContains animal: no\nContains text: yes (some text visible on labels, \"ak\" visible)\nContains vehicle: no\nContains food: no\nContains indoor scene: yes\nContains outdoor scene: no\nContains artificial or rendered content: no\nContains occlusion or truncation: yes (people are cut off)\nContains unusual viewpoint: no\nContains multiple main objects: yes\n\nDominant content: object (the metallic brackets)\nImage style: natural_photo\nSemantic domain: trade show/exhibition/product display\n\nShort caption: \"Metallic mounting brackets displayed on illuminated table at a trade show with people in background\"\n\nMain objects: mounting brackets, display table, people\nPossible interpretations: trade show display, product exhibition, technical equipment showcase\nUncertainty: exact purpose of brackets unclear, faces not visible",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1522,
+          "completion_tokens": 795,
+          "total_tokens": 2317,
+          "cost": 0.00126036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 626,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00126036,
+            "upstream_inference_prompt_cost": 0.00030636,
+            "upstream_inference_completions_cost": 0.000954
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 559,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}
