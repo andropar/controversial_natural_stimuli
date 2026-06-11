@@ -14,6 +14,9 @@ MODEL_SET="${MODEL_SET:-sota}"
 TARGET_SIZE="${TARGET_SIZE:-100}"
 MAX_RAM_GB="${MAX_RAM_GB:-50}"
 BATCH_SIZE="${BATCH_SIZE:-2500}"
+ADAPTIVE_BATCH_SIZE="${ADAPTIVE_BATCH_SIZE:-0}"
+MAX_BATCH_SIZE="${MAX_BATCH_SIZE:-0}"
+MIN_BATCH_SIZE="${MIN_BATCH_SIZE:-256}"
 MEM="${MEM:-128000}"
 N_RANDOM_SUBSETS="${N_RANDOM_SUBSETS:-50}"
 N_NOISE_SAMPLES="${N_NOISE_SAMPLES:-100}"
@@ -38,6 +41,12 @@ CMD=(
   --progress-every-batches "${PROGRESS_EVERY_BATCHES}"
   --output-root "${OUTPUT_ROOT}"
 )
+
+if [[ "${ADAPTIVE_BATCH_SIZE}" == "1" ]]; then
+  CMD+=(--adaptive-batch-size)
+  CMD+=(--max-batch-size "${MAX_BATCH_SIZE}")
+  CMD+=(--min-batch-size "${MIN_BATCH_SIZE}")
+fi
 
 if [[ -n "${EXTRA_ARGS:-}" ]]; then
   # shellcheck disable=SC2206

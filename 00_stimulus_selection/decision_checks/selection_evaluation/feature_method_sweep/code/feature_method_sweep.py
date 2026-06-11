@@ -103,6 +103,7 @@ class MethodSpec:
     across: str
     weights: dict[str, float] | None = None
     raw_weight: float | None = None
+    objective_noise_ceiling_target: float | None = None
     summary_weights: dict[str, float] = field(default_factory=dict)
     description: str = ""
 
@@ -226,6 +227,24 @@ def default_methods() -> list[MethodSpec]:
             raw_weight=0.5,
             summary_weights=w05,
             description="Hardest-alternative margin, worst source model.",
+        ),
+        MethodSpec(
+            method_id="paper_effective_identity_sub01_mean_min_no_attenuation",
+            label="Paper effective identity sub-01, no attenuation",
+            tracks=all_tracks,
+            track_agg_method="identity",
+            track_norm_method="zscore",
+            within="mean",
+            across="min",
+            raw_weight=0.5,
+            objective_noise_ceiling_target=1.0,
+            summary_weights={"sub-01": 1.0},
+            description=(
+                "Same effective selector as the frozen paper run (identity aggregation, "
+                "therefore sub-01 only; mean alternative, min source model), but with "
+                "zero objective noise, i.e. no analytical attenuation. Recovery "
+                "evaluation still uses the run-level target noise."
+            ),
         ),
     ]
 
@@ -507,12 +526,21 @@ def build_runtime(
         rdm_by_model = {model: get_rdm_vector(selected[model], metric) for model in model_names}
         rdm_len, rdm_sum, rdm_sumsq, rdm_dot = compute_rdm_stats(rdm_by_model, model_names)
         noise = var_noise_by_track[track.name]
+        if method.objective_noise_ceiling_target is None:
+            objective_noise = noise
+        elif method.objective_noise_ceiling_target >= 1.0:
+            objective_noise = {model: 0.0 for model in model_names}
+        else:
+            raise ValueError(
+                "Method-specific objective_noise_ceiling_target currently only "
+                "supports values >= 1.0 for the no-attenuation objective."
+            )
         tracks[track.name] = TrackRuntime(
             spec=track,
             selected_features=selected,
             rdm_by_model=rdm_by_model,
             noise_vars=torch.tensor(
-                [noise[model] for model in model_names],
+                [objective_noise[model] for model in model_names],
                 device=device,
                 dtype=torch.float32,
             ),
@@ -627,6 +655,13 @@ def save_runtime_progress(
         track_name: track_runtime.var_noise_by_model
         for track_name, track_runtime in runtime.tracks.items()
     }
+    objective_var_noise_payload = {
+        track_name: {
+            model: float(track_runtime.noise_vars[idx].detach().cpu().item())
+            for idx, model in enumerate(model_names)
+        }
+        for track_name, track_runtime in runtime.tracks.items()
+    }
     track_aggregation = {
         "norm_method": runtime.spec.track_norm_method,
         "agg_method": runtime.spec.track_agg_method,
@@ -654,6 +689,7 @@ def save_runtime_progress(
         "greedy_image_records": image_records,
         "best_raw_combined_image_records": image_records,
         "var_noise_by_model": var_noise_payload,
+        "selection_objective_var_noise_by_model": objective_var_noise_payload,
         "scores": runtime.scores_combined,
         "selected_features_raw": selected_raw_np,
         "greedy_features_raw": selected_raw_np,
@@ -691,6 +727,7 @@ def save_manifest(methods: list[MethodSpec], payload_root: Path) -> None:
                 "track_norm_method": method.track_norm_method,
                 "within": method.within,
                 "across": method.across,
+                "objective_noise_ceiling_target": method.objective_noise_ceiling_target,
                 "raw_weight": method.raw_weight,
                 "weights_json": json.dumps(method.weights or {}, sort_keys=True),
                 "summary_weights_json": json.dumps(method.summary_weights, sort_keys=True),
@@ -784,6 +821,13 @@ def format_seconds(seconds: float) -> str:
         return f"{int(minutes)}m{sec:04.1f}s"
     hours, minutes = divmod(minutes, 60)
     return f"{int(hours)}h{int(minutes):02d}m{sec:04.1f}s"
+
+
+def is_cuda_oom(exc: BaseException) -> bool:
+    message = str(exc).lower()
+    return isinstance(exc, torch.cuda.OutOfMemoryError) or (
+        "cuda" in message and "out of memory" in message
+    )
 
 
 def write_selection_progress(output_root: Path, event: str, **payload: Any) -> None:
@@ -907,6 +951,10 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
         "candidate_pool": "np.arange(max_images)",
         "candidate_pool_size": max_images,
         "encoding_roi_subset": args.encoding_roi_subset,
+        "adaptive_batch_size": args.adaptive_batch_size,
+        "initial_batch_size": args.batch_size,
+        "max_batch_size": args.max_batch_size,
+        "min_batch_size": args.min_batch_size,
     }
     with (output_root / "run_config.json").open("w") as f:
         json.dump(run_config, f, indent=2, default=str)
@@ -951,7 +999,12 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
         runtimes[method.method_id] = runtime
         save_runtime_progress(runtime, payload_root, raw_features_np, raw_shard_slices, model_names, run_config)
 
-    n_batches_total = (max_images + args.batch_size - 1) // args.batch_size
+    current_batch_size = int(args.batch_size)
+    min_batch_size = max(1, int(args.min_batch_size))
+    max_batch_size = int(args.max_batch_size) if int(args.max_batch_size) > 0 else current_batch_size
+    max_batch_size = max(max_batch_size, current_batch_size)
+    successful_batches_since_resize = 0
+
     for greedy_step in trange(args.init_size, args.target_size, desc="Feature-only greedy"):
         active = [
             runtime
@@ -967,9 +1020,11 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
         pool_sizes = {
             runtime.spec.method_id: int(runtime.pool_mask.sum()) for runtime in active
         }
+        n_batches_estimate = (max_images + current_batch_size - 1) // current_batch_size
         print(
             f"[selection] greedy {greedy_iter}/{greedy_total}: "
-            f"active_methods={len(active)}, batches={n_batches_total}, "
+            f"active_methods={len(active)}, batches~={n_batches_estimate}, "
+            f"batch_size={current_batch_size}, "
             f"pool_remaining={pool_sizes}",
             flush=True,
         )
@@ -979,7 +1034,8 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
             greedy_iter=greedy_iter,
             greedy_total=greedy_total,
             active_methods=[runtime.spec.method_id for runtime in active],
-            n_batches=n_batches_total,
+            n_batches_estimate=n_batches_estimate,
+            batch_size=current_batch_size,
             pool_remaining=pool_sizes,
         )
 
@@ -995,78 +1051,126 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
                 "write_pos": 0,
             }
 
-        for batch_idx, start in enumerate(range(0, max_images, args.batch_size), start=1):
-            end = min(start + args.batch_size, max_images)
-            batch_indices = np.arange(start, end, dtype=np.int64)
-            raw_batch_all = {
-                model: torch.from_numpy(raw_features_np[model][start:end]).to(
-                    device=device, dtype=torch.float32
-                )
-                for model in model_names
+        start = 0
+        batch_idx = 0
+        while start < max_images:
+            end = min(start + current_batch_size, max_images)
+            raw_batch_all = None
+            encoded_batch_all = None
+            write_pos_snapshot = {
+                method_id: int(buf["write_pos"]) for method_id, buf in buffers.items()
             }
-            encoded_batch_all = (
-                encode_batch_for_all_encodings(raw_batch_all, encoding_params)
-                if required_encodings
-                else {}
-            )
-
-            for runtime in active:
-                valid_mask = runtime.pool_mask[batch_indices]
-                if not valid_mask.any():
-                    continue
-                valid_positions_np = np.flatnonzero(valid_mask).astype(np.int64)
-                valid_positions = torch.from_numpy(valid_positions_np).to(device=device)
-                buf = buffers[runtime.spec.method_id]
-                write_pos = int(buf["write_pos"])
-                n_valid = len(valid_positions_np)
-                buf["candidate_indices"][write_pos : write_pos + n_valid] = batch_indices[
-                    valid_positions_np
-                ]
-
-                raw_batch = {
-                    model: tensor.index_select(0, valid_positions)
-                    for model, tensor in raw_batch_all.items()
+            try:
+                batch_indices = np.arange(start, end, dtype=np.int64)
+                raw_batch_all = {
+                    model: torch.from_numpy(raw_features_np[model][start:end]).to(
+                        device=device, dtype=torch.float32
+                    )
+                    for model in model_names
                 }
-                encoded_batch = {
-                    enc: {
+                encoded_batch_all = (
+                    encode_batch_for_all_encodings(raw_batch_all, encoding_params)
+                    if required_encodings
+                    else {}
+                )
+
+                for runtime in active:
+                    valid_mask = runtime.pool_mask[batch_indices]
+                    if not valid_mask.any():
+                        continue
+                    valid_positions_np = np.flatnonzero(valid_mask).astype(np.int64)
+                    valid_positions = torch.from_numpy(valid_positions_np).to(device=device)
+                    buf = buffers[runtime.spec.method_id]
+                    write_pos = int(buf["write_pos"])
+                    n_valid = len(valid_positions_np)
+                    buf["candidate_indices"][write_pos : write_pos + n_valid] = batch_indices[
+                        valid_positions_np
+                    ]
+
+                    raw_batch = {
                         model: tensor.index_select(0, valid_positions)
-                        for model, tensor in encoded.items()
+                        for model, tensor in raw_batch_all.items()
                     }
-                    for enc, encoded in encoded_batch_all.items()
-                }
+                    encoded_batch = {
+                        enc: {
+                            model: tensor.index_select(0, valid_positions)
+                            for model, tensor in encoded.items()
+                        }
+                        for enc, encoded in encoded_batch_all.items()
+                    }
 
-                for track in runtime.spec.tracks:
-                    cand = get_track_candidate_features(track, raw_batch, encoded_batch)
-                    scores = compute_track_scores(
-                        candidate_features=cand,
-                        runtime=runtime.tracks[track.name],
-                        metric=args.metric,
-                        corr_type=args.corr_type,
-                        within=runtime.spec.within,
-                        across=runtime.spec.across,
-                    )
-                    buf["scores_per_track"][track.name][write_pos : write_pos + n_valid] = (
-                        scores.detach().cpu().to(torch.float32)
-                    )
-                buf["write_pos"] = write_pos + n_valid
+                    for track in runtime.spec.tracks:
+                        cand = get_track_candidate_features(track, raw_batch, encoded_batch)
+                        scores = compute_track_scores(
+                            candidate_features=cand,
+                            runtime=runtime.tracks[track.name],
+                            metric=args.metric,
+                            corr_type=args.corr_type,
+                            within=runtime.spec.within,
+                            across=runtime.spec.across,
+                        )
+                        buf["scores_per_track"][track.name][write_pos : write_pos + n_valid] = (
+                            scores.detach().cpu().to(torch.float32)
+                        )
+                    buf["write_pos"] = write_pos + n_valid
 
-            del raw_batch_all, encoded_batch_all
-            if device.type == "cuda":
-                torch.cuda.empty_cache()
+                del raw_batch_all, encoded_batch_all
+                if device.type == "cuda":
+                    torch.cuda.empty_cache()
+
+            except Exception as exc:
+                raw_batch_all = None
+                encoded_batch_all = None
+                gc.collect()
+                if device.type == "cuda":
+                    torch.cuda.empty_cache()
+                if (
+                    args.adaptive_batch_size
+                    and is_cuda_oom(exc)
+                    and current_batch_size > min_batch_size
+                ):
+                    for method_id, write_pos in write_pos_snapshot.items():
+                        buffers[method_id]["write_pos"] = write_pos
+                    new_batch_size = max(min_batch_size, current_batch_size // 2)
+                    print(
+                        f"[selection] CUDA OOM at batch_size={current_batch_size}; "
+                        f"retrying start={start} with batch_size={new_batch_size}",
+                        flush=True,
+                    )
+                    write_selection_progress(
+                        output_root,
+                        event="batch_size_backoff",
+                        greedy_iter=greedy_iter,
+                        greedy_total=greedy_total,
+                        start=start,
+                        old_batch_size=current_batch_size,
+                        new_batch_size=new_batch_size,
+                    )
+                    current_batch_size = new_batch_size
+                    successful_batches_since_resize = 0
+                    continue
+                raise
+
+            batch_idx += 1
+            successful_batches_since_resize += 1
 
             if (
                 args.progress_every_batches > 0
                 and (
                     batch_idx == 1
-                    or batch_idx == n_batches_total
+                    or end == max_images
                     or batch_idx % args.progress_every_batches == 0
                 )
             ):
                 elapsed = time.monotonic() - iter_start_time
+                n_batches_estimate = (
+                    (max_images - start + current_batch_size - 1) // current_batch_size
+                )
                 print(
                     f"[selection] greedy {greedy_iter}/{greedy_total}: "
-                    f"batch {batch_idx}/{n_batches_total} "
-                    f"({end}/{max_images} images scanned), elapsed={format_seconds(elapsed)}",
+                    f"batch {batch_idx}/~{batch_idx + max(0, n_batches_estimate - 1)} "
+                    f"({end}/{max_images} images scanned), "
+                    f"batch_size={current_batch_size}, elapsed={format_seconds(elapsed)}",
                     flush=True,
                 )
                 write_selection_progress(
@@ -1075,12 +1179,37 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
                     greedy_iter=greedy_iter,
                     greedy_total=greedy_total,
                     batch_idx=batch_idx,
-                    n_batches=n_batches_total,
+                    n_batches_estimate=batch_idx + max(0, n_batches_estimate - 1),
+                    batch_size=current_batch_size,
                     images_scanned=end,
                     max_images=max_images,
                     elapsed_seconds=elapsed,
                     elapsed=format_seconds(elapsed),
                 )
+
+            start = end
+            if (
+                args.adaptive_batch_size
+                and current_batch_size < max_batch_size
+                and successful_batches_since_resize >= 2
+            ):
+                new_batch_size = min(max_batch_size, current_batch_size * 2)
+                if new_batch_size > current_batch_size:
+                    print(
+                        f"[selection] increasing batch_size "
+                        f"{current_batch_size}->{new_batch_size}",
+                        flush=True,
+                    )
+                    write_selection_progress(
+                        output_root,
+                        event="batch_size_growth",
+                        greedy_iter=greedy_iter,
+                        greedy_total=greedy_total,
+                        old_batch_size=current_batch_size,
+                        new_batch_size=new_batch_size,
+                    )
+                    current_batch_size = new_batch_size
+                    successful_batches_since_resize = 0
 
         selected_summaries = []
         selected_records = []
@@ -1331,6 +1460,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-ram-gb", type=float, default=50.0)
     parser.add_argument("--max-images", type=int, default=None)
     parser.add_argument("--batch-size", type=int, default=2500)
+    parser.add_argument("--adaptive-batch-size", action="store_true")
+    parser.add_argument("--max-batch-size", type=int, default=0)
+    parser.add_argument("--min-batch-size", type=int, default=256)
     parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     parser.add_argument("--encoding-roi-subset", default="hlvis")
     parser.add_argument("--noise-calib-examples", type=int, default=1000)
