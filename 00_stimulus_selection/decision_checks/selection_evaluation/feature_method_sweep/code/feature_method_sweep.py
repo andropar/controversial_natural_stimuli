@@ -49,7 +49,6 @@ from cstims.encoding.linear import (  # noqa: E402
 from cstims.noise_estimation import rdm_noise_by_model  # noqa: E402
 from cstims.rdm_cuda import get_rdm_vector  # noqa: E402
 from cstims.selection.primitives import (  # noqa: E402
-    compute_correlation_matrix,
     compute_pairwise_distances,
 )
 
@@ -115,6 +114,10 @@ class TrackRuntime:
     rdm_by_model: dict[str, torch.Tensor]
     noise_vars: torch.Tensor
     var_noise_by_model: dict[str, float]
+    rdm_len: int
+    rdm_sum: torch.Tensor
+    rdm_sumsq: torch.Tensor
+    rdm_dot: torch.Tensor
 
 
 @dataclass
@@ -381,6 +384,19 @@ def aggregate_across_models_custom(utilities_per_model: torch.Tensor, across: st
     raise ValueError(f"Unsupported across-model aggregation: {across}")
 
 
+def compute_rdm_stats(
+    rdm_by_model: dict[str, torch.Tensor],
+    model_names: list[str],
+) -> tuple[int, torch.Tensor, torch.Tensor, torch.Tensor]:
+    rdms = torch.stack([rdm_by_model[model] for model in model_names], dim=0)
+    return (
+        int(rdms.shape[1]),
+        rdms.sum(dim=1),
+        (rdms * rdms).sum(dim=1),
+        rdms @ rdms.t(),
+    )
+
+
 @torch.no_grad()
 def compute_track_scores(
     candidate_features: dict[str, torch.Tensor],
@@ -406,13 +422,23 @@ def compute_track_scores(
     }
     new_dissims_tensor = torch.stack([new_dissims[model] for model in model_names], dim=1)
 
-    current_rdms = torch.stack([runtime.rdm_by_model[model] for model in model_names], dim=0)
-    current_rdms = current_rdms.unsqueeze(0).expand(batch_size, -1, -1)
-    augmented_rdms = torch.cat([current_rdms, new_dissims_tensor], dim=2)
+    total_len = runtime.rdm_len + int(new_dissims_tensor.shape[2])
+    new_sum = new_dissims_tensor.sum(dim=2)
+    new_sumsq = (new_dissims_tensor * new_dissims_tensor).sum(dim=2)
+    new_dot = torch.bmm(new_dissims_tensor, new_dissims_tensor.transpose(1, 2))
 
-    rdm_vars = augmented_rdms.var(dim=2, unbiased=False)
+    total_sum = runtime.rdm_sum.unsqueeze(0) + new_sum
+    total_sumsq = runtime.rdm_sumsq.unsqueeze(0) + new_sumsq
+    total_dot = runtime.rdm_dot.unsqueeze(0) + new_dot
+
+    mean = total_sum / total_len
+    rdm_vars = (total_sumsq / total_len - mean.square()).clamp_min(0.0)
+    cov = total_dot / total_len - mean.unsqueeze(2) * mean.unsqueeze(1)
+    std = torch.sqrt(rdm_vars) + 1e-8
+    correlations = cov / (std.unsqueeze(2) * std.unsqueeze(1))
+    correlations = torch.nan_to_num(correlations, nan=0.0)
+
     attenuation = torch.sqrt(rdm_vars / (rdm_vars + runtime.noise_vars.unsqueeze(0) + 1e-8))
-    correlations = compute_correlation_matrix(augmented_rdms, augmented_rdms, corr_type="correlation")
     expected_correlations = correlations * attenuation.unsqueeze(2)
 
     utilities_per_model = compute_model_utilities_custom(expected_correlations, within)
@@ -479,6 +505,7 @@ def build_runtime(
     for track in method.tracks:
         selected = get_track_selected_features(track, raw_selected, encoded_selected)
         rdm_by_model = {model: get_rdm_vector(selected[model], metric) for model in model_names}
+        rdm_len, rdm_sum, rdm_sumsq, rdm_dot = compute_rdm_stats(rdm_by_model, model_names)
         noise = var_noise_by_track[track.name]
         tracks[track.name] = TrackRuntime(
             spec=track,
@@ -490,6 +517,10 @@ def build_runtime(
                 dtype=torch.float32,
             ),
             var_noise_by_model=dict(noise),
+            rdm_len=rdm_len,
+            rdm_sum=rdm_sum,
+            rdm_sumsq=rdm_sumsq,
+            rdm_dot=rdm_dot,
         )
 
     pool_mask = np.ones(pool_size, dtype=bool)
@@ -543,6 +574,12 @@ def append_new_stimulus(
             track_runtime.rdm_by_model[model] = torch.cat(
                 [track_runtime.rdm_by_model[model], new_dists]
             )
+        (
+            track_runtime.rdm_len,
+            track_runtime.rdm_sum,
+            track_runtime.rdm_sumsq,
+            track_runtime.rdm_dot,
+        ) = compute_rdm_stats(track_runtime.rdm_by_model, model_names)
 
     runtime.current_indices.append(int(new_idx))
     runtime.pool_mask[int(new_idx)] = False
