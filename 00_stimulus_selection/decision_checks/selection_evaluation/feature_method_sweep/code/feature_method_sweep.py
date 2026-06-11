@@ -66,6 +66,21 @@ RECOVERY_SCRIPT = (
     / "code"
     / "compute_noisy_by_clean_recovery.py"
 )
+UNIQUE_ENCODING_ROOT = (
+    ROOT
+    / "01_brain_model_alignment"
+    / "results"
+    / "encoding_models"
+    / "subject_unique_encoding_models"
+    / "runs"
+)
+UNIQUE_ENCODING_DIRS = {
+    "sub-01": UNIQUE_ENCODING_ROOT / "20260317_170621",
+    "sub-03": UNIQUE_ENCODING_ROOT / "20260319_152751",
+    "sub-05": UNIQUE_ENCODING_ROOT / "20260317_170621",
+    "sub-06": UNIQUE_ENCODING_ROOT / "20260319_152752",
+    "sub-07": UNIQUE_ENCODING_ROOT / "20260317_170621",
+}
 
 ENCODING_TRACKS = ("sub-01", "sub-03", "sub-05", "sub-06", "sub-07")
 
@@ -237,6 +252,50 @@ def load_env_paths(env: str) -> dict[str, Any]:
 def load_model_set(model_set: str) -> tuple[str, list[str]]:
     config = load_yaml(MODEL_SET_CONFIG_ROOT / f"{model_set}.yaml")
     return config.get("model_set_name", model_set), list(config["model_names"])
+
+
+def load_encoding_params_for_sweep(
+    *,
+    paths: dict[str, Any],
+    model_list_csv: Path,
+    encoding_names: list[str],
+    device: torch.device,
+    roi_subset: str | None,
+    shared_encodings: bool,
+) -> EncodingParamsByEncoding:
+    if not encoding_names:
+        return {}
+
+    if shared_encodings:
+        return load_encoding_params_by_encoding(
+            encoding_root=Path(paths["encoding_root"]),
+            model_list_csv=model_list_csv,
+            encoding_names=encoding_names,
+            device=device,
+            roi_subset=roi_subset,
+        )
+
+    params: EncodingParamsByEncoding = {}
+    for encoding_name in encoding_names:
+        encoding_root = UNIQUE_ENCODING_DIRS.get(encoding_name)
+        if encoding_root is None:
+            raise ValueError(
+                f"No unique encoding root configured for encoding '{encoding_name}'. "
+                "Use --shared-encodings to load all encodings from paths.encoding_root."
+            )
+        if not encoding_root.exists():
+            raise FileNotFoundError(
+                f"Unique encoding root for '{encoding_name}' does not exist: {encoding_root}"
+            )
+        loaded = load_encoding_params_by_encoding(
+            encoding_root=encoding_root,
+            model_list_csv=model_list_csv,
+            encoding_names=[encoding_name],
+            device=device,
+            roi_subset=roi_subset,
+        )
+        params.update(loaded)
+    return params
 
 
 def load_layer_names(model_list_csv: Path, model_names: list[str]) -> list[str]:
@@ -735,16 +794,13 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
             if track.type == "encoding" and track.encoding_name
         }
     )
-    encoding_params = (
-        load_encoding_params_by_encoding(
-            encoding_root=Path(paths["encoding_root"]),
-            model_list_csv=model_list_csv,
-            encoding_names=required_encodings,
-            device=device,
-            roi_subset=args.encoding_roi_subset,
-        )
-        if required_encodings
-        else {}
+    encoding_params = load_encoding_params_for_sweep(
+        paths=paths,
+        model_list_csv=model_list_csv,
+        encoding_names=required_encodings,
+        device=device,
+        roi_subset=args.encoding_roi_subset,
+        shared_encodings=args.shared_encodings,
     )
     missing_encodings = sorted(set(required_encodings) - set(encoding_params))
     if missing_encodings:
