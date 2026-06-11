@@ -109,7 +109,7 @@ SELECTION_PAYLOAD = SELECTION_OUTPUT_ROOT / "all_models" / "selected_stimuli_dat
 
 # Eval pipeline results
 EVAL_DATA_DIR = (
-    SHARE_ROOT / "00_stimulus_selection" / "decision_checks" / "selection_evaluation" / "results"
+    SHARE_ROOT / "00_stimulus_selection" / "selection_evaluation" / "results"
 )
 
 

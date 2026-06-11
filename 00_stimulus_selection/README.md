@@ -11,7 +11,7 @@ uses the images.
 - `code/`: selection entrypoint plus copied selection/evaluation dependencies.
 - `resources/`: Hydra configs, model-set definitions, and selection resources.
 - `results/selected_stimuli/`: final frozen selected sets.
-- `decision_checks/`: selection evaluation, diagnostics, and known-bad or
+- `selection_evaluation/`: selection evaluation, diagnostics, and known-bad or
   superseded checks.
 - `resources/manifests/selection_runs.csv`: readable provenance for each
   selected set.
@@ -31,19 +31,19 @@ description.
 
 ## Decision Checks
 
-`decision_checks/selection_evaluation/` contains the sanity checks used to
+`selection_evaluation/` contains the sanity checks used to
 evaluate the final selection procedure: discriminability, diversity, model-RDM
 correlation matrices, natural-image filter records, greedy/refinement score
 traces, noise calibration, objective composition, the selection-method
 leaderboard, and related figures.
 
-See `decision_checks/README.md` for the file-by-file description.
+See `selection_evaluation/README.md` for the file-by-file description.
 
 ## How To Read This Stage
 
 Start with `results/selected_stimuli/` if you need the actual frozen image sets. Use
 `resources/manifests/selection_runs.csv` to identify which run produced a set,
-then inspect `resources/` for the selection configuration and `decision_checks/`
+then inspect `resources/` for the selection configuration and `selection_evaluation/`
 for the evidence that the chosen set has the intended disagreement structure.
 
 ## Selection Method
@@ -93,7 +93,7 @@ including model sets such as `sota`, `all_models`, `architecture`,
 - Figures in this folder tree: 115
 - Data/table-like files in this folder tree: 281
 - Python scripts in this folder tree: 51
-- Main child folders: `code/`, `resources/`, `results/selected_stimuli/`, `decision_checks/`
+- Main child folders: `code/`, `resources/`, `results/selected_stimuli/`, `selection_evaluation/`
 
 Use the tables below as a trace from rendered files back to the nearby code, staged data, score tables, or reports that produced them.
 
@@ -101,13 +101,13 @@ Use the tables below as a trace from rendered files back to the nearby code, sta
 
 | Figure directory | Figures | README |
 |---|---:|---|
-| `00_stimulus_selection/decision_checks/selection_evaluation/figures/correlation_matrices_eval_pipeline` | 10 | `00_stimulus_selection/decision_checks/selection_evaluation/figures/correlation_matrices_eval_pipeline/README.md` |
-| `00_stimulus_selection/decision_checks/selection_evaluation/figures/correlation_matrices_eval_pipeline/png` | 10 | `00_stimulus_selection/decision_checks/selection_evaluation/figures/correlation_matrices_eval_pipeline/png/README.md` |
-| `00_stimulus_selection/decision_checks/selection_evaluation/figures/correlation_matrices_pool` | 20 | `00_stimulus_selection/decision_checks/selection_evaluation/figures/correlation_matrices_pool/README.md` |
-| `00_stimulus_selection/decision_checks/selection_evaluation/figures/correlation_matrices_pool/png` | 20 | `00_stimulus_selection/decision_checks/selection_evaluation/figures/correlation_matrices_pool/png/README.md` |
-| `00_stimulus_selection/decision_checks/selection_evaluation/figures/correlation_matrices_vicco` | 20 | `00_stimulus_selection/decision_checks/selection_evaluation/figures/correlation_matrices_vicco/README.md` |
-| `00_stimulus_selection/decision_checks/selection_evaluation/figures/correlation_matrices_vicco/png` | 20 | `00_stimulus_selection/decision_checks/selection_evaluation/figures/correlation_matrices_vicco/png/README.md` |
-| `00_stimulus_selection/decision_checks/selection_evaluation/figures/insilico_curve` | 7 | `00_stimulus_selection/decision_checks/selection_evaluation/figures/insilico_curve/README.md` |
-| `00_stimulus_selection/decision_checks/selection_evaluation/figures/insilico_curve/png` | 7 | `00_stimulus_selection/decision_checks/selection_evaluation/figures/insilico_curve/png/README.md` |
-| `00_stimulus_selection/decision_checks/selection_evaluation/method_comparison/figures` | 1 | `00_stimulus_selection/decision_checks/selection_evaluation/method_comparison/figures/README.md` |
+| `00_stimulus_selection/selection_evaluation/figures/correlation_matrices_eval_pipeline` | 10 | `00_stimulus_selection/selection_evaluation/figures/correlation_matrices_eval_pipeline/README.md` |
+| `00_stimulus_selection/selection_evaluation/figures/correlation_matrices_eval_pipeline/png` | 10 | `00_stimulus_selection/selection_evaluation/figures/correlation_matrices_eval_pipeline/png/README.md` |
+| `00_stimulus_selection/selection_evaluation/figures/correlation_matrices_pool` | 20 | `00_stimulus_selection/selection_evaluation/figures/correlation_matrices_pool/README.md` |
+| `00_stimulus_selection/selection_evaluation/figures/correlation_matrices_pool/png` | 20 | `00_stimulus_selection/selection_evaluation/figures/correlation_matrices_pool/png/README.md` |
+| `00_stimulus_selection/selection_evaluation/figures/correlation_matrices_vicco` | 20 | `00_stimulus_selection/selection_evaluation/figures/correlation_matrices_vicco/README.md` |
+| `00_stimulus_selection/selection_evaluation/figures/correlation_matrices_vicco/png` | 20 | `00_stimulus_selection/selection_evaluation/figures/correlation_matrices_vicco/png/README.md` |
+| `00_stimulus_selection/selection_evaluation/figures/insilico_curve` | 7 | `00_stimulus_selection/selection_evaluation/figures/insilico_curve/README.md` |
+| `00_stimulus_selection/selection_evaluation/figures/insilico_curve/png` | 7 | `00_stimulus_selection/selection_evaluation/figures/insilico_curve/png/README.md` |
+| `00_stimulus_selection/selection_evaluation/method_comparison/figures` | 1 | `00_stimulus_selection/selection_evaluation/method_comparison/figures/README.md` |
 <!-- END AUTO-FIGURE-PROVENANCE -->
