@@ -199,6 +199,7 @@ def compute_discriminability_for_track(
     track: dict,
     device: torch.device,
     n_random_subsets: int,
+    n_random_images: int,
     n_noise_samples: int,
     noise_level_multipliers: np.ndarray,
     metric: str,
@@ -214,6 +215,7 @@ def compute_discriminability_for_track(
         track: Track definition dict
         device: Torch device
         n_random_subsets: Number of random baseline subsets
+        n_random_images: Number of random baseline images to load before subset sampling
         n_noise_samples: Number of noise samples per level
         noise_level_multipliers: Array of noise multipliers
         metric: RDM metric (euclidean, cosine, correlation)
@@ -238,7 +240,7 @@ def compute_discriminability_for_track(
         track=track,
         device=device,
         encoding_params_cache=encoding_params_cache,
-        n_random=10000,
+        n_random=n_random_images,
         selection_variant=selection_variant,
         encoding_root_map=encoding_root_map,
     )
@@ -576,6 +578,12 @@ def main():
         help="Number of random baseline subsets (default: 50)",
     )
     parser.add_argument(
+        "--n-random-images",
+        type=int,
+        default=10000,
+        help="Number of random baseline images to load before subset sampling (default: 10000)",
+    )
+    parser.add_argument(
         "--n-noise-samples",
         type=int,
         default=DEFAULT_N_NOISE_SAMPLES,
@@ -683,6 +691,7 @@ def main():
                     track=track,
                     device=device,
                     n_random_subsets=args.n_random_subsets,
+                    n_random_images=args.n_random_images,
                     n_noise_samples=args.n_noise_samples,
                     noise_level_multipliers=noise_level_multipliers,
                     metric=metric,

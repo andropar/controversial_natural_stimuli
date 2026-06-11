@@ -679,6 +679,7 @@ def run_model_set(
                     track=track,
                     device=device,
                     n_random_subsets=args.n_random_subsets,
+                    n_random_images=args.n_random_images,
                     n_noise_samples=args.n_noise_samples,
                     noise_level_multipliers=noise_level_multipliers,
                     metric=metric,
@@ -786,6 +787,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--n-random-subsets", type=int, default=50)
+    parser.add_argument(
+        "--n-random-images",
+        type=int,
+        default=10000,
+        help="Number of random baseline images to load from candidate pool/cache before subset sampling.",
+    )
     parser.add_argument("--n-noise-samples", type=int, default=disc.DEFAULT_N_NOISE_SAMPLES)
     parser.add_argument("--n-bootstrap", type=int, default=disc.N_BOOTSTRAP_DEFAULT)
     parser.add_argument(
