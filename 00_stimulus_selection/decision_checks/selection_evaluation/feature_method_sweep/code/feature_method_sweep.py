@@ -18,6 +18,7 @@ import os
 import pickle
 import subprocess
 import sys
+import time
 from dataclasses import asdict, dataclass, field
 from datetime import datetime
 from pathlib import Path
@@ -737,6 +738,32 @@ def load_existing_trace(method_dir: Path) -> list[dict[str, Any]]:
     return pd.read_csv(path).to_dict("records")
 
 
+def format_seconds(seconds: float) -> str:
+    seconds = max(0.0, float(seconds))
+    if seconds < 60:
+        return f"{seconds:.1f}s"
+    minutes, sec = divmod(seconds, 60)
+    if minutes < 60:
+        return f"{int(minutes)}m{sec:04.1f}s"
+    hours, minutes = divmod(minutes, 60)
+    return f"{int(hours)}h{int(minutes):02d}m{sec:04.1f}s"
+
+
+def write_selection_progress(output_root: Path, event: str, **payload: Any) -> None:
+    record = {
+        "timestamp": datetime.now().isoformat(timespec="seconds"),
+        "event": event,
+        **payload,
+    }
+    latest_path = output_root / "selection_progress_latest.json"
+    tmp_path = output_root / "selection_progress_latest.json.tmp"
+    with tmp_path.open("w") as f:
+        json.dump(record, f, indent=2, default=str)
+    tmp_path.replace(latest_path)
+    with (output_root / "selection_progress.jsonl").open("a") as f:
+        f.write(json.dumps(record, default=str) + "\n")
+
+
 def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[Path, Path, Path]:
     paths = load_env_paths(args.env)
     model_set_name, model_names = load_model_set(args.model_set)
@@ -848,6 +875,15 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
         json.dump(run_config, f, indent=2, default=str)
     np.save(output_root / "pool_indices.npy", np.arange(max_images, dtype=np.int64))
     save_manifest(methods, payload_root)
+    write_selection_progress(
+        output_root,
+        event="selection_started",
+        model_set_name=model_set_name,
+        max_images=max_images,
+        target_size=args.target_size,
+        init_size=args.init_size,
+        methods=[method.method_id for method in methods],
+    )
 
     runtimes: dict[str, MethodRuntime] = {}
     for method in methods:
@@ -878,6 +914,7 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
         runtimes[method.method_id] = runtime
         save_runtime_progress(runtime, payload_root, raw_features_np, raw_shard_slices, model_names, run_config)
 
+    n_batches_total = (max_images + args.batch_size - 1) // args.batch_size
     for greedy_step in trange(args.init_size, args.target_size, desc="Feature-only greedy"):
         active = [
             runtime
@@ -886,6 +923,28 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
         ]
         if not active:
             break
+
+        greedy_iter = greedy_step - args.init_size + 1
+        greedy_total = args.target_size - args.init_size
+        iter_start_time = time.monotonic()
+        pool_sizes = {
+            runtime.spec.method_id: int(runtime.pool_mask.sum()) for runtime in active
+        }
+        print(
+            f"[selection] greedy {greedy_iter}/{greedy_total}: "
+            f"active_methods={len(active)}, batches={n_batches_total}, "
+            f"pool_remaining={pool_sizes}",
+            flush=True,
+        )
+        write_selection_progress(
+            output_root,
+            event="greedy_iteration_start",
+            greedy_iter=greedy_iter,
+            greedy_total=greedy_total,
+            active_methods=[runtime.spec.method_id for runtime in active],
+            n_batches=n_batches_total,
+            pool_remaining=pool_sizes,
+        )
 
         buffers: dict[str, dict[str, Any]] = {}
         for runtime in active:
@@ -899,7 +958,7 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
                 "write_pos": 0,
             }
 
-        for start in range(0, max_images, args.batch_size):
+        for batch_idx, start in enumerate(range(0, max_images, args.batch_size), start=1):
             end = min(start + args.batch_size, max_images)
             batch_indices = np.arange(start, end, dtype=np.int64)
             raw_batch_all = {
@@ -958,6 +1017,36 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
             if device.type == "cuda":
                 torch.cuda.empty_cache()
 
+            if (
+                args.progress_every_batches > 0
+                and (
+                    batch_idx == 1
+                    or batch_idx == n_batches_total
+                    or batch_idx % args.progress_every_batches == 0
+                )
+            ):
+                elapsed = time.monotonic() - iter_start_time
+                print(
+                    f"[selection] greedy {greedy_iter}/{greedy_total}: "
+                    f"batch {batch_idx}/{n_batches_total} "
+                    f"({end}/{max_images} images scanned), elapsed={format_seconds(elapsed)}",
+                    flush=True,
+                )
+                write_selection_progress(
+                    output_root,
+                    event="candidate_batch",
+                    greedy_iter=greedy_iter,
+                    greedy_total=greedy_total,
+                    batch_idx=batch_idx,
+                    n_batches=n_batches_total,
+                    images_scanned=end,
+                    max_images=max_images,
+                    elapsed_seconds=elapsed,
+                    elapsed=format_seconds(elapsed),
+                )
+
+        selected_summaries = []
+        selected_records = []
         for runtime in active:
             buf = buffers[runtime.spec.method_id]
             n_written = int(buf["write_pos"])
@@ -989,6 +1078,16 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
                 runtime.scores_per_track_history[track_name].append(score)
             runtime.trace_rows.append(row)
             runtime.scores_combined.append(best_score)
+            selected_summaries.append(
+                f"{runtime.spec.method_id}:idx={best_idx},score={best_score:.4f}"
+            )
+            selected_records.append(
+                {
+                    "method_id": runtime.spec.method_id,
+                    "selected_index": best_idx,
+                    "score": best_score,
+                }
+            )
 
             append_new_stimulus(
                 runtime=runtime,
@@ -1007,6 +1106,23 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
                 model_names,
                 run_config,
             )
+
+        elapsed = time.monotonic() - iter_start_time
+        print(
+            f"[selection] greedy {greedy_iter}/{greedy_total}: selected "
+            + "; ".join(selected_summaries)
+            + f" | iteration_elapsed={format_seconds(elapsed)}",
+            flush=True,
+        )
+        write_selection_progress(
+            output_root,
+            event="greedy_iteration_selected",
+            greedy_iter=greedy_iter,
+            greedy_total=greedy_total,
+            selected=selected_records,
+            elapsed_seconds=elapsed,
+            elapsed=format_seconds(elapsed),
+        )
 
         gc.collect()
         if device.type == "cuda":
@@ -1185,6 +1301,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--n-random-subsets", type=int, default=50)
     parser.add_argument("--n-noise-samples", type=int, default=100)
     parser.add_argument("--n-bootstrap", type=int, default=500)
+    parser.add_argument(
+        "--progress-every-batches",
+        type=int,
+        default=10,
+        help="Print one progress line every N candidate batches during each greedy step. Set 0 to disable.",
+    )
     parser.add_argument("--shared-encodings", action="store_true")
     parser.add_argument("--skip-selection", action="store_true")
     parser.add_argument("--skip-eval", action="store_true")

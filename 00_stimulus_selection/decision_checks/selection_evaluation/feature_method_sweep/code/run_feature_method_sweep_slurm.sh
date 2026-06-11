@@ -18,6 +18,7 @@ MEM="${MEM:-128000}"
 N_RANDOM_SUBSETS="${N_RANDOM_SUBSETS:-50}"
 N_NOISE_SAMPLES="${N_NOISE_SAMPLES:-100}"
 N_BOOTSTRAP="${N_BOOTSTRAP:-500}"
+PROGRESS_EVERY_BATCHES="${PROGRESS_EVERY_BATCHES:-10}"
 SEED="${SEED:-42}"
 TIMESTAMP="${TIMESTAMP:-$(date +%Y%m%d_%H%M%S)}"
 OUTPUT_ROOT="${OUTPUT_ROOT:-${REPO_ROOT}/00_stimulus_selection/decision_checks/selection_evaluation/feature_method_sweep/results/${MODEL_SET}_${TIMESTAMP}}"
@@ -34,6 +35,7 @@ CMD=(
   --n-random-subsets "${N_RANDOM_SUBSETS}"
   --n-noise-samples "${N_NOISE_SAMPLES}"
   --n-bootstrap "${N_BOOTSTRAP}"
+  --progress-every-batches "${PROGRESS_EVERY_BATCHES}"
   --output-root "${OUTPUT_ROOT}"
 )
 
