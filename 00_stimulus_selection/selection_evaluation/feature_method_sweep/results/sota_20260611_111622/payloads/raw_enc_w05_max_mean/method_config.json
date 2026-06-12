@@ -1,0 +1,122 @@
+{
+  "model_set_name": "sota",
+  "model_names": [
+    "slip_vit_l_slip",
+    "slip_vit_l_simclr",
+    "timm_vit_large_patch14_clip_224_laion2b",
+    "dinov2_vitl14",
+    "openclip_vit_so400m_14_siglip_webli",
+    "torchvision_convnext_base_imagenet1k_v1"
+  ],
+  "paths": {
+    "subset_root": "/ptmp/rothj/cstims_laion_natural_subset",
+    "preprocessed_dirs": {
+      "raw": "/ptmp/rothj/cstims_laion_natural_subset_memmaps",
+      "fitted": "/ptmp/rothj/cstims_laion_natural_subset_memmaps_encoded/sub-01/encoded"
+    },
+    "model_list_csv": "/raven/u/rothj/controversial_natural_stimuli/00_stimulus_selection/resources/model_list.csv",
+    "output_base": "/u/rothj/cstims/00_stimulus_selection/results/selected_stimuli",
+    "encoding_root": "/u/rothj/cstims/01_brain_model_alignment/results/encoding_models/encoding_20251222_141301",
+    "classifier_path": "/u/rothj/laion_natural/experiments/laion/deepvision_dataset/data/laion_natural_img_clf.pkl"
+  },
+  "target_size": 100,
+  "init_size": 3,
+  "seed": 42,
+  "metric": "cosine",
+  "corr_type": "correlation",
+  "use_analytical": true,
+  "aggregation_within": "method_specific",
+  "aggregation_across": "method_specific",
+  "noise_ceiling_target": 0.46,
+  "noise_in_feature_space": false,
+  "image_filter": {
+    "enabled": false
+  },
+  "refinement": {
+    "max_passes": 0,
+    "min_replacements": 0
+  },
+  "max_ram_gb": 50.0,
+  "max_images": 1718977,
+  "candidate_pool": "np.arange(max_images)",
+  "candidate_pool_size": 1718977,
+  "encoding_roi_subset": "hlvis",
+  "adaptive_batch_size": false,
+  "initial_batch_size": 2500,
+  "max_batch_size": 0,
+  "min_batch_size": 256,
+  "method_name": "raw_enc_w05_max_mean",
+  "feature_method_sweep": true,
+  "feature_method_spec": {
+    "method_id": "raw_enc_w05_max_mean",
+    "label": "Raw+enc w0.5, max/mean",
+    "tracks": [
+      {
+        "name": "sub-01",
+        "type": "encoding",
+        "encoding_name": "sub-01"
+      },
+      {
+        "name": "sub-03",
+        "type": "encoding",
+        "encoding_name": "sub-03"
+      },
+      {
+        "name": "sub-05",
+        "type": "encoding",
+        "encoding_name": "sub-05"
+      },
+      {
+        "name": "sub-06",
+        "type": "encoding",
+        "encoding_name": "sub-06"
+      },
+      {
+        "name": "sub-07",
+        "type": "encoding",
+        "encoding_name": "sub-07"
+      },
+      {
+        "name": "raw",
+        "type": "identity",
+        "encoding_name": null
+      }
+    ],
+    "track_agg_method": "weighted_mean",
+    "track_norm_method": "zscore",
+    "within": "max",
+    "across": "mean",
+    "weights": {
+      "raw": 0.5,
+      "sub-01": 0.1,
+      "sub-03": 0.1,
+      "sub-05": 0.1,
+      "sub-06": 0.1,
+      "sub-07": 0.1
+    },
+    "raw_weight": 0.5,
+    "objective_noise_ceiling_target": null,
+    "summary_weights": {
+      "raw": 0.5,
+      "sub-01": 0.1,
+      "sub-03": 0.1,
+      "sub-05": 0.1,
+      "sub-06": 0.1,
+      "sub-07": 0.1
+    },
+    "description": "Hardest-alternative margin, averaged over source models."
+  },
+  "track_aggregation": {
+    "norm_method": "zscore",
+    "agg_method": "weighted_mean",
+    "raw_weight": 0.5,
+    "weights": {
+      "raw": 0.5,
+      "sub-01": 0.1,
+      "sub-03": 0.1,
+      "sub-05": 0.1,
+      "sub-06": 0.1,
+      "sub-07": 0.1
+    }
+  }
+}
