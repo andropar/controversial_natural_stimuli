@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-06-11T11:28:37",
+  "event": "candidate_batch",
+  "greedy_iter": 3,
+  "greedy_total": 97,
+  "batch_idx": 370,
+  "n_batches_estimate": 688,
+  "batch_size": 2500,
+  "images_scanned": 925000,
+  "max_images": 1718977,
+  "elapsed_seconds": 54.167266047996236,
+  "elapsed": "54.2s"
+}

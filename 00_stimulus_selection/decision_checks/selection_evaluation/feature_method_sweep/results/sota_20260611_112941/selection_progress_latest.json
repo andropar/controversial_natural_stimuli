@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-06-11T20:17:59",
+  "event": "greedy_iteration_selected",
+  "greedy_iter": 97,
+  "greedy_total": 97,
+  "selected": [
+    {
+      "method_id": "raw_only_mean_min",
+      "selected_index": 713187,
+      "score": 0.5379865169525146
+    },
+    {
+      "method_id": "sub01_only_mean_min",
+      "selected_index": 1554147,
+      "score": 0.31688886880874634
+    },
+    {
+      "method_id": "paper_effective_identity_sub01_mean_min",
+      "selected_index": 1554147,
+      "score": 5.213666915893555
+    },
+    {
+      "method_id": "raw_enc_w05_mean_min",
+      "selected_index": 509732,
+      "score": 3.6342008113861084
+    },
+    {
+      "method_id": "raw_enc_w05_max_mean",
+      "selected_index": 927375,
+      "score": 3.492081880569458
+    },
+    {
+      "method_id": "raw_enc_w05_max_min",
+      "selected_index": 1143210,
+      "score": 1.969175100326538
+    },
+    {
+      "method_id": "paper_effective_identity_sub01_mean_min_no_attenuation",
+      "selected_index": 490046,
+      "score": 5.073818206787109
+    }
+  ],
+  "elapsed_seconds": 539.0369093689951,
+  "elapsed": "8m59.0s"
+}
