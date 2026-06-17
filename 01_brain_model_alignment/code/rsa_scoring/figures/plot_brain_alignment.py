@@ -21,9 +21,8 @@ from pathlib import Path
 
 STAGE = Path(__file__).resolve().parents[3]
 SHARE_ROOT = STAGE.parent
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
-import config
+sys.path.insert(0, str(SHARE_ROOT / "src"))
+from cstims.paper import config
 
 import numpy as np
 import pandas as pd
@@ -40,7 +39,7 @@ RSA_DATA_DIR = config.RSA_DATA_DIR
 FIGURES_DIR = STAGE / "figures" / "rsa_scores"
 get_subject_data_dir = config.get_subject_data_dir
 
-from style import apply_style, FONT, DPI, W_DOUBLE
+from cstims.paper.style_improved import apply_style, FONT, DPI, W_DOUBLE
 
 apply_style()
 

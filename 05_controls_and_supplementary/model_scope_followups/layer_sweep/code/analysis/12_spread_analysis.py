@@ -14,7 +14,7 @@ from _paths import LAYER_SWEEP_ROOT
 import numpy as np
 import pandas as pd
 
-from config import PAPER_ROOT
+from cstims.paper.config import PAPER_ROOT
 from layers_config import MAIN_LAYER
 
 DATA_DIR = LAYER_SWEEP_ROOT / "results"

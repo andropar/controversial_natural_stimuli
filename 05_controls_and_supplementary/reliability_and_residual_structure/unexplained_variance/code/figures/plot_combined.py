@@ -19,6 +19,8 @@ Usage:
 
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -27,7 +29,6 @@ from PIL import Image
 
 STAGE = Path(__file__).resolve().parents[2]
 SHARE_ROOT = STAGE.parents[2]
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
 
 DATA_DIR = STAGE / "results"
 IMAGE_DIR = (
@@ -43,7 +44,7 @@ FIG_DIR = STAGE / "figures"
 SUBJECTS_CSTIM = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]
 
 try:
-    from style_improved import apply_style, DPI, W_DOUBLE
+    from cstims.paper.style_improved import apply_style, DPI, W_DOUBLE
     apply_style()
 except ImportError:
     DPI = 150

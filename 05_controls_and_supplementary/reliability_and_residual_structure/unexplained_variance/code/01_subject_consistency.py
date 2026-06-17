@@ -24,6 +24,8 @@ Usage:
 
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 import numpy as np
 import pandas as pd
 from scipy.spatial.distance import squareform
@@ -35,8 +37,7 @@ _PAPER = Path(__file__).resolve().parents[1]
 SHARE_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))
-sys.path.insert(0, str(_PAPER / "figures"))
-import config
+from cstims.paper import config
 
 SUBJECTS = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]
 RDM_DIR = Path("/home/jroth/rsa_based_selection/experiments/archive/simulationdiffs_to_braindiffs/data")
@@ -56,7 +57,7 @@ FIG_DIR = Path(__file__).resolve().parent / "figures"
 N_IMAGES = 100
 
 try:
-    from style_improved import apply_style, DPI, W_SINGLE, W_DOUBLE
+    from cstims.paper.style_improved import apply_style, DPI, W_SINGLE, W_DOUBLE
     apply_style()
 except ImportError:
     DPI = 150

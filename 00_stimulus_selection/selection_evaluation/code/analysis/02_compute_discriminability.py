@@ -282,6 +282,7 @@ def compute_discriminability_for_track(
         )
         noise_stds = noise_params.get_noise_stds(metric)
         noise_info = {m: float(noise_stds[i].item()) for i, m in enumerate(model_names)}
+    noise_stds = noise_stds.to(device)
 
     # Compute RDMs for selected stimuli
     print(f"  Computing RDMs for selected stimuli...")
@@ -317,11 +318,19 @@ def compute_discriminability_for_track(
 
     # Compute random correlation matrix (average across subsets)
     random_corr_list = []
+    random_corr_noised_list = []
     for random_rdm in random_rdms:
-        corr = compute_clean_correlation_matrix(random_rdm[metric], corr_type)
+        random_metric_rdms = random_rdm[metric].to(device)
+        corr = compute_clean_correlation_matrix(random_metric_rdms, corr_type)
         random_corr_list.append(corr.cpu())  # Keep on CPU to save GPU memory
+        corr_noised = compute_correlation_at_target_noise(
+            random_metric_rdms, noise_stds, corr_type, n_noise_samples
+        )
+        random_corr_noised_list.append(corr_noised.cpu())
+        del random_metric_rdms, corr, corr_noised
     random_corr = torch.stack(random_corr_list).mean(dim=0)
-    del random_corr_list
+    random_corr_noised = torch.stack(random_corr_noised_list).mean(dim=0)
+    del random_corr_list, random_corr_noised_list
     gc.collect()
 
     # Compute correlation at target noise level
@@ -562,6 +571,7 @@ def compute_discriminability_for_track(
         "selected_clean": selected_corr.numpy().tolist(),
         "selected_noised": selected_corr_noised.numpy().tolist(),
         "random_clean": random_corr.numpy().tolist(),
+        "random_noised": random_corr_noised.numpy().tolist(),
         "model_names": model_names,
     }
 
@@ -628,10 +638,8 @@ def main():
     # Build encoding root map if using unique encodings
     encoding_root_map = None
     if args.unique_encodings:
-        import sys as _sys
-        _paper_root = Path(__file__).resolve().parents[2]  # cstim_paper/
-        _sys.path.insert(0, str(_paper_root))
-        from config import UNIQUE_ENCODING_DIRS
+        from cstims.paper.config import UNIQUE_ENCODING_DIRS
+
         encoding_root_map = {k: v for k, v in UNIQUE_ENCODING_DIRS.items()}
         print(f"Using UNIQUE per-subject encodings: {list(encoding_root_map.keys())}")
 
@@ -755,7 +763,9 @@ def main():
         for corr_info in all_correlation_data:
             track = corr_info["track"]
             model_names = corr_info["model_names"]
-            for matrix_type in ["selected_clean", "selected_noised", "random_clean"]:
+            for matrix_type in ["selected_clean", "selected_noised", "random_clean", "random_noised"]:
+                if matrix_type not in corr_info:
+                    continue
                 matrix = corr_info[matrix_type]
                 for i, mi in enumerate(model_names):
                     for j, mj in enumerate(model_names):

@@ -17,7 +17,7 @@ from _paths import LAYER_SWEEP_ROOT
 import numpy as np
 import pandas as pd
 
-from config import PAPER_ROOT
+from cstims.paper.config import PAPER_ROOT
 
 DATA_DIR = LAYER_SWEEP_ROOT / "results"
 RESCUE_CSV = DATA_DIR / "layer_rescue_summary.csv"

@@ -28,15 +28,14 @@ from pathlib import Path
 _PAPER = Path(__file__).resolve().parents[2]
 _SHARE_ROOT = Path(__file__).resolve().parents[5]
 sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_SHARE_ROOT / "shared" / "code" / "paper_helpers"))
-sys.path.insert(0, str(_SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
+sys.path.insert(0, str(_SHARE_ROOT / "src"))
 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
-import config
+from cstims.paper import config
 
 DATA_DIR = _PAPER / "results"
 PER     = DATA_DIR / "baseline_subsampling.csv"

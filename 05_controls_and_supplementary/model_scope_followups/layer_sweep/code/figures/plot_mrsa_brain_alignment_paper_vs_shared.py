@@ -20,7 +20,6 @@ from pathlib import Path
 import _paths  # noqa: F401
 from _paths import LAYER_SWEEP_ROOT, SOURCE_PAPER_ROOT
 
-sys.path.insert(0, str(SOURCE_PAPER_ROOT / "figures"))
 
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
@@ -28,8 +27,8 @@ import numpy as np
 import pandas as pd
 from matplotlib.lines import Line2D
 
-from config import MODEL_DISPLAY_NAMES, MODEL_SETS, RSA_DATA_DIR, STATS_DATA_DIR, SUBJECTS
-from style_improved import (
+from cstims.paper.config import MODEL_DISPLAY_NAMES, MODEL_SETS, RSA_DATA_DIR, STATS_DATA_DIR, SUBJECTS
+from cstims.paper.style_improved import (
     COLOR_BASELINE,
     COLOR_CSTIM,
     DPI,

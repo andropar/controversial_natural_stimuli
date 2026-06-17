@@ -11,8 +11,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.stats import spearmanr
 
-from config import PAPER_ROOT
-from style import apply_style, FONT
+from cstims.paper.config import PAPER_ROOT
+from cstims.paper.style_improved import apply_style, FONT
 
 apply_style()
 

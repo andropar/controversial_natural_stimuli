@@ -29,17 +29,16 @@ from pathlib import Path
 
 _PAPER = Path(__file__).resolve().parents[2]
 SHARE_ROOT = _PAPER.parents[1]
-HELPERS = SHARE_ROOT / "shared" / "code" / "paper_helpers"
+HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(HELPERS))
-sys.path.insert(0, str(HELPERS / "figures"))
 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 
-import config
-from style_improved import (
+from cstims.paper import config
+from cstims.paper.style_improved import (
     apply_style, FONT, DPI, W_DOUBLE, W_SINGLE, OKABE_ITO,
     COLOR_CSTIM, COLOR_BASELINE,
 )

@@ -13,8 +13,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-import config
-from style_improved import (
+from cstims.paper import config
+from cstims.paper.style_improved import (
     COLOR_BASELINE,
     COLOR_CSTIM,
     DPI,

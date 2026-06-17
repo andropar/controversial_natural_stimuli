@@ -1,0 +1,49 @@
+{
+  "model_set": "sota",
+  "model_names": [
+    "slip_vit_l_slip",
+    "slip_vit_l_simclr",
+    "timm_vit_large_patch14_clip_224_laion2b",
+    "dinov2_vitl14",
+    "openclip_vit_so400m_14_siglip_webli",
+    "torchvision_convnext_base_imagenet1k_v1"
+  ],
+  "tracks": [
+    {
+      "name": "raw",
+      "type": "identity"
+    }
+  ],
+  "metric": "cosine",
+  "corr_type": "spearman",
+  "eval_noise_mode": "response",
+  "fit_noise_calibration": "rdm_empirical",
+  "eval_refit_mode": "eval_augmented_loo",
+  "calibration_images": 100,
+  "calibration_noise_samples": 2,
+  "calibration_max_iter": 8,
+  "target_dim": null,
+  "random_feature_dir": "shared/cache_or_heavy/natural_pool_subset_100k_seed42",
+  "encoding_roots": {
+    "shared": "/data/home_roth/cstims_share/01_brain_model_alignment/results/encoding_models/shared_subject_encoding_models/encoding_20251222_141301"
+  },
+  "n_random_images": 100000,
+  "n_selected_eval_images": 100,
+  "random_eval_subset_size": 100,
+  "refit_pool_size": 1000,
+  "refit_train_n": 800,
+  "refit_val_n": 200,
+  "n_refit_repeats": 1,
+  "computed_refit_repeat_indices": [
+    0
+  ],
+  "n_random_subsets": 5,
+  "n_noise_samples": 2,
+  "base_noise_ceiling": 0.46,
+  "noise_mults": [
+    1.0
+  ],
+  "seed": 42,
+  "resume_enabled": false,
+  "note": "Held-out recovery is scored as corr(RDM(candidate prediction), noisy RDM(teacher response)). eval_augmented_loo uses the refit pool plus each eval set for final readouts, with leave-one-out predictions for eval images."
+}

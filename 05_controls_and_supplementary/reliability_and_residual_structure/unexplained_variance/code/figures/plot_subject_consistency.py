@@ -10,18 +10,19 @@ Outputs:
 
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
 _PAPER = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(_PAPER / "figures"))
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "results"
 FIG_DIR = Path(__file__).resolve().parent
 
 try:
-    from style_improved import apply_style, DPI, W_SINGLE
+    from cstims.paper.style_improved import apply_style, DPI, W_SINGLE
     apply_style()
 except ImportError:
     DPI = 150

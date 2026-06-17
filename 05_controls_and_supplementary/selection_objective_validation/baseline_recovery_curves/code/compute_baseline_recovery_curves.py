@@ -30,12 +30,12 @@ if not hasattr(np, "trapz") and hasattr(np, "trapezoid"):
 SCRIPT = Path(__file__).resolve()
 SHARE = SCRIPT.parents[4]
 ANALYSIS_DIR = SHARE / "00_stimulus_selection" / "decision_checks" / "selection_evaluation" / "code" / "analysis"
-HELPERS_DIR = SHARE / "shared" / "code" / "paper_helpers"
+HELPERS_DIR = SHARE / "src"
 SRC_DIR = SHARE / "src"
 for path in (SRC_DIR, HELPERS_DIR, ANALYSIS_DIR):
     sys.path.insert(0, str(path))
 
-import config  # noqa: E402
+from cstims.paper import config  # noqa: E402
 import utils as eval_utils  # noqa: E402
 from cstims.evaluation.computation import (  # noqa: E402
     compute_all_rdms,
@@ -130,7 +130,7 @@ def load_selection_payload(model_set: str) -> dict[str, Any]:
 
 
 def encoding_root_map() -> dict[str, Path]:
-    from config import UNIQUE_ENCODING_DIRS
+    from cstims.paper.config import UNIQUE_ENCODING_DIRS
 
     return {k: v for k, v in UNIQUE_ENCODING_DIRS.items()}
 

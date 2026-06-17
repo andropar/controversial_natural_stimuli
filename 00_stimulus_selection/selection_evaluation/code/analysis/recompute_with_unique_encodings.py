@@ -26,11 +26,11 @@ from tqdm import tqdm
 
 STAGE = Path(__file__).resolve().parents[2]
 SHARE_ROOT = STAGE.parents[1]
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
 sys.path.insert(0, str(SHARE_ROOT / "src"))
 sys.path.insert(0, str(SHARE_ROOT))
 
-from config import UNIQUE_ENCODING_DIRS, MODEL_LIST_CSV, MODEL_SETS
+from cstims.paper.config import UNIQUE_ENCODING_DIRS, MODEL_LIST_CSV, MODEL_SETS
 from cstims.encoding.linear import load_encoding_params_by_encoding, encode_batch_for_all_encodings
 from cstims.feature_extraction.universal_extractor import UniversalFeatureExtractor
 

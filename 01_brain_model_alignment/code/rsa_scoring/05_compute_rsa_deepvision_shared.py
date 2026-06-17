@@ -22,6 +22,8 @@ import os
 import sys
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 
 # Limit BLAS thread oversubscription before numpy is imported.
 # Workers get OMP_NUM_THREADS=1 via env (set in main before pool creation).
@@ -38,11 +40,11 @@ import pandas as pd
 from scipy.stats import rankdata
 from tqdm import tqdm
 
-from config import (
+from cstims.paper.config import (
     MODEL_SETS, MODEL_DISPLAY_NAMES, RSA_DATA_DIR,
     SHARED_ENCODING_ROOT, PROJECT_ROOT, VOXEL_CACHE_DIR,
 )
-from utils import (
+from cstims.paper.utils import (
     compute_rdm_correlation, bootstrap_sample_indices,
     load_encoding_model,
     parse_subject_arg, load_model_layer_mapping,

@@ -20,10 +20,10 @@ from matplotlib.ticker import FuncFormatter  # noqa: E402
 THIS = Path(__file__).resolve()
 RERUN_ROOT = THIS.parents[1]
 SHARE_ROOT = THIS.parents[3]
-HELPERS = SHARE_ROOT / "shared" / "code" / "paper_helpers"
+HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(HELPERS))
 
-from style_improved import (  # noqa: E402
+from cstims.paper.style_improved import (  # noqa: E402
     DPI,
     FONT,
     MODEL_SET_DISPLAY,

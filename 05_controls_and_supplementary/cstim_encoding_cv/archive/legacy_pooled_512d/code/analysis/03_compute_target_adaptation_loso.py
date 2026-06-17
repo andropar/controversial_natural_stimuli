@@ -35,7 +35,7 @@ import pandas as pd
 import scipy.linalg
 from scipy import stats
 
-import config
+from cstims.paper import config
 from cstims.datasets.deepvision import DeepVisionBenchmark
 
 
@@ -53,9 +53,9 @@ LOCAL_DV_FEATURE_DIR = LOCAL_SELECTED_CACHE_DIR / "dv_features"
 FEATURE_DIRS = (LOCAL_FEATURE_DIR, SOURCE_FEATURE_DIR)
 DV_FEATURE_DIRS = (LOCAL_DV_FEATURE_DIR, SOURCE_DV_FEATURE_DIR)
 
-DV_CACHE_ROOT = SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "brain_data"
+DV_CACHE_ROOT = SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "deepvision_benchmark_cache"
 BRAIN_CACHE_ROOT = (
-    SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "brain_data_cache" / "data"
+    SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "cstim_brain_response_cache" / "data"
 )
 
 SCORE_CSV = RESULTS_DIR / "target_adaptation_weighted_scores.csv"

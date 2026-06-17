@@ -8,8 +8,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from config import MODEL_DISPLAY_NAMES, MODEL_SETS
-from style import apply_style, DPI, FONT
+from cstims.paper.config import MODEL_DISPLAY_NAMES, MODEL_SETS
+from cstims.paper.style_improved import apply_style, DPI, FONT
 from layers_config import MAIN_LAYER, get_layer_set
 
 

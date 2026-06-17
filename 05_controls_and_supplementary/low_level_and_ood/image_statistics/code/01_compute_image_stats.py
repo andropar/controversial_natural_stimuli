@@ -9,6 +9,8 @@ Output: data/image_stats.csv with one row per image.
 import io
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 
 import numpy as np
 import pandas as pd
@@ -19,7 +21,7 @@ from tqdm import tqdm
 _PAPER = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_PAPER))
 
-from config import CSTIM_HDF5_ROOT  # noqa: E402
+from cstims.paper.config import CSTIM_HDF5_ROOT  # noqa: E402
 
 
 STIMULUS_SETS = [

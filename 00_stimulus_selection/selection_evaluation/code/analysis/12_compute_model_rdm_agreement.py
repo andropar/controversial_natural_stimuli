@@ -27,12 +27,11 @@ from scipy import stats
 
 SCRIPT = Path(__file__).resolve()
 SHARE_ROOT = SCRIPT.parents[4]
-HELPERS = SHARE_ROOT / "shared" / "code" / "paper_helpers"
+HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(HELPERS))
-sys.path.insert(0, str(HELPERS / "figures"))
 
-import config
-from style_improved import MODEL_SET_ORDER
+from cstims.paper import config
+from cstims.paper.style_improved import MODEL_SET_ORDER
 
 
 DATA_SUFFIX = "_unique_boot"

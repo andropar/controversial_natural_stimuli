@@ -14,8 +14,8 @@ import numpy as np
 import pandas as pd
 from matplotlib.lines import Line2D
 
-import config
-from style_improved import (
+from cstims.paper import config
+from cstims.paper.style_improved import (
     COLOR_BASELINE,
     COLOR_CSTIM,
     DPI,

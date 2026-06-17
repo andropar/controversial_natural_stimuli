@@ -24,6 +24,8 @@ Output:
 import sys
 from itertools import combinations
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 
 import numpy as np
 import pandas as pd
@@ -31,7 +33,7 @@ import pandas as pd
 PROJECT = Path(__file__).resolve().parents[4]
 PAPER = PROJECT / "experiments" / "cstim_paper"
 sys.path.insert(0, str(PAPER))
-from config import MODEL_SETS  # noqa
+from cstims.paper.config import MODEL_SETS  # noqa
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "results"
 

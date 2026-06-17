@@ -5,19 +5,20 @@ from __future__ import annotations
 import math
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 
 PAPER = Path(__file__).resolve().parents[2]
 PROJECT = PAPER.parents[1]
 sys.path.insert(0, str(PAPER))
 sys.path.insert(0, str(PROJECT))
-sys.path.insert(0, str(PAPER / "figures"))
 
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-import config  # noqa: E402
-from style_improved import DPI, FONT, OKABE_ITO, W_DOUBLE, add_panel_label, apply_style  # noqa: E402
+from cstims.paper import config  # noqa: E402
+from cstims.paper.style_improved import DPI, FONT, OKABE_ITO, W_DOUBLE, add_panel_label, apply_style  # noqa: E402
 
 
 FIGURES_DIR = Path(__file__).resolve().parent

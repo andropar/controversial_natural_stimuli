@@ -13,8 +13,8 @@ _PAPER = Path(__file__).resolve().parents[2]
 _SHARE_ROOT = Path(__file__).resolve().parents[5]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))  # project root
-sys.path.insert(0, str(_SHARE_ROOT / "shared" / "code" / "paper_helpers"))
-import config
+sys.path.insert(0, str(_SHARE_ROOT / "src"))
+from cstims.paper import config
 
 import numpy as np
 import pandas as pd
@@ -398,7 +398,7 @@ def create_brain_consistency_plot(sd_threshold=1.0):
     Pairs that pass the consistency filter (all 5 subjects, SD < threshold) are
     highlighted; the rest are shown in grey.
     """
-    from style_improved import apply_style, FONT, DPI, W_DOUBLE
+    from cstims.paper.style_improved import apply_style, FONT, DPI, W_DOUBLE
     apply_style()
 
     data_dir = config.PROJECT_ROOT / "experiments" / "archive" / "cstim_image_analysis" / "model_pair_disagreement"

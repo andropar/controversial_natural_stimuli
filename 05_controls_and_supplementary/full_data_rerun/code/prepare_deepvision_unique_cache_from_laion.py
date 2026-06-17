@@ -21,7 +21,7 @@ OLD_UNIQUE_ROOT = (
     SHARE_ROOT
     / "01_brain_model_alignment"
     / "cache_or_heavy"
-    / "brain_data"
+    / "deepvision_benchmark_cache"
     / "voxel_sets"
 )
 CSTIM_CACHE = RERUN_ROOT / "results" / "brain_data_cache"

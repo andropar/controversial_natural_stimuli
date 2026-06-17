@@ -16,6 +16,8 @@ Outputs per subject (in data/{subject}/):
 import argparse
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 
 # Setup imports from cstim_paper root
 _PAPER = Path(__file__).resolve().parents[1]
@@ -28,8 +30,8 @@ import pandas as pd
 from scipy.stats import zscore
 from tqdm import tqdm
 
-from config import DEEPVISION_ROOT, INPUT_SOURCE, get_brain_input_dir
-from utils import (
+from cstims.paper.config import DEEPVISION_ROOT, INPUT_SOURCE, get_brain_input_dir
+from cstims.paper.utils import (
     correct_stimulus_label,
     detect_available_sessions,
     parse_stimulus_label,

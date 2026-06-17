@@ -8,9 +8,12 @@ DEFAULT_METRICS = ["euclidean", "cosine", "correlation"]
 DEFAULT_CORR_TYPES = ["spearman", "pearson"]
 DEFAULT_N_RANDOM_SUBSETS = 100
 DEFAULT_N_NOISE_SAMPLES = 100
+DEFAULT_N_BOOTSTRAP = 500
 DEFAULT_N_NOISE_LEVELS = 20
 DEFAULT_NOISE_LEVEL_RANGE = (-1, 2)
 DEFAULT_SEED = 42
+MODEL_SET_ORDER = ["all_models", "sota", "training_objective", "architecture", "dataset"]
+ENCODING_TRACKS = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]
 
 DEFAULT_DISCRIMINABILITY_METRICS = [
     "score_deltas",

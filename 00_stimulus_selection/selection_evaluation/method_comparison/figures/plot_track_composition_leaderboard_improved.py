@@ -15,6 +15,8 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 
 import matplotlib
 matplotlib.use("Agg")
@@ -26,7 +28,7 @@ from matplotlib.lines import Line2D
 # Path to style_improved
 _PAPER_FIGURES = Path(__file__).resolve().parents[4] / "experiments" / "cstim_paper" / "figures"
 sys.path.insert(0, str(_PAPER_FIGURES))
-from style_improved import (
+from cstims.paper.style_improved import (
     apply_style, FONT, DPI, OKABE_ITO,
 )
 

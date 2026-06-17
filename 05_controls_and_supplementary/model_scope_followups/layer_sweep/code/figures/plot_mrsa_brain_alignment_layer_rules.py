@@ -18,8 +18,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from config import MODEL_SETS as CONFIG_MODEL_SETS
-from style import apply_style, DPI, FONT
+from cstims.paper.config import MODEL_SETS as CONFIG_MODEL_SETS
+from cstims.paper.style_improved import apply_style, DPI, FONT
 
 
 apply_style()

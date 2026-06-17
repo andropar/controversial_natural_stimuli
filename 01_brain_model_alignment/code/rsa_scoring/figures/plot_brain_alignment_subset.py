@@ -23,9 +23,8 @@ from pathlib import Path
 
 STAGE = Path(__file__).resolve().parents[3]
 SHARE_ROOT = STAGE.parent
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
-import config
+sys.path.insert(0, str(SHARE_ROOT / "src"))
+from cstims.paper import config
 
 import numpy as np
 import pandas as pd
@@ -39,7 +38,7 @@ STATS_DATA_DIR = config.STATS_DATA_DIR
 RSA_DATA_DIR = config.RSA_DATA_DIR
 FIGURES_DIR = STAGE / "figures" / "rsa_scores"
 
-from style import apply_style, FONT, DPI, W_DOUBLE
+from cstims.paper.style_improved import apply_style, FONT, DPI, W_DOUBLE
 
 apply_style()
 

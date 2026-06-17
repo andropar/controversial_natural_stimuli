@@ -22,9 +22,9 @@ from tqdm import tqdm
 
 STAGE = Path(__file__).resolve().parents[1]
 SHARE_ROOT = STAGE.parents[1]
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
 
-import config  # noqa: E402
+from cstims.paper import config  # noqa: E402
 
 
 OUT = STAGE / "results" / "unique_image_low_level_stats.csv"
@@ -52,7 +52,7 @@ def subject_metadata(subject: str) -> pd.DataFrame:
         config.SHARE_ROOT
         / "01_brain_model_alignment"
         / "cache_or_heavy"
-        / "brain_data"
+        / "deepvision_benchmark_cache"
         / "image_sets"
     )
     path = image_root / f"deepvision_unique_{subject}.csv"

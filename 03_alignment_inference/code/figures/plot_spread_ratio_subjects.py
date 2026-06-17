@@ -13,10 +13,9 @@ from matplotlib.lines import Line2D
 
 STAGE = Path(__file__).resolve().parents[2]
 SHARE_ROOT = STAGE.parent
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
 
-from style_improved import (  # noqa: E402
+from cstims.paper.style_improved import (  # noqa: E402
     apply_style,
     FONT,
     DPI,

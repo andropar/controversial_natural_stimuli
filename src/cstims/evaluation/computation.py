@@ -2,7 +2,7 @@
 Pure computation functions for evaluation (no I/O).
 """
 
-from typing import Dict, List
+from typing import Any, Dict, List
 
 import numpy as np
 import torch
@@ -39,6 +39,8 @@ def compute_correlation_at_target_noise(
     noise_stds: torch.Tensor,
     corr_type: str,
     n_noise_samples: int = 100,
+    orientation: str = "clean_by_noisy",
+    generator: torch.Generator | None = None,
 ) -> torch.Tensor:
     """
     Compute correlation matrix at target noise level.
@@ -48,17 +50,52 @@ def compute_correlation_at_target_noise(
         noise_stds: Noise standard deviations of shape [M, 1]
         corr_type: Correlation type ('spearman' or 'pearson')
         n_noise_samples: Number of noise samples to average over
+        orientation: Whether scores are ``corr(clean_i, noisy_j)`` or
+            ``corr(noisy_i, clean_j)``. The default preserves the historical
+            behavior.
+        generator: Optional torch random generator for reproducible noise.
 
     Returns:
         Correlation matrix of shape [M, M]
     """
+    correlations = compute_noised_correlation_matrices(
+        rdms,
+        noise_stds,
+        corr_type,
+        n_noise_samples=n_noise_samples,
+        orientation=orientation,
+        generator=generator,
+    )
+    return correlations.mean(dim=0).cpu()
+
+
+def compute_noised_correlation_matrices(
+    rdms: torch.Tensor,
+    noise_stds: torch.Tensor,
+    corr_type: str,
+    *,
+    n_noise_samples: int,
+    noise_multiplier: float = 1.0,
+    orientation: str = "clean_by_noisy",
+    generator: torch.Generator | None = None,
+) -> torch.Tensor:
+    """Sample score matrices from clean RDMs plus Gaussian RDM noise."""
+    noise_stds = noise_stds.to(rdms.device)
+    noise_kwargs = {"device": rdms.device}
+    if generator is not None:
+        noise_kwargs["generator"] = generator
     noised_rdms = (
-        rdms + torch.randn((n_noise_samples, *rdms.shape)).to(rdms.device) * noise_stds
+        rdms
+        + torch.randn((n_noise_samples, *rdms.shape), **noise_kwargs)
+        * noise_stds
+        * float(noise_multiplier)
     )
-    repeat_correlations = compute_correlation_matrix(
-        rdms.repeat(n_noise_samples, 1, 1), noised_rdms, corr_type
-    )
-    return repeat_correlations.mean(dim=0).cpu()
+    clean_rdms = rdms.unsqueeze(0).expand(n_noise_samples, -1, -1)
+    if orientation == "clean_by_noisy":
+        return compute_correlation_matrix(clean_rdms, noised_rdms, corr_type)
+    elif orientation == "noisy_by_clean":
+        return compute_correlation_matrix(noised_rdms, clean_rdms, corr_type)
+    raise ValueError(f"Unsupported orientation: {orientation}")
 
 
 def compute_clean_correlation_matrix(
@@ -80,15 +117,35 @@ def compute_clean_correlation_matrix(
     return correlations[0].cpu()
 
 
+def compute_auc(x: np.ndarray, y: np.ndarray) -> float:
+    """Compute normalized AUC over log-scaled x values."""
+    x = np.asarray(x, dtype=np.float64)
+    y = np.asarray(y, dtype=np.float64)
+    sort_idx = np.argsort(x)
+    x_sorted = x[sort_idx]
+    y_sorted = y[sort_idx]
+    x_log = np.log10(x_sorted + 1e-10)
+    integrate = np.trapezoid if hasattr(np, "trapezoid") else np.trapz
+    raw_auc = float(integrate(y_sorted, x_log))
+    log_span = x_log[-1] - x_log[0]
+    if log_span > 0:
+        return raw_auc / log_span
+    return raw_auc
+
+
 def compute_discriminability_by_noise_level(
     rdms: torch.Tensor,
     noise_stds: torch.Tensor,
     n_noise_samples: int,
     noise_level_multipliers: np.ndarray,
     corr_type: str,
-) -> List[Dict[str, torch.Tensor]]:
+    *,
+    orientation: str = "clean_by_noisy",
+    n_bootstrap: int | None = None,
+    seed: int | None = None,
+) -> dict[str, Any]:
     """
-    Compute discriminability metrics across noise levels.
+    Compute model-discriminability metrics across RDM noise levels.
 
     Args:
         rdms: RDM tensor of shape [M, n_pairs]
@@ -96,33 +153,114 @@ def compute_discriminability_by_noise_level(
         n_noise_samples: Number of noise samples per level
         noise_level_multipliers: Array of noise level multipliers
         corr_type: Correlation type ('spearman' or 'pearson')
+        orientation: Whether scores are ``corr(clean_i, noisy_j)`` or
+            ``corr(noisy_i, clean_j)``.
+        n_bootstrap: Optional number of bootstrap resamples over the
+            Monte Carlo noise-draw dimension.
+        seed: Optional seed for deterministic noise and bootstrap sampling.
 
     Returns:
-        List of discriminability dictionaries, one per noise level
+        Plain dict with the sampled noise multipliers, per-level metric dicts,
+        scalar metric curves, and optional bootstrap arrays.
     """
-    # Use GPU if available (noise_stds is typically on desired device)
     device = noise_stds.device
     rdms = rdms.to(device)
+    noise_stds = noise_stds.to(device)
 
-    noised_correlations = {}
-    for noise_level_multiplier in noise_level_multipliers:
-        noised_rdms = (
-            rdms
-            + torch.randn((n_noise_samples, *rdms.shape), device=device)
-            * noise_stds
-            * noise_level_multiplier
+    noise_gen = torch.Generator(device=device)
+    boot_gen = torch.Generator(device="cpu")
+    if seed is not None:
+        noise_gen.manual_seed(int(seed))
+        boot_gen.manual_seed(int(seed) + 1)
+    else:
+        noise_gen.seed()
+        boot_gen.seed()
+
+    noise_multipliers = np.asarray(noise_level_multipliers, dtype=np.float64)
+    n_levels = len(noise_multipliers)
+    do_bootstrap = n_bootstrap is not None and n_bootstrap > 0
+
+    metrics_by_noise_level: list[dict] = []
+    multiclass_error_probability = np.empty(n_levels, dtype=np.float64)
+    pairwise_dominance = np.empty(n_levels, dtype=np.float64)
+    pairwise_error_probability = np.empty(n_levels, dtype=np.float64)
+    mean_pairwise_margin = np.empty(n_levels, dtype=np.float64)
+
+    multiclass_error_probability_bootstrap = None
+    pairwise_dominance_bootstrap = None
+    pairwise_error_probability_bootstrap = None
+    mean_pairwise_margin_bootstrap = None
+    if do_bootstrap:
+        n_bootstrap_int = int(n_bootstrap)
+        multiclass_error_probability_bootstrap = np.empty(
+            (n_levels, n_bootstrap_int),
+            dtype=np.float64,
         )
-        repeat_correlations = compute_correlation_matrix(
-            rdms.repeat(n_noise_samples, 1, 1), noised_rdms, corr_type
+        pairwise_dominance_bootstrap = np.empty(
+            (n_levels, n_bootstrap_int),
+            dtype=np.float64,
         )
-        noised_correlations[noise_level_multiplier] = repeat_correlations.to("cpu")
+        pairwise_error_probability_bootstrap = np.empty(
+            (n_levels, n_bootstrap_int),
+            dtype=np.float64,
+        )
+        mean_pairwise_margin_bootstrap = np.empty(
+            (n_levels, n_bootstrap_int),
+            dtype=np.float64,
+        )
 
-    discriminability_by_noise_level = [
-        model_discriminability(noised_correlations[multiplier])
-        for multiplier in noise_level_multipliers
-    ]
+    for level_idx, noise_multiplier in enumerate(noise_multipliers):
+        scores = compute_noised_correlation_matrices(
+            rdms,
+            noise_stds,
+            corr_type,
+            n_noise_samples=n_noise_samples,
+            noise_multiplier=float(noise_multiplier),
+            orientation=orientation,
+            generator=noise_gen,
+        )
+        metrics = model_discriminability(
+            scores,
+            n_bootstrap=int(n_bootstrap) if do_bootstrap else None,
+            generator=boot_gen if do_bootstrap else None,
+        )
+        metrics_by_noise_level.append(metrics)
 
-    return discriminability_by_noise_level
+        multiclass_error_probability[level_idx] = float(
+            metrics["non_parametric_multiclass_error_prob"]
+        )
+        pairwise_dominance[level_idx] = float(metrics["pairwise_dominance"])
+        pairwise_error_probability[level_idx] = float(metrics["pairwise_error_prob"])
+        mean_pairwise_margin[level_idx] = float(metrics["mean_margin"])
+
+        if do_bootstrap:
+            multiclass_error_probability_bootstrap[level_idx] = metrics[
+                "error_prob_boot"
+            ]
+            pairwise_dominance_bootstrap[level_idx] = metrics[
+                "pairwise_dominance_boot"
+            ]
+            pairwise_error_probability_bootstrap[level_idx] = (
+                1.0 - metrics["pairwise_dominance_boot"]
+            )
+            mean_pairwise_margin_bootstrap[level_idx] = metrics["mean_margin_boot"]
+
+        del scores, metrics
+
+    return {
+        "noise_multipliers": noise_multipliers,
+        "metrics": metrics_by_noise_level,
+        "multiclass_error_probability": multiclass_error_probability,
+        "multiclass_error_probability_bootstrap": (
+            multiclass_error_probability_bootstrap
+        ),
+        "pairwise_dominance": pairwise_dominance,
+        "pairwise_error_probability": pairwise_error_probability,
+        "pairwise_error_probability_bootstrap": pairwise_error_probability_bootstrap,
+        "mean_pairwise_margin": mean_pairwise_margin,
+        "pairwise_dominance_bootstrap": pairwise_dominance_bootstrap,
+        "mean_pairwise_margin_bootstrap": mean_pairwise_margin_bootstrap,
+    }
 
 
 def compute_random_baseline_rdms(

@@ -18,6 +18,8 @@ Outputs per subject (in data/{subject}/):
 import argparse
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 
 _PAPER = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_PAPER))
@@ -28,11 +30,11 @@ import pandas as pd
 from PIL import Image
 from tqdm import tqdm
 
-from config import (
+from cstims.paper.config import (
     MODEL_SETS, MODEL_DISPLAY_NAMES, CSTIM_HDF5_ROOT, MODEL_LIST_CSV,
     get_brain_input_dir, RSA_DATA_DIR, PROJECT_ROOT,
 )
-from utils import (
+from cstims.paper.utils import (
     compute_rdm_correlation,
     compute_rsa_score,
     load_encoding_model,

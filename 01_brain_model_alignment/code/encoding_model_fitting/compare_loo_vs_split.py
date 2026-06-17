@@ -53,7 +53,7 @@ def run_comparison(
         cache_root=Path(
             os.environ.get(
                 "CSTIMS_DEEPVISION_CACHE_ROOT",
-                PROJECT_ROOT / "01_brain_model_alignment/cache_or_heavy/brain_data",
+                PROJECT_ROOT / "01_brain_model_alignment/cache_or_heavy/deepvision_benchmark_cache",
             )
         ),
         deepvision_fmri_root=deepvision_fmri_root(),

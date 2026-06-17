@@ -25,8 +25,7 @@ SOURCE_LAYER_SWEEP_ROOT = (
 
 for path in (
     SHARE_ROOT / "src",
-    SHARE_ROOT / "shared" / "code" / "paper_helpers",
-    SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures",
+    SHARE_ROOT / "src",
     LAYER_SWEEP_ROOT / "code",
     LAYER_SWEEP_ROOT / "code" / "analysis",
 ):

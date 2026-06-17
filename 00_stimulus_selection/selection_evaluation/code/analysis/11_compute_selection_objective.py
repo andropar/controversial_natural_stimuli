@@ -31,12 +31,11 @@ import numpy as np
 
 PAPER_ROOT = Path(__file__).resolve().parents[2]
 SHARE_ROOT = PAPER_ROOT.parents[1]
-HELPERS = SHARE_ROOT / "shared" / "code" / "paper_helpers"
+HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(HELPERS))
-sys.path.insert(0, str(HELPERS / "figures"))
 
-import config
-from style_improved import MODEL_SET_ORDER
+from cstims.paper import config
+from cstims.paper.style_improved import MODEL_SET_ORDER
 
 
 TRACK_ORDER = ["raw", "sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]

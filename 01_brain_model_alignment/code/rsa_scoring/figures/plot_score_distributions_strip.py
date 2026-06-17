@@ -16,19 +16,20 @@ Usage:
 
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 
 _PAPER = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))  # project root
-sys.path.insert(0, str(_PAPER / "figures"))  # for shared figure style
-import config
+from cstims.paper import config
 
 import numpy as np
 import pandas as pd
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from style_improved import apply_style, FONT, DPI, W_DOUBLE
+from cstims.paper.style_improved import apply_style, FONT, DPI, W_DOUBLE
 
 apply_style()
 

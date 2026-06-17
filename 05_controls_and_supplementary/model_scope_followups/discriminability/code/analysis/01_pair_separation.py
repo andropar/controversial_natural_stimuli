@@ -34,9 +34,9 @@ from statsmodels.stats.multitest import multipletests
 
 STAGE = Path(__file__).resolve().parents[2]
 SHARE_ROOT = STAGE.parents[2]
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
 
-from config import MODEL_SETS, MODEL_DISPLAY_NAMES, RSA_DATA_DIR, SUBJECTS  # noqa
+from cstims.paper.config import MODEL_SETS, MODEL_DISPLAY_NAMES, RSA_DATA_DIR, SUBJECTS  # noqa
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "results"
 DATA_DIR.mkdir(parents=True, exist_ok=True)

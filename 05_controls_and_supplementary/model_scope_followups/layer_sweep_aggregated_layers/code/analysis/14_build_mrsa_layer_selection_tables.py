@@ -22,7 +22,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from config import MODEL_DISPLAY_NAMES, PAPER_ROOT
+from cstims.paper.config import MODEL_DISPLAY_NAMES, PAPER_ROOT
 from layers_config import LAYER_SET_CHOICES, MAIN_LAYER, STIMULUS_SETS, get_layer_set
 
 

@@ -40,13 +40,12 @@ from sklearn.linear_model import RidgeCV
 _HERE = Path(__file__).resolve()
 STAGE = _HERE.parents[2]
 SHARE_ROOT = STAGE.parents[2]
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
 
 import matplotlib.pyplot as plt
 
-import config
-from style_improved import apply_style, DPI, FONT, W_DOUBLE
+from cstims.paper import config
+from cstims.paper.style_improved import apply_style, DPI, FONT, W_DOUBLE
 
 apply_style()
 

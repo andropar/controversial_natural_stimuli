@@ -16,10 +16,10 @@ from sklearn.linear_model import RidgeCV
 THIS = Path(__file__).resolve()
 RERUN_ROOT = THIS.parents[1]
 SHARE_ROOT = THIS.parents[3]
-HELPERS = SHARE_ROOT / "shared" / "code" / "paper_helpers"
+HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(HELPERS))
 
-import config  # noqa: E402
+from cstims.paper import config  # noqa: E402
 
 
 SUBJECTS = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]

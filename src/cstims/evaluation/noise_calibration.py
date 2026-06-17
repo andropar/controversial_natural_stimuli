@@ -1,7 +1,6 @@
-"""
-Noise calibration functions for evaluation.
-"""
+"""Noise calibration functions for evaluation."""
 
+import math
 from typing import Dict, List
 
 import numpy as np
@@ -9,6 +8,147 @@ import torch
 
 from cstims.evaluation.results import NoiseParameters
 from cstims.noise_estimation import rdm_noise_by_model
+from cstims.rdm_cuda import calculate_correlation_value, get_rdm_vector_np
+
+
+def multiplier_to_noise_ceiling(k: float, nc_base: float) -> float:
+    """Convert a noise multiplier to the effective RDM noise ceiling."""
+    if k <= 0:
+        return 1.0
+    if nc_base <= 0 or nc_base >= 1:
+        return nc_base
+    term = k * k * (1.0 / (nc_base * nc_base) - 1.0)
+    return float(1.0 / np.sqrt(1.0 + term))
+
+
+def noise_std_from_multiplier(noise_mult: float, nc_base: float) -> float:
+    """Convert a response-noise multiplier to an analytic response noise std."""
+    if noise_mult <= 0 or nc_base <= 0 or nc_base >= 1:
+        return 0.0
+    return float(noise_mult * math.sqrt(1.0 / (nc_base * nc_base) - 1.0))
+
+
+def response_noise_std_from_rdm_multiplier(noise_mult: float, nc_base: float) -> float:
+    """Analytic response-noise std implied by an RDM reliability multiplier."""
+    target_nc = multiplier_to_noise_ceiling(noise_mult, nc_base)
+    if noise_mult <= 0 or target_nc <= 0 or target_nc >= 1:
+        return 0.0
+    return float(math.sqrt(1.0 / target_nc - 1.0))
+
+
+def response_noise_std_from_mode(noise_mult: float, nc_base: float, mode: str) -> float:
+    """Resolve the requested analytic response-noise calibration mode."""
+    if mode == "response":
+        return noise_std_from_multiplier(noise_mult, nc_base)
+    if mode == "rdm_analytic":
+        return response_noise_std_from_rdm_multiplier(noise_mult, nc_base)
+    if mode == "rdm_empirical":
+        raise RuntimeError("rdm_empirical calibration needs teacher responses")
+    raise ValueError(f"Unsupported fit_noise_calibration: {mode}")
+
+
+def rdm_noise_std_from_clean(
+    clean_rdm: np.ndarray,
+    base_noise_ceiling: float,
+    noise_mult: float,
+) -> float:
+    """Analytic RDM-space noise std for a target base noisy-vs-clean reliability."""
+    if noise_mult <= 0 or base_noise_ceiling <= 0 or base_noise_ceiling >= 1:
+        return 0.0
+    var = float(np.var(clean_rdm))
+    if var <= 1e-12:
+        return 0.0
+    return float(
+        noise_mult
+        * math.sqrt(var * (1.0 / (base_noise_ceiling * base_noise_ceiling) - 1.0))
+    )
+
+
+def empirical_response_noise_rdm_reliability(
+    y_clean: np.ndarray,
+    clean_rdm: np.ndarray,
+    noise_std: float,
+    *,
+    metric: str,
+    corr_type: str,
+    rng: np.random.Generator,
+    n_samples: int,
+) -> float:
+    """Estimate noisy-vs-clean RDM reliability after adding response-space noise."""
+    if noise_std <= 0:
+        return 1.0
+    vals = []
+    for _ in range(n_samples):
+        y_noisy = y_clean + rng.normal(0.0, noise_std, y_clean.shape).astype(np.float32)
+        noisy_rdm = get_rdm_vector_np(y_noisy, metric)
+        vals.append(calculate_correlation_value(noisy_rdm, clean_rdm, corr_type))
+    return float(np.nanmean(vals))
+
+
+def calibrate_response_noise_for_rdm_reliability(
+    y_clean: np.ndarray,
+    *,
+    target_reliability: float,
+    metric: str,
+    corr_type: str,
+    rng: np.random.Generator,
+    n_samples: int,
+    max_iter: int,
+) -> tuple[float, float]:
+    """Find response noise whose noisy-vs-clean RDM reliability matches target."""
+    if target_reliability <= 0:
+        target_reliability = 1e-6
+    if target_reliability >= 1:
+        return 0.0, 1.0
+    clean_rdm = get_rdm_vector_np(y_clean, metric)
+    lo = 0.0
+    hi = math.sqrt(1.0 / target_reliability - 1.0)
+    hi = max(hi, 1e-3)
+    for _ in range(10):
+        rel = empirical_response_noise_rdm_reliability(
+            y_clean,
+            clean_rdm,
+            hi,
+            metric=metric,
+            corr_type=corr_type,
+            rng=rng,
+            n_samples=n_samples,
+        )
+        if np.isfinite(rel) and rel <= target_reliability:
+            break
+        hi *= 2.0
+    best_std = hi
+    best_rel = empirical_response_noise_rdm_reliability(
+        y_clean,
+        clean_rdm,
+        hi,
+        metric=metric,
+        corr_type=corr_type,
+        rng=rng,
+        n_samples=n_samples,
+    )
+    best_err = abs(best_rel - target_reliability) if np.isfinite(best_rel) else np.inf
+    for _ in range(max_iter):
+        mid = 0.5 * (lo + hi)
+        rel = empirical_response_noise_rdm_reliability(
+            y_clean,
+            clean_rdm,
+            mid,
+            metric=metric,
+            corr_type=corr_type,
+            rng=rng,
+            n_samples=n_samples,
+        )
+        err = abs(rel - target_reliability) if np.isfinite(rel) else np.inf
+        if err < best_err:
+            best_std = mid
+            best_rel = rel
+            best_err = err
+        if not np.isfinite(rel) or rel < target_reliability:
+            hi = mid
+        else:
+            lo = mid
+    return float(best_std), float(best_rel)
 
 
 def calibrate_noise_parameters(

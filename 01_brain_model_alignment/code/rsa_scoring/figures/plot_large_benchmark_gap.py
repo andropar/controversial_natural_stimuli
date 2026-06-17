@@ -12,6 +12,8 @@ Set-model overlay uses cross_set_wrsa_scores.csv (mRSA) and crsa_scores.csv (fRS
 
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 
 _PAPER = Path(__file__).resolve().parents[2]
 _FIGURES = _PAPER / "figures"
@@ -24,8 +26,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
-from style import apply_style, FONT, DPI, W_DOUBLE
-from config import RSA_DATA_DIR, STATS_DATA_DIR, SUBJECTS
+from cstims.paper.style_improved import apply_style, FONT, DPI, W_DOUBLE
+from cstims.paper.config import RSA_DATA_DIR, STATS_DATA_DIR, SUBJECTS
 
 apply_style()
 

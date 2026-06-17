@@ -12,8 +12,7 @@ import _paths  # noqa: F401
 from _paths import LAYER_SWEEP_ROOT
 
 SHARE_ROOT = LAYER_SWEEP_ROOT.parents[2]
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
 
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
@@ -21,8 +20,8 @@ import numpy as np
 import pandas as pd
 from matplotlib.lines import Line2D
 
-import config
-from style_improved import (
+from cstims.paper import config
+from cstims.paper.style_improved import (
     COLOR_BASELINE,
     COLOR_CSTIM,
     DPI,

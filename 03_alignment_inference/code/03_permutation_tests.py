@@ -27,15 +27,17 @@ import itertools
 import numpy as np
 import pandas as pd
 from pathlib import Path
-
 import sys
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
+
 
 # Setup imports from cstim_paper root
 _PAPER = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))  # project root for cstims
 
-import config
+from cstims.paper import config
 
 
 METHODS = {

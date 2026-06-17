@@ -34,7 +34,7 @@ os.environ.setdefault("MKL_NUM_THREADS", "8")
 
 STAGE = Path(__file__).resolve().parents[2]
 SHARE_ROOT = STAGE.parents[1]
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
 sys.path.insert(0, str(SHARE_ROOT / "src"))
 
 import numpy as np
@@ -42,8 +42,8 @@ import pandas as pd
 import torch
 from tqdm import tqdm
 
-import config
-from utils import load_encoding_model
+from cstims.paper import config
+from cstims.paper.utils import load_encoding_model
 from cstims.evaluation.computation import (
     compute_all_rdms,
     compute_clean_correlation_matrix,

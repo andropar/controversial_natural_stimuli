@@ -19,7 +19,7 @@ from pathlib import Path
 import _paths  # noqa: F401
 from _paths import LAYER_SWEEP_ROOT
 
-from config import SUBJECTS
+from cstims.paper.config import SUBJECTS
 from layers_config import LAYER_SET_CHOICES, get_layer_set
 
 

@@ -22,16 +22,15 @@ import matplotlib.pyplot as plt
 
 STAGE = Path(__file__).resolve().parents[1]
 SHARE_ROOT = STAGE.parents[2]
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
-import config
+sys.path.insert(0, str(SHARE_ROOT / "src"))
+from cstims.paper import config
 
 STATS_DIR = SHARE_ROOT / "02_alignment_reliability" / "results"
 DATA_DIR = STAGE / "results"
 FIG_DIR = STAGE / "figures"
 
 try:
-    from style_improved import apply_style, DPI, W_SINGLE, W_DOUBLE
+    from cstims.paper.style_improved import apply_style, DPI, W_SINGLE, W_DOUBLE
     apply_style()
 except ImportError:
     DPI = 150

@@ -23,6 +23,8 @@ import argparse
 import gc
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 
 import nibabel as nib
 import numpy as np
@@ -35,8 +37,8 @@ PROJECT = PAPER.parents[1]
 sys.path.insert(0, str(PAPER))
 sys.path.insert(0, str(PROJECT))
 
-import config  # noqa: E402
-from utils import bootstrap_sample_indices, get_encoding_folder, load_model_layer_mapping  # noqa: E402
+from cstims.paper import config  # noqa: E402
+from cstims.paper.utils import bootstrap_sample_indices, get_encoding_folder, load_model_layer_mapping  # noqa: E402
 
 
 OUT = PAPER / "13_roi_analysis" / "results"

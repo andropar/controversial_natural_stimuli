@@ -117,8 +117,12 @@ class _RidgeGCVFast(_RidgeGCV):
         n_samples = X.shape[0]
 
         if sample_weight is not None:
-            X, y = _rescale_data(X, y, sample_weight)
-            sqrt_sw = np.sqrt(sample_weight)
+            rescaled = _rescale_data(X, y, sample_weight)
+            X, y = rescaled[:2]
+            if len(rescaled) >= 3:
+                sqrt_sw = rescaled[2]
+            else:
+                sqrt_sw = np.sqrt(sample_weight)
         else:
             sqrt_sw = np.ones(n_samples, dtype=X.dtype)
 

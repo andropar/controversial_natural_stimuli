@@ -30,12 +30,11 @@ from scipy import stats
 
 STAGE = Path(__file__).resolve().parents[2]
 SHARE_ROOT = STAGE.parents[2]
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
 
 import matplotlib.pyplot as plt
 
-from style_improved import apply_style, DPI, FONT, W_DOUBLE
+from cstims.paper.style_improved import apply_style, DPI, FONT, W_DOUBLE
 
 apply_style()
 

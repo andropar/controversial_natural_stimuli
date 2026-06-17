@@ -26,16 +26,15 @@ def _find_share_root(start: Path) -> Path:
         if (
             (candidate / "pyproject.toml").exists()
             and (candidate / "00_stimulus_selection").exists()
-            and (candidate / "shared" / "code" / "paper_helpers").exists()
+            and (candidate / "src").exists()
         ):
             return candidate
     return _PAPER.parents[1]
 
 
 SHARE_ROOT = _find_share_root(_SCRIPT)
-HELPERS_DIR = SHARE_ROOT / "shared" / "code" / "paper_helpers"
+HELPERS_DIR = SHARE_ROOT / "src"
 sys.path.insert(0, str(HELPERS_DIR))
-sys.path.insert(0, str(HELPERS_DIR / "figures"))
 
 import numpy as np
 import pandas as pd
@@ -43,8 +42,8 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-import config
-from style_improved import (
+from cstims.paper import config
+from cstims.paper.style_improved import (
     apply_style, FONT, DPI, W_DOUBLE,
     MODEL_SET_ORDER, MODEL_SET_DISPLAY_SHORT,
     add_panel_label,
@@ -329,8 +328,12 @@ def plot_faceted_curve(
 ) -> None:
     df = load_discriminability(model_set)
     tracks = ["raw"] if track_key == "raw" else ENCODING_TRACKS
-    sel, rand, rand_std, x = get_sel_rand(df, tracks)
     col = model_set_color(model_set)
+
+    if df.empty:
+        sel = rand = rand_std = x = None
+    else:
+        sel, rand, rand_std, x = get_sel_rand(df, tracks)
 
     if sel is None:
         ax.text(0.5, 0.5, "No data", ha="center", va="center", transform=ax.transAxes)

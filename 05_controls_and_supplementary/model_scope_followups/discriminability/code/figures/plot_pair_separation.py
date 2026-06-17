@@ -10,6 +10,8 @@ Two parts:
 
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 
 import numpy as np
 import pandas as pd
@@ -18,7 +20,7 @@ import matplotlib.pyplot as plt
 PROJECT = Path(__file__).resolve().parents[4]
 PAPER = PROJECT / "experiments" / "cstim_paper"
 sys.path.insert(0, str(PAPER))
-from style_improved import apply_style, FONT, DPI  # noqa
+from cstims.paper.style_improved import apply_style, FONT, DPI  # noqa
 
 apply_style()
 

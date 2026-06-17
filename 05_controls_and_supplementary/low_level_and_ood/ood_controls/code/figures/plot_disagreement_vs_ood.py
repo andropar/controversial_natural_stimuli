@@ -21,15 +21,14 @@ from pathlib import Path
 _PAPER = Path(__file__).resolve().parents[2]
 _SHARE_ROOT = Path(__file__).resolve().parents[5]
 sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_SHARE_ROOT / "shared" / "code" / "paper_helpers"))
-sys.path.insert(0, str(_SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
+sys.path.insert(0, str(_SHARE_ROOT / "src"))
 
 import numpy as np
 import pandas as pd
 from scipy import stats
 import matplotlib.pyplot as plt
 
-import config
+from cstims.paper import config
 
 OOD_DIR = _PAPER / "results"
 PAIRS   = OOD_DIR / "disagreement_vs_ood_pairs.csv"

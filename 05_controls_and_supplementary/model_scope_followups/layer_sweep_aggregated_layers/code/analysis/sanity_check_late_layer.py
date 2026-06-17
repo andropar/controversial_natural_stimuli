@@ -14,10 +14,10 @@ from _paths import LAYER_SWEEP_ROOT
 import numpy as np
 import pandas as pd
 
-from config import (
+from cstims.paper.config import (
     MODEL_DISPLAY_NAMES, PAPER_ROOT, get_brain_input_dir, MODEL_SETS,
 )
-from utils import compute_rdm_correlation, compute_rsa_score
+from cstims.paper.utils import compute_rdm_correlation, compute_rsa_score
 from layers_config import MODEL_LAYERS, MAIN_LAYER, LATE_LAYER
 
 CACHE_NEW = LAYER_SWEEP_ROOT / "cache_or_heavy" / "features"

@@ -35,10 +35,8 @@ _PAPER = Path(__file__).resolve().parents[2]
 _SHARE_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))
-sys.path.insert(0, str(_PAPER / "figures"))
-sys.path.insert(0, str(_SHARE_ROOT / "shared" / "code" / "paper_helpers"))
-sys.path.insert(0, str(_SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
-import config
+sys.path.insert(0, str(_SHARE_ROOT / "src"))
+from cstims.paper import config
 
 import numpy as np
 import pandas as pd
@@ -48,7 +46,7 @@ import matplotlib.gridspec as gridspec
 from matplotlib.lines import Line2D
 from scipy import stats
 
-from style_improved import apply_style, FONT, DPI, W_DOUBLE
+from cstims.paper.style_improved import apply_style, FONT, DPI, W_DOUBLE
 
 apply_style()
 

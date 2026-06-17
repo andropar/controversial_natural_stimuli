@@ -27,10 +27,10 @@ from tqdm import tqdm
 
 STAGE = Path(__file__).resolve().parents[1]
 SHARE_ROOT = STAGE.parents[1]
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
 
-import config  # noqa: E402
-from utils import compute_rdm_correlation, compute_rsa_score, get_encoding_folder, load_encoding_model  # noqa: E402
+from cstims.paper import config  # noqa: E402
+from cstims.paper.utils import compute_rdm_correlation, compute_rsa_score, get_encoding_folder, load_encoding_model  # noqa: E402
 
 
 OUT_DIR = STAGE / "results"

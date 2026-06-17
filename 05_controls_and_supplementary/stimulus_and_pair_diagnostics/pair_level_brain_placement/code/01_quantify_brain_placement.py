@@ -6,6 +6,8 @@ from __future__ import annotations
 import pickle
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 
 import numpy as np
 import pandas as pd
@@ -14,12 +16,11 @@ from scipy.stats import zscore
 
 _PAPER = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_PAPER))
-sys.path.insert(0, str(_PAPER / "figures"))
 sys.path.insert(0, str(_PAPER.parents[1]))
 
-import config  # noqa: E402
-from style_improved import OKABE_ITO, apply_style  # noqa: E402
-from utils import compute_rdm_correlation  # noqa: E402
+from cstims.paper import config  # noqa: E402
+from cstims.paper.style_improved import OKABE_ITO, apply_style  # noqa: E402
+from cstims.paper.utils import compute_rdm_correlation  # noqa: E402
 
 
 OUT = _PAPER / "15_pair_level_brain_placement" / "results"

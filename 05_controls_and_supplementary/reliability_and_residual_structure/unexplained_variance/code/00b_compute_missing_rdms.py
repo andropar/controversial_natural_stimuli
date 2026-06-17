@@ -18,6 +18,8 @@ Usage:
 import argparse
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 import numpy as np
 from tqdm import tqdm
 from PIL import Image
@@ -25,8 +27,8 @@ from PIL import Image
 _PAPER = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))
-import config
-from utils import (
+from cstims.paper import config
+from cstims.paper.utils import (
     compute_rdm_correlation,
     load_encoding_model,
     predict_voxel_responses,

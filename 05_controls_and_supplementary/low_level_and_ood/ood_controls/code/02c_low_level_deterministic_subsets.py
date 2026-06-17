@@ -36,6 +36,8 @@ meaning low-level shift alone does not explain the drop.
 
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 
 _PAPER = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_PAPER))
@@ -45,8 +47,8 @@ import pandas as pd
 from scipy import stats
 from tqdm import tqdm
 
-import config
-from utils import (
+from cstims.paper import config
+from cstims.paper.utils import (
     load_encoding_model, predict_voxel_responses,
     compute_rdm_correlation, rdm_to_vector,
 )

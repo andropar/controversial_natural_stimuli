@@ -36,7 +36,7 @@ from pathlib import Path
 
 STAGE = Path(__file__).resolve().parents[2]
 SHARE_ROOT = STAGE.parents[2]
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
 
 import numpy as np
 import pandas as pd
@@ -44,8 +44,8 @@ from scipy import stats
 from sklearn.linear_model import RidgeCV
 from tqdm import tqdm
 
-import config
-from utils import (
+from cstims.paper import config
+from cstims.paper.utils import (
     bootstrap_sample_indices,
     compute_rdm_correlation,
     load_cached_features,

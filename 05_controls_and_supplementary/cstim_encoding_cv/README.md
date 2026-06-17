@@ -24,11 +24,11 @@ including that set's own target samples changes the mixed-RSA scores.
 ## Completed Target-Adaptation Run
 
 The completed run uses all 100 best-on-shared subject/model/layer selections
-covering 20 models and 5 subjects. It produced 3,570 score rows:
+covering 20 models and 5 subjects. It produced 5,100 score rows:
 
-- 1,435 CSTIM LOSO rows across model-set memberships and seven weights
-- 1,435 held-out Vicco rows from the matching CSTIM-adapted models
-- 700 Vicco LOSO rows from separate Vicco-adapted models
+- 2,050 CSTIM LOSO rows across model-set memberships and ten weights
+- 2,050 held-out Vicco rows from the matching CSTIM-adapted models
+- 1,000 Vicco LOSO rows from separate Vicco-adapted models
 
 The final intended run is the fresh SRP5920 version:
 
@@ -71,9 +71,10 @@ For each fixed subject/model/layer selection, the analysis loads:
   `cache_or_heavy/selected_layer_features_srp5920/dv_features/{subject}/{model}.npz`
 - CSTIM and Vicco features from
   `cache_or_heavy/selected_layer_features_srp5920/features/{model}/{set}.npz`
-- DeepVision unique responses through `DeepVisionBenchmark(..., image_set="unique")`
+- DeepVision unique responses from the cached benchmark response files under
+  `01_brain_model_alignment/cache_or_heavy/deepvision_benchmark_cache/`
 - CSTIM/Vicco averaged betas, stimulus metadata, and hlvis voxel masks from
-  `01_brain_model_alignment/cache_or_heavy/brain_data_cache/data/{subject}/`
+  `01_brain_model_alignment/cache_or_heavy/cstim_brain_response_cache/data/{subject}/`
 
 Feature extraction follows the dense layer-sweep stream convention:
 
@@ -106,17 +107,87 @@ training set. Each target condition is then handled as a weighted ridge update:
   Vicco LOSO
 
 Predictions are evaluated with the same convention as the dense layer-sweep
-stream scorer (`layer_sweep_stream_predict_v1`). This matters because
-`target_weight=0` is intended to be exactly the Figure 2 best-on-shared
-DeepVision-only baseline, not merely a numerically similar refit. Vicco scores
-use the same 1,000 no-replacement 100-image bootstrap samples as the
-layer-sweep source table.
+stream scorer (`layer_sweep_stream_predict_v1`). Vicco scores use the same
+1,000 no-replacement 100-image bootstrap samples as the layer-sweep source
+table.
 
-The target weights are `0, 0.25, 0.5, 1, 2, 4, 8`. `target_weight=0` is the
-DeepVision-only baseline under the same selected-layer/SRP/per-voxel-alpha and
-layer-sweep evaluation protocol. Mixed RSA is computed as Spearman correlation
-between the upper triangles of the predicted-response correlation-distance RDM
-and the matching brain-response correlation-distance RDM.
+The target weights are `0, 0.25, 0.5, 1, 2, 4, 8, 16, 32, 47`.
+`target_weight=0` is the DeepVision-only baseline under the same
+selected-layer/SRP/per-voxel-alpha target-adaptation code path. Mixed RSA is
+computed as Spearman correlation between the upper triangles of the
+predicted-response correlation-distance RDM and the matching brain-response
+correlation-distance RDM.
+
+The delta trajectory figure can also include the optional
+`target_weight=4700` fast-update stress test from
+`code/analysis/04_score_fast_update_extreme_weight_sensitivity.py`. That
+weight makes the 100 CSTIM target samples dominate the weighted objective
+while still using fixed DeepVision preprocessing and fixed DeepVision-selected
+alphas. It is a diagnostic for near-target-only behavior, not part of the
+canonical weight grid.
+
+The score table carries the original Figure 2 source-table score in
+`original_best_shared_mrsa`, and
+`results/target_adaptation_weight0_repro_check.csv` summarizes the weight-0
+reproduction check. In the current run, weight 0 closely reproduces the source
+means but is not bitwise identical:
+
+- CSTIM LOSO mean delta: `+0.000348`, max absolute delta: `0.021806`
+- held-out Vicco mean delta: `+0.000220`, max absolute delta: `0.018698`
+
+The largest deltas are concentrated in `robustness_imagenet_l2_eps3`. Treat
+`original_best_shared_mrsa` as the canonical source reference when reporting
+delta values.
+
+Reusable constants, selection-table readers, atomic writers, z-scoring helpers,
+and RSA/bootstrap helpers live in `src/cstims/target_adaptation.py`; scripts in
+this folder keep only the analysis-specific orchestration.
+
+## Full-Refit Sensitivity
+
+`code/analysis/03_sensitivity_full_refit_target_adaptation.py` is an optional
+stress test, not part of the canonical plotted analysis. It refits one CSTIM
+target set with all 5,920 SRP features and all hlvis voxels after recomputing
+weighted DeepVision+CSTIM feature/response normalization and selecting
+per-voxel alphas with weighted analytical LOO RidgeCV.
+
+The completed limited run used the SOTA target set at `target_weight=4`, the
+weight with the largest mean SOTA CSTIM improvement in the canonical table. It
+covered all 30 SOTA subject/model selections and wrote:
+
+- `results/target_adaptation_full_refit_sensitivity_scores.csv`
+- `results/target_adaptation_full_refit_sensitivity_summary.csv`
+- `results/target_adaptation_full_refit_sensitivity_metadata.json`
+- `results/target_adaptation_full_refit_sensitivity_by_model.csv`
+- `figures/target_adaptation_full_refit_sensitivity_by_model.pdf`
+
+For this sensitivity, mean SOTA CSTIM LOSO was `0.264331`, which is `-0.014841`
+relative to the canonical fixed-DeepVision-stat weighted update at the same
+weight. Held-out Vicco was lower in all 30 rows, with mean delta `-0.044816`
+relative to the canonical score.
+
+## CSTIM-Dominant Fast-Update Sensitivity
+
+`code/analysis/04_score_fast_update_extreme_weight_sensitivity.py` is an
+optional stress test that reuses the canonical Woodbury weighted update with
+fixed DeepVision feature/response normalization and fixed DeepVision-selected
+per-voxel alphas. The completed run used `target_weight=4700`, where the 100
+CSTIM target samples have total weight about 100 times larger than the
+DeepVision unique training set.
+
+It writes:
+
+- `results/target_adaptation_fast_extreme_weight_scores.csv`
+- `results/target_adaptation_fast_extreme_weight_summary.csv`
+- `results/target_adaptation_fast_extreme_weight_metadata.json`
+
+The result is deliberately not folded into
+`results/target_adaptation_weighted_scores.csv`. It is appended only while
+making `figures/target_adaptation_weight_delta_trajectory_cached.pdf`, where it
+appears as the separated `4.7k` diagnostic point. In the completed run, the
+near-CSTIM-only weighting was substantially worse than the original reference:
+SOTA mean CSTIM LOSO delta was `-0.082167`, and SOTA held-out baseline delta
+was `-0.152210`.
 
 ## VGG Cache Repair
 
@@ -140,7 +211,7 @@ single-layer extraction for each selected layer. That mismatch made VGG train
 on pre-ReLU DeepVision features but score post-ReLU target features, causing
 the near-zero VGG CSTIM LOSO result.
 
-`code/analysis/00_fill_selected_layer_srp5920_cache.py` was patched so the
+`code/analysis/01_cache_selected_layer_srp5920_features.py` was patched so the
 DeepVision side is extracted with the same multi-layer model context as the
 target side. After that patch:
 
@@ -162,35 +233,48 @@ Use the project conda environment:
 
 ```bash
 LD_LIBRARY_PATH=/data/home_roth/miniforge3/lib:${LD_LIBRARY_PATH:-} \
-  /data/home_roth/miniforge3/bin/python code/analysis/00_fill_selected_layer_srp5920_cache.py \
+  /data/home_roth/miniforge3/bin/python code/analysis/01_cache_selected_layer_srp5920_features.py \
   --batch-size 4 --device cuda:0 --layers-per-chunk 32 --progress-every 1024
 
 LD_LIBRARY_PATH=/data/home_roth/miniforge3/lib:${LD_LIBRARY_PATH:-} \
-  /data/home_roth/miniforge3/bin/python code/analysis/04_compute_target_adaptation_srp5920_voxelalpha.py \
-  --weights 0,0.25,0.5,1,2,4,8 --n-vicco-boot 1000 --overwrite --overwrite-alpha
+  /data/home_roth/miniforge3/bin/python code/analysis/02_score_target_adaptation_srp5920_per_voxel_alpha.py \
+  --weights 0,0.25,0.5,1,2,4,8,16,32,47 --n-vicco-boot 1000 --overwrite --overwrite-alpha
 
 LD_LIBRARY_PATH=/data/home_roth/miniforge3/lib:${LD_LIBRARY_PATH:-} \
-  /data/home_roth/miniforge3/bin/python code/figures/04_plot_target_adaptation_trajectory.py
+  /data/home_roth/miniforge3/bin/python code/figures/01_plot_target_weight_trajectories.py
 
 LD_LIBRARY_PATH=/data/home_roth/miniforge3/lib:${LD_LIBRARY_PATH:-} \
-  /data/home_roth/miniforge3/bin/python code/figures/05_plot_target_adaptation_condition_comparisons.py \
-  --weight 2 --model-set all_models
+  /data/home_roth/miniforge3/bin/python code/figures/02_plot_weight0_to_best_cstim_grid.py
+```
+
+Optional full-refit sensitivity:
+
+```bash
+LD_LIBRARY_PATH=/data/home_roth/miniforge3/lib:${LD_LIBRARY_PATH:-} \
+  /data/home_roth/miniforge3/bin/python code/analysis/03_sensitivity_full_refit_target_adaptation.py \
+  --model-set sota --weight 4 --n-vicco-boot 1000 --overwrite
 
 LD_LIBRARY_PATH=/data/home_roth/miniforge3/lib:${LD_LIBRARY_PATH:-} \
-  /data/home_roth/miniforge3/bin/python code/figures/05_plot_target_adaptation_condition_comparisons.py \
-  --weight 2 --model-set all_models --label-models
+  /data/home_roth/miniforge3/bin/python code/figures/05_plot_full_refit_sensitivity.py
+```
+
+Optional CSTIM-dominant fast-update sensitivity:
+
+```bash
+LD_LIBRARY_PATH=/data/home_roth/miniforge3/lib:${LD_LIBRARY_PATH:-} \
+  /data/home_roth/miniforge3/bin/python code/analysis/04_score_fast_update_extreme_weight_sensitivity.py \
+  --weights 4700 --n-vicco-boot 1000 --overwrite
 
 LD_LIBRARY_PATH=/data/home_roth/miniforge3/lib:${LD_LIBRARY_PATH:-} \
-  /data/home_roth/miniforge3/bin/python code/figures/06_plot_target_adaptation_brain_alignment_style_allpoints.py \
-  --weight 2
+  /data/home_roth/miniforge3/bin/python code/figures/01_plot_target_weight_trajectories.py
 ```
 
 If the scorer is interrupted after a checkpoint, resume with:
 
 ```bash
 LD_LIBRARY_PATH=/data/home_roth/miniforge3/lib:${LD_LIBRARY_PATH:-} \
-  /data/home_roth/miniforge3/bin/python code/analysis/04_compute_target_adaptation_srp5920_voxelalpha.py \
-  --weights 0,0.25,0.5,1,2,4,8 --n-vicco-boot 1000 --resume
+  /data/home_roth/miniforge3/bin/python code/analysis/02_score_target_adaptation_srp5920_per_voxel_alpha.py \
+  --weights 0,0.25,0.5,1,2,4,8,16,32,47 --n-vicco-boot 1000 --resume
 ```
 
 Main outputs:
@@ -198,13 +282,26 @@ Main outputs:
 - `results/target_adaptation_weighted_scores.csv`
 - `results/target_adaptation_weighted_summary.csv`
 - `results/target_adaptation_cached_selection_audit.csv`
-- `results/target_adaptation_condition_comparison_all_models_w2.csv`
-- `results/target_adaptation_brain_alignment_style_allpoints_w2_summary.csv`
-- `figures/target_adaptation_weighting_trajectory_cached.pdf`
-- `figures/target_adaptation_weighting_delta_trajectory_cached.pdf`
-- `figures/target_adaptation_1to1_all_models_w2_cached.pdf`
-- `figures/target_adaptation_1to1_all_models_w2_labeled_cached.pdf`
-- `figures/target_adaptation_brain_alignment_style_allpoints_w2_cached.pdf`
+- `results/target_adaptation_weight0_repro_check.csv`
+- `results/target_adaptation_weight0_to_best_cstim_points.csv`
+- `results/target_adaptation_weight0_to_best_cstim_summary.csv`
+- `results/target_adaptation_full_refit_sensitivity_scores.csv` (optional)
+- `results/target_adaptation_full_refit_sensitivity_summary.csv` (optional)
+- `results/target_adaptation_full_refit_sensitivity_metadata.json` (optional)
+- `results/target_adaptation_full_refit_sensitivity_by_model.csv` (optional)
+- `results/target_adaptation_fast_extreme_weight_scores.csv` (optional)
+- `results/target_adaptation_fast_extreme_weight_summary.csv` (optional)
+- `results/target_adaptation_fast_extreme_weight_metadata.json` (optional)
+- `figures/target_adaptation_weight_trajectory_cached.pdf`
+- `figures/target_adaptation_weight_delta_trajectory_cached.pdf`
+- `figures/target_adaptation_weight0_to_best_cstim_grid_cached.pdf`
+- `figures/target_adaptation_full_refit_sensitivity_by_model.pdf` (optional)
+
+Optional diagnostic figure scripts:
+
+- `code/figures/03_plot_fixed_weight_brain_alignment_grid.py`
+- `code/figures/04_plot_fixed_weight_cstim_vicco_scatter.py`
+- `code/figures/05_plot_full_refit_sensitivity.py`
 
 Archived historical outputs:
 

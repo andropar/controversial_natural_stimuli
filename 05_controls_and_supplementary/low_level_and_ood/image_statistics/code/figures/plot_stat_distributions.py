@@ -13,6 +13,8 @@ Writes: stat_distributions.{pdf,png}
 
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -20,7 +22,7 @@ import pandas as pd
 
 _PAPER = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(_PAPER))
-from style import apply_style, FONT  # noqa: E402
+from cstims.paper.style_improved import apply_style, FONT  # noqa: E402
 
 apply_style()
 

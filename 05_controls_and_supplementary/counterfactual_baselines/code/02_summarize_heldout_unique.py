@@ -12,11 +12,10 @@ import pandas as pd
 
 STAGE = Path(__file__).resolve().parents[1]
 SHARE_ROOT = STAGE.parents[1]
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
 
-import config  # noqa: E402
-from style_improved import OKABE_ITO, apply_style, shade  # noqa: E402
+from cstims.paper import config  # noqa: E402
+from cstims.paper.style_improved import OKABE_ITO, apply_style, shade  # noqa: E402
 
 
 DATA = STAGE / "results"

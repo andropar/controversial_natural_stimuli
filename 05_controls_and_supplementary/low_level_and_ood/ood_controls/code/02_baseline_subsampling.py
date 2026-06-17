@@ -41,6 +41,8 @@ The summary CSV is the canonical result for the figure / paper claims.
 
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 
 _PAPER = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_PAPER))
@@ -49,8 +51,8 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 
-import config
-from utils import bootstrap_sample_indices
+from cstims.paper import config
+from cstims.paper.utils import bootstrap_sample_indices
 
 # --------------------------------------------------------------------------------
 # Constants matching 02_compute_wrsa_transfer.py

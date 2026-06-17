@@ -12,10 +12,9 @@ import matplotlib.pyplot as plt
 
 STAGE = Path(__file__).resolve().parents[1]
 SHARE_ROOT = STAGE.parents[2]
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
 
-from style_improved import (  # noqa: E402
+from cstims.paper.style_improved import (  # noqa: E402
     apply_style,
     FONT,
     DPI,

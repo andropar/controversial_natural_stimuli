@@ -16,12 +16,11 @@ from matplotlib.patches import Patch
 
 PAPER_ROOT = Path(__file__).resolve().parents[2]
 SHARE_ROOT = PAPER_ROOT.parents[1]
-HELPERS = SHARE_ROOT / "shared" / "code" / "paper_helpers"
+HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(HELPERS))
-sys.path.insert(0, str(HELPERS / "figures"))
 
-import config
-from style_improved import (
+from cstims.paper import config
+from cstims.paper.style_improved import (
     apply_style,
     DPI,
     FONT,

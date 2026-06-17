@@ -21,8 +21,7 @@ from pathlib import Path
 
 STAGE = Path(__file__).resolve().parents[3]
 SHARE_ROOT = STAGE.parent
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
 
 import numpy as np
 import pandas as pd
@@ -30,8 +29,8 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.lines import Line2D
 
-import config
-from style_improved import (
+from cstims.paper import config
+from cstims.paper.style_improved import (
     apply_style, FONT, DPI, W_DOUBLE,
     COLOR_CSTIM, COLOR_BASELINE,
     add_panel_label,

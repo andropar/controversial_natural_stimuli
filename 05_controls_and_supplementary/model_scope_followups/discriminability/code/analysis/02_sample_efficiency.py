@@ -37,12 +37,12 @@ from joblib import Parallel, delayed
 STAGE = Path(__file__).resolve().parents[2]
 SHARE_ROOT = STAGE.parents[2]
 LAYER_SWEEP = STAGE.parent / "layer_sweep"
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
 sys.path.insert(0, str(LAYER_SWEEP))
 sys.path.insert(0, str(LAYER_SWEEP / "code"))
 
-from config import MODEL_SETS, get_brain_input_dir  # noqa
-from utils import load_encoding_model, predict_voxel_responses  # noqa
+from cstims.paper.config import MODEL_SETS, get_brain_input_dir  # noqa
+from cstims.paper.utils import load_encoding_model, predict_voxel_responses  # noqa
 from layers_config import MAIN_LAYER  # noqa
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "results"

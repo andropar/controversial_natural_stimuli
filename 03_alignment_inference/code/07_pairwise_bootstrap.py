@@ -28,6 +28,8 @@ Usage:
 import argparse
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 from itertools import combinations
 
 # Setup imports from cstim_paper root
@@ -40,8 +42,8 @@ import pandas as pd
 from scipy import stats
 from tqdm import tqdm
 
-import config
-from utils import (
+from cstims.paper import config
+from cstims.paper.utils import (
     get_encoding_folder,
     compute_rdm_correlation,
     rdm_to_vector,

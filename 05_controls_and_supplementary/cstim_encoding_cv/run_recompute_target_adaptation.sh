@@ -29,7 +29,7 @@ export TORCHDYNAMO_DISABLE=1
 export TORCHINDUCTOR_COMPILE_THREADS=1
 
 echo "[phase] regenerate selected-layer SRP5920 caches with dense-chunk context"
-"${PY}" code/analysis/00_fill_selected_layer_srp5920_cache.py \
+"${PY}" code/analysis/01_cache_selected_layer_srp5920_features.py \
   --batch-size 4 \
   --device "${GPU_DEVICE}" \
   --layers-per-chunk 32 \
@@ -37,25 +37,20 @@ echo "[phase] regenerate selected-layer SRP5920 caches with dense-chunk context"
   --overwrite
 
 echo "[phase] recompute target-adaptation scores"
-"${PY}" code/analysis/04_compute_target_adaptation_srp5920_voxelalpha.py \
-  --weights 0,0.25,0.5,1,2,4,8 \
+"${PY}" code/analysis/02_score_target_adaptation_srp5920_per_voxel_alpha.py \
+  --weights 0,0.25,0.5,1,2,4,8,16,32,47 \
   --n-vicco-boot 1000 \
   --overwrite \
   --overwrite-alpha
 
-echo "[phase] rebuild figures"
-"${PY}" code/figures/04_plot_target_adaptation_trajectory.py
-"${PY}" code/figures/05_plot_target_adaptation_condition_comparisons.py \
-  --weight 2 \
-  --model-set all_models
-"${PY}" code/figures/05_plot_target_adaptation_condition_comparisons.py \
-  --weight 2 \
-  --model-set all_models \
-  --label-models
-"${PY}" code/figures/06_plot_target_adaptation_brain_alignment_style_allpoints.py \
-  --weight 2
+echo "[phase] clean generated target-adaptation figures"
+rm -f figures/target_adaptation_*.pdf figures/png/target_adaptation_*.png
 
-echo "[phase] verify weight-0 equality against source layer-sweep table"
+echo "[phase] rebuild figures"
+"${PY}" code/figures/01_plot_target_weight_trajectories.py
+"${PY}" code/figures/02_plot_weight0_to_best_cstim_grid.py
+
+echo "[phase] summarize weight-0 reproduction against source layer-sweep table"
 "${PY}" - <<'PY'
 import pandas as pd
 

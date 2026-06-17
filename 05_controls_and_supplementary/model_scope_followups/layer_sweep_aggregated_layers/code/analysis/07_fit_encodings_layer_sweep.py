@@ -44,8 +44,8 @@ from joblib import Parallel, delayed
 from scipy.stats import rankdata
 from tqdm import tqdm
 
-from config import CSTIM_HDF5_ROOT, MODEL_DISPLAY_NAMES, PAPER_ROOT, get_brain_input_dir
-from utils import bootstrap_sample_indices, compute_rdm_correlation, parse_subject_arg
+from cstims.paper.config import CSTIM_HDF5_ROOT, MODEL_DISPLAY_NAMES, PAPER_ROOT, get_brain_input_dir
+from cstims.paper.utils import bootstrap_sample_indices, compute_rdm_correlation, parse_subject_arg
 from batch_tuning import (
     parse_batch_candidates,
     parse_batch_size,
@@ -82,7 +82,7 @@ CACHE_DIR = LAYER_SWEEP_ROOT / "cache_or_heavy"
 DV_FEAT_CACHE = CACHE_DIR / "dv_features"
 ENC_CACHE = CACHE_DIR / "encodings"
 LOCK_DIR = CACHE_DIR / "locks"
-DEEPVISION_CACHE = SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "brain_data"
+DEEPVISION_CACHE = SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "deepvision_benchmark_cache"
 DV_BENCHMARK_CACHE = DEEPVISION_CACHE
 DATA_DIR = LAYER_SWEEP_ROOT / "results"
 STREAM_WRSA_CSV = DATA_DIR / "wrsa_dense_layer_sweep.csv"

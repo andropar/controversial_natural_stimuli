@@ -30,10 +30,10 @@ import pandas as pd
 from tqdm import tqdm
 from joblib import Parallel, delayed
 
-from config import (
+from cstims.paper.config import (
     MODEL_DISPLAY_NAMES, PAPER_ROOT, get_brain_input_dir, SUBJECTS,
 )
-from utils import (
+from cstims.paper.utils import (
     compute_rdm_correlation, compute_rsa_score, bootstrap_sample_indices,
     parse_subject_arg,
 )

@@ -23,10 +23,10 @@ from sklearn.preprocessing import StandardScaler
 
 STAGE = Path(__file__).resolve().parents[2]
 SHARE_ROOT = STAGE.parents[1]
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
 
-import config  # noqa: E402
-from utils import compute_rdm_correlation, rdm_to_vector, load_cached_features, stimulus_cv_splits  # noqa: E402
+from cstims.paper import config  # noqa: E402
+from cstims.paper.utils import compute_rdm_correlation, rdm_to_vector, load_cached_features, stimulus_cv_splits  # noqa: E402
 
 
 DATA = STAGE / "results"

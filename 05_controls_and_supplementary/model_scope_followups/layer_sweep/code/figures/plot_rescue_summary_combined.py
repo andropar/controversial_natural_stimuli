@@ -9,8 +9,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from config import PAPER_ROOT, MODEL_DISPLAY_NAMES
-from style import apply_style, FONT
+from cstims.paper.config import PAPER_ROOT, MODEL_DISPLAY_NAMES
+from cstims.paper.style_improved import apply_style, FONT
 from layers_config import MODEL_LAYERS
 
 apply_style()

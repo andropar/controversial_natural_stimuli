@@ -28,7 +28,7 @@ import numpy as np
 from PIL import Image
 from tqdm import tqdm
 
-from config import CSTIM_HDF5_ROOT, PAPER_ROOT
+from cstims.paper.config import CSTIM_HDF5_ROOT, PAPER_ROOT
 from batch_tuning import parse_batch_candidates, parse_batch_size, tune_batch_size
 from layers_config import MODEL_LAYERS, MODEL_SOURCE, STIMULUS_SETS, get_layer_set
 from multilayer_extractor import MultiLayerExtractor

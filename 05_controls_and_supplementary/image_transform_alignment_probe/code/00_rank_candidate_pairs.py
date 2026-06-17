@@ -22,9 +22,9 @@ ROOT = Path(__file__).resolve().parents[3]
 ANALYSIS_DIR = Path(__file__).resolve().parents[1]
 RESULTS_DIR = ANALYSIS_DIR / "results"
 
-HELPER_DIR = ROOT / "shared" / "code" / "paper_helpers"
+HELPER_DIR = ROOT / "src"
 sys.path.insert(0, str(HELPER_DIR))
-import config  # noqa: E402
+from cstims.paper import config  # noqa: E402
 
 
 PAIR_SUMMARY = (

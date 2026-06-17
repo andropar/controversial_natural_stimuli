@@ -19,7 +19,7 @@ from _paths import LAYER_SWEEP_ROOT
 import numpy as np
 import pandas as pd
 
-from config import PAPER_ROOT, MODEL_DISPLAY_NAMES
+from cstims.paper.config import PAPER_ROOT, MODEL_DISPLAY_NAMES
 
 DATA_DIR = LAYER_SWEEP_ROOT / "results"
 IN_CSV = DATA_DIR / "fixed_rsa_layer_sweep.csv"

@@ -15,6 +15,8 @@ import pickle
 import zipfile
 from itertools import product
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -26,10 +28,9 @@ PAPER = Path(__file__).resolve().parents[1]
 PROJECT = PAPER.parents[1]
 sys.path.insert(0, str(PAPER))
 sys.path.insert(0, str(PROJECT))
-sys.path.insert(0, str(PAPER / "figures"))
 
-import config  # noqa: E402
-from style_improved import (  # noqa: E402
+from cstims.paper import config  # noqa: E402
+from cstims.paper.style_improved import (  # noqa: E402
     DPI,
     FONT,
     MODEL_SET_COLORS,
@@ -318,7 +319,7 @@ def image_path(row: pd.Series) -> Path:
             config.SHARE_ROOT
             / "01_brain_model_alignment"
             / "cache_or_heavy"
-            / "brain_data"
+            / "deepvision_benchmark_cache"
             / "image_sets"
             / "deepvision_shared"
             / row["image"]

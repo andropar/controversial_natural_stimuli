@@ -23,6 +23,8 @@ Output: data/low_level_rdm_brain_alignment.csv
 
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 
 import numpy as np
 import pandas as pd
@@ -33,8 +35,8 @@ _PAPER = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))
 
-from config import CSTIM_HDF5_ROOT, SUBJECTS, get_brain_input_dir  # noqa: E402
-from utils import (  # noqa: E402
+from cstims.paper.config import CSTIM_HDF5_ROOT, SUBJECTS, get_brain_input_dir  # noqa: E402
+from cstims.paper.utils import (  # noqa: E402
     compute_rdm_correlation,
     compute_rsa_score,
     bootstrap_sample_indices,

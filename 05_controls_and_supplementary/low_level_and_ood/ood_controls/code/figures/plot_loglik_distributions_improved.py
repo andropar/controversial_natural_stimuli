@@ -13,11 +13,12 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 
 _PAPER = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))
-sys.path.insert(0, str(_PAPER / "figures"))
 
 import numpy as np
 import pandas as pd
@@ -25,8 +26,8 @@ from scipy.stats import gaussian_kde
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
-import config
-from style_improved import (
+from cstims.paper import config
+from cstims.paper.style_improved import (
     apply_style, FONT, DPI, W_DOUBLE,
     COLOR_CSTIM, COLOR_BASELINE, COLOR_TRAIN,
 )

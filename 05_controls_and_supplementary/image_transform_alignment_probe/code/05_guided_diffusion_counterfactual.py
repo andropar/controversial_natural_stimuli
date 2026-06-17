@@ -43,9 +43,9 @@ RESULTS_DIR = ANALYSIS_DIR / "results"
 FIGURES_DIR = ANALYSIS_DIR / "figures"
 IMAGE_OUT_DIR = ANALYSIS_DIR / "optimized_images"
 
-HELPER_DIR = ROOT / "shared" / "code" / "paper_helpers"
+HELPER_DIR = ROOT / "src"
 sys.path.insert(0, str(HELPER_DIR))
-import config  # noqa: E402
+from cstims.paper import config  # noqa: E402
 
 
 PAIR_SUBJECT = (

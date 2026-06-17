@@ -27,8 +27,8 @@ from scipy.stats import rankdata
 from tqdm import tqdm
 from joblib import Parallel, delayed
 
-from config import MODEL_DISPLAY_NAMES, PAPER_ROOT, SUBJECTS
-from utils import (
+from cstims.paper.config import MODEL_DISPLAY_NAMES, PAPER_ROOT, SUBJECTS
+from cstims.paper.utils import (
     bootstrap_sample_indices,
     compute_rdm_correlation,
     parse_subject_arg,
@@ -67,7 +67,7 @@ CACHE_ROOT = LAYER_SWEEP_ROOT / "cache_or_heavy"
 FEATURE_CACHE = CACHE_ROOT / "features"
 DATA_DIR = LAYER_SWEEP_ROOT / "results"
 PART_DIR = DATA_DIR / "wrsa_dense_shared_parts"
-DEEPVISION_CACHE = SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "brain_data"
+DEEPVISION_CACHE = SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "deepvision_benchmark_cache"
 DEEPVISION_FMRI_ROOT = Path("/data/labshare/_stachelschwein/SSD/jroth/deepvision_fmri")
 STIMULUS_TYPE = "deepvision_shared"
 

@@ -39,15 +39,15 @@ from pathlib import Path
 
 STAGE = Path(__file__).resolve().parents[1]
 SHARE_ROOT = STAGE.parents[2]
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
 
 import numpy as np
 import pandas as pd
 from sklearn.decomposition import PCA
 from tqdm import tqdm
 
-import config
-from utils import get_encoding_folder, load_encoding_model
+from cstims.paper import config
+from cstims.paper.utils import get_encoding_folder, load_encoding_model
 
 # =============================================================================
 # Constants

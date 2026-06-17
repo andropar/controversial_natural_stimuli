@@ -28,11 +28,11 @@ from scipy.stats import rankdata
 from tqdm import tqdm
 
 from batch_tuning import parse_batch_candidates, parse_batch_size, tune_batch_size
-from config import CSTIM_HDF5_ROOT, MODEL_DISPLAY_NAMES, PAPER_ROOT, SUBJECTS, get_brain_input_dir
+from cstims.paper.config import CSTIM_HDF5_ROOT, MODEL_DISPLAY_NAMES, PAPER_ROOT, SUBJECTS, get_brain_input_dir
 from layers_config import MODEL_SOURCE, STIMULUS_SETS, get_layer_set
 from multilayer_extractor import MultiLayerExtractor
 from srp_utils import SRPProjectorCache, SRP_SEED
-from utils import bootstrap_sample_indices, compute_rdm_correlation
+from cstims.paper.utils import bootstrap_sample_indices, compute_rdm_correlation
 
 
 SHARE_ROOT = LAYER_SWEEP_ROOT.parents[2]

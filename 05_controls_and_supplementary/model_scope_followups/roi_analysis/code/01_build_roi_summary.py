@@ -41,7 +41,7 @@ def main() -> None:
     note.write_text(
         "# ROI Feasibility Note\n\n"
         "The current paper cache contains `visual_mask` and `hlvis_mask` in "
-        "`01_brain_model_alignment/cache_or_heavy/brain_data_cache/data/{subject}/voxel_metadata.npz`. It does not contain "
+        "`01_brain_model_alignment/cache_or_heavy/cstim_brain_response_cache/data/{subject}/voxel_metadata.npz`. It does not contain "
         "parcel labels or masks for early visual, ventral/object, or scene ROIs. "
         "Accordingly, `roi_results.csv` reports the primary hlvis endpoint only. "
         "Additional ROI splits require adding the atlas/parcel masks to the cache "

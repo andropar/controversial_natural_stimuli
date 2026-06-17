@@ -23,8 +23,7 @@ _SHARE_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))
 sys.path.insert(0, str(_FIGURES))
-sys.path.insert(0, str(_SHARE_ROOT / "shared" / "code" / "paper_helpers"))
-sys.path.insert(0, str(_SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
+sys.path.insert(0, str(_SHARE_ROOT / "src"))
 
 import numpy as np
 import pandas as pd
@@ -32,12 +31,12 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from scipy.stats import wilcoxon
 
-from style_improved import (
+from cstims.paper.style_improved import (
     apply_style, FONT, DPI, W_DOUBLE,
     COLOR_CSTIM, COLOR_BASELINE,
     add_panel_label,
 )
-from config import SUBJECTS
+from cstims.paper.config import SUBJECTS
 
 apply_style()
 

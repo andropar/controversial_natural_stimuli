@@ -3,6 +3,26 @@ from __future__ import annotations
 import torch
 
 EPSILON = 1e-9
+_TRIU_INDEX_CACHE: dict[tuple[int, str], tuple[torch.Tensor, torch.Tensor]] = {}
+
+
+def _device_key(device: torch.device) -> str:
+    if device.type == "cuda":
+        return f"cuda:{device.index if device.index is not None else torch.cuda.current_device()}"
+    return str(device)
+
+
+def _triu_indices_cached(
+    n_images: int,
+    device: torch.device,
+) -> tuple[torch.Tensor, torch.Tensor]:
+    key = (int(n_images), _device_key(device))
+    cached = _TRIU_INDEX_CACHE.get(key)
+    if cached is None:
+        idx = torch.triu_indices(n_images, n_images, offset=1, device=device)
+        cached = (idx[0], idx[1])
+        _TRIU_INDEX_CACHE[key] = cached
+    return cached
 
 def get_rdm_vector(activations, metric="euclidean"):
     """
@@ -29,7 +49,7 @@ def get_rdm_vector(activations, metric="euclidean"):
             similarity_matrix = torch.matmul(activations_norm, activations_norm.t())
             similarity_matrix = torch.clamp(similarity_matrix, -1.0, 1.0)
             rdm_matrix = 1.0 - similarity_matrix
-            indices = torch.triu_indices(rdm_matrix.shape[0], rdm_matrix.shape[1], offset=1)
+            indices = _triu_indices_cached(rdm_matrix.shape[0], activations.device)
             return rdm_matrix[indices[0], indices[1]]
             
         elif metric == "correlation":
@@ -41,7 +61,7 @@ def get_rdm_vector(activations, metric="euclidean"):
             )
             similarity_matrix = torch.clamp(similarity_matrix, -1.0, 1.0)
             rdm_matrix = 1.0 - similarity_matrix
-            indices = torch.triu_indices(rdm_matrix.shape[0], rdm_matrix.shape[1], offset=1)
+            indices = _triu_indices_cached(rdm_matrix.shape[0], activations.device)
             return rdm_matrix[indices[0], indices[1]]
             
         else:  # Assume euclidean or other torch.pdist compatible metric
@@ -75,15 +95,60 @@ def get_rdm_vector(activations, metric="euclidean"):
             # cdist supports batching: [B, N, D] -> [B, N, N]
             rdm_matrix = torch.cdist(activations.float(), activations.float(), p=2)
             
-        # Extract upper triangle for each batch
-        # triu_indices returns [2, P]
-        indices = torch.triu_indices(N, N, offset=1, device=activations.device)
-        # We can gather from [B, N, N] using these indices
-        # rdm_matrix[:, indices[0], indices[1]] -> [B, P]
+        indices = _triu_indices_cached(N, activations.device)
         return rdm_matrix[:, indices[0], indices[1]]
 
     else:
         raise ValueError(f"Expected 2D or 3D input, got {activations.shape}")
+
+
+def rank_standardize_batch(vectors: torch.Tensor) -> torch.Tensor:
+    """Rank-standardize batched vectors using ordinal ranks.
+
+    This matches the previous ``argsort(argsort(x))`` behavior for continuous
+    RDM values but avoids the second sort.
+    """
+    values = vectors.float()
+    order = torch.argsort(values, dim=-1)
+    ranks = torch.empty_like(values, dtype=torch.float32)
+    base = torch.arange(
+        values.shape[-1],
+        device=values.device,
+        dtype=torch.float32,
+    ).expand_as(values)
+    ranks.scatter_(dim=-1, index=order, src=base)
+    return (ranks - ranks.mean(dim=-1, keepdim=True)) / (
+        ranks.std(dim=-1, unbiased=False, keepdim=True) + EPSILON
+    )
+
+
+def vector_standardize_batch(vectors: torch.Tensor) -> torch.Tensor:
+    values = vectors.float()
+    return (values - values.mean(dim=-1, keepdim=True)) / (
+        values.std(dim=-1, unbiased=False, keepdim=True) + EPSILON
+    )
+
+
+def prepare_correlation_reference_batch(
+    vectors: torch.Tensor,
+    corr_type: str = "spearman",
+) -> torch.Tensor:
+    if corr_type == "spearman":
+        return rank_standardize_batch(vectors)
+    return vector_standardize_batch(vectors)
+
+
+def correlate_vector_batches(
+    vectors: torch.Tensor,
+    reference: torch.Tensor,
+    corr_type: str = "spearman",
+) -> torch.Tensor:
+    """Correlate each row in ``vectors`` with pre-standardized references."""
+    if corr_type == "spearman":
+        standardized = rank_standardize_batch(vectors)
+    else:
+        standardized = vector_standardize_batch(vectors)
+    return torch.mean(standardized * reference, dim=-1)
 
 def calculate_correlation(vec_A, vec_B, corr_type="correlation"):
     """
@@ -128,3 +193,42 @@ def calculate_correlation(vec_A, vec_B, corr_type="correlation"):
         r = r_matrix[0, 1]
 
     return torch.nan_to_num(r, nan=0.0)
+
+
+def get_rdm_vector_np(activations, metric="euclidean", device=None):
+    """Compute an RDM vector with ``get_rdm_vector`` and return a CPU NumPy array."""
+    if isinstance(activations, torch.Tensor):
+        tensor = (
+            activations.to(device=device, dtype=torch.float32)
+            if device is not None
+            else activations.float()
+        )
+    else:
+        tensor = torch.as_tensor(activations, dtype=torch.float32, device=device)
+    return get_rdm_vector(tensor, metric=metric).detach().cpu().numpy()
+
+
+def calculate_correlation_value(vec_A, vec_B, corr_type="spearman", device=None):
+    """Compute an RDM-vector correlation with ``calculate_correlation`` as a float."""
+    if isinstance(vec_A, torch.Tensor):
+        a = (
+            vec_A.to(device=device, dtype=torch.float32)
+            if device is not None
+            else vec_A.float()
+        )
+    else:
+        a = torch.as_tensor(vec_A, dtype=torch.float32, device=device)
+    if isinstance(vec_B, torch.Tensor):
+        b = (
+            vec_B.to(device=device, dtype=torch.float32)
+            if device is not None
+            else vec_B.float()
+        )
+    else:
+        b = torch.as_tensor(vec_B, dtype=torch.float32, device=device)
+    return float(
+        calculate_correlation(a.reshape(-1), b.reshape(-1), corr_type)
+        .detach()
+        .cpu()
+        .item()
+    )

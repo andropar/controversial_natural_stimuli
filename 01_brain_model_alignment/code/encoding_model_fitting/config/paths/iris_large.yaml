@@ -4,6 +4,6 @@
 
 paths:
   model_list_csv: /home/jroth/cstims/00_stimulus_selection/resources/model_list_large.csv
-  cache_root: /home/jroth/cstims/01_brain_model_alignment/cache_or_heavy/brain_data
+  cache_root: /home/jroth/cstims/01_brain_model_alignment/cache_or_heavy/deepvision_benchmark_cache
   deepvision_root: /SSD/jroth/deepvision_fmri
   output_root: /home/jroth/cstims/01_brain_model_alignment/results/encoding_models/deepvision_encoding_models_large

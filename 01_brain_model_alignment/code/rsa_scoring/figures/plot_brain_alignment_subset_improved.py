@@ -14,19 +14,18 @@ from pathlib import Path
 
 STAGE = Path(__file__).resolve().parents[3]
 SHARE_ROOT = STAGE.parent
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers"))
-sys.path.insert(0, str(SHARE_ROOT / "shared" / "code" / "paper_helpers" / "figures"))
+sys.path.insert(0, str(SHARE_ROOT / "src"))
 
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 
-from style_improved import (
+from cstims.paper.style_improved import (
     apply_style, FONT, DPI, W_DOUBLE,
     MODEL_SET_DISPLAY, MODEL_SET_COLORS,
     add_panel_label,
 )
-import config
+from cstims.paper import config
 
 apply_style()
 

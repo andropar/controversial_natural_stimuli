@@ -26,6 +26,8 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -34,9 +36,8 @@ import pandas as pd
 _PAPER = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))
-sys.path.insert(0, str(_PAPER / "figures"))
 
-from style_improved import apply_style, FONT, DPI, W_DOUBLE  # noqa: E402
+from cstims.paper.style_improved import apply_style, FONT, DPI, W_DOUBLE  # noqa: E402
 
 apply_style()
 
@@ -52,7 +53,7 @@ NC_BINS = np.arange(0.05, 0.50, 0.05)  # 0.05 ... 0.45 edges -> centers 0.075, 0
 
 
 def short_model(name: str) -> str:
-    from config import MODEL_DISPLAY_NAMES
+    from cstims.paper.config import MODEL_DISPLAY_NAMES
     return MODEL_DISPLAY_NAMES.get(name, name.replace("_", " "))[:14]
 
 

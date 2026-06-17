@@ -27,6 +27,8 @@ Usage:
 
 import sys
 from pathlib import Path
+_CSTIMS_SHARE_ROOT = next(p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists())
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 import numpy as np
 import pandas as pd
 from scipy import stats
@@ -36,7 +38,7 @@ _PAPER = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))  # project root for cstims
 
-import config
+from cstims.paper import config
 
 SIM_DATA_DIR = config.SIM_DATA_DIR
 

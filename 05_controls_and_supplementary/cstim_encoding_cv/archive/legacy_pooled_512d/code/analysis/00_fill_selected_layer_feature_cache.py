@@ -26,7 +26,7 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 
-from config import CSTIM_HDF5_ROOT, PAPER_ROOT
+from cstims.paper.config import CSTIM_HDF5_ROOT, PAPER_ROOT
 from cstims.datasets.deepvision import DeepVisionBenchmark
 from layers_config import MODEL_SOURCE
 from multilayer_extractor import MultiLayerExtractor
@@ -41,7 +41,7 @@ LOCAL_FEATURE_DIR = LOCAL_SELECTED_CACHE_DIR / "features"
 LOCAL_DV_FEATURE_DIR = LOCAL_SELECTED_CACHE_DIR / "dv_features"
 SOURCE_FEATURE_DIR = SOURCE_LAYER_SWEEP_ROOT / "cache" / "features"
 SOURCE_DV_FEATURE_DIR = SOURCE_LAYER_SWEEP_ROOT / "cache" / "dv_features"
-DV_CACHE_ROOT = SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "brain_data"
+DV_CACHE_ROOT = SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "deepvision_benchmark_cache"
 LABSHARE_CSTIM_HDF5_ROOT = Path(
     "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files"
 )

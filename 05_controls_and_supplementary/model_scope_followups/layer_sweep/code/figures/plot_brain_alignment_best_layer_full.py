@@ -22,11 +22,11 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.lines import Line2D
 
-from config import (
+from cstims.paper.config import (
     PAPER_ROOT, MODEL_SETS, MODEL_DISPLAY_NAMES, SUBJECTS,
     STATS_DATA_DIR, RSA_DATA_DIR,
 )
-from style import apply_style, FONT, DPI
+from cstims.paper.style_improved import apply_style, FONT, DPI
 
 apply_style()
 
@@ -304,7 +304,7 @@ def main():
     ylims = {meth: compute_row_ylim(df, all_sets, meth, nc_df) for meth in methods}
 
     try:
-        from style import W_DOUBLE
+        from cstims.paper.style_improved import W_DOUBLE
         figw = W_DOUBLE
     except ImportError:
         figw = 14.0

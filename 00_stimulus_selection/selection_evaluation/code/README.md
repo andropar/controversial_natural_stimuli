@@ -11,6 +11,18 @@ Source provenance:
   helpers.
 - `figures/`: paper-facing plotting scripts for the selection-evaluation
   figures.
+- `noisy_by_clean/`: shared corrected noisy-by-clean recovery implementation
+  used by the final-stimuli and feature-method-sweep recovery entrypoints.
+- `teacher_student/`: teacher/student recovery evaluation scripts. The curated
+  plotters are `11_plot_final_stimuli_recovery.py` and
+  `21_plot_feature_method_sweep_recovery.py`; legacy/intermediate plotters are
+  archived under `teacher_student/archive/`.
+
+The corresponding evaluation outputs now live under
+`../final_stimuli_recovery/` and `../feature_method_sweep_recovery/`.
+Reusable method scripts live here under `noisy_by_clean/` and
+`teacher_student/`; result directories keep only analysis-specific bash runners
+unless they need real additional orchestration logic.
 
 These scripts were added to the share package after an audit found that the
 initial copy step included `00_selection_evaluation` derivatives

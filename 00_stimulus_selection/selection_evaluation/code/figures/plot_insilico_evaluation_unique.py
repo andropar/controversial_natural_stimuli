@@ -21,9 +21,8 @@ from pathlib import Path
 
 _PAPER = Path(__file__).resolve().parents[2]
 SHARE_ROOT = _PAPER.parents[1]
-HELPERS = SHARE_ROOT / "shared" / "code" / "paper_helpers"
+HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(HELPERS))
-sys.path.insert(0, str(HELPERS / "figures"))
 
 import numpy as np
 import pandas as pd
@@ -32,8 +31,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from scipy.integrate import trapezoid
 
-import config
-from style import apply_style, FONT, DPI, W_DOUBLE
+from cstims.paper import config
+from cstims.paper.style_improved import apply_style, FONT, DPI, W_DOUBLE
 
 apply_style()
 
