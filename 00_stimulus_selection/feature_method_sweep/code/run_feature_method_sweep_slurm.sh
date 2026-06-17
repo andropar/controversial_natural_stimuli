@@ -44,6 +44,7 @@ PROGRESS_EVERY_BATCHES="${PROGRESS_EVERY_BATCHES:-10}"
 SEED="${SEED:-42}"
 SKIP_SELECTION="${SKIP_SELECTION:-0}"
 SKIP_EVAL="${SKIP_EVAL:-0}"
+SHARED_ENCODINGS="${SHARED_ENCODINGS:-1}"
 TIMESTAMP="${TIMESTAMP:-$(date +%Y%m%d_%H%M%S)}"
 OUTPUT_ROOT="${OUTPUT_ROOT:-${REPO_ROOT}/00_stimulus_selection/feature_method_sweep/results/${MODEL_SET}_${TIMESTAMP}}"
 RUN_LOCAL="${RUN_LOCAL:-0}"
@@ -101,6 +102,10 @@ if [[ "${SKIP_EVAL}" == "1" ]]; then
   SCRIPT_CMD+=(--skip-eval)
 fi
 
+if [[ "${SHARED_ENCODINGS}" == "1" ]]; then
+  SCRIPT_CMD+=(--shared-encodings)
+fi
+
 if [[ -n "${EXTRA_ARGS:-}" ]]; then
   # shellcheck disable=SC2206
   EXTRA_ARGS_ARRAY=(${EXTRA_ARGS})
@@ -115,6 +120,7 @@ fi
 
 echo "Submitting feature method sweep"
 echo "Output root: ${OUTPUT_ROOT}"
+echo "Shared encodings: ${SHARED_ENCODINGS}"
 printf 'Command:'
 printf ' %q' "${CMD[@]}"
 printf '\n'

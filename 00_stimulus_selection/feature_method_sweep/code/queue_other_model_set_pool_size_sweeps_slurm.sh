@@ -33,6 +33,7 @@ MIN_BATCH_SIZE="${MIN_BATCH_SIZE:-512}"
 PROGRESS_EVERY_BATCHES="${PROGRESS_EVERY_BATCHES:-50}"
 SEED="${SEED:-42}"
 SKIP_EVAL="${SKIP_EVAL:-1}"
+SHARED_ENCODINGS="${SHARED_ENCODINGS:-1}"
 SUBMIT_RESUME="${SUBMIT_RESUME:-1}"
 SUBMIT="${SUBMIT:-1}"
 
@@ -74,6 +75,7 @@ echo "Run stamp: ${RUN_STAMP}"
 echo "Model sets: ${MODEL_SETS}"
 echo "Methods: ${METHODS}"
 echo "Pool sizes: ${POOL_SIZES}"
+echo "Shared encodings: ${SHARED_ENCODINGS}"
 echo "Queue dir: ${QUEUE_DIR}"
 
 if [[ "${SUBMIT}" == "0" ]]; then
@@ -115,6 +117,7 @@ for model_set in ${MODEL_SETS//,/ }; do
     PROGRESS_EVERY_BATCHES="${PROGRESS_EVERY_BATCHES}" \
     SEED="${SEED}" \
     SKIP_EVAL="${SKIP_EVAL}" \
+    SHARED_ENCODINGS="${SHARED_ENCODINGS}" \
     OUTPUT_ROOT="${output_root}" \
     PYTHON_BIN="${PYTHON_BIN:-}" \
     CONDA_LIB="${CONDA_LIB:-}" \
@@ -167,6 +170,7 @@ for model_set in ${MODEL_SETS//,/ }; do
       PROGRESS_EVERY_BATCHES="${PROGRESS_EVERY_BATCHES}" \
       SEED="${SEED}" \
       SKIP_EVAL="${SKIP_EVAL}" \
+      SHARED_ENCODINGS="${SHARED_ENCODINGS}" \
       PYTHON_BIN="${PYTHON_BIN:-}" \
       CONDA_LIB="${CONDA_LIB:-}" \
       CSTIMS_SLURM_WRAPPER="${CSTIMS_SLURM_WRAPPER:-}" \
