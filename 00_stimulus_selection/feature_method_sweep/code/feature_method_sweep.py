@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Feature-only selection-method sweep with corrected recovery evaluation.
+"""Feature selection-method sweep with final-run filtering and recovery hooks.
 
 This script is intentionally separate from the production stimulus selector. It
-keeps the feature-level ingredients fixed, skips image filtering/refinement, and
-compares several greedy selection objectives on the same candidate pool.
+keeps the feature-level ingredients fixed, applies the same image-quality filter
+used by the final selector, skips refinement, and compares several greedy
+selection objectives on the same candidate pool.
 
 After selection it writes minimal selection payloads and runs the isolated
 noisy-by-clean recovery evaluator on each method.
@@ -48,6 +49,11 @@ from cstims.encoding.linear import (  # noqa: E402
 )
 from cstims.noise_estimation import rdm_noise_by_model  # noqa: E402
 from cstims.rdm_cuda import get_rdm_vector  # noqa: E402
+from cstims.selection.image_filter import (  # noqa: E402
+    FilterRecord,
+    ImageFilter,
+    ImageFilterConfig,
+)
 from cstims.selection.primitives import (  # noqa: E402
     compute_pairwise_distances,
 )
@@ -137,6 +143,7 @@ class MethodRuntime:
     scores_combined: list[float] = field(default_factory=list)
     scores_per_track_history: dict[str, list[float]] = field(default_factory=dict)
     trace_rows: list[dict[str, Any]] = field(default_factory=list)
+    filter_records: list[dict[str, Any]] = field(default_factory=list)
 
 
 @dataclass
@@ -387,6 +394,235 @@ def load_encoding_params_for_sweep(
         )
         params.update(loaded)
     return params
+
+
+def encoding_roots_for_sweep(
+    *,
+    paths: dict[str, Any],
+    encoding_names: list[str],
+    shared_encodings: bool,
+) -> dict[str, str]:
+    if not encoding_names:
+        return {}
+    if shared_encodings:
+        root = Path(paths["encoding_root"]).resolve()
+        return {encoding_name: str(root) for encoding_name in encoding_names}
+
+    roots: dict[str, str] = {}
+    for encoding_name in encoding_names:
+        encoding_root = UNIQUE_ENCODING_DIRS.get(encoding_name)
+        if encoding_root is None:
+            raise ValueError(
+                f"No unique encoding root configured for encoding '{encoding_name}'."
+            )
+        roots[encoding_name] = str(encoding_root.resolve())
+    return roots
+
+
+def filter_record_to_dict(
+    record: FilterRecord,
+    *,
+    method_id: str | None = None,
+    pool_size: int | None = None,
+) -> dict[str, Any]:
+    payload = {
+        "global_idx": int(record.global_idx),
+        "passed": bool(record.passed),
+        "reason": record.reason,
+        "shard_name": record.shard_name,
+        "image_name": record.image_name,
+        "width": record.width,
+        "height": record.height,
+        "natural_prob": record.natural_prob,
+        "score": float(record.score),
+        "scores_per_track": record.scores_per_track,
+        "rank": int(record.rank),
+        "phase": record.phase,
+        "iteration": int(record.iteration),
+        "refinement_position": record.refinement_position,
+        "saved_path": record.saved_path,
+    }
+    if method_id is not None:
+        payload["method_id"] = method_id
+    if pool_size is not None:
+        payload["pool_size"] = int(pool_size)
+    return payload
+
+
+def make_image_filter(
+    *,
+    args: argparse.Namespace,
+    paths: dict[str, Any],
+    raw_shard_slices: Any,
+    output_root: Path,
+) -> tuple[ImageFilter | None, dict[str, Any]]:
+    if args.disable_image_filter:
+        return None, {"enabled": False}
+    if args.pool_feature_dir is not None:
+        raise ValueError(
+            "Image filtering requires LAION shard metadata from the natural feature "
+            "loader. Re-run without --pool-feature-dir or pass --disable-image-filter "
+            "for explicit unfiltered .npz-pool sweeps."
+        )
+
+    classifier_path = (
+        args.filter_classifier_path
+        if args.filter_classifier_path is not None
+        else Path(paths["classifier_path"])
+        if paths.get("classifier_path")
+        else None
+    )
+    save_dir = None if args.disable_filter_image_save else output_root / "validated_images"
+    config = ImageFilterConfig(
+        enabled=True,
+        min_resolution=int(args.filter_min_resolution),
+        natural_prob_threshold=float(args.filter_natural_prob_threshold),
+        download_timeout=float(args.filter_download_timeout),
+        max_attempts_per_iteration=int(args.filter_max_attempts_per_iteration),
+        parallel_batch_size=int(args.filter_parallel_batch_size),
+        classifier_path=classifier_path,
+        save_dir=save_dir,
+    )
+    image_filter = ImageFilter(
+        config=config,
+        shard_slices=raw_shard_slices,
+        subset_root=Path(paths["subset_root"]),
+    )
+    payload = {
+        "enabled": True,
+        "min_resolution": config.min_resolution,
+        "natural_prob_threshold": config.natural_prob_threshold,
+        "download_timeout": config.download_timeout,
+        "max_attempts_per_iteration": config.max_attempts_per_iteration,
+        "parallel_batch_size": config.parallel_batch_size,
+        "classifier_path": str(config.classifier_path) if config.classifier_path else None,
+        "save_dir": str(config.save_dir) if config.save_dir else None,
+        "allow_fallback_without_filter_pass": bool(args.allow_filter_fallback),
+    }
+    return image_filter, payload
+
+
+def select_initial_indices(
+    *,
+    rng: np.random.Generator,
+    initial_pool_size: int,
+    init_size: int,
+    image_filter: ImageFilter | None,
+) -> tuple[np.ndarray, list[dict[str, Any]]]:
+    if image_filter is None:
+        return (
+            rng.choice(initial_pool_size, size=init_size, replace=False).astype(np.int64),
+            [],
+        )
+
+    random_order = rng.permutation(initial_pool_size).astype(np.int64)
+    selected: list[int] = []
+    blocked: set[int] = set()
+    records: list[dict[str, Any]] = []
+    while len(selected) < init_size:
+        remaining = np.asarray(
+            [idx for idx in random_order if int(idx) not in blocked],
+            dtype=np.int64,
+        )
+        if remaining.size == 0:
+            raise RuntimeError(
+                f"Image filter could only find {len(selected)}/{init_size} "
+                "valid initialization images."
+            )
+        scores = np.linspace(
+            float(remaining.size),
+            1.0,
+            num=remaining.size,
+            dtype=np.float32,
+        )
+        before = len(image_filter.filter_records)
+        selected_idx, _score, _attempts = image_filter.select_first_valid(
+            remaining,
+            scores,
+            candidate_scores_per_track=None,
+            phase="initialization",
+            iteration=len(selected) + 1,
+        )
+        new_records = [
+            filter_record_to_dict(record)
+            for record in image_filter.filter_records[before:]
+        ]
+        records.extend(new_records)
+        for record in new_records:
+            if not record["passed"]:
+                blocked.add(int(record["global_idx"]))
+        selected_record = next(
+            (
+                record
+                for record in new_records
+                if int(record["global_idx"]) == int(selected_idx)
+            ),
+            None,
+        )
+        blocked.add(int(selected_idx))
+        if selected_record is None or not selected_record["passed"]:
+            continue
+        selected.append(int(selected_idx))
+
+    return np.asarray(selected, dtype=np.int64), records
+
+
+def find_existing_initial_indices(
+    *,
+    output_root: Path,
+    pool_sizes: list[int],
+    methods: list[MethodSpec],
+    init_size: int,
+    multi_pool: bool,
+) -> np.ndarray | None:
+    for pool_size in pool_sizes:
+        pool_output_root = output_root / pool_size_dir_name(pool_size) if multi_pool else output_root
+        payload_root = pool_output_root / "payloads"
+        for method in methods:
+            existing = load_existing_indices(payload_root / method.method_id)
+            if existing is not None and len(existing) >= init_size:
+                return np.asarray(existing[:init_size], dtype=np.int64)
+    return None
+
+
+def load_existing_filter_records(method_dir: Path) -> list[dict[str, Any]]:
+    path = method_dir / "filter_records.csv"
+    if not path.exists() or path.stat().st_size == 0:
+        return []
+    records = pd.read_csv(path).replace({np.nan: None}).to_dict("records")
+    return [dict(record) for record in records]
+
+
+def bool_from_record_value(value: Any) -> bool:
+    if value is None:
+        return False
+    if isinstance(value, str):
+        return value.strip().lower() in {"1", "true", "yes", "y"}
+    return bool(value)
+
+
+def mark_filter_failures(image_filter: ImageFilter, records: list[dict[str, Any]]) -> None:
+    for record in records:
+        if (
+            record.get("global_idx") is not None
+            and not bool_from_record_value(record.get("passed"))
+        ):
+            image_filter.mark_candidate_failed(int(record["global_idx"]))
+
+
+def exclude_failed_indices(runtime: MethodRuntime, image_filter: ImageFilter | None) -> None:
+    if image_filter is None or not image_filter._failed_indices:
+        return
+    failed = np.asarray(
+        [
+            int(idx)
+            for idx in image_filter._failed_indices
+            if 0 <= int(idx) < len(runtime.pool_mask)
+        ],
+        dtype=np.int64,
+    )
+    if failed.size:
+        runtime.pool_mask[failed] = False
 
 
 def load_layer_names(model_list_csv: Path, model_names: list[str]) -> list[str]:
@@ -801,6 +1037,26 @@ def save_runtime_progress(
     indices = np.asarray(runtime.current_indices, dtype=np.int64)
     np.save(method_dir / "selected_indices.npy", indices)
     pd.DataFrame(runtime.trace_rows).to_csv(method_dir / "selection_trace.csv", index=False)
+    if runtime.filter_records:
+        filter_df = pd.DataFrame(runtime.filter_records)
+        filter_df.to_csv(method_dir / "filter_records.csv", index=False)
+        passed_series = (
+            filter_df["passed"].map(bool_from_record_value)
+            if "passed" in filter_df
+            else pd.Series([], dtype=bool)
+        )
+        filter_summary = {
+            "n_records": int(len(filter_df)),
+            "n_passed": int(passed_series.sum()) if "passed" in filter_df else 0,
+            "n_failed": int((~passed_series).sum()) if "passed" in filter_df else 0,
+            "reason_counts": (
+                filter_df["reason"].value_counts(dropna=False).to_dict()
+                if "reason" in filter_df
+                else {}
+            ),
+        }
+        with (method_dir / "filter_summary.json").open("w") as f:
+            json.dump(filter_summary, f, indent=2, default=str)
 
     image_records = build_selection_image_records(
         indices.tolist(),
@@ -892,7 +1148,7 @@ def save_runtime_progress(
         "scores_per_view_history": runtime.scores_per_track_history,
         "scores_per_rep_history": None,
         "refinement_history": [],
-        "filter_records": [],
+        "filter_records": runtime.filter_records or None,
         "track_definitions": track_definitions,
         "track_aggregation": track_aggregation,
         "config": config,
@@ -1139,6 +1395,16 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
             model_csv=model_list_csv,
         )
 
+    image_filter, image_filter_config = make_image_filter(
+        args=args,
+        paths=paths,
+        raw_shard_slices=raw_shard_slices,
+        output_root=output_root,
+    )
+    print(f"Image filter enabled: {image_filter is not None}")
+    if image_filter is not None:
+        print(f"Image filter config: {image_filter_config}")
+
     all_needed_tracks = {
         track.name: track
         for method in methods
@@ -1151,6 +1417,17 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
             if track.type == "encoding" and track.encoding_name
         }
     )
+    encoding_roots_by_encoding = encoding_roots_for_sweep(
+        paths=paths,
+        encoding_names=required_encodings,
+        shared_encodings=args.shared_encodings,
+    )
+    print(
+        "Encoding model mode: "
+        f"{'shared' if args.shared_encodings else 'unique'}"
+    )
+    for encoding_name, encoding_root in encoding_roots_by_encoding.items():
+        print(f"  {encoding_name}: {encoding_root}")
     encoding_params = load_encoding_params_for_sweep(
         paths=paths,
         model_list_csv=model_list_csv,
@@ -1179,17 +1456,44 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
 
     rng = np.random.default_rng(args.seed)
     initial_pool_size = min(pool_sizes)
-    initial_indices = rng.choice(
-        initial_pool_size,
-        size=args.init_size,
-        replace=False,
-    ).astype(np.int64)
+    existing_initial_indices = (
+        find_existing_initial_indices(
+            output_root=output_root,
+            pool_sizes=pool_sizes,
+            methods=methods,
+            init_size=args.init_size,
+            multi_pool=multi_pool,
+        )
+        if args.resume
+        else None
+    )
+    if existing_initial_indices is not None:
+        initial_indices = existing_initial_indices
+        initial_filter_records: list[dict[str, Any]] = []
+        initialization_source = "resume_existing_selected_indices"
+    else:
+        initial_indices, initial_filter_records = select_initial_indices(
+            rng=rng,
+            initial_pool_size=initial_pool_size,
+            init_size=args.init_size,
+            image_filter=image_filter,
+        )
+        initialization_source = (
+            "filtered_random_order" if image_filter is not None else "random_choice"
+        )
     base_run_config = {
+        "feature_method_sweep_version": "final_run_no_refinement",
+        "script": str(SCRIPT),
+        "argv": sys.argv,
+        "created_at": datetime.now().isoformat(timespec="seconds"),
         "model_set_name": model_set_name,
         "model_names": model_names,
+        "methods": [method.method_id for method in methods],
         "paths": paths,
         "target_size": args.target_size,
         "init_size": args.init_size,
+        "initial_indices": initial_indices.tolist(),
+        "initialization_source": initialization_source,
         "seed": args.seed,
         "metric": args.metric,
         "corr_type": args.corr_type,
@@ -1198,7 +1502,7 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
         "aggregation_across": "method_specific",
         "noise_ceiling_target": args.noise_ceiling_target,
         "noise_in_feature_space": False,
-        "image_filter": {"enabled": False},
+        "image_filter": image_filter_config,
         "refinement": {"max_passes": 0, "min_replacements": 0},
         "max_ram_gb": args.max_ram_gb,
         "max_loaded_images": max_images,
@@ -1219,6 +1523,12 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
             else None
         ),
         "recovery_n_random_images": args.n_random_images,
+        "shared_encodings": bool(args.shared_encodings),
+        "encoding_model_mode": "shared" if args.shared_encodings else "unique",
+        "encoding_roots_by_encoding": encoding_roots_by_encoding,
+        "unique_encoding_dirs": {
+            name: str(path.resolve()) for name, path in UNIQUE_ENCODING_DIRS.items()
+        },
         "encoding_roi_subset": args.encoding_roi_subset,
         "adaptive_batch_size": args.adaptive_batch_size,
         "initial_batch_size": args.batch_size,
@@ -1314,6 +1624,9 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
         target_size=args.target_size,
         init_size=args.init_size,
         methods=[method.method_id for method in methods],
+        image_filter=image_filter_config,
+        encoding_model_mode="shared" if args.shared_encodings else "unique",
+        encoding_roots_by_encoding=encoding_roots_by_encoding,
     )
 
     for pool_run in pool_runs.values():
@@ -1321,6 +1634,17 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
             method_dir = pool_run.payload_root / method.method_id
             existing = load_existing_indices(method_dir) if args.resume else None
             selected = existing if existing is not None else initial_indices.tolist()
+            if existing is not None:
+                filter_records = load_existing_filter_records(method_dir)
+            else:
+                filter_records = [
+                    {
+                        **record,
+                        "method_id": method.method_id,
+                        "pool_size": pool_run.pool_size,
+                    }
+                    for record in initial_filter_records
+                ]
             if max(selected) >= pool_run.pool_size:
                 raise ValueError(
                     f"{method_dir} contains selected index outside pool_size={pool_run.pool_size}"
@@ -1336,6 +1660,7 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
                 device=device,
                 pool_size=pool_run.pool_size,
             )
+            runtime.filter_records = filter_records
             runtime.trace_rows = load_existing_trace(method_dir) if args.resume else []
             if runtime.trace_rows:
                 runtime.scores_combined = [
@@ -1346,6 +1671,9 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
                         key = f"score_{track.name}"
                         if key in row and pd.notna(row[key]):
                             runtime.scores_per_track_history[track.name].append(float(row[key]))
+            if image_filter is not None:
+                mark_filter_failures(image_filter, runtime.filter_records)
+                exclude_failed_indices(runtime, image_filter)
             pool_run.runtimes[method.method_id] = runtime
             save_runtime_progress(
                 runtime,
@@ -1372,6 +1700,9 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
         ]
         if not active:
             break
+        if image_filter is not None:
+            for _pool_run, _method_id, runtime in active:
+                exclude_failed_indices(runtime, image_filter)
 
         greedy_iter = greedy_step - args.init_size + 1
         greedy_total = args.target_size - args.init_size
@@ -1592,8 +1923,89 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
                 name: scores[:n_written]
                 for name, scores in buf["scores_per_track"].items()
             }
+            if image_filter is not None and image_filter._failed_indices:
+                keep_mask = np.asarray(
+                    [
+                        int(candidate_idx) not in image_filter._failed_indices
+                        for candidate_idx in candidate_indices
+                    ],
+                    dtype=bool,
+                )
+                if not keep_mask.any():
+                    raise RuntimeError(
+                        f"No unfailed candidates left for pool_size={pool_run.pool_size}, "
+                        f"method={method_id}"
+                    )
+                if not keep_mask.all():
+                    keep_t = torch.from_numpy(keep_mask)
+                    candidate_indices = candidate_indices[keep_mask]
+                    scores_per_track = {
+                        name: scores[keep_t]
+                        for name, scores in scores_per_track.items()
+                    }
             combined = aggregate_track_scores(scores_per_track, runtime.spec)
-            best_pos = int(torch.argmax(combined).item())
+            filter_attempts = 0
+            filter_selected_passed = None
+            filter_selected_reason = None
+            if image_filter is not None:
+                order = torch.argsort(combined, descending=True)
+                order_np = order.detach().cpu().numpy()
+                before = len(image_filter.filter_records)
+                best_idx, _filter_score, filter_attempts = image_filter.select_first_valid(
+                    candidate_indices[order_np],
+                    combined[order].detach().cpu().numpy(),
+                    candidate_scores_per_track={
+                        name: scores[order] for name, scores in scores_per_track.items()
+                    },
+                    phase="greedy",
+                    iteration=greedy_iter,
+                )
+                new_filter_records = [
+                    {
+                        **filter_record_to_dict(
+                            record,
+                            method_id=runtime.spec.method_id,
+                            pool_size=pool_run.pool_size,
+                        )
+                    }
+                    for record in image_filter.filter_records[before:]
+                ]
+                runtime.filter_records.extend(new_filter_records)
+                selected_filter_record = next(
+                    (
+                        record
+                        for record in new_filter_records
+                        if int(record["global_idx"]) == int(best_idx)
+                    ),
+                    None,
+                )
+                if selected_filter_record is not None:
+                    filter_selected_passed = bool(selected_filter_record["passed"])
+                    filter_selected_reason = selected_filter_record["reason"]
+                if (
+                    not args.allow_filter_fallback
+                    and not bool(filter_selected_passed)
+                ):
+                    raise RuntimeError(
+                        "Image filter did not find a passing greedy candidate within "
+                        f"{image_filter.config.max_attempts_per_iteration} attempts "
+                        f"for pool_size={pool_run.pool_size}, method={method_id}, "
+                        f"iteration={greedy_iter}. Increase "
+                        "--filter-max-attempts-per-iteration or pass "
+                        "--allow-filter-fallback for diagnostic runs."
+                    )
+                exclude_failed_indices(runtime, image_filter)
+                best_positions = np.flatnonzero(candidate_indices == int(best_idx))
+                if best_positions.size == 0:
+                    raise RuntimeError(
+                        f"Image filter returned idx={best_idx}, which was not in the "
+                        f"scored candidates for pool_size={pool_run.pool_size}, "
+                        f"method={method_id}"
+                    )
+                best_pos = int(best_positions[0])
+            else:
+                best_pos = int(torch.argmax(combined).item())
+                best_idx = int(candidate_indices[best_pos])
             best_idx = int(candidate_indices[best_pos])
             best_score = float(combined[best_pos].item())
             best_track_scores = {
@@ -1610,6 +2022,9 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
                 "within": runtime.spec.within,
                 "across": runtime.spec.across,
                 "pool_size": pool_run.pool_size,
+                "filter_attempts": filter_attempts,
+                "filter_selected_passed": filter_selected_passed,
+                "filter_selected_reason": filter_selected_reason,
             }
             for track_name, score in best_track_scores.items():
                 row[f"score_{track_name}"] = score
@@ -1626,6 +2041,9 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
                     "method_id": runtime.spec.method_id,
                     "selected_index": best_idx,
                     "score": best_score,
+                    "filter_attempts": filter_attempts,
+                    "filter_selected_passed": filter_selected_passed,
+                    "filter_selected_reason": filter_selected_reason,
                 }
             )
 
@@ -1890,7 +2308,39 @@ def parse_args() -> argparse.Namespace:
         default=10,
         help="Print one progress line every N candidate batches during each greedy step. Set 0 to disable.",
     )
-    parser.add_argument("--shared-encodings", action="store_true")
+    parser.add_argument(
+        "--shared-encodings",
+        dest="shared_encodings",
+        action="store_true",
+        default=True,
+        help="Use shared encoding models from paths.encoding_root (default).",
+    )
+    parser.add_argument(
+        "--unique-encodings",
+        dest="shared_encodings",
+        action="store_false",
+        help="Use the legacy subject-unique encoding roots hard-coded in this script.",
+    )
+    parser.add_argument(
+        "--disable-image-filter",
+        action="store_true",
+        help="Disable final-run image filtering. Required for arbitrary .npz feature pools.",
+    )
+    parser.add_argument("--filter-min-resolution", type=int, default=1000)
+    parser.add_argument("--filter-natural-prob-threshold", type=float, default=0.85)
+    parser.add_argument("--filter-download-timeout", type=float, default=10.0)
+    parser.add_argument("--filter-max-attempts-per-iteration", type=int, default=1000)
+    parser.add_argument("--filter-parallel-batch-size", type=int, default=1)
+    parser.add_argument("--filter-classifier-path", type=Path, default=None)
+    parser.add_argument("--disable-filter-image-save", action="store_true")
+    parser.add_argument(
+        "--allow-filter-fallback",
+        action="store_true",
+        help=(
+            "Allow selecting the top candidate when no image passes within the "
+            "configured filter attempt window. Off by default for final runs."
+        ),
+    )
     parser.add_argument("--skip-selection", action="store_true")
     parser.add_argument("--skip-eval", action="store_true")
     parser.add_argument("--resume", action="store_true")

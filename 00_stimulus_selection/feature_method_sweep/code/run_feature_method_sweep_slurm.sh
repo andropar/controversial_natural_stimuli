@@ -45,6 +45,15 @@ SEED="${SEED:-42}"
 SKIP_SELECTION="${SKIP_SELECTION:-0}"
 SKIP_EVAL="${SKIP_EVAL:-0}"
 SHARED_ENCODINGS="${SHARED_ENCODINGS:-1}"
+IMAGE_FILTER="${IMAGE_FILTER:-1}"
+FILTER_MIN_RESOLUTION="${FILTER_MIN_RESOLUTION:-1000}"
+FILTER_NATURAL_PROB_THRESHOLD="${FILTER_NATURAL_PROB_THRESHOLD:-0.85}"
+FILTER_DOWNLOAD_TIMEOUT="${FILTER_DOWNLOAD_TIMEOUT:-10.0}"
+FILTER_MAX_ATTEMPTS_PER_ITERATION="${FILTER_MAX_ATTEMPTS_PER_ITERATION:-1000}"
+FILTER_PARALLEL_BATCH_SIZE="${FILTER_PARALLEL_BATCH_SIZE:-1}"
+FILTER_CLASSIFIER_PATH="${FILTER_CLASSIFIER_PATH:-}"
+FILTER_SAVE_IMAGES="${FILTER_SAVE_IMAGES:-1}"
+ALLOW_FILTER_FALLBACK="${ALLOW_FILTER_FALLBACK:-0}"
 TIMESTAMP="${TIMESTAMP:-$(date +%Y%m%d_%H%M%S)}"
 OUTPUT_ROOT="${OUTPUT_ROOT:-${REPO_ROOT}/00_stimulus_selection/feature_method_sweep/results/${MODEL_SET}_${TIMESTAMP}}"
 RUN_LOCAL="${RUN_LOCAL:-0}"
@@ -104,6 +113,27 @@ fi
 
 if [[ "${SHARED_ENCODINGS}" == "1" ]]; then
   SCRIPT_CMD+=(--shared-encodings)
+else
+  SCRIPT_CMD+=(--unique-encodings)
+fi
+
+if [[ "${IMAGE_FILTER}" == "1" ]]; then
+  SCRIPT_CMD+=(--filter-min-resolution "${FILTER_MIN_RESOLUTION}")
+  SCRIPT_CMD+=(--filter-natural-prob-threshold "${FILTER_NATURAL_PROB_THRESHOLD}")
+  SCRIPT_CMD+=(--filter-download-timeout "${FILTER_DOWNLOAD_TIMEOUT}")
+  SCRIPT_CMD+=(--filter-max-attempts-per-iteration "${FILTER_MAX_ATTEMPTS_PER_ITERATION}")
+  SCRIPT_CMD+=(--filter-parallel-batch-size "${FILTER_PARALLEL_BATCH_SIZE}")
+  if [[ -n "${FILTER_CLASSIFIER_PATH}" ]]; then
+    SCRIPT_CMD+=(--filter-classifier-path "${FILTER_CLASSIFIER_PATH}")
+  fi
+  if [[ "${FILTER_SAVE_IMAGES}" != "1" ]]; then
+    SCRIPT_CMD+=(--disable-filter-image-save)
+  fi
+  if [[ "${ALLOW_FILTER_FALLBACK}" == "1" ]]; then
+    SCRIPT_CMD+=(--allow-filter-fallback)
+  fi
+else
+  SCRIPT_CMD+=(--disable-image-filter)
 fi
 
 if [[ -n "${EXTRA_ARGS:-}" ]]; then
@@ -121,6 +151,7 @@ fi
 echo "Submitting feature method sweep"
 echo "Output root: ${OUTPUT_ROOT}"
 echo "Shared encodings: ${SHARED_ENCODINGS}"
+echo "Image filter: ${IMAGE_FILTER}"
 printf 'Command:'
 printf ' %q' "${CMD[@]}"
 printf '\n'
