@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 import _paths  # noqa: F401
-from _paths import LAYER_SWEEP_ROOT, SOURCE_PAPER_ROOT
+from _paths import LAYER_SWEEP_ROOT
 
 
 import matplotlib.patches as mpatches
@@ -17,7 +17,9 @@ import pandas as pd
 from matplotlib.lines import Line2D
 from matplotlib import colors as mcolors
 
-from cstims.paper.config import MODEL_DISPLAY_NAMES, MODEL_SETS, STATS_DATA_DIR
+from cstims import paths
+from cstims.constants import MODEL_DISPLAY_NAMES, MODEL_SETS
+STATS_DATA_DIR = paths.stats_data_dir()
 from cstims.paper.style_improved import (
     COLOR_BASELINE,
     COLOR_CSTIM,

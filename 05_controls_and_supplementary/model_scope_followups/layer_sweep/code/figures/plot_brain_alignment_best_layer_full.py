@@ -22,10 +22,11 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.lines import Line2D
 
-from cstims.paper.config import (
-    PAPER_ROOT, MODEL_SETS, MODEL_DISPLAY_NAMES, SUBJECTS,
-    STATS_DATA_DIR, RSA_DATA_DIR,
-)
+from cstims import paths
+from cstims.constants import MODEL_SETS, MODEL_DISPLAY_NAMES, SUBJECTS
+PAPER_ROOT = paths.paper_root()
+STATS_DATA_DIR = paths.stats_data_dir()
+RSA_DATA_DIR = paths.rsa_data_dir()
 from cstims.paper.style_improved import apply_style, FONT, DPI
 
 apply_style()

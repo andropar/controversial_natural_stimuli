@@ -19,11 +19,15 @@ from joblib import Parallel, delayed
 from PIL import Image
 from scipy.stats import zscore
 
-from cstims.paths import deepvision_fmri_root as default_deepvision_fmri_root
+from cstims.paths import deepvision_fmri_source_root as default_deepvision_fmri_root
 
 _LOG = logging.getLogger(__name__)
 
-__all__ = ["DeepVisionBenchmark"]
+__all__ = [
+    "DeepVisionBenchmark",
+    "correct_stimulus_label",
+    "parse_stimulus_label",
+]
 
 # Default threshold for cross-validated effect mask
 DEFAULT_CVE_THRESHOLD = 0.2
@@ -45,6 +49,39 @@ SUBJECT_TO_UNIQUE_PARTICIPANT = {
     "sub-06": "p02",
     "sub-07": "p05",
 }
+
+
+def correct_stimulus_label(label: str) -> str:
+    """Correct the swapped dataset/architecture labels in cstim trial_info."""
+    if label.startswith("shared_4rep_LAION_controversial_dataset_"):
+        return label.replace("_dataset_", "_architecture_")
+    if label.startswith("shared_4rep_LAION_controversial_architecture_"):
+        return label.replace("_architecture_", "_dataset_")
+    return label
+
+
+def parse_stimulus_label(label: str) -> Tuple[str, Optional[int]]:
+    """Parse a DeepVision/CSTIM trial label into ``(group, index)``."""
+    if label == "blank":
+        return "blank", None
+
+    label = correct_stimulus_label(label)
+
+    if "vicco" in label:
+        idx = int(label.split("_")[-1].replace(".jpg", ""))
+        return "vicco", idx
+    if "controversial" in label:
+        label_clean = label.replace(".jpg", "")
+        idx_part = label_clean.split("_i")[-1]
+        idx = int(idx_part)
+        after_controversial = label_clean.split("controversial_")[1]
+        model_set = after_controversial.rsplit("_i", 1)[0]
+        if model_set == "all":
+            model_set = "all_models"
+        elif model_set == "training":
+            model_set = "training_objective"
+        return model_set, idx
+    raise ValueError(f"Unknown label format: {label}")
 
 
 def _read_binary_img(img_bytes) -> Image.Image:

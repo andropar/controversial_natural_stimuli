@@ -11,7 +11,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from cstims.paper.config import PAPER_ROOT
+from cstims import paths
+PAPER_ROOT = paths.paper_root()
 from cstims.paper.style_improved import apply_style, FONT
 from layers_config import MAIN_LAYER, MODEL_LAYERS
 
@@ -34,7 +35,7 @@ CSTIM_COLORS = {
 def main():
     df = pd.read_csv(DATA_DIR / "layer_drop_summary_subject_avg.csv")
 
-    from cstims.paper.config import MODEL_DISPLAY_NAMES
+    from cstims.constants import MODEL_DISPLAY_NAMES
     n = len(MODEL_ORDER)
     n_cols = 5
     n_rows = (n + n_cols - 1) // n_cols

@@ -27,11 +27,14 @@ Idempotent: skips models with all layers already fit.
 """
 
 import _paths  # noqa: F401
-from _paths import LAYER_SWEEP_ROOT, SHARE_ROOT
+from _paths import LAYER_SWEEP_ROOT
 import argparse
+from collections import deque
+from concurrent.futures import ThreadPoolExecutor
 import gc
 import glob
 import hashlib
+import json
 import os
 import socket
 import time
@@ -39,13 +42,19 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import torch
 from PIL import Image
 from joblib import Parallel, delayed
 from scipy.stats import rankdata
 from tqdm import tqdm
 
-from cstims.paper.config import CSTIM_HDF5_ROOT, MODEL_DISPLAY_NAMES, PAPER_ROOT, get_brain_input_dir
-from cstims.paper.utils import bootstrap_sample_indices, compute_rdm_correlation, parse_subject_arg
+from cstims import paths
+from cstims.cache import load_cstim_brain_cache
+from cstims.constants import MODEL_DISPLAY_NAMES
+get_brain_input_dir = paths.get_brain_input_dir
+from cstims.rdm import compute_rdm_correlation
+from cstims.sampling import bootstrap_sample_indices
+from cstims.subjects import parse_subject_arg
 from batch_tuning import (
     parse_batch_candidates,
     parse_batch_size,
@@ -74,7 +83,7 @@ CACHE_DIR = LAYER_SWEEP_ROOT / "cache_or_heavy"
 DV_FEAT_CACHE = CACHE_DIR / "dv_features"
 ENC_CACHE = CACHE_DIR / "encodings"
 LOCK_DIR = CACHE_DIR / "locks"
-DEEPVISION_CACHE = SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "deepvision_benchmark_cache"
+DEEPVISION_CACHE = paths.deepvision_cache_root()
 DV_BENCHMARK_CACHE = DEEPVISION_CACHE
 DATA_DIR = LAYER_SWEEP_ROOT / "results"
 STREAM_WRSA_CSV = DATA_DIR / "wrsa_dense_layer_sweep.csv"
@@ -82,12 +91,11 @@ STREAM_SHARED_CSV = DATA_DIR / "wrsa_dense_shared_layer_sweep.csv"
 STREAM_PART_DIR = DATA_DIR / "stream_parts"
 STREAM_WRSA_PART_DIR = STREAM_PART_DIR / "wrsa_dense_layer_sweep"
 STREAM_SHARED_PART_DIR = STREAM_PART_DIR / "wrsa_dense_shared_layer_sweep"
-LABSHARE_CSTIM_HDF5_ROOT = Path(
-    "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files"
-)
 STREAM_SHARED_STIMULUS_TYPE = "deepvision_shared"
 DEFAULT_LAYERS_PER_CHUNK = 16
 DEFAULT_N_FIT_JOBS = 3
+DEFAULT_MAX_LAYERS_PER_CHUNK = 128
+DEFAULT_MAX_FEATURE_GB_PER_CHUNK = 40.0
 
 ENCODING_PROTOCOL = "hydra_random_kfold_v1"
 DEFAULT_N_FOLDS = 5
@@ -102,6 +110,28 @@ LOCK_STALE_SECONDS = 24 * 3600
 def sanitize_layer_name(layer: str) -> str:
     return (str(layer).replace(".", "_").replace(":", "_")
             .replace("[", "_").replace("]", "_").replace("/", "_"))
+
+
+def parse_subject_list(subject_arg: str):
+    values = [v.strip() for v in str(subject_arg).split(",") if v.strip()]
+    if not values or values == ["all"]:
+        return parse_subject_arg("all")
+    subjects = []
+    for value in values:
+        for subject in parse_subject_arg(value):
+            if subject not in subjects:
+                subjects.append(subject)
+    return subjects
+
+
+def parse_layers_per_chunk(value):
+    value = str(value).strip().lower()
+    if value == "auto":
+        return "auto"
+    parsed = int(value)
+    if parsed <= 0:
+        raise ValueError("--layers-per-chunk must be 'auto' or a positive integer")
+    return parsed
 
 
 def encoding_path(subject, model, layer):
@@ -414,6 +444,193 @@ def fit_layer_encoding(
     }
 
 
+def _standardize_torch(x: torch.Tensor):
+    mean = x.mean(dim=0)
+    centered = x - mean
+    scale = torch.sqrt(torch.mean(centered * centered, dim=0))
+    scale = torch.where(scale == 0, torch.ones_like(scale), scale)
+    return centered / scale, mean, scale
+
+
+def _pearson_scores_torch(y_true: torch.Tensor, y_pred: torch.Tensor):
+    yt = y_true - y_true.mean(dim=0, keepdim=True)
+    yp = y_pred - y_pred.mean(dim=0, keepdim=True)
+    numerator = torch.sum(yt * yp, dim=0)
+    denominator = torch.sqrt(torch.sum(yt * yt, dim=0) * torch.sum(yp * yp, dim=0))
+    return numerator / denominator
+
+
+def _select_alphas_gpu(
+    X_train: np.ndarray,
+    Y_train: np.ndarray,
+    alpha_grid: np.ndarray,
+    *,
+    device: torch.device,
+    dtype: torch.dtype,
+):
+    if X_train.shape[0] > X_train.shape[1]:
+        raise ValueError(
+            "GPU RidgeCV layer-sweep path currently implements sklearn's Gram "
+            "GCV mode only. Expected n_train <= n_features after SRP."
+        )
+
+    X = torch.as_tensor(X_train, device=device, dtype=dtype)
+    Y = torch.as_tensor(Y_train, device=device, dtype=dtype)
+
+    X_scaled, _, _ = _standardize_torch(X)
+
+    # Match sklearn RidgeCVFast/_RidgeGCV for fit_intercept=True. Dense X is
+    # centered in preprocessing, then sklearn adds an explicit intercept
+    # dimension to the Gram matrix and cancels its regularization.
+    X_offset = X_scaled.mean(dim=0)
+    Y_offset = Y.mean(dim=0)
+    X_centered = X_scaled - X_offset
+    Y_centered = Y - Y_offset
+
+    sqrt_sw = torch.ones(X.shape[0], device=device, dtype=dtype)
+    gram = X_centered @ X_centered.T
+    gram = gram + torch.outer(sqrt_sw, sqrt_sw)
+    eigvals, Q = torch.linalg.eigh(gram)
+    eigvals = torch.clamp(eigvals, min=0)
+    QT_Y = Q.T @ Y_centered
+    normalized_sw = sqrt_sw / torch.linalg.vector_norm(sqrt_sw)
+    intercept_dim = torch.argmax(torch.abs(normalized_sw @ Q))
+
+    best_score = None
+    best_alpha = None
+    for alpha in np.asarray(alpha_grid, dtype=np.float64):
+        w = 1.0 / (eigvals + float(alpha))
+        w[intercept_dim] = 0.0
+        dual_coef = Q @ (w[:, None] * QT_Y)
+        g_inverse_diag = (Q * Q) @ w
+        predictions = Y_centered - dual_coef / g_inverse_diag[:, None] + Y_offset
+        alpha_score = _pearson_scores_torch(Y, predictions)
+        if best_score is None:
+            best_score = alpha_score
+            best_alpha = torch.full_like(alpha_score, float(alpha))
+        else:
+            update = alpha_score > best_score
+            best_score = torch.where(update, alpha_score, best_score)
+            best_alpha = torch.where(
+                update,
+                torch.full_like(best_alpha, float(alpha)),
+                best_alpha,
+            )
+
+    return best_alpha.detach().cpu().numpy().astype(np.float32)
+
+
+def _refit_with_chosen_alphas_gpu(
+    X_full: np.ndarray,
+    Y_full: np.ndarray,
+    chosen_alphas: np.ndarray,
+    *,
+    device: torch.device,
+    dtype: torch.dtype,
+):
+    X = torch.as_tensor(X_full, device=device, dtype=dtype)
+    Y = torch.as_tensor(Y_full, device=device, dtype=dtype)
+
+    X_scaled, feature_mean, feature_scale = _standardize_torch(X)
+    X_offset = X_scaled.mean(dim=0)
+    Y_offset = Y.mean(dim=0)
+    X_centered = X_scaled - X_offset
+    Y_centered = Y - Y_offset
+
+    gram = X_centered @ X_centered.T
+    eigvals, Q = torch.linalg.eigh(gram)
+    eigvals = torch.clamp(eigvals, min=0)
+
+    n_features = X.shape[1]
+    n_voxels = Y.shape[1]
+    W_raw = torch.empty((n_features, n_voxels), device=device, dtype=dtype)
+    b_raw = torch.empty((n_voxels,), device=device, dtype=dtype)
+
+    alphas = np.asarray(chosen_alphas)
+    for alpha in np.unique(alphas):
+        voxel_idx_np = np.flatnonzero(alphas == alpha)
+        voxel_idx = torch.as_tensor(voxel_idx_np, device=device, dtype=torch.long)
+        Y_sub = Y_centered.index_select(1, voxel_idx)
+        denom = eigvals + float(alpha)
+        dual_coef = Q @ ((Q.T @ Y_sub) / denom[:, None])
+        W_scaled = X_centered.T @ dual_coef
+        b_scaled = Y_offset.index_select(0, voxel_idx) - X_offset @ W_scaled
+        W_raw[:, voxel_idx] = W_scaled / feature_scale[:, None]
+        b_raw[voxel_idx] = b_scaled - (feature_mean / feature_scale) @ W_scaled
+
+    return (
+        W_raw.detach().cpu().numpy().astype(np.float32),
+        b_raw.detach().cpu().numpy().astype(np.float32),
+        feature_mean.detach().cpu().numpy().astype(np.float32),
+        feature_scale.detach().cpu().numpy().astype(np.float32),
+    )
+
+
+def fit_layer_encoding_gpu(
+    features,
+    responses,
+    hlvis_mask,
+    *,
+    n_folds,
+    seed,
+    alpha_aggregation,
+    alpha_grid,
+    dtype_name,
+):
+    """GPU implementation matched to fit_layer_encoding for SRP layer sweeps."""
+    if not torch.cuda.is_available():
+        raise RuntimeError("--fit-backend gpu requested but CUDA is not available")
+
+    dtype = torch.float64 if dtype_name == "float64" else torch.float32
+    device = torch.device("cuda")
+    Y_full = responses[hlvis_mask].T.astype(np.float32)
+    Y_z, Y_mean, Y_std = zscore_targets_by_voxel(Y_full)
+    n_images = features.shape[0]
+
+    rng = np.random.RandomState(seed)
+    fold_alphas = []
+    for _ in range(n_folds):
+        indices = rng.permutation(n_images)
+        train_idx = indices[:n_images // 2]
+        fold_alphas.append(
+            _select_alphas_gpu(
+                features[train_idx],
+                Y_z[train_idx],
+                alpha_grid,
+                device=device,
+                dtype=dtype,
+            )
+        )
+
+    chosen_alphas, fold_alphas_array = aggregate_alphas(fold_alphas, alpha_aggregation)
+    W_raw, b_raw, feat_mean, feat_scale = _refit_with_chosen_alphas_gpu(
+        features,
+        Y_z,
+        chosen_alphas,
+        device=device,
+        dtype=dtype,
+    )
+
+    return {
+        "weights": W_raw.astype(np.float32),
+        "intercept": b_raw.astype(np.float32),
+        "feature_mean": feat_mean.astype(np.float32),
+        "feature_scale": feat_scale.astype(np.float32),
+        "alphas": chosen_alphas.astype(np.float32),
+        "fold_alphas": fold_alphas_array.astype(np.float32),
+        "alpha_grid": alpha_grid.astype(np.float32),
+        "fit_protocol": np.array(ENCODING_PROTOCOL),
+        "n_folds": np.array(n_folds, dtype=np.int32),
+        "seed": np.array(seed, dtype=np.int32),
+        "alpha_aggregation": np.array(alpha_aggregation),
+        "Y_mean_zscore": Y_mean.astype(np.float32),
+        "Y_std_zscore": Y_std.astype(np.float32),
+        "n_train": int(features.shape[0]),
+        "fit_backend": np.array("gpu"),
+        "gpu_fit_dtype": np.array(dtype_name),
+    }
+
+
 def _stable_layer_seed(model: str, layer: str, *, base_seed: int = SRP_SEED) -> int:
     """Stable per-layer SRP seed, so equal-width layers do not share a matrix."""
     digest = hashlib.blake2b(f"{model}::{layer}".encode("utf-8"), digest_size=4).digest()
@@ -462,34 +679,7 @@ def _atomic_savez_compressed(path: Path, **payload):
 
 def _load_cstim_images(group: str):
     """Match 01_extract_layer_features.py stimulus-set loading exactly."""
-    folder_group = group
-    if group == "architecture":
-        folder_group = "dataset"
-    elif group == "dataset":
-        folder_group = "architecture"
-
-    if folder_group == "vicco":
-        img_dir = CSTIM_HDF5_ROOT / "shared_vicco"
-    else:
-        img_dir = CSTIM_HDF5_ROOT / folder_group
-
-    img_files = sorted(list(img_dir.glob("*.jpg")) + list(img_dir.glob("*.png")))
-    if not img_files and folder_group != "vicco":
-        fallback_dirs = (
-            SHARE_ROOT / "00_stimulus_selection" / "decision_checks" / "selection_evaluation"
-            / "results" / folder_group / "images",
-            PAPER_ROOT / "00_selection_evaluation" / "data" / folder_group / "images",
-            PAPER_ROOT / "00_selection_evaluation" / "results" / folder_group / "images",
-        )
-        for fallback_dir in fallback_dirs:
-            img_files = sorted(list(fallback_dir.glob("*.jpg")) + list(fallback_dir.glob("*.png")))
-            if img_files:
-                img_dir = fallback_dir
-                break
-    if not img_files and folder_group == "vicco":
-        img_dir = LABSHARE_CSTIM_HDF5_ROOT / "shared_vicco"
-        img_files = sorted(list(img_dir.glob("*.jpg")) + list(img_dir.glob("*.png")))
-
+    img_files = paths.cstim_image_paths(group, apply_architecture_dataset_swap=True)
     images = []
     for path in img_files:
         with Image.open(path) as img:
@@ -532,22 +722,12 @@ def load_stream_eval_items():
 
 
 def _load_cstim_subject_indices(subject: str):
-    d = get_brain_input_dir(subject)
-    b = np.load(d / "cstim_betas_averaged.npz", allow_pickle=True)
-    v = np.load(d / "voxel_metadata.npz", allow_pickle=True)
-    si = pd.read_csv(d / "cstim_stimulus_info.csv")
-    hlvis = np.asarray(v["hlvis_mask"], dtype=bool)
-    betas_hlvis = np.ascontiguousarray(b["betas"][hlvis, :], dtype=np.float32)
-    k2i = {k: i for i, k in enumerate(b["stim_keys"])}
-
-    group_indices = {}
-    group_stim_idx = {}
-    for group in sorted(si["group"].unique()):
-        mask = si["group"] == group
-        group_indices[group] = np.array([k2i[k] for k in si.loc[mask, "stim_key"].values], dtype=int)
-        idx = si.loc[mask, "stim_idx"].values.astype(int)
-        group_stim_idx[group] = idx - 1 if group == "vicco" else idx
-    return betas_hlvis, group_indices, group_stim_idx
+    cache = load_cstim_brain_cache(subject)
+    return (
+        np.ascontiguousarray(cache.betas_roi, dtype=np.float32),
+        cache.group_brain_indices(),
+        cache.group_feature_indices(),
+    )
 
 
 def load_cstim_subject_ranks(subject: str, n_vicco_boot: int):
@@ -679,46 +859,214 @@ def tune_stream_batch_size(extractor, items, batch_candidates):
     return batch_size
 
 
+def _is_oom_error(exc: BaseException) -> bool:
+    text = str(exc).lower()
+    return (
+        "out of memory" in text
+        or "cuda error: out of memory" in text
+        or "cudnn_status_alloc_failed" in text
+        or "defaultcpuallocator" in text and "can't allocate memory" in text
+        or "no batch-size candidate completed successfully" in text
+    )
+
+
+def _cleanup_after_probe():
+    gc.collect()
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+        try:
+            torch.cuda.synchronize()
+        except Exception:
+            pass
+
+
+def _layer_chunk_candidates(upper: int):
+    if upper <= 1:
+        return [1]
+    anchors = [1, 2, 4, 8, 16, 24, 32, 48, 64, 96, 128, upper]
+    return sorted({min(int(v), upper) for v in anchors if int(v) > 0}, reverse=True)
+
+
+def _feature_budget_layer_cap(n_items: int, max_feature_gb: float) -> int:
+    if max_feature_gb <= 0:
+        return 10**9
+    bytes_per_layer = max(1, int(n_items)) * SRP_TARGET_DIM * np.dtype(np.float32).itemsize
+    return max(1, int((float(max_feature_gb) * 1024**3) // bytes_per_layer))
+
+
+def prepare_stream_extractor(
+    *,
+    model: str,
+    layer_specs: list,
+    items: list,
+    batch_size_arg,
+    batch_candidates,
+    max_layers_per_chunk: int,
+    max_feature_gb_per_chunk: float,
+):
+    """Create an extractor for the largest feasible prefix of ``layer_specs``."""
+    if not layer_specs:
+        raise ValueError("No layer specs left to extract")
+
+    feature_cap = _feature_budget_layer_cap(len(items), max_feature_gb_per_chunk)
+    hard_cap = len(layer_specs)
+    if max_layers_per_chunk > 0:
+        hard_cap = min(hard_cap, int(max_layers_per_chunk))
+    hard_cap = min(hard_cap, feature_cap)
+    candidates = _layer_chunk_candidates(hard_cap)
+    probe_items = items[:min(max(parse_batch_candidates(batch_candidates)), len(items))]
+    if not probe_items:
+        raise ValueError("Need at least one image to probe extraction")
+
+    last_oom = None
+    for n_layers in candidates:
+        chunk_specs = layer_specs[:n_layers]
+        print(
+            f"    probing layer chunk={n_layers} "
+            f"(feature_budget_cap={feature_cap}, hard_cap={hard_cap})",
+            flush=True,
+        )
+        extractor = None
+        try:
+            extractor = MultiLayerExtractor(model, MODEL_SOURCE[model], chunk_specs)
+            if batch_size_arg == "auto":
+                batch_size = tune_stream_batch_size(extractor, probe_items, batch_candidates)
+            else:
+                batch_size = int(batch_size_arg)
+                probe_batch = _load_mixed_items(probe_items[:min(batch_size, len(probe_items))])
+                out = extractor.extract(probe_batch)
+                del out, probe_batch
+            _cleanup_after_probe()
+            return chunk_specs, extractor, batch_size
+        except (RuntimeError, MemoryError) as exc:
+            if extractor is not None:
+                extractor.free()
+            _cleanup_after_probe()
+            if _is_oom_error(exc):
+                last_oom = exc
+                print(f"    layer chunk {n_layers}: OOM; trying smaller", flush=True)
+                continue
+            raise
+
+    raise RuntimeError("No layer chunk candidate fit") from last_oom
+
+
 def extract_reduced_stream_features(
     extractor,
     items,
     *,
     batch_size: int,
     model: str,
+    progress_log: str | Path | None = None,
+    chunk_idx: int | None = None,
+    extract_prefetch_workers: int = 0,
 ):
     layer_names = [name for name, _ in extractor.layers]
-    feats = {name: [] for name in layer_names}
+    feats = {}
     srp_caches = {
         name: SRPProjectorCache(seed=_stable_layer_seed(model, name))
         for name in layer_names
     }
     meta_by_layer = {}
-    for start in tqdm(range(0, len(items), batch_size), desc="    extract", leave=False):
-        batch = _load_mixed_items(items[start:start + batch_size])
-        raw = extractor.extract(batch)
+    total_batches = int(np.ceil(len(items) / max(batch_size, 1)))
+    progress_every = max(1, total_batches // 100)
+
+    def log_batch_stage(event: str, batch_idx: int, start_idx: int, stop_idx: int, **fields):
+        if batch_idx != 0 and batch_idx + 1 != total_batches and (batch_idx + 1) % progress_every != 0:
+            return
+        append_progress_log(
+            progress_log,
+            event,
+            model=model,
+            chunk_idx=int(chunk_idx) if chunk_idx is not None else None,
+            batch_num=int(batch_idx + 1),
+            n_batches=int(total_batches),
+            start_idx=int(start_idx),
+            stop_idx=int(stop_idx),
+            n_images=int(len(items)),
+            batch_size=int(batch_size),
+            n_layers=int(len(layer_names)),
+            **fields,
+        )
+
+    def prepare_batch(start_idx: int, stop_idx: int):
+        batch_t0 = time.time()
+        images = _load_mixed_items(items[start_idx:stop_idx])
+        batch = extractor.preprocess_images(images)
+        return batch, time.time() - batch_t0
+
+    def process_batch(batch_idx: int, start_idx: int, stop_idx: int, batch, load_elapsed: float):
+        log_batch_stage("extract_batch_loaded", batch_idx, start_idx, stop_idx, elapsed_sec=float(load_elapsed))
+        forward_t0 = time.time()
+        raw = extractor.extract_tensor_batch(batch)
+        forward_elapsed = time.time() - forward_t0
+        log_batch_stage(
+            "extract_batch_forward_done",
+            batch_idx,
+            start_idx,
+            stop_idx,
+            elapsed_sec=float(forward_elapsed),
+        )
+        srp_t0 = time.time()
         for name in layer_names:
             reduced, meta = srp_caches[name].transform(raw[name])
             if name not in meta_by_layer:
                 meta_by_layer[name] = meta
             elif int(meta_by_layer[name]["original_feature_dim"]) != int(meta["original_feature_dim"]):
                 raise RuntimeError(f"Inconsistent feature dim for layer {name}")
-            feats[name].append(reduced)
+            reduced = np.ascontiguousarray(reduced, dtype=np.float32)
+            if name not in feats:
+                feats[name] = np.empty(
+                    (len(items), reduced.shape[1]),
+                    dtype=np.float32,
+                )
+            feats[name][start_idx:stop_idx] = reduced
+        srp_elapsed = time.time() - srp_t0
+        log_batch_stage("extract_batch_srp_done", batch_idx, start_idx, stop_idx, elapsed_sec=float(srp_elapsed))
         del raw, batch
-    return {
-        name: np.ascontiguousarray(np.concatenate(chunks, axis=0), dtype=np.float32)
-        for name, chunks in feats.items()
-    }, meta_by_layer
+
+    starts = list(range(0, len(items), batch_size))
+    if extract_prefetch_workers <= 0:
+        for batch_idx, start in enumerate(tqdm(starts, desc="    extract", leave=False)):
+            stop = min(start + batch_size, len(items))
+            log_batch_stage("extract_batch_start", batch_idx, start, stop)
+            batch, load_elapsed = prepare_batch(start, stop)
+            process_batch(batch_idx, start, stop, batch, load_elapsed)
+    else:
+        max_pending = max(1, int(extract_prefetch_workers))
+        with ThreadPoolExecutor(max_workers=max_pending) as pool:
+            pending = deque()
+            next_batch_idx = 0
+
+            def submit_until_full():
+                nonlocal next_batch_idx
+                while next_batch_idx < len(starts) and len(pending) < max_pending:
+                    start_idx = starts[next_batch_idx]
+                    stop_idx = min(start_idx + batch_size, len(items))
+                    log_batch_stage("extract_batch_start", next_batch_idx, start_idx, stop_idx)
+                    future = pool.submit(prepare_batch, start_idx, stop_idx)
+                    pending.append((next_batch_idx, start_idx, stop_idx, future))
+                    next_batch_idx += 1
+
+            submit_until_full()
+            with tqdm(total=len(starts), desc="    extract", leave=False) as pbar:
+                while pending:
+                    batch_idx, start, stop, future = pending.popleft()
+                    batch, load_elapsed = future.result()
+                    process_batch(batch_idx, start, stop, batch, load_elapsed)
+                    pbar.update(1)
+                    submit_until_full()
+    return feats, meta_by_layer
 
 
 def predict_stream(features: np.ndarray, enc: dict) -> np.ndarray:
     x = np.asarray(features, dtype=np.float32)
-    mean = enc["feature_mean"]
-    scale = enc["feature_scale"]
-    if mean is not None and np.any(mean != 0):
-        x = x - mean
-    if scale is not None and np.any(scale != 1):
-        x = x / (scale + 1e-8)
-    pred = x @ enc["weights"] + enc["intercept"]
+    weights = np.asarray(enc["weights"], dtype=np.float32)
+    intercept = np.asarray(enc["intercept"], dtype=np.float32)
+    pred = x @ weights + intercept
+    roi = enc.get("roi_hlvis")
+    if roi is not None:
+        pred = pred[:, np.asarray(roi, dtype=bool)]
     return np.ascontiguousarray(pred, dtype=np.float32)
 
 
@@ -736,15 +1084,27 @@ def score_bootstrap_prediction(boot_idx, idx, pred_all, brain_rank, n_stimuli):
 
 
 def fit_stream_layer(layer_name, features, responses, hlvis_mask, args):
-    enc = fit_layer_encoding(
-        features,
-        responses,
-        hlvis_mask,
-        n_folds=args.n_folds,
-        seed=args.seed,
-        alpha_aggregation=args.alpha_aggregation,
-        alpha_grid=ALPHA_GRID,
-    )
+    if args.fit_backend == "gpu":
+        enc = fit_layer_encoding_gpu(
+            features,
+            responses,
+            hlvis_mask,
+            n_folds=args.n_folds,
+            seed=args.seed,
+            alpha_aggregation=args.alpha_aggregation,
+            alpha_grid=ALPHA_GRID,
+            dtype_name=args.gpu_fit_dtype,
+        )
+    else:
+        enc = fit_layer_encoding(
+            features,
+            responses,
+            hlvis_mask,
+            n_folds=args.n_folds,
+            seed=args.seed,
+            alpha_aggregation=args.alpha_aggregation,
+            alpha_grid=ALPHA_GRID,
+        )
     enc["layer"] = np.array(layer_name)
     enc["roi_hlvis"] = np.ones(enc["weights"].shape[1], dtype=bool)
     enc["feature_protocol"] = np.array(FEATURE_PROTOCOL)
@@ -754,24 +1114,72 @@ def fit_stream_layer(layer_name, features, responses, hlvis_mask, args):
     return layer_name, enc
 
 
-def stream_append_rows(path: Path, rows):
-    if not rows:
+def stream_write_chunk_rows(path: Path, rows, layer_names):
+    layer_names = set(str(layer) for layer in layer_names)
+    if not rows and not path.exists():
         return
     path.parent.mkdir(parents=True, exist_ok=True)
-    pd.DataFrame(rows).to_csv(
-        path,
-        mode="a",
-        header=not path.exists(),
-        index=False,
-    )
+    frames = []
+    if path.exists():
+        try:
+            existing = pd.read_csv(path)
+            if "layer" in existing.columns:
+                existing = existing[~existing["layer"].astype(str).isin(layer_names)]
+            frames.append(existing)
+        except pd.errors.EmptyDataError:
+            pass
+    if rows:
+        frames.append(pd.DataFrame(rows))
+    if not frames:
+        return
+    out = pd.concat(frames, ignore_index=True)
+    tmp = path.parent / f".{path.name}.{os.getpid()}.{time.time_ns()}.tmp"
+    out.to_csv(tmp, index=False)
+    os.replace(tmp, path)
 
 
-def stream_part_paths(subject: str, model: str):
+def stream_part_dirs(part_root: str | Path | None = None) -> tuple[Path, Path]:
+    root = Path(part_root) if part_root else STREAM_PART_DIR
+    return root / "wrsa_dense_layer_sweep", root / "wrsa_dense_shared_layer_sweep"
+
+
+def stream_part_paths(subject: str, model: str, part_root: str | Path | None = None):
     safe_model = model.replace("/", "_")
+    wrsa_dir, shared_dir = stream_part_dirs(part_root)
     return (
-        STREAM_WRSA_PART_DIR / f"{subject}_{safe_model}.csv",
-        STREAM_SHARED_PART_DIR / f"{subject}_{safe_model}.csv",
+        wrsa_dir / f"{subject}_{safe_model}.csv",
+        shared_dir / f"{subject}_{safe_model}.csv",
     )
+
+
+def stream_encoding_path(root: str | Path | None, subject: str, model: str, layer: str):
+    if root is None:
+        return None
+    root = Path(root)
+    return root / subject / f"{model}.layer{sanitize_layer_name(layer)}" / "encoding_model.npz"
+
+
+def append_progress_log(path: str | Path | None, event: str, **fields):
+    if not path:
+        return
+    row = {
+        "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
+        "event": event,
+        **fields,
+    }
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "a", buffering=1) as f:
+        f.write(json.dumps(row, sort_keys=True) + "\n")
+
+
+def save_stream_encoding(path: Path | None, enc: dict):
+    if path is None:
+        return
+    payload = dict(enc)
+    payload["prediction_formula"] = np.array("features @ weights + intercept")
+    payload["prediction_feature_space"] = np.array("raw_cached_srp_features")
+    _atomic_savez_compressed(path, **payload)
 
 
 def completed_stream_layers(
@@ -793,8 +1201,8 @@ def completed_stream_layers(
     return {
         layer
         for layer in set(wrsa_counts.index).intersection(set(shared_counts.index))
-        if wrsa_counts.get(layer, 0) >= expected_wrsa_rows
-        and shared_counts.get(layer, 0) >= expected_shared_rows
+        if wrsa_counts.get(layer, 0) == expected_wrsa_rows
+        and shared_counts.get(layer, 0) == expected_shared_rows
     }
 
 
@@ -945,7 +1353,7 @@ def stream_subject_model(args, subject: str, model: str):
     )
     expected_wrsa = len(cstim_data["cstim_ranks"]) + len(cstim_data["vicco_bootstrap"])
     expected_shared = len(shared_data["boot"])
-    wrsa_part, shared_part = stream_part_paths(subject, model)
+    wrsa_part, shared_part = stream_part_paths(subject, model, args.stream_part_root)
     completed = set() if args.overwrite else completed_stream_layers(
         wrsa_part,
         shared_part,
@@ -964,18 +1372,42 @@ def stream_subject_model(args, subject: str, model: str):
         f"score_jobs={args.n_score_jobs}",
         flush=True,
     )
+    append_progress_log(
+        args.progress_log,
+        "model_start",
+        subject=subject,
+        model=model,
+        n_unique=int(n_unique),
+        n_eval=int(len(eval_items)),
+        n_layers_remaining=int(len(layer_specs)),
+        n_layers_total=int(len(MODEL_LAYERS[model])),
+        layers_per_chunk=int(args.layers_per_chunk),
+        stream_part_root=str(args.stream_part_root or STREAM_PART_DIR),
+        stream_encoding_root=str(args.stream_encoding_root or ""),
+    )
     display = MODEL_DISPLAY_NAMES.get(model, model)
     n_chunks = int(np.ceil(len(layer_specs) / args.layers_per_chunk))
 
     for chunk_idx, start in enumerate(range(0, len(layer_specs), args.layers_per_chunk), start=1):
         chunk_specs = layer_specs[start:start + args.layers_per_chunk]
         layer_names = [name for name, _ in chunk_specs]
+        chunk_t0 = time.time()
         print(
             f"  [chunk {chunk_idx}/{n_chunks}] extracting+fitting "
             f"{len(chunk_specs)} layers: {layer_names[0]} ... {layer_names[-1]}",
             flush=True,
         )
-        t0 = time.time()
+        append_progress_log(
+            args.progress_log,
+            "chunk_start",
+            subject=subject,
+            model=model,
+            chunk_idx=int(chunk_idx),
+            n_chunks=int(n_chunks),
+            n_layers=int(len(chunk_specs)),
+            first_layer=str(layer_names[0]),
+            last_layer=str(layer_names[-1]),
+        )
         extractor = MultiLayerExtractor(model, MODEL_SOURCE[model], chunk_specs)
         try:
             batch_size = args.batch_size
@@ -986,6 +1418,9 @@ def stream_subject_model(args, subject: str, model: str):
                 all_items,
                 batch_size=batch_size,
                 model=model,
+                progress_log=args.progress_log,
+                chunk_idx=chunk_idx,
+                extract_prefetch_workers=args.extract_prefetch_workers,
             )
         finally:
             extractor.free()
@@ -1000,8 +1435,9 @@ def stream_subject_model(args, subject: str, model: str):
             )
             for layer_name in layer_names
         )
-        if args.n_fit_jobs > 1 and len(layer_names) > 1:
-            fitted = Parallel(n_jobs=args.n_fit_jobs, prefer="threads")(fit_jobs)
+        n_fit_jobs = 1 if args.fit_backend == "gpu" else args.n_fit_jobs
+        if n_fit_jobs > 1 and len(layer_names) > 1:
+            fitted = Parallel(n_jobs=n_fit_jobs, prefer="threads")(fit_jobs)
         else:
             fitted = [
                 fit_stream_layer(
@@ -1014,6 +1450,30 @@ def stream_subject_model(args, subject: str, model: str):
                 for layer_name in layer_names
             ]
         enc_by_layer = {layer_name: enc for layer_name, enc in fitted}
+
+        saved_count = 0
+        if args.stream_encoding_root:
+            for layer_name, enc in enc_by_layer.items():
+                enc["layer"] = np.array(layer_name)
+                enc["model"] = np.array(model)
+                enc["subject"] = np.array(subject)
+                enc["display_name"] = np.array(display)
+                out_path = stream_encoding_path(
+                    args.stream_encoding_root,
+                    subject,
+                    model,
+                    layer_name,
+                )
+                save_stream_encoding(out_path, enc)
+                saved_count += 1
+            append_progress_log(
+                args.progress_log,
+                "encodings_saved",
+                subject=subject,
+                model=model,
+                chunk_idx=int(chunk_idx),
+                n_saved=int(saved_count),
+            )
 
         wrsa_rows, shared_rows = score_stream_chunk(
             subject=subject,
@@ -1028,32 +1488,337 @@ def stream_subject_model(args, subject: str, model: str):
             shared_data=shared_data,
             n_score_jobs=args.n_score_jobs,
         )
-        stream_append_rows(wrsa_part, wrsa_rows)
-        stream_append_rows(shared_part, shared_rows)
+        stream_write_chunk_rows(wrsa_part, wrsa_rows, layer_names)
+        stream_write_chunk_rows(shared_part, shared_rows, layer_names)
+        elapsed = time.time() - chunk_t0
         print(
             f"  [chunk {chunk_idx}/{n_chunks}] wrote "
             f"{len(wrsa_rows)} cstim/vicco rows + {len(shared_rows)} shared rows "
-            f"in {time.time() - t0:.1f}s",
+            f"in {elapsed:.1f}s",
             flush=True,
+        )
+        append_progress_log(
+            args.progress_log,
+            "chunk_done",
+            subject=subject,
+            model=model,
+            chunk_idx=int(chunk_idx),
+            n_chunks=int(n_chunks),
+            n_saved=int(saved_count),
+            n_wrsa_rows=int(len(wrsa_rows)),
+            n_shared_rows=int(len(shared_rows)),
+            elapsed_sec=float(elapsed),
         )
         del features_by_layer, enc_by_layer, fitted, wrsa_rows, shared_rows
         gc.collect()
+
+    append_progress_log(
+        args.progress_log,
+        "model_done",
+        subject=subject,
+        model=model,
+        n_layers_total=int(len(MODEL_LAYERS[model])),
+    )
+
+
+def load_stream_subject_state(args, subject: str, model: str):
+    bench = DeepVisionBenchmark(
+        cache_root=str(DV_BENCHMARK_CACHE),
+        subject=subject,
+        voxel_set="visual",
+        input_source="finalinterp",
+        image_set="unique",
+    )
+    responses = bench.response_data.to_numpy()
+    hlvis_mask = bench.get_roi_mask("hlvis")
+    unique_paths = bench.stimulus_data.image_path.tolist()
+    cstim_data = load_cstim_subject_ranks(subject, args.n_vicco_boot)
+    shared_data = load_shared_subject_ranks(
+        subject,
+        n_bootstrap=args.n_shared_boot,
+        bootstrap_n=args.bootstrap_n,
+        seed=args.shared_seed,
+    )
+    expected_wrsa = len(cstim_data["cstim_ranks"]) + len(cstim_data["vicco_bootstrap"])
+    expected_shared = len(shared_data["boot"])
+    wrsa_part, shared_part = stream_part_paths(subject, model, args.stream_part_root)
+    completed = set() if args.overwrite else completed_stream_layers(
+        wrsa_part,
+        shared_part,
+        expected_wrsa_rows=expected_wrsa,
+        expected_shared_rows=expected_shared,
+    )
+    return {
+        "subject": subject,
+        "responses": responses,
+        "hlvis_mask": hlvis_mask,
+        "unique_paths": unique_paths,
+        "cstim_data": cstim_data,
+        "shared_data": shared_data,
+        "wrsa_part": wrsa_part,
+        "shared_part": shared_part,
+        "completed": completed,
+    }
+
+
+def remaining_specs_for_states(model: str, states: list):
+    return [
+        (name, agg)
+        for name, agg in MODEL_LAYERS[model]
+        if any(name not in state["completed"] for state in states)
+    ]
+
+
+def build_model_stream_items(states: list, eval_items: list):
+    items = []
+    unique_slices = {}
+    for state in states:
+        start = len(items)
+        items.extend(state["unique_paths"])
+        unique_slices[state["subject"]] = slice(start, len(items))
+    eval_start = len(items)
+    items.extend(eval_items)
+    return items, unique_slices, eval_start
+
+
+def stream_model_all_subjects(args, model: str, subjects: list):
+    if model not in MODEL_LAYERS:
+        print(f"[skip] unknown model: {model}", flush=True)
+        return
+
+    print(f"\n=== stream model-major / {model} / {len(subjects)} subjects ===", flush=True)
+    eval_items, cstim_slices, shared_slice = load_stream_eval_items()
+    states = [load_stream_subject_state(args, subject, model) for subject in subjects]
+    states = [
+        state for state in states
+        if len(state["completed"]) < len(MODEL_LAYERS[model])
+    ]
+    if not states:
+        print(f"[cached] {model}: stream parts complete for all subjects", flush=True)
+        return
+
+    display = MODEL_DISPLAY_NAMES.get(model, model)
+    append_progress_log(
+        args.progress_log,
+        "model_start",
+        subject=",".join(state["subject"] for state in states),
+        model=model,
+        n_subjects=int(len(states)),
+        n_eval=int(len(eval_items)),
+        n_layers_total=int(len(MODEL_LAYERS[model])),
+        layers_per_chunk=str(args.layers_per_chunk),
+        stream_part_root=str(args.stream_part_root or STREAM_PART_DIR),
+        stream_encoding_root=str(args.stream_encoding_root or ""),
+    )
+
+    chunk_idx = 0
+    while True:
+        remaining_specs = remaining_specs_for_states(model, states)
+        if not remaining_specs:
+            break
+        states_with_remaining = [
+            state for state in states
+            if any(name not in state["completed"] for name, _agg in remaining_specs)
+        ]
+        probe_items, _probe_slices, _probe_eval_start = build_model_stream_items(
+            states_with_remaining,
+            eval_items,
+        )
+
+        chunk_specs, extractor, batch_size = prepare_stream_extractor(
+            model=model,
+            layer_specs=remaining_specs,
+            items=probe_items,
+            batch_size_arg=args.batch_size,
+            batch_candidates=args.batch_candidates,
+            max_layers_per_chunk=(
+                args.max_layers_per_chunk
+                if args.layers_per_chunk == "auto"
+                else int(args.layers_per_chunk)
+            ),
+            max_feature_gb_per_chunk=args.max_feature_gb_per_chunk,
+        )
+        layer_names = [name for name, _agg in chunk_specs]
+        active_states = [
+            state for state in states
+            if any(name not in state["completed"] for name in layer_names)
+        ]
+        all_items, unique_slices, eval_start = build_model_stream_items(
+            active_states,
+            eval_items,
+        )
+        chunk_idx += 1
+        chunk_t0 = time.time()
+        print(
+            f"  [chunk {chunk_idx}] extracting {len(layer_names)} layers "
+            f"for {len(active_states)} subjects, {len(all_items)} images: "
+            f"{layer_names[0]} ... {layer_names[-1]}",
+            flush=True,
+        )
+        append_progress_log(
+            args.progress_log,
+            "chunk_start",
+            subject=",".join(state["subject"] for state in active_states),
+            model=model,
+            chunk_idx=int(chunk_idx),
+            n_layers=int(len(layer_names)),
+            n_subjects=int(len(active_states)),
+            n_images=int(len(all_items)),
+            batch_size=int(batch_size),
+            first_layer=str(layer_names[0]),
+            last_layer=str(layer_names[-1]),
+        )
+
+        try:
+            features_by_layer, _meta_by_layer = extract_reduced_stream_features(
+                extractor,
+                all_items,
+                batch_size=batch_size,
+                model=model,
+                progress_log=args.progress_log,
+                chunk_idx=chunk_idx,
+                extract_prefetch_workers=args.extract_prefetch_workers,
+            )
+        finally:
+            extractor.free()
+
+        eval_features_by_layer = {
+            layer_name: arr[eval_start:]
+            for layer_name, arr in features_by_layer.items()
+        }
+        total_fit = 0
+        total_saved = 0
+        total_wrsa_rows = 0
+        total_shared_rows = 0
+
+        for state in active_states:
+            subject = state["subject"]
+            subject_layers = [
+                layer_name for layer_name in layer_names
+                if layer_name not in state["completed"]
+            ]
+            if not subject_layers:
+                continue
+            subj_slice = unique_slices[subject]
+            enc_by_layer = {}
+            for layer_name in subject_layers:
+                _name, enc = fit_stream_layer(
+                    layer_name,
+                    features_by_layer[layer_name][subj_slice],
+                    state["responses"],
+                    state["hlvis_mask"],
+                    args,
+                )
+                enc_by_layer[layer_name] = enc
+                total_fit += 1
+
+            if args.stream_encoding_root:
+                for layer_name, enc in enc_by_layer.items():
+                    enc["layer"] = np.array(layer_name)
+                    enc["model"] = np.array(model)
+                    enc["subject"] = np.array(subject)
+                    enc["display_name"] = np.array(display)
+                    out_path = stream_encoding_path(
+                        args.stream_encoding_root,
+                        subject,
+                        model,
+                        layer_name,
+                    )
+                    save_stream_encoding(out_path, enc)
+                    total_saved += 1
+
+            wrsa_rows, shared_rows = score_stream_chunk(
+                subject=subject,
+                model=model,
+                display=display,
+                features_by_layer=eval_features_by_layer,
+                enc_by_layer=enc_by_layer,
+                n_unique=0,
+                cstim_slices=cstim_slices,
+                shared_slice=shared_slice,
+                cstim_data=state["cstim_data"],
+                shared_data=state["shared_data"],
+                n_score_jobs=args.n_score_jobs,
+            )
+            stream_write_chunk_rows(state["wrsa_part"], wrsa_rows, subject_layers)
+            stream_write_chunk_rows(state["shared_part"], shared_rows, subject_layers)
+            state["completed"].update(subject_layers)
+            total_wrsa_rows += len(wrsa_rows)
+            total_shared_rows += len(shared_rows)
+            del enc_by_layer, wrsa_rows, shared_rows
+            gc.collect()
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+
+        elapsed = time.time() - chunk_t0
+        print(
+            f"  [chunk {chunk_idx}] fit={total_fit}, saved={total_saved}, "
+            f"rows={total_wrsa_rows}+{total_shared_rows} in {elapsed:.1f}s",
+            flush=True,
+        )
+        append_progress_log(
+            args.progress_log,
+            "chunk_done",
+            subject=",".join(state["subject"] for state in active_states),
+            model=model,
+            chunk_idx=int(chunk_idx),
+            n_layers=int(len(layer_names)),
+            n_subjects=int(len(active_states)),
+            n_fit=int(total_fit),
+            n_saved=int(total_saved),
+            n_wrsa_rows=int(total_wrsa_rows),
+            n_shared_rows=int(total_shared_rows),
+            elapsed_sec=float(elapsed),
+        )
+        del features_by_layer, eval_features_by_layer
+        gc.collect()
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+
+    append_progress_log(
+        args.progress_log,
+        "model_done",
+        subject=",".join(subjects),
+        model=model,
+        n_layers_total=int(len(MODEL_LAYERS[model])),
+    )
 
 
 def stream_main(args):
     global MODEL_LAYERS
     MODEL_LAYERS = get_layer_set(args.layer_set)
     args.batch_size = parse_batch_size(args.batch_size)
+    args.layers_per_chunk = parse_layers_per_chunk(args.layers_per_chunk)
+    if args.layers_per_chunk == "auto":
+        args.layers_per_chunk = DEFAULT_LAYERS_PER_CHUNK
     if args.n_score_jobs is None:
         args.n_score_jobs = args.n_fit_jobs
 
-    STREAM_WRSA_PART_DIR.mkdir(parents=True, exist_ok=True)
-    STREAM_SHARED_PART_DIR.mkdir(parents=True, exist_ok=True)
-    subjects = parse_subject_arg(args.subject)
+    wrsa_part_dir, shared_part_dir = stream_part_dirs(args.stream_part_root)
+    wrsa_part_dir.mkdir(parents=True, exist_ok=True)
+    shared_part_dir.mkdir(parents=True, exist_ok=True)
+    subjects = parse_subject_list(args.subject)
     for subject in subjects:
         for model in args.models:
             stream_subject_model(args, subject, model)
     print("[stream] done", flush=True)
+
+
+def stream_model_main(args):
+    global MODEL_LAYERS
+    MODEL_LAYERS = get_layer_set(args.layer_set)
+    args.batch_size = parse_batch_size(args.batch_size)
+    args.layers_per_chunk = parse_layers_per_chunk(args.layers_per_chunk)
+    if args.n_score_jobs is None:
+        args.n_score_jobs = args.n_fit_jobs
+
+    wrsa_part_dir, shared_part_dir = stream_part_dirs(args.stream_part_root)
+    wrsa_part_dir.mkdir(parents=True, exist_ok=True)
+    shared_part_dir.mkdir(parents=True, exist_ok=True)
+    subjects = parse_subject_list(args.subject)
+    for model in args.models:
+        stream_model_all_subjects(args, model, subjects)
+    print("[stream-model] done", flush=True)
 
 
 def merge_stream_parts(out_csv: Path, part_dir: Path):
@@ -1082,8 +1847,9 @@ def merge_stream_parts(out_csv: Path, part_dir: Path):
 def merge_stream_main(args):
     wrsa_csv = Path(args.out_csv) if args.out_csv else STREAM_WRSA_CSV
     shared_csv = Path(args.shared_out_csv) if args.shared_out_csv else STREAM_SHARED_CSV
-    merge_stream_parts(wrsa_csv, STREAM_WRSA_PART_DIR)
-    merge_stream_parts(shared_csv, STREAM_SHARED_PART_DIR)
+    wrsa_part_dir, shared_part_dir = stream_part_dirs(args.stream_part_root)
+    merge_stream_parts(wrsa_csv, wrsa_part_dir)
+    merge_stream_parts(shared_csv, shared_part_dir)
 
 
 def main():
@@ -1098,20 +1864,39 @@ def main():
                         help="Batch size or 'auto' to benchmark per model")
     parser.add_argument("--batch-candidates", default=None,
                         help="Comma-separated candidates for --batch-size auto")
+    parser.add_argument("--extract-prefetch-workers", type=int, default=2,
+                        help="Streaming mode: CPU worker threads per process for "
+                             "loading and preprocessing upcoming image batches. "
+                             "Use 0 to disable prefetching.")
     parser.add_argument("--n-folds", type=int, default=DEFAULT_N_FOLDS)
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED)
     parser.add_argument("--alpha-aggregation", choices=["median", "mean"],
                         default=DEFAULT_ALPHA_AGGREGATION)
-    parser.add_argument("--mode", choices=["all", "features", "fit", "stream", "merge-stream"],
+    parser.add_argument("--mode", choices=["all", "features", "fit", "stream", "stream-model", "merge-stream"],
                         default="all",
                         help="'features' only prepares DeepVision feature caches; "
                              "'fit' requires those caches and only fits encodings; "
                              "'stream' extracts flattened+SRP layer chunks, fits, scores, "
-                             "and writes result parts without storing feature/encoding caches.")
-    parser.add_argument("--layers-per-chunk", type=int, default=DEFAULT_LAYERS_PER_CHUNK,
-                        help="Streaming mode: number of model layers extracted/fitted together.")
+                             "and writes result parts; 'stream-model' does the same "
+                             "model-major across all requested subjects.")
+    parser.add_argument("--layers-per-chunk", default=str(DEFAULT_LAYERS_PER_CHUNK),
+                        help="Streaming mode: number of model layers extracted/fitted together, "
+                             "or 'auto' for model-major GPU probing.")
+    parser.add_argument("--max-layers-per-chunk", type=int, default=DEFAULT_MAX_LAYERS_PER_CHUNK,
+                        help="stream-model auto mode: hard cap on layers per extraction chunk. "
+                             "Use 0 for no explicit layer-count cap.")
+    parser.add_argument("--max-feature-gb-per-chunk", type=float,
+                        default=DEFAULT_MAX_FEATURE_GB_PER_CHUNK,
+                        help="stream-model auto mode: approximate host-memory budget for the "
+                             "reduced feature block per GPU worker. Use <=0 to disable.")
     parser.add_argument("--n-fit-jobs", type=int, default=DEFAULT_N_FIT_JOBS,
                         help="Streaming mode: parallel layer fits within each GPU worker.")
+    parser.add_argument("--fit-backend", choices=["cpu", "gpu"], default="cpu",
+                        help="Streaming mode: fit encoding models on CPU or with the "
+                             "GPU RidgeCV/refit implementation.")
+    parser.add_argument("--gpu-fit-dtype", choices=["float32", "float64"], default="float64",
+                        help="Streaming mode: dtype for --fit-backend gpu. float64 "
+                             "matches CPU RidgeCVFast alpha choices most closely.")
     parser.add_argument("--n-score-jobs", type=int, default=None,
                         help="Streaming mode: parallel bootstrap scoring jobs. "
                              "Default matches --n-fit-jobs.")
@@ -1119,6 +1904,13 @@ def main():
     parser.add_argument("--n-shared-boot", type=int, default=1000)
     parser.add_argument("--bootstrap-n", type=int, default=100)
     parser.add_argument("--shared-seed", type=int, default=0)
+    parser.add_argument("--stream-part-root", default=None,
+                        help="Optional stream part root. Defaults to results/stream_parts.")
+    parser.add_argument("--stream-encoding-root", default=None,
+                        help="Streaming mode: optional root for saving fitted encoding_model.npz "
+                             "files as {root}/{subject}/{model}.layer{layer}/encoding_model.npz.")
+    parser.add_argument("--progress-log", default=None,
+                        help="Streaming mode: append JSONL progress events to this file.")
     parser.add_argument("--out-csv", default=None,
                         help="merge-stream mode: cstim/Vicco output CSV.")
     parser.add_argument("--shared-out-csv", default=None,
@@ -1127,6 +1919,9 @@ def main():
 
     if args.mode == "stream":
         stream_main(args)
+        return
+    if args.mode == "stream-model":
+        stream_model_main(args)
         return
     if args.mode == "merge-stream":
         merge_stream_main(args)

@@ -24,13 +24,13 @@ import pandas as pd
 from tqdm import tqdm
 from joblib import Parallel, delayed
 
-from cstims.paper.config import MODEL_DISPLAY_NAMES, PAPER_ROOT, get_brain_input_dir
-from cstims.paper.utils import (
-    compute_rdm_correlation,
-    compute_rsa_score,
-    parse_subject_arg,
-    predict_voxel_responses,
-)
+from cstims import paths
+from cstims.cache import load_cstim_brain_cache
+from cstims.constants import MODEL_DISPLAY_NAMES
+PAPER_ROOT = paths.paper_root()
+get_brain_input_dir = paths.get_brain_input_dir
+from cstims.rdm import compute_rdm_correlation, compute_rsa_score
+from cstims.subjects import parse_subject_arg
 from layers_config import MODEL_LAYERS, MAIN_LAYER
 
 CACHE_FEAT = LAYER_SWEEP_ROOT / "cache_or_heavy" / "features"
@@ -54,29 +54,20 @@ def load_encoding(path):
 
 
 def predict(features, enc):
-    """Match 02_rsa_scores/02_compute_wrsa_transfer.py prediction semantics."""
-    pred = predict_voxel_responses(features, enc)
+    """Predict with raw-space encoding weights saved by the layer-sweep fitter."""
+    x = np.asarray(features, dtype=np.float32)
+    weights = np.asarray(enc["weights"], dtype=np.float32)
+    intercept = np.asarray(enc["intercept"], dtype=np.float32)
+    pred = x @ weights + intercept
     roi = enc.get("roi_hlvis")
     if roi is not None:
         pred = pred[:, np.asarray(roi, dtype=bool)]
-    return pred
+    return np.ascontiguousarray(pred, dtype=np.float32)
 
 
 def load_subject_brain(subject):
-    d = get_brain_input_dir(subject)
-    b = np.load(d / "cstim_betas_averaged.npz", allow_pickle=True)
-    v = np.load(d / "voxel_metadata.npz", allow_pickle=True)
-    si = pd.read_csv(d / "cstim_stimulus_info.csv")
-    hlvis = v["hlvis_mask"]
-    betas_hlvis = b["betas"][hlvis, :]
-    k2i = {k: i for i, k in enumerate(b["stim_keys"])}
-    g_brain, g_file = {}, {}
-    for g in si["group"].unique():
-        m = si["group"] == g
-        g_brain[g] = np.array([k2i[k] for k in si.loc[m, "stim_key"].values])
-        idx = si.loc[m, "stim_idx"].values
-        g_file[g] = idx - 1 if g == "vicco" else idx
-    return betas_hlvis, g_brain, g_file
+    cache = load_cstim_brain_cache(subject)
+    return cache.betas_roi, cache.group_brain_indices(), cache.group_feature_indices()
 
 
 def held_out_one(subject, model, mset, betas, brain_idx, file_idx,

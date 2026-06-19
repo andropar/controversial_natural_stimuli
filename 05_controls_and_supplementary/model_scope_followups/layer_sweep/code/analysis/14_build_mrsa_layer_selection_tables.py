@@ -22,7 +22,9 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from cstims.paper.config import MODEL_DISPLAY_NAMES, PAPER_ROOT
+from cstims import paths
+from cstims.constants import MODEL_DISPLAY_NAMES
+PAPER_ROOT = paths.paper_root()
 from layers_config import MAIN_LAYER, STIMULUS_SETS, get_layer_set
 
 

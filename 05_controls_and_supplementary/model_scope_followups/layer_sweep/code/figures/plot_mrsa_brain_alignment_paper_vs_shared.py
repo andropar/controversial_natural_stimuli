@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 import _paths  # noqa: F401
-from _paths import LAYER_SWEEP_ROOT, SOURCE_PAPER_ROOT
+from _paths import LAYER_SWEEP_ROOT
 
 
 import matplotlib.patches as mpatches
@@ -27,7 +27,10 @@ import numpy as np
 import pandas as pd
 from matplotlib.lines import Line2D
 
-from cstims.paper.config import MODEL_DISPLAY_NAMES, MODEL_SETS, RSA_DATA_DIR, STATS_DATA_DIR, SUBJECTS
+from cstims import paths
+from cstims.constants import MODEL_DISPLAY_NAMES, MODEL_SETS, SUBJECTS
+RSA_DATA_DIR = paths.rsa_data_dir()
+STATS_DATA_DIR = paths.stats_data_dir()
 from cstims.paper.style_improved import (
     COLOR_BASELINE,
     COLOR_CSTIM,
@@ -53,8 +56,7 @@ SUMMARY_WITH_SHARED_CSV = DATA_DIR / "mrsa_brain_alignment_paper_vs_shared_with_
 SUMMARY_WITH_SHARED_NC_CSV = (
     DATA_DIR / "mrsa_brain_alignment_paper_vs_shared_with_shared_nc_normalized_summary.csv"
 )
-SHARE_ROOT = LAYER_SWEEP_ROOT.parents[2]
-PAPER_RSA_DATA_DIR = SHARE_ROOT / "01_brain_model_alignment" / "results" / "rsa_scores"
+PAPER_RSA_DATA_DIR = RSA_DATA_DIR
 PERMUTATION_CSV = STATS_DATA_DIR / "permutation_test_results.csv"
 
 PANEL_ORDER = ["all_models", "sota", "training_objective", "architecture", "dataset"]

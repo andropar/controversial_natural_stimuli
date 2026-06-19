@@ -13,7 +13,8 @@ from _paths import LAYER_SWEEP_ROOT
 import numpy as np
 import pandas as pd
 
-from cstims.paper.config import PAPER_ROOT
+from cstims import paths
+PAPER_ROOT = paths.paper_root()
 from layers_config import MAIN_LAYER, MODEL_LAYERS, layer_depth_rank, layer_depth_frac
 
 DATA_DIR = LAYER_SWEEP_ROOT / "results"

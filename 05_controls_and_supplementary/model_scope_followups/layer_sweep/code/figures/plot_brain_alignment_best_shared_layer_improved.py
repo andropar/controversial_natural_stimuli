@@ -6,13 +6,8 @@ the layer selected on DeepVision shared images in the dense mRSA layer sweep.
 """
 from __future__ import annotations
 
-import sys
-
 import _paths  # noqa: F401
 from _paths import LAYER_SWEEP_ROOT
-
-SHARE_ROOT = LAYER_SWEEP_ROOT.parents[2]
-sys.path.insert(0, str(SHARE_ROOT / "src"))
 
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
@@ -20,7 +15,7 @@ import numpy as np
 import pandas as pd
 from matplotlib.lines import Line2D
 
-from cstims.paper import config
+from cstims import constants, paths
 from cstims.paper.style_improved import (
     COLOR_BASELINE,
     COLOR_CSTIM,
@@ -39,9 +34,9 @@ PNG_DIR = FIGURES_DIR / "png"
 MRSA_TRANSFER_CSV = DATA_DIR / "mrsa_dense_layer_selection_transfer.csv"
 FRSA_TRANSFER_CSV = DATA_DIR / "frsa_best_shared_layer_transfer.csv"
 
-MODEL_SETS = config.MODEL_SETS
-MODEL_DISPLAY = config.MODEL_DISPLAY_NAMES
-STATS_DATA_DIR = config.STATS_DATA_DIR
+MODEL_SETS = constants.MODEL_SETS
+MODEL_DISPLAY = constants.MODEL_DISPLAY_NAMES
+STATS_DATA_DIR = paths.stats_data_dir()
 
 PANEL_ORDER = ["all_models", "sota", "training_objective", "architecture", "dataset"]
 METHOD_ORDER = ["mRSA", "fRSA"]
@@ -193,25 +188,27 @@ def load_scores() -> pd.DataFrame:
 
 
 def load_noise_ceilings() -> pd.DataFrame:
-    paths = [
+    candidate_paths = [
         STATS_DATA_DIR / "rdm_noise_ceilings.csv",
-        SHARE_ROOT / "02_alignment_reliability" / "results" / "rdm_noise_ceilings.csv",
+        paths.reliability_data_dir() / "rdm_noise_ceilings.csv",
     ]
-    for path in paths:
+    for path in candidate_paths:
         if path.exists():
             return pd.read_csv(path)
-    raise FileNotFoundError(f"Could not find rdm_noise_ceilings.csv in {paths}")
+    raise FileNotFoundError(f"Could not find rdm_noise_ceilings.csv in {candidate_paths}")
 
 
 def load_between_subject_noise_ceilings() -> pd.DataFrame:
-    paths = [
+    candidate_paths = [
         STATS_DATA_DIR / "between_subject_noise_ceilings.csv",
-        SHARE_ROOT / "02_alignment_reliability" / "results" / "between_subject_noise_ceilings.csv",
+        paths.reliability_data_dir() / "between_subject_noise_ceilings.csv",
     ]
-    for path in paths:
+    for path in candidate_paths:
         if path.exists():
             return pd.read_csv(path)
-    raise FileNotFoundError(f"Could not find between_subject_noise_ceilings.csv in {paths}")
+    raise FileNotFoundError(
+        f"Could not find between_subject_noise_ceilings.csv in {candidate_paths}"
+    )
 
 
 def eval_model_set(condition: str, model_set: str) -> str:

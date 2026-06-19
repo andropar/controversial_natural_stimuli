@@ -19,7 +19,7 @@ or get_custom_model, exactly as used in 02_rsa_scores/01_compute_crsa.py.
 """
 
 import _paths  # noqa: F401  -- sets up sys.path
-from _paths import LAYER_SWEEP_ROOT, SHARE_ROOT
+from _paths import LAYER_SWEEP_ROOT
 import argparse
 import time
 from pathlib import Path
@@ -28,7 +28,7 @@ import numpy as np
 from PIL import Image
 from tqdm import tqdm
 
-from cstims.paper.config import CSTIM_HDF5_ROOT, PAPER_ROOT
+from cstims import paths
 from batch_tuning import parse_batch_candidates, parse_batch_size, tune_batch_size
 from layers_config import MODEL_LAYERS, MODEL_SOURCE, STIMULUS_SETS, get_layer_set
 from multilayer_extractor import MultiLayerExtractor
@@ -36,44 +36,13 @@ from srp_utils import cached_layer_current, metadata_arrays, SRPProjectorCache
 
 
 CACHE_ROOT = LAYER_SWEEP_ROOT / "cache_or_heavy" / "features"
-LABSHARE_CSTIM_HDF5_ROOT = Path(
-    "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files"
-)
 
 
 def load_images(group: str):
     """Load stimulus images for a group, applying the architecture/dataset
     folder swap that matches 02_compute_crsa.py.
     """
-    folder_group = group
-    if group == "architecture":
-        folder_group = "dataset"
-    elif group == "dataset":
-        folder_group = "architecture"
-
-    if folder_group == "vicco":
-        img_dir = CSTIM_HDF5_ROOT / "shared_vicco"
-    else:
-        img_dir = CSTIM_HDF5_ROOT / folder_group
-
-    img_files = sorted(list(img_dir.glob("*.jpg")) + list(img_dir.glob("*.png")))
-    if not img_files and folder_group != "vicco":
-        # Server fallback: the old /SSD image root is not always mounted, but
-        # the share copy and the private cstim tree keep the same image sets.
-        fallback_dirs = (
-            SHARE_ROOT / "00_stimulus_selection" / "decision_checks" / "selection_evaluation"
-            / "results" / folder_group / "images",
-            PAPER_ROOT / "00_selection_evaluation" / "data" / folder_group / "images",
-            PAPER_ROOT / "00_selection_evaluation" / "results" / folder_group / "images",
-        )
-        for fallback_dir in fallback_dirs:
-            img_files = sorted(list(fallback_dir.glob("*.jpg")) + list(fallback_dir.glob("*.png")))
-            if img_files:
-                img_dir = fallback_dir
-                break
-    if not img_files and folder_group == "vicco":
-        img_dir = LABSHARE_CSTIM_HDF5_ROOT / "shared_vicco"
-        img_files = sorted(list(img_dir.glob("*.jpg")) + list(img_dir.glob("*.png")))
+    img_files = paths.cstim_image_paths(group, apply_architecture_dataset_swap=True)
     images = [Image.open(f).convert("RGB") for f in img_files]
     filenames = [f.name for f in img_files]
     return images, filenames

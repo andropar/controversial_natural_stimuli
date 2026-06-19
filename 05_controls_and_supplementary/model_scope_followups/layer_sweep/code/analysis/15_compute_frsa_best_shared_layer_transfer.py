@@ -28,19 +28,19 @@ from scipy.stats import rankdata
 from tqdm import tqdm
 
 from batch_tuning import parse_batch_candidates, parse_batch_size, tune_batch_size
-from cstims.paper.config import CSTIM_HDF5_ROOT, MODEL_DISPLAY_NAMES, PAPER_ROOT, SUBJECTS, get_brain_input_dir
+from cstims import paths
+from cstims.cache import load_cstim_brain_cache
+from cstims.constants import MODEL_DISPLAY_NAMES, SUBJECTS
+get_brain_input_dir = paths.get_brain_input_dir
 from layers_config import MODEL_SOURCE, STIMULUS_SETS, get_layer_set
 from multilayer_extractor import MultiLayerExtractor
 from srp_utils import SRPProjectorCache, SRP_SEED
-from cstims.paper.utils import bootstrap_sample_indices, compute_rdm_correlation
+from cstims.rdm import compute_rdm_correlation
+from cstims.sampling import bootstrap_sample_indices
 
 
-SHARE_ROOT = LAYER_SWEEP_ROOT.parents[2]
 DATA_DIR = LAYER_SWEEP_ROOT / "results"
 CACHE_DIR = LAYER_SWEEP_ROOT / "cache_or_heavy"
-LABSHARE_CSTIM_HDF5_ROOT = Path(
-    "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files"
-)
 
 SELECTION_CSV = DATA_DIR / "mrsa_dense_layer_selection_transfer.csv"
 OUT_CSV = DATA_DIR / "frsa_best_shared_layer_transfer.csv"
@@ -78,38 +78,7 @@ def _atomic_savez_compressed(path: Path, **payload) -> None:
 
 
 def _load_cstim_images(group: str):
-    folder_group = group
-    if group == "architecture":
-        folder_group = "dataset"
-    elif group == "dataset":
-        folder_group = "architecture"
-
-    if folder_group == "vicco":
-        img_dir = CSTIM_HDF5_ROOT / "shared_vicco"
-    else:
-        img_dir = CSTIM_HDF5_ROOT / folder_group
-
-    img_files = sorted(list(img_dir.glob("*.jpg")) + list(img_dir.glob("*.png")))
-    if not img_files and folder_group != "vicco":
-        fallback_dirs = (
-            SHARE_ROOT
-            / "00_stimulus_selection"
-            / "decision_checks"
-            / "selection_evaluation"
-            / "results"
-            / folder_group
-            / "images",
-            PAPER_ROOT / "00_selection_evaluation" / "data" / folder_group / "images",
-            PAPER_ROOT / "00_selection_evaluation" / "results" / folder_group / "images",
-        )
-        for fallback_dir in fallback_dirs:
-            img_files = sorted(list(fallback_dir.glob("*.jpg")) + list(fallback_dir.glob("*.png")))
-            if img_files:
-                break
-    if not img_files and folder_group == "vicco":
-        img_dir = LABSHARE_CSTIM_HDF5_ROOT / "shared_vicco"
-        img_files = sorted(list(img_dir.glob("*.jpg")) + list(img_dir.glob("*.png")))
-
+    img_files = paths.cstim_image_paths(group, apply_architecture_dataset_swap=True)
     images = []
     for path in img_files:
         with Image.open(path) as img:
@@ -132,25 +101,12 @@ def load_eval_items():
 
 
 def _load_cstim_subject_indices(subject: str):
-    d = get_brain_input_dir(subject)
-    betas = np.load(d / "cstim_betas_averaged.npz", allow_pickle=True)
-    voxel = np.load(d / "voxel_metadata.npz", allow_pickle=True)
-    stim_info = pd.read_csv(d / "cstim_stimulus_info.csv")
-    hlvis = np.asarray(voxel["hlvis_mask"], dtype=bool)
-    betas_hlvis = np.ascontiguousarray(betas["betas"][hlvis, :], dtype=np.float32)
-    key_to_idx = {k: i for i, k in enumerate(betas["stim_keys"])}
-
-    group_indices = {}
-    group_stim_idx = {}
-    for group in sorted(stim_info["group"].unique()):
-        mask = stim_info["group"].eq(group)
-        group_indices[group] = np.array(
-            [key_to_idx[k] for k in stim_info.loc[mask, "stim_key"].values],
-            dtype=int,
-        )
-        idx = stim_info.loc[mask, "stim_idx"].values.astype(int)
-        group_stim_idx[group] = idx - 1 if group == "vicco" else idx
-    return betas_hlvis, group_indices, group_stim_idx
+    cache = load_cstim_brain_cache(subject)
+    return (
+        np.ascontiguousarray(cache.betas_roi, dtype=np.float32),
+        cache.group_brain_indices(),
+        cache.group_feature_indices(),
+    )
 
 
 def load_cstim_subject_ranks(subject: str, n_vicco_boot: int):

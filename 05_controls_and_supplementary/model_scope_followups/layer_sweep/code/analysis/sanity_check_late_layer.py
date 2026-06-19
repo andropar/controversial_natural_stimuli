@@ -14,10 +14,12 @@ from _paths import LAYER_SWEEP_ROOT
 import numpy as np
 import pandas as pd
 
-from cstims.paper.config import (
-    MODEL_DISPLAY_NAMES, PAPER_ROOT, get_brain_input_dir, MODEL_SETS,
-)
-from cstims.paper.utils import compute_rdm_correlation, compute_rsa_score
+from cstims import paths
+from cstims.cache import load_cstim_brain_cache
+from cstims.constants import MODEL_DISPLAY_NAMES, MODEL_SETS
+PAPER_ROOT = paths.paper_root()
+get_brain_input_dir = paths.get_brain_input_dir
+from cstims.rdm import compute_rdm_correlation, compute_rsa_score
 from layers_config import MODEL_LAYERS, MAIN_LAYER, LATE_LAYER
 
 CACHE_NEW = LAYER_SWEEP_ROOT / "cache_or_heavy" / "features"
@@ -40,20 +42,8 @@ EXPECTED_DIVERGENT_MODELS = {"robustness_imagenet_l2_eps3"}
 
 
 def load_subject(subject: str):
-    d = get_brain_input_dir(subject)
-    b = np.load(d / "cstim_betas_averaged.npz", allow_pickle=True)
-    v = np.load(d / "voxel_metadata.npz", allow_pickle=True)
-    si = pd.read_csv(d / "cstim_stimulus_info.csv")
-    hlvis = v["hlvis_mask"]
-    betas = b["betas"][hlvis, :]
-    stim_keys = b["stim_keys"]
-    k2i = {k: i for i, k in enumerate(stim_keys)}
-    g_brain, g_file = {}, {}
-    for g, sub in si.groupby("group"):
-        g_brain[g] = np.array([k2i[k] for k in sub["stim_key"].values])
-        idx = sub["stim_idx"].values
-        g_file[g] = idx - 1 if g == "vicco" else idx
-    return betas, g_brain, g_file
+    cache = load_cstim_brain_cache(subject)
+    return cache.betas_roi, cache.group_brain_indices(), cache.group_feature_indices()
 
 
 def main():

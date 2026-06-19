@@ -19,7 +19,7 @@ from pathlib import Path
 import _paths  # noqa: F401
 from _paths import LAYER_SWEEP_ROOT
 
-from cstims.paper.config import SUBJECTS
+from cstims.constants import SUBJECTS
 from layers_config import get_layer_set
 
 
@@ -56,6 +56,17 @@ def build_env(gpu: str | None = None, *, allow_cuda: bool = True):
     except Exception:
         pass
     return env
+
+
+def balance_model_groups(models, layer_specs, n_groups: int):
+    groups = [[] for _ in range(n_groups)]
+    weights = [0 for _ in range(n_groups)]
+    ordered = sorted(models, key=lambda m: len(layer_specs[m]), reverse=True)
+    for model in ordered:
+        idx = min(range(n_groups), key=lambda i: weights[i])
+        groups[idx].append(model)
+        weights[idx] += len(layer_specs[model])
+    return groups, weights
 
 
 def run_jobs(
@@ -130,6 +141,8 @@ def main():
                         help="Comma-separated model names. Default: all models in layer set.")
     parser.add_argument("--python", default=sys.executable)
     parser.add_argument("--batch-candidates", default=None)
+    parser.add_argument("--extract-prefetch-workers", type=int, default=2,
+                        help="Streaming mode: CPU prefetch threads per 07 worker.")
     parser.add_argument("--n-jobs-encoding", type=int, default=None,
                         help="CPU workers for encoding fits after feature caches are prepared. "
                              "Default: number of GPU slots.")
@@ -137,9 +150,34 @@ def main():
     parser.add_argument("--n-shared-boot", type=int, default=1000)
     parser.add_argument("--bootstrap-n", type=int, default=100)
     parser.add_argument("--n-jobs-score", type=int, default=16)
-    parser.add_argument("--layers-per-chunk", type=int, default=16)
+    parser.add_argument("--layers-per-chunk", default="auto",
+                        help="Streaming mode: layer chunk size passed to 07; use 'auto' "
+                             "for model-major GPU probing.")
+    parser.add_argument("--max-layers-per-chunk", type=int, default=128,
+                        help="Streaming model-major: hard cap on auto layer chunk size. "
+                             "Use 0 for no explicit layer-count cap.")
+    parser.add_argument("--max-feature-gb-per-chunk", type=float, default=40.0,
+                        help="Streaming model-major: approximate host-memory budget for "
+                             "one reduced feature block per GPU worker.")
     parser.add_argument("--n-fit-jobs", type=int, default=3)
     parser.add_argument("--n-score-jobs-stream", type=int, default=3)
+    parser.add_argument("--stream-dispatch", choices=["model", "subject-model"], default="model",
+                        help="Streaming scheduler. 'model' runs one long-lived worker per "
+                             "GPU with a balanced model queue across all subjects.")
+    parser.add_argument("--fit-backend", choices=["cpu", "gpu"], default="cpu",
+                        help="Streaming mode: encoding-fit backend passed to 07.")
+    parser.add_argument("--gpu-fit-dtype", choices=["float32", "float64"], default="float64",
+                        help="Streaming mode: dtype passed to 07 when --fit-backend gpu.")
+    parser.add_argument("--stream-part-root", default=None,
+                        help="Optional stream part root passed to 07 stream/merge-stream.")
+    parser.add_argument("--stream-encoding-root", default=None,
+                        help="Optional root where 07 stream saves fitted encoding_model.npz files.")
+    parser.add_argument("--stream-progress-log", default=None,
+                        help="Optional JSONL progress log. Defaults to a timestamped file under logs/.")
+    parser.add_argument("--stream-out-csv", default=None,
+                        help="Optional cstim/Vicco stream merge output CSV.")
+    parser.add_argument("--stream-shared-out-csv", default=None,
+                        help="Optional DeepVision-shared stream merge output CSV.")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
@@ -150,6 +188,16 @@ def main():
     models = parse_csv(args.models) if args.models else list(layer_specs.keys())
     stamp = time.strftime("%Y%m%d_%H%M%S")
     log_dir = LOG_ROOT / f"{args.layer_set}_{stamp}"
+    stream_progress_log = None
+    if args.phase == "stream":
+        stream_progress_log = (
+            Path(args.stream_progress_log)
+            if args.stream_progress_log
+            else log_dir / f"stream_progress_{stamp}.jsonl"
+        )
+        print(f"[progress-log] {stream_progress_log}", flush=True)
+        if args.stream_encoding_root:
+            print(f"[stream-encoding-root] {args.stream_encoding_root}", flush=True)
 
     common = ["--layer-set", args.layer_set, "--batch-size", "auto"]
     if args.batch_candidates:
@@ -251,25 +299,77 @@ def main():
 
     if args.phase == "stream":
         jobs = []
-        for subject in subjects:
-            for model in models:
+        if args.stream_dispatch == "model":
+            groups, weights = balance_model_groups(models, layer_specs, len(gpus))
+            for idx, group in enumerate(groups):
+                if not group:
+                    continue
+                print(
+                    f"[stream-group {idx}] layers={weights[idx]} models={','.join(group)}",
+                    flush=True,
+                )
                 jobs.append({
-                    "name": f"stream_{subject}_{model}",
+                    "name": f"stream_model_group{idx}_{group[0]}",
                     "cmd": [
                         args.python,
                         str(SCRIPT_DIR / "07_fit_encodings_layer_sweep.py"),
-                        "--subject", subject,
-                        "--models", model,
-                        "--mode", "stream",
+                        "--subject", ",".join(subjects),
+                        "--models", *group,
+                        "--mode", "stream-model",
                         *common,
                         "--n-vicco-boot", str(args.n_vicco_boot),
                         "--n-shared-boot", str(args.n_shared_boot),
                         "--bootstrap-n", str(args.bootstrap_n),
                         "--layers-per-chunk", str(args.layers_per_chunk),
+                        "--max-layers-per-chunk", str(args.max_layers_per_chunk),
+                        "--max-feature-gb-per-chunk", str(args.max_feature_gb_per_chunk),
                         "--n-fit-jobs", str(args.n_fit_jobs),
                         "--n-score-jobs", str(args.n_score_jobs_stream),
+                        "--fit-backend", args.fit_backend,
+                        "--gpu-fit-dtype", args.gpu_fit_dtype,
+                        "--extract-prefetch-workers", str(args.extract_prefetch_workers),
                     ],
                 })
+                if args.stream_part_root:
+                    jobs[-1]["cmd"].extend(["--stream-part-root", args.stream_part_root])
+                if args.stream_encoding_root:
+                    jobs[-1]["cmd"].extend(["--stream-encoding-root", args.stream_encoding_root])
+                if stream_progress_log:
+                    jobs[-1]["cmd"].extend(["--progress-log", str(stream_progress_log)])
+        else:
+            layer_chunk = (
+                "16"
+                if str(args.layers_per_chunk).lower() == "auto"
+                else str(args.layers_per_chunk)
+            )
+            for model in models:
+                for subject in subjects:
+                    jobs.append({
+                        "name": f"stream_{subject}_{model}",
+                        "cmd": [
+                            args.python,
+                            str(SCRIPT_DIR / "07_fit_encodings_layer_sweep.py"),
+                            "--subject", subject,
+                            "--models", model,
+                            "--mode", "stream",
+                            *common,
+                            "--n-vicco-boot", str(args.n_vicco_boot),
+                            "--n-shared-boot", str(args.n_shared_boot),
+                            "--bootstrap-n", str(args.bootstrap_n),
+                            "--layers-per-chunk", layer_chunk,
+                            "--n-fit-jobs", str(args.n_fit_jobs),
+                            "--n-score-jobs", str(args.n_score_jobs_stream),
+                            "--fit-backend", args.fit_backend,
+                            "--gpu-fit-dtype", args.gpu_fit_dtype,
+                            "--extract-prefetch-workers", str(args.extract_prefetch_workers),
+                        ],
+                    })
+                    if args.stream_part_root:
+                        jobs[-1]["cmd"].extend(["--stream-part-root", args.stream_part_root])
+                    if args.stream_encoding_root:
+                        jobs[-1]["cmd"].extend(["--stream-encoding-root", args.stream_encoding_root])
+                    if stream_progress_log:
+                        jobs[-1]["cmd"].extend(["--progress-log", str(stream_progress_log)])
         failures = run_jobs(
             jobs,
             gpus,
@@ -285,6 +385,12 @@ def main():
             "--mode", "merge-stream",
             "--layer-set", args.layer_set,
         ]
+        if args.stream_part_root:
+            merge_cmd.extend(["--stream-part-root", args.stream_part_root])
+        if args.stream_out_csv:
+            merge_cmd.extend(["--out-csv", args.stream_out_csv])
+        if args.stream_shared_out_csv:
+            merge_cmd.extend(["--shared-out-csv", args.stream_shared_out_csv])
         if args.dry_run:
             print(" ".join(merge_cmd))
         else:

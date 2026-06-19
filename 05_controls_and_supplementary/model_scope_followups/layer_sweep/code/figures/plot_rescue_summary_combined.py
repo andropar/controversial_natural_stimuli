@@ -9,7 +9,9 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from cstims.paper.config import PAPER_ROOT, MODEL_DISPLAY_NAMES
+from cstims import paths
+from cstims.constants import MODEL_DISPLAY_NAMES
+PAPER_ROOT = paths.paper_root()
 from cstims.paper.style_improved import apply_style, FONT
 from layers_config import MODEL_LAYERS
 

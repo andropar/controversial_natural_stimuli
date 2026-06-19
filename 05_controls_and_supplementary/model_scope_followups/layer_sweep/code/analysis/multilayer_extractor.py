@@ -172,16 +172,20 @@ class MultiLayerExtractor:
             self._hook_modules = {n: named[n] for n in layer_names}
             self._mode = "hooks"
 
+    def preprocess_images(self, pil_images: List) -> torch.Tensor:
+        """Apply the model-specific CPU image transform and stack a batch."""
+        tensors = [self.preprocess(img) for img in pil_images]
+        return torch.stack(tensors)
+
     @torch.inference_mode()
-    def extract(self, pil_images: List) -> Dict[str, np.ndarray]:
-        """Run a single forward pass and return aggregated activations per layer.
+    def extract_tensor_batch(self, batch: torch.Tensor) -> Dict[str, np.ndarray]:
+        """Run a single forward pass from a preprocessed tensor batch.
 
         Returns
         -------
         dict[str, np.ndarray]   layer_name -> (B, F) float32 array
         """
-        tensors = [self.preprocess(img) for img in pil_images]
-        batch = torch.stack(tensors).to(self.device)
+        batch = batch.to(self.device, non_blocking=True)
 
         if self._mode == "fx":
             outputs = self._fx_extractor(batch)
@@ -215,6 +219,11 @@ class MultiLayerExtractor:
             t = _aggregate(t, agg)
             result[name] = t.float().cpu().numpy()
         return result
+
+    @torch.inference_mode()
+    def extract(self, pil_images: List) -> Dict[str, np.ndarray]:
+        """Run a single forward pass and return aggregated activations per layer."""
+        return self.extract_tensor_batch(self.preprocess_images(pil_images))
 
     def free(self):
         """Release GPU memory."""

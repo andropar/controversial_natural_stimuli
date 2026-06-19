@@ -13,7 +13,7 @@ or, with --part-dir:
 """
 
 import _paths  # noqa: F401
-from _paths import LAYER_SWEEP_ROOT, SHARE_ROOT
+from _paths import LAYER_SWEEP_ROOT
 import argparse
 import importlib.util
 import os
@@ -27,13 +27,12 @@ from scipy.stats import rankdata
 from tqdm import tqdm
 from joblib import Parallel, delayed
 
-from cstims.paper.config import MODEL_DISPLAY_NAMES, PAPER_ROOT, SUBJECTS
-from cstims.paper.utils import (
-    bootstrap_sample_indices,
-    compute_rdm_correlation,
-    parse_subject_arg,
-    predict_voxel_responses,
-)
+from cstims import paths
+from cstims.constants import MODEL_DISPLAY_NAMES, SUBJECTS
+PAPER_ROOT = paths.paper_root()
+from cstims.rdm import compute_rdm_correlation
+from cstims.sampling import bootstrap_sample_indices
+from cstims.subjects import parse_subject_arg
 from layers_config import MODEL_SOURCE, get_layer_set
 from batch_tuning import (
     parse_batch_candidates,
@@ -67,8 +66,7 @@ CACHE_ROOT = LAYER_SWEEP_ROOT / "cache_or_heavy"
 FEATURE_CACHE = CACHE_ROOT / "features"
 DATA_DIR = LAYER_SWEEP_ROOT / "results"
 PART_DIR = DATA_DIR / "wrsa_dense_shared_parts"
-DEEPVISION_CACHE = SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "deepvision_benchmark_cache"
-DEEPVISION_FMRI_ROOT = Path("/data/labshare/_stachelschwein/SSD/jroth/deepvision_fmri")
+DEEPVISION_CACHE = paths.deepvision_cache_root()
 STIMULUS_TYPE = "deepvision_shared"
 
 
@@ -252,7 +250,10 @@ def load_shared_subject_data(subjects, n_bootstrap: int, bootstrap_n: int, seed:
 
 
 def predict(features, enc):
-    pred = predict_voxel_responses(features, enc)
+    x = np.asarray(features, dtype=np.float32)
+    weights = np.asarray(enc["weights"], dtype=np.float32)
+    intercept = np.asarray(enc["intercept"], dtype=np.float32)
+    pred = x @ weights + intercept
     roi = enc.get("roi_hlvis")
     if roi is not None:
         pred = pred[:, np.asarray(roi, dtype=bool)]

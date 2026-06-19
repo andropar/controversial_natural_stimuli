@@ -18,7 +18,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from cstims.paper.config import PAPER_ROOT
+from cstims import paths
+PAPER_ROOT = paths.paper_root()
 from cstims.paper.style_improved import apply_style, FONT
 from layers_config import MAIN_LAYER, MODEL_LAYERS
 
@@ -98,7 +99,7 @@ def _render_for_models(df, models, out_pdf, out_png):
             if i == 0:
                 ax.set_title(mset, fontsize=FONT["title"])
             if j == 0:
-                from cstims.paper.config import MODEL_DISPLAY_NAMES
+                from cstims.constants import MODEL_DISPLAY_NAMES
                 disp = MODEL_DISPLAY_NAMES.get(model, model)
                 ax.set_ylabel(f"{disp}\nRSA", fontsize=FONT["axis_label"])
             # Show layer-name x-ticks on every row (since layers differ per model)

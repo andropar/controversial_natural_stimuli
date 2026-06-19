@@ -16,7 +16,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from cstims.paper.config import PAPER_ROOT
+from cstims import paths
+PAPER_ROOT = paths.paper_root()
 from cstims.paper.style_improved import apply_style, FONT
 from layers_config import MAIN_LAYER
 

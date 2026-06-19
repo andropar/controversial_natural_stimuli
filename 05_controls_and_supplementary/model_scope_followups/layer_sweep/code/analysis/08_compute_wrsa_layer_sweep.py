@@ -24,12 +24,14 @@ import pandas as pd
 from tqdm import tqdm
 from joblib import Parallel, delayed
 
-from cstims.paper.config import MODEL_DISPLAY_NAMES, PAPER_ROOT, get_brain_input_dir
-from cstims.paper.utils import (
-    compute_rdm_correlation, compute_rsa_score,
-    bootstrap_sample_indices, parse_subject_arg,
-    predict_voxel_responses,
-)
+from cstims import paths
+from cstims.cache import cstim_brain_cache_exists, load_cstim_brain_cache
+from cstims.constants import MODEL_DISPLAY_NAMES
+PAPER_ROOT = paths.paper_root()
+get_brain_input_dir = paths.get_brain_input_dir
+from cstims.rdm import compute_rdm_correlation, compute_rsa_score
+from cstims.sampling import bootstrap_sample_indices
+from cstims.subjects import parse_subject_arg
 from layers_config import MODEL_LAYERS, STIMULUS_SETS, get_layer_set
 
 CACHE_FEAT = LAYER_SWEEP_ROOT / "cache_or_heavy" / "features"
@@ -57,37 +59,30 @@ def load_encoding(path):
 
 
 def predict(features, enc):
-    """Match 02_rsa_scores/02_compute_wrsa_transfer.py prediction semantics."""
-    pred = predict_voxel_responses(features, enc)
+    """Predict with raw-space encoding weights saved by the layer-sweep fitter."""
+    x = np.asarray(features, dtype=np.float32)
+    weights = np.asarray(enc["weights"], dtype=np.float32)
+    intercept = np.asarray(enc["intercept"], dtype=np.float32)
+    pred = x @ weights + intercept
     roi = enc.get("roi_hlvis")
     if roi is not None:
         pred = pred[:, np.asarray(roi, dtype=bool)]
-    return pred
+    return np.ascontiguousarray(pred, dtype=np.float32)
 
 
 def load_subject_data(subject, n_vicco_boot):
-    d = get_brain_input_dir(subject)
-    b = np.load(d / "cstim_betas_averaged.npz", allow_pickle=True)
-    v = np.load(d / "voxel_metadata.npz", allow_pickle=True)
-    si = pd.read_csv(d / "cstim_stimulus_info.csv")
-    hlvis = v["hlvis_mask"]
-    betas_hlvis = b["betas"][hlvis, :]
-    k2i = {k: i for i, k in enumerate(b["stim_keys"])}
-    avail = sorted(si["group"].unique())
-    g_brain, g_file = {}, {}
-    for g in avail:
-        m = si["group"] == g
-        g_brain[g] = np.array([k2i[k] for k in si.loc[m, "stim_key"].values])
-        idx = si.loc[m, "stim_idx"].values
-        g_file[g] = idx - 1 if g == "vicco" else idx
+    cache = load_cstim_brain_cache(subject)
+    data = cache.as_legacy_group_dict()
+    g_brain = data["group_indices"]
+    g_file = data["group_stim_idx"]
     n_vicco = len(g_brain.get("vicco", []))
     n_vicco_sample = min(100, n_vicco) if n_vicco > 0 else 0
     boots = bootstrap_sample_indices(n_vicco, n_vicco_sample, n_bootstrap=n_vicco_boot, seed=0) if n_vicco > 0 else []
     return {
-        "betas_hlvis": betas_hlvis,
+        "betas_hlvis": data["betas_hlvis"],
         "group_indices": g_brain,
         "group_stim_idx": g_file,
-        "available_groups": avail,
+        "available_groups": data["available_groups"],
         "vicco_bootstrap": boots,
         "n_vicco_sample": n_vicco_sample,
     }
@@ -156,7 +151,7 @@ def main():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     subjects = parse_subject_arg(args.subject)
     sdata_all = {s: load_subject_data(s, args.n_vicco_boot) for s in subjects
-                  if (get_brain_input_dir(s) / "cstim_betas_averaged.npz").exists()}
+                  if cstim_brain_cache_exists(s)}
     print("Subjects:", list(sdata_all.keys()))
 
     existing_counts = load_existing_counts(out_csv)

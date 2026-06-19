@@ -10,7 +10,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from cstims.paper.config import PAPER_ROOT
+from cstims import paths
+PAPER_ROOT = paths.paper_root()
 from cstims.paper.style_improved import apply_style, FONT
 from layers_config import MODEL_LAYERS
 
@@ -45,7 +46,7 @@ def main():
                edgecolor="black", linewidth=0.4, capsize=1.5, label=mset)
 
     ax.axhline(0, color="black", lw=0.6)
-    from cstims.paper.config import MODEL_DISPLAY_NAMES
+    from cstims.constants import MODEL_DISPLAY_NAMES
     ax.set_xticks(x)
     ax.set_xticklabels([MODEL_DISPLAY_NAMES.get(m, m.replace("_imagenet1k_v1", "").replace("torchvision_", ""))
                         for m in MODEL_ORDER], rotation=45, ha="right", fontsize=FONT["tick"])
