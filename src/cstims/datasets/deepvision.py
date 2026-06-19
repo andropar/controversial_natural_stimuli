@@ -462,23 +462,33 @@ class DeepVisionBenchmark:
                 responses_full[:, j] += vec
             counts[j] += 1
 
-        # Load all sessions in parallel using joblib
-        print(f"Loading {len(h5s)} session files with {self.n_jobs} workers...")
-        session_results = Parallel(n_jobs=self.n_jobs, backend="loky", verbose=10)(
-            delayed(_load_session_betas)(h5, n_vox_brain) for h5 in h5s
-        )
-        print(f"Loaded {len([r for r in session_results if r is not None])} sessions")
-
-        # Aggregate results sequentially (fast, in-memory)
-        for result in session_results:
+        def aggregate_session_result(result) -> bool:
             if result is None:
-                continue
+                return False
             labels, betas_z = result
             for col_idx, name in enumerate(labels):
                 lname = str(name).strip()
                 if lname.lower() == "blank":
                     continue
                 add_to_accum(lname, betas_z[:, col_idx])
+            return True
+
+        # Load all sessions.  For n_jobs=1, aggregate each session immediately so
+        # large subject caches can be built without retaining every session array.
+        print(f"Loading {len(h5s)} session files with {self.n_jobs} workers...")
+        loaded_sessions = 0
+        if self.n_jobs == 1:
+            for h5 in h5s:
+                if aggregate_session_result(_load_session_betas(h5, n_vox_brain)):
+                    loaded_sessions += 1
+        else:
+            session_results = Parallel(n_jobs=self.n_jobs, backend="loky", verbose=10)(
+                delayed(_load_session_betas)(h5, n_vox_brain) for h5 in h5s
+            )
+            for result in session_results:
+                if aggregate_session_result(result):
+                    loaded_sessions += 1
+        print(f"Loaded {loaded_sessions} sessions")
 
         # Finalize averages
         for j in range(len(target_images)):

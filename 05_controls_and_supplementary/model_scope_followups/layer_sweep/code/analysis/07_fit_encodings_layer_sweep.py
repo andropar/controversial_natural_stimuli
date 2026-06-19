@@ -1336,6 +1336,7 @@ def stream_subject_model(args, subject: str, model: str):
         voxel_set="visual",
         input_source="finalinterp",
         image_set="unique",
+        n_jobs=args.deepvision_load_jobs,
     )
     responses = bench.response_data.to_numpy()
     hlvis_mask = bench.get_roi_mask("hlvis")
@@ -1528,6 +1529,7 @@ def load_stream_subject_state(args, subject: str, model: str):
         voxel_set="visual",
         input_source="finalinterp",
         image_set="unique",
+        n_jobs=args.deepvision_load_jobs,
     )
     responses = bench.response_data.to_numpy()
     hlvis_mask = bench.get_roi_mask("hlvis")
@@ -1821,6 +1823,46 @@ def stream_model_main(args):
     print("[stream-model] done", flush=True)
 
 
+def validate_stream_parts_complete(args) -> None:
+    subjects = parse_subject_list(args.subject)
+    missing = []
+    for subject in subjects:
+        cstim_data = load_cstim_subject_ranks(subject, args.n_vicco_boot)
+        shared_data = load_shared_subject_ranks(
+            subject,
+            n_bootstrap=args.n_shared_boot,
+            bootstrap_n=args.bootstrap_n,
+            seed=args.shared_seed,
+        )
+        expected_wrsa = len(cstim_data["cstim_ranks"]) + len(cstim_data["vicco_bootstrap"])
+        expected_shared = len(shared_data["boot"])
+        for model in args.models:
+            if model not in MODEL_LAYERS:
+                missing.append(f"{subject}/{model}: unknown model")
+                continue
+            wrsa_part, shared_part = stream_part_paths(subject, model, args.stream_part_root)
+            complete_layers = completed_stream_layers(
+                wrsa_part,
+                shared_part,
+                expected_wrsa_rows=expected_wrsa,
+                expected_shared_rows=expected_shared,
+            )
+            expected_layers = [name for name, _ in MODEL_LAYERS[model]]
+            missing_layers = [name for name in expected_layers if name not in complete_layers]
+            if missing_layers:
+                missing.append(
+                    f"{subject}/{model}: {len(missing_layers)}/{len(expected_layers)} "
+                    f"layers missing or incomplete"
+                )
+    if missing:
+        preview = "\n".join(f"  - {item}" for item in missing[:40])
+        extra = "" if len(missing) <= 40 else f"\n  ... {len(missing) - 40} more"
+        raise RuntimeError(
+            "Refusing to merge incomplete dense layer sweep stream parts:\n"
+            f"{preview}{extra}"
+        )
+
+
 def merge_stream_parts(out_csv: Path, part_dir: Path):
     files = sorted(glob.glob(str(part_dir / "*.csv")))
     if not files:
@@ -1848,6 +1890,7 @@ def merge_stream_main(args):
     wrsa_csv = Path(args.out_csv) if args.out_csv else STREAM_WRSA_CSV
     shared_csv = Path(args.shared_out_csv) if args.shared_out_csv else STREAM_SHARED_CSV
     wrsa_part_dir, shared_part_dir = stream_part_dirs(args.stream_part_root)
+    validate_stream_parts_complete(args)
     merge_stream_parts(wrsa_csv, wrsa_part_dir)
     merge_stream_parts(shared_csv, shared_part_dir)
 
@@ -1856,7 +1899,7 @@ def main():
     global MODEL_LAYERS
     parser = argparse.ArgumentParser()
     parser.add_argument("--subject", default="all")
-    parser.add_argument("--models", nargs="*", default=list(MODEL_LAYERS.keys()))
+    parser.add_argument("--models", nargs="*", default=None)
     parser.add_argument("--layer-set", choices=["configured", "dense"], default="configured",
                         help="Layer inventory to fit")
     parser.add_argument("--overwrite", action="store_true")
@@ -1868,6 +1911,9 @@ def main():
                         help="Streaming mode: CPU worker threads per process for "
                              "loading and preprocessing upcoming image batches. "
                              "Use 0 to disable prefetching.")
+    parser.add_argument("--deepvision-load-jobs", type=int, default=8,
+                        help="Workers used to build missing DeepVision response caches. "
+                             "Use 1 for memory-constrained Slurm retries.")
     parser.add_argument("--n-folds", type=int, default=DEFAULT_N_FOLDS)
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED)
     parser.add_argument("--alpha-aggregation", choices=["median", "mean"],
@@ -1917,6 +1963,10 @@ def main():
                         help="merge-stream mode: DeepVision-shared output CSV.")
     args = parser.parse_args()
 
+    MODEL_LAYERS = get_layer_set(args.layer_set)
+    if args.models is None:
+        args.models = list(MODEL_LAYERS.keys())
+
     if args.mode == "stream":
         stream_main(args)
         return
@@ -1927,7 +1977,6 @@ def main():
         merge_stream_main(args)
         return
 
-    MODEL_LAYERS = get_layer_set(args.layer_set)
     args.batch_size = parse_batch_size(args.batch_size)
     batch_candidates = parse_batch_candidates(args.batch_candidates)
 
@@ -1950,6 +1999,7 @@ def main():
             voxel_set="visual",
             input_source="finalinterp",
             image_set="unique",
+            n_jobs=args.deepvision_load_jobs,
         )
         responses = bench.response_data.to_numpy()  # (n_voxels, n_images)
         n_images = bench.n_stimuli

@@ -51,9 +51,11 @@ N_VICCO_BOOT="${N_VICCO_BOOT:-1000}"
 N_SHARED_BOOT="${N_SHARED_BOOT:-1000}"
 BOOTSTRAP_N="${BOOTSTRAP_N:-100}"
 EXTRACT_PREFETCH_WORKERS="${EXTRACT_PREFETCH_WORKERS:-2}"
+DEEPVISION_LOAD_JOBS="${DEEPVISION_LOAD_JOBS:-1}"
 STREAM_ENCODING_ROOT="${STREAM_ENCODING_ROOT:-}"
 
 MAX_CONCURRENT="${MAX_CONCURRENT:-100}"
+GPU_DEPENDENCY="${GPU_DEPENDENCY:-}"
 TIME_LIMIT="${TIME_LIMIT:-24:00:00}"
 CONSTRAINT="${CONSTRAINT:-gpu}"
 GRES="${GRES:-gpu:a100:1}"
@@ -137,6 +139,7 @@ WORKER_SCRIPT="${RUN_ROOT}/dense_stream_worker.slurm.sh"
   printf 'N_SHARED_BOOT=%q\n' "${N_SHARED_BOOT}"
   printf 'BOOTSTRAP_N=%q\n' "${BOOTSTRAP_N}"
   printf 'EXTRACT_PREFETCH_WORKERS=%q\n' "${EXTRACT_PREFETCH_WORKERS}"
+  printf 'DEEPVISION_LOAD_JOBS=%q\n' "${DEEPVISION_LOAD_JOBS}"
   printf 'STREAM_ENCODING_ROOT=%q\n\n' "${STREAM_ENCODING_ROOT}"
   cat <<'SLURM'
 export CSTIMS_PATH_ENV
@@ -190,6 +193,7 @@ cmd=(
   --n-shared-boot "${N_SHARED_BOOT}"
   --bootstrap-n "${BOOTSTRAP_N}"
   --extract-prefetch-workers "${EXTRACT_PREFETCH_WORKERS}"
+  --deepvision-load-jobs "${DEEPVISION_LOAD_JOBS}"
   --stream-part-root "${PART_ROOT}"
   --progress-log "${progress_log}"
 )
@@ -217,6 +221,8 @@ MERGE_SCRIPT="${RUN_ROOT}/dense_stream_merge.slurm.sh"
   printf 'SHARED_OUT_CSV=%q\n' "${SHARED_OUT_CSV}"
   printf 'CSTIMS_PATH_ENV=%q\n' "${CSTIMS_PATH_ENV}"
   printf 'LAYER_SET=%q\n\n' "${LAYER_SET}"
+  printf 'SUBJECTS=%q\n' "${SUBJECTS}"
+  printf 'MODELS=%q\n\n' "${MODELS}"
   cat <<'SLURM'
 export CSTIMS_PATH_ENV
 export PYTHONUNBUFFERED=1
@@ -235,9 +241,11 @@ echo "[merge] $(date --iso-8601=seconds) part_root=${PART_ROOT}"
 "${PYTHON_BIN}" "${ANALYSIS_DIR}/07_fit_encodings_layer_sweep.py" \
   --mode merge-stream \
   --layer-set "${LAYER_SET}" \
+  --subject "${SUBJECTS}" \
   --stream-part-root "${PART_ROOT}" \
   --out-csv "${OUT_CSV}" \
-  --shared-out-csv "${SHARED_OUT_CSV}"
+  --shared-out-csv "${SHARED_OUT_CSV}" \
+  ${MODELS:+--models ${MODELS//,/ }}
 
 "${PYTHON_BIN}" "${ANALYSIS_DIR}/14_build_mrsa_layer_selection_tables.py" \
   --layer-set "${LAYER_SET}" \
@@ -268,6 +276,9 @@ if [[ -n "${ACCOUNT}" ]]; then
 fi
 if [[ -n "${QOS}" ]]; then
   GPU_SBATCH_ARGS+=(--qos="${QOS}")
+fi
+if [[ -n "${GPU_DEPENDENCY}" ]]; then
+  GPU_SBATCH_ARGS+=(--dependency="${GPU_DEPENDENCY}")
 fi
 
 MERGE_SBATCH_ARGS=(
