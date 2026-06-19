@@ -231,7 +231,7 @@ fi
 
 cd "${CV_ROOT}"
 score_cmd=(
-  "${PYTHON_BIN}" code/analysis/02_score_target_adaptation_srp5920_per_voxel_alpha.py
+  "${PYTHON_BIN}" code/analysis/02_score_target_adaptation_fixed_alpha.py
   --weights "${FIXED_WEIGHTS}"
   --n-vicco-boot "${N_VICCO_BOOT}"
 )
