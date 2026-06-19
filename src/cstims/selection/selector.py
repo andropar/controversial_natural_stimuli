@@ -20,7 +20,7 @@ from ..encoding.linear import (
     encode_batch_for_all_encodings,
 )
 from ..feature_accessor import PrefetchingFeatureAccessor
-from ..rdm_cuda import get_rdm_vector
+from ..rdm import get_rdm_vector
 from ..timing import timed
 from .primitives import compute_pairwise_distances
 from .utility import (

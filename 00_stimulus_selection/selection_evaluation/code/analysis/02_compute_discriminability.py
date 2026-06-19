@@ -638,7 +638,8 @@ def main():
     # Build encoding root map if using unique encodings
     encoding_root_map = None
     if args.unique_encodings:
-        from cstims.paper.config import UNIQUE_ENCODING_DIRS
+        from cstims import paths
+        UNIQUE_ENCODING_DIRS = paths.unique_encoding_dirs()
 
         encoding_root_map = {k: v for k, v in UNIQUE_ENCODING_DIRS.items()}
         print(f"Using UNIQUE per-subject encodings: {list(encoding_root_map.keys())}")

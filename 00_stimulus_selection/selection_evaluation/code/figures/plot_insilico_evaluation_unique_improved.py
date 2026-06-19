@@ -42,7 +42,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from cstims.paper import config
+from cstims import constants, paths
 from cstims.paper.style_improved import (
     apply_style, FONT, DPI, W_DOUBLE,
     MODEL_SET_ORDER, MODEL_SET_DISPLAY_SHORT,
@@ -92,7 +92,7 @@ def duplicate_model_adjustment(model_set: str) -> tuple[int, int]:
     if model_set != "all_models":
         return 0, 0
 
-    path = config.EVAL_DATA_DIR / f"{model_set}{DATA_SUFFIX}" / "correlation_matrices.csv"
+    path = paths.selection_evaluation_results_dir() / f"{model_set}{DATA_SUFFIX}" / "correlation_matrices.csv"
     if not path.exists():
         return 0, 0
 
@@ -210,7 +210,7 @@ def correct_duplicate_auc_columns(df: pd.DataFrame, model_set: str) -> pd.DataFr
 
 
 def load_discriminability(model_set: str) -> pd.DataFrame:
-    path = config.EVAL_DATA_DIR / f"{model_set}{DATA_SUFFIX}" / "discriminability.csv"
+    path = paths.selection_evaluation_results_dir() / f"{model_set}{DATA_SUFFIX}" / "discriminability.csv"
     if not path.exists():
         return pd.DataFrame()
     df = pd.read_csv(path)
@@ -221,7 +221,7 @@ def load_discriminability(model_set: str) -> pd.DataFrame:
 
 
 def load_auc(model_set: str) -> pd.DataFrame:
-    path = config.EVAL_DATA_DIR / f"{model_set}{DATA_SUFFIX}" / "auc_significance.csv"
+    path = paths.selection_evaluation_results_dir() / f"{model_set}{DATA_SUFFIX}" / "auc_significance.csv"
     if not path.exists():
         return pd.DataFrame()
     return correct_duplicate_auc_columns(pd.read_csv(path), model_set)

@@ -36,7 +36,7 @@ from cstims.evaluation.model_discrimination import (
     model_discriminability,
 )
 from cstims.noise_estimation import rdm_noise_by_model
-from cstims.rdm_cuda import get_rdm_vector
+from cstims.rdm import get_rdm_vector
 from cstims.selection.primitives import (
     aggregate_across_models,
     compute_correlation_matrix,

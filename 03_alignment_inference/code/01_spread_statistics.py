@@ -39,7 +39,7 @@ _PAPER = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))  # project root for cstims
 
-from cstims.paper import config
+from cstims import constants, paths
 
 
 METHODS = {
@@ -51,7 +51,7 @@ METHODS = {
 def load_scores(subject: str, method: str) -> pd.DataFrame:
     """Load score CSV for a subject and method."""
     filename = METHODS[method]
-    path = config.RSA_DATA_DIR / subject / filename
+    path = paths.rsa_data_dir() / subject / filename
     if not path.exists():
         return pd.DataFrame()
     return pd.read_csv(path)
@@ -270,7 +270,7 @@ def compute_cross_subject_summary(results_df: pd.DataFrame) -> pd.DataFrame:
 
 def main():
     parser = argparse.ArgumentParser(description="Compute spread statistics")
-    parser.add_argument("--subjects", nargs="+", default=config.SUBJECTS)
+    parser.add_argument("--subjects", nargs="+", default=constants.SUBJECTS)
     args = parser.parse_args()
 
     all_results = []
@@ -297,13 +297,13 @@ def main():
 
     # Save detailed results
     results_df = pd.DataFrame(all_results)
-    output_path = config.STATS_DATA_DIR / "spread_statistics.csv"
+    output_path = paths.stats_data_dir() / "spread_statistics.csv"
     results_df.to_csv(output_path, index=False)
     print(f"\nSaved detailed results to {output_path}")
 
     # Compute cross-subject summary
     summary_df = compute_cross_subject_summary(results_df)
-    summary_path = config.STATS_DATA_DIR / "spread_statistics_summary.csv"
+    summary_path = paths.stats_data_dir() / "spread_statistics_summary.csv"
     summary_df.to_csv(summary_path, index=False)
     print(f"Saved summary to {summary_path}")
 

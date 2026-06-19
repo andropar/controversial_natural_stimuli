@@ -27,7 +27,7 @@ import pandas as pd
 from scipy import stats
 import matplotlib.pyplot as plt
 
-from cstims.paper import config
+from cstims import constants, paths
 from cstims.paper.style_improved import (
     apply_style, FONT, DPI, W_DOUBLE,
     OKABE_ITO, add_panel_label,
@@ -42,7 +42,7 @@ from plot_ood_vs_alignment import (
 )
 
 FIGURES = Path(__file__).resolve().parent
-OOD_DATA = config.OOD_DATA_DIR / "pca_loglik.csv"
+OOD_DATA = paths.ood_data_dir() / "pca_loglik.csv"
 
 
 def bootstrap_spearman_ci(x, y, n_boot=2000, ci=95):
@@ -100,7 +100,7 @@ def panel(ax, sub, ood_col, color, panel_label, space_label):
         if i not in label_idx:
             continue
         ax.annotate(
-            config.MODEL_DISPLAY_NAMES.get(name, name),
+            constants.MODEL_DISPLAY_NAMES.get(name, name),
             (xi, yi), fontsize=FONT["small"] - 3, ha="left", va="bottom",
             xytext=(3, 3), textcoords="offset points", color="#444",
             alpha=0.85,

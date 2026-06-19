@@ -31,7 +31,7 @@ SHARE_ROOT = THIS.parents[3]
 HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(HELPERS))
 
-from cstims.paper import config  # noqa: E402
+from cstims import constants, paths
 from cstims.paper.style_improved import (  # noqa: E402
     DPI,
     FONT,
@@ -210,7 +210,7 @@ def subject_scores(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def get_panel_data(df: pd.DataFrame, model_set: str):
-    models = config.MODEL_SETS[model_set]
+    models = constants.MODEL_SETS[model_set]
     sub = df[df["model_set"].eq(model_set)]
     subjects = sorted(sub["subject"].unique())
     out = {}
@@ -358,7 +358,7 @@ def plot_method_panel(
     ax.set_xticks(x)
     if show_xticks:
         ax.set_xticklabels(
-            [SHORT_NAMES.get(m, config.MODEL_DISPLAY_NAMES.get(m, m)) for m in order],
+            [SHORT_NAMES.get(m, constants.MODEL_DISPLAY_NAMES.get(m, m)) for m in order],
             rotation=45,
             ha="right",
         )
@@ -422,7 +422,7 @@ def plot_roi(
         print(f"{roi}: no rows, skipping")
         return
 
-    ratios = [max(len(config.MODEL_SETS[model_set]), 4) for model_set in PANEL_ORDER]
+    ratios = [max(len(constants.MODEL_SETS[model_set]), 4) for model_set in PANEL_ORDER]
     fig = plt.figure(figsize=(W_DOUBLE, 9.0))
     gs = fig.add_gridspec(
         2,

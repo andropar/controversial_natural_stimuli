@@ -47,19 +47,18 @@ import pandas as pd
 from scipy import stats
 from tqdm import tqdm
 
-from cstims.paper import config
-from cstims.paper.utils import (
-    load_encoding_model, predict_voxel_responses,
-    compute_rdm_correlation, rdm_to_vector,
-)
+from cstims import constants, paths
+from cstims.cache import load_cstim_brain_cache, load_cstim_features
+from cstims.rdm import compute_rdm_correlation, rdm_to_vector
+from cstims.paper.utils import load_encoding_model, predict_voxel_responses
 
-OOD_DIR    = config.OOD_DATA_DIR
+OOD_DIR    = paths.ood_data_dir()
 PER_IMG    = OOD_DIR / "low_level_robustness_per_image_distances.csv"
 OUT_PATH   = OOD_DIR / "wrsa_low_level_subsets.csv"
 SUM_PATH   = OOD_DIR / "wrsa_low_level_subsets_summary.csv"
 
 CSTIM_SETS = ["all_models", "architecture", "training_objective", "sota", "dataset"]
-ALL_MODELS = config.MODEL_SETS["all_models"]
+ALL_MODELS = constants.MODEL_SETS["all_models"]
 
 
 # --------------------------------------------------------------------------------
@@ -122,25 +121,11 @@ def build_subsets(per_image_low: np.ndarray, cstim_per_image_per_set: dict,
 # --------------------------------------------------------------------------------
 
 def load_subject_brain_vicco(subject: str):
-    data_dir = config.get_brain_input_dir(subject)
-    betas_data = np.load(data_dir / "cstim_betas_averaged.npz", allow_pickle=True)
-    voxel_data = np.load(data_dir / "voxel_metadata.npz", allow_pickle=True)
-    stim_info = pd.read_csv(data_dir / "cstim_stimulus_info.csv")
-
-    hlvis_mask = voxel_data["hlvis_mask"]
-    betas_hlvis = betas_data["betas"][hlvis_mask, :]
-    stim_keys = betas_data["stim_keys"]
-    stim_key_to_idx = {k: i for i, k in enumerate(stim_keys)}
-
-    vicco = stim_info[stim_info["group"] == "vicco"].sort_values("stim_idx").reset_index(drop=True)
-    file_idx = vicco["stim_idx"].astype(int).values - 1   # 0..291
-    keys = vicco["stim_key"].values
-    brain_idx = np.array([stim_key_to_idx[k] for k in keys])
-
+    cache = load_cstim_brain_cache(subject)
     return {
-        "betas_hlvis": betas_hlvis,
-        "vicco_file_idx": file_idx,        # ordered by file index 0..291
-        "vicco_brain_idx": brain_idx,      # for indexing betas
+        "betas_hlvis": cache.betas_roi,
+        "vicco_file_idx": cache.feature_indices("vicco", sort_by_stim_idx=True),
+        "vicco_brain_idx": cache.brain_indices("vicco", sort_by_stim_idx=True),
     }
 
 
@@ -149,13 +134,10 @@ def load_subject_brain_vicco(subject: str):
 # --------------------------------------------------------------------------------
 
 def full_vicco_rdms(model: str, subject: str, brain) -> dict | None:
-    feat_path = config.CSTIM_FEATURE_CACHE / f"{model}.npz"
-    if not feat_path.exists():
+    try:
+        X_full = load_cstim_features(model, "vicco", dtype=np.float32)
+    except (FileNotFoundError, KeyError):
         return None
-    feats = np.load(feat_path)
-    if "vicco" not in feats:
-        return None
-    X_full = feats["vicco"].astype(np.float32)         # (292, d), file_idx ordered
     if X_full.shape[0] != 292:
         return None
 
@@ -215,9 +197,9 @@ def main():
     # 2. Per (model, subject), compute full vicco RDMs and then wRSA per subset
     rows = []
     print("\nComputing full vicco RDMs and per-subset wRSA...")
-    subj_brain = {s: load_subject_brain_vicco(s) for s in config.SUBJECTS}
+    subj_brain = {s: load_subject_brain_vicco(s) for s in constants.SUBJECTS}
     for model in tqdm(ALL_MODELS, desc="Models"):
-        for subject in config.SUBJECTS:
+        for subject in constants.SUBJECTS:
             brain = subj_brain[subject]
             rdms = full_vicco_rdms(model, subject, brain)
             if rdms is None:
@@ -257,8 +239,8 @@ def main():
     # 4. Comparison: cstim wRSA per (subject, model, model_set) vs subset wRSA
     print("\nComparing to cstim wRSA from 02_rsa_scores...")
     wrsa_dfs = []
-    for s in config.SUBJECTS:
-        p = config.RSA_DATA_DIR / s / "wrsa_transfer_scores.csv"
+    for s in constants.SUBJECTS:
+        p = paths.rsa_data_dir() / s / "wrsa_transfer_scores.csv"
         if p.exists():
             wrsa_dfs.append(pd.read_csv(p))
     cstim = pd.concat(wrsa_dfs, ignore_index=True)
@@ -279,7 +261,7 @@ def main():
             models = ALL_MODELS
             cs = cstim[cstim["model_set"] == "all_models"]
         else:
-            models = config.MODEL_SETS[stim_set]
+            models = constants.MODEL_SETS[stim_set]
             cs = cstim[cstim["model_set"] == stim_set]
         cs_mean_wrsa = cs["wrsa_transfer"].mean()
         sub_df = df[df["model"].isin(models)]

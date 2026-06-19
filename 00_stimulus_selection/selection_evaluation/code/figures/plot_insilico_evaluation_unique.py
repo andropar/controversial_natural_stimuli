@@ -31,7 +31,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from scipy.integrate import trapezoid
 
-from cstims.paper import config
+from cstims import constants, paths
 from cstims.paper.style_improved import apply_style, FONT, DPI, W_DOUBLE
 
 apply_style()
@@ -63,7 +63,7 @@ DATA_SUFFIX = "_unique_boot"
 
 
 def load_discriminability(model_set: str) -> pd.DataFrame:
-    path = config.EVAL_DATA_DIR / f"{model_set}{DATA_SUFFIX}" / "discriminability.csv"
+    path = paths.selection_evaluation_results_dir() / f"{model_set}{DATA_SUFFIX}" / "discriminability.csv"
     if not path.exists():
         return pd.DataFrame()
     df = pd.read_csv(path)
@@ -74,7 +74,7 @@ def load_discriminability(model_set: str) -> pd.DataFrame:
 
 
 def load_auc_significance(model_set: str) -> pd.DataFrame:
-    path = config.EVAL_DATA_DIR / f"{model_set}{DATA_SUFFIX}" / "auc_significance.csv"
+    path = paths.selection_evaluation_results_dir() / f"{model_set}{DATA_SUFFIX}" / "auc_significance.csv"
     if not path.exists():
         return pd.DataFrame()
     return pd.read_csv(path)

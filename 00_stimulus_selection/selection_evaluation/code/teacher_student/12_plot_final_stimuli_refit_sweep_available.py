@@ -37,6 +37,10 @@ SUBSET_STYLE = {
     "random": {"color": "#E45756", "linestyle": "--", "label": "Random"},
 }
 CI_MULT = 1.96
+MODE_DISPLAY_NAMES = {
+    "independent": "Separate-train refit",
+    "eval_augmented_loo": "Eval-included LOO refit",
+}
 
 
 def sample_sd(values: pd.Series | np.ndarray) -> float:
@@ -66,6 +70,10 @@ def safe_int(value: Any, default: int = 0) -> int:
         return int(value)
     except Exception:
         return default
+
+
+def mode_display_name(mode: str) -> str:
+    return MODE_DISPLAY_NAMES.get(mode, mode.replace("_", " "))
 
 
 def load_metadata(run_dir: Path) -> dict[str, Any]:
@@ -582,7 +590,7 @@ def plot_empirical_snr(summary: pd.DataFrame, out_base: Path) -> None:
                 ax.set_title(model_set.replace("_", " "), fontsize=9)
             if c == 0:
                 track_label = "Raw" if track == "raw" else "Encoding avg"
-                mode_label = mode.replace("_", " ")
+                mode_label = mode_display_name(mode)
                 ax.set_ylabel(f"{mode_label}\n{track_label}\nRecovery", fontsize=8)
             if r == n_rows - 1:
                 ax.set_xlabel("Refit pool size", fontsize=8)
@@ -697,7 +705,10 @@ def plot_noise_curves(summary: pd.DataFrame, out_base: Path) -> None:
         frameon=False,
         bbox_to_anchor=(0.5, 1.02),
     )
-    fig.suptitle("Independent teacher/student recovery curves by refit pool size", y=1.065)
+    fig.suptitle(
+        f"{mode_display_name('independent')} teacher/student recovery curves by refit pool size",
+        y=1.065,
+    )
     fig.tight_layout()
     out_base.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_base.with_suffix(".png"), dpi=220, bbox_inches="tight")

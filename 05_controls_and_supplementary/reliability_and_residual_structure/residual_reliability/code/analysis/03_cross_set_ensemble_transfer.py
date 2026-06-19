@@ -44,7 +44,7 @@ sys.path.insert(0, str(SHARE_ROOT / "src"))
 
 import matplotlib.pyplot as plt
 
-from cstims.paper import config
+from cstims import constants, paths
 from cstims.paper.style_improved import apply_style, DPI, FONT, W_DOUBLE
 
 apply_style()
@@ -320,7 +320,7 @@ def main() -> None:
     parser.add_argument("--cv-seed", type=int, default=rr.CV_RANDOM_STATE)
     args = parser.parse_args()
 
-    subjects = config.SUBJECTS if args.subject == "all" else rr.parse_subject_arg(args.subject)
+    subjects = constants.SUBJECTS if args.subject == "all" else rr.parse_subject_arg(args.subject)
     rsa_types = ["fixed", "mixed"] if args.rsa_type == "all" else [args.rsa_type]
 
     OUT_DATA.mkdir(parents=True, exist_ok=True)

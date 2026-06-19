@@ -48,7 +48,7 @@ from cstims.encoding.linear import (  # noqa: E402
     load_encoding_params_by_encoding,
 )
 from cstims.noise_estimation import rdm_noise_by_model  # noqa: E402
-from cstims.rdm_cuda import get_rdm_vector  # noqa: E402
+from cstims.rdm import get_rdm_vector  # noqa: E402
 from cstims.selection.image_filter import (  # noqa: E402
     FilterRecord,
     ImageFilter,
@@ -1690,6 +1690,7 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
     max_batch_size = int(args.max_batch_size) if int(args.max_batch_size) > 0 else current_batch_size
     max_batch_size = max(max_batch_size, current_batch_size)
     successful_batches_since_resize = 0
+    adaptive_growth_limit = max_batch_size
 
     for greedy_step in trange(args.init_size, args.target_size, desc="Feature-only greedy"):
         active = [
@@ -1830,9 +1831,11 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
                     for key, write_pos in write_pos_snapshot.items():
                         buffers[key]["write_pos"] = write_pos
                     new_batch_size = max(min_batch_size, current_batch_size // 2)
+                    adaptive_growth_limit = min(adaptive_growth_limit, new_batch_size)
                     print(
                         f"[selection] CUDA OOM at batch_size={current_batch_size}; "
-                        f"retrying start={start} with batch_size={new_batch_size}",
+                        f"retrying start={start} with batch_size={new_batch_size}; "
+                        f"future adaptive growth capped at {adaptive_growth_limit}",
                         flush=True,
                     )
                     write_selection_progress(
@@ -1843,6 +1846,7 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
                         start=start,
                         old_batch_size=current_batch_size,
                         new_batch_size=new_batch_size,
+                        adaptive_growth_limit=adaptive_growth_limit,
                     )
                     current_batch_size = new_batch_size
                     successful_batches_since_resize = 0
@@ -1888,10 +1892,10 @@ def run_selection(args: argparse.Namespace, methods: list[MethodSpec]) -> tuple[
             start = end
             if (
                 args.adaptive_batch_size
-                and current_batch_size < max_batch_size
+                and current_batch_size < adaptive_growth_limit
                 and successful_batches_since_resize >= 2
             ):
-                new_batch_size = min(max_batch_size, current_batch_size * 2)
+                new_batch_size = min(adaptive_growth_limit, current_batch_size * 2)
                 if new_batch_size > current_batch_size:
                     print(
                         f"[selection] increasing batch_size "

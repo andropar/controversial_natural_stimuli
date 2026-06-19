@@ -28,7 +28,9 @@ sys.path.insert(0, str(SHARE_ROOT / "src"))
 sys.path.insert(0, str(SHARE_ROOT / "src"))
 sys.path.insert(0, str(SHARE_ROOT))
 
-from cstims.paper.config import UNIQUE_ENCODING_DIRS, MODEL_LIST_CSV
+from cstims import paths
+UNIQUE_ENCODING_DIRS = paths.unique_encoding_dirs()
+MODEL_LIST_CSV = paths.model_list_csv()
 from cstims.encoding.linear import load_encoding_params_by_encoding, encode_batch_for_all_encodings
 
 SELECTION_ROOT = SHARE_ROOT / "00_stimulus_selection" / "results" / "selected_stimuli"

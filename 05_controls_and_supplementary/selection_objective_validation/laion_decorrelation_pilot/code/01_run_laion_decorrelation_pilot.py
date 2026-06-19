@@ -35,7 +35,7 @@ from cstims.evaluation.model_discrimination import model_discriminability
 from cstims.feature_accessor import FeatureAccessor
 from cstims.feature_extraction.universal_extractor import UniversalFeatureExtractor
 from cstims.noise_estimation import rdm_noise_by_model
-from cstims.rdm_cuda import get_rdm_vector
+from cstims.rdm import get_rdm_vector
 from cstims.selection import (
     TrackAggregationConfig,
     TrackDefinition,

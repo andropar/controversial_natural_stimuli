@@ -10,7 +10,6 @@ Usage:
 """
 
 import argparse
-import os
 import sys
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -1208,15 +1207,10 @@ def plot_brain_maps(df: pd.DataFrame, run_dir: Path, out_dir: Path, top_n: int =
     # Group by subject
     subjects = sorted(set(m["subject"] for m in model_dirs))
 
-    from cstims.paths import deepvision_fmri_root
+    from cstims import paths
 
-    cache_root = Path(
-        os.environ.get(
-            "CSTIMS_DEEPVISION_CACHE_ROOT",
-            PROJECT_ROOT / "01_brain_model_alignment/cache_or_heavy/deepvision_benchmark_cache",
-        )
-    )
-    deepvision_root = deepvision_fmri_root()
+    cache_root = paths.deepvision_cache_root()
+    deepvision_root = paths.deepvision_fmri_root()
 
     for subject in subjects:
         subj_models = [m for m in model_dirs if m["subject"] == subject]

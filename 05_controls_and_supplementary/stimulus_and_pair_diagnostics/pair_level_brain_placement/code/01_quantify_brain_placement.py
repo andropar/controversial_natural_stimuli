@@ -18,9 +18,10 @@ _PAPER = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))
 
-from cstims.paper import config  # noqa: E402
+from cstims import constants, paths
+from cstims.cache import load_cstim_brain_cache
 from cstims.paper.style_improved import OKABE_ITO, apply_style  # noqa: E402
-from cstims.paper.utils import compute_rdm_correlation  # noqa: E402
+from cstims.rdm import compute_rdm_correlation  # noqa: E402
 
 
 OUT = _PAPER / "15_pair_level_brain_placement" / "results"
@@ -64,7 +65,7 @@ def rdm_vec_to_zmat(vec: np.ndarray, n: int) -> np.ndarray:
 
 
 def load_model_zmats() -> dict[str, np.ndarray]:
-    with open(config.SELECTION_PAYLOAD, "rb") as f:
+    with open(paths.selected_stimuli_payload(), "rb") as f:
         payload = pickle.load(f)
     features = payload.get("selected_features_raw", payload.get("best_raw_combined_features_raw"))
     out = {}
@@ -81,18 +82,10 @@ def load_model_zmats() -> dict[str, np.ndarray]:
 
 def load_brain_zmats() -> dict[str, np.ndarray]:
     out = {}
-    for subject in config.SUBJECTS:
-        data_dir = config.get_subject_data_dir(subject)
-        betas = np.load(data_dir / "cstim_betas_averaged.npz", allow_pickle=True)
-        voxel = np.load(data_dir / "voxel_metadata.npz", allow_pickle=True)
-        stim_info = pd.read_csv(data_dir / "cstim_stimulus_info.csv")
-        hlvis = voxel["hlvis_mask"]
-        beta_h = betas["betas"][hlvis, :]
-        key_to_idx = {k: i for i, k in enumerate(betas["stim_keys"])}
-        gdf = stim_info[stim_info["group"] == "all_models"].copy()
-        brain_idx = np.array([key_to_idx[k] for k in gdf["stim_key"].values])
-        file_idx = gdf["stim_idx"].values.astype(int)
-        rdm = compute_rdm_correlation(beta_h[:, brain_idx].T)
+    for subject in constants.SUBJECTS:
+        cache = load_cstim_brain_cache(subject)
+        file_idx = cache.feature_indices("all_models")
+        rdm = compute_rdm_correlation(cache.patterns("all_models"))
         tri = np.triu_indices(rdm.shape[0], k=1)
         zmat_order = rdm_vec_to_zmat(rdm[tri], rdm.shape[0])
         zmat = np.full((100, 100), np.nan)

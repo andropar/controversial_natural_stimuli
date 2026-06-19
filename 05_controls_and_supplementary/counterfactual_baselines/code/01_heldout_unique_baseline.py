@@ -29,8 +29,10 @@ STAGE = Path(__file__).resolve().parents[1]
 SHARE_ROOT = STAGE.parents[1]
 sys.path.insert(0, str(SHARE_ROOT / "src"))
 
-from cstims.paper import config  # noqa: E402
-from cstims.paper.utils import compute_rdm_correlation, compute_rsa_score, get_encoding_folder, load_encoding_model  # noqa: E402
+from cstims import constants, paths
+from cstims.cache import load_cstim_brain_cache, load_cstim_feature_groups
+from cstims.rdm import compute_rdm_correlation, compute_rsa_score  # noqa: E402
+from cstims.paper.utils import load_encoding_model  # noqa: E402
 
 
 OUT_DIR = STAGE / "results"
@@ -64,7 +66,7 @@ LOW_LEVEL_COLS = [
 
 def _unique_voxel_dir(subject: str) -> Path:
     return (
-        config.PROJECT_ROOT
+        paths.project_root()
         / "results"
         / "cache"
         / "voxel_sets"
@@ -81,32 +83,23 @@ def load_unique_betas(subject: str, roi_hlvis: np.ndarray) -> np.ndarray:
 
 
 def load_cstim_brain(subject: str) -> dict:
-    data_dir = config.get_subject_data_dir(subject)
-    betas_data = np.load(data_dir / "cstim_betas_averaged.npz", allow_pickle=True)
-    voxel_data = np.load(data_dir / "voxel_metadata.npz", allow_pickle=True)
-    stim_info = pd.read_csv(data_dir / "cstim_stimulus_info.csv")
-    hlvis = voxel_data["hlvis_mask"]
-    betas = betas_data["betas"][hlvis, :].astype(np.float32)
-    stim_keys = betas_data["stim_keys"]
-    key_to_idx = {k: i for i, k in enumerate(stim_keys)}
-    group_indices = {}
-    group_file_idx = {}
-    for group, gdf in stim_info.groupby("group"):
-        group_indices[group] = np.array([key_to_idx[k] for k in gdf["stim_key"].values])
-        idx = gdf["stim_idx"].values.astype(int)
-        group_file_idx[group] = idx - 1 if group == "vicco" else idx
-    return {"betas_hlvis": betas, "group_indices": group_indices, "group_file_idx": group_file_idx}
+    cache = load_cstim_brain_cache(subject)
+    return {
+        "betas_hlvis": cache.betas_roi.astype(np.float32, copy=False),
+        "group_indices": cache.group_brain_indices(),
+        "group_file_idx": cache.group_feature_indices(),
+    }
 
 
 def load_unique_features(subject: str, model: str) -> np.ndarray:
-    folder = get_encoding_folder(subject, model)
+    folder = paths.encoding_model_dir(subject, model)
     path = folder / "features.npz"
     with np.load(path) as z:
         return z["features"].astype(np.float32)
 
 
 def load_median_hlvis_alpha(subject: str, model: str, roi_hlvis: np.ndarray) -> float:
-    path = get_encoding_folder(subject, model) / "encoding_model.npz"
+    path = paths.encoding_model_dir(subject, model) / "encoding_model.npz"
     try:
         with np.load(path, allow_pickle=True) as z:
             if "alphas" in z.files and z["alphas"].shape[0] == roi_hlvis.shape[0]:
@@ -117,9 +110,7 @@ def load_median_hlvis_alpha(subject: str, model: str, roi_hlvis: np.ndarray) -> 
 
 
 def load_cstim_features(model: str) -> dict[str, np.ndarray]:
-    path = config.CSTIM_FEATURE_CACHE / f"{model}.npz"
-    with np.load(path) as z:
-        return {k: z[k].astype(np.float32) for k in z.files}
+    return load_cstim_feature_groups(model, dtype=np.float32)
 
 
 def make_splits(n_images: int, n_splits: int, train_fraction: float, seed: int) -> list[tuple[np.ndarray, np.ndarray]]:
@@ -409,7 +400,7 @@ def summarize_endpoints() -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--subjects", nargs="+", default=config.SUBJECTS)
+    parser.add_argument("--subjects", nargs="+", default=constants.SUBJECTS)
     parser.add_argument("--model-sets", nargs="+", default=MODEL_SETS)
     parser.add_argument("--n-splits", type=int, default=10)
     parser.add_argument("--train-fraction", type=float, default=0.8)
@@ -443,7 +434,7 @@ def main() -> None:
     for subject in args.subjects:
         cstim_brain = load_cstim_brain(subject)
         unique_low_level_stats = load_unique_low_level(subject)
-        model_union = sorted(set(m for ms in args.model_sets for m in config.MODEL_SETS[ms]))
+        model_union = sorted(set(m for ms in args.model_sets for m in constants.MODEL_SETS[ms]))
         if args.max_models is not None:
             model_union = model_union[: args.max_models]
 
@@ -479,7 +470,7 @@ def main() -> None:
                 cstim_x_by_set = {}
                 file_idx_by_set = {}
                 for model_set in args.model_sets:
-                    if model not in config.MODEL_SETS[model_set] or model_set not in cstim_brain["group_indices"]:
+                    if model not in constants.MODEL_SETS[model_set] or model_set not in cstim_brain["group_indices"]:
                         continue
                     file_idx = cstim_brain["group_file_idx"][model_set]
                     file_idx_by_set[model_set] = file_idx

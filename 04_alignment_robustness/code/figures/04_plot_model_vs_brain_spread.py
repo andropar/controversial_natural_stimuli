@@ -24,7 +24,7 @@ STAGE = Path(__file__).resolve().parents[2]
 SHARE_ROOT = STAGE.parent
 PAPER_HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(PAPER_HELPERS))
-from cstims.paper import config
+from cstims import constants, paths
 
 FIGURES_DIR = STAGE / "figures"
 PNG_DIR = FIGURES_DIR / "png"
@@ -49,8 +49,8 @@ GROUP_LABELS = {
 
 
 def load_data():
-    brain = pd.read_csv(config.RELIABILITY_DATA_DIR / "rdm_noise_ceilings.csv")
-    model = pd.read_csv(config.ROBUSTNESS_DATA_DIR / "model_rdm_spreads.csv")
+    brain = pd.read_csv(paths.reliability_data_dir() / "rdm_noise_ceilings.csv")
+    model = pd.read_csv(paths.robustness_data_dir() / "model_rdm_spreads.csv")
 
     # Brain NC per subject per group (vicco: mean over bootstraps first, then per subject)
     vicco_per_subj = (brain[brain["stimulus_type"] == "vicco"]

@@ -31,7 +31,7 @@ SHARE_ROOT = STAGE.parent
 PAPER_HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(PAPER_HELPERS))
 
-from cstims.paper import config
+from cstims import constants, paths
 
 
 METHODS = {
@@ -44,7 +44,7 @@ N_VICCO_SCORE_BOOTSTRAPS = 10
 
 def load_noise_ceilings() -> pd.DataFrame:
     """Load noise ceilings, computing mean vicco NC per subject."""
-    nc = pd.read_csv(config.RELIABILITY_DATA_DIR / "rdm_noise_ceilings.csv")
+    nc = pd.read_csv(paths.reliability_data_dir() / "rdm_noise_ceilings.csv")
 
     # Controversial: one NC per (subject, group)
     cstim_nc = nc[nc["stimulus_type"] == "controversial"][
@@ -121,8 +121,8 @@ def main():
     frames = []
 
     for method, (filename, score_col) in METHODS.items():
-        for subject in config.SUBJECTS:
-            path = config.RSA_DATA_DIR / subject / filename
+        for subject in constants.SUBJECTS:
+            path = paths.rsa_data_dir() / subject / filename
             if not path.exists():
                 continue
             scores = pd.read_csv(path)
@@ -130,7 +130,7 @@ def main():
 
     # Save full per-subject results
     full_df = pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
-    full_path = config.RELIABILITY_DATA_DIR / "nc_normalized_scores.csv"
+    full_path = paths.reliability_data_dir() / "nc_normalized_scores.csv"
     full_path.parent.mkdir(parents=True, exist_ok=True)
     full_df.to_csv(full_path, index=False)
     print(f"Saved {len(full_df)} rows to {full_path}")
@@ -176,7 +176,7 @@ def main():
     else:
         summary["stimulus_type"] = "controversial"
 
-    summary_path = config.RELIABILITY_DATA_DIR / "nc_normalized_summary.csv"
+    summary_path = paths.reliability_data_dir() / "nc_normalized_summary.csv"
     summary.to_csv(summary_path, index=False)
     print(f"Saved summary ({len(summary)} rows) to {summary_path}")
 
@@ -188,7 +188,7 @@ def main():
     for method in ["wrsa_transfer", "crsa"]:
         print(f"\n  {method}:")
         method_df = cstim_summary[cstim_summary["method"] == method]
-        for model_set in config.MODEL_SETS:
+        for model_set in constants.MODEL_SETS:
             ms_df = method_df[method_df["model_set"] == model_set].sort_values(
                 "nc_normalized_mean", ascending=False
             )

@@ -42,17 +42,10 @@ import pandas as pd
 from scipy import stats
 from tqdm import tqdm
 
-from cstims.paper import config
-from cstims.paper.utils import (
-    get_encoding_folder,
-    compute_rdm_correlation,
-    rdm_to_vector,
-    load_encoding_model,
-    predict_voxel_responses,
-)
-
-# Cached features
-FEATURE_CACHE = config.CONSENSUS_DATA_DIR / "features"
+from cstims import constants, paths
+from cstims.cache import load_consensus_features, load_cstim_brain_cache
+from cstims.rdm import compute_rdm_correlation, rdm_to_vector
+from cstims.paper.utils import load_encoding_model, predict_voxel_responses
 
 # VICReg excluded from mRSA
 VERSA_EXCLUDED = {"vicreg_resnet50"}
@@ -64,35 +57,18 @@ VERSA_EXCLUDED = {"vicreg_resnet50"}
 
 def load_cached_features(model_set: str, model: str) -> np.ndarray:
     """Load pre-extracted features from consensus_mystery cache."""
-    path = FEATURE_CACHE / model_set / f"{model}.npz"
-    if not path.exists():
-        raise FileNotFoundError(f"Cached features not found: {path}")
-    return np.load(path)["features"]
+    return load_consensus_features(model, model_set)
 
 
 def load_brain_data(subject: str, model_set: str):
     """Load brain betas for a subject and model set, return brain RDM indices."""
-    data_dir = config.get_subject_data_dir(subject)
-    betas_data = np.load(data_dir / "cstim_betas_averaged.npz", allow_pickle=True)
-    voxel_data = np.load(data_dir / "voxel_metadata.npz", allow_pickle=True)
-    stim_info = pd.read_csv(data_dir / "cstim_stimulus_info.csv")
-
-    hlvis_mask = voxel_data["hlvis_mask"]
-    betas_hlvis = betas_data["betas"][hlvis_mask, :]
-    stim_keys = betas_data["stim_keys"]
-    stim_key_to_idx = {k: i for i, k in enumerate(stim_keys)}
-
-    # Get indices for this model set
-    mask = stim_info["group"] == model_set
-    if mask.sum() == 0:
+    cache = load_cstim_brain_cache(subject, missing_ok=True)
+    if cache is None or model_set not in cache.available_groups:
         return None, None, None
 
-    keys = stim_info.loc[mask, "stim_key"].values
-    brain_idx = np.array([stim_key_to_idx[k] for k in keys])
-    stim_idx = stim_info.loc[mask, "stim_idx"].values
-
-    # Brain betas for this stimulus set (n_voxels, n_stimuli)
-    brain_betas = betas_hlvis[:, brain_idx]
+    brain_idx = cache.brain_indices(model_set)
+    stim_idx = cache.feature_indices(model_set)
+    brain_betas = cache.betas_roi[:, brain_idx]
 
     return brain_betas, stim_idx, len(brain_idx)
 
@@ -118,7 +94,7 @@ def run_bootstrap_for_model_set(model_set: str, method: str, n_bootstrap: int,
 
     Returns list of dicts with pairwise results.
     """
-    models = config.MODEL_SETS[model_set]
+    models = constants.MODEL_SETS[model_set]
     if method == "mRSA":
         models = [m for m in models if m not in VERSA_EXCLUDED]
 
@@ -128,7 +104,7 @@ def run_bootstrap_for_model_set(model_set: str, method: str, n_bootstrap: int,
     results = []
 
     # For each subject: compute full RDM vectors, then bootstrap
-    for subject in config.SUBJECTS:
+    for subject in constants.SUBJECTS:
         brain_betas, stim_idx, n_stim = load_brain_data(subject, model_set)
         if brain_betas is None:
             continue
@@ -206,8 +182,8 @@ def run_bootstrap_for_model_set(model_set: str, method: str, n_bootstrap: int,
                 "subject": subject,
                 "model_1": m1,
                 "model_2": m2,
-                "display_1": config.MODEL_DISPLAY_NAMES.get(m1, m1),
-                "display_2": config.MODEL_DISPLAY_NAMES.get(m2, m2),
+                "display_1": constants.MODEL_DISPLAY_NAMES.get(m1, m1),
+                "display_2": constants.MODEL_DISPLAY_NAMES.get(m2, m2),
                 "score_1": observed_scores[m1],
                 "score_2": observed_scores[m2],
                 "observed_diff": obs_diff,
@@ -323,9 +299,9 @@ def main():
 
     for model_set in all_model_sets:
         for method in all_methods:
-            n_models = len(config.MODEL_SETS[model_set])
+            n_models = len(constants.MODEL_SETS[model_set])
             if method == "mRSA":
-                n_models -= sum(1 for m in config.MODEL_SETS[model_set] if m in VERSA_EXCLUDED)
+                n_models -= sum(1 for m in constants.MODEL_SETS[model_set] if m in VERSA_EXCLUDED)
             n_pairs = n_models * (n_models - 1) // 2
 
             print(f"\n{'='*60}")
@@ -340,13 +316,13 @@ def main():
 
     # Save per-subject results
     results_df = pd.DataFrame(all_results)
-    out_path = config.STATS_DATA_DIR / "pairwise_bootstrap_results.csv"
+    out_path = paths.stats_data_dir() / "pairwise_bootstrap_results.csv"
     results_df.to_csv(out_path, index=False)
     print(f"\nSaved per-subject results: {out_path} ({len(results_df)} rows)")
 
     # Combine across subjects and apply FDR
     summary_df = combine_subjects_and_correct(results_df)
-    summary_path = config.STATS_DATA_DIR / "pairwise_bootstrap_summary.csv"
+    summary_path = paths.stats_data_dir() / "pairwise_bootstrap_summary.csv"
     summary_df.to_csv(summary_path, index=False)
     print(f"Saved summary: {summary_path} ({len(summary_df)} rows)")
 

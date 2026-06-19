@@ -39,7 +39,7 @@ OPTIMIZED_DIR = ANALYSIS_DIR / "optimized_images"
 
 HELPER_DIR = ROOT / "src"
 sys.path.insert(0, str(HELPER_DIR))
-from cstims.paper import config  # noqa: E402
+from cstims import constants, paths
 
 
 PAIR_SUBJECT = (
@@ -116,7 +116,7 @@ def load_brain_target(subject: str, img_i: int, img_j: int) -> float:
 
 
 def load_cached_calibration(model_name: str, img_i: int, img_j: int) -> Calibration:
-    with open(config.SELECTION_PAYLOAD, "rb") as f:
+    with open(paths.selected_stimuli_payload(), "rb") as f:
         payload = pickle.load(f)
     features = np.asarray(payload["selected_features_raw"][model_name])
     values = pdist(features, metric="cosine")

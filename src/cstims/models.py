@@ -1,77 +1,21 @@
-"""Model-set definitions and display names used across cstims analyses."""
+"""Compatibility re-exports for model constants.
+
+New code should import these names from :mod:`cstims.constants`.
+"""
 
 from __future__ import annotations
 
-
-MODEL_SET_ORDER = [
-    "all_models",
-    "sota",
-    "training_objective",
-    "architecture",
-    "dataset",
-]
-
-MODEL_SETS: dict[str, list[str]] = {
-    "architecture": [
-        "torchvision_vgg16_imagenet1k_v1",
-        "torchvision_resnet50_imagenet1k_v1",
-        "torchvision_convnext_base_imagenet1k_v1",
-        "torchvision_vit_l_16_imagenet1k_v1",
-        "cornet_s",
-    ],
-    "training_objective": [
-        "vissl_resnet50_supervised",
-        "vissl_resnet50_barlowtwins",
-        "vissl_resnet50_mocov2",
-        "vicreg_resnet50",
-        "robustness_imagenet_l2_eps3",
-    ],
-    "sota": [
-        "slip_vit_l_slip",
-        "slip_vit_l_simclr",
-        "timm_vit_large_patch14_clip_224_laion2b",
-        "dinov2_vitl14",
-        "openclip_vit_so400m_14_siglip_webli",
-        "torchvision_convnext_base_imagenet1k_v1",
-    ],
-    "dataset": [
-        "openclip_vit_l_14_quickgelu_metaclip_400m",
-        "openclip_vit_l_14_quickgelu_metaclip_fullcc",
-        "timm_vit_large_patch14_clip_224_dfn2b",
-        "timm_vit_large_patch14_clip_quickgelu_224_openai",
-        "openclip_vit_l_14_laion400m_e31",
-    ],
-}
-
-MODEL_SETS["all_models"] = sorted(
-    {model for models in MODEL_SETS.values() for model in models}
+from cstims.constants import (
+    MODEL_DISPLAY_NAMES,
+    MODEL_SET_ORDER,
+    MODEL_SETS,
+    MODELS_EXCL_VICREG,
 )
 
-MODELS_EXCL_VICREG = [
-    model for model in MODEL_SETS["all_models"] if model != "vicreg_resnet50"
+__all__ = [
+    "MODEL_DISPLAY_NAMES",
+    "MODEL_SET_ORDER",
+    "MODEL_SETS",
+    "MODELS_EXCL_VICREG",
 ]
-
-MODEL_DISPLAY_NAMES = {
-    "torchvision_vgg16_imagenet1k_v1": "VGG-16",
-    "torchvision_resnet50_imagenet1k_v1": "ResNet-50",
-    "torchvision_convnext_base_imagenet1k_v1": "ConvNeXt-B",
-    "torchvision_vit_l_16_imagenet1k_v1": "ViT-L/16",
-    "cornet_s": "CORnet-S",
-    "vissl_resnet50_supervised": "Supervised",
-    "vissl_resnet50_barlowtwins": "BarlowTwins",
-    "vissl_resnet50_mocov2": "MoCoV2",
-    "vicreg_resnet50": "VICReg",
-    "robustness_imagenet_l2_eps3": "Robust-L2",
-    "slip_vit_l_slip": "SLIP",
-    "slip_vit_l_simclr": "SimCLR-ViT",
-    "timm_vit_large_patch14_clip_224_laion2b": "CLIP-L2B",
-    "dinov2_vitl14": "DINOv2",
-    "openclip_vit_so400m_14_siglip_webli": "SigLIP",
-    "openclip_vit_l_14_quickgelu_metaclip_400m": "MetaCLIP-400M",
-    "openclip_vit_l_14_quickgelu_metaclip_fullcc": "MetaCLIP-Full",
-    "timm_vit_large_patch14_clip_224_dfn2b": "DFN-2B",
-    "timm_vit_large_patch14_clip_quickgelu_224_openai": "CLIP-OpenAI",
-    "openclip_vit_l_14_laion400m_e31": "CLIP-L400M",
-    "torchvision_alexnet_imagenet1k_v1": "AlexNet",
-}
 

@@ -20,19 +20,19 @@ import types
 from pathlib import Path
 
 import _paths  # noqa: F401
-from _paths import CACHE_DIR, LAYER_SWEEP_ROOT, SHARE_ROOT
+from _paths import CACHE_DIR, LAYER_SWEEP_ROOT, RESULTS_DIR, SHARE_ROOT
 
 import numpy as np
 import pandas as pd
 from PIL import Image
 
-from cstims import paths as cstims_paths
-from cstims.paper.config import CSTIM_HDF5_ROOT, PAPER_ROOT
+from cstims import paths
 from cstims.datasets.deepvision import DeepVisionBenchmark
 from cstims.target_adaptation import (
     BASELINE_SET,
     CSTIM_SETS,
     atomic_savez_compressed,
+    atomic_write_csv,
     load_best_shared_selections as load_best_shared_selections_from_csv,
     stable_layer_seed,
 )
@@ -53,10 +53,9 @@ SELECTION_CSV = LAYER_SWEEP_ROOT / "results" / "mrsa_dense_layer_selection_trans
 LOCAL_SELECTED_CACHE_DIR = CACHE_DIR / "selected_layer_features_srp5920"
 LOCAL_FEATURE_DIR = LOCAL_SELECTED_CACHE_DIR / "features"
 LOCAL_DV_FEATURE_DIR = LOCAL_SELECTED_CACHE_DIR / "dv_features"
-DV_CACHE_ROOT = cstims_paths.deepvision_cache_root()
-LABSHARE_CSTIM_HDF5_ROOT = Path(
-    "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files"
-)
+CACHE_RESULTS_DIR = RESULTS_DIR / "01_cache_srp_features"
+AUDIT_CSV = CACHE_RESULTS_DIR / "selection_audit.csv"
+DV_CACHE_ROOT = SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "deepvision_benchmark_cache"
 DEFAULT_LAYERS_PER_CHUNK = 32
 
 
@@ -115,40 +114,7 @@ def layer_current(path: Path, layer: str) -> bool:
 
 
 def load_cstim_images(group: str) -> tuple[list[Image.Image], list[str]]:
-    folder_group = group
-    if group == "architecture":
-        folder_group = "dataset"
-    elif group == "dataset":
-        folder_group = "architecture"
-
-    if folder_group == "vicco":
-        img_dir = CSTIM_HDF5_ROOT / "shared_vicco"
-    else:
-        img_dir = CSTIM_HDF5_ROOT / folder_group
-
-    img_files = sorted(list(img_dir.glob("*.jpg")) + list(img_dir.glob("*.png")))
-    if not img_files and folder_group != "vicco":
-        fallback_dirs = (
-            SHARE_ROOT
-            / "00_stimulus_selection"
-            / "decision_checks"
-            / "selection_evaluation"
-            / "results"
-            / folder_group
-            / "images",
-            PAPER_ROOT / "00_selection_evaluation" / "data" / folder_group / "images",
-            PAPER_ROOT / "00_selection_evaluation" / "results" / folder_group / "images",
-        )
-        for fallback_dir in fallback_dirs:
-            img_files = sorted(list(fallback_dir.glob("*.jpg")) + list(fallback_dir.glob("*.png")))
-            if img_files:
-                break
-    if not img_files and folder_group == "vicco":
-        img_dir = LABSHARE_CSTIM_HDF5_ROOT / "shared_vicco"
-        img_files = sorted(list(img_dir.glob("*.jpg")) + list(img_dir.glob("*.png")))
-    if not img_files:
-        raise FileNotFoundError(f"No images found for stimulus group {group!r}")
-
+    img_files = paths.cstim_image_paths(group, apply_architecture_dataset_swap=True)
     images = []
     for path in img_files:
         with Image.open(path) as img:
@@ -271,6 +237,30 @@ def merge_specs(spec_groups: list[list[tuple[str, str]]]) -> list[tuple[str, str
     return merged
 
 
+def audit_selection_cache(selections: pd.DataFrame) -> pd.DataFrame:
+    rows = []
+    for row in selections.itertuples(index=False):
+        missing = []
+        for stim_set in STIMULUS_SETS:
+            path = LOCAL_FEATURE_DIR / row.model / f"{stim_set}.npz"
+            if not layer_current(path, row.layer):
+                missing.append(f"target:{stim_set}")
+        dv_path = LOCAL_DV_FEATURE_DIR / row.subject / f"{row.model}.npz"
+        if not layer_current(dv_path, row.layer):
+            missing.append("deepvision_unique")
+        rows.append(
+            {
+                "subject": row.subject,
+                "model": row.model,
+                "display_name": row.display_name,
+                "selected_layer": row.layer,
+                "feature_cache_ready": len(missing) == 0,
+                "missing_reason": ";".join(missing),
+            }
+        )
+    return pd.DataFrame(rows)
+
+
 def dense_chunk_context_specs(
     model: str,
     wanted_specs: list[tuple[str, str]],
@@ -338,6 +328,7 @@ def main() -> None:
     parser.add_argument("--progress-every", type=int, default=1024)
     parser.add_argument("--layers-per-chunk", type=int, default=DEFAULT_LAYERS_PER_CHUNK)
     parser.add_argument("--overwrite", action="store_true")
+    parser.add_argument("--audit-only", action="store_true")
     args = parser.parse_args()
 
     selections = load_best_shared_selections()
@@ -347,6 +338,14 @@ def main() -> None:
         selections = selections[selections["model"].isin(args.models)].copy()
     if selections.empty:
         raise RuntimeError("No selected subject/model/layer rows after filtering")
+
+    if args.audit_only:
+        CACHE_RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+        audit = audit_selection_cache(selections)
+        atomic_write_csv(audit, AUDIT_CSV)
+        ready = int(audit["feature_cache_ready"].sum()) if not audit.empty else 0
+        print(f"Wrote cache audit {ready}/{len(audit)} ready -> {AUDIT_CSV}", flush=True)
+        return
 
     specs_by_model = dense_layer_specs_for_rows(selections)
     cstim_images: dict[str, tuple[list[Image.Image], list[str]]] = {}
@@ -493,7 +492,12 @@ def main() -> None:
                 extractor.free()
         print(f"  model done in {time.time() - t_model:.1f}s", flush=True)
 
+    CACHE_RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+    audit = audit_selection_cache(selections)
+    atomic_write_csv(audit, AUDIT_CSV)
+    ready = int(audit["feature_cache_ready"].sum()) if not audit.empty else 0
     print(f"\nDone. Missing SRP entries considered: {total_missing}", flush=True)
+    print(f"Wrote cache audit {ready}/{len(audit)} ready -> {AUDIT_CSV}", flush=True)
 
 
 if __name__ == "__main__":

@@ -35,12 +35,13 @@ _PAPER = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))
 
-from cstims.paper.config import CSTIM_HDF5_ROOT, SUBJECTS, get_brain_input_dir  # noqa: E402
-from cstims.paper.utils import (  # noqa: E402
-    compute_rdm_correlation,
-    compute_rsa_score,
-    bootstrap_sample_indices,
-)
+from cstims import paths
+from cstims.cache import load_cstim_brain_cache
+from cstims.constants import SUBJECTS
+CSTIM_HDF5_ROOT = paths.cstim_hdf5_root()
+get_brain_input_dir = paths.get_brain_input_dir
+from cstims.rdm import compute_rdm_correlation, compute_rsa_score  # noqa: E402
+from cstims.sampling import bootstrap_sample_indices  # noqa: E402
 
 
 HERE = Path(__file__).resolve().parent
@@ -77,26 +78,14 @@ def stats_vectors(df_stats: pd.DataFrame, group: str) -> np.ndarray:
 
 
 def load_subject_brain(subject: str):
-    data_dir = get_brain_input_dir(subject)
-    betas_path = data_dir / "cstim_betas_averaged.npz"
-    if not betas_path.exists():
+    cache = load_cstim_brain_cache(subject, missing_ok=True)
+    if cache is None:
         return None
-    betas = np.load(betas_path, allow_pickle=True)
-    voxel = np.load(data_dir / "voxel_metadata.npz", allow_pickle=True)
-    info = pd.read_csv(data_dir / "cstim_stimulus_info.csv")
-    hlvis = voxel["hlvis_mask"]
-    betas_hlvis = betas["betas"][hlvis, :]
-    stim_keys = list(betas["stim_keys"])
-    key2col = {k: i for i, k in enumerate(stim_keys)}
 
-    out = {"betas": betas_hlvis, "groups": {}}
-    for g in info["group"].unique():
-        mask = info["group"] == g
-        keys = info.loc[mask, "stim_key"].values
-        brain_idx = np.array([key2col[k] for k in keys])
-        stim_idx = info.loc[mask, "stim_idx"].values
-        # vicco stim_idx is 1-based, controversial 0-based (see 01_compute_crsa)
-        file_idx = stim_idx - 1 if g == "vicco" else stim_idx
+    out = {"betas": cache.betas_roi, "groups": {}}
+    for g in cache.available_groups:
+        brain_idx = cache.brain_indices(g)
+        file_idx = cache.feature_indices(g)
         out["groups"][g] = {"brain_idx": brain_idx, "file_idx": file_idx}
     return out
 

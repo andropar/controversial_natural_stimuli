@@ -37,14 +37,15 @@ PROJECT = PAPER.parents[1]
 sys.path.insert(0, str(PAPER))
 sys.path.insert(0, str(PROJECT))
 
-from cstims.paper import config  # noqa: E402
-from cstims.paper.utils import bootstrap_sample_indices, get_encoding_folder, load_model_layer_mapping  # noqa: E402
+from cstims import constants, paths
+from cstims.cache import load_cstim_brain_cache, load_cstim_feature_groups
+from cstims.sampling import bootstrap_sample_indices  # noqa: E402
 
 
 OUT = PAPER / "13_roi_analysis" / "results"
 OUT.mkdir(parents=True, exist_ok=True)
 
-ATLAS_ROOT = config.DEEPVISION_ROOT / "derivatives/functional/1sTR_1pt5mm/atlas"
+ATLAS_ROOT = paths.deepvision_fmri_root() / "derivatives/functional/1sTR_1pt5mm/atlas"
 GLASSER_NAMES = ATLAS_ROOT / "glasser_names.txt"
 
 MODEL_SET_ORDER = ["all_models", "sota", "training_objective", "architecture", "dataset"]
@@ -125,18 +126,11 @@ def median_abs_pairwise(values: np.ndarray) -> float:
 
 
 def load_cstim_features(model: str) -> dict[str, np.ndarray]:
-    path = config.CSTIM_FEATURE_CACHE / f"{model}.npz"
-    with np.load(path) as z:
-        return {k: z[k].astype(np.float32) for k in z.files}
+    return load_cstim_feature_groups(model, dtype=np.float32)
 
 
-def load_encoding(model: str, subject: str, layer_mapping: dict[str, str]) -> dict:
-    folder = config.get_encoding_root(subject) / f"{subject}_{model}.{layer_mapping[model]}"
-    path = folder / "encoding_model.npz"
-    if not path.exists():
-        # Keep this fallback aligned with the canonical helper if the folder
-        # naming convention changes.
-        path = get_encoding_folder(subject, model) / "encoding_model.npz"
+def load_encoding(model: str, subject: str) -> dict:
+    path = paths.encoding_model_dir(subject, model) / "encoding_model.npz"
     with np.load(path, allow_pickle=True) as z:
         return {
             "weights": z["weights"].astype(np.float32),
@@ -158,31 +152,24 @@ def predict_visual(features: np.ndarray, encoding: dict) -> np.ndarray:
 
 
 def load_subject_data(subject: str) -> dict:
-    data_dir = config.get_subject_data_dir(subject)
-    vm = np.load(data_dir / "voxel_metadata.npz", allow_pickle=True)
-    visual_mask = vm["visual_mask"].astype(bool)
-    hlvis_over_visual = vm["hlvis_mask"].astype(bool)[visual_mask]
-
-    betas_npz = np.load(data_dir / "cstim_betas_averaged.npz", allow_pickle=True)
-    betas_visual = np.asarray(betas_npz["betas"][visual_mask, :], dtype=np.float32)
-    stim_keys = betas_npz["stim_keys"]
-    key_to_idx = {k: i for i, k in enumerate(stim_keys)}
-    stim_info = pd.read_csv(data_dir / "cstim_stimulus_info.csv")
+    data_dir = paths.get_subject_data_dir(subject)
+    cache = load_cstim_brain_cache(subject, roi="visual")
+    visual_mask = cache.roi_mask.astype(bool)
+    hlvis_over_visual = cache.voxel_metadata["hlvis_mask"].astype(bool)[visual_mask]
+    betas_visual = cache.betas_roi.astype(np.float32, copy=False)
 
     groups = {}
-    for group, gdf in stim_info.groupby("group"):
-        brain_idx = np.array([key_to_idx[k] for k in gdf["stim_key"].values], dtype=int)
-        file_idx = gdf["stim_idx"].to_numpy(dtype=int)
-        if group == "vicco":
-            file_idx = file_idx - 1
+    for group in cache.available_groups:
+        brain_idx = cache.brain_indices(group)
+        file_idx = cache.feature_indices(group)
         groups[group] = {"brain_idx": brain_idx, "file_idx": file_idx}
 
     return {
         "betas_visual": betas_visual,
         "visual_mask": visual_mask,
         "hlvis_over_visual": hlvis_over_visual,
-        "brain_flat_indices": vm["brain_flat_indices"],
-        "volume_shape": tuple(vm["volume_shape"]),
+        "brain_flat_indices": cache.voxel_metadata["brain_flat_indices"],
+        "volume_shape": tuple(cache.voxel_metadata["volume_shape"]),
         "groups": groups,
     }
 
@@ -329,10 +316,9 @@ def score_model_subject(
     brain_ranks: dict,
     model_sets: list[str],
     n_boot: int,
-    layer_mapping: dict[str, str],
 ) -> list[dict]:
     rows: list[dict] = []
-    encoding = load_encoding(model, subject, layer_mapping)
+    encoding = load_encoding(model, subject)
     features = load_cstim_features(model)
 
     vicco_group = sdata["groups"]["vicco"]
@@ -340,10 +326,10 @@ def score_model_subject(
     n_vicco = len(vicco_group["brain_idx"])
     bootstraps = bootstrap_sample_indices(n_vicco, N_BASELINE_SAMPLE, n_bootstrap=n_boot, seed=0)
 
-    display = config.MODEL_DISPLAY_NAMES.get(model, model)
+    display = constants.MODEL_DISPLAY_NAMES.get(model, model)
 
     for model_set in model_sets:
-        if model not in config.MODEL_SETS[model_set]:
+        if model not in constants.MODEL_SETS[model_set]:
             continue
         if model_set not in sdata["groups"]:
             continue
@@ -446,7 +432,7 @@ def summarize_endpoints(scores: pd.DataFrame) -> pd.DataFrame:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--subjects", nargs="+", default=config.SUBJECTS)
+    parser.add_argument("--subjects", nargs="+", default=constants.SUBJECTS)
     parser.add_argument("--model-sets", nargs="+", default=MODEL_SET_ORDER)
     parser.add_argument("--baseline-bootstraps", type=int, default=N_BASELINE_BOOTSTRAPS)
     parser.add_argument("--min-voxels", type=int, default=MIN_VOXELS)
@@ -460,7 +446,6 @@ def main() -> None:
         print(f"outputs already exist in {OUT}; pass --overwrite to recompute")
         return
 
-    layer_mapping = load_model_layer_mapping()
     all_scores: list[dict] = []
     all_meta: list[pd.DataFrame] = []
 
@@ -478,7 +463,7 @@ def main() -> None:
         print("  precomputing brain RDM ranks")
         brain_ranks = precompute_brain_ranks(sdata, rois, args.model_sets, args.baseline_bootstraps)
 
-        model_union = sorted(set(m for ms in args.model_sets for m in config.MODEL_SETS[ms]))
+        model_union = sorted(set(m for ms in args.model_sets for m in constants.MODEL_SETS[ms]))
         for i, model in enumerate(model_union, start=1):
             print(f"  scoring {i:02d}/{len(model_union)} {model}")
             rows = score_model_subject(
@@ -489,7 +474,6 @@ def main() -> None:
                 brain_ranks,
                 args.model_sets,
                 args.baseline_bootstraps,
-                layer_mapping,
             )
             all_scores.extend(rows)
             gc.collect()

@@ -28,8 +28,15 @@ import requests
 from PIL import Image
 
 
+_CSTIMS_SHARE_ROOT = next(
+    p for p in Path(__file__).resolve().parents if (p / "src" / "cstims").exists()
+)
+sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
+
+from cstims import paths
+
 BASE_DIR = Path(__file__).resolve().parents[1]
-DEFAULT_IMAGE_ROOT = Path("/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files")
+DEFAULT_IMAGE_ROOT = paths.cstim_hdf5_root()
 DEFAULT_API_KEY_FILE = BASE_DIR / "openrouter_api_key.txt"
 OPENROUTER_ENDPOINT = "https://openrouter.ai/api/v1/chat/completions"
 PROMPT_VERSION = "vlm_annotation_audit_v1"

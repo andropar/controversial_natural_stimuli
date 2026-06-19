@@ -45,7 +45,7 @@ IMAGE_OUT_DIR = ANALYSIS_DIR / "optimized_images"
 
 HELPER_DIR = ROOT / "src"
 sys.path.insert(0, str(HELPER_DIR))
-from cstims.paper import config  # noqa: E402
+from cstims import constants, paths
 
 
 PAIR_SUBJECT = (
@@ -140,7 +140,7 @@ def stabilize_latents(latents: torch.Tensor, clip_value: float) -> torch.Tensor:
 
 
 def load_calibration(subject: str, anchor_idx: int, target_idx: int) -> Calibration:
-    with open(config.SELECTION_PAYLOAD, "rb") as f:
+    with open(paths.selected_stimuli_payload(), "rb") as f:
         payload = pickle.load(f)
 
     model_features = np.asarray(payload["selected_features_raw"][MODEL_NAME])

@@ -30,17 +30,17 @@ import pandas as pd
 from PIL import Image
 from tqdm import tqdm
 
-from cstims.paper.config import (
-    MODEL_SETS, MODEL_DISPLAY_NAMES, CSTIM_HDF5_ROOT, MODEL_LIST_CSV,
-    get_brain_input_dir, RSA_DATA_DIR, PROJECT_ROOT,
-)
-from cstims.paper.utils import (
-    compute_rdm_correlation,
-    compute_rsa_score,
-    load_encoding_model,
-    predict_voxel_responses,
-    parse_subject_arg,
-)
+from cstims import paths
+from cstims.cache import load_cstim_brain_cache
+from cstims.constants import MODEL_SETS, MODEL_DISPLAY_NAMES
+CSTIM_HDF5_ROOT = paths.cstim_hdf5_root()
+MODEL_LIST_CSV = paths.model_list_csv()
+get_brain_input_dir = paths.get_brain_input_dir
+RSA_DATA_DIR = paths.rsa_data_dir()
+PROJECT_ROOT = paths.project_root()
+from cstims.rdm import compute_rdm_correlation, compute_rsa_score
+from cstims.subjects import parse_subject_arg
+from cstims.paper.utils import load_encoding_model, predict_voxel_responses
 
 from cstims.feature_extraction.universal_extractor import UniversalFeatureExtractor
 
@@ -91,35 +91,10 @@ def extract_features(model_name: str, images: list) -> np.ndarray:
 
 
 def load_subject_brain_data(subject: str) -> dict:
-    data_dir = get_brain_input_dir(subject)
-    betas_path = data_dir / "cstim_betas_averaged.npz"
-    if not betas_path.exists():
+    cache = load_cstim_brain_cache(subject, missing_ok=True)
+    if cache is None:
         return None
-
-    betas_data = np.load(betas_path, allow_pickle=True)
-    voxel_data = np.load(data_dir / "voxel_metadata.npz", allow_pickle=True)
-    stim_info  = pd.read_csv(data_dir / "cstim_stimulus_info.csv")
-
-    hlvis_mask   = voxel_data["hlvis_mask"]
-    betas_hlvis  = betas_data["betas"][hlvis_mask, :]
-    stim_keys    = betas_data["stim_keys"]
-    stim_key_to_idx = {k: i for i, k in enumerate(stim_keys)}
-
-    group_indices = {}
-    group_stim_idx = {}
-    for group in stim_info["group"].unique():
-        mask = stim_info["group"] == group
-        keys = stim_info.loc[mask, "stim_key"].values
-        group_indices[group]  = np.array([stim_key_to_idx[k] for k in keys])
-        idx = stim_info.loc[mask, "stim_idx"].values
-        group_stim_idx[group] = idx - 1 if group == "vicco" else idx
-
-    return {
-        "betas_hlvis":   betas_hlvis,
-        "group_indices": group_indices,
-        "group_stim_idx": group_stim_idx,
-        "n_hlvis":       int(hlvis_mask.sum()),
-    }
+    return cache.as_legacy_group_dict()
 
 
 def main():

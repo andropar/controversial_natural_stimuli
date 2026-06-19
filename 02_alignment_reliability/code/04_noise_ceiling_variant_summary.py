@@ -29,12 +29,12 @@ SHARE_ROOT = STAGE.parent
 PAPER_HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(PAPER_HELPERS))
 
-from cstims.paper import config  # noqa: E402
+from cstims import constants, paths
 
 
-DATA = config.RELIABILITY_DATA_DIR
-RSA = config.RSA_DATA_DIR
-SUBJECTS = config.SUBJECTS
+DATA = paths.reliability_data_dir()
+RSA = paths.rsa_data_dir()
+SUBJECTS = constants.SUBJECTS
 MODEL_SETS = ["all_models", "sota", "training_objective", "architecture", "dataset"]
 METHOD_LABEL = {"wrsa_transfer": "mixed_RSA", "crsa": "fixed_RSA"}
 SCORE_COL = {"wrsa_transfer": "wrsa_transfer", "crsa": "crsa"}

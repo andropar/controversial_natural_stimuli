@@ -26,7 +26,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.stats import spearmanr
 
-from cstims.paper import config
+from cstims import constants, paths
 from cstims.paper.style_improved import (
     apply_style, FONT, DPI, W_1_5COL,
     COLOR_CSTIM, COLOR_BASELINE, add_panel_label,
@@ -34,7 +34,7 @@ from cstims.paper.style_improved import (
 
 apply_style()
 
-DATA_DIR = config.ROBUSTNESS_DATA_DIR
+DATA_DIR = paths.robustness_data_dir()
 FIGURES_DIR = STAGE / "figures"
 PNG_DIR = FIGURES_DIR / "png"
 

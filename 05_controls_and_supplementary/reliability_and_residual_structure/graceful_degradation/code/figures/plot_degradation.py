@@ -53,7 +53,7 @@ NC_BINS = np.arange(0.05, 0.50, 0.05)  # 0.05 ... 0.45 edges -> centers 0.075, 0
 
 
 def short_model(name: str) -> str:
-    from cstims.paper.config import MODEL_DISPLAY_NAMES
+    from cstims.constants import MODEL_DISPLAY_NAMES
     return MODEL_DISPLAY_NAMES.get(name, name.replace("_", " "))[:14]
 
 

@@ -7,8 +7,6 @@ import argparse
 import math
 import re
 import shutil
-from collections import defaultdict
-from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
@@ -41,6 +39,10 @@ ENCODING_TRACKS = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]
 DISPLAY_TRACK_ORDER = ["raw", "encoding_avg"]
 COLORS = {"selected": "#4C78A8", "random": "#E45756"}
 CI_MULT = 1.96
+MODE_DISPLAY_NAMES = {
+    "independent": "Separate-train refit",
+    "eval_augmented_loo": "Eval-included LOO refit",
+}
 
 NEEDED_COLUMNS = [
     "model_set",
@@ -67,18 +69,13 @@ NEEDED_COLUMNS = [
 ]
 
 
-@dataclass
-class GroupStats:
-    correct_sum: float = 0.0
-    margin_sum: float = 0.0
-    n_units: int = 0
-    noise_samples: set[int] = field(default_factory=set)
-    meta: dict[str, Any] = field(default_factory=dict)
-
-
 def ordered(values: pd.Series | list[str], preferred: list[str]) -> list[str]:
     present = list(dict.fromkeys(pd.Series(values).dropna().astype(str)))
     return [x for x in preferred if x in present] + [x for x in present if x not in preferred]
+
+
+def mode_display_name(mode: str) -> str:
+    return MODE_DISPLAY_NAMES.get(mode, mode.replace("_", " "))
 
 
 def compute_log_auc(noise_mult: pd.Series, values: pd.Series) -> float:
@@ -166,7 +163,7 @@ def aggregate_cache_suffix(
     *,
     chunksize: int,
 ) -> pd.DataFrame:
-    stats: dict[tuple[Any, ...], GroupStats] = defaultdict(GroupStats)
+    compact_frames: list[pd.DataFrame] = []
     files = cache_files(results_root, suffix)
     if not files:
         return pd.DataFrame()
@@ -199,95 +196,87 @@ def aggregate_cache_suffix(
             print(f"  {suffix}: reading shard {file_idx}/{len(files)}", flush=True)
         header = read_columns(path)
         usecols = [col for col in NEEDED_COLUMNS if col in header]
-        for chunk in pd.read_csv(path, usecols=usecols, chunksize=chunksize):
-            if chunk.empty:
-                continue
-            if "model_set" not in chunk:
-                chunk["model_set"] = model_set
-            else:
-                chunk["model_set"] = chunk["model_set"].fillna(model_set)
-            if "refit_repeat_idx" not in chunk:
-                chunk["refit_repeat_idx"] = 0
-            if "relative_snr" not in chunk:
-                chunk["relative_snr"] = 1.0 / chunk["noise_mult"].astype(float)
-            if "eval_refit_mode" not in chunk:
-                chunk["eval_refit_mode"] = variant_from_suffix(suffix)
-            if "track_type" not in chunk:
-                chunk["track_type"] = chunk["track"]
-            if "n_equivalence_classes" not in chunk:
-                chunk["n_equivalence_classes"] = chunk["model_set"].map(EXPECTED_MODELS)
-            chunk["recovered_correct"] = chunk["recovered_correct"].astype(float)
-            chunk["teacher_margin"] = chunk["teacher_margin"].astype(float)
+        chunk = pd.read_csv(path, usecols=usecols)
+        if chunk.empty:
+            continue
+        if "model_set" not in chunk:
+            chunk["model_set"] = model_set
+        else:
+            chunk["model_set"] = chunk["model_set"].fillna(model_set)
+        if "refit_repeat_idx" not in chunk:
+            chunk["refit_repeat_idx"] = 0
+        if "relative_snr" not in chunk:
+            chunk["relative_snr"] = 1.0 / chunk["noise_mult"].astype(float)
+        if "eval_refit_mode" not in chunk:
+            chunk["eval_refit_mode"] = variant_from_suffix(suffix)
+        if "track_type" not in chunk:
+            chunk["track_type"] = chunk["track"]
+        if "n_equivalence_classes" not in chunk:
+            chunk["n_equivalence_classes"] = chunk["model_set"].map(EXPECTED_MODELS)
+        chunk["recovered_correct"] = chunk["recovered_correct"].astype(float)
+        chunk["teacher_margin"] = chunk["teacher_margin"].astype(float)
 
-            for key, group in chunk.groupby(key_cols, sort=False, dropna=False):
-                entry = stats[key]
-                entry.correct_sum += float(group["recovered_correct"].sum())
-                entry.margin_sum += float(group["teacher_margin"].sum())
-                entry.n_units += int(len(group))
-                if "noise_sample_idx" in group:
-                    entry.noise_samples.update(
-                        int(x) for x in group["noise_sample_idx"].dropna().unique()
-                    )
-                if not entry.meta:
-                    first = group.iloc[0]
-                    entry.meta = {
-                        col: first[col]
-                        for col in meta_cols
-                        if col in group.columns and pd.notna(first[col])
-                    }
-
-    rows: list[dict[str, Any]] = []
-    for key, entry in stats.items():
-        (
-            model_set,
-            track,
-            track_type,
-            noise_mult,
-            noise_ceiling,
-            subset_type,
-            subset_idx,
-            refit_repeat_idx,
-        ) = key
-        n_units = max(entry.n_units, 1)
-        rows.append(
-            {
-                "model_set": str(model_set),
-                "recovery_orientation": "teacher_student_independent_refit_rdm_recovery",
-                "track": str(track),
-                "track_type": str(track_type),
-                "metric": entry.meta.get("metric", "cosine"),
-                "corr_type": entry.meta.get("corr_type", "spearman"),
-                "noise_mult": float(noise_mult),
-                "relative_snr": float(entry.meta.get("relative_snr", 1.0 / float(noise_mult))),
-                "noise_ceiling": float(noise_ceiling),
-                "subset_type": str(subset_type),
-                "subset_idx": int(subset_idx),
-                "refit_repeat_idx": int(refit_repeat_idx),
-                "recovery_accuracy": float(entry.correct_sum / n_units),
-                "error_prob": float(1.0 - entry.correct_sum / n_units),
-                "mean_margin": float(entry.margin_sum / n_units),
-                "n_units": int(entry.n_units),
-                "n_models": int(EXPECTED_MODELS.get(str(model_set), 0) or 0),
-                "n_equivalence_classes": int(
-                    entry.meta.get(
-                        "n_equivalence_classes",
-                        EXPECTED_MODELS.get(str(model_set), 0) or 0,
-                    )
-                ),
-                "n_noise_samples": int(len(entry.noise_samples))
-                if entry.noise_samples
-                else 1,
-                "refit_pool_size": int(entry.meta.get("refit_pool_size", -1)),
-                "refit_train_n": int(entry.meta.get("refit_train_n", -1)),
-                "refit_val_n": int(entry.meta.get("refit_val_n", -1)),
-                "eval_noise_mode": entry.meta.get("eval_noise_mode", "response"),
-                "fit_noise_calibration": entry.meta.get("fit_noise_calibration", "rdm_empirical"),
-                "eval_refit_mode": entry.meta.get("eval_refit_mode", variant_from_suffix(suffix)),
-            }
+        agg_spec: dict[str, tuple[str, str]] = {
+            "correct_sum": ("recovered_correct", "sum"),
+            "margin_sum": ("teacher_margin", "sum"),
+            "n_units": ("recovered_correct", "size"),
+            "n_noise_samples": ("noise_sample_idx", "nunique"),
+        }
+        for col in meta_cols:
+            if col in chunk.columns:
+                agg_spec[col] = (col, "first")
+        compact_frames.append(
+            chunk.groupby(key_cols, sort=False, dropna=False)
+            .agg(**agg_spec)
+            .reset_index()
         )
-    subset = pd.DataFrame(rows)
-    if subset.empty:
-        return subset
+
+    if not compact_frames:
+        return pd.DataFrame()
+    compact = pd.concat(compact_frames, ignore_index=True, sort=False)
+    combine_spec: dict[str, tuple[str, str]] = {
+        "correct_sum": ("correct_sum", "sum"),
+        "margin_sum": ("margin_sum", "sum"),
+        "n_units": ("n_units", "sum"),
+        "n_noise_samples": ("n_noise_samples", "max"),
+    }
+    for col in meta_cols:
+        if col in compact.columns:
+            combine_spec[col] = (col, "first")
+    subset = (
+        compact.groupby(key_cols, sort=False, dropna=False)
+        .agg(**combine_spec)
+        .reset_index()
+    )
+    subset["model_set"] = subset["model_set"].astype(str)
+    subset["recovery_orientation"] = "teacher_student_independent_refit_rdm_recovery"
+    subset["metric"] = subset.get("metric", pd.Series(["cosine"] * len(subset))).fillna("cosine")
+    subset["corr_type"] = subset.get("corr_type", pd.Series(["spearman"] * len(subset))).fillna("spearman")
+    subset["relative_snr"] = subset.get(
+        "relative_snr",
+        1.0 / subset["noise_mult"].astype(float),
+    )
+    subset["recovery_accuracy"] = subset["correct_sum"] / subset["n_units"].clip(lower=1)
+    subset["error_prob"] = 1.0 - subset["recovery_accuracy"]
+    subset["mean_margin"] = subset["margin_sum"] / subset["n_units"].clip(lower=1)
+    subset["n_models"] = subset["model_set"].map(EXPECTED_MODELS).fillna(0).astype(int)
+    if "n_equivalence_classes" not in subset:
+        subset["n_equivalence_classes"] = subset["n_models"]
+    subset["n_equivalence_classes"] = (
+        subset["n_equivalence_classes"].fillna(subset["n_models"]).astype(int)
+    )
+    for col, default in [
+        ("refit_pool_size", -1),
+        ("refit_train_n", -1),
+        ("refit_val_n", -1),
+        ("eval_noise_mode", "response"),
+        ("fit_noise_calibration", "rdm_empirical"),
+        ("eval_refit_mode", variant_from_suffix(suffix)),
+    ]:
+        if col not in subset:
+            subset[col] = default
+        else:
+            subset[col] = subset[col].fillna(default)
 
     agg_keys = [
         "model_set",
@@ -652,7 +641,10 @@ def plot_refit_sweep(combined: pd.DataFrame, out_base: Path) -> None:
         Line2D([0], [0], color=COLORS["selected"], linestyle="-", marker="o", lw=1.8, label="Selected"),
     ]
     fig.legend(handles=handles, loc="upper center", ncol=2, frameon=False, bbox_to_anchor=(0.5, 1.02))
-    fig.suptitle("Independent refit sweep: empirical SNR partial-cache results", y=1.06)
+    fig.suptitle(
+        f"{mode_display_name('independent')} sweep: empirical SNR partial-cache results",
+        y=1.06,
+    )
     fig.tight_layout()
     out_base.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_base.with_suffix(".png"), dpi=220, bbox_inches="tight")
@@ -668,17 +660,34 @@ def write_outputs(
     title: str,
     png_dir: Path,
 ) -> pd.DataFrame:
-    curves_csv = figures_root / f"{name}_curves_summary.csv"
-    auc_csv = figures_root / f"{name}_auc_summary.csv"
-    emp_csv = figures_root / f"{name}_empirical_snr.csv"
+    is_intermediate = "intermediate" in name
+    is_partial_cache = "partial_cache" in name
+    summary_dir = figures_root / "summaries"
+    if is_intermediate:
+        summary_dir = summary_dir / "intermediate"
+    elif is_partial_cache:
+        summary_dir = summary_dir / "partial_cache"
+    if is_intermediate:
+        figure_dir = figures_root / "intermediate"
+    elif is_partial_cache:
+        figure_dir = figures_root / "intermediate" / "partial_cache"
+    else:
+        figure_dir = figures_root
+    png_output_dir = figure_dir / "png" if is_intermediate else png_dir
+    if is_partial_cache:
+        png_output_dir = figure_dir / "png"
+    summary_dir.mkdir(parents=True, exist_ok=True)
+    curves_csv = summary_dir / f"{name}_curves_summary.csv"
+    auc_csv = summary_dir / f"{name}_auc_summary.csv"
+    emp_csv = summary_dir / f"{name}_empirical_snr.csv"
     summary.to_csv(curves_csv, index=False)
     make_auc(summary).to_csv(auc_csv, index=False)
     empirical_snr_table(summary).to_csv(emp_csv, index=False)
-    plot_curves(summary, figures_root / name, title)
-    png = figures_root / f"{name}.png"
+    plot_curves(summary, figure_dir / name, title)
+    png = figure_dir / f"{name}.png"
     if png.exists():
-        png_dir.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(png, png_dir / png.name)
+        png_output_dir.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(png, png_output_dir / png.name)
     print(f"Wrote {png}", flush=True)
     print(f"Wrote {curves_csv}", flush=True)
     return summary
@@ -733,14 +742,31 @@ def main() -> None:
 
     if summaries:
         combined = pd.concat(summaries, ignore_index=True, sort=False)
-        combined_csv = args.figures_root / f"{args.name_prefix}_all_available_curves_summary.csv"
+        is_intermediate = "intermediate" in args.name_prefix
+        is_partial_cache = "partial_cache" in args.name_prefix
+        summary_dir = args.figures_root / "summaries"
+        if is_intermediate:
+            summary_dir = summary_dir / "intermediate"
+        elif is_partial_cache:
+            summary_dir = summary_dir / "partial_cache"
+        summary_dir.mkdir(parents=True, exist_ok=True)
+        if is_intermediate:
+            figure_dir = args.figures_root / "intermediate"
+        elif is_partial_cache:
+            figure_dir = args.figures_root / "intermediate" / "partial_cache"
+        else:
+            figure_dir = args.figures_root
+        png_output_dir = figure_dir / "png" if is_intermediate else png_dir
+        if is_partial_cache:
+            png_output_dir = figure_dir / "png"
+        combined_csv = summary_dir / f"{args.name_prefix}_all_available_curves_summary.csv"
         combined.to_csv(combined_csv, index=False)
-        sweep_base = args.figures_root / f"{args.name_prefix}_independent_refit_sweep_empirical_snr"
+        sweep_base = figure_dir / f"{args.name_prefix}_independent_refit_sweep_empirical_snr"
         plot_refit_sweep(combined, sweep_base)
         sweep_png = sweep_base.with_suffix(".png")
         if sweep_png.exists():
-            png_dir.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(sweep_png, png_dir / sweep_png.name)
+            png_output_dir.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(sweep_png, png_output_dir / sweep_png.name)
             print(f"Wrote {sweep_png}", flush=True)
         print(f"Wrote {combined_csv}", flush=True)
 

@@ -30,11 +30,11 @@ SHARE_ROOT = STAGE.parent
 PAPER_HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(PAPER_HELPERS))
 
-from cstims.paper import config
+from cstims import constants, paths
+from cstims.cache import load_cstim_brain_cache
 
-SUBJECTS = config.SUBJECTS
-BRAIN_DATA_DIR = config.BRAIN_DATA_DIR
-DATA_OUT = config.RELIABILITY_DATA_DIR / "between_subject_noise_ceilings.csv"
+SUBJECTS = constants.SUBJECTS
+DATA_OUT = paths.reliability_data_dir() / "between_subject_noise_ceilings.csv"
 
 N_MATCH = 100    # match controversial stimulus count
 N_BOOT = 200     # bootstrap iterations for vicco subsampling
@@ -67,13 +67,8 @@ def kriegeskorte_nc_per_subject(rdm_mat: np.ndarray):
 
 def load_betas_hlvis(subject: str, stim_group: str):
     """Load hlvis-masked betas for stimuli matching stim_group."""
-    d = np.load(BRAIN_DATA_DIR / subject / "cstim_betas_averaged.npz", allow_pickle=True)
-    vm = np.load(BRAIN_DATA_DIR / subject / "voxel_metadata.npz", allow_pickle=True)
-    hlvis = vm["hlvis_mask"]
-    betas = d["betas"][hlvis].astype(np.float32)
-    stim_keys = d["stim_keys"]
-    mask = np.array([stim_group in k for k in stim_keys])
-    return betas[:, mask]
+    cache = load_cstim_brain_cache(subject)
+    return cache.betas_for_group(stim_group).astype(np.float32, copy=False)
 
 
 def compute_nc(stim_group: str, rng: np.random.Generator):
@@ -106,7 +101,7 @@ def main():
     rng = np.random.default_rng(42)
     rows = []
 
-    groups = list(config.MODEL_SETS.keys()) + ["vicco"]
+    groups = list(constants.MODEL_SETS.keys()) + ["vicco"]
 
     for group in groups:
         stim_group = "vicco" if group == "vicco" else group

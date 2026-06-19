@@ -37,7 +37,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 
-from cstims.paper import config
+from cstims import constants, paths
 from cstims.paper.style_improved import (
     apply_style, FONT, DPI, W_DOUBLE, W_SINGLE, OKABE_ITO,
     COLOR_CSTIM, COLOR_BASELINE,
@@ -55,9 +55,9 @@ COND_INFO = {
 COND_ORDER = list(COND_INFO.keys())
 SELECTED_MATRIX_TYPES = {"selected_clean", "selected_noised"}
 
-PROJECT_ROOT = config.PROJECT_ROOT
-MODEL_SETS = config.MODEL_SETS
-SELECTION_OUTPUT_ROOT = config.SELECTION_OUTPUT_ROOT
+PROJECT_ROOT = paths.project_root()
+MODEL_SETS = constants.MODEL_SETS
+SELECTION_OUTPUT_ROOT = paths.selected_stimuli_root()
 FIGURES_DIR = Path(__file__).resolve().parent
 
 # Short labels matching the brain-alignment figure
@@ -113,7 +113,7 @@ EVAL_DIRS = {
 # 00_selection_evaluation/analysis/run_discriminability_unique.sh.
 CURRENT_EVAL_DATA_SUFFIX = "_unique_boot"
 CURRENT_EVAL_DIRS = {
-    ms: config.EVAL_DATA_DIR / f"{ms}{CURRENT_EVAL_DATA_SUFFIX}"
+    ms: paths.selection_evaluation_results_dir() / f"{ms}{CURRENT_EVAL_DATA_SUFFIX}"
     for ms in ["all_models", "sota", "training_objective", "architecture", "dataset"]
 }
 

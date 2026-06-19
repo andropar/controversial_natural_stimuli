@@ -30,7 +30,10 @@ sys.path.insert(0, str(SHARE_ROOT / "src"))
 sys.path.insert(0, str(SHARE_ROOT / "src"))
 sys.path.insert(0, str(SHARE_ROOT))
 
-from cstims.paper.config import UNIQUE_ENCODING_DIRS, MODEL_LIST_CSV, MODEL_SETS
+from cstims import paths
+from cstims.constants import MODEL_SETS
+UNIQUE_ENCODING_DIRS = paths.unique_encoding_dirs()
+MODEL_LIST_CSV = paths.model_list_csv()
 from cstims.encoding.linear import load_encoding_params_by_encoding, encode_batch_for_all_encodings
 from cstims.feature_extraction.universal_extractor import UniversalFeatureExtractor
 

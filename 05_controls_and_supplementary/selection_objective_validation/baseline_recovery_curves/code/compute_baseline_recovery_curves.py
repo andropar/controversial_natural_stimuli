@@ -35,7 +35,7 @@ SRC_DIR = SHARE / "src"
 for path in (SRC_DIR, HELPERS_DIR, ANALYSIS_DIR):
     sys.path.insert(0, str(path))
 
-from cstims.paper import config  # noqa: E402
+from cstims import constants, paths
 import utils as eval_utils  # noqa: E402
 from cstims.evaluation.computation import (  # noqa: E402
     compute_all_rdms,
@@ -78,7 +78,7 @@ RESULTS = SCRIPT.parents[1] / "results"
 
 
 def layer_lookup() -> dict[str, str]:
-    model_list = Path(config.MODEL_LIST_CSV)
+    model_list = Path(paths.model_list_csv())
     if not model_list.exists():
         return {}
     df = pd.read_csv(model_list)
@@ -130,7 +130,8 @@ def load_selection_payload(model_set: str) -> dict[str, Any]:
 
 
 def encoding_root_map() -> dict[str, Path]:
-    from cstims.paper.config import UNIQUE_ENCODING_DIRS
+    from cstims import paths
+    UNIQUE_ENCODING_DIRS = paths.unique_encoding_dirs()
 
     return {k: v for k, v in UNIQUE_ENCODING_DIRS.items()}
 

@@ -28,8 +28,11 @@ PAPER_HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(PAPER_HELPERS))
 sys.path.insert(0, str(SHARE_ROOT / "src"))
 
-from cstims.paper import config  # noqa: E402
-from cstims.paper.utils import bootstrap_sample_indices, compute_rdm_correlation, compute_rsa_score, load_encoding_model  # noqa: E402
+from cstims import constants, paths
+from cstims.cache import load_cstim_brain_cache, load_cstim_feature_groups
+from cstims.rdm import compute_rdm_correlation, compute_rsa_score  # noqa: E402
+from cstims.sampling import bootstrap_sample_indices  # noqa: E402
+from cstims.paper.utils import load_encoding_model  # noqa: E402
 
 
 MODEL_SETS = ["all_models", "sota", "training_objective", "architecture", "dataset"]
@@ -59,26 +62,12 @@ def predict_hlvis(features: np.ndarray, encoding: dict) -> np.ndarray:
 
 
 def load_subject_brain_data(subject: str, n_bootstrap: int) -> dict | None:
-    data_dir = config.get_subject_data_dir(subject)
-    betas_path = data_dir / "cstim_betas_averaged.npz"
-    if not betas_path.exists():
+    cache = load_cstim_brain_cache(subject, missing_ok=True)
+    if cache is None:
         return None
-    betas_data = np.load(betas_path, allow_pickle=True)
-    voxel_data = np.load(data_dir / "voxel_metadata.npz", allow_pickle=True)
-    stim_info = pd.read_csv(data_dir / "cstim_stimulus_info.csv")
-
-    hlvis = voxel_data["hlvis_mask"]
-    betas = betas_data["betas"][hlvis, :]
-    stim_keys = betas_data["stim_keys"]
-    stim_key_to_idx = {k: i for i, k in enumerate(stim_keys)}
-
-    group_indices = {}
-    group_file_idx = {}
-    for group, gdf in stim_info.groupby("group"):
-        keys = gdf["stim_key"].values
-        group_indices[group] = np.array([stim_key_to_idx[k] for k in keys])
-        idx = gdf["stim_idx"].values.astype(int)
-        group_file_idx[group] = idx - 1 if group == "vicco" else idx
+    data = cache.as_legacy_group_dict()
+    group_indices = data["group_indices"]
+    group_file_idx = data["group_file_idx"]
 
     n_vicco = len(group_indices.get("vicco", []))
     n_vicco_sample = min(100, n_vicco)
@@ -86,7 +75,7 @@ def load_subject_brain_data(subject: str, n_bootstrap: int) -> dict | None:
         n_vicco, n_vicco_sample, n_bootstrap=n_bootstrap, seed=0
     )
     return {
-        "betas_hlvis": betas,
+        "betas_hlvis": data["betas_hlvis"],
         "group_indices": group_indices,
         "group_file_idx": group_file_idx,
         "vicco_bootstrap": vicco_bootstrap,
@@ -95,11 +84,7 @@ def load_subject_brain_data(subject: str, n_bootstrap: int) -> dict | None:
 
 
 def load_features(model: str) -> dict[str, np.ndarray]:
-    path = config.CSTIM_FEATURE_CACHE / f"{model}.npz"
-    if not path.exists():
-        raise FileNotFoundError(path)
-    with np.load(path) as z:
-        return {k: z[k].astype(np.float32) for k in z.files}
+    return load_cstim_feature_groups(model, dtype=np.float32)
 
 
 def score_one(brain_patterns: np.ndarray, pred_patterns: np.ndarray) -> tuple[float, float]:
@@ -136,13 +121,13 @@ def build_rank_summary(df: pd.DataFrame) -> pd.DataFrame:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--subjects", nargs="+", default=config.SUBJECTS)
+    parser.add_argument("--subjects", nargs="+", default=constants.SUBJECTS)
     parser.add_argument("--model-sets", nargs="+", default=MODEL_SETS)
     parser.add_argument("--n-bootstrap", type=int, default=10)
     parser.add_argument("--max-models", type=int, default=None)
     args = parser.parse_args()
 
-    data_dir = config.ROBUSTNESS_DATA_DIR
+    data_dir = paths.robustness_data_dir()
     data_dir.mkdir(parents=True, exist_ok=True)
     rows = []
 
@@ -150,7 +135,7 @@ def main() -> None:
         sdata = load_subject_brain_data(subject, n_bootstrap=args.n_bootstrap)
         if sdata is None:
             continue
-        model_union = sorted(set(m for ms in args.model_sets for m in config.MODEL_SETS[ms]))
+        model_union = sorted(set(m for ms in args.model_sets for m in constants.MODEL_SETS[ms]))
         if args.max_models is not None:
             model_union = model_union[: args.max_models]
         for model in tqdm(model_union, desc=subject):
@@ -162,7 +147,7 @@ def main() -> None:
                 continue
 
             for model_set in args.model_sets:
-                if model not in config.MODEL_SETS[model_set] or model_set not in sdata["group_indices"]:
+                if model not in constants.MODEL_SETS[model_set] or model_set not in sdata["group_indices"]:
                     continue
                 file_idx = sdata["group_file_idx"][model_set]
                 brain_idx = sdata["group_indices"][model_set]
@@ -174,7 +159,7 @@ def main() -> None:
                         "subject": subject,
                         "model_set": model_set,
                         "model": model,
-                        "display_name": config.MODEL_DISPLAY_NAMES.get(model, model),
+                        "display_name": constants.MODEL_DISPLAY_NAMES.get(model, model),
                         "stimulus_type": "controversial",
                         "bootstrap_idx": 0,
                         "n_stimuli": len(brain_idx),
@@ -197,7 +182,7 @@ def main() -> None:
                             "subject": subject,
                             "model_set": model_set,
                             "model": model,
-                            "display_name": config.MODEL_DISPLAY_NAMES.get(model, model),
+                            "display_name": constants.MODEL_DISPLAY_NAMES.get(model, model),
                             "stimulus_type": "vicco",
                             "bootstrap_idx": boot_idx,
                             "n_stimuli": len(subset),

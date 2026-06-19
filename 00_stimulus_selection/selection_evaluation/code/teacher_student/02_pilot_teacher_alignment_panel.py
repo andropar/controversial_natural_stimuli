@@ -40,7 +40,7 @@ from cstims.evaluation.random_features import (  # noqa: E402
     available_random_models,
     load_random_feature_cache,
 )
-from cstims.evaluation.teacher_student.independent_refit_rdm_recovery import (  # noqa: E402
+from cstims.evaluation.teacher_student import (  # noqa: E402
     build_candidate_ops,
     build_eval_raw_and_meta,
     detect_equivalent_models,
@@ -53,7 +53,7 @@ from cstims.evaluation.teacher_student.independent_refit_rdm_recovery import (  
 )
 from cstims.evaluation.ridge import standardize_from_train  # noqa: E402
 from cstims.evaluation.track_loading import load_selected_raw_features  # noqa: E402
-from cstims.rdm_cuda import calculate_correlation_value, get_rdm_vector_np  # noqa: E402
+from cstims.rdm import calculate_correlation_value, get_rdm_vector_np  # noqa: E402
 
 
 DEFAULT_OUT = (

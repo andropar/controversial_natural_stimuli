@@ -28,7 +28,7 @@ from cstims.evaluation.random_features import (  # noqa: E402
     ensure_npy_feature_cache,
     load_random_feature_cache,
 )
-from cstims.evaluation.teacher_student.independent_refit_rdm_recovery import (  # noqa: E402
+from cstims.evaluation.teacher_student import (  # noqa: E402
     DEFAULT_RESULTS,
     build_candidate_ops,
     build_eval_raw_and_meta,
@@ -115,12 +115,14 @@ def main() -> None:
     )
     parser.add_argument(
         "--eval-refit-mode",
-        choices=["independent", "eval_augmented_loo"],
+        choices=["independent", "eval_augmented_loo", "eval_augmented_nested_loo"],
         default="independent",
         help=(
             "independent fits readouts only on the refit pool; "
             "eval_augmented_loo fits final readouts on the refit pool plus each "
-            "eval set, using kernel-ridge leave-one-out predictions for eval images."
+            "eval set, using kernel-ridge leave-one-out predictions for eval images; "
+            "eval_augmented_nested_loo additionally selects alpha inside each "
+            "eval set with the outer eval image left out."
         ),
     )
     parser.add_argument("--calibration-images", type=int, default=100)
@@ -168,6 +170,16 @@ def main() -> None:
             "teacher_student_recoveries.csv. Normal plots only require the summary CSVs."
         ),
     )
+    parser.add_argument(
+        "--teacher-workers",
+        type=int,
+        default=1,
+        help=(
+            "Compute teachers in parallel inside this process. The default serial "
+            "path is retained for exact legacy behavior. Values >1 currently "
+            "support CPU scalar scoring only, not CUDA/batched evaluation."
+        ),
+    )
     parser.add_argument("--encoding-device", default="cuda")
     parser.add_argument("--encoding-batch-size", type=int, default=1024)
     parser.add_argument(
@@ -194,6 +206,8 @@ def main() -> None:
 
     if args.n_refit_repeats < 1:
         raise ValueError("--n-refit-repeats must be at least 1")
+    if args.teacher_workers < 1:
+        raise ValueError("--teacher-workers must be at least 1")
     if args.rdm_device == "cuda" and not torch.cuda.is_available():
         raise RuntimeError("--rdm-device cuda requested but CUDA is unavailable")
     if args.gpu_alpha_batch and args.rdm_device != "cuda":
@@ -221,6 +235,17 @@ def main() -> None:
         )
     if args.batch_noise_samples and args.rdm_device != "cuda":
         raise ValueError("--batch-noise-samples currently requires --rdm-device cuda")
+    if args.teacher_workers > 1 and (
+        args.batch_noise_samples
+        or args.rdm_device == "cuda"
+        or args.gpu_alpha_batch
+        or args.gpu_predict_batch
+        or args.gpu_eval_noise_batch
+    ):
+        raise ValueError(
+            "--teacher-workers > 1 currently supports CPU scalar scoring only; "
+            "use --teacher-workers 1 for CUDA/batched evaluation"
+        )
     rdm_device = torch.device(args.rdm_device)
     max_refit_pool_size = int(args.max_refit_pool_size or args.refit_pool_size)
     if max_refit_pool_size < args.refit_pool_size:
@@ -257,6 +282,11 @@ def main() -> None:
         else np.asarray(get_default_noise_level_multipliers(), dtype=np.float64)
     )
     alphas = [float(x) for x in parse_csv_list(args.alphas)]
+    alpha_selection = (
+        "targetwise_eval_nested_loo_pearson"
+        if args.eval_refit_mode == "eval_augmented_nested_loo"
+        else "targetwise_validation_pearson"
+    )
     teacher_indices = parse_index_list(args.teacher_indices, len(model_names))
     target_nc = float(args.noise_ceiling or payload.get("config", {}).get("noise_ceiling_target", 0.46))
     tracks = []
@@ -272,9 +302,14 @@ def main() -> None:
                 f"{args.model_set}_teacher_student_independent_refit_1k_rdm_recovery_"
                 f"{args.eval_noise_mode}"
             )
-        else:
+        elif args.eval_refit_mode == "eval_augmented_loo":
             default_name = (
                 f"{args.model_set}_teacher_student_eval_augmented_loo_refit_1k_"
+                f"rdm_recovery_{args.eval_noise_mode}"
+            )
+        else:
+            default_name = (
+                f"{args.model_set}_teacher_student_eval_augmented_nested_loo_refit_1k_"
                 f"rdm_recovery_{args.eval_noise_mode}"
             )
         out_dir = DEFAULT_RESULTS / default_name
@@ -307,7 +342,7 @@ def main() -> None:
             "tracks": tracks,
             "metric": metric,
             "corr_type": args.corr_type,
-            "alpha_selection": "targetwise_validation_pearson",
+            "alpha_selection": alpha_selection,
             "eval_noise_mode": args.eval_noise_mode,
             "fit_noise_calibration": args.fit_noise_calibration,
             "eval_refit_mode": args.eval_refit_mode,
@@ -328,6 +363,7 @@ def main() -> None:
             "computed_refit_repeat_indices": refit_repeat_indices,
             "n_random_subsets": args.n_random_subsets,
             "n_noise_samples": args.n_noise_samples,
+            "teacher_workers": int(args.teacher_workers),
             "batch_noise_samples": bool(args.batch_noise_samples),
             "fast_gpu_batch": bool(args.fast_gpu_batch),
             "rdm_device": str(rdm_device),
@@ -340,9 +376,10 @@ def main() -> None:
             "resume_enabled": not args.no_resume,
             "note": (
                 "Held-out recovery is scored as corr(RDM(candidate prediction), "
-                "noisy RDM(teacher response)). eval_augmented_loo uses the refit "
+                "noisy RDM(teacher response)). eval-augmented modes use the refit "
                 "pool plus each eval set for final readouts, with leave-one-out "
-                "predictions for eval images."
+                "predictions for eval images. eval_augmented_nested_loo also "
+                "selects alpha inside the eval set with the outer eval image held out."
             ),
         }
         metadata_path = out_dir / "metadata.json"
@@ -390,7 +427,7 @@ def main() -> None:
         "tracks": tracks,
         "metric": metric,
         "corr_type": args.corr_type,
-        "alpha_selection": "targetwise_validation_pearson",
+        "alpha_selection": alpha_selection,
         "eval_noise_mode": args.eval_noise_mode,
         "fit_noise_calibration": args.fit_noise_calibration,
         "eval_refit_mode": args.eval_refit_mode,
@@ -411,6 +448,7 @@ def main() -> None:
         "computed_refit_repeat_indices": refit_repeat_indices,
         "n_random_subsets": args.n_random_subsets,
         "n_noise_samples": args.n_noise_samples,
+        "teacher_workers": int(args.teacher_workers),
         "batch_noise_samples": bool(args.batch_noise_samples),
         "fast_gpu_batch": bool(args.fast_gpu_batch),
         "rdm_device": str(rdm_device),
@@ -423,9 +461,10 @@ def main() -> None:
         "resume_enabled": not args.no_resume,
         "note": (
             "Held-out recovery is scored as corr(RDM(candidate prediction), noisy "
-            "RDM(teacher response)). eval_augmented_loo uses the refit pool plus "
+            "RDM(teacher response)). eval-augmented modes use the refit pool plus "
             "each eval set for final readouts, with leave-one-out predictions for "
-            "eval images."
+            "eval images. eval_augmented_nested_loo also selects alpha inside the "
+            "eval set with the outer eval image held out."
         ),
     }
     metadata_path = out_dir / "metadata.json"
@@ -534,7 +573,7 @@ def main() -> None:
             raise ValueError("Refit validation split is shorter than requested")
         base_fit_pos = (
             np.concatenate([train_pos, val_pos])
-            if args.eval_refit_mode == "eval_augmented_loo"
+            if args.eval_refit_mode in {"eval_augmented_loo", "eval_augmented_nested_loo"}
             else None
         )
         print(
@@ -655,6 +694,7 @@ def main() -> None:
                 gpu_alpha_batch=args.gpu_alpha_batch,
                 gpu_predict_batch=args.gpu_predict_batch,
                 gpu_eval_noise_batch=args.gpu_eval_noise_batch,
+                teacher_workers=args.teacher_workers,
             )
             all_rows.extend(rows)
             if not args.cache_only:

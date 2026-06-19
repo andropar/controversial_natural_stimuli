@@ -19,7 +19,8 @@ SHARE_ROOT = THIS.parents[3]
 HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(HELPERS))
 
-from cstims.paper import config  # noqa: E402
+from cstims import constants, paths
+from cstims.cache import load_cstim_voxel_metadata
 
 
 SUBJECTS = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]
@@ -48,7 +49,7 @@ def layer_safe(layer: str) -> str:
 
 
 def model_layer_map() -> dict[str, str]:
-    df = pd.read_csv(config.MODEL_LIST_CSV)
+    df = pd.read_csv(paths.model_list_csv())
     return {r["model"]: r["layer"] for _, r in df.iterrows()}
 
 
@@ -64,7 +65,7 @@ def feature_path(subject: str, model: str, layer: str) -> Path:
 
 
 def roi_union(subject: str):
-    z = np.load(CSTIM_CACHE / subject / "voxel_metadata.npz", allow_pickle=True)
+    z = load_cstim_voxel_metadata(subject, cache_root=CSTIM_CACHE)
     names = [str(x) for x in z["roi_names"]]
     union = np.zeros_like(z["visual_mask"], dtype=bool)
     roi_masks = {}
@@ -149,7 +150,7 @@ def main():
 
     subjects = SUBJECTS if args.subject == "all" else [args.subject]
     layers = model_layer_map()
-    models = sorted(config.MODEL_SETS["all_models"]) if args.models == "all" else args.models.split(",")
+    models = sorted(constants.MODEL_SETS["all_models"]) if args.models == "all" else args.models.split(",")
     for subject in subjects:
         for model in models:
             fit_one(subject, model, layers[model], args.overwrite)

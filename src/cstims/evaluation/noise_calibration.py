@@ -8,7 +8,7 @@ import torch
 
 from cstims.evaluation.results import NoiseParameters
 from cstims.noise_estimation import rdm_noise_by_model
-from cstims.rdm_cuda import calculate_correlation_value, get_rdm_vector_np
+from cstims.rdm import calculate_correlation_value, get_rdm_vector_np
 
 
 def multiplier_to_noise_ceiling(k: float, nc_base: float) -> float:

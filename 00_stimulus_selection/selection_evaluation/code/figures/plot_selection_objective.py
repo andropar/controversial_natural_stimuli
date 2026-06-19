@@ -19,7 +19,7 @@ SHARE_ROOT = PAPER_ROOT.parents[1]
 HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(HELPERS))
 
-from cstims.paper import config
+from cstims import constants, paths
 from cstims.paper.style_improved import (
     apply_style,
     DPI,
@@ -35,7 +35,7 @@ apply_style()
 
 FIGURES_DIR = PAPER_ROOT / "figures" / "insilico_curve"
 PNG_DIR = FIGURES_DIR / "png"
-DATA_PATH = config.EVAL_DATA_DIR / "selection_objective_combined.csv"
+DATA_PATH = paths.selection_evaluation_results_dir() / "selection_objective_combined.csv"
 TRACK = "combined_raw_plus_encoding"
 
 

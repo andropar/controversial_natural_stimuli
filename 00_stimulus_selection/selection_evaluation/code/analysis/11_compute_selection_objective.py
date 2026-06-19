@@ -34,7 +34,7 @@ SHARE_ROOT = PAPER_ROOT.parents[1]
 HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(HELPERS))
 
-from cstims.paper import config
+from cstims import constants, paths
 from cstims.paper.style_improved import MODEL_SET_ORDER
 
 
@@ -101,10 +101,10 @@ def _combined_bootstrap_ci(
 
 def _matrix_path(model_set: str, matrix_source: str) -> Path:
     if matrix_source == "selected":
-        return config.EVAL_DATA_DIR / model_set / "correlation_matrices.csv"
+        return paths.selection_evaluation_results_dir() / model_set / "correlation_matrices.csv"
     if matrix_source == "random":
         return (
-            config.SELECTION_OUTPUT_ROOT
+            paths.selected_stimuli_root()
             / model_set
             / "method-raw_plus_all_encodings"
             / "20251222_175721"
@@ -397,7 +397,7 @@ def main() -> None:
     parser.add_argument(
         "--out-dir",
         type=Path,
-        default=config.EVAL_DATA_DIR,
+        default=paths.selection_evaluation_results_dir(),
         help="Output directory for CSV files",
     )
     args = parser.parse_args()

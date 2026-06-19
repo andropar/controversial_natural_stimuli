@@ -3,7 +3,7 @@
 import numpy as np
 import torch
 
-from cstims.rdm_cuda import get_rdm_vector
+from cstims.rdm import get_rdm_vector
 
 
 def calibrate_feature_noise(

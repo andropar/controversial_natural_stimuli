@@ -37,7 +37,7 @@ _PAPER = Path(__file__).resolve().parents[1]
 SHARE_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))
-from cstims.paper import config
+from cstims import constants, paths
 
 SUBJECTS = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]
 RDM_DIR = Path("/home/jroth/rsa_based_selection/experiments/archive/simulationdiffs_to_braindiffs/data")

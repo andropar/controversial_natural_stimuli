@@ -47,16 +47,15 @@ import pandas as pd
 from scipy import stats
 from tqdm import tqdm
 
-from cstims.paper import config
-from cstims.paper.utils import (
-    load_encoding_model, predict_voxel_responses,
-    compute_rdm_correlation, rdm_to_vector,
-)
+from cstims import constants, paths
+from cstims.cache import load_cstim_feature_groups
+from cstims.rdm import compute_rdm_correlation, rdm_to_vector
+from cstims.paper.utils import load_encoding_model, predict_voxel_responses
 
-OUT_DIR = config.OOD_DATA_DIR
+OUT_DIR = paths.ood_data_dir()
 
 STIM_SETS = ["all_models", "architecture", "training_objective", "sota", "dataset", "vicco"]
-ALL_MODELS = config.MODEL_SETS["all_models"]
+ALL_MODELS = constants.MODEL_SETS["all_models"]
 
 
 # --------------------------------------------------------------------------------
@@ -71,8 +70,8 @@ def models_for_set(stim_set: str, variant: str) -> list:
         # caller picks the roster — we should never reach here directly
         raise ValueError("Use models_for_set(cstim_set, variant) and apply that "
                          "list to the vicco reference too.")
-    if stim_set in config.MODEL_SETS:
-        models = list(config.MODEL_SETS[stim_set])
+    if stim_set in constants.MODEL_SETS:
+        models = list(constants.MODEL_SETS[stim_set])
     else:
         raise ValueError(stim_set)
     if variant == "no_vicreg":
@@ -92,19 +91,19 @@ def build_rdm_cache():
     n_imgs_per_set = {}
 
     for model in tqdm(ALL_MODELS, desc="Models"):
-        feat_path = config.CSTIM_FEATURE_CACHE / f"{model}.npz"
-        if not feat_path.exists():
+        try:
+            feats = load_cstim_feature_groups(model, dtype=np.float32)
+        except FileNotFoundError:
             print(f"  SKIP {model}: missing feature cache")
             continue
-        feats = np.load(feat_path)
         # Pre-load every set's features
-        X_sets = {ss: feats[ss].astype(np.float32) for ss in STIM_SETS if ss in feats}
+        X_sets = {ss: feats[ss] for ss in STIM_SETS if ss in feats}
         for ss, X in X_sets.items():
             n_imgs_per_set[ss] = X.shape[0]
 
         # For each subject, load encoding once, predict on all sets
         per_subj_rdm_vecs = {ss: [] for ss in X_sets}
-        for subject in config.SUBJECTS:
+        for subject in constants.SUBJECTS:
             try:
                 enc = load_encoding_model(model, subject)
             except FileNotFoundError:
@@ -145,7 +144,7 @@ def build_stack(cache: dict, models: list, stim_set: str):
 # --------------------------------------------------------------------------------
 
 def per_image_ood(stim_set: str, models: list) -> np.ndarray:
-    df = pd.read_csv(config.OOD_DATA_DIR / "pca_loglik.csv")
+    df = pd.read_csv(paths.ood_data_dir() / "pca_loglik.csv")
     sub = df[(df["stimulus_group"] == stim_set) & (df["model"].isin(models))]
     return (sub.groupby("stimulus_idx")["loglik_pred_z"]
             .mean().sort_index().values)
@@ -190,7 +189,7 @@ def main():
     cstim_sets = [s for s in STIM_SETS if s != "vicco"]
     for stim_set in cstim_sets:
         variants = ["all"]
-        if "vicreg_resnet50" in config.MODEL_SETS[stim_set]:
+        if "vicreg_resnet50" in constants.MODEL_SETS[stim_set]:
             variants.append("no_vicreg")
 
         for variant in variants:

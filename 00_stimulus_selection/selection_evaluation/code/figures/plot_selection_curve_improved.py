@@ -26,7 +26,7 @@ sys.path.insert(0, str(HELPERS))
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
-from cstims.paper import config
+from cstims import constants, paths
 from cstims.paper.style_improved import (
     apply_style,
     FONT,
@@ -112,7 +112,7 @@ def _track_label(col: str) -> str:
 
 
 def load_score_data(model_set: str) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
-    base = config.EVAL_DATA_DIR / model_set
+    base = paths.selection_evaluation_results_dir() / model_set
     return _read_csv(base / "greedy_scores.csv"), _read_csv(base / "refinement.csv")
 
 

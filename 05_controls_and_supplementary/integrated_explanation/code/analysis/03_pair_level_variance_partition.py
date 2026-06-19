@@ -25,8 +25,10 @@ STAGE = Path(__file__).resolve().parents[2]
 SHARE_ROOT = STAGE.parents[1]
 sys.path.insert(0, str(SHARE_ROOT / "src"))
 
-from cstims.paper import config  # noqa: E402
-from cstims.paper.utils import compute_rdm_correlation, rdm_to_vector, load_cached_features, stimulus_cv_splits  # noqa: E402
+from cstims import constants, paths
+from cstims.cache import load_cstim_brain_cache, load_cstim_features
+from cstims.rdm import compute_rdm_correlation, rdm_to_vector  # noqa: E402
+from cstims.sampling import stimulus_cv_splits  # noqa: E402
 
 
 DATA = STAGE / "results"
@@ -172,7 +174,7 @@ def _semantic_family(group: str) -> tuple[np.ndarray, list[str]]:
     names = []
     for model in SEMANTIC_PROXY_MODELS:
         try:
-            feats = load_cached_features(model, group)
+            feats = load_cstim_features(model, group)
         except FileNotFoundError:
             continue
         cols.append(_rdm_vec_from_features(feats))
@@ -185,9 +187,9 @@ def _semantic_family(group: str) -> tuple[np.ndarray, list[str]]:
 def _model_family(group: str) -> tuple[np.ndarray, list[str], np.ndarray, list[str]]:
     model_vecs = []
     model_names = []
-    for model in config.MODEL_SETS[group]:
+    for model in constants.MODEL_SETS[group]:
         try:
-            feats = load_cached_features(model, group)
+            feats = load_cstim_features(model, group)
         except FileNotFoundError:
             continue
         model_vecs.append(_rdm_vec_from_features(feats))
@@ -226,20 +228,10 @@ def build_family_matrices(group: str, image_stats: pd.DataFrame, ood_scores: pd.
 
 
 def _brain_vec(subject: str, group: str) -> np.ndarray:
-    data_dir = config.get_brain_input_dir(subject)
-    betas_npz = np.load(data_dir / "cstim_betas_averaged.npz", allow_pickle=True)
-    voxel_npz = np.load(data_dir / "voxel_metadata.npz", allow_pickle=True)
-    stim_info = pd.read_csv(data_dir / "cstim_stimulus_info.csv")
-
-    hlvis_mask = voxel_npz["hlvis_mask"]
-    stim_keys = betas_npz["stim_keys"]
-    key_to_idx = {str(k): i for i, k in enumerate(stim_keys)}
-
-    sub = stim_info[stim_info["group"] == group].sort_values("stim_idx").reset_index(drop=True)
-    if len(sub) != 100:
-        raise RuntimeError(f"Expected 100 stimuli for {subject}/{group}, got {len(sub)}")
-    brain_idx = np.array([key_to_idx[str(k)] for k in sub["stim_key"]], dtype=int)
-    betas = betas_npz["betas"][hlvis_mask, :][:, brain_idx].T
+    cache = load_cstim_brain_cache(subject)
+    betas = cache.patterns(group, sort_by_stim_idx=True)
+    if betas.shape[0] != 100:
+        raise RuntimeError(f"Expected 100 stimuli for {subject}/{group}, got {betas.shape[0]}")
     return rdm_to_vector(compute_rdm_correlation(betas))
 
 
@@ -363,7 +355,7 @@ def main() -> None:
     args = parser.parse_args()
 
     groups = GROUP_ORDER if args.groups == "all" else [g.strip() for g in args.groups.split(",") if g.strip()]
-    subjects = config.SUBJECTS if args.subjects == "all" else [s.strip() for s in args.subjects.split(",") if s.strip()]
+    subjects = constants.SUBJECTS if args.subjects == "all" else [s.strip() for s in args.subjects.split(",") if s.strip()]
     bad_groups = set(groups) - set(GROUP_ORDER)
     if bad_groups:
         raise ValueError(f"Unknown groups: {sorted(bad_groups)}")

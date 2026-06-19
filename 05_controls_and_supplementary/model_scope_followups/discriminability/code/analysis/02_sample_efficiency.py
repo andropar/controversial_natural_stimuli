@@ -41,7 +41,10 @@ sys.path.insert(0, str(SHARE_ROOT / "src"))
 sys.path.insert(0, str(LAYER_SWEEP))
 sys.path.insert(0, str(LAYER_SWEEP / "code"))
 
-from cstims.paper.config import MODEL_SETS, get_brain_input_dir  # noqa
+from cstims import paths
+from cstims.cache import load_cstim_brain_cache
+from cstims.constants import MODEL_SETS
+get_brain_input_dir = paths.get_brain_input_dir
 from cstims.paper.utils import load_encoding_model, predict_voxel_responses  # noqa
 from layers_config import MAIN_LAYER  # noqa
 
@@ -84,20 +87,8 @@ def spearman_rdm(a, b):
 
 
 def load_subject_brain(subject):
-    d = get_brain_input_dir(subject)
-    b = np.load(d / "cstim_betas_averaged.npz", allow_pickle=True)
-    v = np.load(d / "voxel_metadata.npz", allow_pickle=True)
-    si = pd.read_csv(d / "cstim_stimulus_info.csv")
-    hlvis = v["hlvis_mask"]
-    betas_hlvis = b["betas"][hlvis, :]
-    k2i = {k: i for i, k in enumerate(b["stim_keys"])}
-    g_brain, g_file = {}, {}
-    for g in si["group"].unique():
-        m = si["group"] == g
-        g_brain[g] = np.array([k2i[k] for k in si.loc[m, "stim_key"].values])
-        idx = si.loc[m, "stim_idx"].values
-        g_file[g] = idx - 1 if g == "vicco" else idx
-    return betas_hlvis, g_brain, g_file
+    cache = load_cstim_brain_cache(subject)
+    return cache.betas_roi, cache.group_brain_indices(), cache.group_feature_indices()
 
 
 def precompute_predictions():

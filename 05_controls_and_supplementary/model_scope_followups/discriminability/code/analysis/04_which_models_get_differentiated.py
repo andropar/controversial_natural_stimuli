@@ -33,7 +33,7 @@ import pandas as pd
 PROJECT = Path(__file__).resolve().parents[4]
 PAPER = PROJECT / "experiments" / "cstim_paper"
 sys.path.insert(0, str(PAPER))
-from cstims.paper.config import MODEL_SETS  # noqa
+from cstims.constants import MODEL_SETS
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "results"
 

@@ -22,11 +22,12 @@ SHARE_ROOT = STAGE.parent
 PAPER_HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(PAPER_HELPERS))
 
-from cstims.paper import config
-from cstims.paper.utils import compute_rdm_correlation, rdm_to_vector
+from cstims import constants, paths
+from cstims.cache import load_cstim_features
+from cstims.rdm import compute_rdm_correlation, rdm_to_vector
 
 GROUPS_CSTIM = ["all_models", "architecture", "training_objective", "sota", "dataset"]
-MODELS = config.MODEL_SETS["all_models"]
+MODELS = constants.MODEL_SETS["all_models"]
 N_VICCO_SAMPLE = 100
 N_VICCO_BOOTSTRAPS = 20
 
@@ -38,14 +39,10 @@ def model_rdm_spread_for_group(group: str, bootstrap_idx: int = 0, seed: int = 0
     """
     spreads = []
     for model in MODELS:
-        cache_path = config.CSTIM_FEATURE_CACHE / f"{model}.npz"
-        if not cache_path.exists():
+        try:
+            feats = load_cstim_features(model, group, dtype=np.float32)
+        except (FileNotFoundError, KeyError):
             continue
-        data = np.load(cache_path)
-        key = "vicco" if group == "vicco" else group
-        if key not in data:
-            continue
-        feats = data[key]
 
         if group == "vicco":
             rng = np.random.default_rng(seed + bootstrap_idx)
@@ -77,7 +74,7 @@ def main():
     print(f"mean={np.mean(vicco_spreads):.4f}")
 
     df = pd.DataFrame(rows)
-    out_path = config.ROBUSTNESS_DATA_DIR / "model_rdm_spreads.csv"
+    out_path = paths.robustness_data_dir() / "model_rdm_spreads.csv"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(out_path, index=False)
     print(f"\nSaved to {out_path}")

@@ -9,7 +9,7 @@ _SHARE_ROOT = Path(__file__).resolve().parents[5]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))  # project root
 sys.path.insert(0, str(_SHARE_ROOT / "src"))
-from cstims.paper import config
+from cstims import constants, paths
 
 import numpy as np
 from PIL import Image
@@ -17,7 +17,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-CSTIM_DIR = config.CSTIM_HDF5_ROOT
+CSTIM_DIR = paths.cstim_hdf5_root()
 FIG_DIR = Path(__file__).resolve().parent
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 

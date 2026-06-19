@@ -27,7 +27,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy import stats
 
-from cstims.paper import config
+from cstims import constants, paths
 from cstims.paper.style_improved import apply_style, FONT, DPI, W_DOUBLE
 
 apply_style()
@@ -85,7 +85,7 @@ def _sem(x):
 
 def _load_wrsa():
     dfs = []
-    for subject in config.SUBJECTS:
+    for subject in constants.SUBJECTS:
         p = RSA_DATA_DIR / subject / "wrsa_transfer_scores.csv"
         if p.exists():
             dfs.append(pd.read_csv(p))
@@ -124,7 +124,7 @@ def _control_absolute_values():
     rel_rows = []
 
     for model_set in CSTIM_SETS:
-        models = config.MODEL_SETS[model_set]
+        models = constants.MODEL_SETS[model_set]
 
         # Raw wRSA cstim subject means for this set/roster.
         cstim = (wrsa[(wrsa["stimulus_type"] == "controversial")

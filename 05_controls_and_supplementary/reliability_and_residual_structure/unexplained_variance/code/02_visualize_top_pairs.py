@@ -34,7 +34,7 @@ _PAPER = Path(__file__).resolve().parents[1]
 SHARE_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))
-from cstims.paper import config
+from cstims import constants, paths
 
 IMAGE_DIR = (
     SHARE_ROOT

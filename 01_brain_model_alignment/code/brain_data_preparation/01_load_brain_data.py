@@ -30,13 +30,12 @@ import pandas as pd
 from scipy.stats import zscore
 from tqdm import tqdm
 
-from cstims.paper.config import DEEPVISION_ROOT, INPUT_SOURCE, get_brain_input_dir
-from cstims.paper.utils import (
-    correct_stimulus_label,
-    detect_available_sessions,
-    parse_stimulus_label,
-    parse_subject_arg,
-)
+from cstims import paths
+from cstims.constants import INPUT_SOURCE
+DEEPVISION_ROOT = paths.deepvision_fmri_root()
+get_brain_input_dir = paths.get_brain_input_dir
+from cstims.datasets.deepvision import correct_stimulus_label, parse_stimulus_label
+from cstims.subjects import detect_available_sessions, parse_subject_arg
 
 CVE_THRESHOLD = 0.2
 

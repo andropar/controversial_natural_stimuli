@@ -31,22 +31,18 @@ import pandas as pd
 from PIL import Image
 from tqdm import tqdm
 
-from cstims.paper import config
-from cstims.paper.utils import (
-    compute_rdm_correlation,
-    compute_rsa_score,
-    bootstrap_sample_indices,
-    get_encoding_folder,
-    parse_subject_arg,
-    load_encoding_model,
-    predict_voxel_responses,
-)
+from cstims import constants, paths
+from cstims.cache import load_cstim_brain_cache
+from cstims.rdm import compute_rdm_correlation, compute_rsa_score
+from cstims.sampling import bootstrap_sample_indices
+from cstims.subjects import parse_subject_arg
+from cstims.paper.utils import load_encoding_model, predict_voxel_responses
 
 from cstims.feature_extraction.universal_extractor import UniversalFeatureExtractor
 
 
 def load_model_config(model_name: str) -> dict:
-    df = pd.read_csv(config.MODEL_LIST_CSV)
+    df = pd.read_csv(paths.model_list_csv())
     row = df[df["model"] == model_name].iloc[0]
     return {
         "layer": row["layer"],
@@ -63,9 +59,9 @@ def load_images(group: str) -> list:
         folder_group = "architecture"
 
     if folder_group == "vicco":
-        img_dir = config.CSTIM_HDF5_ROOT / "shared_vicco"
+        img_dir = paths.cstim_hdf5_root() / "shared_vicco"
     else:
-        img_dir = config.CSTIM_HDF5_ROOT / folder_group
+        img_dir = paths.cstim_hdf5_root() / folder_group
 
     img_files = sorted(list(img_dir.glob("*.jpg")) + list(img_dir.glob("*.png")))
     return [Image.open(f).convert("RGB") for f in img_files]
@@ -97,21 +93,9 @@ def extract_features(model_name: str, images: list, target_size: int = 224) -> n
 
 def load_subject_brain_data(subject: str, max_stim: int) -> dict:
     """Load brain data with subset indexing."""
-    data_dir = config.get_subject_data_dir(subject)
-    betas_path = data_dir / "cstim_betas_averaged.npz"
-    if not betas_path.exists():
+    cache = load_cstim_brain_cache(subject, missing_ok=True)
+    if cache is None:
         return None
-
-    betas_data = np.load(betas_path, allow_pickle=True)
-    voxel_data = np.load(data_dir / "voxel_metadata.npz", allow_pickle=True)
-    stim_info = pd.read_csv(data_dir / "cstim_stimulus_info.csv")
-
-    hlvis_mask = voxel_data["hlvis_mask"]
-    betas_hlvis = betas_data["betas"][hlvis_mask, :]
-    stim_keys = betas_data["stim_keys"]
-    stim_key_to_idx = {k: i for i, k in enumerate(stim_keys)}
-
-    available_groups = sorted(stim_info["group"].unique().tolist())
 
     # Full indices (same as original scripts)
     group_indices = {}
@@ -120,14 +104,9 @@ def load_subject_brain_data(subject: str, max_stim: int) -> dict:
     group_indices_subset = {}
     group_stim_idx_subset = {}
 
-    for group in available_groups:
-        mask = stim_info["group"] == group
-        group_df = stim_info[mask].sort_values("stim_idx")
-        keys = group_df["stim_key"].values
-        idx = group_df["stim_idx"].values
-
-        brain_idx = np.array([stim_key_to_idx[k] for k in keys])
-        file_idx = idx - 1 if group == "vicco" else idx
+    for group in cache.available_groups:
+        brain_idx = cache.brain_indices(group, sort_by_stim_idx=True)
+        file_idx = cache.feature_indices(group, sort_by_stim_idx=True)
 
         group_indices[group] = brain_idx
         group_stim_idx[group] = file_idx
@@ -146,15 +125,15 @@ def load_subject_brain_data(subject: str, max_stim: int) -> dict:
     ) if n_vicco > 0 else []
 
     return {
-        "betas_hlvis": betas_hlvis,
+        "betas_hlvis": cache.betas_roi,
         "group_indices": group_indices,
         "group_stim_idx": group_stim_idx,
         "group_indices_subset": group_indices_subset,
         "group_stim_idx_subset": group_stim_idx_subset,
-        "available_groups": available_groups,
+        "available_groups": cache.available_groups,
         "vicco_bootstrap": vicco_bootstrap,
         "n_vicco_sample": n_vicco_sample,
-        "n_hlvis": int(hlvis_mask.sum()),
+        "n_hlvis": cache.n_roi_voxels,
     }
 
 
@@ -191,7 +170,7 @@ def main():
     all_vicco_images = load_images("vicco")
     print(f"  {len(all_vicco_images)} vicco images")
 
-    for model_set, models in config.MODEL_SETS.items():
+    for model_set, models in constants.MODEL_SETS.items():
         print(f"\n{'='*60}")
         print(f"Model set: {model_set} ({len(models)} models)")
         print(f"{'='*60}")
@@ -199,7 +178,7 @@ def main():
         cstim_images = load_images(model_set)
 
         for model in tqdm(models, desc="Models"):
-            display_name = config.MODEL_DISPLAY_NAMES.get(model, model)
+            display_name = constants.MODEL_DISPLAY_NAMES.get(model, model)
 
             # Extract features for all images
             all_images = cstim_images + all_vicco_images
@@ -281,7 +260,7 @@ def main():
                     })
 
     df = pd.DataFrame(results)
-    out_path = config.STATS_DATA_DIR / f"subset_scores_K{max_stim}.csv"
+    out_path = paths.stats_data_dir() / f"subset_scores_K{max_stim}.csv"
     df.to_csv(out_path, index=False)
     print(f"\nSaved {len(df)} rows to {out_path}")
 
@@ -296,7 +275,7 @@ def main():
         for ms in ["sota", "training_objective", "architecture", "dataset", "all_models"]:
             ms_data = sub_mean.loc[ms].sort_values(ascending=False)
             top = ms_data.index[0]
-            top_name = config.MODEL_DISPLAY_NAMES.get(top, top)
+            top_name = constants.MODEL_DISPLAY_NAMES.get(top, top)
             print(f"    {ms:25s}: top={top_name:15s} r={ms_data.iloc[0]:.3f}")
 
 

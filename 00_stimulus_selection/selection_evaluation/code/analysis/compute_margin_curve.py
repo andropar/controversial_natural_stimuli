@@ -42,7 +42,7 @@ import pandas as pd
 import torch
 from tqdm import tqdm
 
-from cstims.paper import config
+from cstims import constants, paths
 from cstims.paper.utils import load_encoding_model
 from cstims.evaluation.computation import (
     compute_all_rdms,
@@ -61,17 +61,17 @@ VICCO_CACHE = (
 )
 
 EVAL_DIRS = {
-    ms: config.SELECTION_OUTPUT_ROOT / ms / "eval_pipeline"
+    ms: paths.selected_stimuli_root() / ms / "eval_pipeline"
     for ms in ["all_models", "sota", "training_objective", "architecture", "dataset"]
 }
 PAYLOAD_PATHS = {
-    ms: config.SELECTION_OUTPUT_ROOT / ms / "selected_stimuli_data.pkl"
+    ms: paths.selected_stimuli_root() / ms / "selected_stimuli_data.pkl"
     for ms in EVAL_DIRS
 }
 
 
 def _layer_lookup() -> dict:
-    df = pd.read_csv(config.MODEL_LIST_CSV)
+    df = pd.read_csv(paths.model_list_csv())
     return dict(zip(df["model"], df["layer"]))
 
 
@@ -91,7 +91,7 @@ def _stable_seed(*parts: object) -> int:
 
 
 def _current_noise_calibration_path(model_set: str, eval_dir: Path) -> Path:
-    current = config.EVAL_DATA_DIR / f"{model_set}_unique_boot" / "noise_calibration.csv"
+    current = paths.selection_evaluation_results_dir() / f"{model_set}_unique_boot" / "noise_calibration.csv"
     if current.exists():
         return current
     return eval_dir / "noise_calibration.csv"
@@ -199,7 +199,7 @@ def process_model_set(
     metric = metric or payload_config.get("metric", "cosine")
     corr_type = corr_type or payload_config.get("corr_type", "spearman")
 
-    set_models = list(config.MODEL_SETS[model_set])
+    set_models = list(constants.MODEL_SETS[model_set])
     available = [m for m in set_models
                  if m in vicco_features_full and m in selected_features]
     if not available:
@@ -335,7 +335,7 @@ def main():
     mults = [float(x) for x in args.multipliers.split(",")]
 
     layer_map = _layer_lookup()
-    needed = sorted({m for ms in model_sets for m in config.MODEL_SETS[ms]})
+    needed = sorted({m for ms in model_sets for m in constants.MODEL_SETS[ms]})
 
     if args.natural_pool_dir is not None:
         print(f"Loading natural-pool features from {args.natural_pool_dir}")

@@ -51,8 +51,9 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 
-from cstims.paper import config
-from cstims.paper.utils import bootstrap_sample_indices
+from cstims import constants, paths
+from cstims.cache import load_cstim_feature_indices
+from cstims.sampling import bootstrap_sample_indices
 
 # --------------------------------------------------------------------------------
 # Constants matching 02_compute_wrsa_transfer.py
@@ -66,10 +67,10 @@ K_MATCH            = 50    # K nearest-OOD bootstraps used as the matched compar
 SD_GOOD_MATCH      = 0.5   # gap thresholds (in SD of bootstrap OOD distribution)
 SD_OUT_OF_RANGE    = 1.5
 
-OOD_DATA = config.OOD_DATA_DIR / "pca_loglik.csv"
-RSA_DIR  = config.RSA_DATA_DIR
-OUT_PER  = config.OOD_DATA_DIR / "baseline_subsampling.csv"
-OUT_SUM  = config.OOD_DATA_DIR / "baseline_subsampling_summary.csv"
+OOD_DATA = paths.ood_data_dir() / "pca_loglik.csv"
+RSA_DIR  = paths.rsa_data_dir()
+OUT_PER  = paths.ood_data_dir() / "baseline_subsampling.csv"
+OUT_SUM  = paths.ood_data_dir() / "baseline_subsampling_summary.csv"
 
 
 # --------------------------------------------------------------------------------
@@ -79,9 +80,7 @@ OUT_SUM  = config.OOD_DATA_DIR / "baseline_subsampling_summary.csv"
 def load_vicco_stim_idx(subject: str) -> np.ndarray:
     """Per-subject ordering of vicco stimuli (file_idx 0..291), as iterated by
     02_compute_wrsa_transfer.py."""
-    info = pd.read_csv(config.get_subject_data_dir(subject) / "cstim_stimulus_info.csv")
-    vicco = info[info["group"] == "vicco"].reset_index(drop=True)
-    file_idx = vicco["stim_idx"].astype(int).values - 1
+    file_idx = load_cstim_feature_indices(subject, "vicco")
     if len(file_idx) != N_VICCO_TOTAL:
         raise RuntimeError(f"{subject}: expected {N_VICCO_TOTAL} vicco stims, got {len(file_idx)}")
     return file_idx
@@ -111,14 +110,14 @@ def classify_match(gap_sd: float) -> str:
 def main():
     print("Loading OOD data and wRSA scores...")
     ood  = pd.read_csv(OOD_DATA)
-    wrsa = load_wrsa(config.SUBJECTS)
+    wrsa = load_wrsa(constants.SUBJECTS)
     print(f"  OOD: {len(ood):,} rows;  wRSA: {len(wrsa):,} rows")
 
     bootstrap_subsets = bootstrap_sample_indices(
         N_VICCO_TOTAL, N_VICCO_SAMPLE,
         n_bootstrap=N_VICCO_BOOTSTRAPS, seed=BOOTSTRAP_SEED,
     )
-    subj_vicco_file_idx = {s: load_vicco_stim_idx(s) for s in config.SUBJECTS}
+    subj_vicco_file_idx = {s: load_vicco_stim_idx(s) for s in constants.SUBJECTS}
 
     # ---- Vicco mean OOD per (subject, model, bootstrap_idx) ----
     print("\nComputing per-bootstrap mean OOD for vicco...")
@@ -145,7 +144,7 @@ def main():
     boot_ood_df = pd.DataFrame(boot_ood_rows)
 
     # ---- Cstim mean OOD per (subject, model, model_set) ----
-    cstim_groups = list(config.MODEL_SETS.keys())
+    cstim_groups = list(constants.MODEL_SETS.keys())
     cstim_ood_df = (
         ood[ood["stimulus_group"].isin(cstim_groups)]
         .groupby(["subject", "model", "stimulus_group"])["loglik_pred_z"]

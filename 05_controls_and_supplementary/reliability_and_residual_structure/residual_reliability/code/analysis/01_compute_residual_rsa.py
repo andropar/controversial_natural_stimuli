@@ -44,16 +44,12 @@ from scipy import stats
 from sklearn.linear_model import RidgeCV
 from tqdm import tqdm
 
-from cstims.paper import config
-from cstims.paper.utils import (
-    bootstrap_sample_indices,
-    compute_rdm_correlation,
-    load_cached_features,
-    load_encoding_model,
-    parse_subject_arg,
-    predict_voxel_responses,
-    stimulus_cv_splits,
-)
+from cstims import constants, paths
+from cstims.cache import load_cstim_features, load_cstim_repetition_cache
+from cstims.rdm import compute_rdm_correlation
+from cstims.sampling import bootstrap_sample_indices, stimulus_cv_splits
+from cstims.subjects import parse_subject_arg
+from cstims.paper.utils import load_encoding_model, predict_voxel_responses
 
 
 N_VICCO_SUBSAMPLES = 10
@@ -63,7 +59,7 @@ N_CV_REPEATS = 50
 CV_RANDOM_STATE = 42
 RIDGE_ALPHAS = np.logspace(-2, 6, 30)
 GROUPS_CONTROVERSIAL = ["all_models", "architecture", "dataset", "sota", "training_objective"]
-ALL_MODELS = config.MODEL_SETS["all_models"]
+ALL_MODELS = constants.MODEL_SETS["all_models"]
 
 
 # ---------------------------------------------------------------------------
@@ -72,28 +68,17 @@ ALL_MODELS = config.MODEL_SETS["all_models"]
 
 def _load_subject_reps(subject: str):
     """Load per-rep hlvis betas + stim info, indexed by group."""
-    data_dir = config.get_brain_input_dir(subject)
-    voxel_meta = np.load(data_dir / "voxel_metadata.npz", allow_pickle=True)
-    hlvis_mask = voxel_meta["hlvis_mask"]
-
-    reps = np.load(data_dir / "cstim_betas_by_rep.npz", allow_pickle=True)
-    betas_by_rep = {k: reps[k][hlvis_mask] for k in reps.files}
-    reps.close()
-
-    stim_info = pd.read_csv(data_dir / "cstim_stimulus_info.csv")
-
+    cache = load_cstim_repetition_cache(subject)
     group_keys: dict[str, list[str]] = {}
     group_stim_idx: dict[str, np.ndarray] = {}
-    for group in sorted(stim_info["group"].unique()):
-        mask = stim_info["group"] == group
-        idx = stim_info.loc[mask, "stim_idx"].values
-        keys = stim_info.loc[mask, "stim_key"].values
-        order = np.argsort(idx)
-        group_stim_idx[group] = (idx[order] - 1) if group == "vicco" else idx[order]
-        group_keys[group] = keys[order].tolist()
+    for group in cache.available_groups:
+        group_stim_idx[group] = cache.feature_indices(group, sort_by_stim_idx=True)
+        group_keys[group] = cache.stim_keys_for_group(
+            group, sort_by_stim_idx=True
+        )
 
     return {
-        "betas_by_rep": betas_by_rep,
+        "betas_by_rep": cache.betas_by_rep,
         "group_keys": group_keys,
         "group_stim_idx": group_stim_idx,
     }
@@ -137,7 +122,7 @@ def _model_rdm_matrices(
     """Return {model_name: N×N RDM} for the given group subset."""
     rdms = {}
     for model in ALL_MODELS:
-        feats = load_cached_features(model, group)[stim_idx]
+        feats = load_cstim_features(model, group)[stim_idx]
         if rsa_type == "fixed":
             rdms[model] = compute_rdm_correlation(feats)
         elif rsa_type == "mixed":

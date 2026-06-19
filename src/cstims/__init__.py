@@ -24,7 +24,7 @@ def estimate_noise_variance_numeric(*args, **kwargs):
 
 
 def get_rdm_vector(*args, **kwargs):
-    from .rdm_cuda import get_rdm_vector as _get_rdm_vector
+    from .rdm import get_rdm_vector as _get_rdm_vector
 
     return _get_rdm_vector(*args, **kwargs)
 

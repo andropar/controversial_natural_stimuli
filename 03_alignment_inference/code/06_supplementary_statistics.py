@@ -38,9 +38,9 @@ _PAPER = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))  # project root for cstims
 
-from cstims.paper import config
+from cstims import constants, paths
 
-SIM_DATA_DIR = config.SIM_DATA_DIR
+SIM_DATA_DIR = paths.simulation_data_dir()
 
 PER_SET_NAMES = ["sota", "architecture", "training_objective", "dataset"]
 
@@ -78,9 +78,9 @@ def within_set_allmodels_analysis():
     results = []
 
     for model_set in PER_SET_NAMES:
-        set_models = set(config.MODEL_SETS[model_set])
+        set_models = set(constants.MODEL_SETS[model_set])
 
-        for subject in config.SUBJECTS:
+        for subject in constants.SUBJECTS:
             # All-models stimuli: subset to within-set pairs
             subj_allm = allm[allm["subject"] == subject]
             within_set = subj_allm[
@@ -192,8 +192,8 @@ def compute_effect_sizes():
     ]:
         # Load all subjects
         dfs = []
-        for subject in config.SUBJECTS:
-            path = config.get_subject_data_dir(subject) / filename
+        for subject in constants.SUBJECTS:
+            path = paths.get_subject_data_dir(subject) / filename
             if path.exists():
                 dfs.append(pd.read_csv(path))
         if not dfs:
@@ -205,7 +205,7 @@ def compute_effect_sizes():
             if ms_data.empty:
                 continue
 
-            models = config.MODEL_SETS[model_set]
+            models = constants.MODEL_SETS[model_set]
 
             # For each model: cross-subject mean controversial and baseline
             cstim_means = []
@@ -266,7 +266,7 @@ def compute_effect_sizes():
 
 def check_multiple_comparisons():
     """Check if permutation test p-values survive Bonferroni correction."""
-    perm_path = config.STATS_DATA_DIR / "permutation_test_results.csv"
+    perm_path = paths.stats_data_dir() / "permutation_test_results.csv"
     if not perm_path.exists():
         print("No permutation test results found.")
         return None
@@ -297,14 +297,14 @@ def check_multiple_comparisons():
 # =============================================================================
 
 def main():
-    config.STATS_DATA_DIR.mkdir(parents=True, exist_ok=True)
+    paths.stats_data_dir().mkdir(parents=True, exist_ok=True)
 
     # 1. Within-set discrimination using all-models stimuli
     print("=" * 60)
     print("1. Within-set discrimination using all-models stimuli")
     print("=" * 60)
     within_df = within_set_allmodels_analysis()
-    out = config.STATS_DATA_DIR / "within_set_allmodels_stimuli.csv"
+    out = paths.stats_data_dir() / "within_set_allmodels_stimuli.csv"
     within_df.to_csv(out, index=False)
     print(f"Saved {out}")
 
@@ -327,7 +327,7 @@ def main():
     print("2. Effect sizes for brain alignment drop")
     print("=" * 60)
     effect_df = compute_effect_sizes()
-    out = config.STATS_DATA_DIR / "effect_sizes_brain_alignment.csv"
+    out = paths.stats_data_dir() / "effect_sizes_brain_alignment.csv"
     effect_df.to_csv(out, index=False)
     print(f"Saved {out}")
 

@@ -27,29 +27,26 @@ from PIL import Image
 _PAPER = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))
-from cstims.paper import config
-from cstims.paper.utils import (
-    compute_rdm_correlation,
-    load_encoding_model,
-    predict_voxel_responses,
-    parse_subject_arg,
-    load_model_layer_mapping,
-)
+from cstims import constants, paths
+from cstims.cache import load_cstim_brain_cache
+from cstims.rdm import compute_rdm_correlation
+from cstims.subjects import parse_subject_arg
+from cstims.paper.utils import load_encoding_model, predict_voxel_responses
 from cstims.feature_extraction.universal_extractor import UniversalFeatureExtractor
 
 ARCHIVE_DIR = Path(__file__).resolve().parents[3] / "archive/simulationdiffs_to_braindiffs/data"
-CSTIM_HDF5_ROOT = config.CSTIM_HDF5_ROOT
+CSTIM_HDF5_ROOT = paths.cstim_hdf5_root()
 
 # Only the all_models group is missing (sub-06 has the rest; sub-07 has nothing)
 MISSING = {
     "sub-06": ["all_models"],
-    "sub-07": list(config.MODEL_SETS.keys()),
+    "sub-07": list(constants.MODEL_SETS.keys()),
 }
 
 
 def load_model_config(model_name):
     import pandas as pd
-    df = pd.read_csv(config.MODEL_LIST_CSV)
+    df = pd.read_csv(paths.model_list_csv())
     row = df[df["model"] == model_name].iloc[0]
     return {"layer": row["layer"], "aggregation": row["aggregation"], "source": row["source"]}
 
@@ -89,32 +86,12 @@ def extract_features(model_name, images):
 
 
 def load_subject_brain_data(subject):
-    import pandas as pd
-    from utils import bootstrap_sample_indices
-    data_dir = config.get_brain_input_dir(subject)
-    betas_data = np.load(data_dir / "cstim_betas_averaged.npz", allow_pickle=True)
-    voxel_data = np.load(data_dir / "voxel_metadata.npz", allow_pickle=True)
-    stim_info = pd.read_csv(data_dir / "cstim_stimulus_info.csv")
-
-    hlvis_mask = voxel_data["hlvis_mask"]
-    betas_hlvis = betas_data["betas"][hlvis_mask, :]
-    stim_keys = betas_data["stim_keys"]
-    stim_key_to_idx = {k: i for i, k in enumerate(stim_keys)}
-
-    group_indices = {}
-    group_stim_idx = {}
-    for group in stim_info["group"].unique():
-        mask = stim_info["group"] == group
-        keys = stim_info.loc[mask, "stim_key"].values
-        group_indices[group] = np.array([stim_key_to_idx[k] for k in keys])
-        idx = stim_info.loc[mask, "stim_idx"].values
-        group_stim_idx[group] = idx - 1 if group == "vicco" else idx
-
+    cache = load_cstim_brain_cache(subject)
     return {
-        "betas_hlvis": betas_hlvis,
-        "group_indices": group_indices,
-        "group_stim_idx": group_stim_idx,
-        "n_hlvis": int(hlvis_mask.sum()),
+        "betas_hlvis": cache.betas_roi,
+        "group_indices": cache.group_brain_indices(),
+        "group_stim_idx": cache.group_feature_indices(),
+        "n_hlvis": cache.n_roi_voxels,
     }
 
 
@@ -152,7 +129,7 @@ def main():
         print(f"  {subject}: {sdata['n_hlvis']} hlvis voxels")
 
         for model_set in missing_groups:
-            models = config.MODEL_SETS[model_set]
+            models = constants.MODEL_SETS[model_set]
             EXCLUDED = {"vicreg_resnet50"}
 
             print(f"\n  --- {model_set} ({len(models)} models) ---")

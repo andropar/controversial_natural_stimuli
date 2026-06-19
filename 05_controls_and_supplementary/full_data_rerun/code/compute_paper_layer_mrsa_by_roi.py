@@ -18,7 +18,8 @@ SHARE_ROOT = THIS.parents[3]
 HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(HELPERS))
 
-from cstims.paper import config  # noqa: E402
+from cstims import constants, paths
+from cstims.cache import cstim_brain_cache_exists, load_cstim_brain_cache
 
 
 SUBJECTS = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]
@@ -59,26 +60,17 @@ def pearson(x: np.ndarray, y: np.ndarray) -> float:
 
 
 def load_subject(subject: str, brain_cache: Path, rois: list[str], n_vicco_boot: int):
-    root = brain_cache / subject
-    betas_z = np.load(root / "cstim_betas_averaged.npz", allow_pickle=True)
-    vox_z = np.load(root / "voxel_metadata.npz", allow_pickle=True)
-    stim_info = pd.read_csv(root / "cstim_stimulus_info.csv")
-
-    stim_key_to_idx = {k: i for i, k in enumerate(betas_z["stim_keys"])}
-    group_brain_idx = {}
-    group_file_idx = {}
-    for group in sorted(stim_info["group"].unique()):
-        sub = stim_info[stim_info["group"].eq(group)]
-        group_brain_idx[group] = np.asarray([stim_key_to_idx[k] for k in sub["stim_key"]])
-        idx = sub["stim_idx"].to_numpy(dtype=int)
-        group_file_idx[group] = idx - 1 if group == "vicco" else idx
+    cache = load_cstim_brain_cache(subject, roi="all", cache_root=brain_cache)
+    betas_all = cache.betas_roi
+    group_brain_idx = cache.group_brain_indices()
+    group_file_idx = cache.group_feature_indices()
 
     roi_masks = {}
     for roi in rois:
         key = f"roi_{roi}"
-        if key not in vox_z.files:
+        if key not in cache.voxel_metadata:
             raise KeyError(f"{subject}: missing {key} in voxel_metadata.npz")
-        roi_masks[roi] = vox_z[key].astype(bool)
+        roi_masks[roi] = cache.voxel_metadata[key].astype(bool)
 
     n_vicco = len(group_brain_idx.get("vicco", []))
     n_vicco_sample = min(100, n_vicco)
@@ -92,7 +84,7 @@ def load_subject(subject: str, brain_cache: Path, rois: list[str], n_vicco_boot:
         if not roi_mask.any():
             print(f"warning: {subject} {roi} has zero voxels", flush=True)
             continue
-        betas_roi = betas_z["betas"][roi_mask, :]
+        betas_roi = betas_all[roi_mask, :]
         for group, brain_idx in group_brain_idx.items():
             if group == "vicco":
                 continue
@@ -146,7 +138,7 @@ def score_subject_model(
     rois: list[str],
 ):
     rows = []
-    display = config.MODEL_DISPLAY_NAMES.get(model, model)
+    display = constants.MODEL_DISPLAY_NAMES.get(model, model)
     pred_cache = {}
     model_rank_cache = {}
 
@@ -172,7 +164,7 @@ def score_subject_model(
             for boot_idx, boot in enumerate(sdata["vicco_boot"]):
                 model_rank_cache[(roi, "vicco", boot_idx)] = rdm_rank_vec(vicco_pred[boot][:, roi_mask])
 
-        for model_set, models in config.MODEL_SETS.items():
+        for model_set, models in constants.MODEL_SETS.items():
             if model not in models:
                 continue
             if model_set not in pred_cache or model_set not in sdata["group_brain_idx"]:
@@ -244,11 +236,11 @@ def main():
 
     subjects = SUBJECTS if args.subject == "all" else [args.subject]
     rois = [r.strip() for r in args.rois.split(",") if r.strip()]
-    models = sorted(config.MODEL_SETS["all_models"]) if args.models == "all" else args.models.split(",")
+    models = sorted(constants.MODEL_SETS["all_models"]) if args.models == "all" else args.models.split(",")
 
     rows = []
     for subject in subjects:
-        if not (args.brain_cache / subject / "cstim_betas_averaged.npz").exists():
+        if not cstim_brain_cache_exists(subject, cache_root=args.brain_cache):
             print(f"{subject}: missing brain cache, skipping", flush=True)
             continue
         print(f"{subject}: loading brain cache", flush=True)

@@ -14,7 +14,7 @@ STAGE = Path(__file__).resolve().parents[1]
 SHARE_ROOT = STAGE.parents[1]
 sys.path.insert(0, str(SHARE_ROOT / "src"))
 
-from cstims.paper import config  # noqa: E402
+from cstims import constants, paths
 from cstims.paper.style_improved import OKABE_ITO, apply_style, shade  # noqa: E402
 
 
@@ -69,7 +69,7 @@ def completeness(df: pd.DataFrame) -> dict:
         "n_model_sets": int(df["model_set"].nunique()),
         "n_baseline_types": int(df["baseline_type"].nunique()),
         "min_splits": int(df["n_splits"].min()) if "n_splits" in df else 0,
-        "complete_subjects": set(config.SUBJECTS).issubset(set(df["subject"])),
+        "complete_subjects": set(constants.SUBJECTS).issubset(set(df["subject"])),
         "complete_model_sets": set(MODEL_SETS).issubset(set(df["model_set"])),
         "complete_baselines": set(BASELINE_ORDER).issubset(set(df["baseline_type"])),
         "complete_splits": bool("n_splits" in df and df["n_splits"].min() >= 10),

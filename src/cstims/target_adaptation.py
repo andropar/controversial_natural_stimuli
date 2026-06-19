@@ -12,6 +12,8 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
+from cstims.sampling import bootstrap_sample_indices
+
 CSTIM_SETS = ["all_models", "architecture", "dataset", "sota", "training_objective"]
 BASELINE_SET = "vicco"
 PANEL_ORDER = ["all_models", "sota", "training_objective", "architecture", "dataset"]
@@ -155,22 +157,6 @@ def atomic_savez_compressed(path: Path, payload: dict) -> None:
     tmp = path.parent / f".{path.name}.{os.getpid()}.{time.time_ns()}.tmp.npz"
     np.savez_compressed(tmp, **payload)
     os.replace(tmp, path)
-
-
-def bootstrap_sample_indices(
-    n_total: int,
-    n_sample: int,
-    *,
-    n_bootstrap: int,
-    seed: int = 0,
-) -> list[np.ndarray]:
-    """Generate deterministic no-replacement bootstrap samples."""
-    samples = []
-    for i in range(n_bootstrap):
-        rng = np.random.default_rng(seed + i)
-        idx = rng.choice(n_total, size=n_sample, replace=False)
-        samples.append(np.sort(idx))
-    return samples
 
 
 def zscore_targets_by_voxel(

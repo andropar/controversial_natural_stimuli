@@ -23,7 +23,7 @@ STAGE = Path(__file__).resolve().parents[2]
 SHARE_ROOT = STAGE.parent
 PAPER_HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(PAPER_HELPERS))
-from cstims.paper import config
+from cstims import constants, paths
 
 import numpy as np
 import pandas as pd
@@ -31,9 +31,9 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.lines import Line2D
 
-MODEL_SETS = config.MODEL_SETS
-MODEL_DISPLAY_NAMES = config.MODEL_DISPLAY_NAMES
-SUBJECTS = config.SUBJECTS
+MODEL_SETS = constants.MODEL_SETS
+MODEL_DISPLAY_NAMES = constants.MODEL_DISPLAY_NAMES
+SUBJECTS = constants.SUBJECTS
 DATA_DIR = STAGE / "results"
 FIGURES_DIR = STAGE / "figures"
 PNG_DIR = FIGURES_DIR / "png"

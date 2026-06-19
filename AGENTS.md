@@ -9,3 +9,10 @@
   `LD_LIBRARY_PATH=/data/home_roth/miniforge3/lib:${LD_LIBRARY_PATH:-}` so the
   conda `libstdc++` is used instead of the system copy.
 - Do not rely on the system `/usr/bin/python3`; it is missing project dependencies such as pandas and scikit-learn.
+
+
+- When writing experiment code always clearly state ALL assumptions made about the experiment and associated methods. For example, when running a regression, make it explicit whether you assume that features are or are not standardized. 
+- Before running experiments, perform a runtime test and estimate an ETA using synthetic data or small subsets of the real data. 
+- Generally optimize for runtime performance - parallelize, batch, use GPU, compile with numba, etc. Look for opportunities to group data processing smartly. 
+- When writing code for figures and creating them, ALWAYS look at the figure afterwards to check if labels are misaligned/overlapping the data, and also if the data looks "right" given the assumptions we're operating under. 
+- Before creating files or changing files, ALWAYS communicate your plan on a high level to the user (e.g. "To do X I will create files Y and Z in directory Z and then run script W on them", or "To do X I will modify files Y and Z in directory Z and then run script W on them") and ASK FOR CONFIRMATION BEFORE PROCEEDING. 

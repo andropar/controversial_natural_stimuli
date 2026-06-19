@@ -31,7 +31,7 @@ sys.path.insert(0, str(ANALYSIS_DIR))
 sys.path.insert(0, str(SHARE_ROOT / "src"))
 sys.path.insert(0, str(SHARE_ROOT / "src"))
 
-from cstims.paper import config  # noqa: E402
+from cstims import constants, paths
 from compute_selected_vs_random_pool100k import (  # noqa: E402
     DEFAULT_MODEL_SETS,
     DEFAULT_POOL_DIR,
@@ -192,7 +192,7 @@ def main() -> None:
         torch.set_float32_matmul_precision("high")
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    all_models = sorted({model for model_set in model_sets for model in config.MODEL_SETS[model_set]})
+    all_models = sorted({model for model_set in model_sets for model in constants.MODEL_SETS[model_set]})
     pool_features = load_pool_features(args.pool_dir, all_models)
     torch_gen = torch.Generator(device=device)
     torch_gen.manual_seed(args.seed)
@@ -205,7 +205,7 @@ def main() -> None:
     subset_summary_rows: list[dict] = []
 
     for model_set in tqdm(model_sets, desc="Model sets", unit="set"):
-        models = [model for model in config.MODEL_SETS[model_set] if model in pool_features]
+        models = [model for model in constants.MODEL_SETS[model_set] if model in pool_features]
         selected_raw = load_selected_raw_features(model_set, models)
 
         for track in tqdm(tracks, desc=f"{model_set} tracks", leave=False, unit="track"):

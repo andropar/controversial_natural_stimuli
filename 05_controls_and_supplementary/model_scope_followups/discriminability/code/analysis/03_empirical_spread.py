@@ -29,7 +29,9 @@ PROJECT = Path(__file__).resolve().parents[4]
 PAPER = PROJECT / "experiments" / "cstim_paper"
 sys.path.insert(0, str(PAPER))
 
-from cstims.paper.config import MODEL_SETS, RSA_DATA_DIR, SUBJECTS  # noqa
+from cstims import paths
+from cstims.constants import MODEL_SETS, SUBJECTS
+RSA_DATA_DIR = paths.rsa_data_dir()
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "results"
 DATA_DIR.mkdir(parents=True, exist_ok=True)

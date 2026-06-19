@@ -4,7 +4,7 @@ from typing import Dict
 
 import torch
 
-from ..rdm_cuda import get_rdm_vector
+from ..rdm import get_rdm_vector
 from ..timing import timed
 from .primitives import (
     aggregate_across_models,

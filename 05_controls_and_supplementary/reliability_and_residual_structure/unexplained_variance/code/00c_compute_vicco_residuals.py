@@ -27,14 +27,16 @@ from PIL import Image
 _PAPER = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))
-from cstims.paper import config
-from cstims.paper.utils import compute_rdm_correlation, load_encoding_model, predict_voxel_responses
+from cstims import constants, paths
+from cstims.cache import load_cstim_brain_cache
+from cstims.rdm import compute_rdm_correlation
+from cstims.paper.utils import load_encoding_model, predict_voxel_responses
 
 from cstims.feature_extraction.universal_extractor import UniversalFeatureExtractor
 
-SUBJECTS = config.SUBJECTS  # all 5
+SUBJECTS = constants.SUBJECTS  # all 5
 DATA_DIR = Path(__file__).resolve().parent / "results"
-VICCO_IMG_DIR = config.CSTIM_HDF5_ROOT / "shared_vicco"
+VICCO_IMG_DIR = paths.cstim_hdf5_root() / "shared_vicco"
 N_VICCO = 292
 
 
@@ -44,7 +46,7 @@ def upper_tri(rdm):
 
 
 def load_model_config(model_name):
-    df = pd.read_csv(config.MODEL_LIST_CSV)
+    df = pd.read_csv(paths.model_list_csv())
     row = df[df["model"] == model_name].iloc[0]
     return {"layer": row["layer"], "aggregation": row["aggregation"], "source": row["source"]}
 
@@ -70,26 +72,16 @@ def extract_features(model_name, images):
 
 def load_subject_vicco_betas(subject):
     """Return (n_voxels_hlvis, 292) betas for vicco stimuli."""
-    data_dir = config.get_brain_input_dir(subject)
-    betas_data = np.load(data_dir / "cstim_betas_averaged.npz", allow_pickle=True)
-    voxel_data = np.load(data_dir / "voxel_metadata.npz", allow_pickle=True)
-    stim_info = pd.read_csv(data_dir / "cstim_stimulus_info.csv")
-
-    hlvis_mask = voxel_data["hlvis_mask"]
-    betas_hlvis = betas_data["betas"][hlvis_mask, :]
-    stim_keys = betas_data["stim_keys"]
-    stim_key_to_idx = {k: i for i, k in enumerate(stim_keys)}
-
-    vicco_rows = stim_info[stim_info["group"] == "vicco"].sort_values("stim_idx")
-    brain_idx = np.array([stim_key_to_idx[k] for k in vicco_rows["stim_key"].values])
-    file_idx = vicco_rows["stim_idx"].values - 1  # 1-based → 0-based
-
-    return betas_hlvis[:, brain_idx], file_idx
+    cache = load_cstim_brain_cache(subject)
+    return (
+        cache.betas_for_group("vicco", sort_by_stim_idx=True),
+        cache.feature_indices("vicco", sort_by_stim_idx=True),
+    )
 
 
 def main():
     all_models = []
-    for model_set, models in config.MODEL_SETS.items():
+    for model_set, models in constants.MODEL_SETS.items():
         all_models.extend(models)
     # Deduplicate preserving order, exclude VICReg (excluded in archive too)
     seen = set()

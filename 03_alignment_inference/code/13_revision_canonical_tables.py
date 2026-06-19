@@ -36,18 +36,18 @@ _PAPER = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))
 
-from cstims.paper import config  # noqa: E402
+from cstims import constants, paths
 
 
-DATA = config.STATS_DATA_DIR
-RSA = config.RSA_DATA_DIR
-PROJECT = config.PROJECT_ROOT
-SUBJECTS = config.SUBJECTS
+DATA = paths.stats_data_dir()
+RSA = paths.rsa_data_dir()
+PROJECT = paths.project_root()
+SUBJECTS = constants.SUBJECTS
 MODEL_SETS = ["all_models", "sota", "training_objective", "architecture", "dataset"]
 METHOD_LABEL = {"wrsa_transfer": "mixed_RSA", "crsa": "fixed_RSA"}
 SCORE_COL = {"wrsa_transfer": "wrsa_transfer", "crsa": "crsa"}
-SELECTION_MODELS = set(config.MODEL_SETS["all_models"])
-MODEL_LIST_LARGE = config.SHARE_ROOT / "00_stimulus_selection" / "resources" / "model_list_large.csv"
+SELECTION_MODELS = set(constants.MODEL_SETS["all_models"])
+MODEL_LIST_LARGE = paths.project_root() / "00_stimulus_selection" / "resources" / "model_list_large.csv"
 
 
 def sem(x: Iterable[float]) -> float:
@@ -161,7 +161,7 @@ def build_primary_endpoint_summary() -> pd.DataFrame:
     # If the held-out unique pipeline has produced results, append its subject
     # level endpoint summary without making this script depend on that pipeline.
     heldout_path = (
-        config.SHARE_ROOT
+        paths.project_root()
         / "05_controls_and_supplementary"
         / "counterfactual_baselines"
         / "results"
@@ -395,7 +395,7 @@ def _objective(model: str) -> str:
 
 
 def _membership_string(model: str) -> str:
-    sets = [ms for ms, models in config.MODEL_SETS.items() if model in models and ms != "all_models"]
+    sets = [ms for ms, models in constants.MODEL_SETS.items() if model in models and ms != "all_models"]
     return ";".join(sets)
 
 
@@ -408,7 +408,7 @@ def _feature_dim_from_cache(model: str) -> float:
 
 
 def build_model_roster_full() -> pd.DataFrame:
-    small = pd.read_csv(config.MODEL_LIST_CSV)
+    small = pd.read_csv(paths.model_list_csv())
     large = pd.read_csv(MODEL_LIST_LARGE) if MODEL_LIST_LARGE.exists() else pd.DataFrame()
     all_models = pd.concat([small, large], ignore_index=True).drop_duplicates("model")
     scored = set()
@@ -422,7 +422,7 @@ def build_model_roster_full() -> pd.DataFrame:
         rows.append(
             {
                 "model": model,
-                "display_name": config.MODEL_DISPLAY_NAMES.get(model, model),
+                "display_name": constants.MODEL_DISPLAY_NAMES.get(model, model),
                 "architecture": _architecture(model),
                 "training_data": _training_data(model),
                 "objective": _objective(model),

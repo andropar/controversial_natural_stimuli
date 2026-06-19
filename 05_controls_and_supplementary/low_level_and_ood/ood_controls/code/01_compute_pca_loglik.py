@@ -46,19 +46,20 @@ import pandas as pd
 from sklearn.decomposition import PCA
 from tqdm import tqdm
 
-from cstims.paper import config
-from cstims.paper.utils import get_encoding_folder, load_encoding_model
+from cstims import constants, paths
+from cstims.cache import load_cstim_feature_groups
+from cstims.paper.utils import load_encoding_model
 
 # =============================================================================
 # Constants
 # =============================================================================
 
-ALL_MODELS = config.MODEL_SETS["all_models"]
-SUBJECTS = config.SUBJECTS
+ALL_MODELS = constants.MODEL_SETS["all_models"]
+SUBJECTS = constants.SUBJECTS
 CSTIM_GROUPS = [
     "architecture", "training_objective", "sota", "dataset", "all_models", "vicco"
 ]
-DATA_DIR = config.OOD_DATA_DIR
+DATA_DIR = paths.ood_data_dir()
 VAR_THRESHOLD = 0.95   # fraction of variance explained for choosing k
 MIN_K_PRED   = 20     # minimum k for prediction space (prevents PPCA breakdown
                       # for near-rank-deficient models like VGG-16, ConvNeXt-B)
@@ -127,7 +128,7 @@ def process_model_subject(model: str, subject: str) -> list:
     Returns a list of row dicts (one per stimulus).
     Returns [] if training features or encoding model are missing.
     """
-    enc_folder = get_encoding_folder(subject, model)
+    enc_folder = paths.encoding_model_dir(subject, model)
     features_path = enc_folder / "features.npz"
     if not features_path.exists():
         print(f"  SKIP {model}/{subject}: features.npz not found at {features_path}")
@@ -216,17 +217,17 @@ def process_model_subject(model: str, subject: str) -> list:
         rows.append(r)
 
     # ---- cstim + vicco groups ----
-    cache_path = config.CSTIM_FEATURE_CACHE / f"{model}.npz"
-    if not cache_path.exists():
+    try:
+        cache = load_cstim_feature_groups(model, dtype=np.float32)
+    except FileNotFoundError:
         print(f"  WARNING: cstim feature cache missing for {model} — skipping test stimuli")
         return rows
 
-    cache = np.load(cache_path)
     for group in CSTIM_GROUPS:
         if group not in cache:
             continue
 
-        X_group   = cache[group].astype(np.float32)                   # (n_group, d)
+        X_group   = cache[group]                                      # (n_group, d)
         X_group_z = (X_group - feature_mean) / (feature_scale + 1e-8)
         P_group   = X_group_z @ W_hlvis + b_hlvis
 

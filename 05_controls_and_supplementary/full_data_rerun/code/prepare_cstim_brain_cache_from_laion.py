@@ -28,7 +28,7 @@ SHARE_ROOT = THIS.parents[3]
 HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(HELPERS))
 
-from cstims.paper.utils import correct_stimulus_label, parse_stimulus_label  # noqa: E402
+from cstims.datasets.deepvision import correct_stimulus_label, parse_stimulus_label  # noqa: E402
 
 
 SUBJECTS = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]

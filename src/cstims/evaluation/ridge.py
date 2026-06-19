@@ -142,6 +142,127 @@ class IndependentRidgeOps:
         return self.eval_prediction_from_coefficients(eval_key, coeff)
 
 
+@dataclass
+class EvalAugmentedLooRidgeOps:
+    """Compact feature-space operators for eval-augmented LOO ridge.
+
+    The alpha selection still uses an independent train/validation ridge split.
+    Final eval predictions use the exact linear-ridge leave-one-out formula for
+    fits on ``base_fit + eval_set`` without materializing ``n_eval x n_base``
+    operators for every alpha and eval set.
+    """
+
+    alphas: tuple[float, ...]
+    backend: str
+    alpha_selector: IndependentRidgeOps
+    base_eigvals: np.ndarray
+    base_projected: np.ndarray
+    eval_projected: dict[str, np.ndarray]
+    eval_s_inv: dict[float, dict[str, np.ndarray]]
+    eval_lengths: tuple[int, ...] = ()
+
+    def __post_init__(self) -> None:
+        if not self.eval_lengths:
+            self.eval_lengths = tuple(
+                int(self.eval_projected[key].shape[0]) for key in self.eval_projected
+            )
+
+    @property
+    def alpha_values(self) -> list[float]:
+        return list(self.alphas)
+
+    @property
+    def eval_keys(self) -> list[str]:
+        return list(self.eval_projected)
+
+    def validation_prediction(self, alpha: float, y_train: np.ndarray) -> np.ndarray:
+        return self.alpha_selector.validation_prediction(alpha, y_train)
+
+    def validation_prediction_from_coefficients(self, coefficients: np.ndarray) -> np.ndarray:
+        return self.alpha_selector.validation_prediction_from_coefficients(coefficients)
+
+    def project_targets(self, y_train: np.ndarray) -> np.ndarray:
+        return self.alpha_selector.project_targets(y_train)
+
+    def coefficients_from_projected_targets(
+        self,
+        alpha: float,
+        projected_y: np.ndarray,
+    ) -> np.ndarray:
+        return self.alpha_selector.coefficients_from_projected_targets(
+            alpha,
+            projected_y,
+        )
+
+    def eval_prediction(
+        self,
+        alpha: float,
+        eval_key: str,
+        y_base_fit: np.ndarray,
+        eval_y_fit: np.ndarray,
+    ) -> np.ndarray:
+        alpha = float(alpha)
+        base_y = np.asarray(y_base_fit, dtype=np.float32)
+        eval_y = np.asarray(eval_y_fit, dtype=np.float32)
+        projected_y = self.base_projected.T @ base_y
+        denom = self.base_eigvals.astype(np.float32, copy=False) + np.float32(alpha)
+        coeff = projected_y / denom[:, None]
+        base_pred = self.eval_projected[eval_key] @ coeff
+        s_inv = self.eval_s_inv[alpha][eval_key]
+        loo_denom = np.diag(s_inv).astype(np.float32, copy=False)
+        return np.asarray(
+            eval_y + (s_inv @ (base_pred - eval_y)) / loo_denom[:, None],
+            dtype=np.float32,
+        )
+
+
+@dataclass
+class EvalAugmentedNestedLooKernelOps:
+    """Kernel-space operators for nested eval-augmented LOO ridge.
+
+    For each alpha/eval set this stores the base-only prediction operator and
+    the inverse residual operator for the eval block.  That is enough to compute
+    both final outer-LOO predictions and inner two-left-out predictions for
+    nested alpha selection without materializing a full augmented-system inverse.
+    """
+
+    alphas: tuple[float, ...]
+    backend: str
+    alpha_selector: IndependentRidgeOps
+    eval_base_ops: dict[float, dict[str, np.ndarray]]
+    eval_s_inv: dict[float, dict[str, np.ndarray]]
+    eval_lengths: tuple[int, ...] = ()
+
+    def __post_init__(self) -> None:
+        if self.eval_lengths:
+            return
+        first_alpha = self.alphas[0]
+        self.eval_lengths = tuple(
+            int(self.eval_base_ops[first_alpha][key].shape[0])
+            for key in self.eval_base_ops[first_alpha]
+        )
+
+    @property
+    def alpha_values(self) -> list[float]:
+        return list(self.alphas)
+
+    @property
+    def eval_keys(self) -> list[str]:
+        return list(self.eval_base_ops[self.alphas[0]])
+
+    def base_prediction(
+        self,
+        alpha: float,
+        eval_key: str,
+        y_base_fit: np.ndarray,
+    ) -> np.ndarray:
+        return np.asarray(
+            self.eval_base_ops[float(alpha)][eval_key]
+            @ np.asarray(y_base_fit, dtype=np.float32),
+            dtype=np.float32,
+        )
+
+
 def _kernel_independent_ridge_ops(
     x_train: np.ndarray,
     x_val: np.ndarray,
@@ -273,3 +394,171 @@ def ridge_eval_augmented_loo_ops(
                 np.asarray(eval_op, dtype=np.float32),
             )
     return out
+
+
+def _kernel_eval_augmented_nested_loo_ops(
+    x_train: np.ndarray,
+    x_val: np.ndarray,
+    x_base: np.ndarray,
+    eval_sets: dict[str, np.ndarray],
+    alphas: Sequence[float],
+) -> EvalAugmentedNestedLooKernelOps:
+    alpha_selector = build_independent_ridge_ops(x_train, x_val, {}, alphas)
+
+    x_base64 = np.asarray(x_base, dtype=np.float64)
+    k_base = x_base64 @ x_base64.T
+    eigvals, eigvecs = np.linalg.eigh(k_base)
+    eigvals = np.maximum(eigvals, 0.0)
+
+    eval_base_ops: dict[float, dict[str, np.ndarray]] = {
+        float(alpha): {} for alpha in alphas
+    }
+    eval_s_inv: dict[float, dict[str, np.ndarray]] = {
+        float(alpha): {} for alpha in alphas
+    }
+    for key, x_eval in eval_sets.items():
+        x_eval64 = np.asarray(x_eval, dtype=np.float64)
+        k_be = x_base64 @ x_eval64.T
+        k_ee = x_eval64 @ x_eval64.T
+        qtu = eigvecs.T @ k_be
+        eye_eval = np.eye(k_ee.shape[0], dtype=np.float64)
+        for alpha in alphas:
+            alpha = float(alpha)
+            denom = eigvals + alpha
+            a_inv_u = eigvecs @ (qtu / denom[:, None])
+            base_pred_op = a_inv_u.T
+            schur = k_ee + alpha * eye_eval - k_be.T @ a_inv_u
+            schur = 0.5 * (schur + schur.T)
+            try:
+                schur_inv = np.linalg.inv(schur)
+            except np.linalg.LinAlgError:
+                schur_inv = np.linalg.pinv(schur)
+            eval_base_ops[alpha][key] = np.asarray(base_pred_op, dtype=np.float32)
+            eval_s_inv[alpha][key] = np.asarray(alpha * schur_inv, dtype=np.float32)
+
+    return EvalAugmentedNestedLooKernelOps(
+        alphas=tuple(float(alpha) for alpha in alphas),
+        backend="kernel",
+        alpha_selector=alpha_selector,
+        eval_base_ops=eval_base_ops,
+        eval_s_inv=eval_s_inv,
+    )
+
+
+def _feature_eval_augmented_loo_ops(
+    x_train: np.ndarray,
+    x_val: np.ndarray,
+    x_base: np.ndarray,
+    eval_sets: dict[str, np.ndarray],
+    alphas: Sequence[float],
+) -> EvalAugmentedLooRidgeOps:
+    alpha_selector = build_independent_ridge_ops(x_train, x_val, {}, alphas)
+
+    x_base64 = np.asarray(x_base, dtype=np.float64)
+    covariance = x_base64.T @ x_base64
+    eigvals, eigvecs = np.linalg.eigh(covariance)
+    eigvals = np.maximum(eigvals, 0.0)
+
+    base_projected = np.asarray(x_base64 @ eigvecs, dtype=np.float32)
+    eval_projected = {
+        key: np.asarray(np.asarray(x_eval, dtype=np.float64) @ eigvecs, dtype=np.float32)
+        for key, x_eval in eval_sets.items()
+    }
+
+    eval_s_inv: dict[float, dict[str, np.ndarray]] = {}
+    for alpha in alphas:
+        alpha = float(alpha)
+        denom = eigvals + alpha
+        by_key: dict[str, np.ndarray] = {}
+        for key, projected in eval_projected.items():
+            projected64 = np.asarray(projected, dtype=np.float64)
+            leverage_kernel = (projected64 / denom[None, :]) @ projected64.T
+            system = np.eye(projected64.shape[0], dtype=np.float64) + leverage_kernel
+            system = 0.5 * (system + system.T)
+            try:
+                s_inv = np.linalg.inv(system)
+            except np.linalg.LinAlgError:
+                s_inv = np.linalg.pinv(system)
+            by_key[key] = np.asarray(s_inv, dtype=np.float32)
+        eval_s_inv[alpha] = by_key
+
+    return EvalAugmentedLooRidgeOps(
+        alphas=tuple(float(alpha) for alpha in alphas),
+        backend="feature",
+        alpha_selector=alpha_selector,
+        base_eigvals=np.asarray(eigvals, dtype=np.float32),
+        base_projected=base_projected,
+        eval_projected=eval_projected,
+        eval_s_inv=eval_s_inv,
+    )
+
+
+def build_eval_augmented_loo_ops(
+    x_train: np.ndarray,
+    x_val: np.ndarray,
+    x_base: np.ndarray,
+    eval_sets: dict[str, np.ndarray],
+    alphas: Sequence[float],
+    *,
+    backend: str = "auto",
+) -> EvalAugmentedLooRidgeOps | dict[float, tuple[np.ndarray, dict[str, tuple[np.ndarray, np.ndarray]]]]:
+    """Build prediction operators for eval-set-augmented LOO ridge.
+
+    ``backend='auto'`` mirrors independent ridge: use kernel space when the
+    base refit set is smaller than the feature dimension, otherwise use the
+    compact feature-space operator.
+    """
+    if backend not in {"auto", "kernel", "feature"}:
+        raise ValueError(f"Unsupported ridge backend: {backend}")
+    n_base, n_features = np.asarray(x_base).shape
+    resolved = backend
+    if resolved == "auto":
+        resolved = "kernel" if n_base <= n_features else "feature"
+    if resolved == "feature":
+        return _feature_eval_augmented_loo_ops(
+            x_train,
+            x_val,
+            x_base,
+            eval_sets,
+            alphas,
+        )
+
+    val_ops = ridge_ops_for_eval_sets(x_train, x_val, {}, list(alphas))
+    loo_ops = ridge_eval_augmented_loo_ops(x_base, eval_sets, list(alphas))
+    return {
+        float(alpha): (val_ops[float(alpha)][0], loo_ops[float(alpha)])
+        for alpha in alphas
+    }
+
+
+def build_eval_augmented_nested_loo_ops(
+    x_train: np.ndarray,
+    x_val: np.ndarray,
+    x_base: np.ndarray,
+    eval_sets: dict[str, np.ndarray],
+    alphas: Sequence[float],
+    *,
+    backend: str = "auto",
+) -> EvalAugmentedLooRidgeOps | EvalAugmentedNestedLooKernelOps:
+    """Build operators for strict nested eval-set-augmented LOO ridge."""
+    if backend not in {"auto", "kernel", "feature"}:
+        raise ValueError(f"Unsupported ridge backend: {backend}")
+    n_base, n_features = np.asarray(x_base).shape
+    resolved = backend
+    if resolved == "auto":
+        resolved = "kernel" if n_base <= n_features else "feature"
+    if resolved == "feature":
+        return _feature_eval_augmented_loo_ops(
+            x_train,
+            x_val,
+            x_base,
+            eval_sets,
+            alphas,
+        )
+    return _kernel_eval_augmented_nested_loo_ops(
+        x_train,
+        x_val,
+        x_base,
+        eval_sets,
+        alphas,
+    )

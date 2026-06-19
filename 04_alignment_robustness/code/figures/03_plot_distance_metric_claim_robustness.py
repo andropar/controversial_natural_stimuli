@@ -15,7 +15,7 @@ SHARE_ROOT = STAGE.parent
 PAPER_HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(PAPER_HELPERS))
 
-from cstims.paper import config  # noqa: E402
+from cstims import constants, paths
 from cstims.paper.style_improved import (  # noqa: E402
     DPI,
     FONT,
@@ -36,7 +36,7 @@ MODEL_SET_MARKERS = {
 }
 
 
-DATA_DIR = config.ROBUSTNESS_DATA_DIR
+DATA_DIR = paths.robustness_data_dir()
 FIGURES_DIR = STAGE / "figures"
 PNG_DIR = FIGURES_DIR / "png"
 

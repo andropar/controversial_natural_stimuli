@@ -20,7 +20,7 @@ sys.path.insert(0, str(_CSTIMS_SHARE_ROOT / "src"))
 _PAPER = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))
-from cstims.paper import config
+from cstims import constants, paths
 
 import numpy as np
 import pandas as pd
@@ -32,7 +32,7 @@ from cstims.paper.style_improved import apply_style, FONT, DPI, W_DOUBLE
 
 apply_style()
 
-DATA_DIR = config.SIM_DATA_DIR
+DATA_DIR = paths.simulation_data_dir()
 FIG_DIR = Path(__file__).resolve().parent
 
 MODEL_SET_COLORS = {
@@ -60,7 +60,7 @@ MODEL_SET_MARKERS = {
 }
 
 # Within-set membership for coloring scatter pairs
-SET_MODELS = {ms: set(models) for ms, models in config.MODEL_SETS.items()
+SET_MODELS = {ms: set(models) for ms, models in constants.MODEL_SETS.items()
               if ms != "all_models"}
 
 PLOT_ORDER = ["sota", "architecture", "training_objective", "dataset"]

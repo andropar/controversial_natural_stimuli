@@ -23,7 +23,7 @@ import matplotlib.pyplot as plt
 STAGE = Path(__file__).resolve().parents[1]
 SHARE_ROOT = STAGE.parents[2]
 sys.path.insert(0, str(SHARE_ROOT / "src"))
-from cstims.paper import config
+from cstims import constants, paths
 
 STATS_DIR = SHARE_ROOT / "02_alignment_reliability" / "results"
 DATA_DIR = STAGE / "results"

@@ -30,7 +30,7 @@ SHARE_ROOT = SCRIPT.parents[4]
 HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(HELPERS))
 
-from cstims.paper import config
+from cstims import constants, paths
 from cstims.paper.style_improved import MODEL_SET_ORDER
 
 
@@ -51,7 +51,7 @@ TRACK_ORDER = ["raw", "sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]
 
 
 def _matrix_path(model_set: str) -> Path:
-    return config.EVAL_DATA_DIR / f"{model_set}{DATA_SUFFIX}" / "correlation_matrices.csv"
+    return paths.selection_evaluation_results_dir() / f"{model_set}{DATA_SUFFIX}" / "correlation_matrices.csv"
 
 
 def _offdiag_pairs(df: pd.DataFrame) -> pd.DataFrame:
@@ -201,7 +201,7 @@ def summarize_representations(track_summary: pd.DataFrame) -> pd.DataFrame:
 
 
 def main() -> None:
-    out_dir = config.EVAL_DATA_DIR
+    out_dir = paths.selection_evaluation_results_dir()
     pairs = build_pair_table(MODEL_SET_ORDER)
     track_summary = summarize_tracks(pairs)
     summary = summarize_representations(track_summary)

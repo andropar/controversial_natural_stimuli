@@ -11,7 +11,6 @@ while using all available data.
 
 import sys
 from pathlib import Path
-import os
 import numpy as np
 import time
 
@@ -32,7 +31,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 from cstims.datasets.deepvision import DeepVisionBenchmark
 from cstims.encoding.ridge_gcv_fast import RidgeCVFast
 from cstims.encoding.fitting import compute_versa, compute_voxel_r
-from cstims.paths import deepvision_fmri_root
+from cstims import paths
 from sklearn.preprocessing import StandardScaler
 
 
@@ -50,13 +49,8 @@ def run_comparison(
     # Load benchmark data
     print(f"\nLoading data for {subject}...")
     benchmark = DeepVisionBenchmark(
-        cache_root=Path(
-            os.environ.get(
-                "CSTIMS_DEEPVISION_CACHE_ROOT",
-                PROJECT_ROOT / "01_brain_model_alignment/cache_or_heavy/deepvision_benchmark_cache",
-            )
-        ),
-        deepvision_fmri_root=deepvision_fmri_root(),
+        cache_root=paths.deepvision_cache_root(),
+        deepvision_fmri_root=paths.deepvision_fmri_root(),
         subject=subject,
         voxel_set="visual",
         cve_threshold=0.2,
@@ -80,12 +74,7 @@ def run_comparison(
             X_full = z["features"]
     else:
         # Use cached features from a previous run if available
-        cache_path = Path(
-            os.environ.get(
-                "CSTIMS_ENCODING_OUTPUT_ROOT",
-                PROJECT_ROOT / "01_brain_model_alignment/results/encoding_models",
-            )
-        )
+        cache_path = PROJECT_ROOT / "01_brain_model_alignment/results/encoding_models"
         feature_files = list(cache_path.glob("**/vissl_resnet50_supervised*/features.npz"))
         if feature_files:
             print(f"Using cached features from {feature_files[0]}")

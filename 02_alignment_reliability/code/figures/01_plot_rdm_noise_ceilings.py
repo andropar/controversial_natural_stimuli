@@ -21,7 +21,7 @@ STAGE = Path(__file__).resolve().parents[2]
 SHARE_ROOT = STAGE.parent
 PAPER_HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(PAPER_HELPERS))
-from cstims.paper import config
+from cstims import constants, paths
 
 import numpy as np
 import pandas as pd

@@ -14,7 +14,8 @@ _SHARE_ROOT = Path(__file__).resolve().parents[5]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))  # project root
 sys.path.insert(0, str(_SHARE_ROOT / "src"))
-from cstims.paper import config
+from cstims import constants, paths
+from cstims.cache import load_cstim_brain_cache
 
 import numpy as np
 import pandas as pd
@@ -24,7 +25,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 
-CSTIM_DIR = config.CSTIM_HDF5_ROOT
+CSTIM_DIR = paths.cstim_hdf5_root()
 FIG_DIR = Path(__file__).resolve().parent
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -87,7 +88,7 @@ def _load_model_zscores():
     from scipy.spatial.distance import pdist, squareform
     from scipy.stats import zscore as sp_zscore
 
-    features_path = config.SELECTION_PAYLOAD
+    features_path = paths.selected_stimuli_payload()
 
     with open(features_path, "rb") as f:
         sel_data = pickle.load(f)
@@ -155,28 +156,11 @@ def _load_brain_zscores():
     from utils import compute_rdm_correlation
 
     brain_z_by_subject = {}
-    for subject in config.SUBJECTS:
-        data_dir = config.get_subject_data_dir(subject)
-        betas_path = data_dir / "cstim_betas_averaged.npz"
-        if not betas_path.exists():
+    for subject in constants.SUBJECTS:
+        cache = load_cstim_brain_cache(subject, missing_ok=True)
+        if cache is None:
             continue
-        betas_data = np.load(betas_path, allow_pickle=True)
-        voxel_data = np.load(data_dir / "voxel_metadata.npz", allow_pickle=True)
-        stim_info = pd.read_csv(data_dir / "cstim_stimulus_info.csv")
-
-        hlvis_mask = voxel_data["hlvis_mask"]
-        betas_hlvis = betas_data["betas"][hlvis_mask, :]
-        stim_keys = betas_data["stim_keys"]
-        stim_key_to_idx = {k: i for i, k in enumerate(stim_keys)}
-
-        mask = stim_info["group"] == "all_models"
-        if mask.sum() == 0:
-            continue
-        keys = stim_info.loc[mask, "stim_key"].values
-        brain_idx = np.array([stim_key_to_idx[k] for k in keys])
-        file_idx = stim_info.loc[mask, "stim_idx"].values.astype(int)
-
-        brain_patterns = betas_hlvis[:, brain_idx].T
+        brain_patterns = cache.patterns("all_models", sort_by_stim_idx=True)
         brain_rdm = compute_rdm_correlation(brain_patterns)
 
         # Z-score the upper triangle, same as model z-scores
@@ -204,7 +188,7 @@ def create_high_spread_pairs():
     """
     from matplotlib.colors import TwoSlopeNorm
 
-    data_dir = config.PROJECT_ROOT / "experiments" / "archive" / "cstim_image_analysis" / "model_pair_disagreement"
+    data_dir = paths.project_root() / "experiments" / "archive" / "cstim_image_analysis" / "model_pair_disagreement"
     spread_df = pd.read_csv(data_dir / "results" / "all_models" / "per_pair_spread.csv")
     spread_df = spread_df.sort_values("spread", ascending=False)
 
@@ -401,7 +385,7 @@ def create_brain_consistency_plot(sd_threshold=1.0):
     from cstims.paper.style_improved import apply_style, FONT, DPI, W_DOUBLE
     apply_style()
 
-    data_dir = config.PROJECT_ROOT / "experiments" / "archive" / "cstim_image_analysis" / "model_pair_disagreement"
+    data_dir = paths.project_root() / "experiments" / "archive" / "cstim_image_analysis" / "model_pair_disagreement"
     spread_df = pd.read_csv(data_dir / "results" / "all_models" / "per_pair_spread.csv")
     spread_df = spread_df.sort_values("spread", ascending=False)
 
@@ -465,7 +449,7 @@ def create_high_spread_pairs_consistent(sd_threshold=1.0, min_abs_mean_z=0.75):
     (|mean_z| > min_abs_mean_z, i.e. clearly similar or clearly dissimilar)."""
     from matplotlib.colors import TwoSlopeNorm
 
-    data_dir = config.PROJECT_ROOT / "experiments" / "archive" / "cstim_image_analysis" / "model_pair_disagreement"
+    data_dir = paths.project_root() / "experiments" / "archive" / "cstim_image_analysis" / "model_pair_disagreement"
     spread_df = pd.read_csv(data_dir / "results" / "all_models" / "per_pair_spread.csv")
     spread_df = spread_df.sort_values("spread", ascending=False)
 

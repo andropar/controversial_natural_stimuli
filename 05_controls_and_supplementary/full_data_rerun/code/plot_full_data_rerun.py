@@ -22,7 +22,7 @@ SHARE_ROOT = THIS.parents[3]
 HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(HELPERS))
 
-from cstims.paper import config  # noqa: E402
+from cstims import constants, paths
 
 
 DATA_DIR = RERUN_ROOT / "results"
@@ -50,7 +50,7 @@ def savefig(fig, stem: str, out_dir: Path):
 
 
 def model_order(df: pd.DataFrame):
-    all_models = list(config.MODEL_SETS["all_models"])
+    all_models = list(constants.MODEL_SETS["all_models"])
     present = set(df["model"])
     return [m for m in all_models if m in present] + sorted(present - set(all_models))
 
@@ -68,7 +68,7 @@ def plot_heatmap(summary: pd.DataFrame, value_col: str, stem: str, title: str, o
         sub.pivot_table(index="model", columns="roi", values=value_col, aggfunc="mean")
         .reindex(index=models, columns=rois)
     )
-    labels = [config.MODEL_DISPLAY_NAMES.get(m, m) for m in mat.index]
+    labels = [constants.MODEL_DISPLAY_NAMES.get(m, m) for m in mat.index]
 
     fig_h = max(5.0, 0.32 * len(labels) + 1.8)
     fig_w = max(7.0, 0.68 * len(rois) + 2.4)
@@ -97,7 +97,7 @@ def plot_roi_bars(summary: pd.DataFrame, value_col: str, stem: str, title: str, 
         .pivot(index="roi", columns="model_set", values=value_col)
         .reindex(rois)
     )
-    model_sets = [s for s in config.MODEL_SETS.keys() if s in agg.columns]
+    model_sets = [s for s in constants.MODEL_SETS.keys() if s in agg.columns]
     x = np.arange(len(agg.index))
     width = 0.8 / max(1, len(model_sets))
 

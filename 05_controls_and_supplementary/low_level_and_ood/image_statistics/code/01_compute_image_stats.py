@@ -21,7 +21,8 @@ from tqdm import tqdm
 _PAPER = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_PAPER))
 
-from cstims.paper.config import CSTIM_HDF5_ROOT  # noqa: E402
+from cstims import paths
+CSTIM_HDF5_ROOT = paths.cstim_hdf5_root()
 
 
 STIMULUS_SETS = [

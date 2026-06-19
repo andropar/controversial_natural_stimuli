@@ -49,7 +49,7 @@ SRC_DIR = ROOT / "src"
 for path in (SRC_DIR,):
     sys.path.insert(0, str(path))
 
-from cstims.paper import config as paper_config  # noqa: E402
+from cstims import constants, paths
 from cstims.evaluation.constants import get_default_noise_level_multipliers  # noqa: E402
 from cstims.evaluation.payload import apply_env_paths, filter_payload_to_models  # noqa: E402
 from cstims.evaluation.random_features import (  # noqa: E402
@@ -60,7 +60,7 @@ from cstims.evaluation.track_loading import (  # noqa: E402
     get_all_tracks_for_evaluation,
     load_features_for_track,
 )
-from cstims.rdm_cuda import get_rdm_vector  # noqa: E402
+from cstims.rdm import get_rdm_vector  # noqa: E402
 
 
 DEFAULT_RUN = SWEEP_ROOT / "results" / "sota_20260611_112941"
@@ -898,7 +898,7 @@ def main() -> None:
     parser.add_argument("--feature-calib-iters", type=int, default=10)
     parser.add_argument("--unique-encodings", action="store_true", default=True)
     parser.add_argument("--shared-encodings", action="store_false", dest="unique_encodings")
-    parser.add_argument("--shared-encoding-root", type=Path, default=paper_config.SHARED_ENCODING_ROOT)
+    parser.add_argument("--shared-encoding-root", type=Path, default=paths.shared_encoding_root())
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
 
@@ -921,7 +921,7 @@ def main() -> None:
     encoding_root_map = None
     if args.unique_encodings:
         encoding_root_map = {
-            key: Path(value).resolve() for key, value in paper_config.UNIQUE_ENCODING_DIRS.items()
+            key: Path(value).resolve() for key, value in paths.unique_encoding_dirs().items()
         }
         print(f"Using unique encoding roots: {list(encoding_root_map)}")
     else:

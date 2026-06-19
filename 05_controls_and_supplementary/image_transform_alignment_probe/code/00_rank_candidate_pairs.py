@@ -24,7 +24,7 @@ RESULTS_DIR = ANALYSIS_DIR / "results"
 
 HELPER_DIR = ROOT / "src"
 sys.path.insert(0, str(HELPER_DIR))
-from cstims.paper import config  # noqa: E402
+from cstims import constants, paths
 
 
 PAIR_SUMMARY = (
@@ -64,7 +64,7 @@ EASY_MODELS = [
 
 
 def load_selection_features() -> dict[str, np.ndarray]:
-    with open(config.SELECTION_PAYLOAD, "rb") as f:
+    with open(paths.selected_stimuli_payload(), "rb") as f:
         payload = pickle.load(f)
     features = payload["selected_features_raw"]
     return {name: np.asarray(value) for name, value in features.items()}
@@ -119,7 +119,7 @@ def main() -> None:
     pair_subject = pd.read_csv(PAIR_SUBJECT)
 
     strong_consistent = pair_summary[
-        (pair_summary["n_subjects"] == len(config.SUBJECTS))
+        (pair_summary["n_subjects"] == len(constants.SUBJECTS))
         & (pair_summary["sd_brain_z"] < 0.75)
         & (pair_summary["mean_brain_z"].abs() > 0.75)
     ].copy()

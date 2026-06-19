@@ -51,7 +51,7 @@ from cstims.evaluation.ridge import (  # noqa: E402
     ridge_ops_for_eval_sets,
     standardize_from_train,
 )
-from cstims.evaluation.teacher_student.independent_refit_rdm_recovery import (  # noqa: E402
+from cstims.evaluation.teacher_student import (  # noqa: E402
     build_eval_raw_and_meta,
     detect_equivalent_models,
     eval_keys_for_ops,
@@ -67,7 +67,7 @@ from cstims.evaluation.track_loading import (  # noqa: E402
     encode_raw_feature_arrays,
     load_selected_raw_features,
 )
-from cstims.rdm_cuda import calculate_correlation_value, get_rdm_vector_np  # noqa: E402
+from cstims.rdm import calculate_correlation_value, get_rdm_vector_np  # noqa: E402
 
 
 @dataclass

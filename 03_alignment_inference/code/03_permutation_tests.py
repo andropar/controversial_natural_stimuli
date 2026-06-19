@@ -37,7 +37,7 @@ _PAPER = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))  # project root for cstims
 
-from cstims.paper import config
+from cstims import constants, paths
 
 
 METHODS = {
@@ -83,7 +83,7 @@ def load_score_sets(subject: str, model_set: str, filename: str,
 
     Uses all vicco bootstraps present in the CSV. Returns None if data is unavailable.
     """
-    path = config.RSA_DATA_DIR / subject / filename
+    path = paths.rsa_data_dir() / subject / filename
     if not path.exists():
         return None
     df = pd.read_csv(path)
@@ -238,14 +238,14 @@ def bh_fdr(p_values: np.ndarray) -> np.ndarray:
 def main():
     all_results = []
 
-    for model_set in config.MODEL_SETS:
+    for model_set in constants.MODEL_SETS:
         for method, (filename, score_col) in METHODS.items():
             print(f"  {method:15s} | {model_set:25s}", end="", flush=True)
 
             # Collect available subjects
             subject_score_sets = []
             available_subjects = []
-            for subject in config.SUBJECTS:
+            for subject in constants.SUBJECTS:
                 sets = load_score_sets(subject, model_set, filename, score_col)
                 if sets is not None:
                     subject_score_sets.append(sets)
@@ -289,7 +289,7 @@ def main():
     cols = ["model_set", "method", "metric", "observed_ratio", "p_perm", "q_bh",
             "n_permutations", "mode", "n_subjects"]
     results_df = results_df[cols]
-    output_path = config.STATS_DATA_DIR / "permutation_test_results.csv"
+    output_path = paths.stats_data_dir() / "permutation_test_results.csv"
     results_df.to_csv(output_path, index=False)
     print(f"\nSaved to {output_path}")
 

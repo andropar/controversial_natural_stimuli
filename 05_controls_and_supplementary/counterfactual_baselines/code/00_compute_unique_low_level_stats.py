@@ -24,7 +24,7 @@ STAGE = Path(__file__).resolve().parents[1]
 SHARE_ROOT = STAGE.parents[1]
 sys.path.insert(0, str(SHARE_ROOT / "src"))
 
-from cstims.paper import config  # noqa: E402
+from cstims import constants, paths
 
 
 OUT = STAGE / "results" / "unique_image_low_level_stats.csv"
@@ -49,7 +49,7 @@ def _load_compute_stats():
 
 def subject_metadata(subject: str) -> pd.DataFrame:
     image_root = (
-        config.SHARE_ROOT
+        paths.project_root()
         / "01_brain_model_alignment"
         / "cache_or_heavy"
         / "deepvision_benchmark_cache"
@@ -68,7 +68,7 @@ def subject_metadata(subject: str) -> pd.DataFrame:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--subjects", nargs="+", default=config.SUBJECTS)
+    parser.add_argument("--subjects", nargs="+", default=constants.SUBJECTS)
     parser.add_argument("--max-images", type=int, default=None)
     parser.add_argument("--max-side", type=int, default=256)
     parser.add_argument("--overwrite", action="store_true")

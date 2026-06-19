@@ -15,6 +15,7 @@ VICCO is subsampled to 100 images to match the cstim set size.
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -24,6 +25,15 @@ from scipy.stats import rankdata
 
 THIS = Path(__file__).resolve()
 RERUN_ROOT = THIS.parents[1]
+SHARE_ROOT = THIS.parents[3]
+sys.path.insert(0, str(SHARE_ROOT / "src"))
+
+from cstims.cache import (  # noqa: E402
+    load_cstim_brain_cache,
+    load_cstim_repetition_cache,
+    load_cstim_stimulus_info,
+    load_cstim_voxel_metadata,
+)
 
 SUBJECTS = ["sub-01", "sub-03", "sub-05", "sub-06", "sub-07"]
 DEFAULT_BRAIN_CACHE = RERUN_ROOT / "results" / "brain_data_cache"
@@ -102,14 +112,14 @@ def split_half_rdm_nc(even_betas: np.ndarray, odd_betas: np.ndarray) -> dict:
 
 
 def load_roi_masks(root: Path, rois: list[str]) -> tuple[dict[str, np.ndarray], np.ndarray]:
-    vox_z = np.load(root / "voxel_metadata.npz", allow_pickle=True)
+    voxel_metadata = load_cstim_voxel_metadata(root.name, cache_root=root.parent)
     full_masks = {}
     union_mask = None
     for roi in rois:
         key = f"roi_{roi}"
-        if key not in vox_z.files:
+        if key not in voxel_metadata:
             raise KeyError(f"{root.parent.name}: missing {key} in voxel_metadata.npz")
-        mask = vox_z[key].astype(bool)
+        mask = voxel_metadata[key].astype(bool)
         full_masks[roi] = mask
         union_mask = mask.copy() if union_mask is None else (union_mask | mask)
     roi_masks = {roi: mask[union_mask] for roi, mask in full_masks.items()}
@@ -117,7 +127,7 @@ def load_roi_masks(root: Path, rois: list[str]) -> tuple[dict[str, np.ndarray], 
 
 
 def load_stim_info(root: Path) -> tuple[pd.DataFrame, dict[str, np.ndarray]]:
-    stim_info = pd.read_csv(root / "cstim_stimulus_info.csv")
+    stim_info = load_cstim_stimulus_info(root.name, cache_root=root.parent)
     group_idx = {}
     for group in sorted(stim_info["group"].unique()):
         group_idx[group] = stim_info.index[stim_info["group"].eq(group)].to_numpy(dtype=int)
@@ -128,20 +138,19 @@ def load_split_halves(root: Path, stim_keys: list[str], union_mask: np.ndarray):
     n_vox = int(union_mask.sum())
     even = np.empty((len(stim_keys), n_vox), dtype=np.float32)
     odd = np.empty((len(stim_keys), n_vox), dtype=np.float32)
-    reps_z = np.load(root / "cstim_betas_by_rep.npz", allow_pickle=True)
+    reps = load_cstim_repetition_cache(root.name, roi="all", cache_root=root.parent)
     for i, key in enumerate(stim_keys):
-        reps = reps_z[key][union_mask]
-        n_reps = reps.shape[1]
+        rep_betas = reps.betas_by_rep[str(key)][union_mask]
+        n_reps = rep_betas.shape[1]
         if n_reps < 2:
-            even[i] = reps[:, 0]
-            odd[i] = reps[:, 0]
+            even[i] = rep_betas[:, 0]
+            odd[i] = rep_betas[:, 0]
         elif n_reps == 2:
-            even[i] = reps[:, 0]
-            odd[i] = reps[:, 1]
+            even[i] = rep_betas[:, 0]
+            odd[i] = rep_betas[:, 1]
         else:
-            even[i] = reps[:, np.arange(0, n_reps, 2)].mean(axis=1)
-            odd[i] = reps[:, np.arange(1, n_reps, 2)].mean(axis=1)
-    reps_z.close()
+            even[i] = rep_betas[:, np.arange(0, n_reps, 2)].mean(axis=1)
+            odd[i] = rep_betas[:, np.arange(1, n_reps, 2)].mean(axis=1)
     return even, odd
 
 
@@ -235,9 +244,8 @@ def kriegeskorte_nc_per_subject(rdm_mat: np.ndarray):
 def load_subject_average(root: Path, rois: list[str]):
     roi_masks, union_mask = load_roi_masks(root, rois)
     stim_info, group_idx = load_stim_info(root)
-    betas_z = np.load(root / "cstim_betas_averaged.npz", allow_pickle=True)
-    betas = betas_z["betas"][union_mask, :].astype(np.float32, copy=False)
-    betas_z.close()
+    cache = load_cstim_brain_cache(root.name, roi="all", cache_root=root.parent)
+    betas = cache.betas_roi[union_mask, :].astype(np.float32, copy=False)
     return {"roi_masks": roi_masks, "group_idx": group_idx, "betas": betas}
 
 

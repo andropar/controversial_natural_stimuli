@@ -24,10 +24,10 @@ SHARE_ROOT = STAGE.parent
 PAPER_HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(PAPER_HELPERS))
 
-from cstims.paper import config  # noqa: E402
+from cstims import constants, paths
 
 
-DATA_DIR = config.ROBUSTNESS_DATA_DIR
+DATA_DIR = paths.robustness_data_dir()
 FIXED_PATH = DATA_DIR / "distance_metric_robustness.csv"
 MIXED_PATH = DATA_DIR / "mixed_distance_metric_robustness.csv"
 OUT_CSV = DATA_DIR / "distance_metric_claim_robustness.csv"

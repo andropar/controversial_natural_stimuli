@@ -40,15 +40,16 @@ import pandas as pd
 from scipy.stats import rankdata
 from tqdm import tqdm
 
-from cstims.paper.config import (
-    MODEL_SETS, MODEL_DISPLAY_NAMES, RSA_DATA_DIR,
-    SHARED_ENCODING_ROOT, PROJECT_ROOT, VOXEL_CACHE_DIR,
-)
-from cstims.paper.utils import (
-    compute_rdm_correlation, bootstrap_sample_indices,
-    load_encoding_model,
-    parse_subject_arg, load_model_layer_mapping,
-)
+from cstims import paths
+from cstims.constants import MODEL_SETS, MODEL_DISPLAY_NAMES
+RSA_DATA_DIR = paths.rsa_data_dir()
+SHARED_ENCODING_ROOT = paths.shared_encoding_root()
+PROJECT_ROOT = paths.project_root()
+VOXEL_CACHE_DIR = paths.voxel_cache_dir()
+from cstims.rdm import compute_rdm_correlation
+from cstims.sampling import bootstrap_sample_indices
+from cstims.subjects import parse_subject_arg
+from cstims.paper.utils import load_encoding_model
 
 
 DV_SHARED_CACHE = (
@@ -176,7 +177,7 @@ def main():
     args = parser.parse_args()
 
     subjects = parse_subject_arg(args.subject)
-    layer_map = load_model_layer_mapping()
+    layer_map = paths.model_layer_mapping()
 
     # Load + hlvis-mask brain betas for each subject
     print("Loading shared brain data per subject...")

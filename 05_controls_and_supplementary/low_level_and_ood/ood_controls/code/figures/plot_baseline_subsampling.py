@@ -35,7 +35,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
-from cstims.paper import config
+from cstims import constants, paths
 
 DATA_DIR = _PAPER / "results"
 PER     = DATA_DIR / "baseline_subsampling.csv"
@@ -153,7 +153,7 @@ def fig_matched_only(summary):
                label="cstim")
         ax.set_xticks(x)
         ax.set_xticklabels(
-            [config.MODEL_DISPLAY_NAMES.get(m, m) for m in per_model["model"]],
+            [constants.MODEL_DISPLAY_NAMES.get(m, m) for m in per_model["model"]],
             rotation=60, ha="right", fontsize=6,
         )
         ax.set_title(f"{GROUP_LABELS[model_set]}\n({len(cell)} / {n_total} cells matched)",
@@ -176,7 +176,7 @@ def fig_matched_only(summary):
 def fig_scatter(per, summary, model_set):
     """Per model in a model_set: scatter of bootstraps in (OOD, wRSA) space,
     overlaying cstim, matched-K, and all-boot mean. Coloured by match quality."""
-    models = config.MODEL_SETS[model_set]
+    models = constants.MODEL_SETS[model_set]
     n = len(models)
     ncols = 5
     nrows = int(np.ceil(n / ncols))
@@ -222,7 +222,7 @@ def fig_scatter(per, summary, model_set):
         ax.axhline(boot_avg["wrsa"].mean(), color="#2166ac", lw=0.6, ls="--", alpha=0.6)
         ax.axvline(cstim["mean_loglik_pred_z"], color="#d6604d", lw=0.6, ls="--", alpha=0.6)
 
-        ax.set_title(f"{config.MODEL_DISPLAY_NAMES.get(model, model)} ({dom})",
+        ax.set_title(f"{constants.MODEL_DISPLAY_NAMES.get(model, model)} ({dom})",
                      fontsize=8, color=qcolor, fontweight="bold")
         ax.set_xlabel("mean loglik z (pred)", fontsize=7)
         ax.set_ylabel("wRSA", fontsize=7)

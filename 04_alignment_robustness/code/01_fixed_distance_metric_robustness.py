@@ -32,12 +32,10 @@ from PIL import Image
 from scipy.stats import spearmanr
 from tqdm import tqdm
 
-from cstims.paper import config
-from cstims.paper.utils import (
-    compute_rdm_correlation,
-    compute_rsa_score,
-    bootstrap_sample_indices,
-)
+from cstims import constants, paths
+from cstims.cache import load_cstim_brain_cache
+from cstims.rdm import compute_rdm_correlation, compute_rsa_score
+from cstims.sampling import bootstrap_sample_indices
 from cstims.feature_extraction.universal_extractor import UniversalFeatureExtractor
 
 
@@ -45,7 +43,7 @@ from cstims.feature_extraction.universal_extractor import UniversalFeatureExtrac
 
 def load_model_config(model_name: str) -> dict:
     """Load layer, aggregation, and source config for a model."""
-    df = pd.read_csv(config.MODEL_LIST_CSV)
+    df = pd.read_csv(paths.model_list_csv())
     row = df[df["model"] == model_name].iloc[0]
     return {
         "layer": row["layer"],
@@ -63,9 +61,9 @@ def load_images(group: str) -> list:
         folder_group = "architecture"
 
     if folder_group == "vicco":
-        img_dir = config.CSTIM_HDF5_ROOT / "shared_vicco"
+        img_dir = paths.cstim_hdf5_root() / "shared_vicco"
     else:
-        img_dir = config.CSTIM_HDF5_ROOT / folder_group
+        img_dir = paths.cstim_hdf5_root() / folder_group
 
     img_files = sorted(list(img_dir.glob("*.jpg")) + list(img_dir.glob("*.png")))
     return [Image.open(f).convert("RGB") for f in img_files]
@@ -98,44 +96,17 @@ def extract_features(model_name: str, images: list, target_size: int = 224) -> n
 
 def load_subject_brain_data(subject: str) -> dict:
     """Load brain data for a subject. Returns None if not available."""
-    data_dir = config.get_subject_data_dir(subject)
-    betas_path = data_dir / "cstim_betas_averaged.npz"
-    if not betas_path.exists():
+    cache = load_cstim_brain_cache(subject, missing_ok=True)
+    if cache is None:
         return None
-
-    betas_data = np.load(betas_path, allow_pickle=True)
-    voxel_data = np.load(data_dir / "voxel_metadata.npz", allow_pickle=True)
-    stim_info = pd.read_csv(data_dir / "cstim_stimulus_info.csv")
-
-    hlvis_mask = voxel_data["hlvis_mask"]
-    betas_hlvis = betas_data["betas"][hlvis_mask, :]
-    stim_keys = betas_data["stim_keys"]
-    stim_key_to_idx = {k: i for i, k in enumerate(stim_keys)}
-
-    available_groups = sorted(stim_info["group"].unique().tolist())
-
-    group_indices = {}
-    group_stim_idx = {}
-    for group in available_groups:
-        mask = stim_info["group"] == group
-        keys = stim_info.loc[mask, "stim_key"].values
-        group_indices[group] = np.array([stim_key_to_idx[k] for k in keys])
-        idx = stim_info.loc[mask, "stim_idx"].values
-        group_stim_idx[group] = idx - 1 if group == "vicco" else idx
-
+    data = cache.as_legacy_group_dict()
+    group_indices = data["group_indices"]
     n_vicco = len(group_indices.get("vicco", []))
     n_vicco_sample = min(100, n_vicco) if n_vicco > 0 else 0
     vicco_bootstrap = bootstrap_sample_indices(n_vicco, n_vicco_sample, n_bootstrap=10, seed=0) if n_vicco > 0 else []
-
-    return {
-        "betas_hlvis": betas_hlvis,
-        "group_indices": group_indices,
-        "group_stim_idx": group_stim_idx,
-        "available_groups": available_groups,
-        "vicco_bootstrap": vicco_bootstrap,
-        "n_vicco_sample": n_vicco_sample,
-        "n_hlvis": int(hlvis_mask.sum()),
-    }
+    data["vicco_bootstrap"] = vicco_bootstrap
+    data["n_vicco_sample"] = n_vicco_sample
+    return data
 
 
 # -- Cosine distance RDM --
@@ -159,7 +130,7 @@ def main():
 
     # Load brain data for all subjects
     subject_data = {}
-    for subject in config.SUBJECTS:
+    for subject in constants.SUBJECTS:
         data = load_subject_brain_data(subject)
         if data is None:
             print(f"  {subject}: no brain data, skipping")
@@ -178,7 +149,7 @@ def main():
 
     results = []
 
-    for model_set, models in config.MODEL_SETS.items():
+    for model_set, models in constants.MODEL_SETS.items():
         print(f"\n{'='*60}")
         print(f"Model set: {model_set} ({len(models)} models)")
         print(f"{'='*60}")
@@ -186,7 +157,7 @@ def main():
         cstim_images = load_images(model_set)
 
         for model in tqdm(models, desc="Models"):
-            display_name = config.MODEL_DISPLAY_NAMES.get(model, model)
+            display_name = constants.MODEL_DISPLAY_NAMES.get(model, model)
 
             # Extract features once
             all_images = cstim_images + all_vicco_images
@@ -255,7 +226,7 @@ def main():
                     })
 
     df = pd.DataFrame(results)
-    out_path = config.ROBUSTNESS_DATA_DIR / "distance_metric_robustness.csv"
+    out_path = paths.robustness_data_dir() / "distance_metric_robustness.csv"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(out_path, index=False)
     print(f"\nSaved {out_path} ({len(df)} rows)")

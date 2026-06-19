@@ -21,7 +21,7 @@ _PAPER = Path(__file__).resolve().parents[2]
 SHARE_ROOT = _PAPER.parents[1]
 HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(HELPERS))
-from cstims.paper import config
+from cstims import constants, paths
 
 import numpy as np
 import pandas as pd
@@ -56,7 +56,7 @@ NC_BASE = 0.46  # Target noise ceiling (at noise_mult = 1.0)
 
 def load_discriminability(model_set: str) -> pd.DataFrame:
     """Load discriminability data for a model set."""
-    eval_dir = config.get_eval_pipeline_dir(model_set)
+    eval_dir = paths.get_eval_pipeline_dir(model_set)
     path = eval_dir / "discriminability.csv"
     if not path.exists():
         return pd.DataFrame()
@@ -67,7 +67,7 @@ def load_discriminability(model_set: str) -> pd.DataFrame:
 
 def load_statistics(model_set: str) -> pd.DataFrame:
     """Load statistics for a model set."""
-    eval_dir = config.get_eval_pipeline_dir(model_set)
+    eval_dir = paths.get_eval_pipeline_dir(model_set)
     path = eval_dir / "statistics.csv"
     if not path.exists():
         return pd.DataFrame()

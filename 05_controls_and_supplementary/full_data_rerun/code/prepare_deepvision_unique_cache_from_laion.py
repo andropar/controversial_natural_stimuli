@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import sys
 import warnings
 from pathlib import Path
 
@@ -15,6 +16,10 @@ import pandas as pd
 THIS = Path(__file__).resolve()
 RERUN_ROOT = THIS.parents[1]
 SHARE_ROOT = THIS.parents[3]
+sys.path.insert(0, str(SHARE_ROOT / "src"))
+
+from cstims.cache import load_cstim_voxel_metadata  # noqa: E402
+
 LAION_ROOT = Path("/data/home_roth/datasets/LAION-fMRI")
 OUT_ROOT = RERUN_ROOT / "results" / "deepvision_unique_cache"
 OLD_UNIQUE_ROOT = (
@@ -63,7 +68,7 @@ def process_subject(subject: str, overwrite: bool):
         print(f"{subject}: exists, skipping {out_path}", flush=True)
         return
 
-    cstim_meta = np.load(CSTIM_CACHE / subject / "voxel_metadata.npz", allow_pickle=True)
+    cstim_meta = load_cstim_voxel_metadata(subject, cache_root=CSTIM_CACHE)
     brain_flat_indices = cstim_meta["brain_flat_indices"].astype(int)
     volume_shape = tuple(int(x) for x in cstim_meta["volume_shape"])
     roi_names = [str(x) for x in cstim_meta["roi_names"]]

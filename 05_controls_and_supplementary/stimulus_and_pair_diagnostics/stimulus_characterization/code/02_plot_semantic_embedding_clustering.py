@@ -29,7 +29,8 @@ PROJECT = PAPER.parents[1]
 sys.path.insert(0, str(PAPER))
 sys.path.insert(0, str(PROJECT))
 
-from cstims.paper import config  # noqa: E402
+from cstims import constants, paths
+from cstims.cache import load_cstim_feature_groups
 from cstims.paper.style_improved import (  # noqa: E402
     DPI,
     FONT,
@@ -63,8 +64,6 @@ SHARED_CACHE_CANDIDATES = [
     / "features"
     / "timm_vit_large_patch14_clip_224_laion2b_blocks.18.attn.qkv_deepjuice_cls.pt",
 ]
-CSTIM_CACHE = config.FEATURE_CACHE_DIR / "cstim" / f"{MODEL}.npz"
-
 OUT = PAPER / "14_stimulus_characterization" / "results"
 FIG = PAPER / "14_stimulus_characterization" / "figures"
 OUT.mkdir(parents=True, exist_ok=True)
@@ -122,7 +121,7 @@ def first_existing(paths: list[Path]) -> Path:
 def cstim_image_dir(source_set: str) -> Path:
     return first_existing(
         [
-            config.CSTIM_HDF5_ROOT / source_set,
+            paths.cstim_hdf5_root() / source_set,
             SELECTION_EVAL_IMAGE_ROOT / source_set / "images",
             WEBAPP_STIMULUS_ROOT / source_set,
         ]
@@ -132,7 +131,7 @@ def cstim_image_dir(source_set: str) -> Path:
 def baseline_image_dir() -> Path:
     return first_existing(
         [
-            config.CSTIM_HDF5_ROOT / "shared_vicco",
+            paths.cstim_hdf5_root() / "shared_vicco",
             WEBAPP_STIMULUS_ROOT / "baseline",
         ]
     )
@@ -190,7 +189,7 @@ def add_block(
 def load_cstim_and_baseline(rng: np.random.Generator) -> tuple[list[dict], list[np.ndarray]]:
     rows: list[dict] = []
     blocks: list[np.ndarray] = []
-    z = np.load(CSTIM_CACHE)
+    z = load_cstim_feature_groups(MODEL)
     for model_set in MODEL_SETS:
         names = sorted_image_names(cstim_image_dir(model_set))
         add_block(
@@ -316,7 +315,7 @@ def image_path(row: pd.Series) -> Path:
         return cstim_image_dir(str(row["source_set"])) / row["image"]
     if row["pool"] == "shared train":
         return (
-            config.SHARE_ROOT
+            paths.project_root()
             / "01_brain_model_alignment"
             / "cache_or_heavy"
             / "deepvision_benchmark_cache"

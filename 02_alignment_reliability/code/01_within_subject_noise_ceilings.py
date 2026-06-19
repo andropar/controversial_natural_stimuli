@@ -36,12 +36,10 @@ SHARE_ROOT = STAGE.parent
 PAPER_HELPERS = SHARE_ROOT / "src"
 sys.path.insert(0, str(PAPER_HELPERS))
 
-from cstims.paper import config
-from cstims.paper.utils import (
-    bootstrap_sample_indices,
-    compute_rdm_correlation,
-    rdm_to_vector,
-)
+from cstims import constants, paths
+from cstims.cache import load_cstim_repetition_cache
+from cstims.rdm import compute_rdm_correlation, rdm_to_vector
+from cstims.sampling import bootstrap_sample_indices
 
 
 N_VICCO_SAMPLE = 100
@@ -56,19 +54,8 @@ def load_subject_data(subject: str):
     the .npz file (each bootstrap touches ~100 keys, so 1000 bootstraps would
     otherwise re-read ~100k times — observed 610 GB of disk reads).
     """
-    data_dir = config.get_subject_data_dir(subject)
-
-    voxel_meta = np.load(data_dir / "voxel_metadata.npz", allow_pickle=True)
-    hlvis_mask = voxel_meta["hlvis_mask"]
-
-    _npz = np.load(data_dir / "cstim_betas_by_rep.npz", allow_pickle=True)
-    # Materialise once, slice to hlvis voxels, store as a plain dict
-    betas_by_rep = {k: _npz[k][hlvis_mask] for k in _npz.files}
-    _npz.close()
-
-    stim_info = pd.read_csv(data_dir / "cstim_stimulus_info.csv")
-
-    return betas_by_rep, stim_info, hlvis_mask
+    cache = load_cstim_repetition_cache(subject)
+    return cache.betas_by_rep, cache.stim_info, cache.roi_mask
 
 
 def compute_split_half_rdm_nc(
@@ -196,7 +183,7 @@ def main():
                        help="Subject to process (sub-XX or 'all')")
     args = parser.parse_args()
 
-    subjects = config.SUBJECTS if args.subject == "all" else [args.subject]
+    subjects = constants.SUBJECTS if args.subject == "all" else [args.subject]
 
     all_results = []
     for subject in subjects:
@@ -205,7 +192,7 @@ def main():
 
     # Save
     df = pd.DataFrame(all_results)
-    output_path = config.RELIABILITY_DATA_DIR / "rdm_noise_ceilings.csv"
+    output_path = paths.reliability_data_dir() / "rdm_noise_ceilings.csv"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(output_path, index=False)
     print(f"\nSaved to {output_path}")

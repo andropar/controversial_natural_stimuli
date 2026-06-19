@@ -6,8 +6,8 @@ import numpy as np
 from typing import Dict, Sequence
 from tqdm import tqdm
 
-from .rdm_cuda import get_rdm_vector
-from .rdm_cuda import calculate_correlation
+from .rdm import get_rdm_vector
+from .rdm import calculate_correlation
 
 def estimate_noise_variance(
     features: torch.Tensor,

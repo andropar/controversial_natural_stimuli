@@ -39,15 +39,12 @@ _PAPER = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))
 
-from cstims.paper import config
-from cstims.paper.utils import (
-    compute_rdm_correlation,
-    load_encoding_model,
-    predict_voxel_responses,
-    rdm_to_vector,
-)
+from cstims import constants, paths
+from cstims.cache import load_cstim_features, load_cstim_repetition_cache
+from cstims.rdm import compute_rdm_correlation, rdm_to_vector
+from cstims.paper.utils import load_encoding_model, predict_voxel_responses
 
-ALL_MODELS = config.MODEL_SETS["all_models"]
+ALL_MODELS = constants.MODEL_SETS["all_models"]
 N_VICCO_SUBSAMPLES = 10
 VICCO_SEED = 0
 
@@ -90,17 +87,11 @@ def measured_sample_nc(
 # ------------------------------------------------------------------
 
 def load_subject_betas(subject: str) -> dict:
-    data_dir = config.get_subject_data_dir(subject)
-    vox = np.load(data_dir / "voxel_metadata.npz", allow_pickle=True)
-    hlvis_mask = vox["hlvis_mask"]
-    npz = np.load(data_dir / "cstim_betas_by_rep.npz", allow_pickle=True)
-    betas_by_key = {k: npz[k][hlvis_mask] for k in npz.files}
-    npz.close()
-    stim_info = pd.read_csv(data_dir / "cstim_stimulus_info.csv")
+    cache = load_cstim_repetition_cache(subject)
     return {
-        "betas_by_key": betas_by_key,
-        "stim_info": stim_info,
-        "n_hlvis": int(hlvis_mask.sum()),
+        "betas_by_key": cache.betas_by_rep,
+        "stim_info": cache.stim_info,
+        "n_hlvis": cache.n_roi_voxels,
     }
 
 
@@ -127,9 +118,7 @@ def stack_stim_betas(
 def load_features(group: str) -> dict[str, np.ndarray]:
     feats = {}
     for model in ALL_MODELS:
-        path = config.CSTIM_FEATURE_CACHE / f"{model}.npz"
-        d = np.load(path)
-        feats[model] = d[group]
+        feats[model] = load_cstim_features(model, group)
     return feats
 
 
@@ -229,14 +218,14 @@ def main():
 
     all_rows = []
 
-    for subject in config.SUBJECTS:
-        data_dir = config.get_subject_data_dir(subject)
-        if not (data_dir / "cstim_betas_by_rep.npz").exists():
+    for subject in constants.SUBJECTS:
+        try:
+            subj = load_subject_betas(subject)
+        except FileNotFoundError:
             print(f"  {subject}: no rep betas, skipping")
             continue
 
         print(f"\n== {subject} ==")
-        subj = load_subject_betas(subject)
 
         # ---- precompute encoder-predicted responses (mRSA) ----
         print("  Loading per-subject encoders and predicting voxel responses...")

@@ -33,7 +33,7 @@ SRC_DIR = ROOT / "src"
 for path in (SRC_DIR,):
     sys.path.insert(0, str(path))
 
-from cstims.paper import config as paper_config  # noqa: E402
+from cstims import constants, paths
 from cstims.evaluation.constants import (  # noqa: E402
     DEFAULT_N_BOOTSTRAP,
     DEFAULT_N_NOISE_SAMPLES,
@@ -332,7 +332,7 @@ def main() -> None:
 
     encoding_root_map = None
     if args.unique_encodings:
-        encoding_root_map = {key: Path(value) for key, value in paper_config.UNIQUE_ENCODING_DIRS.items()}
+        encoding_root_map = {key: Path(value) for key, value in paths.unique_encoding_dirs().items()}
         print(f"Using unique encoding roots: {list(encoding_root_map)}")
 
     args.output_root.mkdir(parents=True, exist_ok=True)

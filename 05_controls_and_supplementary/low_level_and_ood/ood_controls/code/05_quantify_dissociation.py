@@ -35,11 +35,11 @@ sys.path.insert(0, str(_PAPER))
 import numpy as np
 import pandas as pd
 
-from cstims.paper import config
+from cstims import constants, paths
 
 
 CSTIM_SETS = ["all_models", "architecture", "training_objective", "sota", "dataset"]
-OOD = config.OOD_DATA_DIR
+OOD = paths.ood_data_dir()
 N_BOOT = 1000
 RNG_SEED = 42
 
@@ -85,8 +85,8 @@ def subject_cluster_bootstrap_ci(df, value_col, subject_col="subject",
 
 def load_wrsa():
     dfs = []
-    for s in config.SUBJECTS:
-        p = config.RSA_DATA_DIR / s / "wrsa_transfer_scores.csv"
+    for s in constants.SUBJECTS:
+        p = paths.rsa_data_dir() / s / "wrsa_transfer_scores.csv"
         if p.exists():
             dfs.append(pd.read_csv(p))
     return pd.concat(dfs, ignore_index=True)
@@ -153,7 +153,7 @@ def shift_ppca():
 
 
 def shift_noise_ceiling():
-    nc = pd.read_csv(config.STATS_DATA_DIR / "rdm_noise_ceilings.csv")
+    nc = pd.read_csv(paths.stats_data_dir() / "rdm_noise_ceilings.csv")
     rows = []
     for s in CSTIM_SETS:
         cstim_nc = (nc[(nc["stimulus_type"] == "controversial")
@@ -199,7 +199,7 @@ def _per_cell_paired(s, baseline_kind, wrsa_full, det):
         - top100   : vicco subset of 100 highest-low-level images
         - full     : full vicco baseline (n=292) with same model roster
     """
-    models = config.MODEL_SETS[s]
+    models = constants.MODEL_SETS[s]
     cstim = (wrsa_full[(wrsa_full["stimulus_type"] == "controversial")
                        & (wrsa_full["model_set"] == s)]
              .groupby(["subject", "model"])["wrsa_transfer"].mean()
@@ -270,7 +270,7 @@ def paired_dwrsa(baseline_kind):
 
 def paired_dwrsa_nc_normalized():
     wrsa = load_wrsa()
-    nc = pd.read_csv(config.STATS_DATA_DIR / "rdm_noise_ceilings.csv")
+    nc = pd.read_csv(paths.stats_data_dir() / "rdm_noise_ceilings.csv")
     cstim_nc = (nc[nc["stimulus_type"] == "controversial"]
                 [["subject", "group", "noise_ceiling_spearman"]]
                 .rename(columns={"group": "model_set",

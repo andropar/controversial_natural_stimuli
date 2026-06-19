@@ -39,26 +39,24 @@ import pandas as pd
 from scipy import stats
 from itertools import combinations
 
-from cstims.paper import config
-
-# =============================================================================
+from cstims import constants, paths
 # Paths
 # =============================================================================
 
-FMRI_DATA_DIR = config.BRAIN_DATA_DIR
-OUTPUT_DIR = config.SIM_DATA_DIR
+FMRI_DATA_DIR = paths.brain_data_dir()
+OUTPUT_DIR = paths.simulation_data_dir()
 
 MODEL_SETS_LIST = ["architecture", "training_objective", "sota", "dataset", "all_models"]
-SUBJECTS = config.SUBJECTS
+SUBJECTS = constants.SUBJECTS
 
 
 def get_sim_eval_dir(model_set: str) -> Path:
     # Use the _unique_boot variant: simulation side must use per-subject
     # unique encodings to match the fMRI side (wrsa_transfer_scores.csv),
     # which also uses per-subject unique encodings. The default
-    # config.get_eval_pipeline_dir() returns the shared-encoding variant
+    # paths.get_eval_pipeline_dir() returns the shared-encoding variant
     # and would produce a cross-encoder comparison.
-    return config.EVAL_DATA_DIR / f"{model_set}_unique_boot"
+    return paths.selection_evaluation_results_dir() / f"{model_set}_unique_boot"
 
 
 def load_sim_correlation_matrix(model_set: str) -> pd.DataFrame:
@@ -71,7 +69,7 @@ def load_sim_correlation_matrix(model_set: str) -> pd.DataFrame:
 def load_fmri_scores(subject: str) -> pd.DataFrame:
     # Must read from RSA_DATA_DIR, not from the brain-data cache, which only
     # contains raw betas/stim info and not RSA scores.
-    path = config.RSA_DATA_DIR / subject / "wrsa_transfer_scores.csv"
+    path = paths.rsa_data_dir() / subject / "wrsa_transfer_scores.csv"
     if not path.exists():
         return pd.DataFrame()
     return pd.read_csv(path)

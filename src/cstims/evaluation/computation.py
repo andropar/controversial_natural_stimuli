@@ -9,7 +9,7 @@ import torch
 from tqdm import tqdm
 
 from cstims.evaluation.model_discrimination import model_discriminability
-from cstims.rdm_cuda import get_rdm_vector
+from cstims.rdm import get_rdm_vector
 from cstims.selection.primitives import compute_correlation_matrix
 
 

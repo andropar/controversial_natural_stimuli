@@ -11,7 +11,6 @@ from __future__ import annotations
 
 import numpy as np
 from scipy import sparse
-from scipy.stats import pearsonr
 
 from sklearn.base import RegressorMixin, MultiOutputMixin, is_classifier
 from sklearn.linear_model import Ridge, RidgeClassifier
@@ -29,15 +28,23 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.utils.validation import validate_data
 
 
-# Vectorized Pearson correlation
-_pearsonr_vec = np.vectorize(pearsonr, signature="(n),(n)->(),()")
-
-
 def _pearson_r_score(y_true, y_pred, multioutput=None):
-    """Compute Pearson R score, vectorized across columns."""
-    y_true_ = y_true.transpose()
-    y_pred_ = y_pred.transpose()
-    return _pearsonr_vec(y_true_, y_pred_)[0]
+    """Compute Pearson R score column-wise."""
+    y_true = np.asarray(y_true, dtype=np.float64)
+    y_pred = np.asarray(y_pred, dtype=np.float64)
+    if y_true.ndim == 1:
+        y_true = y_true[:, None]
+    if y_pred.ndim == 1:
+        y_pred = y_pred[:, None]
+
+    y_true_c = y_true - y_true.mean(axis=0, keepdims=True)
+    y_pred_c = y_pred - y_pred.mean(axis=0, keepdims=True)
+    numerator = np.sum(y_true_c * y_pred_c, axis=0)
+    denominator = np.sqrt(np.sum(y_true_c * y_true_c, axis=0) * np.sum(y_pred_c * y_pred_c, axis=0))
+    with np.errstate(divide="ignore", invalid="ignore"):
+        score = numerator / denominator
+    score[~np.isfinite(score)] = np.nan
+    return score
 
 
 class _RidgeGCVFast(_RidgeGCV):
@@ -90,16 +97,30 @@ class _RidgeGCVFast(_RidgeGCV):
                 "negative or null value instead."
             )
 
-        preprocessed = _preprocess_data(
-            X,
-            y,
-            fit_intercept=self.fit_intercept,
-            copy=self.copy_X,
-            sample_weight=sample_weight,
-        )
-        # sklearn >= 1.7 returns sample_weight_sqrt as a sixth value; older
-        # versions returned only the first five values.
+        unscaled_y = y
+        try:
+            preprocessed = _preprocess_data(
+                X,
+                y,
+                fit_intercept=self.fit_intercept,
+                copy=self.copy_X,
+                sample_weight=sample_weight,
+                rescale_with_sw=True,
+            )
+        except TypeError:
+            preprocessed = _preprocess_data(
+                X,
+                y,
+                fit_intercept=self.fit_intercept,
+                copy=self.copy_X,
+                sample_weight=sample_weight,
+            )
+
+        # sklearn >= 1.7 returns sample_weight_sqrt and already rescales
+        # X/y when sample_weight is provided. Older versions returned only the
+        # first five values and need explicit rescaling below.
         X, y, X_offset, y_offset, X_scale = preprocessed[:5]
+        sqrt_sw = preprocessed[5] if len(preprocessed) >= 6 else None
 
         gcv_mode = _check_gcv_mode(X, self.gcv_mode)
 
@@ -116,14 +137,14 @@ class _RidgeGCVFast(_RidgeGCV):
 
         n_samples = X.shape[0]
 
-        if sample_weight is not None:
+        if sample_weight is not None and sqrt_sw is None:
             rescaled = _rescale_data(X, y, sample_weight)
             X, y = rescaled[:2]
             if len(rescaled) >= 3:
                 sqrt_sw = rescaled[2]
             else:
                 sqrt_sw = np.sqrt(sample_weight)
-        else:
+        elif sqrt_sw is None:
             sqrt_sw = np.ones(n_samples, dtype=X.dtype)
 
         X_mean, *decomposition = decompose(X, y, sqrt_sw)
@@ -144,22 +165,28 @@ class _RidgeGCVFast(_RidgeGCV):
         for i, alpha in enumerate(np.atleast_1d(self.alphas)):
             G_inverse_diag, c = solve(float(alpha), y, sqrt_sw, X_mean, *decomposition)
             predictions = y - (c / G_inverse_diag)
+            if sample_weight is not None:
+                if predictions.ndim > 1:
+                    predictions = predictions / sqrt_sw[:, None]
+                else:
+                    predictions = predictions / sqrt_sw
+            predictions = predictions + y_offset
             if self.store_cv_values:
                 self.cv_values_[:, i] = predictions.ravel()
 
             if self.alpha_per_target:
                 if self.scoring == "pearson_r":
-                    alpha_score = _pearson_r_score(y, predictions)
+                    alpha_score = _pearson_r_score(unscaled_y, predictions)
                 elif self.scoring == "explained_variance":
                     alpha_score = explained_variance_score(
-                        y, predictions, multioutput="raw_values"
+                        unscaled_y, predictions, multioutput="raw_values"
                     )
             else:
                 if self.scoring == "pearson_r":
-                    alpha_score = _pearson_r_score(y, predictions).mean()
+                    alpha_score = _pearson_r_score(unscaled_y, predictions).mean()
                 elif self.scoring == "explained_variance":
                     alpha_score = explained_variance_score(
-                        y, predictions, multioutput="uniform_average"
+                        unscaled_y, predictions, multioutput="uniform_average"
                     )
 
             # Keep track of the best model
@@ -184,9 +211,15 @@ class _RidgeGCVFast(_RidgeGCV):
         self.alpha_ = best_alpha
         self.best_score_ = best_score
         self.dual_coef_ = best_coef
-        self.coef_ = safe_sparse_dot(self.dual_coef_.T, X)
+        dual_T = self.dual_coef_.T if self.dual_coef_.ndim > 1 else self.dual_coef_
+        self.coef_ = safe_sparse_dot(dual_T, X)
+        if y.ndim == 1 or y.shape[1] == 1:
+            self.coef_ = self.coef_.ravel()
 
-        X_offset += X_mean * X_scale
+        if sparse.issparse(X):
+            X_offset = X_mean * X_scale
+        else:
+            X_offset += X_mean * X_scale
         self._set_intercept(X_offset, y_offset, X_scale)
 
         if self.store_cv_values:

@@ -44,9 +44,9 @@ SHARE_ROOT = STIMULUS_ROOT.parent
 sys.path.insert(0, str(SHARE_ROOT / "src"))
 sys.path.insert(0, str(SHARE_ROOT / "src"))
 
-from cstims.paper import config  # noqa: E402
+from cstims import constants, paths
 from cstims.encoding.linear import load_encoding_params_by_encoding  # noqa: E402
-from cstims.rdm_cuda import get_rdm_vector  # noqa: E402
+from cstims.rdm import get_rdm_vector  # noqa: E402
 from cstims.selection.primitives import compute_correlation_matrix  # noqa: E402
 
 
@@ -114,7 +114,7 @@ def write_csv(path: Path, rows: list[dict]) -> None:
 
 
 def selected_payload_path(model_set: str) -> Path:
-    return config.SELECTION_OUTPUT_ROOT / model_set / "selected_stimuli_data.pkl"
+    return paths.selected_stimuli_root() / model_set / "selected_stimuli_data.pkl"
 
 
 def load_selected_raw_features(model_set: str, models: list[str]) -> dict[str, np.ndarray]:
@@ -155,10 +155,10 @@ def make_random_subsets(
 
 
 def noise_calibration_path(model_set: str) -> Path:
-    current = config.EVAL_DATA_DIR / f"{model_set}_unique_boot" / "noise_calibration.csv"
+    current = paths.selection_evaluation_results_dir() / f"{model_set}_unique_boot" / "noise_calibration.csv"
     if current.exists():
         return current
-    fallback = config.EVAL_DATA_DIR / model_set / "noise_calibration.csv"
+    fallback = paths.selection_evaluation_results_dir() / model_set / "noise_calibration.csv"
     if fallback.exists():
         return fallback
     raise FileNotFoundError(f"No noise calibration found for {model_set}")
@@ -191,8 +191,8 @@ def load_encoding_params(
         return None
     if track not in cache:
         params = load_encoding_params_by_encoding(
-            encoding_root=config.UNIQUE_ENCODING_DIRS[track],
-            model_list_csv=config.MODEL_LIST_CSV,
+            encoding_root=paths.unique_encoding_dirs()[track],
+            model_list_csv=paths.model_list_csv(),
             encoding_names=[track],
             device=device,
             roi_subset="hlvis",
@@ -414,7 +414,7 @@ def main() -> None:
         device=str(device),
     )
 
-    all_models = sorted({model for model_set in model_sets for model in config.MODEL_SETS[model_set]})
+    all_models = sorted({model for model_set in model_sets for model in constants.MODEL_SETS[model_set]})
     pool_features = load_pool_features(args.pool_dir, all_models)
     n_total = min(features.shape[0] for features in pool_features.values())
     subsets = make_random_subsets(n_total, args.n_subsets, args.subset_size, args.seed)
@@ -430,7 +430,7 @@ def main() -> None:
     torch_gen.manual_seed(args.seed)
 
     for model_set in tqdm(model_sets, desc="Model sets", unit="set"):
-        models = [model for model in config.MODEL_SETS[model_set] if model in pool_features]
+        models = [model for model in constants.MODEL_SETS[model_set] if model in pool_features]
         selected_raw = load_selected_raw_features(model_set, models)
 
         for track in tqdm(tracks, desc=f"{model_set} tracks", leave=False, unit="track"):

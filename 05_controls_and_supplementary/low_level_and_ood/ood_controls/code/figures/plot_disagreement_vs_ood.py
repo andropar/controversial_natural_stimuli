@@ -28,7 +28,7 @@ import pandas as pd
 from scipy import stats
 import matplotlib.pyplot as plt
 
-from cstims.paper import config
+from cstims import constants, paths
 
 OOD_DIR = _PAPER / "results"
 PAIRS   = OOD_DIR / "disagreement_vs_ood_pairs.csv"

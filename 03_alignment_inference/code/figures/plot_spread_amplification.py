@@ -23,7 +23,7 @@ _SHARE_ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))  # project root
 sys.path.insert(0, str(_SHARE_ROOT / "src"))
-from cstims.paper import config
+from cstims import constants, paths
 
 import numpy as np
 import pandas as pd

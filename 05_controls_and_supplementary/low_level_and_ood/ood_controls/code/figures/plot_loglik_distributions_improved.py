@@ -26,7 +26,7 @@ from scipy.stats import gaussian_kde
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
-from cstims.paper import config
+from cstims import constants, paths
 from cstims.paper.style_improved import (
     apply_style, FONT, DPI, W_DOUBLE,
     COLOR_CSTIM, COLOR_BASELINE, COLOR_TRAIN,
@@ -34,9 +34,9 @@ from cstims.paper.style_improved import (
 
 apply_style()
 
-OOD_DATA = config.OOD_DATA_DIR / "pca_loglik.csv"
+OOD_DATA = paths.ood_data_dir() / "pca_loglik.csv"
 FIGURES  = Path(__file__).resolve().parent
-ALL_MODELS = config.MODEL_SETS["all_models"]
+ALL_MODELS = constants.MODEL_SETS["all_models"]
 
 GROUPS = ["training", "vicco", "all_models"]
 GROUP_LABELS = {
@@ -100,7 +100,7 @@ def main():
                         edgecolor="white", linewidth=0.6, zorder=5,
                         clip_on=False)
 
-        display = config.MODEL_DISPLAY_NAMES.get(model, model)
+        display = constants.MODEL_DISPLAY_NAMES.get(model, model)
         ax.set_title(display, fontsize=FONT["small"] + 1, fontweight="bold",
                        pad=2)
         ax.tick_params(labelsize=FONT["small"] - 1)

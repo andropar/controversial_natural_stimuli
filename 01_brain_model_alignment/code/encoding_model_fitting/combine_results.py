@@ -14,7 +14,6 @@ Usage:
 
 import argparse
 import json
-import os
 import sys
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -358,15 +357,10 @@ def main():
 
     # Optionally compute hlvis metrics
     if args.compute_hlvis:
-        from cstims.paths import deepvision_fmri_root
+        from cstims import paths
 
-        cache_root = Path(
-            os.environ.get(
-                "CSTIMS_DEEPVISION_CACHE_ROOT",
-                PROJECT_ROOT / "01_brain_model_alignment/cache_or_heavy/deepvision_benchmark_cache",
-            )
-        )
-        deepvision_root = deepvision_fmri_root()
+        cache_root = paths.deepvision_cache_root()
+        deepvision_root = paths.deepvision_fmri_root()
 
         df = compute_hlvis_metrics(df, cache_root, deepvision_root)
 
