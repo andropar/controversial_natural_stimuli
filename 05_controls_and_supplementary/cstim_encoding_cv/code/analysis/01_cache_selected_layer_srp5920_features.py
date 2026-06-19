@@ -26,6 +26,7 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 
+from cstims import paths as cstims_paths
 from cstims.paper.config import CSTIM_HDF5_ROOT, PAPER_ROOT
 from cstims.datasets.deepvision import DeepVisionBenchmark
 from cstims.target_adaptation import (
@@ -52,7 +53,7 @@ SELECTION_CSV = LAYER_SWEEP_ROOT / "results" / "mrsa_dense_layer_selection_trans
 LOCAL_SELECTED_CACHE_DIR = CACHE_DIR / "selected_layer_features_srp5920"
 LOCAL_FEATURE_DIR = LOCAL_SELECTED_CACHE_DIR / "features"
 LOCAL_DV_FEATURE_DIR = LOCAL_SELECTED_CACHE_DIR / "dv_features"
-DV_CACHE_ROOT = SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "deepvision_benchmark_cache"
+DV_CACHE_ROOT = cstims_paths.deepvision_cache_root()
 LABSHARE_CSTIM_HDF5_ROOT = Path(
     "/data/labshare/_stachelschwein/SSD/jroth/final_cstims_hdf5_files"
 )

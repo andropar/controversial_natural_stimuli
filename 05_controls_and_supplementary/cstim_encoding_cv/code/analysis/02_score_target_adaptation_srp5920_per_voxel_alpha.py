@@ -30,6 +30,7 @@ import numpy as np
 import pandas as pd
 import scipy.linalg
 
+from cstims import paths as cstims_paths
 from cstims.paper import config
 from cstims.encoding.fitting import fit_voxelwise_ridgecv_fast
 from cstims.target_adaptation import (
@@ -70,10 +71,8 @@ LOCAL_FEATURE_DIR = LOCAL_SELECTED_CACHE_DIR / "features"
 LOCAL_DV_FEATURE_DIR = LOCAL_SELECTED_CACHE_DIR / "dv_features"
 LOCAL_ALPHA_DIR = CACHE_DIR / "target_adaptation_srp5920" / "alphas"
 
-DV_CACHE_ROOT = SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "deepvision_benchmark_cache"
-BRAIN_CACHE_ROOT = (
-    SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "cstim_brain_response_cache" / "data"
-)
+DV_CACHE_ROOT = cstims_paths.deepvision_cache_root()
+BRAIN_CACHE_ROOT = cstims_paths.brain_data_dir()
 
 SCORE_CSV = RESULTS_DIR / "target_adaptation_weighted_scores.csv"
 SUMMARY_CSV = RESULTS_DIR / "target_adaptation_weighted_summary.csv"

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
@@ -36,5 +37,18 @@ for path in (
 RESULTS_DIR = ROOT / "results"
 FIGURES_DIR = ROOT / "figures"
 PNG_DIR = FIGURES_DIR / "png"
-CACHE_DIR = ROOT / "cache_or_heavy"
 
+
+def _cache_dir() -> Path:
+    override = os.environ.get("CSTIM_ENCODING_CV_CACHE_DIR")
+    if override:
+        return Path(override).expanduser().resolve()
+    try:
+        from cstims import paths as cstims_paths
+
+        return cstims_paths.feature_cache_dir() / "cstim_encoding_cv"
+    except Exception:
+        return ROOT / "cache_or_heavy"
+
+
+CACHE_DIR = _cache_dir()

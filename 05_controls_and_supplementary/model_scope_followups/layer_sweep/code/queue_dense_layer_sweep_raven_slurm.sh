@@ -19,7 +19,9 @@ ANALYSIS_DIR="${SCRIPT_DIR}/analysis"
 REPO_ROOT="$(cd "${LAYER_SWEEP_ROOT}/../../.." && pwd)"
 
 if [[ -z "${PYTHON_BIN:-}" ]]; then
-  if [[ -x "/u/rothj/miniforge3/bin/python" ]]; then
+  if [[ -x "/u/rothj/conda-envs/deepjuice/bin/python" ]]; then
+    PYTHON_BIN="/u/rothj/conda-envs/deepjuice/bin/python"
+  elif [[ -x "/u/rothj/miniforge3/bin/python" ]]; then
     PYTHON_BIN="/u/rothj/miniforge3/bin/python"
   else
     PYTHON_BIN="python"
@@ -296,6 +298,17 @@ printf ' %q' "${GPU_SBATCH_ARGS[@]}" "${WORKER_SCRIPT}"
 printf '\n'
 
 if [[ "${DRY_RUN}" == "1" ]]; then
+  if [[ "${SUBMIT_MERGE}" == "1" ]]; then
+    printf 'Merge sbatch: sbatch'
+    printf ' %q' "${MERGE_SBATCH_ARGS[@]}"
+    printf ' --dependency=%q' "afterok:<gpu_job_id>"
+    printf ' %q' "${MERGE_SCRIPT}"
+    printf '\n'
+    if [[ "${SUBMIT_CSTIM_ENCODING_CV}" == "1" ]]; then
+      printf 'CSTIM encoding-CV queue: LAYER_MERGE_JOB_ID=%q PYTHON_BIN=%q CSTIMS_PATH_ENV=%q SUBJECTS=%q MODELS=%q bash %q\n' \
+        "<merge_job_id>" "${PYTHON_BIN}" "${CSTIMS_PATH_ENV}" "${SUBJECTS}" "${MODELS}" "${CSTIM_ENCODING_CV_QUEUE}"
+    fi
+  fi
   echo "DRY_RUN=1; not submitting."
   exit 0
 fi
@@ -316,6 +329,14 @@ if [[ "${SUBMIT_MERGE}" == "1" ]]; then
       exit 2
     fi
     echo "Submitting CSTIM encoding-CV pipeline after merge job ${MERGE_JOB_ID}"
-    LAYER_MERGE_JOB_ID="${MERGE_JOB_ID}" bash "${CSTIM_ENCODING_CV_QUEUE}"
+    LAYER_MERGE_JOB_ID="${MERGE_JOB_ID}" \
+      PYTHON_BIN="${PYTHON_BIN}" \
+      CSTIMS_PATH_ENV="${CSTIMS_PATH_ENV}" \
+      SUBJECTS="${SUBJECTS}" \
+      MODELS="${MODELS}" \
+      PARTITION="${PARTITION}" \
+      ACCOUNT="${ACCOUNT}" \
+      QOS="${QOS}" \
+      bash "${CSTIM_ENCODING_CV_QUEUE}"
   fi
 fi
