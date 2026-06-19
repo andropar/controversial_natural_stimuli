@@ -17,7 +17,6 @@ import argparse
 import json
 import math
 import multiprocessing as mp
-import pickle
 import sys
 import time
 from dataclasses import asdict, dataclass
@@ -62,6 +61,7 @@ from feature_method_sweep import (  # noqa: E402
     MethodSpec,
     TrackSpec,
     build_runtime,
+    calibrate_noise_by_track,
     compute_track_scores,
     exclude_failed_indices,
     filter_record_to_dict,
@@ -76,16 +76,10 @@ from feature_method_sweep import (  # noqa: E402
     mark_filter_failures,
     save_manifest,
     save_runtime_progress,
+    select_initial_indices,
 )
 
 
-DEFAULT_SOURCE_RUN = (
-    ROOT
-    / "00_stimulus_selection"
-    / "feature_method_sweep"
-    / "results"
-    / "sota_pool100k_seed42_raw_sub01_rawenc_w05_meanmin_attenuation_20260615_153656"
-)
 MODEL_LIST_CSV = ROOT / "00_stimulus_selection" / "resources" / "model_list.csv"
 
 
@@ -166,19 +160,6 @@ def parse_csv_floats(value: str) -> list[float]:
     return [float(part.strip()) for part in value.split(",") if part.strip()]
 
 
-def load_json(path: Path) -> dict[str, Any]:
-    with path.open("r") as f:
-        return json.load(f)
-
-
-def load_source_payload(source_run: Path, method_id: str) -> dict[str, Any]:
-    path = source_run / "payloads" / method_id / "selected_stimuli_data.pkl"
-    if not path.exists():
-        raise FileNotFoundError(f"Source payload not found: {path}")
-    with path.open("rb") as f:
-        return pickle.load(f)
-
-
 def load_existing_indices(method_dir: Path) -> list[int] | None:
     path = method_dir / "selected_indices.npy"
     if not path.exists():
@@ -189,7 +170,10 @@ def load_existing_indices(method_dir: Path) -> list[int] | None:
 def load_existing_rows(path: Path, *, max_iteration: int | None = None) -> list[dict[str, Any]]:
     if not path.exists() or path.stat().st_size == 0:
         return []
-    rows = pd.read_csv(path).replace({np.nan: None}).to_dict("records")
+    try:
+        rows = pd.read_csv(path).replace({np.nan: None}).to_dict("records")
+    except pd.errors.EmptyDataError:
+        return []
     if not rows or max_iteration is None or "iteration" not in rows[0]:
         return [dict(row) for row in rows]
     return [
@@ -1482,8 +1466,6 @@ def build_refit_splits(
 
 
 def run_selection(args: argparse.Namespace) -> Path:
-    source_run = args.source_run.resolve()
-    source_config = load_json(source_run / "run_config.json")
     paths = load_env_paths(args.env)
     local_encoding_root = (
         ROOT
@@ -1497,24 +1479,19 @@ def run_selection(args: argparse.Namespace) -> Path:
     if not encoding_root.exists() and local_encoding_root.exists():
         paths["encoding_root"] = str(local_encoding_root)
         print(f"Using local encoding_root: {local_encoding_root}", flush=True)
-    model_set_name, configured_model_names = load_model_set(args.model_set)
-    model_names = list(source_config.get("model_names") or configured_model_names)
-    if model_names != configured_model_names:
-        print(
-            "Using model_names from source run because they differ from model-set config",
-            flush=True,
-        )
+    model_set_name, model_names = load_model_set(args.model_set)
 
     model_list_csv = Path(paths.get("model_list_csv") or MODEL_LIST_CSV)
-    explicit_pool_feature_dir = args.pool_feature_dir
-    source_pool_feature_dir = source_config.get("pool_feature_dir")
-    inherited_pool_feature_dir = (
-        Path(source_pool_feature_dir)
-        if source_pool_feature_dir and args.disable_image_filter
-        else None
-    )
-    pool_feature_dir = explicit_pool_feature_dir or inherited_pool_feature_dir
-    max_images_arg = args.max_images or source_config.get("candidate_pool_size") or source_config.get("max_images")
+    output_root = args.output_root.resolve()
+    output_root.mkdir(parents=True, exist_ok=True)
+    payload_root = output_root / "payloads"
+    method = make_method(args.method_id, args.track)
+    method_dir = payload_root / args.method_id
+    method_dir.mkdir(parents=True, exist_ok=True)
+    save_manifest([method], payload_root)
+
+    pool_feature_dir = args.pool_feature_dir
+    max_images_arg = args.max_images
     pool_records_by_index: list[dict[str, Any]] | None = None
     pool_info: dict[str, Any] | None = None
     if pool_feature_dir is not None:
@@ -1560,6 +1537,11 @@ def run_selection(args: argparse.Namespace) -> Path:
             "n_loaded": pool_size,
             "natural_feature_loader": True,
         }
+    if pool_size <= args.init_size:
+        raise ValueError(f"Candidate pool too small: pool_size={pool_size}")
+
+    np.random.seed(args.seed)
+    torch.manual_seed(args.seed)
 
     device = torch.device(args.device)
     if device.type == "cuda" and not torch.cuda.is_available():
@@ -1580,28 +1562,60 @@ def run_selection(args: argparse.Namespace) -> Path:
     if args.track not in encoding_params:
         raise RuntimeError(f"Missing encoding params for {args.track}")
 
-    source_payload = load_source_payload(source_run, args.initial_from_method)
-    if pool_feature_dir is None and source_config.get("pool_feature_dir"):
-        raise ValueError(
-            "Filtered natural-pool refit runs must initialize from a source run "
-            "with the same natural-pool coordinate system. The provided source "
-            "run used a .npz pool, whose selected_global_indices are local to "
-            "that .npz subset."
-        )
-    initial_indices = [
-        int(x)
-        for x in np.asarray(source_payload["selected_global_indices"], dtype=np.int64)[
-            : args.init_size
-        ]
-    ]
-    var_noise_by_track = {
-        args.track: dict(
-            (source_payload.get("var_noise_by_model") or {}).get(
-                args.track,
-                {model: 0.0 for model in model_names},
+    image_filter, image_filter_config = make_image_filter(
+        args=args,
+        paths=paths,
+        raw_shard_slices=raw_shard_slices,
+        output_root=output_root,
+    )
+    print(f"Image filter enabled: {image_filter is not None}", flush=True)
+    if image_filter is not None:
+        print(f"Image filter config: {image_filter_config}", flush=True)
+
+    existing_selected = load_existing_indices(method_dir) if args.resume else None
+    if existing_selected is not None:
+        if len(existing_selected) < args.init_size:
+            raise ValueError(
+                f"Cannot resume {method_dir}: selected_indices.npy has only "
+                f"{len(existing_selected)} entries, expected at least init_size={args.init_size}"
             )
+        initial_indices = [int(x) for x in existing_selected[: args.init_size]]
+        initial_filter_records: list[dict[str, Any]] = []
+        initialization_source = "resume_existing_selected_indices"
+    else:
+        rng = np.random.default_rng(args.seed)
+        initial_array, initial_filter_records_raw = select_initial_indices(
+            rng=rng,
+            initial_pool_size=pool_size,
+            init_size=args.init_size,
+            image_filter=image_filter,
         )
-    }
+        initial_indices = [int(x) for x in initial_array.tolist()]
+        initial_filter_records = [
+            {
+                **record,
+                "method_id": args.method_id,
+                "pool_size": pool_size,
+            }
+            for record in initial_filter_records_raw
+        ]
+        initialization_source = (
+            "filtered_random_order" if image_filter is not None else "random_choice"
+        )
+
+    var_noise_by_track = calibrate_noise_by_track(
+        raw_features_np=raw_features_np,
+        model_names=model_names,
+        track_specs=list(method.tracks),
+        encoding_params=encoding_params,
+        metric=args.metric,
+        corr_type=args.corr_type,
+        target_nc=args.noise_ceiling,
+        seed=args.seed,
+        device=device,
+        calib_n_examples=args.proxy_noise_calib_examples,
+        n_repeats=args.proxy_noise_calib_repeats,
+    )
     if args.no_proxy_attenuation:
         var_noise_by_track = {args.track: {model: 0.0 for model in model_names}}
 
@@ -1673,22 +1687,6 @@ def run_selection(args: argparse.Namespace) -> Path:
         n_noise_samples=args.n_noise_samples,
     )
 
-    output_root = args.output_root.resolve()
-    payload_root = output_root / "payloads"
-    method = make_method(args.method_id, args.track)
-    method_dir = payload_root / args.method_id
-    method_dir.mkdir(parents=True, exist_ok=True)
-    save_manifest([method], payload_root)
-    image_filter, image_filter_config = make_image_filter(
-        args=args,
-        paths=paths,
-        raw_shard_slices=raw_shard_slices,
-        output_root=output_root,
-    )
-    print(f"Image filter enabled: {image_filter is not None}", flush=True)
-    if image_filter is not None:
-        print(f"Image filter config: {image_filter_config}", flush=True)
-
     resume_state = (
         load_resume_state(
             method_dir=method_dir,
@@ -1703,9 +1701,9 @@ def run_selection(args: argparse.Namespace) -> Path:
         selected_indices, trace_rows, candidate_rows = resume_state
         if selected_indices[: args.init_size] != list(initial_indices):
             raise ValueError(
-                "Resume initial indices differ from the current source-run init; "
-                "use the same --source-run/--initial-from-method as the original "
-                "run or start a new --output-root"
+                "Resume initial indices differ from the current run initialization; "
+                "use the same --seed/--init-size/filter settings as the original "
+                "run or start a new --output-root."
             )
         print(
             f"Resuming {args.method_id}: n_selected={len(selected_indices)}/"
@@ -1721,22 +1719,25 @@ def run_selection(args: argparse.Namespace) -> Path:
         selected_indices = list(initial_indices)
         trace_rows: list[dict[str, Any]] = []
         candidate_rows: list[dict[str, Any]] = []
-        filter_records: list[dict[str, Any]] = []
+        filter_records = initial_filter_records
     if image_filter is not None:
         mark_filter_failures(image_filter, filter_records)
 
     run_config = {
-        **source_config,
+        "refit_robust_selection_version": "self_initialized_feature_method",
+        "script": str(SCRIPT),
+        "argv": sys.argv,
+        "created_at": datetime.now().isoformat(timespec="seconds"),
         "method_name": args.method_id,
         "model_set_name": model_set_name,
         "model_names": model_names,
+        "paths": paths,
         "feature_method_sweep": True,
         "refit_robust_selection": True,
-        "source_run": str(source_run),
-        "initial_from_method": args.initial_from_method,
         "target_size": args.target_size,
         "init_size": args.init_size,
         "initial_indices": selected_indices[: args.init_size],
+        "initialization_source": initialization_source,
         "seed": args.seed,
         "metric": args.metric,
         "corr_type": args.corr_type,
@@ -1744,12 +1745,17 @@ def run_selection(args: argparse.Namespace) -> Path:
         "candidate_pool_size": pool_size,
         "pool_feature_dir": str(pool_feature_dir) if pool_feature_dir is not None else None,
         "pool_info": pool_info,
+        "max_ram_gb": args.max_ram_gb,
+        "max_loaded_images": pool_size,
         "image_filter": image_filter_config,
         "refit_pool_size": args.refit_pool_size,
         "refit_val_size": args.refit_val_size,
         "refit_train_n": args.refit_pool_size - args.refit_val_size,
         "noise_mult": args.noise_mult,
         "noise_ceiling_target": args.noise_ceiling,
+        "proxy_noise_calib_examples": args.proxy_noise_calib_examples,
+        "proxy_noise_calib_repeats": args.proxy_noise_calib_repeats,
+        "proxy_attenuation_disabled": bool(args.no_proxy_attenuation),
         "fit_noise_calibration": args.fit_noise_calibration,
         "n_noise_samples": args.n_noise_samples,
         "alphas": alphas,
@@ -1770,6 +1776,35 @@ def run_selection(args: argparse.Namespace) -> Path:
     output_root.mkdir(parents=True, exist_ok=True)
     with (output_root / "run_config.json").open("w") as f:
         json.dump(run_config, f, indent=2, default=str)
+
+    checkpoint_runtime = build_proxy_runtime(
+        method=method,
+        selected_indices=selected_indices,
+        raw_features_np=raw_features_np,
+        model_names=model_names,
+        encoding_params=encoding_params,
+        var_noise_by_track=var_noise_by_track,
+        metric=args.metric,
+        device=device,
+        pool_size=pool_size,
+    )
+    checkpoint_runtime.trace_rows = trace_rows
+    checkpoint_runtime.scores_combined = [
+        float(row["score_combined"]) for row in trace_rows if row.get("score_combined") is not None
+    ]
+    checkpoint_runtime.scores_per_track_history[args.track] = list(
+        checkpoint_runtime.scores_combined
+    )
+    checkpoint_runtime.filter_records = filter_records
+    save_runtime_progress(
+        checkpoint_runtime,
+        payload_root,
+        raw_features_np,
+        raw_shard_slices=raw_shard_slices,
+        model_names=model_names,
+        run_config=run_config,
+        pool_records_by_index=pool_records_by_index,
+    )
 
     start_total = time.monotonic()
     while len(selected_indices) < args.target_size:
@@ -2034,10 +2069,8 @@ def run_selection(args: argparse.Namespace) -> Path:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--source-run", type=Path, default=DEFAULT_SOURCE_RUN)
     parser.add_argument("--output-root", type=Path, default=None)
     parser.add_argument("--method-id", default="sub01_eval_augmented_loo_refit_robust")
-    parser.add_argument("--initial-from-method", default="sub01_only_mean_min")
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--env", default="raven")
     parser.add_argument("--model-set", default="sota")
@@ -2060,6 +2093,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--top-k-proxy", type=int, default=8)
     parser.add_argument("--random-shortlist", type=int, default=0)
     parser.add_argument("--proxy-batch-size", type=int, default=2048)
+    parser.add_argument("--proxy-noise-calib-examples", type=int, default=1000)
+    parser.add_argument("--proxy-noise-calib-repeats", type=int, default=100)
     parser.add_argument("--no-proxy-attenuation", action="store_true")
     parser.add_argument("--alphas", default="0.001,0.01,0.1,1,10,100")
     parser.add_argument("--noise-mult", type=float, default=1.0)
@@ -2130,6 +2165,10 @@ def parse_args() -> argparse.Namespace:
         raise ValueError("--kernel-batch-size must be positive")
     if args.refit_score_workers <= 0:
         raise ValueError("--refit-score-workers must be positive")
+    if args.proxy_noise_calib_examples <= 0:
+        raise ValueError("--proxy-noise-calib-examples must be positive")
+    if args.proxy_noise_calib_repeats <= 0:
+        raise ValueError("--proxy-noise-calib-repeats must be positive")
     if njit is None:
         raise RuntimeError("refit-robust selection requires numba")
     if args.metric != "cosine" or args.corr_type != "spearman":
