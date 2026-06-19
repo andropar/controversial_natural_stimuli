@@ -10,6 +10,21 @@
   conda `libstdc++` is used instead of the system copy.
 - Do not rely on the system `/usr/bin/python3`; it is missing project dependencies such as pandas and scikit-learn.
 
+## GitHub Pushes From Campus Hosts
+
+- `~/.bashrc` exports the required campus proxy:
+  `http_proxy=http://10.60.3.254:3128` and
+  `https_proxy=http://10.60.3.254:3128`.
+- HTTPS Git fetch/`ls-remote` works with those proxy variables, but HTTPS push
+  can hang on credential prompts because `gh` is not authenticated here.
+- SSH to `github.com:22` can hang. The verified push route is SSH over port 443
+  to `ssh.github.com`, using `/home/roth/.ssh/id_ed25519_git` and an HTTP
+  CONNECT proxy command through `10.60.3.254:3128`.
+- The installed `/usr/bin/nc` does not support `-X connect`; use a small Python
+  `ProxyCommand` or install a CONNECT-capable helper before running `git push`.
+  Push URL form:
+  `ssh://git@ssh.github.com:443/andropar/controversial_natural_stimuli.git`.
+
 
 - When writing experiment code always clearly state ALL assumptions made about the experiment and associated methods. For example, when running a regression, make it explicit whether you assume that features are or are not standardized. 
 - Before running experiments, perform a runtime test and estimate an ETA using synthetic data or small subsets of the real data. 
