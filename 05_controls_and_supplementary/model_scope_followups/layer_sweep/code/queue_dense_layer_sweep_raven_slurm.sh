@@ -65,6 +65,8 @@ ACCOUNT="${ACCOUNT:-${SLURM_ACCOUNT:-}}"
 QOS="${QOS:-}"
 DRY_RUN="${DRY_RUN:-0}"
 SUBMIT_MERGE="${SUBMIT_MERGE:-1}"
+SUBMIT_CSTIM_ENCODING_CV="${SUBMIT_CSTIM_ENCODING_CV:-0}"
+CSTIM_ENCODING_CV_QUEUE="${CSTIM_ENCODING_CV_QUEUE:-${REPO_ROOT}/05_controls_and_supplementary/cstim_encoding_cv/code/queue_cstim_encoding_cv_raven_slurm.sh}"
 
 mkdir -p "${RUN_ROOT}/logs" "${PART_ROOT}"
 
@@ -308,4 +310,12 @@ if [[ "${SUBMIT_MERGE}" == "1" ]]; then
   printf '\n'
   MERGE_JOB_ID="$(sbatch "${MERGE_SBATCH_ARGS[@]}" "${MERGE_SCRIPT}")"
   echo "Submitted merge/table job: ${MERGE_JOB_ID}"
+  if [[ "${SUBMIT_CSTIM_ENCODING_CV}" == "1" ]]; then
+    if [[ ! -x "${CSTIM_ENCODING_CV_QUEUE}" ]]; then
+      echo "CSTIM encoding-CV queue script is not executable: ${CSTIM_ENCODING_CV_QUEUE}" >&2
+      exit 2
+    fi
+    echo "Submitting CSTIM encoding-CV pipeline after merge job ${MERGE_JOB_ID}"
+    LAYER_MERGE_JOB_ID="${MERGE_JOB_ID}" bash "${CSTIM_ENCODING_CV_QUEUE}"
+  fi
 fi
