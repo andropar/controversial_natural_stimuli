@@ -81,6 +81,8 @@ from feature_method_sweep import (  # noqa: E402
 
 
 MODEL_LIST_CSV = ROOT / "00_stimulus_selection" / "resources" / "model_list.csv"
+MAX_BASE_KERNEL_PRECOMPUTE_GIB = 16.0
+MAX_BASE_KERNEL_PRECOMPUTE_RAM_FRACTION = 0.25
 
 
 @dataclass
@@ -807,6 +809,47 @@ def build_fit_context(
         val_indices=val_indices,
         base_indices=base_indices,
     )
+
+
+def resolve_base_kernel_precompute(
+    *,
+    requested: bool,
+    pool_size: int,
+    refit_pool_size: int,
+    model_names: list[str],
+    max_ram_gb: float,
+) -> tuple[bool, dict[str, Any]]:
+    bytes_per_model = (
+        int(refit_pool_size) * int(pool_size) * np.dtype(np.float32).itemsize
+    )
+    n_models = max(1, len(model_names))
+    total_gib = (bytes_per_model * n_models) / (1024**3)
+    per_model_gib = bytes_per_model / (1024**3)
+    budget_gib = min(
+        MAX_BASE_KERNEL_PRECOMPUTE_GIB,
+        max(1.0, float(max_ram_gb) * MAX_BASE_KERNEL_PRECOMPUTE_RAM_FRACTION),
+    )
+    config = {
+        "requested": bool(requested),
+        "enabled": bool(requested),
+        "estimated_gib_per_model": per_model_gib,
+        "estimated_gib_total": total_gib,
+        "budget_gib": budget_gib,
+        "reason": None,
+    }
+    if requested and total_gib > budget_gib:
+        config["enabled"] = False
+        config["reason"] = "estimated_precompute_cache_exceeds_budget"
+        print(
+            "Disabling base-kernel precompute: "
+            f"estimated {total_gib:.1f} GiB total "
+            f"({per_model_gib:.1f} GiB/model) for pool_size={pool_size}, "
+            f"refit_pool_size={refit_pool_size}, n_models={len(model_names)} "
+            f"exceeds {budget_gib:.1f} GiB budget. "
+            "Shortlist kernels will be computed on demand.",
+            flush=True,
+        )
+    return bool(config["enabled"]), config
 
 
 def response_noise_rows(
@@ -1703,6 +1746,13 @@ def run_selection(args: argparse.Namespace) -> Path:
         target_cols=target_cols,
     )
     alphas = parse_csv_floats(args.alphas)
+    precompute_base_kernels, base_kernel_precompute = resolve_base_kernel_precompute(
+        requested=args.precompute_base_kernels,
+        pool_size=pool_size,
+        refit_pool_size=args.refit_pool_size,
+        model_names=model_names,
+        max_ram_gb=args.max_ram_gb,
+    )
     fit_context = build_fit_context(
         raw_features_np=raw_features_np,
         encoded_refit=encoded_refit,
@@ -1722,7 +1772,7 @@ def run_selection(args: argparse.Namespace) -> Path:
         calibration_images=args.calibration_images,
         calibration_noise_samples=args.calibration_noise_samples,
         calibration_max_iter=args.calibration_max_iter,
-        precompute_base_kernels=args.precompute_base_kernels,
+        precompute_base_kernels=precompute_base_kernels,
         kernel_batch_size=args.kernel_batch_size,
     )
     fit_context.target_cols = target_cols
@@ -1813,7 +1863,8 @@ def run_selection(args: argparse.Namespace) -> Path:
         "teacher_aggregation": args.teacher_aggregation,
         "refit_objective": args.refit_objective,
         "exclude_refit_from_selection": args.exclude_refit_from_selection,
-        "precompute_base_kernels": args.precompute_base_kernels,
+        "precompute_base_kernels": precompute_base_kernels,
+        "base_kernel_precompute": base_kernel_precompute,
         "kernel_batch_size": args.kernel_batch_size,
         "refit_score_workers": args.refit_score_workers,
         "refit_indices": base_indices.tolist(),

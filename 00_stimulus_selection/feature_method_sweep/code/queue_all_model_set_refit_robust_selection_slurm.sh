@@ -26,6 +26,8 @@ if [[ -z "${PYTHON_BIN:-}" ]]; then
     PYTHON_BIN="/data/home_roth/miniforge3/bin/python"
   elif [[ -x "/u/rothj/miniforge3/bin/python" ]]; then
     PYTHON_BIN="/u/rothj/miniforge3/bin/python"
+  elif [[ -x "/u/rothj/conda-envs/laion/bin/python" ]]; then
+    PYTHON_BIN="/u/rothj/conda-envs/laion/bin/python"
   else
     PYTHON_BIN="python"
   fi
@@ -78,7 +80,7 @@ TEACHER_AGGREGATION="${TEACHER_AGGREGATION:-mean}"
 REFIT_OBJECTIVE="${REFIT_OBJECTIVE:-accuracy_margin}"
 KERNEL_BATCH_SIZE="${KERNEL_BATCH_SIZE:-4096}"
 REFIT_SCORE_WORKERS="${REFIT_SCORE_WORKERS:-4}"
-PRECOMPUTE_BASE_KERNELS="${PRECOMPUTE_BASE_KERNELS:-1}"
+PRECOMPUTE_BASE_KERNELS="${PRECOMPUTE_BASE_KERNELS:-0}"
 ALLOW_REFIT_SELECTION_OVERLAP="${ALLOW_REFIT_SELECTION_OVERLAP:-0}"
 NO_PROXY_ATTENUATION="${NO_PROXY_ATTENUATION:-0}"
 
@@ -93,7 +95,7 @@ FILTER_SAVE_IMAGES="${FILTER_SAVE_IMAGES:-1}"
 ALLOW_FILTER_FALLBACK="${ALLOW_FILTER_FALLBACK:-0}"
 
 DEVICE="${DEVICE:-cuda}"
-MEM="${MEM:-640000}"
+MEM="${MEM:-64000}"
 USE_GPU="${USE_GPU:-1}"
 RUN_LOCAL="${RUN_LOCAL:-0}"
 SUBMIT="${SUBMIT:-1}"
@@ -539,6 +541,7 @@ echo "Method id: ${METHOD_ID}"
 echo "Target size: ${TARGET_SIZE}"
 echo "Max RAM GB: ${MAX_RAM_GB}"
 echo "Max images override: ${MAX_IMAGES:-<largest POOL_SIZES entry per model set>}"
+echo "Slurm mem: ${MEM}"
 echo "Unique encodings: ${UNIQUE_ENCODINGS}"
 echo "Image filter: ${IMAGE_FILTER}"
 echo "Filter max attempts per iteration: ${FILTER_MAX_ATTEMPTS_PER_ITERATION}"
