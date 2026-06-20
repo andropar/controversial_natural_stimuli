@@ -17,6 +17,7 @@ import argparse
 import json
 import math
 import multiprocessing as mp
+import shutil
 import sys
 import time
 from dataclasses import asdict, dataclass
@@ -48,11 +49,10 @@ from cstims.evaluation.noise_calibration import (  # noqa: E402
 )
 from cstims.evaluation.ridge import (  # noqa: E402
     ridge_ops_for_eval_sets,
-    standardize_from_train,
 )
 from cstims.evaluation.teacher_student import (  # noqa: E402
     detect_equivalent_models,
-    select_targetwise_alpha_indices,
+    pearson_columns,
     stable_seed,
 )
 
@@ -83,6 +83,8 @@ from feature_method_sweep import (  # noqa: E402
 MODEL_LIST_CSV = ROOT / "00_stimulus_selection" / "resources" / "model_list.csv"
 MAX_BASE_KERNEL_PRECOMPUTE_GIB = 16.0
 MAX_BASE_KERNEL_PRECOMPUTE_RAM_FRACTION = 0.25
+DEFAULT_ALPHA_TARGET_BATCH_SIZE = 4096
+DEFAULT_SCORE_TARGET_BATCH_SIZE = 8192
 
 
 @dataclass
@@ -103,17 +105,26 @@ class StudentOps:
 @dataclass
 class TeacherTargets:
     model: str
-    y_train_clean: np.ndarray
-    y_val_clean: np.ndarray
     y_base_clean: np.ndarray
+    base_indices: np.ndarray
+    train_pos: np.ndarray
+    val_pos: np.ndarray
+    train_indices: np.ndarray
+    val_indices: np.ndarray
     response_noise_std: float
     achieved_fit_rdm_reliability: float
+    y_base_clean_path: str | None = None
+
+    @property
+    def n_targets(self) -> int:
+        return int(self.y_base_clean.shape[1])
 
 
 @dataclass
 class TeacherNoiseState:
     y_base_fit: np.ndarray
     alpha_choices: dict[str, tuple[list[float], np.ndarray]]
+    y_base_fit_path: str | None = None
 
 
 @dataclass
@@ -147,7 +158,6 @@ class V2StudentCache:
 class V2PredictionPath:
     order: np.ndarray
     offsets: np.ndarray
-    y_base_ordered: np.ndarray
 
 
 @dataclass
@@ -333,7 +343,7 @@ def apply_standardization(
 
 if njit is not None:
 
-    @njit(cache=True, nogil=True)
+    @njit(cache=False, nogil=True)
     def _materialize_v2_ops_numba(
         selected_inverse: np.ndarray,
         selected_inverse_diag: np.ndarray,
@@ -399,7 +409,7 @@ if njit is not None:
         return base_ops, eval_ops
 
 
-    @njit(cache=True, nogil=True, fastmath=True)
+    @njit(cache=False, nogil=True, fastmath=True)
     def _fast_response_rdm(response: np.ndarray) -> np.ndarray:
         n_eval = response.shape[0]
         n_targets = response.shape[1]
@@ -432,7 +442,7 @@ if njit is not None:
         return rdm
 
 
-    @njit(cache=True, nogil=True, fastmath=True)
+    @njit(cache=False, nogil=True, fastmath=True)
     def _fast_response_ranks(response: np.ndarray) -> np.ndarray:
         rdm = _fast_response_rdm(response)
         order = np.argsort(rdm, kind="mergesort")
@@ -442,7 +452,7 @@ if njit is not None:
         return ranks
 
 
-    @njit(cache=True, nogil=True, fastmath=True)
+    @njit(cache=False, nogil=True, fastmath=True)
     def _fast_spearman_scores_flat(
         predicted_flat: np.ndarray,
         teacher_ranks: np.ndarray,
@@ -559,9 +569,10 @@ def choose_target_columns(
 ) -> np.ndarray | None:
     if target_dim is None or target_dim <= 0:
         return None
+    probe_model = model_names[0]
     encoded_one = encode_indices(
         raw_features_np=raw_features_np,
-        model_names=model_names,
+        model_names=[probe_model],
         indices=[0],
         track=track,
         encoding_params=encoding_params,
@@ -667,24 +678,14 @@ def topk_shortlist(
     return np.unique(np.concatenate([top, random])).astype(np.int64)
 
 
-def standardize_y_from_train(
-    y_train: np.ndarray,
-    y_val: np.ndarray,
-    y_base: np.ndarray,
-) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
-    y_train_std, y_val_std, y_base_std = standardize_from_train(
-        y_train,
-        y_val,
-        y_base,
-    )
-    return y_train_std, y_val_std, y_base_std
-
-
 def build_fit_context(
     *,
     raw_features_np: dict[str, np.ndarray],
-    encoded_refit: dict[str, np.ndarray],
     model_names: list[str],
+    track: str,
+    encoding_params: Any,
+    device: torch.device,
+    target_cols: np.ndarray | None,
     train_indices: np.ndarray,
     val_indices: np.ndarray,
     base_indices: np.ndarray,
@@ -702,6 +703,8 @@ def build_fit_context(
     calibration_max_iter: int,
     precompute_base_kernels: bool,
     kernel_batch_size: int,
+    target_cache_dir: Path | None,
+    target_batch_size: int,
 ) -> FitContext:
     student_ops: dict[str, StudentOps] = {}
     for model in model_names:
@@ -752,25 +755,36 @@ def build_fit_context(
 
     teacher_targets: dict[str, TeacherTargets] = {}
     for model in model_names:
-        y_base_raw = encoded_refit[model]
-        y_train_raw = y_base_raw[refit_train_pos]
-        y_val_raw = y_base_raw[refit_val_pos]
-        y_train_clean, y_val_clean, y_base_clean = standardize_y_from_train(
-            y_train_raw,
-            y_val_raw,
-            y_base_raw,
+        print(f"  encoding and caching refit target for teacher={model}", flush=True)
+        encoded_one = encode_indices(
+            raw_features_np=raw_features_np,
+            model_names=[model],
+            indices=base_indices,
+            track=track,
+            encoding_params=encoding_params,
+            device=device,
+            target_cols=target_cols,
+        )
+        y_base_raw = np.asarray(encoded_one[model], dtype=np.float32)
+        y_base_clean, y_base_clean_path = standardize_base_targets(
+            y_base_raw=y_base_raw,
+            train_pos=refit_train_pos,
+            teacher=model,
+            cache_dir=target_cache_dir,
+            target_batch_size=target_batch_size,
         )
         achieved = np.nan
         if fit_noise_calibration == "rdm_empirical":
-            y_calib = y_train_clean
-            if 0 < calibration_images < len(y_train_clean):
+            calib_pos = refit_train_pos
+            if 0 < calibration_images < len(refit_train_pos):
                 calib_rng = np.random.default_rng(
                     seed + stable_seed(model, "selector_noise_calibration")
                 )
-                calib_idx = np.sort(
-                    calib_rng.choice(len(y_train_clean), size=calibration_images, replace=False)
+                calib_local_idx = np.sort(
+                    calib_rng.choice(len(refit_train_pos), size=calibration_images, replace=False)
                 )
-                y_calib = y_train_clean[calib_idx]
+                calib_pos = refit_train_pos[calib_local_idx]
+            y_calib = np.asarray(y_base_clean[calib_pos], dtype=np.float32)
             cal_rng = np.random.default_rng(seed + stable_seed(model, noise_mult, "rdm_empirical"))
             response_noise_std, achieved = calibrate_response_noise_for_rdm_reliability(
                 y_calib,
@@ -789,12 +803,17 @@ def build_fit_context(
             )
         teacher_targets[model] = TeacherTargets(
             model=model,
-            y_train_clean=y_train_clean,
-            y_val_clean=y_val_clean,
             y_base_clean=y_base_clean,
+            base_indices=np.asarray(base_indices, dtype=np.int64),
+            train_pos=np.asarray(refit_train_pos, dtype=np.int64),
+            val_pos=np.asarray(refit_val_pos, dtype=np.int64),
+            train_indices=np.asarray(train_indices, dtype=np.int64),
+            val_indices=np.asarray(val_indices, dtype=np.int64),
             response_noise_std=float(response_noise_std),
             achieved_fit_rdm_reliability=float(achieved),
+            y_base_clean_path=y_base_clean_path,
         )
+        del encoded_one, y_base_raw
 
     equivalence_labels = detect_equivalent_models(
         {model: np.asarray(raw_features_np[model][base_indices], dtype=np.float32) for model in model_names},
@@ -804,7 +823,7 @@ def build_fit_context(
         student_ops=student_ops,
         teacher_targets=teacher_targets,
         equivalence_labels=equivalence_labels,
-        target_cols=None,
+        target_cols=target_cols,
         train_indices=train_indices,
         val_indices=val_indices,
         base_indices=base_indices,
@@ -867,6 +886,262 @@ def response_noise_rows(
     return np.stack(rows, axis=0)
 
 
+def response_noise_rows_chunk(
+    *,
+    image_indices: np.ndarray,
+    n_targets: int,
+    start: int,
+    end: int,
+    std: float,
+    seed: int,
+    parts: tuple[object, ...],
+) -> np.ndarray:
+    image_indices = np.asarray(image_indices, dtype=np.int64)
+    width = int(end) - int(start)
+    if width <= 0:
+        return np.empty((len(image_indices), 0), dtype=np.float32)
+    if float(std) == 0.0:
+        return np.zeros((len(image_indices), width), dtype=np.float32)
+    out = np.empty((len(image_indices), width), dtype=np.float32)
+    for row_idx, image_idx in enumerate(image_indices):
+        rng = np.random.default_rng(
+            seed
+            + stable_seed(
+                *parts,
+                int(image_idx),
+                int(start),
+                int(end),
+                int(n_targets),
+            )
+        )
+        out[row_idx] = rng.normal(0.0, std, size=width).astype(np.float32)
+    return out
+
+
+def safe_cache_component(value: str) -> str:
+    return "".join(ch if ch.isalnum() or ch in "._-" else "_" for ch in value)
+
+
+def target_rows_chunk(
+    target: TeacherTargets,
+    row_positions: np.ndarray,
+    start: int,
+    end: int,
+) -> np.ndarray:
+    return np.asarray(
+        target.y_base_clean[np.asarray(row_positions, dtype=np.int64), start:end],
+        dtype=np.float32,
+    )
+
+
+def target_standardization_stats(
+    y_base_raw: np.ndarray,
+    train_pos: np.ndarray,
+    *,
+    target_batch_size: int,
+) -> tuple[np.ndarray, np.ndarray]:
+    n_targets = int(y_base_raw.shape[1])
+    target_batch_size = min(max(1, int(target_batch_size)), n_targets)
+    train_pos = np.asarray(train_pos, dtype=np.int64)
+    mean = np.empty((1, n_targets), dtype=np.float32)
+    scale = np.empty((1, n_targets), dtype=np.float32)
+    for start in range(0, n_targets, target_batch_size):
+        end = min(start + target_batch_size, n_targets)
+        train_chunk = np.asarray(y_base_raw[train_pos, start:end], dtype=np.float32)
+        mean[:, start:end] = train_chunk.mean(
+            axis=0,
+            dtype=np.float64,
+            keepdims=True,
+        ).astype(np.float32)
+        scale_chunk = train_chunk.std(
+            axis=0,
+            dtype=np.float64,
+            keepdims=True,
+        ).astype(np.float32)
+        scale_chunk[scale_chunk < 1e-6] = 1.0
+        scale[:, start:end] = scale_chunk
+    return mean, scale
+
+
+def standardize_base_targets(
+    *,
+    y_base_raw: np.ndarray,
+    train_pos: np.ndarray,
+    teacher: str,
+    cache_dir: Path | None,
+    target_batch_size: int,
+) -> tuple[np.ndarray, str | None]:
+    n_base, n_targets = y_base_raw.shape
+    target_batch_size = min(max(1, int(target_batch_size)), int(n_targets))
+    mean, scale = target_standardization_stats(
+        y_base_raw,
+        train_pos,
+        target_batch_size=target_batch_size,
+    )
+    path: Path | None = None
+    if cache_dir is not None:
+        cache_dir.mkdir(parents=True, exist_ok=True)
+        path = cache_dir / f"{safe_cache_component(teacher)}_y_base_clean.npy"
+        y_base_clean = np.lib.format.open_memmap(
+            path,
+            mode="w+",
+            dtype=np.float32,
+            shape=(int(n_base), int(n_targets)),
+        )
+    else:
+        y_base_clean = np.empty((int(n_base), int(n_targets)), dtype=np.float32)
+    for start in range(0, n_targets, target_batch_size):
+        end = min(start + target_batch_size, n_targets)
+        y_base_clean[:, start:end] = (
+            np.asarray(y_base_raw[:, start:end], dtype=np.float32)
+            - mean[:, start:end]
+        ) / scale[:, start:end]
+    if path is not None:
+        y_base_clean.flush()
+        del y_base_clean
+        return np.load(path, mmap_mode="r"), str(path)
+    return np.asarray(y_base_clean, dtype=np.float32), None
+
+
+def encode_indices_modelwise_cached(
+    *,
+    raw_features_np: dict[str, np.ndarray],
+    model_names: list[str],
+    indices: np.ndarray | list[int],
+    track: str,
+    encoding_params: Any,
+    device: torch.device,
+    target_cols: np.ndarray | None,
+    cache_dir: Path | None,
+    cache_prefix: str,
+) -> dict[str, np.ndarray]:
+    out: dict[str, np.ndarray] = {}
+    if cache_dir is not None:
+        cache_dir.mkdir(parents=True, exist_ok=True)
+    for model in model_names:
+        encoded_one = encode_indices(
+            raw_features_np=raw_features_np,
+            model_names=[model],
+            indices=indices,
+            track=track,
+            encoding_params=encoding_params,
+            device=device,
+            target_cols=target_cols,
+        )
+        arr = np.asarray(encoded_one[model], dtype=np.float32)
+        if cache_dir is not None:
+            path = cache_dir / (
+                f"{safe_cache_component(cache_prefix)}_"
+                f"{safe_cache_component(model)}.npy"
+            )
+            cached = np.lib.format.open_memmap(
+                path,
+                mode="w+",
+                dtype=np.float32,
+                shape=arr.shape,
+            )
+            cached[:] = arr
+            cached.flush()
+            del cached
+            out[model] = np.load(path, mmap_mode="r")
+        else:
+            out[model] = arr
+        del encoded_one, arr
+    return out
+
+
+def select_targetwise_alpha_indices_for_target(
+    alpha_ops: dict[float, tuple[np.ndarray, dict[str, np.ndarray]]],
+    target: TeacherTargets,
+    *,
+    noise_sample_idx: int,
+    seed: int,
+    target_batch_size: int,
+) -> tuple[list[float], np.ndarray]:
+    if not isinstance(alpha_ops, dict):
+        raise TypeError("Chunked alpha selection requires dict ridge operators")
+
+    alpha_values = list(alpha_ops)
+    if not alpha_values:
+        raise ValueError("No alpha operators available")
+    n_targets = target.n_targets
+    target_batch_size = min(max(1, int(target_batch_size)), n_targets)
+    best_alpha_idx = np.empty(n_targets, dtype=np.int32)
+    for start in range(0, n_targets, target_batch_size):
+        end = min(start + target_batch_size, n_targets)
+        y_train_chunk = target_rows_chunk(target, target.train_pos, start, end)
+        y_train_chunk += response_noise_rows_chunk(
+            image_indices=target.train_indices,
+            n_targets=n_targets,
+            start=start,
+            end=end,
+            std=target.response_noise_std,
+            seed=seed,
+            parts=("alpha_train_noise", target.model, noise_sample_idx),
+        )
+        y_val_chunk = target_rows_chunk(target, target.val_pos, start, end)
+        y_val_chunk += response_noise_rows_chunk(
+            image_indices=target.val_indices,
+            n_targets=n_targets,
+            start=start,
+            end=end,
+            std=target.response_noise_std,
+            seed=seed,
+            parts=("alpha_val_noise", target.model, noise_sample_idx),
+        )
+        scores = np.empty((len(alpha_values), end - start), dtype=np.float64)
+        for alpha_idx, alpha in enumerate(alpha_values):
+            val_op, _eval_ops = alpha_ops[alpha]
+            pred_val = np.asarray(val_op @ y_train_chunk, dtype=np.float32)
+            scores[alpha_idx] = pearson_columns(pred_val, y_val_chunk)
+            del pred_val
+        scores = np.nan_to_num(scores, nan=-np.inf)
+        best_alpha_idx[start:end] = np.argmax(scores, axis=0).astype(np.int32)
+    return alpha_values, best_alpha_idx
+
+
+def write_noisy_base_fit_memmap(
+    *,
+    target: TeacherTargets,
+    teacher: str,
+    noise_sample_idx: int,
+    seed: int,
+    cache_dir: Path,
+    target_batch_size: int,
+) -> tuple[np.ndarray, str]:
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    path = cache_dir / (
+        f"{safe_cache_component(teacher)}_noise{int(noise_sample_idx):03d}_"
+        "y_base_fit.npy"
+    )
+    target_batch_size = max(1, int(target_batch_size))
+    n_targets = target.n_targets
+    y_base_fit = np.lib.format.open_memmap(
+        path,
+        mode="w+",
+        dtype=np.float32,
+        shape=target.y_base_clean.shape,
+    )
+    std = target.response_noise_std
+    for start in range(0, n_targets, target_batch_size):
+        end = min(start + target_batch_size, n_targets)
+        y_base_fit[:, start:end] = np.asarray(
+            target.y_base_clean[:, start:end],
+            dtype=np.float32,
+        ) + response_noise_rows_chunk(
+            image_indices=target.base_indices,
+            n_targets=n_targets,
+            start=start,
+            end=end,
+            std=std,
+            seed=seed,
+            parts=("refit_base_fit_noise", teacher, noise_sample_idx),
+        )
+    y_base_fit.flush()
+    del y_base_fit
+    return np.load(path, mmap_mode="r"), str(path)
+
+
 def build_noise_states(
     *,
     fit_context: FitContext,
@@ -874,43 +1149,56 @@ def build_noise_states(
     seed: int,
     alphas: list[float],
     n_noise_samples: int,
+    alpha_target_batch_size: int,
+    noise_cache_dir: Path | None,
 ) -> dict[str, list[TeacherNoiseState]]:
     states: dict[str, list[TeacherNoiseState]] = {}
     for teacher in model_names:
         target = fit_context.teacher_targets[teacher]
         teacher_states: list[TeacherNoiseState] = []
         for noise_sample_idx in range(n_noise_samples):
-            rng = np.random.default_rng(
-                seed + stable_seed("refit_robust_refit_noise", teacher, noise_sample_idx)
-            )
             std = target.response_noise_std
-            y_train = target.y_train_clean + rng.normal(
-                0.0,
-                std,
-                target.y_train_clean.shape,
-            ).astype(np.float32)
-            y_val = target.y_val_clean + rng.normal(
-                0.0,
-                std,
-                target.y_val_clean.shape,
-            ).astype(np.float32)
-            y_base_fit = target.y_base_clean + rng.normal(
-                0.0,
-                std,
-                target.y_base_clean.shape,
-            ).astype(np.float32)
+            y_base_fit_path = None
+            if noise_cache_dir is not None:
+                y_base_fit, y_base_fit_path = write_noisy_base_fit_memmap(
+                    target=target,
+                    teacher=teacher,
+                    noise_sample_idx=noise_sample_idx,
+                    seed=seed,
+                    cache_dir=noise_cache_dir,
+                    target_batch_size=alpha_target_batch_size,
+                )
+            else:
+                y_base_fit = np.empty_like(target.y_base_clean, dtype=np.float32)
+                for start in range(0, target.n_targets, alpha_target_batch_size):
+                    end = min(start + alpha_target_batch_size, target.n_targets)
+                    y_base_fit[:, start:end] = np.asarray(
+                        target.y_base_clean[:, start:end],
+                        dtype=np.float32,
+                    ) + response_noise_rows_chunk(
+                        image_indices=target.base_indices,
+                        n_targets=target.n_targets,
+                        start=start,
+                        end=end,
+                        std=std,
+                        seed=seed,
+                        parts=("refit_base_fit_noise", teacher, noise_sample_idx),
+                    )
             alpha_choices = {}
             for student in model_names:
-                alpha_values, best_alpha_idx, _coeff_cache = select_targetwise_alpha_indices(
+                alpha_values, best_alpha_idx = select_targetwise_alpha_indices_for_target(
                     fit_context.student_ops[student].val_ops,
-                    y_train,
-                    y_val,
+                    target,
+                    noise_sample_idx=noise_sample_idx,
+                    seed=seed,
+                    target_batch_size=alpha_target_batch_size,
                 )
                 alpha_choices[student] = (alpha_values, best_alpha_idx)
             teacher_states.append(
                 TeacherNoiseState(
                     y_base_fit=y_base_fit,
                     alpha_choices=alpha_choices,
+                    y_base_fit_path=y_base_fit_path,
                 )
             )
         states[teacher] = teacher_states
@@ -926,6 +1214,7 @@ def build_v2_round_cache(
     noise_states: dict[str, list[TeacherNoiseState]],
     model_names: list[str],
     alphas: list[float],
+    build_paths: bool = True,
 ) -> V2RoundCache:
     selected_array = np.asarray(selected_indices, dtype=np.int64)
     shortlist = np.asarray(shortlist, dtype=np.int64)
@@ -1023,32 +1312,28 @@ def build_v2_round_cache(
         for teacher in model_names
         for noise_idx in range(len(noise_states[teacher]))
     ]
-    target_dim = fit_context.teacher_targets[model_names[0]].y_base_clean.shape[1]
     paths: dict[str, V2PredictionPath] = {}
-    for student in model_names:
-        alpha_indices: list[np.ndarray] = []
-        alpha_targets: list[np.ndarray] = []
-        for alpha_idx in range(len(alphas)):
-            packed_indices: list[np.ndarray] = []
-            packed_targets: list[np.ndarray] = []
-            for block_idx, (teacher, noise_idx) in enumerate(blocks):
-                noise_state = noise_states[teacher][noise_idx]
-                _alpha_values, best_alpha_idx = noise_state.alpha_choices[student]
-                cols = np.flatnonzero(best_alpha_idx == alpha_idx)
-                packed_indices.append(block_idx * target_dim + cols)
-                packed_targets.append(noise_state.y_base_fit[:, cols])
-            alpha_indices.append(np.concatenate(packed_indices))
-            alpha_targets.append(np.concatenate(packed_targets, axis=1))
-        order = np.concatenate(alpha_indices).astype(np.int64, copy=False)
-        offsets = np.zeros(len(alphas) + 1, dtype=np.int64)
-        offsets[1:] = np.cumsum(
-            np.asarray([indices.size for indices in alpha_indices], dtype=np.int64)
-        )
-        paths[student] = V2PredictionPath(
-            order=order,
-            offsets=offsets,
-            y_base_ordered=np.ascontiguousarray(np.concatenate(alpha_targets, axis=1)),
-        )
+    if build_paths:
+        target_dim = fit_context.teacher_targets[model_names[0]].y_base_clean.shape[1]
+        for student in model_names:
+            alpha_indices: list[np.ndarray] = []
+            for alpha_idx in range(len(alphas)):
+                packed_indices: list[np.ndarray] = []
+                for block_idx, (teacher, noise_idx) in enumerate(blocks):
+                    noise_state = noise_states[teacher][noise_idx]
+                    _alpha_values, best_alpha_idx = noise_state.alpha_choices[student]
+                    cols = np.flatnonzero(best_alpha_idx == alpha_idx)
+                    packed_indices.append(block_idx * target_dim + cols)
+                alpha_indices.append(np.concatenate(packed_indices))
+            order = np.concatenate(alpha_indices).astype(np.int64, copy=False)
+            offsets = np.zeros(len(alphas) + 1, dtype=np.int64)
+            offsets[1:] = np.cumsum(
+                np.asarray([indices.size for indices in alpha_indices], dtype=np.int64)
+            )
+            paths[student] = V2PredictionPath(
+                order=order,
+                offsets=offsets,
+            )
 
     return V2RoundCache(
         student_caches=student_caches,
@@ -1128,6 +1413,258 @@ def prepare_v2_eval_data(
     return eval_fit, eval_score
 
 
+def gather_y_base_fit_columns(
+    *,
+    noise_states: dict[str, list[TeacherNoiseState]],
+    blocks: list[tuple[str, int]],
+    flat_indices: np.ndarray,
+    target_dim: int,
+) -> np.ndarray:
+    flat_indices = np.asarray(flat_indices, dtype=np.int64)
+    first_teacher, first_noise_idx = blocks[0]
+    n_base = noise_states[first_teacher][first_noise_idx].y_base_fit.shape[0]
+    out = np.empty((n_base, len(flat_indices)), dtype=np.float32)
+    block_indices = flat_indices // int(target_dim)
+    target_indices = flat_indices % int(target_dim)
+    for block_idx in np.unique(block_indices):
+        teacher, noise_idx = blocks[int(block_idx)]
+        positions = np.flatnonzero(block_indices == block_idx)
+        out[:, positions] = noise_states[teacher][noise_idx].y_base_fit[
+            :,
+            target_indices[positions],
+        ]
+    return out
+
+
+def predict_student_flat_v2(
+    *,
+    student_idx: int,
+    student: str,
+    base_ops: np.ndarray,
+    eval_ops: np.ndarray,
+    eval_fit_flat: np.ndarray,
+    predicted_flat: np.ndarray,
+    round_cache: V2RoundCache,
+    noise_states: dict[str, list[TeacherNoiseState]],
+    target_dim: int,
+    target_batch_size: int,
+) -> None:
+    path = round_cache.paths[student]
+    target_batch_size = max(1, int(target_batch_size))
+    for alpha_idx in range(base_ops.shape[0]):
+        lo = int(path.offsets[alpha_idx])
+        hi = int(path.offsets[alpha_idx + 1])
+        if hi <= lo:
+            continue
+        for start in range(lo, hi, target_batch_size):
+            end = min(start + target_batch_size, hi)
+            flat_cols = path.order[start:end]
+            y_base_cols = gather_y_base_fit_columns(
+                noise_states=noise_states,
+                blocks=round_cache.blocks,
+                flat_indices=flat_cols,
+                target_dim=target_dim,
+            )
+            eval_cols = eval_fit_flat[:, flat_cols]
+            predicted_flat[student_idx, :, flat_cols] = (
+                base_ops[alpha_idx] @ y_base_cols
+                + eval_ops[alpha_idx] @ eval_cols
+            )
+
+
+def pair_index_arrays(n_eval: int) -> tuple[np.ndarray, np.ndarray]:
+    rows, cols = np.triu_indices(int(n_eval), k=1)
+    return rows.astype(np.int64, copy=False), cols.astype(np.int64, copy=False)
+
+
+def accumulate_response_gram(
+    *,
+    response: np.ndarray,
+    row_norms: np.ndarray,
+    pair_dots: np.ndarray,
+    pair_rows: np.ndarray,
+    pair_cols: np.ndarray,
+) -> None:
+    response = np.asarray(response, dtype=np.float32)
+    gram = np.asarray(response @ response.T, dtype=np.float64)
+    row_norms += np.diag(gram)
+    pair_dots += gram[pair_rows, pair_cols]
+
+
+def ordinal_ranks_from_response_stats(
+    *,
+    row_norms: np.ndarray,
+    pair_dots: np.ndarray,
+    pair_rows: np.ndarray,
+    pair_cols: np.ndarray,
+) -> np.ndarray:
+    denom = np.sqrt(row_norms[pair_rows] * row_norms[pair_cols])
+    similarity = np.zeros_like(pair_dots, dtype=np.float64)
+    valid = denom > 1e-24
+    similarity[valid] = pair_dots[valid] / denom[valid]
+    rdm = np.asarray(1.0 - similarity, dtype=np.float64)
+    order = np.argsort(rdm, kind="mergesort")
+    ranks = np.empty(order.size, dtype=np.int64)
+    ranks[order] = np.arange(order.size, dtype=np.int64)
+    return ranks
+
+
+def spearman_from_ordinal_ranks(
+    ranks_a: np.ndarray,
+    ranks_b: np.ndarray,
+) -> float:
+    n_pairs = int(ranks_a.size)
+    if n_pairs < 2:
+        return float("nan")
+    diff = ranks_a.astype(np.int64, copy=False) - ranks_b.astype(np.int64, copy=False)
+    sum_sq = float(np.sum(diff * diff, dtype=np.int64))
+    denominator = float(n_pairs * (n_pairs * n_pairs - 1))
+    return float(1.0 - 6.0 * sum_sq / denominator)
+
+
+def score_candidate_refit_robust_v2_streaming(
+    *,
+    candidate_idx: int,
+    selected_indices: list[int],
+    encoded_eval_pool: dict[str, np.ndarray],
+    encoded_pos: dict[int, int],
+    fit_context: FitContext,
+    model_names: list[str],
+    metric: str,
+    corr_type: str,
+    noise_mult: float,
+    base_noise_ceiling: float,
+    seed: int,
+    aggregate_teachers: str,
+    objective: str,
+    round_cache: V2RoundCache,
+    noise_states: dict[str, list[TeacherNoiseState]],
+    score_target_batch_size: int,
+) -> dict[str, Any]:
+    if metric != "cosine" or corr_type != "spearman":
+        raise ValueError("Refit-robust streaming scoring supports only cosine/Spearman")
+
+    candidate_pos = round_cache.candidate_pos[int(candidate_idx)]
+    eval_indices = np.asarray([*selected_indices, int(candidate_idx)], dtype=np.int64)
+    eval_positions = np.asarray([encoded_pos[int(idx)] for idx in eval_indices], dtype=np.int64)
+    n_eval = int(len(eval_indices))
+    n_blocks = int(len(round_cache.blocks))
+    n_students = int(len(model_names))
+    pair_rows, pair_cols = pair_index_arrays(n_eval)
+    n_pairs = int(len(pair_rows))
+    scores = np.empty((n_blocks, n_students), dtype=np.float32)
+
+    dense_ops_by_student: dict[str, tuple[np.ndarray, np.ndarray]] = {}
+    for student in model_names:
+        dense_ops = materialize_v2_ops(round_cache.student_caches[student], candidate_pos)
+        if dense_ops is None:
+            raise RuntimeError(
+                f"Numerically unstable candidate delta for candidate {candidate_idx}, "
+                f"student {student}"
+            )
+        dense_ops_by_student[student] = dense_ops
+
+    for block_idx, (teacher, noise_sample_idx) in enumerate(round_cache.blocks):
+        target = fit_context.teacher_targets[teacher]
+        noise_state = noise_states[teacher][noise_sample_idx]
+        target_dim = target.n_targets
+        target_batch_size = min(max(1, int(score_target_batch_size)), target_dim)
+        teacher_row_norms = np.zeros(n_eval, dtype=np.float64)
+        teacher_pair_dots = np.zeros(n_pairs, dtype=np.float64)
+        student_row_norms = np.zeros((n_students, n_eval), dtype=np.float64)
+        student_pair_dots = np.zeros((n_students, n_pairs), dtype=np.float64)
+        encoded_teacher = encoded_eval_pool[teacher]
+
+        for start in range(0, target_dim, target_batch_size):
+            end = min(start + target_batch_size, target_dim)
+            eval_y_clean = np.asarray(
+                encoded_teacher[eval_positions, start:end],
+                dtype=np.float32,
+            )
+            eval_fit = eval_y_clean + response_noise_rows_chunk(
+                image_indices=eval_indices,
+                n_targets=target_dim,
+                start=start,
+                end=end,
+                std=target.response_noise_std,
+                seed=seed,
+                parts=("eval_fit_noise", teacher, noise_mult, noise_sample_idx),
+            )
+            eval_score = eval_y_clean + response_noise_rows_chunk(
+                image_indices=eval_indices,
+                n_targets=target_dim,
+                start=start,
+                end=end,
+                std=target.response_noise_std,
+                seed=seed,
+                parts=("eval_score_noise", teacher, noise_mult, noise_sample_idx),
+            )
+            accumulate_response_gram(
+                response=eval_score,
+                row_norms=teacher_row_norms,
+                pair_dots=teacher_pair_dots,
+                pair_rows=pair_rows,
+                pair_cols=pair_cols,
+            )
+
+            y_base_fit_chunk = np.asarray(
+                noise_state.y_base_fit[:, start:end],
+                dtype=np.float32,
+            )
+            for student_idx, student in enumerate(model_names):
+                base_ops, eval_ops = dense_ops_by_student[student]
+                _alpha_values, best_alpha_idx = noise_state.alpha_choices[student]
+                alpha_chunk = best_alpha_idx[start:end]
+                pred_chunk = np.empty((n_eval, end - start), dtype=np.float32)
+                for alpha_idx_raw in np.unique(alpha_chunk):
+                    alpha_idx = int(alpha_idx_raw)
+                    cols = np.flatnonzero(alpha_chunk == alpha_idx)
+                    if cols.size == 0:
+                        continue
+                    pred_chunk[:, cols] = (
+                        base_ops[alpha_idx] @ y_base_fit_chunk[:, cols]
+                        + eval_ops[alpha_idx] @ eval_fit[:, cols]
+                    )
+                accumulate_response_gram(
+                    response=pred_chunk,
+                    row_norms=student_row_norms[student_idx],
+                    pair_dots=student_pair_dots[student_idx],
+                    pair_rows=pair_rows,
+                    pair_cols=pair_cols,
+                )
+
+        teacher_ranks = ordinal_ranks_from_response_stats(
+            row_norms=teacher_row_norms,
+            pair_dots=teacher_pair_dots,
+            pair_rows=pair_rows,
+            pair_cols=pair_cols,
+        )
+        for student_idx in range(n_students):
+            student_ranks = ordinal_ranks_from_response_stats(
+                row_norms=student_row_norms[student_idx],
+                pair_dots=student_pair_dots[student_idx],
+                pair_rows=pair_rows,
+                pair_cols=pair_cols,
+            )
+            scores[block_idx, student_idx] = np.float32(
+                spearman_from_ordinal_ranks(student_ranks, teacher_ranks)
+            )
+
+    return aggregate_v2_scores(
+        scores=scores,
+        candidate_idx=candidate_idx,
+        n_eval=n_eval,
+        fit_context=fit_context,
+        model_names=model_names,
+        round_cache=round_cache,
+        aggregate_teachers=aggregate_teachers,
+        noise_mult=noise_mult,
+        base_noise_ceiling=base_noise_ceiling,
+        objective=objective,
+        score_backend="v2-stream",
+    )
+
+
 def aggregate_v2_scores(
     *,
     scores: np.ndarray,
@@ -1140,6 +1677,7 @@ def aggregate_v2_scores(
     noise_mult: float,
     base_noise_ceiling: float,
     objective: str,
+    score_backend: str = "v2-fast",
 ) -> dict[str, Any]:
     teacher_utilities: list[float] = []
     teacher_self_scores: list[float] = []
@@ -1210,7 +1748,7 @@ def aggregate_v2_scores(
         "teacher_majority_recovery_accuracy": teacher_majority_recovery_accuracy,
         "noise_mult": float(noise_mult),
         "noise_ceiling": float(noise_ceiling),
-        "score_backend": "v2-fast",
+        "score_backend": score_backend,
     }
 
 
@@ -1230,6 +1768,8 @@ def score_candidate_refit_robust_v2_fast(
     aggregate_teachers: str,
     objective: str,
     round_cache: V2RoundCache,
+    noise_states: dict[str, list[TeacherNoiseState]],
+    score_target_batch_size: int,
 ) -> dict[str, Any]:
     if njit is None:
         raise RuntimeError("V2-fast scoring requires numba")
@@ -1267,19 +1807,18 @@ def score_candidate_refit_robust_v2_fast(
 
     for student_idx, student in enumerate(model_names):
         base_ops, eval_ops = dense_ops_by_student[student]
-        path = round_cache.paths[student]
-        eval_ordered = eval_fit_flat[:, path.order]
-        predicted_ordered = np.empty_like(eval_ordered)
-        for alpha_idx in range(len(alphas)):
-            lo = int(path.offsets[alpha_idx])
-            hi = int(path.offsets[alpha_idx + 1])
-            if hi <= lo:
-                continue
-            predicted_ordered[:, lo:hi] = (
-                base_ops[alpha_idx] @ path.y_base_ordered[:, lo:hi]
-                + eval_ops[alpha_idx] @ eval_ordered[:, lo:hi]
-            )
-        predicted_flat[student_idx][:, path.order] = predicted_ordered
+        predict_student_flat_v2(
+            student_idx=student_idx,
+            student=student,
+            base_ops=base_ops,
+            eval_ops=eval_ops,
+            eval_fit_flat=eval_fit_flat,
+            predicted_flat=predicted_flat,
+            round_cache=round_cache,
+            noise_states=noise_states,
+            target_dim=target_dim,
+            target_batch_size=score_target_batch_size,
+        )
 
     assert _fast_response_ranks is not None
     assert _fast_spearman_scores_flat is not None
@@ -1314,19 +1853,13 @@ _V2_WORKER_ARGS: dict[str, Any] | None = None
 def _score_v2_worker(candidate_idx: int) -> dict[str, Any]:
     assert _V2_WORKER_ARGS is not None
     kwargs = _V2_WORKER_ARGS
-    encoded_eval_by_model = encoded_eval_for_candidate(
+    return score_candidate_refit_robust_v2_streaming(
+        candidate_idx=int(candidate_idx),
+        selected_indices=kwargs["selected_indices"],
         encoded_eval_pool=kwargs["encoded_eval_pool"],
         encoded_pos=kwargs["encoded_pos"],
-        selected_indices=kwargs["selected_indices"],
-        candidate_idx=int(candidate_idx),
-    )
-    return score_candidate_refit_robust_v2_fast(
-        candidate_idx=int(candidate_idx),
-        selected_indices=kwargs["selected_indices"],
-        encoded_eval_by_model=encoded_eval_by_model,
         fit_context=kwargs["fit_context"],
         model_names=kwargs["model_names"],
-        alphas=kwargs["alphas"],
         metric=kwargs["metric"],
         corr_type=kwargs["corr_type"],
         noise_mult=kwargs["noise_mult"],
@@ -1335,6 +1868,8 @@ def _score_v2_worker(candidate_idx: int) -> dict[str, Any]:
         aggregate_teachers=kwargs["aggregate_teachers"],
         objective=kwargs["objective"],
         round_cache=kwargs["round_cache"],
+        noise_states=kwargs["noise_states"],
+        score_target_batch_size=kwargs["score_target_batch_size"],
     )
 
 
@@ -1353,7 +1888,7 @@ def warm_v2_fast(round_cache: V2RoundCache, model_names: list[str], alphas: list
         0,
     )
     n_eval = cache.selected_inverse.shape[1] + 1
-    target_dim = round_cache.paths[first_student].y_base_ordered.shape[1] // max(
+    target_dim = round_cache.paths[first_student].order.size // max(
         1, len(round_cache.blocks)
     )
     n_blocks = len(round_cache.blocks)
@@ -1391,13 +1926,14 @@ def score_shortlist_refit_robust_v2_fast(
     aggregate_teachers: str,
     objective: str,
     workers: int,
+    score_target_batch_size: int,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     if njit is None:
         raise RuntimeError("V2-fast scoring requires numba")
     if metric != "cosine" or corr_type != "spearman":
         raise ValueError("Refit-robust selection currently supports only cosine/Spearman")
 
-    timing: dict[str, Any] = {"backend": "v2-fast"}
+    timing: dict[str, Any] = {"backend": "v2-stream"}
     start = time.monotonic()
     round_cache = build_v2_round_cache(
         selected_indices=selected_indices,
@@ -1407,6 +1943,7 @@ def score_shortlist_refit_robust_v2_fast(
         noise_states=noise_states,
         model_names=model_names,
         alphas=alphas,
+        build_paths=False,
     )
     timing["cache_seconds"] = float(time.monotonic() - start)
     timing["minimum_delta"] = float(
@@ -1425,7 +1962,17 @@ def score_shortlist_refit_robust_v2_fast(
     )
 
     start = time.monotonic()
-    warm_v2_fast(round_cache, model_names, alphas)
+    first_student = model_names[0]
+    cache = round_cache.student_caches[first_student]
+    _materialize_v2_ops_numba(
+        cache.selected_inverse,
+        cache.selected_inverse_diag,
+        cache.selected_base_numerator,
+        cache.candidate_q,
+        cache.candidate_delta,
+        cache.candidate_z,
+        0,
+    )
     timing["warmup_seconds"] = float(time.monotonic() - start)
 
     common_kwargs = {
@@ -1443,6 +1990,8 @@ def score_shortlist_refit_robust_v2_fast(
         "aggregate_teachers": aggregate_teachers,
         "objective": objective,
         "round_cache": round_cache,
+        "noise_states": noise_states,
+        "score_target_batch_size": score_target_batch_size,
     }
 
     start = time.monotonic()
@@ -1458,20 +2007,15 @@ def score_shortlist_refit_robust_v2_fast(
     else:
         rows = []
         for candidate_idx in shortlist:
-            encoded_eval_by_model = encoded_eval_for_candidate(
-                encoded_eval_pool=encoded_eval_pool,
-                encoded_pos=encoded_pos,
-                selected_indices=selected_indices,
-                candidate_idx=int(candidate_idx),
-            )
             rows.append(
-                score_candidate_refit_robust_v2_fast(
+                score_candidate_refit_robust_v2_streaming(
                     candidate_idx=int(candidate_idx),
-                    encoded_eval_by_model=encoded_eval_by_model,
+                    encoded_eval_pool=encoded_eval_pool,
+                    encoded_pos=encoded_pos,
                     **{
                         key: value
                         for key, value in common_kwargs.items()
-                        if key not in {"encoded_eval_pool", "encoded_pos"}
+                        if key not in {"encoded_eval_pool", "encoded_pos", "alphas"}
                     },
                 )
             )
@@ -1736,15 +2280,6 @@ def run_selection(args: argparse.Namespace) -> Path:
         f"target_dim={len(target_cols) if target_cols is not None else 'all'}",
         flush=True,
     )
-    encoded_refit = encode_indices(
-        raw_features_np=raw_features_np,
-        model_names=model_names,
-        indices=base_indices,
-        track=args.track,
-        encoding_params=encoding_params,
-        device=device,
-        target_cols=target_cols,
-    )
     alphas = parse_csv_floats(args.alphas)
     precompute_base_kernels, base_kernel_precompute = resolve_base_kernel_precompute(
         requested=args.precompute_base_kernels,
@@ -1753,10 +2288,14 @@ def run_selection(args: argparse.Namespace) -> Path:
         model_names=model_names,
         max_ram_gb=args.max_ram_gb,
     )
+    target_cache_dir = args.noise_cache_dir / "clean_targets" if args.noise_cache_dir else None
     fit_context = build_fit_context(
         raw_features_np=raw_features_np,
-        encoded_refit=encoded_refit,
         model_names=model_names,
+        track=args.track,
+        encoding_params=encoding_params,
+        device=device,
+        target_cols=target_cols,
         train_indices=train_indices,
         val_indices=val_indices,
         base_indices=base_indices,
@@ -1774,8 +2313,9 @@ def run_selection(args: argparse.Namespace) -> Path:
         calibration_max_iter=args.calibration_max_iter,
         precompute_base_kernels=precompute_base_kernels,
         kernel_batch_size=args.kernel_batch_size,
+        target_cache_dir=target_cache_dir,
+        target_batch_size=args.alpha_target_batch_size,
     )
-    fit_context.target_cols = target_cols
     print("Precomputing noisy refit targets and target-wise alpha choices", flush=True)
     noise_states = build_noise_states(
         fit_context=fit_context,
@@ -1783,6 +2323,8 @@ def run_selection(args: argparse.Namespace) -> Path:
         seed=args.seed + stable_seed(args.method_id),
         alphas=alphas,
         n_noise_samples=args.n_noise_samples,
+        alpha_target_batch_size=args.alpha_target_batch_size,
+        noise_cache_dir=args.noise_cache_dir,
     )
 
     resume_state = (
@@ -1866,6 +2408,10 @@ def run_selection(args: argparse.Namespace) -> Path:
         "precompute_base_kernels": precompute_base_kernels,
         "base_kernel_precompute": base_kernel_precompute,
         "kernel_batch_size": args.kernel_batch_size,
+        "alpha_target_batch_size": args.alpha_target_batch_size,
+        "score_target_batch_size": args.score_target_batch_size,
+        "noise_cache_dir": str(args.noise_cache_dir) if args.noise_cache_dir else None,
+        "target_cache_dir": str(target_cache_dir) if target_cache_dir else None,
         "refit_score_workers": args.refit_score_workers,
         "refit_indices": base_indices.tolist(),
         "refit_train_indices": train_indices.tolist(),
@@ -1953,7 +2499,12 @@ def run_selection(args: argparse.Namespace) -> Path:
         eval_indices_for_encoding = np.unique(
             np.concatenate([np.asarray(selected_indices, dtype=np.int64), shortlist])
         )
-        encoded_eval_pool = encode_indices(
+        eval_cache_dir = (
+            args.noise_cache_dir / "eval_targets" / f"step_{step:03d}"
+            if args.noise_cache_dir
+            else None
+        )
+        encoded_eval_pool = encode_indices_modelwise_cached(
             raw_features_np=raw_features_np,
             model_names=model_names,
             indices=eval_indices_for_encoding,
@@ -1961,30 +2512,38 @@ def run_selection(args: argparse.Namespace) -> Path:
             encoding_params=encoding_params,
             device=device,
             target_cols=target_cols,
+            cache_dir=eval_cache_dir,
+            cache_prefix=f"eval_step_{step:03d}",
         )
         encoded_pos = {int(idx): pos for pos, idx in enumerate(eval_indices_for_encoding)}
 
         best: dict[str, Any] | None = None
         score_seed = args.seed + stable_seed(args.method_id, step)
-        scored_rows, backend_timing = score_shortlist_refit_robust_v2_fast(
-            shortlist=shortlist,
-            selected_indices=selected_indices,
-            encoded_eval_pool=encoded_eval_pool,
-            encoded_pos=encoded_pos,
-            raw_features_np=raw_features_np,
-            fit_context=fit_context,
-            noise_states=noise_states,
-            model_names=model_names,
-            alphas=alphas,
-            metric=args.metric,
-            corr_type=args.corr_type,
-            noise_mult=args.noise_mult,
-            base_noise_ceiling=args.noise_ceiling,
-            seed=score_seed,
-            aggregate_teachers=args.teacher_aggregation,
-            objective=args.refit_objective,
-            workers=args.refit_score_workers,
-        )
+        try:
+            scored_rows, backend_timing = score_shortlist_refit_robust_v2_fast(
+                shortlist=shortlist,
+                selected_indices=selected_indices,
+                encoded_eval_pool=encoded_eval_pool,
+                encoded_pos=encoded_pos,
+                raw_features_np=raw_features_np,
+                fit_context=fit_context,
+                noise_states=noise_states,
+                model_names=model_names,
+                alphas=alphas,
+                metric=args.metric,
+                corr_type=args.corr_type,
+                noise_mult=args.noise_mult,
+                base_noise_ceiling=args.noise_ceiling,
+                seed=score_seed,
+                aggregate_teachers=args.teacher_aggregation,
+                objective=args.refit_objective,
+                workers=args.refit_score_workers,
+                score_target_batch_size=args.score_target_batch_size,
+            )
+        finally:
+            if eval_cache_dir is not None:
+                del encoded_eval_pool
+                shutil.rmtree(eval_cache_dir, ignore_errors=True)
         print(
             "[refit-robust] "
             f"step {step}: backend={backend_timing.get('backend')} "
@@ -2231,6 +2790,24 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--kernel-batch-size", type=int, default=4096)
     parser.add_argument(
+        "--alpha-target-batch-size",
+        type=int,
+        default=DEFAULT_ALPHA_TARGET_BATCH_SIZE,
+        help="Target columns per chunk when selecting validation alphas.",
+    )
+    parser.add_argument(
+        "--score-target-batch-size",
+        type=int,
+        default=DEFAULT_SCORE_TARGET_BATCH_SIZE,
+        help="Target columns per chunk when scoring refit predictions.",
+    )
+    parser.add_argument(
+        "--noise-cache-dir",
+        type=Path,
+        default=None,
+        help="Directory for disk-backed noisy base target caches.",
+    )
+    parser.add_argument(
         "--refit-score-workers",
         type=int,
         default=1,
@@ -2262,6 +2839,10 @@ def parse_args() -> argparse.Namespace:
     args = parser.parse_args()
     if args.kernel_batch_size <= 0:
         raise ValueError("--kernel-batch-size must be positive")
+    if args.alpha_target_batch_size <= 0:
+        raise ValueError("--alpha-target-batch-size must be positive")
+    if args.score_target_batch_size <= 0:
+        raise ValueError("--score-target-batch-size must be positive")
     if args.refit_score_workers <= 0:
         raise ValueError("--refit-score-workers must be positive")
     if args.proxy_noise_calib_examples <= 0:

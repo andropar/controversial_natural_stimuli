@@ -1,5 +1,9 @@
 # Agent Notes
 
+## Communication
+
+- Do not use the phrase "smoke test"; say "runtime validation run" or "minimal validation job" instead.
+
 ## Python Environment
 
 - Use the conda environment at `/data/home_roth/miniforge3` for this project.
