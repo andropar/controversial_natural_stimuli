@@ -42,7 +42,7 @@ QUEUE_DIR="${QUEUE_DIR:-${RESULTS_ROOT}/all_model_set_refit_robust_queue_${RUN_S
 
 METHOD_ID="${METHOD_ID:-sub01_eval_augmented_loo_refit_robust}"
 ENV_NAME="${ENV_NAME:-raven}"
-CSTIMS_PATH_ENV="${CSTIMS_PATH_ENV:-${ENV_NAME}}"
+export CSTIMS_PATH_ENV="${CSTIMS_PATH_ENV:-${ENV_NAME}}"
 TRACK="${TRACK:-sub-01}"
 ENCODING_ROI_SUBSET="${ENCODING_ROI_SUBSET:-hlvis}"
 UNIQUE_ENCODINGS="${UNIQUE_ENCODINGS:-0}"

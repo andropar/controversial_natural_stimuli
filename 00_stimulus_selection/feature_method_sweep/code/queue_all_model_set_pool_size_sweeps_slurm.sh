@@ -28,6 +28,8 @@ fi
 
 RUN_STAMP="${RUN_STAMP:-$(date +%Y%m%d_%H%M%S)}"
 RUN_TAG="${RUN_TAG:-pool_size_sweep_new_methods}"
+CSTIMS_PATH_ENV="${CSTIMS_PATH_ENV:-raven}"
+export CSTIMS_PATH_ENV
 MODEL_SETS="${MODEL_SETS:-sota,all_models,training_objective,architecture,dataset}"
 METHODS="${METHODS:-raw_only_mean_min,raw_only_mean_min_no_attenuation,sub01_only_mean_min,sub01_only_mean_min_no_attenuation,raw_enc_w05_mean_min,raw_enc_w05_mean_min_no_attenuation}"
 POOL_SIZES="${POOL_SIZES:-1k,10k,50k,100k,250k,500k,1M,5M,10M}"
@@ -269,7 +271,7 @@ EOF
   printf 'export EXTRA_ARGS=%q\n' "${EXTRA_ARGS_BASE}" >> "${submit_script}"
 
   for name in \
-    RUN_TAG MODEL_SETS METHODS POOL_SIZES TARGET_SIZE MAX_RAM_GB MEM BATCH_SIZE \
+    RUN_TAG CSTIMS_PATH_ENV MODEL_SETS METHODS POOL_SIZES TARGET_SIZE MAX_RAM_GB MEM BATCH_SIZE \
     ADAPTIVE_BATCH_SIZE MAX_BATCH_SIZE MIN_BATCH_SIZE PROGRESS_EVERY_BATCHES \
     SEED SKIP_EVAL SHARED_ENCODINGS IMAGE_FILTER FILTER_MIN_RESOLUTION \
     FILTER_NATURAL_PROB_THRESHOLD FILTER_DOWNLOAD_TIMEOUT \
