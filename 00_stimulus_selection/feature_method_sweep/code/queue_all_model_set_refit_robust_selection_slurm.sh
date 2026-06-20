@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 #
 # Submit refit-robust selection for every model set, using one fixed natural pool
-# size determined by MAX_RAM_GB/MAX_IMAGES, and keep queueing dependency-gated
-# resume jobs until each run is complete.
+# size determined by the largest feature-method-sweep POOL_SIZES entry unless
+# MAX_IMAGES is explicitly set, and keep queueing dependency-gated resume jobs
+# until each run is complete.
 #
 # Usage on Raven:
 #   bash 00_stimulus_selection/feature_method_sweep/code/queue_all_model_set_refit_robust_selection_slurm.sh
 #
 # Defaults:
 #   MODEL_SETS=sota,all_models,training_objective,architecture,dataset
+#   POOL_SIZES=1k,10k,50k,100k,250k,500k,1M,5M,10M
 #   MAX_RAM_GB=300
 #   TARGET_SIZE=100
 
@@ -37,6 +39,7 @@ fi
 RUN_STAMP="${RUN_STAMP:-$(date +%Y%m%d_%H%M%S)}"
 RUN_TAG="${RUN_TAG:-refit_robust_selection}"
 MODEL_SETS="${MODEL_SETS:-sota,all_models,training_objective,architecture,dataset}"
+POOL_SIZES="${POOL_SIZES:-1k,10k,50k,100k,250k,500k,1M,5M,10M}"
 RESULTS_ROOT="${RESULTS_ROOT:-${REPO_ROOT}/00_stimulus_selection/feature_method_sweep/results}"
 QUEUE_DIR="${QUEUE_DIR:-${RESULTS_ROOT}/all_model_set_refit_robust_queue_${RUN_STAMP}}"
 
@@ -132,6 +135,78 @@ extract_slurm_job_id() {
   ' "${log_path}"
 }
 
+parse_count_token() {
+  local token="$1"
+  token="${token//_/}"
+  token="${token// /}"
+  token="${token,,}"
+  local factor=1
+  case "${token}" in
+    *k)
+      factor=1000
+      token="${token%k}"
+      ;;
+    *m)
+      factor=1000000
+      token="${token%m}"
+      ;;
+  esac
+  awk -v value="${token}" -v factor="${factor}" '
+    BEGIN {
+      if (value !~ /^[0-9]+([.][0-9]+)?$/) {
+        exit 1
+      }
+      printf "%.0f\n", value * factor
+    }
+  '
+}
+
+normalize_count_value() {
+  local value="$1"
+  local parsed
+  if ! parsed="$(parse_count_token "${value}")"; then
+    echo "Invalid count value: ${value}" >&2
+    exit 2
+  fi
+  printf '%s\n' "${parsed}"
+}
+
+max_pool_size_from_pool_sizes() {
+  local pool_sizes="$1"
+  local token parsed
+  local max_pool_size=0
+  IFS=',' read -ra tokens <<< "${pool_sizes}"
+  for token in "${tokens[@]}"; do
+    [[ -z "${token// /}" ]] && continue
+    parsed="$(normalize_count_value "${token}")"
+    if (( parsed > max_pool_size )); then
+      max_pool_size="${parsed}"
+    fi
+  done
+  if (( max_pool_size <= 0 )); then
+    echo "POOL_SIZES did not contain a positive pool size: ${pool_sizes}" >&2
+    exit 2
+  fi
+  printf '%s\n' "${max_pool_size}"
+}
+
+max_images_for_model_set() {
+  local model_set="$1"
+  local upper_model_set
+  upper_model_set="$(printf '%s' "${model_set}" | tr '[:lower:]' '[:upper:]')"
+  local model_set_override_var="MAX_IMAGES_${upper_model_set}"
+  local model_set_override="${!model_set_override_var:-}"
+  if [[ -n "${model_set_override}" ]]; then
+    normalize_count_value "${model_set_override}"
+    return
+  fi
+  if [[ -n "${MAX_IMAGES}" ]]; then
+    normalize_count_value "${MAX_IMAGES}"
+    return
+  fi
+  max_pool_size_from_pool_sizes "${POOL_SIZES}"
+}
+
 check_complete() {
   local output_root="$1"
   "${PYTHON_BIN}" - "${output_root}" "${METHOD_ID}" "${TARGET_SIZE}" <<'PY'
@@ -195,6 +270,8 @@ build_script_cmd() {
   local model_set="$1"
   local output_root="$2"
   local resume="$3"
+  local effective_max_images
+  effective_max_images="$(max_images_for_model_set "${model_set}")"
   SCRIPT_CMD=(
     "${SCRIPT_DIR}/refit_robust_selection.py"
     --output-root "${output_root}"
@@ -238,8 +315,8 @@ build_script_cmd() {
   if [[ -n "${POOL_FEATURE_DIR}" ]]; then
     SCRIPT_CMD+=(--pool-feature-dir "${POOL_FEATURE_DIR}")
   fi
-  if [[ -n "${MAX_IMAGES}" ]]; then
-    SCRIPT_CMD+=(--max-images "${MAX_IMAGES}")
+  if [[ -n "${effective_max_images}" ]]; then
+    SCRIPT_CMD+=(--max-images "${effective_max_images}")
   fi
   if [[ "${IMAGE_FILTER}" == "1" ]]; then
     SCRIPT_CMD+=(--filter-min-resolution "${FILTER_MIN_RESOLUTION}")
@@ -376,7 +453,7 @@ EOF
   for name in \
     START_SLURM PYTHON_BIN CONDA_LIB RUN_TAG MODEL_SETS RESULTS_ROOT METHOD_ID \
     ENV_NAME CSTIMS_PATH_ENV TRACK ENCODING_ROI_SUBSET UNIQUE_ENCODINGS TARGET_SIZE INIT_SIZE \
-    SEED METRIC CORR_TYPE MAX_RAM_GB MAX_IMAGES POOL_FEATURE_DIR TARGET_DIM \
+    SEED METRIC CORR_TYPE MAX_RAM_GB MAX_IMAGES POOL_SIZES POOL_FEATURE_DIR TARGET_DIM \
     TOP_K_PROXY RANDOM_SHORTLIST PROXY_BATCH_SIZE PROXY_NOISE_CALIB_EXAMPLES \
     PROXY_NOISE_CALIB_REPEATS REFIT_POOL_SIZE REFIT_VAL_SIZE N_NOISE_SAMPLES \
     NOISE_MULT NOISE_CEILING ALPHAS FIT_NOISE_CALIBRATION CALIBRATION_IMAGES \
@@ -457,10 +534,11 @@ echo "Submitting all-model-set refit-robust selections"
 echo "Repo: ${REPO_ROOT}"
 echo "Run stamp: ${RUN_STAMP}"
 echo "Model sets: ${MODEL_SETS}"
+echo "Pool sizes: ${POOL_SIZES}"
 echo "Method id: ${METHOD_ID}"
 echo "Target size: ${TARGET_SIZE}"
 echo "Max RAM GB: ${MAX_RAM_GB}"
-echo "Max images: ${MAX_IMAGES:-<computed from MAX_RAM_GB>}"
+echo "Max images override: ${MAX_IMAGES:-<largest POOL_SIZES entry per model set>}"
 echo "Unique encodings: ${UNIQUE_ENCODINGS}"
 echo "Image filter: ${IMAGE_FILTER}"
 echo "Filter max attempts per iteration: ${FILTER_MAX_ATTEMPTS_PER_ITERATION}"
@@ -476,6 +554,7 @@ if [[ "${SUBMIT}" == "0" ]]; then
     build_submit_cmd
     echo
     echo "MODEL_SET=${model_set} OUTPUT_ROOT=${output_root}"
+    echo "Effective max images: $(max_images_for_model_set "${model_set}")"
     print_command SUBMIT_CMD
   done
   exit 0

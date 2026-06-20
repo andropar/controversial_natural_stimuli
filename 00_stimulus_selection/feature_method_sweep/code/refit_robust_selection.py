@@ -1465,6 +1465,55 @@ def build_refit_splits(
     return base_indices, train_indices, val_indices, order
 
 
+def bound_natural_feature_pool(
+    raw_features_np: dict[str, np.ndarray],
+    model_names: list[str],
+    *,
+    max_images: int | None,
+) -> tuple[dict[str, np.ndarray], int, dict[str, Any]]:
+    feature_lengths = {
+        model: int(raw_features_np[model].shape[0])
+        for model in model_names
+    }
+    shared_available = min(feature_lengths.values())
+    if shared_available <= 0:
+        raise ValueError(f"No shared natural-pool rows available: {feature_lengths}")
+
+    if max_images is None:
+        pool_size = shared_available
+    else:
+        requested = int(max_images)
+        if requested <= 0:
+            raise ValueError(f"Invalid max_images={requested}")
+        if requested > shared_available:
+            raise ValueError(
+                f"Requested max_images={requested}, but the shortest loaded feature "
+                f"array has only {shared_available} rows: {feature_lengths}"
+            )
+        pool_size = requested
+
+    if any(length != pool_size for length in feature_lengths.values()):
+        raw_features_np = {
+            model: raw_features_np[model][:pool_size]
+            for model in model_names
+        }
+        print(
+            f"Using natural-pool prefix of {pool_size} rows; "
+            f"loaded feature lengths were {feature_lengths}",
+            flush=True,
+        )
+
+    pool_info = {
+        "pool_feature_dir": None,
+        "n_loaded": int(pool_size),
+        "requested_max_images": int(max_images) if max_images is not None else None,
+        "shared_available": int(shared_available),
+        "feature_lengths": feature_lengths,
+        "natural_feature_loader": True,
+    }
+    return raw_features_np, pool_size, pool_info
+
+
 def run_selection(args: argparse.Namespace) -> Path:
     paths = load_env_paths(args.env)
     local_encoding_root = (
@@ -1510,14 +1559,7 @@ def run_selection(args: argparse.Namespace) -> Path:
             max_images=max_images,
         )
         raw_shard_slices = []
-        feature_lengths = {model: int(raw_features_np[model].shape[0]) for model in model_names}
-        pool_size = min(feature_lengths.values())
-        if len(set(feature_lengths.values())) > 1:
-            print(
-                "Loaded feature arrays have different lengths; "
-                f"using shared pool_size={pool_size}: {feature_lengths}",
-                flush=True,
-            )
+        pool_size = int(next(iter(raw_features_np.values())).shape[0])
     else:
         layer_names = load_layer_names(model_list_csv, model_names)
         if max_images_arg is not None:
@@ -1538,19 +1580,11 @@ def run_selection(args: argparse.Namespace) -> Path:
             max_images=max_images,
             model_csv=model_list_csv,
         )
-        feature_lengths = {model: int(raw_features_np[model].shape[0]) for model in model_names}
-        pool_size = min(feature_lengths.values())
-        if len(set(feature_lengths.values())) > 1:
-            print(
-                "Loaded feature arrays have different lengths; "
-                f"using shared pool_size={pool_size}: {feature_lengths}",
-                flush=True,
-            )
-        pool_info = {
-            "pool_feature_dir": None,
-            "n_loaded": pool_size,
-            "natural_feature_loader": True,
-        }
+        raw_features_np, pool_size, pool_info = bound_natural_feature_pool(
+            raw_features_np,
+            model_names,
+            max_images=max_images,
+        )
     if pool_size <= args.init_size:
         raise ValueError(f"Candidate pool too small: pool_size={pool_size}")
 
