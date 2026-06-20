@@ -2,6 +2,8 @@
 Pure computation functions for evaluation (no I/O).
 """
 
+from __future__ import annotations
+
 from typing import Any, Dict, List
 
 import numpy as np

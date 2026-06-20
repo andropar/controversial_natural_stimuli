@@ -5,7 +5,7 @@ from __future__ import annotations
 import gc
 import hashlib
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any, Callable, Optional
 
 import numpy as np
 import pandas as pd
@@ -28,7 +28,7 @@ from cstims.evaluation.noise_calibration import (
 
 
 FeatureLoader = Callable[..., tuple[dict[str, torch.Tensor], dict[str, np.ndarray]]]
-NoiseVarianceLoader = Callable[[dict, str], dict[str, float] | None]
+NoiseVarianceLoader = Callable[[dict, str], Optional[dict[str, float]]]
 LogMemoryFn = Callable[[str], None]
 
 

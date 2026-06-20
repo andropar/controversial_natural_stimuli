@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Sequence
+from typing import Union
 from dataclasses import dataclass
 from typing import Any
 import math
@@ -8,10 +9,7 @@ import math
 import numpy as np
 from scipy.linalg import cho_factor, cho_solve, pinvh
 
-ArrayLike = np.ndarray | Sequence[float]
-
-
-ArrayLike = np.ndarray | Sequence[float]
+ArrayLike = Union[np.ndarray, Sequence[float]]
 
 
 def _as_2d_targets(y: np.ndarray) -> tuple[np.ndarray, bool]:
@@ -205,5 +203,3 @@ def _score_columns(prediction: np.ndarray, target: np.ndarray, scoring: str) -> 
     if scoring == "pearson_r":
         return _pearson_columns(prediction, target)
     return -np.mean((target - prediction) ** 2, axis=0)
-
-
