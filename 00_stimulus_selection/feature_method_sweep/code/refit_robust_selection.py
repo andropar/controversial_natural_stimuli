@@ -1510,7 +1510,14 @@ def run_selection(args: argparse.Namespace) -> Path:
             max_images=max_images,
         )
         raw_shard_slices = []
-        pool_size = int(next(iter(raw_features_np.values())).shape[0])
+        feature_lengths = {model: int(raw_features_np[model].shape[0]) for model in model_names}
+        pool_size = min(feature_lengths.values())
+        if len(set(feature_lengths.values())) > 1:
+            print(
+                "Loaded feature arrays have different lengths; "
+                f"using shared pool_size={pool_size}: {feature_lengths}",
+                flush=True,
+            )
     else:
         layer_names = load_layer_names(model_list_csv, model_names)
         if max_images_arg is not None:
@@ -1531,7 +1538,14 @@ def run_selection(args: argparse.Namespace) -> Path:
             max_images=max_images,
             model_csv=model_list_csv,
         )
-        pool_size = int(next(iter(raw_features_np.values())).shape[0])
+        feature_lengths = {model: int(raw_features_np[model].shape[0]) for model in model_names}
+        pool_size = min(feature_lengths.values())
+        if len(set(feature_lengths.values())) > 1:
+            print(
+                "Loaded feature arrays have different lengths; "
+                f"using shared pool_size={pool_size}: {feature_lengths}",
+                flush=True,
+            )
         pool_info = {
             "pool_feature_dir": None,
             "n_loaded": pool_size,
