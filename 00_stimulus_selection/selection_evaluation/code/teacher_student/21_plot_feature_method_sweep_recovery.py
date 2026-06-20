@@ -89,6 +89,20 @@ def parse_csv_list(value: str) -> list[str]:
     return [item.strip() for item in value.split(",") if item.strip()]
 
 
+def ordered_methods(methods: list[str]) -> list[str]:
+    requested = [method for method in methods if method]
+    return [
+        *[method for method in METHOD_ORDER if method in requested],
+        *[method for method in requested if method not in METHOD_ORDER],
+    ]
+
+
+def method_color(method_id: str, index: int) -> object:
+    if method_id in METHOD_COLORS:
+        return METHOD_COLORS[method_id]
+    return plt.get_cmap("tab10")(index % 10)
+
+
 def load_results(run_dir: Path, results_name: str, methods: list[str]) -> pd.DataFrame:
     frames: list[pd.DataFrame] = []
     for method_id in methods:
@@ -112,7 +126,7 @@ def load_results(run_dir: Path, results_name: str, methods: list[str]) -> pd.Dat
     return data
 
 
-def make_raw_and_encoding_avg(data: pd.DataFrame) -> pd.DataFrame:
+def make_raw_and_encoding_avg(data: pd.DataFrame, methods: list[str]) -> pd.DataFrame:
     raw = data[data["track"] == RAW_TRACK].copy()
     if not raw.empty:
         raw["report_track"] = "raw"
@@ -194,7 +208,11 @@ def make_raw_and_encoding_avg(data: pd.DataFrame) -> pd.DataFrame:
     out = pd.concat([raw, enc_avg], ignore_index=True, sort=False)
     if out.empty:
         return out
-    out["method_id"] = pd.Categorical(out["method_id"], categories=METHOD_ORDER, ordered=True)
+    out["method_id"] = pd.Categorical(
+        out["method_id"],
+        categories=ordered_methods(methods),
+        ordered=True,
+    )
     out["report_track"] = pd.Categorical(
         out["report_track"],
         categories=REPORT_TRACKS,
@@ -381,18 +399,18 @@ def add_random_repeat_band(ax: plt.Axes, sub: pd.DataFrame) -> None:
     )
 
 
-def plot_curves(summary: pd.DataFrame, out_base: Path) -> None:
+def plot_curves(summary: pd.DataFrame, out_base: Path, methods: list[str]) -> None:
     spaces = [track for track in REPORT_TRACKS if track in set(summary["report_track"].astype(str))]
     fig, axes = plt.subplots(1, len(spaces), figsize=(6.2 * len(spaces), 4.4), sharey=True)
     axes = np.atleast_1d(axes)
     for ax, report_track in zip(axes, spaces):
         sub = summary[summary["report_track"].astype(str) == report_track]
         add_random_repeat_band(ax, sub)
-        for method_id in METHOD_ORDER:
+        for color_idx, method_id in enumerate(ordered_methods(methods)):
             method_df = sub[sub["method_id"].astype(str) == method_id]
             if method_df.empty:
                 continue
-            color = METHOD_COLORS.get(method_id, "#777777")
+            color = method_color(method_id, color_idx)
             g = method_df[method_df["subset_type"] == "selected"].sort_values("relative_snr")
             if g.empty:
                 continue
@@ -456,8 +474,14 @@ def plot_curves(summary: pd.DataFrame, out_base: Path) -> None:
         ax.set_xlabel("Relative SNR")
     axes[0].set_ylabel("Recovery accuracy")
     method_handles = [
-        plt.Line2D([0], [0], color=METHOD_COLORS[m], linewidth=2.0, label=METHOD_LABELS[m])
-        for m in METHOD_ORDER
+        plt.Line2D(
+            [0],
+            [0],
+            color=method_color(m, idx),
+            linewidth=2.0,
+            label=METHOD_LABELS.get(m, m),
+        )
+        for idx, m in enumerate(ordered_methods(methods))
         if m in set(summary["method_id"].astype(str))
     ]
     style_handles = [
@@ -520,7 +544,7 @@ def main() -> None:
     data = load_results(args.run_dir, args.results_name, methods)
     if data.empty:
         raise SystemExit("No completed feature-method teacher/student results found.")
-    summary = make_raw_and_encoding_avg(data)
+    summary = make_raw_and_encoding_avg(data, methods)
     args.figures_root.mkdir(parents=True, exist_ok=True)
     summary_csv = args.figures_root / f"{args.name}_raw_encoding_avg_summary.csv"
     auc_csv = args.figures_root / f"{args.name}_raw_encoding_avg_auc.csv"
@@ -530,7 +554,7 @@ def main() -> None:
     make_auc(summary).to_csv(auc_csv, index=False)
     empirical_snr_table(summary).to_csv(empirical_csv, index=False)
     random_repeat_summary(summary).to_csv(random_csv, index=False)
-    plot_curves(summary, args.figures_root / args.name)
+    plot_curves(summary, args.figures_root / args.name, methods)
     png_dir = args.figures_root / "png"
     png_dir.mkdir(parents=True, exist_ok=True)
     png = args.figures_root / f"{args.name}.png"
