@@ -1665,6 +1665,129 @@ def score_candidate_refit_robust_v2_streaming(
     )
 
 
+def score_candidate_refit_robust_v2_chunked(
+    *,
+    candidate_idx: int,
+    selected_indices: list[int],
+    encoded_eval_by_model: dict[str, np.ndarray],
+    fit_context: FitContext,
+    model_names: list[str],
+    metric: str,
+    corr_type: str,
+    noise_mult: float,
+    base_noise_ceiling: float,
+    seed: int,
+    aggregate_teachers: str,
+    objective: str,
+    round_cache: V2RoundCache,
+    noise_states: dict[str, list[TeacherNoiseState]],
+    score_target_batch_size: int,
+) -> dict[str, Any]:
+    if metric != "cosine" or corr_type != "spearman":
+        raise ValueError("Refit-robust chunked scoring supports only cosine/Spearman")
+
+    candidate_pos = round_cache.candidate_pos[int(candidate_idx)]
+    eval_indices = np.asarray([*selected_indices, int(candidate_idx)], dtype=np.int64)
+    dense_ops_by_student: dict[str, tuple[np.ndarray, np.ndarray]] = {}
+    for student in model_names:
+        dense_ops = materialize_v2_ops(round_cache.student_caches[student], candidate_pos)
+        if dense_ops is None:
+            raise RuntimeError(
+                f"Numerically unstable candidate delta for candidate {candidate_idx}, "
+                f"student {student}"
+            )
+        dense_ops_by_student[student] = dense_ops
+
+    eval_fit, eval_score = prepare_v2_eval_data(
+        round_cache=round_cache,
+        encoded_eval_by_model=encoded_eval_by_model,
+        eval_indices=eval_indices,
+        fit_context=fit_context,
+        noise_mult=noise_mult,
+        seed=seed,
+    )
+    n_eval = int(len(eval_indices))
+    n_blocks = int(len(round_cache.blocks))
+    n_students = int(len(model_names))
+    target_dim = int(eval_fit.shape[2])
+    total_targets = n_blocks * target_dim
+    target_batch_size = min(max(1, int(score_target_batch_size)), total_targets)
+    pair_rows, pair_cols = pair_index_arrays(n_eval)
+    n_pairs = int(len(pair_rows))
+    eval_fit_flat = np.ascontiguousarray(
+        np.transpose(eval_fit, (1, 0, 2)).reshape(n_eval, total_targets)
+    )
+
+    assert _fast_response_ranks is not None
+    teacher_ranks = np.empty((n_blocks, n_pairs), dtype=np.int64)
+    for block_idx in range(n_blocks):
+        teacher_ranks[block_idx] = _fast_response_ranks(eval_score[block_idx])
+
+    student_row_norms = np.zeros((n_students, n_blocks, n_eval), dtype=np.float64)
+    student_pair_dots = np.zeros((n_students, n_blocks, n_pairs), dtype=np.float64)
+    for student_idx, student in enumerate(model_names):
+        path = round_cache.paths[student]
+        base_ops, eval_ops = dense_ops_by_student[student]
+        for alpha_idx in range(base_ops.shape[0]):
+            lo = int(path.offsets[alpha_idx])
+            hi = int(path.offsets[alpha_idx + 1])
+            if hi <= lo:
+                continue
+            for start in range(lo, hi, target_batch_size):
+                end = min(start + target_batch_size, hi)
+                flat_cols = path.order[start:end]
+                y_base_cols = gather_y_base_fit_columns(
+                    noise_states=noise_states,
+                    blocks=round_cache.blocks,
+                    flat_indices=flat_cols,
+                    target_dim=target_dim,
+                )
+                pred_chunk = (
+                    base_ops[alpha_idx] @ y_base_cols
+                    + eval_ops[alpha_idx] @ eval_fit_flat[:, flat_cols]
+                )
+                block_indices = flat_cols // int(target_dim)
+                for block_idx_raw in np.unique(block_indices):
+                    block_idx = int(block_idx_raw)
+                    cols = np.flatnonzero(block_indices == block_idx)
+                    if cols.size == 0:
+                        continue
+                    accumulate_response_gram(
+                        response=pred_chunk[:, cols],
+                        row_norms=student_row_norms[student_idx, block_idx],
+                        pair_dots=student_pair_dots[student_idx, block_idx],
+                        pair_rows=pair_rows,
+                        pair_cols=pair_cols,
+                    )
+
+    scores = np.empty((n_blocks, n_students), dtype=np.float32)
+    for block_idx in range(n_blocks):
+        for student_idx in range(n_students):
+            student_ranks = ordinal_ranks_from_response_stats(
+                row_norms=student_row_norms[student_idx, block_idx],
+                pair_dots=student_pair_dots[student_idx, block_idx],
+                pair_rows=pair_rows,
+                pair_cols=pair_cols,
+            )
+            scores[block_idx, student_idx] = np.float32(
+                spearman_from_ordinal_ranks(student_ranks, teacher_ranks[block_idx])
+            )
+
+    return aggregate_v2_scores(
+        scores=scores,
+        candidate_idx=candidate_idx,
+        n_eval=n_eval,
+        fit_context=fit_context,
+        model_names=model_names,
+        round_cache=round_cache,
+        aggregate_teachers=aggregate_teachers,
+        noise_mult=noise_mult,
+        base_noise_ceiling=base_noise_ceiling,
+        objective=objective,
+        score_backend="v2-chunked",
+    )
+
+
 def aggregate_v2_scores(
     *,
     scores: np.ndarray,
@@ -1853,11 +1976,16 @@ _V2_WORKER_ARGS: dict[str, Any] | None = None
 def _score_v2_worker(candidate_idx: int) -> dict[str, Any]:
     assert _V2_WORKER_ARGS is not None
     kwargs = _V2_WORKER_ARGS
-    return score_candidate_refit_robust_v2_streaming(
-        candidate_idx=int(candidate_idx),
-        selected_indices=kwargs["selected_indices"],
+    encoded_eval_by_model = encoded_eval_for_candidate(
         encoded_eval_pool=kwargs["encoded_eval_pool"],
         encoded_pos=kwargs["encoded_pos"],
+        selected_indices=kwargs["selected_indices"],
+        candidate_idx=int(candidate_idx),
+    )
+    return score_candidate_refit_robust_v2_chunked(
+        candidate_idx=int(candidate_idx),
+        selected_indices=kwargs["selected_indices"],
+        encoded_eval_by_model=encoded_eval_by_model,
         fit_context=kwargs["fit_context"],
         model_names=kwargs["model_names"],
         metric=kwargs["metric"],
@@ -1933,7 +2061,7 @@ def score_shortlist_refit_robust_v2_fast(
     if metric != "cosine" or corr_type != "spearman":
         raise ValueError("Refit-robust selection currently supports only cosine/Spearman")
 
-    timing: dict[str, Any] = {"backend": "v2-stream"}
+    timing: dict[str, Any] = {"backend": "v2-chunked"}
     start = time.monotonic()
     round_cache = build_v2_round_cache(
         selected_indices=selected_indices,
@@ -1943,7 +2071,7 @@ def score_shortlist_refit_robust_v2_fast(
         noise_states=noise_states,
         model_names=model_names,
         alphas=alphas,
-        build_paths=False,
+        build_paths=True,
     )
     timing["cache_seconds"] = float(time.monotonic() - start)
     timing["minimum_delta"] = float(
@@ -2007,11 +2135,16 @@ def score_shortlist_refit_robust_v2_fast(
     else:
         rows = []
         for candidate_idx in shortlist:
+            encoded_eval_by_model = encoded_eval_for_candidate(
+                encoded_eval_pool=encoded_eval_pool,
+                encoded_pos=encoded_pos,
+                selected_indices=selected_indices,
+                candidate_idx=int(candidate_idx),
+            )
             rows.append(
-                score_candidate_refit_robust_v2_streaming(
+                score_candidate_refit_robust_v2_chunked(
                     candidate_idx=int(candidate_idx),
-                    encoded_eval_pool=encoded_eval_pool,
-                    encoded_pos=encoded_pos,
+                    encoded_eval_by_model=encoded_eval_by_model,
                     **{
                         key: value
                         for key, value in common_kwargs.items()
