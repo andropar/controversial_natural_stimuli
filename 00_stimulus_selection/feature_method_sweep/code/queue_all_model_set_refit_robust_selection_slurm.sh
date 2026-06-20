@@ -2,7 +2,9 @@
 #
 # Submit refit-robust selection for every model set, using one fixed natural pool
 # size determined by the largest feature-method-sweep POOL_SIZES entry unless
-# MAX_IMAGES is explicitly set, and keep queueing dependency-gated resume jobs
+# MAX_IMAGES or a model-set-specific override is explicitly set.  The all_models
+# set defaults to a smaller cap because the combined model library is much
+# heavier than the grouped model sets.  Dependency-gated resume jobs are queued
 # until each run is complete.
 #
 # Usage on Raven:
@@ -11,6 +13,7 @@
 # Defaults:
 #   MODEL_SETS=sota,all_models,training_objective,architecture,dataset
 #   POOL_SIZES=1k,10k,50k,100k,250k,500k,1M,5M,10M
+#   DEFAULT_MAX_IMAGES_ALL_MODELS=2.5M
 #   MAX_RAM_GB=300
 #   TARGET_SIZE=100
 
@@ -59,6 +62,7 @@ METRIC="${METRIC:-cosine}"
 CORR_TYPE="${CORR_TYPE:-spearman}"
 MAX_RAM_GB="${MAX_RAM_GB:-300}"
 MAX_IMAGES="${MAX_IMAGES:-}"
+DEFAULT_MAX_IMAGES_ALL_MODELS="${DEFAULT_MAX_IMAGES_ALL_MODELS:-2.5M}"
 POOL_FEATURE_DIR="${POOL_FEATURE_DIR:-}"
 
 TARGET_DIM="${TARGET_DIM:-0}"
@@ -207,6 +211,10 @@ max_images_for_model_set() {
   fi
   if [[ -n "${MAX_IMAGES}" ]]; then
     normalize_count_value "${MAX_IMAGES}"
+    return
+  fi
+  if [[ "${model_set}" == "all_models" && -n "${DEFAULT_MAX_IMAGES_ALL_MODELS}" ]]; then
+    normalize_count_value "${DEFAULT_MAX_IMAGES_ALL_MODELS}"
     return
   fi
   max_pool_size_from_pool_sizes "${POOL_SIZES}"
@@ -462,7 +470,8 @@ EOF
   for name in \
     START_SLURM PYTHON_BIN CONDA_LIB RUN_TAG MODEL_SETS RESULTS_ROOT METHOD_ID \
     ENV_NAME CSTIMS_PATH_ENV TRACK ENCODING_ROI_SUBSET UNIQUE_ENCODINGS TARGET_SIZE INIT_SIZE \
-    SEED METRIC CORR_TYPE MAX_RAM_GB MAX_IMAGES POOL_SIZES POOL_FEATURE_DIR TARGET_DIM \
+    SEED METRIC CORR_TYPE MAX_RAM_GB MAX_IMAGES DEFAULT_MAX_IMAGES_ALL_MODELS \
+    POOL_SIZES POOL_FEATURE_DIR TARGET_DIM \
     NOISE_CACHE_ROOT NOISE_CACHE_DIR \
     TOP_K_PROXY RANDOM_SHORTLIST PROXY_BATCH_SIZE PROXY_NOISE_CALIB_EXAMPLES \
     PROXY_NOISE_CALIB_REPEATS REFIT_POOL_SIZE REFIT_VAL_SIZE N_NOISE_SAMPLES \
@@ -549,7 +558,8 @@ echo "Pool sizes: ${POOL_SIZES}"
 echo "Method id: ${METHOD_ID}"
 echo "Target size: ${TARGET_SIZE}"
 echo "Max RAM GB: ${MAX_RAM_GB}"
-echo "Max images override: ${MAX_IMAGES:-<largest POOL_SIZES entry per model set>}"
+echo "Global max images override: ${MAX_IMAGES:-<none>}"
+echo "Default all_models max images: ${DEFAULT_MAX_IMAGES_ALL_MODELS:-<none>}"
 echo "Slurm mem: ${MEM}"
 echo "Target batch sizes: alpha=${ALPHA_TARGET_BATCH_SIZE}, score=${SCORE_TARGET_BATCH_SIZE}"
 echo "Noise cache root: ${NOISE_CACHE_ROOT}"
