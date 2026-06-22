@@ -200,14 +200,16 @@ def layer_sweep_eval_design(
 ) -> np.ndarray:
     """Evaluation design that mirrors the dense layer-sweep stream scorer.
 
-    The stream scorer stores raw-space ridge weights but then standardizes
-    evaluation features again before prediction. The target-adaptation scorer
-    works in standardized primal/dual space, so this transform reproduces that
-    stream prediction convention for already-standardized features.
+    The dense layer-sweep stream scorer predicts from raw SRP features with
+    raw-space ridge weights. In the target-adaptation analytic scorer, those
+    same predictions are represented in the DeepVision-standardized dual
+    feature space, so already-standardized evaluation features should be used
+    directly. Applying the raw-space transform here would standardize the
+    evaluation rows a second time and make the weight=0 endpoint disagree with
+    the original layer-sweep mRSA scores.
     """
-    scale = np.maximum(np.asarray(feature_scale, dtype=np.float64), eps)
-    mean_over_scale = np.asarray(feature_mean, dtype=np.float64) / scale
-    return np.asarray(features_z, dtype=np.float64) / scale[None, :] - mean_over_scale[None, :]
+    del feature_mean, feature_scale, eps
+    return np.asarray(features_z, dtype=np.float64)
 
 
 def rdm_corr(features: np.ndarray) -> np.ndarray:
