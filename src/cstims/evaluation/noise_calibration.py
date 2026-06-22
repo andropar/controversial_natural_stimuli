@@ -12,13 +12,32 @@ from cstims.rdm import calculate_correlation_value, get_rdm_vector_np
 
 
 def multiplier_to_noise_ceiling(k: float, nc_base: float) -> float:
-    """Convert a noise multiplier to the effective RDM noise ceiling."""
+    """Convert a noise multiplier to clean-vs-noisy RDM reliability."""
     if k <= 0:
         return 1.0
     if nc_base <= 0 or nc_base >= 1:
         return nc_base
     term = k * k * (1.0 / (nc_base * nc_base) - 1.0)
     return float(1.0 / np.sqrt(1.0 + term))
+
+
+def multiplier_to_noisy_pair_reliability(k: float, nc_base: float) -> float:
+    """Convert a noise multiplier to noisy-vs-noisy RDM reliability."""
+    if k <= 0:
+        return 1.0
+    if nc_base <= 0 or nc_base >= 1:
+        return nc_base
+    term = k * k * (1.0 / nc_base - 1.0)
+    return float(1.0 / (1.0 + term))
+
+
+def multiplier_to_rdm_reliability(k: float, nc_base: float, comparison: str) -> float:
+    """Convert a noise multiplier to the requested empirical RDM reliability target."""
+    if comparison == "clean_to_noisy":
+        return multiplier_to_noise_ceiling(k, nc_base)
+    if comparison == "noisy_to_noisy":
+        return multiplier_to_noisy_pair_reliability(k, nc_base)
+    raise ValueError(f"Unsupported RDM calibration comparison: {comparison}")
 
 
 def noise_std_from_multiplier(noise_mult: float, nc_base: float) -> float:
@@ -73,15 +92,23 @@ def empirical_response_noise_rdm_reliability(
     corr_type: str,
     rng: np.random.Generator,
     n_samples: int,
+    comparison: str = "clean_to_noisy",
 ) -> float:
-    """Estimate noisy-vs-clean RDM reliability after adding response-space noise."""
+    """Estimate RDM reliability after adding response-space noise."""
     if noise_std <= 0:
         return 1.0
     vals = []
     for _ in range(n_samples):
         y_noisy = y_clean + rng.normal(0.0, noise_std, y_clean.shape).astype(np.float32)
         noisy_rdm = get_rdm_vector_np(y_noisy, metric)
-        vals.append(calculate_correlation_value(noisy_rdm, clean_rdm, corr_type))
+        if comparison == "clean_to_noisy":
+            vals.append(calculate_correlation_value(noisy_rdm, clean_rdm, corr_type))
+        elif comparison == "noisy_to_noisy":
+            y_noisy_b = y_clean + rng.normal(0.0, noise_std, y_clean.shape).astype(np.float32)
+            noisy_rdm_b = get_rdm_vector_np(y_noisy_b, metric)
+            vals.append(calculate_correlation_value(noisy_rdm, noisy_rdm_b, corr_type))
+        else:
+            raise ValueError(f"Unsupported RDM calibration comparison: {comparison}")
     return float(np.nanmean(vals))
 
 
@@ -94,8 +121,9 @@ def calibrate_response_noise_for_rdm_reliability(
     rng: np.random.Generator,
     n_samples: int,
     max_iter: int,
+    comparison: str = "clean_to_noisy",
 ) -> tuple[float, float]:
-    """Find response noise whose noisy-vs-clean RDM reliability matches target."""
+    """Find response noise whose empirical RDM reliability matches target."""
     if target_reliability <= 0:
         target_reliability = 1e-6
     if target_reliability >= 1:
@@ -113,6 +141,7 @@ def calibrate_response_noise_for_rdm_reliability(
             corr_type=corr_type,
             rng=rng,
             n_samples=n_samples,
+            comparison=comparison,
         )
         if np.isfinite(rel) and rel <= target_reliability:
             break
@@ -126,6 +155,7 @@ def calibrate_response_noise_for_rdm_reliability(
         corr_type=corr_type,
         rng=rng,
         n_samples=n_samples,
+        comparison=comparison,
     )
     best_err = abs(best_rel - target_reliability) if np.isfinite(best_rel) else np.inf
     for _ in range(max_iter):
@@ -138,6 +168,7 @@ def calibrate_response_noise_for_rdm_reliability(
             corr_type=corr_type,
             rng=rng,
             n_samples=n_samples,
+            comparison=comparison,
         )
         err = abs(rel - target_reliability) if np.isfinite(rel) else np.inf
         if err < best_err:

@@ -9,9 +9,9 @@ observation space used by the stimulus-selection analyses:
 
 For the main response-noise/RDM-calibrated run, Gaussian response noise is added
 both while fitting candidate readouts and while evaluating the held-out teacher
-responses.  The response-noise scale is inferred per teacher by matching the
-target noisy-vs-clean RDM correlation, so the empirical-SNR label is tied to the
-same RSA observation space as the noisy-by-clean curves.
+responses.  The response-noise scale is inferred per teacher by matching an
+empirical RDM reliability target; empirical calibration can target either
+clean-vs-noisy or noisy-vs-noisy RDM correlations.
 """
 
 from __future__ import annotations
@@ -32,6 +32,7 @@ from cstims.encoding.linear import load_encoding_params_by_encoding
 from cstims.evaluation.noise_calibration import (
     calibrate_response_noise_for_rdm_reliability,
     multiplier_to_noise_ceiling,
+    multiplier_to_rdm_reliability,
     rdm_noise_std_from_clean,
     response_noise_std_from_mode,
 )
@@ -856,6 +857,7 @@ def _rows_from_score_tensor(
     refit_val_n: int,
     eval_noise_mode: str,
     fit_noise_calibration: str,
+    rdm_calibration_comparison: str,
     eval_refit_mode: str,
     response_noise_std: float,
     achieved_fit_rdm_reliability: float,
@@ -909,6 +911,7 @@ def _rows_from_score_tensor(
                 "refit_val_n": int(refit_val_n),
                 "eval_noise_mode": eval_noise_mode,
                 "fit_noise_calibration": fit_noise_calibration,
+                "rdm_calibration_comparison": rdm_calibration_comparison,
                 "eval_refit_mode": eval_refit_mode,
                 "alpha_selection": (
                     NESTED_ALPHA_SELECTION
@@ -965,6 +968,7 @@ def _run_batched_response_noise_level(
     metric: str,
     corr_type: str,
     fit_noise_calibration: str,
+    rdm_calibration_comparison: str,
     teacher_rng: np.random.Generator,
     rdm_device: torch.device,
     gpu_alpha_batch: bool,
@@ -1202,6 +1206,7 @@ def _run_batched_response_noise_level(
         refit_val_n=refit_val_n,
         eval_noise_mode="response",
         fit_noise_calibration=fit_noise_calibration,
+        rdm_calibration_comparison=rdm_calibration_comparison,
         eval_refit_mode=eval_refit_mode,
         response_noise_std=response_noise_std,
         achieved_fit_rdm_reliability=achieved_fit_rdm_reliability,
@@ -1491,6 +1496,8 @@ def summarize_rows(rows: list[dict[str, Any]], n_models: int) -> pd.DataFrame:
     df = pd.DataFrame(rows)
     if "refit_repeat_idx" not in df:
         df["refit_repeat_idx"] = 0
+    if "rdm_calibration_comparison" not in df:
+        df["rdm_calibration_comparison"] = "clean_to_noisy"
     out = []
     keys = [
         "model_set",
@@ -1498,6 +1505,7 @@ def summarize_rows(rows: list[dict[str, Any]], n_models: int) -> pd.DataFrame:
         "track_type",
         "noise_mult",
         "noise_ceiling",
+        "rdm_calibration_comparison",
         "subset_type",
         "subset_idx",
         "refit_repeat_idx",
@@ -1516,9 +1524,10 @@ def summarize_rows(rows: list[dict[str, Any]], n_models: int) -> pd.DataFrame:
                 "noise_mult": float(key[3]),
                 "relative_snr": np.inf if float(key[3]) <= 0 else 1.0 / float(key[3]),
                 "noise_ceiling": float(key[4]),
-                "subset_type": key[5],
-                "subset_idx": int(key[6]),
-                "refit_repeat_idx": int(key[7]),
+                "rdm_calibration_comparison": key[5],
+                "subset_type": key[6],
+                "subset_idx": int(key[7]),
+                "refit_repeat_idx": int(key[8]),
                 "recovery_accuracy": float(correct.mean()),
                 "error_prob": float(1.0 - correct.mean()),
                 "mean_margin": float(np.mean(margins)),
@@ -1547,6 +1556,7 @@ def summarize_rows(rows: list[dict[str, Any]], n_models: int) -> pd.DataFrame:
         "relative_snr",
         "noise_ceiling",
         "subset_type",
+        "rdm_calibration_comparison",
     ]
     rows2 = []
     for key, group in summary.groupby(agg_keys, sort=False, dropna=False):
@@ -1589,6 +1599,7 @@ def summarize_rows(rows: list[dict[str, Any]], n_models: int) -> pd.DataFrame:
                 "refit_val_n": int(group["refit_val_n"].iloc[0]),
                 "eval_noise_mode": group["eval_noise_mode"].iloc[0],
                 "fit_noise_calibration": group["fit_noise_calibration"].iloc[0],
+                "rdm_calibration_comparison": key[10],
                 "eval_refit_mode": group.get("eval_refit_mode", pd.Series(["independent"])).iloc[0],
             }
         )
@@ -1656,6 +1667,7 @@ def merge_complete_cache_tracks(
     n_eval_sets: int,
     refit_repeat_indices: list[int],
     write_detail: bool = False,
+    required_cache_values: dict[str, Any] | None = None,
 ) -> set[str]:
     existing = load_existing_detail(out_dir)
     expected_track_rows = (
@@ -1696,6 +1708,7 @@ def merge_complete_cache_tracks(
                     teacher=teacher,
                     track_name=track_name,
                     expected_rows=expected_teacher_rows,
+                    required_values=required_cache_values,
                 )
                 if cached is None:
                     track_cache_rows = []
@@ -1747,6 +1760,7 @@ def _run_single_teacher_rdm_recovery(
     corr_type: str,
     eval_noise_mode: str,
     fit_noise_calibration: str,
+    rdm_calibration_comparison: str,
     eval_refit_mode: str,
     calibration_images: int,
     calibration_noise_samples: int,
@@ -1770,7 +1784,11 @@ def _run_single_teacher_rdm_recovery(
         teacher,
     )
     if cache_path is not None:
-        required_cache_values = {"eval_refit_mode": eval_refit_mode}
+        required_cache_values = {
+            "eval_refit_mode": eval_refit_mode,
+            "fit_noise_calibration": fit_noise_calibration,
+            "rdm_calibration_comparison": rdm_calibration_comparison,
+        }
         if batch_noise_samples:
             required_cache_values.update(
                 {
@@ -1869,11 +1887,28 @@ def _run_single_teacher_rdm_recovery(
 
     for noise_mult in noise_mults:
         noise_mult = float(noise_mult)
-        noise_ceiling = multiplier_to_noise_ceiling(noise_mult, base_noise_ceiling)
+        if fit_noise_calibration == "rdm_empirical":
+            noise_ceiling = multiplier_to_rdm_reliability(
+                noise_mult,
+                base_noise_ceiling,
+                rdm_calibration_comparison,
+            )
+        else:
+            noise_ceiling = multiplier_to_noise_ceiling(
+                noise_mult,
+                base_noise_ceiling,
+            )
         achieved_fit_rdm_reliability = np.nan
         if fit_noise_calibration == "rdm_empirical":
             cal_rng = np.random.default_rng(
-                seed + stable_seed(track["name"], teacher, noise_mult, "rdm_empirical")
+                seed
+                + stable_seed(
+                    track["name"],
+                    teacher,
+                    noise_mult,
+                    "rdm_empirical",
+                    rdm_calibration_comparison,
+                )
             )
             (
                 response_noise_std,
@@ -1886,6 +1921,7 @@ def _run_single_teacher_rdm_recovery(
                 rng=cal_rng,
                 n_samples=calibration_noise_samples,
                 max_iter=calibration_max_iter,
+                comparison=rdm_calibration_comparison,
             )
         else:
             response_noise_std = response_noise_std_from_mode(
@@ -1923,6 +1959,7 @@ def _run_single_teacher_rdm_recovery(
                 metric=metric,
                 corr_type=corr_type,
                 fit_noise_calibration=fit_noise_calibration,
+                rdm_calibration_comparison=rdm_calibration_comparison,
                 teacher_rng=teacher_rng,
                 rdm_device=rdm_device,
                 gpu_alpha_batch=gpu_alpha_batch,
@@ -2091,6 +2128,7 @@ def _run_single_teacher_rdm_recovery(
                     "refit_val_n": int(refit_val_n),
                     "eval_noise_mode": eval_noise_mode,
                     "fit_noise_calibration": fit_noise_calibration,
+                    "rdm_calibration_comparison": rdm_calibration_comparison,
                     "eval_refit_mode": eval_refit_mode,
                     "alpha_selection": (
                         NESTED_ALPHA_SELECTION
@@ -2145,6 +2183,7 @@ def run_track_rdm_recovery(
     corr_type: str,
     eval_noise_mode: str,
     fit_noise_calibration: str,
+    rdm_calibration_comparison: str,
     eval_refit_mode: str,
     calibration_images: int,
     calibration_noise_samples: int,
@@ -2209,6 +2248,7 @@ def run_track_rdm_recovery(
         corr_type=corr_type,
         eval_noise_mode=eval_noise_mode,
         fit_noise_calibration=fit_noise_calibration,
+        rdm_calibration_comparison=rdm_calibration_comparison,
         eval_refit_mode=eval_refit_mode,
         calibration_images=calibration_images,
         calibration_noise_samples=calibration_noise_samples,

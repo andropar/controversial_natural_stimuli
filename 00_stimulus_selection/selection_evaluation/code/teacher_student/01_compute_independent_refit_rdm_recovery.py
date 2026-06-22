@@ -114,6 +114,16 @@ def main() -> None:
         default="response",
     )
     parser.add_argument(
+        "--rdm-calibration-comparison",
+        choices=["noisy_to_noisy", "clean_to_noisy"],
+        default="clean_to_noisy",
+        help=(
+            "Empirical RDM calibration target for --fit-noise-calibration rdm_empirical. "
+            "clean_to_noisy matches the older clean-vs-noisy calibration; noisy_to_noisy "
+            "matches repeat/split reliability directly."
+        ),
+    )
+    parser.add_argument(
         "--eval-refit-mode",
         choices=["independent", "eval_augmented_loo", "eval_augmented_nested_loo"],
         default="independent",
@@ -208,7 +218,11 @@ def main() -> None:
         raise ValueError("--n-refit-repeats must be at least 1")
     if args.teacher_workers < 1:
         raise ValueError("--teacher-workers must be at least 1")
-    if args.rdm_device == "cuda" and not torch.cuda.is_available():
+    if (
+        not args.merge_only
+        and args.rdm_device == "cuda"
+        and not torch.cuda.is_available()
+    ):
         raise RuntimeError("--rdm-device cuda requested but CUDA is unavailable")
     if args.gpu_alpha_batch and args.rdm_device != "cuda":
         raise ValueError("--gpu-alpha-batch requires --rdm-device cuda")
@@ -345,6 +359,7 @@ def main() -> None:
             "alpha_selection": alpha_selection,
             "eval_noise_mode": args.eval_noise_mode,
             "fit_noise_calibration": args.fit_noise_calibration,
+            "rdm_calibration_comparison": args.rdm_calibration_comparison,
             "eval_refit_mode": args.eval_refit_mode,
             "calibration_images": args.calibration_images,
             "calibration_noise_samples": args.calibration_noise_samples,
@@ -379,7 +394,9 @@ def main() -> None:
                 "noisy RDM(teacher response)). eval-augmented modes use the refit "
                 "pool plus each eval set for final readouts, with leave-one-out "
                 "predictions for eval images. eval_augmented_nested_loo also "
-                "selects alpha inside the eval set with the outer eval image held out."
+                "selects alpha inside the eval set with the outer eval image held out. "
+                "Empirical response-noise calibration records whether targets were "
+                "matched as clean-vs-noisy or noisy-vs-noisy RDM correlations."
             ),
         }
         metadata_path = out_dir / "metadata.json"
@@ -397,6 +414,11 @@ def main() -> None:
             n_eval_sets=1 + args.n_random_subsets,
             refit_repeat_indices=refit_repeat_indices,
             write_detail=args.write_detail_output,
+            required_cache_values={
+                "eval_refit_mode": args.eval_refit_mode,
+                "fit_noise_calibration": args.fit_noise_calibration,
+                "rdm_calibration_comparison": args.rdm_calibration_comparison,
+            },
         )
         print(
             "Merged complete tracks: "
@@ -430,6 +452,7 @@ def main() -> None:
         "alpha_selection": alpha_selection,
         "eval_noise_mode": args.eval_noise_mode,
         "fit_noise_calibration": args.fit_noise_calibration,
+        "rdm_calibration_comparison": args.rdm_calibration_comparison,
         "eval_refit_mode": args.eval_refit_mode,
         "calibration_images": args.calibration_images,
         "calibration_noise_samples": args.calibration_noise_samples,
@@ -464,7 +487,9 @@ def main() -> None:
             "RDM(teacher response)). eval-augmented modes use the refit pool plus "
             "each eval set for final readouts, with leave-one-out predictions for "
             "eval images. eval_augmented_nested_loo also selects alpha inside the "
-            "eval set with the outer eval image held out."
+            "eval set with the outer eval image held out. Empirical response-noise "
+            "calibration records whether targets were matched as clean-vs-noisy "
+            "or noisy-vs-noisy RDM correlations."
         ),
     }
     metadata_path = out_dir / "metadata.json"
@@ -681,6 +706,7 @@ def main() -> None:
                 corr_type=args.corr_type,
                 eval_noise_mode=args.eval_noise_mode,
                 fit_noise_calibration=args.fit_noise_calibration,
+                rdm_calibration_comparison=args.rdm_calibration_comparison,
                 eval_refit_mode=args.eval_refit_mode,
                 calibration_images=args.calibration_images,
                 calibration_noise_samples=args.calibration_noise_samples,

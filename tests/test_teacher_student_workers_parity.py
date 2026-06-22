@@ -85,6 +85,7 @@ def _make_problem(eval_refit_mode: str):
         "corr_type": "spearman",
         "eval_noise_mode": "response",
         "fit_noise_calibration": "response",
+        "rdm_calibration_comparison": "clean_to_noisy",
         "eval_refit_mode": eval_refit_mode,
         "calibration_images": 4,
         "calibration_noise_samples": 1,

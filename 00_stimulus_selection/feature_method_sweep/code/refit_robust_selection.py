@@ -45,6 +45,7 @@ from cstims.encoding.linear import encode_batch_for_all_encodings  # noqa: E402
 from cstims.evaluation.noise_calibration import (  # noqa: E402
     calibrate_response_noise_for_rdm_reliability,
     multiplier_to_noise_ceiling,
+    multiplier_to_rdm_reliability,
     response_noise_std_from_mode,
 )
 from cstims.evaluation.ridge import (  # noqa: E402
@@ -136,6 +137,8 @@ class FitContext:
     train_indices: np.ndarray
     val_indices: np.ndarray
     base_indices: np.ndarray
+    fit_noise_calibration: str
+    rdm_calibration_comparison: str
 
 
 @dataclass
@@ -695,6 +698,7 @@ def build_fit_context(
     base_noise_ceiling: float,
     noise_mult: float,
     fit_noise_calibration: str,
+    rdm_calibration_comparison: str,
     metric: str,
     corr_type: str,
     seed: int,
@@ -785,15 +789,28 @@ def build_fit_context(
                 )
                 calib_pos = refit_train_pos[calib_local_idx]
             y_calib = np.asarray(y_base_clean[calib_pos], dtype=np.float32)
-            cal_rng = np.random.default_rng(seed + stable_seed(model, noise_mult, "rdm_empirical"))
+            cal_rng = np.random.default_rng(
+                seed
+                + stable_seed(
+                    model,
+                    noise_mult,
+                    "rdm_empirical",
+                    rdm_calibration_comparison,
+                )
+            )
             response_noise_std, achieved = calibrate_response_noise_for_rdm_reliability(
                 y_calib,
-                target_reliability=multiplier_to_noise_ceiling(noise_mult, base_noise_ceiling),
+                target_reliability=multiplier_to_rdm_reliability(
+                    noise_mult,
+                    base_noise_ceiling,
+                    rdm_calibration_comparison,
+                ),
                 metric=metric,
                 corr_type=corr_type,
                 rng=cal_rng,
                 n_samples=calibration_noise_samples,
                 max_iter=calibration_max_iter,
+                comparison=rdm_calibration_comparison,
             )
         else:
             response_noise_std = response_noise_std_from_mode(
@@ -827,6 +844,8 @@ def build_fit_context(
         train_indices=train_indices,
         val_indices=val_indices,
         base_indices=base_indices,
+        fit_noise_calibration=fit_noise_calibration,
+        rdm_calibration_comparison=rdm_calibration_comparison,
     )
 
 
@@ -1854,7 +1873,14 @@ def aggregate_v2_scores(
         score_tie_breaker = recovery_accuracy
     else:
         raise ValueError(f"Unsupported objective: {objective}")
-    noise_ceiling = multiplier_to_noise_ceiling(noise_mult, base_noise_ceiling)
+    if fit_context.fit_noise_calibration == "rdm_empirical":
+        noise_ceiling = multiplier_to_rdm_reliability(
+            noise_mult,
+            base_noise_ceiling,
+            fit_context.rdm_calibration_comparison,
+        )
+    else:
+        noise_ceiling = multiplier_to_noise_ceiling(noise_mult, base_noise_ceiling)
     return {
         "candidate_index": int(candidate_idx),
         "n_eval": int(n_eval),
@@ -1871,6 +1897,7 @@ def aggregate_v2_scores(
         "teacher_majority_recovery_accuracy": teacher_majority_recovery_accuracy,
         "noise_mult": float(noise_mult),
         "noise_ceiling": float(noise_ceiling),
+        "rdm_calibration_comparison": fit_context.rdm_calibration_comparison,
         "score_backend": score_backend,
     }
 
@@ -2438,6 +2465,7 @@ def run_selection(args: argparse.Namespace) -> Path:
         base_noise_ceiling=args.noise_ceiling,
         noise_mult=args.noise_mult,
         fit_noise_calibration=args.fit_noise_calibration,
+        rdm_calibration_comparison=args.rdm_calibration_comparison,
         metric=args.metric,
         corr_type=args.corr_type,
         seed=args.seed,
@@ -2530,6 +2558,7 @@ def run_selection(args: argparse.Namespace) -> Path:
         "proxy_noise_calib_repeats": args.proxy_noise_calib_repeats,
         "proxy_attenuation_disabled": bool(args.no_proxy_attenuation),
         "fit_noise_calibration": args.fit_noise_calibration,
+        "rdm_calibration_comparison": args.rdm_calibration_comparison,
         "n_noise_samples": args.n_noise_samples,
         "alphas": alphas,
         "target_dim": len(target_cols) if target_cols is not None else None,
@@ -2894,6 +2923,14 @@ def parse_args() -> argparse.Namespace:
         "--fit-noise-calibration",
         choices=["response", "rdm_analytic", "rdm_empirical"],
         default="rdm_empirical",
+    )
+    parser.add_argument(
+        "--rdm-calibration-comparison",
+        choices=["noisy_to_noisy", "clean_to_noisy"],
+        default="clean_to_noisy",
+        help=(
+            "Empirical RDM calibration target for --fit-noise-calibration rdm_empirical."
+        ),
     )
     parser.add_argument("--calibration-images", type=int, default=100)
     parser.add_argument("--calibration-noise-samples", type=int, default=2)
