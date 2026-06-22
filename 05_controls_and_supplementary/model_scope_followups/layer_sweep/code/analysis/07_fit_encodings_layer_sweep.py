@@ -1900,7 +1900,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--subject", default="all")
     parser.add_argument("--models", nargs="*", default=None)
-    parser.add_argument("--layer-set", choices=["configured", "dense"], default="configured",
+    parser.add_argument("--layer-set", choices=["configured", "dense", "cornet_decoder"], default="configured",
                         help="Layer inventory to fit")
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--batch-size", default="auto",

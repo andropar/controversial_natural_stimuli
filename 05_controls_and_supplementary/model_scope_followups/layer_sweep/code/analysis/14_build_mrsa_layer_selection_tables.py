@@ -188,7 +188,7 @@ def build_transfer_table(scores: pd.DataFrame, selections: pd.DataFrame, layer_s
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--layer-set", choices=["configured", "dense"], default="dense")
+    parser.add_argument("--layer-set", choices=["configured", "dense", "cornet_decoder"], default="dense")
     parser.add_argument("--wrsa-csv", default=str(DATA_DIR / "wrsa_dense_layer_sweep.csv"))
     parser.add_argument("--shared-csv", default=str(DATA_DIR / "wrsa_dense_shared_layer_sweep.csv"))
     parser.add_argument("--layer-scores-csv",

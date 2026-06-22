@@ -59,6 +59,8 @@ def x_positions(weights: list[float]) -> dict[float, float]:
 
 
 def weight_label(weight: float) -> str:
+    if np.isposinf(weight):
+        return "target-only"
     if abs(weight) >= 1000:
         return f"{weight / 1000:g}k"
     return f"{weight:g}"

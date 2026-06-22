@@ -2,13 +2,16 @@ from __future__ import annotations
 
 import csv
 import os
+import re
 import socket
+from functools import lru_cache
 from pathlib import Path
 
 from cstims.constants import EXPECTED_CSTIM_IMAGE_COUNTS
 
 
 IMAGE_EXTENSIONS = ("*.jpg", "*.jpeg", "*.png")
+_NATURAL_SORT_RE = re.compile(r"(\d+)")
 _CONFIG_CACHE: dict[str, str] | None = None
 _CONFIG_CACHE_KEY: tuple[str, str | None, str | None, str | None] | None = None
 
@@ -126,7 +129,15 @@ def _image_files(path: Path) -> list[Path]:
     files: list[Path] = []
     for pattern in IMAGE_EXTENSIONS:
         files.extend(path.glob(pattern))
-    return sorted(set(files))
+    return sorted(set(files), key=_natural_path_key)
+
+
+def _natural_path_key(path: Path) -> tuple[tuple[int, int | str], ...]:
+    parts = _NATURAL_SORT_RE.split(path.name)
+    return tuple(
+        (0, int(part)) if part.isdigit() else (1, part.lower())
+        for part in parts
+    )
 
 
 def _cstim_folder_name(stimulus_set: str, *, apply_architecture_dataset_swap: bool = False) -> str:
@@ -136,6 +147,111 @@ def _cstim_folder_name(stimulus_set: str, *, apply_architecture_dataset_swap: bo
         elif stimulus_set == "dataset":
             stimulus_set = "architecture"
     return "shared_vicco" if stimulus_set == "vicco" else stimulus_set
+
+
+def _cstim_public_name(folder_name: str) -> str:
+    return "vicco" if folder_name == "shared_vicco" else folder_name
+
+
+@lru_cache(maxsize=8)
+def _cstim_hdf5_records(root_str: str) -> tuple[tuple[int, str, str], ...]:
+    root = Path(root_str)
+    metadata_path = _require_file(root / "metadata.csv", "CSTIM_HDF5_ROOT/metadata.csv")
+    with metadata_path.open("r", newline="") as f:
+        reader = csv.DictReader(f)
+        missing = {"group", "image_name"} - set(reader.fieldnames or [])
+        if missing:
+            raise KeyError(f"{metadata_path} is missing required columns: {sorted(missing)}")
+        records = tuple(
+            (row_idx, str(row["group"]), str(row["image_name"]))
+            for row_idx, row in enumerate(reader)
+        )
+
+    h5_path = _require_file(root / "stimuli.hdf5", "CSTIM_HDF5_ROOT/stimuli.hdf5")
+    import h5py
+
+    with h5py.File(h5_path, "r") as h5:
+        if "images" not in h5:
+            raise KeyError(f"{h5_path} is missing required dataset 'images'")
+        n_images = len(h5["images"])
+    if n_images != len(records):
+        raise RuntimeError(
+            f"CSTIM metadata/HDF5 count mismatch: metadata has {len(records)} rows, "
+            f"stimuli.hdf5 has {n_images} images."
+        )
+    return records
+
+
+def _cstim_hdf5_group_counts(root: Path) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for _row_idx, group, _image_name in _cstim_hdf5_records(str(root)):
+        counts[group] = counts.get(group, 0) + 1
+    return counts
+
+
+def _cstim_extracted_image_cache_root() -> Path:
+    root = _configured_path_or_default(
+        "CSTIM_EXTRACTED_IMAGE_CACHE_DIR",
+        feature_cache_dir() / "cstim_hdf5_images",
+    )
+    root.mkdir(parents=True, exist_ok=True)
+    return root
+
+
+def _safe_cstim_image_name(image_name: str, fallback_idx: int) -> str:
+    name = Path(image_name).name
+    if not name:
+        name = f"image_{fallback_idx}.jpg"
+    if Path(name).suffix:
+        return name
+    return f"{name}.jpg"
+
+
+def _ensure_cstim_hdf5_images(
+    stimulus_set: str,
+    *,
+    apply_architecture_dataset_swap: bool = False,
+) -> list[Path]:
+    root = cstim_hdf5_root()
+    folder = _cstim_folder_name(
+        stimulus_set,
+        apply_architecture_dataset_swap=apply_architecture_dataset_swap,
+    )
+    records = [
+        (row_idx, image_name)
+        for row_idx, group, image_name in _cstim_hdf5_records(str(root))
+        if group == folder
+    ]
+    expected = EXPECTED_CSTIM_IMAGE_COUNTS.get(stimulus_set)
+    if expected is not None and len(records) != expected:
+        raise RuntimeError(
+            f"Unexpected CSTIM metadata count for {stimulus_set!r}: "
+            f"found {len(records)} in group {folder!r}, expected {expected}."
+        )
+
+    out_dir = _cstim_extracted_image_cache_root() / folder
+    out_dir.mkdir(parents=True, exist_ok=True)
+    paths: list[Path] = []
+    missing: list[tuple[int, Path]] = []
+    for fallback_idx, (row_idx, image_name) in enumerate(records):
+        out_path = out_dir / _safe_cstim_image_name(image_name, fallback_idx)
+        paths.append(out_path)
+        if not out_path.is_file() or out_path.stat().st_size == 0:
+            missing.append((row_idx, out_path))
+
+    if missing:
+        import h5py
+        import numpy as np
+
+        with h5py.File(root / "stimuli.hdf5", "r") as h5:
+            images = h5["images"]
+            for row_idx, out_path in missing:
+                raw = np.asarray(images[row_idx]).tobytes()
+                tmp = out_path.with_name(f".{out_path.name}.{os.getpid()}.tmp")
+                tmp.write_bytes(raw)
+                os.replace(tmp, out_path)
+
+    return paths
 
 
 def project_root() -> Path:
@@ -240,7 +356,8 @@ def cstim_hdf5_root() -> Path:
         markers=("metadata.csv", "stimuli.hdf5"),
     )
     for stimulus_set, expected in EXPECTED_CSTIM_IMAGE_COUNTS.items():
-        img_dir = root / _cstim_folder_name(stimulus_set)
+        folder = _cstim_folder_name(stimulus_set)
+        img_dir = root / folder
         files = _image_files(img_dir)
         if len(files) != expected:
             raise RuntimeError(

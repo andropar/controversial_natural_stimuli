@@ -58,6 +58,14 @@ PAIR_LINE_ALPHA = 0.13
 PAIR_LINE_WIDTH = 0.26
 
 
+def format_weight(weight: float) -> str:
+    if np.isposinf(weight):
+        return "target-only"
+    if abs(weight) >= 1000:
+        return f"{weight / 1000:g}k"
+    return f"{weight:g}"
+
+
 def load_weight_scores() -> pd.DataFrame:
     df = pd.read_csv(SCORE_CSV)
     df["target_weight"] = df["target_weight"].astype(float)
@@ -304,7 +312,7 @@ def panel_weight_label(panel: pd.DataFrame, mode: str) -> str:
     if not weights:
         return ""
     if mode == "mean_best":
-        return f"mean-best w={weights[0]:g}"
+        return f"mean-best w={format_weight(weights[0])}"
     return "per-model w*"
 
 
@@ -314,7 +322,7 @@ def set_x_labels(ax, panel: pd.DataFrame, order: list[str], mode: str) -> None:
         row = panel[panel["model"].eq(model)].iloc[0]
         label = short_model_label(model)
         if mode == "model_best":
-            label = f"{label}\nw={float(row.selected_weight):g}"
+            label = f"{label}\nw={format_weight(float(row.selected_weight))}"
         labels.append(label)
     ax.set_xticks(np.arange(len(order)))
     ax.set_xticklabels(labels, rotation=48, ha="right", fontsize=FONT_TICK)

@@ -41,7 +41,7 @@ from cstims.target_adaptation import (
 from srp_utils import FEATURE_PROTOCOL, SRP_TARGET_DIM
 
 
-DEFAULT_WEIGHTS = "0,0.25,0.5,1,2,4,8,16,32,47"
+DEFAULT_WEIGHTS = "0,0.25,0.5,1,2,4,8,16,32,47,4700,inf"
 DEFAULT_N_VICCO_BOOT = 1000
 DEFAULT_OUTPUT_STEM = "default"
 REFIT_RESULTS_DIR = RESULTS_DIR / "03_refit_alpha"
@@ -578,6 +578,17 @@ def prepare_weighted_training(
             f"DeepVision feature/response length mismatch: {X_dv_raw.shape[0]} vs "
             f"{Y_dv_raw.shape[0]}"
         )
+    if np.isposinf(weight):
+        sample_weight = np.ones(X_target_raw.shape[0], dtype=np.float64)
+        target_indices = np.arange(X_target_raw.shape[0])
+        return (
+            X_target_raw.astype(np.float32, copy=False),
+            Y_target_raw.astype(np.float32, copy=False),
+            sample_weight,
+            target_indices.astype(int),
+            0,
+            "deepvision=0,target=1",
+        )
     if weight <= 0:
         sample_weight = np.ones(X_dv_raw.shape[0], dtype=np.float64)
         return (
@@ -699,6 +710,9 @@ def score_cstim_job(
 
     rows = []
     elapsed = time.time() - t0
+    target_only = np.isposinf(weight)
+    scope_prefix = "full_refit_target_only" if target_only else "full_refit_deepvision_unique_plus"
+    zscore_reference = "target_only" if target_only else ZSCORE_REFERENCE
     for eval_target, stimulus_type, score, sem, n_scored, n_boot, hat, scope in [
         (
             "cstim_loso",
@@ -708,7 +722,7 @@ def score_cstim_job(
             X_target_raw.shape[0],
             1,
             target_hat,
-            f"full_refit_deepvision_unique_plus_{model_set}_target_loso",
+            f"{scope_prefix}_{model_set}_target_loso",
         ),
         (
             "vicco_heldout",
@@ -718,7 +732,7 @@ def score_cstim_job(
             vicco_n_scored,
             vicco_n_boot,
             None,
-            f"full_refit_deepvision_unique_plus_{model_set}_target_vicco_held_out",
+            f"{scope_prefix}_{model_set}_target_vicco_held_out",
         ),
     ]:
         canonical_score, canonical_sem, original_score, original_sem = canonical_values(
@@ -750,8 +764,8 @@ def score_cstim_job(
             score_sample_size=n_scored,
             alphas=alphas,
             hat_diag=hat,
-            feature_reference=ZSCORE_REFERENCE,
-            response_reference=ZSCORE_REFERENCE,
+            feature_reference=zscore_reference,
+            response_reference=zscore_reference,
             training_target_scope=scope,
             runtime_alpha=alpha_runtime,
             runtime_prediction=pred_runtime,
@@ -850,6 +864,9 @@ def score_vicco_loso_job(
         weight=weight,
     )
     rows: list[dict] = []
+    target_only = np.isposinf(weight)
+    scope_prefix = "full_refit_target_only" if target_only else "full_refit_deepvision_unique_plus"
+    zscore_reference = "target_only" if target_only else ZSCORE_REFERENCE
     add_score_row(
         rows,
         sel=sel,
@@ -871,9 +888,9 @@ def score_vicco_loso_job(
         score_sample_size=vicco_n_scored,
         alphas=alphas,
         hat_diag=vicco_hat,
-        feature_reference=ZSCORE_REFERENCE,
-        response_reference=ZSCORE_REFERENCE,
-        training_target_scope="full_refit_deepvision_unique_plus_vicco_target_loso",
+        feature_reference=zscore_reference,
+        response_reference=zscore_reference,
+        training_target_scope=f"{scope_prefix}_vicco_target_loso",
         runtime_alpha=alpha_runtime,
         runtime_prediction=pred_runtime,
         runtime_total=time.time() - t0,
@@ -1046,6 +1063,7 @@ def main() -> None:
     parser.add_argument("--skip-vicco-loso", action="store_true")
     parser.add_argument("--n-vicco-boot", type=int, default=DEFAULT_N_VICCO_BOOT)
     parser.add_argument("--output-stem", default=DEFAULT_OUTPUT_STEM)
+    parser.add_argument("--canonical-score-csv", type=Path, default=CANONICAL_SCORE_CSV)
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--resume", action="store_true")
     args = parser.parse_args()
@@ -1059,7 +1077,7 @@ def main() -> None:
         return
 
     weights = parse_weights(args.weights)
-    canonical = pd.read_csv(CANONICAL_SCORE_CSV)
+    canonical = pd.read_csv(args.canonical_score_csv)
     canonical_rows = canonical_lookup(canonical)
     selections = select_rows(
         model_set=args.model_set,
@@ -1181,7 +1199,7 @@ def main() -> None:
         ),
         "fit_scope": FIT_SCOPE,
         "prediction_protocol": "layer_sweep_stream_predict_v1",
-        "canonical_score_csv": str(CANONICAL_SCORE_CSV),
+        "canonical_score_csv": str(args.canonical_score_csv),
         "score_csv": str(score_csv),
         "summary_csv": str(summary_csv),
         "python": os.sys.executable,

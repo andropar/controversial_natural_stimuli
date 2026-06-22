@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSTIM Encoding CV Plots</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f7f4;
+      --panel: #ffffff;
+      --text: #1d252c;
+      --muted: #64717c;
+      --border: #d9dedb;
+      --accent: #166a72;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+
+    header {
+      padding: 28px 28px 18px;
+      border-bottom: 1px solid var(--border);
+      background: #fbfbf8;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: clamp(24px, 3vw, 38px);
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 980px;
+    }
+
+    main {
+      padding: 24px 28px 48px;
+    }
+
+    h2 {
+      margin: 22px 0 14px;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+
+    figure {
+      margin: 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--panel);
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(29, 37, 44, 0.05);
+    }
+
+    figcaption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    figcaption span {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CSTIM Encoding CV Plots</h1>
+    <p>Jun 21 retry outputs plus the added median/spread diagnostics. Root-level plots from Jun 17 are not mixed into the retry sections.</p>
+  </header>
+
+  <main>
+    <h2>Fixed Alpha</h2>
+    <section class="grid">
+      <figure>
+        <figcaption>
+          <span>Brain alignment grid, target/cstim weight 2</span>
+          <a href="02_fixed_alpha/target_adaptation_fixed_weight_brain_alignment_grid_w2_cached.pdf">PDF</a>
+        </figcaption>
+        <img src="02_fixed_alpha/png/target_adaptation_fixed_weight_brain_alignment_grid_w2_cached.png" alt="Fixed alpha brain alignment grid">
+      </figure>
+
+      <figure>
+        <figcaption>
+          <span>CSTIM vs VICCo, all models, target/cstim weight 2</span>
+          <a href="02_fixed_alpha/target_adaptation_fixed_weight_cstim_vicco_scatter_all_models_w2_cached.pdf">PDF</a>
+        </figcaption>
+        <img src="02_fixed_alpha/png/target_adaptation_fixed_weight_cstim_vicco_scatter_all_models_w2_cached.png" alt="Fixed alpha CSTIM VICCo scatter for all models">
+      </figure>
+
+      <figure>
+        <figcaption>
+          <span>CSTIM vs VICCo, SOTA, target/cstim weight 2</span>
+          <a href="02_fixed_alpha/target_adaptation_fixed_weight_cstim_vicco_scatter_sota_w2_cached.pdf">PDF</a>
+        </figcaption>
+        <img src="02_fixed_alpha/png/target_adaptation_fixed_weight_cstim_vicco_scatter_sota_w2_cached.png" alt="Fixed alpha CSTIM VICCo scatter for SOTA models">
+      </figure>
+
+      <figure>
+        <figcaption>
+          <span>CSTIM vs VICCo by training objective, target/cstim weight 2</span>
+          <a href="02_fixed_alpha/target_adaptation_fixed_weight_cstim_vicco_scatter_training_objective_w2_cached.pdf">PDF</a>
+        </figcaption>
+        <img src="02_fixed_alpha/png/target_adaptation_fixed_weight_cstim_vicco_scatter_training_objective_w2_cached.png" alt="Fixed alpha CSTIM VICCo scatter by training objective">
+      </figure>
+
+      <figure>
+        <figcaption>
+          <span>CSTIM vs VICCo by architecture, target/cstim weight 2</span>
+          <a href="02_fixed_alpha/target_adaptation_fixed_weight_cstim_vicco_scatter_architecture_w2_cached.pdf">PDF</a>
+        </figcaption>
+        <img src="02_fixed_alpha/png/target_adaptation_fixed_weight_cstim_vicco_scatter_architecture_w2_cached.png" alt="Fixed alpha CSTIM VICCo scatter by architecture">
+      </figure>
+
+      <figure>
+        <figcaption>
+          <span>CSTIM vs VICCo by dataset, target/cstim weight 2</span>
+          <a href="02_fixed_alpha/target_adaptation_fixed_weight_cstim_vicco_scatter_dataset_w2_cached.pdf">PDF</a>
+        </figcaption>
+        <img src="02_fixed_alpha/png/target_adaptation_fixed_weight_cstim_vicco_scatter_dataset_w2_cached.png" alt="Fixed alpha CSTIM VICCo scatter by dataset">
+      </figure>
+    </section>
+
+    <h2>Refit Alpha</h2>
+    <section class="grid">
+      <figure>
+        <figcaption>
+          <span>Score trajectory across target/cstim weights</span>
+          <a href="03_refit_alpha/target_adaptation_weight_trajectory_cached.pdf">PDF</a>
+        </figcaption>
+        <img src="03_refit_alpha/png/target_adaptation_weight_trajectory_cached.png" alt="Refit alpha score trajectory across weights">
+      </figure>
+
+      <figure>
+        <figcaption>
+          <span>Score delta trajectory across target/cstim weights</span>
+          <a href="03_refit_alpha/target_adaptation_weight_delta_trajectory_cached.pdf">PDF</a>
+        </figcaption>
+        <img src="03_refit_alpha/png/target_adaptation_weight_delta_trajectory_cached.png" alt="Refit alpha score delta trajectory across weights">
+      </figure>
+
+      <figure>
+        <figcaption>
+          <span>Weight 0 to best CSTIM grid</span>
+          <a href="03_refit_alpha/target_adaptation_weight0_to_best_cstim_grid_cached.pdf">PDF</a>
+        </figcaption>
+        <img src="03_refit_alpha/png/target_adaptation_weight0_to_best_cstim_grid_cached.png" alt="Refit alpha weight 0 to best CSTIM grid">
+      </figure>
+    </section>
+
+    <h2>Median And Spread</h2>
+    <section class="grid">
+      <figure>
+        <figcaption>
+          <span>Median alignment and spread across dense layers</span>
+          <a href="04_alignment_spread/target_adaptation_layer_depth_spread_median_cached.pdf">PDF</a>
+        </figcaption>
+        <img src="04_alignment_spread/png/target_adaptation_layer_depth_spread_median_cached.png" alt="Median alignment and spread across dense layers">
+      </figure>
+
+      <figure>
+        <figcaption>
+          <span>Median alignment and spread across target-weight refits</span>
+          <a href="04_alignment_spread/target_adaptation_refit_weight_spread_median_cached.pdf">PDF</a>
+        </figcaption>
+        <img src="04_alignment_spread/png/target_adaptation_refit_weight_spread_median_cached.png" alt="Median alignment and spread across target-weight refits">
+      </figure>
+    </section>
+  </main>
+</body>
+</html>

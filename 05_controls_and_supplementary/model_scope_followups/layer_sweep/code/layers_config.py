@@ -505,6 +505,7 @@ DENSE_MODEL_LAYERS: Dict[str, List[LayerSpec]] = {
 LAYER_SETS: Dict[str, Dict[str, List[LayerSpec]]] = {
     "configured": MODEL_LAYERS,
     "dense": {model: _flatten_layers(specs) for model, specs in DENSE_MODEL_LAYERS.items()},
+    "cornet_decoder": {"cornet_s": [("decoder.flatten", "squeeze")]},
 }
 
 

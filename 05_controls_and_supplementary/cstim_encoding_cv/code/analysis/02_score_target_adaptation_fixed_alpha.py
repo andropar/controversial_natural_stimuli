@@ -56,7 +56,7 @@ from cstims.target_adaptation import (
 from srp_utils import FEATURE_PROTOCOL, SRP_TARGET_DIM, cached_layer_current
 
 
-DEFAULT_WEIGHTS = "0,0.25,0.5,1,2,4,8,16,32,47"
+DEFAULT_WEIGHTS = "0,0.25,0.5,1,2,4,8,16,32,47,4700,inf"
 ALPHA_GRID = np.logspace(np.log10(0.1), np.log10(1.0e7), 20).astype(np.float32)
 DEFAULT_N_FOLDS = 5
 DEFAULT_SEED = 42
@@ -71,9 +71,7 @@ LOCAL_DV_FEATURE_DIR = LOCAL_SELECTED_CACHE_DIR / "dv_features"
 LOCAL_ALPHA_DIR = CACHE_DIR / "target_adaptation_srp5920" / "alphas"
 
 DV_CACHE_ROOT = SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "deepvision_benchmark_cache"
-BRAIN_CACHE_ROOT = (
-    SHARE_ROOT / "01_brain_model_alignment" / "cache_or_heavy" / "cstim_brain_response_cache" / "data"
-)
+BRAIN_CACHE_ROOT = paths.brain_data_dir()
 
 ANALYSIS_RESULTS_DIR = RESULTS_DIR / "02_fixed_alpha"
 SCORE_CSV = ANALYSIS_RESULTS_DIR / "scores.csv"
@@ -350,6 +348,69 @@ def alpha_groups(alphas: np.ndarray) -> list[tuple[float, np.ndarray]]:
     return groups
 
 
+def target_only_fixed_alpha_predictions(
+    *,
+    X_target_z: np.ndarray,
+    Y_target_z: np.ndarray,
+    X_eval_z: np.ndarray | None,
+    alphas: np.ndarray,
+    feature_mean: np.ndarray,
+    feature_scale: np.ndarray,
+    layer_sweep_eval: bool,
+) -> tuple[np.ndarray, np.ndarray | None, np.ndarray]:
+    """Fit the fixed-alpha endpoint using target rows only."""
+    Xt_fit = np.asarray(X_target_z, dtype=np.float64)
+    Yt = np.asarray(Y_target_z, dtype=np.float64)
+    if layer_sweep_eval:
+        Xt_eval = layer_sweep_eval_design(Xt_fit, feature_mean, feature_scale)
+    else:
+        Xt_eval = Xt_fit
+
+    x_bar = Xt_fit.mean(axis=0)
+    y_bar = Yt.mean(axis=0)
+    Xc = Xt_fit - x_bar[None, :]
+    Yc = Yt - y_bar[None, :]
+    K = Xc @ Xc.T
+    K = (K + K.T) * 0.5
+    K_eval = (np.asarray(Xt_eval, dtype=np.float64) - x_bar[None, :]) @ Xc.T
+    if X_eval_z is not None:
+        Xe = np.asarray(X_eval_z, dtype=np.float64)
+        if layer_sweep_eval:
+            Xe = layer_sweep_eval_design(Xe, feature_mean, feature_scale)
+        C_eval = (Xe - x_bar[None, :]) @ Xc.T
+        eval_pred = np.empty((Xe.shape[0], Yt.shape[1]), dtype=np.float32)
+    else:
+        C_eval = None
+        eval_pred = None
+
+    pred = np.empty_like(Yt, dtype=np.float32)
+    hats = np.empty_like(Yt, dtype=np.float32)
+    eye = np.eye(K.shape[0], dtype=np.float64)
+    for alpha, vox_idx in alpha_groups(alphas):
+        A = K + eye * float(alpha)
+        try:
+            cf = scipy.linalg.cho_factor(A, lower=True, check_finite=False)
+        except scipy.linalg.LinAlgError:
+            A = A + eye * 1e-8
+            cf = scipy.linalg.cho_factor(A, lower=True, check_finite=False)
+        dual = scipy.linalg.cho_solve(cf, Yc[:, vox_idx], check_finite=False)
+        solved_eye = scipy.linalg.cho_solve(cf, eye, check_finite=False)
+        fit_pred = y_bar[vox_idx][None, :] + K @ dual
+        eval_fit_pred = y_bar[vox_idx][None, :] + K_eval @ dual
+        residual = Yt[:, vox_idx] - fit_pred
+        eval_leverage = np.sum(K_eval * solved_eye.T, axis=1)
+        loo_scale = eval_leverage / np.maximum(np.diag(solved_eye), 1e-12)
+        pred[:, vox_idx] = (eval_fit_pred - loo_scale[:, None] * residual).astype(
+            np.float32
+        )
+        hats[:, vox_idx] = np.clip(np.diag(K @ solved_eye), 0.0, 0.999999)[:, None]
+        if eval_pred is not None and C_eval is not None:
+            eval_pred[:, vox_idx] = (y_bar[vox_idx][None, :] + C_eval @ dual).astype(
+                np.float32
+            )
+    return pred, eval_pred, hats
+
+
 def weighted_predictions_for_target(
     *,
     X_dv_z: np.ndarray,
@@ -435,6 +496,8 @@ def weighted_predictions_for_target(
                 h = np.zeros(X_target_z.shape[0], dtype=np.float64)
                 if eval_pred is not None and base_e is not None:
                     eval_pred[weight][:, vox_idx] = base_e.astype(np.float32)
+            elif np.isposinf(weight):
+                continue
             else:
                 B = K + np.eye(K.shape[0], dtype=np.float64) / float(weight)
                 try:
@@ -461,6 +524,22 @@ def weighted_predictions_for_target(
                 loo = pred_t - loo_scale[:, None] * solved_residual
             target_pred[weight][:, vox_idx] = loo.astype(np.float32)
             hats[weight][:, vox_idx] = h[:, None].astype(np.float32)
+    if any(np.isposinf(weight) for weight in weights):
+        inf_target, inf_eval, inf_hats = target_only_fixed_alpha_predictions(
+            X_target_z=X_target_z,
+            Y_target_z=Y_target_z,
+            X_eval_z=X_eval_z,
+            alphas=alphas,
+            feature_mean=feature_mean,
+            feature_scale=feature_scale,
+            layer_sweep_eval=layer_sweep_eval,
+        )
+        for weight in weights:
+            if np.isposinf(weight):
+                target_pred[weight][:] = inf_target
+                hats[weight][:] = inf_hats
+                if eval_pred is not None and inf_eval is not None:
+                    eval_pred[weight][:] = inf_eval
     return target_pred, eval_pred, hats
 
 
@@ -634,6 +713,9 @@ def compute_one_selection(
         )
         assert pred_vicco is not None
         for weight in target_weights:
+            target_only = np.isposinf(weight)
+            n_deepvision_train = 0 if target_only else X_dv_z.shape[0]
+            scope_prefix = "fixed_alpha_target_only" if target_only else "deepvision_unique_plus"
             cstim_score = rsa_spearman(pred_loso[weight], Y_target_raw)
             if vicco_boot:
                 vicco_score, vicco_sem = rsa_spearman_bootstrap_mean(
@@ -660,14 +742,14 @@ def compute_one_selection(
                 score_sem=np.nan,
                 original_score=cstim_ref,
                 original_sem=cstim_ref_sem,
-                n_deepvision_train=X_dv_z.shape[0],
+                n_deepvision_train=n_deepvision_train,
                 n_target_train=X_target_z.shape[0],
                 n_stimuli_scored=X_target_z.shape[0],
                 n_score_bootstrap=1,
                 score_sample_size=X_target_z.shape[0],
                 alpha_values=alphas,
                 hat_diag=hats[weight],
-                training_target_scope=f"deepvision_unique_plus_{group}_target_loso",
+                training_target_scope=f"{scope_prefix}_{group}_target_loso",
             )
             add_score_row(
                 out,
@@ -681,14 +763,14 @@ def compute_one_selection(
                 score_sem=vicco_sem,
                 original_score=vicco_ref,
                 original_sem=vicco_ref_sem,
-                n_deepvision_train=X_dv_z.shape[0],
+                n_deepvision_train=n_deepvision_train,
                 n_target_train=X_target_z.shape[0],
                 n_stimuli_scored=vicco_n_scored,
                 n_score_bootstrap=vicco_n_boot,
                 score_sample_size=vicco_n_scored,
                 alpha_values=alphas,
                 hat_diag=None,
-                training_target_scope=f"deepvision_unique_plus_{group}_target_vicco_held_out",
+                training_target_scope=f"{scope_prefix}_{group}_target_vicco_held_out",
             )
 
     vicco_loso_pred, _unused_eval, vicco_hats = weighted_predictions_for_target(
@@ -706,6 +788,9 @@ def compute_one_selection(
         layer_sweep_eval=True,
     )
     for weight in target_weights:
+        target_only = np.isposinf(weight)
+        n_deepvision_train = 0 if target_only else X_dv_z.shape[0]
+        scope_prefix = "fixed_alpha_target_only" if target_only else "deepvision_unique_plus"
         if vicco_boot:
             vicco_score, vicco_sem = rsa_spearman_bootstrap_mean(
                 vicco_loso_pred[weight],
@@ -731,14 +816,14 @@ def compute_one_selection(
             score_sem=vicco_sem,
             original_score=vicco_ref,
             original_sem=vicco_ref_sem,
-            n_deepvision_train=X_dv_z.shape[0],
+            n_deepvision_train=n_deepvision_train,
             n_target_train=X_vicco_z.shape[0],
             n_stimuli_scored=vicco_n_scored,
             n_score_bootstrap=vicco_n_boot,
             score_sample_size=vicco_n_scored,
             alpha_values=alphas,
             hat_diag=vicco_hats[weight],
-            training_target_scope="deepvision_unique_plus_vicco_target_loso",
+            training_target_scope=f"{scope_prefix}_vicco_target_loso",
         )
 
     elapsed = time.time() - t0
@@ -828,6 +913,8 @@ def completed_resume_weight_rows(
 
 
 def main() -> None:
+    global ANALYSIS_RESULTS_DIR, SCORE_CSV, SUMMARY_CSV, AUDIT_CSV, RUN_META_JSON
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--weights", default=DEFAULT_WEIGHTS)
     parser.add_argument("--subject", default="all")
@@ -837,6 +924,7 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED)
     parser.add_argument("--n-vicco-boot", type=int, default=DEFAULT_N_VICCO_BOOT)
     parser.add_argument("--max-selections", type=int, default=None)
+    parser.add_argument("--output-dir", type=Path, default=ANALYSIS_RESULTS_DIR)
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--overwrite-alpha", action="store_true")
     parser.add_argument(
@@ -848,6 +936,12 @@ def main() -> None:
         ),
     )
     args = parser.parse_args()
+
+    ANALYSIS_RESULTS_DIR = args.output_dir
+    SCORE_CSV = ANALYSIS_RESULTS_DIR / "scores.csv"
+    SUMMARY_CSV = ANALYSIS_RESULTS_DIR / "summary.csv"
+    AUDIT_CSV = ANALYSIS_RESULTS_DIR / "cache_and_alpha_audit.csv"
+    RUN_META_JSON = ANALYSIS_RESULTS_DIR / "metadata.json"
 
     ANALYSIS_RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     CACHE_DIR.mkdir(parents=True, exist_ok=True)

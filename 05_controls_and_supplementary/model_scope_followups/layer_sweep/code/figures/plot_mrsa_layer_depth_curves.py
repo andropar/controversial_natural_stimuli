@@ -112,6 +112,16 @@ def best_frac(curve: pd.DataFrame) -> float:
     return float(curve.loc[curve[value_col].idxmax(), "layer_frac"])
 
 
+def plot_curve(ax, curve: pd.DataFrame, *, color: str, label: str) -> None:
+    ax.plot(
+        curve["layer_frac"].to_numpy(dtype=float),
+        curve["mrsa_plot"].to_numpy(dtype=float),
+        color=color,
+        linewidth=1.0,
+        label=label,
+    )
+
+
 def plot_for_set(summary: pd.DataFrame, cstim_set: str) -> None:
     specs = get_layer_set("dense")
     model_order = [m for m in MODEL_SETS[cstim_set] if m in specs]
@@ -134,12 +144,9 @@ def plot_for_set(summary: pd.DataFrame, cstim_set: str) -> None:
         vicco_plot = smooth_curve(vicco)
         cstim_plot = smooth_curve(cstim)
 
-        ax.plot(shared_plot["layer_frac"], shared_plot["mrsa_plot"], color=LINE_COLORS["shared"],
-                linewidth=1.0, label="Shared")
-        ax.plot(vicco_plot["layer_frac"], vicco_plot["mrsa_plot"], color=LINE_COLORS["vicco"],
-                linewidth=1.0, label="Vicco")
-        ax.plot(cstim_plot["layer_frac"], cstim_plot["mrsa_plot"], color=LINE_COLORS["cstim"],
-                linewidth=1.0, label="Cstim")
+        plot_curve(ax, shared_plot, color=LINE_COLORS["shared"], label="Shared")
+        plot_curve(ax, vicco_plot, color=LINE_COLORS["vicco"], label="Vicco")
+        plot_curve(ax, cstim_plot, color=LINE_COLORS["cstim"], label="Cstim")
 
         paper_frac = summary[
             summary["model"].eq(model)

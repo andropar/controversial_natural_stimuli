@@ -271,7 +271,14 @@ def model_order_from_panel(panel: pd.DataFrame) -> list[str]:
 
 
 def load_noise_ceilings() -> pd.DataFrame:
-    return pd.read_csv(STATS_DATA_DIR / "rdm_noise_ceilings.csv")
+    candidate_paths = [
+        STATS_DATA_DIR / "rdm_noise_ceilings.csv",
+        paths.reliability_data_dir() / "rdm_noise_ceilings.csv",
+    ]
+    for path in candidate_paths:
+        if path.exists():
+            return pd.read_csv(path)
+    raise FileNotFoundError(f"Could not find rdm_noise_ceilings.csv in {candidate_paths}")
 
 
 def load_permutation_results() -> pd.DataFrame:

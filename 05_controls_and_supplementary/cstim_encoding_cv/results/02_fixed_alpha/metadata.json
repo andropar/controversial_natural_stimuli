@@ -1,0 +1,23 @@
+{
+  "run": "raven_cstim_encoding_cv_20260620_173400_png_full",
+  "source": "parallel subject/model shards",
+  "manifest": "/raven/u/rothj/controversial_natural_stimuli/05_controls_and_supplementary/cstim_encoding_cv/logs/raven_cstim_encoding_cv_20260620_173400_png_full/score_subject_model_manifest.tsv",
+  "shard_root": "/raven/u/rothj/controversial_natural_stimuli/05_controls_and_supplementary/cstim_encoding_cv/results/02_fixed_alpha/by_subject_model_png_full_20260620_173400",
+  "n_shards": 100,
+  "n_rows": 6120,
+  "weights": [
+    0.0,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    47.0,
+    4700.0,
+    Infinity
+  ],
+  "created": "2026-06-21 17:26:45"
+}
