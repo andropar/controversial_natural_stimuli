@@ -704,15 +704,11 @@ def score_shortlist_refit_robust(
     start = time.monotonic()
     first_student = model_names[0]
     cache = round_cache.student_caches[first_student]
-    _materialize_candidate_ops_numba(
-        cache.selected_inverse,
-        cache.selected_inverse_diag,
-        cache.selected_base_numerator,
-        cache.candidate_q,
-        cache.candidate_delta,
-        cache.candidate_z,
-        0,
-    )
+    if materialize_candidate_ops(cache, 0) is None:
+        raise RuntimeError(
+            "Numerically unstable candidate delta during Numba warmup for "
+            f"student {first_student}"
+        )
     timing["warmup_seconds"] = float(time.monotonic() - start)
 
     common_kwargs = {
