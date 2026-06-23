@@ -80,7 +80,27 @@ from refit_robust import (  # noqa: E402
 MODEL_LIST_CSV = ROOT / "00_stimulus_selection" / "resources" / "model_list.csv"
 
 def run_selection(args: argparse.Namespace) -> Path:
-    """Run greedy refit-robust selection and write resumable payload files."""
+    """Run the full greedy refit-robust selector.
+
+    This is the orchestration layer: it loads model features and encoding
+    weights, initializes or resumes the selected set, builds the refit
+    train/validation pool, scores proxy shortlists, applies the optional
+    image filter, and writes checkpointable payload files after every
+    selected image.
+
+    Assumptions:
+        Candidate features are aligned by row across all models.  Feature
+        and target standardization, response-noise calibration, and
+        eval-augmented LOO scoring are delegated to the refit_robust package.
+        The command-line defaults mirror the production Slurm launch path.
+
+    Args:
+        args: Parsed command-line arguments from parse_args().
+
+    Returns:
+        Path to the completed method payload directory.
+
+    """
     paths = load_env_paths(args.env)
     local_encoding_root = (
         ROOT
@@ -707,7 +727,17 @@ def run_selection(args: argparse.Namespace) -> Path:
 
 
 def parse_args() -> argparse.Namespace:
-    """Parse and validate command-line arguments for a refit-robust run."""
+    """Parse and validate CLI options for a refit-robust run.
+
+    The parser intentionally preserves the historical command-line surface
+    used by queued Slurm jobs.  It validates only cheap local constraints;
+    data-dependent checks happen in run_selection().
+
+    Returns:
+        argparse.Namespace with normalized defaults, including a timestamped
+        output root when --output-root is omitted.
+
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-root", type=Path, default=None)
     parser.add_argument("--method-id", default="sub01_eval_augmented_loo_refit_robust")
@@ -854,7 +884,13 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> None:
-    """CLI entry point for refit-robust selection."""
+    """Execute the refit-robust selector from the command line.
+
+    Side effects:
+        Writes run outputs under args.output_root and prints the final
+        payload directory when selection completes.
+
+    """
     args = parse_args()
     method_dir = run_selection(args)
     print(f"Done. Payload: {method_dir.resolve()}", flush=True)

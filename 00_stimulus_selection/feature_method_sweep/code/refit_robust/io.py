@@ -13,12 +13,30 @@ from feature_method_sweep import MethodSpec, TrackSpec
 
 
 def parse_csv_floats(value: str) -> list[float]:
-    """Parse a comma-separated float list from a command-line option."""
+    """Parse a comma-separated list of ridge alpha values.
+
+    Empty fields are ignored so values such as "0.1, 1, 10," are accepted.
+
+    Args:
+        value: Comma-separated numeric string.
+
+    Returns:
+        Parsed float values in their input order.
+
+    """
     return [float(part.strip()) for part in value.split(",") if part.strip()]
 
 
 def load_existing_indices(method_dir: Path) -> list[int] | None:
-    """Load selected indices from a previous run if the checkpoint exists."""
+    """Load selected image indices from a run checkpoint.
+
+    Args:
+        method_dir: Payload directory containing selected_indices.npy.
+
+    Returns:
+        List of integer pool indices, or None when the checkpoint is absent.
+
+    """
     path = method_dir / "selected_indices.npy"
     if not path.exists():
         return None
@@ -26,7 +44,21 @@ def load_existing_indices(method_dir: Path) -> list[int] | None:
 
 
 def load_existing_rows(path: Path, *, max_iteration: int | None = None) -> list[dict[str, Any]]:
-    """Load checkpoint CSV rows and optionally truncate them to completed iterations."""
+    """Load a checkpoint CSV as dictionaries.
+
+    Missing and empty files are treated as no completed rows.  When
+    max_iteration is supplied and the CSV has an iteration column, rows after
+    that completed iteration are ignored so partially written resume state
+    cannot get ahead of selected_indices.npy.
+
+    Args:
+        path: CSV checkpoint path.
+        max_iteration: Highest completed greedy iteration to keep.
+
+    Returns:
+        CSV rows converted to plain dictionaries with NaN replaced by None.
+
+    """
     if not path.exists() or path.stat().st_size == 0:
         return []
     try:
@@ -49,7 +81,27 @@ def load_resume_state(
     init_size: int,
     pool_size: int,
 ) -> tuple[list[int], list[dict[str, Any]], list[dict[str, Any]]] | None:
-    """Validate and load selected indices plus trace rows for a resumable run."""
+    """Validate and load all state needed to resume selection.
+
+    The selected-index checkpoint is authoritative.  Trace and candidate
+    score rows are loaded only through the number of completed greedy
+    iterations implied by selected_indices.npy.
+
+    Args:
+        method_dir: Method payload directory.
+        target_size: Requested final number of selected images.
+        init_size: Number of initial seed images.
+        pool_size: Number of candidate rows available in the loaded pool.
+
+    Returns:
+        Tuple of selected indices, trace rows, and candidate-score rows, or
+        None when no selected-index checkpoint exists.
+
+    Raises:
+        ValueError: If the checkpoint is internally inconsistent or refers
+        to indices outside the current candidate pool.
+
+    """
     selected = load_existing_indices(method_dir)
     if selected is None:
         return None
@@ -98,7 +150,18 @@ def load_resume_state(
 
 
 def save_filter_records(method_dir: Path, records: list[dict[str, Any]]) -> None:
-    """Write image-filter records and a compact pass/fail summary for a method payload."""
+    """Write image-filter audit records and summary counts.
+
+    Args:
+        method_dir: Method payload directory to receive filter_records.csv
+            and filter_summary.json.
+        records: Filter audit rows produced during initialization or greedy
+            candidate validation.
+
+    Side effects:
+        Writes CSV/JSON files when records is non-empty.
+
+    """
     if not records:
         return
     filter_df = pd.DataFrame(records)
@@ -123,7 +186,15 @@ def save_filter_records(method_dir: Path, records: list[dict[str, Any]]) -> None
 
 
 def format_seconds(seconds: float) -> str:
-    """Format elapsed seconds as a compact human-readable duration."""
+    """Format an elapsed duration for progress logs.
+
+    Args:
+        seconds: Duration in seconds.  Negative values are clamped to zero.
+
+    Returns:
+        Human-readable duration string in seconds, minutes, or hours.
+
+    """
     seconds = max(0.0, float(seconds))
     if seconds < 60:
         return f"{seconds:.1f}s"
@@ -135,7 +206,16 @@ def format_seconds(seconds: float) -> str:
 
 
 def make_method(method_id: str, track: str) -> MethodSpec:
-    """Build the feature-method metadata used by manifests and payload writers."""
+    """Build manifest metadata for the refit-robust method.
+
+    Args:
+        method_id: Stable payload identifier for the run.
+        track: Encoding track used for proxy scoring and refit targets.
+
+    Returns:
+        MethodSpec compatible with feature_method_sweep payload writers.
+
+    """
     return MethodSpec(
         method_id=method_id,
         label=f"{track} eval-augmented LOO refit robust",

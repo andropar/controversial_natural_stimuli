@@ -67,7 +67,12 @@ class TeacherTargets:
 
     @property
     def n_targets(self) -> int:
-        """Return the number of response target columns available for this teacher."""
+        """Return the number of response target dimensions.
+
+        Returns:
+            Number of columns in y_base_clean after any target-dim subsampling.
+
+        """
         return int(self.y_base_clean.shape[1])
 
 
@@ -97,7 +102,19 @@ def raw_subset_tensors(
     indices: np.ndarray | list[int],
     device: torch.device,
 ) -> dict[str, torch.Tensor]:
-    """Load raw feature rows for selected models as float32 tensors on the target device."""
+    """Gather raw model-feature rows as PyTorch tensors.
+
+    Args:
+        raw_features_np: Mapping from model name to natural-pool feature
+            matrix with shape (n_pool, n_features_model).
+        model_names: Models to gather.
+        indices: Natural-pool row indices to select.
+        device: Torch device used for encoding.
+
+    Returns:
+        Mapping from model name to float32 tensor on device.
+
+    """
     idx = np.asarray(indices, dtype=np.int64)
     return {
         model: torch.from_numpy(np.asarray(raw_features_np[model][idx])).to(
@@ -113,7 +130,22 @@ def feature_standardization_stats(
     *,
     scale_by_sqrt_features: bool = False,
 ) -> tuple[np.ndarray, np.ndarray]:
-    """Compute train-set feature centering and scaling statistics."""
+    """Compute feature standardization from refit-train rows.
+
+    Features are centered and scaled columnwise using only the provided
+    training matrix.  Near-zero scales are set to 1.0.  When
+    scale_by_sqrt_features is true, scales are additionally multiplied by
+    sqrt(n_features), matching the ridge assumptions used by this selector.
+
+    Args:
+        train: Feature matrix with shape (n_train, n_features).
+        scale_by_sqrt_features: Whether to normalize feature-vector norm by
+            feature dimensionality.
+
+    Returns:
+        Tuple of mean and scale arrays with shape (1, n_features).
+
+    """
     train = np.asarray(train, dtype=np.float32)
     mean = train.mean(axis=0, dtype=np.float64, keepdims=True).astype(np.float32)
     scale = train.std(axis=0, dtype=np.float64, keepdims=True).astype(np.float32)
@@ -128,7 +160,17 @@ def apply_standardization(
     mean: np.ndarray,
     scale: np.ndarray,
 ) -> np.ndarray:
-    """Apply previously computed feature standardization to an array."""
+    """Apply precomputed feature standardization.
+
+    Args:
+        array: Feature matrix whose columns match the training features.
+        mean: Column means from feature_standardization_stats().
+        scale: Column scales from feature_standardization_stats().
+
+    Returns:
+        float32 standardized feature matrix with the same shape as array.
+
+    """
     return np.asarray((np.asarray(array, dtype=np.float32) - mean) / scale, dtype=np.float32)
 
 
@@ -141,7 +183,27 @@ def encode_indices(
     device: torch.device,
     target_cols: np.ndarray | None = None,
 ) -> dict[str, np.ndarray]:
-    """Encode selected natural-pool rows into the requested brain-response target space."""
+    """Encode natural-pool rows into response-target space.
+
+    Raw model features are first moved to the requested torch device, then
+    passed through the loaded linear encoding parameters for one encoding
+    track.  The returned arrays are always CPU float32 numpy arrays.
+
+    Args:
+        raw_features_np: Model feature matrices indexed by natural-pool row.
+        model_names: Models to encode.
+        indices: Natural-pool rows to encode.
+        track: Encoding name, for example sub-01.
+        encoding_params: Encoding parameter mapping returned by
+            load_encoding_params_for_sweep().
+        device: Device used for the encoding matrix multiplies.
+        target_cols: Optional sorted target-column subset.
+
+    Returns:
+        Mapping from model name to encoded responses with shape
+        (len(indices), n_targets_selected).
+
+    """
     raw = raw_subset_tensors(raw_features_np, model_names, indices, device)
     encoded = encode_batch_for_all_encodings(raw, {track: encoding_params[track]})[track]
     out: dict[str, np.ndarray] = {}
@@ -166,7 +228,23 @@ def choose_target_columns(
     target_dim: int | None,
     seed: int,
 ) -> np.ndarray | None:
-    """Choose a reproducible target-column subset when dimensionality reduction is requested."""
+    """Select a reproducible subset of target columns.
+
+    Args:
+        raw_features_np: Model feature matrices used for a one-row probe.
+        model_names: Available models; the first model defines the full
+            encoded target dimensionality.
+        track: Encoding name used for target responses.
+        encoding_params: Loaded encoding parameters.
+        device: Device used for the probe encoding.
+        target_dim: Requested number of target columns; <=0 means all.
+        seed: Base random seed.
+
+    Returns:
+        Sorted int64 column indices, or None when all target columns should
+        be used.
+
+    """
     if target_dim is None or target_dim <= 0:
         return None
     probe_model = model_names[0]
@@ -197,7 +275,23 @@ def build_proxy_runtime(
     device: torch.device,
     pool_size: int,
 ) -> MethodRuntime:
-    """Construct the fixed-RDM proxy runtime for the current selected image set."""
+    """Create the cheap fixed-RDM proxy runtime.
+
+    Args:
+        method: MethodSpec describing the proxy objective.
+        selected_indices: Current selected natural-pool rows.
+        raw_features_np: Model feature matrices.
+        model_names: Models included in the selection run.
+        encoding_params: Loaded encoding parameters.
+        var_noise_by_track: Per-track, per-model proxy attenuation variances.
+        metric: RDM metric used by the proxy runtime.
+        device: Torch device used by feature_method_sweep helpers.
+        pool_size: Number of candidate rows in the natural-pool prefix.
+
+    Returns:
+        MethodRuntime with pool_mask and proxy-track state for scoring.
+
+    """
     return build_runtime(
         method=method,
         selected_indices=selected_indices,
@@ -223,7 +317,26 @@ def proxy_scores_for_pool(
     device: torch.device,
     batch_size: int,
 ) -> np.ndarray:
-    """Score all eligible pool candidates with the cheap proxy objective."""
+    """Score eligible candidates with the proxy objective.
+
+    The proxy score is not the final selection objective.  It is used only to
+    reduce the expensive refit-robust scoring set to a shortlist.
+
+    Args:
+        runtime: Current MethodRuntime with selected images and pool mask.
+        raw_features_np: Model feature matrices.
+        model_names: Models included in proxy scoring.
+        encoding_params: Loaded encoding parameters.
+        track: Encoding track to score.
+        metric: RDM metric passed to compute_track_scores().
+        corr_type: Correlation mode for compute_track_scores().
+        device: Torch device for batched encoding.
+        batch_size: Number of pool rows per proxy batch.
+
+    Returns:
+        float32 array of length pool_size; ineligible rows are -inf.
+
+    """
     pool_size = len(runtime.pool_mask)
     scores = np.full(pool_size, -np.inf, dtype=np.float32)
     track_spec = runtime.spec.tracks[0]
@@ -263,7 +376,20 @@ def topk_shortlist(
     random_k: int,
     rng: np.random.Generator,
 ) -> np.ndarray:
-    """Combine top proxy candidates with optional random exploration candidates."""
+    """Build the final candidate shortlist for one greedy step.
+
+    Args:
+        proxy_scores: One proxy score per pool row.
+        pool_mask: Boolean eligibility mask from the current runtime.
+        top_k: Number of highest proxy-scored rows to keep.
+        random_k: Number of additional eligible rows sampled uniformly.
+        rng: Random generator for exploration candidates.
+
+    Returns:
+        Sorted unique int64 candidate indices from the union of proxy-top and
+        random candidates.
+
+    """
     eligible = np.flatnonzero(pool_mask)
     if len(eligible) == 0:
         return np.empty(0, dtype=np.int64)
@@ -309,7 +435,51 @@ def build_fit_context(
     target_cache_dir: Path | None,
     target_batch_size: int,
 ) -> FitContext:
-    """Prepare standardized student features, teacher targets, and refit calibration state."""
+    """Prepare reusable student and teacher state for refit scoring.
+
+    For each student model, raw features are standardized using only the
+    refit-train split, and base-set kernel eigendecompositions are cached.
+    For each teacher model, encoded target responses are standardized using
+    the refit-train rows, and response-noise scale is calibrated according to
+    the requested mode.
+
+    Assumptions:
+        Feature arrays are row-aligned across models.  Features are
+        standardized before ridge fitting.  Target responses are standardized
+        before response-noise calibration and scoring.
+
+    Args:
+        raw_features_np: Model feature matrices with shared pool rows.
+        model_names: Student/teacher model roster.
+        track: Encoding track used to produce teacher targets.
+        encoding_params: Loaded encoding parameters.
+        device: Torch device for target encoding.
+        target_cols: Optional target-column subset.
+        train_indices: Natural-pool rows used for alpha validation fitting.
+        val_indices: Natural-pool rows used for alpha validation scoring.
+        base_indices: Natural-pool rows available for base refit targets.
+        refit_train_pos: Positions of train_indices inside base_indices.
+        refit_val_pos: Positions of val_indices inside base_indices.
+        alphas: Ridge alpha grid.
+        base_noise_ceiling: Reference noise-ceiling target.
+        noise_mult: Multiplier applied to the reference noise target.
+        fit_noise_calibration: Response-noise calibration mode.
+        rdm_calibration_comparison: Empirical RDM reliability comparison.
+        metric: RDM metric; currently cosine in production.
+        corr_type: RDM correlation type; currently Spearman in production.
+        seed: Base seed for deterministic calibration sampling.
+        calibration_images: Max images used for empirical calibration.
+        calibration_noise_samples: Noise samples per calibration iteration.
+        calibration_max_iter: Iterations for empirical calibration search.
+        precompute_base_kernels: Whether to cache base x pool kernels.
+        kernel_batch_size: Pool batch size for optional base-kernel cache.
+        target_cache_dir: Optional directory for clean target memmaps.
+        target_batch_size: Target-column chunk size for standardization.
+
+    Returns:
+        FitContext reused by every greedy iteration.
+
+    """
     student_ops: dict[str, StudentOps] = {}
     for model in model_names:
         x_train_raw = np.asarray(raw_features_np[model][train_indices], dtype=np.float32)
@@ -457,7 +627,19 @@ def resolve_base_kernel_precompute(
     model_names: list[str],
     max_ram_gb: float,
 ) -> tuple[bool, dict[str, Any]]:
-    """Enable base-kernel precompute only when its estimated memory cost fits the budget."""
+    """Decide whether optional base-kernel precompute fits memory.
+
+    Args:
+        requested: User-requested precompute flag.
+        pool_size: Number of loaded candidate-pool rows.
+        refit_pool_size: Number of base refit rows.
+        model_names: Model roster.
+        max_ram_gb: Run-level memory budget.
+
+    Returns:
+        Tuple of enabled flag and a JSON-serializable diagnostic dictionary.
+
+    """
     bytes_per_model = (
         int(refit_pool_size) * int(pool_size) * np.dtype(np.float32).itemsize
     )
@@ -499,7 +681,22 @@ def response_noise_rows(
     seed: int,
     parts: tuple[object, ...],
 ) -> np.ndarray:
-    """Generate deterministic response-noise rows for complete target vectors."""
+    """Generate deterministic full-width response-noise rows.
+
+    Each image row gets its own seed derived from the base seed and parts,
+    making noise stable across chunking and resume runs.
+
+    Args:
+        image_indices: Natural-pool image indices for each noise row.
+        n_targets: Number of target columns.
+        std: Gaussian noise standard deviation.
+        seed: Base seed.
+        parts: Stable seed components describing the noise role.
+
+    Returns:
+        float32 noise matrix with shape (len(image_indices), n_targets).
+
+    """
     rows = []
     for image_idx in image_indices:
         rng = np.random.default_rng(seed + stable_seed(*parts, int(image_idx)))
@@ -517,7 +714,25 @@ def response_noise_rows_chunk(
     seed: int,
     parts: tuple[object, ...],
 ) -> np.ndarray:
-    """Generate deterministic response-noise rows for a target-column chunk."""
+    """Generate deterministic response noise for a target chunk.
+
+    Chunk boundaries are part of the seed so each requested chunk is stable
+    across runs.  A zero standard deviation returns zeros without creating
+    random generators.
+
+    Args:
+        image_indices: Natural-pool image indices for each noise row.
+        n_targets: Total target dimensionality before chunking.
+        start: Inclusive target-column start.
+        end: Exclusive target-column end.
+        std: Gaussian noise standard deviation.
+        seed: Base seed.
+        parts: Stable seed components describing the noise role.
+
+    Returns:
+        float32 noise matrix with shape (len(image_indices), end - start).
+
+    """
     image_indices = np.asarray(image_indices, dtype=np.int64)
     width = int(end) - int(start)
     if width <= 0:
@@ -541,7 +756,16 @@ def response_noise_rows_chunk(
 
 
 def safe_cache_component(value: str) -> str:
-    """Sanitize a string for use as one component of a cache filename."""
+    """Sanitize a string for cache filename components.
+
+    Args:
+        value: Arbitrary model or cache label.
+
+    Returns:
+        String containing only alphanumeric characters, dot, underscore, and
+        hyphen; all other characters are replaced by underscores.
+
+    """
     return "".join(ch if ch.isalnum() or ch in "._-" else "_" for ch in value)
 
 
@@ -551,7 +775,18 @@ def target_rows_chunk(
     start: int,
     end: int,
 ) -> np.ndarray:
-    """Read a chunk of target columns for selected base-set positions."""
+    """Read selected rows and target columns from clean teacher targets.
+
+    Args:
+        target: Teacher target state.
+        row_positions: Positions inside target.y_base_clean.
+        start: Inclusive target-column start.
+        end: Exclusive target-column end.
+
+    Returns:
+        float32 target chunk with shape (len(row_positions), end - start).
+
+    """
     return np.asarray(
         target.y_base_clean[np.asarray(row_positions, dtype=np.int64), start:end],
         dtype=np.float32,
@@ -564,7 +799,18 @@ def target_standardization_stats(
     *,
     target_batch_size: int,
 ) -> tuple[np.ndarray, np.ndarray]:
-    """Compute target centering and scaling statistics from refit-train rows in chunks."""
+    """Compute response-target standardization from refit-train rows.
+
+    Args:
+        y_base_raw: Unstandardized encoded teacher targets with shape
+            (n_base, n_targets).
+        train_pos: Positions inside y_base_raw used to estimate moments.
+        target_batch_size: Target columns processed per chunk.
+
+    Returns:
+        Tuple of mean and scale arrays with shape (1, n_targets).
+
+    """
     n_targets = int(y_base_raw.shape[1])
     target_batch_size = min(max(1, int(target_batch_size)), n_targets)
     train_pos = np.asarray(train_pos, dtype=np.int64)
@@ -596,7 +842,24 @@ def standardize_base_targets(
     cache_dir: Path | None,
     target_batch_size: int,
 ) -> tuple[np.ndarray, str | None]:
-    """Standardize all base targets and optionally back them with a memory-mapped cache file."""
+    """Standardize teacher base targets, optionally as a memmap.
+
+    Standardization uses only the refit-train positions.  When cache_dir is
+    supplied, the standardized matrix is written to disk and reopened in
+    read-only mmap mode to reduce resident memory pressure.
+
+    Args:
+        y_base_raw: Raw encoded teacher target matrix, shape
+            (n_base, n_targets).
+        train_pos: Refit-train positions used for target moments.
+        teacher: Teacher model name for cache naming.
+        cache_dir: Optional cache directory.
+        target_batch_size: Target columns processed per chunk.
+
+    Returns:
+        Tuple of standardized target array/memmap and optional cache path.
+
+    """
     n_base, n_targets = y_base_raw.shape
     target_batch_size = min(max(1, int(target_batch_size)), int(n_targets))
     mean, scale = target_standardization_stats(
@@ -641,7 +904,27 @@ def encode_indices_modelwise_cached(
     cache_dir: Path | None,
     cache_prefix: str,
 ) -> dict[str, np.ndarray]:
-    """Encode rows one model at a time and optionally store each result as a memmap."""
+    """Encode eval rows model-by-model with optional disk backing.
+
+    This avoids holding large temporary encoded tensors for all models at
+    once.  When cache_dir is supplied, each model result is stored as a .npy
+    memmap and reopened read-only.
+
+    Args:
+        raw_features_np: Model feature matrices.
+        model_names: Models to encode.
+        indices: Natural-pool rows to encode.
+        track: Encoding track.
+        encoding_params: Loaded encoding parameters.
+        device: Torch device for encoding.
+        target_cols: Optional target-column subset.
+        cache_dir: Optional cache directory for per-model encoded arrays.
+        cache_prefix: Prefix used in cache filenames.
+
+    Returns:
+        Mapping from model name to encoded response arrays/memmaps.
+
+    """
     out: dict[str, np.ndarray] = {}
     if cache_dir is not None:
         cache_dir.mkdir(parents=True, exist_ok=True)
@@ -685,7 +968,24 @@ def select_targetwise_alpha_indices_for_target(
     seed: int,
     target_batch_size: int,
 ) -> tuple[list[float], np.ndarray]:
-    """Select one ridge alpha per target column using validation Pearson correlation."""
+    """Choose target-wise ridge alphas by validation Pearson correlation.
+
+    A separate alpha is selected for each target column.  Training and
+    validation teacher targets include deterministic response noise for the
+    requested teacher/noise sample.
+
+    Args:
+        alpha_ops: Ridge validation operators keyed by alpha.
+        target: Teacher target state.
+        noise_sample_idx: Noise replicate index.
+        seed: Base seed for deterministic train/validation noise.
+        target_batch_size: Number of target columns scored per chunk.
+
+    Returns:
+        Tuple of alpha values and int32 best-alpha indices with length
+        target.n_targets.
+
+    """
     if not isinstance(alpha_ops, dict):
         raise TypeError("Chunked alpha selection requires dict ridge operators")
 
@@ -737,7 +1037,20 @@ def write_noisy_base_fit_memmap(
     cache_dir: Path,
     target_batch_size: int,
 ) -> tuple[np.ndarray, str]:
-    """Write one noisy teacher base-fit target matrix to a memory-mapped cache file."""
+    """Write noisy base-fit targets for one teacher/noise sample.
+
+    Args:
+        target: Clean teacher target state.
+        teacher: Teacher model name.
+        noise_sample_idx: Noise replicate index.
+        seed: Base seed for deterministic base-fit noise.
+        cache_dir: Directory for the output .npy memmap.
+        target_batch_size: Target columns written per chunk.
+
+    Returns:
+        Tuple of read-only memmap and its path.
+
+    """
     cache_dir.mkdir(parents=True, exist_ok=True)
     path = cache_dir / (
         f"{safe_cache_component(teacher)}_noise{int(noise_sample_idx):03d}_"
@@ -781,7 +1094,26 @@ def build_noise_states(
     alpha_target_batch_size: int,
     noise_cache_dir: Path | None,
 ) -> dict[str, list[TeacherNoiseState]]:
-    """Precompute noisy teacher targets and target-wise alpha choices for all noise samples."""
+    """Precompute noisy fit targets and per-target alpha choices.
+
+    For each teacher/noise sample, this builds y_base_fit and stores the
+    best alpha index for every student and every target column.  This state
+    is independent of the selected image set, so it is reused across greedy
+    iterations.
+
+    Args:
+        fit_context: Reusable standardized feature/target context.
+        model_names: Teacher/student model roster.
+        seed: Base seed for deterministic noise generation.
+        alphas: Ridge alpha grid.
+        n_noise_samples: Number of teacher noise replicates.
+        alpha_target_batch_size: Target columns processed per alpha chunk.
+        noise_cache_dir: Optional memmap directory for noisy base targets.
+
+    Returns:
+        Mapping teacher name to a list of TeacherNoiseState objects.
+
+    """
     states: dict[str, list[TeacherNoiseState]] = {}
     for teacher in model_names:
         target = fit_context.teacher_targets[teacher]
@@ -844,7 +1176,22 @@ def build_refit_splits(
     seed: int,
     exclude_refit_from_selection: bool,
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
-    """Construct deterministic refit train/validation splits from the natural-pool prefix."""
+    """Construct deterministic base, train, and validation refit splits.
+
+    Args:
+        pool_size: Number of loaded natural-pool rows.
+        selected_initial: Initial selected rows to exclude when requested.
+        refit_pool_size: Number of rows in the independent base refit pool.
+        refit_val_size: Number of base rows held out for alpha validation.
+        seed: Base seed for pool and split permutations.
+        exclude_refit_from_selection: Whether refit-pool rows are excluded
+            from later greedy candidate selection.
+
+    Returns:
+        base_indices, train_indices, val_indices, and the full randomized
+        refit candidate order.
+
+    """
     if refit_val_size <= 0 or refit_val_size >= refit_pool_size:
         raise ValueError("--refit-val-size must be between 1 and refit_pool_size - 1")
     rng = np.random.default_rng(seed + stable_seed("refit_robust_selector", "refit_pool"))
@@ -870,7 +1217,19 @@ def bound_natural_feature_pool(
     *,
     max_images: int | None,
 ) -> tuple[dict[str, np.ndarray], int, dict[str, Any]]:
-    """Trim loaded model feature arrays to a shared, requested natural-pool size."""
+    """Trim model feature arrays to a shared natural-pool prefix.
+
+    Args:
+        raw_features_np: Model feature matrices loaded from natural-pool
+            shards.
+        model_names: Model roster.
+        max_images: Optional requested pool-size cap.
+
+    Returns:
+        Tuple of possibly trimmed feature mapping, final pool size, and
+        JSON-serializable pool metadata.
+
+    """
     feature_lengths = {
         model: int(raw_features_np[model].shape[0])
         for model in model_names

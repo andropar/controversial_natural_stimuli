@@ -58,7 +58,33 @@ if njit is not None:
         candidate_z: np.ndarray,
         candidate_pos: int,
     ) -> tuple[np.ndarray, np.ndarray]:
-        """Materialize LOO base and eval operators for one shortlist candidate."""
+        """Materialize candidate-specific LOO prediction operators.
+
+        Inputs are round-cache arrays for one student and all alphas.  The
+        candidate_pos column identifies the candidate being appended to the
+        selected eval set.  The returned operators predict held-out eval rows
+        from base targets and noisy eval-fit targets.
+
+        Args:
+            selected_inverse: Inverse selected Schur blocks, shape
+                (n_alpha, n_selected, n_selected).
+            selected_inverse_diag: Diagonal of selected_inverse, shape
+                (n_alpha, n_selected).
+            selected_base_numerator: Cached selected-to-base numerator terms,
+                shape (n_alpha, n_selected, n_base).
+            candidate_q: Candidate Schur cross terms,
+                shape (n_alpha, n_selected, n_shortlist).
+            candidate_delta: Candidate Schur residual scalars,
+                shape (n_alpha, n_shortlist).
+            candidate_z: Candidate-to-base numerator terms,
+                shape (n_alpha, n_base, n_shortlist).
+            candidate_pos: Column of shortlist candidate to materialize.
+
+        Returns:
+            base_ops and eval_ops with shapes (n_alpha, n_eval, n_base) and
+            (n_alpha, n_eval, n_eval), where n_eval = n_selected + 1.
+
+        """
         n_alphas = selected_inverse.shape[0]
         n_selected = selected_inverse.shape[1]
         n_base = selected_base_numerator.shape[2]
@@ -130,7 +156,28 @@ def build_round_cache(
     alphas: list[float],
     build_paths: bool = True,
 ) -> RoundCache:
-    """Build per-student Schur-update caches for the current selected set and shortlist."""
+    """Build Schur-update caches for the current greedy round.
+
+    The cache amortizes expensive base-kernel algebra across all candidates
+    in the shortlist.  Features are standardized using the refit-train
+    statistics stored in fit_context.student_ops.
+
+    Args:
+        selected_indices: Current selected natural-pool rows.
+        shortlist: Candidate rows to score this iteration.
+        raw_features_np: Model feature matrices.
+        fit_context: Reusable standardized student/teacher context.
+        noise_states: Teacher noise states used to build alpha paths.
+        model_names: Student/teacher model roster.
+        alphas: Ridge alpha grid.
+        build_paths: Whether to build flattened alpha-specific prediction
+            paths for scoring.
+
+    Returns:
+        RoundCache containing one StudentRoundCache per student, teacher/noise
+        blocks, flattened alpha paths, and shortlist position lookup.
+
+    """
     selected_array = np.asarray(selected_indices, dtype=np.int64)
     shortlist = np.asarray(shortlist, dtype=np.int64)
     alpha_array = np.asarray(alphas, dtype=np.float64)
@@ -264,7 +311,18 @@ def materialize_candidate_ops(
     *,
     delta_tol: float = 1e-10,
 ) -> tuple[np.ndarray, np.ndarray] | None:
-    """Return dense candidate operators when the Schur update is numerically stable."""
+    """Return dense LOO operators for one candidate if stable.
+
+    Args:
+        cache: Student round cache produced by build_round_cache().
+        candidate_pos: Candidate column in the round shortlist.
+        delta_tol: Minimum allowed Schur residual for every alpha.
+
+    Returns:
+        Tuple of base_ops and eval_ops, or None when any candidate Schur
+        residual is non-finite or too small.
+
+    """
     delta = cache.candidate_delta[:, candidate_pos]
     if np.any(delta <= delta_tol) or not np.all(np.isfinite(delta)):
         return None

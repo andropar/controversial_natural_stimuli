@@ -29,7 +29,16 @@ if njit is not None:
 
     @njit(cache=False, nogil=True, fastmath=True)
     def _fast_response_rdm(response: np.ndarray) -> np.ndarray:
-        """Compute a cosine-distance RDM vector for one response matrix."""
+        """Compute a cosine-distance RDM vector for one response matrix.
+
+        Args:
+            response: Response matrix with shape (n_eval, n_targets).
+
+        Returns:
+            float32 upper-triangle cosine-distance vector with length
+            n_eval * (n_eval - 1) / 2.
+
+        """
         n_eval = response.shape[0]
         n_targets = response.shape[1]
         n_pairs = n_eval * (n_eval - 1) // 2
@@ -63,7 +72,15 @@ if njit is not None:
 
     @njit(cache=False, nogil=True, fastmath=True)
     def _fast_response_ranks(response: np.ndarray) -> np.ndarray:
-        """Compute ordinal RDM ranks for Spearman scoring of one response matrix."""
+        """Compute ordinal ranks of a response RDM.
+
+        Args:
+            response: Response matrix with shape (n_eval, n_targets).
+
+        Returns:
+            Integer rank vector aligned to the upper-triangle RDM vector.
+
+        """
         rdm = _fast_response_rdm(response)
         order = np.argsort(rdm, kind="mergesort")
         ranks = np.empty(order.size, dtype=np.int64)
@@ -87,7 +104,20 @@ def encoded_eval_for_candidate(
     selected_indices: list[int],
     candidate_idx: int,
 ) -> dict[str, np.ndarray]:
-    """Gather encoded selected-plus-candidate eval rows from a shared eval cache."""
+    """Gather selected-plus-candidate encoded eval rows.
+
+    Args:
+        encoded_eval_pool: Per-model encoded responses for the union of
+            selected rows and shortlist rows.
+        encoded_pos: Mapping from natural-pool row index to row position in
+            encoded_eval_pool arrays.
+        selected_indices: Current selected natural-pool rows.
+        candidate_idx: Candidate natural-pool row to append.
+
+    Returns:
+        Per-model eval arrays with shape (n_selected + 1, n_targets).
+
+    """
     eval_positions = [encoded_pos[int(idx)] for idx in [*selected_indices, int(candidate_idx)]]
     return {
         model: arr[eval_positions].astype(np.float32, copy=False)
@@ -104,7 +134,24 @@ def prepare_eval_data(
     noise_mult: float,
     seed: int,
 ) -> tuple[np.ndarray, np.ndarray]:
-    """Build noisy eval-fit and eval-score target tensors for each teacher/noise block."""
+    """Create noisy eval-fit and eval-score tensors.
+
+    The same clean teacher eval responses are used for fitting and scoring,
+    but independent deterministic noise fields are added for the two roles.
+
+    Args:
+        round_cache: Current round cache defining teacher/noise blocks.
+        encoded_eval_by_model: Clean eval responses for selected + candidate.
+        eval_indices: Natural-pool row indices for eval rows.
+        fit_context: Teacher target metadata and noise scales.
+        noise_mult: Noise multiplier, included in seed components.
+        seed: Base scoring seed.
+
+    Returns:
+        eval_fit and eval_score arrays with shape
+        (n_blocks, n_eval, n_targets).
+
+    """
     n_blocks = len(round_cache.blocks)
     n_eval = len(eval_indices)
     target_dim = next(iter(encoded_eval_by_model.values())).shape[1]
@@ -138,7 +185,19 @@ def gather_y_base_fit_columns(
     flat_indices: np.ndarray,
     target_dim: int,
 ) -> np.ndarray:
-    """Gather base-fit target columns indexed in flattened block-target coordinates."""
+    """Gather base-fit target columns from flattened block indices.
+
+    Args:
+        noise_states: Teacher noise states containing y_base_fit matrices.
+        blocks: Ordered teacher/noise block roster.
+        flat_indices: Flattened indices equal to block_idx * target_dim +
+            target_col.
+        target_dim: Number of target columns per block.
+
+    Returns:
+        float32 matrix with shape (n_base, len(flat_indices)).
+
+    """
     flat_indices = np.asarray(flat_indices, dtype=np.int64)
     first_teacher, first_noise_idx = blocks[0]
     n_base = noise_states[first_teacher][first_noise_idx].y_base_fit.shape[0]
@@ -156,7 +215,16 @@ def gather_y_base_fit_columns(
 
 
 def pair_index_arrays(n_eval: int) -> tuple[np.ndarray, np.ndarray]:
-    """Return upper-triangle row and column index arrays for an eval set."""
+    """Build upper-triangle index arrays for an eval set.
+
+    Args:
+        n_eval: Number of eval images.
+
+    Returns:
+        Pair of int64 arrays selecting row and column positions for all
+        unordered image pairs.
+
+    """
     rows, cols = np.triu_indices(int(n_eval), k=1)
     return rows.astype(np.int64, copy=False), cols.astype(np.int64, copy=False)
 
@@ -169,7 +237,19 @@ def accumulate_response_gram(
     pair_rows: np.ndarray,
     pair_cols: np.ndarray,
 ) -> None:
-    """Accumulate row norms and pairwise dots for chunked cosine-RDM scoring."""
+    """Accumulate sufficient statistics for cosine RDMs.
+
+    Args:
+        response: Response chunk with shape (n_eval, n_chunk_targets).
+        row_norms: Running sum of response row squared norms.
+        pair_dots: Running sum of pairwise dot products.
+        pair_rows: Upper-triangle row indices.
+        pair_cols: Upper-triangle column indices.
+
+    Side effects:
+        Mutates row_norms and pair_dots in place.
+
+    """
     response = np.asarray(response, dtype=np.float32)
     gram = np.asarray(response @ response.T, dtype=np.float64)
     row_norms += np.diag(gram)
@@ -183,7 +263,18 @@ def ordinal_ranks_from_response_stats(
     pair_rows: np.ndarray,
     pair_cols: np.ndarray,
 ) -> np.ndarray:
-    """Convert accumulated cosine-RDM statistics into ordinal ranks."""
+    """Convert accumulated cosine statistics to ordinal RDM ranks.
+
+    Args:
+        row_norms: Final row squared norms across target chunks.
+        pair_dots: Final pairwise dot products across target chunks.
+        pair_rows: Upper-triangle row indices.
+        pair_cols: Upper-triangle column indices.
+
+    Returns:
+        int64 ordinal ranks aligned to the upper-triangle pair order.
+
+    """
     denom = np.sqrt(row_norms[pair_rows] * row_norms[pair_cols])
     similarity = np.zeros_like(pair_dots, dtype=np.float64)
     valid = denom > 1e-24
@@ -199,7 +290,19 @@ def spearman_from_ordinal_ranks(
     ranks_a: np.ndarray,
     ranks_b: np.ndarray,
 ) -> float:
-    """Compute Spearman correlation from two ordinal rank vectors without tie correction."""
+    """Compute rank-correlation from ordinal rank vectors.
+
+    The scorer assumes no tie correction, matching the historical fast path
+    for dense RDM ranking in this selector.
+
+    Args:
+        ranks_a: First rank vector.
+        ranks_b: Second rank vector with the same length.
+
+    Returns:
+        Spearman rho as a float, or NaN when fewer than two pairs exist.
+
+    """
     n_pairs = int(ranks_a.size)
     if n_pairs < 2:
         return float("nan")
@@ -227,7 +330,36 @@ def score_candidate_refit_robust_chunked(
     noise_states: dict[str, list[TeacherNoiseState]],
     score_target_batch_size: int,
 ) -> dict[str, Any]:
-    """Score one candidate with chunked eval-augmented LOO refit recovery."""
+    """Score one candidate under eval-augmented LOO refitting.
+
+    For every teacher/noise block and every student, the function predicts
+    held-out responses on the selected images plus candidate after allowing
+    the student readout to refit on the independent base pool and the eval
+    set.  Response RDMs are accumulated in target chunks to avoid holding a
+    full student x block x target prediction tensor in memory.
+
+    Args:
+        candidate_idx: Natural-pool row being scored.
+        selected_indices: Current selected rows.
+        encoded_eval_by_model: Clean eval responses for selected + candidate.
+        fit_context: Reusable standardized feature/target context.
+        model_names: Student/teacher model roster.
+        metric: RDM metric; only cosine is currently supported.
+        corr_type: RDM correlation; only Spearman is currently supported.
+        noise_mult: Noise multiplier recorded in output metadata.
+        base_noise_ceiling: Reference noise-ceiling target.
+        seed: Base seed for eval-fit and eval-score noise.
+        aggregate_teachers: Teacher margin aggregation mode.
+        objective: Candidate objective, accuracy_margin or margin.
+        round_cache: Current round cache.
+        noise_states: Teacher noisy base targets and alpha choices.
+        score_target_batch_size: Flattened target columns per scoring chunk.
+
+    Returns:
+        Candidate score row with recovery accuracy, margin, tie-breaker, and
+        backend metadata.
+
+    """
     if metric != "cosine" or corr_type != "spearman":
         raise ValueError("Refit-robust chunked scoring supports only cosine/Spearman")
 
@@ -347,7 +479,25 @@ def aggregate_candidate_scores(
     objective: str,
     score_backend: str = "chunked",
 ) -> dict[str, Any]:
-    """Aggregate teacher/student recovery scores into the candidate objective row."""
+    """Aggregate block-level student scores into one candidate row.
+
+    Args:
+        scores: Matrix with shape (n_teacher_noise_blocks, n_students).
+        candidate_idx: Natural-pool candidate row.
+        n_eval: Number of eval rows scored, selected + candidate.
+        fit_context: Contains model equivalence labels and calibration mode.
+        model_names: Model roster in score-column order.
+        round_cache: Current round cache defining teacher/noise block order.
+        aggregate_teachers: mean or min aggregation for teacher margins.
+        noise_mult: Noise multiplier used for metadata.
+        base_noise_ceiling: Reference noise-ceiling target.
+        objective: accuracy_margin or margin.
+        score_backend: Backend label written to candidate_scores.csv.
+
+    Returns:
+        JSON/CSV-friendly dictionary for one candidate.
+
+    """
     teacher_utilities: list[float] = []
     teacher_self_scores: list[float] = []
     teacher_other_scores: list[float] = []
@@ -430,7 +580,20 @@ def aggregate_candidate_scores(
 
 
 def _score_worker(candidate_idx: int) -> dict[str, Any]:
-    """Multiprocessing worker entry point for scoring one shortlist candidate."""
+    """Score one candidate inside a forked worker process.
+
+    The worker reads immutable round state from the module-global
+    _WORKER_ARGS, which is populated immediately before multiprocessing Pool
+    execution.  This relies on fork semantics to avoid serializing large
+    numpy arrays.
+
+    Args:
+        candidate_idx: Candidate natural-pool row.
+
+    Returns:
+        Candidate score row from score_candidate_refit_robust_chunked().
+
+    """
     assert _WORKER_ARGS is not None
     kwargs = _WORKER_ARGS
     encoded_eval_by_model = encoded_eval_for_candidate(
@@ -479,7 +642,32 @@ def score_shortlist_refit_robust(
     workers: int,
     score_target_batch_size: int,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
-    """Build round caches and score every candidate in the current shortlist."""
+    """Score every candidate in a proxy shortlist.
+
+    Args:
+        shortlist: Candidate natural-pool rows for this greedy iteration.
+        selected_indices: Current selected rows.
+        encoded_eval_pool: Encoded responses for selected rows plus shortlist.
+        encoded_pos: Natural-pool row to encoded_eval_pool row lookup.
+        raw_features_np: Model feature matrices.
+        fit_context: Reusable standardized feature/target context.
+        noise_states: Teacher noisy base targets and alpha choices.
+        model_names: Student/teacher model roster.
+        alphas: Ridge alpha grid.
+        metric: RDM metric; only cosine is currently supported.
+        corr_type: RDM correlation; only Spearman is currently supported.
+        noise_mult: Noise multiplier used in score metadata.
+        base_noise_ceiling: Reference noise-ceiling target.
+        seed: Base scoring seed for this greedy step.
+        aggregate_teachers: Teacher aggregation mode.
+        objective: Candidate objective.
+        workers: Number of forked candidate scoring workers.
+        score_target_batch_size: Flattened target columns per scoring chunk.
+
+    Returns:
+        Tuple of candidate score rows and timing diagnostics.
+
+    """
     if njit is None:
         raise RuntimeError("chunked scoring requires numba")
     if metric != "cosine" or corr_type != "spearman":
