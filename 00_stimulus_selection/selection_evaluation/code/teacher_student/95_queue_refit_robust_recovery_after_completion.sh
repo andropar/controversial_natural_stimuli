@@ -25,16 +25,21 @@ PYTHON="${PYTHON:-/u/rothj/conda-envs/deepjuice/bin/python}"
 SCRIPT="${SCRIPT:-${SCRIPT_DIR}/01_compute_independent_refit_rdm_recovery.py}"
 PLOT_SCRIPT="${PLOT_SCRIPT:-${SCRIPT_DIR}/21_plot_feature_method_sweep_recovery.py}"
 RANDOM_FEATURE_DIR="${RANDOM_FEATURE_DIR:-shared/cache_or_heavy/natural_pool_subset_100k_seed42}"
+ENCODING_ROOT="${ENCODING_ROOT:-/u/rothj/cstims/experiments/encoding_fitting/results/encoding_20251222_141301}"
+ENCODING_MODE="${ENCODING_MODE:-shared}"
 
 REFIT_SIZE="${REFIT_SIZE:-1000}"
 REFIT_VAL_SIZE="${REFIT_VAL_SIZE:-200}"
 MAX_REFIT_POOL_SIZE="${MAX_REFIT_POOL_SIZE:-10000}"
 N_NOISE_SAMPLES="${N_NOISE_SAMPLES:-20}"
+NOISE_MULTS="${NOISE_MULTS:-0.1,0.143844988829,0.206913808111,0.297635144163,0.428133239872,0.615848211066,0.88586679041,1,1.2742749857,1.83298071083,2.63665089873,3,3.79269019073,5,5.45559478117,7.84759970351,10}"
+NOISE_MULTS_LABEL="${NOISE_MULTS_LABEL:-snr0p1to10}"
 N_RANDOM_SUBSETS="${N_RANDOM_SUBSETS:-100}"
 N_RANDOM_IMAGES="${N_RANDOM_IMAGES:-100000}"
 N_REFIT_REPEATS="${N_REFIT_REPEATS:-3}"
 TRACKS="${TRACKS:-raw,sub-01,sub-03,sub-05,sub-06,sub-07}"
 TEACHER_CHUNK_SIZE="${TEACHER_CHUNK_SIZE:-auto}"
+RDM_CALIBRATION_COMPARISON="${RDM_CALIBRATION_COMPARISON:-clean_to_noisy}"
 
 GPUS_PER_JOB="${GPUS_PER_JOB:-4}"
 MAX_PROCS="${MAX_PROCS:-${GPUS_PER_JOB}}"
@@ -105,8 +110,9 @@ results_name() {
       exit 2
       ;;
   esac
-  printf 'teacher_student_%s_refit%s_rdm_score_spearman_response_empcal_ns%s_rand%s_rr%s_fastgpu\n' \
-    "${mode_part}" "${REFIT_SIZE}" "${N_NOISE_SAMPLES}" "${N_RANDOM_SUBSETS}" "${N_REFIT_REPEATS}"
+  printf 'teacher_student_%s_%s_refit%s_rdm_score_spearman_response_empcal_%s_ns%s_rand%s_rr%s_fastgpu\n' \
+    "${mode_part}" "${RDM_CALIBRATION_COMPARISON}" "${REFIT_SIZE}" "${NOISE_MULTS_LABEL}" \
+    "${N_NOISE_SAMPLES}" "${N_RANDOM_SUBSETS}" "${N_REFIT_REPEATS}"
 }
 
 check_refit_complete() {
@@ -245,6 +251,15 @@ run_cache_job() {
   local safe_indices="${teacher_indices//,/plus}"
   safe_indices="${safe_indices//-/to}"
   local log="${LOG_DIR}/cache_${eval_mode}_${TS}_${eval_id}_${safe_indices}_rr${refit_repeat}.log"
+  local -a encoding_args=(--encoding-root "${ENCODING_ROOT}")
+  case "${ENCODING_MODE}" in
+    shared) encoding_args+=(--shared-encodings) ;;
+    unique) encoding_args+=(--unique-encodings) ;;
+    *)
+      echo "Unknown ENCODING_MODE=${ENCODING_MODE}; expected shared or unique" >&2
+      return 2
+      ;;
+  esac
   {
     echo "job_start $(date -Is) mode=${eval_mode} model_set=${model_set} eval_id=${eval_id} teachers=${teacher_indices} repeat=${refit_repeat}"
     echo "CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-unset}"
@@ -261,8 +276,10 @@ run_cache_job() {
       --refit-repeat-indices "${refit_repeat}" \
       --n-random-subsets "${N_RANDOM_SUBSETS}" \
       --n-noise-samples "${N_NOISE_SAMPLES}" \
+      --noise-mults "${NOISE_MULTS}" \
       --eval-noise-mode response \
       --fit-noise-calibration rdm_empirical \
+      --rdm-calibration-comparison "${RDM_CALIBRATION_COMPARISON}" \
       --eval-refit-mode "${eval_mode}" \
       --calibration-images 100 \
       --calibration-noise-samples 2 \
@@ -270,7 +287,7 @@ run_cache_job() {
       --corr-type spearman \
       --encoding-device cuda \
       --encoding-batch-size 1024 \
-      --unique-encodings \
+      "${encoding_args[@]}" \
       --teacher-indices "${teacher_indices}" \
       --fast-gpu-batch \
       --cache-only \
@@ -307,6 +324,15 @@ run_eval() {
     export CUDA_VISIBLE_DEVICES=$(((JOB_SLOT + GPU_OFFSET) % GPU_COUNT))
     run_cache_job "$@"
   ' _ < "${job_file}"
+  local -a encoding_args=(--encoding-root "${ENCODING_ROOT}")
+  case "${ENCODING_MODE}" in
+    shared) encoding_args+=(--shared-encodings) ;;
+    unique) encoding_args+=(--unique-encodings) ;;
+    *)
+      echo "Unknown ENCODING_MODE=${ENCODING_MODE}; expected shared or unique" >&2
+      return 2
+      ;;
+  esac
   "${PYTHON}" -u "${SCRIPT}" \
     --model-set "${eval_id}" \
     --selection-root "${STAGED_SELECTION_ROOT}" \
@@ -319,15 +345,17 @@ run_eval() {
     --n-refit-repeats "${N_REFIT_REPEATS}" \
     --n-random-subsets "${N_RANDOM_SUBSETS}" \
     --n-noise-samples "${N_NOISE_SAMPLES}" \
+    --noise-mults "${NOISE_MULTS}" \
     --eval-noise-mode response \
     --fit-noise-calibration rdm_empirical \
+    --rdm-calibration-comparison "${RDM_CALIBRATION_COMPARISON}" \
     --eval-refit-mode "${EVAL_MODE}" \
     --calibration-images 100 \
     --calibration-noise-samples 2 \
     --calibration-max-iter 8 \
     --corr-type spearman \
     --encoding-device cuda \
-    --unique-encodings \
+    "${encoding_args[@]}" \
     --fast-gpu-batch \
     --merge-only \
     --output-dir "${OUT_RUN}/${name}/${eval_id}"
@@ -353,8 +381,10 @@ write_env_exports() {
   for name in \
     MODEL_SETS METHOD_ID RUN_TAG REFIT_RUN_STAMP TARGET_SIZE EVAL_MODES \
     FEATURE_RESULTS_ROOT TEACHER_ROOT OUT_RUN STAGED_SELECTION_ROOT FIGURES_DIR \
-    LOG_DIR QUEUE_DIR PYTHON SCRIPT PLOT_SCRIPT RANDOM_FEATURE_DIR REFIT_SIZE \
-    REFIT_VAL_SIZE MAX_REFIT_POOL_SIZE N_NOISE_SAMPLES N_RANDOM_SUBSETS \
+    LOG_DIR QUEUE_DIR PYTHON SCRIPT PLOT_SCRIPT RANDOM_FEATURE_DIR ENCODING_ROOT \
+    ENCODING_MODE REFIT_SIZE \
+    REFIT_VAL_SIZE MAX_REFIT_POOL_SIZE N_NOISE_SAMPLES NOISE_MULTS NOISE_MULTS_LABEL \
+    RDM_CALIBRATION_COMPARISON N_RANDOM_SUBSETS \
     N_RANDOM_IMAGES N_REFIT_REPEATS TRACKS TEACHER_CHUNK_SIZE GPUS_PER_JOB \
     MAX_PROCS GPU_COUNT GPU_OFFSET CPUS_PER_TASK EVAL_MEM EVAL_TIME \
     GPU_PARTITION GPU_QOS GPU_ACCOUNT POLL_MINUTES MAX_WATCH_ATTEMPTS \
