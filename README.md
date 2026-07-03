@@ -11,6 +11,23 @@ images are intended to make different vision models predict different
 representational similarity structure, while remaining usable under realistic
 brain-measurement noise.
 
+## At a glance
+
+This repository is a reproducible analysis share for a NeuroAI project on
+natural images that separate vision models. It combines stimulus selection,
+model-feature analyses, subject-specific brain-encoding tracks, reliability
+checks, statistical inference, robustness tests, and manuscript-ready figures in
+one staged pipeline.
+
+What this repository demonstrates:
+
+- Model-disagreement-based stimulus selection from natural image pools
+- Brain-model alignment analyses using representational similarity structure
+- Reliability, noise-ceiling, permutation, bootstrap, and robustness checks
+- A staged research-code layout with frozen resources, outputs, and local READMEs
+- Explicit documentation of external data and heavyweight intermediates that are
+  not committed to the repository
+
 ## Mini Guide
 
 Read the numbered folders as a pipeline:
