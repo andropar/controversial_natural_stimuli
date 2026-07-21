@@ -1,0 +1,15 @@
+{
+  "feature_standardization": "None. Native activation columns are not standardized.",
+  "response_standardization": "No new standardization during RSA. Cached DeepVision/CSTIM beta estimates retain their upstream session-wise voxel standardization.",
+  "layer_selection_variant_a": "Per-subject dense layer previously selected by mixed RSA on held-out DeepVision shared images.",
+  "layer_selection_variant_b": "Per-subject layer maximizing native fixed RSA on all held-out DeepVision shared images, among the pre-specified coarse configured layer landmarks. Earliest candidate wins an exact tie.",
+  "dimensionality": "Full native flattened activation dimensionality; no SRP or PCA.",
+  "aggregation": "Flatten all non-batch dimensions for both variants, matching the dense mixed-RSA sweep.",
+  "distance_metric": "Correlation distance across the feature/voxel dimension for each image pair. The row centering and L2 normalization intrinsic to correlation distance is not dataset-level feature standardization.",
+  "rsa_metric": "Spearman correlation of upper-triangular RDM entries with average ranks.",
+  "model_identifiers": "The 20 identifiers in layers_config.py, unchanged.",
+  "missing_cell_handling": "No imputation or dropping; merging fails on any absent or duplicate cell.",
+  "aggregation_across_resamples": "Five CSTIM set scores are single full-set values. Vicco uses 1,000 deterministic size-100 bootstrap samples and reports their arithmetic mean and SEM.",
+  "selection_evaluation_separation": "Layer selection uses DeepVision shared images; transferred scores use CSTIM/Vicco images.",
+  "preserved_srp_result": "/data/home_roth/cstims_share/05_controls_and_supplementary/model_scope_followups/layer_sweep/results/frsa_best_shared_layer_transfer.csv"
+}

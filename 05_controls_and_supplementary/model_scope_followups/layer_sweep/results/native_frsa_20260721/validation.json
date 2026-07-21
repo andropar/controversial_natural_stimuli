@@ -1,0 +1,25 @@
+{
+  "native_at_mrsa_best_shared": {
+    "output": "05_controls_and_supplementary/model_scope_followups/layer_sweep/results/native_frsa_20260721/frsa_native_at_mrsa_best_shared.csv",
+    "validation": {
+      "rows": 600,
+      "expected_rows": 600,
+      "subjects": {
+        "sub-01": 20,
+        "sub-03": 20,
+        "sub-05": 20,
+        "sub-06": 20,
+        "sub-07": 20
+      },
+      "models": 20,
+      "duplicate_keys": 0,
+      "incomplete_cells": 0,
+      "nonfinite_scores": 0,
+      "bad_vicco_bootstrap_counts": 0,
+      "frsa_range": [
+        -0.033918386619552,
+        0.4649790426351136
+      ]
+    }
+  }
+}

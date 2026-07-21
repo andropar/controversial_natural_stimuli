@@ -21,6 +21,7 @@ Outputs in 03_alignment_inference/results:
 
 from __future__ import annotations
 
+import argparse
 import math
 import sys
 from pathlib import Path
@@ -48,6 +49,16 @@ METHOD_LABEL = {"wrsa_transfer": "mixed_RSA", "crsa": "fixed_RSA"}
 SCORE_COL = {"wrsa_transfer": "wrsa_transfer", "crsa": "crsa"}
 SELECTION_MODELS = set(constants.MODEL_SETS["all_models"])
 MODEL_LIST_LARGE = paths.project_root() / "00_stimulus_selection" / "resources" / "model_list_large.csv"
+
+RANK_FIGURE_CODE = (
+    PROJECT
+    / "01_brain_model_alignment"
+    / "code"
+    / "rsa_scoring"
+    / "figures"
+)
+sys.path.insert(0, str(RANK_FIGURE_CODE))
+from plot_rank_shift import load_scores as load_rank_score_table  # noqa: E402
 
 
 def sem(x: Iterable[float]) -> float:
@@ -179,11 +190,11 @@ def build_primary_endpoint_summary() -> pd.DataFrame:
     return out
 
 
-def build_rank_correlations() -> pd.DataFrame:
+def build_rank_correlations(methods: Iterable[str] = ("wrsa_transfer", "crsa")) -> pd.DataFrame:
     rank_null = pd.read_csv(DATA / "rank_null.csv") if (DATA / "rank_null.csv").exists() else pd.DataFrame()
     rows = []
-    for method in ["wrsa_transfer", "crsa"]:
-        scores = load_score_table(method)
+    for method in methods:
+        scores = load_rank_score_table(method)
         score_col = SCORE_COL[method]
         if scores.empty:
             continue
@@ -627,8 +638,39 @@ def validate_outputs() -> None:
         raise RuntimeError("Rank correlation table missing all_models mixed_RSA mean row")
 
 
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--rank-only",
+        action="store_true",
+        help="Rebuild and validate only rank_correlations.csv.",
+    )
+    parser.add_argument(
+        "--rank-methods",
+        nargs="+",
+        choices=["wrsa_transfer", "crsa"],
+        default=["wrsa_transfer", "crsa"],
+    )
+    return parser.parse_args()
+
+
 def main() -> None:
+    args = parse_args()
     DATA.mkdir(parents=True, exist_ok=True)
+    if args.rank_only:
+        print("building rank_correlations.csv", flush=True)
+        rank = build_rank_correlations(args.rank_methods)
+        means = rank[rank["aggregation"].eq("mean_across_subjects")]
+        expected = len(MODEL_SETS) * len(args.rank_methods)
+        if len(means) != expected:
+            raise RuntimeError(
+                f"Rank table has {len(means)} mean rows, expected {expected}"
+            )
+        if means["n_models"].min() < 3:
+            raise RuntimeError("Rank table contains a panel with fewer than three models")
+        print(f"rank_correlations.csv: {len(rank)} rows")
+        return
+
     print("building primary_endpoint_summary.csv", flush=True)
     primary = build_primary_endpoint_summary()
     print("building rank_correlations.csv", flush=True)

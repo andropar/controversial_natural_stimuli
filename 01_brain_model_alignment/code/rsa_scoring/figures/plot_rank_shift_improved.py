@@ -26,7 +26,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
-from cstims.paper import config
 from cstims.paper.style_improved import (
     apply_style, FONT, DPI, W_DOUBLE,
     OKABE_ITO, add_panel_label, MODEL_SET_DISPLAY,
@@ -110,10 +109,13 @@ def draw_panel_improved(ax, df_mrsa, df_frsa, model_set, rank_corr, title=None,
     mean_m, std_m, base_m, cstim_m = compute_deltas(df_mrsa, model_set, "wrsa_transfer")
     mean_f, std_f, base_f, cstim_f = compute_deltas(df_frsa, model_set, "crsa")
 
+    roster_position = {model: idx for idx, model in enumerate(MODEL_SETS[model_set])}
     models = sorted(
         set(mean_m) | set(mean_f),
-        key=lambda m: mean_m.get(m, mean_f.get(m, 0)),
-        reverse=True,
+        key=lambda model: (
+            -mean_m.get(model, mean_f.get(model, 0)),
+            roster_position.get(model, len(roster_position)),
+        ),
     )
     if not models:
         ax.set_visible(False); return
@@ -141,7 +143,10 @@ def draw_panel_improved(ax, df_mrsa, df_frsa, model_set, rank_corr, title=None,
     ax.axhline(0, color="#333", linewidth=0.7, zorder=4)
     ax.set_xticks(x)
     name_lookup = SHORT_DISPLAY_NAMES if use_short_names else DN
-    ax.set_xticklabels([name_lookup.get(m, DN.get(m, m)) for m in models],
+    ax.set_xticklabels([
+        name_lookup.get(m, DN.get(m, m))
+        for m in models
+    ],
                        rotation=45, ha="right")
     ax.set_xlim(-0.7, n - 0.3)
     if show_ylabel:
@@ -204,6 +209,7 @@ def draw_rho_summary_improved(df_mrsa, df_frsa):
             for xi, v, ms in zip(x + off, vals, rho_df["model_set"]):
                 if not np.isnan(v):
                     pw = _subject_pair_values(df_source, score_col, ms, stim)
+                    label_y = v + 0.025
                     if len(pw):
                         jitter = np.linspace(-0.07, 0.07, len(pw))
                         sem = np.std(pw, ddof=1) / np.sqrt(len(pw)) if len(pw) > 1 else 0.0
@@ -217,14 +223,16 @@ def draw_rho_summary_improved(df_mrsa, df_frsa):
                             facecolor="white", edgecolor="#444",
                             linewidth=0.45, alpha=0.9, zorder=6,
                         )
-                    ax.text(xi, v + 0.025, f"{v:.2f}",
+                        label_gap = 0.12 if key == "base" else 0.035
+                        label_y = max(v + 1.96 * sem, float(np.nanmax(pw))) + label_gap
+                    ax.text(xi, label_y, f"{v:.2f}",
                             ha="center", va="bottom",
                             fontsize=FONT["small"], color="#222")
 
         ax.axhline(0, color="#444", linewidth=0.6, zorder=4)
         ax.set_xticks(x)
         ax.set_xticklabels([_MS_SHORT.get(ms, ms) for ms in rho_df["model_set"]])
-        ax.set_ylim(-0.75, 1.15)
+        ax.set_ylim(-0.75, 1.32)
         ax.set_title(method_label, fontweight="bold", pad=4)
         ax.grid(axis="y", alpha=0.22, linewidth=0.4, zorder=0)
         add_panel_label(ax, panel_label, x=-0.07, y=1.05)

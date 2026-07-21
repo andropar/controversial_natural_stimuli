@@ -32,7 +32,7 @@ from itertools import combinations
 _PAPER = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(_PAPER))
 sys.path.insert(0, str(_PAPER.parents[1]))
-from cstims.paper import config
+from cstims import constants
 
 import numpy as np
 import pandas as pd
@@ -50,12 +50,26 @@ apply_style()
 # Constants
 # ---------------------------------------------------------------------------
 
-SUBJECTS   = config.SUBJECTS
-MODEL_SETS = config.MODEL_SETS
-DN         = config.MODEL_DISPLAY_NAMES
+SUBJECTS   = constants.SUBJECTS
+MODEL_SETS = constants.MODEL_SETS
+DN         = constants.MODEL_DISPLAY_NAMES
 
-RSA_DATA_DIR = config.RSA_DATA_DIR
-FIGURES_DIR  = Path(__file__).resolve().parent
+LAYER_SWEEP_RESULTS = (
+    _CSTIMS_SHARE_ROOT
+    / "05_controls_and_supplementary"
+    / "model_scope_followups"
+    / "layer_sweep"
+    / "results"
+)
+MRSA_TRANSFER_CSV = LAYER_SWEEP_RESULTS / "mrsa_dense_layer_selection_transfer.csv"
+FRSA_TRANSFER_CSV = (
+    LAYER_SWEEP_RESULTS
+    / "native_frsa_20260721"
+    / "frsa_native_at_mrsa_best_shared.csv"
+)
+FIGURES_DIR = (
+    _CSTIMS_SHARE_ROOT / "01_brain_model_alignment" / "figures" / "rsa_scores"
+)
 
 # Match brain_alignment color scheme: red = cstim-side, blue = baseline-side
 # Here we repurpose: mRSA = darker, fRSA = lighter
@@ -85,6 +99,10 @@ SHORT_DISPLAY_NAMES = {
     "openclip_vit_l_14_laion400m_e31":                  "CLIP-L400",
 }
 
+def rank_models(model_set: str) -> list[str]:
+    """Return the intended, distinct evaluation roster for a rank panel."""
+    return list(MODEL_SETS[model_set])
+
 TITLE_MAP = {
     "all_models":        "All Models",
     "sota":              "State of the Art",
@@ -99,14 +117,133 @@ PANEL_LABELS = list("abcde")
 # Data loading
 # ---------------------------------------------------------------------------
 
+def _validate_rank_scores(df: pd.DataFrame, method: str) -> None:
+    score_col = "wrsa_transfer" if method == "wrsa_transfer" else "crsa"
+    key = ["subject", "model_set", "model", "stimulus_type"]
+    if df.empty:
+        raise ValueError(f"No rank-analysis rows loaded for {method}")
+    if df[key + [score_col]].isna().any().any():
+        raise ValueError(f"Missing rank-analysis values detected for {method}")
+    if df.duplicated(key).any():
+        raise ValueError(f"Duplicate subject/model/set/condition rows detected for {method}")
+
+    for model_set, models in MODEL_SETS.items():
+        expected_models = set(models)
+        for stimulus_type in ("controversial", "vicco"):
+            block = df[
+                df["model_set"].eq(model_set)
+                & df["stimulus_type"].eq(stimulus_type)
+            ]
+            expected_n = len(SUBJECTS) * len(expected_models)
+            if len(block) != expected_n:
+                raise ValueError(
+                    f"{method} {model_set} {stimulus_type}: "
+                    f"found {len(block)} rows, expected {expected_n}"
+                )
+            if set(block["model"].unique()) != expected_models:
+                raise ValueError(
+                    f"{method} {model_set} {stimulus_type}: model roster mismatch"
+                )
+            if set(block["subject"].unique()) != set(SUBJECTS):
+                raise ValueError(
+                    f"{method} {model_set} {stimulus_type}: subject roster mismatch"
+                )
+
+
 def load_scores(method: str) -> pd.DataFrame:
-    filename = f"{method}_scores.csv"
-    dfs = []
-    for subject in SUBJECTS:
-        path = RSA_DATA_DIR / subject / filename
-        if path.exists():
-            dfs.append(pd.read_csv(path))
-    return pd.concat(dfs, ignore_index=True) if dfs else pd.DataFrame()
+    """Load the same best-on-shared transfer scores used in brain alignment.
+
+    Layers are selected independently on DeepVision shared images.  For each
+    participant and model, the selected layer is then evaluated on each
+    controversial set and on the size-matched Vicco baseline.  The transfer
+    tables already contain the mean across baseline resamples, so every output
+    row is at the subject x model x stimulus-set grain used for ranking.
+    """
+    if method == "wrsa_transfer":
+        path = MRSA_TRANSFER_CSV
+        source_col = "mrsa_mean"
+        score_col = "wrsa_transfer"
+        selection_rule = "best_on_shared"
+        selection_model_set = "deepvision_shared"
+    elif method == "crsa":
+        path = FRSA_TRANSFER_CSV
+        source_col = "frsa_mean"
+        score_col = "crsa"
+        selection_rule = "native_at_mrsa_best_shared"
+        selection_model_set = "deepvision_shared_mrsa"
+    else:
+        raise ValueError(f"Unknown rank-analysis method: {method}")
+
+    if not path.exists():
+        raise FileNotFoundError(path)
+    source = pd.read_csv(path)
+    source = source[
+        source["selection_rule"].eq(selection_rule)
+        & source["selection_model_set"].eq(selection_model_set)
+        & source["eval_target"].isin(["cstim", "vicco"])
+    ].copy()
+
+    if method == "crsa":
+        selected = pd.read_csv(MRSA_TRANSFER_CSV)
+        selected = selected[
+            selected["selection_rule"].eq("best_on_shared")
+            & selected["selection_model_set"].eq("deepvision_shared")
+        ][["subject", "model", "selected_layer"]].drop_duplicates()
+        observed = source[["subject", "model", "selected_layer"]].drop_duplicates()
+        layer_check = selected.merge(
+            observed,
+            on=["subject", "model"],
+            how="outer",
+            suffixes=("_mrsa", "_frsa"),
+            validate="one_to_one",
+            indicator=True,
+        )
+        if (
+            not layer_check["_merge"].eq("both").all()
+            or not layer_check["selected_layer_mrsa"].eq(
+                layer_check["selected_layer_frsa"]
+            ).all()
+        ):
+            raise ValueError(
+                "Native fRSA rows do not match the authoritative mRSA "
+                "best-on-shared layer selections"
+            )
+
+    rows = []
+    for model_set, models in MODEL_SETS.items():
+        model_mask = source["model"].isin(models)
+        for stimulus_type, eval_target, eval_model_set in (
+            ("controversial", "cstim", model_set),
+            ("vicco", "vicco", "vicco"),
+        ):
+            block = source[
+                model_mask
+                & source["eval_target"].eq(eval_target)
+                & source["eval_model_set"].eq(eval_model_set)
+            ].copy()
+            block["model_set"] = model_set
+            block["stimulus_type"] = stimulus_type
+            block[score_col] = block[source_col].astype(float)
+            rows.append(
+                block[
+                    [
+                        "subject",
+                        "model_set",
+                        "model",
+                        "display_name",
+                        "stimulus_type",
+                        "n_stimuli",
+                        "selected_layer",
+                        score_col,
+                    ]
+                ]
+            )
+
+    out = pd.concat(rows, ignore_index=True)
+    out = out.rename(columns={"selected_layer": "layer"})
+    out["bootstrap_idx"] = 0
+    _validate_rank_scores(out, method)
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -116,21 +253,27 @@ def load_scores(method: str) -> pd.DataFrame:
 def per_subject_ranks(df: pd.DataFrame, model_set: str, score_col: str,
                       stimulus_type: str) -> pd.DataFrame:
     """Returns DataFrame[subject, model, rank]."""
-    models = MODEL_SETS[model_set]
+    models = rank_models(model_set)
     sub_df = df[
         (df["model_set"] == model_set) &
         (df["stimulus_type"] == stimulus_type) &
-        (df["bootstrap_idx"] == 0) &
         (df["model"].isin(models))
     ]
+    # Baseline has 1,000 size-matched subsets per subject/model whereas the
+    # controversial set has one row.  Aggregate at subject x model before
+    # ranking so the baseline is not an arbitrary bootstrap-0 realization.
+    sub_df = (
+        sub_df.groupby(["subject", "model"], as_index=False, sort=False)[score_col]
+        .mean()
+    )
     rows = []
     for subject in SUBJECTS:
-        s_df = sub_df[sub_df["subject"] == subject]
+        s_df = sub_df[sub_df["subject"] == subject].copy()
         if s_df.empty:
             continue
-        ranked = s_df.sort_values(score_col, ascending=False).reset_index(drop=True)
-        for rank, row in enumerate(ranked.itertuples(), 1):
-            rows.append({"subject": subject, "model": row.model, "rank": rank})
+        s_df["rank"] = s_df[score_col].rank(method="average", ascending=False)
+        for row in s_df.itertuples():
+            rows.append({"subject": subject, "model": row.model, "rank": float(row.rank)})
     return pd.DataFrame(rows)
 
 
@@ -197,7 +340,7 @@ def compute_deltas(df: pd.DataFrame, model_set: str, score_col: str):
     if base_df.empty or cstim_df.empty:
         return {}, {}, base_df, cstim_df
 
-    models = list(MODEL_SETS[model_set])
+    models = rank_models(model_set)
     delta_by = {m: [] for m in models}
     for subject in SUBJECTS:
         b = base_df[base_df["subject"] == subject].set_index("model")["rank"]
@@ -226,11 +369,14 @@ def draw_panel(ax, df_mrsa: pd.DataFrame, df_frsa: pd.DataFrame,
     mean_m, std_m, base_m, cstim_m = compute_deltas(df_mrsa, model_set, "wrsa_transfer")
     mean_f, std_f, base_f, cstim_f = compute_deltas(df_frsa, model_set, "crsa")
 
+    roster_position = {model: idx for idx, model in enumerate(rank_models(model_set))}
     models = sorted(
         set(mean_m) | set(mean_f),
-        key=lambda m: mean_m.get(m, mean_f.get(m, 0)),
-        reverse=True,   # biggest improvers on left
-    )
+        key=lambda model: (
+            -mean_m.get(model, mean_f.get(model, 0)),
+            roster_position.get(model, len(roster_position)),
+        ),
+    )  # biggest improvers on left; canonical roster breaks exact ties
     if not models:
         ax.set_visible(False)
         return
@@ -382,8 +528,12 @@ def compute_rho_summary(df: pd.DataFrame, score_col: str):
         # ranks, so use the SB-corrected reliability of those means in denominator
         r_sb_base  = spearman_brown(rho_base,  N_SUBJECTS)
         r_sb_cstim = spearman_brown(rho_cstim, N_SUBJECTS)
-        denom = np.sqrt(r_sb_base * r_sb_cstim)
-        rho_b2c_corrected = float(np.clip(rho_b2c / denom, -1.0, 1.0)) if denom > 0 else np.nan
+        reliability_product = r_sb_base * r_sb_cstim
+        if np.isfinite(reliability_product) and reliability_product > 0:
+            denom = np.sqrt(reliability_product)
+            rho_b2c_corrected = float(np.clip(rho_b2c / denom, -1.0, 1.0))
+        else:
+            rho_b2c_corrected = np.nan
         rows.append({
             "model_set":        ms,
             "rho_base":         rho_base,
